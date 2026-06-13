@@ -1,0 +1,642 @@
+schema_version: 1
+status: draft
+purpose: >
+  Palantir-style personal ontology for Brian's life operations. The ontology
+  connects time, tasks, emotions, body records, finance, relationships,
+  maintenance, fun, identity, and historical evidence.
+
+areas:
+  - id: MIND
+    purpose: Thinking, learning, emotion, reflection, attention.
+  - id: BODY
+    purpose: Sleep, exercise, food, health, body composition, recovery.
+  - id: CAREER
+    purpose: Work, engineering projects, AI agent development, skills, reputation.
+  - id: FINANCE
+    purpose: Assets, spending, investing, portfolio decisions, financial goals.
+  - id: RELATION
+    purpose: Spouse, family, friends, coworkers, social energy, companion animals.
+  - id: MAINTENANCE
+    purpose: Chores, admin, errands, repairs, pet logistics, household operations.
+  - id: FUN
+    purpose: Play, recovery, creativity, hobbies, entertainment, exploration.
+
+conventions:
+  ids: snake_case_stable_ids
+  dates: YYYY-MM-DD
+  times: HH:MM_24h
+  durations: minutes
+  score_scale_default: 1_to_10
+  valence_score: -5_to_5
+  raw_text_policy: preserve_when_available
+  causality_policy: use_confidence_and_evidence_do_not_overclaim
+
+core_object_types:
+  Area:
+    fields: [id, purpose]
+  Day:
+    fields:
+      - date
+      - summary
+      - happiness_score
+      - stress_score
+      - energy_score
+      - dominant_emotions
+      - notes
+  TimeBlock:
+    purpose: A bounded time period in a day.
+    fields:
+      - id
+      - date
+      - start
+      - end
+      - area
+      - mode
+      - items
+  BlockItem:
+    purpose: An item inside a TimeBlock.
+    fields:
+      - type
+      - ref
+      - title
+      - planned_minutes
+      - actual_minutes
+      - status
+      - session_ref
+  Task:
+    purpose: A unit of work or life action to complete or track.
+    fields:
+      - id
+      - title
+      - area
+      - status
+      - priority
+      - energy
+      - estimated_minutes
+      - due_date
+      - tracking_level
+      - project_ref
+      - component_ref
+      - owner_ref
+      - progress_percent
+      - tags
+  Habit:
+    fields:
+      - id
+      - title
+      - area
+      - cadence
+      - minimum
+      - status
+  Person:
+    purpose: A global person object reused across work, family, finance, and social records.
+    fields:
+      - id
+      - name
+      - aliases
+      - relationship_types
+      - org
+      - notes
+  Note:
+    fields: [id, date, area, title, body, related_entities]
+
+emotion_and_identity_object_types:
+  MoodEntry:
+    fields:
+      - id
+      - date
+      - time
+      - valence_score
+      - arousal_score
+      - stress_score
+      - energy_score
+      - emotions
+      - linked_context
+      - possible_triggers
+      - note
+      - raw_text
+  Observation:
+    fields:
+      - id
+      - date
+      - observation_type
+      - area
+      - value
+      - unit
+      - linked_context
+      - confidence
+  Pattern:
+    fields:
+      - id
+      - statement
+      - evidence
+      - confidence
+      - related_entities
+      - last_reviewed
+  IdentityStatement:
+    fields:
+      - id
+      - statement
+      - evidence
+      - confidence
+      - status
+      - needs_user_review
+  OperatingRule:
+    fields:
+      - id
+      - statement
+      - applies_when
+      - recommended_actions
+      - derived_from
+      - confidence
+  Intervention:
+    fields:
+      - id
+      - date
+      - trigger_pattern_ref
+      - recommendation
+      - accepted
+      - outcome_check_time
+      - outcome
+
+career_object_types:
+  Project:
+    fields:
+      - id
+      - title
+      - area
+      - project_type
+      - status
+      - current_phase
+      - due_date
+      - notes
+  Component:
+    fields: [id, project_ref, title, owner_ref, status, notes]
+  DesignItem:
+    fields: [id, project_ref, component_ref, title, status, notes]
+  WorkSession:
+    fields:
+      - id
+      - date
+      - task_ref
+      - project_ref
+      - component_ref
+      - start
+      - end
+      - actual_minutes
+      - focus_level
+      - summary
+      - findings
+      - next_steps
+      - artifacts
+      - mood_refs
+  Issue:
+    fields:
+      - id
+      - project_ref
+      - component_ref
+      - task_ref
+      - title
+      - status
+      - severity
+      - discovered_on
+      - discovered_in_session
+      - blocker_for
+  Resolution:
+    fields:
+      - id
+      - issue_ref
+      - resolved_on
+      - resolved_by
+      - method
+      - root_cause
+      - changes
+      - verified_by
+  Decision:
+    fields:
+      - id
+      - date
+      - project_ref
+      - component_ref
+      - title
+      - decision
+      - rationale
+      - alternatives
+      - consequences
+      - source_refs
+  Artifact:
+    fields: [id, title, artifact_type, project_ref, component_ref, path_or_uri, created_on, notes]
+  StatusUpdate:
+    fields:
+      - id
+      - date
+      - task_ref
+      - author_ref
+      - status
+      - progress_percent
+      - summary
+      - blockers
+      - next_step
+  Assignment:
+    fields: [id, task_ref, person_ref, role, responsibility, status]
+  Meeting:
+    fields:
+      - id
+      - date
+      - project_ref
+      - participants
+      - topics
+      - decisions
+      - follow_up_tasks
+      - notes
+  Milestone:
+    fields: [id, project_ref, title, due_date, status, related_tasks]
+
+body_object_types:
+  ExerciseCatalog:
+    fields: [id, name, aliases, muscle_groups, equipment, notes]
+  WorkoutSession:
+    fields:
+      - id
+      - date
+      - start
+      - end
+      - habit_ref
+      - title
+      - location
+      - duration_minutes
+      - perceived_energy
+      - digestion
+      - performance_note
+      - exercises
+  WorkoutExercise:
+    fields: [exercise_ref, variant, equipment, notes, sets]
+  SetRecord:
+    fields: [set, weight_kg, reps, rpe, rest_seconds, is_warmup, is_pr]
+  Meal:
+    fields:
+      - id
+      - date
+      - time
+      - area
+      - meal_type
+      - items
+      - supplements
+      - related_workout
+      - notes
+  FoodItem:
+    fields:
+      - name
+      - amount
+      - unit
+      - calories
+      - protein_g
+      - carbs_g
+      - fat_g
+  Supplement:
+    fields: [name, amount, unit, caffeine_mg, notes]
+  BodyCompositionRecord:
+    fields:
+      - id
+      - date
+      - time
+      - source
+      - weight_kg
+      - skeletal_muscle_mass_kg
+      - body_fat_mass_kg
+      - body_fat_percent
+      - bmi
+      - basal_metabolic_rate_kcal
+      - visceral_fat_level
+      - condition
+      - notes
+  SleepRecord:
+    fields: [id, date, sleep_start, sleep_end, duration_minutes, quality_score, notes]
+
+finance_object_types:
+  FinanceGoal:
+    fields: [id, title, target_amount, currency, target_date, priority, notes]
+  Account:
+    fields: [id, title, account_type, institution, currency, notes]
+  Asset:
+    fields: [id, symbol, name, asset_type, market, sector, currency]
+  Holding:
+    fields:
+      - id
+      - account_ref
+      - asset_ref
+      - quantity
+      - average_cost
+      - currency
+      - thesis_ref
+      - status
+  Transaction:
+    fields:
+      - id
+      - date
+      - type
+      - account_ref
+      - asset_ref
+      - quantity
+      - price
+      - currency
+      - fees
+      - decision_ref
+  InvestmentDecision:
+    fields:
+      - id
+      - date
+      - action
+      - asset_ref
+      - thesis_ref
+      - reason
+      - risks
+      - emotion_at_decision
+      - conviction
+      - expected_horizon
+      - invalidation_conditions
+      - review_date
+  InvestmentThesis:
+    fields:
+      - id
+      - asset_ref
+      - title
+      - stance
+      - horizon
+      - reasons
+      - risks
+      - market_trend_refs
+      - source_refs
+      - review_triggers
+  InvestmentReview:
+    fields:
+      - id
+      - date
+      - asset_ref
+      - thesis_ref
+      - decision
+      - reason
+      - updated_risks
+      - next_review_date
+  MarketTrend:
+    fields: [id, title, description, source_refs, related_assets, status]
+  PeerGroup:
+    fields: [id, title, assets, trend_refs, notes]
+  Risk:
+    fields: [id, title, description, severity, related_assets, related_theses]
+  Catalyst:
+    fields: [id, title, date, asset_refs, trend_refs, expected_impact, source_refs]
+  Source:
+    fields: [id, title, source_type, uri, date, reliability, notes]
+  WatchlistItem:
+    fields: [id, asset_ref, reason, trend_refs, target_review_date, status]
+  AllocationTarget:
+    fields: [id, title, target_weights, rationale, review_cadence]
+
+relation_object_types:
+  Household:
+    fields: [id, title, members, notes]
+  Relationship:
+    fields: [id, from, to, relationship_type, area, status, notes]
+  CompanionAnimal:
+    fields: [id, name, species, household_ref, notes]
+  SocialInteraction:
+    fields:
+      - id
+      - date
+      - people_refs
+      - interaction_type
+      - relationship_area
+      - quality_score
+      - emotion_after
+      - follow_up_tasks
+      - notes
+  CareActivity:
+    fields:
+      - id
+      - date
+      - subjects
+      - activity_type
+      - duration_minutes
+      - area
+      - notes
+
+maintenance_object_types:
+  MaintenanceDomain:
+    values: [home, car, documents, health_admin, pet_care, subscriptions, repairs, errands]
+  RecurringTask:
+    fields: [id, task_ref, cadence, next_due_date, last_done_date]
+
+fun_object_types:
+  EnjoymentActivity:
+    fields:
+      - id
+      - date
+      - title
+      - area
+      - fun_domain
+      - people_refs
+      - duration_minutes
+      - active_or_passive
+      - intentionality
+      - enjoyment_score
+      - recovery_score
+      - emotions_after
+      - notes
+
+import_object_types:
+  ImportedRecord:
+    fields:
+      - id
+      - source_name
+      - source_type
+      - original_date
+      - imported_at
+      - raw_text
+      - raw_metadata
+      - parse_status
+  ParsedObservation:
+    fields:
+      - id
+      - imported_record_ref
+      - date
+      - observation_type
+      - area
+      - extracted_entities
+      - confidence
+      - needs_user_review
+  EvidenceLink:
+    fields:
+      - id
+      - source_ref
+      - target_ref
+      - evidence_type
+      - summary
+      - confidence
+  PatternCandidate:
+    fields: [id, statement, evidence_refs, confidence, needs_user_review]
+  IdentityCandidate:
+    fields: [id, statement, evidence_refs, confidence, needs_user_review]
+
+link_types:
+  contains:
+    from: TimeBlock
+    to: Task | Habit | WorkSession | WorkoutSession | Meal | SocialInteraction | EnjoymentActivity | Event
+    via: BlockItem.ref
+  contained_by:
+    from: Task | Habit | WorkSession | WorkoutSession | Meal | SocialInteraction | EnjoymentActivity | Event
+    to: TimeBlock
+    inverse_of: contains
+    stored: false
+  scheduled_in:
+    from: Task
+    to: TimeBlock
+    via: BlockItem.ref
+  belongs_to_area:
+    from: any_object
+    to: Area
+  task_in_project:
+    from: Task
+    to: Project
+    via: project_ref
+  task_targets_component:
+    from: Task
+    to: Component
+    via: component_ref
+  work_session_for_task:
+    from: WorkSession
+    to: Task
+    via: task_ref
+  issue_resolved_by:
+    from: Issue
+    to: Resolution
+  produces_artifact:
+    from: WorkSession | Task | Decision
+    to: Artifact
+  assigned_to:
+    from: Task
+    to: Person
+    via: Assignment
+  person_in_project:
+    from: Person
+    to: Project
+    via: ProjectMembership
+  mood_associated_with:
+    from: MoodEntry
+    to: TimeBlock | Task | WorkSession | WorkoutSession | Meal | SocialInteraction | Person | Project
+  meal_before_workout:
+    from: Meal
+    to: WorkoutSession
+    derived_by: meal.time within 0-3 hours before workout.start
+  meal_after_workout:
+    from: Meal
+    to: WorkoutSession
+    derived_by: meal.time within 0-3 hours after workout.end
+  workout_before_body_composition:
+    from: WorkoutSession
+    to: BodyCompositionRecord
+    derived_by: workout.date within 1-7 days before measurement.date
+  relationship_between:
+    from: Person
+    to: Person
+    via: Relationship
+  care_activity_for:
+    from: CareActivity
+    to: Person | CompanionAnimal
+  holding_of_asset:
+    from: Holding
+    to: Asset
+  transaction_for_asset:
+    from: Transaction
+    to: Asset
+  decision_based_on_thesis:
+    from: InvestmentDecision
+    to: InvestmentThesis
+  asset_exposed_to_trend:
+    from: Asset
+    to: MarketTrend
+  asset_in_peer_group:
+    from: Asset
+    to: PeerGroup
+  thesis_supported_by_source:
+    from: InvestmentThesis
+    to: Source
+  thesis_threatened_by_risk:
+    from: InvestmentThesis
+    to: Risk
+  evidence_supports_pattern:
+    from: EvidenceLink
+    to: Pattern | PatternCandidate
+  pattern_informs_rule:
+    from: Pattern
+    to: OperatingRule
+
+action_types:
+  log_day:
+    creates: [Day, TimeBlock, MoodEntry]
+  plan_day:
+    uses: [Task, Habit, Project, MoodEntry, OperatingRule]
+    creates_or_updates: [Day, TimeBlock]
+  log_task:
+    creates_or_updates: [Task, StatusUpdate]
+  schedule_task:
+    creates_or_updates: [TimeBlock, BlockItem]
+  log_work_session:
+    creates: [WorkSession]
+    may_update: [Task, StatusUpdate, Issue, Artifact]
+  log_issue_resolution:
+    creates: [Issue, Resolution]
+    may_update: [Decision, Artifact, Task]
+  log_workout:
+    creates: [WorkoutSession, WorkoutExercise, SetRecord]
+  log_meal:
+    creates: [Meal, FoodItem, Supplement]
+  log_body_composition:
+    creates: [BodyCompositionRecord]
+  log_social_interaction:
+    creates: [SocialInteraction]
+  log_mood:
+    creates: [MoodEntry]
+  log_finance_decision:
+    creates: [InvestmentDecision]
+    may_update: [InvestmentThesis, Holding, WatchlistItem]
+  log_transaction:
+    creates: [Transaction]
+    may_update: [Holding]
+  review_holding:
+    creates: [InvestmentReview]
+  import_records:
+    creates: [ImportedRecord, ParsedObservation]
+  update_pattern_candidate:
+    creates_or_updates: [PatternCandidate, Pattern, EvidenceLink]
+  recommend_intervention:
+    uses: [MoodEntry, Pattern, OperatingRule, Day, TimeBlock]
+    creates: [Intervention]
+
+query_types:
+  today_plan:
+    uses: [Day, TimeBlock, Task, MoodEntry, OperatingRule]
+  task_time_invested:
+    input: task_ref
+    uses: [TimeBlock, BlockItem, WorkSession]
+  exercise_history:
+    input: exercise_ref
+    uses: [ExerciseCatalog, WorkoutSession, WorkoutExercise, SetRecord]
+  mood_pattern:
+    uses: [MoodEntry, TimeBlock, Pattern, EvidenceLink]
+  unhappy_trajectory_check:
+    uses: [MoodEntry, Area, TimeBlock, Pattern, OperatingRule, Intervention]
+  project_status:
+    input: project_ref
+    uses: [Project, Task, StatusUpdate, Issue, Assignment, WorkSession]
+  person_context:
+    input: person_ref
+    uses: [Person, Relationship, Assignment, Meeting, SocialInteraction, MoodEntry]
+  why_own_asset:
+    input: asset_ref
+    uses: [Holding, Transaction, InvestmentDecision, InvestmentThesis, MarketTrend, Risk, Source]
+  trend_exposure:
+    input: trend_ref
+    uses: [MarketTrend, Asset, Holding, WatchlistItem, PeerGroup]
+  neglected_area_check:
+    uses: [Day, TimeBlock, Area, MoodEntry, Pattern]

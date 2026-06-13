@@ -1,0 +1,144 @@
+schema_version: 1
+status: draft
+purpose: >
+  Rules for importing Brian's historical time records, emotion records, work
+  records, finance records, and conversation records into the life ontology.
+
+principles:
+  - Preserve raw records before parsing.
+  - Do not overwrite raw records.
+  - Separate raw history from interpretation.
+  - Use confidence for extracted meaning.
+  - Mark uncertain interpretations with `needs_user_review: true`.
+  - Build identity only through evidence-backed patterns.
+  - Keep private records local unless Brian explicitly asks otherwise.
+
+pipeline:
+  - step: raw_import
+    creates: ImportedRecord
+    description: Store original text or metadata with source and date.
+  - step: parse_observations
+    creates: ParsedObservation
+    description: Extract dated observations such as mood, task, work session, meal, workout, social interaction, finance decision, or note.
+  - step: link_objects
+    creates: EvidenceLink
+    description: Connect observations to existing ontology objects such as Project, Person, Task, Asset, TimeBlock, or Area.
+  - step: propose_patterns
+    creates: PatternCandidate
+    description: Summarize repeated relationships without asserting causality.
+  - step: propose_identity
+    creates: IdentityCandidate
+    description: Suggest identity statements only when multiple evidence links support them.
+  - step: create_operating_rule
+    creates: OperatingRule
+    description: Convert confirmed patterns into assistant behavior.
+
+source_types:
+  - user_memory
+  - journal
+  - emotion_log
+  - work_log
+  - time_log
+  - calendar
+  - chat
+  - markdown
+  - csv
+  - spreadsheet
+  - finance_export
+  - workout_export
+  - food_log
+
+parse_status_values:
+  - unparsed
+  - parsed
+  - partially_parsed
+  - needs_review
+  - ignored
+
+observation_types:
+  - mood
+  - task
+  - time_block
+  - work_session
+  - issue
+  - resolution
+  - decision
+  - artifact
+  - workout
+  - meal
+  - body_composition
+  - social_interaction
+  - maintenance
+  - fun
+  - finance_decision
+  - transaction
+  - trend_note
+  - identity_note
+
+confidence_values:
+  - low
+  - medium
+  - high
+
+required_imported_record_fields:
+  - id
+  - source_name
+  - source_type
+  - original_date
+  - imported_at
+  - raw_text
+  - raw_metadata
+  - parse_status
+
+required_parsed_observation_fields:
+  - id
+  - imported_record_ref
+  - date
+  - observation_type
+  - area
+  - extracted_entities
+  - confidence
+  - needs_user_review
+
+normalization_rules:
+  dates:
+    rule: Convert to ISO date when possible; preserve original text in raw_metadata.
+  people:
+    rule: Resolve names to Person IDs when confident; otherwise create candidate IDs.
+  projects:
+    rule: Resolve Milano to project_milano and AI Agent work to project_ai_agent when context is clear.
+  exercises:
+    rule: Resolve aliases such as squat or back squat to ExerciseCatalog IDs when available.
+  finance_assets:
+    rule: Resolve ticker symbols to Asset IDs, but verify ambiguous tickers before linking.
+  emotions:
+    rule: Keep original emotional language in raw_text and map to normalized emotion tags only as interpretation.
+
+identity_update_rules:
+  - Never turn one record into an identity statement.
+  - Prefer PatternCandidate first.
+  - Require evidence references.
+  - Require Brian confirmation when the statement is psychologically significant.
+  - Keep desired identity separate from historical pattern.
+
+example_import:
+  imported_record:
+    id: import_example_20260613_001
+    source_name: conversation
+    source_type: user_memory
+    original_date: 2026-06-13
+    imported_at: 2026-06-13
+    raw_text: "Milano pressure was high, I skipped workout, and my mood got worse."
+    raw_metadata: {}
+    parse_status: parsed
+  parsed_observations:
+    - id: parsed_example_20260613_mood
+      imported_record_ref: import_example_20260613_001
+      date: 2026-06-13
+      observation_type: mood
+      area: MIND
+      extracted_entities:
+        emotions: [pressured]
+        possible_triggers: [project_milano, skipped_workout]
+      confidence: medium
+      needs_user_review: true

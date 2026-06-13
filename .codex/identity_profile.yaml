@@ -1,0 +1,140 @@
+schema_version: 1
+status: draft
+profile:
+  id: brian
+  display_name: Brian
+  updated_at: 2026-06-13
+
+known_context:
+  areas:
+    - MIND
+    - BODY
+    - CAREER
+    - FINANCE
+    - RELATION
+    - MAINTENANCE
+    - FUN
+  career:
+    roles:
+      - hardware_engineer
+      - ai_agent_builder
+    active_projects:
+      - id: project_milano
+        title: Milano
+        project_type: hardware_design
+        status: active
+        notes: SSD design work with PCIe responsibility.
+      - id: project_ai_agent
+        title: AI Agent Development
+        project_type: software_agent
+        status: active
+        notes: Development of ontology-backed AI agents and Codex workflows.
+    focus_components:
+      - id: component_milano_pcie
+        project_ref: project_milano
+        title: PCIe
+  relationship:
+    household:
+      id: household_brian
+      members:
+        - person_brian
+        - person_wife
+        - pet_dog_1
+        - pet_dog_2
+    family_placeholders:
+      - person_wife
+      - person_brian_mother
+      - person_brian_father
+      - person_wife_mother
+      - person_wife_father
+    companion_animals:
+      - pet_dog_1
+      - pet_dog_2
+
+desired_identity:
+  - id: desired_deep_and_executing_designer
+    statement: A designer/engineer with both deep system understanding and execution.
+  - id: desired_sustainable_operator
+    statement: A person who can work deeply while protecting body, emotions, relationships, and joy.
+  - id: desired_ontology_backed_self_manager
+    statement: A person whose life decisions are supported by memory, evidence, and personal ontology.
+
+pattern_candidates:
+  - id: pattern_candidate_ambiguous_work_pressure
+    statement: Ambiguous work and near due dates may increase pressure or anxiety.
+    evidence_refs: []
+    confidence: low
+    needs_user_review: true
+  - id: pattern_candidate_structure_reduces_pressure
+    statement: Breaking unclear work into goal, output, blocker, and next action may reduce pressure.
+    evidence_refs: []
+    confidence: low
+    needs_user_review: true
+  - id: pattern_candidate_body_fun_relation_balance
+    statement: BODY, FUN, and RELATION may protect mood when CAREER load is high.
+    evidence_refs: []
+    confidence: low
+    needs_user_review: true
+  - id: pattern_candidate_passive_fun_vs_restorative_fun
+    statement: Passive avoidance may feel different from restorative fun and should be tracked separately.
+    evidence_refs: []
+    confidence: low
+    needs_user_review: true
+  - id: pattern_candidate_emotional_investing
+    statement: Finance decisions should track emotion at decision time to detect FOMO or fear-driven behavior.
+    evidence_refs: []
+    confidence: low
+    needs_user_review: true
+
+operating_rules:
+  - id: rule_do_not_optimize_only_productivity
+    statement: Do not optimize Brian's plan only for output; preserve long-term wellbeing across all areas.
+    applies_when:
+      - planning_day
+      - reviewing_week
+      - mood_low_or_stress_high
+    recommended_actions:
+      - Check BODY, RELATION, FUN, and MIND balance before adding more CAREER work.
+    derived_from:
+      - desired_sustainable_operator
+    confidence: medium
+  - id: rule_unclear_career_work
+    statement: If career work is unclear, split it into objective, expected artifact, blocker, next action, and time block.
+    applies_when:
+      - task.area == CAREER
+      - task.status in [todo, in_progress]
+      - task.description_is_ambiguous
+    recommended_actions:
+      - Clarify output.
+      - Identify blocker.
+      - Create one next action.
+      - Schedule in a high-energy block if deep design work.
+    derived_from:
+      - pattern_candidate_structure_reduces_pressure
+    confidence: low
+  - id: rule_finance_thesis_before_trade
+    statement: Before buy/sell decisions, review thesis, risk, allocation, emotion, and current sources.
+    applies_when:
+      - area == FINANCE
+      - action in [buy, sell, add_to_position, exit_position]
+    recommended_actions:
+      - Record InvestmentDecision.
+      - Check current market data and sources.
+      - Identify risks and invalidation conditions.
+      - Create review date.
+    derived_from:
+      - pattern_candidate_emotional_investing
+    confidence: medium
+  - id: rule_recommend_intervention_from_history
+    statement: When current behavior resembles a past unhappy pattern, suggest a small alternate action with evidence.
+    applies_when:
+      - mood.valence_score <= -2
+      - matching_pattern_found
+    recommended_actions:
+      - Explain the matching pattern.
+      - Offer one low-friction alternate action.
+      - Record whether Brian accepted it.
+      - Follow up on outcome.
+    derived_from:
+      - desired_ontology_backed_self_manager
+    confidence: medium
