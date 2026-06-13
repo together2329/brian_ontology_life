@@ -10,10 +10,26 @@ Rules:
 
 ## Snapshots
 
+- `review_archive/`
+  - Source roots:
+    - `/Users/brian/Desktop/_Review/2018`
+    - `/Users/brian/Desktop/_Review/2019`
+    - `/Users/brian/Desktop/_Review/2020`
+    - `/Users/brian/Desktop/_Review/2021`
+    - `/Users/brian/Desktop/_Review/2023`
+  - Copied: 2026-06-14
+  - Scope: historical review archive source files used by `life/imports/review_archive/`
+  - File count: 35
 - `obsidian/01_Daily/`
   - Source: `/Users/brian/Library/Mobile Documents/iCloud~md~obsidian/Documents/Brian/01_Daily`
   - Copied: 2026-06-13
   - Scope: Obsidian Daily, Weekly, Planner, Goal, Time Report files under `01_Daily`
+- `documents/happiness_bundle/`
+  - Source: `/Users/brian/Library/CloudStorage/GoogleDrive-together2329@gmail.com/내 드라이브/Brian's Life/행복꾸러미.doc.pdf`
+  - Copied: 2026-06-14
+  - Scope: happiness bundle PDF source used by `life/imports/happiness_bundle/`
+  - Raw copy: `happiness_bundle.doc.pdf`
+  - SHA-256: `35988871cde919d07881a299a26a5a7c632c3a5378bf5c3eb140da15751a7c0b`
 - `documents/bke_gratitude_campaign_2019/`
   - Source: `/Users/brian/Downloads/BKE Group 감사일기 캠페인 2019년 최정윤.docx`
   - Copied: 2026-06-13

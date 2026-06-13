@@ -2,6 +2,10 @@
 
 This directory contains derived indexes from Brian's local `행복꾸러미` PDF.
 
+The raw PDF is preserved in the repository at:
+
+- `raw_data/documents/happiness_bundle/happiness_bundle.doc.pdf`
+
 Generated files:
 
 - `manifest.yaml`: source path, sha256, page count, text count, and generated file refs.
@@ -19,4 +23,4 @@ Regenerate with:
 python3 tools/import_happiness_bundle.py
 ```
 
-The raw PDF stays at its original local Google Drive path. This repo stores only source metadata, page refs, short excerpts, image hashes/metadata, and structured ontology objects.
+The original PDF path is also kept in `manifest.yaml` for provenance. Derived ontology files store page refs, short excerpts, image hashes/metadata, and structured ontology objects.

@@ -2,7 +2,11 @@
 
 This folder contains ontology-friendly indexes generated from Brian's historical `_Review` archive.
 
-Raw source files are not copied here. They remain under:
+Raw source files are preserved in the repository under:
+
+- `raw_data/review_archive/`
+
+Their original source roots were:
 
 - `/Users/brian/Desktop/_Review/2018`
 - `/Users/brian/Desktop/_Review/2019`

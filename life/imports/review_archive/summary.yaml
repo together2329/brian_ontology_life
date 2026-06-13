@@ -7,9 +7,11 @@ import_scope:
   - /Users/brian/Desktop/_Review/2020
   - /Users/brian/Desktop/_Review/2021
   - /Users/brian/Desktop/_Review/2023
+  raw_snapshot_ref: raw_data/review_archive/
   file_count: 35
   canonical_source_count: 6
-  raw_policy: raw files are referenced by path and sha256; full raw prose is not copied into this repo
+  raw_policy: raw source files are preserved under raw_data/review_archive; derived indexes keep original source paths,
+    source rows, hashes, and excerpts for traceability
 records:
   normalized_record_count: 18162
   date_range:
