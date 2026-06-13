@@ -1,0 +1,500 @@
+schema_version: 1
+status: draft
+purpose: >
+  Semantic object catalog for linking historical review records to ontology
+  objects. This is the bridge from raw strings such as "아름", "지구",
+  "SR", or "제품 포장" into stable object IDs.
+
+review_policy:
+  - Links generated from this catalog are semantic link candidates.
+  - Use `needs_user_review` when a mapping may be personal, ambiguous, or historically sensitive.
+  - Keep raw historical records unchanged; write semantic links to a derived index.
+  - Prefer stable IDs over display names.
+
+entities:
+  people:
+    - id: person_brian
+      object_type: Person
+      display_name: Brian
+      aliases:
+        - Brian Choi
+        - happy_growth
+        - Happy Growth
+      confidence: high
+      needs_user_review: false
+
+    - id: person_wife
+      object_type: Person
+      display_name: Wife
+      aliases:
+        - 아름이
+        - 아름이와
+        - 아름이가
+        - 아름이를
+        - 아름에게
+        - 아름과
+        - 아름 집중
+      confidence: high
+      needs_user_review: true
+      notes: Historical records use the name "아름/아름이"; confirm this maps to current spouse.
+
+    - id: person_mother
+      object_type: Person
+      display_name: Mother
+      aliases:
+        - 엄마
+      confidence: medium
+      needs_user_review: true
+
+    - id: person_father
+      object_type: Person
+      display_name: Father
+      aliases:
+        - 아빠
+      confidence: medium
+      needs_user_review: true
+
+    - id: person_jihyeong
+      object_type: Person
+      display_name: Jihyeong
+      aliases:
+        - 지형이형
+        - 지형이 형
+      confidence: medium
+      needs_user_review: true
+
+    - id: person_hyeongsik
+      object_type: Person
+      display_name: Hyeongsik
+      aliases:
+        - 형식이
+      confidence: medium
+      needs_user_review: true
+
+    - id: person_sangsik
+      object_type: Person
+      display_name: Sangsik
+      aliases:
+        - 상식 책임님
+        - 상식책임님
+      confidence: medium
+      needs_user_review: true
+
+    - id: person_shivam
+      object_type: Person
+      display_name: Shivam
+      aliases:
+        - Shivam
+      confidence: medium
+      needs_user_review: true
+
+    - id: person_seoung
+      object_type: Person
+      display_name: Seoung
+      aliases:
+        - 서웅매니저님
+        - 서웅 매니저님
+      confidence: medium
+      needs_user_review: true
+
+  companion_animals:
+    - id: pet_dog_1
+      object_type: CompanionAnimal
+      display_name: 지구
+      species: dog
+      aliases:
+        - 지구
+      negative_aliases:
+        - 지구살림
+        - 지구살림e
+        - 지구살림E
+      requires_any_context:
+        - 지구와 함께
+        - 지구랑
+        - 지구에게
+        - 지구를 위해
+        - 지구가
+        - 지구도
+        - 지구 목욕
+        - 지구 집중
+        - 지구 똥
+        - 비숑
+        - 강아지
+        - 반려견
+        - 입양
+        - 울타리
+        - 목욕
+        - 간식
+        - 패드
+        - 훈련
+        - 병원
+        - 놀아주
+      confidence: high
+      needs_user_review: true
+      notes: Avoid linking plain "지구" when it means the smart-store brand/project.
+
+  projects:
+    - id: project_smart_store
+      object_type: Project
+      display_name: Smart Store / 지구살림e
+      area: CAREER
+      project_type: business
+      aliases:
+        - 스마트 스토어
+        - 스마트스토어
+        - 지구살림e
+        - 지구살림E
+        - 지구살림
+        - E,art
+        - 소창행주
+        - 소창 행주
+        - 화장솜
+        - 삼베수세미
+        - 수세미
+        - 면마스크
+      confidence: medium
+      needs_user_review: true
+
+    - id: project_srtri14lf
+      object_type: Project
+      display_name: SRTRI14LF / WAVE
+      area: CAREER
+      project_type: hardware_design
+      aliases:
+        - SRTRI14LF
+        - SR ( SRTRI14LF )
+        - WAVE
+      confidence: high
+      needs_user_review: true
+
+    - id: project_deeper_i
+      object_type: Project
+      display_name: Deeper-I / Tachy-BS1
+      area: CAREER
+      project_type: hardware_design
+      aliases:
+        - Deeper-I
+        - Deeper I
+        - Deeper I CPUSS Release
+        - Tachy-BS1
+      confidence: high
+      needs_user_review: true
+
+    - id: project_aworld_magic
+      object_type: Project
+      display_name: AWorld Magic
+      area: CAREER
+      project_type: hardware_or_software
+      aliases:
+        - AWorld Magic
+        - Aworld Magic
+        - Magic
+      confidence: medium
+      needs_user_review: true
+
+    - id: project_keti_rathma
+      object_type: Project
+      display_name: KETI / Rathma
+      area: CAREER
+      project_type: hardware_design
+      aliases:
+        - KETI
+        - Rathma
+      confidence: high
+      needs_user_review: true
+
+    - id: project_x330
+      object_type: Project
+      display_name: X330 / SKT AI
+      area: CAREER
+      project_type: hardware_design
+      aliases:
+        - X330
+        - SKT AI
+      confidence: high
+      needs_user_review: true
+
+    - id: project_ranix
+      object_type: Project
+      display_name: Ranix
+      area: CAREER
+      project_type: hardware_design
+      aliases:
+        - 라닉스
+        - Ranix
+      confidence: medium
+      needs_user_review: true
+
+    - id: project_haibi
+      object_type: Project
+      display_name: Haibi
+      area: CAREER
+      project_type: hardware_design
+      aliases:
+        - 하이비
+        - 하이비 Single Project
+      confidence: medium
+      needs_user_review: true
+
+    - id: project_milano
+      object_type: Project
+      display_name: Milano
+      area: CAREER
+      project_type: hardware_design
+      aliases:
+        - Milano
+        - 밀라노
+      confidence: high
+      needs_user_review: false
+
+    - id: project_ai_agent
+      object_type: Project
+      display_name: AI Agent Development
+      area: CAREER
+      project_type: software_agent
+      aliases:
+        - AI Agent
+        - AI 에이전트
+        - 온톨로지 에이전트
+        - life ontology
+      confidence: high
+      needs_user_review: false
+
+  components:
+    - id: component_usb
+      object_type: Component
+      display_name: USB
+      aliases:
+        - USB
+        - USB PHY
+        - USB VIP
+        - CR IF
+      confidence: high
+      needs_user_review: false
+
+    - id: component_pcie
+      object_type: Component
+      display_name: PCIe
+      aliases:
+        - PCIe
+        - PCIE
+      confidence: high
+      needs_user_review: false
+
+    - id: component_cpuss
+      object_type: Component
+      display_name: CPUSS
+      aliases:
+        - CPUSS
+        - CPU
+        - CA5
+      confidence: high
+      needs_user_review: false
+
+    - id: component_dma
+      object_type: Component
+      display_name: DMA
+      aliases:
+        - DMA
+      confidence: high
+      needs_user_review: false
+
+    - id: component_fpga
+      object_type: Component
+      display_name: FPGA
+      aliases:
+        - FPGA
+        - bit file
+        - bit 생성
+      confidence: high
+      needs_user_review: false
+
+    - id: component_jtag
+      object_type: Component
+      display_name: JTAG
+      aliases:
+        - JTAG
+        - Jtag
+      confidence: high
+      needs_user_review: false
+
+    - id: component_cts
+      object_type: Component
+      display_name: CTS / timing
+      aliases:
+        - CTS
+        - timing
+        - clock
+        - sdc
+        - cdc
+      confidence: medium
+      needs_user_review: false
+
+  activities:
+    - id: activity_sleep
+      object_type: Activity
+      display_name: Sleep
+      area: BODY
+      aliases:
+        - 수면
+        - 잘 잤
+        - 숙면
+      confidence: high
+      needs_user_review: false
+
+    - id: activity_meal
+      object_type: Activity
+      display_name: Meal
+      area: BODY
+      aliases:
+        - 식사
+        - 식단
+        - 맛있게 먹
+      confidence: high
+      needs_user_review: false
+
+    - id: activity_workout
+      object_type: Activity
+      display_name: Workout
+      area: BODY
+      aliases:
+        - 운동
+        - 헬스
+        - 스쿼트
+        - 푸쉬업
+      confidence: medium
+      needs_user_review: false
+
+    - id: activity_product_packaging
+      object_type: Activity
+      display_name: Product packaging
+      area: CAREER
+      aliases:
+        - 제품 포장
+        - 포장하기
+        - 소창 행주를 접
+        - 택배 포장
+      confidence: high
+      needs_user_review: false
+
+    - id: activity_product_shipping
+      object_type: Activity
+      display_name: Product shipping
+      area: CAREER
+      aliases:
+        - 제품 발송
+        - 택배 발송
+        - 편의점 택배
+        - 우체국 택배
+      confidence: high
+      needs_user_review: false
+
+    - id: activity_customer_analysis
+      object_type: Activity
+      display_name: Customer analysis
+      area: CAREER
+      aliases:
+        - 고객 분석
+        - 유입 경로
+        - 키워드 분석
+        - 판매 분석
+      confidence: high
+      needs_user_review: false
+
+    - id: activity_customer_service
+      object_type: Activity
+      display_name: Customer service
+      area: CAREER
+      aliases:
+        - 고객 서비스
+        - 고객님께
+        - 감사의 인사
+      confidence: medium
+      needs_user_review: false
+
+    - id: activity_advertising
+      object_type: Activity
+      display_name: Advertising / marketing
+      area: CAREER
+      aliases:
+        - 제품 광고
+        - 광고
+        - 마케팅
+        - 인스타그램
+        - 네이버 검색 광고
+      confidence: medium
+      needs_user_review: false
+
+    - id: activity_gratitude
+      object_type: Activity
+      display_name: Gratitude
+      area: MIND
+      aliases:
+        - 감사하기
+        - 감사일기
+      confidence: medium
+      needs_user_review: false
+
+    - id: activity_goal_review
+      object_type: Activity
+      display_name: Goal setting and review
+      area: MIND
+      aliases:
+        - 목표 설정
+        - 목표 & 계획
+        - 하루 목표
+        - 반성하기
+      confidence: medium
+      needs_user_review: false
+
+    - id: activity_memo
+      object_type: Activity
+      display_name: Memo / reflection
+      area: MIND
+      aliases:
+        - 메모하기
+        - 순간 순간
+        - 고통에 대한 기록
+      confidence: medium
+      needs_user_review: false
+
+    - id: activity_cleaning_organizing
+      object_type: Activity
+      display_name: Cleaning and organizing
+      area: MAINTENANCE
+      aliases:
+        - 정리 및 유지
+        - 청소
+        - 설거지
+        - 설겆이
+        - 빨래
+        - 분리수거
+      confidence: high
+      needs_user_review: false
+
+    - id: activity_rest
+      object_type: Activity
+      display_name: Rest
+      area: FUN
+      aliases:
+        - 휴식
+        - 편안하게 휴식
+        - 쉬었습니다
+      confidence: high
+      needs_user_review: false
+
+    - id: activity_happiness_bundle
+      object_type: Activity
+      display_name: 행복꾸러미
+      area: FUN
+      aliases:
+        - 행복꾸러미
+      confidence: high
+      needs_user_review: true
+
+link_relations:
+  Person: associated_person
+  CompanionAnimal: associated_companion_animal
+  Project: belongs_to_project
+  Component: targets_component
+  Activity: involves_activity

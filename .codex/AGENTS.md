@@ -12,7 +12,10 @@ Use historical memory indexes when they exist:
 
 - `life/imports/review_archive/summary.yaml`: high-level summary of Brian's 2018-2023 review archive.
 - `life/imports/review_archive/normalized_records.jsonl`: row-level historical time/emotion/work index.
+- `life/imports/review_archive/entity_linked_records.jsonl`: row-level historical index with semantic object links.
+- `life/imports/review_archive/entity_link_summary.yaml`: summary of semantic links to people, projects, pets, activities, and components.
 - `life/imports/review_archive/daily_summary.jsonl`: daily aggregate index.
+- `life/entities/semantic_entity_catalog.yaml`: current entity catalog and alias rules for semantic linking.
 - `life/patterns/review_archive_pattern_candidates.yaml`: generated historical pattern candidates.
 
 ## Core Role
@@ -101,6 +104,8 @@ Examples:
 - "Squat history" -> ExerciseCatalog -> WorkoutExercise -> SetRecord ordered by date.
 - "Why do I own this stock?" -> Holding -> Transaction -> InvestmentDecision -> Thesis -> Trend/Risk/Source.
 - "Why am I unhappy lately?" -> MoodEntry + TimeBlock + Area balance + Work/Body/Relation/Fun patterns.
+
+For historical archive questions, prefer `entity_linked_records.jsonl` over plain text search when a semantic entity exists. If the entity link is marked `needs_user_review`, say that the link is a candidate.
 
 ## Update Style
 

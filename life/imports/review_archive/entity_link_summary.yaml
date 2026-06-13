@@ -1,0 +1,1272 @@
+schema_version: 1
+generated_at: '2026-06-13T16:35:26'
+input_ref: life/imports/review_archive/normalized_records.jsonl
+catalog_ref: life/entities/semantic_entity_catalog.yaml
+output_ref: life/imports/review_archive/entity_linked_records.jsonl
+records:
+  total: 18162
+  with_semantic_links: 12968
+  without_semantic_links: 5194
+  with_review_needed: 5667
+link_counts:
+  by_object_type:
+    Activity: 9497
+    Person: 2641
+    Component: 1206
+    Project: 2464
+    CompanionAnimal: 323
+  by_relation:
+    involves_activity: 9497
+    associated_person: 2641
+    targets_component: 1206
+    belongs_to_project: 2464
+    associated_companion_animal: 323
+top_entities:
+- entity_ref: activity_meal
+  display_name: Meal
+  object_type: Activity
+  records: 2777
+  hours: 2308.91
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20180103_1400_review_2018_time_jira_r11
+    date: '2018-01-03'
+    area: BODY
+    title: '[식단 관리] 2018년 1월 1~2주'
+    matched_alias: 식단
+  - record_ref: hist_20180104_1900_review_2018_time_jira_r17
+    date: '2018-01-04'
+    area: BODY
+    title: '[식단 관리] 2018년 1월 1~2주'
+    matched_alias: 식사
+  - record_ref: hist_20180106_1500_review_2018_time_jira_r26
+    date: '2018-01-06'
+    area: BODY
+    title: '[식단 관리] 2018년 1월 1~2주'
+    matched_alias: 식단
+  - record_ref: hist_20180106_1800_review_2018_time_jira_r28
+    date: '2018-01-06'
+    area: BODY
+    title: '[식단 관리] 2018년 1월 1~2주'
+    matched_alias: 식단
+  - record_ref: hist_20180107_1000_review_2018_time_jira_r32
+    date: '2018-01-07'
+    area: BODY
+    title: '[식단 관리] 2018년 1월 1~2주'
+    matched_alias: 식단
+- entity_ref: person_wife
+  display_name: Wife
+  object_type: Person
+  records: 1626
+  hours: 1945.24
+  needs_user_review_records: 1626
+  examples:
+  - record_ref: hist_20180101_2200_review_2018_time_jira_r4
+    date: '2018-01-01'
+    area: RELATION
+    title: 아름이와 행복한 시간 보내기
+    matched_alias: 아름이
+  - record_ref: hist_20180102_2200_review_2018_time_jira_r8
+    date: '2018-01-02'
+    area: RELATION
+    title: 아름이와 행복한 시간 보내기
+    matched_alias: 아름이
+  - record_ref: hist_20180105_2300_review_2018_time_jira_r23
+    date: '2018-01-05'
+    area: RELATION
+    title: 아름이와 행복한 시간 보내기
+    matched_alias: 아름이
+  - record_ref: hist_20180106_1230_review_2018_time_jira_r25
+    date: '2018-01-06'
+    area: RELATION
+    title: 소중한 아름이와 병원함께 가기
+    matched_alias: 아름이
+  - record_ref: hist_20180107_0915_review_2018_time_jira_r31
+    date: '2018-01-07'
+    area: FUN
+    title: 휴식
+    matched_alias: 아름이
+- entity_ref: activity_sleep
+  display_name: Sleep
+  object_type: Activity
+  records: 1476
+  hours: 8036.23
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20180101_0000_review_2018_time_jira_r2
+    date: '2018-01-01'
+    area: BODY
+    title: '[수면] 2018년 1월 1~2주'
+    matched_alias: 수면
+  - record_ref: hist_20180102_0100_review_2018_time_jira_r5
+    date: '2018-01-02'
+    area: BODY
+    title: '[수면] 2018년 1월 1~2주'
+    matched_alias: 수면
+  - record_ref: hist_20180103_0000_review_2018_time_jira_r9
+    date: '2018-01-03'
+    area: BODY
+    title: '[수면] 2018년 1월 1~2주'
+    matched_alias: 수면
+  - record_ref: hist_20180104_0030_review_2018_time_jira_r14
+    date: '2018-01-04'
+    area: BODY
+    title: '[수면] 2018년 1월 1~2주'
+    matched_alias: 수면
+  - record_ref: hist_20180105_0030_review_2018_time_jira_r20
+    date: '2018-01-05'
+    area: BODY
+    title: '[수면] 2018년 1월 1~2주'
+    matched_alias: 수면
+- entity_ref: activity_rest
+  display_name: Rest
+  object_type: Activity
+  records: 1300
+  hours: 1497.59
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20180101_1100_review_2018_time_jira_r3
+    date: '2018-01-01'
+    area: FUN
+    title: 휴식
+    matched_alias: 휴식
+  - record_ref: hist_20180102_0945_review_2018_time_jira_r7
+    date: '2018-01-02'
+    area: FUN
+    title: 휴식
+    matched_alias: 휴식
+  - record_ref: hist_20180103_2100_review_2018_time_jira_r13
+    date: '2018-01-03'
+    area: FUN
+    title: 휴식
+    matched_alias: 휴식
+  - record_ref: hist_20180107_0915_review_2018_time_jira_r31
+    date: '2018-01-07'
+    area: FUN
+    title: 휴식
+    matched_alias: 휴식
+  - record_ref: hist_20180107_1359_review_2018_time_jira_r34
+    date: '2018-01-07'
+    area: FUN
+    title: 휴식
+    matched_alias: 휴식
+- entity_ref: activity_cleaning_organizing
+  display_name: Cleaning and organizing
+  object_type: Activity
+  records: 928
+  hours: 692.99
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20180111_2129_review_2018_time_jira_r113
+    date: '2018-01-11'
+    area: FUN
+    title: 휴식
+    matched_alias: 설겆이
+  - record_ref: hist_20180210_1308_review_2018_time_jira_r535
+    date: '2018-02-10'
+    area: MAINTENANCE
+    title: 정리하기
+    matched_alias: 설겆이
+  - record_ref: hist_20180214_2038_review_2018_time_jira_r598
+    date: '2018-02-14'
+    area: MAINTENANCE
+    title: 청소 및 정리하기
+    matched_alias: 청소
+  - record_ref: hist_20180218_0730_review_2018_time_jira_r640
+    date: '2018-02-18'
+    area: BODY
+    title: '[식단 관리] 2018년 2월 3~5주'
+    matched_alias: 설겆이
+  - record_ref: hist_20180218_1941_review_2018_time_jira_r651
+    date: '2018-02-18'
+    area: MAINTENANCE
+    title: 정리하기
+    matched_alias: 청소
+- entity_ref: activity_happiness_bundle
+  display_name: 행복꾸러미
+  object_type: Activity
+  records: 764
+  hours: 648.62
+  needs_user_review_records: 764
+  examples:
+  - record_ref: hist_20180215_1432_review_2018_time_jira_r611
+    date: '2018-02-15'
+    area: RELATION
+    title: 소중한 사람들에게 연락하기(전화, 문자), 만나기
+    matched_alias: 행복꾸러미
+  - record_ref: hist_20180403_0921_review_2018_time_jira_r1171
+    date: '2018-04-03'
+    area: FUN
+    title: '[FUN] 행복꾸러미'
+    matched_alias: 행복꾸러미
+  - record_ref: hist_20180404_1056_review_2018_time_jira_r1185
+    date: '2018-04-04'
+    area: FUN
+    title: '[FUN] 행복꾸러미'
+    matched_alias: 행복꾸러미
+  - record_ref: hist_20180406_0833_review_2018_time_jira_r1210
+    date: '2018-04-06'
+    area: FUN
+    title: '[FUN] 행복꾸러미'
+    matched_alias: 행복꾸러미
+  - record_ref: hist_20180410_2003_review_2018_time_jira_r1297
+    date: '2018-04-10'
+    area: FUN
+    title: '[FUN] 행복꾸러미'
+    matched_alias: 행복꾸러미
+- entity_ref: activity_memo
+  display_name: Memo / reflection
+  object_type: Activity
+  records: 617
+  hours: 398.18
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20180217_0956_review_2018_time_jira_r631
+    date: '2018-02-17'
+    area: MIND
+    title: '[Memo] 순간 순간 떠오르는 것 메모하기'
+    matched_alias: 메모하기
+  - record_ref: hist_20180706_0638_review_2018_time_jira_r2129
+    date: '2018-07-06'
+    area: MIND
+    title: BKE group 감사일기 캠페인
+    matched_alias: 순간 순간
+  - record_ref: hist_20180706_1928_review_2018_time_jira_r2144
+    date: '2018-07-06'
+    area: MIND
+    title: '[Memo] 순간 순간 떠오르는 것 메모하기'
+    matched_alias: 메모하기
+  - record_ref: hist_20180706_1959_review_2018_time_jira_r2145
+    date: '2018-07-06'
+    area: MIND
+    title: '[Memo] 순간 순간 떠오르는 것 메모하기'
+    matched_alias: 메모하기
+  - record_ref: hist_20180707_0531_review_2018_time_jira_r2150
+    date: '2018-07-07'
+    area: MIND
+    title: '[Memo] 순간 순간 떠오르는 것 메모하기'
+    matched_alias: 메모하기
+- entity_ref: person_jihyeong
+  display_name: Jihyeong
+  object_type: Person
+  records: 586
+  hours: 608.12
+  needs_user_review_records: 586
+  examples:
+  - record_ref: hist_20180103_1400_review_2018_time_jira_r11
+    date: '2018-01-03'
+    area: BODY
+    title: '[식단 관리] 2018년 1월 1~2주'
+    matched_alias: 지형이형
+  - record_ref: hist_20180104_2240_review_2018_time_jira_r19
+    date: '2018-01-04'
+    area: RELATION
+    title: 지형이형
+    matched_alias: 지형이형
+  - record_ref: hist_20180108_1239_review_2018_time_jira_r43
+    date: '2018-01-08'
+    area: BODY
+    title: '[식단 관리] 2018년 1월 1~2주'
+    matched_alias: 지형이형
+  - record_ref: hist_20180110_1004_review_2018_time_jira_r74
+    date: '2018-01-10'
+    area: CAREER
+    title: Cetus Final Action Item
+    matched_alias: 지형이 형
+  - record_ref: hist_20180110_1241_review_2018_time_jira_r78
+    date: '2018-01-10'
+    area: BODY
+    title: '[식단 관리] 2018년 1월 1~2주'
+    matched_alias: 지형이형
+- entity_ref: project_x330
+  display_name: X330 / SKT AI
+  object_type: Project
+  records: 548
+  hours: 648.67
+  needs_user_review_records: 548
+  examples:
+  - record_ref: hist_20201020_1715_review_2020_time_jira_r3358
+    date: '2020-10-20'
+    area: MIND
+    title: '[MIND] 목표 설정 및 리뷰'
+    matched_alias: X330
+  - record_ref: hist_20201021_1330_review_2020_time_jira_r3378
+    date: '2020-10-21'
+    area: CAREER
+    title: '[CAR] 미팅 & 회의 참가'
+    matched_alias: X330
+  - record_ref: hist_20201105_1330_review_2020_time_jira_r3538
+    date: '2020-11-05'
+    area: CAREER
+    title: X330 ( SVP )
+    matched_alias: X330
+  - record_ref: hist_20201105_1515_review_2020_time_jira_r3540
+    date: '2020-11-05'
+    area: CAREER
+    title: X330 CPUSS Check를 위한 SPYGLASS 셋팅
+    matched_alias: X330
+  - record_ref: hist_20201106_1015_review_2020_time_jira_r3544
+    date: '2020-11-06'
+    area: CAREER
+    title: X330 CPUSS Check를 위한 SPYGLASS 셋팅
+    matched_alias: X330
+- entity_ref: activity_workout
+  display_name: Workout
+  object_type: Activity
+  records: 498
+  hours: 488.21
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20180109_1236_review_2018_time_jira_r60
+    date: '2018-01-09'
+    area: BODY
+    title: '[식단 관리] 2018년 1월 1~2주'
+    matched_alias: 운동
+  - record_ref: hist_20180122_2340_review_2018_time_jira_r272
+    date: '2018-01-22'
+    area: BODY
+    title: '[운동] 2018년 1월 4주'
+    matched_alias: 운동
+  - record_ref: hist_20180125_2016_review_2018_time_jira_r322
+    date: '2018-01-25'
+    area: BODY
+    title: '[식단 관리] 2018년 1월 4주'
+    matched_alias: 운동
+  - record_ref: hist_20180126_1744_review_2018_time_jira_r335
+    date: '2018-01-26'
+    area: FUN
+    title: 휴식
+    matched_alias: 운동
+  - record_ref: hist_20180129_2127_review_2018_time_jira_r373
+    date: '2018-01-29'
+    area: MIND
+    title: '[하루 기록 및 반성] 2018년 1~3월'
+    matched_alias: 운동
+- entity_ref: project_ranix
+  display_name: Ranix
+  object_type: Project
+  records: 492
+  hours: 591.4
+  needs_user_review_records: 492
+  examples:
+  - record_ref: hist_20190121_1715_review_2019_time_jira_r445
+    date: '2019-01-21'
+    area: CAREER
+    title: '[CAR] 미팅 & 회의 참가'
+    matched_alias: 라닉스
+  - record_ref: hist_20190122_1700_review_2019_time_jira_r469
+    date: '2019-01-22'
+    area: CAREER
+    title: '[CAR] 미팅 & 회의 참가'
+    matched_alias: 라닉스
+  - record_ref: hist_20190123_1915_review_2019_time_jira_r495
+    date: '2019-01-23'
+    area: CAREER
+    title: '[CAR] 미팅 & 회의 참가'
+    matched_alias: 라닉스
+  - record_ref: hist_20190125_1618_review_2019_time_jira_r534
+    date: '2019-01-25'
+    area: CAREER
+    title: 라닉스 프로젝트
+    matched_alias: 라닉스
+  - record_ref: hist_20190125_1703_review_2019_time_jira_r535
+    date: '2019-01-25'
+    area: CAREER
+    title: 라닉스 프로젝트
+    matched_alias: 라닉스
+- entity_ref: activity_goal_review
+  display_name: Goal setting and review
+  object_type: Activity
+  records: 490
+  hours: 349.1
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20180108_2145_review_2018_time_jira_r51
+    date: '2018-01-08'
+    area: MIND
+    title: 아직 정의할 수 없는 시간
+    matched_alias: 반성하기
+  - record_ref: hist_20180109_0945_review_2018_time_jira_r57
+    date: '2018-01-09'
+    area: MIND
+    title: 기반시스템을 위한 행동( 이슈에 없는 것들 )
+    matched_alias: 하루 목표
+  - record_ref: hist_20180110_0902_review_2018_time_jira_r73
+    date: '2018-01-10'
+    area: MIND
+    title: 아직 정의할 수 없는 시간
+    matched_alias: 하루 목표
+  - record_ref: hist_20180110_2041_review_2018_time_jira_r88
+    date: '2018-01-10'
+    area: CAREER
+    title: 아직 정의할 수 없는 시간
+    matched_alias: 반성하기
+  - record_ref: hist_20180111_0954_review_2018_time_jira_r97
+    date: '2018-01-11'
+    area: MIND
+    title: 아직 정의할 수 없는 시간
+    matched_alias: 하루 목표
+- entity_ref: project_smart_store
+  display_name: Smart Store / 지구살림e
+  object_type: Project
+  records: 481
+  hours: 1509.76
+  needs_user_review_records: 481
+  examples:
+  - record_ref: hist_20190912_0650_review_2019_time_jira_r4832
+    date: '2019-09-12'
+    area: CAREER
+    title: 스마트 스토어 관련 강의 듣기
+    matched_alias: 스마트 스토어
+  - record_ref: hist_20190912_1700_review_2019_time_jira_r4837
+    date: '2019-09-12'
+    area: CAREER
+    title: 스마트 스토어 관련 강의 듣기
+    matched_alias: 스마트 스토어
+  - record_ref: hist_20190913_1430_review_2019_time_jira_r4844
+    date: '2019-09-13'
+    area: CAREER
+    title: 스마트 스토어 관련 강의 듣기
+    matched_alias: 스마트 스토어
+  - record_ref: hist_20190915_0820_review_2019_time_jira_r4860
+    date: '2019-09-15'
+    area: CAREER
+    title: 스마트 스토어 관련 강의 듣기
+    matched_alias: 스마트 스토어
+  - record_ref: hist_20191009_1830_review_2019_time_jira_r5255
+    date: '2019-10-09'
+    area: MIND
+    title: '[Memo] 순간 순간 떠오르는 것 메모하기'
+    matched_alias: 스마트 스토어
+- entity_ref: component_cpuss
+  display_name: CPUSS
+  object_type: Component
+  records: 337
+  hours: 503.61
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20180108_1818_review_2018_time_jira_r48
+    date: '2018-01-08'
+    area: CAREER
+    title: Cetus CPUSS RTL Integration[Final]
+    matched_alias: CPUSS
+  - record_ref: hist_20180108_1946_review_2018_time_jira_r50
+    date: '2018-01-08'
+    area: CAREER
+    title: Cetus CPUSS RTL Integration[Final]
+    matched_alias: CPUSS
+  - record_ref: hist_20180110_1124_review_2018_time_jira_r75
+    date: '2018-01-10'
+    area: CAREER
+    title: Cetus CPUSS RTL Integration[Final]
+    matched_alias: CPUSS
+  - record_ref: hist_20180110_1506_review_2018_time_jira_r81
+    date: '2018-01-10'
+    area: CAREER
+    title: 이슈로 정의되지 않은 일들
+    matched_alias: CPUSS
+  - record_ref: hist_20180110_1639_review_2018_time_jira_r84
+    date: '2018-01-10'
+    area: CAREER
+    title: Cetus Final Action Item
+    matched_alias: CPUSS
+- entity_ref: pet_dog_1
+  display_name: 지구
+  object_type: CompanionAnimal
+  records: 323
+  hours: 299.43
+  needs_user_review_records: 323
+  examples:
+  - record_ref: hist_20200304_1330_review_2020_time_jira_r1262
+    date: '2020-03-04'
+    area: FUN
+    title: 지구와 함께 :)
+    matched_alias: 지구
+  - record_ref: hist_20200305_1315_review_2020_time_jira_r1272
+    date: '2020-03-05'
+    area: MAINTENANCE
+    title: 정리 및 유지를 위한 활동
+    matched_alias: 지구
+  - record_ref: hist_20200305_1900_review_2020_time_jira_r1277
+    date: '2020-03-05'
+    area: FUN
+    title: '[FUN] 행복꾸러미'
+    matched_alias: 지구
+  - record_ref: hist_20200306_0020_review_2020_time_jira_r1283
+    date: '2020-03-06'
+    area: FUN
+    title: 지구와 함께 :)
+    matched_alias: 지구
+  - record_ref: hist_20200306_0800_review_2020_time_jira_r1285
+    date: '2020-03-06'
+    area: FUN
+    title: 지구와 함께 :)
+    matched_alias: 지구
+- entity_ref: activity_gratitude
+  display_name: Gratitude
+  object_type: Activity
+  records: 310
+  hours: 193.27
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20180429_0000_review_2018_time_jira_r1495
+    date: '2018-04-29'
+    area: MIND
+    title: 아름이와 행복한 시간 보내기
+    matched_alias: 감사일기
+  - record_ref: hist_20180507_1012_review_2018_time_jira_r1596
+    date: '2018-05-07'
+    area: MIND
+    title: BKE group 감사일기 캠페인
+    matched_alias: 감사일기
+  - record_ref: hist_20180507_1820_review_2018_time_jira_r1603
+    date: '2018-05-07'
+    area: MIND
+    title: BKE group 감사일기 캠페인
+    matched_alias: 감사일기
+  - record_ref: hist_20180512_1523_review_2018_time_jira_r1667
+    date: '2018-05-12'
+    area: MIND
+    title: BKE group 감사일기 캠페인
+    matched_alias: 감사일기
+  - record_ref: hist_20180522_1942_review_2018_time_jira_r1786
+    date: '2018-05-22'
+    area: MIND
+    title: BKE group 감사일기 캠페인
+    matched_alias: 감사일기
+- entity_ref: project_deeper_i
+  display_name: Deeper-I / Tachy-BS1
+  object_type: Project
+  records: 299
+  hours: 447.03
+  needs_user_review_records: 299
+  examples:
+  - record_ref: hist_20190830_1000_review_2019_time_jira_r4681
+    date: '2019-08-30'
+    area: CAREER
+    title: Deeper-I ( Tachy-BS1 )
+    matched_alias: Deeper-I
+  - record_ref: hist_20190830_1345_review_2019_time_jira_r4684
+    date: '2019-08-30'
+    area: CAREER
+    title: Deeper-I ( Tachy-BS1 )
+    matched_alias: Deeper-I
+  - record_ref: hist_20190902_1019_review_2019_time_jira_r4699
+    date: '2019-09-02'
+    area: CAREER
+    title: Deeper-I ( Tachy-BS1 )
+    matched_alias: Deeper-I
+  - record_ref: hist_20190902_1335_review_2019_time_jira_r4702
+    date: '2019-09-02'
+    area: CAREER
+    title: Deeper-I ( Tachy-BS1 )
+    matched_alias: Deeper-I
+  - record_ref: hist_20190902_1850_review_2019_time_jira_r4705
+    date: '2019-09-02'
+    area: CAREER
+    title: Deeper-I ( Tachy-BS1 )
+    matched_alias: Deeper-I
+- entity_ref: project_haibi
+  display_name: Haibi
+  object_type: Project
+  records: 295
+  hours: 410.05
+  needs_user_review_records: 295
+  examples:
+  - record_ref: hist_20180213_1828_review_2018_time_jira_r583
+    date: '2018-02-13'
+    area: CAREER
+    title: 지원하기
+    matched_alias: 하이비
+  - record_ref: hist_20180327_1330_review_2018_time_jira_r1088
+    date: '2018-03-27'
+    area: CAREER
+    title: '[CAR] ASICLAND verification 환경 만들기'
+    matched_alias: 하이비
+  - record_ref: hist_20180327_2101_review_2018_time_jira_r1094
+    date: '2018-03-27'
+    area: CAREER
+    title: '[CAR] ASICLAND verification 환경 만들기'
+    matched_alias: 하이비
+  - record_ref: hist_20180328_0915_review_2018_time_jira_r1098
+    date: '2018-03-28'
+    area: CAREER
+    title: '[CAR] ASICLAND verification 환경 만들기'
+    matched_alias: 하이비
+  - record_ref: hist_20180328_2135_review_2018_time_jira_r1103
+    date: '2018-03-28'
+    area: CAREER
+    title: '[CAR] ASICLAND verification 환경 만들기'
+    matched_alias: 하이비
+- entity_ref: component_pcie
+  display_name: PCIe
+  object_type: Component
+  records: 256
+  hours: 344.23
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20180119_1259_review_2018_time_jira_r227
+    date: '2018-01-19'
+    area: CAREER
+    title: 사람 책 읽기
+    matched_alias: PCIE
+  - record_ref: hist_20180306_1000_review_2018_time_jira_r851
+    date: '2018-03-06'
+    area: CAREER
+    title: '[메일 대응] 메일 일괄 처리 후 Action Item 정리'
+    matched_alias: PCIe
+  - record_ref: hist_20180308_1408_review_2018_time_jira_r877
+    date: '2018-03-08'
+    area: CAREER
+    title: Mira Pre-final RTL Integration
+    matched_alias: PCIe
+  - record_ref: hist_20180409_1031_review_2018_time_jira_r1260
+    date: '2018-04-09'
+    area: CAREER
+    title: '[CAR] 메일 대응'
+    matched_alias: PCIe
+  - record_ref: hist_20180830_0958_review_2018_time_jira_r2952
+    date: '2018-08-30'
+    area: RELATION
+    title: '[REL] 사람 책 읽기'
+    matched_alias: PCIe
+- entity_ref: component_cts
+  display_name: CTS / timing
+  object_type: Component
+  records: 221
+  hours: 286.55
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20180108_1818_review_2018_time_jira_r48
+    date: '2018-01-08'
+    area: CAREER
+    title: Cetus CPUSS RTL Integration[Final]
+    matched_alias: clock
+  - record_ref: hist_20180111_1728_review_2018_time_jira_r108
+    date: '2018-01-11'
+    area: CAREER
+    title: 이슈로 정의되지 않은 일들
+    matched_alias: sdc
+  - record_ref: hist_20180112_1458_review_2018_time_jira_r128
+    date: '2018-01-12'
+    area: CAREER
+    title: 이슈로 정의되지 않은 일들
+    matched_alias: timing
+  - record_ref: hist_20180122_1134_review_2018_time_jira_r260
+    date: '2018-01-22'
+    area: CAREER
+    title: 이슈로 정의되지 않은 일들
+    matched_alias: sdc
+  - record_ref: hist_20180309_1127_review_2018_time_jira_r887
+    date: '2018-03-09'
+    area: CAREER
+    title: Mira PreFinal Chip Top Release [3/14]
+    matched_alias: clock
+- entity_ref: component_usb
+  display_name: USB
+  object_type: Component
+  records: 219
+  hours: 377.34
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20180327_1136_review_2018_time_jira_r1086
+    date: '2018-03-27'
+    area: MAINTENANCE
+    title: '[메일 대응] 메일 일괄 처리 후 Action Item 정리'
+    matched_alias: USB
+  - record_ref: hist_20190131_1503_review_2019_time_jira_r649
+    date: '2019-01-31'
+    area: CAREER
+    title: '[CAR] 미팅 & 회의 참가'
+    matched_alias: USB
+  - record_ref: hist_20190213_1039_review_2019_time_jira_r944
+    date: '2019-02-13'
+    area: CAREER
+    title: '[CAR] 미팅 & 회의 참가'
+    matched_alias: USB
+  - record_ref: hist_20190219_1027_review_2019_time_jira_r1097
+    date: '2019-02-19'
+    area: CAREER
+    title: 라닉스 프로젝트
+    matched_alias: USB
+  - record_ref: hist_20190315_1600_review_2019_time_jira_r1695
+    date: '2019-03-15'
+    area: CAREER
+    title: 라닉스 프로젝트
+    matched_alias: USB
+- entity_ref: project_srtri14lf
+  display_name: SRTRI14LF / WAVE
+  object_type: Project
+  records: 205
+  hours: 369.64
+  needs_user_review_records: 205
+  examples:
+  - record_ref: hist_20190708_1110_review_2019_time_jira_r3564
+    date: '2019-07-08'
+    area: CAREER
+    title: SR ( SRTRI14LF )
+    matched_alias: SRTRI14LF
+  - record_ref: hist_20190708_1400_review_2019_time_jira_r3567
+    date: '2019-07-08'
+    area: CAREER
+    title: '[CAR] 미팅 & 회의 참가'
+    matched_alias: WAVE
+  - record_ref: hist_20190708_1428_review_2019_time_jira_r3568
+    date: '2019-07-08'
+    area: CAREER
+    title: SR ( SRTRI14LF )
+    matched_alias: SRTRI14LF
+  - record_ref: hist_20190709_1010_review_2019_time_jira_r3590
+    date: '2019-07-09'
+    area: CAREER
+    title: SR ( SRTRI14LF )
+    matched_alias: SRTRI14LF
+  - record_ref: hist_20190709_1500_review_2019_time_jira_r3594
+    date: '2019-07-09'
+    area: CAREER
+    title: SR ( SRTRI14LF )
+    matched_alias: SRTRI14LF
+- entity_ref: person_mother
+  display_name: Mother
+  object_type: Person
+  records: 166
+  hours: 157.87
+  needs_user_review_records: 166
+  examples:
+  - record_ref: hist_20180112_1255_review_2018_time_jira_r123
+    date: '2018-01-12'
+    area: RELATION
+    title: 가족에게 전화하기
+    matched_alias: 엄마
+  - record_ref: hist_20180130_1908_review_2018_time_jira_r388
+    date: '2018-01-30'
+    area: RELATION
+    title: 가족에게 전화하기
+    matched_alias: 엄마
+  - record_ref: hist_20180215_2312_review_2018_time_jira_r616
+    date: '2018-02-15'
+    area: RELATION
+    title: 사람 책 읽기
+    matched_alias: 엄마
+  - record_ref: hist_20180219_1956_review_2018_time_jira_r669
+    date: '2018-02-19'
+    area: BODY
+    title: '[식단 관리] 2018년 2월 3~5주'
+    matched_alias: 엄마
+  - record_ref: hist_20180309_1751_review_2018_time_jira_r893
+    date: '2018-03-09'
+    area: RELATION
+    title: 사람 책 읽기
+    matched_alias: 엄마
+- entity_ref: activity_advertising
+  display_name: Advertising / marketing
+  object_type: Activity
+  records: 156
+  hours: 159.12
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20180216_1841_review_2018_time_jira_r626
+    date: '2018-02-16'
+    area: FUN
+    title: 휴식
+    matched_alias: 광고
+  - record_ref: hist_20180218_0917_review_2018_time_jira_r643
+    date: '2018-02-18'
+    area: MIND
+    title: '[독서] 일취월장 8장 성장'
+    matched_alias: 광고
+  - record_ref: hist_20180222_1911_review_2018_time_jira_r715
+    date: '2018-02-22'
+    area: MIND
+    title: 아직 정의할 수 없는 시간
+    matched_alias: 광고
+  - record_ref: hist_20180913_0830_review_2018_time_jira_r3207
+    date: '2018-09-13'
+    area: MIND
+    title: 탈모 - 관심 가지고 치료하기
+    matched_alias: 광고
+  - record_ref: hist_20181130_2031_review_2018_time_jira_r4517
+    date: '2018-11-30'
+    area: MIND
+    title: '[MIND] 강의 듣기'
+    matched_alias: 마케팅
+- entity_ref: component_fpga
+  display_name: FPGA
+  object_type: Component
+  records: 107
+  hours: 159.02
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20180116_1106_review_2018_time_jira_r180
+    date: '2018-01-16'
+    area: CAREER
+    title: Cetus FPGA Environment release
+    matched_alias: FPGA
+  - record_ref: hist_20180116_1350_review_2018_time_jira_r183
+    date: '2018-01-16'
+    area: CAREER
+    title: Cetus FPGA Environment release
+    matched_alias: FPGA
+  - record_ref: hist_20180116_2022_review_2018_time_jira_r187
+    date: '2018-01-16'
+    area: CAREER
+    title: Cetus FPGA Environment release
+    matched_alias: FPGA
+  - record_ref: hist_20180302_1050_review_2018_time_jira_r807
+    date: '2018-03-02'
+    area: MAINTENANCE
+    title: '[메일 대응] 메일 일괄 처리 후 Action Item 정리'
+    matched_alias: FPGA
+  - record_ref: hist_20180307_1644_review_2018_time_jira_r868
+    date: '2018-03-07'
+    area: CAREER
+    title: 이슈로 정의되지 않은 일들
+    matched_alias: FPGA
+- entity_ref: project_aworld_magic
+  display_name: AWorld Magic
+  object_type: Project
+  records: 91
+  hours: 132.78
+  needs_user_review_records: 91
+  examples:
+  - record_ref: hist_20200109_1330_review_2020_time_jira_r213
+    date: '2020-01-09'
+    area: CAREER
+    title: '[CAR] 미팅 & 회의 참가'
+    matched_alias: Magic
+  - record_ref: hist_20200220_1700_review_2020_time_jira_r1021
+    date: '2020-02-20'
+    area: CAREER
+    title: AWorld Magic
+    matched_alias: AWorld Magic
+  - record_ref: hist_20200221_1045_review_2020_time_jira_r1039
+    date: '2020-02-21'
+    area: CAREER
+    title: 회사일 목표 및 계획 수립
+    matched_alias: AWorld Magic
+  - record_ref: hist_20200224_1800_review_2020_time_jira_r1103
+    date: '2020-02-24'
+    area: CAREER
+    title: '[CAR] 미팅 & 회의 참가'
+    matched_alias: AWorld Magic
+  - record_ref: hist_20200302_1015_review_2020_time_jira_r1228
+    date: '2020-03-02'
+    area: CAREER
+    title: AWorld Magic
+    matched_alias: AWorld Magic
+- entity_ref: person_sangsik
+  display_name: Sangsik
+  object_type: Person
+  records: 83
+  hours: 84.28
+  needs_user_review_records: 83
+  examples:
+  - record_ref: hist_20190305_1923_review_2019_time_jira_r1469
+    date: '2019-03-05'
+    area: CAREER
+    title: 라닉스 프로젝트
+    matched_alias: 상식 책임님
+  - record_ref: hist_20190307_2000_review_2019_time_jira_r1515
+    date: '2019-03-07'
+    area: CAREER
+    title: 라닉스 프로젝트
+    matched_alias: 상식 책임님
+  - record_ref: hist_20190307_2145_review_2019_time_jira_r1516
+    date: '2019-03-07'
+    area: MIND
+    title: 이동 & 외출 & 출근 & 퇴근
+    matched_alias: 상식 책임님
+  - record_ref: hist_20190314_1630_review_2019_time_jira_r1675
+    date: '2019-03-14'
+    area: CAREER
+    title: '[CAR] 메일 대응'
+    matched_alias: 상식 책임님
+  - record_ref: hist_20190403_1922_review_2019_time_jira_r2128
+    date: '2019-04-03'
+    area: CAREER
+    title: 라닉스 관련 해야할일
+    matched_alias: 상식 책임님
+- entity_ref: person_father
+  display_name: Father
+  object_type: Person
+  records: 77
+  hours: 68.21
+  needs_user_review_records: 77
+  examples:
+  - record_ref: hist_20180130_1908_review_2018_time_jira_r388
+    date: '2018-01-30'
+    area: RELATION
+    title: 가족에게 전화하기
+    matched_alias: 아빠
+  - record_ref: hist_20180215_2312_review_2018_time_jira_r616
+    date: '2018-02-15'
+    area: RELATION
+    title: 사람 책 읽기
+    matched_alias: 아빠
+  - record_ref: hist_20180309_1751_review_2018_time_jira_r893
+    date: '2018-03-09'
+    area: RELATION
+    title: 사람 책 읽기
+    matched_alias: 아빠
+  - record_ref: hist_20180309_1941_review_2018_time_jira_r894
+    date: '2018-03-09'
+    area: RELATION
+    title: 사람 책 읽기
+    matched_alias: 아빠
+  - record_ref: hist_20180310_2027_review_2018_time_jira_r908
+    date: '2018-03-10'
+    area: MIND
+    title: 아직 정의할 수 없는 시간
+    matched_alias: 아빠
+- entity_ref: person_hyeongsik
+  display_name: Hyeongsik
+  object_type: Person
+  records: 68
+  hours: 60.77
+  needs_user_review_records: 68
+  examples:
+  - record_ref: hist_20180217_1302_review_2018_time_jira_r634
+    date: '2018-02-17'
+    area: RELATION
+    title: 사람 책 읽기
+    matched_alias: 형식이
+  - record_ref: hist_20180701_2253_review_2018_time_jira_r2063
+    date: '2018-07-01'
+    area: RELATION
+    title: 사람 책 읽기
+    matched_alias: 형식이
+  - record_ref: hist_20180808_1232_review_2018_time_jira_r2628
+    date: '2018-08-08'
+    area: RELATION
+    title: 사람 책 읽기
+    matched_alias: 형식이
+  - record_ref: hist_20180817_1250_review_2018_time_jira_r2739
+    date: '2018-08-17'
+    area: RELATION
+    title: 사람 책 읽기
+    matched_alias: 형식이
+  - record_ref: hist_20180822_0957_review_2018_time_jira_r2807
+    date: '2018-08-22'
+    area: MIND
+    title: BKE group 감사일기 캠페인
+    matched_alias: 형식이
+- entity_ref: activity_customer_service
+  display_name: Customer service
+  object_type: Activity
+  records: 60
+  hours: 46.28
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20180822_2058_review_2018_time_jira_r2815
+    date: '2018-08-22'
+    area: FUN
+    title: '[FUN] 행복꾸러미'
+    matched_alias: 감사의 인사
+  - record_ref: hist_20181025_1511_review_2018_time_jira_r3922
+    date: '2018-10-25'
+    area: MIND
+    title: 감사하기
+    matched_alias: 감사의 인사
+  - record_ref: hist_20190430_0945_review_2019_time_jira_r2432
+    date: '2019-04-30'
+    area: MIND
+    title: 감사하기
+    matched_alias: 감사의 인사
+  - record_ref: hist_20190511_1345_review_2019_time_jira_r2609
+    date: '2019-05-11'
+    area: FUN
+    title: '[FUN] 행복꾸러미'
+    matched_alias: 감사의 인사
+  - record_ref: hist_20200211_1530_review_2020_time_jira_r837
+    date: '2020-02-11'
+    area: MIND
+    title: 고객 서비스
+    matched_alias: 고객 서비스
+- entity_ref: activity_product_packaging
+  display_name: Product packaging
+  object_type: Activity
+  records: 60
+  hours: 88.32
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20200120_2100_review_2020_time_jira_r450
+    date: '2020-01-20'
+    area: CAREER
+    title: 제품 포장하기 ( 제품 포장 / 박스 포장 )
+    matched_alias: 제품 포장
+  - record_ref: hist_20200204_1620_review_2020_time_jira_r708
+    date: '2020-02-04'
+    area: MIND
+    title: 제품 포장하기 ( 제품 포장 / 박스 포장 )
+    matched_alias: 제품 포장
+  - record_ref: hist_20200204_1925_review_2020_time_jira_r712
+    date: '2020-02-04'
+    area: MIND
+    title: 제품 포장하기 ( 제품 포장 / 박스 포장 )
+    matched_alias: 제품 포장
+  - record_ref: hist_20200205_1400_review_2020_time_jira_r729
+    date: '2020-02-05'
+    area: CAREER
+    title: 제품 포장하기 ( 제품 포장 / 박스 포장 )
+    matched_alias: 제품 포장
+  - record_ref: hist_20200205_2130_review_2020_time_jira_r738
+    date: '2020-02-05'
+    area: CAREER
+    title: 제품 포장하기 ( 제품 포장 / 박스 포장 )
+    matched_alias: 제품 포장
+- entity_ref: project_keti_rathma
+  display_name: KETI / Rathma
+  object_type: Project
+  records: 53
+  hours: 80.63
+  needs_user_review_records: 53
+  examples:
+  - record_ref: hist_20180119_1100_review_2018_time_jira_r225
+    date: '2018-01-19'
+    area: MIND
+    title: 아직 정의할 수 없는 시간
+    matched_alias: KETI
+  - record_ref: hist_20200106_1500_review_2020_time_jira_r141
+    date: '2020-01-06'
+    area: CAREER
+    title: KETI ( Rathma )
+    matched_alias: KETI
+  - record_ref: hist_20200108_1115_review_2020_time_jira_r182
+    date: '2020-01-08'
+    area: CAREER
+    title: KETI ( Rathma )
+    matched_alias: KETI
+  - record_ref: hist_20200109_1115_review_2020_time_jira_r209
+    date: '2020-01-09'
+    area: CAREER
+    title: KETI ( Rathma )
+    matched_alias: KETI
+  - record_ref: hist_20200109_1830_review_2020_time_jira_r217
+    date: '2020-01-09'
+    area: MIND
+    title: KETI ( Rathma )
+    matched_alias: KETI
+- entity_ref: activity_customer_analysis
+  display_name: Customer analysis
+  object_type: Activity
+  records: 36
+  hours: 33.33
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20200114_1200_review_2020_time_jira_r318
+    date: '2020-01-14'
+    area: MIND
+    title: 고객 분석 ( 유입 경로 / 왜 샀는지 등 )
+    matched_alias: 고객 분석
+  - record_ref: hist_20200119_0500_review_2020_time_jira_r417
+    date: '2020-01-19'
+    area: MIND
+    title: 고객 분석 ( 유입 경로 / 왜 샀는지 등 )
+    matched_alias: 고객 분석
+  - record_ref: hist_20200119_0645_review_2020_time_jira_r419
+    date: '2020-01-19'
+    area: MIND
+    title: 고객 분석 ( 유입 경로 / 왜 샀는지 등 )
+    matched_alias: 고객 분석
+  - record_ref: hist_20200120_0640_review_2020_time_jira_r434
+    date: '2020-01-20'
+    area: CAREER
+    title: 고객 분석 ( 유입 경로 / 왜 샀는지 등 )
+    matched_alias: 고객 분석
+  - record_ref: hist_20200121_0525_review_2020_time_jira_r455
+    date: '2020-01-21'
+    area: MIND
+    title: 고객 분석 ( 유입 경로 / 왜 샀는지 등 )
+    matched_alias: 고객 분석
+- entity_ref: component_jtag
+  display_name: JTAG
+  object_type: Component
+  records: 35
+  hours: 41.23
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20180827_2129_review_2018_time_jira_r2893
+    date: '2018-08-27'
+    area: CAREER
+    title: 하이비 칩 테스트
+    matched_alias: Jtag
+  - record_ref: hist_20180913_1527_review_2018_time_jira_r3214
+    date: '2018-09-13'
+    area: CAREER
+    title: 하이비 칩 테스트
+    matched_alias: Jtag
+  - record_ref: hist_20180916_2234_review_2018_time_jira_r3269
+    date: '2018-09-16'
+    area: BODY
+    title: 더 효율적으로 할 수 있는 방법
+    matched_alias: Jtag
+  - record_ref: hist_20180917_0936_review_2018_time_jira_r3277
+    date: '2018-09-17'
+    area: CAREER
+    title: 하이비 칩 테스트
+    matched_alias: Jtag
+  - record_ref: hist_20180918_1733_review_2018_time_jira_r3309
+    date: '2018-09-18'
+    area: CAREER
+    title: 하이비 칩 테스트
+    matched_alias: Jtag
+- entity_ref: component_dma
+  display_name: DMA
+  object_type: Component
+  records: 31
+  hours: 58.51
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20180109_1427_review_2018_time_jira_r61
+    date: '2018-01-09'
+    area: CAREER
+    title: 이슈로 정의되지 않은 일들
+    matched_alias: DMA
+  - record_ref: hist_20180116_1802_review_2018_time_jira_r185
+    date: '2018-01-16'
+    area: CAREER
+    title: Cetus Level0 Coverage Report ( Final 90% )
+    matched_alias: DMA
+  - record_ref: hist_20180116_2115_review_2018_time_jira_r188
+    date: '2018-01-16'
+    area: CAREER
+    title: Cetus Level0 Coverage Report ( Final 90% )
+    matched_alias: DMA
+  - record_ref: hist_20180117_0945_review_2018_time_jira_r194
+    date: '2018-01-17'
+    area: CAREER
+    title: Cetus Level0 Coverage Report ( Final 90% )
+    matched_alias: DMA
+  - record_ref: hist_20180409_1624_review_2018_time_jira_r1269
+    date: '2018-04-09'
+    area: CAREER
+    title: '[CAR] CPUSS internal connection check'
+    matched_alias: DMA
+- entity_ref: activity_product_shipping
+  display_name: Product shipping
+  object_type: Activity
+  records: 25
+  hours: 19.58
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20200211_0900_review_2020_time_jira_r832
+    date: '2020-02-11'
+    area: MIND
+    title: 이동 & 외출 & 출근 & 퇴근
+    matched_alias: 편의점 택배
+  - record_ref: hist_20200214_0900_review_2020_time_jira_r887
+    date: '2020-02-14'
+    area: MIND
+    title: 제품 발송하기 ( 사입 )
+    matched_alias: 제품 발송
+  - record_ref: hist_20200214_0930_review_2020_time_jira_r888
+    date: '2020-02-14'
+    area: RELATION
+    title: 이동 & 외출 & 출근 & 퇴근
+    matched_alias: 우체국 택배
+  - record_ref: hist_20200226_1130_review_2020_time_jira_r1136
+    date: '2020-02-26'
+    area: MIND
+    title: 제품 발송하기 ( 사입 )
+    matched_alias: 제품 발송
+  - record_ref: hist_20200228_1530_review_2020_time_jira_r1182
+    date: '2020-02-28'
+    area: MIND
+    title: 제품 발송하기 ( 사입 )
+    matched_alias: 제품 발송
+- entity_ref: person_seoung
+  display_name: Seoung
+  object_type: Person
+  records: 23
+  hours: 26.16
+  needs_user_review_records: 23
+  examples:
+  - record_ref: hist_20210331_1600_review_2021_clockify_work_r745
+    date: '2021-03-31'
+    area: CAREER
+    title: '[CAREER] X330 ( SKT AI 과제 )'
+    matched_alias: 서웅 매니저님
+  - record_ref: hist_20210504_1330_review_2021_clockify_work_r1052
+    date: '2021-05-04'
+    area: CAREER
+    title: PCIe Clock Domain 고려하기
+    matched_alias: 서웅 매니저님
+  - record_ref: hist_20210510_1800_review_2021_life_logged_time_r2193
+    date: '2021-05-10'
+    area: CAREER
+    title: Bus Architecture Review ( HPDF + Clock Domain 고려 )
+    matched_alias: 서웅 매니저님
+  - record_ref: hist_20210512_1100_review_2021_life_logged_time_r2197
+    date: '2021-05-12'
+    area: CAREER
+    title: Bus Architecture Review ( HPDF + Clock Domain 고려 )
+    matched_alias: 서웅 매니저님
+  - record_ref: hist_20210521_1015_review_2021_life_logged_time_r2334
+    date: '2021-05-21'
+    area: CAREER
+    title: CPUSS spec 협의
+    matched_alias: 서웅 매니저님
+- entity_ref: person_brian
+  display_name: Brian
+  object_type: Person
+  records: 6
+  hours: 6.65
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20181202_0832_review_2018_time_jira_r4537
+    date: '2018-12-02'
+    area: MAINTENANCE
+    title: 반성하기
+    matched_alias: Brian Choi
+  - record_ref: hist_20190103_0907_review_2019_time_jira_r57
+    date: '2019-01-03'
+    area: MIND
+    title: 글쓰기
+    matched_alias: happy_growth
+  - record_ref: hist_20190316_1115_review_2019_time_jira_r1716
+    date: '2019-03-16'
+    area: CAREER
+    title: 1년 안에 블로그 이웃수 1만명에 도달한다. 한 편당 평균 공감 횟수가 400개에 도달한다. 매일 매일 하나 이상의 콘텐츠를 올린다.
+    matched_alias: happy_growth
+  - record_ref: hist_20190402_0915_review_2019_time_jira_r2096
+    date: '2019-04-02'
+    area: CAREER
+    title: 도움이 되는 글을 쓰자. ( 소영처럼님 블로그 글 참고 )
+    matched_alias: happy_growth
+  - record_ref: hist_20191004_2000_review_2019_time_jira_r5189
+    date: '2019-10-04'
+    area: MIND
+    title: '[Memo] 순간 순간 떠오르는 것 메모하기'
+    matched_alias: happy_growth
+- entity_ref: person_shivam
+  display_name: Shivam
+  object_type: Person
+  records: 6
+  hours: 9.7
+  needs_user_review_records: 6
+  examples:
+  - record_ref: hist_20200306_1115_review_2020_time_jira_r1289
+    date: '2020-03-06'
+    area: MIND
+    title: USB phy register access 검토
+    matched_alias: Shivam
+  - record_ref: hist_20200615_1607_review_2020_time_jira_r2330
+    date: '2020-06-15'
+    area: CAREER
+    title: SR ( SRTRI14LF )
+    matched_alias: Shivam
+  - record_ref: hist_20200619_1030_review_2020_time_jira_r2389
+    date: '2020-06-19'
+    area: CAREER
+    title: SR ( SRTRI14LF )
+    matched_alias: Shivam
+  - record_ref: hist_20200729_1100_review_2020_time_jira_r2512
+    date: '2020-07-29'
+    area: CAREER
+    title: SR ( SRTRI14LF )
+    matched_alias: Shivam
+  - record_ref: hist_20200730_1230_review_2020_time_jira_r2534
+    date: '2020-07-30'
+    area: CAREER
+    title: SR ( SRTRI14LF )
+    matched_alias: Shivam

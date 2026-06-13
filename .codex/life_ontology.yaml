@@ -486,6 +486,28 @@ import_object_types:
       - raw_text_sha256
       - raw_text_excerpt
       - needs_user_review
+      - entity_refs
+      - semantic_links
+      - semantic_link_confidence
+      - semantic_needs_user_review
+  SemanticLink:
+    purpose: Candidate link from a historical record to a stable ontology object.
+    fields:
+      - entity_ref
+      - object_type
+      - relation
+      - matched_alias
+      - confidence
+      - needs_user_review
+  SemanticEntityCatalog:
+    purpose: Alias and rule catalog for resolving historical strings into ontology objects.
+    fields:
+      - people
+      - companion_animals
+      - projects
+      - components
+      - activities
+      - link_relations
   DailyHistoricalSummary:
     purpose: Day-level aggregate generated from historical normalized records.
     fields:
@@ -640,6 +662,10 @@ action_types:
   import_review_archive:
     creates: [NormalizedHistoricalRecord, DailyHistoricalSummary, PatternCandidate]
     preserves_raw_by: source_path_and_sha256
+  link_semantic_entities:
+    uses: [NormalizedHistoricalRecord, SemanticEntityCatalog]
+    creates: [SemanticLink]
+    writes: entity_linked_records_jsonl
   update_pattern_candidate:
     creates_or_updates: [PatternCandidate, Pattern, EvidenceLink]
   recommend_intervention:
