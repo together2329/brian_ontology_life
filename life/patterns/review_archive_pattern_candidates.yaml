@@ -1,0 +1,308 @@
+schema_version: 1
+generated_at: '2026-06-13T16:13:52'
+source: life/imports/review_archive/normalized_records.jsonl
+causality_policy: candidate patterns only; do not treat as confirmed identity or causality without Brian review
+pattern_candidates:
+- id: pattern_candidate_legacy_sleep_energy_tracking
+  statement: Historical records frequently connect sleep duration with energy notes.
+  confidence: medium
+  needs_user_review: true
+  evidence_summary:
+    matching_records: 827
+    total_sleep_hours: 4302.88
+  evidence:
+  - record_ref: hist_20181207_1525_review_2018_time_jira_r4651
+    date: '2018-12-07'
+    area: BODY
+    title: '[BODY] 수면'
+    source_ref: review_2018_time_jira
+    source_row: 4651
+  - record_ref: hist_20181209_1410_review_2018_time_jira_r4679
+    date: '2018-12-09'
+    area: BODY
+    title: '[BODY] 수면'
+    source_ref: review_2018_time_jira
+    source_row: 4679
+  - record_ref: hist_20181218_1135_review_2018_time_jira_r4856
+    date: '2018-12-18'
+    area: BODY
+    title: '[BODY] 수면'
+    source_ref: review_2018_time_jira
+    source_row: 4856
+  - record_ref: hist_20190103_1318_review_2019_time_jira_r62
+    date: '2019-01-03'
+    area: BODY
+    title: '[BODY] 수면'
+    source_ref: review_2019_time_jira
+    source_row: 62
+  - record_ref: hist_20190107_0030_review_2019_time_jira_r123
+    date: '2019-01-07'
+    area: BODY
+    title: '[BODY] 수면'
+    source_ref: review_2019_time_jira
+    source_row: 123
+  - record_ref: hist_20190110_0729_review_2019_time_jira_r186
+    date: '2019-01-10'
+    area: BODY
+    title: '[BODY] 수면'
+    source_ref: review_2019_time_jira
+    source_row: 186
+- id: pattern_candidate_legacy_gratitude_positive_affect
+  statement: Gratitude records often appear with positive emotional language.
+  confidence: medium
+  needs_user_review: true
+  evidence_summary:
+    matching_records: 4800
+  evidence:
+  - record_ref: hist_20180106_1800_review_2018_time_jira_r28
+    date: '2018-01-06'
+    area: BODY
+    title: '[식단 관리] 2018년 1월 1~2주'
+    source_ref: review_2018_time_jira
+    source_row: 28
+  - record_ref: hist_20180214_0913_review_2018_time_jira_r587
+    date: '2018-02-14'
+    area: BODY
+    title: '[식단 관리] 2018년 2월 3~5주'
+    source_ref: review_2018_time_jira
+    source_row: 587
+  - record_ref: hist_20180215_0830_review_2018_time_jira_r604
+    date: '2018-02-15'
+    area: BODY
+    title: '[식단 관리] 2018년 2월 3~5주'
+    source_ref: review_2018_time_jira
+    source_row: 604
+  - record_ref: hist_20180215_1520_review_2018_time_jira_r612
+    date: '2018-02-15'
+    area: FUN
+    title: 휴식
+    source_ref: review_2018_time_jira
+    source_row: 612
+  - record_ref: hist_20180217_0956_review_2018_time_jira_r631
+    date: '2018-02-17'
+    area: MIND
+    title: '[Memo] 순간 순간 떠오르는 것 메모하기'
+    source_ref: review_2018_time_jira
+    source_row: 631
+  - record_ref: hist_20180218_0021_review_2018_time_jira_r639
+    date: '2018-02-18'
+    area: BODY
+    title: '[수면] 2018년 2월 3~5주'
+    source_ref: review_2018_time_jira
+    source_row: 639
+- id: pattern_candidate_legacy_relationship_areum_happiness
+  statement: Records involving '아름' frequently appear with happiness or positive affect.
+  confidence: medium
+  needs_user_review: true
+  evidence_summary:
+    matching_records: 1032
+  evidence:
+  - record_ref: hist_20180101_2200_review_2018_time_jira_r4
+    date: '2018-01-01'
+    area: RELATION
+    title: 아름이와 행복한 시간 보내기
+    source_ref: review_2018_time_jira
+    source_row: 4
+  - record_ref: hist_20180102_2200_review_2018_time_jira_r8
+    date: '2018-01-02'
+    area: RELATION
+    title: 아름이와 행복한 시간 보내기
+    source_ref: review_2018_time_jira
+    source_row: 8
+  - record_ref: hist_20180105_2300_review_2018_time_jira_r23
+    date: '2018-01-05'
+    area: RELATION
+    title: 아름이와 행복한 시간 보내기
+    source_ref: review_2018_time_jira
+    source_row: 23
+  - record_ref: hist_20180108_2302_review_2018_time_jira_r52
+    date: '2018-01-08'
+    area: RELATION
+    title: 아름이와 행복한 시간 보내기
+    source_ref: review_2018_time_jira
+    source_row: 52
+  - record_ref: hist_20180110_0739_review_2018_time_jira_r71
+    date: '2018-01-10'
+    area: RELATION
+    title: 아름이와 행복한 시간 보내기
+    source_ref: review_2018_time_jira
+    source_row: 71
+  - record_ref: hist_20180110_2209_review_2018_time_jira_r90
+    date: '2018-01-10'
+    area: RELATION
+    title: 아름이와 행복한 시간 보내기
+    source_ref: review_2018_time_jira
+    source_row: 90
+- id: pattern_candidate_legacy_maintenance_mood_boost
+  statement: Cleaning, organizing, and maintenance records sometimes mention improved mood or calm.
+  confidence: low
+  needs_user_review: true
+  evidence_summary:
+    matching_records: 250
+  evidence:
+  - record_ref: hist_20180210_1332_review_2018_time_jira_r536
+    date: '2018-02-10'
+    area: MAINTENANCE
+    title: 정리하기
+    source_ref: review_2018_time_jira
+    source_row: 536
+  - record_ref: hist_20180630_1647_review_2018_time_jira_r2045
+    date: '2018-06-30'
+    area: MAINTENANCE
+    title: 집 정리하기 ( 빨래 배수구 화장실 방 등 )
+    source_ref: review_2018_time_jira
+    source_row: 2045
+  - record_ref: hist_20180630_2319_review_2018_time_jira_r2051
+    date: '2018-06-30'
+    area: MAINTENANCE
+    title: 여수, 순천 여행가기
+    source_ref: review_2018_time_jira
+    source_row: 2051
+  - record_ref: hist_20180704_0730_review_2018_time_jira_r2098
+    date: '2018-07-04'
+    area: MAINTENANCE
+    title: '[TIME] Unknown'
+    source_ref: review_2018_time_jira
+    source_row: 2098
+  - record_ref: hist_20180811_1501_review_2018_time_jira_r2670
+    date: '2018-08-11'
+    area: MAINTENANCE
+    title: 집 정리하기 ( 빨래 배수구 화장실 방 등 )
+    source_ref: review_2018_time_jira
+    source_row: 2670
+  - record_ref: hist_20180813_1036_review_2018_time_jira_r2690
+    date: '2018-08-13'
+    area: MAINTENANCE
+    title: 집 정리하기 ( 빨래 배수구 화장실 방 등 )
+    source_ref: review_2018_time_jira
+    source_row: 2690
+- id: pattern_candidate_legacy_goal_review_stability
+  statement: Goal-setting and review records sometimes explicitly mention stability or feeling settled.
+  confidence: low
+  needs_user_review: true
+  evidence_summary:
+    matching_records: 11
+  evidence:
+  - record_ref: hist_20180503_0800_review_2018_time_jira_r1552
+    date: '2018-05-03'
+    area: MIND
+    title: '[MIND] 목표 설정 및 리뷰'
+    source_ref: review_2018_time_jira
+    source_row: 1552
+  - record_ref: hist_20180617_1130_review_2018_time_jira_r1859
+    date: '2018-06-17'
+    area: MIND
+    title: '[MIND] 목표 설정 및 리뷰'
+    source_ref: review_2018_time_jira
+    source_row: 1859
+  - record_ref: hist_20180617_2142_review_2018_time_jira_r1868
+    date: '2018-06-17'
+    area: MIND
+    title: '[MIND] 목표 설정 및 리뷰'
+    source_ref: review_2018_time_jira
+    source_row: 1868
+  - record_ref: hist_20181214_0827_review_2018_time_jira_r4771
+    date: '2018-12-14'
+    area: MIND
+    title: '[MIND] 목표 설정 및 리뷰'
+    source_ref: review_2018_time_jira
+    source_row: 4771
+  - record_ref: hist_20190104_1418_review_2019_time_jira_r90
+    date: '2019-01-04'
+    area: CAREER
+    title: 하이비 Single Project
+    source_ref: review_2019_time_jira
+    source_row: 90
+  - record_ref: hist_20190213_0511_review_2019_time_jira_r933
+    date: '2019-02-13'
+    area: MIND
+    title: '[MIND] 목표 설정 및 리뷰'
+    source_ref: review_2019_time_jira
+    source_row: 933
+- id: pattern_candidate_legacy_career_energy_tracking
+  statement: Career work sessions include enough energy notes to support future high-energy scheduling analysis.
+  confidence: medium
+  needs_user_review: false
+  evidence_summary:
+    matching_records: 2555
+  evidence:
+  - record_ref: hist_20180830_1346_review_2018_time_jira_r2959
+    date: '2018-08-30'
+    area: CAREER
+    title: FreeRTOS 관련 API release
+    source_ref: review_2018_time_jira
+    source_row: 2959
+  - record_ref: hist_20180830_1943_review_2018_time_jira_r2962
+    date: '2018-08-30'
+    area: CAREER
+    title: FreeRTOS 관련 API release
+    source_ref: review_2018_time_jira
+    source_row: 2962
+  - record_ref: hist_20180831_1351_review_2018_time_jira_r2977
+    date: '2018-08-31'
+    area: CAREER
+    title: FreeRTOS 관련 API release
+    source_ref: review_2018_time_jira
+    source_row: 2977
+  - record_ref: hist_20180831_1521_review_2018_time_jira_r2978
+    date: '2018-08-31'
+    area: CAREER
+    title: FreeRTOS 관련 API release
+    source_ref: review_2018_time_jira
+    source_row: 2978
+  - record_ref: hist_20180831_1613_review_2018_time_jira_r2981
+    date: '2018-08-31'
+    area: CAREER
+    title: FreeRTOS 관련 API release
+    source_ref: review_2018_time_jira
+    source_row: 2981
+  - record_ref: hist_20180903_1053_review_2018_time_jira_r3019
+    date: '2018-09-03'
+    area: CAREER
+    title: 하이비 칩 테스트
+    source_ref: review_2018_time_jira
+    source_row: 3019
+- id: pattern_candidate_legacy_fun_restoration_vs_avoidance
+  statement: FUN records include both rest/happiness language and '불행' language, so restorative fun and avoidance should be
+    separated.
+  confidence: low
+  needs_user_review: true
+  evidence_summary:
+    matching_records: 1143
+  evidence:
+  - record_ref: hist_20180101_1100_review_2018_time_jira_r3
+    date: '2018-01-01'
+    area: FUN
+    title: 휴식
+    source_ref: review_2018_time_jira
+    source_row: 3
+  - record_ref: hist_20180102_0945_review_2018_time_jira_r7
+    date: '2018-01-02'
+    area: FUN
+    title: 휴식
+    source_ref: review_2018_time_jira
+    source_row: 7
+  - record_ref: hist_20180103_2100_review_2018_time_jira_r13
+    date: '2018-01-03'
+    area: FUN
+    title: 휴식
+    source_ref: review_2018_time_jira
+    source_row: 13
+  - record_ref: hist_20180107_0915_review_2018_time_jira_r31
+    date: '2018-01-07'
+    area: FUN
+    title: 휴식
+    source_ref: review_2018_time_jira
+    source_row: 31
+  - record_ref: hist_20180107_1359_review_2018_time_jira_r34
+    date: '2018-01-07'
+    area: FUN
+    title: 휴식
+    source_ref: review_2018_time_jira
+    source_row: 34
+  - record_ref: hist_20180107_1625_review_2018_time_jira_r35
+    date: '2018-01-07'
+    area: FUN
+    title: 휴식
+    source_ref: review_2018_time_jira
+    source_row: 35

@@ -8,6 +8,13 @@ Use the local files in `.codex/` as the operating model:
 - `identity_profile.yaml`: current identity, family/project context, patterns, and operating rules.
 - `import_rules.yaml`: how to absorb past records without losing raw data.
 
+Use historical memory indexes when they exist:
+
+- `life/imports/review_archive/summary.yaml`: high-level summary of Brian's 2018-2023 review archive.
+- `life/imports/review_archive/normalized_records.jsonl`: row-level historical time/emotion/work index.
+- `life/imports/review_archive/daily_summary.jsonl`: daily aggregate index.
+- `life/patterns/review_archive_pattern_candidates.yaml`: generated historical pattern candidates.
+
 ## Core Role
 
 Brian's life is modeled as connected objects, not isolated notes.
@@ -48,6 +55,7 @@ For planning:
 - Consider open tasks, due dates, energy, mood, area balance, family commitments, and historical patterns.
 - Do not optimize only for productivity. Protect BODY, RELATION, MIND, and FUN when CAREER pressure is high.
 - If Brian appears to be moving toward a known unhappy pattern, recommend a small alternate action grounded in prior evidence.
+- When using historical review archive patterns, treat them as candidates until Brian confirms them.
 
 For CAREER:
 

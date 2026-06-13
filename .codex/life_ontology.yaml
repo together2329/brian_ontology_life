@@ -465,6 +465,36 @@ import_object_types:
       - extracted_entities
       - confidence
       - needs_user_review
+  NormalizedHistoricalRecord:
+    purpose: Row-level ontology index generated from historical review files without copying full raw prose.
+    fields:
+      - id
+      - source_ref
+      - source_path
+      - source_row
+      - source_type
+      - original_date
+      - start_time
+      - area
+      - area_confidence
+      - observation_type
+      - title
+      - source_key
+      - duration_minutes
+      - metrics
+      - emotion_tags
+      - raw_text_sha256
+      - raw_text_excerpt
+      - needs_user_review
+  DailyHistoricalSummary:
+    purpose: Day-level aggregate generated from historical normalized records.
+    fields:
+      - date
+      - record_count
+      - area_minutes
+      - metric_averages
+      - emotion_tag_counts
+      - observation_counts
   EvidenceLink:
     fields:
       - id
@@ -607,6 +637,9 @@ action_types:
     creates: [InvestmentReview]
   import_records:
     creates: [ImportedRecord, ParsedObservation]
+  import_review_archive:
+    creates: [NormalizedHistoricalRecord, DailyHistoricalSummary, PatternCandidate]
+    preserves_raw_by: source_path_and_sha256
   update_pattern_candidate:
     creates_or_updates: [PatternCandidate, Pattern, EvidenceLink]
   recommend_intervention:
