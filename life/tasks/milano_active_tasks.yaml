@@ -20,6 +20,12 @@ source_records:
     imported_at: 2026-06-14
     parse_status: parsed
     raw_text: "arir 은 area, instance count"
+  - id: source_milano_conversation_20260614_firenze_handler_reflection
+    source_type: chat
+    original_date: 2026-06-14
+    imported_at: 2026-06-14
+    parse_status: parsed
+    raw_text: "그 다음에 firenze 에 적용한 handler가 milano에 다 반영되었는지 확인 필요."
 
 summary:
   recently_completed:
@@ -28,6 +34,7 @@ summary:
     - 3nm synthesis rerun using two SDC profiles
     - ARIR area and instance count pre-check from synthesis results
     - lint re-check after new IP revision 0.1 integration
+    - Firenze handler reflection check in Milano
     - final GEN7 PHY DB synthesis integration
     - common module replacement from PCI-internal to ASIC-common implementations
     - cross-power-domain signal naming cleanup
@@ -39,6 +46,10 @@ summary:
     - id: oq_milano_sync_5v_term
       question: "'싱크 5V'가 정확한 모듈명인지, 음성 전사 오류인지 확인 필요."
       related_task_ref: task_milano_common_module_replacement
+      needs_user_review: true
+    - id: oq_milano_firenze_handler_scope
+      question: "Firenze에 적용한 handler가 msg handler, security handler, event handler 중 어느 범위인지 확인 필요. 우선 handler 변경 전체를 후보 범위로 둔다."
+      related_task_ref: task_milano_firenze_handler_reflection_check
       needs_user_review: true
 
 tasks:
@@ -174,6 +185,49 @@ tasks:
     confidence: high
     needs_user_review: false
 
+  - id: task_milano_firenze_handler_reflection_check
+    title: Firenze에 적용한 handler 변경점이 Milano에 모두 반영되었는지 확인
+    area: CAREER
+    status: todo
+    priority: high
+    energy: deep_work
+    estimated_minutes: null
+    due_date: null
+    tracking_level: detailed
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    related_project_refs:
+      - project_firenze
+    progress_percent: 0
+    tags:
+      - milano
+      - firenze
+      - handler
+      - rtl_review
+      - cross_project_porting
+    context:
+      - Firenze has prior handler-related implementation work.
+      - Milano needs a parity check so relevant Firenze handler changes are not missed before lint and DB synthesis.
+    scope:
+      - Identify handler changes applied in Firenze.
+      - Decide which Firenze handler changes are applicable to Milano.
+      - Check whether each applicable change is already reflected in Milano.
+      - Classify each item as reflected, missing, or not_applicable.
+    expected_outputs:
+      - Firenze handler change inventory
+      - Milano reflection checklist
+      - missing or not_applicable handler change list
+      - issue list for missing critical changes
+    next_actions:
+      - Collect Firenze handler-related CLs, notes, or source file changes.
+      - Compare Firenze handler implementation against Milano RTL/config/register integration.
+      - Mark each handler delta as reflected, missing, or not_applicable.
+      - Create Issue objects for missing Milano changes when concrete evidence exists.
+    evidence_refs:
+      - source_milano_conversation_20260614_firenze_handler_reflection
+    confidence: high
+    needs_user_review: false
+
   - id: task_milano_gen7_phy_db_synthesis
     title: GEN7 PHY를 함께 DB로 최종 합성
     area: CAREER
@@ -205,6 +259,7 @@ tasks:
       - task_milano_sdc_dual_profile_synth_rerun
       - task_milano_arir_precheck
       - task_milano_lint_ip_rev_0_1_rerun
+      - task_milano_firenze_handler_reflection_check
       - task_milano_common_module_replacement
       - task_milano_cross_domain_signal_naming_cleanup
     evidence_refs:
@@ -289,6 +344,7 @@ tasks:
     needs_user_review: false
 
 recommended_execution_order:
+  - task_milano_firenze_handler_reflection_check
   - task_milano_lint_ip_rev_0_1_rerun
   - task_milano_common_module_replacement
   - task_milano_cross_domain_signal_naming_cleanup
@@ -303,8 +359,9 @@ project_status_updates:
     author_ref: person_brian
     status: active
     progress_percent: null
-    summary: Milano is currently focused on 3nm synthesis rerun, ARIR area/instance count pre-check, lint re-check after IP rev 0.1, common module replacement, domain-crossing naming cleanup, and final DB synthesis including GEN7 PHY.
+    summary: Milano is currently focused on Firenze handler reflection check, 3nm synthesis rerun, ARIR area/instance count pre-check, lint re-check after IP rev 0.1, common module replacement, domain-crossing naming cleanup, and final DB synthesis including GEN7 PHY.
     blockers:
       - Need confirmation of the exact meaning of "제7파이".
       - Need confirmation of the exact module term transcribed as "sync 5V".
-    next_step: Start with IP rev 0.1 lint rerun and structural RTL cleanup before final DB synthesis.
+      - Need concrete Firenze handler source refs or CL list if not already known locally.
+    next_step: Start with Firenze handler reflection check, then rerun lint with IP rev 0.1 and continue structural RTL cleanup before final DB synthesis.
