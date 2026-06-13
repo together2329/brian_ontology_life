@@ -1,0 +1,27 @@
+- Grizzly Ridge 
+	- DV Progress 100% 달성
+		- IDE Regression
+			- 각 TC의 progress 관리
+		- TL Regression
+			- 각 TC의 progress 관리
+		- Custom Regression
+			- 각 TC의 progress 관리
+	- TDISP 검토 및 옵션 추가
+	- IDE 검토 및 옵션 추가
+- Ratel2
+	- MSG Automation (deassemable/assemable)
+	- MSG TX
+	- DOE
+	- Shared SRAM
+- 개인 기술 발전 (Long-term)
+	- PCIe IP 완전 정복 (2025 Q4)
+		- Claude Code 활용한 Gen5/Gen6 구현
+		- Advanced error handling & verification
+		- Production-ready 수준 달성
+		- 오픈소스 기여 가능 품질
+	- UCIe IP 도전 (2026년)
+		- Die-to-die 통신 전문가
+		- Chiplet 시대 선도 기술
+		- PCIe 기반 확장 아키텍처
+	- CXL 프로토콜 (후순위)
+		- 시장 수요에 따라 결정

@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day Planner Timesheet</title>
+    <style>
+        :root {
+            --primary-color: #0052cc;
+            --primary-light: #e6efff;
+            --secondary-color: #6b778c;
+            --border-color: #dfe1e6;
+            --hover-color: #f4f5f7;
+            --header-bg: #f4f5f7;
+            --weekend-bg: #f8f9fa;
+            --energy-100: #36b37e;
+            --energy-90: #57d9a3;
+            --energy-80: #79f2c0;
+            --energy-70: #abf5d1;
+            --energy-60: #ffab00;
+            --energy-50: #ffc400;
+            --energy-40: #ffe380;
+            --energy-30: #fff0b3;
+            --energy-20: #ff5630;
+            --energy-10: #ff8f73;
+            --today-column: #e6efff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #172b4d;
+            background-color: #f5f5f5;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+            border-radius: 3px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 0 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .header-title {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo i {
+            color: white;
+            font-size: 20px;
+        }
+
+        .title-text h1 {
+            font-size: 18px;
+            color: #6b778c;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        .title-text h2 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .header-controls {
+            display: flex;
+        }
+
+        .header-controls .total-hours {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            font-size: 16px;
+        }
+
+        .total-value {
+            font-size: 20px;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+
+        button {
+            padding: 8px 12px;
+            background: #0052cc;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: 500;
+            margin-left: 10px;
+        }
+
+        button:hover {
+            background: #0747a6;
+        }
+
+        button.secondary {
+            background: white;
+            color: #0052cc;
+            border: 1px solid #0052cc;
+        }
+
+        button.secondary:hover {
+            background: #f4f5f7;
+        }
+
+        .settings-btn {
+            background: none;
+            border: none;
+            color: #6b778c;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .filters-left, .filters-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .date-navigation {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .date-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .date-selector span.nav {
+            cursor: pointer;
+            padding: 5px;
+            user-select: none;
+        }
+        
+        .date-selector span.nav:hover {
+            color: var(--primary-color);
+        }
+        
+        .month-selector {
+            padding: 6px 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 3px;
+            background: white;
+            cursor: pointer;
+        }
+        
+        .month-selector:hover {
+            border-color: var(--primary-color);
+        }
+
+        .filter-dropdown {
+            position: relative;
+            margin-right: 10px;
+        }
+
+        .filter-dropdown select {
+            border: 1px solid var(--border-color);
+            border-radius: 3px;
+            padding: 7px 30px 7px 10px;
+            background-color: white;
+            appearance: none;
+            color: #172b4d;
+            cursor: pointer;
+        }
+
+        .filter-dropdown:after {
+            content: "▼";
+            font-size: 10px;
+            color: var(--secondary-color);
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        .view-selector {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .view-selector button {
+            background: white;
+            color: #172b4d;
+            border: none;
+            padding: 7px 15px;
+            cursor: pointer;
+            margin: 0;
+            border-right: 1px solid var(--border-color);
+        }
+
+        .view-selector button:last-child {
+            border-right: none;
+        }
+
+        .view-selector button.active {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        /* Timesheet table */
+        .timesheet {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .timesheet th, .timesheet td {
+            border: 1px solid var(--border-color);
+            padding: 6px;
+            text-align: center;
+        }
+
+        .timesheet thead th {
+            background-color: var(--header-bg);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            font-weight: 500;
+        }
+
+        .timesheet th.day-header {
+            width: 80px;
+            padding: 8px 3px;
+        }
+
+        .timesheet th.weekend {
+            background-color: var(--weekend-bg);
+        }
+
+        .timesheet th.today {
+            background-color: var(--today-column);
+        }
+
+        .timesheet tbody th {
+            text-align: left;
+            font-weight: normal;
+            max-width: 300px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .timesheet td.weekend {
+            background-color: var(--weekend-bg);
+        }
+
+        .timesheet td.today {
+            background-color: var(--today-column);
+        }
+
+        .timesheet tr.total-row {
+            font-weight: bold;
+        }
+
+        .timesheet tr.total-row th {
+            font-weight: bold;
+        }
+
+        .timesheet tr:hover {
+            background-color: var(--hover-color);
+        }
+
+        .issue-row {
+            cursor: pointer;
+        }
+
+        .issue-key {
+            color: var(--secondary-color);
+            margin-left: 5px;
+            font-size: 0.9em;
+        }
+
+        .timesheet .checkbox {
+            width: 16px;
+            height: 16px;
+            border: 2px solid #dfe1e6;
+            border-radius: 3px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+            position: relative;
+        }
+
+        .timesheet .checkbox.checked {
+            background-color: #0052cc;
+            border-color: #0052cc;
+        }
+
+        .timesheet .checkbox.checked::after {
+            content: "✓";
+            position: absolute;
+            color: white;
+            font-size: 10px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .energy-cell {
+            padding: 4px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+
+        /* Time entry cell */
+        .time-entry {
+            padding: 4px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+
+        /* Loading spinner */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+        }
+
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: var(--primary-color);
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header-controls .total-hours {
+                display: none;
+            }
+            
+            .filters {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .filters-left, .filters-right {
+                justify-content: space-between;
+                width: 100%;
+            }
+            
+            .timesheet {
+                font-size: 0.9em;
+            }
+            
+            .timesheet th.day-header {
+                width: 60px;
+                padding: 5px 2px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-title {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .logo {
+                margin-bottom: 10px;
+            }
+            
+            .filters-left, .filters-right {
+                flex-wrap: wrap;
+                gap: 5px;
+            }
+            
+            .date-selector, .filter-dropdown {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
+            
+            .view-selector {
+                width: 100%;
+            }
+            
+            .view-selector button {
+                flex: 1;
+            }
+            
+            .timesheet {
+                font-size: 0.8em;
+            }
+        }
+
+        /* Add new styles for date inputs */
+        .date-input {
+            padding: 6px 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 3px;
+            font-size: 14px;
+            color: #172b4d;
+            background: white;
+        }
+
+        .date-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px var(--primary-light);
+        }
+
+        /* Add styles for drop zone */
+        .drop-zone {
+            border: 2px dashed var(--border-color);
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            background-color: var(--hover-color);
+            transition: all 0.3s ease;
+        }
+
+        .drop-zone.dragover {
+            border-color: var(--primary-color);
+            background-color: var(--primary-light);
+        }
+
+        .drop-zone p {
+            margin: 10px 0;
+            color: var(--secondary-color);
+        }
+
+        .drop-zone-hint {
+            font-size: 0.9em;
+            color: var(--secondary-color);
+        }
+
+        #file-input {
+            display: none;
+        }
+
+        .drop-zone:hover {
+            border-color: var(--primary-color);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-title">
+                <div class="logo">📆</div>
+                <div class="title-text">
+                    <h1>Day Planner</h1>
+                    <h2>Day Planner Report</h2>
+                </div>
+            </div>
+            <div class="header-controls">
+                <div class="total-hours">
+                    Total Hours <span class="total-value">0h</span>
+                </div>
+                <button class="secondary">Save as</button>
+                <button>⬇️ Export</button>
+                <button class="settings-btn">⚙️</button>
+            </div>
+        </header>
+
+        <!-- Add drop zone -->
+        <div id="drop-zone" class="drop-zone">
+            <p>마크다운 파일을 여기에 드래그하세요</p>
+            <p class="drop-zone-hint">또는 파일 선택</p>
+            <input type="file" id="file-input" accept=".md" multiple>
+        </div>
+
+        <div class="filters">
+            <div class="filters-left">
+                <div class="date-navigation">
+                    <div class="date-selector">
+                        <span class="nav prev">◀</span>
+                        <input type="date" id="start-date" class="date-input">
+                        <span style="margin: 0 8px;">~</span>
+                        <input type="date" id="end-date" class="date-input">
+                        <span class="nav next">▶</span>
+                    </div>
+                    <select id="month-selector" class="month-selector">
+                        <!-- Will be populated by JavaScript -->
+                    </select>
+                </div>
+                <div class="filter-dropdown">
+                    <select id="worklog-filter">
+                        <option>Worklogs</option>
+                    </select>
+                </div>
+                <div class="filter-dropdown">
+                    <select id="filter-by">
+                        <option>Filter by</option>
+                    </select>
+                </div>
+            </div>
+            <div class="filters-right">
+                <div class="filter-dropdown">
+                    <select id="group-by">
+                        <option>Group by</option>
+                        <option>1. Issue</option>
+                    </select>
+                </div>
+                <div class="view-selector">
+                    <button id="list-view">▤</button>
+                    <button id="grid-view" class="active">Grid view (Days)</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="timesheet-container">
+            <div class="loading">
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables for date tracking
+        let currentStartDate = new Date();
+        let currentEndDate = new Date();
+        
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Initialize date inputs
+            const startDateInput = document.getElementById('start-date');
+            const endDateInput = document.getElementById('end-date');
+            
+            // Set initial dates
+            currentStartDate.setDate(1); // First day of current month
+            currentEndDate = new Date(currentStartDate.getFullYear(), currentStartDate.getMonth() + 1, 0); // Last day of current month
+            
+            startDateInput.value = formatDateForInput(currentStartDate);
+            endDateInput.value = formatDateForInput(currentEndDate);
+            
+            // Initial load
+            await loadDateRangeData(currentStartDate, currentEndDate);
+            
+            // Add event listeners for date inputs
+            startDateInput.addEventListener('change', async function() {
+                currentStartDate = new Date(this.value);
+                if (currentStartDate > currentEndDate) {
+                    currentEndDate = new Date(currentStartDate);
+                    currentEndDate.setMonth(currentEndDate.getMonth() + 1);
+                    endDateInput.value = formatDateForInput(currentEndDate);
+                }
+                await loadDateRangeData(currentStartDate, currentEndDate);
+            });
+            
+            endDateInput.addEventListener('change', async function() {
+                currentEndDate = new Date(this.value);
+                if (currentEndDate < currentStartDate) {
+                    currentStartDate = new Date(currentEndDate);
+                    currentStartDate.setMonth(currentStartDate.getMonth() - 1);
+                    startDateInput.value = formatDateForInput(currentStartDate);
+                }
+                await loadDateRangeData(currentStartDate, currentEndDate);
+            });
+            
+            // Add event listeners for date navigation
+            document.querySelector('.date-selector .prev').addEventListener('click', async function() {
+                const monthDiff = getDaysDifference(currentStartDate, currentEndDate);
+                currentEndDate = new Date(currentStartDate);
+                currentStartDate.setDate(currentStartDate.getDate() - monthDiff);
+                
+                startDateInput.value = formatDateForInput(currentStartDate);
+                endDateInput.value = formatDateForInput(currentEndDate);
+                
+                await loadDateRangeData(currentStartDate, currentEndDate);
+            });
+            
+            document.querySelector('.date-selector .next').addEventListener('click', async function() {
+                const monthDiff = getDaysDifference(currentStartDate, currentEndDate);
+                currentStartDate = new Date(currentEndDate);
+                currentEndDate.setDate(currentEndDate.getDate() + monthDiff);
+                
+                startDateInput.value = formatDateForInput(currentStartDate);
+                endDateInput.value = formatDateForInput(currentEndDate);
+                
+                await loadDateRangeData(currentStartDate, currentEndDate);
+            });
+            
+            // Add month selector dropdown
+            const monthSelector = document.getElementById('month-selector');
+            monthSelector.addEventListener('change', async function() {
+                const [year, month] = this.value.split('-').map(Number);
+                currentStartDate = new Date(year, month, 1);
+                currentEndDate = new Date(year, month + 1, 0);
+                
+                startDateInput.value = formatDateForInput(currentStartDate);
+                endDateInput.value = formatDateForInput(currentEndDate);
+                
+                await loadDateRangeData(currentStartDate, currentEndDate);
+            });
+            
+            // Initialize month selector
+            updateMonthSelector(currentStartDate.getFullYear(), currentStartDate.getMonth());
+        });
+        
+        // Helper function to format date for input value
+        function formatDateForInput(date) {
+            return date.toISOString().split('T')[0];
+        }
+        
+        // Helper function to get days difference between two dates
+        function getDaysDifference(startDate, endDate) {
+            return Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
+        }
+        
+        // Function to load data for a date range
+        async function loadDateRangeData(startDate, endDate) {
+            // Initialize loading state
+            const timesheetContainer = document.getElementById('timesheet-container');
+            timesheetContainer.innerHTML = '<div class="loading"><div class="spinner"></div></div>';
+            
+            // Create array of dates
+            const dates = [];
+            const days = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
+            const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 
+                              'July', 'August', 'September', 'October', 'November', 'December'];
+            
+            let currentDate = new Date(startDate);
+            while (currentDate <= endDate) {
+                const dayOfWeek = currentDate.getDay();
+                const isWeekend = (dayOfWeek === 0 || dayOfWeek === 6);
+                
+                dates.push({
+                    date: currentDate.getDate(),
+                    dayOfWeek: days[dayOfWeek],
+                    month: monthNames[currentDate.getMonth()].substring(0, 3).toUpperCase(),
+                    isWeekend: isWeekend,
+                    isToday: isToday(currentDate),
+                    dateStr: formatDateForInput(currentDate),
+                    key: String(currentDate.getDate()).padStart(2, '0')
+                });
+                
+                currentDate.setDate(currentDate.getDate() + 1);
+            }
+            
+            // Fetch data and build table
+            const activities = await parseAllDailyFiles(dates);
+            buildTimesheetTable(activities, dates);
+            
+            // Update month selector
+            updateMonthSelector(startDate.getFullYear(), startDate.getMonth());
+        }
+        
+        // Helper function to check if a date is today
+        function isToday(date) {
+            const today = new Date();
+            return date.getDate() === today.getDate() &&
+                   date.getMonth() === today.getMonth() &&
+                   date.getFullYear() === today.getFullYear();
+        }
+        
+        // Function to update the month selector dropdown
+        function updateMonthSelector(currentYear, currentMonth) {
+            const monthSelector = document.getElementById('month-selector');
+            monthSelector.innerHTML = ''; // Clear existing options
+            
+            // Add options for the last 12 months and next 12 months
+            const startYear = currentYear - 1;
+            const endYear = currentYear + 1;
+            
+            for (let year = startYear; year <= endYear; year++) {
+                for (let month = 0; month < 12; month++) {
+                    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 
+                                      'July', 'August', 'September', 'October', 'November', 'December'];
+                    const optionText = `${monthNames[month]} ${year}`;
+                    const optionValue = `${year}-${month}`;
+                    
+                    const option = document.createElement('option');
+                    option.value = optionValue;
+                    option.text = optionText;
+                    option.selected = (year === currentYear && month === currentMonth);
+                    monthSelector.appendChild(option);
+                }
+            }
+        }
+        
+        // Parse all daily files for the specified date range
+        async function parseAllDailyFiles(dates) {
+            // This is a simulated function that in a real application would make AJAX calls
+            // to fetch and parse the daily markdown files
+            
+            // Activity tracker
+            const allActivities = {};
+            const allTags = new Set();
+            
+            // Loop through all dates
+            for (const dateObj of dates) {
+                // Process each date's activities
+                const activities = await parseDailyFile(dateObj.dateStr);
+                
+                // Add activities to the global tracker
+                activities.forEach(activity => {
+                    const key = activity.name;
+                    if (!allActivities[key]) {
+                        allActivities[key] = {
+                            id: 'ACT-' + Object.keys(allActivities).length,
+                            name: key,
+                            key: activity.tag || '',
+                            timeEntries: {}
+                        };
+                        
+                        // Track all tags
+                        if (activity.tag) {
+                            allTags.add(activity.tag);
+                        }
+                    }
+                    
+                    // Add time entry
+                    allActivities[key].timeEntries[dateObj.key] = {
+                        hours: activity.duration / 60, // Convert minutes to hours
+                        energy: activity.energy
+                    };
+                });
+            }
+            
+            return Object.values(allActivities);
+        }
+        
+        // Parse a single daily file
+        async function parseDailyFile(dateStr) {
+            try {
+                // Use DataviewJS to get the data
+                const dv = window.app.plugins.plugins['dataview'].api;
+                const filePath = `01_Daily/Daily/${dateStr}.md`;
+                const page = dv.page(filePath);
+                
+                if (!page) {
+                    console.log(`No file found for ${dateStr}`);
+                    return [];
+                }
+                
+                const fileContent = await dv.io.load(page.file.path);
+                const activities = [];
+                
+                // Find the Day planner section
+                const plannerHeaderText = "Day planner";
+                const headerRegex = new RegExp(`^#+\\s+${plannerHeaderText}\\s*$`, 'mi');
+                const headerMatch = fileContent.match(headerRegex);
+                
+                if (headerMatch) {
+                    const headerStartIndex = headerMatch.index;
+                    const matchedHeader = headerMatch[0];
+                    const contentAfterHeaderStart = fileContent.substring(headerStartIndex + matchedHeader.length);
+                    const nextHeaderMatch = contentAfterHeaderStart.match(/^\s*#{1,}\s+/m);
+                    const contentEndIndex = nextHeaderMatch ? nextHeaderMatch.index : contentAfterHeaderStart.length;
+                    const sectionContent = contentAfterHeaderStart.substring(0, contentEndIndex).trim();
+                    
+                    const lines = sectionContent.split('\n');
+                    const lineRegex = /^\s*[-*]\s+(?:\*\*)?(\d{1,2}:\d{2})(?:\*\*)?\s*[-–]\s*(?:\*\*)?(\d{1,2}:\d{2})(?:\*\*)?\s*(.*?)(?:\s+#.*)?$/;
+                    
+                    for (const line of lines) {
+                        if (!line.trim() || line.trim().startsWith('#')) continue;
+                        
+                        const match = line.trim().match(lineRegex);
+                        if (match) {
+                            const [_, startTime, endTime, activityName] = match;
+                            const energyMatch = line.match(/#에너지(\d+)/);
+                            const energy = energyMatch ? parseInt(energyMatch[1]) : 50;
+                            
+                            // Calculate duration
+                            const [startHour, startMinute] = startTime.split(':').map(Number);
+                            const [endHour, endMinute] = endTime.split(':').map(Number);
+                            const duration = (endHour * 60 + endMinute) - (startHour * 60 + startMinute);
+                            
+                            activities.push({
+                                name: activityName.trim(),
+                                start: startTime,
+                                end: endTime,
+                                duration: duration,
+                                energy: energy,
+                                tag: `#에너지${energy}`
+                            });
+                        }
+                    }
+                }
+                
+                return activities;
+            } catch (error) {
+                console.error(`Error parsing file for ${dateStr}:`, error);
+                return [];
+            }
+        }
+        
+        // Build the timesheet table
+        function buildTimesheetTable(activities, dates) {
+            console.log('Building timesheet with:', activities.length, 'activities');
+            const timesheetContainer = document.getElementById('timesheet-container');
+            timesheetContainer.innerHTML = '';
+            
+            if (activities.length === 0) {
+                console.log('No activities to display');
+                timesheetContainer.innerHTML = '<p>No activities found</p>';
+                return;
+            }
+            
+            const table = document.createElement('table');
+            table.className = 'timesheet';
+            
+            // Create header
+            const thead = document.createElement('thead');
+            const headerRow = document.createElement('tr');
+            
+            // Issue column
+            const issueHeader = document.createElement('th');
+            issueHeader.textContent = 'Issue';
+            headerRow.appendChild(issueHeader);
+            
+            // Total column
+            const totalHeader = document.createElement('th');
+            totalHeader.textContent = 'Σ';
+            headerRow.appendChild(totalHeader);
+            
+            // Date columns
+            dates.forEach(date => {
+                const dayHeader = document.createElement('th');
+                dayHeader.textContent = date.date;
+                dayHeader.className = 'day-header';
+                
+                const dayOfWeek = document.createElement('div');
+                dayOfWeek.textContent = date.dayOfWeek;
+                dayOfWeek.style.fontSize = '0.8em';
+                dayHeader.appendChild(dayOfWeek);
+                
+                if (date.isWeekend) dayHeader.classList.add('weekend');
+                if (date.isToday) dayHeader.classList.add('today');
+                
+                headerRow.appendChild(dayHeader);
+            });
+            
+            thead.appendChild(headerRow);
+            table.appendChild(thead);
+            
+            // Create body
+            const tbody = document.createElement('tbody');
+            
+            // Sort activities by duration
+            activities.sort((a, b) => b.duration - a.duration);
+            
+            // Add activity rows
+            activities.forEach(activity => {
+                console.log('Adding activity row:', activity);
+                const row = document.createElement('tr');
+                row.className = 'issue-row';
+                
+                // Issue cell
+                const issueCell = document.createElement('th');
+                
+                const checkbox = document.createElement('span');
+                checkbox.className = 'checkbox checked';
+                issueCell.appendChild(checkbox);
+                
+                const activityName = document.createTextNode(activity.name);
+                issueCell.appendChild(activityName);
+                
+                // Add sub-activities if any
+                if (activity.subActivities && activity.subActivities.length > 0) {
+                    const subList = document.createElement('ul');
+                    subList.style.marginLeft = '20px';
+                    subList.style.fontSize = '0.9em';
+                    subList.style.color = 'var(--secondary-color)';
+                    
+                    activity.subActivities.forEach(subActivity => {
+                        const subItem = document.createElement('li');
+                        subItem.textContent = subActivity;
+                        subList.appendChild(subItem);
+                    });
+                    
+                    issueCell.appendChild(subList);
+                }
+                
+                row.appendChild(issueCell);
+                
+                // Total cell
+                const totalCell = document.createElement('td');
+                totalCell.textContent = (activity.duration / 60).toFixed(1) + 'h';
+                row.appendChild(totalCell);
+                
+                // Date cells
+                dates.forEach(date => {
+                    const dayCell = document.createElement('td');
+                    
+                    if (date.isWeekend) dayCell.classList.add('weekend');
+                    if (date.isToday) dayCell.classList.add('today');
+                    
+                    const timeEntry = document.createElement('div');
+                    timeEntry.className = 'time-entry';
+                    timeEntry.textContent = (activity.duration / 60).toFixed(1);
+                    
+                    // Set energy level color
+                    if (activity.energy) {
+                        const energyLevel = activity.energy;
+                        let bgColor = '';
+                        
+                        if (energyLevel >= 90) bgColor = 'var(--energy-100)';
+                        else if (energyLevel >= 80) bgColor = 'var(--energy-80)';
+                        else if (energyLevel >= 70) bgColor = 'var(--energy-70)';
+                        else if (energyLevel >= 60) bgColor = 'var(--energy-60)';
+                        else if (energyLevel >= 50) bgColor = 'var(--energy-50)';
+                        else if (energyLevel >= 40) bgColor = 'var(--energy-40)';
+                        else if (energyLevel >= 30) bgColor = 'var(--energy-30)';
+                        else if (energyLevel >= 20) bgColor = 'var(--energy-20)';
+                        else bgColor = 'var(--energy-10)';
+                        
+                        timeEntry.style.backgroundColor = bgColor;
+                        timeEntry.style.color = (energyLevel >= 60) ? '#fff' : '#172b4d';
+                    }
+                    
+                    dayCell.appendChild(timeEntry);
+                    row.appendChild(dayCell);
+                });
+                
+                tbody.appendChild(row);
+            });
+            
+            // Add total row
+            const totalRow = document.createElement('tr');
+            totalRow.className = 'total-row';
+            
+            const totalLabelCell = document.createElement('th');
+            totalLabelCell.textContent = 'Total';
+            totalRow.appendChild(totalLabelCell);
+            
+            const grandTotalCell = document.createElement('td');
+            const grandTotal = activities.reduce((sum, activity) => sum + activity.duration, 0) / 60;
+            grandTotalCell.textContent = grandTotal.toFixed(1) + 'h';
+            totalRow.appendChild(grandTotalCell);
+            
+            dates.forEach(date => {
+                const dailyTotalCell = document.createElement('td');
+                
+                if (date.isWeekend) dailyTotalCell.classList.add('weekend');
+                if (date.isToday) dailyTotalCell.classList.add('today');
+                
+                const dailyTotal = activities.reduce((sum, activity) => sum + activity.duration, 0) / 60;
+                dailyTotalCell.textContent = dailyTotal.toFixed(1);
+                
+                totalRow.appendChild(dailyTotalCell);
+            });
+            
+            tbody.appendChild(totalRow);
+            table.appendChild(tbody);
+            timesheetContainer.appendChild(table);
+            
+            // Update header total
+            document.querySelector('.total-value').textContent = grandTotal.toFixed(1) + 'h';
+            
+            console.log('Timesheet built successfully');
+        }
+
+        // Add drag and drop functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropZone = document.getElementById('drop-zone');
+            const fileInput = document.getElementById('file-input');
+            
+            // Basic drag and drop events
+            dropZone.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                dropZone.classList.add('dragover');
+            });
+            
+            dropZone.addEventListener('dragleave', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                dropZone.classList.remove('dragover');
+            });
+            
+            dropZone.addEventListener('drop', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                dropZone.classList.remove('dragover');
+                
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    handleFiles(files);
+                }
+            });
+            
+            // File input click handler
+            dropZone.addEventListener('click', function() {
+                fileInput.click();
+            });
+            
+            fileInput.addEventListener('change', function(e) {
+                if (e.target.files.length > 0) {
+                    handleFiles(e.target.files);
+                }
+            });
+            
+            async function handleFiles(files) {
+                console.log('Handling files:', files);
+                const activities = [];
+                
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    if (file.name.endsWith('.md')) {
+                        try {
+                            const content = await readFile(file);
+                            console.log('File content loaded for:', file.name);
+                            const fileActivities = parseMarkdownContent(content);
+                            console.log('Parsed activities:', fileActivities);
+                            activities.push(...fileActivities);
+                        } catch (error) {
+                            console.error('Error processing file:', error);
+                        }
+                    }
+                }
+                
+                if (activities.length > 0) {
+                    console.log('Building timesheet with activities:', activities);
+                    const dates = getDateRangeFromFiles(files);
+                    console.log('Date range:', dates);
+                    buildTimesheetTable(activities, dates);
+                } else {
+                    console.log('No activities found in files');
+                }
+            }
+            
+            function readFile(file) {
+                return new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        resolve(e.target.result);
+                    };
+                    reader.onerror = function(e) {
+                        reject(e);
+                    };
+                    reader.readAsText(file);
+                });
+            }
+            
+            function parseMarkdownContent(content) {
+                console.log('Parsing markdown content:', content);
+                const activities = [];
+                const lines = content.split('\n');
+                let inDayPlanner = false;
+                
+                for (const line of lines) {
+                    // Day planner 섹션 시작 확인
+                    if (line.trim() === '### Day planner') {
+                        console.log('Found Day planner section');
+                        inDayPlanner = true;
+                        continue;
+                    }
+                    
+                    // 다른 섹션 시작 시 Day planner 섹션 종료
+                    if (inDayPlanner && line.trim().startsWith('###')) {
+                        console.log('End of Day planner section');
+                        break;
+                    }
+                    
+                    if (!inDayPlanner) continue;
+                    
+                    // 빈 줄이나 주석 건너뛰기
+                    if (!line.trim() || line.trim().startsWith('#')) continue;
+                    
+                    // 활동 라인 파싱
+                    if (line.startsWith('-') && line.includes(' - ')) {
+                        console.log('Found activity line:', line);
+                        const timeMatch = line.match(/(\d{1,2}:\d{2})\s*-\s*(\d{1,2}:\d{2})/);
+                        if (timeMatch) {
+                            const [_, startTime, endTime] = timeMatch;
+                            console.log('Time match:', startTime, endTime);
+                            
+                            // 활동 이름과 에너지 태그 추출
+                            const activityPart = line.split(' - ')[1].trim();
+                            const activityName = activityPart.split('#')[0].trim();
+                            const energyMatch = line.match(/#에너지(\d+)/);
+                            const energy = energyMatch ? parseInt(energyMatch[1]) : 50;
+                            
+                            console.log('Activity details:', {
+                                name: activityName,
+                                start: startTime,
+                                end: endTime,
+                                energy: energy
+                            });
+                            
+                            // 시간 계산
+                            const [startHour, startMinute] = startTime.split(':').map(Number);
+                            const [endHour, endMinute] = endTime.split(':').map(Number);
+                            const duration = (endHour * 60 + endMinute) - (startHour * 60 + startMinute);
+                            
+                            // 서브 활동 처리
+                            let subActivities = [];
+                            let nextLineIndex = lines.indexOf(line) + 1;
+                            while (nextLineIndex < lines.length && 
+                                   lines[nextLineIndex].trim().startsWith('\t-')) {
+                                const subLine = lines[nextLineIndex].trim();
+                                const subActivityName = subLine.substring(2).trim();
+                                subActivities.push(subActivityName);
+                                nextLineIndex++;
+                            }
+                            
+                            activities.push({
+                                name: activityName,
+                                start: startTime,
+                                end: endTime,
+                                duration: duration,
+                                energy: energy,
+                                tag: `#에너지${energy}`,
+                                subActivities: subActivities
+                            });
+                            
+                            console.log('Added activity:', activities[activities.length - 1]);
+                        }
+                    }
+                }
+                
+                console.log('Total activities found:', activities.length);
+                return activities;
+            }
+            
+            function getDateRangeFromFiles(files) {
+                const dates = [];
+                const days = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
+                
+                files.forEach(file => {
+                    const dateMatch = file.name.match(/(\d{4}-\d{2}-\d{2})/);
+                    if (dateMatch) {
+                        const dateStr = dateMatch[1];
+                        const date = new Date(dateStr);
+                        const dayOfWeek = date.getDay();
+                        const isWeekend = (dayOfWeek === 0 || dayOfWeek === 6);
+                        
+                        dates.push({
+                            date: date.getDate(),
+                            dayOfWeek: days[dayOfWeek],
+                            month: date.toLocaleString('default', { month: 'short' }).toUpperCase(),
+                            isWeekend: isWeekend,
+                            isToday: false,
+                            dateStr: dateStr,
+                            key: String(date.getDate()).padStart(2, '0')
+                        });
+                    }
+                });
+                
+                // 날짜 정렬
+                dates.sort((a, b) => new Date(a.dateStr) - new Date(b.dateStr));
+                
+                return dates;
+            }
+        });
+    </script>
+</body>
+</html>

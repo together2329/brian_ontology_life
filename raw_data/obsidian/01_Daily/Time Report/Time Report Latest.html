@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day Planner Timesheet</title>
+    <style>
+        /* Root variables for consistent theming */
+        :root {
+            --primary-color: #0052cc; /* Blue */
+            --primary-light: #e6efff; /* Light blue */
+            --secondary-color: #6b778c; /* Gray */
+            --border-color: #dfe1e6; /* Light gray border */
+            --hover-color: #f4f5f7; /* Very light gray for hover */
+            --header-bg: #f4f5f7; /* Background for table header */
+            --weekend-bg: #fafbfc; /* Slightly off-white for weekend columns */
+            --today-column: #e6efff; /* Highlight for today's column */
+            --detail-row-bg: #f8f9fa; /* Background for detail rows */
+            --total-highlight-bg: #fffbe6; /* Light yellow for totals */
+            --total-row-highlight-bg: #fff0b3; /* Slightly darker yellow for total row */
+            /* Energy level colors */
+            --energy-100: #36b37e; /* Green */
+            --energy-90: #57d9a3;
+            --energy-80: #79f2c0;
+            --energy-70: #abf5d1;
+            --energy-60: #ffab00; /* Yellow */
+            --energy-50: #ffc400;
+            --energy-40: #ffe380;
+            --energy-30: #fff0b3;
+            --energy-20: #ff5630; /* Red */
+            --energy-10: #ff8f73;
+            /* Energy text colors (for better contrast) */
+            --energy-text-dark: #172b4d; /* Dark text for light backgrounds */
+            --energy-text-light: #ffffff; /* Light text for dark backgrounds */
+        }
+
+        /* Basic reset and box-sizing */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Body styling */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #172b4d; /* Default text color */
+            background-color: #f5f5f5; /* Light gray background */
+            line-height: 1.5;
+            /* Prevent text selection during drag */
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        /* Main container */
+        .container {
+            max-width: 1600px;
+            margin: 20px auto; /* Add top/bottom margin */
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+            border-radius: 3px;
+        }
+
+        /* Header section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            gap: 10px; /* Add gap between items */
+        }
+
+        .header-title {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+
+        .title-text h1 {
+            font-size: 16px; /* Slightly smaller */
+            color: var(--secondary-color);
+            margin: 0;
+            font-weight: 500; /* Medium weight */
+        }
+
+        .title-text h2 {
+            font-size: 22px; /* Slightly smaller */
+            margin: 0;
+            font-weight: 600; /* Semi-bold */
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping */
+            gap: 10px; /* Add gap */
+        }
+
+        .header-controls .total-hours {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            color: var(--secondary-color);
+        }
+
+        .total-value {
+            font-size: 20px;
+            font-weight: bold;
+            margin-left: 8px;
+            color: #172b4d; /* Darker color for value */
+        }
+
+        /* Button styling */
+        button {
+            padding: 8px 16px; /* Slightly more padding */
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 14px;
+            transition: background-color 0.2s ease; /* Smooth transition */
+        }
+
+        button:hover {
+            background: #0747a6; /* Darker blue on hover */
+        }
+
+        button.secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 1px solid var(--border-color); /* Use border color */
+        }
+
+        button.secondary:hover {
+            background: var(--hover-color); /* Light hover background */
+            border-color: #c1c7d0; /* Slightly darker border on hover */
+        }
+
+        #load-files-btn { /* Specific style for load button */
+             background-color: #36b37e; /* Green */
+        }
+        #load-files-btn:hover {
+             background-color: #006644; /* Darker green */
+        }
+
+        #view-report-btn { /* Style for view report button */
+             /* Use default primary color */
+        }
+
+        .settings-btn {
+            background: none;
+            border: none;
+            color: var(--secondary-color);
+            cursor: pointer;
+            font-size: 20px;
+            padding: 5px; /* Add padding for easier clicking */
+        }
+        .settings-btn:hover {
+            color: #172b4d;
+        }
+
+        /* Filters section */
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap; /* Allow wrapping */
+            gap: 15px; /* Add gap */
+        }
+
+        .filters-left, .filters-right {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping within sections */
+            gap: 10px; /* Gap between filter elements */
+        }
+
+        /* Date Range Selector Styling */
+        .date-range-selector {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid var(--border-color);
+            padding: 5px 10px;
+            border-radius: 3px;
+            background-color: white;
+        }
+        .date-range-selector label {
+             font-size: 13px;
+             color: var(--secondary-color);
+        }
+        .date-range-selector input[type="date"] {
+            padding: 4px 8px;
+            border: 1px solid var(--border-color);
+            border-radius: 3px;
+            font-size: 14px;
+            color: #172b4d;
+        }
+        .date-range-selector input[type="date"]:hover {
+            border-color: var(--primary-color);
+        }
+
+
+        /* Select dropdown styling */
+        select {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 3px;
+            background: white;
+            cursor: pointer;
+            font-size: 14px;
+            color: #172b4d;
+            appearance: none; /* Remove default arrow */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='5' viewBox='0 0 10 5'%3E%3Cpath fill='%236B778C' d='M0 0l5 5 5-5z'/%3E%3C/svg%3E"); /* Custom arrow */
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            padding-right: 30px; /* Space for arrow */
+        }
+
+        select:hover {
+            border-color: var(--primary-color);
+        }
+
+        .filter-dropdown {
+            position: relative; /* Needed for potential custom dropdowns later */
+        }
+
+        /* View selector buttons */
+        .view-selector {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .view-selector button {
+            background: white;
+            color: #172b4d;
+            border: none;
+            padding: 8px 15px; /* Consistent padding */
+            cursor: pointer;
+            margin: 0;
+            border-radius: 0; /* Remove individual radius */
+            border-right: 1px solid var(--border-color);
+            font-size: 14px;
+        }
+
+        .view-selector button:last-child {
+            border-right: none;
+        }
+
+        .view-selector button.active {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        /* Timesheet table styling */
+        #timesheet-container {
+            overflow-x: auto; /* Enable horizontal scrolling if needed */
+            width: 100%;
+        }
+
+        .timesheet {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            border: 1px solid var(--border-color); /* Add outer border */
+            font-size: 13px; /* Slightly smaller font */
+            table-layout: fixed; /* Important for resizing */
+        }
+
+        .timesheet th, .timesheet td {
+            border: 1px solid var(--border-color);
+            padding: 8px 6px; /* Adjust padding */
+            text-align: center;
+            vertical-align: middle; /* Align content vertically */
+            overflow: hidden; /* Prevent content overflow during resize */
+            white-space: nowrap; /* Prevent wrapping in most cells */
+        }
+
+        /* Table header */
+        .timesheet thead th {
+            background-color: var(--header-bg);
+            position: sticky;
+            top: 0; /* Stick to top on scroll */
+            z-index: 10;
+            font-weight: 600; /* Bolder header */
+            color: #42526e; /* Slightly darker header text */
+        }
+        /* Specific style for the first header (Activity/Issue) */
+        .timesheet thead th:first-child {
+             width: 250px; /* Initial width, will be overridden by JS */
+             position: sticky;
+             left: 0;
+             z-index: 11; /* Above other sticky headers */
+             background-color: var(--header-bg); /* Ensure background */
+             /* Add relative positioning for the handle */
+             position: relative;
+        }
+        /* Highlight total column header */
+        .timesheet thead th:nth-child(2) {
+             background-color: var(--total-highlight-bg);
+        }
+
+
+        .timesheet th.day-header {
+            min-width: 65px; /* Minimum width for day columns */
+            padding: 8px 4px;
+        }
+        .timesheet th.day-header div {
+            font-size: 0.85em;
+            font-weight: normal;
+            color: var(--secondary-color);
+        }
+
+        .timesheet th.weekend, .timesheet td.weekend {
+            background-color: var(--weekend-bg);
+        }
+
+        .timesheet th.today, .timesheet td.today {
+            background-color: var(--today-column);
+            border-left: 2px solid var(--primary-color); /* Emphasize today */
+            border-right: 2px solid var(--primary-color);
+        }
+        .timesheet thead th.today {
+             border-top: 2px solid var(--primary-color);
+        }
+         .timesheet tr.total-row td.today {
+             border-bottom: 2px solid var(--primary-color);
+        }
+
+
+        /* Table body */
+        .timesheet tbody th { /* Issue column cells */
+            text-align: left;
+            font-weight: normal;
+            white-space: normal; /* Allow wrapping in activity name cell */
+            background-color: #fff; /* White background for issue names */
+            position: sticky;
+            left: 0; /* Stick issue column */
+            z-index: 5;
+            cursor: default; /* Default cursor for the cell */
+            /* Width will be controlled by JS */
+        }
+        /* Make activity name itself clickable */
+         .timesheet tbody th .activity-name-wrapper {
+             display: flex;
+             align-items: center;
+             cursor: pointer; /* Pointer cursor for the wrapper */
+         }
+
+        /* Highlight activity total column */
+        .timesheet tbody .activity-row td:nth-child(2) {
+             background-color: var(--total-highlight-bg);
+             font-weight: 500;
+        }
+
+
+        .timesheet tbody tr:hover th { /* Keep issue cell white on row hover */
+             background-color: #fff;
+        }
+        .timesheet tbody tr:hover td { /* Apply hover to data cells only */
+            background-color: var(--hover-color);
+        }
+        /* Hover effect for detail row should match main row */
+        .timesheet tbody tr.detail-row:hover td {
+             background-color: var(--hover-color);
+        }
+
+
+        .timesheet tr.total-row {
+            font-weight: bold;
+            /* background-color: var(--header-bg); */ /* Remove default header bg */
+        }
+
+        .timesheet tr.total-row th,
+        .timesheet tr.total-row td {
+            font-weight: bold;
+            color: #172b4d;
+            white-space: nowrap; /* Prevent wrapping in total row */
+            background-color: var(--total-row-highlight-bg); /* Apply yellow to all total row cells */
+        }
+        .timesheet tr.total-row th { /* Sticky total row label */
+             position: sticky;
+             left: 0;
+             z-index: 6; /* Above issue cells */
+             background-color: var(--total-row-highlight-bg); /* Ensure background */
+        }
+
+
+        .issue-row {
+            /* cursor: pointer; */ /* Remove cursor from entire row */
+        }
+
+        .issue-key {
+            color: var(--secondary-color);
+            margin-left: 8px; /* More space */
+            font-size: 0.9em;
+            white-space: nowrap; /* Prevent tag from wrapping */
+        }
+
+        /* Checkbox styling */
+        .timesheet .checkbox {
+            width: 16px;
+            height: 16px;
+            border: 1px solid #c1c7d0; /* Slightly darker border */
+            border-radius: 3px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+            position: relative;
+            background-color: #fff; /* White background */
+            cursor: default; /* Indicate non-interactive */
+            flex-shrink: 0; /* Prevent checkbox from shrinking */
+        }
+
+        .timesheet .checkbox.checked {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .timesheet .checkbox.checked::after {
+            content: "✓";
+            position: absolute;
+            color: white;
+            font-size: 12px; /* Slightly larger check */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Toggle icon for expandable rows */
+        .toggle-icon {
+            display: inline-block;
+            width: 16px; /* Match checkbox width */
+            text-align: center;
+            margin-right: 5px;
+            color: var(--secondary-color);
+            font-size: 0.8em;
+            transition: transform 0.2s ease;
+            flex-shrink: 0; /* Prevent icon from shrinking */
+        }
+        .toggle-icon.expanded {
+            transform: rotate(90deg);
+        }
+
+        /* Detail Row Styling */
+        .detail-row {
+            background-color: var(--detail-row-bg);
+        }
+        .detail-row td {
+            padding: 10px 15px 10px 40px; /* Add left padding for indentation */
+            text-align: left;
+            vertical-align: top;
+            white-space: normal; /* Allow wrapping in detail cell */
+        }
+        .detail-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        .detail-list > li { /* Style for main time block items */
+            margin-bottom: 10px; /* Space between time blocks */
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+         .detail-list > li:last-child {
+             border-bottom: none;
+             margin-bottom: 0;
+             padding-bottom: 0;
+         }
+        /* Styling for time block details */
+        .detail-time-block {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            margin-bottom: 5px; /* Space before sub-items */
+        }
+        .detail-time {
+            font-weight: 500;
+            color: var(--primary-color);
+            white-space: nowrap;
+        }
+         .detail-description {
+             flex-grow: 1;
+             color: #172b4d;
+         }
+         .detail-duration {
+             font-weight: 500;
+             color: var(--secondary-color);
+             font-size: 0.9em;
+             white-space: nowrap;
+         }
+        .detail-energy {
+             font-size: 0.9em;
+             font-weight: 500;
+             padding: 1px 4px;
+             border-radius: 3px;
+             color: var(--energy-text-dark);
+             white-space: nowrap;
+         }
+         /* Styling for sub-item list */
+         .sub-item-list {
+             list-style: none; /* Remove default bullets */
+             margin-left: 0;   /* Let whitespace handle indent */
+             padding-left: 0; /* Reset padding */
+             font-size: 0.95em;
+             color: var(--secondary-color);
+         }
+         .sub-item-list li {
+             margin-bottom: 2px;
+             /* Preserve whitespace for indentation */
+             white-space: pre-wrap;
+             /* Remove pseudo-element bullet and padding */
+             /* padding-left: 1.2em; */
+             /* position: relative; */
+         }
+         /* Remove pseudo-element bullet */
+         /* .sub-item-list li::before { ... } */
+
+
+        /* Time entry cell styling */
+        .time-entry {
+            padding: 3px 5px; /* Adjust padding */
+            border-radius: 3px;
+            font-weight: 500;
+            display: inline-block; /* Allow background color */
+            min-width: 40px; /* Ensure minimum width */
+            text-align: center;
+            font-size: 0.95em;
+        }
+
+        /* Energy level specific styles */
+        .energy-100 { background-color: var(--energy-100); color: var(--energy-text-light); }
+        .energy-90 { background-color: var(--energy-90); color: var(--energy-text-dark); }
+        .energy-80 { background-color: var(--energy-80); color: var(--energy-text-dark); }
+        .energy-70 { background-color: var(--energy-70); color: var(--energy-text-dark); }
+        .energy-60 { background-color: var(--energy-60); color: var(--energy-text-dark); }
+        .energy-50 { background-color: var(--energy-50); color: var(--energy-text-dark); }
+        .energy-40 { background-color: var(--energy-40); color: var(--energy-text-dark); }
+        .energy-30 { background-color: var(--energy-30); color: var(--energy-text-dark); }
+        .energy-20 { background-color: var(--energy-20); color: var(--energy-text-light); }
+        .energy-10 { background-color: var(--energy-10); color: var(--energy-text-light); }
+
+        /* Loading spinner */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            width: 100%;
+        }
+
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: var(--primary-color);
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+         /* Resize Handle Styling */
+         .resize-handle {
+             position: absolute;
+             top: 0;
+             right: -5px; /* Position slightly outside the cell border */
+             width: 10px; /* Handle width */
+             height: 100%;
+             cursor: col-resize;
+             z-index: 12; /* Above sticky header content */
+             /* background-color: rgba(0, 0, 255, 0.1); */ /* Optional: for debugging */
+         }
+         .resize-handle:hover {
+             background-color: rgba(0, 82, 204, 0.1); /* Light blue on hover */
+         }
+          /* Style during drag */
+         body.resizing {
+             cursor: col-resize;
+         }
+
+
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 15px;
+            }
+            .filters {
+                gap: 10px;
+            }
+             .date-range-selector {
+                 width: 100%; /* Full width on smaller screens */
+                 justify-content: space-between;
+             }
+             .date-range-selector input[type="date"] {
+                 flex-grow: 1; /* Allow inputs to grow */
+             }
+            .timesheet {
+                font-size: 12px; /* Adjust font size */
+            }
+             .timesheet th.day-header {
+                min-width: 55px;
+            }
+             /* Removed fixed max-width */
+             /* .timesheet tbody th { max-width: 250px; } */
+             .detail-row td {
+                 padding-left: 30px;
+             }
+        }
+
+        @media (max-width: 768px) {
+             body {
+                 font-size: 14px; /* Adjust base font size */
+             }
+            .container {
+                padding: 10px;
+                margin: 10px;
+            }
+            header {
+                 flex-direction: column;
+                 align-items: flex-start;
+                 gap: 15px;
+            }
+             .header-controls {
+                 width: 100%;
+                 justify-content: space-between; /* Space out controls */
+             }
+             .header-controls .total-hours {
+                 display: flex;
+                 order: -1; /* Move total hours to the start */
+                 margin-right: 0;
+             }
+             .settings-btn {
+                 margin-left: auto; /* Push settings to the right */
+             }
+
+            .filters {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .filters-left, .filters-right {
+                flex-direction: column; /* Stack filters vertically */
+                align-items: stretch; /* Stretch items to full width */
+                width: 100%;
+                gap: 8px;
+            }
+             .date-range-selector {
+                 flex-direction: column; /* Stack date inputs vertically */
+                 align-items: stretch;
+                 padding: 10px;
+             }
+             .date-range-selector div { /* Wrap label and input */
+                 display: flex;
+                 justify-content: space-between;
+                 align-items: center;
+                 margin-bottom: 5px;
+             }
+             .date-range-selector label {
+                 margin-right: 10px;
+             }
+             .date-range-selector input[type="date"] {
+                 width: auto; /* Adjust width */
+                 flex-grow: 1;
+             }
+             #view-report-btn {
+                 width: 100%; /* Full width button */
+             }
+
+            .view-selector {
+                 width: 100%;
+            }
+             .view-selector button {
+                 flex: 1; /* Make view buttons equal width */
+             }
+            select {
+                 width: 100%; /* Full width dropdowns */
+            }
+
+            .timesheet {
+                font-size: 11px; /* Further reduce font size */
+            }
+             .timesheet th, .timesheet td {
+                 padding: 6px 4px; /* Reduce padding */
+             }
+             .timesheet th.day-header {
+                 min-width: 45px; /* Reduce day column width */
+             }
+             /* Removed fixed max-width */
+             /* .timesheet tbody th { max-width: 150px; } */
+             .issue-key {
+                 display: block; /* Stack key below name */
+                 margin-left: 0;
+                 margin-top: 2px;
+             }
+             .timesheet .checkbox {
+                 margin-right: 5px;
+             }
+             .time-entry {
+                 min-width: 35px;
+                 padding: 2px 4px;
+             }
+             .detail-row td {
+                 padding: 8px 10px 8px 20px; /* Adjust padding */
+             }
+             .detail-list {
+                 font-size: 0.9em;
+             }
+             .detail-list .detail-time-block {
+                 gap: 5px; /* Reduce gap */
+             }
+             .sub-item-list {
+                 margin-left: 0; /* Let whitespace handle indent */
+                 /* padding-left: 10px; */
+             }
+             .sub-item-list li {
+                  /* padding-left: 0; */ /* Remove padding */
+             }
+             /* Hide resize handle on small screens where sticky might be complex */
+             .resize-handle {
+                 display: none;
+             }
+
+        }
+    </style>
+    </head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-title">
+                <div class="logo">🗓️</div>
+                <div class="title-text">
+                    <h1>Day Planner</h1>
+                    <h2>Timesheet Report</h2>
+                </div>
+            </div>
+            <div class="header-controls">
+                <div class="total-hours">
+                    Total <span class="total-value">0h</span>
+                </div>
+                <button class="secondary">Save as</button>
+                <button>⬇️ Export</button>
+                <button class="settings-btn" title="Settings">⚙️</button>
+            </div>
+        </header>
+
+        <div class="filters">
+            <div class="filters-left">
+                 <input type="file" id="md-file-input" multiple accept=".md" style="display: none;">
+                <button id="load-files-btn" title="Select .md files (YYYY-MM-DD.md)">Load Daily Files</button>
+
+                <div class="date-range-selector">
+                     <div>
+                         <label for="start-date">시작:</label>
+                         <input type="date" id="start-date" name="start-date">
+                     </div>
+                     <div>
+                         <label for="end-date">종료:</label>
+                         <input type="date" id="end-date" name="end-date">
+                    </div>
+                    <button id="view-report-btn">리포트 보기</button>
+                </div>
+                 <div class="filter-dropdown">
+                    <select id="worklog-filter" title="Filter Worklogs">
+                        <option>Worklogs</option>
+                        </select>
+                </div>
+                <div class="filter-dropdown">
+                    <select id="filter-by" title="Filter By">
+                        <option>Filter by</option>
+                         </select>
+                </div>
+            </div>
+            <div class="filters-right">
+                <div class="filter-dropdown">
+                    <select id="group-by" title="Group By">
+                        <option value="issue">Group by: Issue</option>
+                        <option value="tag">Group by: Tag</option>
+                         </select>
+                </div>
+                <div class="view-selector">
+                    <button id="list-view" title="List View">▤ List</button>
+                    <button id="grid-view" class="active" title="Grid View">▦ Grid</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="timesheet-container">
+            <p style="text-align: center; padding: 20px; color: var(--secondary-color);">
+                먼저 'Load Daily Files'를 클릭하여 파일을 로드한 후, 시작/종료 날짜를 선택하고 '리포트 보기'를 클릭하세요.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // --- Global Variables ---
+        let currentStartDate = null;
+        let currentEndDate = null;
+        const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+                          'July', 'August', 'September', 'October', 'November', 'December'];
+        const dayShortNames = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
+        let uploadedFilesData = {}; // Stores content of uploaded files: { 'YYYY-MM-DD': 'file content', ... }
+        let aggregatedActivitiesData = {}; // Stores processed data for the table: { 'activityId': { name, key, detailedEntries: {...} } }
+
+        // --- DOM Elements ---
+        const fileInputElement = document.getElementById('md-file-input');
+        const loadFilesButton = document.getElementById('load-files-btn');
+        const timesheetContainer = document.getElementById('timesheet-container');
+        const startDateInput = document.getElementById('start-date');
+        const endDateInput = document.getElementById('end-date');
+        const viewReportButton = document.getElementById('view-report-btn');
+
+        // --- Event Listeners ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date();
+            const endDateDefault = today.toISOString().split('T')[0];
+            const startDateDefault = new Date(new Date().setDate(today.getDate() - 6)).toISOString().split('T')[0]; // Corrected default start date
+            startDateInput.value = startDateDefault;
+            endDateInput.value = endDateDefault;
+
+            timesheetContainer.innerHTML = `<p style="text-align: center; padding: 20px; color: var(--secondary-color);">먼저 'Load Daily Files'를 클릭하여 파일을 로드한 후, 시작/종료 날짜를 선택하고 '리포트 보기'를 클릭하세요.</p>`;
+
+            loadFilesButton.addEventListener('click', () => fileInputElement.click());
+            fileInputElement.addEventListener('change', handleFileSelect);
+            viewReportButton.addEventListener('click', handleViewReportClick);
+            document.getElementById('list-view').addEventListener('click', () => switchView('list'));
+            document.getElementById('grid-view').addEventListener('click', () => switchView('grid'));
+
+            // Add event listener to the table body for toggling details (event delegation)
+            timesheetContainer.addEventListener('click', (event) => {
+                 // Find the closest ancestor which is the clickable wrapper
+                 const wrapper = event.target.closest('.activity-name-wrapper');
+                 if (wrapper) {
+                     const activityRow = wrapper.closest('.activity-row');
+                     if (activityRow) {
+                         toggleDetails(activityRow);
+                     }
+                 }
+            });
+
+             // Initialize column resizing after table is potentially built
+             // Note: This needs to be called *after* buildTimesheetTable if the table exists
+             // We'll call it within handleViewReportClick after table build.
+
+        });
+
+        // --- Core Functions ---
+
+        /**
+         * Handles the click of the "View Report" button.
+         */
+        async function handleViewReportClick() {
+            const startDateStr = startDateInput.value;
+            const endDateStr = endDateInput.value;
+
+            if (!startDateStr || !endDateStr) {
+                alert("시작 날짜와 종료 날짜를 모두 선택해주세요."); return;
+            }
+            if (new Date(startDateStr) > new Date(endDateStr)) {
+                alert("시작 날짜는 종료 날짜보다 이전이어야 합니다."); return;
+            }
+            if (Object.keys(uploadedFilesData).length === 0) {
+                 alert("먼저 'Load Daily Files' 버튼을 클릭하여 파일을 로드해주세요."); return;
+            }
+
+            currentStartDate = startDateStr;
+            currentEndDate = endDateStr;
+
+            console.log(`Loading report for range: ${currentStartDate} to ${currentEndDate}`);
+            await loadDateRangeData(currentStartDate, currentEndDate);
+
+             // Initialize resizing AFTER the table is built
+             const table = timesheetContainer.querySelector('.timesheet');
+             if (table) {
+                 initializeResize(table);
+             }
+        }
+
+
+        /**
+         * Handles the selection of files from the file input.
+         */
+        async function handleFileSelect(event) {
+            const files = event.target.files;
+            if (!files || files.length === 0) return;
+
+            console.log(`Reading ${files.length} files...`);
+            loadFilesButton.textContent = '파일 읽는 중...';
+            loadFilesButton.disabled = true;
+            uploadedFilesData = {}; // Reset
+
+            const readFile = (file) => new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const content = e.target.result;
+                    const dateMatch = file.name.match(/(\d{4}-\d{2}-\d{2})\.md$/);
+                    if (dateMatch && dateMatch[1]) {
+                        uploadedFilesData[dateMatch[1]] = content;
+                    } else {
+                        console.warn(`Skipping file: ${file.name}`);
+                    }
+                    resolve();
+                };
+                reader.onerror = (e) => { console.error(`Error reading ${file.name}:`, e); reject(e); };
+                reader.readAsText(file);
+            });
+
+            try {
+                await Promise.all(Array.from(files).map(readFile));
+                console.log("Files read:", Object.keys(uploadedFilesData).length);
+                loadFilesButton.textContent = `${Object.keys(uploadedFilesData).length}개 파일 로드됨`;
+                timesheetContainer.innerHTML = `<p style="text-align: center; padding: 20px; color: var(--secondary-color);">파일 로드 완료. 날짜 범위를 선택하고 '리포트 보기'를 클릭하세요.</p>`;
+            } catch (error) {
+                console.error("Error processing files:", error);
+                 loadFilesButton.textContent = '파일 로드 오류';
+                 timesheetContainer.innerHTML = '<p style="color: red; text-align: center;">Error reading files.</p>';
+            } finally {
+                 loadFilesButton.disabled = false;
+                 event.target.value = null;
+            }
+        }
+
+        /**
+         * Loads and displays timesheet data for a specific date range.
+         */
+        async function loadDateRangeData(startDateStr, endDateStr) {
+            console.log(`Generating report for: ${startDateStr} to ${endDateStr}`);
+            timesheetContainer.innerHTML = '<div class="loading"><div class="spinner"></div></div>';
+
+            try {
+                const dates = generateDatesForRange(startDateStr, endDateStr);
+                if (dates.length === 0) {
+                     timesheetContainer.innerHTML = '<p style="text-align: center; padding: 20px;">Invalid date range.</p>'; return;
+                }
+                 if (dates.length > 180) { // Keep the date range limit
+                    alert(`Date range too long (${dates.length} days). Max 180 days.`);
+                    timesheetContainer.innerHTML = `<p style="text-align: center; padding: 20px; color: var(--secondary-color);">Select date range and click 'View Report'.</p>`; return;
+                }
+
+                // Process data and store it globally for detail view access
+                aggregatedActivitiesData = parseAllDailyFilesFromContent(dates);
+
+                // Build the table using the processed data
+                buildTimesheetTable(Object.values(aggregatedActivitiesData), dates);
+
+            } catch (error) {
+                console.error("Error loading date range data:", error);
+                timesheetContainer.innerHTML = '<p style="color: red; text-align: center;">Failed to load timesheet data.</p>';
+            }
+        }
+
+        /**
+         * Generates an array of date objects for a given date range.
+         */
+        function generateDatesForRange(startDateStr, endDateStr) {
+            const dates = [];
+            const start = new Date(startDateStr + 'T00:00:00');
+            const end = new Date(endDateStr + 'T00:00:00');
+
+            if (isNaN(start.getTime()) || isNaN(end.getTime()) || start > end) return dates;
+
+            const today = new Date();
+            const todayDateString = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+            let current = new Date(start);
+
+            while (current <= end) {
+                const year = current.getFullYear();
+                const month = current.getMonth();
+                const dayOfMonth = current.getDate();
+                const dayOfWeek = current.getDay();
+                const currentDateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(dayOfMonth).padStart(2, '0')}`;
+                dates.push({
+                    date: dayOfMonth, dayOfWeek: dayShortNames[dayOfWeek], monthShort: monthNames[month].substring(0, 3).toUpperCase(),
+                    isWeekend: (dayOfWeek === 0 || dayOfWeek === 6), isToday: (currentDateStr === todayDateString),
+                    dateStr: currentDateStr, key: String(dayOfMonth).padStart(2, '0')
+                });
+                current.setDate(current.getDate() + 1);
+            }
+            return dates;
+        }
+
+
+        /**
+         * Parses daily activity data for all dates in the array using the globally stored file content.
+         * Returns an object keyed by activity ID containing detailed entries including sub-items.
+         * @param {Array<object>} dates - Array of date objects from generateDatesForRange.
+         * @returns {object} An object where keys are activity IDs and values contain aggregated info + detailed entries.
+         */
+        function parseAllDailyFilesFromContent(dates) {
+            const activitiesMap = {}; // Use map for easier aggregation { groupingName: { id, name, key, detailedEntries } }
+            const allTags = new Set();
+            let activityCounter = 0;
+
+            for (const dateObj of dates) {
+                const fileContent = uploadedFilesData[dateObj.dateStr];
+
+                if (fileContent) {
+                    // parseMarkdownContent now returns entries with subItems array
+                    const dailyEntries = parseMarkdownContent(fileContent, dateObj.dateStr);
+
+                    dailyEntries.forEach(entry => {
+                        // Only process entries that are main items (have duration)
+                        if (entry.duration === undefined) return;
+
+                        const groupingName = entry.groupingName;
+                        const tag = entry.tag || '#Untagged';
+
+                        if (!activitiesMap[groupingName]) {
+                            activitiesMap[groupingName] = {
+                                id: 'ACT-' + activityCounter++,
+                                name: groupingName,
+                                key: tag,
+                                detailedEntries: {} // Map dates to arrays of main entries
+                            };
+                        }
+
+                        if (!activitiesMap[groupingName].detailedEntries[dateObj.dateStr]) {
+                            activitiesMap[groupingName].detailedEntries[dateObj.dateStr] = [];
+                        }
+
+                        // Add the main entry details (including its subItems with original indent)
+                        activitiesMap[groupingName].detailedEntries[dateObj.dateStr].push({
+                            start: entry.start,
+                            end: entry.end,
+                            duration: entry.duration,
+                            energy: entry.energy,
+                            description: entry.description, // Original description of the main line
+                            tags: entry.allTags,
+                            subItems: entry.subItems || [] // Store the sub-items with original indent
+                        });
+
+                        // Collect all unique tags
+                        if (entry.allTags && Array.isArray(entry.allTags)) {
+                             entry.allTags.forEach(t => allTags.add(t));
+                        } else if (tag !== '#Untagged') {
+                             allTags.add(tag);
+                        }
+                    });
+                }
+            }
+
+            console.log("Unique Tags Found from files:", Array.from(allTags));
+            const activitiesById = {};
+            Object.values(activitiesMap).forEach(activity => {
+                activitiesById[activity.id] = activity;
+            });
+            return activitiesById;
+        }
+
+
+       /**
+         * Parses Markdown content from a daily note file to extract individual activities and their sub-items (with original indentation).
+         * @param {string} markdownContent - The full content of the .md file.
+         * @param {string} dateStr - The date string 'YYYY-MM-DD' for context.
+         * @returns {Array<object>} An array of individual activity entry objects.
+         * Each object: { groupingName, start, end, duration, energy, tag, allTags, description, subItems: [string] }
+         * subItems contains strings with original leading whitespace.
+         */
+        function parseMarkdownContent(markdownContent, dateStr) {
+            const entries = [];
+            const plannerHeaderText = "Day planner";
+            const headerRegex = new RegExp(`^#+\\s+${plannerHeaderText}\\s*$`, 'im');
+            const headerMatch = markdownContent.match(headerRegex);
+
+            if (!headerMatch) return entries;
+
+            const headerStartIndex = headerMatch.index;
+            const contentAfterHeaderStart = markdownContent.substring(headerStartIndex + headerMatch[0].length);
+            const nextHeaderMatch = contentAfterHeaderStart.match(/^\s*#{1,}/m);
+            const contentEndIndex = nextHeaderMatch ? nextHeaderMatch.index : contentAfterHeaderStart.length;
+            const sectionContent = contentAfterHeaderStart.substring(0, contentEndIndex).trim();
+
+            const lines = sectionContent.split('\n');
+            const lineRegex = /^\s*[-*]\s+(?:\*\*)?(\d{1,2}:\d{2})(?:\*\*)?\s*[-–—]\s*(?:\*\*)?(\d{1,2}:\d{2})(?:\*\*)?\s+(.*?)$/;
+            // Regex to detect indented lines (potential sub-items) - captures leading whitespace and text after bullet
+            const subItemRegex = /^(\s+)[-*]\s+(.*)$/;
+            const tagRegex = /#([\p{L}\p{N}_/]+)/gu;
+            const energyTagRegex = /#에너지(\d+)/u;
+            let currentMainEntry = null; // Track the last main entry to attach sub-items
+
+            for (const line of lines) {
+                // Don't trim the line here, preserve leading whitespace for subItemRegex
+                if (!line.trim()) continue; // Skip empty lines based on trimmed content
+
+                const trimmedLine = line.trim(); // Use trimmed for main item regex match
+                const mainMatch = trimmedLine.match(lineRegex);
+                // Use original line for sub-item regex to catch indentation
+                const subMatch = line.match(subItemRegex);
+
+                if (mainMatch) {
+                    // --- Process Main Activity Line ---
+                    currentMainEntry = null; // Reset sub-item context for new main item
+                    let startTimeStr = mainMatch[1];
+                    let endTimeStr = mainMatch[2];
+                    let description = mainMatch[3].trim();
+                    let originalDescriptionForDetail = description; // Keep original with tags etc.
+
+                    if (startTimeStr.length === 4) startTimeStr = "0" + startTimeStr;
+                    if (endTimeStr.length === 4) endTimeStr = "0" + endTimeStr;
+
+                    const allTagsFound = Array.from(description.matchAll(tagRegex)).map(m => `#${m[1]}`);
+                    let energyLevel = 0;
+                    let primaryTag = null;
+                    let cleanDescription = description; // For grouping name
+
+                    allTagsFound.forEach(tag => {
+                        const energyMatch = tag.match(energyTagRegex);
+                        if (energyMatch && energyMatch[1]) {
+                            energyLevel = parseInt(energyMatch[1], 10);
+                        } else if (!primaryTag && !tag.startsWith('#에너지')) {
+                             primaryTag = tag;
+                        }
+                        cleanDescription = cleanDescription.replace(tag, '').trim();
+                    });
+
+                    let groupingName = cleanDescription.replace(/!?\[\[(.*?)\]\]/g, '').replace(/\s+/g, ' ').trim();
+                    const linkMatch = cleanDescription.match(/\[\[(.*?)\]\]/);
+                    if (linkMatch && linkMatch[1] && !groupingName.includes(linkMatch[1])) {
+                        groupingName += ` (${linkMatch[1]})`;
+                    }
+                    groupingName = groupingName || "(활동 설명 없음)";
+
+                    try {
+                        const start = new Date(`${dateStr}T${startTimeStr}:00`);
+                        const end = new Date(`${dateStr}T${endTimeStr}:00`);
+
+                        if (isNaN(start.getTime()) || isNaN(end.getTime())) {
+                            console.warn(`Invalid time format: "${trimmedLine}" for ${dateStr}`);
+                            continue;
+                        }
+
+                        let adjustedEnd = end;
+                        if (start >= end) {
+                             if (start.getHours() > 12 && end.getHours() < 12) {
+                                 adjustedEnd.setDate(adjustedEnd.getDate() + 1);
+                             } else {
+                                console.warn(`End time before start: "${trimmedLine}" for ${dateStr}`);
+                                continue;
+                             }
+                        }
+
+                        const duration = (adjustedEnd - start) / (1000 * 60);
+
+                        if (duration > 0) {
+                            // Create the main entry object
+                             currentMainEntry = {
+                                groupingName: groupingName,
+                                start: startTimeStr,
+                                end: endTimeStr,
+                                duration: duration,
+                                energy: energyLevel,
+                                tag: primaryTag || (energyLevel > 0 ? `#에너지${energyLevel}` : null),
+                                allTags: allTagsFound,
+                                description: originalDescriptionForDetail,
+                                subItems: [] // Initialize subItems array
+                            };
+                            entries.push(currentMainEntry); // Add to the list
+                        } else {
+                             currentMainEntry = null; // Reset if duration invalid
+                        }
+                    } catch (e) {
+                        console.error(`Time processing error: "${trimmedLine}"`, e);
+                        currentMainEntry = null; // Reset on error
+                    }
+                } else if (subMatch && currentMainEntry) {
+                    // --- Process Sub-Item Line ---
+                    // Store the original line content (including leading whitespace)
+                    currentMainEntry.subItems.push(line); // Store the original line
+                } else if (trimmedLine) {
+                    // Neither a main item nor a recognized sub-item following a main item
+                    // console.log(`Ignoring non-activity line: "${trimmedLine}"`);
+                    currentMainEntry = null; // Reset context
+                }
+            }
+            return entries;
+        }
+
+
+        /**
+         * Builds the HTML table for the timesheet, including expandable rows and resize handle.
+         * @param {Array<object>} activities - Array of aggregated activity objects (values from aggregatedActivitiesData).
+         * @param {Array<object>} dates - Array of date objects for the selected range.
+         */
+        function buildTimesheetTable(activities, dates) {
+            timesheetContainer.innerHTML = ''; // Clear previous content
+
+            if (!activities || activities.length === 0) {
+                timesheetContainer.innerHTML = '<p style="text-align: center; padding: 20px;">선택된 기간의 파일에서 활동 내역을 찾을 수 없습니다.</p>';
+                updateHeaderTotal(0); return;
+            }
+             if (!dates || dates.length === 0) {
+                 console.error("BuildTimesheetTable called with no dates.");
+                 timesheetContainer.innerHTML = '<p style="color: red; text-align: center;">오류: 날짜 범위를 생성할 수 없습니다.</p>'; return;
+             }
+
+            const table = document.createElement('table');
+            table.className = 'timesheet';
+            const columnsCount = dates.length + 2; // Activity + Total + Dates
+
+            // --- Create Table Header (thead) ---
+            const thead = table.createTHead();
+            const headerRow = thead.insertRow();
+
+            // Header Cell 1: Activity/Issue (with Resize Handle)
+            let thActivity = document.createElement('th');
+            thActivity.textContent = 'Activity / Issue';
+            thActivity.id = 'activity-header-cell'; // Add ID for easier selection
+            // Add resize handle
+            const resizeHandle = document.createElement('div');
+            resizeHandle.className = 'resize-handle';
+            resizeHandle.title = 'Drag to resize column';
+            thActivity.appendChild(resizeHandle);
+            headerRow.appendChild(thActivity);
+
+
+            // Header Cell 2: Total
+            let thTotal = document.createElement('th');
+            thTotal.textContent = 'Σ';
+            thTotal.title = "Total Hours per Activity";
+            headerRow.appendChild(thTotal);
+
+            // Header Cells 3+: Dates
+            dates.forEach(date => {
+                let thDate = document.createElement('th');
+                thDate.className = 'day-header';
+                thDate.textContent = date.date;
+                const dayOfWeekDiv = document.createElement('div');
+                dayOfWeekDiv.textContent = `${date.monthShort} ${date.dayOfWeek}`;
+                thDate.appendChild(dayOfWeekDiv);
+                if (date.isWeekend) thDate.classList.add('weekend');
+                if (date.isToday) thDate.classList.add('today');
+                thDate.title = date.dateStr;
+                headerRow.appendChild(thDate);
+            });
+
+            // --- Create Table Body (tbody) ---
+            const tbody = table.createTBody();
+            const finalDailyTotals = {}; dates.forEach(date => { finalDailyTotals[date.dateStr] = 0; });
+
+            // Sort activities
+            activities.sort((a, b) => {
+                 const calculateRangeTotal = (act) => {
+                     let total = 0;
+                     dates.forEach(d => {
+                         if (act.detailedEntries[d.dateStr]) {
+                             act.detailedEntries[d.dateStr].forEach(entry => total += entry.duration);
+                         }
+                     });
+                     return total / 60;
+                 };
+                const totalA = calculateRangeTotal(a);
+                const totalB = calculateRangeTotal(b);
+                if (totalB !== totalA) return totalB - totalA;
+                return a.name.localeCompare(b.name);
+            });
+
+            // --- Populate Activity and Detail Rows ---
+            activities.forEach(activity => {
+                // --- Main Activity Row ---
+                const activityRow = tbody.insertRow();
+                activityRow.className = 'activity-row';
+                activityRow.dataset.activityId = activity.id;
+
+                // Cell 1: Activity Name (clickable)
+                const issueCell = document.createElement('th'); // Use TH for sticky
+                issueCell.classList.add('activity-issue-cell'); // Add class for resizing
+                const nameWrapper = document.createElement('div');
+                nameWrapper.className = 'activity-name-wrapper';
+                const toggleIcon = document.createElement('span');
+                toggleIcon.className = 'toggle-icon';
+                toggleIcon.textContent = '▶';
+                nameWrapper.appendChild(toggleIcon);
+                const checkbox = document.createElement('span');
+                checkbox.className = 'checkbox checked';
+                nameWrapper.appendChild(checkbox);
+                const activityNameSpan = document.createElement('span');
+                activityNameSpan.textContent = activity.name + ' ';
+                nameWrapper.appendChild(activityNameSpan);
+                if (activity.key && activity.key !== '#Untagged') {
+                    const keySpan = document.createElement('span');
+                    keySpan.className = 'issue-key';
+                    keySpan.textContent = `(${activity.key})`;
+                    nameWrapper.appendChild(keySpan);
+                }
+                issueCell.appendChild(nameWrapper);
+                activityRow.appendChild(issueCell);
+
+                // Cell 2: Activity Total Hours (Displayed range)
+                const totalCell = activityRow.insertCell();
+                let activityRangeTotalHours = 0;
+                dates.forEach(d => {
+                    if (activity.detailedEntries[d.dateStr]) {
+                        activity.detailedEntries[d.dateStr].forEach(entry => activityRangeTotalHours += entry.duration);
+                    }
+                });
+                 activityRangeTotalHours /= 60;
+                 totalCell.textContent = activityRangeTotalHours > 0 ? activityRangeTotalHours.toFixed(1) + 'h' : '-';
+                 totalCell.style.fontWeight = '500';
+
+                // Cells 3+: Daily Aggregated Time Entries
+                dates.forEach(date => {
+                    const dayCell = activityRow.insertCell();
+                    if (date.isWeekend) dayCell.classList.add('weekend');
+                    if (date.isToday) dayCell.classList.add('today');
+                    let dailyTotalDuration = 0;
+                    let dailyWeightedEnergy = 0;
+                    let dailyEnergyDuration = 0;
+                    if (activity.detailedEntries[date.dateStr]) {
+                        activity.detailedEntries[date.dateStr].forEach(entry => {
+                            dailyTotalDuration += entry.duration;
+                            if (entry.energy > 0) {
+                                dailyWeightedEnergy += entry.energy * entry.duration;
+                                dailyEnergyDuration += entry.duration;
+                            }
+                        });
+                    }
+                    const dailyTotalHours = dailyTotalDuration / 60;
+                    const dailyAvgEnergy = dailyEnergyDuration > 0 ? Math.round(dailyWeightedEnergy / dailyEnergyDuration) : 0;
+                    if (dailyTotalHours > 0) {
+                        const timeEntryDiv = document.createElement('div');
+                        timeEntryDiv.className = 'time-entry';
+                        timeEntryDiv.textContent = dailyTotalHours.toFixed(1) + 'h';
+                        const energyClass = getEnergyClass(dailyAvgEnergy);
+                        if (energyClass) timeEntryDiv.classList.add(energyClass);
+                        dayCell.appendChild(timeEntryDiv);
+                        finalDailyTotals[date.dateStr] += dailyTotalHours;
+                    } else {
+                        dayCell.innerHTML = '&nbsp;';
+                    }
+                });
+
+                // --- Detail Row (Initially Hidden) ---
+                const detailRow = tbody.insertRow();
+                detailRow.className = 'detail-row';
+                detailRow.dataset.parentId = activity.id;
+                detailRow.style.display = 'none';
+                const detailCell = detailRow.insertCell();
+                detailCell.colSpan = columnsCount;
+                // Add a specific class to the detail cell's TH parent if needed for styling/selection
+                detailCell.parentElement.querySelector('th')?.classList.add('detail-row-header');
+            });
+
+            // --- Create Total Row ---
+            const totalRow = tbody.insertRow();
+            totalRow.className = 'total-row';
+            const totalLabelCell = document.createElement('th'); // Use TH for sticky
+            totalLabelCell.textContent = 'Total';
+            totalLabelCell.classList.add('activity-issue-cell'); // Apply same class for width sync
+            totalRow.appendChild(totalLabelCell);
+            const grandTotalCell = totalRow.insertCell();
+            const rangeGrandTotal = Object.values(finalDailyTotals).reduce((sum, hours) => sum + hours, 0);
+            grandTotalCell.textContent = rangeGrandTotal.toFixed(1) + 'h';
+            grandTotalCell.title = "Total hours for the selected period";
+            dates.forEach(date => {
+                const dailyTotalCell = totalRow.insertCell();
+                const total = finalDailyTotals[date.dateStr];
+                dailyTotalCell.textContent = total > 0 ? total.toFixed(1) + 'h' : '-';
+                if (date.isWeekend) dailyTotalCell.classList.add('weekend');
+                if (date.isToday) dailyTotalCell.classList.add('today');
+            });
+
+            timesheetContainer.appendChild(table);
+            updateHeaderTotal(rangeGrandTotal);
+        }
+
+        /**
+         * Toggles the visibility of the detail row and populates it with individual time blocks and their sub-items (preserving indent).
+         * @param {HTMLTableRowElement} activityRow - The main activity row element.
+         */
+        function toggleDetails(activityRow) {
+            const activityId = activityRow.dataset.activityId;
+            const detailRow = activityRow.nextElementSibling;
+            const toggleIcon = activityRow.querySelector('.toggle-icon');
+
+            if (!detailRow || !detailRow.classList.contains('detail-row') || detailRow.dataset.parentId !== activityId) {
+                console.error("Could not find detail row for activity ID:", activityId); return;
+            }
+
+            const isExpanded = detailRow.style.display !== 'none';
+
+            if (isExpanded) {
+                detailRow.style.display = 'none';
+                toggleIcon.classList.remove('expanded');
+                detailRow.querySelector('td').innerHTML = ''; // Clear content
+            } else {
+                // Expand - Populate with individual TIME BLOCKS and their SUB-ITEMS
+                const activityData = aggregatedActivitiesData[activityId];
+                if (!activityData) {
+                    console.error("Could not find data for activity ID:", activityId); return;
+                }
+
+                const detailCell = detailRow.querySelector('td');
+                const detailList = document.createElement('ul'); // Main list for time blocks
+                detailList.className = 'detail-list';
+                let entriesFound = false;
+
+                const displayedDates = generateDatesForRange(currentStartDate, currentEndDate);
+                // Sort entries chronologically within the date range
+                const allEntriesForRange = [];
+                 displayedDates.forEach(date => {
+                    if (activityData.detailedEntries[date.dateStr]) {
+                        activityData.detailedEntries[date.dateStr].forEach(entry => {
+                            allEntriesForRange.push({ ...entry, dateStr: date.dateStr }); // Add dateStr for sorting
+                        });
+                    }
+                });
+                 allEntriesForRange.sort((a, b) => {
+                    const startA = new Date(`${a.dateStr}T${a.start}:00`);
+                    const startB = new Date(`${b.dateStr}T${b.start}:00`);
+                    return startA - startB;
+                });
+
+
+                // Iterate through sorted entries
+                allEntriesForRange.forEach(mainEntry => {
+                     entriesFound = true;
+                     const li = document.createElement('li'); // List item for the main time block
+
+                     // --- Create the main time block display ---
+                     const timeBlockDiv = document.createElement('div');
+                     timeBlockDiv.className = 'detail-time-block';
+
+                     // Time Range
+                     const timeSpan = document.createElement('span');
+                     timeSpan.className = 'detail-time';
+                     timeSpan.textContent = `${mainEntry.dateStr} ${mainEntry.start} - ${mainEntry.end}`; // Use sorted entry's date
+                     timeBlockDiv.appendChild(timeSpan);
+
+                     // Description (Original from MD)
+                     const descSpan = document.createElement('span');
+                     descSpan.className = 'detail-description';
+                     descSpan.textContent = mainEntry.description;
+                     timeBlockDiv.appendChild(descSpan);
+
+                     // Duration
+                     const durationSpan = document.createElement('span');
+                     durationSpan.className = 'detail-duration';
+                     durationSpan.textContent = `(${(mainEntry.duration / 60).toFixed(1)}h)`;
+                     timeBlockDiv.appendChild(durationSpan);
+
+                     // Energy
+                     if (mainEntry.energy > 0) {
+                         const energySpan = document.createElement('span');
+                         energySpan.className = 'detail-energy';
+                         const energyClass = getEnergyClass(mainEntry.energy);
+                         if(energyClass) energySpan.classList.add(energyClass);
+                         energySpan.textContent = `E:${mainEntry.energy}`;
+                         timeBlockDiv.appendChild(energySpan);
+                     }
+                     li.appendChild(timeBlockDiv); // Add the time block div to the list item
+
+                     // --- Create and append the sub-item list (if any) ---
+                     if (mainEntry.subItems && mainEntry.subItems.length > 0) {
+                         const subList = document.createElement('ul');
+                         subList.className = 'sub-item-list';
+                         mainEntry.subItems.forEach(subItemTextWithIndent => {
+                             const subLi = document.createElement('li');
+                             // Set textContent to preserve whitespace (including tabs/spaces)
+                             subLi.textContent = subItemTextWithIndent;
+                             subList.appendChild(subLi);
+                         });
+                         li.appendChild(subList); // Append the sub-list to the main list item
+                     }
+
+                     detailList.appendChild(li); // Add the complete list item (time block + sub-items)
+                 });
+
+
+                if (!entriesFound) {
+                    const li = document.createElement('li');
+                    li.textContent = '선택된 기간에 해당하는 상세 내역이 없습니다.';
+                    li.style.fontStyle = 'italic';
+                    li.style.color = 'var(--secondary-color)';
+                    li.style.borderBottom = 'none'; // No border if no entries
+                    detailList.appendChild(li);
+                }
+
+                detailCell.appendChild(detailList);
+                detailRow.style.display = 'table-row';
+                toggleIcon.classList.add('expanded');
+            }
+        }
+
+
+        // --- Column Resizing Logic ---
+        function initializeResize(table) {
+            const headerCell = table.querySelector('#activity-header-cell');
+            const resizeHandle = headerCell?.querySelector('.resize-handle');
+            const bodyCells = table.querySelectorAll('tbody th.activity-issue-cell'); // Select all corresponding body cells
+
+            if (!resizeHandle || !headerCell || bodyCells.length === 0) {
+                console.warn("Resize elements not found, skipping initialization.");
+                return;
+            }
+
+            let startX, startWidth;
+
+            const handleMouseDown = (e) => {
+                startX = e.clientX;
+                startWidth = headerCell.offsetWidth;
+                document.addEventListener('mousemove', handleMouseMove);
+                document.addEventListener('mouseup', handleMouseUp);
+                document.body.classList.add('resizing'); // Add class for cursor style
+            };
+
+            const handleMouseMove = (e) => {
+                const newWidth = startWidth + (e.clientX - startX);
+                const minWidth = 100; // Minimum column width
+                const finalWidth = Math.max(minWidth, newWidth);
+
+                // Apply width to header cell
+                headerCell.style.width = `${finalWidth}px`;
+                 // Apply the same width to all corresponding body cells
+                 bodyCells.forEach(cell => {
+                     cell.style.width = `${finalWidth}px`;
+                 });
+            };
+
+            const handleMouseUp = () => {
+                document.removeEventListener('mousemove', handleMouseMove);
+                document.removeEventListener('mouseup', handleMouseUp);
+                document.body.classList.remove('resizing'); // Remove class
+            };
+
+            resizeHandle.addEventListener('mousedown', handleMouseDown);
+        }
+
+
+        // --- Helper Functions (updateHeaderTotal, getEnergyClass, switchView - unchanged) ---
+        function updateHeaderTotal(totalHours) {
+            const totalValueElement = document.querySelector('.total-value');
+            if (totalValueElement) {
+                totalValueElement.textContent = totalHours.toFixed(1) + 'h';
+            }
+        }
+        function getEnergyClass(energy) {
+            if (energy === undefined || energy === null || energy <= 0) return '';
+            const roundedEnergy = Math.round(energy / 10) * 10;
+            if (roundedEnergy >= 100) return 'energy-100';
+            if (roundedEnergy >= 90) return 'energy-90';
+            if (roundedEnergy >= 80) return 'energy-80';
+            if (roundedEnergy >= 70) return 'energy-70';
+            if (roundedEnergy >= 60) return 'energy-60';
+            if (roundedEnergy >= 50) return 'energy-50';
+            if (roundedEnergy >= 40) return 'energy-40';
+            if (roundedEnergy >= 30) return 'energy-30';
+            if (roundedEnergy >= 20) return 'energy-20';
+            if (roundedEnergy >= 10) return 'energy-10';
+            return '';
+        }
+        function switchView(viewType) {
+            console.log("Switching to view:", viewType);
+            const listBtn = document.getElementById('list-view');
+            const gridBtn = document.getElementById('grid-view');
+            if (viewType === 'list') {
+                listBtn.classList.add('active'); gridBtn.classList.remove('active');
+                alert("List view is not yet implemented.");
+            } else {
+                gridBtn.classList.add('active'); listBtn.classList.remove('active');
+            }
+        }
+
+    </script>
+</body>
+</html>
