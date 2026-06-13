@@ -14,13 +14,19 @@ source_records:
     parse_status: parsed
     raw_text: |-
       요즘에 하고 있는 거는 3나노 공정 합성 환경은 셋업을 했고 SDC를 링크형 레퍼용이랑 PDBCI용으로 두 벌 만들어서 테스트하고 합성을 다시 시도해야 돼. 그래서 ARIR을 미리 한 번 확인하는 목적이 있고 또 린트 클린업을 하긴 했는데 새로운 IP 리비전 0.1 버전을 반영을 해서 다시 린트를 한 번 봐야 되고 최종적으로 제7파이를 같이 DB로 합성을 해야 돼. 그리고 커먼 모듈들 싱크 플리플롭이나 뭐 리셋, 싱크 5V 등을 PCI 내부용 말고 애직에서 커먼으로 쓰는 걸로 바꿔야 되고 그다음에 PD PCI나 PD HGT, PDNVMe 도메인 간에 넘나드는 시그널은 네이밍 룰에 맞춰서 다시 다 재정비를 해야 돼. 여기까지 테스크 한 번 정리해 줘. 밀라노 과제야.
+  - id: source_milano_conversation_20260614_arir_definition
+    source_type: chat
+    original_date: 2026-06-14
+    imported_at: 2026-06-14
+    parse_status: parsed
+    raw_text: "arir 은 area, instance count"
 
 summary:
   recently_completed:
     - task_milano_3nm_synth_env_setup
   active_threads:
     - 3nm synthesis rerun using two SDC profiles
-    - ARIR pre-check from synthesis results
+    - ARIR area and instance count pre-check from synthesis results
     - lint re-check after new IP revision 0.1 integration
     - final GEN7 PHY DB synthesis integration
     - common module replacement from PCI-internal to ASIC-common implementations
@@ -98,7 +104,7 @@ tasks:
     needs_user_review: false
 
   - id: task_milano_arir_precheck
-    title: 합성 재시도 결과로 ARIR 사전 확인
+    title: 합성 재시도 결과로 ARIR area/instance count 사전 확인
     area: CAREER
     status: todo
     priority: high
@@ -113,18 +119,24 @@ tasks:
       - milano
       - synthesis
       - arir
+      - area
+      - instance_count
       - precheck
     expected_outputs:
-      - ARIR pre-check result
+      - area report or area summary from synthesis rerun
+      - instance count report or instance summary from synthesis rerun
       - risk list before final DB synthesis
     next_actions:
-      - Collect ARIR-related result from the synthesis rerun.
+      - Collect area results from the synthesis rerun.
+      - Collect instance count results from the synthesis rerun.
+      - Compare area and instance count against expected baseline or prior run if available.
       - Identify early blockers before final DB synthesis.
       - Convert any blocker into Issue objects when concrete failure evidence exists.
     depends_on:
       - task_milano_sdc_dual_profile_synth_rerun
     evidence_refs:
       - source_milano_conversation_20260614_current_tasks
+      - source_milano_conversation_20260614_arir_definition
     confidence: medium
     needs_user_review: false
 
@@ -291,7 +303,7 @@ project_status_updates:
     author_ref: person_brian
     status: active
     progress_percent: null
-    summary: Milano is currently focused on 3nm synthesis rerun, ARIR pre-check, lint re-check after IP rev 0.1, common module replacement, domain-crossing naming cleanup, and final DB synthesis including GEN7 PHY.
+    summary: Milano is currently focused on 3nm synthesis rerun, ARIR area/instance count pre-check, lint re-check after IP rev 0.1, common module replacement, domain-crossing naming cleanup, and final DB synthesis including GEN7 PHY.
     blockers:
       - Need confirmation of the exact meaning of "제7파이".
       - Need confirmation of the exact module term transcribed as "sync 5V".
