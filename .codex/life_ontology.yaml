@@ -443,6 +443,41 @@ fun_object_types:
       - recovery_score
       - emotions_after
       - notes
+  HappinessBundle:
+    purpose: Brian-defined catalog of happiness triggers, principles, memories, scenes, and sensory anchors.
+    fields:
+      - id
+      - activity_ref
+      - definition
+      - source_refs
+      - core_principles
+      - area_model
+      - visual_evidence_model
+      - assistant_usage
+  HappinessTrigger:
+    purpose: A concrete action, scene, value, memory, or condition that Brian identifies as happiness-producing.
+    fields:
+      - id
+      - area
+      - text
+      - tags
+      - linked_entities
+      - source_ref
+      - source_pages
+      - confidence
+      - needs_user_review
+  VisualEvidence:
+    purpose: Page-level image or visual anchor from a source document.
+    fields:
+      - id
+      - source_ref
+      - page
+      - image_count
+      - visual_kind
+      - visual_categories
+      - linked_entities
+      - confidence
+      - review_method
 
 import_object_types:
   ImportedRecord:
@@ -529,6 +564,17 @@ import_object_types:
     fields: [id, statement, evidence_refs, confidence, needs_user_review]
   IdentityCandidate:
     fields: [id, statement, evidence_refs, confidence, needs_user_review]
+  SourcePageIndex:
+    purpose: Page-level text index for a local source document.
+    fields:
+      - id
+      - source_ref
+      - page
+      - text_sha256
+      - text_excerpt
+      - tags
+      - linked_entities
+      - parse_status
 
 link_types:
   contains:
@@ -659,6 +705,9 @@ action_types:
     creates: [InvestmentReview]
   import_records:
     creates: [ImportedRecord, ParsedObservation]
+  import_happiness_bundle:
+    creates: [HappinessBundle, HappinessTrigger, VisualEvidence, SourcePageIndex]
+    preserves_raw_by: source_path_and_sha256
   import_review_archive:
     creates: [NormalizedHistoricalRecord, DailyHistoricalSummary, PatternCandidate]
     preserves_raw_by: source_path_and_sha256

@@ -17,6 +17,11 @@ Use historical memory indexes when they exist:
 - `life/imports/review_archive/daily_summary.jsonl`: daily aggregate index.
 - `life/entities/semantic_entity_catalog.yaml`: current entity catalog and alias rules for semantic linking.
 - `life/patterns/review_archive_pattern_candidates.yaml`: generated historical pattern candidates.
+- `life/concepts/happiness_bundle.yaml`: confirmed happiness bundle concept, principles, trigger refs, and visual evidence model.
+- `life/imports/happiness_bundle/manifest.yaml`: source metadata for Brian's happiness bundle PDF.
+- `life/imports/happiness_bundle/parsed_items.yaml`: structured happiness trigger list extracted from the PDF.
+- `life/imports/happiness_bundle/image_index.jsonl`: page-level image/visual evidence index for the PDF.
+- `life/imports/happiness_bundle/page_index.jsonl`: page-level text index for the PDF.
 
 ## Core Role
 
@@ -92,6 +97,7 @@ For FUN:
 
 - Distinguish restorative fun from avoidance.
 - Track enjoyment, recovery, people involved, and emotions afterward.
+- Treat `happiness_bundle` as Brian's confirmed catalog of personal happiness triggers. Use it for planning, recovery, and intervention suggestions, but avoid turning it into pressure or obligation.
 
 ## Query Style
 
@@ -106,6 +112,8 @@ Examples:
 - "Why am I unhappy lately?" -> MoodEntry + TimeBlock + Area balance + Work/Body/Relation/Fun patterns.
 
 For historical archive questions, prefer `entity_linked_records.jsonl` over plain text search when a semantic entity exists. If the entity link is marked `needs_user_review`, say that the link is a candidate.
+
+For happiness-related questions, use `life/concepts/happiness_bundle.yaml` first, then follow its `parsed_items_ref`, `page_index_ref`, and `image_index_ref` for evidence pages and visual anchors.
 
 ## Update Style
 

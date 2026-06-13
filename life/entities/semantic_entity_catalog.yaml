@@ -25,7 +25,7 @@ entities:
 
     - id: person_wife
       object_type: Person
-      display_name: Wife
+      display_name: Wife / 아름이
       aliases:
         - 아름이
         - 아름이와
@@ -35,24 +35,49 @@ entities:
         - 아름과
         - 아름 집중
       confidence: high
-      needs_user_review: true
-      notes: Historical records use the name "아름/아름이"; confirm this maps to current spouse.
+      needs_user_review: false
+      confirmed_at: 2026-06-13
+      notes: Historical records use "아름/아름이"; Brian confirmed this maps to his current spouse.
 
     - id: person_mother
       object_type: Person
-      display_name: Mother
+      display_name: Brian's mother
       aliases:
         - 엄마
-      confidence: medium
-      needs_user_review: true
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-13
 
     - id: person_father
       object_type: Person
-      display_name: Father
+      display_name: Brian's father
       aliases:
         - 아빠
-      confidence: medium
-      needs_user_review: true
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-13
+
+    - id: person_mother_in_law
+      object_type: Person
+      display_name: Mother-in-law
+      aliases:
+        - 어머님
+        - 장모님
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-13
+      notes: Brian confirmed this means spouse's mother.
+
+    - id: person_father_in_law
+      object_type: Person
+      display_name: Father-in-law
+      aliases:
+        - 아버님
+        - 장인어른
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-13
+      notes: Brian confirmed this means spouse's father.
 
     - id: person_jihyeong
       object_type: Person
@@ -61,7 +86,8 @@ entities:
         - 지형이형
         - 지형이 형
       confidence: medium
-      needs_user_review: true
+      needs_user_review: false
+      confirmed_at: 2026-06-13
 
     - id: person_hyeongsik
       object_type: Person
@@ -69,7 +95,8 @@ entities:
       aliases:
         - 형식이
       confidence: medium
-      needs_user_review: true
+      needs_user_review: false
+      confirmed_at: 2026-06-13
 
     - id: person_sangsik
       object_type: Person
@@ -78,7 +105,8 @@ entities:
         - 상식 책임님
         - 상식책임님
       confidence: medium
-      needs_user_review: true
+      needs_user_review: false
+      confirmed_at: 2026-06-13
 
     - id: person_shivam
       object_type: Person
@@ -86,7 +114,8 @@ entities:
       aliases:
         - Shivam
       confidence: medium
-      needs_user_review: true
+      needs_user_review: false
+      confirmed_at: 2026-06-13
 
     - id: person_seoung
       object_type: Person
@@ -95,7 +124,8 @@ entities:
         - 서웅매니저님
         - 서웅 매니저님
       confidence: medium
-      needs_user_review: true
+      needs_user_review: false
+      confirmed_at: 2026-06-13
 
   companion_animals:
     - id: pet_dog_1
@@ -130,8 +160,30 @@ entities:
         - 병원
         - 놀아주
       confidence: high
-      needs_user_review: true
-      notes: Avoid linking plain "지구" when it means the smart-store brand/project.
+      needs_user_review: false
+      confirmed_at: 2026-06-13
+      notes: Brian confirmed 지구 is the first dog. Avoid linking plain "지구" when it means the smart-store brand/project.
+
+    - id: pet_dog_2
+      object_type: CompanionAnimal
+      display_name: 해이
+      species: dog
+      aliases:
+        - 해이랑
+        - 해이와
+        - 해이가
+        - 해이를
+        - 해이에게
+        - 해이도
+        - 해이 목욕
+        - 해이 산책
+        - 해이 간식
+        - 해이 병원
+        - 둘째 강아지
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-13
+      notes: Brian confirmed 해이 is the second dog.
 
   projects:
     - id: project_smart_store
@@ -153,7 +205,8 @@ entities:
         - 수세미
         - 면마스크
       confidence: medium
-      needs_user_review: true
+      needs_user_review: false
+      confirmed_at: 2026-06-13
 
     - id: project_srtri14lf
       object_type: Project
@@ -165,7 +218,8 @@ entities:
         - SR ( SRTRI14LF )
         - WAVE
       confidence: high
-      needs_user_review: true
+      needs_user_review: false
+      confirmed_at: 2026-06-13
 
     - id: project_deeper_i
       object_type: Project
@@ -178,7 +232,8 @@ entities:
         - Deeper I CPUSS Release
         - Tachy-BS1
       confidence: high
-      needs_user_review: true
+      needs_user_review: false
+      confirmed_at: 2026-06-13
 
     - id: project_aworld_magic
       object_type: Project
@@ -190,7 +245,8 @@ entities:
         - Aworld Magic
         - Magic
       confidence: medium
-      needs_user_review: true
+      needs_user_review: false
+      confirmed_at: 2026-06-13
 
     - id: project_keti_rathma
       object_type: Project
@@ -201,7 +257,8 @@ entities:
         - KETI
         - Rathma
       confidence: high
-      needs_user_review: true
+      needs_user_review: false
+      confirmed_at: 2026-06-13
 
     - id: project_x330
       object_type: Project
@@ -212,7 +269,8 @@ entities:
         - X330
         - SKT AI
       confidence: high
-      needs_user_review: true
+      needs_user_review: false
+      confirmed_at: 2026-06-13
 
     - id: project_ranix
       object_type: Project
@@ -223,7 +281,8 @@ entities:
         - 라닉스
         - Ranix
       confidence: medium
-      needs_user_review: true
+      needs_user_review: false
+      confirmed_at: 2026-06-13
 
     - id: project_haibi
       object_type: Project
@@ -234,7 +293,8 @@ entities:
         - 하이비
         - 하이비 Single Project
       confidence: medium
-      needs_user_review: true
+      needs_user_review: false
+      confirmed_at: 2026-06-13
 
     - id: project_milano
       object_type: Project
@@ -489,8 +549,12 @@ entities:
       area: FUN
       aliases:
         - 행복꾸러미
+        - 행복 꾸러미
+        - 행복꾸러기
       confidence: high
-      needs_user_review: true
+      needs_user_review: false
+      confirmed_at: 2026-06-13
+      notes: Brian-defined bundle of things he considers happiness.
 
 link_relations:
   Person: associated_person

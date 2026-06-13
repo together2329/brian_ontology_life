@@ -17,6 +17,14 @@ historical_memory:
     daily_summary_ref: life/imports/review_archive/daily_summary.jsonl
     pattern_candidates_ref: life/patterns/review_archive_pattern_candidates.yaml
     raw_policy: Raw files remain in /Users/brian/Desktop/_Review and are referenced by path and sha256.
+  happiness_bundle:
+    status: imported_as_confirmed_concept
+    concept_ref: life/concepts/happiness_bundle.yaml
+    manifest_ref: life/imports/happiness_bundle/manifest.yaml
+    parsed_items_ref: life/imports/happiness_bundle/parsed_items.yaml
+    page_index_ref: life/imports/happiness_bundle/page_index.jsonl
+    image_index_ref: life/imports/happiness_bundle/image_index.jsonl
+    raw_policy: Raw PDF remains in Google Drive and is referenced by path and sha256.
 
 known_context:
   areas:
@@ -56,13 +64,16 @@ known_context:
         - pet_dog_2
     family_placeholders:
       - person_wife
-      - person_brian_mother
-      - person_brian_father
-      - person_wife_mother
-      - person_wife_father
+      - person_mother
+      - person_father
+      - person_mother_in_law
+      - person_father_in_law
     companion_animals:
       - pet_dog_1
       - pet_dog_2
+  happiness:
+    confirmed_concept_ref: happiness_bundle
+    notes: Brian confirmed 행복꾸러미 as a bundle of things he defines as happiness.
 
 desired_identity:
   - id: desired_deep_and_executing_designer

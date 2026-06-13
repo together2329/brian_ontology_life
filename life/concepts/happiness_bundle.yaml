@@ -1,0 +1,348 @@
+schema_version: 1
+id: happiness_bundle
+object_type: HappinessBundle
+activity_ref: activity_happiness_bundle
+status: confirmed_by_brian
+updated_at: '2026-06-13'
+definition: Brian-defined bundle of scenes, actions, values, memories, and sensory anchors that reliably make life feel happy
+  or meaningful.
+source_refs:
+- source_happiness_bundle_pdf
+source_files:
+  manifest_ref: life/imports/happiness_bundle/manifest.yaml
+  page_index_ref: life/imports/happiness_bundle/page_index.jsonl
+  image_index_ref: life/imports/happiness_bundle/image_index.jsonl
+  parsed_items_ref: life/imports/happiness_bundle/parsed_items.yaml
+core_principles:
+- id: happiness_principle_concrete_values
+  statement: Brian lives more densely when his values are concrete, visual, and connected to why they matter.
+  source_pages:
+  - 1
+  confidence: high
+- id: happiness_principle_process_over_goal
+  statement: A goal does not automatically create happiness; goals should be designed so the process itself can be felt and
+    enjoyed.
+  source_pages:
+  - 5
+  confidence: high
+- id: happiness_principle_present_window
+  statement: Happiness can be embedded into the current 30-60 minute window by attending to the moment with care and gratitude.
+  source_pages:
+  - 6
+  confidence: high
+- id: happiness_principle_memory_media
+  statement: Positive memories become stronger happiness anchors when preserved with writing, photos, videos, music, lighting,
+    and sensory detail.
+  source_pages:
+  - 3
+  - 4
+  - 16
+  - 57
+  confidence: high
+- id: happiness_principle_action_precedes_feeling
+  statement: Intentional action can precede and generate the feeling of happiness.
+  source_pages:
+  - 3
+  - 153
+  confidence: high
+- id: happiness_principle_observe_and_adjust
+  statement: Daily reflection should identify which activities, places, times, and people raise or lower Brian's emotional
+    quality of life.
+  source_pages:
+  - 47
+  - 153
+  confidence: high
+area_model:
+  BODY:
+    trigger_count: 8
+    trigger_refs:
+    - happiness_trigger_048
+    - happiness_trigger_049
+    - happiness_trigger_050
+    - happiness_trigger_051
+    - happiness_trigger_052
+    - happiness_trigger_053
+    - happiness_trigger_054
+    - happiness_trigger_055
+  CAREER:
+    trigger_count: 26
+    trigger_refs:
+    - happiness_trigger_069
+    - happiness_trigger_070
+    - happiness_trigger_071
+    - happiness_trigger_072
+    - happiness_trigger_073
+    - happiness_trigger_074
+    - happiness_trigger_075
+    - happiness_trigger_091
+    - happiness_trigger_092
+    - happiness_trigger_093
+    - happiness_trigger_094
+    - happiness_trigger_095
+    - happiness_trigger_096
+    - happiness_trigger_097
+    - happiness_trigger_098
+    - happiness_trigger_099
+    - happiness_trigger_100
+    - happiness_trigger_101
+    - happiness_trigger_102
+    - happiness_trigger_103
+    - happiness_trigger_104
+    - happiness_trigger_105
+    - happiness_trigger_106
+    - happiness_trigger_107
+    - happiness_trigger_108
+    - happiness_trigger_109
+  FINANCE:
+    trigger_count: 1
+    trigger_refs:
+    - happiness_trigger_068
+  FUN:
+    trigger_count: 2
+    trigger_refs:
+    - happiness_trigger_076
+    - happiness_trigger_077
+  MIND:
+    trigger_count: 52
+    trigger_refs:
+    - happiness_trigger_001
+    - happiness_trigger_002
+    - happiness_trigger_003
+    - happiness_trigger_004
+    - happiness_trigger_005
+    - happiness_trigger_006
+    - happiness_trigger_007
+    - happiness_trigger_008
+    - happiness_trigger_009
+    - happiness_trigger_010
+    - happiness_trigger_011
+    - happiness_trigger_012
+    - happiness_trigger_013
+    - happiness_trigger_014
+    - happiness_trigger_015
+    - happiness_trigger_016
+    - happiness_trigger_017
+    - happiness_trigger_018
+    - happiness_trigger_019
+    - happiness_trigger_020
+    - happiness_trigger_021
+    - happiness_trigger_022
+    - happiness_trigger_023
+    - happiness_trigger_024
+    - happiness_trigger_025
+    - happiness_trigger_026
+    - happiness_trigger_027
+    - happiness_trigger_028
+    - happiness_trigger_029
+    - happiness_trigger_030
+    - happiness_trigger_031
+    - happiness_trigger_032
+    - happiness_trigger_033
+    - happiness_trigger_034
+    - happiness_trigger_035
+    - happiness_trigger_036
+    - happiness_trigger_037
+    - happiness_trigger_038
+    - happiness_trigger_039
+    - happiness_trigger_040
+    - happiness_trigger_041
+    - happiness_trigger_042
+    - happiness_trigger_043
+    - happiness_trigger_044
+    - happiness_trigger_045
+    - happiness_trigger_046
+    - happiness_trigger_047
+    - happiness_trigger_086
+    - happiness_trigger_087
+    - happiness_trigger_088
+    - happiness_trigger_089
+    - happiness_trigger_090
+  MULTIPLE:
+    trigger_count: 8
+    trigger_refs:
+    - happiness_trigger_078
+    - happiness_trigger_079
+    - happiness_trigger_080
+    - happiness_trigger_081
+    - happiness_trigger_082
+    - happiness_trigger_083
+    - happiness_trigger_084
+    - happiness_trigger_085
+  RELATION:
+    trigger_count: 12
+    trigger_refs:
+    - happiness_trigger_056
+    - happiness_trigger_057
+    - happiness_trigger_058
+    - happiness_trigger_059
+    - happiness_trigger_060
+    - happiness_trigger_061
+    - happiness_trigger_062
+    - happiness_trigger_063
+    - happiness_trigger_064
+    - happiness_trigger_065
+    - happiness_trigger_066
+    - happiness_trigger_067
+visual_evidence_model:
+  body_recovery_bath:
+    description: Bathing or hot-water recovery scenes.
+    page_count: 1
+    pages:
+    - 71
+  companion_animal_jigu:
+    description: Photos of 지구, Brian's first dog.
+    page_count: 5
+    pages:
+    - 90
+    - 91
+    - 92
+    - 93
+    - 94
+  exercise_movement:
+    description: Movement scenes such as running track, walking, or outdoor exercise context.
+    page_count: 3
+    pages:
+    - 61
+    - 67
+    - 68
+  food_home_cooking:
+    description: Home cooking, meals, ingredients, drinks, and shared food scenes.
+    page_count: 23
+    pages:
+    - 74
+    - 75
+    - 125
+    - 127
+    - 129
+    - 130
+    - 132
+    - 135
+    - 136
+    - 137
+    - 138
+    - 139
+    - 140
+    - 141
+    - 142
+    - 143
+    - 144
+    - 145
+    - 146
+    - 148
+    - 149
+    - 150
+    - 151
+  gratitude_message:
+    description: Message or record screenshots connected to gratitude and appreciation.
+    page_count: 3
+    pages:
+    - 58
+    - 65
+    - 81
+  learning_creation:
+    description: Learning, content creation, YouTube, tools, or skill-building visuals.
+    page_count: 6
+    pages:
+    - 6
+    - 7
+    - 8
+    - 11
+    - 20
+    - 44
+  memory_photo_archive:
+    description: Photos used as memory anchors for recollection and emotional recall.
+    page_count: 14
+    pages:
+    - 30
+    - 31
+    - 32
+    - 35
+    - 90
+    - 91
+    - 92
+    - 94
+    - 95
+    - 111
+    - 112
+    - 113
+    - 114
+    - 115
+  music_media_inspiration:
+    description: Music, video, movie, lecture, or media that evokes inspiration.
+    page_count: 5
+    pages:
+    - 20
+    - 44
+    - 116
+    - 117
+    - 128
+  nature_sky_sea_travel:
+    description: Natural scenes such as sky, sea, forest, garden, track, and travel views.
+    page_count: 10
+    pages:
+    - 12
+    - 13
+    - 67
+    - 68
+    - 111
+    - 112
+    - 113
+    - 114
+    - 115
+    - 121
+  planning_record_screenshot:
+    description: Screenshots or photos of notes, plans, chats, diagrams, or records.
+    page_count: 8
+    pages:
+    - 10
+    - 21
+    - 22
+    - 58
+    - 65
+    - 72
+    - 82
+    - 128
+  relationship_family_friends:
+    description: People-centered memories with spouse, family, friends, or shared meals.
+    page_count: 15
+    pages:
+    - 30
+    - 31
+    - 32
+    - 35
+    - 72
+    - 74
+    - 81
+    - 83
+    - 90
+    - 91
+    - 95
+    - 125
+    - 127
+    - 129
+    - 130
+  workspace_cafe_focus:
+    description: Laptop, desk, cafe, monitor, or focused personal workspace scenes.
+    page_count: 10
+    pages:
+    - 54
+    - 56
+    - 57
+    - 63
+    - 75
+    - 123
+    - 126
+    - 130
+    - 132
+    - 133
+assistant_usage:
+- When Brian is low-energy or unhappy, recommend one small happiness trigger from the least-covered life area.
+- When planning a day, reserve at least one concrete happiness trigger, not only productive work.
+- When CAREER load is high, check BODY, RELATION, MIND, and FUN triggers before adding more work.
+- When Brian records happiness, link the record to the matching happiness trigger and update evidence.
+- When a trigger has not appeared recently, surface it as a gentle candidate rather than a command.
+query_examples:
+- 최근 내가 놓치고 있는 행복꾸러미는 뭐야?
+- CAREER 압박이 큰 날에 쓸 수 있는 20분짜리 행복꾸러미 추천해줘.
+- 아름이/지구/해이와 연결된 행복꾸러미를 보여줘.
+- 운동, 식사, 수면과 행복꾸러미가 같이 나온 날을 찾아줘.

@@ -1,23 +1,23 @@
 schema_version: 1
-generated_at: '2026-06-13T16:35:26'
+generated_at: '2026-06-13T17:10:52'
 input_ref: life/imports/review_archive/normalized_records.jsonl
 catalog_ref: life/entities/semantic_entity_catalog.yaml
 output_ref: life/imports/review_archive/entity_linked_records.jsonl
 records:
   total: 18162
-  with_semantic_links: 12968
-  without_semantic_links: 5194
-  with_review_needed: 5667
+  with_semantic_links: 12979
+  without_semantic_links: 5183
+  with_review_needed: 0
 link_counts:
   by_object_type:
-    Activity: 9497
-    Person: 2641
+    Activity: 9501
+    Person: 2691
     Component: 1206
     Project: 2464
     CompanionAnimal: 323
   by_relation:
-    involves_activity: 9497
-    associated_person: 2641
+    involves_activity: 9501
+    associated_person: 2691
     targets_component: 1206
     belongs_to_project: 2464
     associated_companion_animal: 323
@@ -55,11 +55,11 @@ top_entities:
     title: '[식단 관리] 2018년 1월 1~2주'
     matched_alias: 식단
 - entity_ref: person_wife
-  display_name: Wife
+  display_name: Wife / 아름이
   object_type: Person
   records: 1626
   hours: 1945.24
-  needs_user_review_records: 1626
+  needs_user_review_records: 0
   examples:
   - record_ref: hist_20180101_2200_review_2018_time_jira_r4
     date: '2018-01-01'
@@ -185,15 +185,20 @@ top_entities:
 - entity_ref: activity_happiness_bundle
   display_name: 행복꾸러미
   object_type: Activity
-  records: 764
-  hours: 648.62
-  needs_user_review_records: 764
+  records: 768
+  hours: 651.52
+  needs_user_review_records: 0
   examples:
   - record_ref: hist_20180215_1432_review_2018_time_jira_r611
     date: '2018-02-15'
     area: RELATION
     title: 소중한 사람들에게 연락하기(전화, 문자), 만나기
     matched_alias: 행복꾸러미
+  - record_ref: hist_20180309_2243_review_2018_time_jira_r895
+    date: '2018-03-09'
+    area: MIND
+    title: 아직 정의할 수 없는 시간
+    matched_alias: 행복 꾸러미
   - record_ref: hist_20180403_0921_review_2018_time_jira_r1171
     date: '2018-04-03'
     area: FUN
@@ -206,11 +211,6 @@ top_entities:
     matched_alias: 행복꾸러미
   - record_ref: hist_20180406_0833_review_2018_time_jira_r1210
     date: '2018-04-06'
-    area: FUN
-    title: '[FUN] 행복꾸러미'
-    matched_alias: 행복꾸러미
-  - record_ref: hist_20180410_2003_review_2018_time_jira_r1297
-    date: '2018-04-10'
     area: FUN
     title: '[FUN] 행복꾸러미'
     matched_alias: 행복꾸러미
@@ -251,7 +251,7 @@ top_entities:
   object_type: Person
   records: 586
   hours: 608.12
-  needs_user_review_records: 586
+  needs_user_review_records: 0
   examples:
   - record_ref: hist_20180103_1400_review_2018_time_jira_r11
     date: '2018-01-03'
@@ -283,7 +283,7 @@ top_entities:
   object_type: Project
   records: 548
   hours: 648.67
-  needs_user_review_records: 548
+  needs_user_review_records: 0
   examples:
   - record_ref: hist_20201020_1715_review_2020_time_jira_r3358
     date: '2020-10-20'
@@ -347,7 +347,7 @@ top_entities:
   object_type: Project
   records: 492
   hours: 591.4
-  needs_user_review_records: 492
+  needs_user_review_records: 0
   examples:
   - record_ref: hist_20190121_1715_review_2019_time_jira_r445
     date: '2019-01-21'
@@ -411,7 +411,7 @@ top_entities:
   object_type: Project
   records: 481
   hours: 1509.76
-  needs_user_review_records: 481
+  needs_user_review_records: 0
   examples:
   - record_ref: hist_20190912_0650_review_2019_time_jira_r4832
     date: '2019-09-12'
@@ -475,7 +475,7 @@ top_entities:
   object_type: CompanionAnimal
   records: 323
   hours: 299.43
-  needs_user_review_records: 323
+  needs_user_review_records: 0
   examples:
   - record_ref: hist_20200304_1330_review_2020_time_jira_r1262
     date: '2020-03-04'
@@ -539,7 +539,7 @@ top_entities:
   object_type: Project
   records: 299
   hours: 447.03
-  needs_user_review_records: 299
+  needs_user_review_records: 0
   examples:
   - record_ref: hist_20190830_1000_review_2019_time_jira_r4681
     date: '2019-08-30'
@@ -571,7 +571,7 @@ top_entities:
   object_type: Project
   records: 295
   hours: 410.05
-  needs_user_review_records: 295
+  needs_user_review_records: 0
   examples:
   - record_ref: hist_20180213_1828_review_2018_time_jira_r583
     date: '2018-02-13'
@@ -699,7 +699,7 @@ top_entities:
   object_type: Project
   records: 205
   hours: 369.64
-  needs_user_review_records: 205
+  needs_user_review_records: 0
   examples:
   - record_ref: hist_20190708_1110_review_2019_time_jira_r3564
     date: '2019-07-08'
@@ -727,11 +727,11 @@ top_entities:
     title: SR ( SRTRI14LF )
     matched_alias: SRTRI14LF
 - entity_ref: person_mother
-  display_name: Mother
+  display_name: Brian's mother
   object_type: Person
   records: 166
   hours: 157.87
-  needs_user_review_records: 166
+  needs_user_review_records: 0
   examples:
   - record_ref: hist_20180112_1255_review_2018_time_jira_r123
     date: '2018-01-12'
@@ -827,7 +827,7 @@ top_entities:
   object_type: Project
   records: 91
   hours: 132.78
-  needs_user_review_records: 91
+  needs_user_review_records: 0
   examples:
   - record_ref: hist_20200109_1330_review_2020_time_jira_r213
     date: '2020-01-09'
@@ -859,7 +859,7 @@ top_entities:
   object_type: Person
   records: 83
   hours: 84.28
-  needs_user_review_records: 83
+  needs_user_review_records: 0
   examples:
   - record_ref: hist_20190305_1923_review_2019_time_jira_r1469
     date: '2019-03-05'
@@ -887,11 +887,11 @@ top_entities:
     title: 라닉스 관련 해야할일
     matched_alias: 상식 책임님
 - entity_ref: person_father
-  display_name: Father
+  display_name: Brian's father
   object_type: Person
   records: 77
   hours: 68.21
-  needs_user_review_records: 77
+  needs_user_review_records: 0
   examples:
   - record_ref: hist_20180130_1908_review_2018_time_jira_r388
     date: '2018-01-30'
@@ -923,7 +923,7 @@ top_entities:
   object_type: Person
   records: 68
   hours: 60.77
-  needs_user_review_records: 68
+  needs_user_review_records: 0
   examples:
   - record_ref: hist_20180217_1302_review_2018_time_jira_r634
     date: '2018-02-17'
@@ -1019,7 +1019,7 @@ top_entities:
   object_type: Project
   records: 53
   hours: 80.63
-  needs_user_review_records: 53
+  needs_user_review_records: 0
   examples:
   - record_ref: hist_20180119_1100_review_2018_time_jira_r225
     date: '2018-01-19'
@@ -1142,6 +1142,38 @@ top_entities:
     area: CAREER
     title: '[CAR] CPUSS internal connection check'
     matched_alias: DMA
+- entity_ref: person_mother_in_law
+  display_name: Mother-in-law
+  object_type: Person
+  records: 29
+  hours: 44.69
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20180806_2010_review_2018_time_jira_r2606
+    date: '2018-08-06'
+    area: RELATION
+    title: 사람 책 읽기
+    matched_alias: 어머님
+  - record_ref: hist_20190101_0955_review_2019_time_jira_r5
+    date: '2019-01-01'
+    area: RELATION
+    title: 소중한 사람들에게 연락하기(전화, 문자), 만나기
+    matched_alias: 어머님
+  - record_ref: hist_20190120_1820_review_2019_time_jira_r423
+    date: '2019-01-20'
+    area: RELATION
+    title: 아름이와 행복한 시간 보내기
+    matched_alias: 어머님
+  - record_ref: hist_20190203_0933_review_2019_time_jira_r706
+    date: '2019-02-03'
+    area: RELATION
+    title: '[REL] 사람 책 읽기'
+    matched_alias: 어머님
+  - record_ref: hist_20190210_1251_review_2019_time_jira_r870
+    date: '2019-02-10'
+    area: FUN
+    title: '[FUN] 행복꾸러미'
+    matched_alias: 장모님
 - entity_ref: activity_product_shipping
   display_name: Product shipping
   object_type: Activity
@@ -1179,7 +1211,7 @@ top_entities:
   object_type: Person
   records: 23
   hours: 26.16
-  needs_user_review_records: 23
+  needs_user_review_records: 0
   examples:
   - record_ref: hist_20210331_1600_review_2021_clockify_work_r745
     date: '2021-03-31'
@@ -1206,6 +1238,38 @@ top_entities:
     area: CAREER
     title: CPUSS spec 협의
     matched_alias: 서웅 매니저님
+- entity_ref: person_father_in_law
+  display_name: Father-in-law
+  object_type: Person
+  records: 21
+  hours: 28.19
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20190119_1219_review_2019_time_jira_r393
+    date: '2019-01-19'
+    area: RELATION
+    title: 상견례하기 ( 1월 19일 )
+    matched_alias: 아버님
+  - record_ref: hist_20190203_0933_review_2019_time_jira_r706
+    date: '2019-02-03'
+    area: RELATION
+    title: '[REL] 사람 책 읽기'
+    matched_alias: 아버님
+  - record_ref: hist_20190407_1730_review_2019_time_jira_r2194
+    date: '2019-04-07'
+    area: BODY
+    title: '[BODY] 식사 준비 및 식사'
+    matched_alias: 아버님
+  - record_ref: hist_20190519_1700_review_2019_time_jira_r2736
+    date: '2019-05-19'
+    area: BODY
+    title: '[BODY] 식사 준비 및 식사'
+    matched_alias: 아버님
+  - record_ref: hist_20190519_1900_review_2019_time_jira_r2737
+    date: '2019-05-19'
+    area: FUN
+    title: '[FUN] 행복꾸러미'
+    matched_alias: 아버님
 - entity_ref: person_brian
   display_name: Brian
   object_type: Person
@@ -1243,7 +1307,7 @@ top_entities:
   object_type: Person
   records: 6
   hours: 9.7
-  needs_user_review_records: 6
+  needs_user_review_records: 0
   examples:
   - record_ref: hist_20200306_1115_review_2020_time_jira_r1289
     date: '2020-03-06'
