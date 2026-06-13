@@ -34,10 +34,16 @@ entities:
         - 아름에게
         - 아름과
         - 아름 집중
+        - 미야
+        - 미야와
+        - 미야랑
+        - 미야가
+        - 미야를
+        - 미야에게
       confidence: high
       needs_user_review: false
       confirmed_at: 2026-06-13
-      notes: Historical records use "아름/아름이"; Brian confirmed this maps to his current spouse.
+      notes: Historical records use "아름/아름이"; Brian confirmed this maps to his current spouse. Daily and gratitude records also use "미야".
 
     - id: person_mother
       object_type: Person
@@ -79,6 +85,15 @@ entities:
       confirmed_at: 2026-06-13
       notes: Brian confirmed this means spouse's father.
 
+    - id: person_grandmother
+      object_type: Person
+      display_name: Grandmother
+      aliases:
+        - 할머니
+      confidence: medium
+      needs_user_review: true
+      notes: Candidate family person from 2019 gratitude diary; exact side of family may need confirmation.
+
     - id: person_jihyeong
       object_type: Person
       display_name: Jihyeong
@@ -107,6 +122,108 @@ entities:
       confidence: medium
       needs_user_review: false
       confirmed_at: 2026-06-13
+
+    - id: person_younggon
+      object_type: Person
+      display_name: Younggon
+      aliases:
+        - 영곤 팀장님
+        - 영곤팀장님
+        - 영곤 수석님
+        - 영곤
+      confidence: medium
+      needs_user_review: true
+      notes: Candidate work person from 2019 gratitude diary.
+
+    - id: person_jang_director
+      object_type: Person
+      display_name: Jang director
+      aliases:
+        - 장이사님
+        - 장 이사님
+      confidence: medium
+      needs_user_review: true
+      notes: Candidate work person from 2019 gratitude diary.
+
+    - id: person_tony
+      object_type: Person
+      display_name: Tony
+      aliases:
+        - 토니
+      confidence: medium
+      needs_user_review: true
+      notes: Candidate work or social person from 2019 gratitude diary.
+
+    - id: person_taehee
+      object_type: Person
+      display_name: Taehee
+      aliases:
+        - 태희형
+        - 태희 형
+        - 태희
+      confidence: medium
+      needs_user_review: true
+      notes: Candidate person from 2019 gratitude diary.
+
+    - id: person_heedo
+      object_type: Person
+      display_name: Heedo
+      aliases:
+        - 희도
+      confidence: medium
+      needs_user_review: true
+      notes: Candidate person from 2019 gratitude diary.
+
+    - id: person_youngil
+      object_type: Person
+      display_name: Youngil
+      aliases:
+        - 영일이형
+        - 영일이 형
+      confidence: medium
+      needs_user_review: true
+      notes: Candidate person from 2019 gratitude diary.
+
+    - id: person_myeongsu
+      object_type: Person
+      display_name: Myeongsu
+      aliases:
+        - 명수
+      confidence: medium
+      needs_user_review: true
+      notes: Candidate person from 2019 gratitude diary.
+
+    - id: person_dasul
+      object_type: Person
+      display_name: Dasul
+      aliases:
+        - 다슬이
+        - 다슬
+      confidence: medium
+      needs_user_review: true
+      notes: Candidate person from 2019 gratitude diary.
+
+    - id: person_byeongtak
+      object_type: Person
+      display_name: Byeongtak
+      aliases:
+        - 병탁 책임님
+        - 병탁책임님
+        - 병탁
+      confidence: medium
+      needs_user_review: true
+      notes: Candidate work person from 2019 gratitude diary.
+
+    - id: person_taegyu
+      object_type: Person
+      display_name: Taegyu
+      aliases:
+        - 태규 책임님
+        - 태규책임님
+        - 태규
+      confidence: medium
+      needs_user_review: true
+      notes: Candidate work person from 2019 gratitude diary.
 
     - id: person_shivam
       object_type: Person
@@ -229,6 +346,8 @@ entities:
       aliases:
         - Deeper-I
         - Deeper I
+        - 디퍼아이
+        - 디퍼 아이
         - Deeper I CPUSS Release
         - Tachy-BS1
       confidence: high
@@ -387,6 +506,16 @@ entities:
         - clock
         - sdc
         - cdc
+      confidence: medium
+      needs_user_review: false
+
+    - id: component_ddr_controller
+      object_type: Component
+      display_name: DDR Controller
+      aliases:
+        - DDR Controller
+        - DDR controller
+        - DDR
       confidence: medium
       needs_user_review: false
 
@@ -555,6 +684,79 @@ entities:
       needs_user_review: false
       confirmed_at: 2026-06-13
       notes: Brian-defined bundle of things he considers happiness.
+
+    - id: activity_reading_learning
+      object_type: Activity
+      display_name: Reading and learning
+      area: MIND
+      aliases:
+        - 책을 읽
+        - 책 읽
+        - 독서
+        - 강의를
+        - 강의도
+        - 강의 들
+        - 강의할
+        - 강의 할
+        - 유튜브 강의
+        - 공부
+        - 배움
+      confidence: medium
+      needs_user_review: false
+
+    - id: activity_conversation
+      object_type: Activity
+      display_name: Conversation
+      area: RELATION
+      aliases:
+        - 대화
+        - 이야기
+        - 통화
+        - 연락
+        - 속마음
+      confidence: medium
+      needs_user_review: false
+
+    - id: activity_cafe_reflection
+      object_type: Activity
+      display_name: Cafe reflection
+      area: FUN
+      aliases:
+        - 카페
+        - 커피 한잔
+        - 커피를
+      confidence: medium
+      needs_user_review: false
+
+    - id: activity_travel
+      object_type: Activity
+      display_name: Travel
+      area: FUN
+      aliases:
+        - 여행
+        - 유럽
+        - 로마
+        - 나폴리
+        - 피렌체
+        - 베네치아
+        - 경주
+        - 대구
+        - 제주도
+      confidence: medium
+      needs_user_review: false
+
+    - id: activity_health_recovery
+      object_type: Activity
+      display_name: Health recovery
+      area: BODY
+      aliases:
+        - 감기
+        - 건강
+        - 몸이 좋아
+        - 회복
+        - 약
+      confidence: medium
+      needs_user_review: false
 
 link_relations:
   Person: associated_person

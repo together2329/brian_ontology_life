@@ -22,6 +22,10 @@ Use historical memory indexes when they exist:
 - `life/imports/happiness_bundle/parsed_items.yaml`: structured happiness trigger list extracted from the PDF.
 - `life/imports/happiness_bundle/image_index.jsonl`: page-level image/visual evidence index for the PDF.
 - `life/imports/happiness_bundle/page_index.jsonl`: page-level text index for the PDF.
+- `life/imports/bke_gratitude_diary_2019/summary.yaml`: high-level summary of Brian's 2019 BKE gratitude diary.
+- `life/imports/bke_gratitude_diary_2019/entity_linked_entries.jsonl`: gratitude entries with semantic object links.
+- `life/imports/bke_gratitude_diary_2019/daily_summary.jsonl`: daily gratitude aggregate index.
+- `life/patterns/bke_gratitude_diary_pattern_candidates.yaml`: generated 2019 gratitude pattern candidates.
 
 ## Core Role
 
