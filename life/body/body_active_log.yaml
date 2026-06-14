@@ -50,6 +50,35 @@ nutrition_targets:
     status: active
     notes: Brian is trying to eat about 70-90g protein per day.
 
+exercise_catalog:
+  - id: exercise_kettlebell_squat
+    object_type: ExerciseCatalog
+    name: Kettlebell squat
+    aliases:
+      - 캐틀벨 스쿼트
+      - 스쿼트
+    muscle_groups:
+      - quads
+      - glutes
+      - hamstrings
+      - core
+    equipment: kettlebell
+    notes: Use this when Brian records squat work with a kettlebell.
+  - id: exercise_push_up
+    object_type: ExerciseCatalog
+    name: Push-up
+    aliases:
+      - 팔굽혀 펴기
+      - 푸쉬업
+      - pushup
+    muscle_groups:
+      - chest
+      - triceps
+      - shoulders
+      - core
+    equipment: bodyweight
+    notes: Bodyweight push-up.
+
 workout_records:
   - id: workoutsession_20260615_pt_shop_access_issue
     object_type: WorkoutSession
@@ -64,19 +93,45 @@ workout_records:
     digestion: null
     performance_note: Fingerprint access suddenly did not work, and nobody was present because it was early morning.
     exercises: []
-  - id: workoutsession_20260615_morning_planned
+  - id: workoutsession_20260615_home_fallback
     object_type: WorkoutSession
     date: 2026-06-15
     planned_start: "06:35"
-    status: planned
-    title: Morning workout
+    start: null
+    end: null
+    status: completed
+    title: Home fallback workout after PT shop access issue
     training_program_ref: pt_program_2026_spring
-    location: null
+    location: home
     duration_minutes: null
     perceived_energy: null
     digestion: null
-    performance_note: Going to workout in the morning; recent training weights have continued to increase.
-    exercises: []
+    performance_note: Could not enter the PT shop because of a fingerprint access issue, so Brian completed a short home workout instead.
+    exercises:
+      - exercise_ref: exercise_kettlebell_squat
+        variant: kettlebell
+        equipment: kettlebell_8kg
+        notes: Home replacement for planned PT shop workout.
+        sets:
+          - set: 1
+            weight_kg: 8
+            reps: 20
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+      - exercise_ref: exercise_push_up
+        variant: bodyweight
+        equipment: bodyweight
+        notes: Home replacement for planned PT shop workout.
+        sets:
+          - set: 1
+            weight_kg: null
+            reps: 20
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
 
 trend_observations:
   - id: body_trend_20260615_strength_up_weight_stable
@@ -91,7 +146,7 @@ trend_observations:
     uncertain_signals:
       - no recent skeletal muscle mass value recorded
       - no recent body fat percent value recorded
-      - no exercise-level set history recorded yet
+      - exercise-level set history has only just started on 2026-06-15
     interpretation: Possible body recomposition; do not overinterpret scale weight alone.
     confidence: medium
 
@@ -106,3 +161,8 @@ raw_records:
     time: null
     source: codex_conversation
     text: "그리고 3월말부터 시작해서 지금까지 주 2회씩 운동 중 최근에 회사 헬스장 동료랑 같이 가면서 주 3회로 올라감"
+  - id: raw_body_record_20260615_home_fallback_workout
+    date: 2026-06-15
+    time: null
+    source: codex_conversation
+    text: "지문 이슈로 피티샵 못가서 집에서 스쿼트 캐틀벨 8kg 20회 팔굽혀 펴기 20회 진행함"
