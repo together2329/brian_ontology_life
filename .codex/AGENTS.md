@@ -26,6 +26,9 @@ Use historical memory indexes when they exist:
 - `life/imports/bke_gratitude_diary_2019/entity_linked_entries.jsonl`: gratitude entries with semantic object links.
 - `life/imports/bke_gratitude_diary_2019/daily_summary.jsonl`: daily gratitude aggregate index.
 - `life/patterns/bke_gratitude_diary_pattern_candidates.yaml`: generated 2019 gratitude pattern candidates.
+- `life/imports/obsidian_daily/summary.yaml`: high-level summary of Brian's 2025-2026 Obsidian Daily notes.
+- `life/imports/obsidian_daily/entity_linked_records.jsonl`: Daily note time blocks and sections with semantic object links.
+- `life/imports/obsidian_daily/daily_summary.jsonl`: daily aggregate index for Daily notes, time blocks, energy, emotions, areas, and entity refs.
 
 ## Core Role
 

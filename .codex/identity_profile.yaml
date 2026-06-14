@@ -3,7 +3,7 @@ status: draft
 profile:
   id: brian
   display_name: Brian
-  updated_at: 2026-06-13
+  updated_at: 2026-06-14
 
 historical_memory:
   review_archive:
@@ -25,6 +25,15 @@ historical_memory:
     page_index_ref: life/imports/happiness_bundle/page_index.jsonl
     image_index_ref: life/imports/happiness_bundle/image_index.jsonl
     raw_policy: Raw PDF remains in Google Drive and is referenced by path and sha256.
+  obsidian_daily:
+    status: imported_as_ontology_index
+    date_range: 2025-03-20_to_2026-03-07
+    summary_ref: life/imports/obsidian_daily/summary.yaml
+    normalized_records_ref: life/imports/obsidian_daily/normalized_records.jsonl
+    entity_linked_records_ref: life/imports/obsidian_daily/entity_linked_records.jsonl
+    daily_summary_ref: life/imports/obsidian_daily/daily_summary.jsonl
+    semantic_entity_catalog_ref: life/entities/semantic_entity_catalog.yaml
+    raw_policy: Raw Obsidian files are preserved under raw_data/obsidian/01_Daily and are referenced by path and sha256.
 
 known_context:
   areas:
