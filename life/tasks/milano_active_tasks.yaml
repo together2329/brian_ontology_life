@@ -38,6 +38,12 @@ source_records:
     imported_at: 2026-06-14
     parse_status: parsed
     raw_text: "port 1 용 interrupt requirement 작성해야 한다."
+  - id: source_milano_conversation_20260614_standard_cell_replacement
+    source_type: chat
+    original_date: 2026-06-14
+    imported_at: 2026-06-14
+    parse_status: parsed
+    raw_text: "latch 등 standard cell 로 교체할 부분 교체 필요 ( task 추가 )"
 
 summary:
   recently_completed:
@@ -49,6 +55,7 @@ summary:
     - Firenze handler reflection check in Milano
     - final GEN7 PHY DB synthesis integration
     - common module replacement from PCI-internal to ASIC-common implementations
+    - standard cell replacement for latch and related cells
     - cross-power-domain signal naming cleanup
     - Port 1 interrupt requirement writing
   open_questions:
@@ -278,6 +285,7 @@ tasks:
       - task_milano_lint_ip_rev_0_1_rerun
       - task_milano_firenze_handler_reflection_check
       - task_milano_common_module_replacement
+      - task_milano_standard_cell_replacement
       - task_milano_cross_domain_signal_naming_cleanup
     evidence_refs:
       - source_milano_conversation_20260614_current_tasks
@@ -397,11 +405,50 @@ tasks:
     confidence: high
     needs_user_review: false
 
+  - id: task_milano_standard_cell_replacement
+    title: latch 등 standard cell로 교체할 부분 교체
+    area: CAREER
+    status: todo
+    priority: high
+    energy: deep_work
+    estimated_minutes: null
+    due_date: null
+    tracking_level: detailed
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    progress_percent: 0
+    tags:
+      - milano
+      - rtl_cleanup
+      - standard_cell
+      - latch
+      - synthesis
+    scope:
+      - Identify latch and other cell-like RTL/common instances that should use approved standard cells.
+      - Replace eligible instances with standard cell implementations.
+      - Leave explicit review notes for any instance that cannot be safely replaced.
+    expected_outputs:
+      - standard cell replacement candidate inventory
+      - replaced latch/standard-cell instance list
+      - exceptions or not_applicable list
+      - build/lint/synthesis sanity result after replacement
+    next_actions:
+      - Search for latch and related cell-like instances in Milano PCIe RTL.
+      - Map each candidate to the approved standard cell equivalent.
+      - Check reset, enable, clock, polarity, and synthesis intent before replacement.
+      - Replace safe candidates.
+      - Re-run build/lint or synthesis sanity checks and record failures as Issue objects.
+    evidence_refs:
+      - source_milano_conversation_20260614_standard_cell_replacement
+    confidence: high
+    needs_user_review: false
+
 recommended_execution_order:
   - task_milano_firenze_handler_reflection_check
   - task_milano_port1_interrupt_requirement
   - task_milano_lint_ip_rev_0_1_rerun
   - task_milano_common_module_replacement
+  - task_milano_standard_cell_replacement
   - task_milano_cross_domain_signal_naming_cleanup
   - task_milano_sdc_dual_profile_synth_rerun
   - task_milano_arir_precheck
@@ -434,7 +481,7 @@ project_status_updates:
     author_ref: person_brian
     status: active
     progress_percent: null
-    summary: Milano is currently focused on Firenze handler reflection check, Port 1 interrupt requirement writing, 3nm synthesis rerun, ARIR area/instance count pre-check, lint re-check after IP rev 0.1, common module replacement, domain-crossing naming cleanup, and final DB synthesis including GEN7 PHY.
+    summary: Milano is currently focused on Firenze handler reflection check, Port 1 interrupt requirement writing, 3nm synthesis rerun, ARIR area/instance count pre-check, lint re-check after IP rev 0.1, common module replacement, standard cell replacement, domain-crossing naming cleanup, and final DB synthesis including GEN7 PHY.
     blockers:
       - Need confirmation of the exact meaning of "제7파이".
       - Need confirmation of the exact module term transcribed as "sync 5V".
