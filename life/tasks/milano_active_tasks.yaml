@@ -26,6 +26,12 @@ source_records:
     imported_at: 2026-06-14
     parse_status: parsed
     raw_text: "그 다음에 firenze 에 적용한 handler가 milano에 다 반영되었는지 확인 필요."
+  - id: source_milano_conversation_20260614_timeblock_cross_domain_signal_naming
+    source_type: chat
+    original_date: 2026-06-14
+    imported_at: 2026-06-14
+    parse_status: parsed
+    raw_text: "10:00 - 11:00 까지 4번 작업 진행 예정."
 
 summary:
   recently_completed:
@@ -351,6 +357,26 @@ recommended_execution_order:
   - task_milano_sdc_dual_profile_synth_rerun
   - task_milano_arir_precheck
   - task_milano_gen7_phy_db_synthesis
+
+planned_time_blocks:
+  - id: timeblock_20260614_1000_milano_cross_domain_signal_naming_cleanup
+    date: 2026-06-14
+    start: "10:00"
+    end: "11:00"
+    area: CAREER
+    mode: planned_deep_work
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    items:
+      - type: task
+        ref: task_milano_cross_domain_signal_naming_cleanup
+        title: PD_PCI/PD_HGT/PD_NVMe 도메인 간 crossing signal naming rule 재정비
+        planned_minutes: 60
+        actual_minutes: null
+        status: planned
+    source_ref: source_milano_conversation_20260614_timeblock_cross_domain_signal_naming
+    confidence: high
+    needs_user_review: false
 
 project_status_updates:
   - id: project_status_milano_20260614_current_tasks
