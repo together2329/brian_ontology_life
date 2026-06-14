@@ -33,16 +33,68 @@ source_records:
       - AGENTS.md with OAG workflow rules
       - timer APB3 Timer IP example
       - mctp_assembler ontology-first hardware IP scaffold
+  - id: source_ai_agent_conversation_20260614_common_ai_agent_origin_history
+    source_type: chat
+    original_date: 2026-06-14
+    imported_at: 2026-06-14
+    parse_status: parsed
+    raw_text: "/Users/brian/Desktop/Project/brian_hw/common_ai_agent 이거 원본 프로젝트 git log 보면 한 8개월 정도 개발한거 보이지? 처음엔 python 기반 engine 이었고 나중엔 UI 를 구현했어."
+  - id: source_ai_agent_conversation_20260614_common_ai_agent_origin_intent
+    source_type: chat
+    original_date: 2026-06-14
+    imported_at: 2026-06-14
+    parse_status: parsed
+    raw_text: "History 는 이거야.... 회사 리눅스 서버에서 쓸 수 있는 zero dependency python 기반 ai agent를 회사 사내 llm 에 연결해서 쓰려고, open code 등 여러 오픈 소스를 참고해서 만들고 구현했어."
+  - id: source_ai_agent_conversation_20260614_atlas_soc_ui_rtl_history
+    source_type: chat
+    original_date: 2026-06-14
+    imported_at: 2026-06-14
+    parse_status: parsed
+    raw_text: "그리고 그러던 중에... SOC 그룹에서 Atlas라는 프로젝트를 진행하고 있었고, RTL 구현을 담당했고, 그 구현을 위해 한 2-3달 UI 개발하면서 힘썼어. 이 과정에서 힘들었던 것도 많고 꺠달은 것도 많아."
+  - id: source_ai_agent_local_git_inspection_20260614_common_ai_agent
+    source_type: local_git_inspection
+    original_date: 2026-06-14
+    imported_at: 2026-06-14
+    parse_status: parsed
+    repo_path: /Users/brian/Desktop/Project/brian_hw/common_ai_agent
+    inspected_branch: feat/codex-bridge
+    first_commit:
+      hash: ff744fb3
+      date: 2025-10-31
+      subject: init
+    latest_observed_commit:
+      hash: 197fe77f
+      date: 2026-06-14
+      subject: "feat(atlas/codex-bridge): surface command cwd in the tool feed (track where codex runs)"
+    commit_count_observed: 4446
+    date_span_assessment: approximately seven and a half months, consistent with Brian's "about eight months" description.
+    observed_phase_markers:
+      - 2025-10-31 began with RTL/AXI generator and hardware experiment commits.
+      - 2025-11-28 shows brian_coder Python engine/parser work.
+      - 2025-12 includes Graph Lite, Verilog analysis plugin, memory, RAG, skills, and autonomous decision-making features.
+      - 2026-03-20 renamed brian_coder to common_ai_agent.
+      - 2026-04-02 added Textual TUI shell.
+      - 2026-04-29 added Atlas React/JSX frontend over WebSocket.
+      - 2026-06-14 contains Atlas Codex bridge work.
 
 summary:
   current_state:
     - Brian is continuing AI Agent development while tired from work, but the activity feels fun.
     - common_ai_agent is being ported toward a Codex-based workflow.
     - Brian expects to help with a company-wide Codex rollout around two weeks after 2026-06-14.
+    - The original long-running common_ai_agent repo is /Users/brian/Desktop/Project/brian_hw/common_ai_agent.
+    - Local git history for common_ai_agent spans 2025-10-31 through 2026-06-14 with 4446 observed commits, supporting Brian's "about eight months" assessment.
+    - The original intent was to build a zero-dependency Python AI agent usable on company Linux servers and connected to the company's internal LLM.
+    - The implementation referenced several open-source coding-agent ideas, including OpenCode-style patterns.
+    - The history shows a progression from zero-dependency Python brian_coder/common_ai_agent engine work into TUI and Atlas UI, and later Codex bridge work.
+    - Atlas was also a SOC group project context where Brian owned RTL implementation and invested two to three months in UI development to support that work.
+    - The Atlas period was difficult and produced important lessons that should be captured later as explicit learning records.
     - The active local implementation repo is /Users/brian/Desktop/Project/ontology_ip_agent.
     - ontology_ip_agent is a .codex-first OAG test pack with hardware IP examples and ontology/knowledge ledger workflows.
   active_threads:
     - common_ai_agent Codex-based porting
+    - common_ai_agent source history analysis and migration into Codex/OAG workflows
+    - Atlas SOC project experience and lessons from UI-assisted RTL implementation
     - company Codex adoption support preparation
     - Brian's personal ontology-backed life agent development
     - ontology_ip_agent development as the concrete OAG/Codex hardware IP agent implementation
@@ -62,8 +114,60 @@ summary:
       question: "Clarify whether common_ai_agent and ontology_ip_agent should be one product line, separate repos with shared OAG concepts, or a migration path from one to the other."
       related_task_ref: task_ai_agent_common_ai_agent_codex_port
       needs_user_review: true
+    - id: oq_ai_agent_atlas_lessons
+      question: "Capture what was hard and what Brian learned during the Atlas SOC project and two to three months of UI work for RTL implementation."
+      related_task_ref: task_ai_agent_common_ai_agent_codex_port
+      needs_user_review: true
+
+experience_records:
+  - id: experience_ai_agent_atlas_soc_ui_rtl_implementation
+    experience_type: project_history
+    area: CAREER
+    secondary_areas:
+      - MIND
+    project_name: Atlas
+    org_context: SOC group
+    role_summary: Brian was responsible for RTL implementation and spent about two to three months developing UI to support the implementation work.
+    duration_estimate: two to three months
+    emotional_tone:
+      - difficult
+      - effortful
+      - insightful
+    learning_status: needs_follow_up_capture
+    related_repo_ref: repo_common_ai_agent_origin
+    related_task_ref: task_ai_agent_common_ai_agent_codex_port
+    source_ref: source_ai_agent_conversation_20260614_atlas_soc_ui_rtl_history
 
 repositories:
+  - id: repo_common_ai_agent_origin
+    title: common_ai_agent
+    repo_type: origin_repo
+    project_ref: project_ai_agent
+    path: /Users/brian/Desktop/Project/brian_hw/common_ai_agent
+    status: active_development
+    observed_at: 2026-06-14
+    observed_branch: feat/codex-bridge
+    purpose: Original long-running zero-dependency Python AI agent project for company Linux servers and internal LLM usage, now being ported or adapted toward Codex-based workflows.
+    development_history:
+      first_commit_date: 2025-10-31
+      latest_observed_commit_date: 2026-06-14
+      observed_commit_count: 4446
+      duration_assessment: about eight months of development.
+      phase_summary:
+        - RTL/AXI generator experiments at project start.
+        - Zero-dependency Python brian_coder engine intended for company Linux server use with an internal LLM.
+        - OpenCode and other open-source coding-agent ideas were studied and adapted where useful.
+        - brian_coder Python parser, tool, graph, memory, RAG, skills, and agent loop development.
+        - common_ai_agent rename and stabilization.
+        - Textual TUI shell.
+        - Atlas React/JSX WebSocket UI, influenced by SOC group Atlas RTL implementation needs.
+        - Codex bridge work.
+    source_refs:
+      - source_ai_agent_conversation_20260614_common_ai_agent_origin_history
+      - source_ai_agent_conversation_20260614_common_ai_agent_origin_intent
+      - source_ai_agent_conversation_20260614_atlas_soc_ui_rtl_history
+      - source_ai_agent_local_git_inspection_20260614_common_ai_agent
+
   - id: repo_ontology_ip_agent
     title: ontology_ip_agent
     repo_type: implementation_repo
@@ -104,22 +208,36 @@ tasks:
     current_state:
       - Porting is actively underway.
       - Brian reports the work is fun despite being tired from earlier work.
+      - common_ai_agent is the original long-running source project, with local git history from 2025-10-31 to 2026-06-14.
+      - common_ai_agent began as a zero-dependency Python AI agent for company Linux servers connected to an internal company LLM.
+      - The original project referenced OpenCode and other open-source coding-agent ideas.
+      - The original project appears to have evolved from Python-based brian_coder/common_ai_agent engine work into TUI, Atlas UI, and Codex bridge work.
+      - Atlas UI work is connected to a SOC group Atlas project where Brian was responsible for RTL implementation.
+      - Brian spent about two to three months developing UI for Atlas-related RTL implementation support, with meaningful difficulty and lessons learned.
       - The active local implementation context includes ontology_ip_agent at /Users/brian/Desktop/Project/ontology_ip_agent.
       - ontology_ip_agent already contains OAG/Codex workflow assets and hardware IP examples.
     expected_outputs:
       - Codex-based common_ai_agent workflow
       - migration notes or repeatable porting guidance
+      - source-history-informed porting map from Python engine/UI concepts to Codex/OAG concepts
       - list of patterns that work well in Codex
       - list of friction points or missing capabilities
       - reusable ontology_ip_agent examples for hardware engineers adopting Codex
+      - captured Atlas lessons: what was hard, what worked, what should be preserved in future Codex/OAG workflows
     next_actions:
       - Define the exact porting scope and target surfaces.
+      - Extract a concise source-history map from common_ai_agent: Python engine, TUI, Atlas UI, Codex bridge.
+      - Interview Brian later on Atlas lessons and convert them into reusable workflow principles.
       - Clarify the boundary between common_ai_agent and ontology_ip_agent.
       - Capture decisions, prompts, tool patterns, and failure cases while porting.
       - Keep experiments small while tired; avoid large architecture changes late in the day.
       - Convert reusable learnings into guidance for company rollout support.
     evidence_refs:
       - source_ai_agent_conversation_20260614_fun_codex_porting_rollout
+      - source_ai_agent_conversation_20260614_common_ai_agent_origin_history
+      - source_ai_agent_conversation_20260614_common_ai_agent_origin_intent
+      - source_ai_agent_conversation_20260614_atlas_soc_ui_rtl_history
+      - source_ai_agent_local_git_inspection_20260614_common_ai_agent
       - source_ai_agent_conversation_20260614_ontology_ip_agent_repo
       - source_ai_agent_local_repo_inspection_20260614_ontology_ip_agent
     confidence: high
@@ -152,6 +270,9 @@ tasks:
       - Company-wide Codex adoption is expected soon.
       - Brian expects to help others adopt or use Codex effectively.
       - The common_ai_agent port can become practical evidence and guidance for the rollout.
+      - common_ai_agent was originally designed for realistic company constraints: Linux server use, zero-dependency Python, and internal LLM integration.
+      - common_ai_agent's eight-month-ish history can be used to explain which AI-agent workflow ideas survived real iteration.
+      - Atlas provides a real SOC/RTL implementation story behind the UI effort, including hard lessons that can make rollout guidance more credible.
       - ontology_ip_agent can supply concrete hardware IP workflow examples for the rollout.
     expected_outputs:
       - support checklist for early Codex users
@@ -191,10 +312,16 @@ work_sessions:
     findings:
       - AI Agent development is currently acting as both career development and enjoyable creative work.
       - The company rollout creates an opportunity for Brian to help others with Codex adoption.
+      - common_ai_agent is the long-running origin project, with roughly eight months of local git history from zero-dependency Python engine work to UI and Codex bridge work.
+      - The origin intent was practical company deployment on Linux servers with an internal LLM, not only a local hobby agent.
+      - Atlas was a SOC group project where Brian owned RTL implementation and spent two to three months pushing UI development to support that implementation.
+      - The Atlas period was hard and produced lessons that should be extracted when Brian has energy.
       - ontology_ip_agent is the concrete local repo where Brian is developing the OAG/Codex hardware IP workflow.
       - Because Brian is tired, this session should stay in experiment or note-capture mode rather than heavy architecture mode.
     next_steps:
       - Capture useful porting patterns while they are fresh.
+      - Preserve the common_ai_agent history as evidence for which agent architecture choices were hard-won.
+      - Create a separate Atlas lessons record later, focused on what was hard and what Brian learned.
       - Use ontology_ip_agent as the source of concrete examples for Codex rollout material.
       - Avoid large late-day design decisions.
       - Turn successful patterns into support material for company adoption.
@@ -228,3 +355,35 @@ project_status_updates:
       - The repo currently appears to have many untracked files, so git hygiene may matter before using it as a rollout reference.
     next_step: Clarify the common_ai_agent versus ontology_ip_agent boundary, then select one small demo path from ontology_ip_agent for Codex rollout preparation.
     source_ref: source_ai_agent_conversation_20260614_ontology_ip_agent_repo
+
+  - id: project_status_ai_agent_20260614_common_ai_agent_history_verified
+    date: 2026-06-14
+    project_ref: project_ai_agent
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: Local git inspection and Brian's explanation show that common_ai_agent has about eight months of development history, starting as a zero-dependency Python AI agent for company Linux servers and internal LLM usage, then evolving into TUI, Atlas UI, and Codex bridge work.
+    evidence_summary:
+      - First observed commit is 2025-10-31.
+      - Latest observed commit is 2026-06-14.
+      - Observed commit count is 4446.
+      - Key transition markers include brian_coder Python engine work on 2025-11-28, rename to common_ai_agent on 2026-03-20, Textual TUI on 2026-04-02, Atlas UI on 2026-04-29, and Codex bridge work on 2026-06-14.
+      - Brian confirmed the original purpose was a zero-dependency Python agent for company Linux server use, connected to the internal company LLM and informed by OpenCode and other open-source projects.
+      - Brian also confirmed that SOC group Atlas work and his RTL implementation responsibility drove two to three months of UI development effort.
+    positive_signal: The long iteration history gives Brian credible firsthand experience for helping a company Codex rollout.
+    risks:
+      - The original repo's current branch and surrounding worktree are not clean, so avoid treating it as a polished demo without cleanup.
+    next_step: "Use the common_ai_agent history to make a compact migration map: what to preserve, what to simplify, and what Codex now provides natively."
+    source_ref: source_ai_agent_local_git_inspection_20260614_common_ai_agent
+
+  - id: project_status_ai_agent_20260614_atlas_soc_experience_recorded
+    date: 2026-06-14
+    project_ref: project_ai_agent
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: Brian connected the Atlas UI work to a SOC group Atlas project where he was responsible for RTL implementation and spent about two to three months developing UI to support that work.
+    emotional_context: The period included significant difficulty and important lessons.
+    positive_signal: This is direct evidence that Brian's agent/UI work came from real hardware implementation pressure, not only abstract tool-building.
+    next_step: "Capture the concrete Atlas lessons later: what was painful, what UI support helped, what failed, and what should be preserved in Codex/OAG workflows."
+    source_ref: source_ai_agent_conversation_20260614_atlas_soc_ui_rtl_history
