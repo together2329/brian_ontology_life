@@ -168,6 +168,26 @@ workout_records:
             is_warmup: false
             is_pr: null
 
+meal_records:
+  - id: meal_20260615_post_workout_the_danbaek_melon
+    object_type: Meal
+    date: 2026-06-15
+    time: null
+    area: BODY
+    meal_type: post_workout_protein
+    items:
+      - name: 더단백 멜론맛
+        amount: 1
+        unit: bottle
+        calories: null
+        protein_g: 20
+        carbs_g: null
+        fat_g: null
+    supplements: []
+    related_workout: workoutsession_20260615_home_fallback
+    related_nutrition_target_ref: protein_target_20260615
+    notes: Post-workout protein drink after home fallback workout.
+
 trend_observations:
   - id: body_trend_20260615_strength_up_weight_stable
     object_type: BodyTrendObservation
@@ -221,3 +241,8 @@ raw_records:
     time: null
     source: codex_conversation
     text: "스쿼트 1세트 완료"
+  - id: raw_body_record_20260615_post_workout_protein
+    date: 2026-06-15
+    time: null
+    source: codex_conversation
+    text: "더단백 멜론맛 마심 ( 단백질 20g )"
