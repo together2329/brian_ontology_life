@@ -186,7 +186,61 @@ meal_records:
     supplements: []
     related_workout: workoutsession_20260615_home_fallback
     related_nutrition_target_ref: protein_target_20260615
+    protein_g_total: 20
+    protein_g_estimate_range: null
+    confidence: high
+    needs_user_review: false
     notes: Post-workout protein drink after home fallback workout.
+  - id: meal_20260615_breakfast_egg_yukgaejang_rice
+    object_type: Meal
+    date: 2026-06-15
+    time: null
+    area: BODY
+    meal_type: breakfast
+    items:
+      - name: 계란말이
+        amount: null
+        unit: serving
+        calories: null
+        protein_g: null
+        carbs_g: null
+        fat_g: null
+      - name: 육개장
+        amount: 1
+        unit: serving
+        calories: null
+        protein_g: null
+        carbs_g: null
+        fat_g: null
+      - name: 현미 햇반
+        amount: 1
+        unit: bowl
+        calories: null
+        protein_g: null
+        carbs_g: null
+        fat_g: null
+      - name: 김치
+        amount: null
+        unit: serving
+        calories: null
+        protein_g: null
+        carbs_g: null
+        fat_g: null
+      - name: 김
+        amount: null
+        unit: serving
+        calories: null
+        protein_g: null
+        carbs_g: null
+        fat_g: null
+    supplements: []
+    related_workout: workoutsession_20260615_home_fallback
+    related_nutrition_target_ref: protein_target_20260615
+    protein_g_total: null
+    protein_g_estimate_range: [30, 45]
+    confidence: low
+    needs_user_review: true
+    notes: Breakfast after the morning home fallback workout. Protein estimate depends heavily on egg roll size and yukgaejang portion.
 
 trend_observations:
   - id: body_trend_20260615_strength_up_weight_stable
@@ -246,3 +300,8 @@ raw_records:
     time: null
     source: codex_conversation
     text: "더단백 멜론맛 마심 ( 단백질 20g )"
+  - id: raw_body_record_20260615_breakfast
+    date: 2026-06-15
+    time: null
+    source: codex_conversation
+    text: "아침에 계란 말이 + 육개장 + 현미 햇반 하나 + 김치 + 김 먹음"
