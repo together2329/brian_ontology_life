@@ -106,7 +106,7 @@ workout_records:
     duration_minutes: null
     perceived_energy: null
     digestion: null
-    performance_note: Could not enter the PT shop because of a fingerprint access issue, so Brian completed a short home workout instead and added one more set.
+    performance_note: Could not enter the PT shop because of a fingerprint access issue, so Brian completed a home fallback workout and added two extra sets.
     exercises:
       - exercise_ref: exercise_kettlebell_squat
         variant: kettlebell
@@ -127,6 +127,13 @@ workout_records:
             rest_seconds: null
             is_warmup: false
             is_pr: null
+          - set: 3
+            weight_kg: 8
+            reps: 20
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
       - exercise_ref: exercise_push_up
         variant: bodyweight
         equipment: bodyweight
@@ -140,6 +147,13 @@ workout_records:
             is_warmup: false
             is_pr: null
           - set: 2
+            weight_kg: null
+            reps: 20
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+          - set: 3
             weight_kg: null
             reps: 20
             rpe: null
@@ -185,3 +199,8 @@ raw_records:
     time: null
     source: codex_conversation
     text: "1세트 더함"
+  - id: raw_body_record_20260615_home_fallback_extra_set_2
+    date: 2026-06-15
+    time: null
+    source: codex_conversation
+    text: "1세트 추가 더"
