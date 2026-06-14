@@ -51,6 +51,12 @@ source_records:
     parse_status: parsed
     raw_text: |-
       일단 PDCI랑 링크 래퍼 SDC를 1차 작성을 했고, 1차적으로 확인을 했고, 합성도 돌린 상태야. 시간이 좀 걸릴 것 같고, 그다음에 지금 세븐파이도 합성도 진행을 했고, 그다음에 PD 크로싱도 카서 AI 써서 회사에서 1차적으로 진행을 했고, 일부 NVMe 쪽 연결하는 것들 좀 보완해서 진행을 했어. 근데 아직 CC랑 AON 등 다른 부분에 더 보완할 점이 있어서 추가로 진행을 해야 되고, 인터럽트 리퀄먼트 아직 못 했어. 그리고 핸들러 비교 아직 못 했고, 린트는 다시 좀 해봐야 될 것 같아. 그리고 커먼 모듈 리플레이스먼트는 다 했고, 한 번 더 확인할 예정이야.
+  - id: source_milano_conversation_20260614_sdc_firenze_gen7_phy_porting
+    source_type: chat
+    original_date: 2026-06-14
+    imported_at: 2026-06-14
+    parse_status: parsed
+    raw_text: "SDC 는 기존 Firenze Project의 pd_pcie sdc 에서 new gen7 phy sdc를 포팅했어. cursor 기반으로. 생각보다 쓸만한데 결과는 어떨지. 처음엔 잘 안되어서 파이썬 스크립트도 같이 사용하도록 했어. 약간 few shot이 필요한 느낌"
 
 summary:
   recently_completed:
@@ -137,6 +143,14 @@ tasks:
       - PDCI/PDBCI SDC and link wrapper SDC first drafts are written.
       - First-pass review is done.
       - Synthesis run has been launched and is expected to take time.
+      - New GEN7 PHY SDC was ported from the existing Firenze project pd_pcie SDC.
+      - Cursor was used as the main porting assistant.
+      - A Python script was added to support the flow after initial attempts did not work well.
+      - Result quality is still unknown until synthesis reports are reviewed.
+    tooling_notes:
+      - Cursor was useful for SDC porting, but needed examples and iteration.
+      - Python scripting helped stabilize or automate parts of the SDC porting flow.
+      - The workflow appears to need few-shot examples for better reliability.
     expected_outputs:
       - SDC profile comparison result
       - synthesis rerun result
@@ -145,12 +159,15 @@ tasks:
       - Wait for synthesis run completion.
       - Collect synthesis logs and reports.
       - Compare failures, warnings, and timing/synthesis report deltas.
+      - Review whether the ported GEN7 PHY SDC works after synthesis completes.
+      - Capture effective few-shot examples and Python script usage as repeatable porting guidance if results are good.
       - Decide which SDC profile should be the working baseline or whether both must remain.
     depends_on:
       - task_milano_3nm_synth_env_setup
     evidence_refs:
       - source_milano_conversation_20260614_current_tasks
       - source_milano_conversation_20260614_multi_hour_progress_update
+      - source_milano_conversation_20260614_sdc_firenze_gen7_phy_porting
     confidence: high
     needs_user_review: false
 
@@ -515,6 +532,9 @@ work_sessions:
     findings:
       - PDCI and link wrapper SDC first drafts were written and reviewed once.
       - SDC synthesis run was launched and is expected to take time.
+      - New GEN7 PHY SDC was ported from Firenze pd_pcie SDC using Cursor.
+      - Python script support was added after the initial Cursor-only approach did not work well.
+      - Cursor appears useful for SDC porting but may need few-shot examples.
       - GEN7 PHY synthesis run was launched.
       - PD crossing cleanup had a first pass using Cursor AI at work.
       - Some NVMe connection items were supplemented.
@@ -533,6 +553,8 @@ work_sessions:
     artifact_refs:
       - artifact_milano_pdci_sdc_v1
       - artifact_milano_link_wrapper_sdc_v1
+      - artifact_milano_gen7_phy_sdc_ported_from_firenze_pd_pcie
+      - artifact_milano_sdc_porting_python_script
       - artifact_milano_sdc_synthesis_run_20260614
       - artifact_milano_gen7_phy_synthesis_run_20260614
       - artifact_milano_pd_crossing_cleanup_cursor_first_pass
@@ -553,6 +575,19 @@ task_status_updates:
       - Need confirmation whether PDCI and PDBCI refer to the same SDC profile.
     next_step: Collect synthesis logs/reports and compare results after run completion.
     source_ref: source_milano_conversation_20260614_multi_hour_progress_update
+
+  - id: status_task_milano_sdc_20260614_firenze_gen7_phy_porting
+    date: 2026-06-14
+    task_ref: task_milano_sdc_dual_profile_synth_rerun
+    author_ref: person_brian
+    status: in_progress
+    progress_percent: 60
+    summary: New GEN7 PHY SDC was ported from the existing Firenze project pd_pcie SDC using Cursor, with Python script support added after initial attempts did not work well.
+    blockers:
+      - Synthesis result is still unknown.
+      - Cursor-based SDC porting may need few-shot examples and iterative guidance.
+    next_step: Review synthesis reports and decide whether the ported GEN7 PHY SDC is usable; if useful, capture Cursor prompts/examples and Python script flow as repeatable guidance.
+    source_ref: source_milano_conversation_20260614_sdc_firenze_gen7_phy_porting
 
   - id: status_task_milano_arir_20260614_waiting_on_synthesis
     date: 2026-06-14
@@ -671,6 +706,28 @@ artifact_candidates:
     status: running
     notes: Synthesis was launched and is expected to take time.
 
+  - id: artifact_milano_gen7_phy_sdc_ported_from_firenze_pd_pcie
+    title: GEN7 PHY SDC ported from Firenze pd_pcie SDC
+    artifact_type: sdc
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_sdc_dual_profile_synth_rerun
+    path_or_uri: null
+    created_on: 2026-06-14
+    status: result_pending
+    notes: Ported with Cursor from existing Firenze project pd_pcie SDC; Python script support was added after early attempts were unreliable.
+
+  - id: artifact_milano_sdc_porting_python_script
+    title: Milano SDC porting Python helper script
+    artifact_type: script
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_sdc_dual_profile_synth_rerun
+    path_or_uri: null
+    created_on: 2026-06-14
+    status: candidate
+    notes: Used together with Cursor because the initial SDC porting flow did not work well without script support.
+
   - id: artifact_milano_gen7_phy_synthesis_run_20260614
     title: GEN7 PHY synthesis run
     artifact_type: synthesis_run
@@ -744,3 +801,15 @@ project_status_updates:
       - Lint rerun is still needed.
     next_step: Wait for synthesis outputs, continue CC/AON crossing cleanup, write Port 1 interrupt requirement, perform Firenze handler comparison, and rerun lint.
     source_ref: source_milano_conversation_20260614_multi_hour_progress_update
+
+  - id: project_status_milano_20260614_sdc_porting_method_note
+    date: 2026-06-14
+    project_ref: project_milano
+    author_ref: person_brian
+    status: in_progress
+    progress_percent: null
+    summary: GEN7 PHY SDC was ported from Firenze pd_pcie SDC using Cursor with Python script support; result is pending synthesis report review.
+    blockers:
+      - Need synthesis result to judge whether the ported SDC is usable.
+    next_step: Review synthesis results and capture repeatable Cursor few-shot/Python helper flow if the method proves useful.
+    source_ref: source_milano_conversation_20260614_sdc_firenze_gen7_phy_porting
