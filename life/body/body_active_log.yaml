@@ -106,12 +106,12 @@ workout_records:
     duration_minutes: null
     perceived_energy: null
     digestion: null
-    performance_note: Could not enter the PT shop because of a fingerprint access issue, so Brian completed a home fallback workout and added two extra sets. Kettlebell squats felt manageable; push-ups felt hard.
+    performance_note: Could not enter the PT shop because of a fingerprint access issue, so Brian completed a home fallback workout. Kettlebell squats felt manageable and reached four sets; push-ups felt hard and stopped at three sets.
     exercises:
       - exercise_ref: exercise_kettlebell_squat
         variant: kettlebell
         equipment: kettlebell_8kg
-        notes: Home replacement for planned PT shop workout; Brian reported this felt manageable after three sets.
+        notes: Home replacement for planned PT shop workout; Brian reported this felt manageable after three sets and then completed one more set.
         sets:
           - set: 1
             weight_kg: 8
@@ -128,6 +128,13 @@ workout_records:
             is_warmup: false
             is_pr: null
           - set: 3
+            weight_kg: 8
+            reps: 20
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+          - set: 4
             weight_kg: 8
             reps: 20
             rpe: null
@@ -209,3 +216,8 @@ raw_records:
     time: null
     source: codex_conversation
     text: "스쿼트는 할만하고 팔굽혀 펴기는 힘든 수준 이제 뭐 할까?"
+  - id: raw_body_record_20260615_home_fallback_squat_extra_set
+    date: 2026-06-15
+    time: null
+    source: codex_conversation
+    text: "스쿼트 1세트 완료"
