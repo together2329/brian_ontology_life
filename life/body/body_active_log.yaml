@@ -20,8 +20,12 @@ training_programs:
     start_date_estimate: 2026-03-25
     start_date_precision: approximate_late_march
     sessions_completed_estimate: 16
+    baseline_frequency_per_week: 2
+    current_frequency_per_week: 3
+    recent_frequency_change_date_estimate: 2026-06
+    frequency_change_reason: Started going with a coworker at the company gym, increasing recent training frequency.
     confidence: medium
-    notes: Brian reports receiving PT from late March 2026 through 2026-06-15, about 16 sessions.
+    notes: Brian reports receiving PT from late March 2026 through 2026-06-15, about 16 sessions; baseline was twice weekly and recently increased toward three times weekly.
 
 body_composition_records:
   - id: body_composition_20260615_0635_self_report
@@ -47,6 +51,19 @@ nutrition_targets:
     notes: Brian is trying to eat about 70-90g protein per day.
 
 workout_records:
+  - id: workoutsession_20260615_pt_shop_access_issue
+    object_type: WorkoutSession
+    date: 2026-06-15
+    planned_start: "06:35"
+    status: blocked_or_delayed
+    title: Morning PT shop workout access issue
+    training_program_ref: pt_program_2026_spring
+    location: PT shop
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    performance_note: Fingerprint access suddenly did not work, and nobody was present because it was early morning.
+    exercises: []
   - id: workoutsession_20260615_morning_planned
     object_type: WorkoutSession
     date: 2026-06-15
@@ -70,6 +87,7 @@ trend_observations:
     positive_signals:
       - progressive overload is occurring
       - subjective body condition feels improved
+      - training frequency recently increased from about 2 times per week toward 3 times per week
     uncertain_signals:
       - no recent skeletal muscle mass value recorded
       - no recent body fat percent value recorded
@@ -83,3 +101,8 @@ raw_records:
     time: "06:35"
     source: codex_conversation
     text: "아침이야 :) 요즘 PT를 받고 있어 한 16회 정도 받은듯 ? 3월 말부터 지금까지. 오늘 새벽 6:35 인데 운동갈꺼야. 근데 계속 무게도 늘어나고 있는데 몸무게는 그대로야 ㅠ_ㅠ 느낌적으로는 몸은 좋아지고 있는듯한데 그리고 몸무게 78 키  175 단백질은 하루에 70~90 정도 먹으려고 노력 중"
+  - id: raw_body_record_20260615_pt_frequency_update
+    date: 2026-06-15
+    time: null
+    source: codex_conversation
+    text: "그리고 3월말부터 시작해서 지금까지 주 2회씩 운동 중 최근에 회사 헬스장 동료랑 같이 가면서 주 3회로 올라감"
