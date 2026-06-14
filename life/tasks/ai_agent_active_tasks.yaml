@@ -7,7 +7,7 @@ secondary_areas:
   - FUN
 project_ref: project_ai_agent
 title: AI Agent active task list
-current_phase: Codex-based common_ai_agent porting and company Codex rollout support preparation
+current_phase: Codex-based ontology development plugin, common_ai_agent migration, and company rollout support preparation
 
 source_records:
   - id: source_ai_agent_conversation_20260614_fun_codex_porting_rollout
@@ -51,6 +51,23 @@ source_records:
     imported_at: 2026-06-14
     parse_status: parsed
     raw_text: "그리고 그러던 중에... SOC 그룹에서 Atlas라는 프로젝트를 진행하고 있었고, RTL 구현을 담당했고, 그 구현을 위해 한 2-3달 UI 개발하면서 힘썼어. 이 과정에서 힘들었던 것도 많고 꺠달은 것도 많아."
+  - id: source_ai_agent_conversation_20260614_server_multiuser_demo_ontology_turning_point
+    source_type: chat
+    original_date: 2026-06-14
+    imported_at: 2026-06-14
+    parse_status: parsed
+    raw_text: "그러던 중에 이게 서버 까지 연동하고, 뭔가 많은 사람들이 쓰게 하려니 마음대로 되지 않는거야. 그냥 사실 TODO 기반 구현은 자신있었는데, 이게 진짜 온톨로지 기반 뭔가 제대로 된 구현 설계는 아니었단 것을 깨닫고, 지금 ontology 기반 개발 플러그인 개발 중 ( codex 용 ).... 이거 전에.. 막 전무님, 부문장님 데모 잡고 그랬는데 한 번도 데모 못함"
+  - id: source_ai_agent_conversation_20260614_cursor_seminar_success_codex_planned
+    source_type: chat
+    original_date: 2026-06-14
+    imported_at: 2026-06-14
+    parse_status: parsed
+    raw_text: "뭔가 마음대로 되지 않아 스트레스 받던차에... 커서 기반으로 세미나 해달라는 요청을 조승덕 팀장님으로부터 받음. 그래서 지난주 금요일에 성공적으로 세미나 진행했고, 코덱스도 할 예정."
+    interpreted_dates:
+      cursor_seminar_date:
+        phrase: 지난주 금요일
+        resolved_date: 2026-06-12
+        basis: Conversation date is 2026-06-14, a Sunday.
   - id: source_ai_agent_local_git_inspection_20260614_common_ai_agent
     source_type: local_git_inspection
     original_date: 2026-06-14
@@ -89,18 +106,29 @@ summary:
     - The history shows a progression from zero-dependency Python brian_coder/common_ai_agent engine work into TUI and Atlas UI, and later Codex bridge work.
     - Atlas was also a SOC group project context where Brian owned RTL implementation and invested two to three months in UI development to support that work.
     - The Atlas period was difficult and produced important lessons that should be captured later as explicit learning records.
+    - Server integration and broader multi-user usage exposed limits in the previous TODO-based implementation approach.
+    - Brian felt confident in TODO-based implementation, but realized the system was not yet a proper ontology-based implementation design.
+    - Brian is now developing a Codex-oriented ontology-based development plugin.
+    - Earlier executive and division-head demos were scheduled, but no successful demo was delivered.
+    - While stressed because things were not going as expected, Brian was asked by 조승덕 팀장님 to run a Cursor-based seminar.
+    - Brian successfully ran the Cursor seminar on 2026-06-12.
+    - Brian expects to run a Codex seminar as a next step.
     - The active local implementation repo is /Users/brian/Desktop/Project/ontology_ip_agent.
     - ontology_ip_agent is a .codex-first OAG test pack with hardware IP examples and ontology/knowledge ledger workflows.
   active_threads:
     - common_ai_agent Codex-based porting
     - common_ai_agent source history analysis and migration into Codex/OAG workflows
     - Atlas SOC project experience and lessons from UI-assisted RTL implementation
+    - Codex ontology-based development plugin design
+    - recovery from missed demos and server/multi-user scaling lessons
+    - Cursor seminar success and Codex seminar preparation
     - company Codex adoption support preparation
     - Brian's personal ontology-backed life agent development
     - ontology_ip_agent development as the concrete OAG/Codex hardware IP agent implementation
   positive_signals:
     - This work appears to combine CAREER, MIND, and FUN rather than being only obligation-driven work.
     - The company rollout creates a near-term opportunity for Brian to turn personal experimentation into practical support.
+    - A successful Cursor seminar shows that Brian can translate the hard-earned agent workflow experience into useful enablement for others.
   open_questions:
     - id: oq_ai_agent_common_ai_agent_port_scope
       question: "common_ai_agent porting scope is not yet explicit: CLI surface, plugin surface, ontology gateway, prompt workflow, or all of these."
@@ -118,6 +146,38 @@ summary:
       question: "Capture what was hard and what Brian learned during the Atlas SOC project and two to three months of UI work for RTL implementation."
       related_task_ref: task_ai_agent_common_ai_agent_codex_port
       needs_user_review: true
+    - id: oq_ai_agent_demo_failure_lessons
+      question: "Capture why the executive/division-head demos could not be delivered and what minimum demo criteria should exist before scheduling future demos."
+      related_task_ref: task_ai_agent_codex_ontology_development_plugin
+      needs_user_review: true
+    - id: oq_ai_agent_ontology_plugin_scope
+      question: "Define the Codex ontology development plugin scope: ontology object model, workflow gates, evidence ledger, UI/server bridge, or all of these."
+      related_task_ref: task_ai_agent_codex_ontology_development_plugin
+      needs_user_review: true
+    - id: oq_ai_agent_codex_seminar_scope
+      question: "Define the Codex seminar scope and audience based on what worked in the successful 2026-06-12 Cursor seminar."
+      related_task_ref: task_ai_agent_codex_seminar_prepare
+      needs_user_review: true
+
+event_records:
+  - id: event_ai_agent_cursor_seminar_success_20260612
+    event_type: seminar
+    area: CAREER
+    secondary_areas:
+      - MIND
+    date: 2026-06-12
+    title: Cursor-based seminar
+    requester_ref: person_cho_seungdeok
+    status: completed_successfully
+    context:
+      - Brian was under stress because the server/multi-user agent direction was not going as expected.
+      - 조승덕 팀장님 requested a Cursor-based seminar.
+      - Brian successfully delivered the seminar.
+    significance:
+      - This converted a stressful agent-development period into visible enablement value.
+      - It provides a practical bridge from Cursor workflows to the planned Codex seminar.
+    follow_up_task_ref: task_ai_agent_codex_seminar_prepare
+    source_ref: source_ai_agent_conversation_20260614_cursor_seminar_success_codex_planned
 
 experience_records:
   - id: experience_ai_agent_atlas_soc_ui_rtl_implementation
@@ -137,6 +197,47 @@ experience_records:
     related_repo_ref: repo_common_ai_agent_origin
     related_task_ref: task_ai_agent_common_ai_agent_codex_port
     source_ref: source_ai_agent_conversation_20260614_atlas_soc_ui_rtl_history
+
+  - id: experience_ai_agent_server_multiuser_demo_ontology_turning_point
+    experience_type: turning_point
+    area: CAREER
+    secondary_areas:
+      - MIND
+    project_name: common_ai_agent_to_codex_ontology_plugin
+    context:
+      - Server integration and broader user usage made the previous approach harder than expected.
+      - Brian was confident in TODO-based implementation.
+      - Brian realized TODO-based implementation was not the same as a proper ontology-based implementation design.
+      - Executive and division-head demos had been scheduled before, but no demo was successfully delivered.
+    lesson_hypothesis:
+      - A TODO loop can manage execution, but it does not by itself provide durable ontology, state model, evidence model, multi-user semantics, or demo-ready product behavior.
+      - Future demos need a smaller reliable vertical slice with explicit readiness criteria.
+    emotional_tone:
+      - difficult
+      - frustrating
+      - humbling
+      - clarifying
+    resulting_direction: Build an ontology-based development plugin for Codex.
+    related_repo_ref: repo_ontology_ip_agent
+    related_task_ref: task_ai_agent_codex_ontology_development_plugin
+    source_ref: source_ai_agent_conversation_20260614_server_multiuser_demo_ontology_turning_point
+
+  - id: experience_ai_agent_cursor_seminar_recovery_signal
+    experience_type: positive_reversal
+    area: CAREER
+    secondary_areas:
+      - MIND
+    context:
+      - Brian was stressed because the broader agent/server/multi-user direction was not going smoothly.
+      - A Cursor seminar request from 조승덕 팀장님 created a concrete, bounded enablement opportunity.
+      - The seminar was successfully delivered on 2026-06-12.
+    lesson_hypothesis:
+      - Even when productization is not ready, Brian can still create value by teaching concrete workflows and hard-earned lessons.
+      - Seminars can become a safer bridge than executive demos when the product architecture is still changing.
+    resulting_direction: Prepare a Codex seminar using Cursor seminar learnings and the ontology-plugin direction.
+    related_event_ref: event_ai_agent_cursor_seminar_success_20260612
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+    source_ref: source_ai_agent_conversation_20260614_cursor_seminar_success_codex_planned
 
 repositories:
   - id: repo_common_ai_agent_origin
@@ -175,7 +276,7 @@ repositories:
     path: /Users/brian/Desktop/Project/ontology_ip_agent
     status: active_development
     observed_at: 2026-06-14
-    purpose: Codex-first OAG test pack and ontology-backed hardware IP agent implementation.
+    purpose: Codex-first OAG test pack, ontology-backed hardware IP agent implementation, and current base for the Codex-oriented ontology development plugin.
     notable_contents:
       - .codex assets, rules, scripts, skills, and hooks for OAG workflow
       - timer APB3 Timer IP with generated evidence flow
@@ -185,6 +286,90 @@ repositories:
       - source_ai_agent_local_repo_inspection_20260614_ontology_ip_agent
 
 tasks:
+  - id: task_ai_agent_codex_ontology_development_plugin
+    title: Codex용 ontology 기반 개발 플러그인 설계/구현
+    area: CAREER
+    secondary_areas:
+      - MIND
+      - FUN
+    status: in_progress
+    priority: high
+    energy: creative_deep_work
+    estimated_minutes: null
+    due_date: null
+    tracking_level: detailed
+    project_ref: project_ai_agent
+    repository_ref: repo_ontology_ip_agent
+    progress_percent: null
+    tags:
+      - codex
+      - ontology
+      - plugin
+      - oag
+      - hardware_ip_agent
+      - productization
+    origin_context:
+      - Previous TODO-based implementation was strong for task execution, but not enough for a proper ontology-based implementation design.
+      - Server integration and many-user usage exposed design gaps.
+      - Missed executive/division-head demos created pressure and showed the need for a reliable demo slice.
+    expected_outputs:
+      - Codex-compatible ontology development plugin
+      - explicit ontology object and link model for development workflows
+      - workflow gates that are more than TODO state
+      - evidence/decision ledger for implementation progress and demo readiness
+      - small reliable demo path before broader rollout
+    next_actions:
+      - Define the minimum ontology object model needed for a real development plugin.
+      - Separate TODO execution state from ontology truth, evidence, and decision records.
+      - Define demo-readiness criteria before scheduling future executive demos.
+      - Choose one narrow vertical slice that can run reliably end to end.
+      - Use the common_ai_agent history to decide what to preserve and what to replace with Codex-native/plugin-native behavior.
+    evidence_refs:
+      - source_ai_agent_conversation_20260614_server_multiuser_demo_ontology_turning_point
+      - source_ai_agent_conversation_20260614_ontology_ip_agent_repo
+      - source_ai_agent_local_repo_inspection_20260614_ontology_ip_agent
+    confidence: high
+    needs_user_review: false
+
+  - id: task_ai_agent_codex_seminar_prepare
+    title: Codex 세미나 준비
+    area: CAREER
+    secondary_areas:
+      - MIND
+    status: planned
+    priority: high
+    energy: communication_and_system_design
+    estimated_minutes: null
+    due_date: null
+    tracking_level: detailed
+    project_ref: project_ai_agent
+    progress_percent: 0
+    tags:
+      - codex
+      - seminar
+      - enablement
+      - cursor
+      - ai_agent
+    context:
+      - Cursor-based seminar was successfully delivered on 2026-06-12 after a request from 조승덕 팀장님.
+      - Codex seminar is expected next.
+      - Cursor seminar can provide the concrete before/after bridge for Codex adoption.
+    expected_outputs:
+      - Codex seminar outline
+      - comparison of Cursor workflow and Codex workflow
+      - examples grounded in common_ai_agent and ontology_ip_agent experience
+      - setup and first-week adoption guidance
+      - cautions about demo readiness, ontology design, and overpromising
+    next_actions:
+      - Write down what worked in the 2026-06-12 Cursor seminar.
+      - Decide whether the Codex seminar should focus on usage, workflow design, hardware IP examples, or ontology-backed development.
+      - Prepare one reliable Codex demo slice rather than a broad product demo.
+      - Reuse the TODO-vs-ontology lesson as a design narrative.
+    evidence_refs:
+      - source_ai_agent_conversation_20260614_cursor_seminar_success_codex_planned
+    confidence: high
+    needs_user_review: false
+
   - id: task_ai_agent_common_ai_agent_codex_port
     title: common_ai_agent를 Codex 기반 workflow로 포팅
     area: CAREER
@@ -214,6 +399,10 @@ tasks:
       - The original project appears to have evolved from Python-based brian_coder/common_ai_agent engine work into TUI, Atlas UI, and Codex bridge work.
       - Atlas UI work is connected to a SOC group Atlas project where Brian was responsible for RTL implementation.
       - Brian spent about two to three months developing UI for Atlas-related RTL implementation support, with meaningful difficulty and lessons learned.
+      - Server integration and multi-user usage exposed limits in the previous TODO-based implementation.
+      - Brian realized the next version needs a true ontology-based design, not only TODO-based task execution.
+      - Brian successfully delivered a Cursor-based seminar on 2026-06-12 after a request from 조승덕 팀장님.
+      - Codex seminar preparation is now part of the follow-up path.
       - The active local implementation context includes ontology_ip_agent at /Users/brian/Desktop/Project/ontology_ip_agent.
       - ontology_ip_agent already contains OAG/Codex workflow assets and hardware IP examples.
     expected_outputs:
@@ -224,10 +413,12 @@ tasks:
       - list of friction points or missing capabilities
       - reusable ontology_ip_agent examples for hardware engineers adopting Codex
       - captured Atlas lessons: what was hard, what worked, what should be preserved in future Codex/OAG workflows
+      - ontology-plugin migration plan that separates TODO execution from durable ontology/evidence semantics
     next_actions:
       - Define the exact porting scope and target surfaces.
       - Extract a concise source-history map from common_ai_agent: Python engine, TUI, Atlas UI, Codex bridge.
       - Interview Brian later on Atlas lessons and convert them into reusable workflow principles.
+      - Write down what TODO-based implementation handled well and what it failed to model.
       - Clarify the boundary between common_ai_agent and ontology_ip_agent.
       - Capture decisions, prompts, tool patterns, and failure cases while porting.
       - Keep experiments small while tired; avoid large architecture changes late in the day.
@@ -237,6 +428,8 @@ tasks:
       - source_ai_agent_conversation_20260614_common_ai_agent_origin_history
       - source_ai_agent_conversation_20260614_common_ai_agent_origin_intent
       - source_ai_agent_conversation_20260614_atlas_soc_ui_rtl_history
+      - source_ai_agent_conversation_20260614_server_multiuser_demo_ontology_turning_point
+      - source_ai_agent_conversation_20260614_cursor_seminar_success_codex_planned
       - source_ai_agent_local_git_inspection_20260614_common_ai_agent
       - source_ai_agent_conversation_20260614_ontology_ip_agent_repo
       - source_ai_agent_local_repo_inspection_20260614_ontology_ip_agent
@@ -273,6 +466,8 @@ tasks:
       - common_ai_agent was originally designed for realistic company constraints: Linux server use, zero-dependency Python, and internal LLM integration.
       - common_ai_agent's eight-month-ish history can be used to explain which AI-agent workflow ideas survived real iteration.
       - Atlas provides a real SOC/RTL implementation story behind the UI effort, including hard lessons that can make rollout guidance more credible.
+      - The missed executive/division-head demos are a warning to prepare a smaller reliable demo slice before broad rollout.
+      - The successful 2026-06-12 Cursor seminar can be reused as a pattern for the upcoming Codex seminar.
       - ontology_ip_agent can supply concrete hardware IP workflow examples for the rollout.
     expected_outputs:
       - support checklist for early Codex users
@@ -302,6 +497,8 @@ work_sessions:
     actual_minutes: null
     time_quality: approximate
     task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
       - task_ai_agent_common_ai_agent_codex_port
     focus_level: tired_but_interested
     mood_signal:
@@ -316,12 +513,20 @@ work_sessions:
       - The origin intent was practical company deployment on Linux servers with an internal LLM, not only a local hobby agent.
       - Atlas was a SOC group project where Brian owned RTL implementation and spent two to three months pushing UI development to support that implementation.
       - The Atlas period was hard and produced lessons that should be extracted when Brian has energy.
+      - Server integration and many-user usage exposed that a TODO-based implementation was not enough for proper ontology-based design.
+      - Brian had scheduled demos with executive/division-head stakeholders but did not successfully deliver a demo.
+      - This led to the current Codex-oriented ontology development plugin direction.
+      - During that stressful period, 조승덕 팀장님 requested a Cursor-based seminar.
+      - Brian successfully delivered the Cursor seminar on 2026-06-12 and expects to do Codex next.
       - ontology_ip_agent is the concrete local repo where Brian is developing the OAG/Codex hardware IP workflow.
       - Because Brian is tired, this session should stay in experiment or note-capture mode rather than heavy architecture mode.
     next_steps:
       - Capture useful porting patterns while they are fresh.
       - Preserve the common_ai_agent history as evidence for which agent architecture choices were hard-won.
       - Create a separate Atlas lessons record later, focused on what was hard and what Brian learned.
+      - Capture the TODO-vs-ontology design lesson before it gets lost.
+      - Define a future demo slice only after reliability criteria are explicit.
+      - Capture the successful Cursor seminar structure while fresh and convert it into a Codex seminar outline.
       - Use ontology_ip_agent as the source of concrete examples for Codex rollout material.
       - Avoid large late-day design decisions.
       - Turn successful patterns into support material for company adoption.
@@ -387,3 +592,27 @@ project_status_updates:
     positive_signal: This is direct evidence that Brian's agent/UI work came from real hardware implementation pressure, not only abstract tool-building.
     next_step: "Capture the concrete Atlas lessons later: what was painful, what UI support helped, what failed, and what should be preserved in Codex/OAG workflows."
     source_ref: source_ai_agent_conversation_20260614_atlas_soc_ui_rtl_history
+
+  - id: project_status_ai_agent_20260614_todo_to_ontology_turning_point
+    date: 2026-06-14
+    project_ref: project_ai_agent
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: Server integration and attempts to support many users showed that the TODO-based common_ai_agent implementation was not a sufficient ontology-based design; Brian is now developing a Codex-oriented ontology development plugin.
+    emotional_context: Brian had confidence in TODO-based implementation, but the server/multi-user/demo pressure exposed a deeper architecture gap.
+    missed_demo_context: Executive and division-head demos were scheduled before, but no successful demo was delivered.
+    lesson: TODO state is useful for execution, but product-level multi-user agent workflows need explicit ontology objects, durable evidence, decisions, ownership, readiness gates, and a small reliable demo slice.
+    next_step: "Define the Codex ontology plugin's minimum object model and one narrow demo path before scheduling future stakeholder demos."
+    source_ref: source_ai_agent_conversation_20260614_server_multiuser_demo_ontology_turning_point
+
+  - id: project_status_ai_agent_20260614_cursor_seminar_success_codex_next
+    date: 2026-06-14
+    project_ref: project_ai_agent
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: While stressed by server/multi-user productization issues, Brian was asked by 조승덕 팀장님 to give a Cursor-based seminar and successfully delivered it on 2026-06-12; a Codex seminar is expected next.
+    positive_signal: Successful seminar delivery shows that Brian's agent workflow experience already creates value even before the ontology plugin is fully productized.
+    next_step: "Capture the Cursor seminar structure and prepare a Codex seminar around one reliable workflow/demo slice."
+    source_ref: source_ai_agent_conversation_20260614_cursor_seminar_success_codex_planned
