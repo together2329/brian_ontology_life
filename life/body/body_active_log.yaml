@@ -106,7 +106,7 @@ workout_records:
     duration_minutes: null
     perceived_energy: null
     digestion: null
-    performance_note: Could not enter the PT shop because of a fingerprint access issue, so Brian completed a short home workout instead.
+    performance_note: Could not enter the PT shop because of a fingerprint access issue, so Brian completed a short home workout instead and added one more set.
     exercises:
       - exercise_ref: exercise_kettlebell_squat
         variant: kettlebell
@@ -120,12 +120,26 @@ workout_records:
             rest_seconds: null
             is_warmup: false
             is_pr: null
+          - set: 2
+            weight_kg: 8
+            reps: 20
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
       - exercise_ref: exercise_push_up
         variant: bodyweight
         equipment: bodyweight
         notes: Home replacement for planned PT shop workout.
         sets:
           - set: 1
+            weight_kg: null
+            reps: 20
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+          - set: 2
             weight_kg: null
             reps: 20
             rpe: null
@@ -166,3 +180,8 @@ raw_records:
     time: null
     source: codex_conversation
     text: "지문 이슈로 피티샵 못가서 집에서 스쿼트 캐틀벨 8kg 20회 팔굽혀 펴기 20회 진행함"
+  - id: raw_body_record_20260615_home_fallback_extra_set
+    date: 2026-06-15
+    time: null
+    source: codex_conversation
+    text: "1세트 더함"
