@@ -1,25 +1,27 @@
 schema_version: 1
-generated_at: '2026-06-13T17:10:52'
+generated_at: '2026-06-14T22:19:01'
 input_ref: life/imports/review_archive/normalized_records.jsonl
 catalog_ref: life/entities/semantic_entity_catalog.yaml
 output_ref: life/imports/review_archive/entity_linked_records.jsonl
 records:
   total: 18162
-  with_semantic_links: 12979
-  without_semantic_links: 5183
-  with_review_needed: 0
+  with_semantic_links: 14930
+  without_semantic_links: 3232
+  with_review_needed: 659
 link_counts:
   by_object_type:
-    Activity: 9501
-    Person: 2691
-    Component: 1206
-    Project: 2464
+    Activity: 14122
+    Person: 4092
+    Component: 1300
+    Project: 2488
+    Concept: 155
     CompanionAnimal: 323
   by_relation:
-    involves_activity: 9501
-    associated_person: 2691
-    targets_component: 1206
-    belongs_to_project: 2464
+    involves_activity: 14122
+    associated_person: 4092
+    targets_component: 1300
+    belongs_to_project: 2488
+    expresses_concept: 155
     associated_companion_animal: 323
 top_entities:
 - entity_ref: activity_meal
@@ -57,8 +59,8 @@ top_entities:
 - entity_ref: person_wife
   display_name: Wife / 아름이
   object_type: Person
-  records: 1626
-  hours: 1945.24
+  records: 2300
+  hours: 2719.48
   needs_user_review_records: 0
   examples:
   - record_ref: hist_20180101_2200_review_2018_time_jira_r4
@@ -86,6 +88,70 @@ top_entities:
     area: FUN
     title: 휴식
     matched_alias: 아름이
+- entity_ref: activity_conversation
+  display_name: Conversation
+  object_type: Activity
+  records: 1904
+  hours: 2141.79
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20180101_2200_review_2018_time_jira_r4
+    date: '2018-01-01'
+    area: RELATION
+    title: 아름이와 행복한 시간 보내기
+    matched_alias: 대화
+  - record_ref: hist_20180102_2200_review_2018_time_jira_r8
+    date: '2018-01-02'
+    area: RELATION
+    title: 아름이와 행복한 시간 보내기
+    matched_alias: 대화
+  - record_ref: hist_20180105_2300_review_2018_time_jira_r23
+    date: '2018-01-05'
+    area: RELATION
+    title: 아름이와 행복한 시간 보내기
+    matched_alias: 이야기
+  - record_ref: hist_20180107_0915_review_2018_time_jira_r31
+    date: '2018-01-07'
+    area: FUN
+    title: 휴식
+    matched_alias: 이야기
+  - record_ref: hist_20180107_1625_review_2018_time_jira_r35
+    date: '2018-01-07'
+    area: FUN
+    title: 휴식
+    matched_alias: 이야기
+- entity_ref: activity_reading_learning
+  display_name: Reading and learning
+  object_type: Activity
+  records: 1585
+  hours: 1627.77
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20180108_1339_review_2018_time_jira_r44
+    date: '2018-01-08'
+    area: MAINTENANCE
+    title: 아직 정의할 수 없는 시간
+    matched_alias: 강의를
+  - record_ref: hist_20180108_2145_review_2018_time_jira_r51
+    date: '2018-01-08'
+    area: MIND
+    title: 아직 정의할 수 없는 시간
+    matched_alias: 공부
+  - record_ref: hist_20180111_0924_review_2018_time_jira_r96
+    date: '2018-01-11'
+    area: MIND
+    title: '[독서] 조훈현 고수의 생각법 읽기 (아플수록 복기하라)'
+    matched_alias: 독서
+  - record_ref: hist_20180111_1421_review_2018_time_jira_r103
+    date: '2018-01-11'
+    area: MIND
+    title: '[독서] 일취월장 2장 사고'
+    matched_alias: 독서
+  - record_ref: hist_20180111_2325_review_2018_time_jira_r114
+    date: '2018-01-11'
+    area: MIND
+    title: '[독서] 일취월장 2장 사고'
+    matched_alias: 독서
 - entity_ref: activity_sleep
   display_name: Sleep
   object_type: Activity
@@ -278,6 +344,38 @@ top_entities:
     area: BODY
     title: '[식단 관리] 2018년 1월 1~2주'
     matched_alias: 지형이형
+- entity_ref: activity_health_recovery
+  display_name: Health recovery
+  object_type: Activity
+  records: 584
+  hours: 698.22
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20180107_0052_review_2018_time_jira_r30
+    date: '2018-01-07'
+    area: BODY
+    title: '[수면] 2018년 1월 1~2주'
+    matched_alias: 약
+  - record_ref: hist_20180111_0834_review_2018_time_jira_r94
+    date: '2018-01-11'
+    area: BODY
+    title: 눔 코치 프로그램 알아보기 - 중단
+    matched_alias: 건강
+  - record_ref: hist_20180111_0924_review_2018_time_jira_r96
+    date: '2018-01-11'
+    area: MIND
+    title: '[독서] 조훈현 고수의 생각법 읽기 (아플수록 복기하라)'
+    matched_alias: 약
+  - record_ref: hist_20180113_1940_review_2018_time_jira_r145
+    date: '2018-01-13'
+    area: BODY
+    title: '[피부] 습진약 바르기 1월 2주'
+    matched_alias: 약
+  - record_ref: hist_20180115_0719_review_2018_time_jira_r162
+    date: '2018-01-15'
+    area: BODY
+    title: '[식단 관리] 2018년 1월 3주'
+    matched_alias: 건강
 - entity_ref: project_x330
   display_name: X330 / SKT AI
   object_type: Project
@@ -470,6 +568,38 @@ top_entities:
     area: CAREER
     title: Cetus Final Action Item
     matched_alias: CPUSS
+- entity_ref: project_deeper_i
+  display_name: Deeper-I / Tachy-BS1
+  object_type: Project
+  records: 323
+  hours: 484.75
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20190521_1600_review_2019_time_jira_r2769
+    date: '2019-05-21'
+    area: CAREER
+    title: '[CAR] 미팅 & 회의 참가'
+    matched_alias: 디퍼아이
+  - record_ref: hist_20190830_1000_review_2019_time_jira_r4681
+    date: '2019-08-30'
+    area: CAREER
+    title: Deeper-I ( Tachy-BS1 )
+    matched_alias: Deeper-I
+  - record_ref: hist_20190830_1345_review_2019_time_jira_r4684
+    date: '2019-08-30'
+    area: CAREER
+    title: Deeper-I ( Tachy-BS1 )
+    matched_alias: Deeper-I
+  - record_ref: hist_20190902_1019_review_2019_time_jira_r4699
+    date: '2019-09-02'
+    area: CAREER
+    title: Deeper-I ( Tachy-BS1 )
+    matched_alias: Deeper-I
+  - record_ref: hist_20190902_1335_review_2019_time_jira_r4702
+    date: '2019-09-02'
+    area: CAREER
+    title: Deeper-I ( Tachy-BS1 )
+    matched_alias: Deeper-I
 - entity_ref: pet_dog_1
   display_name: 지구
   object_type: CompanionAnimal
@@ -534,38 +664,38 @@ top_entities:
     area: MIND
     title: BKE group 감사일기 캠페인
     matched_alias: 감사일기
-- entity_ref: project_deeper_i
-  display_name: Deeper-I / Tachy-BS1
-  object_type: Project
-  records: 299
-  hours: 447.03
+- entity_ref: activity_travel
+  display_name: Travel
+  object_type: Activity
+  records: 298
+  hours: 490.56
   needs_user_review_records: 0
   examples:
-  - record_ref: hist_20190830_1000_review_2019_time_jira_r4681
-    date: '2019-08-30'
-    area: CAREER
-    title: Deeper-I ( Tachy-BS1 )
-    matched_alias: Deeper-I
-  - record_ref: hist_20190830_1345_review_2019_time_jira_r4684
-    date: '2019-08-30'
-    area: CAREER
-    title: Deeper-I ( Tachy-BS1 )
-    matched_alias: Deeper-I
-  - record_ref: hist_20190902_1019_review_2019_time_jira_r4699
-    date: '2019-09-02'
-    area: CAREER
-    title: Deeper-I ( Tachy-BS1 )
-    matched_alias: Deeper-I
-  - record_ref: hist_20190902_1335_review_2019_time_jira_r4702
-    date: '2019-09-02'
-    area: CAREER
-    title: Deeper-I ( Tachy-BS1 )
-    matched_alias: Deeper-I
-  - record_ref: hist_20190902_1850_review_2019_time_jira_r4705
-    date: '2019-09-02'
-    area: CAREER
-    title: Deeper-I ( Tachy-BS1 )
-    matched_alias: Deeper-I
+  - record_ref: hist_20180105_2300_review_2018_time_jira_r23
+    date: '2018-01-05'
+    area: RELATION
+    title: 아름이와 행복한 시간 보내기
+    matched_alias: 여행
+  - record_ref: hist_20180119_1100_review_2018_time_jira_r225
+    date: '2018-01-19'
+    area: MIND
+    title: 아직 정의할 수 없는 시간
+    matched_alias: 대구
+  - record_ref: hist_20180120_1541_review_2018_time_jira_r239
+    date: '2018-01-20'
+    area: MAINTENANCE
+    title: 아직 정의할 수 없는 시간
+    matched_alias: 여행
+  - record_ref: hist_20180215_1211_review_2018_time_jira_r609
+    date: '2018-02-15'
+    area: FINANCE
+    title: 아직 정의할 수 없는 시간
+    matched_alias: 경주
+  - record_ref: hist_20180216_1108_review_2018_time_jira_r621
+    date: '2018-02-16'
+    area: MAINTENANCE
+    title: 정리하기
+    matched_alias: 경주
 - entity_ref: project_haibi
   display_name: Haibi
   object_type: Project
@@ -630,6 +760,38 @@ top_entities:
     area: RELATION
     title: '[REL] 사람 책 읽기'
     matched_alias: PCIe
+- entity_ref: activity_cafe_reflection
+  display_name: Cafe reflection
+  object_type: Activity
+  records: 250
+  hours: 245.29
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20180108_0855_review_2018_time_jira_r41
+    date: '2018-01-08'
+    area: MAINTENANCE
+    title: 기반시스템을 위한 행동( 이슈에 없는 것들 )
+    matched_alias: 카페
+  - record_ref: hist_20180110_1822_review_2018_time_jira_r86
+    date: '2018-01-10'
+    area: BODY
+    title: '[식단 관리] 2018년 1월 1~2주'
+    matched_alias: 카페
+  - record_ref: hist_20180112_1215_review_2018_time_jira_r122
+    date: '2018-01-12'
+    area: BODY
+    title: '[식단 관리] 2018년 1월 1~2주'
+    matched_alias: 카페
+  - record_ref: hist_20180112_1255_review_2018_time_jira_r123
+    date: '2018-01-12'
+    area: RELATION
+    title: 가족에게 전화하기
+    matched_alias: 카페
+  - record_ref: hist_20180112_1334_review_2018_time_jira_r124
+    date: '2018-01-12'
+    area: FUN
+    title: 휴식
+    matched_alias: 카페
 - entity_ref: component_cts
   display_name: CTS / timing
   object_type: Component
@@ -726,6 +888,38 @@ top_entities:
     area: CAREER
     title: SR ( SRTRI14LF )
     matched_alias: SRTRI14LF
+- entity_ref: person_younggon
+  display_name: Younggon
+  object_type: Person
+  records: 199
+  hours: 211.27
+  needs_user_review_records: 199
+  examples:
+  - record_ref: hist_20180118_1401_review_2018_time_jira_r214
+    date: '2018-01-18'
+    area: RELATION
+    title: 사람 책 읽기
+    matched_alias: 영곤
+  - record_ref: hist_20180126_1312_review_2018_time_jira_r331
+    date: '2018-01-26'
+    area: MIND
+    title: 아직 정의할 수 없는 시간
+    matched_alias: 영곤
+  - record_ref: hist_20180129_2238_review_2018_time_jira_r375
+    date: '2018-01-29'
+    area: MIND
+    title: '[하루 기록 및 반성] 2018년 1~3월'
+    matched_alias: 영곤
+  - record_ref: hist_20180201_1030_review_2018_time_jira_r416
+    date: '2018-02-01'
+    area: RELATION
+    title: 팀장님과 대화하기
+    matched_alias: 영곤
+  - record_ref: hist_20180214_1248_review_2018_time_jira_r591
+    date: '2018-02-14'
+    area: BODY
+    title: '[식단 관리] 2018년 2월 3~5주'
+    matched_alias: 영곤
 - entity_ref: person_mother
   display_name: Brian's mother
   object_type: Person
@@ -790,6 +984,70 @@ top_entities:
     area: MIND
     title: '[MIND] 강의 듣기'
     matched_alias: 마케팅
+- entity_ref: concept_fulfilled_mind
+  display_name: 충만한 마음
+  object_type: Concept
+  records: 155
+  hours: 169.39
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20180210_1332_review_2018_time_jira_r536
+    date: '2018-02-10'
+    area: MAINTENANCE
+    title: 정리하기
+    matched_alias: 충만
+  - record_ref: hist_20180211_2029_review_2018_time_jira_r552
+    date: '2018-02-11'
+    area: FUN
+    title: 휴식
+    matched_alias: 충만
+  - record_ref: hist_20180218_1547_review_2018_time_jira_r649
+    date: '2018-02-18'
+    area: RELATION
+    title: 아름이와 행복한 시간 보내기
+    matched_alias: 충만한 시간
+  - record_ref: hist_20180302_0236_review_2018_time_jira_r804
+    date: '2018-03-02'
+    area: BODY
+    title: '[수면] 2018년 2월 3~5주'
+    matched_alias: 충만한 마음
+  - record_ref: hist_20180321_0730_review_2018_time_jira_r1042
+    date: '2018-03-21'
+    area: MIND
+    title: 출근 준비하기 ( 씻고, 옷입고,  등등 )
+    matched_alias: 충만
+- entity_ref: person_taehee
+  display_name: Taehee
+  object_type: Person
+  records: 147
+  hours: 169.41
+  needs_user_review_records: 147
+  examples:
+  - record_ref: hist_20180302_0120_review_2018_time_jira_r803
+    date: '2018-03-02'
+    area: CAREER
+    title: 팀장님과 대화하기
+    matched_alias: 태희
+  - record_ref: hist_20180305_1230_review_2018_time_jira_r845
+    date: '2018-03-05'
+    area: FINANCE
+    title: 팀장님과 대화하기
+    matched_alias: 태희형
+  - record_ref: hist_20180424_1330_review_2018_time_jira_r1439
+    date: '2018-04-24'
+    area: CAREER
+    title: 이슈로 정의되지 않은 일들
+    matched_alias: 태희형
+  - record_ref: hist_20180503_0854_review_2018_time_jira_r1554
+    date: '2018-05-03'
+    area: RELATION
+    title: '[REL] 사람 책 읽기'
+    matched_alias: 태희 형
+  - record_ref: hist_20180714_1011_review_2018_time_jira_r2284
+    date: '2018-07-14'
+    area: RELATION
+    title: '[REL] 사람 책 읽기'
+    matched_alias: 태희형
 - entity_ref: component_fpga
   display_name: FPGA
   object_type: Component
@@ -822,6 +1080,70 @@ top_entities:
     area: CAREER
     title: 이슈로 정의되지 않은 일들
     matched_alias: FPGA
+- entity_ref: person_jang_director
+  display_name: Jang director
+  object_type: Person
+  records: 105
+  hours: 130.54
+  needs_user_review_records: 105
+  examples:
+  - record_ref: hist_20180109_1642_review_2018_time_jira_r63
+    date: '2018-01-09'
+    area: CAREER
+    title: 이슈로 정의되지 않은 일들
+    matched_alias: 장이사님
+  - record_ref: hist_20180922_1319_review_2018_time_jira_r3368
+    date: '2018-09-22'
+    area: BODY
+    title: '[BODY] 식단'
+    matched_alias: 장이사님
+  - record_ref: hist_20181002_1002_review_2018_time_jira_r3534
+    date: '2018-10-02'
+    area: CAREER
+    title: 장이사님과 시그널비젼 보드 리뷰하기
+    matched_alias: 장이사님
+  - record_ref: hist_20181002_1252_review_2018_time_jira_r3536
+    date: '2018-10-02'
+    area: MIND
+    title: 장이사님과 시그널비젼 보드 리뷰하기
+    matched_alias: 장이사님
+  - record_ref: hist_20181004_1400_review_2018_time_jira_r3577
+    date: '2018-10-04'
+    area: CAREER
+    title: 장이사님과 시그널비젼 보드 리뷰하기
+    matched_alias: 장이사님
+- entity_ref: component_ddr_controller
+  display_name: DDR Controller
+  object_type: Component
+  records: 94
+  hours: 139.47
+  needs_user_review_records: 0
+  examples:
+  - record_ref: hist_20180119_1259_review_2018_time_jira_r227
+    date: '2018-01-19'
+    area: CAREER
+    title: 사람 책 읽기
+    matched_alias: DDR
+  - record_ref: hist_20180122_1246_review_2018_time_jira_r262
+    date: '2018-01-22'
+    area: CAREER
+    title: 추가적인 Level0  Test case만들기(OSPI, LZdecomp)
+    matched_alias: DDR
+  - record_ref: hist_20180122_1525_review_2018_time_jira_r266
+    date: '2018-01-22'
+    area: CAREER
+    title: Level0 Simulation All Pass [ Final ]
+    matched_alias: DDR
+  - record_ref: hist_20180122_1631_review_2018_time_jira_r268
+    date: '2018-01-22'
+    area: CAREER
+    title: Level0 Simulation All Pass [ Final ]
+    matched_alias: DDR
+  - record_ref: hist_20180122_2002_review_2018_time_jira_r269
+    date: '2018-01-22'
+    area: CAREER
+    title: Level0 Simulation All Pass [ Final ]
+    matched_alias: DDR
 - entity_ref: project_aworld_magic
   display_name: AWorld Magic
   object_type: Project
@@ -918,6 +1240,38 @@ top_entities:
     area: MIND
     title: 아직 정의할 수 없는 시간
     matched_alias: 아빠
+- entity_ref: person_grandmother
+  display_name: Grandmother
+  object_type: Person
+  records: 75
+  hours: 89.66
+  needs_user_review_records: 75
+  examples:
+  - record_ref: hist_20180112_1255_review_2018_time_jira_r123
+    date: '2018-01-12'
+    area: RELATION
+    title: 가족에게 전화하기
+    matched_alias: 할머니
+  - record_ref: hist_20180130_1908_review_2018_time_jira_r388
+    date: '2018-01-30'
+    area: RELATION
+    title: 가족에게 전화하기
+    matched_alias: 할머니
+  - record_ref: hist_20180215_1211_review_2018_time_jira_r609
+    date: '2018-02-15'
+    area: FINANCE
+    title: 아직 정의할 수 없는 시간
+    matched_alias: 할머니
+  - record_ref: hist_20180218_1547_review_2018_time_jira_r649
+    date: '2018-02-18'
+    area: RELATION
+    title: 아름이와 행복한 시간 보내기
+    matched_alias: 할머니
+  - record_ref: hist_20180310_1825_review_2018_time_jira_r906
+    date: '2018-03-10'
+    area: BODY
+    title: '[식단 관리] 2018년 2월 3~5주'
+    matched_alias: 할머니
 - entity_ref: person_hyeongsik
   display_name: Hyeongsik
   object_type: Person
@@ -1014,6 +1368,38 @@ top_entities:
     area: CAREER
     title: 제품 포장하기 ( 제품 포장 / 박스 포장 )
     matched_alias: 제품 포장
+- entity_ref: person_byeongtak
+  display_name: Byeongtak
+  object_type: Person
+  records: 57
+  hours: 59.44
+  needs_user_review_records: 57
+  examples:
+  - record_ref: hist_20180503_1911_review_2018_time_jira_r1560
+    date: '2018-05-03'
+    area: MIND
+    title: '[TIME] Unknown'
+    matched_alias: 병탁 책임님
+  - record_ref: hist_20180918_1254_review_2018_time_jira_r3303
+    date: '2018-09-18'
+    area: FUN
+    title: '[FUN] 휴식'
+    matched_alias: 병탁 책임님
+  - record_ref: hist_20181010_1430_review_2018_time_jira_r3658
+    date: '2018-10-10'
+    area: MIND
+    title: 이슈로 정의되지 않은 일들
+    matched_alias: 병탁 책임님
+  - record_ref: hist_20181122_1028_review_2018_time_jira_r4374
+    date: '2018-11-22'
+    area: CAREER
+    title: 시그널비젼 관련 ( 연구노트 작성 )
+    matched_alias: 병탁책임님
+  - record_ref: hist_20181123_1336_review_2018_time_jira_r4390
+    date: '2018-11-23'
+    area: RELATION
+    title: SoC팀 당일 워크샵
+    matched_alias: 병탁 책임님
 - entity_ref: project_keti_rathma
   display_name: KETI / Rathma
   object_type: Project
@@ -1046,6 +1432,38 @@ top_entities:
     area: MIND
     title: KETI ( Rathma )
     matched_alias: KETI
+- entity_ref: person_youngil
+  display_name: Youngil
+  object_type: Person
+  records: 38
+  hours: 43.21
+  needs_user_review_records: 38
+  examples:
+  - record_ref: hist_20180207_2117_review_2018_time_jira_r500
+    date: '2018-02-07'
+    area: RELATION
+    title: 사람 책 읽기
+    matched_alias: 영일이 형
+  - record_ref: hist_20180405_1813_review_2018_time_jira_r1204
+    date: '2018-04-05'
+    area: BODY
+    title: '[BODY] 식단'
+    matched_alias: 영일이형
+  - record_ref: hist_20180405_1951_review_2018_time_jira_r1205
+    date: '2018-04-05'
+    area: RELATION
+    title: 사람 책 읽기
+    matched_alias: 영일이형
+  - record_ref: hist_20190105_1138_review_2019_time_jira_r106
+    date: '2019-01-05'
+    area: BODY
+    title: '[BODY] 식사 준비 및 식사'
+    matched_alias: 영일이형
+  - record_ref: hist_20190105_1439_review_2019_time_jira_r107
+    date: '2019-01-05'
+    area: RELATION
+    title: '[REL] 사람 책 읽기'
+    matched_alias: 영일이형
 - entity_ref: activity_customer_analysis
   display_name: Customer analysis
   object_type: Activity
@@ -1110,6 +1528,38 @@ top_entities:
     area: CAREER
     title: 하이비 칩 테스트
     matched_alias: Jtag
+- entity_ref: person_myeongsu
+  display_name: Myeongsu
+  object_type: Person
+  records: 33
+  hours: 35.53
+  needs_user_review_records: 33
+  examples:
+  - record_ref: hist_20180113_2020_review_2018_time_jira_r147
+    date: '2018-01-13'
+    area: FINANCE
+    title: '[전화] 명수와 이야기 ( 근황 및 경제 이야기 )'
+    matched_alias: 명수
+  - record_ref: hist_20180215_1432_review_2018_time_jira_r611
+    date: '2018-02-15'
+    area: RELATION
+    title: 소중한 사람들에게 연락하기(전화, 문자), 만나기
+    matched_alias: 명수
+  - record_ref: hist_20180217_2315_review_2018_time_jira_r638
+    date: '2018-02-17'
+    area: RELATION
+    title: 사람 책 읽기
+    matched_alias: 명수
+  - record_ref: hist_20180303_1615_review_2018_time_jira_r824
+    date: '2018-03-03'
+    area: MIND
+    title: '[전화] 명수와 이야기 ( 근황 및 경제 이야기 )'
+    matched_alias: 명수
+  - record_ref: hist_20180630_0917_review_2018_time_jira_r2037
+    date: '2018-06-30'
+    area: MIND
+    title: 명수 보기 ( 6/30 ), 엑셀도 알려주기
+    matched_alias: 명수
 - entity_ref: component_dma
   display_name: DMA
   object_type: Component
@@ -1206,6 +1656,38 @@ top_entities:
     area: MIND
     title: 제품 발송하기 ( 사입 )
     matched_alias: 제품 발송
+- entity_ref: person_dasul
+  display_name: Dasul
+  object_type: Person
+  records: 24
+  hours: 23.72
+  needs_user_review_records: 24
+  examples:
+  - record_ref: hist_20180215_1432_review_2018_time_jira_r611
+    date: '2018-02-15'
+    area: RELATION
+    title: 소중한 사람들에게 연락하기(전화, 문자), 만나기
+    matched_alias: 다슬
+  - record_ref: hist_20180523_1859_review_2018_time_jira_r1798
+    date: '2018-05-23'
+    area: MIND
+    title: 다슬이 만나기 ( 판교 저녁 약속 )
+    matched_alias: 다슬이
+  - record_ref: hist_20180915_1925_review_2018_time_jira_r3254
+    date: '2018-09-15'
+    area: RELATION
+    title: '[REL] 사람 책 읽기'
+    matched_alias: 다슬
+  - record_ref: hist_20181013_1945_review_2018_time_jira_r3712
+    date: '2018-10-13'
+    area: RELATION
+    title: '[REL] 사람 책 읽기'
+    matched_alias: 다슬이
+  - record_ref: hist_20181125_0748_review_2018_time_jira_r4413
+    date: '2018-11-25'
+    area: MIND
+    title: 다슬이가 부탁한 자료 읽어보고 피드백 주기
+    matched_alias: 다슬이
 - entity_ref: person_seoung
   display_name: Seoung
   object_type: Person
@@ -1270,6 +1752,102 @@ top_entities:
     area: FUN
     title: '[FUN] 행복꾸러미'
     matched_alias: 아버님
+- entity_ref: person_heedo
+  display_name: Heedo
+  object_type: Person
+  records: 20
+  hours: 22.18
+  needs_user_review_records: 20
+  examples:
+  - record_ref: hist_20180215_1432_review_2018_time_jira_r611
+    date: '2018-02-15'
+    area: RELATION
+    title: 소중한 사람들에게 연락하기(전화, 문자), 만나기
+    matched_alias: 희도
+  - record_ref: hist_20180215_1904_review_2018_time_jira_r613
+    date: '2018-02-15'
+    area: BODY
+    title: '[식단 관리] 2018년 2월 3~5주'
+    matched_alias: 희도
+  - record_ref: hist_20180215_2028_review_2018_time_jira_r614
+    date: '2018-02-15'
+    area: RELATION
+    title: 사람 책 읽기
+    matched_alias: 희도
+  - record_ref: hist_20180301_1010_review_2018_time_jira_r791
+    date: '2018-03-01'
+    area: RELATION
+    title: 사람 책 읽기
+    matched_alias: 희도
+  - record_ref: hist_20180404_1056_review_2018_time_jira_r1185
+    date: '2018-04-04'
+    area: FUN
+    title: '[FUN] 행복꾸러미'
+    matched_alias: 희도
+- entity_ref: person_taegyu
+  display_name: Taegyu
+  object_type: Person
+  records: 20
+  hours: 18.94
+  needs_user_review_records: 20
+  examples:
+  - record_ref: hist_20190311_1440_review_2019_time_jira_r1599
+    date: '2019-03-11'
+    area: BODY
+    title: '[BODY] 식사 준비 및 식사'
+    matched_alias: 태규 책임님
+  - record_ref: hist_20190318_1620_review_2019_time_jira_r1757
+    date: '2019-03-18'
+    area: CAREER
+    title: 라닉스 프로젝트
+    matched_alias: 태규 책임님
+  - record_ref: hist_20190417_1830_review_2019_time_jira_r2391
+    date: '2019-04-17'
+    area: BODY
+    title: '[BODY] 식사 준비 및 식사'
+    matched_alias: 태규 책임님
+  - record_ref: hist_20190430_1245_review_2019_time_jira_r2437
+    date: '2019-04-30'
+    area: FUN
+    title: '[FUN] 행복꾸러미'
+    matched_alias: 태규 책임님
+  - record_ref: hist_20190502_1230_review_2019_time_jira_r2469
+    date: '2019-05-02'
+    area: BODY
+    title: '[BODY] 식사 준비 및 식사'
+    matched_alias: 태규 책임님
+- entity_ref: person_tony
+  display_name: Tony
+  object_type: Person
+  records: 9
+  hours: 8.84
+  needs_user_review_records: 9
+  examples:
+  - record_ref: hist_20190906_1200_review_2019_time_jira_r4748
+    date: '2019-09-06'
+    area: BODY
+    title: '[BODY] 식사 준비 및 식사'
+    matched_alias: 토니
+  - record_ref: hist_20190918_1200_review_2019_time_jira_r4909
+    date: '2019-09-18'
+    area: CAREER
+    title: 이동 & 외출 & 출근 & 퇴근
+    matched_alias: 토니
+  - record_ref: hist_20190923_1240_review_2019_time_jira_r4990
+    date: '2019-09-23'
+    area: RELATION
+    title: '[REL] 사람 책 읽기'
+    matched_alias: 토니
+  - record_ref: hist_20190924_1205_review_2019_time_jira_r5011
+    date: '2019-09-24'
+    area: BODY
+    title: '[BODY] 식사 준비 및 식사'
+    matched_alias: 토니
+  - record_ref: hist_20210402_1245_review_2021_clockify_work_r782
+    date: '2021-04-02'
+    area: MIND
+    title: 고통
+    matched_alias: 토니
 - entity_ref: person_brian
   display_name: Brian
   object_type: Person

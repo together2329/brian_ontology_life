@@ -787,9 +787,34 @@ entities:
       confidence: medium
       needs_user_review: false
 
+  concepts:
+    - id: concept_fulfilled_mind
+      object_type: Concept
+      display_name: 충만한 마음
+      area: MIND
+      aliases:
+        - 충만한 마음
+        - 충만함
+        - 충만감
+        - 충만한 기분
+        - 충만한 시간
+        - 충만한 순간
+        - 마음이 충만
+        - 마음을 충만
+        - 마음의 충만
+        - 가슴이 충만
+        - 충만
+        - fulfilled mind
+        - fullness
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-14
+      notes: Brian's recurring concept of intentionally creating a fulfilled, grateful, happy, calm inner state through visualization, gratitude, reflection, relationships, and happiness-bundle actions.
+
 link_relations:
   Person: associated_person
   CompanionAnimal: associated_companion_animal
   Project: belongs_to_project
   Component: targets_component
   Activity: involves_activity
+  Concept: expresses_concept

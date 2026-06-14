@@ -1,0 +1,102 @@
+schema_version: 1
+id: concept_fulfilled_mind
+object_type: Concept
+display_name: 충만한 마음
+status: promoted_concept
+updated_at: 2026-06-14
+area: MIND
+aliases:
+  - 충만한 마음
+  - 충만함
+  - 충만감
+  - 충만한 기분
+  - 충만한 시간
+  - 충만한 순간
+  - 마음이 충만
+  - 마음을 충만
+  - 마음의 충만
+  - 가슴이 충만
+  - fulfilled mind
+  - fullness
+definition: >
+  Brian's recurring concept of an intentionally cultivated inner state that feels happy, grateful, calm, present,
+  meaningful, and alive. It is not only a passive emotion; the records repeatedly describe it as something that can be
+  created through visualization, gratitude, reflection, writing, relationships, rest, and happiness-bundle actions.
+source_policy: association_only_do_not_overclaim_causality
+primary_links:
+  happiness_bundle_ref: happiness_bundle
+  happiness_trigger_refs:
+    - happiness_trigger_013
+  activity_refs:
+    - activity_happiness_bundle
+    - activity_gratitude
+    - activity_goal_review
+    - activity_memo
+    - activity_conversation
+    - activity_rest
+    - activity_workout
+  emotion_tags:
+    - happy
+    - grateful
+    - calm
+  related_context_refs:
+    people:
+      - person_wife
+      - person_mother
+    companion_animals:
+      - pet_dog_1
+      - pet_dog_2
+evidence_summary:
+  direct_keyword_hits:
+    review_archive: 155
+    bke_gratitude_diary_2019: 15
+    obsidian_daily: 9
+  interpretation: >
+    The evidence supports treating fulfilled mind as a stable personal concept because it appears across multiple years
+    and source types: review archive, gratitude diary, happiness bundle, and Obsidian Daily notes.
+evidence_refs:
+  - ref: happiness_trigger_013
+    source_ref: life/imports/happiness_bundle/parsed_items.yaml
+    date: null
+    statement: 충만한 마음을 의식적으로 만들기 ( 시각화 )
+  - ref: happiness_bundle_page_016
+    source_ref: life/imports/happiness_bundle/page_index.jsonl
+    date: null
+    statement: 행복한 기억, 현재, 미래를 의식적으로 떠올리며 충만함을 만들 수 있다는 기록.
+  - ref: hist_20181203_1510_review_2018_time_jira_r4565
+    source_ref: life/imports/review_archive/entity_linked_records.jsonl
+    date: 2018-12-03
+    statement: 마음을 행복하게 하는 것도 연습이 필요하고 의식적으로 반복해야 한다는 기록.
+  - ref: bke_gratitude_20190307_001
+    source_ref: life/imports/bke_gratitude_diary_2019/entity_linked_entries.jsonl
+    date: 2019-03-07
+    statement: 감사일기가 마음을 충만하게 하고 행복하게 해준다는 기록.
+  - ref: bke_gratitude_20190930_002
+    source_ref: life/imports/bke_gratitude_diary_2019/entity_linked_entries.jsonl
+    date: 2019-09-30
+    statement: 시간 기록과 감사일기로 마음을 충만하게 만든 것에 감사한다는 기록.
+  - ref: hist_20210524_0930_review_2021_life_logged_time_r1272
+    source_ref: life/imports/review_archive/entity_linked_records.jsonl
+    date: 2021-05-24
+    statement: 행복감과 충만함을 느끼는 시간이 하루에 한 번은 꼭 있어야 한다는 기록.
+  - ref: hist_20210525_0915_review_2021_life_logged_time_r1274
+    source_ref: life/imports/review_archive/entity_linked_records.jsonl
+    date: 2021-05-25
+    statement: 하루를 더 충만하게 보내야겠다는 기록.
+  - ref: obsidian_daily_20250414_section_review
+    source_ref: life/imports/obsidian_daily/entity_linked_records.jsonl
+    date: 2025-04-14
+    statement: 행복꾸러미와 함께 충만한 마음을 의식적으로 만들기라는 Daily review 기록.
+  - ref: obsidian_daily_20250425_timeblock_011
+    source_ref: life/imports/obsidian_daily/entity_linked_records.jsonl
+    date: 2025-04-25
+    statement: 충만한 마음은 그냥 얻어지는 것이 아니라 되새김질과 시각화가 필요하다는 기록.
+assistant_usage:
+  - When Brian asks about happiness, recovery, or low mood, search records linked to concept_fulfilled_mind.
+  - >
+    Prefer concrete actions that historically co-occur with fulfilled mind: gratitude writing, reflection, visualization,
+    conversation, gentle rest, walking, family or companion-animal time, and happiness-bundle review.
+  - Do not pressure Brian to feel fulfilled; offer a small repeatable action and record whether it helped.
+query_examples:
+  - python3 tools/query_life.py concept --keyword 충만
+  - python3 tools/query_life.py search --entity concept_fulfilled_mind --limit 20

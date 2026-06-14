@@ -1,5 +1,5 @@
 schema_version: 1
-generated_at: '2026-06-14T21:34:04'
+generated_at: '2026-06-14T22:19:02'
 import_scope:
   source_root: raw_data/obsidian/01_Daily
   raw_file_count: 263
@@ -22,8 +22,8 @@ records:
   total: 1547
   time_blocks: 1305
   section_records: 242
-  with_semantic_links: 845
-  without_semantic_links: 702
+  with_semantic_links: 846
+  without_semantic_links: 701
   with_review_needed: 4
   by_year:
     '2025': 1427
@@ -85,12 +85,14 @@ link_counts:
     Component: 325
     Project: 163
     CompanionAnimal: 68
+    Concept: 9
   by_relation:
     involves_activity: 698
     associated_person: 63
     targets_component: 325
     belongs_to_project: 163
     associated_companion_animal: 68
+    expresses_concept: 9
 top_entities:
 - entity_ref: activity_meal
   display_name: Meal
@@ -486,7 +488,7 @@ top_entities:
     date: '2026-01-05'
     area: BODY
     title: 식사
-    matched_alias: 헬스
+    matched_alias: 운동
   - record_ref: obsidian_daily_20260105_section_three_important_goal
     date: '2026-01-05'
     area: CAREER
@@ -572,12 +574,12 @@ top_entities:
     date: '2025-05-08'
     area: FUN
     title: 휴식 & 쉼호흡
-    matched_alias: 여행
+    matched_alias: 경주
   - record_ref: obsidian_daily_20250508_section_happiness_point
     date: '2025-05-08'
     area: FUN
     title: Happiness Point
-    matched_alias: 여행
+    matched_alias: 경주
 - entity_ref: component_dma
   display_name: DMA
   object_type: Component
@@ -632,6 +634,33 @@ top_entities:
     area: CAREER
     title: Three Important Goal
     matched_alias: 밀라노
+- entity_ref: concept_fulfilled_mind
+  display_name: 충만한 마음
+  object_type: Concept
+  records: 9
+  hours: 2.83
+  needs_user_review_records: 0
+  examples:
+  - record_ref: obsidian_daily_20260225_section_review
+    date: '2026-02-25'
+    area: MIND
+    title: Review
+    matched_alias: 충만함
+  - record_ref: obsidian_daily_20250414_section_review
+    date: '2025-04-14'
+    area: MIND
+    title: Review
+    matched_alias: 충만한 마음
+  - record_ref: obsidian_daily_20250425_timeblock_011
+    date: '2025-04-25'
+    area: RELATION
+    title: 다시 재정비하고 시작
+    matched_alias: 충만한 마음
+  - record_ref: obsidian_daily_20250502_timeblock_002
+    date: '2025-05-02'
+    area: MIND
+    title: 따뜻한 물에 샤워하고 여유 가지기
+    matched_alias: 충만
 - entity_ref: activity_cleaning_organizing
   display_name: Cleaning and organizing
   object_type: Activity
@@ -840,23 +869,6 @@ top_entities:
     area: CAREER
     title: Three Important Goal
     matched_alias: CPU
-- entity_ref: activity_memo
-  display_name: Memo / reflection
-  object_type: Activity
-  records: 2
-  hours: 0.1
-  needs_user_review_records: 0
-  examples:
-  - record_ref: obsidian_daily_20251119_timeblock_006
-    date: '2025-11-19'
-    area: FUN
-    title: 행복꾸러미 ( MIND ) ->
-    matched_alias: 순간 순간
-  - record_ref: obsidian_daily_20251129_section_review
-    date: '2025-11-29'
-    area: CAREER
-    title: Review
-    matched_alias: 순간 순간
 outputs:
   manifest_ref: life/imports/obsidian_daily/manifest.yaml
   normalized_records_ref: life/imports/obsidian_daily/normalized_records.jsonl

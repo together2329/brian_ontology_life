@@ -99,6 +99,17 @@ core_object_types:
       - notes
   Note:
     fields: [id, date, area, title, body, related_entities]
+  Concept:
+    purpose: A stable personal concept that many records can express or provide evidence for.
+    fields:
+      - id
+      - display_name
+      - aliases
+      - area
+      - definition
+      - primary_links
+      - evidence_refs
+      - assistant_usage
 
 emotion_and_identity_object_types:
   MoodEntry:

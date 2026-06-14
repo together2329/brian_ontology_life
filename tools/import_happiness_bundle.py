@@ -8,6 +8,7 @@ import hashlib
 import json
 import os
 import re
+import shutil
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any, Dict, Iterable, List
@@ -29,6 +30,7 @@ PAGE_INDEX_PATH = IMPORT_DIR / "page_index.jsonl"
 IMAGE_INDEX_PATH = IMPORT_DIR / "image_index.jsonl"
 PARSED_ITEMS_PATH = IMPORT_DIR / "parsed_items.yaml"
 CONCEPT_PATH = Path("life/concepts/happiness_bundle.yaml")
+RAW_COPY_PATH = Path("raw_data/documents/happiness_bundle/happiness_bundle.doc.pdf")
 
 AREA_MAP = {
     "MIND": "MIND",
@@ -76,6 +78,7 @@ ENTITY_KEYWORDS = {
     "activity_workout": ["걷", "달리", "운동", "근력", "탁구", "등산", "산책"],
     "activity_meal": ["식사", "요리", "샌드위치", "카페모카", "와인"],
     "activity_rest": ["휴식", "여유", "목욕", "족욕", "반신욕"],
+    "concept_fulfilled_mind": ["충만한 마음", "충만함", "충만감", "충만한 기분", "마음이 충만", "마음을 충만", "충만"],
 }
 
 VISUAL_CATEGORY_PAGE_GROUPS = {
@@ -428,6 +431,7 @@ def build_manifest(path: Path, pages: List[Dict[str, Any]], items: List[Dict[str
             "title": "행복꾸러미",
             "source_type": "pdf",
             "path": str(path),
+            "raw_copy_ref": str(RAW_COPY_PATH),
             "sha256": sha256_file(path),
             "size_bytes": stat.st_size,
             "mtime": dt.datetime.fromtimestamp(stat.st_mtime).replace(microsecond=0).isoformat(),
@@ -440,12 +444,13 @@ def build_manifest(path: Path, pages: List[Dict[str, Any]], items: List[Dict[str
         "embedded_image_ref_count": sum(row["image_count"] for row in images),
         "parsed_item_count": len(items),
         "generated_files": {
+            "raw_pdf": str(RAW_COPY_PATH),
             "page_index": str(PAGE_INDEX_PATH),
             "image_index": str(IMAGE_INDEX_PATH),
             "parsed_items": str(PARSED_ITEMS_PATH),
             "concept": str(CONCEPT_PATH),
         },
-        "raw_policy": "Raw PDF remains at source path; derived ontology stores source path, sha256, page refs, short excerpts, and structured triggers.",
+        "raw_policy": "Raw PDF is preserved under raw_data/documents/happiness_bundle; derived ontology stores source path, raw copy ref, sha256, page refs, short excerpts, and structured triggers.",
     }
 
 
@@ -492,7 +497,9 @@ def build_concept(items: List[Dict[str, Any]], images: List[Dict[str, Any]]) -> 
         "updated_at": dt.date.today().isoformat(),
         "definition": "Brian-defined bundle of scenes, actions, values, memories, and sensory anchors that reliably make life feel happy or meaningful.",
         "source_refs": ["source_happiness_bundle_pdf"],
+        "related_concept_refs": ["concept_fulfilled_mind"],
         "source_files": {
+            "raw_pdf_ref": str(RAW_COPY_PATH),
             "manifest_ref": str(MANIFEST_PATH),
             "page_index_ref": str(PAGE_INDEX_PATH),
             "image_index_ref": str(IMAGE_INDEX_PATH),
@@ -567,10 +574,20 @@ def build_concept(items: List[Dict[str, Any]], images: List[Dict[str, Any]]) -> 
     }
 
 
+def ensure_raw_copy(path: Path) -> None:
+    RAW_COPY_PATH.parent.mkdir(parents=True, exist_ok=True)
+    if RAW_COPY_PATH.resolve() == path.resolve():
+        return
+    if RAW_COPY_PATH.exists() and sha256_file(RAW_COPY_PATH) == sha256_file(path):
+        return
+    shutil.copy2(path, RAW_COPY_PATH)
+
+
 def main() -> None:
     if not SOURCE_PATH.exists():
         raise FileNotFoundError(SOURCE_PATH)
 
+    ensure_raw_copy(SOURCE_PATH)
     pages = extract_pages(SOURCE_PATH)
     items = extract_items(pages)
     images = image_rows(SOURCE_PATH, pages)

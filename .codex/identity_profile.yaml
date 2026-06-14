@@ -25,6 +25,17 @@ historical_memory:
     page_index_ref: life/imports/happiness_bundle/page_index.jsonl
     image_index_ref: life/imports/happiness_bundle/image_index.jsonl
     raw_policy: Raw PDF remains in Google Drive and is referenced by path and sha256.
+  fulfilled_mind:
+    status: promoted_as_concept
+    concept_ref: life/concepts/fulfilled_mind.yaml
+    semantic_entity_ref: concept_fulfilled_mind
+    date_range: 2018-02-10_to_2026-02-25
+    source_refs:
+      - life/imports/happiness_bundle/parsed_items.yaml
+      - life/imports/review_archive/entity_linked_records.jsonl
+      - life/imports/bke_gratitude_diary_2019/entity_linked_entries.jsonl
+      - life/imports/obsidian_daily/entity_linked_records.jsonl
+    notes: Brian's recurring "충만한 마음" pattern, now queryable as an ontology Concept.
   obsidian_daily:
     status: imported_as_ontology_index
     date_range: 2025-03-20_to_2026-03-07
@@ -95,6 +106,7 @@ known_context:
       - pet_dog_2
   happiness:
     confirmed_concept_ref: happiness_bundle
+    fulfilled_mind_concept_ref: concept_fulfilled_mind
     notes: Brian confirmed 행복꾸러미 as a bundle of things he defines as happiness.
 
 desired_identity:

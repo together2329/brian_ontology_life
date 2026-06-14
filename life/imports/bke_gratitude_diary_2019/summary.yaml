@@ -1,5 +1,5 @@
 schema_version: 1
-generated_at: '2026-06-13T21:53:58'
+generated_at: '2026-06-14T22:19:01'
 source:
   id: bke_gratitude_diary_2019
   raw_ref: raw_data/documents/bke_gratitude_campaign_2019/BKE Group 감사일기 캠페인 2019년 최정윤.docx
@@ -77,6 +77,7 @@ link_counts:
   by_object_type:
     Activity: 2523
     Person: 721
+    Concept: 15
     Project: 54
     Component: 48
   top_entities:
@@ -491,6 +492,31 @@ link_counts:
       date: '2019-04-01'
       matched_alias: 형식이
       text_excerpt: 형식이와 재밌게 통화를 할 수 있어서 감사합니다. 통화하는 순간 순간이 아주 재밌습니다.
+  - entity_ref: concept_fulfilled_mind
+    records: 15
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20190103_005
+      date: '2019-01-03'
+      matched_alias: 충만한 기분
+      text_excerpt: 일터에서 충만한 기분을 꽤 느낀 것 같습니다. 하루 종일은 아니더라도 자주 이런 멋진 기분을 느낄 수 있어 감사합니다.
+    - entry_ref: bke_gratitude_20190104_005
+      date: '2019-01-04'
+      matched_alias: 충만
+      text_excerpt: 아름이와 자기전에 영혼이 충만해지는 이야기를 나누어 감사합니다. 비록 잠이와서 중간에 잤지만 그 기억만으로도 행복합니다. 감사합니다.
+    - entry_ref: bke_gratitude_20190130_004
+      date: '2019-01-30'
+      matched_alias: 마음이 충만
+      text_excerpt: 감사일기 장학금 100만원 내일 지급하겠다고 BKE 그룹 직원 분께서 말씀해주셨습니다. 이렇게 제가 감사일기를 쓰는 습관을 만들어주신 것도 감사하고 이러 인해 마음이 충만해졌음도 감사합니다.
+        이렇게 저 좋자고 감사일기를 썼을 뿐인데 장학금 100만원 까지 주셔서 더욱 감사합니다.
+    - entry_ref: bke_gratitude_20190218_005
+      date: '2019-02-18'
+      matched_alias: 마음을 충만
+      text_excerpt: 멋진 글을 적어 제 마음을 충만하게 만들어준 아름이에게 감사합니다.
+    - entry_ref: bke_gratitude_20190303_001
+      date: '2019-03-03'
+      matched_alias: 마음이 충만
+      text_excerpt: 은성이형과 운동과 관련된 이야기를 했는데 마음이 충만해졌습니다. 용기내어 은성이형과 대화했음에 감사합니다.
   - entity_ref: activity_cleaning_organizing
     records: 15
     needs_user_review_records: 0
@@ -995,15 +1021,3 @@ link_counts:
       date: '2019-01-17'
       matched_alias: 하이비
       text_excerpt: 하이비 관련하여 열정을 가지고 Leakage 이슈를 파고 들었음에 감사합니다.
-  - entity_ref: component_cts
-    records: 2
-    needs_user_review_records: 0
-    examples:
-    - entry_ref: bke_gratitude_20190617_001
-      date: '2019-06-17'
-      matched_alias: clock
-      text_excerpt: 라닉스에서 발생한 문제에 대한 설명( system register, clock/reset sequence) 을 잘 할 수 있어서 감사합니다.
-    - entry_ref: bke_gratitude_20190806_006
-      date: '2019-08-06'
-      matched_alias: timing
-      text_excerpt: 태희형에게 Prime Time 툴 및 setup, hold timing에 대해 잘 알려줄 수 있어서 감사합니다.
