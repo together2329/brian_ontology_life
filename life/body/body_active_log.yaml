@@ -1,0 +1,85 @@
+schema_version: 1
+updated_at: 2026-06-15
+profile_ref: person_brian
+area: BODY
+
+body_profile:
+  object_type: BodyProfile
+  id: body_profile_brian
+  profile_ref: person_brian
+  height_cm: 175
+  latest_weight_kg: 78
+  latest_weight_record_ref: body_composition_20260615_0635_self_report
+  notes: Height and weight are self-reported by Brian.
+
+training_programs:
+  - id: pt_program_2026_spring
+    object_type: TrainingProgram
+    title: Personal training from late March 2026
+    status: active
+    start_date_estimate: 2026-03-25
+    start_date_precision: approximate_late_march
+    sessions_completed_estimate: 16
+    confidence: medium
+    notes: Brian reports receiving PT from late March 2026 through 2026-06-15, about 16 sessions.
+
+body_composition_records:
+  - id: body_composition_20260615_0635_self_report
+    object_type: BodyCompositionRecord
+    date: 2026-06-15
+    time: "06:35"
+    source: self_report
+    weight_kg: 78
+    skeletal_muscle_mass_kg: null
+    body_fat_mass_kg: null
+    body_fat_percent: null
+    waist_cm: null
+    notes: Body weight is unchanged recently, while Brian subjectively feels his body is improving.
+
+nutrition_targets:
+  - id: protein_target_20260615
+    object_type: NutritionTarget
+    date: 2026-06-15
+    nutrient: protein
+    target_range_g_per_day: [70, 90]
+    source: self_report
+    status: active
+    notes: Brian is trying to eat about 70-90g protein per day.
+
+workout_records:
+  - id: workoutsession_20260615_morning_planned
+    object_type: WorkoutSession
+    date: 2026-06-15
+    planned_start: "06:35"
+    status: planned
+    title: Morning workout
+    training_program_ref: pt_program_2026_spring
+    location: null
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    performance_note: Going to workout in the morning; recent training weights have continued to increase.
+    exercises: []
+
+trend_observations:
+  - id: body_trend_20260615_strength_up_weight_stable
+    object_type: BodyTrendObservation
+    date: 2026-06-15
+    observation_type: body_recomposition_candidate
+    summary: Training weights are increasing while body weight remains around 78kg.
+    positive_signals:
+      - progressive overload is occurring
+      - subjective body condition feels improved
+    uncertain_signals:
+      - no recent skeletal muscle mass value recorded
+      - no recent body fat percent value recorded
+      - no exercise-level set history recorded yet
+    interpretation: Possible body recomposition; do not overinterpret scale weight alone.
+    confidence: medium
+
+raw_records:
+  - id: raw_body_record_20260615_0635
+    date: 2026-06-15
+    time: "06:35"
+    source: codex_conversation
+    text: "아침이야 :) 요즘 PT를 받고 있어 한 16회 정도 받은듯 ? 3월 말부터 지금까지. 오늘 새벽 6:35 인데 운동갈꺼야. 근데 계속 무게도 늘어나고 있는데 몸무게는 그대로야 ㅠ_ㅠ 느낌적으로는 몸은 좋아지고 있는듯한데 그리고 몸무게 78 키  175 단백질은 하루에 70~90 정도 먹으려고 노력 중"

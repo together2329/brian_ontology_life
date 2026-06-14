@@ -276,15 +276,39 @@ career_object_types:
     fields: [id, project_ref, title, due_date, status, related_tasks]
 
 body_object_types:
+  BodyProfile:
+    fields:
+      - id
+      - profile_ref
+      - height_cm
+      - latest_weight_kg
+      - latest_weight_record_ref
+      - notes
+  TrainingProgram:
+    fields:
+      - id
+      - title
+      - status
+      - start_date
+      - start_date_estimate
+      - start_date_precision
+      - sessions_completed
+      - sessions_completed_estimate
+      - coach_ref
+      - location
+      - notes
   ExerciseCatalog:
     fields: [id, name, aliases, muscle_groups, equipment, notes]
   WorkoutSession:
     fields:
       - id
       - date
+      - planned_start
       - start
       - end
       - habit_ref
+      - training_program_ref
+      - status
       - title
       - location
       - duration_minutes
@@ -329,10 +353,31 @@ body_object_types:
       - body_fat_mass_kg
       - body_fat_percent
       - bmi
+      - waist_cm
       - basal_metabolic_rate_kcal
       - visceral_fat_level
       - condition
       - notes
+  NutritionTarget:
+    fields:
+      - id
+      - date
+      - nutrient
+      - target_range_g_per_day
+      - target_g_per_day
+      - source
+      - status
+      - notes
+  BodyTrendObservation:
+    fields:
+      - id
+      - date
+      - observation_type
+      - summary
+      - positive_signals
+      - uncertain_signals
+      - interpretation
+      - confidence
   SleepRecord:
     fields: [id, date, sleep_start, sleep_end, duration_minutes, quality_score, notes]
 
