@@ -1,0 +1,162 @@
+schema_version: 1
+status: active
+updated_at: 2026-06-14
+area: CAREER
+secondary_areas:
+  - MIND
+  - FUN
+project_ref: project_ai_agent
+title: AI Agent active task list
+current_phase: Codex-based common_ai_agent porting and company Codex rollout support preparation
+
+source_records:
+  - id: source_ai_agent_conversation_20260614_fun_codex_porting_rollout
+    source_type: chat
+    original_date: 2026-06-14
+    imported_at: 2026-06-14
+    parse_status: parsed
+    raw_text: "근데 재밌음. common ai agent 를 codex 기반으로 포팅중. 회사에서 2주 뒤쯤 codex 전사 도입한다고 해서 내가 도움 줄 예정"
+
+summary:
+  current_state:
+    - Brian is continuing AI Agent development while tired from work, but the activity feels fun.
+    - common_ai_agent is being ported toward a Codex-based workflow.
+    - Brian expects to help with a company-wide Codex rollout around two weeks after 2026-06-14.
+  active_threads:
+    - common_ai_agent Codex-based porting
+    - company Codex adoption support preparation
+    - Brian's personal ontology-backed life agent development
+  positive_signals:
+    - This work appears to combine CAREER, MIND, and FUN rather than being only obligation-driven work.
+    - The company rollout creates a near-term opportunity for Brian to turn personal experimentation into practical support.
+  open_questions:
+    - id: oq_ai_agent_common_ai_agent_port_scope
+      question: "common_ai_agent porting scope is not yet explicit: CLI surface, plugin surface, ontology gateway, prompt workflow, or all of these."
+      related_task_ref: task_ai_agent_common_ai_agent_codex_port
+      needs_user_review: true
+    - id: oq_ai_agent_codex_rollout_exact_date
+      question: "Company-wide Codex rollout is described as roughly two weeks after 2026-06-14; exact date and Brian's support role are not yet confirmed."
+      related_task_ref: task_ai_agent_company_codex_rollout_support
+      needs_user_review: true
+
+tasks:
+  - id: task_ai_agent_common_ai_agent_codex_port
+    title: common_ai_agent를 Codex 기반 workflow로 포팅
+    area: CAREER
+    secondary_areas:
+      - MIND
+      - FUN
+    status: in_progress
+    priority: high
+    energy: creative_deep_work
+    estimated_minutes: null
+    due_date: null
+    tracking_level: detailed
+    project_ref: project_ai_agent
+    progress_percent: null
+    tags:
+      - ai_agent
+      - common_ai_agent
+      - codex
+      - porting
+      - ontology_agent
+    current_state:
+      - Porting is actively underway.
+      - Brian reports the work is fun despite being tired from earlier work.
+    expected_outputs:
+      - Codex-based common_ai_agent workflow
+      - migration notes or repeatable porting guidance
+      - list of patterns that work well in Codex
+      - list of friction points or missing capabilities
+    next_actions:
+      - Define the exact porting scope and target surfaces.
+      - Capture decisions, prompts, tool patterns, and failure cases while porting.
+      - Keep experiments small while tired; avoid large architecture changes late in the day.
+      - Convert reusable learnings into guidance for company rollout support.
+    evidence_refs:
+      - source_ai_agent_conversation_20260614_fun_codex_porting_rollout
+    confidence: high
+    needs_user_review: false
+
+  - id: task_ai_agent_company_codex_rollout_support
+    title: 회사 Codex 전사 도입 지원 준비
+    area: CAREER
+    secondary_areas:
+      - MIND
+    status: planned
+    priority: high
+    energy: communication_and_system_design
+    estimated_minutes: null
+    due_date: null
+    target_window:
+      basis_date: 2026-06-14
+      description: around two weeks after the conversation date
+      approximate_date: 2026-06-28
+      confidence: low
+    tracking_level: detailed
+    project_ref: project_ai_agent
+    progress_percent: 0
+    tags:
+      - codex
+      - company_rollout
+      - enablement
+      - ai_agent
+    context:
+      - Company-wide Codex adoption is expected soon.
+      - Brian expects to help others adopt or use Codex effectively.
+      - The common_ai_agent port can become practical evidence and guidance for the rollout.
+    expected_outputs:
+      - support checklist for early Codex users
+      - examples of effective Codex workflows
+      - known pitfalls and recovery patterns
+      - candidate training or onboarding notes
+    next_actions:
+      - Identify what coworkers will need first: setup, prompt patterns, repo workflow, review workflow, or automation examples.
+      - Convert current common_ai_agent porting lessons into short internal examples.
+      - Prepare a concise support script for the first rollout week.
+      - Track repeated questions from coworkers as future agent/tooling requirements.
+    evidence_refs:
+      - source_ai_agent_conversation_20260614_fun_codex_porting_rollout
+    confidence: medium
+    needs_user_review: true
+
+work_sessions:
+  - id: worksession_20260614_ai_agent_codex_porting_fun_while_tired
+    date: 2026-06-14
+    project_ref: project_ai_agent
+    start: null
+    end: null
+    actual_minutes: null
+    time_quality: approximate
+    task_refs:
+      - task_ai_agent_common_ai_agent_codex_port
+    focus_level: tired_but_interested
+    mood_signal:
+      valence: positive
+      energy: tired
+      note: Brian described the Codex-based common_ai_agent porting work as fun despite being tired from earlier work.
+    summary: Brian continued AI Agent development by porting common_ai_agent toward Codex, with near-term relevance to a company-wide Codex rollout.
+    findings:
+      - AI Agent development is currently acting as both career development and enjoyable creative work.
+      - The company rollout creates an opportunity for Brian to help others with Codex adoption.
+      - Because Brian is tired, this session should stay in experiment or note-capture mode rather than heavy architecture mode.
+    next_steps:
+      - Capture useful porting patterns while they are fresh.
+      - Avoid large late-day design decisions.
+      - Turn successful patterns into support material for company adoption.
+    source_ref: source_ai_agent_conversation_20260614_fun_codex_porting_rollout
+
+project_status_updates:
+  - id: project_status_ai_agent_20260614_codex_porting_and_rollout
+    date: 2026-06-14
+    project_ref: project_ai_agent
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: common_ai_agent is being ported toward a Codex-based workflow, and Brian expects to help with a company-wide Codex rollout around two weeks after 2026-06-14.
+    positive_signal: The work feels fun to Brian, suggesting it connects to both career direction and intrinsic creative interest.
+    risks:
+      - Brian is tired after earlier work, so late-day architecture decisions may be lower quality.
+      - The rollout date and expected support scope are approximate.
+    next_step: Keep tonight's work lightweight, capture useful porting patterns, and later convert them into concise rollout support guidance.
+    source_ref: source_ai_agent_conversation_20260614_fun_codex_porting_rollout
