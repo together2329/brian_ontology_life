@@ -16,16 +16,36 @@ source_records:
     imported_at: 2026-06-14
     parse_status: parsed
     raw_text: "근데 재밌음. common ai agent 를 codex 기반으로 포팅중. 회사에서 2주 뒤쯤 codex 전사 도입한다고 해서 내가 도움 줄 예정"
+  - id: source_ai_agent_conversation_20260614_ontology_ip_agent_repo
+    source_type: chat
+    original_date: 2026-06-14
+    imported_at: 2026-06-14
+    parse_status: parsed
+    raw_text: "내가 요걸 개발 중이야 ~/Desktop/Project/ontology_ip_agent"
+  - id: source_ai_agent_local_repo_inspection_20260614_ontology_ip_agent
+    source_type: local_repo_inspection
+    original_date: 2026-06-14
+    imported_at: 2026-06-14
+    parse_status: parsed
+    repo_path: /Users/brian/Desktop/Project/ontology_ip_agent
+    observed_items:
+      - .codex-first OAG test pack
+      - AGENTS.md with OAG workflow rules
+      - timer APB3 Timer IP example
+      - mctp_assembler ontology-first hardware IP scaffold
 
 summary:
   current_state:
     - Brian is continuing AI Agent development while tired from work, but the activity feels fun.
     - common_ai_agent is being ported toward a Codex-based workflow.
     - Brian expects to help with a company-wide Codex rollout around two weeks after 2026-06-14.
+    - The active local implementation repo is /Users/brian/Desktop/Project/ontology_ip_agent.
+    - ontology_ip_agent is a .codex-first OAG test pack with hardware IP examples and ontology/knowledge ledger workflows.
   active_threads:
     - common_ai_agent Codex-based porting
     - company Codex adoption support preparation
     - Brian's personal ontology-backed life agent development
+    - ontology_ip_agent development as the concrete OAG/Codex hardware IP agent implementation
   positive_signals:
     - This work appears to combine CAREER, MIND, and FUN rather than being only obligation-driven work.
     - The company rollout creates a near-term opportunity for Brian to turn personal experimentation into practical support.
@@ -38,6 +58,27 @@ summary:
       question: "Company-wide Codex rollout is described as roughly two weeks after 2026-06-14; exact date and Brian's support role are not yet confirmed."
       related_task_ref: task_ai_agent_company_codex_rollout_support
       needs_user_review: true
+    - id: oq_ai_agent_common_vs_ontology_ip_agent_boundary
+      question: "Clarify whether common_ai_agent and ontology_ip_agent should be one product line, separate repos with shared OAG concepts, or a migration path from one to the other."
+      related_task_ref: task_ai_agent_common_ai_agent_codex_port
+      needs_user_review: true
+
+repositories:
+  - id: repo_ontology_ip_agent
+    title: ontology_ip_agent
+    repo_type: implementation_repo
+    project_ref: project_ai_agent
+    path: /Users/brian/Desktop/Project/ontology_ip_agent
+    status: active_development
+    observed_at: 2026-06-14
+    purpose: Codex-first OAG test pack and ontology-backed hardware IP agent implementation.
+    notable_contents:
+      - .codex assets, rules, scripts, skills, and hooks for OAG workflow
+      - timer APB3 Timer IP with generated evidence flow
+      - mctp_assembler ontology-first hardware IP scaffold
+    source_refs:
+      - source_ai_agent_conversation_20260614_ontology_ip_agent_repo
+      - source_ai_agent_local_repo_inspection_20260614_ontology_ip_agent
 
 tasks:
   - id: task_ai_agent_common_ai_agent_codex_port
@@ -63,18 +104,24 @@ tasks:
     current_state:
       - Porting is actively underway.
       - Brian reports the work is fun despite being tired from earlier work.
+      - The active local implementation context includes ontology_ip_agent at /Users/brian/Desktop/Project/ontology_ip_agent.
+      - ontology_ip_agent already contains OAG/Codex workflow assets and hardware IP examples.
     expected_outputs:
       - Codex-based common_ai_agent workflow
       - migration notes or repeatable porting guidance
       - list of patterns that work well in Codex
       - list of friction points or missing capabilities
+      - reusable ontology_ip_agent examples for hardware engineers adopting Codex
     next_actions:
       - Define the exact porting scope and target surfaces.
+      - Clarify the boundary between common_ai_agent and ontology_ip_agent.
       - Capture decisions, prompts, tool patterns, and failure cases while porting.
       - Keep experiments small while tired; avoid large architecture changes late in the day.
       - Convert reusable learnings into guidance for company rollout support.
     evidence_refs:
       - source_ai_agent_conversation_20260614_fun_codex_porting_rollout
+      - source_ai_agent_conversation_20260614_ontology_ip_agent_repo
+      - source_ai_agent_local_repo_inspection_20260614_ontology_ip_agent
     confidence: high
     needs_user_review: false
 
@@ -105,18 +152,23 @@ tasks:
       - Company-wide Codex adoption is expected soon.
       - Brian expects to help others adopt or use Codex effectively.
       - The common_ai_agent port can become practical evidence and guidance for the rollout.
+      - ontology_ip_agent can supply concrete hardware IP workflow examples for the rollout.
     expected_outputs:
       - support checklist for early Codex users
       - examples of effective Codex workflows
       - known pitfalls and recovery patterns
       - candidate training or onboarding notes
+      - hardware IP-oriented demo path using ontology_ip_agent examples
     next_actions:
       - Identify what coworkers will need first: setup, prompt patterns, repo workflow, review workflow, or automation examples.
       - Convert current common_ai_agent porting lessons into short internal examples.
+      - Select one small ontology_ip_agent demo path that shows the value of OAG/Codex workflow without overwhelming users.
       - Prepare a concise support script for the first rollout week.
       - Track repeated questions from coworkers as future agent/tooling requirements.
     evidence_refs:
       - source_ai_agent_conversation_20260614_fun_codex_porting_rollout
+      - source_ai_agent_conversation_20260614_ontology_ip_agent_repo
+      - source_ai_agent_local_repo_inspection_20260614_ontology_ip_agent
     confidence: medium
     needs_user_review: true
 
@@ -139,9 +191,11 @@ work_sessions:
     findings:
       - AI Agent development is currently acting as both career development and enjoyable creative work.
       - The company rollout creates an opportunity for Brian to help others with Codex adoption.
+      - ontology_ip_agent is the concrete local repo where Brian is developing the OAG/Codex hardware IP workflow.
       - Because Brian is tired, this session should stay in experiment or note-capture mode rather than heavy architecture mode.
     next_steps:
       - Capture useful porting patterns while they are fresh.
+      - Use ontology_ip_agent as the source of concrete examples for Codex rollout material.
       - Avoid large late-day design decisions.
       - Turn successful patterns into support material for company adoption.
     source_ref: source_ai_agent_conversation_20260614_fun_codex_porting_rollout
@@ -160,3 +214,17 @@ project_status_updates:
       - The rollout date and expected support scope are approximate.
     next_step: Keep tonight's work lightweight, capture useful porting patterns, and later convert them into concise rollout support guidance.
     source_ref: source_ai_agent_conversation_20260614_fun_codex_porting_rollout
+
+  - id: project_status_ai_agent_20260614_ontology_ip_agent_repo_linked
+    date: 2026-06-14
+    project_ref: project_ai_agent
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: Brian identified /Users/brian/Desktop/Project/ontology_ip_agent as the active development repo for the OAG/Codex hardware IP agent work.
+    positive_signal: The repo provides concrete IP examples and OAG workflow assets that can become rollout demos or reusable guidance.
+    risks:
+      - The exact relationship between common_ai_agent and ontology_ip_agent still needs to be clarified.
+      - The repo currently appears to have many untracked files, so git hygiene may matter before using it as a rollout reference.
+    next_step: Clarify the common_ai_agent versus ontology_ip_agent boundary, then select one small demo path from ontology_ip_agent for Codex rollout preparation.
+    source_ref: source_ai_agent_conversation_20260614_ontology_ip_agent_repo
