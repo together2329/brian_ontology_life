@@ -182,6 +182,72 @@ emotion_and_identity_object_types:
       - outcome_check_time
       - outcome
 
+knowledge_object_types:
+  ThoughtThread:
+    purpose: A dated thread of Brian's evolving thinking, questions, interpretations, and design direction.
+    fields:
+      - id
+      - date
+      - area
+      - secondary_areas
+      - topic
+      - summary
+      - conversation_flow
+      - related_concept_refs
+      - related_project_refs
+      - related_task_refs
+      - source_refs
+      - confidence
+      - needs_user_review
+  Understanding:
+    purpose: Brian's current explicit understanding of a concept, architecture, tradeoff, or direction.
+    fields:
+      - id
+      - date
+      - area
+      - statement
+      - brian_wording_ko
+      - status
+      - related_thread_ref
+      - related_concept_refs
+      - source_refs
+      - confidence
+      - needs_user_review
+  ArchitectureDirection:
+    purpose: A directional architecture choice that may guide implementation but is not necessarily final.
+    fields:
+      - id
+      - date
+      - area
+      - secondary_areas
+      - project_ref
+      - title
+      - statement
+      - rationale
+      - implementation_direction
+      - tradeoffs
+      - follow_up_task_refs
+      - source_refs
+      - status
+      - confidence
+      - needs_user_review
+  KnowledgeInterest:
+    purpose: A topic Brian is actively interested in and wants to develop over time.
+    fields:
+      - id
+      - date
+      - area
+      - secondary_areas
+      - topic
+      - current_interest
+      - development_direction
+      - related_project_refs
+      - related_concept_refs
+      - status
+      - source_refs
+      - confidence
+      - needs_user_review
+
 career_object_types:
   Project:
     fields:

@@ -922,6 +922,80 @@ entities:
       needs_user_review: false
 
   concepts:
+    - id: concept_llm_wiki
+      object_type: Concept
+      display_name: LLM Wiki
+      area: MIND
+      aliases:
+        - LLM Wiki
+        - LLM WIKI
+        - LLM wiki
+        - agent-managed wiki
+        - agent wiki
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-15
+      notes: Brian discussed LLM Wiki as an operating pattern where agents maintain linked markdown-style knowledge over time.
+
+    - id: concept_okf_open_knowledge_format
+      object_type: Concept
+      display_name: Open Knowledge Format / OKF
+      area: MIND
+      aliases:
+        - OKF
+        - Open Knowledge Format
+        - Google OKF
+        - Google Open Knowledge Format
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-15
+      notes: Brian discussed OKF as a standardized format for LLM Wiki-like knowledge bundles and as a possible export target for Brian Ontology Agent.
+
+    - id: concept_ontology_first_agent_memory
+      object_type: Concept
+      display_name: Ontology-first agent memory
+      area: MIND
+      aliases:
+        - ontology-first
+        - ontology first
+        - ontology-first memory
+        - ontology-first agent
+        - 온톨로지 우선
+        - 온톨로지 기반 메모리
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-15
+      notes: Brian's direction that ontology object and relation design is more important than the export format, because it determines whether the agent can continue, query, and recommend well.
+
+    - id: concept_okf_export_layer
+      object_type: Concept
+      display_name: OKF export layer
+      area: CAREER
+      aliases:
+        - OKF export
+        - OKF export layer
+        - OKF-compatible export
+        - OKF view
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-15
+      notes: Candidate read-only export layer from Brian's canonical YAML ontology into OKF-compatible markdown.
+
+    - id: concept_conversation_knowledge_memory
+      object_type: Concept
+      display_name: Conversation knowledge memory
+      area: MIND
+      aliases:
+        - conversation memory
+        - knowledge conversation memory
+        - thought thread memory
+        - 대화 흐름 기록
+        - 지식 대화 흐름
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-15
+      notes: Brian wants the agent to remember how his interests and understanding evolve through conversation, not only final facts.
+
     - id: concept_fulfilled_mind
       object_type: Concept
       display_name: 충만한 마음

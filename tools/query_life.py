@@ -17,6 +17,7 @@ import yaml
 REPO_ROOT = Path(__file__).resolve().parents[1]
 TASK_DIR = REPO_ROOT / "life/tasks"
 CONCEPT_DIR = REPO_ROOT / "life/concepts"
+KNOWLEDGE_DIR = REPO_ROOT / "life/knowledge"
 
 RECORD_INDEXES = [
     ("review", REPO_ROOT / "life/imports/review_archive/entity_linked_records.jsonl"),
@@ -57,6 +58,14 @@ TASK_SEARCH_SECTIONS = [
     "artifacts",
     "milestones",
 ]
+KNOWLEDGE_SEARCH_SECTIONS = [
+    "source_records",
+    "thought_threads",
+    "understandings",
+    "architecture_directions",
+    "knowledge_interests",
+    "follow_up_tasks",
+]
 DIRECT_REF_KEYS = {
     "project_ref",
     "component_ref",
@@ -72,6 +81,9 @@ DIRECT_REF_KEYS = {
     "related_workout",
     "related_nutrition_target_ref",
     "source_ref",
+    "related_thread_ref",
+    "knowledge_thread_ref",
+    "related_knowledge_thread_ref",
 }
 DIRECT_REF_LIST_KEYS = {
     "task_refs",
@@ -85,6 +97,9 @@ DIRECT_REF_LIST_KEYS = {
     "evidence_refs",
     "source_refs",
     "blocker_for",
+    "related_concept_refs",
+    "related_task_refs",
+    "follow_up_task_refs",
     "people_refs",
     "subjects",
     "linked_entities",
@@ -159,6 +174,8 @@ def record_date(record: Dict[str, Any]) -> Optional[str]:
 def record_title(record: Dict[str, Any]) -> str:
     return (
         record.get("title")
+        or record.get("topic")
+        or record.get("statement")
         or record.get("gratitude_text")
         or record.get("text_excerpt")
         or record.get("summary")
@@ -212,9 +229,19 @@ def record_text(record: Dict[str, Any]) -> str:
         record.get("text_excerpt"),
         record.get("raw_text"),
         record.get("notes"),
+        record.get("topic"),
+        record.get("statement"),
+        record.get("brian_wording_ko"),
         flatten_text(record.get("topics")),
         flatten_text(record.get("findings")),
         flatten_text(record.get("next_steps")),
+        flatten_text(record.get("summary")),
+        flatten_text(record.get("conversation_flow")),
+        flatten_text(record.get("current_interest")),
+        flatten_text(record.get("development_direction")),
+        flatten_text(record.get("rationale")),
+        flatten_text(record.get("implementation_direction")),
+        flatten_text(record.get("tradeoffs")),
         " ".join(entity_refs(record)),
     ]
     return "\n".join(str(part) for part in parts if part)
@@ -255,6 +282,22 @@ def iter_task_search_records() -> Iterable[Dict[str, Any]]:
                 enriched.setdefault("area", task_file.get("area"))
                 enriched["_source"] = f"task:{section}"
                 enriched["_source_file"] = task_file["_path"]
+                enriched["_record_kind"] = section
+                yield enriched
+
+
+def iter_knowledge_search_records() -> Iterable[Dict[str, Any]]:
+    for path in sorted(KNOWLEDGE_DIR.glob("*.yaml")):
+        data = load_yaml(path)
+        for section in KNOWLEDGE_SEARCH_SECTIONS:
+            for row in data.get(section) or []:
+                if not isinstance(row, dict):
+                    continue
+                enriched = dict(row)
+                enriched.setdefault("project_ref", data.get("project_ref"))
+                enriched.setdefault("area", data.get("area"))
+                enriched["_source"] = f"knowledge:{section}"
+                enriched["_source_file"] = str(path.relative_to(REPO_ROOT))
                 enriched["_record_kind"] = section
                 yield enriched
 
@@ -398,6 +441,12 @@ def cmd_search(args: argparse.Namespace) -> None:
             enriched["_source"] = source
             hits.append(enriched)
     for row in iter_task_search_records():
+        if args.entity and args.entity not in entity_refs(row):
+            continue
+        if args.keyword and args.keyword.lower() not in record_text(row).lower():
+            continue
+        hits.append(row)
+    for row in iter_knowledge_search_records():
         if args.entity and args.entity not in entity_refs(row):
             continue
         if args.keyword and args.keyword.lower() not in record_text(row).lower():

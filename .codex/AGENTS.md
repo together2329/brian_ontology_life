@@ -23,6 +23,7 @@ Use historical memory indexes when they exist:
 - `life/imports/happiness_bundle/image_index.jsonl`: page-level image/visual evidence index for the PDF.
 - `life/imports/happiness_bundle/page_index.jsonl`: page-level text index for the PDF.
 - `life/concepts/fulfilled_mind.yaml`: promoted concept for Brian's recurring "충만한 마음" / fulfilled mind pattern.
+- `life/knowledge/agent_architecture_thoughts.yaml`: Brian's AI-agent architecture thought threads, understandings, knowledge interests, and OKF/LLM Wiki/ontology-first conversation memory.
 - `life/imports/bke_gratitude_diary_2019/summary.yaml`: high-level summary of Brian's 2019 BKE gratitude diary.
 - `life/imports/bke_gratitude_diary_2019/entity_linked_entries.jsonl`: gratitude entries with semantic object links.
 - `life/imports/bke_gratitude_diary_2019/daily_summary.jsonl`: daily gratitude aggregate index.

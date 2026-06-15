@@ -1,6 +1,6 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-14
+updated_at: 2026-06-15
 area: CAREER
 secondary_areas:
   - MIND
@@ -93,6 +93,14 @@ source_records:
       - 2026-04-02 added Textual TUI shell.
       - 2026-04-29 added Atlas React/JSX frontend over WebSocket.
       - 2026-06-14 contains Atlas Codex bridge work.
+  - id: source_ai_agent_conversation_20260615_okf_ontology_memory_direction
+    source_type: chat
+    original_date: 2026-06-15
+    imported_at: 2026-06-15
+    parse_status: parsed
+    raw_text: "Brian discussed OKF, LLM Wiki, ontology-first memory, OKF export, and the need to record conversation flow and evolving knowledge interests so future discussions can continue from the ontology."
+    knowledge_thread_ref: thought_thread_20260615_okf_llm_wiki_ontology
+    knowledge_file_ref: life/knowledge/agent_architecture_thoughts.yaml
 
 summary:
   current_state:
@@ -125,6 +133,8 @@ summary:
     - company Codex adoption support preparation
     - Brian's personal ontology-backed life agent development
     - ontology_ip_agent development as the concrete OAG/Codex hardware IP agent implementation
+    - ontology-first conversation memory for Brian's evolving knowledge interests
+    - OKF-compatible export layer as a future read-only view over canonical YAML ontology
   positive_signals:
     - This work appears to combine CAREER, MIND, and FUN rather than being only obligation-driven work.
     - The company rollout creates a near-term opportunity for Brian to turn personal experimentation into practical support.
@@ -157,6 +167,10 @@ summary:
     - id: oq_ai_agent_codex_seminar_scope
       question: "Define the Codex seminar scope and audience based on what worked in the successful 2026-06-12 Cursor seminar."
       related_task_ref: task_ai_agent_codex_seminar_prepare
+      needs_user_review: true
+    - id: oq_ai_agent_okf_export_scope
+      question: "Define first OKF export scope: projects/tasks/concepts only, or include people/body/daily summaries as well."
+      related_task_ref: task_ai_agent_okf_export_layer
       needs_user_review: true
 
 event_records:
@@ -488,6 +502,45 @@ tasks:
     confidence: medium
     needs_user_review: true
 
+  - id: task_ai_agent_okf_export_layer
+    title: Brian Ontology Agent OKF export layer 설계
+    area: CAREER
+    secondary_areas:
+      - MIND
+    status: planned
+    priority: medium
+    energy: system_design
+    estimated_minutes: null
+    due_date: null
+    tracking_level: concept
+    project_ref: project_ai_agent
+    progress_percent: 0
+    tags:
+      - okf
+      - llm_wiki
+      - ontology
+      - export
+      - agent_memory
+    context:
+      - Brian concluded that ontology design is more important than OKF format.
+      - Current Brian Ontology Agent is ontology-first YAML with structured objects and refs.
+      - Because the data is already structured, OKF export should be relatively straightforward.
+      - OKF should initially be a generated read-only view, not the source of truth.
+    expected_outputs:
+      - tools/export_okf.py candidate design
+      - okf/index.md generated view
+      - OKF markdown pages for selected projects, tasks, concepts, people, and daily/body summaries
+    next_actions:
+      - Keep life/**/*.yaml as the canonical ontology store.
+      - Define first export scope before implementing.
+      - Generate read-only OKF markdown views from existing ontology objects.
+      - Avoid bidirectional sync until source-of-truth rules are stable.
+    evidence_refs:
+      - source_ai_agent_conversation_20260615_okf_ontology_memory_direction
+    related_knowledge_thread_ref: thought_thread_20260615_okf_llm_wiki_ontology
+    confidence: high
+    needs_user_review: false
+
 work_sessions:
   - id: worksession_20260614_ai_agent_codex_porting_fun_while_tired
     date: 2026-06-14
@@ -616,3 +669,15 @@ project_status_updates:
     positive_signal: Successful seminar delivery shows that Brian's agent workflow experience already creates value even before the ontology plugin is fully productized.
     next_step: "Capture the Cursor seminar structure and prepare a Codex seminar around one reliable workflow/demo slice."
     source_ref: source_ai_agent_conversation_20260614_cursor_seminar_success_codex_planned
+
+  - id: project_status_ai_agent_20260615_okf_ontology_memory_direction
+    date: 2026-06-15
+    project_ref: project_ai_agent
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: Brian clarified that OKF is useful as a standardized LLM Wiki/export format, but ontology-first memory design is the more important core of the agent.
+    lesson: The agent should remember Brian's evolving knowledge interests and conversation flow, not only final facts, so future discussions can continue from the ontology.
+    next_step: Keep canonical memory in structured YAML ontology and later design a read-only OKF export layer.
+    source_ref: source_ai_agent_conversation_20260615_okf_ontology_memory_direction
+    knowledge_thread_ref: thought_thread_20260615_okf_llm_wiki_ontology

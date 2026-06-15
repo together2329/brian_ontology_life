@@ -1,0 +1,245 @@
+schema_version: 1
+status: active
+updated_at: 2026-06-15
+area: MIND
+secondary_areas:
+  - CAREER
+project_ref: project_ai_agent
+title: AI agent architecture thought threads
+purpose: >
+  Records Brian's evolving understanding, questions, decisions, and interests around AI agent architecture,
+  LLM Wiki, OKF, ontology-first memory, and personal/company agent development.
+
+source_records:
+  - id: source_knowledge_conversation_20260615_okf_search
+    source_type: chat
+    original_date: 2026-06-15
+    imported_at: 2026-06-15
+    parse_status: parsed
+    raw_text: "이건 궁금해서 그런데 구글이 출시한 OKF 검색 좀."
+  - id: source_knowledge_conversation_20260615_llm_wiki_concept
+    source_type: chat
+    original_date: 2026-06-15
+    imported_at: 2026-06-15
+    parse_status: parsed
+    raw_text: "LLM WIKI 등과 함께 개념 정리 한 번 해줘."
+  - id: source_knowledge_conversation_20260615_okf_layer_understanding
+    source_type: chat
+    original_date: 2026-06-15
+    imported_at: 2026-06-15
+    parse_status: parsed
+    raw_text: "흠... 좋은데? 근데 우리는 어떻게 하고 있어? 일단 이해하기로는 OKF는 LLM WIKI를 표준화해서 지원하는 형식이고, 온톨로지는 그 위의 레이어지?"
+  - id: source_knowledge_conversation_20260615_okf_export_easy
+    source_type: chat
+    original_date: 2026-06-15
+    imported_at: 2026-06-15
+    parse_status: parsed
+    raw_text: "근데 우리가 구조화가 되어있으니OKF로 뽑는건 순식간일듯?"
+  - id: source_knowledge_conversation_20260615_ontology_more_important
+    source_type: chat
+    original_date: 2026-06-15
+    imported_at: 2026-06-15
+    parse_status: parsed
+    raw_text: "그리고... OKF 보다 ontology 를 어떻게 가져갈지가 훨씬 중요할듯?"
+  - id: source_knowledge_conversation_20260615_record_conversation_flow
+    source_type: chat
+    original_date: 2026-06-15
+    imported_at: 2026-06-15
+    parse_status: parsed
+    raw_text: "우리가 이야기한거 이런것도 기록에 들어갈 수 있을까 지식과 나의 대화 흐름 같은거"
+  - id: source_knowledge_conversation_20260615_continue_later
+    source_type: chat
+    original_date: 2026-06-15
+    imported_at: 2026-06-15
+    parse_status: parsed
+    raw_text: "그래야 이런 것들 이어서 이야기할 수 있잖아?"
+  - id: source_knowledge_conversation_20260615_interest_development_path
+    source_type: chat
+    original_date: 2026-06-15
+    imported_at: 2026-06-15
+    parse_status: parsed
+    raw_text: "내가 어떤 지식에 관심을 가지고 있고, 어떻게 발전시켜 나가고 싶은지 온톨로지에 녹아있어야지"
+  - id: source_knowledge_conversation_20260615_record_request
+    source_type: chat
+    original_date: 2026-06-15
+    imported_at: 2026-06-15
+    parse_status: parsed
+    raw_text: "기록으로 넣어줘"
+
+thought_threads:
+  - id: thought_thread_20260615_okf_llm_wiki_ontology
+    object_type: ThoughtThread
+    date: 2026-06-15
+    area: MIND
+    secondary_areas:
+      - CAREER
+    topic: OKF, LLM Wiki, and ontology-first agent memory
+    summary:
+      - Brian investigated Google's OKF and related it to LLM Wiki patterns.
+      - Brian understood OKF as a standardized file format for LLM Wiki-like knowledge bundles.
+      - Brian identified ontology design as more important than OKF export because ontology carries the real object and relationship model.
+      - Brian recognized that his structured YAML ontology can likely export to OKF quickly.
+      - Brian explicitly wants knowledge interests and conversation flow to be recorded so future discussions can continue from the same conceptual state.
+    conversation_flow:
+      - Curiosity started from Google's OKF announcement.
+      - The discussion moved from external format to LLM Wiki as an operating pattern.
+      - Brian then mapped the concepts onto the current Brian Ontology Agent architecture.
+      - Brian concluded that OKF is useful as an export or interoperability layer, while ontology-first design is the core asset.
+      - Brian then raised a meta-memory requirement: the agent must remember not only facts, but also how Brian's understanding and interests evolve through conversation.
+    related_concept_refs:
+      - concept_okf_open_knowledge_format
+      - concept_llm_wiki
+      - concept_ontology_first_agent_memory
+      - concept_okf_export_layer
+      - concept_conversation_knowledge_memory
+    related_project_refs:
+      - project_ai_agent
+    related_task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_okf_export_layer
+    source_refs:
+      - source_knowledge_conversation_20260615_okf_search
+      - source_knowledge_conversation_20260615_llm_wiki_concept
+      - source_knowledge_conversation_20260615_okf_layer_understanding
+      - source_knowledge_conversation_20260615_okf_export_easy
+      - source_knowledge_conversation_20260615_ontology_more_important
+      - source_knowledge_conversation_20260615_record_conversation_flow
+      - source_knowledge_conversation_20260615_continue_later
+      - source_knowledge_conversation_20260615_interest_development_path
+      - source_knowledge_conversation_20260615_record_request
+    confidence: high
+    needs_user_review: false
+
+understandings:
+  - id: understanding_20260615_okf_llm_wiki_ontology_layering
+    object_type: Understanding
+    date: 2026-06-15
+    area: MIND
+    statement: "OKF is a standardized file format for LLM Wiki-like knowledge bundles, while ontology is the deeper semantic/object-and-relation layer that determines agent usefulness."
+    brian_wording_ko: "OKF는 LLM WIKI를 표준화해서 지원하는 형식이고, ontology를 어떻게 가져갈지가 훨씬 중요하다."
+    status: confirmed_by_brian
+    related_thread_ref: thought_thread_20260615_okf_llm_wiki_ontology
+    related_concept_refs:
+      - concept_okf_open_knowledge_format
+      - concept_llm_wiki
+      - concept_ontology_first_agent_memory
+    source_refs:
+      - source_knowledge_conversation_20260615_okf_layer_understanding
+      - source_knowledge_conversation_20260615_ontology_more_important
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260615_conversation_flow_is_memory
+    object_type: Understanding
+    date: 2026-06-15
+    area: MIND
+    statement: "Brian wants the agent to remember not only knowledge facts, but also his conversation flow, interests, and intended development path so later discussions can resume naturally."
+    brian_wording_ko: "내가 어떤 지식에 관심을 가지고 있고, 어떻게 발전시켜 나가고 싶은지 온톨로지에 녹아있어야지."
+    status: confirmed_by_brian
+    related_thread_ref: thought_thread_20260615_okf_llm_wiki_ontology
+    related_concept_refs:
+      - concept_conversation_knowledge_memory
+      - concept_ontology_first_agent_memory
+    source_refs:
+      - source_knowledge_conversation_20260615_record_conversation_flow
+      - source_knowledge_conversation_20260615_continue_later
+      - source_knowledge_conversation_20260615_interest_development_path
+    confidence: high
+    needs_user_review: false
+
+architecture_directions:
+  - id: architecture_direction_20260615_ontology_first_okf_export
+    object_type: ArchitectureDirection
+    date: 2026-06-15
+    area: CAREER
+    secondary_areas:
+      - MIND
+    project_ref: project_ai_agent
+    title: Ontology-first memory with OKF as generated export view
+    statement: Keep Brian Ontology Agent's canonical memory as structured ontology YAML and later generate OKF-compatible markdown as a read-only export layer.
+    rationale:
+      - The current YAML ontology already captures stable IDs, object types, task state, source records, evidence refs, and semantic links.
+      - OKF export is useful for interoperability with LLM Wiki-like tools, but it is not the source of truth.
+      - Ontology quality determines whether the personal agent can answer, continue, and recommend well.
+    implementation_direction:
+      canonical_store: life/**/*.yaml plus derived jsonl indexes
+      future_export: okf/**/*.md generated by tools/export_okf.py
+      sync_policy: one_way_read_only_export_initially
+    tradeoffs:
+      - YAML ontology is less portable than OKF markdown but better for precise structured queries.
+      - OKF markdown is easier for external agents and humans to browse but weaker as the canonical state model.
+      - Bidirectional sync should be avoided initially because it can create source-of-truth conflicts.
+    follow_up_task_refs:
+      - task_ai_agent_okf_export_layer
+    source_refs:
+      - source_knowledge_conversation_20260615_okf_export_easy
+      - source_knowledge_conversation_20260615_ontology_more_important
+    status: active_direction
+    confidence: high
+    needs_user_review: false
+
+knowledge_interests:
+  - id: knowledge_interest_20260615_agent_memory_architecture
+    object_type: KnowledgeInterest
+    date: 2026-06-15
+    area: MIND
+    secondary_areas:
+      - CAREER
+    topic: AI agent memory and knowledge architecture
+    current_interest:
+      - LLM Wiki as an operating pattern for agent-managed knowledge.
+      - OKF as a portable markdown/YAML-frontmatter export format.
+      - Ontology as the core semantic layer for durable object and relationship memory.
+      - Capturing conversation flow and Brian's evolving understanding, not only final conclusions.
+    development_direction:
+      - Build Brian Ontology Agent as ontology-first local memory.
+      - Add OKF-compatible export later for external agent interoperability.
+      - Make knowledge interests, architecture decisions, and conversation threads queryable.
+      - Use this same pattern in Codex/OAG/hardware-IP agent development.
+    related_project_refs:
+      - project_ai_agent
+    related_concept_refs:
+      - concept_llm_wiki
+      - concept_okf_open_knowledge_format
+      - concept_ontology_first_agent_memory
+      - concept_conversation_knowledge_memory
+    status: active_interest
+    source_refs:
+      - source_knowledge_conversation_20260615_interest_development_path
+    confidence: high
+    needs_user_review: false
+
+follow_up_tasks:
+  - id: task_ai_agent_okf_export_layer
+    object_type: Task
+    title: Brian Ontology Agent OKF export layer 설계
+    area: CAREER
+    secondary_areas:
+      - MIND
+    status: candidate
+    priority: medium
+    energy: system_design
+    estimated_minutes: null
+    due_date: null
+    tracking_level: concept
+    project_ref: project_ai_agent
+    progress_percent: 0
+    tags:
+      - okf
+      - llm_wiki
+      - ontology
+      - export
+      - agent_memory
+    expected_outputs:
+      - tools/export_okf.py candidate design
+      - okf/index.md generated view
+      - OKF markdown pages for projects, tasks, concepts, people, and daily/body summaries
+    next_actions:
+      - Keep YAML ontology as canonical source of truth.
+      - Define first export scope before implementing.
+      - Generate read-only OKF markdown views from existing ontology objects.
+      - Do not implement bidirectional sync until the source-of-truth model is stable.
+    source_refs:
+      - source_knowledge_conversation_20260615_okf_export_easy
+      - source_knowledge_conversation_20260615_ontology_more_important
+    confidence: high
+    needs_user_review: false
