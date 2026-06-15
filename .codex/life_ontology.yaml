@@ -202,17 +202,23 @@ career_object_types:
       - id
       - date
       - task_ref
+      - task_refs
       - project_ref
       - component_ref
       - start
       - end
       - actual_minutes
+      - time_quality
       - focus_level
       - summary
       - findings
       - next_steps
       - artifacts
+      - artifact_refs
       - mood_refs
+      - source_ref
+      - clarification_source_ref
+      - needs_user_review
   Issue:
     fields:
       - id
@@ -276,6 +282,7 @@ career_object_types:
       - follow_up_tasks
       - notes
       - source_ref
+      - clarification_source_ref
       - needs_user_review
   Milestone:
     fields: [id, project_ref, title, due_date, status, related_tasks]

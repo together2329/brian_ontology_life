@@ -13,6 +13,12 @@ source_records:
     imported_at: 2026-06-15
     parse_status: parsed
     raw_text: "10:00 - 11:00 AIX 회의 진행 , 11:00 - 11:25 주간 보고 작성"
+  - id: source_career_daily_20260615_aix_definition
+    source_type: chat
+    original_date: 2026-06-15
+    imported_at: 2026-06-15
+    parse_status: parsed
+    raw_text: "전사 AI Transformation 활동가 모임"
 
 meetings:
   - id: meeting_20260615_aix
@@ -20,32 +26,36 @@ meetings:
     date: 2026-06-15
     start: "10:00"
     end: "11:00"
-    project_ref: project_work_general
-    title: AIX 회의
+    project_ref: project_company_ai_transformation
+    title: 전사 AI Transformation 활동가 모임
     participants: []
     topics:
       - AIX
+      - company-wide AI Transformation
+      - AI transformation activist group
     decisions: []
     follow_up_tasks: []
-    notes: AIX meeting was held from 10:00 to 11:00. Details were not captured yet.
+    notes: Brian clarified that AIX refers to the company-wide AI Transformation activist group.
     source_ref: source_career_daily_20260615_aix_meeting_weekly_report
-    needs_user_review: true
+    clarification_source_ref: source_career_daily_20260615_aix_definition
+    needs_user_review: false
 
 work_sessions:
   - id: worksession_20260615_aix_meeting
     date: 2026-06-15
-    project_ref: project_work_general
+    project_ref: project_company_ai_transformation
     start: "10:00"
     end: "11:00"
     actual_minutes: 60
     time_quality: exact
     task_refs: []
     focus_level: meeting
-    summary: AIX meeting.
+    summary: 전사 AI Transformation 활동가 모임.
     findings: []
     next_steps: []
     source_ref: source_career_daily_20260615_aix_meeting_weekly_report
-    needs_user_review: true
+    clarification_source_ref: source_career_daily_20260615_aix_definition
+    needs_user_review: false
 
   - id: worksession_20260615_weekly_report
     date: 2026-06-15
