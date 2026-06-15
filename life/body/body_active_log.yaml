@@ -241,6 +241,86 @@ meal_records:
     confidence: low
     needs_user_review: true
     notes: Breakfast after the morning home fallback workout. Protein estimate depends heavily on egg roll size and yukgaejang portion.
+  - id: meal_20260615_lunch_cold_jjamppong_pepper_steak_rice
+    object_type: Meal
+    date: 2026-06-15
+    time: null
+    area: BODY
+    meal_type: lunch
+    items:
+      - name: 냉짬뽕
+        amount: 1
+        unit: serving
+        calories: null
+        protein_g: null
+        carbs_g: null
+        fat_g: null
+      - name: 고추잡채밥
+        amount: 1
+        unit: serving
+        calories: null
+        protein_g: null
+        carbs_g: null
+        fat_g: null
+    supplements: []
+    related_workout: null
+    related_nutrition_target_ref: protein_target_20260615
+    protein_g_total: null
+    protein_g_estimate_range: [35, 55]
+    confidence: low
+    needs_user_review: true
+    notes: Lunch record. Protein estimate depends on seafood/meat portion size.
+  - id: meal_20260615_pre_dinner_protein_shake
+    object_type: Meal
+    date: 2026-06-15
+    time: null
+    area: BODY
+    meal_type: pre_dinner_protein
+    items:
+      - name: 단백질 쉐이크
+        amount: 1
+        unit: serving
+        calories: null
+        protein_g: 30
+        carbs_g: null
+        fat_g: null
+    supplements: []
+    related_workout: null
+    related_nutrition_target_ref: protein_target_20260615
+    protein_g_total: 30
+    protein_g_estimate_range: null
+    confidence: high
+    needs_user_review: false
+    notes: Protein shake consumed before dinner.
+  - id: meal_20260615_dinner_hamburger_protein_yogurt
+    object_type: Meal
+    date: 2026-06-15
+    time: null
+    area: BODY
+    meal_type: dinner
+    items:
+      - name: 햄버거
+        amount: 1
+        unit: serving
+        calories: null
+        protein_g: null
+        carbs_g: null
+        fat_g: null
+      - name: 프로틴 요거트
+        amount: 1
+        unit: serving
+        calories: null
+        protein_g: null
+        carbs_g: null
+        fat_g: null
+    supplements: []
+    related_workout: null
+    related_nutrition_target_ref: protein_target_20260615
+    protein_g_total: null
+    protein_g_estimate_range: [35, 55]
+    confidence: low
+    needs_user_review: true
+    notes: Dinner record. Protein estimate depends on hamburger patty size and protein yogurt product.
 
 trend_observations:
   - id: body_trend_20260615_strength_up_weight_stable
@@ -305,3 +385,8 @@ raw_records:
     time: null
     source: codex_conversation
     text: "아침에 계란 말이 + 육개장 + 현미 햇반 하나 + 김치 + 김 먹음"
+  - id: raw_body_record_20260615_lunch_dinner_protein
+    date: 2026-06-15
+    time: null
+    source: codex_conversation
+    text: "점심은 냉짬뽕, 고추잡채밥. 저녁은 햄버거 , 프로틴 요거트 , 저녁 전에 단백질 쉐이크(30g)"
