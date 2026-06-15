@@ -1,11 +1,11 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-14
+updated_at: 2026-06-15
 area: CAREER
 project_ref: project_milano
 component_ref: component_milano_pcie
 title: Milano active task list
-current_phase: 3nm synthesis setup, lint re-check, and final DB synthesis preparation
+current_phase: 3nm synthesis setup, MSE/PF BAR0 guard, lint re-check, and final DB synthesis preparation
 source_records:
   - id: source_milano_conversation_20260614_current_tasks
     source_type: chat
@@ -57,6 +57,12 @@ source_records:
     imported_at: 2026-06-14
     parse_status: parsed
     raw_text: "SDC 는 기존 Firenze Project의 pd_pcie sdc 에서 new gen7 phy sdc를 포팅했어. cursor 기반으로. 생각보다 쓸만한데 결과는 어떨지. 처음엔 잘 안되어서 파이썬 스크립트도 같이 사용하도록 했어. 약간 few shot이 필요한 느낌"
+  - id: source_milano_conversation_20260615_mse_pf_bar0_overlap_guard
+    source_type: chat
+    original_date: 2026-06-15
+    imported_at: 2026-06-15
+    parse_status: parsed
+    raw_text: "milano task 중에 MSE 연동해서 PF BAR0 address overlap 방지하는 기능 추가해야 해 ( Firenze에 추가했다가 MSE 0 일때 BAR0가 안 써지는 이슈가 있어서 실패 ) 이번에는 잘 해야해"
 
 summary:
   recently_completed:
@@ -71,6 +77,7 @@ summary:
     - standard cell replacement for latch and related cells
     - cross-power-domain signal naming cleanup
     - Port 1 interrupt requirement writing
+    - MSE-linked PF BAR0 address overlap prevention with Firenze failure-mode regression
   open_questions:
     - id: oq_milano_gen7_phy_term
       question: "'제7파이'를 GEN7 PHY로 해석하는 것이 맞는지 확인 필요."
@@ -91,6 +98,10 @@ summary:
     - id: oq_milano_pdci_pdbci_name
       question: "PDCI와 기존 기록의 PDBCI가 같은 SDC profile을 의미하는지 확인 필요."
       related_task_ref: task_milano_sdc_dual_profile_synth_rerun
+      needs_user_review: true
+    - id: oq_milano_mse_pf_bar0_expected_behavior
+      question: "MSE=0/1 상태별 PF BAR0 overlap 방지 조건과 BAR0 사용 가능 상태를 behavior table로 확정 필요."
+      related_task_ref: task_milano_mse_pf_bar0_overlap_guard
       needs_user_review: true
 
 tasks:
@@ -287,6 +298,61 @@ tasks:
     confidence: high
     needs_user_review: false
 
+  - id: task_milano_mse_pf_bar0_overlap_guard
+    title: MSE 연동 PF BAR0 address overlap 방지 기능 추가
+    area: CAREER
+    status: todo
+    priority: high
+    energy: deep_work
+    estimated_minutes: null
+    due_date: null
+    tracking_level: detailed
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    related_project_refs:
+      - project_firenze
+    progress_percent: 0
+    tags:
+      - milano
+      - pcie
+      - pf
+      - bar0
+      - mse
+      - address_overlap
+      - rtl
+      - regression
+    context:
+      - Milano needs an MSE-linked guard to prevent PF BAR0 address overlap.
+      - A prior Firenze attempt failed because BAR0 became unusable when MSE was 0.
+      - Milano implementation must avoid repeating the Firenze failure while still preventing real overlap.
+    failure_modes_to_avoid:
+      - BAR0 becomes unusable solely because MSE is 0.
+      - Disabled or inactive BAR state is incorrectly treated as an address overlap.
+      - Overlap prevention changes BAR0 enable/reset semantics without an explicit requirement.
+    expected_outputs:
+      - MSE/PF BAR0 behavior table for MSE=0 and MSE=1 cases
+      - RTL or spec patch implementing PF BAR0 overlap prevention
+      - Review note explaining how the Firenze MSE=0 failure mode is avoided
+      - Targeted regression or checklist result for MSE=0 and MSE=1 behavior
+    acceptance_criteria:
+      - PF BAR0 address overlap is prevented in the enabled/active scenarios defined by the requirement.
+      - MSE=0 case does not reproduce the Firenze failure where BAR0 cannot be used.
+      - MSE=0 and MSE=1 behavior are explicitly documented and reviewed before implementation is considered done.
+      - Build, lint, regression, or targeted test evidence is captured before marking the task complete.
+    next_actions:
+      - Identify Milano PF BAR0 decode/config path and the exact MSE source signal.
+      - Find the Firenze implementation attempt or notes that caused the MSE=0 BAR0 issue.
+      - Define the behavior table for MSE=0/1 and overlap/non-overlap cases before coding.
+      - Implement the overlap guard with narrow conditions so MSE=0 does not globally break BAR0 behavior.
+      - Add targeted checks for the prior Firenze failure mode.
+      - Record Issue/Resolution evidence after implementation and validation artifacts exist.
+    related_issue_refs:
+      - issue_firenze_mse0_pf_bar0_disabled
+    evidence_refs:
+      - source_milano_conversation_20260615_mse_pf_bar0_overlap_guard
+    confidence: high
+    needs_user_review: false
+
   - id: task_milano_gen7_phy_db_synthesis
     title: GEN7 PHY를 함께 DB로 최종 합성
     area: CAREER
@@ -320,6 +386,7 @@ tasks:
       - task_milano_arir_precheck
       - task_milano_lint_ip_rev_0_1_rerun
       - task_milano_firenze_handler_reflection_check
+      - task_milano_mse_pf_bar0_overlap_guard
       - task_milano_common_module_replacement
       - task_milano_standard_cell_replacement
       - task_milano_cross_domain_signal_naming_cleanup
@@ -484,6 +551,7 @@ tasks:
 
 recommended_execution_order:
   - task_milano_firenze_handler_reflection_check
+  - task_milano_mse_pf_bar0_overlap_guard
   - task_milano_port1_interrupt_requirement
   - task_milano_lint_ip_rev_0_1_rerun
   - task_milano_common_module_replacement
@@ -672,6 +740,44 @@ task_status_updates:
     next_step: Rerun lint and diff new violations against previous cleanup state.
     source_ref: source_milano_conversation_20260614_multi_hour_progress_update
 
+  - id: status_task_milano_mse_pf_bar0_20260615_added
+    date: 2026-06-15
+    task_ref: task_milano_mse_pf_bar0_overlap_guard
+    author_ref: person_brian
+    status: todo
+    progress_percent: 0
+    summary: Need MSE-linked PF BAR0 address overlap prevention in Milano; prior Firenze attempt failed because BAR0 became unusable when MSE was 0.
+    blockers:
+      - Need exact intended behavior table for MSE=0/1 and BAR0 overlap/non-overlap cases.
+      - Need Firenze failure implementation or source reference if available.
+    next_step: Define the MSE/PF BAR0 behavior table first, then implement narrowly and add regression for the Firenze failure mode.
+    source_ref: source_milano_conversation_20260615_mse_pf_bar0_overlap_guard
+
+issues:
+  - id: issue_firenze_mse0_pf_bar0_disabled
+    project_ref: project_firenze
+    related_project_refs:
+      - project_milano
+    component_ref: component_pcie
+    task_ref: task_milano_mse_pf_bar0_overlap_guard
+    title: Firenze MSE=0 path made PF BAR0 unusable during overlap-prevention attempt
+    status: historical_failure_to_avoid
+    severity: high
+    discovered_on: null
+    recorded_on: 2026-06-15
+    discovered_in_session: source_milano_conversation_20260615_mse_pf_bar0_overlap_guard
+    blocker_for:
+      - task_milano_mse_pf_bar0_overlap_guard
+    context:
+      - Firenze previously attempted PF BAR0 address overlap prevention with MSE integration.
+      - The attempt failed because BAR0 could not be used when MSE was 0.
+      - Milano implementation should explicitly test or review this failure mode before completion.
+    source_ref: source_milano_conversation_20260615_mse_pf_bar0_overlap_guard
+    evidence_refs:
+      - source_milano_conversation_20260615_mse_pf_bar0_overlap_guard
+    confidence: high
+    needs_user_review: false
+
 artifact_candidates:
   - id: artifact_milano_pdci_sdc_v1
     title: PDCI SDC v1
@@ -813,3 +919,16 @@ project_status_updates:
       - Need synthesis result to judge whether the ported SDC is usable.
     next_step: Review synthesis results and capture repeatable Cursor few-shot/Python helper flow if the method proves useful.
     source_ref: source_milano_conversation_20260614_sdc_firenze_gen7_phy_porting
+
+  - id: project_status_milano_20260615_mse_pf_bar0_overlap_guard_added
+    date: 2026-06-15
+    project_ref: project_milano
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: Added a high-risk Milano task for MSE-linked PF BAR0 address overlap prevention, explicitly carrying forward the Firenze MSE=0 BAR0 unusable failure mode.
+    blockers:
+      - Need MSE=0/1 behavior table before coding or review can be trusted.
+      - Need Firenze failure source or implementation reference if available.
+    next_step: Confirm intended MSE/PF BAR0 behavior, inspect Firenze failure, then implement and validate the Milano guard before lint/final synthesis closure.
+    source_ref: source_milano_conversation_20260615_mse_pf_bar0_overlap_guard

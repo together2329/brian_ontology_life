@@ -226,14 +226,21 @@ career_object_types:
     fields:
       - id
       - project_ref
+      - related_project_refs
       - component_ref
       - task_ref
       - title
       - status
       - severity
       - discovered_on
+      - recorded_on
       - discovered_in_session
       - blocker_for
+      - context
+      - source_ref
+      - evidence_refs
+      - confidence
+      - needs_user_review
   Resolution:
     fields:
       - id
