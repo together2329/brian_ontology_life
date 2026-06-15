@@ -1,0 +1,63 @@
+schema_version: 1
+status: active
+updated_at: 2026-06-15
+area: CAREER
+project_ref: project_work_general
+title: Career daily work log
+current_phase: Daily meetings, reports, and general work sessions not yet mapped to a specific active project.
+
+source_records:
+  - id: source_career_daily_20260615_aix_meeting_weekly_report
+    source_type: chat
+    original_date: 2026-06-15
+    imported_at: 2026-06-15
+    parse_status: parsed
+    raw_text: "10:00 - 11:00 AIX 회의 진행 , 11:00 - 11:25 주간 보고 작성"
+
+meetings:
+  - id: meeting_20260615_aix
+    object_type: Meeting
+    date: 2026-06-15
+    start: "10:00"
+    end: "11:00"
+    project_ref: project_work_general
+    title: AIX 회의
+    participants: []
+    topics:
+      - AIX
+    decisions: []
+    follow_up_tasks: []
+    notes: AIX meeting was held from 10:00 to 11:00. Details were not captured yet.
+    source_ref: source_career_daily_20260615_aix_meeting_weekly_report
+    needs_user_review: true
+
+work_sessions:
+  - id: worksession_20260615_aix_meeting
+    date: 2026-06-15
+    project_ref: project_work_general
+    start: "10:00"
+    end: "11:00"
+    actual_minutes: 60
+    time_quality: exact
+    task_refs: []
+    focus_level: meeting
+    summary: AIX meeting.
+    findings: []
+    next_steps: []
+    source_ref: source_career_daily_20260615_aix_meeting_weekly_report
+    needs_user_review: true
+
+  - id: worksession_20260615_weekly_report
+    date: 2026-06-15
+    project_ref: project_work_general
+    start: "11:00"
+    end: "11:25"
+    actual_minutes: 25
+    time_quality: exact
+    task_refs: []
+    focus_level: writing
+    summary: 주간 보고 작성.
+    findings: []
+    next_steps: []
+    source_ref: source_career_daily_20260615_aix_meeting_weekly_report
+    needs_user_review: false

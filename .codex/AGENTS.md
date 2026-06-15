@@ -31,6 +31,7 @@ Use historical memory indexes when they exist:
 - `life/imports/obsidian_daily/entity_linked_records.jsonl`: Daily note time blocks and sections with semantic object links.
 - `life/imports/obsidian_daily/daily_summary.jsonl`: daily aggregate index for Daily notes, time blocks, energy, emotions, areas, and entity refs.
 - `life/body/body_active_log.yaml`: current BODY status, PT trend, body metrics, protein targets, and recent workout records.
+- `life/tasks/career_daily_work_log.yaml`: current CAREER daily work sessions, meetings, and reports not yet mapped to a specific active project.
 
 ## Core Role
 

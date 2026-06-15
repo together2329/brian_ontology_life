@@ -266,12 +266,17 @@ career_object_types:
     fields:
       - id
       - date
+      - start
+      - end
       - project_ref
+      - title
       - participants
       - topics
       - decisions
       - follow_up_tasks
       - notes
+      - source_ref
+      - needs_user_review
   Milestone:
     fields: [id, project_ref, title, due_date, status, related_tasks]
 
