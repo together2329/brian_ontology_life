@@ -25,6 +25,12 @@ source_records:
     imported_at: 2026-06-15
     parse_status: parsed
     raw_text: "주마다 담당님이랑 활동가를 회의해"
+  - id: source_career_daily_20260615_aix_participants
+    source_type: chat
+    original_date: 2026-06-15
+    imported_at: 2026-06-15
+    parse_status: parsed
+    raw_text: "구인재 담당님, 활동가 멤버 김성찬TL님, 박소영TL님, 유호강TL님, 최현우TL님, 홍요한 TL님, 양진혁TL님, Manu TL님"
 
 recurring_meetings:
   - id: recurring_meeting_company_ai_transformation_weekly_activists
@@ -39,10 +45,19 @@ recurring_meetings:
       - company_ai_transformation_activists
     known_participant_refs:
       - person_brian
+      - person_gu_injae
+      - person_kim_sungchan
+      - person_park_soyoung
+      - person_yoo_hogang
+      - person_choi_hyunwoo
+      - person_hong_yohan
+      - person_yang_jinhyuk
+      - person_manu
     status: active
-    notes: Weekly meeting with the 담당님 and AI Transformation activists. The 담당님 identity and regular weekday/time are not yet captured.
+    notes: Weekly meeting with 구인재 담당님 and AI Transformation activists. Regular weekday/time is not yet captured.
     source_ref: source_career_daily_20260615_aix_weekly_cadence
-    needs_user_review: true
+    participant_source_ref: source_career_daily_20260615_aix_participants
+    needs_user_review: false
 
 meetings:
   - id: meeting_20260615_aix
@@ -53,7 +68,16 @@ meetings:
     recurring_meeting_ref: recurring_meeting_company_ai_transformation_weekly_activists
     project_ref: project_company_ai_transformation
     title: 전사 AI Transformation 활동가 모임
-    participants: []
+    participants:
+      - person_brian
+      - person_gu_injae
+      - person_kim_sungchan
+      - person_park_soyoung
+      - person_yoo_hogang
+      - person_choi_hyunwoo
+      - person_hong_yohan
+      - person_yang_jinhyuk
+      - person_manu
     participant_roles:
       - 담당님
       - AI Transformation 활동가
@@ -63,9 +87,10 @@ meetings:
       - AI transformation activist group
     decisions: []
     follow_up_tasks: []
-    notes: Brian clarified that AIX refers to the company-wide AI Transformation activist group.
+    notes: Brian clarified that AIX refers to the company-wide AI Transformation activist group and provided the 담당님/activity member names.
     source_ref: source_career_daily_20260615_aix_meeting_weekly_report
     clarification_source_ref: source_career_daily_20260615_aix_definition
+    participant_source_ref: source_career_daily_20260615_aix_participants
     needs_user_review: false
 
 work_sessions:

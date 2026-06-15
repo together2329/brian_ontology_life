@@ -192,6 +192,9 @@ career_object_types:
       - status
       - current_phase
       - due_date
+      - responsible_person_ref
+      - member_refs
+      - activist_member_refs
       - notes
   Component:
     fields: [id, project_ref, title, owner_ref, status, notes]
@@ -285,6 +288,7 @@ career_object_types:
       - notes
       - source_ref
       - clarification_source_ref
+      - participant_source_ref
       - needs_user_review
   RecurringMeeting:
     fields:
@@ -298,6 +302,7 @@ career_object_types:
       - status
       - notes
       - source_ref
+      - participant_source_ref
       - needs_user_review
   Milestone:
     fields: [id, project_ref, title, due_date, status, related_tasks]

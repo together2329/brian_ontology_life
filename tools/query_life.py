@@ -42,6 +42,48 @@ STATUS_RANK = {
     "blocked": 5,
     "completed": 9,
 }
+TASK_SEARCH_SECTIONS = [
+    "source_records",
+    "tasks",
+    "planned_time_blocks",
+    "work_sessions",
+    "task_status_updates",
+    "assignments",
+    "meetings",
+    "recurring_meetings",
+    "issues",
+    "resolutions",
+    "decisions",
+    "artifacts",
+    "milestones",
+]
+DIRECT_REF_KEYS = {
+    "project_ref",
+    "component_ref",
+    "task_ref",
+    "owner_ref",
+    "person_ref",
+    "author_ref",
+    "recurring_meeting_ref",
+    "activity_ref",
+    "exercise_ref",
+    "training_program_ref",
+    "habit_ref",
+    "related_workout",
+    "related_nutrition_target_ref",
+}
+DIRECT_REF_LIST_KEYS = {
+    "task_refs",
+    "participants",
+    "known_participant_refs",
+    "participant_refs",
+    "member_refs",
+    "activist_member_refs",
+    "people_refs",
+    "subjects",
+    "linked_entities",
+    "related_entities",
+}
 
 
 def load_yaml(path: Path) -> Dict[str, Any]:
@@ -69,6 +111,31 @@ def compact_text(value: Any, limit: int = 180) -> str:
     return text[: limit - 1].rstrip() + "…"
 
 
+def flatten_text(value: Any) -> str:
+    if value is None:
+        return ""
+    if isinstance(value, dict):
+        return " ".join(flatten_text(v) for v in value.values())
+    if isinstance(value, list):
+        return " ".join(flatten_text(v) for v in value)
+    return str(value)
+
+
+def collect_ref_values(value: Any) -> List[str]:
+    if value is None:
+        return []
+    if isinstance(value, str):
+        return [value] if value else []
+    if isinstance(value, list):
+        refs: List[str] = []
+        for item in value:
+            refs.extend(collect_ref_values(item))
+        return refs
+    if isinstance(value, dict):
+        return collect_ref_values(value.get("entity_refs"))
+    return []
+
+
 def iso_date(value: Any) -> Optional[str]:
     if value is None:
         return None
@@ -89,6 +156,8 @@ def record_title(record: Dict[str, Any]) -> str:
         or record.get("gratitude_text")
         or record.get("text_excerpt")
         or record.get("summary")
+        or record.get("raw_text")
+        or record.get("notes")
         or record.get("id")
         or ""
     )
@@ -98,8 +167,10 @@ def record_excerpt(record: Dict[str, Any]) -> str:
     return compact_text(
         record.get("summary")
         or record.get("raw_text_excerpt")
+        or record.get("raw_text")
         or record.get("gratitude_text")
         or record.get("text_excerpt")
+        or record.get("notes")
         or record_title(record),
         220,
     )
@@ -110,9 +181,18 @@ def entity_refs(record: Dict[str, Any]) -> List[str]:
     for link in record.get("semantic_links") or []:
         refs.append(link.get("entity_ref"))
     linked_entities = record.get("linked_entities") or {}
-    refs.extend(linked_entities.get("entity_refs") or [])
-    for values in (record.get("entity_refs") or {}).values():
-        refs.extend(values or [])
+    refs.extend(collect_ref_values(linked_entities))
+    entity_ref_map = record.get("entity_refs") or {}
+    if isinstance(entity_ref_map, dict):
+        for values in entity_ref_map.values():
+            refs.extend(collect_ref_values(values))
+    else:
+        refs.extend(collect_ref_values(entity_ref_map))
+    for key in DIRECT_REF_KEYS:
+        if record.get(key):
+            refs.append(record.get(key))
+    for key in DIRECT_REF_LIST_KEYS:
+        refs.extend(collect_ref_values(record.get(key)))
     return sorted(set(ref for ref in refs if ref))
 
 
@@ -124,6 +204,11 @@ def record_text(record: Dict[str, Any]) -> str:
         record.get("raw_text_excerpt"),
         record.get("gratitude_text"),
         record.get("text_excerpt"),
+        record.get("raw_text"),
+        record.get("notes"),
+        flatten_text(record.get("topics")),
+        flatten_text(record.get("findings")),
+        flatten_text(record.get("next_steps")),
         " ".join(entity_refs(record)),
     ]
     return "\n".join(str(part) for part in parts if part)
@@ -151,6 +236,21 @@ def load_task_files() -> List[Dict[str, Any]]:
         data["_path"] = str(path.relative_to(REPO_ROOT))
         task_files.append(data)
     return task_files
+
+
+def iter_task_search_records() -> Iterable[Dict[str, Any]]:
+    for task_file in load_task_files():
+        for section in TASK_SEARCH_SECTIONS:
+            for row in task_file.get(section) or []:
+                if not isinstance(row, dict):
+                    continue
+                enriched = dict(row)
+                enriched.setdefault("project_ref", task_file.get("project_ref"))
+                enriched.setdefault("area", task_file.get("area"))
+                enriched["_source"] = f"task:{section}"
+                enriched["_source_file"] = task_file["_path"]
+                enriched["_record_kind"] = section
+                yield enriched
 
 
 def recent_update_for(task_file: Dict[str, Any], task_id: str) -> Optional[Dict[str, Any]]:
@@ -291,6 +391,12 @@ def cmd_search(args: argparse.Namespace) -> None:
             enriched = dict(row)
             enriched["_source"] = source
             hits.append(enriched)
+    for row in iter_task_search_records():
+        if args.entity and args.entity not in entity_refs(row):
+            continue
+        if args.keyword and args.keyword.lower() not in record_text(row).lower():
+            continue
+        hits.append(row)
     hits.sort(key=lambda row: (record_date(row) or "", row.get("id") or ""))
     result = hits[: args.limit]
     if args.json:
