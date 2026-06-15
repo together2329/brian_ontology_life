@@ -71,6 +71,7 @@ DIRECT_REF_KEYS = {
     "habit_ref",
     "related_workout",
     "related_nutrition_target_ref",
+    "source_ref",
 }
 DIRECT_REF_LIST_KEYS = {
     "task_refs",
@@ -82,6 +83,7 @@ DIRECT_REF_LIST_KEYS = {
     "related_project_refs",
     "related_issue_refs",
     "evidence_refs",
+    "source_refs",
     "blocker_for",
     "people_refs",
     "subjects",

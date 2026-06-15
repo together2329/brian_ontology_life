@@ -63,19 +63,31 @@ source_records:
     imported_at: 2026-06-15
     parse_status: parsed
     raw_text: "milano task 중에 MSE 연동해서 PF BAR0 address overlap 방지하는 기능 추가해야 해 ( Firenze에 추가했다가 MSE 0 일때 BAR0가 안 써지는 이슈가 있어서 실패 ) 이번에는 잘 해야해"
+  - id: source_milano_conversation_20260615_cross_domain_signal_naming_completed
+    source_type: chat
+    original_date: 2026-06-15
+    imported_at: 2026-06-15
+    parse_status: parsed
+    raw_text: "crossing signal naming rule 재정비 오나료"
+  - id: source_milano_conversation_20260615_common_module_replacement_completed
+    source_type: chat
+    original_date: 2026-06-15
+    imported_at: 2026-06-15
+    parse_status: parsed
+    raw_text: "common module 교체 완료"
 
 summary:
   recently_completed:
     - task_milano_3nm_synth_env_setup
+    - task_milano_cross_domain_signal_naming_cleanup
+    - task_milano_common_module_replacement
   active_threads:
     - 3nm synthesis rerun using two SDC profiles
     - ARIR area and instance count pre-check from synthesis results
     - lint re-check after new IP revision 0.1 integration
     - Firenze handler reflection check in Milano
     - final GEN7 PHY DB synthesis integration
-    - common module replacement from PCI-internal to ASIC-common implementations
     - standard cell replacement for latch and related cells
-    - cross-power-domain signal naming cleanup
     - Port 1 interrupt requirement writing
     - MSE-linked PF BAR0 address overlap prevention with Firenze failure-mode regression
   open_questions:
@@ -399,7 +411,7 @@ tasks:
   - id: task_milano_common_module_replacement
     title: PCI 내부용 common module을 ASIC common module로 교체
     area: CAREER
-    status: in_review
+    status: completed
     priority: high
     energy: deep_work
     estimated_minutes: null
@@ -407,7 +419,7 @@ tasks:
     tracking_level: detailed
     project_ref: project_milano
     component_ref: component_milano_pcie
-    progress_percent: 90
+    progress_percent: 100
     tags:
       - milano
       - rtl_cleanup
@@ -424,19 +436,19 @@ tasks:
       - build/lint result after replacement
       - review notes for any module that cannot be safely swapped
     next_actions:
-      - Review completed replacements once more.
-      - Confirm no unsafe replacement or missing instance remains.
-      - Re-run build/lint checks for integration errors.
+      - Use later lint/build/synthesis runs to catch any integration issue if it appears.
+    outcome: PCI-internal common modules were replaced with ASIC-common implementations.
     evidence_refs:
       - source_milano_conversation_20260614_current_tasks
       - source_milano_conversation_20260614_multi_hour_progress_update
-    confidence: medium
-    needs_user_review: true
+      - source_milano_conversation_20260615_common_module_replacement_completed
+    confidence: high
+    needs_user_review: false
 
   - id: task_milano_cross_domain_signal_naming_cleanup
     title: PD_PCI/PD_HGT/PD_NVMe 도메인 간 crossing signal naming rule 재정비
     area: CAREER
-    status: in_progress
+    status: completed
     priority: high
     energy: deep_work
     estimated_minutes: null
@@ -444,7 +456,7 @@ tasks:
     tracking_level: detailed
     project_ref: project_milano
     component_ref: component_milano_pcie
-    progress_percent: 55
+    progress_percent: 100
     tags:
       - milano
       - rtl_cleanup
@@ -463,14 +475,12 @@ tasks:
       - naming-rule compliance check result
       - follow-up lint/CDC issue list if generated
     next_actions:
-      - Review Cursor AI first-pass changes.
-      - Continue CC and AON crossing cleanup.
-      - Confirm NVMe connection supplements are correct.
-      - Identify any remaining naming-rule violations.
-      - Re-run relevant lint/CDC/naming checks.
+      - Use later lint/CDC/naming checks to catch any residual issue if it appears.
+    outcome: Cross-power-domain signal naming rule cleanup was completed.
     evidence_refs:
       - source_milano_conversation_20260614_current_tasks
       - source_milano_conversation_20260614_multi_hour_progress_update
+      - source_milano_conversation_20260615_cross_domain_signal_naming_completed
     confidence: high
     needs_user_review: false
 
@@ -554,9 +564,7 @@ recommended_execution_order:
   - task_milano_mse_pf_bar0_overlap_guard
   - task_milano_port1_interrupt_requirement
   - task_milano_lint_ip_rev_0_1_rerun
-  - task_milano_common_module_replacement
   - task_milano_standard_cell_replacement
-  - task_milano_cross_domain_signal_naming_cleanup
   - task_milano_sdc_dual_profile_synth_rerun
   - task_milano_arir_precheck
   - task_milano_gen7_phy_db_synthesis
@@ -753,6 +761,28 @@ task_status_updates:
     next_step: Define the MSE/PF BAR0 behavior table first, then implement narrowly and add regression for the Firenze failure mode.
     source_ref: source_milano_conversation_20260615_mse_pf_bar0_overlap_guard
 
+  - id: status_task_milano_cross_domain_20260615_completed
+    date: 2026-06-15
+    task_ref: task_milano_cross_domain_signal_naming_cleanup
+    author_ref: person_brian
+    status: completed
+    progress_percent: 100
+    summary: Cross-power-domain signal naming rule cleanup was completed.
+    blockers: []
+    next_step: Use later lint/CDC/naming checks to catch any residual issue if it appears.
+    source_ref: source_milano_conversation_20260615_cross_domain_signal_naming_completed
+
+  - id: status_task_milano_common_module_20260615_completed
+    date: 2026-06-15
+    task_ref: task_milano_common_module_replacement
+    author_ref: person_brian
+    status: completed
+    progress_percent: 100
+    summary: Common module replacement was completed.
+    blockers: []
+    next_step: Use later lint/build/synthesis runs to catch any integration issue if it appears.
+    source_ref: source_milano_conversation_20260615_common_module_replacement_completed
+
 issues:
   - id: issue_firenze_mse0_pf_bar0_disabled
     project_ref: project_firenze
@@ -853,8 +883,8 @@ artifact_candidates:
     task_ref: task_milano_cross_domain_signal_naming_cleanup
     path_or_uri: null
     created_on: 2026-06-14
-    status: candidate
-    notes: First pass was done with Cursor AI at work.
+    status: completed
+    notes: First pass was done with Cursor AI at work; overall crossing naming cleanup was later confirmed complete on 2026-06-15.
 
   - id: artifact_milano_nvme_connection_supplement
     title: NVMe connection supplement
@@ -864,8 +894,8 @@ artifact_candidates:
     task_ref: task_milano_cross_domain_signal_naming_cleanup
     path_or_uri: null
     created_on: 2026-06-14
-    status: candidate
-    notes: Some NVMe connection items were supplemented during PD crossing cleanup.
+    status: completed
+    notes: Some NVMe connection items were supplemented during PD crossing cleanup; overall crossing naming cleanup was later confirmed complete on 2026-06-15.
 
   - id: artifact_milano_common_module_replacement_patch
     title: Common module replacement patch
@@ -875,8 +905,8 @@ artifact_candidates:
     task_ref: task_milano_common_module_replacement
     path_or_uri: null
     created_on: 2026-06-14
-    status: needs_review
-    notes: Replacement is done and needs one more verification pass.
+    status: completed
+    notes: Common module replacement was confirmed complete on 2026-06-15.
 
 project_status_updates:
   - id: project_status_milano_20260614_current_tasks
@@ -932,3 +962,17 @@ project_status_updates:
       - Need Firenze failure source or implementation reference if available.
     next_step: Confirm intended MSE/PF BAR0 behavior, inspect Firenze failure, then implement and validate the Milano guard before lint/final synthesis closure.
     source_ref: source_milano_conversation_20260615_mse_pf_bar0_overlap_guard
+
+  - id: project_status_milano_20260615_cleanup_tasks_completed
+    date: 2026-06-15
+    project_ref: project_milano
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: Crossing signal naming rule cleanup and common module replacement were both confirmed complete.
+    blockers:
+      - Remaining integration confidence should come from later lint/build/synthesis or CDC/naming checks.
+    next_step: Continue with Firenze handler reflection, MSE/PF BAR0 guard, Port 1 interrupt requirement, lint rerun, and standard-cell replacement.
+    source_refs:
+      - source_milano_conversation_20260615_cross_domain_signal_naming_completed
+      - source_milano_conversation_20260615_common_module_replacement_completed

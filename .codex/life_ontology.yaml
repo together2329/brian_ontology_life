@@ -269,6 +269,8 @@ career_object_types:
     fields:
       - id
       - date
+      - project_ref
+      - component_ref
       - task_ref
       - author_ref
       - status
@@ -276,6 +278,8 @@ career_object_types:
       - summary
       - blockers
       - next_step
+      - source_ref
+      - source_refs
   Assignment:
     fields: [id, task_ref, person_ref, role, responsibility, status]
   Meeting:
