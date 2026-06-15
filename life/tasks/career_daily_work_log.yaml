@@ -19,6 +19,30 @@ source_records:
     imported_at: 2026-06-15
     parse_status: parsed
     raw_text: "전사 AI Transformation 활동가 모임"
+  - id: source_career_daily_20260615_aix_weekly_cadence
+    source_type: chat
+    original_date: 2026-06-15
+    imported_at: 2026-06-15
+    parse_status: parsed
+    raw_text: "주마다 담당님이랑 활동가를 회의해"
+
+recurring_meetings:
+  - id: recurring_meeting_company_ai_transformation_weekly_activists
+    object_type: RecurringMeeting
+    project_ref: project_company_ai_transformation
+    title: 전사 AI Transformation 주간 활동가 모임
+    cadence: weekly
+    participant_roles:
+      - 담당님
+      - AI Transformation 활동가
+    participant_groups:
+      - company_ai_transformation_activists
+    known_participant_refs:
+      - person_brian
+    status: active
+    notes: Weekly meeting with the 담당님 and AI Transformation activists. The 담당님 identity and regular weekday/time are not yet captured.
+    source_ref: source_career_daily_20260615_aix_weekly_cadence
+    needs_user_review: true
 
 meetings:
   - id: meeting_20260615_aix
@@ -26,9 +50,13 @@ meetings:
     date: 2026-06-15
     start: "10:00"
     end: "11:00"
+    recurring_meeting_ref: recurring_meeting_company_ai_transformation_weekly_activists
     project_ref: project_company_ai_transformation
     title: 전사 AI Transformation 활동가 모임
     participants: []
+    participant_roles:
+      - 담당님
+      - AI Transformation 활동가
     topics:
       - AIX
       - company-wide AI Transformation

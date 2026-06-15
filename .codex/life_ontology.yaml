@@ -274,15 +274,30 @@ career_object_types:
       - date
       - start
       - end
+      - recurring_meeting_ref
       - project_ref
       - title
       - participants
+      - participant_roles
       - topics
       - decisions
       - follow_up_tasks
       - notes
       - source_ref
       - clarification_source_ref
+      - needs_user_review
+  RecurringMeeting:
+    fields:
+      - id
+      - project_ref
+      - title
+      - cadence
+      - participant_roles
+      - participant_groups
+      - known_participant_refs
+      - status
+      - notes
+      - source_ref
       - needs_user_review
   Milestone:
     fields: [id, project_ref, title, due_date, status, related_tasks]
