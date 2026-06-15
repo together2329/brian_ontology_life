@@ -9,15 +9,17 @@ import json
 import re
 from collections import Counter
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Optional
+from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 import yaml
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 TASK_DIR = REPO_ROOT / "life/tasks"
+BODY_DIR = REPO_ROOT / "life/body"
 CONCEPT_DIR = REPO_ROOT / "life/concepts"
 KNOWLEDGE_DIR = REPO_ROOT / "life/knowledge"
+ENTITY_CATALOG_PATH = REPO_ROOT / "life/entities/semantic_entity_catalog.yaml"
 
 RECORD_INDEXES = [
     ("review", REPO_ROOT / "life/imports/review_archive/entity_linked_records.jsonl"),
@@ -45,10 +47,14 @@ STATUS_RANK = {
 }
 TASK_SEARCH_SECTIONS = [
     "source_records",
+    "event_records",
+    "experience_records",
+    "repositories",
     "tasks",
     "planned_time_blocks",
     "work_sessions",
     "task_status_updates",
+    "project_status_updates",
     "assignments",
     "meetings",
     "recurring_meetings",
@@ -56,7 +62,19 @@ TASK_SEARCH_SECTIONS = [
     "resolutions",
     "decisions",
     "artifacts",
+    "artifact_candidates",
     "milestones",
+]
+BODY_SEARCH_SECTIONS = [
+    "body_profile",
+    "training_programs",
+    "body_composition_records",
+    "nutrition_targets",
+    "exercise_catalog",
+    "workout_records",
+    "meal_records",
+    "trend_observations",
+    "raw_records",
 ]
 KNOWLEDGE_SEARCH_SECTIONS = [
     "source_records",
@@ -73,6 +91,7 @@ DIRECT_REF_KEYS = {
     "owner_ref",
     "person_ref",
     "author_ref",
+    "profile_ref",
     "recurring_meeting_ref",
     "activity_ref",
     "exercise_ref",
@@ -81,9 +100,16 @@ DIRECT_REF_KEYS = {
     "related_workout",
     "related_nutrition_target_ref",
     "source_ref",
+    "clarification_source_ref",
+    "participant_source_ref",
     "related_thread_ref",
     "knowledge_thread_ref",
     "related_knowledge_thread_ref",
+    "latest_weight_record_ref",
+    "protein_target_ref",
+    "current_training_program_ref",
+    "knowledge_file_ref",
+    "discovered_in_session",
 }
 DIRECT_REF_LIST_KEYS = {
     "task_refs",
@@ -105,6 +131,7 @@ DIRECT_REF_LIST_KEYS = {
     "linked_entities",
     "related_entities",
 }
+DATE_KEYS = ("date", "original_date", "recorded_on", "created_on", "imported_at")
 
 
 def load_yaml(path: Path) -> Dict[str, Any]:
@@ -122,7 +149,7 @@ def iter_jsonl(path: Path) -> Iterable[Dict[str, Any]]:
 
 def dump_result(data: Any, as_json: bool) -> None:
     if as_json:
-        print(json.dumps(data, ensure_ascii=False, indent=2, sort_keys=True))
+        print(json.dumps(data, ensure_ascii=False, indent=2, sort_keys=True, default=str))
 
 
 def compact_text(value: Any, limit: int = 180) -> str:
@@ -157,6 +184,72 @@ def collect_ref_values(value: Any) -> List[str]:
     return []
 
 
+def collect_string_values(value: Any) -> List[str]:
+    if value is None:
+        return []
+    if isinstance(value, str):
+        return [value] if value else []
+    if isinstance(value, list):
+        refs: List[str] = []
+        for item in value:
+            refs.extend(collect_string_values(item))
+        return refs
+    if isinstance(value, dict):
+        refs = []
+        for item in value.values():
+            refs.extend(collect_string_values(item))
+        return refs
+    return []
+
+
+def is_ref_key(key: str) -> bool:
+    return key.endswith("_ref") or key.endswith("_refs") or key in DIRECT_REF_KEYS or key in DIRECT_REF_LIST_KEYS
+
+
+def record_ref_edges(record: Dict[str, Any]) -> List[Dict[str, str]]:
+    edges: List[Dict[str, str]] = []
+
+    def add_edge(relation: str, target_ref: Any) -> None:
+        if isinstance(target_ref, str) and target_ref:
+            edges.append({"relation": relation, "target_ref": target_ref})
+
+    def walk(value: Any) -> None:
+        if isinstance(value, dict):
+            for key, item in value.items():
+                if key == "semantic_links" and isinstance(item, list):
+                    for link in item:
+                        if isinstance(link, dict):
+                            add_edge(link.get("relation") or "semantic_link", link.get("entity_ref"))
+                    continue
+                if key in {"entity_refs", "linked_entities"}:
+                    if isinstance(item, dict):
+                        for group, refs in item.items():
+                            for ref in collect_string_values(refs):
+                                add_edge(f"{key}.{group}", ref)
+                    else:
+                        for ref in collect_string_values(item):
+                            add_edge(key, ref)
+                    continue
+                if is_ref_key(key):
+                    for ref in collect_string_values(item):
+                        add_edge(key, ref)
+                    continue
+                walk(item)
+        elif isinstance(value, list):
+            for item in value:
+                walk(item)
+
+    walk(record)
+    unique_edges = []
+    seen = set()
+    for edge in edges:
+        key = (edge["relation"], edge["target_ref"])
+        if key not in seen:
+            seen.add(key)
+            unique_edges.append(edge)
+    return unique_edges
+
+
 def iso_date(value: Any) -> Optional[str]:
     if value is None:
         return None
@@ -168,7 +261,10 @@ def iso_date(value: Any) -> Optional[str]:
 
 
 def record_date(record: Dict[str, Any]) -> Optional[str]:
-    return iso_date(record.get("date") or record.get("original_date"))
+    for key in DATE_KEYS:
+        if record.get(key):
+            return iso_date(record.get(key))
+    return None
 
 
 def record_title(record: Dict[str, Any]) -> str:
@@ -176,9 +272,13 @@ def record_title(record: Dict[str, Any]) -> str:
         record.get("title")
         or record.get("topic")
         or record.get("statement")
+        or record.get("display_name")
+        or record.get("name")
         or record.get("gratitude_text")
         or record.get("text_excerpt")
+        or record.get("text")
         or record.get("summary")
+        or record.get("performance_note")
         or record.get("raw_text")
         or record.get("notes")
         or record.get("id")
@@ -191,8 +291,12 @@ def record_excerpt(record: Dict[str, Any]) -> str:
         record.get("summary")
         or record.get("raw_text_excerpt")
         or record.get("raw_text")
+        or record.get("text")
         or record.get("gratitude_text")
         or record.get("text_excerpt")
+        or record.get("performance_note")
+        or record.get("statement")
+        or record.get("definition")
         or record.get("notes")
         or record_title(record),
         220,
@@ -200,22 +304,7 @@ def record_excerpt(record: Dict[str, Any]) -> str:
 
 
 def entity_refs(record: Dict[str, Any]) -> List[str]:
-    refs = []
-    for link in record.get("semantic_links") or []:
-        refs.append(link.get("entity_ref"))
-    linked_entities = record.get("linked_entities") or {}
-    refs.extend(collect_ref_values(linked_entities))
-    entity_ref_map = record.get("entity_refs") or {}
-    if isinstance(entity_ref_map, dict):
-        for values in entity_ref_map.values():
-            refs.extend(collect_ref_values(values))
-    else:
-        refs.extend(collect_ref_values(entity_ref_map))
-    for key in DIRECT_REF_KEYS:
-        if record.get(key):
-            refs.append(record.get(key))
-    for key in DIRECT_REF_LIST_KEYS:
-        refs.extend(collect_ref_values(record.get(key)))
+    refs = [edge["target_ref"] for edge in record_ref_edges(record)]
     return sorted(set(ref for ref in refs if ref))
 
 
@@ -227,11 +316,14 @@ def record_text(record: Dict[str, Any]) -> str:
         record.get("raw_text_excerpt"),
         record.get("gratitude_text"),
         record.get("text_excerpt"),
+        record.get("text"),
         record.get("raw_text"),
         record.get("notes"),
         record.get("topic"),
         record.get("statement"),
         record.get("brian_wording_ko"),
+        flatten_text(record.get("items")),
+        flatten_text(record.get("exercises")),
         flatten_text(record.get("topics")),
         flatten_text(record.get("findings")),
         flatten_text(record.get("next_steps")),
@@ -271,35 +363,106 @@ def load_task_files() -> List[Dict[str, Any]]:
     return task_files
 
 
+def iter_section_records(
+    data: Dict[str, Any],
+    path: Path,
+    source_prefix: str,
+    sections: List[str],
+    defaults: Optional[Dict[str, Any]] = None,
+) -> Iterable[Dict[str, Any]]:
+    defaults = defaults or {}
+    source_file = str(path.relative_to(REPO_ROOT))
+    for section in sections:
+        value = data.get(section)
+        if isinstance(value, dict):
+            rows = [value]
+        elif isinstance(value, list):
+            rows = value
+        else:
+            continue
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            enriched = dict(row)
+            for key, default_value in defaults.items():
+                enriched.setdefault(key, default_value)
+            enriched["_source"] = f"{source_prefix}:{section}"
+            enriched["_source_file"] = source_file
+            enriched["_record_kind"] = section
+            yield enriched
+
+
 def iter_task_search_records() -> Iterable[Dict[str, Any]]:
     for task_file in load_task_files():
-        for section in TASK_SEARCH_SECTIONS:
-            for row in task_file.get(section) or []:
-                if not isinstance(row, dict):
-                    continue
-                enriched = dict(row)
-                enriched.setdefault("project_ref", task_file.get("project_ref"))
-                enriched.setdefault("area", task_file.get("area"))
-                enriched["_source"] = f"task:{section}"
-                enriched["_source_file"] = task_file["_path"]
-                enriched["_record_kind"] = section
-                yield enriched
+        path = REPO_ROOT / task_file["_path"]
+        defaults = {
+            "project_ref": task_file.get("project_ref"),
+            "component_ref": task_file.get("component_ref"),
+            "area": task_file.get("area"),
+        }
+        yield from iter_section_records(task_file, path, "task", TASK_SEARCH_SECTIONS, defaults)
 
 
 def iter_knowledge_search_records() -> Iterable[Dict[str, Any]]:
     for path in sorted(KNOWLEDGE_DIR.glob("*.yaml")):
         data = load_yaml(path)
-        for section in KNOWLEDGE_SEARCH_SECTIONS:
-            for row in data.get(section) or []:
-                if not isinstance(row, dict):
-                    continue
-                enriched = dict(row)
-                enriched.setdefault("project_ref", data.get("project_ref"))
-                enriched.setdefault("area", data.get("area"))
-                enriched["_source"] = f"knowledge:{section}"
-                enriched["_source_file"] = str(path.relative_to(REPO_ROOT))
-                enriched["_record_kind"] = section
-                yield enriched
+        defaults = {
+            "project_ref": data.get("project_ref"),
+            "area": data.get("area"),
+            "secondary_areas": data.get("secondary_areas"),
+        }
+        yield from iter_section_records(data, path, "knowledge", KNOWLEDGE_SEARCH_SECTIONS, defaults)
+
+
+def iter_body_search_records() -> Iterable[Dict[str, Any]]:
+    for path in sorted(BODY_DIR.glob("*.yaml")):
+        data = load_yaml(path)
+        defaults = {
+            "area": data.get("area"),
+            "profile_ref": data.get("profile_ref"),
+        }
+        yield from iter_section_records(data, path, "body", BODY_SEARCH_SECTIONS, defaults)
+
+
+def iter_concept_search_records() -> Iterable[Dict[str, Any]]:
+    for path in sorted(CONCEPT_DIR.glob("*.yaml")):
+        data = load_yaml(path)
+        if not isinstance(data, dict) or not data.get("id"):
+            continue
+        enriched = dict(data)
+        enriched["_source"] = "concept:file"
+        enriched["_source_file"] = str(path.relative_to(REPO_ROOT))
+        enriched["_record_kind"] = "concept"
+        yield enriched
+
+
+def iter_entity_catalog_records() -> Iterable[Dict[str, Any]]:
+    if not ENTITY_CATALOG_PATH.exists():
+        return
+    data = load_yaml(ENTITY_CATALOG_PATH)
+    entities = data.get("entities") or {}
+    if not isinstance(entities, dict):
+        return
+    for section, rows in entities.items():
+        if not isinstance(rows, list):
+            continue
+        for row in rows:
+            if not isinstance(row, dict) or not row.get("id"):
+                continue
+            enriched = dict(row)
+            enriched["_source"] = f"entity:{section}"
+            enriched["_source_file"] = str(ENTITY_CATALOG_PATH.relative_to(REPO_ROOT))
+            enriched["_record_kind"] = section
+            yield enriched
+
+
+def iter_current_search_records(include_catalog: bool = True) -> Iterable[Dict[str, Any]]:
+    yield from iter_task_search_records()
+    yield from iter_body_search_records()
+    yield from iter_knowledge_search_records()
+    yield from iter_concept_search_records()
+    if include_catalog:
+        yield from iter_entity_catalog_records()
 
 
 def recent_update_for(task_file: Dict[str, Any], task_id: str) -> Optional[Dict[str, Any]]:
@@ -386,11 +549,203 @@ def task_time_for_date(date_value: str) -> Dict[str, List[Dict[str, Any]]]:
     return result
 
 
+def node_key(record: Dict[str, Any]) -> str:
+    record_id = record.get("id")
+    source = record.get("_source") or "record"
+    source_file = record.get("_source_file") or ""
+    if record_id:
+        return f"{record_id}|{source}|{source_file}"
+    return f"{source}|{source_file}|{record.get('_record_kind') or ''}|{record_title(record)}"
+
+
+def node_summary(record: Dict[str, Any]) -> Dict[str, Any]:
+    return {
+        "key": node_key(record),
+        "id": record.get("id"),
+        "date": record_date(record),
+        "time": record.get("time") or record.get("start") or record.get("planned_start"),
+        "end": record.get("end"),
+        "area": record.get("area"),
+        "secondary_areas": record.get("secondary_areas"),
+        "object_type": record.get("object_type"),
+        "source": record.get("_source"),
+        "source_file": record.get("_source_file"),
+        "record_kind": record.get("_record_kind"),
+        "title": record_title(record),
+        "excerpt": record_excerpt(record),
+        "refs": entity_refs(record),
+    }
+
+
+def build_current_object_index() -> Tuple[List[Dict[str, Any]], Dict[str, List[Dict[str, Any]]], Dict[str, List[Tuple[Dict[str, Any], str]]]]:
+    records = list(iter_current_search_records())
+    by_id: Dict[str, List[Dict[str, Any]]] = {}
+    referrers: Dict[str, List[Tuple[Dict[str, Any], str]]] = {}
+    for record in records:
+        record_id = record.get("id")
+        if record_id:
+            by_id.setdefault(record_id, []).append(record)
+        for edge in record_ref_edges(record):
+            referrers.setdefault(edge["target_ref"], []).append((record, edge["relation"]))
+    return records, by_id, referrers
+
+
+def should_expand_graph_node(record: Dict[str, Any]) -> bool:
+    source = record.get("_source") or ""
+    return not (source.startswith("entity:") or source.startswith("concept:"))
+
+
+def build_day_graph(date_value: str, depth: int = 1) -> Dict[str, Any]:
+    current_records, by_id, referrers = build_current_object_index()
+    roots = [record for record in current_records if record_date(record) == date_value]
+    roots.extend(records_for_date(date_value))
+
+    nodes: Dict[str, Dict[str, Any]] = {}
+    root_keys: List[str] = []
+    linked_keys: List[str] = []
+    links: List[Dict[str, Any]] = []
+    seen_links = set()
+
+    def add_node(record: Dict[str, Any], role: str) -> Tuple[str, bool]:
+        key = node_key(record)
+        is_new = key not in nodes
+        if is_new:
+            nodes[key] = node_summary(record)
+        if role == "root" and key not in root_keys:
+            root_keys.append(key)
+        elif role == "linked" and key not in root_keys and key not in linked_keys:
+            linked_keys.append(key)
+        return key, is_new
+
+    def add_link(source_key: str, relation: str, target_ref: str, target_key: Optional[str], direction: str) -> None:
+        link_key = (source_key, relation, target_ref, target_key, direction)
+        if link_key in seen_links:
+            return
+        seen_links.add(link_key)
+        links.append(
+            {
+                "source_key": source_key,
+                "relation": relation,
+                "target_ref": target_ref,
+                "target_key": target_key,
+                "direction": direction,
+                "resolved": target_key is not None,
+            }
+        )
+
+    frontier = []
+    for root in roots:
+        _, is_new = add_node(root, "root")
+        if is_new:
+            frontier.append(root)
+
+    for level in range(max(depth, 0)):
+        next_frontier: List[Dict[str, Any]] = []
+        for record in frontier:
+            source_key, _ = add_node(record, "root" if node_key(record) in root_keys else "linked")
+
+            for edge in record_ref_edges(record):
+                target_ref = edge["target_ref"]
+                targets = by_id.get(target_ref) or []
+                if not targets:
+                    add_link(source_key, edge["relation"], target_ref, None, "forward")
+                    continue
+                for target in targets:
+                    target_key, is_new = add_node(target, "linked")
+                    add_link(source_key, edge["relation"], target_ref, target_key, "forward")
+                    if is_new and level + 1 < depth and should_expand_graph_node(target):
+                        next_frontier.append(target)
+
+            record_id = record.get("id")
+            if record_id:
+                for referrer, relation in referrers.get(record_id) or []:
+                    referrer_key, is_new = add_node(referrer, "linked")
+                    add_link(referrer_key, relation, record_id, source_key, "backlink")
+                    if is_new and level + 1 < depth and should_expand_graph_node(referrer):
+                        next_frontier.append(referrer)
+        frontier = next_frontier
+
+    root_nodes = [nodes[key] for key in root_keys]
+    linked_nodes = [nodes[key] for key in linked_keys]
+    return {
+        "date": date_value,
+        "depth": depth,
+        "summary": summarize_day_graph(root_nodes, linked_nodes, links),
+        "roots": root_nodes,
+        "linked": linked_nodes,
+        "links": links,
+    }
+
+
+def summarize_day_graph(root_nodes: List[Dict[str, Any]], linked_nodes: List[Dict[str, Any]], links: List[Dict[str, Any]]) -> Dict[str, Any]:
+    root_areas = Counter(node.get("area") for node in root_nodes if node.get("area"))
+    root_sources = Counter(node.get("source") for node in root_nodes if node.get("source"))
+    root_types = Counter(node.get("object_type") or node.get("record_kind") for node in root_nodes if node.get("object_type") or node.get("record_kind"))
+    linked_sources = Counter(node.get("source") for node in linked_nodes if node.get("source"))
+    unresolved = [link for link in links if not link.get("resolved")]
+    return {
+        "root_count": len(root_nodes),
+        "linked_count": len(linked_nodes),
+        "link_count": len(links),
+        "unresolved_link_count": len(unresolved),
+        "root_areas": dict(root_areas.most_common()),
+        "root_sources": dict(root_sources.most_common()),
+        "root_types": dict(root_types.most_common()),
+        "linked_sources": dict(linked_sources.most_common()),
+    }
+
+
+def format_time_part(node: Dict[str, Any]) -> str:
+    start = node.get("time")
+    end = node.get("end")
+    if start and end:
+        return f"{start}-{end} "
+    if start:
+        return f"{start} "
+    return ""
+
+
+def print_day_graph(graph: Dict[str, Any], limit: int) -> None:
+    summary = graph["summary"]
+    print("\n[day_graph]")
+    print(
+        "  "
+        f"roots={summary['root_count']} linked={summary['linked_count']} "
+        f"links={summary['link_count']} unresolved={summary['unresolved_link_count']}"
+    )
+    print(f"  root_areas={summary['root_areas']}")
+    print(f"  root_sources={summary['root_sources']}")
+
+    roots_by_area: Dict[str, List[Dict[str, Any]]] = {}
+    for node in graph["roots"]:
+        roots_by_area.setdefault(node.get("area") or "UNSET", []).append(node)
+
+    area_count = max(len(roots_by_area), 1)
+    per_area_limit = max(1, limit // area_count)
+    print(f"  showing_up_to={per_area_limit}_roots_per_area")
+    for area in sorted(roots_by_area):
+        print(f"  {area}:")
+        for node in roots_by_area[area][:per_area_limit]:
+            label = node.get("id") or node.get("title")
+            kind = node.get("object_type") or node.get("record_kind") or node.get("source")
+            print(f"    - {format_time_part(node)}{kind} {label}")
+            excerpt = node.get("excerpt")
+            if excerpt and excerpt != label:
+                print(f"      {compact_text(excerpt, 140)}")
+            refs = node.get("refs") or []
+            if refs:
+                print(f"      refs={', '.join(refs[:8])}")
+        remaining = len(roots_by_area[area]) - per_area_limit
+        if remaining > 0:
+            print(f"    ... {remaining} more")
+
+
 def cmd_daily(args: argparse.Namespace) -> None:
     rows = daily_rows(args.date)
     records = records_for_date(args.date)
     task_time = task_time_for_date(args.date)
-    result = {"date": args.date, "summaries": rows, "records": records, "task_time": task_time}
+    day_graph = build_day_graph(args.date, args.graph_depth)
+    result = {"date": args.date, "summaries": rows, "records": records, "task_time": task_time, "day_graph": day_graph}
     if args.json:
         dump_result(result, True)
         return
@@ -422,6 +777,7 @@ def cmd_daily(args: argparse.Namespace) -> None:
         for row in records[: args.limit]:
             print(f"  - {row['_source']} {row.get('id')} {row.get('area')} {record_title(row)}")
             print(f"    {record_excerpt(row)}")
+    print_day_graph(day_graph, args.limit)
 
 
 def cmd_today(args: argparse.Namespace) -> None:
@@ -440,13 +796,7 @@ def cmd_search(args: argparse.Namespace) -> None:
             enriched = dict(row)
             enriched["_source"] = source
             hits.append(enriched)
-    for row in iter_task_search_records():
-        if args.entity and args.entity not in entity_refs(row):
-            continue
-        if args.keyword and args.keyword.lower() not in record_text(row).lower():
-            continue
-        hits.append(row)
-    for row in iter_knowledge_search_records():
+    for row in iter_current_search_records():
         if args.entity and args.entity not in entity_refs(row):
             continue
         if args.keyword and args.keyword.lower() not in record_text(row).lower():
@@ -554,12 +904,14 @@ def build_parser() -> argparse.ArgumentParser:
     daily = sub.add_parser("daily", help="Show daily aggregate and records")
     daily.add_argument("--date", required=True, help="YYYY-MM-DD")
     daily.add_argument("--limit", type=int, default=12)
+    daily.add_argument("--graph-depth", type=int, default=1, help="How many direct ref hops to include in the day graph")
     daily.add_argument("--json", action="store_true")
     daily.set_defaults(func=cmd_daily)
 
     today = sub.add_parser("today", help="Show today's aggregate and records")
     today.add_argument("--date", help="Override today with YYYY-MM-DD")
     today.add_argument("--limit", type=int, default=12)
+    today.add_argument("--graph-depth", type=int, default=1, help="How many direct ref hops to include in the day graph")
     today.add_argument("--json", action="store_true")
     today.set_defaults(func=cmd_today)
 
