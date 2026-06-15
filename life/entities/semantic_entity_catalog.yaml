@@ -996,6 +996,80 @@ entities:
       confirmed_at: 2026-06-15
       notes: Brian wants the agent to remember how his interests and understanding evolve through conversation, not only final facts.
 
+    - id: concept_agentic_rag
+      object_type: Concept
+      display_name: Agentic RAG
+      area: MIND
+      aliases:
+        - Agentic RAG
+        - agentic retrieval augmented generation
+        - Agentic Retrieval-Augmented Generation
+        - 에이전틱 RAG
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-16
+      notes: Pattern where an agent actively plans retrieval and uses multiple tools or data sources, instead of passively receiving one retrieved context.
+
+    - id: concept_graphrag
+      object_type: Concept
+      display_name: GraphRAG
+      area: MIND
+      aliases:
+        - GraphRAG
+        - Graph RAG
+        - graph retrieval augmented generation
+        - graph-based RAG
+        - 그래프 RAG
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-16
+      notes: Retrieval pattern that combines generated answers with graph/relationship context so connected objects can be retrieved together.
+
+    - id: concept_local_ontology_first_agentic_rag
+      object_type: Concept
+      display_name: Local ontology-first Agentic RAG
+      area: MIND
+      aliases:
+        - local ontology-first Agentic RAG
+        - ontology-first Agentic RAG
+        - local GraphRAG
+        - lightweight GraphRAG
+        - 로컬 온톨로지 기반 Agentic RAG
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-16
+      notes: Brian Ontology Agent's current direction; local YAML ontology is the source of truth and agentic retrieval follows structured objects, refs, source records, and backlinks.
+
+    - id: concept_day_graph_traversal
+      object_type: Concept
+      display_name: Day graph traversal
+      area: CAREER
+      aliases:
+        - day graph
+        - day_graph
+        - Day Graph
+        - Day -> all objects -> linked objects
+        - 날짜 그래프
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-16
+      notes: Query pattern implemented in tools/query_life.py where a date retrieves root objects across areas and expands through refs and backlinks.
+
+    - id: concept_agentic_retrieval_substrate
+      object_type: Concept
+      display_name: Agentic retrieval substrate
+      area: CAREER
+      aliases:
+        - agentic retrieval substrate
+        - retrieval substrate
+        - agent memory retrieval substrate
+        - personal retrieval substrate
+        - 에이전틱 검색 기반
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-16
+      notes: Architecture direction where the local ontology provides the grounded retrieval layer for future question planning, evidence-backed answers, optional vector search, MCP exposure, and OKF export.
+
     - id: concept_fulfilled_mind
       object_type: Concept
       display_name: 충만한 마음

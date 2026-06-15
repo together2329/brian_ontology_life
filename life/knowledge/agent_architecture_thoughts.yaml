@@ -1,6 +1,6 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-15
+updated_at: 2026-06-16
 area: MIND
 secondary_areas:
   - CAREER
@@ -65,6 +65,28 @@ source_records:
     imported_at: 2026-06-15
     parse_status: parsed
     raw_text: "기록으로 넣어줘"
+  - id: source_knowledge_conversation_20260616_agentic_rag_similarity_question
+    source_type: chat
+    original_date: 2026-06-16
+    imported_at: 2026-06-16
+    parse_status: parsed
+    raw_text: "Google의 Agentic RAG 와 비슷한 개념인가?"
+  - id: source_knowledge_conversation_20260616_agentic_rag_mapping_answer
+    source_type: assistant_synthesis
+    original_date: 2026-06-16
+    imported_at: 2026-06-16
+    parse_status: parsed
+    raw_text: "Brian Ontology Agent was mapped as conceptually similar to Google Agentic RAG, but more precisely as a local ontology-first Agentic RAG / lightweight GraphRAG approach. The current system uses local YAML ontology objects, day_graph traversal, semantic refs, and source records rather than Google Cloud ADK, Vertex AI Search, vector search, or deployed cloud RAG infrastructure."
+    external_source_refs:
+      - https://cloud.google.com/resources/core-concepts-ai-agents
+      - https://codelabs.developers.google.com/codelabs/production-ready-ai-with-gc/7-advanced-agent-capabilities/building-agents-with-retrieval-augmented-generation
+      - https://docs.cloud.google.com/architecture/agentic-ai-multimodal-graph-rag-resource-orchestration
+  - id: source_knowledge_conversation_20260616_record_agentic_rag_flow
+    source_type: chat
+    original_date: 2026-06-16
+    imported_at: 2026-06-16
+    parse_status: parsed
+    raw_text: "이 개념들 다 연결해서 저장해두고 우리의 대화 흐름도 같이 :)"
 
 thought_threads:
   - id: thought_thread_20260615_okf_llm_wiki_ontology
@@ -109,6 +131,48 @@ thought_threads:
       - source_knowledge_conversation_20260615_record_request
     confidence: high
     needs_user_review: false
+  - id: thought_thread_20260616_agentic_rag_graphrag_ontology_mapping
+    object_type: ThoughtThread
+    date: 2026-06-16
+    area: MIND
+    secondary_areas:
+      - CAREER
+    topic: Agentic RAG, GraphRAG, and Brian Ontology Agent day-graph retrieval
+    summary:
+      - Brian asked whether the current ontology/day-graph direction is similar to Google's Agentic RAG.
+      - The current Brian Ontology Agent was mapped as conceptually similar to Agentic RAG because it plans retrieval over multiple local sources and follows object links instead of doing one-shot text search.
+      - It was also mapped as closer to a lightweight local GraphRAG pattern because `day_graph` retrieves connected ontology objects, semantic refs, and backlinks.
+      - The distinction is that Brian Ontology Agent uses local YAML ontology as the canonical source of truth, not Google Cloud ADK, Vertex AI Search, cloud RAG Engine, or vector search.
+      - Brian explicitly asked to store these concepts and the conversation flow together.
+    conversation_flow:
+      - The previous step upgraded `query_life.py` so a daily query builds a Day Graph across BODY, CAREER, MIND, refs, and linked entities.
+      - Brian then asked whether this resembles Google's Agentic RAG.
+      - The comparison established that Google Agentic RAG is about an agent actively planning retrieval and using multiple tools or data sources, while Brian Ontology Agent is doing a local version over ontology objects.
+      - The comparison also linked the current day graph to GraphRAG because retrieval follows explicit object relationships, not only keyword or vector similarity.
+      - The resulting development direction is to treat the local ontology as an agentic retrieval substrate, then later add retrieval planning, evidence/source refs, optional vector search, MCP exposure, and OKF export.
+    related_concept_refs:
+      - concept_agentic_rag
+      - concept_graphrag
+      - concept_local_ontology_first_agentic_rag
+      - concept_day_graph_traversal
+      - concept_agentic_retrieval_substrate
+      - concept_ontology_first_agent_memory
+      - concept_conversation_knowledge_memory
+      - concept_okf_export_layer
+    related_project_refs:
+      - project_ai_agent
+    related_task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_agentic_retrieval_planner
+      - task_ai_agent_okf_export_layer
+    prior_thread_refs:
+      - thought_thread_20260615_okf_llm_wiki_ontology
+    source_refs:
+      - source_knowledge_conversation_20260616_agentic_rag_similarity_question
+      - source_knowledge_conversation_20260616_agentic_rag_mapping_answer
+      - source_knowledge_conversation_20260616_record_agentic_rag_flow
+    confidence: high
+    needs_user_review: false
 
 understandings:
   - id: understanding_20260615_okf_llm_wiki_ontology_layering
@@ -145,6 +209,41 @@ understandings:
       - source_knowledge_conversation_20260615_interest_development_path
     confidence: high
     needs_user_review: false
+  - id: understanding_20260616_brian_agent_is_local_ontology_first_agentic_rag
+    object_type: Understanding
+    date: 2026-06-16
+    area: MIND
+    statement: "Brian Ontology Agent is conceptually similar to Agentic RAG, but its current form is a local ontology-first retrieval system that follows structured objects and refs instead of using cloud RAG infrastructure."
+    brian_wording_ko: "Google의 Agentic RAG 와 비슷한 개념인가?"
+    status: confirmed_by_conversation
+    related_thread_ref: thought_thread_20260616_agentic_rag_graphrag_ontology_mapping
+    related_concept_refs:
+      - concept_agentic_rag
+      - concept_local_ontology_first_agentic_rag
+      - concept_ontology_first_agent_memory
+      - concept_day_graph_traversal
+    source_refs:
+      - source_knowledge_conversation_20260616_agentic_rag_similarity_question
+      - source_knowledge_conversation_20260616_agentic_rag_mapping_answer
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260616_day_graph_is_lightweight_graphrag
+    object_type: Understanding
+    date: 2026-06-16
+    area: MIND
+    statement: "The new day_graph query is a lightweight local GraphRAG-style retrieval step because it retrieves a date's root objects and expands through explicit semantic links, refs, and backlinks."
+    brian_wording_ko: "이 개념들 다 연결해서 저장해두고 우리의 대화 흐름도 같이."
+    status: confirmed_by_brian_record_request
+    related_thread_ref: thought_thread_20260616_agentic_rag_graphrag_ontology_mapping
+    related_concept_refs:
+      - concept_graphrag
+      - concept_day_graph_traversal
+      - concept_agentic_retrieval_substrate
+    source_refs:
+      - source_knowledge_conversation_20260616_agentic_rag_mapping_answer
+      - source_knowledge_conversation_20260616_record_agentic_rag_flow
+    confidence: high
+    needs_user_review: false
 
 architecture_directions:
   - id: architecture_direction_20260615_ontology_first_okf_export
@@ -173,6 +272,40 @@ architecture_directions:
     source_refs:
       - source_knowledge_conversation_20260615_okf_export_easy
       - source_knowledge_conversation_20260615_ontology_more_important
+    status: active_direction
+    confidence: high
+    needs_user_review: false
+  - id: architecture_direction_20260616_agentic_retrieval_substrate
+    object_type: ArchitectureDirection
+    date: 2026-06-16
+    area: CAREER
+    secondary_areas:
+      - MIND
+    project_ref: project_ai_agent
+    title: Local ontology-first agentic retrieval substrate
+    statement: Treat Brian Ontology Agent's local YAML ontology and day_graph traversal as the retrieval substrate for a personal Agentic RAG / lightweight GraphRAG system.
+    rationale:
+      - The ontology already holds source records, stable object IDs, dates, areas, tasks, meals, workouts, concepts, people, and semantic refs.
+      - Day graph traversal now retrieves connected current objects across BODY, CAREER, and MIND for a date.
+      - This gives Brian a grounded personal memory layer before adding cloud tools, vector search, or external export formats.
+    implementation_direction:
+      canonical_store: life/**/*.yaml plus imported jsonl indexes
+      current_retrieval: tools/query_life.py daily day_graph traversal
+      next_retrieval_layer: question-specific retrieval planner over date, area, entity, task, concept, and source refs
+      optional_future_retrieval: vector search for fuzzy recall over raw imported records
+      future_tool_surface: MCP tool and OKF export as generated views over the canonical ontology
+      answer_policy: include source_ref/evidence_ref when answers depend on recorded facts
+    tradeoffs:
+      - Local YAML is transparent and git-reviewable, but query planning must be coded explicitly.
+      - Graph traversal gives precise linked context, but fuzzy memory may still need vector search later.
+      - Cloud Agentic RAG products are more scalable, but the local ontology better matches Brian's privacy and personal memory needs right now.
+    follow_up_task_refs:
+      - task_ai_agent_agentic_retrieval_planner
+      - task_ai_agent_okf_export_layer
+    source_refs:
+      - source_knowledge_conversation_20260616_agentic_rag_similarity_question
+      - source_knowledge_conversation_20260616_agentic_rag_mapping_answer
+      - source_knowledge_conversation_20260616_record_agentic_rag_flow
     status: active_direction
     confidence: high
     needs_user_review: false
@@ -205,6 +338,36 @@ knowledge_interests:
     status: active_interest
     source_refs:
       - source_knowledge_conversation_20260615_interest_development_path
+    confidence: high
+    needs_user_review: false
+  - id: knowledge_interest_20260616_agentic_rag_graphrag_personal_memory
+    object_type: KnowledgeInterest
+    date: 2026-06-16
+    area: MIND
+    secondary_areas:
+      - CAREER
+    topic: Agentic RAG and GraphRAG for personal ontology memory
+    current_interest:
+      - Agentic RAG as a pattern where an agent plans retrieval and uses multiple data sources or tools.
+      - GraphRAG as retrieval over explicit relationships and graph context.
+      - Brian Ontology Agent as a local ontology-first memory substrate that can later expose MCP/OKF/tool interfaces.
+      - Conversation flow itself as a first-class memory object linked to concepts, architecture directions, and follow-up tasks.
+    development_direction:
+      - Continue strengthening day_graph traversal as the precise graph side of retrieval.
+      - Add a question-specific retrieval planner so different questions choose date, entity, area, task, concept, or history retrieval paths.
+      - Add evidence/source-ref display to make answers auditable.
+      - Consider vector search later only as a fuzzy recall layer over raw archives, not as the source of truth.
+    related_project_refs:
+      - project_ai_agent
+    related_concept_refs:
+      - concept_agentic_rag
+      - concept_graphrag
+      - concept_local_ontology_first_agentic_rag
+      - concept_agentic_retrieval_substrate
+      - concept_conversation_knowledge_memory
+    status: active_interest
+    source_refs:
+      - source_knowledge_conversation_20260616_record_agentic_rag_flow
     confidence: high
     needs_user_review: false
 
@@ -241,5 +404,40 @@ follow_up_tasks:
     source_refs:
       - source_knowledge_conversation_20260615_okf_export_easy
       - source_knowledge_conversation_20260615_ontology_more_important
+    confidence: high
+    needs_user_review: false
+  - id: task_ai_agent_agentic_retrieval_planner
+    object_type: Task
+    title: Brian Ontology Agent agentic retrieval planner 설계
+    area: CAREER
+    secondary_areas:
+      - MIND
+    status: candidate
+    priority: medium
+    energy: system_design
+    estimated_minutes: null
+    due_date: null
+    tracking_level: concept
+    project_ref: project_ai_agent
+    progress_percent: 0
+    tags:
+      - agentic_rag
+      - graphrag
+      - ontology
+      - retrieval_planning
+      - evidence
+    expected_outputs:
+      - retrieval plan types for date, entity, task, concept, area, and historical-memory questions
+      - source/evidence display policy for ontology answers
+      - day_graph extension points for question-specific traversal
+      - optional vector-search boundary definition
+    next_actions:
+      - Keep day_graph traversal as the current precise graph retrieval layer.
+      - Define retrieval intents before implementing more search code.
+      - Make answers cite source_ref/evidence_ref when possible.
+      - Treat vector search as an optional fuzzy recall layer, not canonical memory.
+    source_refs:
+      - source_knowledge_conversation_20260616_agentic_rag_mapping_answer
+      - source_knowledge_conversation_20260616_record_agentic_rag_flow
     confidence: high
     needs_user_review: false
