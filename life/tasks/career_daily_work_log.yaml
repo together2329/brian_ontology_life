@@ -1,6 +1,6 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-15
+updated_at: 2026-06-16
 area: CAREER
 project_ref: project_work_general
 title: Career daily work log
@@ -31,6 +31,56 @@ source_records:
     imported_at: 2026-06-15
     parse_status: parsed
     raw_text: "구인재 담당님, 활동가 멤버 김성찬TL님, 박소영TL님, 유호강TL님, 최현우TL님, 홍요한 TL님, 양진혁TL님, Manu TL님"
+  - id: source_career_daily_20260616_cursor_csr_guidance_kim_sungah
+    source_type: chat
+    original_date: 2026-06-16
+    imported_at: 2026-06-16
+    parse_status: parsed
+    raw_text: "김성아 TL님에게 CSR 작업하는거 Cursor로 어떻게 하는지 방법 알려드리기 3:30 - 4:00"
+    interpreted_time:
+      date: 2026-06-16
+      start: "15:30"
+      end: "16:00"
+      time_quality: exact
+    participants:
+      guide_ref: person_brian
+      learner_ref: person_kim_sungah
+
+tasks:
+  - id: task_career_20260616_cursor_csr_guidance_kim_sungah
+    title: 김성아 TL님에게 Cursor 기반 CSR 작업 방법 안내
+    area: CAREER
+    status: planned
+    priority: medium
+    energy: collaboration
+    estimated_minutes: 30
+    due_date: 2026-06-16
+    tracking_level: lightweight
+    project_ref: project_work_general
+    related_project_refs:
+      - project_ai_agent
+    owner_ref: person_brian
+    participant_refs:
+      - person_brian
+      - person_kim_sungah
+    tags:
+      - cursor
+      - csr
+      - ai_enablement
+      - work_guidance
+    context:
+      - Brian plans to show 김성아 TL님 how to use Cursor for CSR work.
+      - This is a practical AI-tool enablement task connected to Brian's broader Cursor/Codex workflow sharing.
+    expected_outputs:
+      - 김성아 TL님 understands the basic Cursor workflow for CSR work.
+      - Brian can later reuse the explanation pattern as a lightweight AI-tool enablement note if useful.
+    next_actions:
+      - Use the 15:30-16:00 block to demonstrate the Cursor workflow for CSR work.
+      - After the session, record whether it was completed and whether any reusable prompt/example should be saved.
+    evidence_refs:
+      - source_career_daily_20260616_cursor_csr_guidance_kim_sungah
+    confidence: high
+    needs_user_review: false
 
 recurring_meetings:
   - id: recurring_meeting_company_ai_transformation_weekly_activists
@@ -57,6 +107,28 @@ recurring_meetings:
     notes: Weekly meeting with 구인재 담당님 and AI Transformation activists. Regular weekday/time is not yet captured.
     source_ref: source_career_daily_20260615_aix_weekly_cadence
     participant_source_ref: source_career_daily_20260615_aix_participants
+    needs_user_review: false
+
+planned_time_blocks:
+  - id: timeblock_20260616_1530_cursor_csr_guidance_kim_sungah
+    date: 2026-06-16
+    start: "15:30"
+    end: "16:00"
+    area: CAREER
+    mode: planned_collaboration
+    project_ref: project_work_general
+    participant_refs:
+      - person_brian
+      - person_kim_sungah
+    items:
+      - type: task
+        ref: task_career_20260616_cursor_csr_guidance_kim_sungah
+        title: 김성아 TL님에게 Cursor 기반 CSR 작업 방법 안내
+        planned_minutes: 30
+        actual_minutes: null
+        status: planned
+    source_ref: source_career_daily_20260616_cursor_csr_guidance_kim_sungah
+    confidence: high
     needs_user_review: false
 
 meetings:
