@@ -113,6 +113,20 @@ source_records:
       unit: not_specified
       sign: not_specified
       interpretation: meaningful_user_reported_synthesis_result
+  - id: source_milano_conversation_20260616_disparity_error_injection_no_error
+    source_type: chat
+    original_date: 2026-06-16
+    imported_at: 2026-06-16
+    parse_status: parsed
+    raw_text: "최원제 TL님 Disparity 문의 주심 -> Dis parity Error Injection 했는데 에러 발생하지 않음. ( 변승현 TL님에게 디버깅 부탁 함 )"
+    participants:
+      requester_ref: person_choi_wonje
+      debug_owner_ref: person_byun_seunghyun
+      recorder_ref: person_brian
+    interpreted_issue:
+      topic: Disparity Error Injection
+      observed_behavior: Error did not occur after Disparity Error Injection.
+      action_taken: Brian asked 변승현 TL님 to debug.
 
 summary:
   recently_completed:
@@ -129,6 +143,7 @@ summary:
     - Port 1 interrupt requirement writing
     - MSE-linked PF BAR0 address overlap prevention with Firenze failure-mode regression
     - PCIe DOE DCG and REG TOP AXI Bridge DCG ownership for Milano power optimization after high Firenze power
+    - Disparity Error Injection case where the expected error did not occur, with debug requested from 변승현 TL님
   current_focus:
     date: 2026-06-16
     primary_tasks:
@@ -683,11 +698,53 @@ tasks:
     confidence: high
     needs_user_review: false
 
+  - id: task_milano_disparity_error_injection_debug_followup
+    title: Disparity Error Injection 미발생 이슈 디버깅 follow-up
+    area: CAREER
+    status: in_progress
+    priority: high
+    energy: collaboration
+    estimated_minutes: null
+    due_date: null
+    tracking_level: detailed
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    progress_percent: 20
+    requester_ref: person_choi_wonje
+    debug_owner_ref: person_byun_seunghyun
+    tags:
+      - milano
+      - pcie
+      - disparity
+      - error_injection
+      - debug
+      - collaboration
+    context:
+      - 최원제 TL님 asked about a Disparity case.
+      - Brian tried Disparity Error Injection, but the expected error did not occur.
+      - Brian asked 변승현 TL님 to debug the case.
+    expected_outputs:
+      - Reproduction condition or reason the error is not triggered.
+      - Classification as testbench setup issue, injection condition mismatch, design path issue, masking/disable condition, or expected behavior.
+      - Follow-up guidance to 최원제 TL님 after 변승현 TL님의 debug result is available.
+    next_actions:
+      - Wait for 변승현 TL님의 debug result.
+      - Capture the exact test/case name, injection point, expected error signal/counter, and observed waveform/log if available.
+      - Decide whether Brian needs to adjust implementation/spec/guidance after root cause is known.
+      - Inform 최원제 TL님 with the result and any next action.
+    related_issue_refs:
+      - issue_milano_disparity_error_injection_no_error
+    evidence_refs:
+      - source_milano_conversation_20260616_disparity_error_injection_no_error
+    confidence: high
+    needs_user_review: false
+
 recommended_execution_order:
   - task_milano_sdc_dual_profile_synth_rerun
   - task_milano_port1_interrupt_requirement
   - task_milano_firenze_handler_reflection_check
   - task_milano_lint_ip_rev_0_1_rerun
+  - task_milano_disparity_error_injection_debug_followup
   - task_milano_standard_cell_replacement
   - task_milano_mse_pf_bar0_overlap_guard
   - task_milano_arir_precheck
@@ -737,6 +794,35 @@ work_sessions:
     artifact_refs:
       - artifact_milano_pd_pcie_sdc_unmapped_file_cleanup_20260616
     source_ref: source_milano_conversation_20260616_morning_pd_pcie_sdc_error_cleanup
+
+  - id: worksession_20260616_milano_disparity_error_injection_triage
+    date: 2026-06-16
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    start: null
+    end: null
+    actual_minutes: null
+    time_quality: not_recorded
+    task_refs:
+      - task_milano_disparity_error_injection_debug_followup
+    participant_refs:
+      - person_brian
+      - person_choi_wonje
+      - person_byun_seunghyun
+    focus_level: debug_triage
+    summary: 최원제 TL님이 Disparity 관련 문의를 했고, Brian이 Disparity Error Injection을 시도했으나 기대한 에러가 발생하지 않아 변승현 TL님에게 디버깅을 부탁했다.
+    findings:
+      - Disparity Error Injection was attempted.
+      - The expected error did not occur.
+      - The current root cause is unknown.
+      - Debug ownership or immediate investigation was handed to 변승현 TL님.
+    next_steps:
+      - Wait for 변승현 TL님의 debug finding.
+      - Capture exact injection target, expected error observation point, test name, and log/waveform reference if available.
+      - Follow up with 최원제 TL님 after debug result is known.
+    issue_refs:
+      - issue_milano_disparity_error_injection_no_error
+    source_ref: source_milano_conversation_20260616_disparity_error_injection_no_error
 
   - id: worksession_20260614_milano_multi_task_progress
     date: 2026-06-14
@@ -936,6 +1022,21 @@ task_status_updates:
       - artifact_milano_link0_wrapper_synthesis_run_20260616
     source_ref: source_milano_conversation_20260616_link0_wrapper_synthesis_meaningful_wns
 
+  - id: status_task_milano_disparity_error_injection_20260616_debug_requested
+    date: 2026-06-16
+    task_ref: task_milano_disparity_error_injection_debug_followup
+    author_ref: person_brian
+    status: in_progress
+    progress_percent: 20
+    summary: 최원제 TL님 문의로 Disparity Error Injection을 시도했지만 기대한 에러가 발생하지 않았고, Brian이 변승현 TL님에게 디버깅을 부탁했다.
+    blockers:
+      - Root cause is unknown until 변승현 TL님의 debug result is available.
+      - Exact test/case name, injection point, expected error observation point, and log/waveform artifact are not yet recorded.
+    next_step: Wait for debug result from 변승현 TL님, then capture root cause and follow up with 최원제 TL님.
+    issue_refs:
+      - issue_milano_disparity_error_injection_no_error
+    source_ref: source_milano_conversation_20260616_disparity_error_injection_no_error
+
   - id: status_task_milano_port1_interrupt_20260616_today_focus
     date: 2026-06-16
     task_ref: task_milano_port1_interrupt_requirement
@@ -1055,6 +1156,47 @@ issues:
     source_ref: source_milano_conversation_20260615_mse_pf_bar0_overlap_guard
     evidence_refs:
       - source_milano_conversation_20260615_mse_pf_bar0_overlap_guard
+    confidence: high
+    needs_user_review: false
+
+  - id: issue_milano_disparity_error_injection_no_error
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_disparity_error_injection_debug_followup
+    title: Disparity Error Injection did not trigger the expected error
+    status: open_debug_requested
+    severity: high
+    discovered_on: 2026-06-16
+    recorded_on: 2026-06-16
+    discovered_in_session: source_milano_conversation_20260616_disparity_error_injection_no_error
+    requester_ref: person_choi_wonje
+    debug_owner_ref: person_byun_seunghyun
+    blocker_for:
+      - task_milano_disparity_error_injection_debug_followup
+    observed_behavior:
+      - Brian attempted Disparity Error Injection.
+      - The expected error did not occur.
+    expected_behavior:
+      - A Disparity-related error should be observable after the injection if the setup and design path are correct.
+    current_hypotheses:
+      - Testbench or injection setup may not be targeting the intended path.
+      - Injection condition may be masked, disabled, or not enabled for the observed mode.
+      - The expected error observation point may be different from the checked signal/counter/log.
+      - Design behavior may intentionally ignore this case, but that has not been confirmed.
+    next_diagnostic_questions:
+      - What exact test/case and injection point were used?
+      - Which error signal, counter, interrupt, or log was expected to change?
+      - Was the relevant mode/link/lane/path enabled at the time of injection?
+      - Does the same injection path work in Firenze or any prior baseline?
+      - Is the Disparity path handled at PHY, PCIe sub, handler, or verification monitor level?
+    handoff:
+      requested_by_ref: person_brian
+      assigned_to_ref: person_byun_seunghyun
+      follow_up_with_ref: person_choi_wonje
+      status: waiting_for_debug_result
+    source_ref: source_milano_conversation_20260616_disparity_error_injection_no_error
+    evidence_refs:
+      - source_milano_conversation_20260616_disparity_error_injection_no_error
     confidence: high
     needs_user_review: false
 
