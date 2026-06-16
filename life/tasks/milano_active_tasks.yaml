@@ -160,19 +160,30 @@ source_records:
       target_window_end: 2026-08-16
       precision: approximate
       basis: Conversation date is 2026-06-16.
+  - id: source_milano_conversation_20260616_latch_std_icg_cell_clear
+    source_type: chat
+    original_date: 2026-06-16
+    imported_at: 2026-06-16
+    parse_status: parsed
+    raw_text: "I udpated latch as std icg cell - clear"
+    interpreted_update:
+      task_ref: task_milano_standard_cell_replacement
+      implementation: Latch-related replacement was updated as a standard ICG cell.
+      result: clear
+      status: completed
 
 summary:
   recently_completed:
     - task_milano_3nm_synth_env_setup
     - task_milano_cross_domain_signal_naming_cleanup
     - task_milano_common_module_replacement
+    - task_milano_standard_cell_replacement
   active_threads:
     - 3nm synthesis rerun using two SDC profiles
     - ARIR area and instance count pre-check from synthesis results
     - lint re-check after new IP revision 0.1 integration
     - Firenze handler reflection check in Milano
     - final GEN7 PHY DB synthesis integration
-    - standard cell replacement for latch and related cells
     - Port 1 interrupt requirement deferred to the 2026-07-16 to 2026-08-16 window
     - MSE-linked PF BAR0 address overlap prevention with Firenze failure-mode regression
     - PCIe DOE DCG and REG TOP AXI Bridge DCG ownership for Milano power optimization after high Firenze power
@@ -715,7 +726,7 @@ tasks:
   - id: task_milano_standard_cell_replacement
     title: latch 등 standard cell로 교체할 부분 교체
     area: CAREER
-    status: todo
+    status: completed
     priority: high
     energy: deep_work
     estimated_minutes: null
@@ -723,12 +734,13 @@ tasks:
     tracking_level: detailed
     project_ref: project_milano
     component_ref: component_milano_pcie
-    progress_percent: 0
+    progress_percent: 100
     tags:
       - milano
       - rtl_cleanup
       - standard_cell
       - latch
+      - std_icg_cell
       - synthesis
     scope:
       - Identify latch and other cell-like RTL/common instances that should use approved standard cells.
@@ -740,13 +752,16 @@ tasks:
       - exceptions or not_applicable list
       - build/lint/synthesis sanity result after replacement
     next_actions:
-      - Search for latch and related cell-like instances in Milano PCIe RTL.
-      - Map each candidate to the approved standard cell equivalent.
-      - Check reset, enable, clock, polarity, and synthesis intent before replacement.
-      - Replace safe candidates.
-      - Re-run build/lint or synthesis sanity checks and record failures as Issue objects.
+      - Use later lint/build/synthesis runs to catch any residual integration issue if it appears.
+    outcome: Latch-related replacement was updated as a standard ICG cell and reported clear.
+    validation_state:
+      status: clear
+      reported_on: 2026-06-16
+      report_path: null
+      notes: Exact file path, instance list, and report artifact are not recorded yet.
     evidence_refs:
       - source_milano_conversation_20260614_standard_cell_replacement
+      - source_milano_conversation_20260616_latch_std_icg_cell_clear
     confidence: high
     needs_user_review: false
 
@@ -800,7 +815,6 @@ recommended_execution_order:
   - task_milano_lint_ip_rev_0_1_rerun
   - task_milano_disparity_error_injection_debug_followup
   - task_milano_firenze_handler_reflection_check
-  - task_milano_standard_cell_replacement
   - task_milano_mse_pf_bar0_overlap_guard
   - task_milano_arir_precheck
   - task_milano_gen7_phy_db_synthesis
@@ -1240,6 +1254,19 @@ task_status_updates:
     next_step: Use later lint/build/synthesis runs to catch any integration issue if it appears.
     source_ref: source_milano_conversation_20260615_common_module_replacement_completed
 
+  - id: status_task_milano_standard_cell_20260616_latch_std_icg_cell_clear
+    date: 2026-06-16
+    task_ref: task_milano_standard_cell_replacement
+    author_ref: person_brian
+    status: completed
+    progress_percent: 100
+    summary: Latch-related replacement was updated as a standard ICG cell and reported clear.
+    blockers: []
+    next_step: Use later lint/build/synthesis runs to catch any residual integration issue if it appears.
+    artifact_refs:
+      - artifact_milano_latch_std_icg_cell_replacement_20260616
+    source_ref: source_milano_conversation_20260616_latch_std_icg_cell_clear
+
 issues:
   - id: issue_firenze_mse0_pf_bar0_disabled
     project_ref: project_firenze
@@ -1350,6 +1377,17 @@ artifact_candidates:
     created_on: 2026-06-16
     status: to_be_created_or_linked
     notes: Brian decided to manage the Disparity Error Injection no-error issue through Jira; exact Jira ID or link is not recorded yet.
+
+  - id: artifact_milano_latch_std_icg_cell_replacement_20260616
+    title: Latch replacement as standard ICG cell
+    artifact_type: rtl_patch
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_standard_cell_replacement
+    path_or_uri: null
+    created_on: 2026-06-16
+    status: completed_clear
+    notes: Brian reported that latch was updated as a standard ICG cell and is clear; exact file path, instance list, and verification report are not recorded yet.
 
   - id: artifact_milano_pdci_sdc_v1
     title: PDCI SDC v1
@@ -1604,6 +1642,23 @@ project_status_updates:
     related_issue_refs:
       - issue_milano_disparity_error_injection_no_error
     source_ref: source_milano_conversation_20260616_gen7_merge_lint_complete_disparity_jira
+
+  - id: project_status_milano_20260616_latch_std_icg_cell_clear
+    date: 2026-06-16
+    project_ref: project_milano
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: Latch-related standard cell replacement was completed by updating latch logic as a standard ICG cell, and Brian reported it clear.
+    positive_signal: Another RTL cleanup item is now closed before later lint/build/synthesis confidence checks.
+    open_follow_up:
+      - Capture exact file path, instance list, or report artifact if needed for review.
+      - Let later lint/build/synthesis runs catch any residual integration issue.
+    related_task_refs:
+      - task_milano_standard_cell_replacement
+    artifact_refs:
+      - artifact_milano_latch_std_icg_cell_replacement_20260616
+    source_ref: source_milano_conversation_20260616_latch_std_icg_cell_clear
 
   - id: project_status_milano_20260615_cleanup_tasks_completed
     date: 2026-06-15
