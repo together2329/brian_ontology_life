@@ -94,6 +94,20 @@ exercise_catalog:
       - core
     equipment: mixed_or_unknown
     notes: Use this when Brian records a lower-body workout without exercise-level set details.
+  - id: exercise_bulgarian_split_squat
+    object_type: ExerciseCatalog
+    name: Bulgarian split squat
+    aliases:
+      - 불가리안 스플릿 스쿼트
+      - Bulgarian split squat
+      - split squat
+    muscle_groups:
+      - quads
+      - glutes
+      - hamstrings
+      - core
+    equipment: external_load_unspecified
+    notes: Unilateral lower-body exercise; record reps per side when Brian counts left and right legs as one set.
 
 workout_records:
   - id: workoutsession_20260616_lower_body_hard
@@ -109,13 +123,48 @@ workout_records:
     duration_minutes: 60
     perceived_energy: hard
     digestion: null
-    performance_note: Brian reported doing 하체 운동 빡세게 from 11:20 to 12:20, then needing to sleep because he was tired.
+    performance_note: Brian reported doing a hard lower-body workout from 11:20 to 12:20, including loaded 불가리안 스플릿 스쿼트 / Bulgarian split squats, then needing to sleep because he was tired.
     exercises:
-      - exercise_ref: exercise_lower_body_training
-        variant: unspecified_lower_body
-        equipment: null
-        notes: Exercise-level movements, sets, reps, and weights were not specified in the source record.
-        sets: []
+      - exercise_ref: exercise_bulgarian_split_squat
+        variant: loaded_unilateral
+        equipment: external_load_unspecified
+        unilateral: true
+        load_kg: 12
+        load_note: Brian said "양쪽 12kg"; equipment type and whether this means 12kg total or 12kg each side/hand need review.
+        notes: 불가리안 스플릿 스쿼트. Brian counted one set as completing left and right legs; three sets were completed.
+        confidence: medium
+        needs_user_review: true
+        sets:
+          - set: 1
+            weight_kg: 12
+            reps: 10
+            reps_per_side: 10
+            left_reps: 10
+            right_reps: 10
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+          - set: 2
+            weight_kg: 12
+            reps: 10
+            reps_per_side: 10
+            left_reps: 10
+            right_reps: 10
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+          - set: 3
+            weight_kg: 12
+            reps: 8
+            reps_per_side: 8
+            left_reps: 8
+            right_reps: 8
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
 
   - id: workoutsession_20260615_pt_shop_access_issue
     object_type: WorkoutSession
@@ -467,3 +516,9 @@ raw_records:
     time: "11:20"
     source: codex_conversation
     text: "11:20 분 부터 12시 20분까지 하체 운동 빡세게 하고 12:20 분 에서 13:00까지 힘들어서 좀 자고, 13:00 - 13:20 닭곰탕 맛있게 먹음"
+  - id: raw_body_record_20260616_bulgarian_split_squat_detail
+    date: 2026-06-16
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260616_lower_body_hard
+    text: "하체 운동 불가리안 스플릿 스쿼트 양쪽 12kg x 한발씩 왼쪽 오른쪽 1세트로 3세트 진행. 횟수는 10, 10, 8"
