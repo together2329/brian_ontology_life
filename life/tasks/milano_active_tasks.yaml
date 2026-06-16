@@ -92,6 +92,16 @@ source_records:
     imported_at: 2026-06-16
     parse_status: parsed
     raw_text: "Power Optimization 은 좀 나중에 할일이고, SDC clean Up 작업과 Interrupt, Handler + Lint 위주로"
+  - id: source_milano_conversation_20260616_morning_pd_pcie_sdc_error_cleanup
+    source_type: chat
+    original_date: 2026-06-16
+    imported_at: 2026-06-16
+    parse_status: parsed
+    raw_text: "오전에 pd pcie sdc error clean up 팜 dc 에서 unmapped file 읽어서 :)"
+    interpreted_time:
+      date: 2026-06-16
+      time_of_day: morning
+      precision: approximate
 
 summary:
   recently_completed:
@@ -183,7 +193,7 @@ tasks:
     tracking_level: detailed
     project_ref: project_milano
     component_ref: component_milano_pcie
-    progress_percent: 60
+    progress_percent: 70
     tags:
       - milano
       - synthesis
@@ -204,6 +214,7 @@ tasks:
       - A Python script was added to support the flow after initial attempts did not work well.
       - Result quality is still unknown until synthesis reports are reviewed.
       - As of 2026-06-16, SDC clean-up is one of today's primary Milano focus items.
+      - On the morning of 2026-06-16, Brian cleaned up PD PCIe SDC errors by reading an unmapped file in farm DC.
     tooling_notes:
       - Cursor was useful for SDC porting, but needed examples and iteration.
       - Python scripting helped stabilize or automate parts of the SDC porting flow.
@@ -213,11 +224,13 @@ tasks:
       - synthesis rerun result
       - synthesis log/report artifacts
     next_actions:
+      - Validate whether the PD PCIe SDC error cleanup is reflected in the next synthesis or lint output.
       - Wait for synthesis run completion.
       - Collect synthesis logs and reports.
       - Compare failures, warnings, and timing/synthesis report deltas.
       - Review whether the ported GEN7 PHY SDC works after synthesis completes.
       - Clean up SDC warnings, mismatches, portability issues, and profile differences before trusting final synthesis.
+      - Continue checking whether the PD PCIe SDC cleanup fully resolves downstream synthesis or lint symptoms.
       - Capture effective few-shot examples and Python script usage as repeatable porting guidance if results are good.
       - Decide which SDC profile should be the working baseline or whether both must remain.
     depends_on:
@@ -227,6 +240,7 @@ tasks:
       - source_milano_conversation_20260614_multi_hour_progress_update
       - source_milano_conversation_20260614_sdc_firenze_gen7_phy_porting
       - source_milano_conversation_20260616_today_focus_sdc_interrupt_handler_lint
+      - source_milano_conversation_20260616_morning_pd_pcie_sdc_error_cleanup
     confidence: high
     needs_user_review: false
 
@@ -687,6 +701,29 @@ planned_time_blocks:
     needs_user_review: false
 
 work_sessions:
+  - id: worksession_20260616_morning_milano_pd_pcie_sdc_error_cleanup
+    date: 2026-06-16
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    start: null
+    end: null
+    actual_minutes: null
+    time_quality: approximate_morning
+    task_refs:
+      - task_milano_sdc_dual_profile_synth_rerun
+    focus_level: cleanup
+    summary: Brian cleaned up PD PCIe SDC errors in the morning by reading an unmapped file in farm DC.
+    findings:
+      - The SDC cleanup target was PD PCIe.
+      - The useful clue or input came from reading an unmapped file in farm DC.
+      - This is part of the 2026-06-16 SDC clean-up focus before interrupt, handler, and lint closure.
+    next_steps:
+      - Check whether the cleaned PD PCIe SDC errors disappear in the next synthesis or lint run.
+      - Capture exact unmapped file path or error signature later if it becomes important for repeatability.
+    artifact_refs:
+      - artifact_milano_pd_pcie_sdc_unmapped_file_cleanup_20260616
+    source_ref: source_milano_conversation_20260616_morning_pd_pcie_sdc_error_cleanup
+
   - id: worksession_20260614_milano_multi_task_progress
     date: 2026-06-14
     project_ref: project_milano
@@ -857,6 +894,19 @@ task_status_updates:
     next_step: Clean up SDC issues before spending time on later power/DCG optimization work.
     source_ref: source_milano_conversation_20260616_today_focus_sdc_interrupt_handler_lint
 
+  - id: status_task_milano_sdc_20260616_pd_pcie_error_cleanup
+    date: 2026-06-16
+    task_ref: task_milano_sdc_dual_profile_synth_rerun
+    author_ref: person_brian
+    status: in_progress
+    progress_percent: 70
+    summary: Brian cleaned up PD PCIe SDC errors in the morning by reading an unmapped file in farm DC.
+    blockers:
+      - Need next synthesis or lint evidence to confirm the cleanup fully resolves the error path.
+      - Exact unmapped file path and error signature are not yet recorded.
+    next_step: Re-run or inspect synthesis/lint output to confirm the PD PCIe SDC error cleanup and capture exact artifact path if needed.
+    source_ref: source_milano_conversation_20260616_morning_pd_pcie_sdc_error_cleanup
+
   - id: status_task_milano_port1_interrupt_20260616_today_focus
     date: 2026-06-16
     task_ref: task_milano_port1_interrupt_requirement
@@ -980,6 +1030,17 @@ issues:
     needs_user_review: false
 
 artifact_candidates:
+  - id: artifact_milano_pd_pcie_sdc_unmapped_file_cleanup_20260616
+    title: PD PCIe SDC error cleanup via farm DC unmapped file
+    artifact_type: sdc_cleanup_evidence
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_sdc_dual_profile_synth_rerun
+    path_or_uri: null
+    created_on: 2026-06-16
+    status: used_for_cleanup
+    notes: Brian cleaned up PD PCIe SDC errors by reading an unmapped file in farm DC; exact file path is not yet recorded.
+
   - id: artifact_milano_pdci_sdc_v1
     title: PDCI SDC v1
     artifact_type: sdc
@@ -1163,6 +1224,20 @@ project_status_updates:
       - task_milano_pcie_doe_reg_top_axi_bridge_dcg_power_optimization
     next_step: Work the SDC/Interrupt/Handler/Lint path first, then revisit DCG/power optimization after the immediate cleanup path is stable.
     source_ref: source_milano_conversation_20260616_today_focus_sdc_interrupt_handler_lint
+
+  - id: project_status_milano_20260616_pd_pcie_sdc_error_cleanup
+    date: 2026-06-16
+    project_ref: project_milano
+    author_ref: person_brian
+    status: in_progress
+    progress_percent: null
+    summary: Brian made morning progress on Milano SDC clean-up by resolving PD PCIe SDC errors using information from an unmapped file in farm DC.
+    positive_signal: The SDC clean-up focus produced concrete progress before moving to Interrupt, Handler, and Lint work.
+    open_follow_up:
+      - Capture exact unmapped file path or error message if it is needed for repeatability.
+      - Confirm with the next synthesis or lint run that the PD PCIe SDC errors are gone.
+    next_step: Validate the cleanup result, then continue with Port 1 interrupt requirement, Firenze handler reflection, and lint re-check.
+    source_ref: source_milano_conversation_20260616_morning_pd_pcie_sdc_error_cleanup
 
   - id: project_status_milano_20260615_cleanup_tasks_completed
     date: 2026-06-15
