@@ -268,30 +268,32 @@ workout_records:
         sequence_order: 4
         variant: machine
         equipment: machine
-        notes: 레그 프레스. Fourth movement in the 2026-06-16 lower-body workout. Weight and reps were not specified.
+        notes: 레그 프레스. Fourth movement in the 2026-06-16 lower-body workout. Brian warmed up with 80kg, then worked at 160kg, then finished at 120kg. Reps were not specified.
         confidence: medium
         sets:
           - set: 1
-            weight_kg: null
+            weight_kg: 80
             reps: null
             rpe: null
             rest_seconds: null
-            is_warmup: false
+            is_warmup: true
             is_pr: null
+            notes: Warm-up set.
           - set: 2
-            weight_kg: null
+            weight_kg: 160
             reps: null
             rpe: null
             rest_seconds: null
             is_warmup: false
             is_pr: null
           - set: 3
-            weight_kg: null
+            weight_kg: 120
             reps: null
             rpe: null
             rest_seconds: null
             is_warmup: false
             is_pr: null
+            notes: Finishing set.
 
   - id: workoutsession_20260615_pt_shop_access_issue
     object_type: WorkoutSession
@@ -655,3 +657,9 @@ raw_records:
     source: codex_conversation
     related_workout: workoutsession_20260616_lower_body_hard
     text: "아 8개씩다 쏘리. 그리고 처음에 이너타이 3세트, 두번째 불스스, 세번째 레그컬, 네번째 레그 프레스 3세트씩"
+  - id: raw_body_record_20260616_leg_press_weight_detail
+    date: 2026-06-16
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260616_lower_body_hard
+    text: "레그 프레스는 80kg 로 1세트 몸풀고, 160kg로 1세트 하고, 120으로 세트 마무리"
