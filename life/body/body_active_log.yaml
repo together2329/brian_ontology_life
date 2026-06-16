@@ -99,6 +99,7 @@ exercise_catalog:
     name: Bulgarian split squat
     aliases:
       - 불가리안 스플릿 스쿼트
+      - 불스스
       - Bulgarian split squat
       - split squat
     muscle_groups:
@@ -108,6 +109,43 @@ exercise_catalog:
       - core
     equipment: external_load_unspecified
     notes: Unilateral lower-body exercise; record reps per side when Brian counts left and right legs as one set.
+  - id: exercise_hip_adductor_machine
+    object_type: ExerciseCatalog
+    name: Hip adductor machine
+    aliases:
+      - 이너타이
+      - inner thigh
+      - hip adductor
+      - adductor machine
+    muscle_groups:
+      - adductors
+      - glutes
+    equipment: machine
+    notes: Inner-thigh/adductor machine exercise.
+  - id: exercise_leg_curl
+    object_type: ExerciseCatalog
+    name: Leg curl
+    aliases:
+      - 레그컬
+      - leg curl
+      - hamstring curl
+    muscle_groups:
+      - hamstrings
+    equipment: machine
+    notes: Use when Brian records leg curl work without specifying seated/lying variant.
+  - id: exercise_leg_press
+    object_type: ExerciseCatalog
+    name: Leg press
+    aliases:
+      - 레그 프레스
+      - 레그프레스
+      - leg press
+    muscle_groups:
+      - quads
+      - glutes
+      - hamstrings
+    equipment: machine
+    notes: Machine leg press.
 
 workout_records:
   - id: workoutsession_20260616_lower_body_hard
@@ -123,34 +161,66 @@ workout_records:
     duration_minutes: 60
     perceived_energy: hard
     digestion: null
-    performance_note: Brian reported doing a hard lower-body workout from 11:20 to 12:20, including loaded 불가리안 스플릿 스쿼트 / Bulgarian split squats, then needing to sleep because he was tired.
+    performance_note: "Brian reported doing a hard lower-body workout from 11:20 to 12:20: 이너타이 3 sets, 불스스/불가리안 스플릿 스쿼트 3 sets, 레그컬 3 sets, and 레그 프레스 3 sets, then needing to sleep because he was tired."
     exercises:
+      - exercise_ref: exercise_hip_adductor_machine
+        sequence_order: 1
+        variant: machine
+        equipment: machine
+        notes: 이너타이. First movement in the 2026-06-16 lower-body workout. Weight and reps were not specified.
+        confidence: medium
+        sets:
+          - set: 1
+            weight_kg: null
+            reps: null
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+          - set: 2
+            weight_kg: null
+            reps: null
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+          - set: 3
+            weight_kg: null
+            reps: null
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
       - exercise_ref: exercise_bulgarian_split_squat
+        sequence_order: 2
         variant: loaded_unilateral
         equipment: external_load_unspecified
         unilateral: true
         load_kg: 12
         load_note: Brian said "양쪽 12kg"; equipment type and whether this means 12kg total or 12kg each side/hand need review.
-        notes: 불가리안 스플릿 스쿼트. Brian counted one set as completing left and right legs; three sets were completed.
+        notes: 불스스 / 불가리안 스플릿 스쿼트. Brian counted one set as completing left and right legs; three sets were completed.
+        correction_note: Brian corrected the reps from the earlier 10, 10, 8 record to 8 reps each for all three sets.
         confidence: medium
         needs_user_review: true
         sets:
           - set: 1
             weight_kg: 12
-            reps: 10
-            reps_per_side: 10
-            left_reps: 10
-            right_reps: 10
+            reps: 8
+            reps_basis: per_side
+            reps_per_side: 8
+            left_reps: 8
+            right_reps: 8
             rpe: null
             rest_seconds: null
             is_warmup: false
             is_pr: null
           - set: 2
             weight_kg: 12
-            reps: 10
-            reps_per_side: 10
-            left_reps: 10
-            right_reps: 10
+            reps: 8
+            reps_basis: per_side
+            reps_per_side: 8
+            left_reps: 8
+            right_reps: 8
             rpe: null
             rest_seconds: null
             is_warmup: false
@@ -158,9 +228,66 @@ workout_records:
           - set: 3
             weight_kg: 12
             reps: 8
+            reps_basis: per_side
             reps_per_side: 8
             left_reps: 8
             right_reps: 8
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+      - exercise_ref: exercise_leg_curl
+        sequence_order: 3
+        variant: machine_unspecified
+        equipment: machine
+        notes: 레그컬. Third movement in the 2026-06-16 lower-body workout. Weight and reps were not specified.
+        confidence: medium
+        sets:
+          - set: 1
+            weight_kg: null
+            reps: null
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+          - set: 2
+            weight_kg: null
+            reps: null
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+          - set: 3
+            weight_kg: null
+            reps: null
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+      - exercise_ref: exercise_leg_press
+        sequence_order: 4
+        variant: machine
+        equipment: machine
+        notes: 레그 프레스. Fourth movement in the 2026-06-16 lower-body workout. Weight and reps were not specified.
+        confidence: medium
+        sets:
+          - set: 1
+            weight_kg: null
+            reps: null
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+          - set: 2
+            weight_kg: null
+            reps: null
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+          - set: 3
+            weight_kg: null
+            reps: null
             rpe: null
             rest_seconds: null
             is_warmup: false
@@ -522,3 +649,9 @@ raw_records:
     source: codex_conversation
     related_workout: workoutsession_20260616_lower_body_hard
     text: "하체 운동 불가리안 스플릿 스쿼트 양쪽 12kg x 한발씩 왼쪽 오른쪽 1세트로 3세트 진행. 횟수는 10, 10, 8"
+  - id: raw_body_record_20260616_lower_body_workout_sequence_correction
+    date: 2026-06-16
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260616_lower_body_hard
+    text: "아 8개씩다 쏘리. 그리고 처음에 이너타이 3세트, 두번째 불스스, 세번째 레그컬, 네번째 레그 프레스 3세트씩"
