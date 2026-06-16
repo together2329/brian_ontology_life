@@ -431,6 +431,30 @@ meal_records:
     needs_user_review: false
     notes: Protein supplement consumed at 15:00 after the hard lower-body workout day.
 
+  - id: meal_20260616_1921_protein_yogurt
+    object_type: Meal
+    date: 2026-06-16
+    time: "19:21"
+    area: BODY
+    meal_type: evening_protein
+    status: completed
+    items:
+      - name: 프로틴 요거트
+        amount: 1
+        unit: serving
+        calories: null
+        protein_g: 15
+        carbs_g: null
+        fat_g: null
+    supplements: []
+    related_workout: workoutsession_20260616_lower_body_hard
+    related_nutrition_target_ref: protein_target_20260615
+    protein_g_total: 15
+    protein_g_estimate_range: null
+    confidence: high
+    needs_user_review: false
+    notes: Protein yogurt consumed at about 19:21 after the lower-body workout day.
+
   - id: meal_20260617_planned_breakfast_soymilk_egg_broccoli_ricecake
     object_type: Meal
     date: 2026-06-17
@@ -731,6 +755,13 @@ raw_records:
     source: codex_conversation
     related_workout: workoutsession_20260616_lower_body_hard
     text: "3시에 프로핏 셀렉스 20g 단백질 섭취 :)"
+  - id: raw_body_record_20260616_1921_protein_yogurt
+    date: 2026-06-16
+    time: "19:21"
+    source: codex_conversation
+    related_workout: workoutsession_20260616_lower_body_hard
+    related_meal: meal_20260616_1921_protein_yogurt
+    text: "방금프로틴 요거트 15g 먹음."
   - id: raw_body_record_20260616_next_morning_breakfast_plan
     date: 2026-06-16
     time: null

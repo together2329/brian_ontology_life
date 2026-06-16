@@ -127,6 +127,25 @@ source_records:
       topic: Disparity Error Injection
       observed_behavior: Error did not occur after Disparity Error Injection.
       action_taken: Brian asked 변승현 TL님 to debug.
+  - id: source_milano_conversation_20260616_gen7_merge_lint_complete_disparity_jira
+    source_type: chat
+    original_date: 2026-06-16
+    imported_at: 2026-06-16
+    parse_status: parsed
+    raw_text: "방금프로틴 요거트 15g 먹음. gen7 merge 후 lint 작업 완료했다고 박길봉TL님에게 전달 받아 최종 확인 중. Disparity는 Jira 만들어서 관리 하기로 함"
+    participants:
+      lint_reporter_ref: person_park_gilbong
+      reviewer_ref: person_brian
+      disparity_debug_owner_ref: person_byun_seunghyun
+      disparity_requester_ref: person_choi_wonje
+    interpreted_status:
+      gen7_merge_lint:
+        reported_completed_by_ref: person_park_gilbong
+        brian_state: final_check_in_progress
+      disparity_tracking:
+        decision: manage_with_jira
+        jira_ref: null
+        jira_status: to_be_created_or_linked
 
 summary:
   recently_completed:
@@ -143,7 +162,8 @@ summary:
     - Port 1 interrupt requirement writing
     - MSE-linked PF BAR0 address overlap prevention with Firenze failure-mode regression
     - PCIe DOE DCG and REG TOP AXI Bridge DCG ownership for Milano power optimization after high Firenze power
-    - Disparity Error Injection case where the expected error did not occur, with debug requested from 변승현 TL님
+    - GEN7 merge lint work reported complete by 박길봉 TL님, with Brian final check in progress
+    - Disparity Error Injection case where the expected error did not occur, with debug requested from 변승현 TL님 and Jira tracking planned
   current_focus:
     date: 2026-06-16
     primary_tasks:
@@ -315,7 +335,7 @@ tasks:
   - id: task_milano_lint_ip_rev_0_1_rerun
     title: 신규 IP revision 0.1 반영 후 lint 재확인
     area: CAREER
-    status: todo
+    status: in_review
     priority: high
     energy: deep_work
     estimated_minutes: null
@@ -323,7 +343,7 @@ tasks:
     tracking_level: detailed
     project_ref: project_milano
     component_ref: component_milano_pcie
-    progress_percent: 10
+    progress_percent: 85
     tags:
       - milano
       - lint
@@ -332,17 +352,21 @@ tasks:
     context:
       - Previous lint cleanup was already performed.
       - New IP revision 0.1 must be reflected before trusting lint status.
+      - After GEN7 merge, 박길봉 TL님 reported that the lint work was completed.
+      - Brian is doing final confirmation before the lint task is marked complete.
     expected_outputs:
       - lint rerun report after IP rev 0.1
       - new violations list
       - waived or fixed issue list
     next_actions:
-      - Integrate or point lint environment to IP revision 0.1.
-      - Rerun lint.
-      - Diff new violations against previous cleanup state.
-      - Classify violations into fix, waive, or owner handoff.
+      - Complete Brian's final lint confirmation after 박길봉 TL님의 completion report.
+      - Capture lint report path, result summary, and remaining violation or waiver status.
+      - If clean, mark the lint task completed.
+      - If residual issues remain, classify them into fix, waive, or owner handoff.
     evidence_refs:
       - source_milano_conversation_20260614_current_tasks
+      - source_milano_conversation_20260616_today_focus_sdc_interrupt_handler_lint
+      - source_milano_conversation_20260616_gen7_merge_lint_complete_disparity_jira
     confidence: high
     needs_user_review: false
 
@@ -709,7 +733,7 @@ tasks:
     tracking_level: detailed
     project_ref: project_milano
     component_ref: component_milano_pcie
-    progress_percent: 20
+    progress_percent: 30
     requester_ref: person_choi_wonje
     debug_owner_ref: person_byun_seunghyun
     tags:
@@ -723,11 +747,14 @@ tasks:
       - 최원제 TL님 asked about a Disparity case.
       - Brian tried Disparity Error Injection, but the expected error did not occur.
       - Brian asked 변승현 TL님 to debug the case.
+      - Brian decided to manage this issue through Jira.
     expected_outputs:
+      - Jira ticket or linked Jira reference for tracking.
       - Reproduction condition or reason the error is not triggered.
       - Classification as testbench setup issue, injection condition mismatch, design path issue, masking/disable condition, or expected behavior.
       - Follow-up guidance to 최원제 TL님 after 변승현 TL님의 debug result is available.
     next_actions:
+      - Create or link the Jira ticket and use it as the tracking source.
       - Wait for 변승현 TL님의 debug result.
       - Capture the exact test/case name, injection point, expected error signal/counter, and observed waveform/log if available.
       - Decide whether Brian needs to adjust implementation/spec/guidance after root cause is known.
@@ -736,6 +763,7 @@ tasks:
       - issue_milano_disparity_error_injection_no_error
     evidence_refs:
       - source_milano_conversation_20260616_disparity_error_injection_no_error
+      - source_milano_conversation_20260616_gen7_merge_lint_complete_disparity_jira
     confidence: high
     needs_user_review: false
 
@@ -1037,6 +1065,23 @@ task_status_updates:
       - issue_milano_disparity_error_injection_no_error
     source_ref: source_milano_conversation_20260616_disparity_error_injection_no_error
 
+  - id: status_task_milano_disparity_error_injection_20260616_jira_tracking
+    date: 2026-06-16
+    task_ref: task_milano_disparity_error_injection_debug_followup
+    author_ref: person_brian
+    status: in_progress
+    progress_percent: 30
+    summary: Disparity Error Injection 미발생 이슈는 Jira를 만들어 관리하기로 했다.
+    blockers:
+      - Jira ID/link is not yet recorded.
+      - Root cause/debug result is still not recorded.
+    next_step: Create or link the Jira ticket, then track 변승현 TL님의 debug result and follow-up with 최원제 TL님 there.
+    issue_refs:
+      - issue_milano_disparity_error_injection_no_error
+    artifact_refs:
+      - artifact_milano_disparity_jira_ticket_20260616
+    source_ref: source_milano_conversation_20260616_gen7_merge_lint_complete_disparity_jira
+
   - id: status_task_milano_port1_interrupt_20260616_today_focus
     date: 2026-06-16
     task_ref: task_milano_port1_interrupt_requirement
@@ -1072,6 +1117,21 @@ task_status_updates:
       - Need IP revision 0.1 and current cleanup state reflected before relying on lint output.
     next_step: Prepare lint rerun and classify new violations into fix, waive, or owner handoff.
     source_ref: source_milano_conversation_20260616_today_focus_sdc_interrupt_handler_lint
+
+  - id: status_task_milano_lint_20260616_gen7_merge_complete_final_check
+    date: 2026-06-16
+    task_ref: task_milano_lint_ip_rev_0_1_rerun
+    author_ref: person_brian
+    status: in_review
+    progress_percent: 85
+    summary: GEN7 merge 후 lint 작업이 완료되었다고 박길봉 TL님에게 전달받았고, Brian이 최종 확인 중이다.
+    blockers:
+      - Need Brian's final confirmation and lint report/result path before marking complete.
+      - Need remaining violation or waiver status if anything is still open.
+    next_step: Finish final lint confirmation, capture report/artifact path, and close or list residual issues.
+    participant_refs:
+      - person_park_gilbong
+    source_ref: source_milano_conversation_20260616_gen7_merge_lint_complete_disparity_jira
 
   - id: status_task_milano_mse_pf_bar0_20260615_added
     date: 2026-06-15
@@ -1164,7 +1224,7 @@ issues:
     component_ref: component_milano_pcie
     task_ref: task_milano_disparity_error_injection_debug_followup
     title: Disparity Error Injection did not trigger the expected error
-    status: open_debug_requested
+    status: jira_tracking_planned
     severity: high
     discovered_on: 2026-06-16
     recorded_on: 2026-06-16
@@ -1193,10 +1253,16 @@ issues:
       requested_by_ref: person_brian
       assigned_to_ref: person_byun_seunghyun
       follow_up_with_ref: person_choi_wonje
-      status: waiting_for_debug_result
+      status: jira_tracking_planned
+    tracking:
+      method: jira
+      jira_status: to_be_created_or_linked
+      jira_ref: null
+      artifact_ref: artifact_milano_disparity_jira_ticket_20260616
     source_ref: source_milano_conversation_20260616_disparity_error_injection_no_error
     evidence_refs:
       - source_milano_conversation_20260616_disparity_error_injection_no_error
+      - source_milano_conversation_20260616_gen7_merge_lint_complete_disparity_jira
     confidence: high
     needs_user_review: false
 
@@ -1226,6 +1292,18 @@ artifact_candidates:
       unit: not_specified
       sign: not_specified
     notes: Link0 wrapper synthesis is running and Brian reports WNS around 1 with meaningful results emerging; exact report path and final metrics are not yet recorded.
+
+  - id: artifact_milano_disparity_jira_ticket_20260616
+    title: Disparity Error Injection Jira tracking ticket
+    artifact_type: jira_ticket
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_disparity_error_injection_debug_followup
+    issue_ref: issue_milano_disparity_error_injection_no_error
+    path_or_uri: null
+    created_on: 2026-06-16
+    status: to_be_created_or_linked
+    notes: Brian decided to manage the Disparity Error Injection no-error issue through Jira; exact Jira ID or link is not recorded yet.
 
   - id: artifact_milano_pdci_sdc_v1
     title: PDCI SDC v1
@@ -1438,6 +1516,25 @@ project_status_updates:
       - Confirm whether the result is stable enough for ARIR and final synthesis decision-making.
     next_step: Let the link0 wrapper synthesis finish, then record final timing/area/report artifacts.
     source_ref: source_milano_conversation_20260616_link0_wrapper_synthesis_meaningful_wns
+
+  - id: project_status_milano_20260616_gen7_lint_final_check_and_disparity_jira
+    date: 2026-06-16
+    project_ref: project_milano
+    author_ref: person_brian
+    status: in_progress
+    progress_percent: null
+    summary: GEN7 merge 후 lint 작업은 박길봉 TL님에게 완료 보고를 받았고 Brian이 최종 확인 중이며, Disparity Error Injection 미발생 이슈는 Jira로 관리하기로 했다.
+    positive_signal: Lint has moved from planned rerun/todo into final confirmation, so the immediate closure path is more concrete.
+    open_follow_up:
+      - Capture lint report path, final result, and residual violation/waiver status.
+      - Create or link the Disparity Jira ticket and record the Jira ID.
+      - Continue tracking 변승현 TL님의 Disparity debug result and follow up with 최원제 TL님.
+    related_task_refs:
+      - task_milano_lint_ip_rev_0_1_rerun
+      - task_milano_disparity_error_injection_debug_followup
+    related_issue_refs:
+      - issue_milano_disparity_error_injection_no_error
+    source_ref: source_milano_conversation_20260616_gen7_merge_lint_complete_disparity_jira
 
   - id: project_status_milano_20260615_cleanup_tasks_completed
     date: 2026-06-15
