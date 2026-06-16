@@ -186,6 +186,24 @@ source_records:
         - link_wrapper
         - ips
       required_action: Reflect the R001 IP Diff in the affected blocks and cross-check all gray areas.
+  - id: source_milano_conversation_20260616_late_night_tired_missed_brian_owned_followups
+    source_type: chat
+    original_date: 2026-06-16
+    imported_at: 2026-06-16
+    parse_status: parsed
+    raw_text: "밤늦게 작업 진행 중. 피곤하네 :) common module 등, 뭔가 내가 해주어야 할 부분이 있었을텐데, 그 부분 못하고 있었음"
+    interpreted_time:
+      date: 2026-06-16
+      time: "21:49"
+      time_of_day: late_night
+      precision: captured_at
+    interpreted_state:
+      work_state: working_late
+      energy: tired
+      mood_note: Brian is tired but still working.
+    interpreted_risk:
+      task_ref: task_milano_audit_missed_brian_owned_followups_common_module_etc
+      summary: Brian noticed there may have been Brian-owned follow-up work, including around common module, that he had not been handling.
 
 summary:
   recently_completed:
@@ -198,6 +216,7 @@ summary:
     - ARIR area and instance count pre-check from synthesis results
     - lint re-check after new IP revision 0.1 integration
     - R001 IP Diff reflection for core, link, link wrapper, and ips with gray-area cross-check
+    - Late-night audit of possible Brian-owned follow-ups that may have been missed, including common module-related items
     - Firenze handler reflection check in Milano
     - final GEN7 PHY DB synthesis integration
     - Port 1 interrupt requirement deferred to the 2026-07-16 to 2026-08-16 window
@@ -210,6 +229,7 @@ summary:
     primary_tasks:
       - task_milano_sdc_dual_profile_synth_rerun
       - task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
+      - task_milano_audit_missed_brian_owned_followups_common_module_etc
       - task_milano_firenze_handler_reflection_check
       - task_milano_lint_ip_rev_0_1_rerun
     deferred_tasks:
@@ -219,6 +239,7 @@ summary:
       - source_milano_conversation_20260616_today_focus_sdc_interrupt_handler_lint
       - source_milano_conversation_20260616_port1_requirement_deferred
       - source_milano_conversation_20260616_r001_ip_diff_gray_cross_check
+      - source_milano_conversation_20260616_late_night_tired_missed_brian_owned_followups
   open_questions:
     - id: oq_milano_gen7_phy_term
       question: "'제7파이'를 GEN7 PHY로 해석하는 것이 맞는지 확인 필요."
@@ -400,6 +421,7 @@ tasks:
       - After GEN7 merge, 박길봉 TL님 reported that the lint work was completed.
       - Brian is doing final confirmation before the lint task is marked complete.
       - R001 IP Diff reflection for core, link, link wrapper, and ips may need to be included before final lint confidence is claimed.
+      - Brian later noticed possible missed Brian-owned follow-ups around common module and related work; this audit should be considered before closing lint confidence.
     expected_outputs:
       - lint rerun report after IP rev 0.1
       - new violations list
@@ -407,6 +429,7 @@ tasks:
     next_actions:
       - Complete Brian's final lint confirmation after 박길봉 TL님의 completion report.
       - Check whether R001 IP Diff reflection and gray-area cross-check affect the final lint confirmation.
+      - Check whether the Brian-owned missed-followup audit exposes any common module or integration item that affects lint closure.
       - Capture lint report path, result summary, and remaining violation or waiver status.
       - If clean, mark the lint task completed.
       - If residual issues remain, classify them into fix, waive, or owner handoff.
@@ -415,6 +438,7 @@ tasks:
       - source_milano_conversation_20260616_today_focus_sdc_interrupt_handler_lint
       - source_milano_conversation_20260616_gen7_merge_lint_complete_disparity_jira
       - source_milano_conversation_20260616_r001_ip_diff_gray_cross_check
+      - source_milano_conversation_20260616_late_night_tired_missed_brian_owned_followups
     confidence: high
     needs_user_review: false
 
@@ -856,6 +880,67 @@ tasks:
     confidence: high
     needs_user_review: false
 
+  - id: task_milano_audit_missed_brian_owned_followups_common_module_etc
+    title: Brian-owned 누락 가능 항목 audit - common module 등
+    area: CAREER
+    status: in_progress
+    priority: high
+    energy: review
+    estimated_minutes: null
+    due_date: null
+    tracking_level: detailed
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    progress_percent: 10
+    owner_ref: person_brian
+    related_task_refs:
+      - task_milano_common_module_replacement
+      - task_milano_standard_cell_replacement
+      - task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
+      - task_milano_lint_ip_rev_0_1_rerun
+    tags:
+      - milano
+      - brian_owned
+      - missed_followup
+      - common_module
+      - audit
+      - late_night
+      - fatigue
+      - lint_risk
+    context:
+      - At 21:49 on 2026-06-16, Brian was working late and felt tired.
+      - Brian noticed there may have been parts he personally needed to handle, including around common module, that he had not been handling.
+      - Common module replacement is still recorded as completed; this task is an audit for missed follow-ups, integration checks, or Brian-owned handoff items rather than a rollback of completion.
+      - Because this was noticed while tired, decisions made tonight should be checked again before closing critical RTL/lint work.
+    scope:
+      - List Brian-owned follow-up items that might have been missed.
+      - Re-check common module-related integration, review, owner handoff, or evidence gaps.
+      - Check whether completed common module and standard-cell work still need lint/build/synthesis evidence.
+      - Check whether R001 IP Diff or lint final confirmation depends on any missed common module-related work.
+      - Classify each item as done, not_applicable, open, blocked, or needs_owner_confirmation.
+    expected_outputs:
+      - Brian-owned follow-up checklist.
+      - Common module-related residual item list, or explicit all-clear.
+      - Evidence gaps that should be captured before lint/final synthesis confidence is claimed.
+      - Follow-up owners or issue refs for anything still open.
+    acceptance_criteria:
+      - There is an explicit list of the items Brian thought he might have missed.
+      - Each item has a status and next action.
+      - Common module completion remains trusted only if residual integration/evidence gaps are either cleared or tracked.
+      - The audit result is considered during lint final confirmation.
+    blockers:
+      - Exact missed item list is not yet recorded.
+      - Brian is tired during the late-night work session, so recall may be incomplete.
+    next_actions:
+      - Capture a quick checklist tonight while the concern is fresh.
+      - Avoid broad late-night implementation unless the missing item is obvious and low-risk.
+      - Re-check the checklist with fresher energy before closing lint/final synthesis confidence.
+      - Convert any concrete unresolved item into a task, issue, or artifact ref.
+    evidence_refs:
+      - source_milano_conversation_20260616_late_night_tired_missed_brian_owned_followups
+    confidence: high
+    needs_user_review: false
+
   - id: task_milano_disparity_error_injection_debug_followup
     title: Disparity Error Injection 미발생 이슈 디버깅 follow-up
     area: CAREER
@@ -904,6 +989,7 @@ tasks:
 recommended_execution_order:
   - task_milano_sdc_dual_profile_synth_rerun
   - task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
+  - task_milano_audit_missed_brian_owned_followups_common_module_etc
   - task_milano_lint_ip_rev_0_1_rerun
   - task_milano_disparity_error_injection_debug_followup
   - task_milano_firenze_handler_reflection_check
@@ -985,6 +1071,34 @@ work_sessions:
     issue_refs:
       - issue_milano_disparity_error_injection_no_error
     source_ref: source_milano_conversation_20260616_disparity_error_injection_no_error
+
+  - id: worksession_20260616_2149_milano_late_night_followup_audit
+    date: 2026-06-16
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    start: "21:49"
+    end: null
+    actual_minutes: null
+    time_quality: captured_start_only
+    task_refs:
+      - task_milano_audit_missed_brian_owned_followups_common_module_etc
+      - task_milano_common_module_replacement
+      - task_milano_lint_ip_rev_0_1_rerun
+    focus_level: tired_late_night_review
+    mood_signal:
+      mood: tired
+      energy: low
+      note: Brian reported feeling tired while continuing late-night Milano work.
+    summary: Brian was working late at night and realized there may have been Brian-owned follow-up work, including common module-related items, that he had not been handling.
+    findings:
+      - The exact missed items are not yet enumerated.
+      - Common module replacement itself is already recorded completed, so this is a residual follow-up/evidence audit.
+      - Fatigue may reduce recall quality and decision quality.
+    next_steps:
+      - Capture a short checklist of suspected missed Brian-owned items before stopping.
+      - Re-check the list with fresher energy before closing lint or final synthesis confidence.
+      - Convert concrete missed items into tasks, issues, or artifact refs.
+    source_ref: source_milano_conversation_20260616_late_night_tired_missed_brian_owned_followups
 
   - id: worksession_20260614_milano_multi_task_progress
     date: 2026-06-14
@@ -1374,6 +1488,22 @@ task_status_updates:
       - artifact_milano_r001_ip_diff_source_20260616
       - artifact_milano_r001_ip_diff_gray_cross_check_20260616
     source_ref: source_milano_conversation_20260616_r001_ip_diff_gray_cross_check
+
+  - id: status_task_milano_missed_brian_owned_followups_20260616_late_night_added
+    date: 2026-06-16
+    task_ref: task_milano_audit_missed_brian_owned_followups_common_module_etc
+    author_ref: person_brian
+    status: in_progress
+    progress_percent: 10
+    summary: Brian is working late while tired and noticed there may have been Brian-owned follow-up work, including common module-related parts, that he had not been handling.
+    blockers:
+      - Exact missed item list is not yet recorded.
+      - Brian's energy is low during this late-night work session.
+    next_step: Capture a short suspected-missed-items checklist now, then re-check it with fresher energy before closing lint or final synthesis confidence.
+    related_task_refs:
+      - task_milano_common_module_replacement
+      - task_milano_lint_ip_rev_0_1_rerun
+    source_ref: source_milano_conversation_20260616_late_night_tired_missed_brian_owned_followups
 
 issues:
   - id: issue_firenze_mse0_pf_bar0_disabled
@@ -1819,6 +1949,32 @@ project_status_updates:
       - artifact_milano_r001_ip_diff_source_20260616
       - artifact_milano_r001_ip_diff_gray_cross_check_20260616
     source_ref: source_milano_conversation_20260616_r001_ip_diff_gray_cross_check
+
+  - id: project_status_milano_20260616_late_night_missed_followup_audit
+    date: 2026-06-16
+    project_ref: project_milano
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: During late-night tired work, Brian noticed a possible gap in Brian-owned follow-ups, including common module-related items, and opened an audit before trusting lint/final synthesis closure.
+    risk: Fatigue plus unclear ownership can hide small integration or evidence gaps even when individual cleanup tasks are marked complete.
+    priority_order:
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
+      - task_milano_audit_missed_brian_owned_followups_common_module_etc
+      - task_milano_lint_ip_rev_0_1_rerun
+      - task_milano_disparity_error_injection_debug_followup
+      - task_milano_firenze_handler_reflection_check
+    energy_note: Brian is tired; prefer checklist capture and review over broad late-night implementation.
+    open_follow_up:
+      - List suspected Brian-owned missed items.
+      - Re-check common module-related residual evidence or integration gaps.
+      - Revisit the audit with fresher energy before closing lint/final synthesis confidence.
+    related_task_refs:
+      - task_milano_audit_missed_brian_owned_followups_common_module_etc
+      - task_milano_common_module_replacement
+      - task_milano_lint_ip_rev_0_1_rerun
+    source_ref: source_milano_conversation_20260616_late_night_tired_missed_brian_owned_followups
 
   - id: project_status_milano_20260615_cleanup_tasks_completed
     date: 2026-06-15
