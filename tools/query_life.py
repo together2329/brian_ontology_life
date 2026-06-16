@@ -73,6 +73,7 @@ BODY_SEARCH_SECTIONS = [
     "exercise_catalog",
     "workout_records",
     "meal_records",
+    "sleep_records",
     "trend_observations",
     "raw_records",
 ]

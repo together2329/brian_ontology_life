@@ -1,5 +1,5 @@
 schema_version: 1
-updated_at: 2026-06-15
+updated_at: 2026-06-16
 profile_ref: person_brian
 area: BODY
 
@@ -78,8 +78,45 @@ exercise_catalog:
       - core
     equipment: bodyweight
     notes: Bodyweight push-up.
+  - id: exercise_lower_body_training
+    object_type: ExerciseCatalog
+    name: Lower-body training
+    aliases:
+      - 하체 운동
+      - 하체
+      - lower body
+      - leg day
+    muscle_groups:
+      - quads
+      - glutes
+      - hamstrings
+      - calves
+      - core
+    equipment: mixed_or_unknown
+    notes: Use this when Brian records a lower-body workout without exercise-level set details.
 
 workout_records:
+  - id: workoutsession_20260616_lower_body_hard
+    object_type: WorkoutSession
+    date: 2026-06-16
+    planned_start: null
+    start: "11:20"
+    end: "12:20"
+    status: completed
+    title: 하체 운동 빡세게
+    training_program_ref: pt_program_2026_spring
+    location: null
+    duration_minutes: 60
+    perceived_energy: hard
+    digestion: null
+    performance_note: Brian reported doing 하체 운동 빡세게 from 11:20 to 12:20, then needing to sleep because he was tired.
+    exercises:
+      - exercise_ref: exercise_lower_body_training
+        variant: unspecified_lower_body
+        equipment: null
+        notes: Exercise-level movements, sets, reps, and weights were not specified in the source record.
+        sets: []
+
   - id: workoutsession_20260615_pt_shop_access_issue
     object_type: WorkoutSession
     date: 2026-06-15
@@ -169,6 +206,29 @@ workout_records:
             is_pr: null
 
 meal_records:
+  - id: meal_20260616_lunch_dak_gomtang
+    object_type: Meal
+    date: 2026-06-16
+    time: "13:00"
+    area: BODY
+    meal_type: lunch
+    items:
+      - name: 닭곰탕
+        amount: 1
+        unit: serving
+        calories: null
+        protein_g: null
+        carbs_g: null
+        fat_g: null
+    supplements: []
+    related_workout: workoutsession_20260616_lower_body_hard
+    related_nutrition_target_ref: protein_target_20260615
+    protein_g_total: null
+    protein_g_estimate_range: [25, 40]
+    confidence: low
+    needs_user_review: true
+    notes: Brian ate 닭곰탕 from 13:00 to 13:20 after a hard lower-body workout and a recovery nap; he described it as tasty.
+
   - id: meal_20260615_post_workout_the_danbaek_melon
     object_type: Meal
     date: 2026-06-15
@@ -322,6 +382,18 @@ meal_records:
     needs_user_review: true
     notes: Dinner record. Protein estimate depends on hamburger patty size and protein yogurt product.
 
+sleep_records:
+  - id: sleep_20260616_post_lower_body_workout_recovery_nap
+    object_type: SleepRecord
+    date: 2026-06-16
+    sleep_start: "12:20"
+    sleep_end: "13:00"
+    duration_minutes: 40
+    quality_score: null
+    notes: Brian slept or napped because he felt tired after a hard lower-body workout.
+    related_workout: workoutsession_20260616_lower_body_hard
+    sleep_type: recovery_nap
+
 trend_observations:
   - id: body_trend_20260615_strength_up_weight_stable
     object_type: BodyTrendObservation
@@ -390,3 +462,8 @@ raw_records:
     time: null
     source: codex_conversation
     text: "점심은 냉짬뽕, 고추잡채밥. 저녁은 햄버거 , 프로틴 요거트 , 저녁 전에 단백질 쉐이크(30g)"
+  - id: raw_body_record_20260616_lower_body_workout_nap_dak_gomtang
+    date: 2026-06-16
+    time: "11:20"
+    source: codex_conversation
+    text: "11:20 분 부터 12시 20분까지 하체 운동 빡세게 하고 12:20 분 에서 13:00까지 힘들어서 좀 자고, 13:00 - 13:20 닭곰탕 맛있게 먹음"
