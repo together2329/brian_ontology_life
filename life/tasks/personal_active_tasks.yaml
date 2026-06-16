@@ -1,0 +1,170 @@
+schema_version: 1
+status: active
+updated_at: 2026-06-16
+area: MAINTENANCE
+secondary_areas:
+  - BODY
+  - RELATION
+  - FINANCE
+project_ref: project_personal_life_admin
+title: Personal life admin active tasks
+current_phase: 2026-06-16 afternoon health and insurance errands
+
+source_records:
+  - id: source_personal_admin_conversation_20260616_afternoon_eye_derm_receipt
+    source_type: chat
+    original_date: 2026-06-16
+    imported_at: 2026-06-16
+    parse_status: parsed
+    raw_text: "오후에 다래끼 검진겸 안과 가야하고 미야 실비보험 받아야해서 피부과 가서 진료비 영수증 받아 외야함"
+    interpreted_time:
+      date: 2026-06-16
+      time_of_day: afternoon
+      precision: approximate
+
+summary:
+  current_focus:
+    date: 2026-06-16
+    primary_tasks:
+      - task_personal_20260616_ophthalmology_stye_check
+      - task_personal_20260616_dermatology_receipt_for_miya_insurance
+    note: Afternoon personal errands should be protected alongside Milano work so health/admin items do not get missed.
+    source_ref: source_personal_admin_conversation_20260616_afternoon_eye_derm_receipt
+
+tasks:
+  - id: task_personal_20260616_ophthalmology_stye_check
+    object_type: Task
+    title: 다래끼 검진 겸 안과 방문
+    area: BODY
+    secondary_areas:
+      - MAINTENANCE
+    status: planned
+    priority: high
+    energy: errand
+    estimated_minutes: null
+    due_date: 2026-06-16
+    tracking_level: simple
+    project_ref: project_personal_life_admin
+    owner_ref: person_brian
+    progress_percent: 0
+    tags:
+      - health
+      - eye
+      - ophthalmology
+      - stye
+      - errand
+    context:
+      - Brian needs to visit an ophthalmology clinic in the afternoon for a stye check.
+    expected_outputs:
+      - Ophthalmology visit completed.
+      - Diagnosis or care instruction captured if important.
+      - Any prescription or follow-up date captured if given.
+    next_actions:
+      - Visit ophthalmology clinic in the afternoon.
+      - Record diagnosis, medication, and follow-up only if relevant.
+    evidence_refs:
+      - source_personal_admin_conversation_20260616_afternoon_eye_derm_receipt
+    confidence: high
+    needs_user_review: false
+
+  - id: task_personal_20260616_dermatology_receipt_for_miya_insurance
+    object_type: Task
+    title: 미야 실비보험 청구용 피부과 진료비 영수증 받기
+    area: MAINTENANCE
+    secondary_areas:
+      - RELATION
+      - FINANCE
+    status: planned
+    priority: high
+    energy: errand
+    estimated_minutes: null
+    due_date: 2026-06-16
+    tracking_level: simple
+    project_ref: project_personal_life_admin
+    owner_ref: person_brian
+    related_person_refs:
+      - person_wife
+    progress_percent: 0
+    tags:
+      - dermatology
+      - receipt
+      - insurance_claim
+      - 실비보험
+      - 미야
+      - errand
+    context:
+      - Miya needs a medical expense receipt from dermatology for a 실비보험 claim.
+    expected_outputs:
+      - Dermatology medical expense receipt collected.
+      - Receipt stored or handed over for insurance claim.
+    next_actions:
+      - Visit dermatology clinic in the afternoon.
+      - Ask for the 진료비 영수증 needed for Miya's 실비보험 claim.
+      - Keep the receipt somewhere safe until the claim is submitted.
+    evidence_refs:
+      - source_personal_admin_conversation_20260616_afternoon_eye_derm_receipt
+    confidence: high
+    needs_user_review: false
+
+planned_time_blocks:
+  - id: timeblock_20260616_afternoon_personal_health_admin_errands
+    date: 2026-06-16
+    start: null
+    end: null
+    area: MAINTENANCE
+    secondary_areas:
+      - BODY
+      - RELATION
+      - FINANCE
+    mode: planned_errands
+    project_ref: project_personal_life_admin
+    items:
+      - type: task
+        ref: task_personal_20260616_ophthalmology_stye_check
+        title: 다래끼 검진 겸 안과 방문
+        planned_minutes: null
+        actual_minutes: null
+        status: planned
+      - type: task
+        ref: task_personal_20260616_dermatology_receipt_for_miya_insurance
+        title: 미야 실비보험 청구용 피부과 진료비 영수증 받기
+        planned_minutes: null
+        actual_minutes: null
+        status: planned
+    source_ref: source_personal_admin_conversation_20260616_afternoon_eye_derm_receipt
+    confidence: high
+    needs_user_review: false
+
+task_status_updates:
+  - id: status_task_personal_ophthalmology_stye_20260616_planned
+    date: 2026-06-16
+    task_ref: task_personal_20260616_ophthalmology_stye_check
+    author_ref: person_brian
+    status: planned
+    progress_percent: 0
+    summary: Brian needs to visit ophthalmology in the afternoon for a stye check.
+    blockers: []
+    next_step: Visit ophthalmology clinic and record care instructions if important.
+    source_ref: source_personal_admin_conversation_20260616_afternoon_eye_derm_receipt
+
+  - id: status_task_personal_dermatology_receipt_miya_20260616_planned
+    date: 2026-06-16
+    task_ref: task_personal_20260616_dermatology_receipt_for_miya_insurance
+    author_ref: person_brian
+    status: planned
+    progress_percent: 0
+    summary: Brian needs to visit dermatology and collect Miya's medical expense receipt for a 실비보험 claim.
+    blockers: []
+    next_step: Get the dermatology 진료비 영수증 and keep it for the insurance claim.
+    source_ref: source_personal_admin_conversation_20260616_afternoon_eye_derm_receipt
+
+project_status_updates:
+  - id: project_status_personal_life_admin_20260616_afternoon_health_admin_errands
+    date: 2026-06-16
+    project_ref: project_personal_life_admin
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: Afternoon errands include Brian's ophthalmology stye check and a dermatology receipt pickup for Miya's 실비보험 claim.
+    next_step: Complete both clinic errands before they are crowded out by Milano work.
+    source_ref: source_personal_admin_conversation_20260616_afternoon_eye_derm_receipt

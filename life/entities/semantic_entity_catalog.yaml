@@ -602,6 +602,25 @@ entities:
       needs_user_review: false
       notes: Catch-all project for work sessions not yet mapped to a more specific project.
 
+    - id: project_personal_life_admin
+      object_type: Project
+      display_name: Personal life admin
+      area: MAINTENANCE
+      project_type: life_admin
+      aliases:
+        - 개인 행정
+        - 생활 관리
+        - 병원 일정
+        - 보험 청구
+        - 실비보험
+        - 영수증
+        - 안과
+        - 피부과
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-16
+      notes: Catch-all project for Brian's personal health/admin errands, family paperwork, receipts, and insurance claim tasks.
+
   components:
     - id: component_usb
       object_type: Component
