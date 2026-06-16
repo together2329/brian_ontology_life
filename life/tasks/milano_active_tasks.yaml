@@ -102,6 +102,17 @@ source_records:
       date: 2026-06-16
       time_of_day: morning
       precision: approximate
+  - id: source_milano_conversation_20260616_link0_wrapper_synthesis_meaningful_wns
+    source_type: chat
+    original_date: 2026-06-16
+    imported_at: 2026-06-16
+    parse_status: parsed
+    raw_text: "link0 wrapper는 이제 합성 진행중 WNS 1 정도 그래도 유의미한 결과가 나오는중"
+    interpreted_metrics:
+      wns_reported: "around 1"
+      unit: not_specified
+      sign: not_specified
+      interpretation: meaningful_user_reported_synthesis_result
 
 summary:
   recently_completed:
@@ -193,7 +204,7 @@ tasks:
     tracking_level: detailed
     project_ref: project_milano
     component_ref: component_milano_pcie
-    progress_percent: 70
+    progress_percent: 75
     tags:
       - milano
       - synthesis
@@ -215,6 +226,7 @@ tasks:
       - Result quality is still unknown until synthesis reports are reviewed.
       - As of 2026-06-16, SDC clean-up is one of today's primary Milano focus items.
       - On the morning of 2026-06-16, Brian cleaned up PD PCIe SDC errors by reading an unmapped file in farm DC.
+      - Link0 wrapper synthesis is now running and producing meaningful results, with Brian reporting WNS around 1.
     tooling_notes:
       - Cursor was useful for SDC porting, but needed examples and iteration.
       - Python scripting helped stabilize or automate parts of the SDC porting flow.
@@ -225,6 +237,7 @@ tasks:
       - synthesis log/report artifacts
     next_actions:
       - Validate whether the PD PCIe SDC error cleanup is reflected in the next synthesis or lint output.
+      - Track link0 wrapper synthesis to completion and capture the actual WNS/TNS/report path when available.
       - Wait for synthesis run completion.
       - Collect synthesis logs and reports.
       - Compare failures, warnings, and timing/synthesis report deltas.
@@ -241,6 +254,7 @@ tasks:
       - source_milano_conversation_20260614_sdc_firenze_gen7_phy_porting
       - source_milano_conversation_20260616_today_focus_sdc_interrupt_handler_lint
       - source_milano_conversation_20260616_morning_pd_pcie_sdc_error_cleanup
+      - source_milano_conversation_20260616_link0_wrapper_synthesis_meaningful_wns
     confidence: high
     needs_user_review: false
 
@@ -907,6 +921,21 @@ task_status_updates:
     next_step: Re-run or inspect synthesis/lint output to confirm the PD PCIe SDC error cleanup and capture exact artifact path if needed.
     source_ref: source_milano_conversation_20260616_morning_pd_pcie_sdc_error_cleanup
 
+  - id: status_task_milano_sdc_20260616_link0_wrapper_synthesis_meaningful
+    date: 2026-06-16
+    task_ref: task_milano_sdc_dual_profile_synth_rerun
+    author_ref: person_brian
+    status: in_progress
+    progress_percent: 75
+    summary: Link0 wrapper synthesis is now running and producing meaningful results; Brian reported WNS around 1.
+    blockers:
+      - Need the final synthesis report and exact WNS/TNS details before marking the SDC/synthesis path done.
+      - WNS unit/sign and report path are not yet recorded.
+    next_step: Wait for link0 wrapper synthesis completion, then capture final timing metrics and report artifact.
+    artifact_refs:
+      - artifact_milano_link0_wrapper_synthesis_run_20260616
+    source_ref: source_milano_conversation_20260616_link0_wrapper_synthesis_meaningful_wns
+
   - id: status_task_milano_port1_interrupt_20260616_today_focus
     date: 2026-06-16
     task_ref: task_milano_port1_interrupt_requirement
@@ -1040,6 +1069,21 @@ artifact_candidates:
     created_on: 2026-06-16
     status: used_for_cleanup
     notes: Brian cleaned up PD PCIe SDC errors by reading an unmapped file in farm DC; exact file path is not yet recorded.
+
+  - id: artifact_milano_link0_wrapper_synthesis_run_20260616
+    title: Link0 wrapper synthesis run
+    artifact_type: synthesis_run
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_sdc_dual_profile_synth_rerun
+    path_or_uri: null
+    created_on: 2026-06-16
+    status: running_meaningful_result
+    metrics:
+      wns_reported: "around 1"
+      unit: not_specified
+      sign: not_specified
+    notes: Link0 wrapper synthesis is running and Brian reports WNS around 1 with meaningful results emerging; exact report path and final metrics are not yet recorded.
 
   - id: artifact_milano_pdci_sdc_v1
     title: PDCI SDC v1
@@ -1238,6 +1282,20 @@ project_status_updates:
       - Confirm with the next synthesis or lint run that the PD PCIe SDC errors are gone.
     next_step: Validate the cleanup result, then continue with Port 1 interrupt requirement, Firenze handler reflection, and lint re-check.
     source_ref: source_milano_conversation_20260616_morning_pd_pcie_sdc_error_cleanup
+
+  - id: project_status_milano_20260616_link0_wrapper_synthesis_meaningful
+    date: 2026-06-16
+    project_ref: project_milano
+    author_ref: person_brian
+    status: in_progress
+    progress_percent: null
+    summary: Link0 wrapper synthesis is now running and producing meaningful timing results, with Brian reporting WNS around 1.
+    positive_signal: After SDC cleanup, link0 wrapper synthesis is yielding usable signal rather than only setup/error noise.
+    open_follow_up:
+      - Capture exact WNS/TNS units, sign, and final report path.
+      - Confirm whether the result is stable enough for ARIR and final synthesis decision-making.
+    next_step: Let the link0 wrapper synthesis finish, then record final timing/area/report artifacts.
+    source_ref: source_milano_conversation_20260616_link0_wrapper_synthesis_meaningful_wns
 
   - id: project_status_milano_20260615_cleanup_tasks_completed
     date: 2026-06-15
