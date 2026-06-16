@@ -5,7 +5,7 @@ area: CAREER
 project_ref: project_milano
 component_ref: component_milano_pcie
 title: Milano active task list
-current_phase: SDC cleanup, Firenze handler reflection, lint final check, Disparity Jira tracking, and final DB synthesis preparation
+current_phase: SDC cleanup, R001 IP Diff reflection, Firenze handler reflection, lint final check, Disparity Jira tracking, and final DB synthesis preparation
 source_records:
   - id: source_milano_conversation_20260614_current_tasks
     source_type: chat
@@ -171,6 +171,21 @@ source_records:
       implementation: Latch-related replacement was updated as a standard ICG cell.
       result: clear
       status: completed
+  - id: source_milano_conversation_20260616_r001_ip_diff_gray_cross_check
+    source_type: chat
+    original_date: 2026-06-16
+    imported_at: 2026-06-16
+    parse_status: parsed
+    raw_text: "R001 IP Diff core, link, link wrapper, ips 부분 반영 필요 그리고 모두 gray 영역 cross check 하기"
+    interpreted_task:
+      task_ref: task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
+      revision: R001
+      affected_blocks:
+        - core
+        - link
+        - link_wrapper
+        - ips
+      required_action: Reflect the R001 IP Diff in the affected blocks and cross-check all gray areas.
 
 summary:
   recently_completed:
@@ -182,6 +197,7 @@ summary:
     - 3nm synthesis rerun using two SDC profiles
     - ARIR area and instance count pre-check from synthesis results
     - lint re-check after new IP revision 0.1 integration
+    - R001 IP Diff reflection for core, link, link wrapper, and ips with gray-area cross-check
     - Firenze handler reflection check in Milano
     - final GEN7 PHY DB synthesis integration
     - Port 1 interrupt requirement deferred to the 2026-07-16 to 2026-08-16 window
@@ -193,6 +209,7 @@ summary:
     date: 2026-06-16
     primary_tasks:
       - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
       - task_milano_firenze_handler_reflection_check
       - task_milano_lint_ip_rev_0_1_rerun
     deferred_tasks:
@@ -201,6 +218,7 @@ summary:
     source_refs:
       - source_milano_conversation_20260616_today_focus_sdc_interrupt_handler_lint
       - source_milano_conversation_20260616_port1_requirement_deferred
+      - source_milano_conversation_20260616_r001_ip_diff_gray_cross_check
   open_questions:
     - id: oq_milano_gen7_phy_term
       question: "'제7파이'를 GEN7 PHY로 해석하는 것이 맞는지 확인 필요."
@@ -381,12 +399,14 @@ tasks:
       - New IP revision 0.1 must be reflected before trusting lint status.
       - After GEN7 merge, 박길봉 TL님 reported that the lint work was completed.
       - Brian is doing final confirmation before the lint task is marked complete.
+      - R001 IP Diff reflection for core, link, link wrapper, and ips may need to be included before final lint confidence is claimed.
     expected_outputs:
       - lint rerun report after IP rev 0.1
       - new violations list
       - waived or fixed issue list
     next_actions:
       - Complete Brian's final lint confirmation after 박길봉 TL님의 completion report.
+      - Check whether R001 IP Diff reflection and gray-area cross-check affect the final lint confirmation.
       - Capture lint report path, result summary, and remaining violation or waiver status.
       - If clean, mark the lint task completed.
       - If residual issues remain, classify them into fix, waive, or owner handoff.
@@ -394,6 +414,7 @@ tasks:
       - source_milano_conversation_20260614_current_tasks
       - source_milano_conversation_20260616_today_focus_sdc_interrupt_handler_lint
       - source_milano_conversation_20260616_gen7_merge_lint_complete_disparity_jira
+      - source_milano_conversation_20260616_r001_ip_diff_gray_cross_check
     confidence: high
     needs_user_review: false
 
@@ -765,6 +786,76 @@ tasks:
     confidence: high
     needs_user_review: false
 
+  - id: task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
+    title: R001 IP Diff core/link/link wrapper/ips 반영 및 gray 영역 cross-check
+    area: CAREER
+    status: todo
+    priority: high
+    energy: deep_work
+    estimated_minutes: null
+    due_date: null
+    tracking_level: detailed
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    progress_percent: 0
+    revision: R001
+    affected_blocks:
+      - core
+      - link
+      - link_wrapper
+      - ips
+    tags:
+      - milano
+      - r001
+      - ip_diff
+      - core
+      - link
+      - link_wrapper
+      - ips
+      - gray_area
+      - rtl_review
+      - cross_check
+    context:
+      - R001 IP Diff needs to be reflected in core, link, link wrapper, and ips.
+      - All gray or ambiguous areas from the diff need cross-check before the task is considered complete.
+      - This diff reflection should be resolved before relying on later lint, build, synthesis, or final DB confidence.
+    scope:
+      - Collect the R001 IP Diff source or change list.
+      - Split diff items by core, link, link wrapper, and ips.
+      - Apply or confirm the required diff items in each affected block.
+      - Identify every gray area where applicability, ownership, or behavior is unclear.
+      - Cross-check all gray areas against spec, prior implementation, owner guidance, or test/build evidence.
+      - Record any unresolved gray area as an Issue object if concrete evidence or ownership exists.
+    expected_outputs:
+      - R001 IP Diff source reference or artifact path.
+      - Per-block reflection checklist for core, link, link wrapper, and ips.
+      - Applied diff item list.
+      - Gray-area cross-check checklist.
+      - Unresolved issue list or explicit all-clear note.
+      - Follow-up lint/build/synthesis sanity result when available.
+    acceptance_criteria:
+      - All R001 diff items for core, link, link wrapper, and ips are classified as applied, already_reflected, not_applicable, or unresolved.
+      - Every gray area is cross-checked and has a recorded decision or follow-up owner.
+      - No unresolved gray area is hidden before final lint/build/synthesis confidence is claimed.
+      - Later lint/build/synthesis results are reviewed for symptoms caused by the R001 diff reflection.
+    blockers:
+      - Exact R001 IP Diff source path, CL, or artifact is not recorded yet.
+      - Exact gray-area list and decision criteria are not recorded yet.
+    next_actions:
+      - Locate or record the R001 IP Diff source path or CL.
+      - Create a per-block checklist for core, link, link wrapper, and ips.
+      - Apply or verify the required diff items block by block.
+      - List every gray area explicitly instead of keeping it implicit.
+      - Cross-check each gray area against available spec, previous project behavior, owner guidance, or validation evidence.
+      - After reflection, run or review lint/build/synthesis sanity output and record residual issues.
+    artifact_refs:
+      - artifact_milano_r001_ip_diff_source_20260616
+      - artifact_milano_r001_ip_diff_gray_cross_check_20260616
+    evidence_refs:
+      - source_milano_conversation_20260616_r001_ip_diff_gray_cross_check
+    confidence: high
+    needs_user_review: false
+
   - id: task_milano_disparity_error_injection_debug_followup
     title: Disparity Error Injection 미발생 이슈 디버깅 follow-up
     area: CAREER
@@ -812,6 +903,7 @@ tasks:
 
 recommended_execution_order:
   - task_milano_sdc_dual_profile_synth_rerun
+  - task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
   - task_milano_lint_ip_rev_0_1_rerun
   - task_milano_disparity_error_injection_debug_followup
   - task_milano_firenze_handler_reflection_check
@@ -1267,6 +1359,22 @@ task_status_updates:
       - artifact_milano_latch_std_icg_cell_replacement_20260616
     source_ref: source_milano_conversation_20260616_latch_std_icg_cell_clear
 
+  - id: status_task_milano_r001_ip_diff_20260616_added
+    date: 2026-06-16
+    task_ref: task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
+    author_ref: person_brian
+    status: todo
+    progress_percent: 0
+    summary: R001 IP Diff를 core, link, link wrapper, ips 부분에 반영하고 모든 gray 영역을 cross-check해야 한다.
+    blockers:
+      - Exact R001 IP Diff source path, CL, or artifact is not recorded yet.
+      - Gray-area item list and decision criteria are not recorded yet.
+    next_step: Locate the R001 IP Diff source, split it by core/link/link wrapper/ips, then build a gray-area cross-check checklist.
+    artifact_refs:
+      - artifact_milano_r001_ip_diff_source_20260616
+      - artifact_milano_r001_ip_diff_gray_cross_check_20260616
+    source_ref: source_milano_conversation_20260616_r001_ip_diff_gray_cross_check
+
 issues:
   - id: issue_firenze_mse0_pf_bar0_disabled
     project_ref: project_firenze
@@ -1388,6 +1496,33 @@ artifact_candidates:
     created_on: 2026-06-16
     status: completed_clear
     notes: Brian reported that latch was updated as a standard ICG cell and is clear; exact file path, instance list, and verification report are not recorded yet.
+
+  - id: artifact_milano_r001_ip_diff_source_20260616
+    title: R001 IP Diff source
+    artifact_type: ip_diff
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
+    path_or_uri: null
+    created_on: 2026-06-16
+    status: needed
+    notes: Source path, CL, or artifact for the R001 IP Diff is not recorded yet.
+
+  - id: artifact_milano_r001_ip_diff_gray_cross_check_20260616
+    title: R001 IP Diff gray-area cross-check checklist
+    artifact_type: review_checklist
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
+    path_or_uri: null
+    created_on: 2026-06-16
+    status: needed
+    scope:
+      - core
+      - link
+      - link_wrapper
+      - ips
+    notes: Checklist should capture all gray areas and cross-check decisions before final lint/build/synthesis confidence is claimed.
 
   - id: artifact_milano_pdci_sdc_v1
     title: PDCI SDC v1
@@ -1659,6 +1794,31 @@ project_status_updates:
     artifact_refs:
       - artifact_milano_latch_std_icg_cell_replacement_20260616
     source_ref: source_milano_conversation_20260616_latch_std_icg_cell_clear
+
+  - id: project_status_milano_20260616_r001_ip_diff_added
+    date: 2026-06-16
+    project_ref: project_milano
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: Added R001 IP Diff reflection work for core, link, link wrapper, and ips, including a requirement to cross-check all gray areas.
+    risk: R001 diff reflection may affect lint/build/synthesis confidence if gray areas are not explicitly checked.
+    priority_order:
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
+      - task_milano_lint_ip_rev_0_1_rerun
+      - task_milano_disparity_error_injection_debug_followup
+      - task_milano_firenze_handler_reflection_check
+    open_follow_up:
+      - Record the exact R001 IP Diff source path or CL.
+      - Build the per-block checklist for core, link, link wrapper, and ips.
+      - Explicitly list and resolve all gray areas.
+    related_task_refs:
+      - task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
+    artifact_refs:
+      - artifact_milano_r001_ip_diff_source_20260616
+      - artifact_milano_r001_ip_diff_gray_cross_check_20260616
+    source_ref: source_milano_conversation_20260616_r001_ip_diff_gray_cross_check
 
   - id: project_status_milano_20260615_cleanup_tasks_completed
     date: 2026-06-15
