@@ -45,6 +45,36 @@ source_records:
     participants:
       guide_ref: person_brian
       learner_ref: person_kim_sungah
+  - id: source_career_daily_20260616_codex_usage_guidance_rtl_design_members
+    source_type: chat
+    original_date: 2026-06-16
+    imported_at: 2026-06-16
+    parse_status: parsed
+    raw_text: "Codex 쓰는 것도 정리해서 알려줄꺼야"
+    target_audience: RTL design members
+    interpreted_scope:
+      topic: Codex usage guidance
+      status: planned
+      audience: 전체 RTL 설계 구성원
+  - id: source_career_daily_20260616_codex_usage_guidance_audience_correction
+    source_type: chat
+    original_date: 2026-06-16
+    imported_at: 2026-06-16
+    parse_status: parsed
+    raw_text: "아니 예정이라고 전체 RTL 설계 구성원 들에게 알려줄꺼야"
+    correction_of_ref: source_career_daily_20260616_codex_usage_guidance_rtl_design_members
+    interpreted_scope:
+      correction: Codex usage guidance is planned for all RTL design members, not specifically for 김성아 TL님.
+  - id: source_career_daily_20260616_codex_app_deep_dive_guidance_goal
+    source_type: chat
+    original_date: 2026-06-16
+    imported_at: 2026-06-16
+    parse_status: parsed
+    raw_text: "그래서 codex app 사용법 완전 해부해서 제대로 사용법 알려주고 싶어."
+    related_task_ref: task_career_20260616_codex_usage_guidance_rtl_design_members
+    interpreted_scope:
+      topic: Codex app usage deep dive
+      quality_goal: Brian wants to deeply analyze the Codex app and explain proper usage, not just announce that guidance is planned.
 
 tasks:
   - id: task_career_20260616_cursor_csr_guidance_kim_sungah
@@ -79,6 +109,49 @@ tasks:
       - After the session, record whether it was completed and whether any reusable prompt/example should be saved.
     evidence_refs:
       - source_career_daily_20260616_cursor_csr_guidance_kim_sungah
+    confidence: high
+    needs_user_review: false
+
+  - id: task_career_20260616_codex_usage_guidance_rtl_design_members
+    title: 전체 RTL 설계 구성원 대상 Codex app 사용법 해부 및 안내 준비
+    area: CAREER
+    status: planned
+    priority: medium
+    energy: communication
+    estimated_minutes: null
+    due_date: null
+    tracking_level: lightweight
+    project_ref: project_work_general
+    related_project_refs:
+      - project_ai_agent
+    owner_ref: person_brian
+    target_audience: RTL design members
+    tags:
+      - codex
+      - codex_app
+      - rtl
+      - ai_enablement
+      - work_guidance
+      - rollout
+    context:
+      - Brian plans to organize Codex usage guidance.
+      - Brian clarified the intended audience is all RTL design members, not only 김성아 TL님.
+      - Brian wants to deeply analyze the Codex app so he can explain proper usage, not just provide a shallow announcement.
+      - This connects to Brian's broader role in helping others adopt Codex at work.
+    expected_outputs:
+      - 전체 RTL 설계 구성원이 Codex 사용법 안내가 예정되어 있음을 알게 된다.
+      - Brian has a compact practical Codex app usage explanation ready for RTL designers.
+      - The guidance covers concrete usage flow, suitable use cases, limitations, mistakes to avoid, and RTL/design-task examples.
+      - The guidance can later connect to the broader Codex rollout/support material.
+    next_actions:
+      - Notify the RTL design members that Codex usage guidance is planned.
+      - Deeply inspect and organize Codex app usage into a compact practical workflow for RTL designers.
+      - Ground the guidance in official/current Codex behavior and Brian's local workflow examples before presenting it.
+      - Later record the actual guidance time, audience, and reusable examples when it happens.
+    evidence_refs:
+      - source_career_daily_20260616_codex_usage_guidance_rtl_design_members
+      - source_career_daily_20260616_codex_usage_guidance_audience_correction
+      - source_career_daily_20260616_codex_app_deep_dive_guidance_goal
     confidence: high
     needs_user_review: false
 
