@@ -5,7 +5,7 @@ area: CAREER
 project_ref: project_milano
 component_ref: component_milano_pcie
 title: Milano active task list
-current_phase: SDC cleanup, R001 IP Diff reflection, Firenze handler reflection, lint final check, Disparity Jira tracking, and final DB synthesis preparation
+current_phase: SDC cleanup, R001 IP Diff reflection, compile/lint/simulation release readiness, Firenze handler reflection, lint final check, Disparity Jira tracking, and final DB synthesis preparation
 source_records:
   - id: source_milano_conversation_20260614_current_tasks
     source_type: chat
@@ -204,6 +204,26 @@ source_records:
     interpreted_risk:
       task_ref: task_milano_audit_missed_brian_owned_followups_common_module_etc
       summary: Brian noticed there may have been Brian-owned follow-up work, including around common module, that he had not been handling.
+  - id: source_milano_conversation_20260616_2238_compile_pass_lint_sim_running_release_tomorrow
+    source_type: chat
+    original_date: 2026-06-16
+    imported_at: 2026-06-16
+    parse_status: parsed
+    raw_text: "22:38 compile은 pass 한다. lint 돌리는 중. simulation 도 돌리는 중. 내일 lint 좀 보고 릴리즈 해야 겠다."
+    interpreted_time:
+      date: 2026-06-16
+      time: "22:38"
+      time_of_day: late_night
+      precision: exact_user_reported
+    interpreted_release_state:
+      compile:
+        status: pass
+      lint:
+        status: running
+      simulation:
+        status: running
+      planned_release_review_date: 2026-06-17
+      next_step: Review lint tomorrow before release.
 
 summary:
   recently_completed:
@@ -217,6 +237,7 @@ summary:
     - lint re-check after new IP revision 0.1 integration
     - R001 IP Diff reflection for core, link, link wrapper, and ips with gray-area cross-check
     - Late-night audit of possible Brian-owned follow-ups that may have been missed, including common module-related items
+    - Compile passed at 22:38; lint and simulation are running; release is planned after lint review on 2026-06-17
     - Firenze handler reflection check in Milano
     - final GEN7 PHY DB synthesis integration
     - Port 1 interrupt requirement deferred to the 2026-07-16 to 2026-08-16 window
@@ -230,6 +251,7 @@ summary:
       - task_milano_sdc_dual_profile_synth_rerun
       - task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
       - task_milano_audit_missed_brian_owned_followups_common_module_etc
+      - task_milano_release_readiness_compile_lint_sim_20260617
       - task_milano_firenze_handler_reflection_check
       - task_milano_lint_ip_rev_0_1_rerun
     deferred_tasks:
@@ -240,6 +262,7 @@ summary:
       - source_milano_conversation_20260616_port1_requirement_deferred
       - source_milano_conversation_20260616_r001_ip_diff_gray_cross_check
       - source_milano_conversation_20260616_late_night_tired_missed_brian_owned_followups
+      - source_milano_conversation_20260616_2238_compile_pass_lint_sim_running_release_tomorrow
   open_questions:
     - id: oq_milano_gen7_phy_term
       question: "'제7파이'를 GEN7 PHY로 해석하는 것이 맞는지 확인 필요."
@@ -401,7 +424,7 @@ tasks:
   - id: task_milano_lint_ip_rev_0_1_rerun
     title: 신규 IP revision 0.1 반영 후 lint 재확인
     area: CAREER
-    status: in_review
+    status: in_progress
     priority: high
     energy: deep_work
     estimated_minutes: null
@@ -409,7 +432,7 @@ tasks:
     tracking_level: detailed
     project_ref: project_milano
     component_ref: component_milano_pcie
-    progress_percent: 85
+    progress_percent: 90
     tags:
       - milano
       - lint
@@ -422,11 +445,14 @@ tasks:
       - Brian is doing final confirmation before the lint task is marked complete.
       - R001 IP Diff reflection for core, link, link wrapper, and ips may need to be included before final lint confidence is claimed.
       - Brian later noticed possible missed Brian-owned follow-ups around common module and related work; this audit should be considered before closing lint confidence.
+      - At 22:38 on 2026-06-16, compile passed and lint was running; Brian plans to review lint on 2026-06-17 before release.
     expected_outputs:
       - lint rerun report after IP rev 0.1
       - new violations list
       - waived or fixed issue list
     next_actions:
+      - Let the current lint run finish.
+      - Review lint result on 2026-06-17 before release.
       - Complete Brian's final lint confirmation after 박길봉 TL님의 completion report.
       - Check whether R001 IP Diff reflection and gray-area cross-check affect the final lint confirmation.
       - Check whether the Brian-owned missed-followup audit exposes any common module or integration item that affects lint closure.
@@ -439,6 +465,7 @@ tasks:
       - source_milano_conversation_20260616_gen7_merge_lint_complete_disparity_jira
       - source_milano_conversation_20260616_r001_ip_diff_gray_cross_check
       - source_milano_conversation_20260616_late_night_tired_missed_brian_owned_followups
+      - source_milano_conversation_20260616_2238_compile_pass_lint_sim_running_release_tomorrow
     confidence: high
     needs_user_review: false
 
@@ -941,6 +968,84 @@ tasks:
     confidence: high
     needs_user_review: false
 
+  - id: task_milano_release_readiness_compile_lint_sim_20260617
+    title: Compile/Lint/Simulation 확인 후 Milano release
+    area: CAREER
+    status: in_progress
+    priority: high
+    energy: review
+    estimated_minutes: null
+    due_date: 2026-06-17
+    tracking_level: detailed
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    progress_percent: 60
+    owner_ref: person_brian
+    related_task_refs:
+      - task_milano_lint_ip_rev_0_1_rerun
+      - task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
+      - task_milano_audit_missed_brian_owned_followups_common_module_etc
+      - task_milano_gen7_phy_db_synthesis
+    tags:
+      - milano
+      - release
+      - compile
+      - lint
+      - simulation
+      - release_readiness
+      - late_night
+    release_gate_state:
+      compile:
+        status: pass
+        checked_at: "22:38"
+        date: 2026-06-16
+        artifact_ref: artifact_milano_compile_run_20260616_2238
+      lint:
+        status: running
+        checked_at: "22:38"
+        date: 2026-06-16
+        artifact_ref: artifact_milano_lint_run_20260616_2238
+      simulation:
+        status: running
+        checked_at: "22:38"
+        date: 2026-06-16
+        artifact_ref: artifact_milano_simulation_run_20260616_2238
+      planned_release_review_date: 2026-06-17
+    context:
+      - At 22:38 on 2026-06-16, compile passed.
+      - Lint was running.
+      - Simulation was running.
+      - Brian plans to review lint on 2026-06-17 and release if gates are acceptable.
+    expected_outputs:
+      - Compile pass evidence.
+      - Lint report reviewed on 2026-06-17.
+      - Simulation result reviewed.
+      - Release artifact, tag, note, or handoff record.
+    acceptance_criteria:
+      - Compile remains passing.
+      - Lint result is reviewed and residual issues are either clean, waived, or explicitly tracked.
+      - Simulation result is reviewed and any failures are tracked before release.
+      - R001 diff and missed-followup audit do not leave unresolved release blockers.
+    blockers:
+      - Lint result is still running and not reviewed.
+      - Simulation result is still running and not reviewed.
+      - Release artifact/path/version is not recorded yet.
+    next_actions:
+      - Let lint and simulation finish.
+      - On 2026-06-17, review lint result first.
+      - Review simulation result before release.
+      - Check whether R001 diff reflection or missed follow-up audit creates any release blocker.
+      - If gates are acceptable, perform release and record release artifact/path/version.
+    artifact_refs:
+      - artifact_milano_compile_run_20260616_2238
+      - artifact_milano_lint_run_20260616_2238
+      - artifact_milano_simulation_run_20260616_2238
+      - artifact_milano_release_candidate_20260617
+    evidence_refs:
+      - source_milano_conversation_20260616_2238_compile_pass_lint_sim_running_release_tomorrow
+    confidence: high
+    needs_user_review: false
+
   - id: task_milano_disparity_error_injection_debug_followup
     title: Disparity Error Injection 미발생 이슈 디버깅 follow-up
     area: CAREER
@@ -991,6 +1096,7 @@ recommended_execution_order:
   - task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
   - task_milano_audit_missed_brian_owned_followups_common_module_etc
   - task_milano_lint_ip_rev_0_1_rerun
+  - task_milano_release_readiness_compile_lint_sim_20260617
   - task_milano_disparity_error_injection_debug_followup
   - task_milano_firenze_handler_reflection_check
   - task_milano_mse_pf_bar0_overlap_guard
@@ -1099,6 +1205,36 @@ work_sessions:
       - Re-check the list with fresher energy before closing lint or final synthesis confidence.
       - Convert concrete missed items into tasks, issues, or artifact refs.
     source_ref: source_milano_conversation_20260616_late_night_tired_missed_brian_owned_followups
+
+  - id: worksession_20260616_2238_milano_compile_lint_sim_release_readiness
+    date: 2026-06-16
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    start: "22:38"
+    end: null
+    actual_minutes: null
+    time_quality: checkpoint
+    task_refs:
+      - task_milano_release_readiness_compile_lint_sim_20260617
+      - task_milano_lint_ip_rev_0_1_rerun
+      - task_milano_gen7_phy_db_synthesis
+    focus_level: release_readiness_checkpoint
+    summary: Compile passed at 22:38; lint and simulation were running, and Brian planned to review lint on 2026-06-17 before release.
+    findings:
+      - Compile passed.
+      - Lint was running.
+      - Simulation was running.
+      - Release is planned after lint review on 2026-06-17 if gates are acceptable.
+    next_steps:
+      - Let lint and simulation finish.
+      - Review lint first on 2026-06-17.
+      - Review simulation result and release only if blockers are acceptable or explicitly tracked.
+    artifact_refs:
+      - artifact_milano_compile_run_20260616_2238
+      - artifact_milano_lint_run_20260616_2238
+      - artifact_milano_simulation_run_20260616_2238
+      - artifact_milano_release_candidate_20260617
+    source_ref: source_milano_conversation_20260616_2238_compile_pass_lint_sim_running_release_tomorrow
 
   - id: worksession_20260614_milano_multi_task_progress
     date: 2026-06-14
@@ -1398,6 +1534,40 @@ task_status_updates:
       - person_park_gilbong
     source_ref: source_milano_conversation_20260616_gen7_merge_lint_complete_disparity_jira
 
+  - id: status_task_milano_lint_20260616_running_for_release
+    date: 2026-06-16
+    task_ref: task_milano_lint_ip_rev_0_1_rerun
+    author_ref: person_brian
+    status: in_progress
+    progress_percent: 90
+    summary: At 22:38 compile passed and lint was running; Brian plans to review lint on 2026-06-17 before release.
+    blockers:
+      - Lint result is not reviewed yet.
+      - Any residual lint issue must be clean, waived, or tracked before release.
+    next_step: Review lint report on 2026-06-17, then decide release readiness.
+    artifact_refs:
+      - artifact_milano_lint_run_20260616_2238
+    source_ref: source_milano_conversation_20260616_2238_compile_pass_lint_sim_running_release_tomorrow
+
+  - id: status_task_milano_release_readiness_20260616_compile_pass_lint_sim_running
+    date: 2026-06-16
+    task_ref: task_milano_release_readiness_compile_lint_sim_20260617
+    author_ref: person_brian
+    status: in_progress
+    progress_percent: 60
+    summary: Compile passed at 22:38; lint and simulation are running; Brian plans to review lint on 2026-06-17 and release if gates are acceptable.
+    blockers:
+      - Lint result is still running and not reviewed.
+      - Simulation result is still running and not reviewed.
+      - Release artifact/path/version is not recorded yet.
+    next_step: Let lint and simulation finish, review lint tomorrow, review simulation, then release if no blocker remains.
+    artifact_refs:
+      - artifact_milano_compile_run_20260616_2238
+      - artifact_milano_lint_run_20260616_2238
+      - artifact_milano_simulation_run_20260616_2238
+      - artifact_milano_release_candidate_20260617
+    source_ref: source_milano_conversation_20260616_2238_compile_pass_lint_sim_running_release_tomorrow
+
   - id: status_task_milano_mse_pf_bar0_20260615_added
     date: 2026-06-15
     task_ref: task_milano_mse_pf_bar0_overlap_guard
@@ -1653,6 +1823,60 @@ artifact_candidates:
       - link_wrapper
       - ips
     notes: Checklist should capture all gray areas and cross-check decisions before final lint/build/synthesis confidence is claimed.
+
+  - id: artifact_milano_compile_run_20260616_2238
+    title: Milano compile run at 22:38
+    artifact_type: compile_run
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_release_readiness_compile_lint_sim_20260617
+    path_or_uri: null
+    created_on: 2026-06-16
+    status: pass
+    result: pass
+    checked_at: "22:38"
+    notes: Compile passed at 22:38; exact log/report path is not recorded yet.
+
+  - id: artifact_milano_lint_run_20260616_2238
+    title: Milano lint run at 22:38
+    artifact_type: lint_run
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_lint_ip_rev_0_1_rerun
+    path_or_uri: null
+    created_on: 2026-06-16
+    status: running
+    checked_at: "22:38"
+    planned_review_date: 2026-06-17
+    notes: Lint was running at 22:38; Brian plans to review it on 2026-06-17 before release.
+
+  - id: artifact_milano_simulation_run_20260616_2238
+    title: Milano simulation run at 22:38
+    artifact_type: simulation_run
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_release_readiness_compile_lint_sim_20260617
+    path_or_uri: null
+    created_on: 2026-06-16
+    status: running
+    checked_at: "22:38"
+    planned_review_date: 2026-06-17
+    notes: Simulation was running at 22:38; result and log/report path are not recorded yet.
+
+  - id: artifact_milano_release_candidate_20260617
+    title: Milano release candidate after lint review
+    artifact_type: release_candidate
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_release_readiness_compile_lint_sim_20260617
+    path_or_uri: null
+    created_on: 2026-06-17
+    status: planned_after_lint_review
+    gating_artifact_refs:
+      - artifact_milano_compile_run_20260616_2238
+      - artifact_milano_lint_run_20260616_2238
+      - artifact_milano_simulation_run_20260616_2238
+    notes: Release is planned after Brian reviews lint on 2026-06-17 and confirms simulation/release gates are acceptable.
 
   - id: artifact_milano_pdci_sdc_v1
     title: PDCI SDC v1
@@ -1975,6 +2199,35 @@ project_status_updates:
       - task_milano_common_module_replacement
       - task_milano_lint_ip_rev_0_1_rerun
     source_ref: source_milano_conversation_20260616_late_night_tired_missed_brian_owned_followups
+
+  - id: project_status_milano_20260616_compile_pass_lint_sim_running_release_tomorrow
+    date: 2026-06-16
+    project_ref: project_milano
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: Compile passed at 22:38; lint and simulation are running; Brian plans to review lint on 2026-06-17 and release if gates are acceptable.
+    positive_signal: Compile pass means the release path has a concrete green gate.
+    blockers:
+      - Lint result pending.
+      - Simulation result pending.
+      - Release artifact/version/path not recorded yet.
+    priority_order:
+      - task_milano_lint_ip_rev_0_1_rerun
+      - task_milano_release_readiness_compile_lint_sim_20260617
+      - task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
+      - task_milano_audit_missed_brian_owned_followups_common_module_etc
+    next_step: Review lint first on 2026-06-17, then simulation, then release if no blocker remains.
+    related_task_refs:
+      - task_milano_release_readiness_compile_lint_sim_20260617
+      - task_milano_lint_ip_rev_0_1_rerun
+      - task_milano_gen7_phy_db_synthesis
+    artifact_refs:
+      - artifact_milano_compile_run_20260616_2238
+      - artifact_milano_lint_run_20260616_2238
+      - artifact_milano_simulation_run_20260616_2238
+      - artifact_milano_release_candidate_20260617
+    source_ref: source_milano_conversation_20260616_2238_compile_pass_lint_sim_running_release_tomorrow
 
   - id: project_status_milano_20260615_cleanup_tasks_completed
     date: 2026-06-15
