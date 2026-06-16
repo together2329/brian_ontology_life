@@ -1,5 +1,5 @@
 schema_version: 1
-updated_at: 2026-06-16
+updated_at: 2026-06-17
 profile_ref: person_brian
 area: BODY
 
@@ -455,13 +455,13 @@ meal_records:
     needs_user_review: false
     notes: Protein yogurt consumed at about 19:21 after the lower-body workout day.
 
-  - id: meal_20260617_planned_breakfast_soymilk_egg_broccoli_ricecake
+  - id: meal_20260615_breakfast_soymilk_egg_broccoli_pack
     object_type: Meal
-    date: 2026-06-17
+    date: 2026-06-15
     time: null
     area: BODY
     meal_type: breakfast
-    status: planned
+    status: completed
     items:
       - name: 두유
         amount: 1
@@ -477,9 +477,9 @@ meal_records:
         protein_g: null
         carbs_g: null
         fat_g: null
-      - name: 브로콜리 떡
+      - name: 브로콜리 팩
         amount: 1
-        unit: piece
+        unit: pack
         calories: null
         protein_g: null
         carbs_g: null
@@ -489,9 +489,9 @@ meal_records:
     related_nutrition_target_ref: protein_target_20260615
     protein_g_total: null
     protein_g_estimate_range: [10, 20]
-    confidence: low
-    needs_user_review: true
-    notes: Planned breakfast interpreted from Brian's wording "먹기"; date assumed to be the next morning after the 2026-06-16 afternoon context.
+    confidence: medium
+    needs_user_review: false
+    notes: Corrected from a wrongly interpreted 2026-06-17 planned breakfast; Brian clarified this was eaten on the morning of 2026-06-15.
 
   - id: meal_20260615_post_workout_the_danbaek_melon
     object_type: Meal
@@ -646,6 +646,31 @@ meal_records:
     needs_user_review: true
     notes: Dinner record. Protein estimate depends on hamburger patty size and protein yogurt product.
 
+  - id: meal_20260615_late_night_protein_30g
+    object_type: Meal
+    date: 2026-06-15
+    time: null
+    time_of_day: night
+    area: BODY
+    meal_type: late_night_protein
+    status: completed
+    items:
+      - name: 프로틴
+        amount: 1
+        unit: serving
+        calories: null
+        protein_g: 30
+        carbs_g: null
+        fat_g: null
+    supplements: []
+    related_workout: null
+    related_nutrition_target_ref: protein_target_20260615
+    protein_g_total: 30
+    protein_g_estimate_range: null
+    confidence: high
+    needs_user_review: false
+    notes: Brian clarified an additional 30g protein intake at night on 2026-06-15.
+
 sleep_records:
   - id: sleep_20260616_post_lower_body_workout_recovery_nap
     object_type: SleepRecord
@@ -762,9 +787,18 @@ raw_records:
     related_workout: workoutsession_20260616_lower_body_hard
     related_meal: meal_20260616_1921_protein_yogurt
     text: "방금프로틴 요거트 15g 먹음."
-  - id: raw_body_record_20260616_next_morning_breakfast_plan
-    date: 2026-06-16
+  - id: raw_body_record_20260615_breakfast_soymilk_egg_broccoli_pack
+    date: 2026-06-15
     time: null
+    time_of_day: morning
     source: codex_conversation
-    related_meal: meal_20260617_planned_breakfast_soymilk_egg_broccoli_ricecake
-    text: "아침에 두유 1개, 계란 한개, 브로콜리 떡 한개 먹기"
+    related_meal: meal_20260615_breakfast_soymilk_egg_broccoli_pack
+    text: "아침에 두유 1개, 계란 한개, 브로콜리 팩 한개 먹음"
+    correction_note: Brian clarified this was about the morning of 2026-06-15, not a 2026-06-17 planned breakfast.
+  - id: raw_body_record_20260615_late_night_protein_30g
+    date: 2026-06-15
+    time: null
+    time_of_day: night
+    source: codex_conversation
+    related_meal: meal_20260615_late_night_protein_30g
+    text: "0615 - 아침이었고, 밤에 프로틴 30g 추가 섭취."
