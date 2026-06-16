@@ -407,6 +407,68 @@ meal_records:
     needs_user_review: true
     notes: Brian ate 닭곰탕 from 13:00 to 13:20 after a hard lower-body workout and a recovery nap; he described it as tasty.
 
+  - id: meal_20260616_1500_profit_selex_protein
+    object_type: Meal
+    date: 2026-06-16
+    time: "15:00"
+    area: BODY
+    meal_type: afternoon_protein
+    status: completed
+    items:
+      - name: 프로핏 셀렉스
+        amount: 1
+        unit: serving
+        calories: null
+        protein_g: 20
+        carbs_g: null
+        fat_g: null
+    supplements: []
+    related_workout: workoutsession_20260616_lower_body_hard
+    related_nutrition_target_ref: protein_target_20260615
+    protein_g_total: 20
+    protein_g_estimate_range: null
+    confidence: high
+    needs_user_review: false
+    notes: Protein supplement consumed at 15:00 after the hard lower-body workout day.
+
+  - id: meal_20260617_planned_breakfast_soymilk_egg_broccoli_ricecake
+    object_type: Meal
+    date: 2026-06-17
+    time: null
+    area: BODY
+    meal_type: breakfast
+    status: planned
+    items:
+      - name: 두유
+        amount: 1
+        unit: pack
+        calories: null
+        protein_g: null
+        carbs_g: null
+        fat_g: null
+      - name: 계란
+        amount: 1
+        unit: egg
+        calories: null
+        protein_g: null
+        carbs_g: null
+        fat_g: null
+      - name: 브로콜리 떡
+        amount: 1
+        unit: piece
+        calories: null
+        protein_g: null
+        carbs_g: null
+        fat_g: null
+    supplements: []
+    related_workout: null
+    related_nutrition_target_ref: protein_target_20260615
+    protein_g_total: null
+    protein_g_estimate_range: [10, 20]
+    confidence: low
+    needs_user_review: true
+    notes: Planned breakfast interpreted from Brian's wording "먹기"; date assumed to be the next morning after the 2026-06-16 afternoon context.
+
   - id: meal_20260615_post_workout_the_danbaek_melon
     object_type: Meal
     date: 2026-06-15
@@ -663,3 +725,15 @@ raw_records:
     source: codex_conversation
     related_workout: workoutsession_20260616_lower_body_hard
     text: "레그 프레스는 80kg 로 1세트 몸풀고, 160kg로 1세트 하고, 120으로 세트 마무리"
+  - id: raw_body_record_20260616_1500_profit_selex_protein
+    date: 2026-06-16
+    time: "15:00"
+    source: codex_conversation
+    related_workout: workoutsession_20260616_lower_body_hard
+    text: "3시에 프로핏 셀렉스 20g 단백질 섭취 :)"
+  - id: raw_body_record_20260616_next_morning_breakfast_plan
+    date: 2026-06-16
+    time: null
+    source: codex_conversation
+    related_meal: meal_20260617_planned_breakfast_soymilk_egg_broccoli_ricecake
+    text: "아침에 두유 1개, 계란 한개, 브로콜리 떡 한개 먹기"
