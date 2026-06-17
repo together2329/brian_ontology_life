@@ -184,6 +184,32 @@ source_records:
       - task_ai_agent_codex_ontology_development_plugin
       - task_ai_agent_codex_seminar_prepare
       - task_ai_agent_company_codex_rollout_support
+  - id: source_ai_agent_conversation_20260617_soc_on_ontology_direction
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "결국 우리가 나아가면 좋을 방향. Ontology 위에 SoC :)"
+    interpreted_design_direction:
+      assumed_soc_meaning: System-on-Chip
+      topic: SoC-on-ontology hardware IP agent direction
+      statement: The target direction is to build SoC-level structure and reasoning on top of the ontology layer.
+      related_scope:
+        - SoC
+        - subsystem
+        - IP block
+        - interface
+        - requirement
+        - integration
+        - verification
+        - evidence
+        - owner
+        - decision
+      needs_user_review: false
+    related_task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
 
 summary:
   current_state:
@@ -208,6 +234,7 @@ summary:
     - The planned Codex seminar package includes rule distribution, skill distribution, a demo, and guide document distribution.
     - Codex has a two-month unlimited-use period; the exact start date and operational scope still need confirmation.
     - Brian identified that subsystem-level ontology should be improved for the hardware IP agent direction.
+    - Brian further clarified the longer-term direction as SoC on top of ontology: SoC-level structure and reasoning should be built above the ontology layer.
     - The active local implementation repo is /Users/brian/Desktop/Project/ontology_ip_agent.
     - ontology_ip_agent is a .codex-first OAG test pack with hardware IP examples and ontology/knowledge ledger workflows.
   active_threads:
@@ -220,6 +247,7 @@ summary:
     - company Codex adoption support preparation
     - next-week Codex seminar package with rules, skills, demo, and guide docs
     - subsystem-level ontology improvement for hardware IP workflows
+    - SoC-on-ontology hardware IP agent direction
     - Brian's personal ontology-backed life agent development
     - ontology_ip_agent development as the concrete OAG/Codex hardware IP agent implementation
     - ontology-first conversation memory for Brian's evolving knowledge interests
@@ -264,6 +292,10 @@ summary:
       needs_user_review: true
     - id: oq_ai_agent_subsystem_ontology_scope
       question: "Define the first subsystem-level ontology slice: subsystem, IP block, interface, requirement, integration point, verification case, evidence, or owner model."
+      related_task_ref: task_ai_agent_codex_ontology_development_plugin
+      needs_user_review: true
+    - id: oq_ai_agent_soc_on_ontology_first_slice
+      question: "Define the first SoC-on-ontology demo slice: which SoC/subsystem/IP/interface/requirement path should become the concrete example?"
       related_task_ref: task_ai_agent_codex_ontology_development_plugin
       needs_user_review: true
     - id: oq_ai_agent_okf_export_scope
@@ -425,6 +457,7 @@ tasks:
       - Server integration and many-user usage exposed design gaps.
       - Missed executive/division-head demos created pressure and showed the need for a reliable demo slice.
       - On 2026-06-17, Brian identified subsystem-level ontology as a key improvement area for the hardware IP agent.
+      - On 2026-06-17, Brian clarified the broader destination as SoC on top of ontology.
     expected_outputs:
       - Codex-compatible ontology development plugin
       - explicit ontology object and link model for development workflows
@@ -432,6 +465,7 @@ tasks:
       - evidence/decision ledger for implementation progress and demo readiness
       - small reliable demo path before broader rollout
       - subsystem-level ontology model covering subsystem, IP block, interface, requirement, integration, verification, evidence, and owner links
+      - SoC-level ontology layer that connects SoC intent to subsystem/IP/interface requirements, implementation tasks, verification evidence, owners, and decisions
     next_actions:
       - Define the minimum ontology object model needed for a real development plugin.
       - Separate TODO execution state from ontology truth, evidence, and decision records.
@@ -439,11 +473,13 @@ tasks:
       - Choose one narrow vertical slice that can run reliably end to end.
       - Use the common_ai_agent history to decide what to preserve and what to replace with Codex-native/plugin-native behavior.
       - Define the first subsystem-level ontology slice and use it as the seminar/demo ontology story.
+      - Define one SoC-on-ontology slice that traces from SoC-level intent to concrete IP work and evidence.
     evidence_refs:
       - source_ai_agent_conversation_20260614_server_multiuser_demo_ontology_turning_point
       - source_ai_agent_conversation_20260614_ontology_ip_agent_repo
       - source_ai_agent_local_repo_inspection_20260614_ontology_ip_agent
       - source_ai_agent_conversation_20260617_subsystem_level_ontology_need
+      - source_ai_agent_conversation_20260617_soc_on_ontology_direction
     confidence: high
     needs_user_review: false
 
@@ -484,6 +520,7 @@ tasks:
       - Brian expects to distribute rules, skills, a demo, and guide documents.
       - A two-month unlimited-use period is expected, but the exact start date and scope need confirmation.
       - The seminar should explain why subsystem-level ontology matters for hardware IP workflows.
+      - "The stronger seminar story is SoC on top of ontology: ontology as semantic substrate, SoC-level workflow/reasoning above it."
     expected_outputs:
       - Codex seminar outline
       - comparison of Cursor workflow and Codex workflow
@@ -495,6 +532,7 @@ tasks:
       - reliable demo script and fallback path
       - guide document for the two-month unlimited-use period
       - subsystem-level ontology explanation and example slice
+      - SoC-on-ontology explanation that connects SoC, subsystem, IP, interface, requirement, verification, evidence, owner, and decision objects
     next_actions:
       - Write down what worked in the 2026-06-12 Cursor seminar.
       - Decide whether the Codex seminar should focus on usage, workflow design, hardware IP examples, or ontology-backed development.
@@ -505,11 +543,13 @@ tasks:
       - Prepare one reliable demo path and one backup demo path.
       - Draft the guide document around practical first-week usage and the two-month unlimited-use window.
       - Choose a subsystem-level ontology demo slice that is concrete enough for RTL/IP engineers.
+      - Frame the demo as a narrow SoC-on-ontology path rather than a broad product demo.
     evidence_refs:
       - source_ai_agent_conversation_20260614_cursor_seminar_success_codex_planned
       - source_ai_agent_conversation_20260617_codex_next_week_seminar_demo_guide
       - source_ai_agent_conversation_20260617_codex_two_month_unlimited_use
       - source_ai_agent_conversation_20260617_subsystem_level_ontology_need
+      - source_ai_agent_conversation_20260617_soc_on_ontology_direction
     confidence: high
     needs_user_review: true
 
@@ -620,6 +660,7 @@ tasks:
       - Next-week seminar deliverables now include rule/skill distribution, a demo, and guide document distribution.
       - The rollout/support framing should account for a two-month unlimited-use period.
       - Subsystem-level ontology should be elevated so hardware/IP users see how Codex workflows connect across requirements, RTL, verification, evidence, and ownership.
+      - "SoC-on-ontology should be the long-term framing: users should see that Codex workflows can connect SoC intent down to IP-level evidence and decisions."
     expected_outputs:
       - support checklist for early Codex users
       - examples of effective Codex workflows
@@ -629,6 +670,7 @@ tasks:
       - participant rule pack and skill pack
       - guide document for two-month unlimited-use period
       - subsystem-level ontology demo showing connected IP workflow objects
+      - SoC-on-ontology demo story that is narrow enough for onboarding but expressive enough to show the target architecture
     next_actions:
       - "Identify what coworkers will need first: setup, prompt patterns, repo workflow, review workflow, or automation examples."
       - Convert current common_ai_agent porting lessons into short internal examples.
@@ -637,6 +679,7 @@ tasks:
       - Track repeated questions from coworkers as future agent/tooling requirements.
       - "Define how users should spend the two-month unlimited-use period: first week setup, second week real task adoption, later weeks repeatable workflow capture."
       - Convert subsystem-level ontology into one practical demo story for hardware/IP engineers.
+      - Convert the SoC-on-ontology direction into a first concrete example path that can be explained to RTL/IP engineers.
     evidence_refs:
       - source_ai_agent_conversation_20260614_fun_codex_porting_rollout
       - source_ai_agent_conversation_20260614_ontology_ip_agent_repo
@@ -644,6 +687,7 @@ tasks:
       - source_ai_agent_conversation_20260617_codex_next_week_seminar_demo_guide
       - source_ai_agent_conversation_20260617_codex_two_month_unlimited_use
       - source_ai_agent_conversation_20260617_subsystem_level_ontology_need
+      - source_ai_agent_conversation_20260617_soc_on_ontology_direction
     confidence: medium
     needs_user_review: true
 
@@ -954,3 +998,22 @@ project_status_updates:
       - task_ai_agent_codex_seminar_prepare
       - task_ai_agent_company_codex_rollout_support
     source_ref: source_ai_agent_conversation_20260617_subsystem_level_ontology_need
+
+  - id: project_status_ai_agent_20260617_soc_on_ontology_direction
+    date: 2026-06-17
+    project_ref: project_ai_agent
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: Brian clarified the longer-term hardware IP agent direction as SoC on top of ontology.
+    lesson: The useful target is not only task/file automation or even subsystem-level tracking; ontology should be the semantic substrate, and SoC-level workflow/reasoning should sit above it.
+    target_layering:
+      foundation: ontology objects, refs, source records, evidence, decisions, ownership, and traversal policy
+      domain_layer: SoC, subsystem, IP block, interface, clock/reset/power domain, requirements, integration constraints, verification cases, and implementation artifacts
+      agent_layer: Codex/OAG workflow that can reason across the domain layer, explain gaps, plan work, and produce auditable evidence-backed answers
+    next_step: Choose one narrow SoC-on-ontology demo slice that traces SoC-level intent to subsystem/IP/interface work and verification/evidence status.
+    related_task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+    source_ref: source_ai_agent_conversation_20260617_soc_on_ontology_direction

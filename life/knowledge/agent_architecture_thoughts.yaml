@@ -1,6 +1,6 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-16
+updated_at: 2026-06-17
 area: MIND
 secondary_areas:
   - CAREER
@@ -87,6 +87,16 @@ source_records:
     imported_at: 2026-06-16
     parse_status: parsed
     raw_text: "이 개념들 다 연결해서 저장해두고 우리의 대화 흐름도 같이 :)"
+  - id: source_knowledge_conversation_20260617_soc_on_ontology_direction
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "결국 우리가 나아가면 좋을 방향. Ontology 위에 SoC :)"
+    interpreted_direction:
+      assumed_soc_meaning: System-on-Chip
+      statement: Brian sees the target direction as modeling SoC-level structure and reasoning on top of the ontology layer.
+      confidence: high
 
 thought_threads:
   - id: thought_thread_20260615_okf_llm_wiki_ontology
@@ -107,7 +117,7 @@ thought_threads:
       - The discussion moved from external format to LLM Wiki as an operating pattern.
       - Brian then mapped the concepts onto the current Brian Ontology Agent architecture.
       - Brian concluded that OKF is useful as an export or interoperability layer, while ontology-first design is the core asset.
-      - Brian then raised a meta-memory requirement: the agent must remember not only facts, but also how Brian's understanding and interests evolve through conversation.
+      - "Brian then raised a meta-memory requirement: the agent must remember not only facts, but also how Brian's understanding and interests evolve through conversation."
     related_concept_refs:
       - concept_okf_open_knowledge_format
       - concept_llm_wiki
@@ -171,6 +181,40 @@ thought_threads:
       - source_knowledge_conversation_20260616_agentic_rag_similarity_question
       - source_knowledge_conversation_20260616_agentic_rag_mapping_answer
       - source_knowledge_conversation_20260616_record_agentic_rag_flow
+    confidence: high
+    needs_user_review: false
+  - id: thought_thread_20260617_soc_on_ontology_direction
+    object_type: ThoughtThread
+    date: 2026-06-17
+    area: MIND
+    secondary_areas:
+      - CAREER
+    topic: SoC-level hardware design agent on top of ontology
+    summary:
+      - "Brian moved the hardware IP agent direction from subsystem-level ontology toward a higher target: SoC on top of ontology."
+      - The intended layering is not only task/file tracking, but an ontology substrate that can represent SoC, subsystems, IP blocks, interfaces, requirements, integration constraints, verification evidence, ownership, and decisions.
+      - This direction makes the ontology the semantic operating layer, with SoC-level design reasoning and workflow support built above it.
+    conversation_flow:
+      - The discussion first identified that subsystem-level ontology needs to be improved.
+      - Brian then summarized the broader destination as "Ontology 위에 SoC".
+      - The architecture implication is that a useful hardware agent should reason across SoC structure, not only local RTL files, task lists, or narrow IP objects.
+      - "This also gives the Codex seminar/demo a stronger story: show how ontology connects SoC-level intent down to concrete implementation/evidence objects."
+    related_concept_refs:
+      - concept_ontology_first_agent_memory
+      - concept_agentic_retrieval_substrate
+      - concept_soc_on_ontology
+      - concept_subsystem_level_ontology
+      - concept_hardware_ip_agent
+    related_project_refs:
+      - project_ai_agent
+    related_task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+    prior_thread_refs:
+      - thought_thread_20260616_agentic_rag_graphrag_ontology_mapping
+    source_refs:
+      - source_knowledge_conversation_20260617_soc_on_ontology_direction
     confidence: high
     needs_user_review: false
 
@@ -244,6 +288,25 @@ understandings:
       - source_knowledge_conversation_20260616_record_agentic_rag_flow
     confidence: high
     needs_user_review: false
+  - id: understanding_20260617_soc_on_top_of_ontology
+    object_type: Understanding
+    date: 2026-06-17
+    area: MIND
+    secondary_areas:
+      - CAREER
+    statement: "Brian's desired hardware-agent direction is to build SoC-level design reasoning on top of ontology, so the ontology becomes the substrate for connecting SoC, subsystems, IPs, interfaces, requirements, verification, evidence, ownership, and decisions."
+    brian_wording_ko: "결국 우리가 나아가면 좋을 방향. Ontology 위에 SoC."
+    status: confirmed_by_brian
+    related_thread_ref: thought_thread_20260617_soc_on_ontology_direction
+    related_concept_refs:
+      - concept_soc_on_ontology
+      - concept_subsystem_level_ontology
+      - concept_hardware_ip_agent
+      - concept_ontology_first_agent_memory
+    source_refs:
+      - source_knowledge_conversation_20260617_soc_on_ontology_direction
+    confidence: high
+    needs_user_review: false
 
 architecture_directions:
   - id: architecture_direction_20260615_ontology_first_okf_export
@@ -309,6 +372,53 @@ architecture_directions:
     status: active_direction
     confidence: high
     needs_user_review: false
+  - id: architecture_direction_20260617_soc_on_ontology_layer
+    object_type: ArchitectureDirection
+    date: 2026-06-17
+    area: CAREER
+    secondary_areas:
+      - MIND
+    project_ref: project_ai_agent
+    title: SoC-level hardware workflow on top of ontology
+    statement: "Build the hardware IP agent toward a SoC-on-ontology architecture: ontology is the semantic substrate, and SoC-level workflow/reasoning is the layer above it."
+    rationale:
+      - Hardware design work becomes valuable when the agent understands relationships across SoC, subsystem, IP block, interface, requirement, implementation, verification, evidence, owner, and decision objects.
+      - Subsystem-level ontology is a necessary intermediate step, but the broader destination is SoC-level reasoning and workflow support.
+      - A SoC-on-ontology demo can show why this is more powerful than a TODO tracker, file search tool, or fixed-script planner.
+    implementation_direction:
+      ontology_substrate:
+        - SoC
+        - subsystem
+        - IP block
+        - interface
+        - clock/reset/power domain
+        - requirement
+        - integration constraint
+        - RTL artifact
+        - verification case
+        - evidence
+        - owner
+        - decision
+      reasoning_layer:
+        - trace SoC intent to subsystem/IP implementation work
+        - find ownership and evidence gaps
+        - explain why a design change is needed
+        - connect lint/simulation/synthesis evidence back to requirements
+        - prepare demoable workflow slices for RTL/IP engineers
+      first_slice_candidate: Model one concrete path from SoC requirement to subsystem/IP/interface object, implementation task, verification evidence, owner, and current status.
+    tradeoffs:
+      - SoC-level ontology gives stronger reasoning, but the first slice must stay narrow enough to demo reliably.
+      - Too much schema upfront can slow implementation, so the model should grow from concrete Milano/OAG examples.
+      - The agent should keep ontology as semantic truth and use tools/scripts as execution aids, not as the core model.
+    follow_up_task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+    source_refs:
+      - source_knowledge_conversation_20260617_soc_on_ontology_direction
+    status: active_direction
+    confidence: high
+    needs_user_review: false
 
 knowledge_interests:
   - id: knowledge_interest_20260615_agent_memory_architecture
@@ -368,6 +478,33 @@ knowledge_interests:
     status: active_interest
     source_refs:
       - source_knowledge_conversation_20260616_record_agentic_rag_flow
+    confidence: high
+    needs_user_review: false
+  - id: knowledge_interest_20260617_soc_ontology_hardware_agent
+    object_type: KnowledgeInterest
+    date: 2026-06-17
+    area: MIND
+    secondary_areas:
+      - CAREER
+    topic: SoC-level ontology for hardware IP agents
+    current_interest:
+      - Building a hardware IP/design agent whose core model is ontology, not TODO lists or file search.
+      - Raising the model from subsystem-level objects toward SoC-level structure and reasoning.
+      - Making SoC, subsystem, IP block, interface, requirement, verification, evidence, owner, and decision objects queryable and connected.
+    development_direction:
+      - Use subsystem-level ontology as the next practical slice.
+      - Build toward SoC-on-ontology as the longer-term architecture.
+      - Make the Codex seminar/demo explain this layering clearly for RTL/IP engineers.
+    related_project_refs:
+      - project_ai_agent
+    related_concept_refs:
+      - concept_soc_on_ontology
+      - concept_subsystem_level_ontology
+      - concept_hardware_ip_agent
+      - concept_ontology_first_agent_memory
+    status: active_interest
+    source_refs:
+      - source_knowledge_conversation_20260617_soc_on_ontology_direction
     confidence: high
     needs_user_review: false
 
