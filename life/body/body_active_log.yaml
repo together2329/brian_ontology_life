@@ -1250,6 +1250,22 @@ sleep_records:
     sleep_type: recovery_nap
 
 trend_observations:
+  - id: body_trend_20260618_current_big_lift_snapshot
+    object_type: BodyTrendObservation
+    date: 2026-06-18
+    observation_type: current_big_lift_load_snapshot
+    summary: Brian reported current main lift loads as deadlift 50kg, squat 70kg, and bench 40kg.
+    positive_signals:
+      - deadlift 50kg was confirmed in today's workout as 10 reps, with grip as the limiting factor rather than pulling strength
+      - squat current load was reported as 70kg
+      - bench current load was reported as 40kg
+      - Brian framed the numbers lightly and positively, suggesting motivation rather than discouragement
+    uncertain_signals:
+      - squat reps, variant, and whether 70kg is a top set or working load were not recorded
+      - bench reps, variant, and whether 40kg is a top set or working load were not recorded
+      - these numbers should not be treated as one-rep maxes unless Brian confirms that standard
+    interpretation: Treat this as a current strength snapshot, not a formal 1RM total. The useful baseline is deadlift 50kg x 10, with squat 70kg and bench 40kg needing reps/variant confirmation later.
+    confidence: medium
   - id: body_trend_20260618_inbody_mixed_eye_body_strength_up
     object_type: BodyTrendObservation
     date: 2026-06-18
@@ -1507,3 +1523,9 @@ raw_records:
     source: codex_conversation
     related_workout: workoutsession_20260618_back_cable_pulldown_seated_row
     text: "마무리로 다시\n렛풀 다운 30kg 10개"
+  - id: raw_body_record_20260618_current_big_lift_snapshot
+    date: 2026-06-18
+    time: null
+    source: codex_conversation
+    related_trend_observation_ref: body_trend_20260618_current_big_lift_snapshot
+    text: "지금 데드 50 , 스쿼트 70 벤치 40임 ㅎㅎ  귀엽지?"
