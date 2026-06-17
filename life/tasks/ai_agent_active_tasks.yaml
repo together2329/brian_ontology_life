@@ -557,6 +557,84 @@ source_records:
     related_task_refs:
       - task_ai_agent_codex_seminar_prepare
       - task_ai_agent_okf_export_layer
+  - id: source_ai_agent_conversation_20260618_common_ontology_agent_workflow_knowhow
+    source_type: chat
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "common_ai_agent 의 노하우 ontology ai agent 의 노하우를 알려주고 싶어. workflow 구축 방법도."
+    interpreted_focus:
+      - The seminar should include Brian's accumulated common_ai_agent know-how, not only Codex feature usage.
+      - The seminar should also include ontology_ai_agent / ontology_ip_agent know-how.
+      - The practical output should be a workflow construction method that coworkers can reuse.
+      - This should connect the history from zero-dependency Python agent, TUI/UI work, Atlas lessons, Codex bridge, and OAG/ontology_ip_agent into teachable patterns.
+    related_concept_refs:
+      - concept_agent_workflow_knowhow_capture
+      - concept_ontology_first_agent_memory
+      - concept_agent_skills
+    related_repo_refs:
+      - repo_common_ai_agent_origin
+      - repo_ontology_ip_agent
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_common_ai_agent_codex_port
+      - task_ai_agent_codex_ontology_development_plugin
+  - id: source_ai_agent_conversation_20260618_small_task_to_skill_principle
+    source_type: chat
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "그리고 처음엔 하나의 작은 task를 잘할 수 있도록 다듬고 이걸 skill 로 만드는 것이 중요."
+    interpreted_focus:
+      principle: Start with one small real task, make it work reliably, then distill that workflow into a reusable skill.
+      rationale: Skills should be extracted from proven workflows, not invented abstractly before task behavior is stable.
+      seminar_use: Present this as the primary method for building useful Codex workflows in a company rollout.
+    related_concept_refs:
+      - concept_task_to_skill_distillation
+      - concept_agent_skills
+      - concept_resource_efficiency_to_threshold
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+  - id: source_ai_agent_conversation_20260618_handoff_skill_and_skill_maker
+    source_type: chat
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "handoff skill 도 subagent 간 주고 받을때 좋을듯 . 그리고 skill 로 내리는 skill 도 있을듯 :)"
+    interpreted_focus:
+      - Handoff skills can preserve task state, context, evidence, blockers, decisions, and next actions when work passes between subagents.
+      - A skill-making skill can help convert a stabilized workflow into a reusable skill package.
+      - This creates a scalable pattern for company rollout: local task success becomes reusable workflow, then reusable workflow becomes skill.
+    related_concept_refs:
+      - concept_agent_handoff_skill
+      - concept_skill_creation_skill
+      - concept_task_to_skill_distillation
+      - concept_agent_skills
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+  - id: source_ai_agent_conversation_20260618_feedback_loop_trial_error_learning
+    source_type: chat
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "그리고 대화하면서 계속 더 좋은 방향으로 개선 될 수 있는 시스템, 시행착오가 학습되어 다음엔 안 할 수 있도록"
+    interpreted_focus:
+      - The agent system should improve through conversation, not only through one-time setup.
+      - Failed attempts, corrections, better directions, and user preferences should be captured as structured memory.
+      - The next workflow should avoid repeating known mistakes by consulting learned failure patterns and updated skill/rule guidance.
+      - This closes the loop between conversation memory, ontology, skills, evaluation, and monitoring.
+    related_concept_refs:
+      - concept_conversation_feedback_learning_loop
+      - concept_conversation_knowledge_memory
+      - concept_ontology_first_agent_memory
+      - concept_agent_evaluation_monitoring
+      - concept_task_to_skill_distillation
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_codex_ontology_development_plugin
 
 summary:
   current_state:
@@ -958,6 +1036,10 @@ tasks:
       - On 2026-06-18, Brian expanded the seminar into a multi-session story that includes Codex setup, LLM/RAG basics, hooks/skills/loops, OKF/LLM Wiki/ontology, Obsidian graph/Bases, interactive HTML, document-generation skills, and hardware-IP demos.
       - The evaluation/monitoring section should explain that agent adoption needs quality thresholds first, then resource-efficiency tracking such as token count, tool-call count, attempts, wall time, and failures.
       - Brian wants to show LLM Wiki and ontology directly, using Google OKF as an export/interoperability format and Obsidian/HTML as human-facing views.
+      - Brian wants to teach hard-earned common_ai_agent and ontology_ip_agent know-how, including how to build repeatable workflows rather than only how to invoke Codex.
+      - Brian identified a core workflow-building principle: first make one small real task work well, then distill it into a reusable skill.
+      - Brian also identified handoff skills for subagent-to-subagent transfer and a skill-making skill as important scaling patterns.
+      - The system should keep improving through conversation: failures, corrections, and better directions should be learned so the next workflow avoids repeating the same mistakes.
     seminar_object:
       id: seminar_codex_202606_next_week
       object_type: Seminar
@@ -980,17 +1062,19 @@ tasks:
         - "LLM Wiki는 설명을 잘한다. Ontology는 일을 굴린다."
         - "OKF는 AI가 읽는 지식 포맷이고, Obsidian은 사람이 보는 지식 UI이며, Interactive HTML은 복잡한 관계를 이해하는 시각화 도구다."
         - "Codex Skill과 문서/발표자료 생성 flow를 붙이면 지식 정리에서 보고서와 발표자료 작성까지 반복 가능한 업무 flow가 된다."
+        - "좋은 skill은 추상적으로 먼저 만드는 것이 아니라, 작은 실제 task 하나를 잘하게 만든 뒤 그 workflow를 정제해서 만든다."
+        - "대화와 시행착오가 ontology에 남아야 다음 실행에서 같은 실수를 반복하지 않는다."
       scope_estimate_one_hour_per_day:
         compressed_intro:
           days: 3
           description: 핵심 메시지와 간단한 setup/demo만 보여주는 압축판.
         realistic_seminar_series:
-          days_range: [8, 10]
+          days_range: [10, 12]
           description: Brian이 이야기한 주제를 대부분 담고, 실무 데모와 Q&A까지 가능한 1시간 세션 묶음.
         full_asset_capture_backlog:
-          days_range: [12, 15]
-          description: 세미나, OKF/Obsidian 샘플, Interactive HTML, Word/PPT 산출물, 평가/모니터링 설계, SoC Knowledge Graph 초안까지 자산으로 남기는 분량.
-        recommendation: Start with the 8-10 day seminar series, then continue the remaining 12-15 day asset backlog during the two-month Codex window.
+          days_range: [15, 18]
+          description: 세미나, common_ai_agent/ontology_ip_agent 노하우, task-to-skill, handoff skill, feedback learning loop, OKF/Obsidian 샘플, Interactive HTML, Word/PPT 산출물, 평가/모니터링 설계, SoC Knowledge Graph 초안까지 자산으로 남기는 분량.
+        recommendation: Start with a compressed first seminar, then run the 10-12 day seminar series and keep the full 15-18 day asset backlog during the two-month Codex window.
       one_hour_session_plan:
         - day: 1
           title: Why Codex now
@@ -1002,56 +1086,108 @@ tasks:
           output: setup_guide_draft
         - day: 3
           title: Agent loop that behaves as intended
-          focus: prompt, context, plan, hook, loop, tool call, file edit, validation, review, and stop conditions.
+          focus: prompt, context, plan, hook, loop, tool call, file edit, validation, review, stop conditions, and Brian's common_ai_agent to ontology_ip_agent workflow lessons.
           output: agent_loop_diagram_and_rule_pack
         - day: 4
+          title: Workflow to skill distillation
+          focus: Start with one small real task, stabilize the workflow, then distill prompts, rules, examples, checks, handoff state, and stop conditions into a skill.
+          output: task_to_skill_workflow_recipe
+        - day: 5
           title: Evaluation and monitoring
           focus: quality threshold first, then tokens/tool calls/time/attempts/failure rate to reduce resource cost per successful result.
           output: scorecard_and_monitoring_story
-        - day: 5
+        - day: 6
           title: Hardware/IP practical demo
           focus: SDC cleanup, lint triage, compile error analysis, simulation smoke, evidence capture, and real Milano/Firenze examples where permitted.
           output: reliable_rtl_demo_script
-        - day: 6
+        - day: 7
           title: LLM Wiki, OKF, and ontology layering
           focus: LLM Wiki as markdown knowledge, OKF as portable format, ontology as object/relation/action layer.
           output: okf_layering_example
-        - day: 7
+        - day: 8
           title: Obsidian graph and Bases demo
           focus: Put OKF-style notes into Obsidian, show graph links, and filter projects/tasks/issues/evidence through Bases.
           output: obsidian_okf_demo_vault_slice
-        - day: 8
+        - day: 9
           title: Interactive HTML knowledge viewer
           focus: Show why a self-contained HTML graph helps understand Milano task/issue/evidence/owner relationships faster than plain notes.
           output: html_graph_viewer_demo
-        - day: 9
+        - day: 10
           title: Document and deck generation with skills
           focus: Use Word/PPT/document-generation skills as a repeatable path from structured knowledge to guide docs and presentation decks; adapt Claude PPT workflow and reference-design examples to Codex.
           output: ppt_word_generation_demo
-        - day: 10
+        - day: 11
           title: SoC Knowledge Graph and two-month asset program
           focus: Turn Codex usage into reusable SoC Knowledge assets, starting with Firenze and expanding to Milano under DRM-aware policy.
           output: two_month_asset_capture_plan
-        - day: 11
+        - day: 12
+          title: Handoff skills and skill-making skills
+          focus: Define how subagents pass context/evidence/decisions/blockers to each other, and how proven workflows get converted into reusable skills.
+          output: handoff_skill_and_skill_maker_pattern
+        - day: 13
+          title: Conversation feedback and failure learning loop
+          focus: Capture failures, corrections, better directions, and user preferences into ontology so future runs avoid repeated mistakes.
+          output: feedback_learning_loop_design
+        - day: 14
           title: Waveform/MCP and verification extension
           focus: Candidate advanced demo for waveform viewer with MCP, UVM, Icarus Verilog, and Verilator.
           output: advanced_demo_backlog
-        - day: 12
+        - day: 15
           title: SoC-on-ontology and VDS document story
           focus: Connect SoC/subsystem/IP/interface/requirement/evidence/owner/decision objects to a possible VDS document layer.
           output: soc_ontology_vds_outline
-        - day: 13
+        - day: 16
           title: Real adoption package
           focus: Package rule set, skill pack, guide document, FAQ, examples, and failure cases so 70-80 users can self-serve.
           output: shareable_enablement_pack
-        - day: 14
+        - day: 17
           title: Rehearsal and fallback
           focus: Dry run the main demo, prepare screenshots/static fallback, check permissions, and remove risky live dependencies.
           output: rehearsed_demo_and_fallback
-        - day: 15
+        - day: 18
           title: Review and asset capture
           focus: Convert seminar Q&A, failures, and examples into ontology/OKF records so the rollout keeps improving.
           output: post_seminar_capture_loop
+      workflow_building_method:
+        title: From one real task to reusable skill
+        origin_story:
+          - common_ai_agent accumulated practical lessons from zero-dependency Python engine work, TUI/UI work, Atlas-related workflows, and Codex bridge work.
+          - The TODO-based implementation was useful for execution, but multi-user/server/demo pressure exposed the need for explicit ontology, evidence, decisions, owners, and gates.
+          - ontology_ip_agent / OAG is the current concrete place where those lessons become Codex-native hardware-IP workflow patterns.
+        steps:
+          - step: choose_one_small_real_task
+            description: Pick one bounded task that matters, such as SDC cleanup, lint triage, one requirement draft, one evidence review, or one PPT/guide artifact.
+          - step: run_with_codex_manually
+            description: Use Codex interactively and record prompts, files, tool calls, corrections, context, and validation outputs.
+          - step: define_quality_threshold
+            description: Decide what good enough means before optimizing for speed or token/tool-call reduction.
+          - step: capture_failure_and_correction
+            description: Record mistakes, missed context, bad assumptions, and successful corrections as ontology source/evidence records.
+          - step: stabilize_workflow
+            description: Repeat until the small task reaches the target result consistently with acceptable resource cost.
+          - step: distill_to_skill
+            description: Convert the stabilized workflow into instructions, examples, required context, tool boundaries, checks, and stop conditions.
+          - step: add_handoff_skill
+            description: Define how a subagent passes task state, evidence, blockers, decisions, and next actions to another subagent.
+          - step: use_skill_creation_skill
+            description: Use a meta-skill to help extract, review, and maintain new skills from proven workflows.
+          - step: monitor_and_iterate
+            description: Track quality, tool calls, tokens, time, failure cases, and user corrections; update the skill when repeated patterns appear.
+        reusable_skill_types:
+          - task_execution_skill
+          - evidence_review_skill
+          - handoff_skill
+          - skill_creation_skill
+          - failure_learning_skill
+          - report_or_ppt_generation_skill
+        feedback_loop:
+          - Conversation creates raw source records.
+          - Source records become ontology objects, understandings, decisions, and task updates.
+          - Evaluation identifies whether the result reached quality threshold.
+          - Monitoring identifies resource cost and repeated failures.
+          - Repeated successful workflows become skills.
+          - Repeated failures become skill cautions, checks, or stop conditions.
+          - Future runs consult these objects so the same mistake is less likely to recur.
       demo_stack:
         okf_soc_vault_slice:
           example_files:
@@ -1098,6 +1234,7 @@ tasks:
         - concept_llm_wiki
         - concept_okf_open_knowledge_format
         - concept_ontology_first_agent_memory
+        - concept_agent_workflow_knowhow_capture
         - concept_agentic_rag
         - concept_graphrag
         - concept_agent_evaluation_monitoring
@@ -1105,6 +1242,10 @@ tasks:
         - concept_obsidian_bases
         - concept_interactive_html_knowledge_viewer
         - concept_agent_skills
+        - concept_task_to_skill_distillation
+        - concept_agent_handoff_skill
+        - concept_skill_creation_skill
+        - concept_conversation_feedback_learning_loop
         - concept_reference_design_guided_generation
         - concept_soc_knowledge_graph
         - concept_soc_on_ontology
@@ -1123,6 +1264,10 @@ tasks:
         - source_ai_agent_conversation_20260618_codex_seminar_days_estimate
         - source_ai_agent_conversation_20260618_claude_ppt_video_codex_transfer
         - source_ai_agent_conversation_20260618_claude_ppt_reference_design_video
+        - source_ai_agent_conversation_20260618_common_ontology_agent_workflow_knowhow
+        - source_ai_agent_conversation_20260618_small_task_to_skill_principle
+        - source_ai_agent_conversation_20260618_handoff_skill_and_skill_maker
+        - source_ai_agent_conversation_20260618_feedback_loop_trial_error_learning
     expected_outputs:
       - Codex seminar outline
       - comparison of Cursor workflow and Codex workflow
@@ -1143,6 +1288,11 @@ tasks:
       - evaluation/monitoring scorecard story for quality threshold and resource efficiency
       - OKF/Obsidian/Interactive HTML demo slice
       - Word/PPT generation demo using skill-based workflows
+      - common_ai_agent and ontology_ip_agent know-how chapter
+      - task-to-skill workflow construction recipe
+      - handoff skill pattern for subagent collaboration
+      - skill-making skill concept for turning proven workflows into reusable packages
+      - conversation feedback loop showing how failures and corrections update future skills/rules
     next_actions:
       - Write down what worked in the 2026-06-12 Cursor seminar.
       - Decide whether the Codex seminar should focus on usage, workflow design, hardware IP examples, or ontology-backed development.
@@ -1165,6 +1315,11 @@ tasks:
       - Prepare one self-contained Interactive HTML graph view for Milano or SoC Knowledge relationships.
       - Prepare one Word/PPT skill demo that turns structured knowledge into a guide document or presentation deck.
       - Keep advanced waveform/MCP and UVM/Verilator demos as optional extension material unless the main demo is stable.
+      - Extract the common_ai_agent to ontology_ip_agent story into three teachable lessons: what worked, what broke, and what became ontology/OAG.
+      - Pick one small real task and turn it into a task-to-skill demo recipe.
+      - Draft a handoff skill schema covering context, state, evidence, blocker, decision, and next action.
+      - Draft a skill-making skill checklist for converting stable workflows into skills.
+      - Add a feedback-learning example showing how a failed attempt becomes a rule, check, or caution in the next version.
     evidence_refs:
       - source_ai_agent_conversation_20260614_cursor_seminar_success_codex_planned
       - source_ai_agent_conversation_20260617_codex_next_week_seminar_demo_guide
@@ -1180,6 +1335,10 @@ tasks:
       - source_ai_agent_conversation_20260618_codex_seminar_okf_obsidian_html_docs
       - source_ai_agent_conversation_20260618_codex_seminar_days_estimate
       - source_ai_agent_conversation_20260617_cursor_seminar_reputation_signal
+      - source_ai_agent_conversation_20260618_common_ontology_agent_workflow_knowhow
+      - source_ai_agent_conversation_20260618_small_task_to_skill_principle
+      - source_ai_agent_conversation_20260618_handoff_skill_and_skill_maker
+      - source_ai_agent_conversation_20260618_feedback_loop_trial_error_learning
     confidence: high
     needs_user_review: true
 

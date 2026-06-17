@@ -189,6 +189,51 @@ source_records:
       caution: Treat external design references as inspiration and analysis unless the source permits reuse.
       seminar_section: Document and deck generation with skills
     related_task_ref: task_ai_agent_codex_seminar_prepare
+  - id: source_knowledge_conversation_20260618_agent_workflow_knowhow
+    source_type: chat
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "common_ai_agent 의 노하우 ontology ai agent 의 노하우를 알려주고 싶어. workflow 구축 방법도."
+    interpreted_direction:
+      - The Codex seminar should teach Brian's accumulated agent workflow know-how, not only product usage.
+      - common_ai_agent provides the long-running practical history.
+      - ontology_ip_agent / ontology AI agent provides the current ontology-first workflow direction.
+      - The output should be teachable workflow construction methods.
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+  - id: source_knowledge_conversation_20260618_task_to_skill_principle
+    source_type: chat
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "그리고 처음엔 하나의 작은 task를 잘할 수 있도록 다듬고 이걸 skill 로 만드는 것이 중요."
+    interpreted_direction:
+      - Start with one small task.
+      - Refine the workflow until it consistently works.
+      - Distill the stabilized workflow into a skill.
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+  - id: source_knowledge_conversation_20260618_handoff_skill_skill_maker
+    source_type: chat
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "handoff skill 도 subagent 간 주고 받을때 좋을듯 . 그리고 skill 로 내리는 skill 도 있을듯 :)"
+    interpreted_direction:
+      - Handoff skills can help subagents pass state without losing continuity.
+      - A skill-making skill can help convert proven workflows into reusable skills.
+      - These are scaling patterns for agent workflow construction.
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+  - id: source_knowledge_conversation_20260618_feedback_loop_failure_learning
+    source_type: chat
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "그리고 대화하면서 계속 더 좋은 방향으로 개선 될 수 있는 시스템, 시행착오가 학습되어 다음엔 안 할 수 있도록"
+    interpreted_direction:
+      - The system should improve through ongoing conversation.
+      - Failed attempts and corrections should become structured memory.
+      - Future workflows should consult learned failures, updated rules, and refined skills to avoid repeating mistakes.
+    related_task_ref: task_ai_agent_codex_seminar_prepare
 
 thought_threads:
   - id: thought_thread_20260615_okf_llm_wiki_ontology
@@ -326,9 +371,12 @@ thought_threads:
       - The knowledge layer should demonstrate LLM Wiki, OKF, ontology, Obsidian graph/Bases, and interactive HTML as connected views over the same work.
       - The engineering layer should use concrete RTL/IP workflows such as SDC cleanup, lint/simulation, UVM/Icarus/Verilator, waveform/MCP, and OAG-style evidence tracking.
       - The management layer should explain evaluation and monitoring: reach quality threshold first, then reduce resource cost to reach the same or better result.
-      - The content is large enough to be treated as an 8-10 one-hour seminar series, with 12-15 one-hour sessions if full reusable assets are produced.
+      - The content is large enough to be treated as a 10-12 one-hour seminar series, with 15-18 one-hour sessions if full reusable assets are produced.
       - Brian added a Claude PPT-making reference video as a transferable example for a Codex-based document/deck generation workflow.
       - Brian added another Claude PPT video that demonstrates reference-design-guided generation using a design taken from a website.
+      - Brian wants to teach common_ai_agent and ontology_ip_agent know-how as workflow construction methods.
+      - Brian identified the central method as refining one small real task until it works, then distilling that workflow into a reusable skill.
+      - Brian also identified handoff skills, skill-making skills, and conversation-driven failure learning as patterns for scaling agent workflows.
     conversation_flow:
       - Brian first listed Codex seminar topics from setup through LLM/RAG trends and agent-control primitives.
       - The discussion then moved from tools to knowledge architecture: Knowledge Graph, SoC Knowledge Graph, Agentic RAG, OKF, LLM Wiki, and ontology.
@@ -337,6 +385,9 @@ thought_threads:
       - Finally, Brian asked for a one-hour-per-day estimate if every discussed topic is included.
       - Brian later added a Claude PPT workflow video and identified that Codex can likely perform the same kind of structured PPT-generation flow.
       - Brian then added a second PPT video and highlighted that using a concrete reference design from a site can improve generated presentation quality.
+      - Brian then connected the seminar to his own common_ai_agent and ontology_ip_agent lessons, asking to teach workflow construction itself.
+      - The workflow construction idea evolved into task-to-skill distillation, handoff skills between subagents, and a skill-making skill.
+      - Brian then added that conversation and trial-and-error should continuously improve the system so future runs do not repeat known mistakes.
     architecture_layering:
       explanation_layer:
         - LLM Wiki
@@ -360,6 +411,14 @@ thought_threads:
         - skills
         - loop
         - stop condition
+      workflow_construction_layer:
+        - common_ai_agent lessons
+        - ontology_ip_agent lessons
+        - one small task
+        - stable workflow
+        - task-to-skill distillation
+        - handoff skill
+        - skill creation skill
       evaluation_layer:
         - quality threshold
         - token count
@@ -367,6 +426,13 @@ thought_threads:
         - attempts
         - wall time
         - failure/retry rate
+      learning_layer:
+        - conversation memory
+        - failure records
+        - corrections
+        - skill updates
+        - rule updates
+        - avoid repeated mistakes
     related_task_ref: task_ai_agent_codex_seminar_prepare
     related_project_refs:
       - project_ai_agent
@@ -381,6 +447,11 @@ thought_threads:
       - concept_obsidian_bases
       - concept_interactive_html_knowledge_viewer
       - concept_agent_skills
+      - concept_agent_workflow_knowhow_capture
+      - concept_task_to_skill_distillation
+      - concept_agent_handoff_skill
+      - concept_skill_creation_skill
+      - concept_conversation_feedback_learning_loop
       - concept_reference_design_guided_generation
       - concept_soc_knowledge_graph
       - concept_soc_on_ontology
@@ -396,6 +467,10 @@ thought_threads:
       - source_knowledge_conversation_20260618_one_hour_day_scope_estimate
       - source_knowledge_external_reference_20260618_claude_ppt_codex_transfer
       - source_knowledge_external_reference_20260618_claude_ppt_reference_design
+      - source_knowledge_conversation_20260618_agent_workflow_knowhow
+      - source_knowledge_conversation_20260618_task_to_skill_principle
+      - source_knowledge_conversation_20260618_handoff_skill_skill_maker
+      - source_knowledge_conversation_20260618_feedback_loop_failure_learning
     status: active_seminar_design
     confidence: high
     needs_user_review: false
@@ -615,6 +690,85 @@ understandings:
       - concept_interactive_html_knowledge_viewer
     source_refs:
       - source_knowledge_external_reference_20260618_claude_ppt_reference_design
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260618_agent_workflow_knowhow_is_teachable_asset
+    object_type: Understanding
+    date: 2026-06-18
+    area: CAREER
+    secondary_areas:
+      - MIND
+    statement: "Brian's common_ai_agent and ontology_ip_agent history should be turned into teachable workflow construction know-how, because it contains hard-won lessons about what survives real agent usage."
+    brian_wording_ko: "common_ai_agent 의 노하우 ontology ai agent 의 노하우를 알려주고 싶어. workflow 구축 방법도."
+    status: confirmed_by_brian
+    related_thread_ref: thought_thread_20260618_codex_seminar_ontology_demo_stack
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+    related_concept_refs:
+      - concept_agent_workflow_knowhow_capture
+      - concept_ontology_first_agent_memory
+      - concept_agent_skills
+    source_refs:
+      - source_knowledge_conversation_20260618_agent_workflow_knowhow
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260618_small_task_to_skill_is_primary_workflow_method
+    object_type: Understanding
+    date: 2026-06-18
+    area: CAREER
+    secondary_areas:
+      - MIND
+    statement: "The primary method for building useful agent workflows is to start with one small real task, refine it until it reliably works, then distill the workflow into a reusable skill."
+    brian_wording_ko: "처음엔 하나의 작은 task를 잘할 수 있도록 다듬고 이걸 skill 로 만드는 것이 중요."
+    status: confirmed_by_brian
+    related_thread_ref: thought_thread_20260618_codex_seminar_ontology_demo_stack
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+    related_concept_refs:
+      - concept_task_to_skill_distillation
+      - concept_agent_skills
+      - concept_resource_efficiency_to_threshold
+    source_refs:
+      - source_knowledge_conversation_20260618_task_to_skill_principle
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260618_handoff_and_skill_maker_are_scaling_patterns
+    object_type: Understanding
+    date: 2026-06-18
+    area: CAREER
+    secondary_areas:
+      - MIND
+    statement: "Handoff skills and skill-making skills are scaling patterns: handoff skills preserve continuity between subagents, while skill-making skills help convert proven workflows into reusable packages."
+    brian_wording_ko: "handoff skill 도 subagent 간 주고 받을때 좋을듯. 그리고 skill 로 내리는 skill 도 있을듯."
+    status: confirmed_by_brian
+    related_thread_ref: thought_thread_20260618_codex_seminar_ontology_demo_stack
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+    related_concept_refs:
+      - concept_agent_handoff_skill
+      - concept_skill_creation_skill
+      - concept_task_to_skill_distillation
+      - concept_agent_skills
+    source_refs:
+      - source_knowledge_conversation_20260618_handoff_skill_skill_maker
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260618_conversation_and_failure_memory_improves_future_runs
+    object_type: Understanding
+    date: 2026-06-18
+    area: CAREER
+    secondary_areas:
+      - MIND
+    statement: "The agent should improve through conversation by recording failed attempts, corrections, better directions, and updated preferences so future workflows avoid repeating known mistakes."
+    brian_wording_ko: "대화하면서 계속 더 좋은 방향으로 개선 될 수 있는 시스템, 시행착오가 학습되어 다음엔 안 할 수 있도록."
+    status: confirmed_by_brian
+    related_thread_ref: thought_thread_20260618_codex_seminar_ontology_demo_stack
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+    related_concept_refs:
+      - concept_conversation_feedback_learning_loop
+      - concept_conversation_knowledge_memory
+      - concept_ontology_first_agent_memory
+      - concept_agent_evaluation_monitoring
+      - concept_task_to_skill_distillation
+    source_refs:
+      - source_knowledge_conversation_20260618_feedback_loop_failure_learning
     confidence: high
     needs_user_review: false
 
@@ -837,12 +991,17 @@ knowledge_interests:
       - Showing LLM Wiki, OKF, ontology, Obsidian, Interactive HTML, and Word/PPT skills as connected layers.
       - Explaining evaluation and monitoring so engineers can judge whether an agent reached quality and how much resource it consumed.
       - Making SoC Knowledge Graph and hardware-IP examples concrete enough for RTL/IP engineers.
+      - Teaching Brian's common_ai_agent and ontology_ip_agent know-how as workflow construction patterns.
+      - Turning one small reliable task into a reusable skill.
+      - Designing handoff skills, skill-making skills, and feedback learning loops so workflows improve through use.
     development_direction:
       - Use an OKF_SoC demo vault as the smallest visible knowledge-as-files example.
       - Use Obsidian Bases and graph view as the human-facing browsing/filtering layer.
       - Use Interactive HTML as a self-contained review artifact for task/issue/evidence/owner relationships.
       - Use skill-based Word/PPT generation to show how structured knowledge becomes deliverables.
       - Keep evaluation/monitoring metrics in the story: quality threshold, tokens, tool calls, attempts, time, and failure/retry rate.
+      - Add a workflow-construction recipe: choose one real task, stabilize it, distill to skill, add handoff, monitor failures, update ontology/rules/skills.
+      - Treat failed attempts and conversation corrections as structured learning material, not as throwaway chat history.
     related_project_refs:
       - project_ai_agent
     related_task_ref: task_ai_agent_codex_seminar_prepare
@@ -853,6 +1012,11 @@ knowledge_interests:
       - concept_obsidian_bases
       - concept_interactive_html_knowledge_viewer
       - concept_agent_skills
+      - concept_agent_workflow_knowhow_capture
+      - concept_task_to_skill_distillation
+      - concept_agent_handoff_skill
+      - concept_skill_creation_skill
+      - concept_conversation_feedback_learning_loop
       - concept_agent_evaluation_monitoring
       - concept_resource_efficiency_to_threshold
       - concept_soc_knowledge_graph
@@ -861,6 +1025,10 @@ knowledge_interests:
       - source_knowledge_conversation_20260618_codex_seminar_full_stack
       - source_knowledge_conversation_20260618_evaluation_monitoring_reason
       - source_knowledge_external_research_20260618_okf_obsidian_skills_docs_trends
+      - source_knowledge_conversation_20260618_agent_workflow_knowhow
+      - source_knowledge_conversation_20260618_task_to_skill_principle
+      - source_knowledge_conversation_20260618_handoff_skill_skill_maker
+      - source_knowledge_conversation_20260618_feedback_loop_failure_learning
     confidence: high
     needs_user_review: false
 

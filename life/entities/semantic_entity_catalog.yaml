@@ -1271,6 +1271,90 @@ entities:
       confirmed_at: 2026-06-18
       notes: Reusable instruction and tool workflow packages for agents; Brian wants to include rule/skill distribution and document-generation skills in the Codex seminar.
 
+    - id: concept_task_to_skill_distillation
+      object_type: Concept
+      display_name: Task-to-skill distillation
+      area: CAREER
+      aliases:
+        - task to skill
+        - task-to-skill
+        - skill distillation
+        - workflow to skill
+        - 작은 task를 skill로
+        - 작은 업무를 스킬로
+        - task를 skill로
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-18
+      notes: >
+        Brian's workflow-building principle: first make one small real task work reliably,
+        then distill the prompts, rules, checks, examples, and stop conditions into a reusable skill.
+
+    - id: concept_agent_handoff_skill
+      object_type: Concept
+      display_name: Agent handoff skill
+      area: CAREER
+      aliases:
+        - handoff skill
+        - handoff protocol
+        - subagent handoff
+        - agent handoff
+        - handoff between subagents
+        - 핸드오프 스킬
+        - 서브에이전트 핸드오프
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-18
+      notes: Reusable skill/protocol for transferring task state, context, evidence, decisions, blockers, and next actions between agents or subagents without losing continuity.
+
+    - id: concept_skill_creation_skill
+      object_type: Concept
+      display_name: Skill creation skill
+      area: CAREER
+      aliases:
+        - skill-making skill
+        - skill creation skill
+        - skill authoring skill
+        - skill generator
+        - skill로 내리는 skill
+        - 스킬 만드는 스킬
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-18
+      notes: Meta-skill idea where an agent helps convert a proven workflow into a reusable skill by extracting instructions, examples, tool boundaries, validation checks, and update rules.
+
+    - id: concept_conversation_feedback_learning_loop
+      object_type: Concept
+      display_name: Conversation feedback learning loop
+      area: CAREER
+      aliases:
+        - conversation feedback loop
+        - continuous improvement loop
+        - trial and error learning
+        - 시행착오 학습
+        - 대화 기반 개선
+        - 피드백 루프
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-18
+      notes: Brian's agent-improvement principle that conversations, failed attempts, corrections, and better directions should be recorded as structured memory so the next workflow can avoid repeating the same mistakes.
+
+    - id: concept_agent_workflow_knowhow_capture
+      object_type: Concept
+      display_name: Agent workflow know-how capture
+      area: CAREER
+      aliases:
+        - workflow know-how
+        - agent know-how
+        - common_ai_agent know-how
+        - ontology agent know-how
+        - workflow 구축 방법
+        - 노하우 캡처
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-18
+      notes: Seminar pattern for extracting Brian's accumulated common_ai_agent and ontology_ip_agent lessons into teachable workflow construction methods, examples, rules, and skills.
+
     - id: concept_soc_knowledge_graph
       object_type: Concept
       display_name: SoC Knowledge Graph
