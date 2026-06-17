@@ -21,6 +21,22 @@ source_records:
       date: 2026-06-16
       time_of_day: afternoon
       precision: approximate
+  - id: source_personal_admin_conversation_20260617_gym_fingerprint_reregistered
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "그리고 해이 지구랑 미야랑 산책 잠깐 다녀옴 아까. 지문 등록 다시함 헬스장 근처가서"
+    interpreted_admin_action:
+      topic: gym fingerprint access
+      status: completed
+      location_context: near gym
+      related_prior_issue_ref: workoutsession_20260615_pt_shop_access_issue
+      reason: Fingerprint access issue previously blocked early-morning PT shop/gym access.
+    related_person_refs:
+      - person_wife
+      - pet_dog_1
+      - pet_dog_2
 
 summary:
   current_focus:
@@ -32,6 +48,39 @@ summary:
     source_ref: source_personal_admin_conversation_20260616_afternoon_eye_derm_receipt
 
 tasks:
+  - id: task_personal_20260617_gym_fingerprint_reregistration
+    object_type: Task
+    title: 헬스장/운동 접근용 지문 재등록
+    area: MAINTENANCE
+    secondary_areas:
+      - BODY
+    status: completed
+    priority: medium
+    energy: errand
+    estimated_minutes: null
+    due_date: 2026-06-17
+    tracking_level: simple
+    project_ref: project_personal_life_admin
+    owner_ref: person_brian
+    progress_percent: 100
+    tags:
+      - gym
+      - fingerprint
+      - access
+      - workout_continuity
+      - errand
+    context:
+      - Brian previously could not enter the PT shop because of a fingerprint access issue.
+      - On 2026-06-17, Brian went near the gym and re-registered the fingerprint.
+    expected_outputs:
+      - Gym/PT access works again for future workouts.
+    next_actions:
+      - Confirm access works on the next gym/PT visit.
+    evidence_refs:
+      - source_personal_admin_conversation_20260617_gym_fingerprint_reregistered
+    confidence: high
+    needs_user_review: false
+
   - id: task_personal_20260616_ophthalmology_stye_check
     object_type: Task
     title: 다래끼 검진 겸 안과 방문
@@ -136,6 +185,17 @@ planned_time_blocks:
     needs_user_review: false
 
 task_status_updates:
+  - id: status_task_personal_gym_fingerprint_reregistration_20260617_completed
+    date: 2026-06-17
+    task_ref: task_personal_20260617_gym_fingerprint_reregistration
+    author_ref: person_brian
+    status: completed
+    progress_percent: 100
+    summary: Brian re-registered his fingerprint near the gym after the earlier access issue.
+    blockers: []
+    next_step: Confirm access works on the next gym/PT visit.
+    source_ref: source_personal_admin_conversation_20260617_gym_fingerprint_reregistered
+
   - id: status_task_personal_ophthalmology_stye_20260616_planned
     date: 2026-06-16
     task_ref: task_personal_20260616_ophthalmology_stye_check

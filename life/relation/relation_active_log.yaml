@@ -1,0 +1,90 @@
+schema_version: 1
+status: active
+updated_at: 2026-06-17
+area: RELATION
+secondary_areas:
+  - BODY
+  - MAINTENANCE
+profile_ref: person_brian
+title: Relation active log
+current_phase: Family, spouse, and companion animal interaction records.
+
+source_records:
+  - id: source_relation_conversation_20260617_family_walk_gym_fingerprint
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "그리고 해이 지구랑 미야랑 산책 잠깐 다녀옴 아까. 지문 등록 다시함 헬스장 근처가서"
+    interpreted_interaction:
+      interaction_type: short_walk
+      participants:
+        - person_brian
+        - person_wife
+        - pet_dog_1
+        - pet_dog_2
+      related_workout_ref: workoutsession_20260617_evening_family_walk
+      related_maintenance_task_ref: task_personal_20260617_gym_fingerprint_reregistration
+  - id: source_relation_conversation_20260617_dinner_with_miya
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "저녁은 키토 계란 김밥 + 돈가스 김밥 미야랑 같이 :)"
+    interpreted_interaction:
+      interaction_type: dinner_together
+      participants:
+        - person_brian
+        - person_wife
+      related_meal_ref: meal_20260617_dinner_keto_egg_gimbap_pork_cutlet_gimbap
+
+social_interactions:
+  - id: socialinteraction_20260617_evening_walk_miya_jigu_haei
+    object_type: SocialInteraction
+    date: 2026-06-17
+    people_refs:
+      - person_wife
+    companion_animal_refs:
+      - pet_dog_1
+      - pet_dog_2
+    interaction_type: short_walk
+    relationship_area: spouse_and_pets
+    quality_score: null
+    emotion_after: tired_but_recovery_oriented
+    follow_up_tasks:
+      - task_personal_20260617_gym_fingerprint_reregistration
+    notes: Brian took a short walk with Miya, Jigu, and Haei after returning home; he also re-registered his gym fingerprint near the gym.
+    related_workout_ref: workoutsession_20260617_evening_family_walk
+    source_ref: source_relation_conversation_20260617_family_walk_gym_fingerprint
+    confidence: high
+    needs_user_review: false
+  - id: socialinteraction_20260617_dinner_with_miya
+    object_type: SocialInteraction
+    date: 2026-06-17
+    people_refs:
+      - person_wife
+    interaction_type: dinner_together
+    relationship_area: spouse
+    quality_score: null
+    emotion_after: null
+    follow_up_tasks: []
+    notes: Brian ate keto egg gimbap and pork cutlet gimbap with Miya.
+    related_meal_ref: meal_20260617_dinner_keto_egg_gimbap_pork_cutlet_gimbap
+    source_ref: source_relation_conversation_20260617_dinner_with_miya
+    confidence: high
+    needs_user_review: false
+
+care_activities:
+  - id: careactivity_20260617_walk_jigu_haei
+    object_type: CareActivity
+    date: 2026-06-17
+    subjects:
+      - pet_dog_1
+      - pet_dog_2
+    activity_type: walk
+    duration_minutes: null
+    area: RELATION
+    notes: Short walk with Jigu and Haei, together with Miya.
+    source_ref: source_relation_conversation_20260617_family_walk_gym_fingerprint
+    confidence: high
+    needs_user_review: false

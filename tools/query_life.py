@@ -21,6 +21,7 @@ CONCEPT_DIR = REPO_ROOT / "life/concepts"
 KNOWLEDGE_DIR = REPO_ROOT / "life/knowledge"
 MIND_DIR = REPO_ROOT / "life/mind"
 FINANCE_DIR = REPO_ROOT / "life/finance"
+RELATION_DIR = REPO_ROOT / "life/relation"
 ENTITY_CATALOG_PATH = REPO_ROOT / "life/entities/semantic_entity_catalog.yaml"
 
 RECORD_INDEXES = [
@@ -112,6 +113,13 @@ FINANCE_SEARCH_SECTIONS = [
     "market_trends",
     "finance_status_updates",
 ]
+RELATION_SEARCH_SECTIONS = [
+    "source_records",
+    "relationships",
+    "social_interactions",
+    "care_activities",
+    "relation_status_updates",
+]
 DIRECT_REF_KEYS = {
     "project_ref",
     "component_ref",
@@ -142,6 +150,7 @@ DIRECT_REF_KEYS = {
 DIRECT_REF_LIST_KEYS = {
     "task_refs",
     "participants",
+    "companions",
     "known_participant_refs",
     "participant_refs",
     "member_refs",
@@ -464,6 +473,19 @@ def iter_finance_search_records() -> Iterable[Dict[str, Any]]:
         yield from iter_section_records(data, path, "finance", FINANCE_SEARCH_SECTIONS, defaults)
 
 
+def iter_relation_search_records() -> Iterable[Dict[str, Any]]:
+    if not RELATION_DIR.exists():
+        return
+    for path in sorted(RELATION_DIR.glob("*.yaml")):
+        data = load_yaml(path)
+        defaults = {
+            "area": data.get("area"),
+            "profile_ref": data.get("profile_ref"),
+            "secondary_areas": data.get("secondary_areas"),
+        }
+        yield from iter_section_records(data, path, "relation", RELATION_SEARCH_SECTIONS, defaults)
+
+
 def iter_body_search_records() -> Iterable[Dict[str, Any]]:
     for path in sorted(BODY_DIR.glob("*.yaml")):
         data = load_yaml(path)
@@ -511,6 +533,7 @@ def iter_current_search_records(include_catalog: bool = True) -> Iterable[Dict[s
     yield from iter_body_search_records()
     yield from iter_mind_search_records()
     yield from iter_finance_search_records()
+    yield from iter_relation_search_records()
     yield from iter_knowledge_search_records()
     yield from iter_concept_search_records()
     if include_catalog:

@@ -407,6 +407,25 @@ source_records:
       - task_ai_agent_codex_ontology_development_plugin
       - task_ai_agent_codex_seminar_prepare
       - task_ai_agent_company_codex_rollout_support
+  - id: source_ai_agent_conversation_20260617_home_ai_dev_headache
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "집에 와서도 한 30분 넘게 AI 개발 중이다 에효.. 머리 아프다"
+    interpreted_work_session:
+      date: 2026-06-17
+      location: home
+      actual_minutes_lower_bound: 30
+      activity: AI development
+      symptom: headache
+      interpretation: Continuing after returning home is useful commitment evidence, but should be treated as an overload signal tonight.
+      related_work_session_ref: worksession_20260617_home_ai_dev_headache
+    related_task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_common_ai_agent_codex_port
+      - task_ai_agent_soc_knowledge_format_db_pilot
+    related_mind_record_ref: mood_20260617_low_margin_impatience_ai_reputation_pressure
 
 summary:
   current_state:
@@ -435,6 +454,7 @@ summary:
     - Brian considers the successful Cursor seminar a reputation asset: coworkers already know he uses AI well.
     - Brian is personally testing Claude and Codex, about 200 USD each and 400 USD total, which is now tracked as a career-capability tool trial.
     - Brian clarified that he has spent several months working on AI during dawn, night, and weekends, so current fatigue should be treated as cumulative sustained effort.
+    - Brian continued AI development for more than 30 minutes after returning home on 2026-06-17 and reported a headache; this is now treated as an overload signal.
     - Codex has a two-month unlimited-use period; the exact start date and operational scope still need confirmation.
     - Brian clarified that the two-month unlimited Codex period starts next week from 2026-06-17, meaning the start window is 2026-06-22 to 2026-06-28 unless the exact date changes.
     - Brian wants the two-month Codex window to leave durable assets, not only usage volume.
@@ -459,6 +479,7 @@ summary:
     - company Codex adoption support preparation
     - AI reputation management: show AI as work accelerator while keeping Milano/RTL execution visible
     - sustainable AI enablement after several months of dawn/night/weekend work
+    - home/off-hours AI development boundary after headache signal
     - two-month Codex unlimited-use asset capture program
     - collaborative SoC Knowledge format/DB design with Firenze pilot and Milano expansion
     - next-week Codex seminar package with rules, skills, demo, and guide docs
@@ -475,6 +496,7 @@ summary:
     - A successful Cursor seminar shows that Brian can translate the hard-earned agent workflow experience into useful enablement for others.
     - Brian's personal Claude/Codex testing spend shows serious commitment to learning the tools, but should be reviewed against concrete outputs rather than emotional pressure alone.
     - Several months of dawn/night/weekend AI work is evidence of commitment and accumulated learning, but also a sustainability risk.
+    - Headache after home AI development is a concrete signal to stop screen-heavy work and recover before further architecture decisions.
     - A two-month unlimited-use period creates a window for real adoption experiments, reusable asset capture, and company enablement beyond a one-time seminar.
     - A 70-80 developer audience means self-serve onboarding assets matter; Brian should not become the only live support path.
     - Starting the SoC Knowledge DB with Firenze lowers schema risk before applying it to live Milano work.
@@ -1012,6 +1034,7 @@ tasks:
       - Clarify the boundary between common_ai_agent and ontology_ip_agent.
       - Capture decisions, prompts, tool patterns, and failure cases while porting.
       - Keep experiments small while tired; avoid large architecture changes late in the day.
+      - Stop screen-heavy AI development when headache appears; capture a note and resume after rest.
       - Convert reusable learnings into guidance for company rollout support.
       - Capture the Atlas RTL-generator step-back lesson without turning it into pressure to overbuild the next demo.
       - Convert the multi-month off-hours AI effort into a smaller sustainable weekly cadence after the Codex seminar package is shaped.
@@ -1295,6 +1318,38 @@ tasks:
     needs_user_review: false
 
 work_sessions:
+  - id: worksession_20260617_home_ai_dev_headache
+    date: 2026-06-17
+    project_ref: project_ai_agent
+    start: null
+    end: null
+    actual_minutes: 30
+    actual_minutes_quality: lower_bound
+    time_quality: approximate_user_reported
+    location: home
+    task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_common_ai_agent_codex_port
+      - task_ai_agent_soc_knowledge_format_db_pilot
+    focus_level: tired_headache_off_hours
+    mood_signal:
+      valence: negative
+      energy: low
+      symptom: headache
+      note: Brian continued AI development after returning home and reported a headache.
+    summary: Brian continued AI development at home for more than 30 minutes after work; the session is evidence of commitment but also a concrete overload signal.
+    findings:
+      - Off-hours AI development is continuing even after an already intense day.
+      - Headache should be treated as a stop signal, not as something to push through for architecture work.
+      - This session reinforces the need to convert AI work into sustainable assets and boundaries.
+    next_steps:
+      - Stop screen-heavy AI development for tonight if possible.
+      - Resume with a small written checklist rather than broad architecture work after rest.
+      - Use the two-month Codex asset-capture program to reduce repeated off-hours pressure.
+    mood_refs:
+      - mood_20260617_low_margin_impatience_ai_reputation_pressure
+    source_ref: source_ai_agent_conversation_20260617_home_ai_dev_headache
+
   - id: worksession_20260616_0430_0555_ip_design_tool_ontology_design
     date: 2026-06-16
     project_ref: project_ai_agent
