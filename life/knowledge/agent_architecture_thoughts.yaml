@@ -97,6 +97,20 @@ source_records:
       assumed_soc_meaning: System-on-Chip
       statement: Brian sees the target direction as modeling SoC-level structure and reasoning on top of the ontology layer.
       confidence: high
+  - id: source_knowledge_conversation_20260617_codex_seminar_soc_ontology_vds
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "codex 세미나 준비에 박차를 가하기 :) + 그리고 SoC 관점에서 어떻게 Ontoogy 를 할지 그리고 어떻게 VDS 문서를 쓸 수 있을지 고민하기."
+    interpreted_direction:
+      - Codex seminar preparation should accelerate.
+      - SoC-level ontology should become a concrete design topic, not only an abstract target.
+      - VDS documents may become a human-facing document layer or generated projection from the ontology.
+    unresolved_terms:
+      - term: VDS
+        issue: acronym_not_expanded_in_source
+        needs_user_review: true
 
 thought_threads:
   - id: thought_thread_20260615_okf_llm_wiki_ontology
@@ -199,6 +213,8 @@ thought_threads:
       - Brian then summarized the broader destination as "Ontology 위에 SoC".
       - The architecture implication is that a useful hardware agent should reason across SoC structure, not only local RTL files, task lists, or narrow IP objects.
       - "This also gives the Codex seminar/demo a stronger story: show how ontology connects SoC-level intent down to concrete implementation/evidence objects."
+      - Brian then connected this direction to Codex seminar preparation and VDS document thinking.
+      - The emerging idea is that VDS can be treated as a document layer over SoC ontology, rather than a separate static artifact disconnected from requirements, implementation, and evidence.
     related_concept_refs:
       - concept_ontology_first_agent_memory
       - concept_agentic_retrieval_substrate
@@ -211,10 +227,12 @@ thought_threads:
       - task_ai_agent_codex_ontology_development_plugin
       - task_ai_agent_codex_seminar_prepare
       - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_soc_ontology_vds_document_design
     prior_thread_refs:
       - thought_thread_20260616_agentic_rag_graphrag_ontology_mapping
     source_refs:
       - source_knowledge_conversation_20260617_soc_on_ontology_direction
+      - source_knowledge_conversation_20260617_codex_seminar_soc_ontology_vds
     confidence: high
     needs_user_review: false
 
@@ -307,6 +325,27 @@ understandings:
       - source_knowledge_conversation_20260617_soc_on_ontology_direction
     confidence: high
     needs_user_review: false
+  - id: understanding_20260617_vds_as_soc_ontology_document_layer
+    object_type: Understanding
+    date: 2026-06-17
+    area: MIND
+    secondary_areas:
+      - CAREER
+    statement: "Brian is considering VDS documents as a possible document layer over SoC-level ontology, where the ontology captures SoC/subsystem/IP/interface/requirement/evidence relationships and the VDS presents them in an engineering-readable form."
+    brian_wording_ko: "SoC 관점에서 어떻게 Ontology를 할지 그리고 어떻게 VDS 문서를 쓸 수 있을지 고민하기."
+    status: candidate_pending_vds_definition
+    related_thread_ref: thought_thread_20260617_soc_on_ontology_direction
+    related_concept_refs:
+      - concept_soc_on_ontology
+      - concept_subsystem_level_ontology
+      - concept_hardware_ip_agent
+      - concept_ontology_first_agent_memory
+      - concept_vds_document_layer
+    related_task_ref: task_ai_agent_soc_ontology_vds_document_design
+    source_refs:
+      - source_knowledge_conversation_20260617_codex_seminar_soc_ontology_vds
+    confidence: medium
+    needs_user_review: true
 
 architecture_directions:
   - id: architecture_direction_20260615_ontology_first_okf_export
@@ -405,17 +444,25 @@ architecture_directions:
         - explain why a design change is needed
         - connect lint/simulation/synthesis evidence back to requirements
         - prepare demoable workflow slices for RTL/IP engineers
+      documentation_layer:
+        - use VDS as a human-facing view over SoC ontology if the VDS scope is confirmed
+        - map requirements, interfaces, integration constraints, verification evidence, and decisions into document sections
+        - keep ontology as the semantic source of truth while generating or reviewing VDS text from it
       first_slice_candidate: Model one concrete path from SoC requirement to subsystem/IP/interface object, implementation task, verification evidence, owner, and current status.
+      vds_first_slice_candidate: Draft one VDS outline from the same SoC requirement to IP/interface/evidence path.
     tradeoffs:
       - SoC-level ontology gives stronger reasoning, but the first slice must stay narrow enough to demo reliably.
       - Too much schema upfront can slow implementation, so the model should grow from concrete Milano/OAG examples.
       - The agent should keep ontology as semantic truth and use tools/scripts as execution aids, not as the core model.
+      - VDS document generation can become useful quickly, but only after the VDS meaning, audience, and expected sections are confirmed.
     follow_up_task_refs:
       - task_ai_agent_codex_ontology_development_plugin
       - task_ai_agent_codex_seminar_prepare
       - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_soc_ontology_vds_document_design
     source_refs:
       - source_knowledge_conversation_20260617_soc_on_ontology_direction
+      - source_knowledge_conversation_20260617_codex_seminar_soc_ontology_vds
     status: active_direction
     confidence: high
     needs_user_review: false

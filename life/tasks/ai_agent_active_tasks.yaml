@@ -210,6 +210,28 @@ source_records:
       - task_ai_agent_codex_ontology_development_plugin
       - task_ai_agent_codex_seminar_prepare
       - task_ai_agent_company_codex_rollout_support
+  - id: source_ai_agent_conversation_20260617_codex_seminar_accelerate_soc_ontology_vds
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "codex 세미나 준비에 박차를 가하기 :) + 그리고 SoC 관점에서 어떻게 Ontoogy 를 할지 그리고 어떻게 VDS 문서를 쓸 수 있을지 고민하기."
+    interpreted_focus:
+      - Accelerate Codex seminar preparation.
+      - Think through how to model ontology from a SoC perspective.
+      - Think through how to write or generate VDS documents from the SoC ontology direction.
+    interpreted_terms:
+      VDS:
+        meaning: not_expanded_in_source
+        needs_user_review: true
+      Ontoogy:
+        normalized_term: ontology
+        interpretation: typo_or_fast_typing
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_soc_ontology_vds_document_design
+      - task_ai_agent_company_codex_rollout_support
 
 summary:
   current_state:
@@ -235,6 +257,7 @@ summary:
     - Codex has a two-month unlimited-use period; the exact start date and operational scope still need confirmation.
     - Brian identified that subsystem-level ontology should be improved for the hardware IP agent direction.
     - Brian further clarified the longer-term direction as SoC on top of ontology: SoC-level structure and reasoning should be built above the ontology layer.
+    - Brian wants to accelerate Codex seminar preparation and connect the seminar to SoC-level ontology and VDS document thinking.
     - The active local implementation repo is /Users/brian/Desktop/Project/ontology_ip_agent.
     - ontology_ip_agent is a .codex-first OAG test pack with hardware IP examples and ontology/knowledge ledger workflows.
   active_threads:
@@ -248,6 +271,7 @@ summary:
     - next-week Codex seminar package with rules, skills, demo, and guide docs
     - subsystem-level ontology improvement for hardware IP workflows
     - SoC-on-ontology hardware IP agent direction
+    - VDS document design as a possible projection of SoC-level ontology
     - Brian's personal ontology-backed life agent development
     - ontology_ip_agent development as the concrete OAG/Codex hardware IP agent implementation
     - ontology-first conversation memory for Brian's evolving knowledge interests
@@ -297,6 +321,10 @@ summary:
     - id: oq_ai_agent_soc_on_ontology_first_slice
       question: "Define the first SoC-on-ontology demo slice: which SoC/subsystem/IP/interface/requirement path should become the concrete example?"
       related_task_ref: task_ai_agent_codex_ontology_development_plugin
+      needs_user_review: true
+    - id: oq_ai_agent_vds_document_meaning_and_scope
+      question: "Confirm what VDS means in this context and whether the target is manual VDS writing, ontology-generated VDS drafting, or VDS review/checking."
+      related_task_ref: task_ai_agent_soc_ontology_vds_document_design
       needs_user_review: true
     - id: oq_ai_agent_okf_export_scope
       question: "Define first OKF export scope: projects/tasks/concepts only, or include people/body/daily summaries as well."
@@ -458,6 +486,7 @@ tasks:
       - Missed executive/division-head demos created pressure and showed the need for a reliable demo slice.
       - On 2026-06-17, Brian identified subsystem-level ontology as a key improvement area for the hardware IP agent.
       - On 2026-06-17, Brian clarified the broader destination as SoC on top of ontology.
+      - Brian also wants to think about how VDS documents can be written from the SoC ontology perspective.
     expected_outputs:
       - Codex-compatible ontology development plugin
       - explicit ontology object and link model for development workflows
@@ -466,6 +495,7 @@ tasks:
       - small reliable demo path before broader rollout
       - subsystem-level ontology model covering subsystem, IP block, interface, requirement, integration, verification, evidence, and owner links
       - SoC-level ontology layer that connects SoC intent to subsystem/IP/interface requirements, implementation tasks, verification evidence, owners, and decisions
+      - VDS document model or drafting flow that can use SoC ontology objects as its source structure
     next_actions:
       - Define the minimum ontology object model needed for a real development plugin.
       - Separate TODO execution state from ontology truth, evidence, and decision records.
@@ -474,12 +504,14 @@ tasks:
       - Use the common_ai_agent history to decide what to preserve and what to replace with Codex-native/plugin-native behavior.
       - Define the first subsystem-level ontology slice and use it as the seminar/demo ontology story.
       - Define one SoC-on-ontology slice that traces from SoC-level intent to concrete IP work and evidence.
+      - Map one SoC-on-ontology slice into a candidate VDS document outline.
     evidence_refs:
       - source_ai_agent_conversation_20260614_server_multiuser_demo_ontology_turning_point
       - source_ai_agent_conversation_20260614_ontology_ip_agent_repo
       - source_ai_agent_local_repo_inspection_20260614_ontology_ip_agent
       - source_ai_agent_conversation_20260617_subsystem_level_ontology_need
       - source_ai_agent_conversation_20260617_soc_on_ontology_direction
+      - source_ai_agent_conversation_20260617_codex_seminar_accelerate_soc_ontology_vds
     confidence: high
     needs_user_review: false
 
@@ -501,7 +533,7 @@ tasks:
       confidence: medium
     tracking_level: detailed
     project_ref: project_ai_agent
-    progress_percent: 20
+    progress_percent: 30
     tags:
       - codex
       - seminar
@@ -521,6 +553,8 @@ tasks:
       - A two-month unlimited-use period is expected, but the exact start date and scope need confirmation.
       - The seminar should explain why subsystem-level ontology matters for hardware IP workflows.
       - "The stronger seminar story is SoC on top of ontology: ontology as semantic substrate, SoC-level workflow/reasoning above it."
+      - Brian wants to put more force behind preparation rather than leaving the Codex seminar as a loose future item.
+      - The seminar should connect practical Codex usage with the larger SoC ontology and VDS documentation direction.
     expected_outputs:
       - Codex seminar outline
       - comparison of Cursor workflow and Codex workflow
@@ -533,6 +567,7 @@ tasks:
       - guide document for the two-month unlimited-use period
       - subsystem-level ontology explanation and example slice
       - SoC-on-ontology explanation that connects SoC, subsystem, IP, interface, requirement, verification, evidence, owner, and decision objects
+      - VDS-oriented section showing how ontology-backed SoC structure can become useful engineering documentation
     next_actions:
       - Write down what worked in the 2026-06-12 Cursor seminar.
       - Decide whether the Codex seminar should focus on usage, workflow design, hardware IP examples, or ontology-backed development.
@@ -544,11 +579,59 @@ tasks:
       - Draft the guide document around practical first-week usage and the two-month unlimited-use window.
       - Choose a subsystem-level ontology demo slice that is concrete enough for RTL/IP engineers.
       - Frame the demo as a narrow SoC-on-ontology path rather than a broad product demo.
+      - "Convert the seminar into concrete deliverables: outline, rule pack, skill pack, demo path, guide document, and VDS/SoC ontology story."
+      - Decide one VDS document example or outline that can be shown without overbuilding the full schema.
     evidence_refs:
       - source_ai_agent_conversation_20260614_cursor_seminar_success_codex_planned
       - source_ai_agent_conversation_20260617_codex_next_week_seminar_demo_guide
       - source_ai_agent_conversation_20260617_codex_two_month_unlimited_use
       - source_ai_agent_conversation_20260617_subsystem_level_ontology_need
+      - source_ai_agent_conversation_20260617_soc_on_ontology_direction
+      - source_ai_agent_conversation_20260617_codex_seminar_accelerate_soc_ontology_vds
+    confidence: high
+    needs_user_review: true
+
+  - id: task_ai_agent_soc_ontology_vds_document_design
+    title: SoC 관점 ontology 및 VDS 문서화 설계
+    area: CAREER
+    secondary_areas:
+      - MIND
+    status: planned
+    priority: high
+    energy: system_design
+    estimated_minutes: null
+    due_date: null
+    tracking_level: concept
+    project_ref: project_ai_agent
+    progress_percent: 0
+    tags:
+      - soc
+      - ontology
+      - vds
+      - documentation
+      - hardware_ip_agent
+      - codex_seminar
+    context:
+      - Brian's broader hardware-agent direction is SoC on top of ontology.
+      - Brian wants to think through how ontology should work from a SoC perspective.
+      - Brian also wants to think through how VDS documents can be written or supported from that ontology.
+      - VDS meaning and exact target document flow are not yet expanded in the source conversation.
+    expected_outputs:
+      - first SoC ontology slice candidate
+      - VDS document outline or section model based on SoC ontology objects
+      - mapping from SoC/subsystem/IP/interface/requirement/evidence objects to document sections
+      - seminar-ready explanation of why ontology-backed VDS is more useful than static documentation
+    next_actions:
+      - Confirm what VDS means and what kind of document Brian wants to target first.
+      - Choose one concrete SoC/subsystem/IP/interface path for the first ontology slice.
+      - Draft a minimal VDS outline using that ontology slice.
+      - Decide which parts should be canonical ontology data and which parts should be generated human-facing documentation.
+    related_task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+    evidence_refs:
+      - source_ai_agent_conversation_20260617_codex_seminar_accelerate_soc_ontology_vds
       - source_ai_agent_conversation_20260617_soc_on_ontology_direction
     confidence: high
     needs_user_review: true
@@ -1017,3 +1100,22 @@ project_status_updates:
       - task_ai_agent_codex_seminar_prepare
       - task_ai_agent_company_codex_rollout_support
     source_ref: source_ai_agent_conversation_20260617_soc_on_ontology_direction
+
+  - id: project_status_ai_agent_20260617_codex_seminar_accelerate_vds
+    date: 2026-06-17
+    project_ref: project_ai_agent
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: Brian wants to accelerate Codex seminar preparation and connect it to SoC-level ontology and VDS document design.
+    lesson: The seminar should not be only a Codex usage demo; it should show the higher-value architecture story where SoC ontology can drive workflow, evidence, and engineering documentation.
+    next_step: "Turn the seminar into concrete deliverables: outline, rule pack, skill pack, demo path, guide document, and one VDS/SoC ontology example."
+    risks:
+      - VDS acronym and target document structure are not yet confirmed.
+      - The SoC ontology story can become too broad unless one narrow example path is selected.
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_soc_ontology_vds_document_design
+      - task_ai_agent_company_codex_rollout_support
+    source_ref: source_ai_agent_conversation_20260617_codex_seminar_accelerate_soc_ontology_vds

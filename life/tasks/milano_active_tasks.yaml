@@ -1,11 +1,11 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-16
+updated_at: 2026-06-17
 area: CAREER
 project_ref: project_milano
 component_ref: component_milano_pcie
 title: Milano active task list
-current_phase: SDC cleanup, R001 IP Diff reflection, compile/lint/simulation release readiness, Firenze handler reflection, lint final check, Disparity Jira tracking, and final DB synthesis preparation
+current_phase: Initial DB release completed; next focus is SDC cleanup, with R001 IP Diff, Firenze handler reflection, lint final check, Disparity Jira tracking, and final DB synthesis follow-up remaining
 source_records:
   - id: source_milano_conversation_20260614_current_tasks
     source_type: chat
@@ -224,6 +224,32 @@ source_records:
         status: running
       planned_release_review_date: 2026-06-17
       next_step: Review lint tomorrow before release.
+  - id: source_milano_conversation_20260617_initial_db_release_completed_rest
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "추가로 initial db release 완료 :) 좀 쉴려고 합니다"
+    interpreted_status:
+      release_type: initial_db_release
+      status: completed
+      recovery_intent: Brian plans to rest after completing the release.
+      artifact_path_or_version: null
+      needs_followup_metadata: true
+    related_task_refs:
+      - task_milano_release_readiness_compile_lint_sim_20260617
+      - task_milano_gen7_phy_db_synthesis
+  - id: source_milano_conversation_20260617_focus_sdc_cleanup
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "sdc clean up에 집중합시다"
+    interpreted_focus:
+      date: 2026-06-17
+      primary_task_ref: task_milano_sdc_dual_profile_synth_rerun
+      priority: high
+      rationale: After initial DB release, Brian wants to focus on SDC cleanup.
 
 summary:
   recently_completed:
@@ -231,13 +257,14 @@ summary:
     - task_milano_cross_domain_signal_naming_cleanup
     - task_milano_common_module_replacement
     - task_milano_standard_cell_replacement
+    - task_milano_release_readiness_compile_lint_sim_20260617
   active_threads:
     - 3nm synthesis rerun using two SDC profiles
     - ARIR area and instance count pre-check from synthesis results
     - lint re-check after new IP revision 0.1 integration
     - R001 IP Diff reflection for core, link, link wrapper, and ips with gray-area cross-check
     - Late-night audit of possible Brian-owned follow-ups that may have been missed, including common module-related items
-    - Compile passed at 22:38; lint and simulation are running; release is planned after lint review on 2026-06-17
+    - Initial DB release completed on 2026-06-17; artifact path/version is not yet recorded
     - Firenze handler reflection check in Milano
     - final GEN7 PHY DB synthesis integration
     - Port 1 interrupt requirement deferred to the 2026-07-16 to 2026-08-16 window
@@ -246,12 +273,12 @@ summary:
     - GEN7 merge lint work reported complete by 박길봉 TL님, with Brian final check in progress
     - Disparity Error Injection case where the expected error did not occur, with debug requested from 변승현 TL님 and Jira tracking planned
   current_focus:
-    date: 2026-06-16
+    date: 2026-06-17
     primary_tasks:
       - task_milano_sdc_dual_profile_synth_rerun
+    supporting_tasks:
       - task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
       - task_milano_audit_missed_brian_owned_followups_common_module_etc
-      - task_milano_release_readiness_compile_lint_sim_20260617
       - task_milano_firenze_handler_reflection_check
       - task_milano_lint_ip_rev_0_1_rerun
     deferred_tasks:
@@ -263,6 +290,8 @@ summary:
       - source_milano_conversation_20260616_r001_ip_diff_gray_cross_check
       - source_milano_conversation_20260616_late_night_tired_missed_brian_owned_followups
       - source_milano_conversation_20260616_2238_compile_pass_lint_sim_running_release_tomorrow
+      - source_milano_conversation_20260617_initial_db_release_completed_rest
+      - source_milano_conversation_20260617_focus_sdc_cleanup
   open_questions:
     - id: oq_milano_gen7_phy_term
       question: "'제7파이'를 GEN7 PHY로 해석하는 것이 맞는지 확인 필요."
@@ -351,6 +380,7 @@ tasks:
       - As of 2026-06-16, SDC clean-up is one of today's primary Milano focus items.
       - On the morning of 2026-06-16, Brian cleaned up PD PCIe SDC errors by reading an unmapped file in farm DC.
       - Link0 wrapper synthesis is now running and producing meaningful results, with Brian reporting WNS around 1.
+      - After completing the initial DB release on 2026-06-17, Brian reset the Milano focus back to SDC clean-up.
     tooling_notes:
       - Cursor was useful for SDC porting, but needed examples and iteration.
       - Python scripting helped stabilize or automate parts of the SDC porting flow.
@@ -370,6 +400,7 @@ tasks:
       - Continue checking whether the PD PCIe SDC cleanup fully resolves downstream synthesis or lint symptoms.
       - Capture effective few-shot examples and Python script usage as repeatable porting guidance if results are good.
       - Decide which SDC profile should be the working baseline or whether both must remain.
+      - Use SDC clean-up as the next primary Milano workstream after the initial DB release and rest.
     depends_on:
       - task_milano_3nm_synth_env_setup
     evidence_refs:
@@ -379,6 +410,8 @@ tasks:
       - source_milano_conversation_20260616_today_focus_sdc_interrupt_handler_lint
       - source_milano_conversation_20260616_morning_pd_pcie_sdc_error_cleanup
       - source_milano_conversation_20260616_link0_wrapper_synthesis_meaningful_wns
+      - source_milano_conversation_20260617_initial_db_release_completed_rest
+      - source_milano_conversation_20260617_focus_sdc_cleanup
     confidence: high
     needs_user_review: false
 
@@ -637,7 +670,7 @@ tasks:
     tracking_level: milestone
     project_ref: project_milano
     component_ref: component_milano_pcie
-    progress_percent: 30
+    progress_percent: 60
     tags:
       - milano
       - gen7
@@ -648,10 +681,13 @@ tasks:
       - final DB synthesis result including GEN7 PHY
       - synthesis reports
       - blocker list if synthesis fails
+    current_state:
+      - Initial DB release was completed on 2026-06-17.
+      - Exact release artifact path/version and the final relationship to GEN7 PHY DB synthesis are not yet recorded.
     next_actions:
       - Confirm whether "제7파이" means GEN7 PHY.
-      - Prepare DB synthesis target including GEN7 PHY.
-      - Wait for GEN7 PHY synthesis result.
+      - Record the initial DB release artifact path/version when available.
+      - Confirm whether the initial DB release includes the intended GEN7 PHY scope or whether a later final DB synthesis remains.
       - Review synthesis reports after the run completes.
       - Record failures as Issue objects with logs/artifacts.
     depends_on:
@@ -971,7 +1007,7 @@ tasks:
   - id: task_milano_release_readiness_compile_lint_sim_20260617
     title: Compile/Lint/Simulation 확인 후 Milano release
     area: CAREER
-    status: in_progress
+    status: completed
     priority: high
     energy: review
     estimated_minutes: null
@@ -979,7 +1015,7 @@ tasks:
     tracking_level: detailed
     project_ref: project_milano
     component_ref: component_milano_pcie
-    progress_percent: 60
+    progress_percent: 100
     owner_ref: person_brian
     related_task_refs:
       - task_milano_lint_ip_rev_0_1_rerun
@@ -1001,48 +1037,52 @@ tasks:
         date: 2026-06-16
         artifact_ref: artifact_milano_compile_run_20260616_2238
       lint:
-        status: running
-        checked_at: "22:38"
-        date: 2026-06-16
+        status: reviewed_for_initial_db_release
+        checked_at: null
+        date: 2026-06-17
         artifact_ref: artifact_milano_lint_run_20260616_2238
       simulation:
-        status: running
-        checked_at: "22:38"
-        date: 2026-06-16
+        status: accepted_for_initial_db_release
+        checked_at: null
+        date: 2026-06-17
         artifact_ref: artifact_milano_simulation_run_20260616_2238
       planned_release_review_date: 2026-06-17
+      initial_db_release:
+        status: completed
+        date: 2026-06-17
+        artifact_ref: artifact_milano_initial_db_release_20260617
     context:
       - At 22:38 on 2026-06-16, compile passed.
       - Lint was running.
       - Simulation was running.
       - Brian plans to review lint on 2026-06-17 and release if gates are acceptable.
+      - On 2026-06-17, Brian reported that the initial DB release was completed.
+      - Brian plans to rest after completing the initial DB release.
     expected_outputs:
       - Compile pass evidence.
       - Lint report reviewed on 2026-06-17.
       - Simulation result reviewed.
       - Release artifact, tag, note, or handoff record.
+      - Initial DB release completion record.
     acceptance_criteria:
       - Compile remains passing.
       - Lint result is reviewed and residual issues are either clean, waived, or explicitly tracked.
       - Simulation result is reviewed and any failures are tracked before release.
       - R001 diff and missed-followup audit do not leave unresolved release blockers.
-    blockers:
-      - Lint result is still running and not reviewed.
-      - Simulation result is still running and not reviewed.
-      - Release artifact/path/version is not recorded yet.
+    blockers: []
     next_actions:
-      - Let lint and simulation finish.
-      - On 2026-06-17, review lint result first.
-      - Review simulation result before release.
-      - Check whether R001 diff reflection or missed follow-up audit creates any release blocker.
-      - If gates are acceptable, perform release and record release artifact/path/version.
+      - Record the initial DB release artifact path, version, or handoff note when available.
+      - Rest before starting the next deep-work block.
+      - Shift the next Milano focus to SDC clean-up.
     artifact_refs:
       - artifact_milano_compile_run_20260616_2238
       - artifact_milano_lint_run_20260616_2238
       - artifact_milano_simulation_run_20260616_2238
       - artifact_milano_release_candidate_20260617
+      - artifact_milano_initial_db_release_20260617
     evidence_refs:
       - source_milano_conversation_20260616_2238_compile_pass_lint_sim_running_release_tomorrow
+      - source_milano_conversation_20260617_initial_db_release_completed_rest
     confidence: high
     needs_user_review: false
 
@@ -1283,6 +1323,9 @@ work_sessions:
       - artifact_milano_nvme_connection_supplement
       - artifact_milano_common_module_replacement_patch
     source_ref: source_milano_conversation_20260614_multi_hour_progress_update
+    evidence_refs:
+      - source_milano_conversation_20260614_multi_hour_progress_update
+      - source_milano_conversation_20260617_initial_db_release_completed_rest
 
 task_status_updates:
   - id: status_task_milano_sdc_20260614_multi_hour_progress
@@ -1567,6 +1610,34 @@ task_status_updates:
       - artifact_milano_simulation_run_20260616_2238
       - artifact_milano_release_candidate_20260617
     source_ref: source_milano_conversation_20260616_2238_compile_pass_lint_sim_running_release_tomorrow
+
+  - id: status_task_milano_release_readiness_20260617_initial_db_release_completed
+    date: 2026-06-17
+    task_ref: task_milano_release_readiness_compile_lint_sim_20260617
+    author_ref: person_brian
+    status: completed
+    progress_percent: 100
+    summary: Brian completed the initial DB release and plans to rest before moving back to the next Milano workstream.
+    remaining_metadata:
+      - Initial DB release artifact path/version is not yet recorded.
+      - Exact lint/simulation report summary used for release acceptance is not yet recorded.
+    next_step: Record artifact path/version later if needed, rest, then focus on SDC clean-up.
+    artifact_refs:
+      - artifact_milano_initial_db_release_20260617
+      - artifact_milano_release_candidate_20260617
+    source_ref: source_milano_conversation_20260617_initial_db_release_completed_rest
+
+  - id: status_task_milano_sdc_20260617_focus_after_initial_db_release
+    date: 2026-06-17
+    task_ref: task_milano_sdc_dual_profile_synth_rerun
+    author_ref: person_brian
+    status: in_progress
+    progress_percent: 75
+    summary: After completing the initial DB release, Brian reset the next Milano focus to SDC clean-up.
+    next_step: Concentrate on SDC warnings, mismatches, portability issues, and profile differences before expanding back into other Milano threads.
+    source_refs:
+      - source_milano_conversation_20260617_initial_db_release_completed_rest
+      - source_milano_conversation_20260617_focus_sdc_cleanup
 
   - id: status_task_milano_mse_pf_bar0_20260615_added
     date: 2026-06-15
@@ -1871,12 +1942,30 @@ artifact_candidates:
     task_ref: task_milano_release_readiness_compile_lint_sim_20260617
     path_or_uri: null
     created_on: 2026-06-17
-    status: planned_after_lint_review
+    status: released_as_initial_db
+    released_artifact_ref: artifact_milano_initial_db_release_20260617
     gating_artifact_refs:
       - artifact_milano_compile_run_20260616_2238
       - artifact_milano_lint_run_20260616_2238
       - artifact_milano_simulation_run_20260616_2238
-    notes: Release is planned after Brian reviews lint on 2026-06-17 and confirms simulation/release gates are acceptable.
+    notes: This release candidate became the completed initial DB release on 2026-06-17; exact release path/version is not yet recorded.
+
+  - id: artifact_milano_initial_db_release_20260617
+    title: Milano initial DB release
+    artifact_type: db_release
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_release_readiness_compile_lint_sim_20260617
+    path_or_uri: null
+    created_on: 2026-06-17
+    status: completed
+    release_scope: initial_db_release
+    gating_artifact_refs:
+      - artifact_milano_compile_run_20260616_2238
+      - artifact_milano_lint_run_20260616_2238
+      - artifact_milano_simulation_run_20260616_2238
+    notes: Brian reported that the initial DB release is complete; artifact path, version, and handoff details are not yet recorded.
+    source_ref: source_milano_conversation_20260617_initial_db_release_completed_rest
 
   - id: artifact_milano_pdci_sdc_v1
     title: PDCI SDC v1
@@ -2228,6 +2317,27 @@ project_status_updates:
       - artifact_milano_simulation_run_20260616_2238
       - artifact_milano_release_candidate_20260617
     source_ref: source_milano_conversation_20260616_2238_compile_pass_lint_sim_running_release_tomorrow
+
+  - id: project_status_milano_20260617_initial_db_release_done_sdc_focus
+    date: 2026-06-17
+    project_ref: project_milano
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: Brian completed the initial DB release and reset the next Milano focus to SDC clean-up.
+    positive_signal: Initial DB release completion closes the immediate release-readiness loop and creates room to work SDC quality more deliberately.
+    recovery_note: Brian plans to rest after completing the initial DB release.
+    next_focus: task_milano_sdc_dual_profile_synth_rerun
+    next_step: After rest, focus on SDC clean-up before widening back to R001 diff, Firenze handler reflection, lint final confidence, and remaining DB synthesis metadata.
+    related_task_refs:
+      - task_milano_release_readiness_compile_lint_sim_20260617
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_gen7_phy_db_synthesis
+    artifact_refs:
+      - artifact_milano_initial_db_release_20260617
+    source_refs:
+      - source_milano_conversation_20260617_initial_db_release_completed_rest
+      - source_milano_conversation_20260617_focus_sdc_cleanup
 
   - id: project_status_milano_20260615_cleanup_tasks_completed
     date: 2026-06-15
