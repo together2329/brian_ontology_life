@@ -343,7 +343,7 @@ workout_records:
         sequence_order: 3
         variant: machine_or_cable
         equipment: cable_or_lat_pulldown_machine
-        notes: 렛풀다운 추가 세트. Done after the main back volume; 30kg dropped to 8 reps, so this is a good point to stop adding back volume.
+        notes: 렛풀다운 추가 세트. Brian later added a final 30kg x 10 finishing set after deadlift work.
         confidence: high
         sets:
           - set: 1
@@ -371,6 +371,14 @@ workout_records:
             is_pr: null
             needs_user_review: true
             notes: Brian confirmed this 15kg extra item was lat pulldown; whether "1개더" means one additional set or one additional rep still needs review.
+          - set: 4
+            weight_kg: 30
+            reps: 10
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+            notes: Final lat pulldown set after deadlift work.
       - exercise_ref: exercise_deadlift
         sequence_order: 4
         variant: barbell
@@ -1493,3 +1501,9 @@ raw_records:
     source: codex_conversation
     related_workout: workoutsession_20260618_back_cable_pulldown_seated_row
     text: "10개함 근데 손에서 빠져 나가려한다 힘은 있는데"
+  - id: raw_body_record_20260618_back_lat_pulldown_final_30kg
+    date: 2026-06-18
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260618_back_cable_pulldown_seated_row
+    text: "마무리로 다시\n렛풀 다운 30kg 10개"
