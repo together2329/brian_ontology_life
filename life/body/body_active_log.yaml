@@ -807,6 +807,32 @@ workout_records:
         sets: []
 
 meal_records:
+  - id: meal_20260618_post_back_workout_the_danbaek_120g
+    object_type: Meal
+    date: 2026-06-18
+    time: null
+    time_of_day: post_workout
+    area: BODY
+    meal_type: post_workout_protein
+    status: completed
+    items:
+      - name: 더단백
+        amount: 120
+        unit: g
+        calories: null
+        protein_g: null
+        carbs_g: null
+        fat_g: null
+        product_weight_g: 120
+    supplements: []
+    related_workout: workoutsession_20260618_back_cable_pulldown_seated_row
+    related_nutrition_target_ref: protein_target_20260615
+    protein_g_total: null
+    protein_g_estimate_range: null
+    confidence: medium
+    needs_user_review: true
+    notes: Brian drank one 120g 더단백 item after the 2026-06-18 back workout. The 120g value is treated as product weight/size, not confirmed protein grams.
+
   - id: meal_20260617_morning_protein_shake_20g
     object_type: Meal
     date: 2026-06-17
@@ -1529,3 +1555,10 @@ raw_records:
     source: codex_conversation
     related_trend_observation_ref: body_trend_20260618_current_big_lift_snapshot
     text: "지금 데드 50 , 스쿼트 70 벤치 40임 ㅎㅎ  귀엽지?"
+  - id: raw_body_record_20260618_post_workout_the_danbaek_120g
+    date: 2026-06-18
+    time: null
+    source: codex_conversation
+    related_meal: meal_20260618_post_back_workout_the_danbaek_120g
+    related_workout: workoutsession_20260618_back_cable_pulldown_seated_row
+    text: "더 단백 120그램 짜리 하나 마심."
