@@ -241,6 +241,21 @@ exercise_catalog:
       - rear_delts
     equipment: cable_or_lat_pulldown_machine
     notes: Use when Brian records lat pulldown work.
+  - id: exercise_deadlift
+    object_type: ExerciseCatalog
+    name: Deadlift
+    aliases:
+      - 데드리프트
+      - 데드
+      - deadlift
+    muscle_groups:
+      - hamstrings
+      - glutes
+      - lower_back
+      - upper_back
+      - core
+    equipment: barbell_or_unspecified
+    notes: Use when Brian records deadlift work; capture empty-bar work separately when exact bar weight is not specified.
 
 workout_records:
   - id: workoutsession_20260618_back_cable_pulldown_seated_row
@@ -250,13 +265,13 @@ workout_records:
     start: null
     end: null
     status: completed
-    title: 등 운동 - 케이블 암 풀다운과 시티드로우
+    title: 등 운동 - 케이블 암 풀다운, 시티드로우, 렛풀다운, 데드리프트
     training_program_ref: pt_program_2026_spring
     location: null
     duration_minutes: null
     perceived_energy: good_back_performance
     digestion: null
-    performance_note: Brian completed a back workout with cable arm pulldown and seated row. Seated row went up well today, and the recommendation was to stop chasing more load and use a controlled finishing set instead because main back volume was already fairly full.
+    performance_note: Brian completed a back workout with cable arm pulldown, seated row, lat pulldown, and empty-bar deadlift. Seated row went up well today, and the recommendation was to stop chasing more load and use a controlled finishing set instead because main back volume was already fairly full.
     recommendation_note: "Recommended finish: seated row 40kg x 12-15 for 1 set, or cable arm pulldown 25kg x 12-15 for 2 sets. After back work, a little biceps or rear-delt work would be appropriate; if doing only more back, use 40kg with slow contraction and eccentric control."
     source_raw_text: |
       오늘 등운동 기록:
@@ -345,6 +360,34 @@ workout_records:
             rest_seconds: null
             is_warmup: false
             is_pr: null
+          - set: 3
+            weight_kg: 15
+            reps: null
+            reported_quantity: "1개더"
+            quantity_interpretation: one_additional_set_or_rep_unclear
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+            needs_user_review: true
+            notes: Brian said "15kg 1개더"; this likely means one more light set, but reps were not clearly recorded.
+      - exercise_ref: exercise_deadlift
+        sequence_order: 4
+        variant: empty_bar
+        equipment: barbell_or_unspecified
+        notes: 데드리프트 빈봉 20개. Exact empty-bar weight was not recorded.
+        confidence: high
+        needs_user_review: true
+        sets:
+          - set: 1
+            weight_kg: null
+            reps: 20
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+            load_description: empty_bar
+            weight_basis_needs_review: true
 
   - id: workoutsession_20260617_chest_smith_bench
     object_type: WorkoutSession
@@ -1383,3 +1426,9 @@ raw_records:
     source: codex_conversation
     related_workout: workoutsession_20260618_back_cable_pulldown_seated_row
     text: "okay 렛풀 다운 25kg 15개 30kg 8개함"
+  - id: raw_body_record_20260618_back_lat_pulldown_deadlift_finish
+    date: 2026-06-18
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260618_back_cable_pulldown_seated_row
+    text: "15kg 1개더 하고\n데드리프트 빈봉으로 20개함"
