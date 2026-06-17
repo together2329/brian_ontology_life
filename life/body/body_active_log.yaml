@@ -271,7 +271,7 @@ workout_records:
     duration_minutes: null
     perceived_energy: good_back_performance
     digestion: null
-    performance_note: Brian completed a back workout with cable arm pulldown, seated row, lat pulldown, and empty-bar deadlift. Seated row went up well today, and the recommendation was to stop chasing more load and use a controlled finishing set instead because main back volume was already fairly full.
+    performance_note: Brian completed a back workout with cable arm pulldown, seated row, lat pulldown, and deadlift. Seated row went up well today, and the recommendation was to stop chasing more load and use a controlled finishing set instead because main back volume was already fairly full.
     recommendation_note: "Recommended finish: seated row 40kg x 12-15 for 1 set, or cable arm pulldown 25kg x 12-15 for 2 sets. After back work, a little biceps or rear-delt work would be appropriate; if doing only more back, use 40kg with slow contraction and eccentric control."
     source_raw_text: |
       오늘 등운동 기록:
@@ -370,24 +370,32 @@ workout_records:
             is_warmup: false
             is_pr: null
             needs_user_review: true
-            notes: Brian said "15kg 1개더"; this likely means one more light set, but reps were not clearly recorded.
+            notes: Brian confirmed this 15kg extra item was lat pulldown; whether "1개더" means one additional set or one additional rep still needs review.
       - exercise_ref: exercise_deadlift
         sequence_order: 4
-        variant: empty_bar
-        equipment: barbell_or_unspecified
-        notes: 데드리프트 빈봉 20개. Exact empty-bar weight was not recorded.
+        variant: barbell
+        equipment: barbell
+        notes: 데드리프트. Brian completed 20kg empty-bar work, then added 10kg total and completed 30kg x 15.
         confidence: high
-        needs_user_review: true
+        needs_user_review: false
         sets:
           - set: 1
-            weight_kg: null
+            weight_kg: 20
             reps: 20
             rpe: null
             rest_seconds: null
             is_warmup: false
             is_pr: null
             load_description: empty_bar
-            weight_basis_needs_review: true
+            notes: Brian confirmed the empty bar was 20kg.
+          - set: 2
+            weight_kg: 30
+            reps: 15
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+            load_description: 20kg_bar_plus_10kg_added_total
 
   - id: workoutsession_20260617_chest_smith_bench
     object_type: WorkoutSession
@@ -1432,3 +1440,21 @@ raw_records:
     source: codex_conversation
     related_workout: workoutsession_20260618_back_cable_pulldown_seated_row
     text: "15kg 1개더 하고\n데드리프트 빈봉으로 20개함"
+  - id: raw_body_record_20260618_back_lat_pulldown_confirmation
+    date: 2026-06-18
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260618_back_cable_pulldown_seated_row
+    text: "랫풀다운 맞아"
+  - id: raw_body_record_20260618_back_deadlift_30kg_set
+    date: 2026-06-18
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260618_back_cable_pulldown_seated_row
+    text: "데드리프트 10kg 추가해서 30kg 15회"
+  - id: raw_body_record_20260618_back_deadlift_empty_bar_weight_confirmation
+    date: 2026-06-18
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260618_back_cable_pulldown_seated_row
+    text: "20kg 맞아"
