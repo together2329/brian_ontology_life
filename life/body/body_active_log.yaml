@@ -375,7 +375,7 @@ workout_records:
         sequence_order: 4
         variant: barbell
         equipment: barbell
-        notes: 데드리프트. Brian completed 20kg empty-bar work, then added 10kg total and completed 30kg x 15.
+        notes: 데드리프트. Brian completed 20kg empty-bar work, then 30kg x 15, then 40kg x 12.
         confidence: high
         needs_user_review: false
         sets:
@@ -396,6 +396,14 @@ workout_records:
             is_warmup: false
             is_pr: null
             load_description: 20kg_bar_plus_10kg_added_total
+          - set: 3
+            weight_kg: 40
+            reps: 12
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+            correction_note: Brian first said 13 reps, then corrected it to 12 reps.
 
   - id: workoutsession_20260617_chest_smith_bench
     object_type: WorkoutSession
@@ -1458,3 +1466,15 @@ raw_records:
     source: codex_conversation
     related_workout: workoutsession_20260618_back_cable_pulldown_seated_row
     text: "20kg 맞아"
+  - id: raw_body_record_20260618_back_deadlift_40kg_set
+    date: 2026-06-18
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260618_back_cable_pulldown_seated_row
+    text: "데드리프트 40kg 13개"
+  - id: raw_body_record_20260618_back_deadlift_40kg_reps_correction
+    date: 2026-06-18
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260618_back_cable_pulldown_seated_row
+    text: "12개 쏘리"
