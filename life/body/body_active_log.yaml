@@ -146,8 +146,136 @@ exercise_catalog:
       - hamstrings
     equipment: machine
     notes: Machine leg press.
+  - id: exercise_smith_machine_chest_press
+    object_type: ExerciseCatalog
+    name: Smith machine chest press
+    aliases:
+      - 스미스 머신 가슴 프레스
+      - 스미스 머신 미는거
+      - 스미스 머신 프레스
+      - smith machine chest press
+      - smith press
+    muscle_groups:
+      - chest
+      - triceps
+      - shoulders
+    equipment: smith_machine
+    notes: Use when Brian records a chest press movement on a Smith machine.
+  - id: exercise_bench_press
+    object_type: ExerciseCatalog
+    name: Bench press
+    aliases:
+      - 벤치 프레스
+      - 벤치프레스
+      - bench press
+    muscle_groups:
+      - chest
+      - triceps
+      - shoulders
+    equipment: barbell_or_unspecified
+    notes: Use when Brian records bench press work; specify barbell, dumbbell, or machine variant later if known.
 
 workout_records:
+  - id: workoutsession_20260617_chest_smith_bench
+    object_type: WorkoutSession
+    date: 2026-06-17
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: 가슴 운동 - 스미스 머신 프레스와 벤치 프레스
+    training_program_ref: pt_program_2026_spring
+    location: null
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    performance_note: Brian reported doing chest exercise today using a Smith-machine press movement and bench press.
+    exercises:
+      - exercise_ref: exercise_smith_machine_chest_press
+        sequence_order: 1
+        variant: smith_machine
+        equipment: smith_machine
+        notes: 가슴 운동 기구로 스미스 머신에서 미는 동작. Brian estimated about 6 sets.
+        confidence: medium
+        sets:
+          - set: 1
+            weight_kg: null
+            reps: null
+            rpe: null
+            rest_seconds: null
+            is_warmup: null
+            is_pr: null
+          - set: 2
+            weight_kg: null
+            reps: null
+            rpe: null
+            rest_seconds: null
+            is_warmup: null
+            is_pr: null
+          - set: 3
+            weight_kg: null
+            reps: null
+            rpe: null
+            rest_seconds: null
+            is_warmup: null
+            is_pr: null
+          - set: 4
+            weight_kg: null
+            reps: null
+            rpe: null
+            rest_seconds: null
+            is_warmup: null
+            is_pr: null
+          - set: 5
+            weight_kg: null
+            reps: null
+            rpe: null
+            rest_seconds: null
+            is_warmup: null
+            is_pr: null
+          - set: 6
+            weight_kg: null
+            reps: null
+            rpe: null
+            rest_seconds: null
+            is_warmup: null
+            is_pr: null
+      - exercise_ref: exercise_bench_press
+        sequence_order: 2
+        variant: unspecified
+        equipment: barbell_or_unspecified
+        notes: 벤치 프레스. Brian reported 4 sets; weight and reps were not specified.
+        confidence: medium
+        sets:
+          - set: 1
+            weight_kg: null
+            reps: null
+            rpe: null
+            rest_seconds: null
+            is_warmup: null
+            is_pr: null
+          - set: 2
+            weight_kg: null
+            reps: null
+            rpe: null
+            rest_seconds: null
+            is_warmup: null
+            is_pr: null
+          - set: 3
+            weight_kg: null
+            reps: null
+            rpe: null
+            rest_seconds: null
+            is_warmup: null
+            is_pr: null
+          - set: 4
+            weight_kg: null
+            reps: null
+            rpe: null
+            rest_seconds: null
+            is_warmup: null
+            is_pr: null
+
   - id: workoutsession_20260616_lower_body_hard
     object_type: WorkoutSession
     date: 2026-06-16
@@ -384,6 +512,56 @@ workout_records:
             is_pr: null
 
 meal_records:
+  - id: meal_20260617_morning_protein_shake_20g
+    object_type: Meal
+    date: 2026-06-17
+    time: null
+    time_of_day: morning
+    area: BODY
+    meal_type: morning_protein
+    status: completed
+    items:
+      - name: 단백질 쉐이크
+        amount: 1
+        unit: serving
+        calories: null
+        protein_g: 20
+        carbs_g: null
+        fat_g: null
+    supplements: []
+    related_workout: workoutsession_20260617_chest_smith_bench
+    related_nutrition_target_ref: protein_target_20260615
+    protein_g_total: 20
+    protein_g_estimate_range: null
+    confidence: high
+    needs_user_review: false
+    notes: Brian reported having a morning protein shake with 20g protein on 2026-06-17.
+
+  - id: meal_20260617_lunch_chicken_breast_risotto
+    object_type: Meal
+    date: 2026-06-17
+    time: null
+    time_of_day: lunch
+    area: BODY
+    meal_type: lunch
+    status: completed
+    items:
+      - name: 닭가슴살 리조또
+        amount: 1
+        unit: serving
+        calories: null
+        protein_g: null
+        carbs_g: null
+        fat_g: null
+    supplements: []
+    related_workout: workoutsession_20260617_chest_smith_bench
+    related_nutrition_target_ref: protein_target_20260615
+    protein_g_total: null
+    protein_g_estimate_range: [25, 40]
+    confidence: medium
+    needs_user_review: false
+    notes: Lunch on 2026-06-17 was chicken breast risotto; protein estimate depends on product and chicken breast portion.
+
   - id: meal_20260616_lunch_dak_gomtang
     object_type: Meal
     date: 2026-06-16
@@ -843,3 +1021,18 @@ raw_records:
     source: codex_conversation
     related_meal: meal_20260616_late_night_protein_30g
     text: "프로틴 30g 추가 섭취와 두유, 계란, 브로콜리 팩은 2026-06-16 기록으로 정정."
+  - id: raw_body_record_20260617_chest_smith_bench_workout
+    date: 2026-06-17
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260617_chest_smith_bench
+    text: "오늘도 운동 했어. 가슴 운동 기구로 가슴운동 (스미스 머신 미는거) + 벤치 프레스 , 스미스는 한 6세트, 벤치는 4세트"
+  - id: raw_body_record_20260617_morning_protein_shake_lunch_risotto
+    date: 2026-06-17
+    time: null
+    source: codex_conversation
+    related_meal_refs:
+      - meal_20260617_morning_protein_shake_20g
+      - meal_20260617_lunch_chicken_breast_risotto
+    related_workout: workoutsession_20260617_chest_smith_bench
+    text: "점심은 닭가슴살 리조또 그리고 오전에 쉐이크 20g(단백질) 먹음"
