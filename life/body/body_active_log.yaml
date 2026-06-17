@@ -375,7 +375,7 @@ workout_records:
         sequence_order: 4
         variant: barbell
         equipment: barbell
-        notes: 데드리프트. Brian completed 20kg empty-bar work, then 30kg x 15, then 40kg x 12.
+        notes: 데드리프트. Brian completed 20kg empty-bar work, then 30kg x 15, 40kg x 12, and 50kg x 10. At 50kg, grip became the limiting factor even though pulling strength felt available.
         confidence: high
         needs_user_review: false
         sets:
@@ -404,6 +404,15 @@ workout_records:
             is_warmup: false
             is_pr: null
             correction_note: Brian first said 13 reps, then corrected it to 12 reps.
+          - set: 4
+            weight_kg: 50
+            reps: 10
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+            limiting_factor: grip
+            notes: Brian reported that the bar felt like it was slipping out of his hands, while strength was still available.
 
   - id: workoutsession_20260617_chest_smith_bench
     object_type: WorkoutSession
@@ -1478,3 +1487,9 @@ raw_records:
     source: codex_conversation
     related_workout: workoutsession_20260618_back_cable_pulldown_seated_row
     text: "12개 쏘리"
+  - id: raw_body_record_20260618_back_deadlift_50kg_grip_limited
+    date: 2026-06-18
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260618_back_cable_pulldown_seated_row
+    text: "10개함 근데 손에서 빠져 나가려한다 힘은 있는데"
