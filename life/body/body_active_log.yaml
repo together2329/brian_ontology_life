@@ -8,9 +8,9 @@ body_profile:
   id: body_profile_brian
   profile_ref: person_brian
   height_cm: 175
-  latest_weight_kg: 78
-  latest_weight_record_ref: body_composition_20260615_0635_self_report
-  notes: Height and weight are self-reported by Brian.
+  latest_weight_kg: 77.6
+  latest_weight_record_ref: body_composition_20260618_0700_inbody_app
+  notes: Height is self-reported by Brian; latest weight is from the 2026-06-18 InBody app screenshot.
 
 training_programs:
   - id: pt_program_2026_spring
@@ -28,6 +28,24 @@ training_programs:
     notes: Brian reports receiving PT from late March 2026 through 2026-06-15, about 16 sessions; baseline was twice weekly and recently increased toward three times weekly.
 
 body_composition_records:
+  - id: body_composition_20260618_0700_inbody_app
+    object_type: BodyCompositionRecord
+    date: 2026-06-18
+    time: "07:00"
+    source: inbody_app_screenshot
+    weight_kg: 77.6
+    skeletal_muscle_mass_kg: 33.2
+    body_fat_mass_kg: 19.1
+    body_fat_percent: 24.6
+    bmi: 25.3
+    waist_cm: null
+    basal_metabolic_rate_kcal: 1635
+    visceral_fat_level: 7
+    abdominal_fat_ratio: 0.90
+    inbody_score: 73
+    inbody_score_needs_review: true
+    condition: morning_measurement_after_recent_training
+    notes: Brian shared InBody app screenshots and felt the numbers were only so-so despite better eye-body condition and improved lifting performance. The top score chart label was cropped in the screenshot, so the 73 score is interpreted from the visible graph and needs review.
   - id: body_composition_20260615_0635_self_report
     object_type: BodyCompositionRecord
     date: 2026-06-15
@@ -1119,6 +1137,23 @@ sleep_records:
     sleep_type: recovery_nap
 
 trend_observations:
+  - id: body_trend_20260618_inbody_mixed_eye_body_strength_up
+    object_type: BodyTrendObservation
+    date: 2026-06-18
+    observation_type: inbody_mixed_signal_recomposition_tracking
+    summary: Eye-body condition and lifting performance feel improved, but the 2026-06-18 InBody result felt underwhelming.
+    positive_signals:
+      - skeletal muscle mass was 33.2kg, up from 32.8kg on 2026-05-21
+      - basal metabolic rate was 1635kcal, up from 1620kcal on 2026-05-21
+      - recent workout records show progressive loading and good seated-row performance
+      - Brian subjectively reports that eye-body condition is improving
+    uncertain_signals:
+      - body fat percent was 24.6%, slightly up from 24.5% on 2026-05-21
+      - body fat mass was 19.1kg, up from 18.8kg on 2026-05-21
+      - abdominal fat ratio returned to 0.90 from 0.89 on 2026-05-21
+      - InBody values can fluctuate with hydration, sodium, glycogen, sleep, and measurement timing
+    interpretation: Mixed signal rather than a bad result. Strength and visual changes are meaningful, but the next useful read is the 2-4 week trend in skeletal muscle mass, body fat mass, waist/abdominal fat, and workout performance rather than reacting to one scan.
+    confidence: medium
   - id: body_trend_20260615_strength_up_weight_stable
     object_type: BodyTrendObservation
     date: 2026-06-15
@@ -1294,3 +1329,14 @@ raw_records:
     related_people_refs:
       - person_wife
     text: "저녁은 키토 계란 김밥 + 돈가스 김밥 미야랑 같이 :)"
+  - id: raw_body_record_20260618_inbody_mixed_feeling
+    date: 2026-06-18
+    time: "07:00"
+    source: codex_conversation_with_inbody_screenshots
+    related_body_composition_ref: body_composition_20260618_0700_inbody_app
+    related_trend_observation_ref: body_trend_20260618_inbody_mixed_eye_body_strength_up
+    attachment_paths:
+      - /tmp/codex-remote-attachments/019ed7ad-1ec5-7100-9489-aa01f3eb1aa1/1AD2F61F-3C05-42B7-836C-91B5595E9D57/1-Photo-1.jpg
+      - /tmp/codex-remote-attachments/019ed7ad-1ec5-7100-9489-aa01f3eb1aa1/1AD2F61F-3C05-42B7-836C-91B5595E9D57/2-Photo-2.jpg
+      - /tmp/codex-remote-attachments/019ed7ad-1ec5-7100-9489-aa01f3eb1aa1/1AD2F61F-3C05-42B7-836C-91B5595E9D57/3-Photo-3.jpg
+    text: "눈바디는 좋아지고 무게도 드는것 같은데 인바디는 써써 하넹"
