@@ -1,0 +1,295 @@
+schema_version: 1
+status: active
+updated_at: 2026-06-17
+area: CAREER
+secondary_areas:
+  - MIND
+project_ref: project_ai_agent
+title: SoC Knowledge format and DB design
+purpose: >
+  Captures Brian's direction that Codex rollout assets should become a shared SoC Knowledge base,
+  with a defined format, database model, and permission-preserving ingestion path. The first pilot
+  should use Firenze, then expand to Milano.
+
+source_records:
+  - id: source_knowledge_conversation_20260617_soc_knowledge_collective_asset
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "사실 자산 제대로 다들 합심해서 하나의 SoC Knowledge 로 만들어야 해. 진짜 중요한 시기야."
+    interpreted_direction:
+      topic: collective SoC Knowledge asset
+      statement: Codex rollout assets should become a shared SoC Knowledge base built collaboratively, not only Brian's personal materials.
+      strategic_importance: high
+      needs_user_review: false
+  - id: source_knowledge_conversation_20260617_soc_knowledge_format_db_need
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "Format 을 정하고 DB 화 해야해"
+    interpreted_need:
+      topic: SoC Knowledge format and database
+      statement: The shared SoC Knowledge asset needs a canonical format and DB representation.
+      needs_user_review: false
+  - id: source_knowledge_conversation_20260617_soc_knowledge_firenze_then_milano
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "Firenze 로 먼저 한 번 시도 하고, 그 다음... Milano"
+    interpreted_pilot_sequence:
+      first_project_ref: project_firenze
+      second_project_ref: project_milano
+      rationale: Use Firenze first to stabilize the format on known prior project knowledge, then apply it to live Milano work.
+      needs_user_review: false
+  - id: source_knowledge_conversation_20260617_soc_knowledge_drm_blocker
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "DRM 이 걸려 있는데 이걸 어떻게 해체 하고 풀지가 관건이네"
+    interpreted_blocker:
+      topic: DRM-protected source material
+      statement: DRM-protected company materials are a key constraint for building a SoC Knowledge DB.
+      policy_interpretation: Do not bypass, remove, break, or work around DRM. Design an authorized, permission-preserving ingestion path instead.
+      needs_user_review: false
+
+thought_threads:
+  - id: thought_thread_20260617_soc_knowledge_db_collective_asset
+    object_type: ThoughtThread
+    date: 2026-06-17
+    area: CAREER
+    secondary_areas:
+      - MIND
+    topic: Shared SoC Knowledge DB from Codex rollout assets
+    summary:
+      - Brian reframed the two-month Codex window as a chance to build a collaborative SoC Knowledge asset, not only seminar material.
+      - The knowledge base needs a canonical format first, then a DB representation that supports query, review, ownership, and evidence links.
+      - The rollout sequence should start with Firenze, where prior knowledge and lessons can stabilize the format, then move to live Milano work.
+      - DRM-protected materials are a constraint; the correct design path is authorized access, metadata stubs, permission-preserving search, and human-authored distilled knowledge, not DRM circumvention.
+    conversation_flow:
+      - The discussion moved from personal Codex asset capture to company-scale self-serve onboarding for roughly 70-80 developers.
+      - Brian then raised the goal of making the assets into one shared SoC Knowledge base.
+      - Brian identified that format and DB design are necessary before broad accumulation.
+      - Brian selected Firenze as the first pilot project and Milano as the second expansion target.
+      - Brian then identified DRM as a key practical blocker for ingesting source documents.
+    related_concept_refs:
+      - concept_soc_on_ontology
+      - concept_ontology_first_agent_memory
+      - concept_agentic_retrieval_substrate
+      - concept_conversation_knowledge_memory
+    related_project_refs:
+      - project_ai_agent
+      - project_firenze
+      - project_milano
+    related_task_refs:
+      - task_ai_agent_soc_knowledge_format_db_pilot
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_soc_ontology_vds_document_design
+    source_refs:
+      - source_knowledge_conversation_20260617_soc_knowledge_collective_asset
+      - source_knowledge_conversation_20260617_soc_knowledge_format_db_need
+      - source_knowledge_conversation_20260617_soc_knowledge_firenze_then_milano
+      - source_knowledge_conversation_20260617_soc_knowledge_drm_blocker
+    confidence: high
+    needs_user_review: false
+
+understandings:
+  - id: understanding_20260617_soc_knowledge_needs_format_and_db
+    object_type: Understanding
+    date: 2026-06-17
+    area: CAREER
+    secondary_areas:
+      - MIND
+    statement: "The company Codex rollout should produce a shared SoC Knowledge base with a canonical format and DB representation, not only isolated guides, prompts, or demos."
+    brian_wording_ko: "자산 제대로 다들 합심해서 하나의 SoC Knowledge 로 만들어야 해. Format 을 정하고 DB 화 해야해."
+    status: confirmed_by_brian
+    related_thread_ref: thought_thread_20260617_soc_knowledge_db_collective_asset
+    related_concept_refs:
+      - concept_soc_on_ontology
+      - concept_ontology_first_agent_memory
+    source_refs:
+      - source_knowledge_conversation_20260617_soc_knowledge_collective_asset
+      - source_knowledge_conversation_20260617_soc_knowledge_format_db_need
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260617_firenze_pilot_then_milano
+    object_type: Understanding
+    date: 2026-06-17
+    area: CAREER
+    statement: "The first SoC Knowledge DB pilot should use Firenze to stabilize the schema on prior project knowledge, then expand to Milano for active project usage."
+    brian_wording_ko: "Firenze 로 먼저 한 번 시도 하고, 그 다음... Milano."
+    status: confirmed_by_brian
+    related_thread_ref: thought_thread_20260617_soc_knowledge_db_collective_asset
+    related_project_refs:
+      - project_firenze
+      - project_milano
+    source_refs:
+      - source_knowledge_conversation_20260617_soc_knowledge_firenze_then_milano
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260617_drm_requires_permission_preserving_ingestion
+    object_type: Understanding
+    date: 2026-06-17
+    area: CAREER
+    statement: "DRM-protected source materials should not be bypassed or unlocked for ingestion; the SoC Knowledge DB needs an authorized, permission-preserving ingest path with metadata stubs and reviewed distilled knowledge when raw content cannot be stored."
+    brian_wording_ko: "DRM 이 걸려 있는데 이걸 어떻게 해체 하고 풀지가 관건이네."
+    status: assistant_policy_interpretation
+    related_thread_ref: thought_thread_20260617_soc_knowledge_db_collective_asset
+    source_refs:
+      - source_knowledge_conversation_20260617_soc_knowledge_drm_blocker
+    confidence: high
+    needs_user_review: false
+
+architecture_directions:
+  - id: architecture_direction_20260617_soc_knowledge_db_firenze_to_milano
+    object_type: ArchitectureDirection
+    date: 2026-06-17
+    area: CAREER
+    secondary_areas:
+      - MIND
+    project_ref: project_ai_agent
+    title: SoC Knowledge DB pilot sequence and format
+    statement: "Build a shared SoC Knowledge DB by defining a canonical ontology format first, piloting it on Firenze, then expanding it to Milano."
+    implementation_direction:
+      pilot_sequence:
+        - phase: 0_format_draft
+          goal: Define the minimal object/edge/source/evidence/review format before ingesting many records.
+        - phase: 1_firenze_pilot
+          project_ref: project_firenze
+          goal: Model known Firenze knowledge, lessons, source metadata, failure modes, and reusable patterns to stabilize the schema.
+        - phase: 2_milano_expansion
+          project_ref: project_milano
+          goal: Apply the schema to live Milano tasks, evidence, ownership, decisions, and issue history.
+      canonical_object_format:
+        required_fields:
+          - id
+          - object_type
+          - title
+          - project_ref
+          - soc_context
+          - owner_ref
+          - status
+          - summary
+          - source_refs
+          - evidence_refs
+          - related_object_refs
+          - review_state
+          - access_policy
+        core_object_types:
+          - SoC
+          - Subsystem
+          - IPBlock
+          - Interface
+          - Requirement
+          - Constraint
+          - DesignDecision
+          - ImplementationTask
+          - Issue
+          - Resolution
+          - VerificationCase
+          - Evidence
+          - Document
+          - Owner
+          - Lesson
+        core_edge_types:
+          - belongs_to_project
+          - decomposes_to
+          - implements
+          - verifies
+          - constrained_by
+          - depends_on
+          - blocked_by
+          - resolved_by
+          - evidenced_by
+          - owned_by
+          - reviewed_by
+          - derived_from_source
+      db_representation:
+        initial_source_of_truth: YAML in Git for schema review and small pilots
+        query_db_candidate: SQLite generated from YAML once the format stabilizes
+        future_company_db_candidate: permission-preserving company-hosted DB or search index, only after security/legal/tooling approval
+        minimum_tables:
+          - knowledge_objects
+          - knowledge_edges
+          - source_records
+          - evidence_records
+          - review_records
+          - access_policies
+          - change_log
+      drm_aware_ingestion_policy:
+        - Do not bypass, remove, decrypt, or work around DRM.
+        - Use approved exports, APIs, document-management connectors, or admin-approved ingestion only.
+        - Preserve original document permissions in any shared DB or search system.
+        - If raw content cannot be stored, create metadata-only SourceRecord stubs with document id/path/title/owner/access scope.
+        - Store human-authored distilled knowledge as new reviewed objects, linked back to source metadata and owner/reviewer refs.
+        - Separate company-shareable SoC Knowledge from Brian's private life ontology.
+      first_firenze_slice_candidate:
+        project_ref: project_firenze
+        scope: PCIe-related prior knowledge that can explain a known design, SDC, power, handler, or BAR0/MSE lesson without exposing restricted raw content.
+        output: 5-10 reviewed SoC Knowledge objects plus edges and source metadata stubs.
+      milano_followup_candidate:
+        project_ref: project_milano
+        scope: Apply the same format to current SDC cleanup, lint/sim evidence, R001 IP Diff, handler reflection, and PF BAR0/MSE overlap prevention.
+    tradeoffs:
+      - Starting with YAML keeps the schema reviewable, but a generated SQLite or approved company DB will be needed for multi-user query at scale.
+      - Firenze is safer for schema stabilization because it is prior knowledge, while Milano will reveal live workflow and ownership requirements.
+      - DRM limits raw ingestion, but metadata stubs plus reviewed distilled knowledge can still make the knowledge graph useful.
+      - Over-modeling the whole SoC upfront will slow adoption; the first slice should be narrow and concrete.
+    source_refs:
+      - source_knowledge_conversation_20260617_soc_knowledge_collective_asset
+      - source_knowledge_conversation_20260617_soc_knowledge_format_db_need
+      - source_knowledge_conversation_20260617_soc_knowledge_firenze_then_milano
+      - source_knowledge_conversation_20260617_soc_knowledge_drm_blocker
+    follow_up_task_refs:
+      - task_ai_agent_soc_knowledge_format_db_pilot
+    status: active_direction
+    confidence: high
+    needs_user_review: false
+
+follow_up_tasks:
+  - id: task_ai_agent_soc_knowledge_format_db_pilot
+    object_type: Task
+    title: "SoC Knowledge format/DB 파일럿: Firenze -> Milano"
+    area: CAREER
+    secondary_areas:
+      - MIND
+    status: candidate
+    priority: high
+    energy: system_design
+    estimated_minutes: null
+    due_date: null
+    tracking_level: concept_to_pilot
+    project_ref: project_ai_agent
+    progress_percent: 0
+    tags:
+      - soc_knowledge
+      - ontology
+      - database
+      - firenze
+      - milano
+      - drm_aware_ingestion
+    expected_outputs:
+      - canonical SoC Knowledge object format
+      - core edge/relation list
+      - source/evidence/review/access policy
+      - Firenze pilot object set
+      - generated SQLite or equivalent DB candidate after schema stabilizes
+      - Milano expansion plan
+    next_actions:
+      - Draft the minimal SoC Knowledge object template.
+      - Select the first Firenze PCIe-related slice.
+      - Define DRM-safe ingestion paths before touching protected materials.
+      - Create metadata-only source stubs for protected documents when raw content cannot be stored.
+      - Convert 5-10 Firenze lessons or design facts into reviewed SoC Knowledge objects.
+      - Apply the resulting schema to Milano SDC/lint/handler/R001/BAR0 examples.
+    source_refs:
+      - source_knowledge_conversation_20260617_soc_knowledge_collective_asset
+      - source_knowledge_conversation_20260617_soc_knowledge_format_db_need
+      - source_knowledge_conversation_20260617_soc_knowledge_firenze_then_milano
+      - source_knowledge_conversation_20260617_soc_knowledge_drm_blocker
+    confidence: high
+    needs_user_review: false

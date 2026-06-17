@@ -439,6 +439,10 @@ summary:
     - Brian clarified that the two-month unlimited Codex period starts next week from 2026-06-17, meaning the start window is 2026-06-22 to 2026-06-28 unless the exact date changes.
     - Brian wants the two-month Codex window to leave durable assets, not only usage volume.
     - Brian clarified that about 70-80 company developers may be able to use Codex during this period.
+    - Brian clarified that these assets should become one collaborative SoC Knowledge base, not only individual Codex usage materials.
+    - Brian identified that the SoC Knowledge base needs a canonical format and DB representation.
+    - Brian selected Firenze as the first pilot target and Milano as the second expansion target.
+    - DRM-protected source materials are a key constraint; ingestion should preserve permissions and use authorized paths, not DRM circumvention.
     - Brian identified that subsystem-level ontology should be improved for the hardware IP agent direction.
     - Brian further clarified the longer-term direction as SoC on top of ontology: SoC-level structure and reasoning should be built above the ontology layer.
     - Brian wants to accelerate Codex seminar preparation and connect the seminar to SoC-level ontology and VDS document thinking.
@@ -456,6 +460,7 @@ summary:
     - AI reputation management: show AI as work accelerator while keeping Milano/RTL execution visible
     - sustainable AI enablement after several months of dawn/night/weekend work
     - two-month Codex unlimited-use asset capture program
+    - collaborative SoC Knowledge format/DB design with Firenze pilot and Milano expansion
     - next-week Codex seminar package with rules, skills, demo, and guide docs
     - subsystem-level ontology improvement for hardware IP workflows
     - SoC-on-ontology hardware IP agent direction
@@ -472,6 +477,8 @@ summary:
     - Several months of dawn/night/weekend AI work is evidence of commitment and accumulated learning, but also a sustainability risk.
     - A two-month unlimited-use period creates a window for real adoption experiments, reusable asset capture, and company enablement beyond a one-time seminar.
     - A 70-80 developer audience means self-serve onboarding assets matter; Brian should not become the only live support path.
+    - Starting the SoC Knowledge DB with Firenze lowers schema risk before applying it to live Milano work.
+    - DRM is a real operational constraint, so the design should use metadata stubs, reviewed distilled knowledge, and permission-preserving retrieval instead of raw unauthorized ingestion.
   open_questions:
     - id: oq_ai_agent_common_ai_agent_port_scope
       question: "common_ai_agent porting scope is not yet explicit: CLI surface, plugin surface, ontology gateway, prompt workflow, or all of these."
@@ -530,6 +537,14 @@ summary:
     - id: oq_ai_agent_soc_on_ontology_first_slice
       question: "Define the first SoC-on-ontology demo slice: which SoC/subsystem/IP/interface/requirement path should become the concrete example?"
       related_task_ref: task_ai_agent_codex_ontology_development_plugin
+      needs_user_review: true
+    - id: oq_ai_agent_soc_knowledge_firenze_first_slice
+      question: "Choose the first Firenze PCIe-related slice for the SoC Knowledge DB pilot: SDC, power, handler, BAR0/MSE, or another known lesson."
+      related_task_ref: task_ai_agent_soc_knowledge_format_db_pilot
+      needs_user_review: true
+    - id: oq_ai_agent_soc_knowledge_drm_authorized_path
+      question: "Confirm which approved path can be used for DRM-protected company materials: official export, document-management connector, admin-approved API, metadata-only stubs, or reviewed manual summaries."
+      related_task_ref: task_ai_agent_soc_knowledge_format_db_pilot
       needs_user_review: true
     - id: oq_ai_agent_vds_document_meaning_and_scope
       question: "Confirm what VDS means in this context and whether the target is manual VDS writing, ontology-generated VDS drafting, or VDS review/checking."
@@ -864,11 +879,83 @@ tasks:
       - task_ai_agent_codex_ontology_development_plugin
       - task_ai_agent_codex_seminar_prepare
       - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_soc_knowledge_format_db_pilot
     evidence_refs:
       - source_ai_agent_conversation_20260617_codex_seminar_accelerate_soc_ontology_vds
       - source_ai_agent_conversation_20260617_soc_on_ontology_direction
     confidence: high
     needs_user_review: true
+
+  - id: task_ai_agent_soc_knowledge_format_db_pilot
+    title: "SoC Knowledge format/DB 파일럿: Firenze -> Milano"
+    area: CAREER
+    secondary_areas:
+      - MIND
+    status: planned
+    priority: high
+    energy: system_design
+    estimated_minutes: null
+    due_date: null
+    tracking_level: concept_to_pilot
+    project_ref: project_ai_agent
+    progress_percent: 0
+    tags:
+      - soc_knowledge
+      - ontology
+      - database
+      - firenze
+      - milano
+      - drm_aware_ingestion
+      - company_asset
+    context:
+      - Brian reframed the Codex rollout assets as a collaborative SoC Knowledge base that multiple people should build together.
+      - The work needs a canonical format and DB representation before many records are accumulated.
+      - Firenze should be used first to stabilize the schema on known prior project knowledge.
+      - Milano should follow as the live project expansion after the format is proven.
+      - DRM-protected source materials are a major constraint; the design must preserve permissions and avoid DRM circumvention.
+      - This task connects the two-month Codex asset-capture program to the longer-term SoC-on-ontology architecture.
+    expected_outputs:
+      - canonical SoC Knowledge object format
+      - core object types and edge types
+      - source/evidence/review/access policy
+      - DRM-aware ingestion policy
+      - Firenze pilot object set
+      - DB representation candidate, initially YAML/Git and later generated SQLite or approved company DB
+      - Milano expansion plan
+    first_pilot_sequence:
+      - phase: Firenze
+        project_ref: project_firenze
+        goal: Stabilize schema on prior project knowledge and known lessons.
+      - phase: Milano
+        project_ref: project_milano
+        goal: Apply the stabilized schema to live SDC, lint/sim, handler, R001, and BAR0/MSE work.
+    drm_policy:
+      - Do not bypass, remove, decrypt, or work around DRM.
+      - Use approved exports, APIs, document-management connectors, or admin-approved ingestion paths.
+      - Preserve original document permissions in any shared DB or search system.
+      - If raw content cannot be stored, create metadata-only source stubs.
+      - Store reviewed human-authored distilled knowledge as separate objects linked to source metadata and owner/reviewer refs.
+    next_actions:
+      - Draft the minimal SoC Knowledge object template.
+      - Choose the first Firenze PCIe-related pilot slice.
+      - Define the DRM-safe ingestion route before touching protected materials.
+      - Create metadata-only source stubs for protected Firenze documents if raw content cannot be stored.
+      - Convert 5-10 Firenze lessons or design facts into reviewed SoC Knowledge objects.
+      - Apply the resulting schema to Milano SDC/lint/handler/R001/BAR0 examples.
+    related_task_refs:
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_soc_ontology_vds_document_design
+    evidence_refs:
+      - source_knowledge_conversation_20260617_soc_knowledge_collective_asset
+      - source_knowledge_conversation_20260617_soc_knowledge_format_db_need
+      - source_knowledge_conversation_20260617_soc_knowledge_firenze_then_milano
+      - source_knowledge_conversation_20260617_soc_knowledge_drm_blocker
+    related_knowledge_thread_ref: thought_thread_20260617_soc_knowledge_db_collective_asset
+    knowledge_file_ref: life/knowledge/soc_knowledge_db_design.yaml
+    confidence: high
+    needs_user_review: false
 
   - id: task_ai_agent_common_ai_agent_codex_port
     title: common_ai_agent를 Codex 기반 workflow로 포팅
