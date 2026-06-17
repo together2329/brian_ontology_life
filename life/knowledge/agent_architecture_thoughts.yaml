@@ -171,6 +171,24 @@ source_records:
       principle: Presentation generation should be treated as a structured workflow over source knowledge, outline, slide intent, artifact generation, visual review, and iteration, not as a vague one-shot prompt.
       seminar_section: Document and deck generation with skills
     related_task_ref: task_ai_agent_codex_seminar_prepare
+  - id: source_knowledge_external_reference_20260618_claude_ppt_reference_design
+    source_type: chat_and_external_video
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "Brian shared another Claude PPT video and observed that it uses a reference design taken from a website."
+    external_reference:
+      platform: YouTube
+      url: https://youtu.be/aITV54CLc_U?si=4oGKBn_AJXXYxLTs
+      observed_title: "오늘, 클로드가 PPT를 죽였습니다."
+      observed_at: 2026-06-18
+    interpreted_transfer:
+      from_tool: Claude
+      to_tool: Codex
+      principle: Presentation and document generation can improve when the agent is given a concrete design reference from an approved site or artifact, then asked to apply that layout/style direction to Brian's own structured content.
+      caution: Treat external design references as inspiration and analysis unless the source permits reuse.
+      seminar_section: Document and deck generation with skills
+    related_task_ref: task_ai_agent_codex_seminar_prepare
 
 thought_threads:
   - id: thought_thread_20260615_okf_llm_wiki_ontology
@@ -310,6 +328,7 @@ thought_threads:
       - The management layer should explain evaluation and monitoring: reach quality threshold first, then reduce resource cost to reach the same or better result.
       - The content is large enough to be treated as an 8-10 one-hour seminar series, with 12-15 one-hour sessions if full reusable assets are produced.
       - Brian added a Claude PPT-making reference video as a transferable example for a Codex-based document/deck generation workflow.
+      - Brian added another Claude PPT video that demonstrates reference-design-guided generation using a design taken from a website.
     conversation_flow:
       - Brian first listed Codex seminar topics from setup through LLM/RAG trends and agent-control primitives.
       - The discussion then moved from tools to knowledge architecture: Knowledge Graph, SoC Knowledge Graph, Agentic RAG, OKF, LLM Wiki, and ontology.
@@ -317,6 +336,7 @@ thought_threads:
       - Brian then wanted to show OKF in Obsidian with graph and Base views, plus interactive HTML for understanding connected work.
       - Finally, Brian asked for a one-hour-per-day estimate if every discussed topic is included.
       - Brian later added a Claude PPT workflow video and identified that Codex can likely perform the same kind of structured PPT-generation flow.
+      - Brian then added a second PPT video and highlighted that using a concrete reference design from a site can improve generated presentation quality.
     architecture_layering:
       explanation_layer:
         - LLM Wiki
@@ -332,6 +352,7 @@ thought_threads:
         - Interactive HTML graph
         - Word/PPT artifacts
         - presentation-generation workflow examples
+        - reference-design-guided document/deck generation
       agent_control_layer:
         - prompt
         - rules
@@ -360,6 +381,7 @@ thought_threads:
       - concept_obsidian_bases
       - concept_interactive_html_knowledge_viewer
       - concept_agent_skills
+      - concept_reference_design_guided_generation
       - concept_soc_knowledge_graph
       - concept_soc_on_ontology
       - concept_hardware_ip_agent
@@ -373,6 +395,7 @@ thought_threads:
       - source_knowledge_external_research_20260618_okf_obsidian_skills_docs_trends
       - source_knowledge_conversation_20260618_one_hour_day_scope_estimate
       - source_knowledge_external_reference_20260618_claude_ppt_codex_transfer
+      - source_knowledge_external_reference_20260618_claude_ppt_reference_design
     status: active_seminar_design
     confidence: high
     needs_user_review: false
@@ -573,6 +596,25 @@ understandings:
       - concept_agent_evaluation_monitoring
     source_refs:
       - source_knowledge_external_reference_20260618_claude_ppt_codex_transfer
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260618_reference_design_improves_generated_artifacts
+    object_type: Understanding
+    date: 2026-06-18
+    area: CAREER
+    secondary_areas:
+      - MIND
+    statement: "The seminar should show that generated PPT/Word/HTML artifacts improve when the agent has a concrete reference design, because the prompt can separate content intent from visual/layout direction."
+    brian_wording_ko: "이건 레퍼런스 디자인을 어느 사이트에서 가져오는거네."
+    status: confirmed_by_brian_observation
+    related_thread_ref: thought_thread_20260618_codex_seminar_ontology_demo_stack
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+    related_concept_refs:
+      - concept_reference_design_guided_generation
+      - concept_agent_skills
+      - concept_interactive_html_knowledge_viewer
+    source_refs:
+      - source_knowledge_external_reference_20260618_claude_ppt_reference_design
     confidence: high
     needs_user_review: false
 

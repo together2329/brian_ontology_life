@@ -532,6 +532,31 @@ source_records:
     related_task_refs:
       - task_ai_agent_codex_seminar_prepare
       - task_ai_agent_okf_export_layer
+  - id: source_ai_agent_conversation_20260618_claude_ppt_reference_design_video
+    source_type: chat_and_external_video
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "https://youtu.be/aITV54CLc_U?si=4oGKBn_AJXXYxLTs 이것도 좋네. 이건 레퍼런스 디자인을 어느 사이트에서 가져오는거네 :)"
+    external_reference:
+      platform: YouTube
+      url: https://youtu.be/aITV54CLc_U?si=4oGKBn_AJXXYxLTs
+      observed_title: "오늘, 클로드가 PPT를 죽였습니다."
+      observed_at: 2026-06-18
+    interpreted_focus:
+      source_tool: Claude
+      pattern: reference_design_guided_generation
+      brian_observation: The workflow appears to bring a reference design from a website and use it to improve the PPT result.
+      seminar_use: Add as a second reference for the PPT/Word generation section, showing that agent-generated documents become better when given a concrete visual/design reference instead of only textual instructions.
+      codex_angle: Codex can use approved public reference sites, screenshots, or local reference artifacts as style/layout inspiration while generating a PPT, Word guide, or interactive HTML artifact from ontology/OKF source content.
+      caution: Keep reference use as inspiration and layout analysis; do not copy protected proprietary designs or assets without permission.
+    related_concept_refs:
+      - concept_agent_skills
+      - concept_reference_design_guided_generation
+      - concept_interactive_html_knowledge_viewer
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_okf_export_layer
 
 summary:
   current_state:
@@ -1001,7 +1026,7 @@ tasks:
           output: html_graph_viewer_demo
         - day: 9
           title: Document and deck generation with skills
-          focus: Use Word/PPT/document-generation skills as a repeatable path from structured knowledge to guide docs and presentation decks; adapt the Claude PPT workflow lesson to Codex.
+          focus: Use Word/PPT/document-generation skills as a repeatable path from structured knowledge to guide docs and presentation decks; adapt Claude PPT workflow and reference-design examples to Codex.
           output: ppt_word_generation_demo
         - day: 10
           title: SoC Knowledge Graph and two-month asset program
@@ -1051,6 +1076,10 @@ tasks:
             source_tool: Claude
             url: https://youtu.be/BboGm3FR4hw?si=TE8mol6GZzynd8Jm
             codex_transfer_note: Adapt the idea to Codex by using structured source notes, outline, slide intent, file-based generation, visual review, and iteration.
+          - title: "오늘, 클로드가 PPT를 죽였습니다."
+            source_tool: Claude
+            url: https://youtu.be/aITV54CLc_U?si=4oGKBn_AJXXYxLTs
+            codex_transfer_note: Adapt the reference-design pattern to Codex by using an approved site, screenshot, or local artifact as a style/layout reference while generating Brian's own content.
         codex_question_demo: "OKF_SoC vault를 기준으로 Milano 프로젝트의 open task를 찾아줘. blocked 된 항목과 evidence가 부족한 항목을 분리하고, 오늘 Brian이 먼저 해야 할 next action을 제안해줘."
       external_trend_refs:
         - https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing
@@ -1062,6 +1091,7 @@ tasks:
         - https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them
         - https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart
         - https://youtu.be/BboGm3FR4hw?si=TE8mol6GZzynd8Jm
+        - https://youtu.be/aITV54CLc_U?si=4oGKBn_AJXXYxLTs
         - https://www.microsoft.com/en-us/microsoft-365/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/
         - https://support.microsoft.com/en-US/PowerPoint/copilot/create-a-new-presentation-with-copilot-in-powerpoint
       related_concept_refs:
@@ -1075,6 +1105,7 @@ tasks:
         - concept_obsidian_bases
         - concept_interactive_html_knowledge_viewer
         - concept_agent_skills
+        - concept_reference_design_guided_generation
         - concept_soc_knowledge_graph
         - concept_soc_on_ontology
         - concept_subsystem_level_ontology
@@ -1091,6 +1122,7 @@ tasks:
         - source_ai_agent_conversation_20260618_codex_seminar_okf_obsidian_html_docs
         - source_ai_agent_conversation_20260618_codex_seminar_days_estimate
         - source_ai_agent_conversation_20260618_claude_ppt_video_codex_transfer
+        - source_ai_agent_conversation_20260618_claude_ppt_reference_design_video
     expected_outputs:
       - Codex seminar outline
       - comparison of Cursor workflow and Codex workflow
