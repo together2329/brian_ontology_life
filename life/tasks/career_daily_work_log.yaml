@@ -1,6 +1,6 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-16
+updated_at: 2026-06-17
 area: CAREER
 project_ref: project_work_general
 title: Career daily work log
@@ -75,6 +75,36 @@ source_records:
     interpreted_scope:
       topic: Codex app usage deep dive
       quality_goal: Brian wants to deeply analyze the Codex app and explain proper usage, not just announce that guidance is planned.
+  - id: source_career_daily_20260617_codex_next_week_seminar_package
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "Codex 차주에... 세미나 예정 ( rule, skill 등 배포 예정 ) + Demo 예정 + 가이드 문서 배포 예정"
+    interpreted_schedule:
+      phrase: 차주
+      week_start: 2026-06-22
+      week_end: 2026-06-28
+      date_precision: week
+    deliverables:
+      - rule distribution
+      - skill distribution
+      - demo
+      - guide document distribution
+    related_task_ref: task_career_20260616_codex_usage_guidance_rtl_design_members
+  - id: source_career_daily_20260617_codex_two_month_unlimited_use
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "2달 동안 무제한 사용"
+    interpreted_program:
+      topic: Codex unlimited-use period
+      duration_months: 2
+      access_model: unlimited_use
+      exact_start_date: null
+      needs_user_review: true
+    related_task_ref: task_career_20260616_codex_usage_guidance_rtl_design_members
 
 tasks:
   - id: task_career_20260616_cursor_csr_guidance_kim_sungah
@@ -116,7 +146,7 @@ tasks:
     title: 전체 RTL 설계 구성원 대상 Codex app 사용법 해부 및 안내 준비
     area: CAREER
     status: planned
-    priority: medium
+    priority: high
     energy: communication
     estimated_minutes: null
     due_date: null
@@ -126,6 +156,13 @@ tasks:
       - project_ai_agent
     owner_ref: person_brian
     target_audience: RTL design members
+    target_window:
+      phrase: 차주
+      week_start: 2026-06-22
+      week_end: 2026-06-28
+      date_precision: week
+      confidence: medium
+    progress_percent: 20
     tags:
       - codex
       - codex_app
@@ -133,27 +170,44 @@ tasks:
       - ai_enablement
       - work_guidance
       - rollout
+      - seminar
+      - rules
+      - skills
+      - demo
+      - guide_docs
     context:
       - Brian plans to organize Codex usage guidance.
       - Brian clarified the intended audience is all RTL design members, not only 김성아 TL님.
       - Brian wants to deeply analyze the Codex app so he can explain proper usage, not just provide a shallow announcement.
       - This connects to Brian's broader role in helping others adopt Codex at work.
+      - As of 2026-06-17, a Codex seminar is planned for the week of 2026-06-22 to 2026-06-28.
+      - The planned package includes rule distribution, skill distribution, a demo, and guide document distribution.
+      - A two-month unlimited-use period is expected, but exact start/end dates and audience scope need confirmation.
     expected_outputs:
       - 전체 RTL 설계 구성원이 Codex 사용법 안내가 예정되어 있음을 알게 된다.
       - Brian has a compact practical Codex app usage explanation ready for RTL designers.
       - The guidance covers concrete usage flow, suitable use cases, limitations, mistakes to avoid, and RTL/design-task examples.
       - The guidance can later connect to the broader Codex rollout/support material.
+      - Rule package and skill package are ready for participants.
+      - A reliable demo and backup demo path are ready.
+      - Guide documents explain practical first-week usage and the two-month unlimited-use window.
     next_actions:
       - Notify the RTL design members that Codex usage guidance is planned.
       - Deeply inspect and organize Codex app usage into a compact practical workflow for RTL designers.
       - Ground the guidance in official/current Codex behavior and Brian's local workflow examples before presenting it.
+      - Fix the exact next-week seminar date/time.
+      - Decide the minimum rule set and skill set to distribute.
+      - Prepare one reliable demo path and one fallback path.
+      - Draft guide documents around actual RTL/IP workflows rather than generic tool usage.
       - Later record the actual guidance time, audience, and reusable examples when it happens.
     evidence_refs:
       - source_career_daily_20260616_codex_usage_guidance_rtl_design_members
       - source_career_daily_20260616_codex_usage_guidance_audience_correction
       - source_career_daily_20260616_codex_app_deep_dive_guidance_goal
+      - source_career_daily_20260617_codex_next_week_seminar_package
+      - source_career_daily_20260617_codex_two_month_unlimited_use
     confidence: high
-    needs_user_review: false
+    needs_user_review: true
 
 recurring_meetings:
   - id: recurring_meeting_company_ai_transformation_weekly_activists

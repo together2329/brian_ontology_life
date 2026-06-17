@@ -1,6 +1,6 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-16
+updated_at: 2026-06-17
 area: CAREER
 secondary_areas:
   - MIND
@@ -125,6 +125,65 @@ source_records:
       - task_ai_agent_codex_ontology_development_plugin
       - task_ai_agent_common_ai_agent_codex_port
       - task_ai_agent_agentic_retrieval_planner
+  - id: source_ai_agent_conversation_20260617_codex_next_week_seminar_demo_guide
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "Codex 차주에... 세미나 예정 ( rule, skill 등 배포 예정 ) + Demo 예정 + 가이드 문서 배포 예정"
+    interpreted_schedule:
+      phrase: 차주
+      week_start: 2026-06-22
+      week_end: 2026-06-28
+      date_precision: week
+      basis: Conversation date is 2026-06-17.
+    deliverables:
+      - Codex seminar
+      - rule distribution
+      - skill distribution
+      - demo
+      - guide document distribution
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+  - id: source_ai_agent_conversation_20260617_codex_two_month_unlimited_use
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "2달 동안 무제한 사용"
+    interpreted_program:
+      topic: Codex unlimited-use period
+      duration_months: 2
+      access_model: unlimited_use
+      exact_start_date: null
+      assumed_relation: Connected to the next-week Codex seminar, rollout support, and guide/demo distribution.
+      needs_user_review: true
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+  - id: source_ai_agent_conversation_20260617_subsystem_level_ontology_need
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "서브 시스템 레벨의 Ontology 높일 필요 있음 :)"
+    interpreted_design_direction:
+      topic: subsystem-level ontology improvement
+      statement: Hardware IP agent ontology should better model subsystem-level objects, relationships, evidence, and workflows rather than only low-level tasks or files.
+      related_scope:
+        - subsystem
+        - IP block
+        - interface
+        - requirement
+        - integration
+        - verification
+        - evidence
+      needs_user_review: false
+    related_task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
 
 summary:
   current_state:
@@ -145,6 +204,10 @@ summary:
     - While stressed because things were not going as expected, Brian was asked by 조승덕 팀장님 to run a Cursor-based seminar.
     - Brian successfully ran the Cursor seminar on 2026-06-12.
     - Brian expects to run a Codex seminar as a next step.
+    - The Codex seminar is now planned for the week of 2026-06-22 to 2026-06-28.
+    - The planned Codex seminar package includes rule distribution, skill distribution, a demo, and guide document distribution.
+    - Codex has a two-month unlimited-use period; the exact start date and operational scope still need confirmation.
+    - Brian identified that subsystem-level ontology should be improved for the hardware IP agent direction.
     - The active local implementation repo is /Users/brian/Desktop/Project/ontology_ip_agent.
     - ontology_ip_agent is a .codex-first OAG test pack with hardware IP examples and ontology/knowledge ledger workflows.
   active_threads:
@@ -155,6 +218,8 @@ summary:
     - recovery from missed demos and server/multi-user scaling lessons
     - Cursor seminar success and Codex seminar preparation
     - company Codex adoption support preparation
+    - next-week Codex seminar package with rules, skills, demo, and guide docs
+    - subsystem-level ontology improvement for hardware IP workflows
     - Brian's personal ontology-backed life agent development
     - ontology_ip_agent development as the concrete OAG/Codex hardware IP agent implementation
     - ontology-first conversation memory for Brian's evolving knowledge interests
@@ -163,6 +228,7 @@ summary:
     - This work appears to combine CAREER, MIND, and FUN rather than being only obligation-driven work.
     - The company rollout creates a near-term opportunity for Brian to turn personal experimentation into practical support.
     - A successful Cursor seminar shows that Brian can translate the hard-earned agent workflow experience into useful enablement for others.
+    - A two-month unlimited-use period creates a window for real adoption experiments, not just one-time seminar exposure.
   open_questions:
     - id: oq_ai_agent_common_ai_agent_port_scope
       question: "common_ai_agent porting scope is not yet explicit: CLI surface, plugin surface, ontology gateway, prompt workflow, or all of these."
@@ -170,6 +236,10 @@ summary:
       needs_user_review: true
     - id: oq_ai_agent_codex_rollout_exact_date
       question: "Company-wide Codex rollout is described as roughly two weeks after 2026-06-14; exact date and Brian's support role are not yet confirmed."
+      related_task_ref: task_ai_agent_company_codex_rollout_support
+      needs_user_review: true
+    - id: oq_ai_agent_codex_unlimited_use_start
+      question: "Confirm the exact start date, end date, audience, and policy details for the two-month unlimited Codex use period."
       related_task_ref: task_ai_agent_company_codex_rollout_support
       needs_user_review: true
     - id: oq_ai_agent_common_vs_ontology_ip_agent_boundary
@@ -191,6 +261,10 @@ summary:
     - id: oq_ai_agent_codex_seminar_scope
       question: "Define the Codex seminar scope and audience based on what worked in the successful 2026-06-12 Cursor seminar."
       related_task_ref: task_ai_agent_codex_seminar_prepare
+      needs_user_review: true
+    - id: oq_ai_agent_subsystem_ontology_scope
+      question: "Define the first subsystem-level ontology slice: subsystem, IP block, interface, requirement, integration point, verification case, evidence, or owner model."
+      related_task_ref: task_ai_agent_codex_ontology_development_plugin
       needs_user_review: true
     - id: oq_ai_agent_okf_export_scope
       question: "Define first OKF export scope: projects/tasks/concepts only, or include people/body/daily summaries as well."
@@ -350,22 +424,26 @@ tasks:
       - Previous TODO-based implementation was strong for task execution, but not enough for a proper ontology-based implementation design.
       - Server integration and many-user usage exposed design gaps.
       - Missed executive/division-head demos created pressure and showed the need for a reliable demo slice.
+      - On 2026-06-17, Brian identified subsystem-level ontology as a key improvement area for the hardware IP agent.
     expected_outputs:
       - Codex-compatible ontology development plugin
       - explicit ontology object and link model for development workflows
       - workflow gates that are more than TODO state
       - evidence/decision ledger for implementation progress and demo readiness
       - small reliable demo path before broader rollout
+      - subsystem-level ontology model covering subsystem, IP block, interface, requirement, integration, verification, evidence, and owner links
     next_actions:
       - Define the minimum ontology object model needed for a real development plugin.
       - Separate TODO execution state from ontology truth, evidence, and decision records.
       - Define demo-readiness criteria before scheduling future executive demos.
       - Choose one narrow vertical slice that can run reliably end to end.
       - Use the common_ai_agent history to decide what to preserve and what to replace with Codex-native/plugin-native behavior.
+      - Define the first subsystem-level ontology slice and use it as the seminar/demo ontology story.
     evidence_refs:
       - source_ai_agent_conversation_20260614_server_multiuser_demo_ontology_turning_point
       - source_ai_agent_conversation_20260614_ontology_ip_agent_repo
       - source_ai_agent_local_repo_inspection_20260614_ontology_ip_agent
+      - source_ai_agent_conversation_20260617_subsystem_level_ontology_need
     confidence: high
     needs_user_review: false
 
@@ -379,34 +457,61 @@ tasks:
     energy: communication_and_system_design
     estimated_minutes: null
     due_date: null
+    target_window:
+      phrase: 차주
+      week_start: 2026-06-22
+      week_end: 2026-06-28
+      date_precision: week
+      confidence: medium
     tracking_level: detailed
     project_ref: project_ai_agent
-    progress_percent: 0
+    progress_percent: 20
     tags:
       - codex
       - seminar
       - enablement
       - cursor
       - ai_agent
+      - rules
+      - skills
+      - demo
+      - guide_docs
     context:
       - Cursor-based seminar was successfully delivered on 2026-06-12 after a request from 조승덕 팀장님.
       - Codex seminar is expected next.
       - Cursor seminar can provide the concrete before/after bridge for Codex adoption.
+      - As of 2026-06-17, the Codex seminar is planned for the week of 2026-06-22 to 2026-06-28.
+      - Brian expects to distribute rules, skills, a demo, and guide documents.
+      - A two-month unlimited-use period is expected, but the exact start date and scope need confirmation.
+      - The seminar should explain why subsystem-level ontology matters for hardware IP workflows.
     expected_outputs:
       - Codex seminar outline
       - comparison of Cursor workflow and Codex workflow
       - examples grounded in common_ai_agent and ontology_ip_agent experience
       - setup and first-week adoption guidance
       - cautions about demo readiness, ontology design, and overpromising
+      - rule package for participants
+      - skill package for participants
+      - reliable demo script and fallback path
+      - guide document for the two-month unlimited-use period
+      - subsystem-level ontology explanation and example slice
     next_actions:
       - Write down what worked in the 2026-06-12 Cursor seminar.
       - Decide whether the Codex seminar should focus on usage, workflow design, hardware IP examples, or ontology-backed development.
       - Prepare one reliable Codex demo slice rather than a broad product demo.
       - Reuse the TODO-vs-ontology lesson as a design narrative.
+      - Fix the seminar date/time once the exact next-week slot is known.
+      - Decide the minimum rule set and skill set to distribute.
+      - Prepare one reliable demo path and one backup demo path.
+      - Draft the guide document around practical first-week usage and the two-month unlimited-use window.
+      - Choose a subsystem-level ontology demo slice that is concrete enough for RTL/IP engineers.
     evidence_refs:
       - source_ai_agent_conversation_20260614_cursor_seminar_success_codex_planned
+      - source_ai_agent_conversation_20260617_codex_next_week_seminar_demo_guide
+      - source_ai_agent_conversation_20260617_codex_two_month_unlimited_use
+      - source_ai_agent_conversation_20260617_subsystem_level_ontology_need
     confidence: high
-    needs_user_review: false
+    needs_user_review: true
 
   - id: task_ai_agent_common_ai_agent_codex_port
     title: common_ai_agent를 Codex 기반 workflow로 포팅
@@ -450,11 +555,11 @@ tasks:
       - list of patterns that work well in Codex
       - list of friction points or missing capabilities
       - reusable ontology_ip_agent examples for hardware engineers adopting Codex
-      - captured Atlas lessons: what was hard, what worked, what should be preserved in future Codex/OAG workflows
+      - "captured Atlas lessons: what was hard, what worked, what should be preserved in future Codex/OAG workflows"
       - ontology-plugin migration plan that separates TODO execution from durable ontology/evidence semantics
     next_actions:
       - Define the exact porting scope and target surfaces.
-      - Extract a concise source-history map from common_ai_agent: Python engine, TUI, Atlas UI, Codex bridge.
+      - "Extract a concise source-history map from common_ai_agent: Python engine, TUI, Atlas UI, Codex bridge."
       - Interview Brian later on Atlas lessons and convert them into reusable workflow principles.
       - Write down what TODO-based implementation handled well and what it failed to model.
       - Clarify the boundary between common_ai_agent and ontology_ip_agent.
@@ -489,6 +594,11 @@ tasks:
       description: around two weeks after the conversation date
       approximate_date: 2026-06-28
       confidence: low
+    rollout_usage_window:
+      duration_months: 2
+      access_model: unlimited_use
+      exact_start_date: null
+      needs_user_review: true
     tracking_level: detailed
     project_ref: project_ai_agent
     progress_percent: 0
@@ -501,28 +611,39 @@ tasks:
       - Company-wide Codex adoption is expected soon.
       - Brian expects to help others adopt or use Codex effectively.
       - The common_ai_agent port can become practical evidence and guidance for the rollout.
-      - common_ai_agent was originally designed for realistic company constraints: Linux server use, zero-dependency Python, and internal LLM integration.
+      - "common_ai_agent was originally designed for realistic company constraints: Linux server use, zero-dependency Python, and internal LLM integration."
       - common_ai_agent's eight-month-ish history can be used to explain which AI-agent workflow ideas survived real iteration.
       - Atlas provides a real SOC/RTL implementation story behind the UI effort, including hard lessons that can make rollout guidance more credible.
       - The missed executive/division-head demos are a warning to prepare a smaller reliable demo slice before broad rollout.
       - The successful 2026-06-12 Cursor seminar can be reused as a pattern for the upcoming Codex seminar.
       - ontology_ip_agent can supply concrete hardware IP workflow examples for the rollout.
+      - Next-week seminar deliverables now include rule/skill distribution, a demo, and guide document distribution.
+      - The rollout/support framing should account for a two-month unlimited-use period.
+      - Subsystem-level ontology should be elevated so hardware/IP users see how Codex workflows connect across requirements, RTL, verification, evidence, and ownership.
     expected_outputs:
       - support checklist for early Codex users
       - examples of effective Codex workflows
       - known pitfalls and recovery patterns
       - candidate training or onboarding notes
       - hardware IP-oriented demo path using ontology_ip_agent examples
+      - participant rule pack and skill pack
+      - guide document for two-month unlimited-use period
+      - subsystem-level ontology demo showing connected IP workflow objects
     next_actions:
-      - Identify what coworkers will need first: setup, prompt patterns, repo workflow, review workflow, or automation examples.
+      - "Identify what coworkers will need first: setup, prompt patterns, repo workflow, review workflow, or automation examples."
       - Convert current common_ai_agent porting lessons into short internal examples.
       - Select one small ontology_ip_agent demo path that shows the value of OAG/Codex workflow without overwhelming users.
       - Prepare a concise support script for the first rollout week.
       - Track repeated questions from coworkers as future agent/tooling requirements.
+      - "Define how users should spend the two-month unlimited-use period: first week setup, second week real task adoption, later weeks repeatable workflow capture."
+      - Convert subsystem-level ontology into one practical demo story for hardware/IP engineers.
     evidence_refs:
       - source_ai_agent_conversation_20260614_fun_codex_porting_rollout
       - source_ai_agent_conversation_20260614_ontology_ip_agent_repo
       - source_ai_agent_local_repo_inspection_20260614_ontology_ip_agent
+      - source_ai_agent_conversation_20260617_codex_next_week_seminar_demo_guide
+      - source_ai_agent_conversation_20260617_codex_two_month_unlimited_use
+      - source_ai_agent_conversation_20260617_subsystem_level_ontology_need
     confidence: medium
     needs_user_review: true
 
@@ -798,3 +919,38 @@ project_status_updates:
     lesson: The planner/tool layer should not become a fixed keyword script; it should stay aligned with ontology-backed agent behavior.
     next_step: Review the morning design after rest and convert the useful parts into explicit ontology objects, evidence needs, traversal policies, and implementation tasks.
     source_ref: source_ai_agent_conversation_20260616_morning_ip_design_tool_session
+
+  - id: project_status_ai_agent_20260617_codex_next_week_seminar_package
+    date: 2026-06-17
+    project_ref: project_ai_agent
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: Codex seminar is planned for the week of 2026-06-22 to 2026-06-28 with rule/skill distribution, demo, guide documents, and a two-month unlimited-use period.
+    positive_signal: The two-month unlimited-use window can turn the seminar into real adoption and workflow learning rather than a one-time presentation.
+    risks:
+      - Exact seminar date/time is not recorded.
+      - Exact unlimited-use start/end dates and audience are not recorded.
+      - Rule/skill package scope may become too broad if not cut down to a reliable first slice.
+    next_step: Fix the exact seminar slot, choose the minimum rule/skill package, prepare one reliable demo and backup path, and draft the guide for first-week adoption.
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+    source_refs:
+      - source_ai_agent_conversation_20260617_codex_next_week_seminar_demo_guide
+      - source_ai_agent_conversation_20260617_codex_two_month_unlimited_use
+
+  - id: project_status_ai_agent_20260617_subsystem_level_ontology_direction
+    date: 2026-06-17
+    project_ref: project_ai_agent
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: Brian identified subsystem-level ontology as an improvement area for the hardware IP agent, so the ontology should model relationships above individual files/tasks.
+    lesson: For hardware IP workflows, useful ontology needs subsystem/IP block/interface/requirement/integration/verification/evidence/owner links so the agent can reason across the design context.
+    next_step: Define one subsystem-level ontology slice and use it as the Codex seminar/demo story.
+    related_task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+    source_ref: source_ai_agent_conversation_20260617_subsystem_level_ontology_need
