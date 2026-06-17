@@ -455,6 +455,38 @@ meal_records:
     needs_user_review: false
     notes: Protein yogurt consumed at about 19:21 after the lower-body workout day.
 
+  - id: meal_20260616_dinner_jjapagetti_fried_eggs
+    object_type: Meal
+    date: 2026-06-16
+    time: null
+    time_of_day: evening
+    area: BODY
+    meal_type: dinner
+    status: completed
+    items:
+      - name: 짜파게티
+        amount: 1
+        unit: serving
+        calories: null
+        protein_g: null
+        carbs_g: null
+        fat_g: null
+      - name: 계란 후라이
+        amount: 2
+        unit: eggs
+        calories: null
+        protein_g: 12
+        carbs_g: null
+        fat_g: null
+    supplements: []
+    related_workout: workoutsession_20260616_lower_body_hard
+    related_nutrition_target_ref: protein_target_20260615
+    protein_g_total: null
+    protein_g_estimate_range: [20, 25]
+    confidence: medium
+    needs_user_review: false
+    notes: Brian clarified that dinner on 2026-06-16 included 짜파게티 and two fried eggs; protein estimate depends on product serving and egg size.
+
   - id: meal_20260616_breakfast_soymilk_egg_broccoli_pack
     object_type: Meal
     date: 2026-06-16
@@ -788,6 +820,14 @@ raw_records:
     related_workout: workoutsession_20260616_lower_body_hard
     related_meal: meal_20260616_1921_protein_yogurt
     text: "방금프로틴 요거트 15g 먹음."
+  - id: raw_body_record_20260616_dinner_jjapagetti_fried_eggs
+    date: 2026-06-16
+    time: null
+    time_of_day: evening
+    source: codex_conversation
+    related_workout: workoutsession_20260616_lower_body_hard
+    related_meal: meal_20260616_dinner_jjapagetti_fried_eggs
+    text: "저녁으로 짜파게티 + 계란 후라이 2개 먹었어."
   - id: raw_body_record_20260616_breakfast_soymilk_egg_broccoli_pack
     date: 2026-06-16
     time: null
