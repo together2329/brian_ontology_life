@@ -1,5 +1,5 @@
 schema_version: 1
-updated_at: 2026-06-17
+updated_at: 2026-06-18
 profile_ref: person_brian
 area: BODY
 
@@ -174,8 +174,123 @@ exercise_catalog:
       - shoulders
     equipment: barbell_or_unspecified
     notes: Use when Brian records bench press work; specify barbell, dumbbell, or machine variant later if known.
+  - id: exercise_cable_straight_arm_pulldown
+    object_type: ExerciseCatalog
+    name: Cable straight-arm pulldown
+    aliases:
+      - 케이블 암 풀다운
+      - 암 풀다운
+      - 암풀다운
+      - 스트레이트 암 풀다운
+      - cable arm pulldown
+      - straight-arm pulldown
+    muscle_groups:
+      - lats
+      - upper_back
+      - rear_delts
+      - core
+    equipment: cable_machine
+    notes: Use when Brian records cable arm pulldown / straight-arm pulldown work.
+  - id: exercise_seated_row
+    object_type: ExerciseCatalog
+    name: Seated row
+    aliases:
+      - 시티드로우
+      - 시티드 로우
+      - seated row
+      - cable row
+    muscle_groups:
+      - lats
+      - rhomboids
+      - traps
+      - rear_delts
+      - biceps
+    equipment: cable_or_row_machine
+    notes: Use when Brian records seated row work.
 
 workout_records:
+  - id: workoutsession_20260618_back_cable_pulldown_seated_row
+    object_type: WorkoutSession
+    date: 2026-06-18
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: 등 운동 - 케이블 암 풀다운과 시티드로우
+    training_program_ref: pt_program_2026_spring
+    location: null
+    duration_minutes: null
+    perceived_energy: good_back_performance
+    digestion: null
+    performance_note: Brian completed a back workout with cable arm pulldown and seated row. Seated row went up well today, and the recommendation was to stop chasing more load and use a controlled finishing set instead because main back volume was already fairly full.
+    recommendation_note: "Recommended finish: seated row 40kg x 12-15 for 1 set, or cable arm pulldown 25kg x 12-15 for 2 sets. After back work, a little biceps or rear-delt work would be appropriate; if doing only more back, use 40kg with slow contraction and eccentric control."
+    source_raw_text: |
+      오늘 등운동 기록:
+      - 케이블 암 풀다운 20kg x 15
+      - 케이블 암 풀다운 25kg x 12
+      - 케이블 암 풀다운 30kg x 10
+      - 시티드로우 35kg x 15
+      - 시티드로우 40kg x 15
+      - 시티드로우 45kg x 12
+      시티드로우는 오늘 충분히 잘 올라갔어요. 이제 더 올리기보단 마무리 세트가 좋습니다.
+    exercises:
+      - exercise_ref: exercise_cable_straight_arm_pulldown
+        sequence_order: 1
+        variant: cable
+        equipment: cable_machine
+        notes: 케이블 암 풀다운. Three ascending working sets were completed.
+        confidence: high
+        sets:
+          - set: 1
+            weight_kg: 20
+            reps: 15
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+          - set: 2
+            weight_kg: 25
+            reps: 12
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+          - set: 3
+            weight_kg: 30
+            reps: 10
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+      - exercise_ref: exercise_seated_row
+        sequence_order: 2
+        variant: cable_or_machine
+        equipment: cable_or_row_machine
+        notes: 시티드로우. Brian reported that this moved well today; load should not be pushed further in this session.
+        confidence: high
+        sets:
+          - set: 1
+            weight_kg: 35
+            reps: 15
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+          - set: 2
+            weight_kg: 40
+            reps: 15
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+          - set: 3
+            weight_kg: 45
+            reps: 12
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+
   - id: workoutsession_20260617_chest_smith_bench
     object_type: WorkoutSession
     date: 2026-06-17
