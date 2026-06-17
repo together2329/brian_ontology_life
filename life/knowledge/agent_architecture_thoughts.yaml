@@ -234,6 +234,28 @@ source_records:
       - Failed attempts and corrections should become structured memory.
       - Future workflows should consult learned failures, updated rules, and refined skills to avoid repeating mistakes.
     related_task_ref: task_ai_agent_codex_seminar_prepare
+  - id: source_knowledge_conversation_20260618_plan_mode_shot_worktree_usage
+    source_type: chat
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "아 plan mode 설명하자 그리고 one shot, two shot. git worktree codex 에서 쓰는 방법"
+    interpreted_direction:
+      - Add Plan mode to the seminar as a practical way to separate planning from execution.
+      - Add one-shot and two-shot examples as concrete prompt-shaping patterns.
+      - Add git worktree usage as a safe Codex operating method for parallel isolated attempts and candidate comparison.
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+  - id: source_knowledge_conversation_20260618_thread_linking_methods
+    source_type: chat
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "쓰레드간 연결 방법 등"
+    interpreted_direction:
+      - Add thread-linking methods to the Codex seminar.
+      - Treat thread linking as a continuity and handoff problem across Codex conversations, subagents, git worktrees, and ontology objects.
+      - Use stable IDs, source refs, evidence refs, decisions, blockers, validation, and next actions as the bridge between threads.
+    related_task_ref: task_ai_agent_codex_seminar_prepare
 
 thought_threads:
   - id: thought_thread_20260615_okf_llm_wiki_ontology
@@ -377,6 +399,7 @@ thought_threads:
       - Brian wants to teach common_ai_agent and ontology_ip_agent know-how as workflow construction methods.
       - Brian identified the central method as refining one small real task until it works, then distilling that workflow into a reusable skill.
       - Brian also identified handoff skills, skill-making skills, and conversation-driven failure learning as patterns for scaling agent workflows.
+      - Brian added practical Codex operating patterns: Plan mode, one-shot/two-shot prompting, git worktree experiments, and thread-to-thread continuity.
     conversation_flow:
       - Brian first listed Codex seminar topics from setup through LLM/RAG trends and agent-control primitives.
       - The discussion then moved from tools to knowledge architecture: Knowledge Graph, SoC Knowledge Graph, Agentic RAG, OKF, LLM Wiki, and ontology.
@@ -388,6 +411,7 @@ thought_threads:
       - Brian then connected the seminar to his own common_ai_agent and ontology_ip_agent lessons, asking to teach workflow construction itself.
       - The workflow construction idea evolved into task-to-skill distillation, handoff skills between subagents, and a skill-making skill.
       - Brian then added that conversation and trial-and-error should continuously improve the system so future runs do not repeat known mistakes.
+      - Brian then added Plan mode, one-shot/two-shot examples, git worktree usage, and thread-linking methods as practical controls participants should learn.
     architecture_layering:
       explanation_layer:
         - LLM Wiki
@@ -406,6 +430,8 @@ thought_threads:
         - reference-design-guided document/deck generation
       agent_control_layer:
         - prompt
+        - one-shot/two-shot examples
+        - Plan mode
         - rules
         - hooks
         - skills
@@ -414,11 +440,13 @@ thought_threads:
       workflow_construction_layer:
         - common_ai_agent lessons
         - ontology_ip_agent lessons
+        - git worktree isolation
         - one small task
         - stable workflow
         - task-to-skill distillation
         - handoff skill
         - skill creation skill
+        - thread handoff summary
       evaluation_layer:
         - quality threshold
         - token count
@@ -432,6 +460,7 @@ thought_threads:
         - corrections
         - skill updates
         - rule updates
+        - thread linking records
         - avoid repeated mistakes
     related_task_ref: task_ai_agent_codex_seminar_prepare
     related_project_refs:
@@ -452,6 +481,10 @@ thought_threads:
       - concept_agent_handoff_skill
       - concept_skill_creation_skill
       - concept_conversation_feedback_learning_loop
+      - concept_codex_plan_mode
+      - concept_prompt_shot_pattern
+      - concept_git_worktree_codex_workflow
+      - concept_codex_thread_linking
       - concept_reference_design_guided_generation
       - concept_soc_knowledge_graph
       - concept_soc_on_ontology
@@ -471,6 +504,8 @@ thought_threads:
       - source_knowledge_conversation_20260618_task_to_skill_principle
       - source_knowledge_conversation_20260618_handoff_skill_skill_maker
       - source_knowledge_conversation_20260618_feedback_loop_failure_learning
+      - source_knowledge_conversation_20260618_plan_mode_shot_worktree_usage
+      - source_knowledge_conversation_20260618_thread_linking_methods
     status: active_seminar_design
     confidence: high
     needs_user_review: false
@@ -771,6 +806,47 @@ understandings:
       - source_knowledge_conversation_20260618_feedback_loop_failure_learning
     confidence: high
     needs_user_review: false
+  - id: understanding_20260618_plan_shot_worktree_are_codex_operating_controls
+    object_type: Understanding
+    date: 2026-06-18
+    area: CAREER
+    secondary_areas:
+      - MIND
+    statement: "Plan mode, one-shot/two-shot prompting, and git worktree usage are core Codex operating controls because they make work scoped, steerable, isolated, comparable, and reproducible."
+    brian_wording_ko: "plan mode 설명하자 그리고 one shot, two shot. git worktree codex 에서 쓰는 방법."
+    status: confirmed_by_brian
+    related_thread_ref: thought_thread_20260618_codex_seminar_ontology_demo_stack
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+    related_concept_refs:
+      - concept_codex_plan_mode
+      - concept_prompt_shot_pattern
+      - concept_git_worktree_codex_workflow
+      - concept_agent_skills
+      - concept_task_to_skill_distillation
+    source_refs:
+      - source_knowledge_conversation_20260618_plan_mode_shot_worktree_usage
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260618_thread_linking_is_continuity_layer
+    object_type: Understanding
+    date: 2026-06-18
+    area: CAREER
+    secondary_areas:
+      - MIND
+    statement: "Thread linking is the continuity layer between Codex sessions: each thread should hand off objective, repo/worktree, ontology refs, evidence, decisions, blockers, validation, and next actions so later work resumes from the same state."
+    brian_wording_ko: "쓰레드간 연결 방법 등."
+    status: confirmed_by_brian
+    related_thread_ref: thought_thread_20260618_codex_seminar_ontology_demo_stack
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+    related_concept_refs:
+      - concept_codex_thread_linking
+      - concept_agent_handoff_skill
+      - concept_conversation_feedback_learning_loop
+      - concept_ontology_first_agent_memory
+    source_refs:
+      - source_knowledge_conversation_20260618_thread_linking_methods
+    confidence: high
+    needs_user_review: false
 
 architecture_directions:
   - id: architecture_direction_20260615_ontology_first_okf_export
@@ -1002,6 +1078,7 @@ knowledge_interests:
       - Keep evaluation/monitoring metrics in the story: quality threshold, tokens, tool calls, attempts, time, and failure/retry rate.
       - Add a workflow-construction recipe: choose one real task, stabilize it, distill to skill, add handoff, monitor failures, update ontology/rules/skills.
       - Treat failed attempts and conversation corrections as structured learning material, not as throwaway chat history.
+      - Teach Codex operating controls explicitly: Plan mode for scope, one/two-shot examples for steering, git worktree for isolation, and thread linking for continuity.
     related_project_refs:
       - project_ai_agent
     related_task_ref: task_ai_agent_codex_seminar_prepare
@@ -1020,6 +1097,10 @@ knowledge_interests:
       - concept_agent_evaluation_monitoring
       - concept_resource_efficiency_to_threshold
       - concept_soc_knowledge_graph
+      - concept_codex_plan_mode
+      - concept_prompt_shot_pattern
+      - concept_git_worktree_codex_workflow
+      - concept_codex_thread_linking
     status: active_interest
     source_refs:
       - source_knowledge_conversation_20260618_codex_seminar_full_stack
@@ -1029,6 +1110,8 @@ knowledge_interests:
       - source_knowledge_conversation_20260618_task_to_skill_principle
       - source_knowledge_conversation_20260618_handoff_skill_skill_maker
       - source_knowledge_conversation_20260618_feedback_loop_failure_learning
+      - source_knowledge_conversation_20260618_plan_mode_shot_worktree_usage
+      - source_knowledge_conversation_20260618_thread_linking_methods
     confidence: high
     needs_user_review: false
 

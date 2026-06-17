@@ -635,6 +635,44 @@ source_records:
       - task_ai_agent_codex_seminar_prepare
       - task_ai_agent_company_codex_rollout_support
       - task_ai_agent_codex_ontology_development_plugin
+  - id: source_ai_agent_conversation_20260618_plan_mode_shot_worktree_codex_usage
+    source_type: chat
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "아 plan mode 설명하자 그리고 one shot, two shot. git worktree codex 에서 쓰는 방법"
+    interpreted_focus:
+      - Explain Plan mode as the safe planning/scope-alignment phase before edits, commands, or broad execution.
+      - Explain one-shot and two-shot prompting as concrete example-based steering patterns for output format, review style, and workflow behavior.
+      - Explain git worktree with Codex as a way to run parallel isolated experiments, compare branches, and keep the main working tree clean.
+      - Present these as practical operating basics that participants can use immediately after setup.
+    related_concept_refs:
+      - concept_codex_plan_mode
+      - concept_prompt_shot_pattern
+      - concept_git_worktree_codex_workflow
+      - concept_agent_skills
+      - concept_task_to_skill_distillation
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+  - id: source_ai_agent_conversation_20260618_thread_linking_methods
+    source_type: chat
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "쓰레드간 연결 방법 등"
+    interpreted_focus:
+      - Add a seminar section for linking Codex threads so work can continue across sessions without losing context.
+      - Thread continuity should use stable IDs, ontology refs, git branch/worktree refs, source/evidence refs, current state, blockers, decisions, and next actions.
+      - Thread linking should be demonstrated as a practical handoff pattern between user sessions, subagents, and future skill-driven workflows.
+    related_concept_refs:
+      - concept_codex_thread_linking
+      - concept_agent_handoff_skill
+      - concept_conversation_feedback_learning_loop
+      - concept_ontology_first_agent_memory
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
 
 summary:
   current_state:
@@ -1040,6 +1078,7 @@ tasks:
       - Brian identified a core workflow-building principle: first make one small real task work well, then distill it into a reusable skill.
       - Brian also identified handoff skills for subagent-to-subagent transfer and a skill-making skill as important scaling patterns.
       - The system should keep improving through conversation: failures, corrections, and better directions should be learned so the next workflow avoids repeating the same mistakes.
+      - Brian added practical Codex operating patterns for the seminar: Plan mode, one-shot/two-shot examples, git worktree usage, and thread-to-thread continuity.
     seminar_object:
       id: seminar_codex_202606_next_week
       object_type: Seminar
@@ -1064,6 +1103,7 @@ tasks:
         - "Codex Skill과 문서/발표자료 생성 flow를 붙이면 지식 정리에서 보고서와 발표자료 작성까지 반복 가능한 업무 flow가 된다."
         - "좋은 skill은 추상적으로 먼저 만드는 것이 아니라, 작은 실제 task 하나를 잘하게 만든 뒤 그 workflow를 정제해서 만든다."
         - "대화와 시행착오가 ontology에 남아야 다음 실행에서 같은 실수를 반복하지 않는다."
+        - "Plan mode, one-shot/two-shot examples, git worktree, and thread handoff are the practical controls that keep Codex work scoped, reproducible, and continuous."
       scope_estimate_one_hour_per_day:
         compressed_intro:
           days: 3
@@ -1082,11 +1122,11 @@ tasks:
           output: opening_story_and_adoption_frame
         - day: 2
           title: Codex setup and operating surfaces
-          focus: app, CLI, config, AGENTS.md, permissions, rules, skills, hooks, MCP, browser, and safe workflow basics.
-          output: setup_guide_draft
+          focus: app, CLI, config, AGENTS.md, permissions, rules, skills, hooks, MCP, browser, Plan mode, git worktree, and safe workflow basics.
+          output: setup_and_operating_guide_draft
         - day: 3
           title: Agent loop that behaves as intended
-          focus: prompt, context, plan, hook, loop, tool call, file edit, validation, review, stop conditions, and Brian's common_ai_agent to ontology_ip_agent workflow lessons.
+          focus: prompt, context, one-shot/two-shot examples, plan, hook, loop, tool call, file edit, validation, review, stop conditions, and Brian's common_ai_agent to ontology_ip_agent workflow lessons.
           output: agent_loop_diagram_and_rule_pack
         - day: 4
           title: Workflow to skill distillation
@@ -1122,7 +1162,7 @@ tasks:
           output: two_month_asset_capture_plan
         - day: 12
           title: Handoff skills and skill-making skills
-          focus: Define how subagents pass context/evidence/decisions/blockers to each other, and how proven workflows get converted into reusable skills.
+          focus: Define how subagents and Codex threads pass context/evidence/decisions/blockers/next actions to each other, and how proven workflows get converted into reusable skills.
           output: handoff_skill_and_skill_maker_pattern
         - day: 13
           title: Conversation feedback and failure learning loop
@@ -1155,6 +1195,12 @@ tasks:
           - The TODO-based implementation was useful for execution, but multi-user/server/demo pressure exposed the need for explicit ontology, evidence, decisions, owners, and gates.
           - ontology_ip_agent / OAG is the current concrete place where those lessons become Codex-native hardware-IP workflow patterns.
         steps:
+          - step: start_in_plan_mode
+            description: For broad, risky, or unclear tasks, first ask Codex to plan, identify scope, likely files, risks, validation, and questions before allowing edits.
+          - step: seed_with_one_or_two_examples
+            description: Give one concrete example when the target format is simple; give two examples when Codex must infer contrast, style, or edge cases.
+          - step: isolate_experiments_with_git_worktree
+            description: Use separate git worktrees and branches for parallel Codex attempts so candidates can be compared without contaminating the main workspace.
           - step: choose_one_small_real_task
             description: Pick one bounded task that matters, such as SDC cleanup, lint triage, one requirement draft, one evidence review, or one PPT/guide artifact.
           - step: run_with_codex_manually
@@ -1169,6 +1215,8 @@ tasks:
             description: Convert the stabilized workflow into instructions, examples, required context, tool boundaries, checks, and stop conditions.
           - step: add_handoff_skill
             description: Define how a subagent passes task state, evidence, blockers, decisions, and next actions to another subagent.
+          - step: link_threads_with_handoff_summary
+            description: When moving to a new Codex thread, pass a compact summary with stable object IDs, branch/worktree, current status, evidence refs, decisions, blockers, and next actions.
           - step: use_skill_creation_skill
             description: Use a meta-skill to help extract, review, and maintain new skills from proven workflows.
           - step: monitor_and_iterate
@@ -1188,6 +1236,52 @@ tasks:
           - Repeated successful workflows become skills.
           - Repeated failures become skill cautions, checks, or stop conditions.
           - Future runs consult these objects so the same mistake is less likely to recur.
+        practical_operating_patterns:
+          plan_mode:
+            purpose: Separate planning and scope alignment from execution so Codex does not edit or run broad commands before the target is clear.
+            when_to_use:
+              - broad or ambiguous request
+              - risky repository change
+              - seminar/demo planning
+              - multi-step workflow design
+              - before converting a workflow into a skill
+            expected_output:
+              - target outcome
+              - files or objects likely to change
+              - risks and assumptions
+              - validation plan
+              - open questions
+              - proposed execution steps
+          one_shot_two_shot:
+            purpose: Steer Codex with examples instead of only abstract instructions.
+            one_shot_use: Give one good example when the desired output shape is stable, such as a status-update format or a short review template.
+            two_shot_use: Give two contrasting examples when Codex must infer style, boundaries, edge cases, or what good and bad output look like.
+            seminar_examples:
+              - one SDC cleanup report example
+              - two task-summary examples showing too vague vs useful
+              - one skill instruction example and one handoff summary example
+          git_worktree_with_codex:
+            purpose: Keep experiments isolated while multiple Codex attempts explore different fixes, demos, or generated artifacts.
+            pattern:
+              - Create a separate worktree per candidate branch.
+              - Run Codex inside that worktree.
+              - Compare diff, tests, quality score, and resource cost.
+              - Promote only the winning patch back to the main branch.
+            caution: Avoid running multiple agents in the same dirty working tree unless the work is deliberately coordinated.
+          thread_linking:
+            purpose: Continue work across Codex threads, subagents, or days without depending on memory alone.
+            minimum_handoff_fields:
+              - objective
+              - repo/path
+              - git branch or worktree
+              - ontology object IDs and refs
+              - current status
+              - important decisions
+              - evidence/source refs
+              - blockers
+              - next actions
+              - validation already run
+            ontology_link_pattern: Thread -> SourceRecord -> Task/Project/Concept -> Evidence/Decision -> NextAction.
       demo_stack:
         okf_soc_vault_slice:
           example_files:
@@ -1246,6 +1340,10 @@ tasks:
         - concept_agent_handoff_skill
         - concept_skill_creation_skill
         - concept_conversation_feedback_learning_loop
+        - concept_codex_plan_mode
+        - concept_prompt_shot_pattern
+        - concept_git_worktree_codex_workflow
+        - concept_codex_thread_linking
         - concept_reference_design_guided_generation
         - concept_soc_knowledge_graph
         - concept_soc_on_ontology
@@ -1268,6 +1366,8 @@ tasks:
         - source_ai_agent_conversation_20260618_small_task_to_skill_principle
         - source_ai_agent_conversation_20260618_handoff_skill_and_skill_maker
         - source_ai_agent_conversation_20260618_feedback_loop_trial_error_learning
+        - source_ai_agent_conversation_20260618_plan_mode_shot_worktree_codex_usage
+        - source_ai_agent_conversation_20260618_thread_linking_methods
     expected_outputs:
       - Codex seminar outline
       - comparison of Cursor workflow and Codex workflow
@@ -1293,6 +1393,10 @@ tasks:
       - handoff skill pattern for subagent collaboration
       - skill-making skill concept for turning proven workflows into reusable packages
       - conversation feedback loop showing how failures and corrections update future skills/rules
+      - Plan mode guide for separating planning from execution
+      - one-shot/two-shot prompting examples for engineering workflows
+      - git worktree Codex workflow for isolated parallel experiments
+      - thread-linking and handoff template for continuing work across Codex sessions
     next_actions:
       - Write down what worked in the 2026-06-12 Cursor seminar.
       - Decide whether the Codex seminar should focus on usage, workflow design, hardware IP examples, or ontology-backed development.
@@ -1320,6 +1424,10 @@ tasks:
       - Draft a handoff skill schema covering context, state, evidence, blocker, decision, and next action.
       - Draft a skill-making skill checklist for converting stable workflows into skills.
       - Add a feedback-learning example showing how a failed attempt becomes a rule, check, or caution in the next version.
+      - Draft a Plan mode quick guide with when-to-use rules and expected planning output.
+      - Prepare one-shot and two-shot prompt examples for SDC cleanup, task summaries, and skill creation.
+      - Prepare a git worktree demo showing two isolated Codex attempts and a promote/compare step.
+      - Draft a thread-linking handoff template that carries objective, repo, branch/worktree, refs, status, decisions, blockers, next actions, and validation.
     evidence_refs:
       - source_ai_agent_conversation_20260614_cursor_seminar_success_codex_planned
       - source_ai_agent_conversation_20260617_codex_next_week_seminar_demo_guide
@@ -1339,6 +1447,8 @@ tasks:
       - source_ai_agent_conversation_20260618_small_task_to_skill_principle
       - source_ai_agent_conversation_20260618_handoff_skill_and_skill_maker
       - source_ai_agent_conversation_20260618_feedback_loop_trial_error_learning
+      - source_ai_agent_conversation_20260618_plan_mode_shot_worktree_codex_usage
+      - source_ai_agent_conversation_20260618_thread_linking_methods
     confidence: high
     needs_user_review: true
 
