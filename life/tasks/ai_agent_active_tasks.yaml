@@ -157,11 +157,66 @@ source_records:
       duration_months: 2
       access_model: unlimited_use
       exact_start_date: null
+      start_window:
+        phrase: 다음주부터
+        week_start: 2026-06-22
+        week_end: 2026-06-28
+        date_precision: week
+        basis: Conversation date is 2026-06-17.
       assumed_relation: Connected to the next-week Codex seminar, rollout support, and guide/demo distribution.
       needs_user_review: true
     related_task_refs:
       - task_ai_agent_codex_seminar_prepare
       - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_codex_two_month_asset_capture_program
+  - id: source_ai_agent_conversation_20260617_codex_two_month_asset_capture_need
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "근데 다음주부터 코덱스를 두달 동안 무제한으로 쓸 수 있거든 이때 모두 잘 활용해서 자산으로 남겨야해."
+    interpreted_program:
+      topic: Codex two-month unlimited-use asset capture
+      duration_months: 2
+      access_model: unlimited_use
+      start_window:
+        phrase: 다음주부터
+        week_start: 2026-06-22
+        week_end: 2026-06-28
+        date_precision: week
+        basis: Conversation date is 2026-06-17.
+      strategic_goal: Use the two-month unlimited Codex period well and leave durable assets rather than only ad hoc usage.
+      asset_capture_targets:
+        - seminar materials
+        - guide documents
+        - rule packs
+        - skill packs
+        - demo scripts
+        - repeatable workflows
+        - hardware/IP examples
+        - onboarding FAQ
+        - ontology patterns
+        - case studies from real work
+      needs_user_review: false
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_codex_two_month_asset_capture_program
+  - id: source_ai_agent_conversation_20260617_codex_company_developer_audience_70_80
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "우리 회사 개발자들 한 70-80명이 사용할 수 있어"
+    interpreted_audience:
+      audience_type: company_developers
+      estimated_user_count_range: [70, 80]
+      scale_implication: The Codex two-month asset-capture program should support self-serve onboarding and reusable materials, not only live explanation by Brian.
+      needs_user_review: false
+    related_task_refs:
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_codex_seminar_prepare
   - id: source_ai_agent_conversation_20260617_subsystem_level_ontology_need
     source_type: chat
     original_date: 2026-06-17
@@ -381,6 +436,9 @@ summary:
     - Brian is personally testing Claude and Codex, about 200 USD each and 400 USD total, which is now tracked as a career-capability tool trial.
     - Brian clarified that he has spent several months working on AI during dawn, night, and weekends, so current fatigue should be treated as cumulative sustained effort.
     - Codex has a two-month unlimited-use period; the exact start date and operational scope still need confirmation.
+    - Brian clarified that the two-month unlimited Codex period starts next week from 2026-06-17, meaning the start window is 2026-06-22 to 2026-06-28 unless the exact date changes.
+    - Brian wants the two-month Codex window to leave durable assets, not only usage volume.
+    - Brian clarified that about 70-80 company developers may be able to use Codex during this period.
     - Brian identified that subsystem-level ontology should be improved for the hardware IP agent direction.
     - Brian further clarified the longer-term direction as SoC on top of ontology: SoC-level structure and reasoning should be built above the ontology layer.
     - Brian wants to accelerate Codex seminar preparation and connect the seminar to SoC-level ontology and VDS document thinking.
@@ -397,6 +455,7 @@ summary:
     - company Codex adoption support preparation
     - AI reputation management: show AI as work accelerator while keeping Milano/RTL execution visible
     - sustainable AI enablement after several months of dawn/night/weekend work
+    - two-month Codex unlimited-use asset capture program
     - next-week Codex seminar package with rules, skills, demo, and guide docs
     - subsystem-level ontology improvement for hardware IP workflows
     - SoC-on-ontology hardware IP agent direction
@@ -411,7 +470,8 @@ summary:
     - A successful Cursor seminar shows that Brian can translate the hard-earned agent workflow experience into useful enablement for others.
     - Brian's personal Claude/Codex testing spend shows serious commitment to learning the tools, but should be reviewed against concrete outputs rather than emotional pressure alone.
     - Several months of dawn/night/weekend AI work is evidence of commitment and accumulated learning, but also a sustainability risk.
-    - A two-month unlimited-use period creates a window for real adoption experiments, not just one-time seminar exposure.
+    - A two-month unlimited-use period creates a window for real adoption experiments, reusable asset capture, and company enablement beyond a one-time seminar.
+    - A 70-80 developer audience means self-serve onboarding assets matter; Brian should not become the only live support path.
   open_questions:
     - id: oq_ai_agent_common_ai_agent_port_scope
       question: "common_ai_agent porting scope is not yet explicit: CLI surface, plugin surface, ontology gateway, prompt workflow, or all of these."
@@ -712,6 +772,7 @@ tasks:
       - As of 2026-06-17, the Codex seminar is planned for the week of 2026-06-22 to 2026-06-28.
       - Brian expects to distribute rules, skills, a demo, and guide documents.
       - A two-month unlimited-use period is expected, but the exact start date and scope need confirmation.
+      - The two-month unlimited-use period should be treated as an asset-capture window, not only a usage benefit.
       - The seminar should explain why subsystem-level ontology matters for hardware IP workflows.
       - "The stronger seminar story is SoC on top of ontology: ontology as semantic substrate, SoC-level workflow/reasoning above it."
       - Brian wants to put more force behind preparation rather than leaving the Codex seminar as a loose future item.
@@ -733,6 +794,7 @@ tasks:
       - SoC-on-ontology explanation that connects SoC, subsystem, IP, interface, requirement, verification, evidence, owner, and decision objects
       - VDS-oriented section showing how ontology-backed SoC structure can become useful engineering documentation
       - one small stakeholder-visible artifact that shows AI helping actual engineering workflow
+      - asset-capture framing for how participants should turn Codex usage into reusable team knowledge during the two-month window
     next_actions:
       - Write down what worked in the 2026-06-12 Cursor seminar.
       - Decide whether the Codex seminar should focus on usage, workflow design, hardware IP examples, or ontology-backed development.
@@ -742,6 +804,7 @@ tasks:
       - Decide the minimum rule set and skill set to distribute.
       - Prepare one reliable demo path and one backup demo path.
       - Draft the guide document around practical first-week usage and the two-month unlimited-use window.
+      - Add a section explaining how to leave assets from Codex usage: examples, prompts, rules, workflows, failure cases, and reusable docs.
       - Choose a subsystem-level ontology demo slice that is concrete enough for RTL/IP engineers.
       - Frame the demo as a narrow SoC-on-ontology path rather than a broad product demo.
       - "Convert the seminar into concrete deliverables: outline, rule pack, skill pack, demo path, guide document, and VDS/SoC ontology story."
@@ -752,6 +815,7 @@ tasks:
       - source_ai_agent_conversation_20260614_cursor_seminar_success_codex_planned
       - source_ai_agent_conversation_20260617_codex_next_week_seminar_demo_guide
       - source_ai_agent_conversation_20260617_codex_two_month_unlimited_use
+      - source_ai_agent_conversation_20260617_codex_two_month_asset_capture_need
       - source_ai_agent_conversation_20260617_subsystem_level_ontology_need
       - source_ai_agent_conversation_20260617_soc_on_ontology_direction
       - source_ai_agent_conversation_20260617_codex_seminar_accelerate_soc_ontology_vds
@@ -899,6 +963,13 @@ tasks:
       duration_months: 2
       access_model: unlimited_use
       exact_start_date: null
+      start_window:
+        phrase: 다음주부터
+        week_start: 2026-06-22
+        week_end: 2026-06-28
+        date_precision: week
+        basis: Conversation date is 2026-06-17.
+      asset_capture_task_ref: task_ai_agent_codex_two_month_asset_capture_program
       needs_user_review: true
     tracking_level: detailed
     project_ref: project_ai_agent
@@ -920,6 +991,8 @@ tasks:
       - ontology_ip_agent can supply concrete hardware IP workflow examples for the rollout.
       - Next-week seminar deliverables now include rule/skill distribution, a demo, and guide document distribution.
       - The rollout/support framing should account for a two-month unlimited-use period.
+      - Brian wants the two-month unlimited-use period to become durable assets: guides, rules, skills, demos, FAQs, workflow cookbooks, and ontology patterns.
+      - About 70-80 company developers may be able to use Codex, so materials should support self-serve onboarding and repeated questions.
       - Subsystem-level ontology should be elevated so hardware/IP users see how Codex workflows connect across requirements, RTL, verification, evidence, and ownership.
       - "SoC-on-ontology should be the long-term framing: users should see that Codex workflows can connect SoC intent down to IP-level evidence and decisions."
       - Brian is concerned that some teammates may perceive AI work as distraction, so rollout support should visibly connect to real engineering work and not look detached from project execution.
@@ -935,6 +1008,8 @@ tasks:
       - subsystem-level ontology demo showing connected IP workflow objects
       - SoC-on-ontology demo story that is narrow enough for onboarding but expressive enough to show the target architecture
       - short stakeholder-facing note that frames Codex as a way to accelerate and document real RTL/IP work
+      - two-month asset index tracking reusable artifacts, source examples, review status, and shareability
+      - self-serve onboarding material for a 70-80 developer audience
     next_actions:
       - "Identify what coworkers will need first: setup, prompt patterns, repo workflow, review workflow, or automation examples."
       - Convert current common_ai_agent porting lessons into short internal examples.
@@ -942,11 +1017,13 @@ tasks:
       - Prepare a concise support script for the first rollout week.
       - Track repeated questions from coworkers as future agent/tooling requirements.
       - "Define how users should spend the two-month unlimited-use period: first week setup, second week real task adoption, later weeks repeatable workflow capture."
+      - Start the two-month asset capture program with a week-one asset list and weekly review cadence.
       - Convert subsystem-level ontology into one practical demo story for hardware/IP engineers.
       - Convert the SoC-on-ontology direction into a first concrete example path that can be explained to RTL/IP engineers.
       - Keep Milano/RTL task progress visible while preparing Codex enablement material.
       - Track whether the Claude/Codex paid testing produces reusable outputs for the rollout.
       - Protect sustainability by not making dawn/night/weekend AI work the default operating mode.
+      - Design first-week materials so 70-80 developers can start without one-by-one explanation from Brian.
     evidence_refs:
       - source_ai_agent_conversation_20260614_fun_codex_porting_rollout
       - source_ai_agent_conversation_20260614_ontology_ip_agent_repo
@@ -955,11 +1032,15 @@ tasks:
       - source_ai_agent_conversation_20260617_codex_two_month_unlimited_use
       - source_ai_agent_conversation_20260617_subsystem_level_ontology_need
       - source_ai_agent_conversation_20260617_soc_on_ontology_direction
+      - source_ai_agent_conversation_20260617_codex_two_month_asset_capture_need
+      - source_ai_agent_conversation_20260617_codex_company_developer_audience_70_80
       - source_ai_agent_conversation_20260617_reputation_fear_ai_only
       - source_ai_agent_conversation_20260617_jeon_yongtae_reputation_fear_full_work
       - source_ai_agent_conversation_20260617_cursor_seminar_reputation_signal
       - source_ai_agent_conversation_20260617_personal_ai_tool_cost_400usd
       - source_ai_agent_conversation_20260617_multi_month_ai_dawn_night_weekend_effort
+    related_task_refs:
+      - task_ai_agent_codex_two_month_asset_capture_program
     confidence: medium
     needs_user_review: true
 
@@ -1001,6 +1082,90 @@ tasks:
     related_knowledge_thread_ref: thought_thread_20260615_okf_llm_wiki_ontology
     confidence: high
     needs_user_review: false
+
+  - id: task_ai_agent_codex_two_month_asset_capture_program
+    title: Codex 2개월 무제한 사용 기간 자산화 프로그램
+    area: CAREER
+    secondary_areas:
+      - MIND
+      - FINANCE
+    status: planned
+    priority: high
+    energy: operating_system_design
+    estimated_minutes: null
+    due_date: null
+    target_window:
+      phrase: 다음주부터 2개월
+      start_week: 2026-06-22_to_2026-06-28
+      duration_months: 2
+      date_precision: start_week
+      confidence: medium
+    tracking_level: program
+    project_ref: project_ai_agent
+    progress_percent: 0
+    tags:
+      - codex
+      - unlimited_use
+      - asset_capture
+      - enablement
+      - seminar
+      - rules
+      - skills
+      - hardware_ip_agent
+    context:
+      - Brian expects to be able to use Codex without usage limits for two months starting next week from 2026-06-17.
+      - Brian wants this period to leave durable assets, not only one-off experiments.
+      - About 70-80 company developers may be able to use Codex during this period.
+      - This should convert several months of dawn/night/weekend AI effort into reusable company and personal assets.
+      - The program should support Codex seminar preparation, company rollout support, and the SoC-on-ontology hardware IP agent direction.
+      - Sustainability matters: the two-month window should reduce repeated manual explanation and overwork, not create more unsustainable off-hours work.
+    expected_outputs:
+      - Codex seminar deck or outline
+      - Codex guide document for RTL/IP engineers
+      - minimal rule pack
+      - minimal skill pack
+      - one reliable demo script and one fallback demo script
+      - first-week onboarding checklist
+      - FAQ from repeated coworker questions
+      - workflow cookbook for real engineering tasks
+      - case studies from Milano or ontology_ip_agent examples
+      - self-serve onboarding material for a 70-80 developer audience
+      - SoC-on-ontology example path
+      - VDS/documentation example if scope is confirmed
+      - asset index that maps each output to source conversations, tasks, examples, and review status
+    asset_principles:
+      - Capture before optimizing.
+      - Turn repeated explanation into documents or reusable examples.
+      - Prefer one reliable small workflow over broad demos.
+      - Tie every AI example to real engineering work.
+      - Keep private Brian life ontology separate from company-shareable assets.
+      - Review outputs weekly so usage becomes knowledge assets.
+    next_actions:
+      - Define the asset index format for the two-month Codex window.
+      - Pick the first five assets to produce during week one.
+      - Decide which assets are company-shareable and which remain personal/private.
+      - Connect each seminar/demo/rule/skill artifact to a source task or concrete engineering use case.
+      - Schedule a weekly Friday review to record what was learned, what became reusable, and what should be discarded.
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_soc_ontology_vds_document_design
+    evidence_refs:
+      - source_ai_agent_conversation_20260617_codex_two_month_unlimited_use
+      - source_ai_agent_conversation_20260617_codex_two_month_asset_capture_need
+      - source_ai_agent_conversation_20260617_codex_company_developer_audience_70_80
+      - source_ai_agent_conversation_20260617_multi_month_ai_dawn_night_weekend_effort
+      - source_ai_agent_conversation_20260617_personal_ai_tool_cost_400usd
+    success_criteria:
+      - Brian can point to durable artifacts after the two-month period.
+      - Coworkers can reuse at least one guide/rule/skill/demo without Brian explaining everything live.
+      - The material can support roughly 70-80 developers without requiring Brian to answer every basic question manually.
+      - The work improves real RTL/IP workflows rather than staying as tool enthusiasm.
+      - The program reduces Brian's reputation anxiety by making normal work and AI enablement visibly connected.
+      - The cadence becomes sustainable enough not to depend on constant dawn/night/weekend work.
+    confidence: high
+    needs_user_review: true
 
   - id: task_ai_agent_agentic_retrieval_planner
     title: Brian Ontology Agent agentic retrieval planner 설계
@@ -1387,3 +1552,53 @@ project_status_updates:
       - task_ai_agent_codex_seminar_prepare
       - task_ai_agent_company_codex_rollout_support
     source_ref: source_ai_agent_conversation_20260617_multi_month_ai_dawn_night_weekend_effort
+
+  - id: project_status_ai_agent_20260617_codex_two_month_asset_capture_program
+    date: 2026-06-17
+    project_ref: project_ai_agent
+    author_ref: person_brian
+    status: planned
+    progress_percent: 0
+    summary: Brian clarified that from next week he can use Codex without limits for two months, and that roughly 70-80 company developers may be able to use it, so the window should leave durable self-serve assets.
+    interpreted_window:
+      phrase: 다음주부터 2개월
+      start_week: 2026-06-22_to_2026-06-28
+      duration_months: 2
+      exact_start_date: null
+      needs_user_review: true
+    strategic_goal: Convert intensive Codex usage into reusable personal and company assets, not only live experimentation.
+    audience:
+      type: company_developers
+      estimated_count_range:
+        - 70
+        - 80
+      implication: The rollout needs self-serve onboarding, FAQ, reusable examples, and clear rules so Brian does not become the only support bottleneck.
+    target_assets:
+      - seminar outline/materials
+      - guide document
+      - rule pack
+      - skill pack
+      - demo script and fallback
+      - first-week onboarding checklist
+      - self-serve onboarding material for a 70-80 developer audience
+      - FAQ from repeated questions
+      - workflow cookbook
+      - real engineering case studies
+      - SoC-on-ontology example
+      - asset index with source/evidence refs
+    risk: Without an asset-capture loop, the two-month window may produce scattered usage and fatigue but not reusable leverage.
+    next_step: Define week-one asset list and weekly review cadence before the unlimited-use window starts.
+    related_task_refs:
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_codex_ontology_development_plugin
+    source_refs:
+      - source_ai_agent_conversation_20260617_codex_two_month_unlimited_use
+      - source_ai_agent_conversation_20260617_codex_two_month_asset_capture_need
+      - source_ai_agent_conversation_20260617_codex_company_developer_audience_70_80
+    evidence_refs:
+      - source_ai_agent_conversation_20260615_okf_ontology_memory_direction
+    related_knowledge_thread_ref: thought_thread_20260615_okf_llm_wiki_ontology
+    confidence: high
+    needs_user_review: false
