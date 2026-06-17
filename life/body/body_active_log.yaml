@@ -225,6 +225,22 @@ exercise_catalog:
       - biceps
     equipment: cable_or_row_machine
     notes: Use when Brian records seated row work.
+  - id: exercise_lat_pulldown
+    object_type: ExerciseCatalog
+    name: Lat pulldown
+    aliases:
+      - 렛풀 다운
+      - 렛풀다운
+      - 랫풀 다운
+      - 랫풀다운
+      - lat pulldown
+    muscle_groups:
+      - lats
+      - upper_back
+      - biceps
+      - rear_delts
+    equipment: cable_or_lat_pulldown_machine
+    notes: Use when Brian records lat pulldown work.
 
 workout_records:
   - id: workoutsession_20260618_back_cable_pulldown_seated_row
@@ -304,6 +320,27 @@ workout_records:
           - set: 3
             weight_kg: 45
             reps: 12
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+      - exercise_ref: exercise_lat_pulldown
+        sequence_order: 3
+        variant: machine_or_cable
+        equipment: cable_or_lat_pulldown_machine
+        notes: 렛풀다운 추가 세트. Done after the main back volume; 30kg dropped to 8 reps, so this is a good point to stop adding back volume.
+        confidence: high
+        sets:
+          - set: 1
+            weight_kg: 25
+            reps: 15
+            rpe: null
+            rest_seconds: null
+            is_warmup: false
+            is_pr: null
+          - set: 2
+            weight_kg: 30
+            reps: 8
             rpe: null
             rest_seconds: null
             is_warmup: false
@@ -1340,3 +1377,9 @@ raw_records:
       - /tmp/codex-remote-attachments/019ed7ad-1ec5-7100-9489-aa01f3eb1aa1/1AD2F61F-3C05-42B7-836C-91B5595E9D57/2-Photo-2.jpg
       - /tmp/codex-remote-attachments/019ed7ad-1ec5-7100-9489-aa01f3eb1aa1/1AD2F61F-3C05-42B7-836C-91B5595E9D57/3-Photo-3.jpg
     text: "눈바디는 좋아지고 무게도 드는것 같은데 인바디는 써써 하넹"
+  - id: raw_body_record_20260618_back_lat_pulldown_extra_sets
+    date: 2026-06-18
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260618_back_cable_pulldown_seated_row
+    text: "okay 렛풀 다운 25kg 15개 30kg 8개함"
