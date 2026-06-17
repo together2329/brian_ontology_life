@@ -195,7 +195,8 @@ workout_records:
         sequence_order: 1
         variant: smith_machine
         equipment: smith_machine
-        notes: 가슴 운동 기구로 스미스 머신에서 미는 동작. Brian estimated about 6 sets.
+        load_range_kg: [40, 60]
+        notes: 가슴 운동 기구로 스미스 머신에서 미는 동작. Brian estimated about 6 sets and later clarified the load moved around 40-60kg.
         confidence: medium
         sets:
           - set: 1
@@ -205,6 +206,8 @@ workout_records:
             rest_seconds: null
             is_warmup: null
             is_pr: null
+            weight_range_kg: [40, 60]
+            notes: Exact set-level load not recorded; overall Smith machine load moved around 40-60kg.
           - set: 2
             weight_kg: null
             reps: null
@@ -212,6 +215,8 @@ workout_records:
             rest_seconds: null
             is_warmup: null
             is_pr: null
+            weight_range_kg: [40, 60]
+            notes: Exact set-level load not recorded; overall Smith machine load moved around 40-60kg.
           - set: 3
             weight_kg: null
             reps: null
@@ -219,6 +224,8 @@ workout_records:
             rest_seconds: null
             is_warmup: null
             is_pr: null
+            weight_range_kg: [40, 60]
+            notes: Exact set-level load not recorded; overall Smith machine load moved around 40-60kg.
           - set: 4
             weight_kg: null
             reps: null
@@ -226,6 +233,8 @@ workout_records:
             rest_seconds: null
             is_warmup: null
             is_pr: null
+            weight_range_kg: [40, 60]
+            notes: Exact set-level load not recorded; overall Smith machine load moved around 40-60kg.
           - set: 5
             weight_kg: null
             reps: null
@@ -233,6 +242,8 @@ workout_records:
             rest_seconds: null
             is_warmup: null
             is_pr: null
+            weight_range_kg: [40, 60]
+            notes: Exact set-level load not recorded; overall Smith machine load moved around 40-60kg.
           - set: 6
             weight_kg: null
             reps: null
@@ -240,41 +251,55 @@ workout_records:
             rest_seconds: null
             is_warmup: null
             is_pr: null
+            weight_range_kg: [40, 60]
+            notes: Exact set-level load not recorded; overall Smith machine load moved around 40-60kg.
       - exercise_ref: exercise_bench_press
         sequence_order: 2
         variant: unspecified
         equipment: barbell_or_unspecified
-        notes: 벤치 프레스. Brian reported 4 sets; weight and reps were not specified.
+        notes: 벤치 프레스. Brian reported 4 sets, later clarified as one empty-bar set and three 10kg sets. Whether 10kg means total load, added load, or per-side plate load needs review.
         confidence: medium
+        needs_user_review: true
         sets:
           - set: 1
             weight_kg: null
             reps: null
             rpe: null
             rest_seconds: null
-            is_warmup: null
+            is_warmup: true
             is_pr: null
+            load_description: empty_bar
+            notes: 빈봉 1세트. Exact empty-bar weight was not recorded.
           - set: 2
-            weight_kg: null
+            weight_kg: 10
             reps: null
             rpe: null
             rest_seconds: null
-            is_warmup: null
+            is_warmup: false
             is_pr: null
+            reported_weight_kg: 10
+            weight_basis_needs_review: true
+            notes: Brian reported 10kg; whether this is total load, added load, or per-side load is not confirmed.
           - set: 3
-            weight_kg: null
+            weight_kg: 10
             reps: null
             rpe: null
             rest_seconds: null
-            is_warmup: null
+            is_warmup: false
             is_pr: null
+            reported_weight_kg: 10
+            weight_basis_needs_review: true
+            notes: Brian reported 10kg; whether this is total load, added load, or per-side load is not confirmed.
           - set: 4
-            weight_kg: null
+            weight_kg: 10
             reps: null
             rpe: null
             rest_seconds: null
-            is_warmup: null
+            is_warmup: false
             is_pr: null
+            reported_weight_kg: 10
+            weight_basis_needs_review: true
+            notes: Brian reported 10kg; whether this is total load, added load, or per-side load is not confirmed.
 
   - id: workoutsession_20260616_lower_body_hard
     object_type: WorkoutSession
@@ -1036,3 +1061,9 @@ raw_records:
       - meal_20260617_lunch_chicken_breast_risotto
     related_workout: workoutsession_20260617_chest_smith_bench
     text: "점심은 닭가슴살 리조또 그리고 오전에 쉐이크 20g(단백질) 먹음"
+  - id: raw_body_record_20260617_chest_workout_load_detail
+    date: 2026-06-17
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260617_chest_smith_bench
+    text: "중량은 벤치는 빈봉 1세트, 10kg 3세트. 스미트 머신은 40~60 왔다 갔다"
