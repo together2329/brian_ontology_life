@@ -154,6 +154,23 @@ source_records:
       realistic_seminar_series_days_range: [8, 10]
       full_asset_capture_days_range: [12, 15]
     related_task_ref: task_ai_agent_codex_seminar_prepare
+  - id: source_knowledge_external_reference_20260618_claude_ppt_codex_transfer
+    source_type: chat_and_external_video
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "Brian shared a YouTube video about making PPTs with Claude and asked to add it because Codex likely can do a similar workflow."
+    external_reference:
+      platform: YouTube
+      url: https://youtu.be/BboGm3FR4hw?si=TE8mol6GZzynd8Jm
+      observed_title: "그냥 “PPT 만들어줘”라고 하면 망합니다. (클로드 PPT 제작 노하우)"
+      observed_at: 2026-06-18
+    interpreted_transfer:
+      from_tool: Claude
+      to_tool: Codex
+      principle: Presentation generation should be treated as a structured workflow over source knowledge, outline, slide intent, artifact generation, visual review, and iteration, not as a vague one-shot prompt.
+      seminar_section: Document and deck generation with skills
+    related_task_ref: task_ai_agent_codex_seminar_prepare
 
 thought_threads:
   - id: thought_thread_20260615_okf_llm_wiki_ontology
@@ -292,12 +309,14 @@ thought_threads:
       - The engineering layer should use concrete RTL/IP workflows such as SDC cleanup, lint/simulation, UVM/Icarus/Verilator, waveform/MCP, and OAG-style evidence tracking.
       - The management layer should explain evaluation and monitoring: reach quality threshold first, then reduce resource cost to reach the same or better result.
       - The content is large enough to be treated as an 8-10 one-hour seminar series, with 12-15 one-hour sessions if full reusable assets are produced.
+      - Brian added a Claude PPT-making reference video as a transferable example for a Codex-based document/deck generation workflow.
     conversation_flow:
       - Brian first listed Codex seminar topics from setup through LLM/RAG trends and agent-control primitives.
       - The discussion then moved from tools to knowledge architecture: Knowledge Graph, SoC Knowledge Graph, Agentic RAG, OKF, LLM Wiki, and ontology.
       - Brian asked to include evaluation and monitoring as the reason that agent rollout needs measurable quality and resource tracking.
       - Brian then wanted to show OKF in Obsidian with graph and Base views, plus interactive HTML for understanding connected work.
       - Finally, Brian asked for a one-hour-per-day estimate if every discussed topic is included.
+      - Brian later added a Claude PPT workflow video and identified that Codex can likely perform the same kind of structured PPT-generation flow.
     architecture_layering:
       explanation_layer:
         - LLM Wiki
@@ -312,6 +331,7 @@ thought_threads:
         - Obsidian Bases
         - Interactive HTML graph
         - Word/PPT artifacts
+        - presentation-generation workflow examples
       agent_control_layer:
         - prompt
         - rules
@@ -352,6 +372,7 @@ thought_threads:
       - source_knowledge_conversation_20260618_evaluation_monitoring_reason
       - source_knowledge_external_research_20260618_okf_obsidian_skills_docs_trends
       - source_knowledge_conversation_20260618_one_hour_day_scope_estimate
+      - source_knowledge_external_reference_20260618_claude_ppt_codex_transfer
     status: active_seminar_design
     confidence: high
     needs_user_review: false
@@ -535,6 +556,25 @@ understandings:
       - source_knowledge_conversation_20260618_one_hour_day_scope_estimate
     confidence: medium
     needs_user_review: true
+  - id: understanding_20260618_ppt_generation_needs_structured_workflow
+    object_type: Understanding
+    date: 2026-06-18
+    area: CAREER
+    secondary_areas:
+      - MIND
+    statement: "The seminar's PPT/Word section should avoid the naive 'make a PPT' prompt pattern and instead show a structured workflow: source knowledge, audience, outline, slide intent, generated artifact, visual review, and iteration."
+    brian_wording_ko: "이건 클로드로 ppt 만들기인데, 코덱스도 가능할 것 같아서 추가좀."
+    status: inferred_from_brian_reference
+    related_thread_ref: thought_thread_20260618_codex_seminar_ontology_demo_stack
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+    related_concept_refs:
+      - concept_agent_skills
+      - concept_resource_efficiency_to_threshold
+      - concept_agent_evaluation_monitoring
+    source_refs:
+      - source_knowledge_external_reference_20260618_claude_ppt_codex_transfer
+    confidence: high
+    needs_user_review: false
 
 architecture_directions:
   - id: architecture_direction_20260615_ontology_first_okf_export

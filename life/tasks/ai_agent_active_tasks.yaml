@@ -509,6 +509,29 @@ source_records:
       recommendation: Use 8-10 one-hour sessions as the realistic seminar series, and keep 12-15 one-hour sessions as the asset-building backlog.
     related_task_refs:
       - task_ai_agent_codex_seminar_prepare
+  - id: source_ai_agent_conversation_20260618_claude_ppt_video_codex_transfer
+    source_type: chat_and_external_video
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "https://youtu.be/BboGm3FR4hw?si=TE8mol6GZzynd8Jm 이건 클로드로 ppt 만들기인데, 코덱스도 가능할 것 같아서 추가좀"
+    external_reference:
+      platform: YouTube
+      url: https://youtu.be/BboGm3FR4hw?si=TE8mol6GZzynd8Jm
+      observed_title: "그냥 “PPT 만들어줘”라고 하면 망합니다. (클로드 PPT 제작 노하우)"
+      observed_at: 2026-06-18
+    interpreted_focus:
+      source_tool: Claude
+      transfer_hypothesis: Brian thinks the same presentation-building workflow can likely be adapted to Codex.
+      seminar_use: Use this as a reference for the Word/PPT generation section, emphasizing structured brief, source material, outline, slide intent, visual review, and iteration rather than a vague one-shot "make a PPT" prompt.
+      codex_angle: Codex can turn ontology/OKF notes and engineering evidence into PPT/Word artifacts through file edits, document skills, validation, and review loops.
+    related_concept_refs:
+      - concept_agent_skills
+      - concept_resource_efficiency_to_threshold
+      - concept_agent_evaluation_monitoring
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_okf_export_layer
 
 summary:
   current_state:
@@ -978,7 +1001,7 @@ tasks:
           output: html_graph_viewer_demo
         - day: 9
           title: Document and deck generation with skills
-          focus: Use Word/PPT/document-generation skills as a repeatable path from structured knowledge to guide docs and presentation decks.
+          focus: Use Word/PPT/document-generation skills as a repeatable path from structured knowledge to guide docs and presentation decks; adapt the Claude PPT workflow lesson to Codex.
           output: ppt_word_generation_demo
         - day: 10
           title: SoC Knowledge Graph and two-month asset program
@@ -1023,6 +1046,11 @@ tasks:
         interactive_html_views:
           - Milano -> Task -> Issue -> Evidence -> Owner
           - SoC -> Subsystem -> IP -> Interface -> Requirement -> Verification
+        document_generation_references:
+          - title: "그냥 “PPT 만들어줘”라고 하면 망합니다. (클로드 PPT 제작 노하우)"
+            source_tool: Claude
+            url: https://youtu.be/BboGm3FR4hw?si=TE8mol6GZzynd8Jm
+            codex_transfer_note: Adapt the idea to Codex by using structured source notes, outline, slide intent, file-based generation, visual review, and iteration.
         codex_question_demo: "OKF_SoC vault를 기준으로 Milano 프로젝트의 open task를 찾아줘. blocked 된 항목과 evidence가 부족한 항목을 분리하고, 오늘 Brian이 먼저 해야 할 next action을 제안해줘."
       external_trend_refs:
         - https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing
@@ -1033,6 +1061,7 @@ tasks:
         - https://developers.openai.com/codex/app/browser
         - https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them
         - https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart
+        - https://youtu.be/BboGm3FR4hw?si=TE8mol6GZzynd8Jm
         - https://www.microsoft.com/en-us/microsoft-365/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/
         - https://support.microsoft.com/en-US/PowerPoint/copilot/create-a-new-presentation-with-copilot-in-powerpoint
       related_concept_refs:
@@ -1061,6 +1090,7 @@ tasks:
         - source_ai_agent_conversation_20260618_codex_seminar_eval_monitoring
         - source_ai_agent_conversation_20260618_codex_seminar_okf_obsidian_html_docs
         - source_ai_agent_conversation_20260618_codex_seminar_days_estimate
+        - source_ai_agent_conversation_20260618_claude_ppt_video_codex_transfer
     expected_outputs:
       - Codex seminar outline
       - comparison of Cursor workflow and Codex workflow
