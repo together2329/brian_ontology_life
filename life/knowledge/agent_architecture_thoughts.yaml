@@ -1,6 +1,6 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-17
+updated_at: 2026-06-18
 area: MIND
 secondary_areas:
   - CAREER
@@ -111,6 +111,49 @@ source_records:
       - term: VDS
         issue: acronym_not_expanded_in_source
         needs_user_review: true
+  - id: source_knowledge_conversation_20260618_codex_seminar_full_stack
+    source_type: chat
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "Brian expanded the Codex seminar into a full stack: Codex setup, LLM/RAG basics, hooks/skills/loops, Knowledge Graph, SoC Knowledge Graph, Agentic RAG, OKF, waveform viewer with MCP, UVM/Icarus Verilog/Verilator, evaluation/monitoring, Obsidian graph/Bases, Interactive HTML, and Word/PPT skill workflows."
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+  - id: source_knowledge_conversation_20260618_evaluation_monitoring_reason
+    source_type: chat
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "Brian clarified the reason for an evaluation/monitoring system: first verify whether a workflow reached the target quality; if it did, measure how many resources were used and improve by reducing tokens, tool calls, time, attempts, and failures."
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+  - id: source_knowledge_external_research_20260618_okf_obsidian_skills_docs_trends
+    source_type: web_research
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "External trend/source check for the Codex seminar: Google OKF formalizes LLM-wiki-style markdown/YAML knowledge bundles and ships a static HTML visualizer; Obsidian Bases provides database-like filtered views over local markdown properties; Codex and Claude Skills show progressive-disclosure tool/workflow packages; Claude Artifacts and Microsoft Copilot show interactive/app-native document and presentation workflows."
+    external_source_refs:
+      - https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing
+      - https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md
+      - https://obsidian.md/help/bases
+      - https://obsidian.md/help/bases/syntax
+      - https://developers.openai.com/codex/skills
+      - https://developers.openai.com/codex/app/browser
+      - https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them
+      - https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart
+      - https://www.microsoft.com/en-us/microsoft-365/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/
+      - https://support.microsoft.com/en-US/PowerPoint/copilot/create-a-new-presentation-with-copilot-in-powerpoint
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+  - id: source_knowledge_conversation_20260618_one_hour_day_scope_estimate
+    source_type: chat
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "Brian asked how many one-hour days the full set of seminar topics would require if everything discussed is included."
+    interpreted_estimate:
+      compressed_intro_days: 3
+      realistic_seminar_series_days_range: [8, 10]
+      full_asset_capture_days_range: [12, 15]
+    related_task_ref: task_ai_agent_codex_seminar_prepare
 
 thought_threads:
   - id: thought_thread_20260615_okf_llm_wiki_ontology
@@ -235,6 +278,83 @@ thought_threads:
       - source_knowledge_conversation_20260617_codex_seminar_soc_ontology_vds
     confidence: high
     needs_user_review: false
+  - id: thought_thread_20260618_codex_seminar_ontology_demo_stack
+    object_type: ThoughtThread
+    date: 2026-06-18
+    area: MIND
+    secondary_areas:
+      - CAREER
+    topic: Codex seminar as ontology/OKF/evaluation demo stack
+    summary:
+      - Brian reframed the Codex seminar as a multi-session enablement and asset-capture program rather than a single setup talk.
+      - The seminar should show Codex setup and usage, but also why precise agent behavior needs rules, hooks, skills, loops, and validation.
+      - The knowledge layer should demonstrate LLM Wiki, OKF, ontology, Obsidian graph/Bases, and interactive HTML as connected views over the same work.
+      - The engineering layer should use concrete RTL/IP workflows such as SDC cleanup, lint/simulation, UVM/Icarus/Verilator, waveform/MCP, and OAG-style evidence tracking.
+      - The management layer should explain evaluation and monitoring: reach quality threshold first, then reduce resource cost to reach the same or better result.
+      - The content is large enough to be treated as an 8-10 one-hour seminar series, with 12-15 one-hour sessions if full reusable assets are produced.
+    conversation_flow:
+      - Brian first listed Codex seminar topics from setup through LLM/RAG trends and agent-control primitives.
+      - The discussion then moved from tools to knowledge architecture: Knowledge Graph, SoC Knowledge Graph, Agentic RAG, OKF, LLM Wiki, and ontology.
+      - Brian asked to include evaluation and monitoring as the reason that agent rollout needs measurable quality and resource tracking.
+      - Brian then wanted to show OKF in Obsidian with graph and Base views, plus interactive HTML for understanding connected work.
+      - Finally, Brian asked for a one-hour-per-day estimate if every discussed topic is included.
+    architecture_layering:
+      explanation_layer:
+        - LLM Wiki
+        - OKF markdown/YAML frontmatter
+        - guide docs
+      semantic_work_layer:
+        - ontology objects
+        - SoC Knowledge Graph
+        - tasks, issues, evidence, owners, decisions
+      human_view_layer:
+        - Obsidian graph view
+        - Obsidian Bases
+        - Interactive HTML graph
+        - Word/PPT artifacts
+      agent_control_layer:
+        - prompt
+        - rules
+        - hooks
+        - skills
+        - loop
+        - stop condition
+      evaluation_layer:
+        - quality threshold
+        - token count
+        - tool-call count
+        - attempts
+        - wall time
+        - failure/retry rate
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+    related_project_refs:
+      - project_ai_agent
+    related_concept_refs:
+      - concept_llm_wiki
+      - concept_okf_open_knowledge_format
+      - concept_ontology_first_agent_memory
+      - concept_agentic_rag
+      - concept_graphrag
+      - concept_agent_evaluation_monitoring
+      - concept_resource_efficiency_to_threshold
+      - concept_obsidian_bases
+      - concept_interactive_html_knowledge_viewer
+      - concept_agent_skills
+      - concept_soc_knowledge_graph
+      - concept_soc_on_ontology
+      - concept_hardware_ip_agent
+    prior_thread_refs:
+      - thought_thread_20260615_okf_llm_wiki_ontology
+      - thought_thread_20260616_agentic_rag_graphrag_ontology_mapping
+      - thought_thread_20260617_soc_on_ontology_direction
+    source_refs:
+      - source_knowledge_conversation_20260618_codex_seminar_full_stack
+      - source_knowledge_conversation_20260618_evaluation_monitoring_reason
+      - source_knowledge_external_research_20260618_okf_obsidian_skills_docs_trends
+      - source_knowledge_conversation_20260618_one_hour_day_scope_estimate
+    status: active_seminar_design
+    confidence: high
+    needs_user_review: false
 
 understandings:
   - id: understanding_20260615_okf_llm_wiki_ontology_layering
@@ -344,6 +464,75 @@ understandings:
     related_task_ref: task_ai_agent_soc_ontology_vds_document_design
     source_refs:
       - source_knowledge_conversation_20260617_codex_seminar_soc_ontology_vds
+    confidence: medium
+    needs_user_review: true
+  - id: understanding_20260618_llm_wiki_explains_ontology_operates
+    object_type: Understanding
+    date: 2026-06-18
+    area: MIND
+    secondary_areas:
+      - CAREER
+    statement: "For the Codex seminar, LLM Wiki should be framed as the explanation/document layer, while ontology should be framed as the object/relation/action layer that lets the agent operate over real work."
+    brian_wording_ko: "LLM WIKI, ONTOLOGY 를 직접 쓰는걸 보여주고 싶어."
+    status: confirmed_by_brian
+    related_thread_ref: thought_thread_20260618_codex_seminar_ontology_demo_stack
+    related_concept_refs:
+      - concept_llm_wiki
+      - concept_ontology_first_agent_memory
+      - concept_okf_open_knowledge_format
+    source_refs:
+      - source_knowledge_conversation_20260618_codex_seminar_full_stack
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260618_quality_threshold_before_resource_efficiency
+    object_type: Understanding
+    date: 2026-06-18
+    area: CAREER
+    secondary_areas:
+      - MIND
+    statement: "Agent evaluation should first ask whether the result reached the required quality threshold; only after that should it optimize resource efficiency such as tokens, tool calls, attempts, time, and failure rate."
+    brian_wording_ko: "결과치에 도달했는지가 우선이고, 도달했다면 얼마나 더 적은 리소스로 구현했는지."
+    status: confirmed_by_brian
+    related_thread_ref: thought_thread_20260618_codex_seminar_ontology_demo_stack
+    related_concept_refs:
+      - concept_agent_evaluation_monitoring
+      - concept_resource_efficiency_to_threshold
+    source_refs:
+      - source_knowledge_conversation_20260618_evaluation_monitoring_reason
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260618_okf_obsidian_html_docs_as_demo_stack
+    object_type: Understanding
+    date: 2026-06-18
+    area: CAREER
+    secondary_areas:
+      - MIND
+    statement: "The seminar demo stack should connect OKF files, Obsidian graph/Bases, Interactive HTML, and Word/PPT skills as different views and outputs over the same structured knowledge."
+    brian_wording_ko: "Google OKF 기반으로 하고, 옵시디언 그래프와 BASE, Interactive HTML, PPT/WORD 작성 도움을 보여주고 싶어."
+    status: confirmed_by_brian
+    related_thread_ref: thought_thread_20260618_codex_seminar_ontology_demo_stack
+    related_concept_refs:
+      - concept_okf_open_knowledge_format
+      - concept_obsidian_bases
+      - concept_interactive_html_knowledge_viewer
+      - concept_agent_skills
+      - concept_soc_knowledge_graph
+    source_refs:
+      - source_knowledge_conversation_20260618_codex_seminar_full_stack
+      - source_knowledge_external_research_20260618_okf_obsidian_skills_docs_trends
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260618_codex_seminar_scope_is_series_not_single_hour
+    object_type: Understanding
+    date: 2026-06-18
+    area: CAREER
+    statement: "If all discussed topics are included, the Codex seminar is not a single one-hour talk; it is roughly an 8-10 one-hour session series, or 12-15 one-hour sessions when reusable assets are also produced."
+    brian_wording_ko: "내가 이야기한 것들 모두 담아서 며칠 분량이 나올까? 하루 1시간씩."
+    status: assistant_estimate_pending_user_review
+    related_thread_ref: thought_thread_20260618_codex_seminar_ontology_demo_stack
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+    source_refs:
+      - source_knowledge_conversation_20260618_one_hour_day_scope_estimate
     confidence: medium
     needs_user_review: true
 
@@ -552,6 +741,44 @@ knowledge_interests:
     status: active_interest
     source_refs:
       - source_knowledge_conversation_20260617_soc_on_ontology_direction
+    confidence: high
+    needs_user_review: false
+  - id: knowledge_interest_20260618_codex_seminar_knowledge_asset_stack
+    object_type: KnowledgeInterest
+    date: 2026-06-18
+    area: MIND
+    secondary_areas:
+      - CAREER
+    topic: Codex seminar knowledge-asset stack
+    current_interest:
+      - Turning Codex rollout training into reusable knowledge assets rather than one-time tool tips.
+      - Showing LLM Wiki, OKF, ontology, Obsidian, Interactive HTML, and Word/PPT skills as connected layers.
+      - Explaining evaluation and monitoring so engineers can judge whether an agent reached quality and how much resource it consumed.
+      - Making SoC Knowledge Graph and hardware-IP examples concrete enough for RTL/IP engineers.
+    development_direction:
+      - Use an OKF_SoC demo vault as the smallest visible knowledge-as-files example.
+      - Use Obsidian Bases and graph view as the human-facing browsing/filtering layer.
+      - Use Interactive HTML as a self-contained review artifact for task/issue/evidence/owner relationships.
+      - Use skill-based Word/PPT generation to show how structured knowledge becomes deliverables.
+      - Keep evaluation/monitoring metrics in the story: quality threshold, tokens, tool calls, attempts, time, and failure/retry rate.
+    related_project_refs:
+      - project_ai_agent
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+    related_concept_refs:
+      - concept_llm_wiki
+      - concept_okf_open_knowledge_format
+      - concept_ontology_first_agent_memory
+      - concept_obsidian_bases
+      - concept_interactive_html_knowledge_viewer
+      - concept_agent_skills
+      - concept_agent_evaluation_monitoring
+      - concept_resource_efficiency_to_threshold
+      - concept_soc_knowledge_graph
+    status: active_interest
+    source_refs:
+      - source_knowledge_conversation_20260618_codex_seminar_full_stack
+      - source_knowledge_conversation_20260618_evaluation_monitoring_reason
+      - source_knowledge_external_research_20260618_okf_obsidian_skills_docs_trends
     confidence: high
     needs_user_review: false
 

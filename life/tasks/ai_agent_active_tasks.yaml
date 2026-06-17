@@ -1,6 +1,6 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-17
+updated_at: 2026-06-18
 area: CAREER
 secondary_areas:
   - MIND
@@ -426,6 +426,89 @@ source_records:
       - task_ai_agent_common_ai_agent_codex_port
       - task_ai_agent_soc_knowledge_format_db_pilot
     related_mind_record_ref: mood_20260617_low_margin_impatience_ai_reputation_pressure
+  - id: source_ai_agent_conversation_20260618_codex_seminar_curriculum_full_scope
+    source_type: chat
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "다음주에 코덱스 들어오면 해야 하는 세미나에 대해 어떻게 구성을 하면 좋을지 같이 정리좀 해보자. how to setup codex, start 강의, LLM 기본 원리, RAG/임베딩, 최근 동향, 의도대로 딱 굴러가게 만들기, hook point, skill point, input prompt, hook, loop, knowledge graph, SoC knowledge graph, agentic rag, OKF, waveform viewer with MCP, uvm/icarus verilog/verilator."
+    interpreted_focus:
+      - Codex setup and first-use onboarding.
+      - Basic conceptual start lecture covering LLM, RAG, embeddings, and recent trends.
+      - Precise agent-control layer using prompts, hooks, loops, rules, and skills.
+      - Knowledge architecture layer using Knowledge Graph, SoC Knowledge Graph, Agentic RAG, and OKF.
+      - Hardware-engineering demo layer using waveform viewer with MCP and simulation flows such as UVM, Icarus Verilog, and Verilator.
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_soc_knowledge_format_db_pilot
+      - task_ai_agent_codex_ontology_development_plugin
+  - id: source_ai_agent_conversation_20260618_codex_seminar_eval_monitoring
+    source_type: chat
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "평가 시스템, 모니터링 시스템이 필요한 이유. 결과치에 도달했는지가 우선이고, 도달했다면 얼마나 더 적은 리소스로 구현했는지, 더 적게 만드는 방법으로 개선. token 수, tool call 수, 하루가 부족하면 며칠에 걸쳐서 하면 된다."
+    interpreted_focus:
+      quality_gate: First determine whether the workflow reached the target result or quality threshold.
+      resource_efficiency: If it reached the target, measure how many tokens, tool calls, commands, attempts, failures, and minutes were needed.
+      improvement_loop: Improve the method by reducing resources while preserving or improving quality.
+      seminar_reason: Evaluation and monitoring explain why AI-agent rollout cannot be only prompt tips; it needs measurable work-quality and operating-cost feedback.
+    related_concept_refs:
+      - concept_agent_evaluation_monitoring
+      - concept_resource_efficiency_to_threshold
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_codex_ontology_development_plugin
+  - id: source_ai_agent_conversation_20260618_codex_seminar_okf_obsidian_html_docs
+    source_type: chat
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "LLM WIKI, ONTOLOGY 를 직접 쓰는걸 보여주고 싶어. Google OKF 기반으로 하고, 이걸 옵시디언에 넣어서 연동해서 그래프 형태로 그리고 BASE 형태로 보여주는거 필터링 하는거 예시 보여주고 싶어. Interactive HTML 기반으로 작업한거 이해할때 혹은 정리할때 어떻게 편한지 보여주고 싶고. PPT 나 WORD 작성하는데 도움을 받는 것도 해주고 싶어 관련 skill 전세계적으로 어떻게 쓰는지 동향 조사해서 같이 알려줘."
+    interpreted_focus:
+      - Demonstrate LLM Wiki and ontology directly, not only conceptually.
+      - Use Google OKF as a portable markdown/YAML-frontmatter representation.
+      - Put OKF-style files into Obsidian and show graph view plus Bases filtering.
+      - Show interactive HTML as a compact visual artifact for understanding and summarizing connected work.
+      - Show document and presentation generation via Word/PPT-oriented skills.
+      - Connect the demo to global trends in agent skills, artifacts, app-native copilots, and knowledge-as-files.
+    related_concept_refs:
+      - concept_llm_wiki
+      - concept_ontology_first_agent_memory
+      - concept_okf_open_knowledge_format
+      - concept_obsidian_bases
+      - concept_interactive_html_knowledge_viewer
+      - concept_agent_skills
+      - concept_soc_knowledge_graph
+    external_source_refs:
+      - https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing
+      - https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md
+      - https://obsidian.md/help/bases
+      - https://obsidian.md/help/bases/syntax
+      - https://developers.openai.com/codex/skills
+      - https://developers.openai.com/codex/app/browser
+      - https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them
+      - https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart
+      - https://www.microsoft.com/en-us/microsoft-365/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/
+      - https://support.microsoft.com/en-US/PowerPoint/copilot/create-a-new-presentation-with-copilot-in-powerpoint
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_okf_export_layer
+      - task_ai_agent_soc_knowledge_format_db_pilot
+  - id: source_ai_agent_conversation_20260618_codex_seminar_days_estimate
+    source_type: chat
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "아까 며칠에 걸쳐서 하면 좋을것들. 내가 이야기한 것들 모두 담아서 며칠 분량이 나올까? 하루 1시간씩 한다고 하고"
+    interpreted_estimate:
+      unit: one_hour_per_day
+      compressed_intro_days: 3
+      seminar_execution_days_range: [8, 10]
+      full_asset_capture_days_range: [12, 15]
+      recommendation: Use 8-10 one-hour sessions as the realistic seminar series, and keep 12-15 one-hour sessions as the asset-building backlog.
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
 
 summary:
   current_state:
@@ -802,6 +885,13 @@ tasks:
       - skills
       - demo
       - guide_docs
+      - okf
+      - llm_wiki
+      - obsidian_bases
+      - interactive_html
+      - evaluation
+      - monitoring
+      - soc_knowledge_graph
     context:
       - Cursor-based seminar was successfully delivered on 2026-06-12 after a request from 조승덕 팀장님.
       - Codex seminar is expected next.
@@ -817,6 +907,160 @@ tasks:
       - Brian feels pressure to show AI value properly to stakeholders, but also worries that teammates may think he is doing only AI work.
       - The seminar should protect Brian's engineering credibility by framing AI as an accelerator for real Milano/RTL/IP work, not as a replacement for normal work.
       - Brian's successful Cursor seminar is already a credibility base; Codex preparation should build on that rather than trying to prove everything at once.
+      - On 2026-06-18, Brian expanded the seminar into a multi-session story that includes Codex setup, LLM/RAG basics, hooks/skills/loops, OKF/LLM Wiki/ontology, Obsidian graph/Bases, interactive HTML, document-generation skills, and hardware-IP demos.
+      - The evaluation/monitoring section should explain that agent adoption needs quality thresholds first, then resource-efficiency tracking such as token count, tool-call count, attempts, wall time, and failures.
+      - Brian wants to show LLM Wiki and ontology directly, using Google OKF as an export/interoperability format and Obsidian/HTML as human-facing views.
+    seminar_object:
+      id: seminar_codex_202606_next_week
+      object_type: Seminar
+      title: Codex 세미나 - setup, agent workflow, ontology/OKF, and engineering assets
+      status: planning
+      owner_ref: person_brian
+      target_window:
+        week_start: 2026-06-22
+        week_end: 2026-06-28
+        date_precision: week
+        needs_user_review: true
+      audience:
+        primary:
+          - company RTL/design engineers
+          - AI Transformation activists and engineering leads
+        estimated_company_codex_users_range: [70, 80]
+        tone: practical_engineering_enablement
+      core_messages:
+        - "AI Agent를 업무에 도입한다는 것은 프롬프트를 잘 쓰는 문제가 아니라, 원하는 품질에 도달하는지 평가하고, 그 품질에 도달하는 비용을 지속적으로 줄이는 시스템을 만드는 일이다."
+        - "LLM Wiki는 설명을 잘한다. Ontology는 일을 굴린다."
+        - "OKF는 AI가 읽는 지식 포맷이고, Obsidian은 사람이 보는 지식 UI이며, Interactive HTML은 복잡한 관계를 이해하는 시각화 도구다."
+        - "Codex Skill과 문서/발표자료 생성 flow를 붙이면 지식 정리에서 보고서와 발표자료 작성까지 반복 가능한 업무 flow가 된다."
+      scope_estimate_one_hour_per_day:
+        compressed_intro:
+          days: 3
+          description: 핵심 메시지와 간단한 setup/demo만 보여주는 압축판.
+        realistic_seminar_series:
+          days_range: [8, 10]
+          description: Brian이 이야기한 주제를 대부분 담고, 실무 데모와 Q&A까지 가능한 1시간 세션 묶음.
+        full_asset_capture_backlog:
+          days_range: [12, 15]
+          description: 세미나, OKF/Obsidian 샘플, Interactive HTML, Word/PPT 산출물, 평가/모니터링 설계, SoC Knowledge Graph 초안까지 자산으로 남기는 분량.
+        recommendation: Start with the 8-10 day seminar series, then continue the remaining 12-15 day asset backlog during the two-month Codex window.
+      one_hour_session_plan:
+        - day: 1
+          title: Why Codex now
+          focus: LLM basics, RAG/embeddings, recent agent trends, and why this matters for RTL/IP engineers.
+          output: opening_story_and_adoption_frame
+        - day: 2
+          title: Codex setup and operating surfaces
+          focus: app, CLI, config, AGENTS.md, permissions, rules, skills, hooks, MCP, browser, and safe workflow basics.
+          output: setup_guide_draft
+        - day: 3
+          title: Agent loop that behaves as intended
+          focus: prompt, context, plan, hook, loop, tool call, file edit, validation, review, and stop conditions.
+          output: agent_loop_diagram_and_rule_pack
+        - day: 4
+          title: Evaluation and monitoring
+          focus: quality threshold first, then tokens/tool calls/time/attempts/failure rate to reduce resource cost per successful result.
+          output: scorecard_and_monitoring_story
+        - day: 5
+          title: Hardware/IP practical demo
+          focus: SDC cleanup, lint triage, compile error analysis, simulation smoke, evidence capture, and real Milano/Firenze examples where permitted.
+          output: reliable_rtl_demo_script
+        - day: 6
+          title: LLM Wiki, OKF, and ontology layering
+          focus: LLM Wiki as markdown knowledge, OKF as portable format, ontology as object/relation/action layer.
+          output: okf_layering_example
+        - day: 7
+          title: Obsidian graph and Bases demo
+          focus: Put OKF-style notes into Obsidian, show graph links, and filter projects/tasks/issues/evidence through Bases.
+          output: obsidian_okf_demo_vault_slice
+        - day: 8
+          title: Interactive HTML knowledge viewer
+          focus: Show why a self-contained HTML graph helps understand Milano task/issue/evidence/owner relationships faster than plain notes.
+          output: html_graph_viewer_demo
+        - day: 9
+          title: Document and deck generation with skills
+          focus: Use Word/PPT/document-generation skills as a repeatable path from structured knowledge to guide docs and presentation decks.
+          output: ppt_word_generation_demo
+        - day: 10
+          title: SoC Knowledge Graph and two-month asset program
+          focus: Turn Codex usage into reusable SoC Knowledge assets, starting with Firenze and expanding to Milano under DRM-aware policy.
+          output: two_month_asset_capture_plan
+        - day: 11
+          title: Waveform/MCP and verification extension
+          focus: Candidate advanced demo for waveform viewer with MCP, UVM, Icarus Verilog, and Verilator.
+          output: advanced_demo_backlog
+        - day: 12
+          title: SoC-on-ontology and VDS document story
+          focus: Connect SoC/subsystem/IP/interface/requirement/evidence/owner/decision objects to a possible VDS document layer.
+          output: soc_ontology_vds_outline
+        - day: 13
+          title: Real adoption package
+          focus: Package rule set, skill pack, guide document, FAQ, examples, and failure cases so 70-80 users can self-serve.
+          output: shareable_enablement_pack
+        - day: 14
+          title: Rehearsal and fallback
+          focus: Dry run the main demo, prepare screenshots/static fallback, check permissions, and remove risky live dependencies.
+          output: rehearsed_demo_and_fallback
+        - day: 15
+          title: Review and asset capture
+          focus: Convert seminar Q&A, failures, and examples into ontology/OKF records so the rollout keeps improving.
+          output: post_seminar_capture_loop
+      demo_stack:
+        okf_soc_vault_slice:
+          example_files:
+            - OKF_SoC/projects/milano.md
+            - OKF_SoC/tasks/milano_sdc_cleanup.md
+            - OKF_SoC/requirements/port1_interrupt_requirement.md
+            - OKF_SoC/modules/pd_pcie.md
+            - OKF_SoC/issues/dc_unmapped_file.md
+            - OKF_SoC/evidence/sdc_porting_attempt_001.md
+            - OKF_SoC/bases/milano_tasks.base
+          purpose: Show portable OKF-style knowledge that agents can read and humans can inspect in Git/Obsidian.
+        obsidian_base_views:
+          - Milano Open Tasks
+          - Blocked Work
+          - Evidence Missing
+          - Owner/Review Needed
+        interactive_html_views:
+          - Milano -> Task -> Issue -> Evidence -> Owner
+          - SoC -> Subsystem -> IP -> Interface -> Requirement -> Verification
+        codex_question_demo: "OKF_SoC vault를 기준으로 Milano 프로젝트의 open task를 찾아줘. blocked 된 항목과 evidence가 부족한 항목을 분리하고, 오늘 Brian이 먼저 해야 할 next action을 제안해줘."
+      external_trend_refs:
+        - https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing
+        - https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md
+        - https://obsidian.md/help/bases
+        - https://obsidian.md/help/bases/syntax
+        - https://developers.openai.com/codex/skills
+        - https://developers.openai.com/codex/app/browser
+        - https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them
+        - https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart
+        - https://www.microsoft.com/en-us/microsoft-365/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/
+        - https://support.microsoft.com/en-US/PowerPoint/copilot/create-a-new-presentation-with-copilot-in-powerpoint
+      related_concept_refs:
+        - concept_llm_wiki
+        - concept_okf_open_knowledge_format
+        - concept_ontology_first_agent_memory
+        - concept_agentic_rag
+        - concept_graphrag
+        - concept_agent_evaluation_monitoring
+        - concept_resource_efficiency_to_threshold
+        - concept_obsidian_bases
+        - concept_interactive_html_knowledge_viewer
+        - concept_agent_skills
+        - concept_soc_knowledge_graph
+        - concept_soc_on_ontology
+        - concept_subsystem_level_ontology
+        - concept_hardware_ip_agent
+      related_task_refs:
+        - task_ai_agent_codex_ontology_development_plugin
+        - task_ai_agent_soc_knowledge_format_db_pilot
+        - task_ai_agent_soc_ontology_vds_document_design
+        - task_ai_agent_okf_export_layer
+        - task_ai_agent_company_codex_rollout_support
+      source_refs:
+        - source_ai_agent_conversation_20260618_codex_seminar_curriculum_full_scope
+        - source_ai_agent_conversation_20260618_codex_seminar_eval_monitoring
+        - source_ai_agent_conversation_20260618_codex_seminar_okf_obsidian_html_docs
+        - source_ai_agent_conversation_20260618_codex_seminar_days_estimate
     expected_outputs:
       - Codex seminar outline
       - comparison of Cursor workflow and Codex workflow
@@ -832,6 +1076,11 @@ tasks:
       - VDS-oriented section showing how ontology-backed SoC structure can become useful engineering documentation
       - one small stakeholder-visible artifact that shows AI helping actual engineering workflow
       - asset-capture framing for how participants should turn Codex usage into reusable team knowledge during the two-month window
+      - 8-10 day one-hour seminar series plan
+      - 12-15 day one-hour asset-capture backlog
+      - evaluation/monitoring scorecard story for quality threshold and resource efficiency
+      - OKF/Obsidian/Interactive HTML demo slice
+      - Word/PPT generation demo using skill-based workflows
     next_actions:
       - Write down what worked in the 2026-06-12 Cursor seminar.
       - Decide whether the Codex seminar should focus on usage, workflow design, hardware IP examples, or ontology-backed development.
@@ -848,6 +1097,12 @@ tasks:
       - Decide one VDS document example or outline that can be shown without overbuilding the full schema.
       - Make Milano/RTL execution progress visible first, then present the AI demo as a work accelerator.
       - Choose one bounded artifact to share with 조승덕 팀장님 and 구인재 담당님; only show 호윤 TL님 if it addresses a concrete need.
+      - Cut the full 15-day backlog into a first 8-10 one-hour seminar series and a later asset-capture backlog.
+      - Build the evaluation/monitoring section around two gates: did the result reach the quality threshold, and how many tokens/tool calls/time/attempts were needed.
+      - Prepare a small OKF_SoC vault slice that can be opened in Obsidian and filtered with Bases.
+      - Prepare one self-contained Interactive HTML graph view for Milano or SoC Knowledge relationships.
+      - Prepare one Word/PPT skill demo that turns structured knowledge into a guide document or presentation deck.
+      - Keep advanced waveform/MCP and UVM/Verilator demos as optional extension material unless the main demo is stable.
     evidence_refs:
       - source_ai_agent_conversation_20260614_cursor_seminar_success_codex_planned
       - source_ai_agent_conversation_20260617_codex_next_week_seminar_demo_guide
@@ -858,6 +1113,10 @@ tasks:
       - source_ai_agent_conversation_20260617_codex_seminar_accelerate_soc_ontology_vds
       - source_ai_agent_conversation_20260617_ai_stakeholder_visibility_pressure
       - source_ai_agent_conversation_20260617_reputation_fear_ai_only
+      - source_ai_agent_conversation_20260618_codex_seminar_curriculum_full_scope
+      - source_ai_agent_conversation_20260618_codex_seminar_eval_monitoring
+      - source_ai_agent_conversation_20260618_codex_seminar_okf_obsidian_html_docs
+      - source_ai_agent_conversation_20260618_codex_seminar_days_estimate
       - source_ai_agent_conversation_20260617_cursor_seminar_reputation_signal
     confidence: high
     needs_user_review: true
