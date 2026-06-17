@@ -19,6 +19,8 @@ TASK_DIR = REPO_ROOT / "life/tasks"
 BODY_DIR = REPO_ROOT / "life/body"
 CONCEPT_DIR = REPO_ROOT / "life/concepts"
 KNOWLEDGE_DIR = REPO_ROOT / "life/knowledge"
+MIND_DIR = REPO_ROOT / "life/mind"
+FINANCE_DIR = REPO_ROOT / "life/finance"
 ENTITY_CATALOG_PATH = REPO_ROOT / "life/entities/semantic_entity_catalog.yaml"
 
 RECORD_INDEXES = [
@@ -84,6 +86,31 @@ KNOWLEDGE_SEARCH_SECTIONS = [
     "architecture_directions",
     "knowledge_interests",
     "follow_up_tasks",
+]
+MIND_SEARCH_SECTIONS = [
+    "source_records",
+    "mood_entries",
+    "observations",
+    "patterns",
+    "identity_statements",
+    "operating_rules",
+    "interventions",
+    "mind_status_updates",
+]
+FINANCE_SEARCH_SECTIONS = [
+    "source_records",
+    "finance_goals",
+    "accounts",
+    "assets",
+    "holdings",
+    "transactions",
+    "spending_records",
+    "tool_trials",
+    "investment_decisions",
+    "investment_theses",
+    "investment_reviews",
+    "market_trends",
+    "finance_status_updates",
 ]
 DIRECT_REF_KEYS = {
     "project_ref",
@@ -415,6 +442,28 @@ def iter_knowledge_search_records() -> Iterable[Dict[str, Any]]:
         yield from iter_section_records(data, path, "knowledge", KNOWLEDGE_SEARCH_SECTIONS, defaults)
 
 
+def iter_mind_search_records() -> Iterable[Dict[str, Any]]:
+    for path in sorted(MIND_DIR.glob("*.yaml")):
+        data = load_yaml(path)
+        defaults = {
+            "area": data.get("area"),
+            "profile_ref": data.get("profile_ref"),
+            "secondary_areas": data.get("secondary_areas"),
+        }
+        yield from iter_section_records(data, path, "mind", MIND_SEARCH_SECTIONS, defaults)
+
+
+def iter_finance_search_records() -> Iterable[Dict[str, Any]]:
+    for path in sorted(FINANCE_DIR.glob("*.yaml")):
+        data = load_yaml(path)
+        defaults = {
+            "area": data.get("area"),
+            "profile_ref": data.get("profile_ref"),
+            "secondary_areas": data.get("secondary_areas"),
+        }
+        yield from iter_section_records(data, path, "finance", FINANCE_SEARCH_SECTIONS, defaults)
+
+
 def iter_body_search_records() -> Iterable[Dict[str, Any]]:
     for path in sorted(BODY_DIR.glob("*.yaml")):
         data = load_yaml(path)
@@ -460,6 +509,8 @@ def iter_entity_catalog_records() -> Iterable[Dict[str, Any]]:
 def iter_current_search_records(include_catalog: bool = True) -> Iterable[Dict[str, Any]]:
     yield from iter_task_search_records()
     yield from iter_body_search_records()
+    yield from iter_mind_search_records()
+    yield from iter_finance_search_records()
     yield from iter_knowledge_search_records()
     yield from iter_concept_search_records()
     if include_catalog:

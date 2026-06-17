@@ -1,0 +1,360 @@
+schema_version: 1
+status: active
+updated_at: 2026-06-17
+area: MIND
+secondary_areas:
+  - CAREER
+  - BODY
+  - FINANCE
+profile_ref: person_brian
+title: Mind active log
+current_phase: Low mental margin and impatience after Milano initial DB release, with pressure to show AI value and unresolved Atlas/RTL-generator experience.
+
+source_records:
+  - id: source_mind_conversation_20260617_low_energy_question
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "d오늘 왜이리 힘이 빠질까"
+    interpreted_state:
+      topic: low_energy
+      typo_normalized_text: "오늘 왜이리 힘이 빠질까"
+  - id: source_mind_conversation_20260617_low_margin
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "마음의 여유가 살짝 없다"
+  - id: source_mind_conversation_20260617_ai_show_something_pressure
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "AI로 뭐라도 보여주고 싶다는 생각에 :)"
+  - id: source_mind_conversation_20260617_impatient
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "조급하다"
+  - id: source_mind_conversation_20260617_atlas_rtl_generator_step_back
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "그리고 RTL 생성기 만들다가... atlas project 난 일단 빠지기로 그 다음부터 관련 화의에 안들어감 ㅠㅜ"
+    interpreted_context:
+      project_name: Atlas
+      activity: RTL generator development
+      decision: Brian decided to step back from the Atlas project.
+      after_effect: Brian stopped attending related meetings afterward.
+      emotional_tone: regret_or_sadness
+      needs_user_review: false
+    related_task_refs:
+      - task_ai_agent_common_ai_agent_codex_port
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+  - id: source_mind_conversation_20260617_stakeholder_show_question
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "호윤 TL님께 그리고 조승덕 팀장님 그리고 구인재팀장님께 적극적으로 뭔가 필요한걸 만들어서 보여드려야 하나"
+    people_refs:
+      - person_hoyun
+      - person_cho_seungdeok
+      - person_gu_injae
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+  - id: source_mind_conversation_20260617_reputation_fear_ai_only
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "팀원들이 나를 일안하고 AI만 하는거 아닌가 생각이 들까봐 살짝 두렵다"
+  - id: source_mind_conversation_20260617_jeon_yongtae_perception_fear
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "전용태TL님은 살짝 그렇게 보는것 같고 하지만 full 로 일도 쳐내고 있다 시간을 갈아넣으며"
+    people_refs:
+      - person_jeon_yongtae
+    interpreted_context:
+      concern: Brian worries that 전용태 TL님 may perceive him as focusing on AI instead of work.
+      counter_evidence: Brian reports he is fully handling work while spending significant time.
+      confidence: medium
+      needs_user_review: true
+  - id: source_mind_conversation_20260617_tired_but_ai_reputation_signal
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "그래서 살짝 지치기도"
+  - id: source_mind_conversation_20260617_cursor_seminar_reputation_signal
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "그나마 cursor 강의 해서 내가 AI 활용 잘 한다는 것은 누구나 다 알고 있다"
+    related_event_ref: event_ai_agent_cursor_seminar_success_20260612
+  - id: source_mind_conversation_20260617_want_to_show_properly_tired
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "이걸 제대로 보여주려ㅜ해서 지치나 :) 욕심인가 ㅎㅎ"
+  - id: source_mind_conversation_20260617_personal_ai_tool_cost_400usd
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "클로드 코덱스도 200불씩 쓰면서 테스트 중이다 400불"
+    related_finance_record_ref: spending_20260617_ai_tool_testing_claude_codex_400usd
+    related_project_refs:
+      - project_ai_agent
+
+mood_entries:
+  - id: mood_20260617_low_margin_impatience_ai_reputation_pressure
+    object_type: MoodEntry
+    date: 2026-06-17
+    time: null
+    valence_score: -2
+    arousal_score: 4
+    stress_score: 7
+    energy_score: 3
+    emotions:
+      - low_energy
+      - low_margin
+      - impatient
+      - pressure
+      - reputation_anxiety
+      - desire_to_show_ai_value
+      - tired
+      - regret_or_sadness_candidate
+    linked_context:
+      career_task_refs:
+        - task_ai_agent_codex_seminar_prepare
+        - task_ai_agent_company_codex_rollout_support
+        - task_ai_agent_codex_ontology_development_plugin
+        - task_ai_agent_common_ai_agent_codex_port
+        - task_ai_agent_soc_ontology_vds_document_design
+        - task_milano_release_readiness_compile_lint_sim_20260617
+        - task_milano_sdc_dual_profile_synth_rerun
+      body_context_refs:
+        - workoutsession_20260616_lower_body_hard
+        - workoutsession_20260617_chest_smith_bench
+      related_project_refs:
+        - project_ai_agent
+        - project_company_ai_transformation
+        - project_milano
+      related_experience_refs:
+        - experience_ai_agent_atlas_soc_ui_rtl_implementation
+      related_people_refs:
+        - person_hoyun
+        - person_cho_seungdeok
+        - person_gu_injae
+        - person_jeon_yongtae
+      related_finance_record_ref: spending_20260617_ai_tool_testing_claude_codex_400usd
+    possible_triggers:
+      - Initial DB release completed, followed by post-release decompression.
+      - Accumulated fatigue from late-night Milano work, early-morning AI/IP design discussion, and recent hard workouts.
+      - Pressure to show visible AI value before the Codex seminar and company rollout.
+      - Concern that some teammates may see Brian as doing only AI work, even while Brian is handling Milano/RTL work fully.
+      - Atlas RTL generator / project step-back memory may be feeding the current urge to prove something with AI.
+      - Personal testing cost of Claude and Codex, about 400 USD total, increases the sense that the AI work should produce visible value.
+    note: Brian feels low energy, low mental margin, impatience, and fatigue; the emotion is connected to wanting to show AI value, fear of being perceived as doing only AI, and a prior Atlas RTL-generator step-back experience.
+    raw_text: "d오늘 왜이리 힘이 빠질까 / 마음의 여유가 살짝 없다 / AI로 뭐라도 보여주고 싶다는 생각에 :) / 조급하다 / 그리고 RTL 생성기 만들다가... atlas project 난 일단 빠지기로 그 다음부터 관련 화의에 안들어감 ㅠㅜ / 팀원들이 나를 일안하고 AI만 하는거 아닌가 생각이 들까봐 살짝 두렵다 / 그래서 살짝 지치기도 / 이걸 제대로 보여주려ㅜ해서 지치나 :) 욕심인가 ㅎㅎ"
+    source_refs:
+      - source_mind_conversation_20260617_low_energy_question
+      - source_mind_conversation_20260617_low_margin
+      - source_mind_conversation_20260617_ai_show_something_pressure
+      - source_mind_conversation_20260617_impatient
+      - source_mind_conversation_20260617_atlas_rtl_generator_step_back
+      - source_mind_conversation_20260617_stakeholder_show_question
+      - source_mind_conversation_20260617_reputation_fear_ai_only
+      - source_mind_conversation_20260617_jeon_yongtae_perception_fear
+      - source_mind_conversation_20260617_tired_but_ai_reputation_signal
+      - source_mind_conversation_20260617_want_to_show_properly_tired
+      - source_mind_conversation_20260617_personal_ai_tool_cost_400usd
+    confidence: high
+    needs_user_review: false
+
+observations:
+  - id: observation_20260617_low_energy_pressure_not_laziness
+    object_type: Observation
+    date: 2026-06-17
+    observation_type: mind_body_career_interaction
+    area: MIND
+    value: The low-energy feeling appears more consistent with accumulated fatigue plus pressure to show AI value than with lack of motivation.
+    linked_context:
+      mood_ref: mood_20260617_low_margin_impatience_ai_reputation_pressure
+      source_refs:
+        - source_mind_conversation_20260617_low_energy_question
+        - source_mind_conversation_20260617_ai_show_something_pressure
+        - source_mind_conversation_20260617_impatient
+    confidence: high
+  - id: observation_20260617_reputation_anxiety_core_trigger
+    object_type: Observation
+    date: 2026-06-17
+    observation_type: possible_trigger
+    area: MIND
+    value: "Brian's impatience is strongly linked to reputation anxiety: fear that teammates may think he is doing only AI work even though he is also handling full work execution."
+    linked_context:
+      mood_ref: mood_20260617_low_margin_impatience_ai_reputation_pressure
+      source_refs:
+        - source_mind_conversation_20260617_reputation_fear_ai_only
+        - source_mind_conversation_20260617_jeon_yongtae_perception_fear
+    confidence: high
+  - id: observation_20260617_cursor_seminar_is_reputation_asset
+    object_type: Observation
+    date: 2026-06-17
+    observation_type: positive_evidence
+    area: MIND
+    value: "The successful Cursor seminar is already a reputation asset: Brian believes coworkers broadly know he uses AI well."
+    linked_context:
+      mood_ref: mood_20260617_low_margin_impatience_ai_reputation_pressure
+      related_event_ref: event_ai_agent_cursor_seminar_success_20260612
+      source_ref: source_mind_conversation_20260617_cursor_seminar_reputation_signal
+    confidence: high
+  - id: observation_20260617_atlas_memory_possible_current_pressure_link
+    object_type: Observation
+    date: 2026-06-17
+    observation_type: possible_trigger
+    area: MIND
+    value: The Atlas RTL-generator step-back memory may be linked to Brian's current pressure to prove AI-agent value through a visible Codex seminar/demo.
+    linked_context:
+      mood_ref: mood_20260617_low_margin_impatience_ai_reputation_pressure
+      related_experience_ref: experience_ai_agent_atlas_soc_ui_rtl_implementation
+      related_task_refs:
+        - task_ai_agent_codex_seminar_prepare
+        - task_ai_agent_codex_ontology_development_plugin
+    confidence: medium
+    needs_user_review: true
+  - id: observation_20260617_ai_tool_cost_increases_need_for_value
+    object_type: Observation
+    date: 2026-06-17
+    observation_type: finance_mind_link
+    area: MIND
+    value: Spending about 400 USD on Claude and Codex testing may increase Brian's feeling that the AI work needs to produce visible value.
+    linked_context:
+      related_finance_record_ref: spending_20260617_ai_tool_testing_claude_codex_400usd
+      mood_ref: mood_20260617_low_margin_impatience_ai_reputation_pressure
+    confidence: medium
+    needs_user_review: true
+
+patterns:
+  - id: pattern_candidate_20260617_ai_demo_pressure_low_margin
+    object_type: Pattern
+    statement: When Brian feels he needs to prove or show visible AI value quickly, mental margin can drop and impatience can rise, especially after intense work or unresolved prior project experiences.
+    evidence:
+      - mood_20260617_low_margin_impatience_ai_reputation_pressure
+      - source_mind_conversation_20260617_ai_show_something_pressure
+      - source_mind_conversation_20260617_atlas_rtl_generator_step_back
+      - source_mind_conversation_20260617_want_to_show_properly_tired
+    confidence: medium
+    related_entities:
+      - project_ai_agent
+      - task_ai_agent_codex_seminar_prepare
+      - experience_ai_agent_atlas_soc_ui_rtl_implementation
+    last_reviewed: 2026-06-17
+    needs_user_review: true
+  - id: pattern_candidate_20260617_reputation_anxiety_overwork
+    object_type: Pattern
+    statement: When Brian worries that AI work may be perceived as avoiding normal work, he may compensate by spending extra time to do both full project execution and AI enablement, increasing fatigue.
+    evidence:
+      - source_mind_conversation_20260617_reputation_fear_ai_only
+      - source_mind_conversation_20260617_jeon_yongtae_perception_fear
+      - source_mind_conversation_20260617_tired_but_ai_reputation_signal
+    confidence: medium
+    related_entities:
+      - project_milano
+      - project_ai_agent
+      - project_company_ai_transformation
+    last_reviewed: 2026-06-17
+    needs_user_review: true
+
+identity_statements:
+  - id: identity_statement_20260617_full_work_plus_ai_enablement
+    object_type: IdentityStatement
+    statement: Brian sees himself as handling full engineering work while also investing extra personal time, money, and energy into AI enablement; the AI work is intended to amplify team work, not replace responsibility.
+    evidence:
+      - source_mind_conversation_20260617_jeon_yongtae_perception_fear
+      - source_mind_conversation_20260617_personal_ai_tool_cost_400usd
+      - source_mind_conversation_20260617_cursor_seminar_reputation_signal
+    confidence: high
+    status: candidate
+    needs_user_review: true
+
+operating_rules:
+  - id: operating_rule_20260617_ai_demo_pressure_small_slice
+    object_type: OperatingRule
+    statement: When Brian feels pressure to show something with AI, reduce scope to one small reliable demo slice and one visible artifact instead of expanding architecture.
+    applies_when:
+      - mood includes impatience or low mental margin
+      - task is Codex seminar, AI agent demo, ontology plugin, or VDS/SoC ontology design
+    recommended_actions:
+      - Stop broad architecture expansion for the moment.
+      - Pick one demo slice that can be shown in five minutes.
+      - Write one artifact outline or checklist before coding more.
+      - Rest or walk before making major architecture decisions.
+    derived_from:
+      - mood_20260617_low_margin_impatience_ai_reputation_pressure
+      - concept_fulfilled_mind
+      - happiness_bundle
+    confidence: medium
+    needs_user_review: true
+  - id: operating_rule_20260617_ai_reputation_visibility_without_overproving
+    object_type: OperatingRule
+    statement: When Brian worries that coworkers may see AI work as distraction, make normal work progress visible first, then show AI as a small practical accelerator tied to that work.
+    applies_when:
+      - reputation anxiety appears
+      - AI seminar/demo pressure appears
+      - Milano or RTL work is also active
+    recommended_actions:
+      - Keep Milano status visible with concrete work outputs.
+      - Frame AI examples as support for existing engineering work.
+      - Share a small artifact with selected stakeholders instead of trying to prove the whole product.
+      - Avoid using rest time to compensate for perceived reputation risk.
+    derived_from:
+      - pattern_candidate_20260617_reputation_anxiety_overwork
+      - observation_20260617_cursor_seminar_is_reputation_asset
+    confidence: medium
+    needs_user_review: true
+
+interventions:
+  - id: intervention_20260617_low_margin_reset
+    object_type: Intervention
+    date: 2026-06-17
+    trigger_pattern_ref: pattern_candidate_20260617_ai_demo_pressure_low_margin
+    recommendation: "Rest first, then choose a single 20-30 minute low-risk action: write the Codex seminar one-page outline or define one SoC-on-ontology demo path, but do not try to prove the whole AI agent tonight."
+    accepted: null
+    outcome_check_time: null
+    outcome: null
+    related_concept_refs:
+      - concept_fulfilled_mind
+      - happiness_bundle
+    source_refs:
+      - source_mind_conversation_20260617_low_margin
+      - source_mind_conversation_20260617_impatient
+  - id: intervention_20260617_stakeholder_strategy
+    object_type: Intervention
+    date: 2026-06-17
+    trigger_pattern_ref: pattern_candidate_20260617_reputation_anxiety_overwork
+    recommendation: "Show progress selectively: keep Milano execution evidence visible to the team, then share one bounded AI artifact with 조승덕 팀장님 and 구인재 담당님 as enablement material; only show 호윤 TL님 if the artifact directly answers a real need."
+    accepted: null
+    outcome_check_time: null
+    outcome: null
+    people_refs:
+      - person_hoyun
+      - person_cho_seungdeok
+      - person_gu_injae
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+      - task_milano_release_readiness_compile_lint_sim_20260617
+    source_refs:
+      - source_mind_conversation_20260617_stakeholder_show_question
+      - source_mind_conversation_20260617_reputation_fear_ai_only

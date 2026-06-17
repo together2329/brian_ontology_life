@@ -232,6 +232,106 @@ source_records:
       - task_ai_agent_codex_ontology_development_plugin
       - task_ai_agent_soc_ontology_vds_document_design
       - task_ai_agent_company_codex_rollout_support
+  - id: source_ai_agent_conversation_20260617_atlas_rtl_generator_step_back
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "그리고 RTL 생성기 만들다가... atlas project 난 일단 빠지기로 그 다음부터 관련 화의에 안들어감 ㅠㅜ"
+    interpreted_context:
+      project_name: Atlas
+      activity: RTL generator development
+      decision: Brian decided to step back from the Atlas project.
+      after_effect: Brian stopped attending related meetings afterward.
+      emotional_tone: regret_or_sadness
+      possible_current_link: This may be connected to current pressure to prove AI-agent value through a visible Codex seminar/demo.
+      needs_user_review: true
+    related_experience_ref: experience_ai_agent_atlas_soc_ui_rtl_implementation
+    related_task_refs:
+      - task_ai_agent_common_ai_agent_codex_port
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+  - id: source_ai_agent_conversation_20260617_ai_stakeholder_visibility_pressure
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "호윤 TL님께 그리고 조승덕 팀장님 그리고 구인재팀장님께 적극적으로 뭔가 필요한걸 만들어서 보여드려야 하나"
+    people_refs:
+      - person_hoyun
+      - person_cho_seungdeok
+      - person_gu_injae
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+  - id: source_ai_agent_conversation_20260617_reputation_fear_ai_only
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "팀원들이 나를 일안하고 AI만 하는거 아닌가 생각이 들까봐 살짝 두렵다"
+    interpreted_context:
+      concern: Brian worries teammates may think he is doing AI instead of normal engineering work.
+      related_mind_record_ref: mood_20260617_low_margin_impatience_ai_reputation_pressure
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+  - id: source_ai_agent_conversation_20260617_jeon_yongtae_reputation_fear_full_work
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "전용태TL님은 살짝 그렇게 보는것 같고 하지만 full 로 일도 쳐내고 있다 시간을 갈아넣으며"
+    people_refs:
+      - person_jeon_yongtae
+    interpreted_context:
+      perceived_risk: Brian thinks 전용태 TL님 may slightly view his AI work as distraction.
+      counter_evidence: Brian reports he is handling full work while spending significant time.
+      needs_user_review: true
+    related_mind_record_ref: mood_20260617_low_margin_impatience_ai_reputation_pressure
+  - id: source_ai_agent_conversation_20260617_cursor_seminar_reputation_signal
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "그나마 cursor 강의 해서 내가 AI 활용 잘 한다는 것은 누구나 다 알고 있다"
+    interpreted_context:
+      positive_signal: The successful Cursor seminar already makes Brian's AI usage capability visible to coworkers.
+    related_event_ref: event_ai_agent_cursor_seminar_success_20260612
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+  - id: source_ai_agent_conversation_20260617_ai_show_properly_tired_ambition
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "이걸 제대로 보여주려ㅜ해서 지치나 :) 욕심인가 ㅎㅎ"
+    interpreted_context:
+      hypothesis: Brian may be tired because he wants to show the AI work properly, not merely because of task load.
+      framing: Treat as pressure and ambition, not as a flaw.
+    related_mind_record_ref: mood_20260617_low_margin_impatience_ai_reputation_pressure
+  - id: source_ai_agent_conversation_20260617_personal_ai_tool_cost_400usd
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "클로드 코덱스도 200불씩 쓰면서 테스트 중이다 400불"
+    interpreted_context:
+      spend_type: personal_ai_tool_testing
+      currency: USD
+      total_amount: 400
+      line_items:
+        - tool_name: Claude
+          amount_usd: 200
+        - tool_name: Codex
+          amount_usd: 200
+      possible_pressure_link: Personal spend may increase the desire to turn AI testing into visible work value.
+    related_finance_record_ref: spending_20260617_ai_tool_testing_claude_codex_400usd
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_codex_ontology_development_plugin
 
 summary:
   current_state:
@@ -245,6 +345,7 @@ summary:
     - The history shows a progression from zero-dependency Python brian_coder/common_ai_agent engine work into TUI and Atlas UI, and later Codex bridge work.
     - Atlas was also a SOC group project context where Brian owned RTL implementation and invested two to three months in UI development to support that work.
     - The Atlas period was difficult and produced important lessons that should be captured later as explicit learning records.
+    - Brian later clarified that while building an RTL generator in the Atlas context, he decided to step back from the Atlas project and stopped attending related meetings afterward.
     - Server integration and broader multi-user usage exposed limits in the previous TODO-based implementation approach.
     - Brian felt confident in TODO-based implementation, but realized the system was not yet a proper ontology-based implementation design.
     - Brian is now developing a Codex-oriented ontology-based development plugin.
@@ -254,6 +355,10 @@ summary:
     - Brian expects to run a Codex seminar as a next step.
     - The Codex seminar is now planned for the week of 2026-06-22 to 2026-06-28.
     - The planned Codex seminar package includes rule distribution, skill distribution, a demo, and guide document distribution.
+    - On 2026-06-17, Brian felt pressure to show AI value properly to stakeholders and worried that teammates might perceive him as doing only AI work rather than normal engineering work.
+    - Brian reports that he is still fully handling normal work while spending significant time on AI enablement.
+    - Brian considers the successful Cursor seminar a reputation asset: coworkers already know he uses AI well.
+    - Brian is personally testing Claude and Codex, about 200 USD each and 400 USD total, which is now tracked as a career-capability tool trial.
     - Codex has a two-month unlimited-use period; the exact start date and operational scope still need confirmation.
     - Brian identified that subsystem-level ontology should be improved for the hardware IP agent direction.
     - Brian further clarified the longer-term direction as SoC on top of ontology: SoC-level structure and reasoning should be built above the ontology layer.
@@ -264,10 +369,12 @@ summary:
     - common_ai_agent Codex-based porting
     - common_ai_agent source history analysis and migration into Codex/OAG workflows
     - Atlas SOC project experience and lessons from UI-assisted RTL implementation
+    - Atlas RTL-generator step-back memory and its possible link to current AI-demo pressure
     - Codex ontology-based development plugin design
     - recovery from missed demos and server/multi-user scaling lessons
     - Cursor seminar success and Codex seminar preparation
     - company Codex adoption support preparation
+    - AI reputation management: show AI as work accelerator while keeping Milano/RTL execution visible
     - next-week Codex seminar package with rules, skills, demo, and guide docs
     - subsystem-level ontology improvement for hardware IP workflows
     - SoC-on-ontology hardware IP agent direction
@@ -280,6 +387,7 @@ summary:
     - This work appears to combine CAREER, MIND, and FUN rather than being only obligation-driven work.
     - The company rollout creates a near-term opportunity for Brian to turn personal experimentation into practical support.
     - A successful Cursor seminar shows that Brian can translate the hard-earned agent workflow experience into useful enablement for others.
+    - Brian's personal Claude/Codex testing spend shows serious commitment to learning the tools, but should be reviewed against concrete outputs rather than emotional pressure alone.
     - A two-month unlimited-use period creates a window for real adoption experiments, not just one-time seminar exposure.
   open_questions:
     - id: oq_ai_agent_common_ai_agent_port_scope
@@ -313,6 +421,24 @@ summary:
     - id: oq_ai_agent_codex_seminar_scope
       question: "Define the Codex seminar scope and audience based on what worked in the successful 2026-06-12 Cursor seminar."
       related_task_ref: task_ai_agent_codex_seminar_prepare
+      needs_user_review: true
+    - id: oq_ai_agent_stakeholder_visibility_strategy
+      question: "Decide what to show to 호윤 TL님, 조승덕 팀장님, and 구인재 담당님, and how to frame AI as a practical work accelerator rather than a side activity."
+      related_task_ref: task_ai_agent_codex_seminar_prepare
+      people_refs:
+        - person_hoyun
+        - person_cho_seungdeok
+        - person_gu_injae
+      needs_user_review: true
+    - id: oq_ai_agent_reputation_anxiety_boundary
+      question: "Clarify what evidence Brian needs to keep visible so teammates see that Milano/RTL work is being fully handled while AI enablement continues."
+      related_task_ref: task_ai_agent_company_codex_rollout_support
+      related_mind_record_ref: mood_20260617_low_margin_impatience_ai_reputation_pressure
+      needs_user_review: true
+    - id: oq_ai_agent_tool_spend_review
+      question: "Review whether the 400 USD Claude/Codex testing spend produced concrete outputs such as seminar material, reusable rules/skills, demo slices, or real workflow gains."
+      related_task_ref: task_ai_agent_codex_seminar_prepare
+      related_finance_record_ref: spending_20260617_ai_tool_testing_claude_codex_400usd
       needs_user_review: true
     - id: oq_ai_agent_subsystem_ontology_scope
       question: "Define the first subsystem-level ontology slice: subsystem, IP block, interface, requirement, integration point, verification case, evidence, or owner model."
@@ -365,10 +491,22 @@ experience_records:
       - difficult
       - effortful
       - insightful
+      - regret_or_sadness_candidate
     learning_status: needs_follow_up_capture
+    later_clarification:
+      date: 2026-06-17
+      summary:
+        - While building an RTL generator in the Atlas context, Brian decided to step back from the Atlas project.
+        - After stepping back, Brian stopped attending related Atlas meetings.
+        - This experience may be emotionally linked to the current pressure to show AI-agent value; treat as a candidate until reviewed.
+      confidence: medium
+      needs_user_review: true
     related_repo_ref: repo_common_ai_agent_origin
     related_task_ref: task_ai_agent_common_ai_agent_codex_port
     source_ref: source_ai_agent_conversation_20260614_atlas_soc_ui_rtl_history
+    source_refs:
+      - source_ai_agent_conversation_20260614_atlas_soc_ui_rtl_history
+      - source_ai_agent_conversation_20260617_atlas_rtl_generator_step_back
 
   - id: experience_ai_agent_server_multiuser_demo_ontology_turning_point
     experience_type: turning_point
@@ -555,6 +693,9 @@ tasks:
       - "The stronger seminar story is SoC on top of ontology: ontology as semantic substrate, SoC-level workflow/reasoning above it."
       - Brian wants to put more force behind preparation rather than leaving the Codex seminar as a loose future item.
       - The seminar should connect practical Codex usage with the larger SoC ontology and VDS documentation direction.
+      - Brian feels pressure to show AI value properly to stakeholders, but also worries that teammates may think he is doing only AI work.
+      - The seminar should protect Brian's engineering credibility by framing AI as an accelerator for real Milano/RTL/IP work, not as a replacement for normal work.
+      - Brian's successful Cursor seminar is already a credibility base; Codex preparation should build on that rather than trying to prove everything at once.
     expected_outputs:
       - Codex seminar outline
       - comparison of Cursor workflow and Codex workflow
@@ -568,6 +709,7 @@ tasks:
       - subsystem-level ontology explanation and example slice
       - SoC-on-ontology explanation that connects SoC, subsystem, IP, interface, requirement, verification, evidence, owner, and decision objects
       - VDS-oriented section showing how ontology-backed SoC structure can become useful engineering documentation
+      - one small stakeholder-visible artifact that shows AI helping actual engineering workflow
     next_actions:
       - Write down what worked in the 2026-06-12 Cursor seminar.
       - Decide whether the Codex seminar should focus on usage, workflow design, hardware IP examples, or ontology-backed development.
@@ -581,6 +723,8 @@ tasks:
       - Frame the demo as a narrow SoC-on-ontology path rather than a broad product demo.
       - "Convert the seminar into concrete deliverables: outline, rule pack, skill pack, demo path, guide document, and VDS/SoC ontology story."
       - Decide one VDS document example or outline that can be shown without overbuilding the full schema.
+      - Make Milano/RTL execution progress visible first, then present the AI demo as a work accelerator.
+      - Choose one bounded artifact to share with 조승덕 팀장님 and 구인재 담당님; only show 호윤 TL님 if it addresses a concrete need.
     evidence_refs:
       - source_ai_agent_conversation_20260614_cursor_seminar_success_codex_planned
       - source_ai_agent_conversation_20260617_codex_next_week_seminar_demo_guide
@@ -588,6 +732,9 @@ tasks:
       - source_ai_agent_conversation_20260617_subsystem_level_ontology_need
       - source_ai_agent_conversation_20260617_soc_on_ontology_direction
       - source_ai_agent_conversation_20260617_codex_seminar_accelerate_soc_ontology_vds
+      - source_ai_agent_conversation_20260617_ai_stakeholder_visibility_pressure
+      - source_ai_agent_conversation_20260617_reputation_fear_ai_only
+      - source_ai_agent_conversation_20260617_cursor_seminar_reputation_signal
     confidence: high
     needs_user_review: true
 
@@ -665,12 +812,14 @@ tasks:
       - The original project appears to have evolved from Python-based brian_coder/common_ai_agent engine work into TUI, Atlas UI, and Codex bridge work.
       - Atlas UI work is connected to a SOC group Atlas project where Brian was responsible for RTL implementation.
       - Brian spent about two to three months developing UI for Atlas-related RTL implementation support, with meaningful difficulty and lessons learned.
+      - Brian later clarified that while building an RTL generator in the Atlas context, he decided to step back from the Atlas project and stopped attending related meetings afterward.
       - Server integration and multi-user usage exposed limits in the previous TODO-based implementation.
       - Brian realized the next version needs a true ontology-based design, not only TODO-based task execution.
       - Brian successfully delivered a Cursor-based seminar on 2026-06-12 after a request from 조승덕 팀장님.
       - Codex seminar preparation is now part of the follow-up path.
       - The active local implementation context includes ontology_ip_agent at /Users/brian/Desktop/Project/ontology_ip_agent.
       - ontology_ip_agent already contains OAG/Codex workflow assets and hardware IP examples.
+      - Brian is personally testing Claude and Codex with about 400 USD total spend, so review outputs against concrete workflow/seminar value rather than pressure alone.
     expected_outputs:
       - Codex-based common_ai_agent workflow
       - migration notes or repeatable porting guidance
@@ -689,6 +838,7 @@ tasks:
       - Capture decisions, prompts, tool patterns, and failure cases while porting.
       - Keep experiments small while tired; avoid large architecture changes late in the day.
       - Convert reusable learnings into guidance for company rollout support.
+      - Capture the Atlas RTL-generator step-back lesson without turning it into pressure to overbuild the next demo.
     evidence_refs:
       - source_ai_agent_conversation_20260614_fun_codex_porting_rollout
       - source_ai_agent_conversation_20260614_common_ai_agent_origin_history
@@ -699,6 +849,8 @@ tasks:
       - source_ai_agent_local_git_inspection_20260614_common_ai_agent
       - source_ai_agent_conversation_20260614_ontology_ip_agent_repo
       - source_ai_agent_local_repo_inspection_20260614_ontology_ip_agent
+      - source_ai_agent_conversation_20260617_atlas_rtl_generator_step_back
+      - source_ai_agent_conversation_20260617_personal_ai_tool_cost_400usd
     confidence: high
     needs_user_review: false
 
@@ -744,6 +896,8 @@ tasks:
       - The rollout/support framing should account for a two-month unlimited-use period.
       - Subsystem-level ontology should be elevated so hardware/IP users see how Codex workflows connect across requirements, RTL, verification, evidence, and ownership.
       - "SoC-on-ontology should be the long-term framing: users should see that Codex workflows can connect SoC intent down to IP-level evidence and decisions."
+      - Brian is concerned that some teammates may perceive AI work as distraction, so rollout support should visibly connect to real engineering work and not look detached from project execution.
+      - The successful Cursor seminar means Brian's AI capability is already visible; the next step should convert that trust into practical Codex enablement.
     expected_outputs:
       - support checklist for early Codex users
       - examples of effective Codex workflows
@@ -754,6 +908,7 @@ tasks:
       - guide document for two-month unlimited-use period
       - subsystem-level ontology demo showing connected IP workflow objects
       - SoC-on-ontology demo story that is narrow enough for onboarding but expressive enough to show the target architecture
+      - short stakeholder-facing note that frames Codex as a way to accelerate and document real RTL/IP work
     next_actions:
       - "Identify what coworkers will need first: setup, prompt patterns, repo workflow, review workflow, or automation examples."
       - Convert current common_ai_agent porting lessons into short internal examples.
@@ -763,6 +918,8 @@ tasks:
       - "Define how users should spend the two-month unlimited-use period: first week setup, second week real task adoption, later weeks repeatable workflow capture."
       - Convert subsystem-level ontology into one practical demo story for hardware/IP engineers.
       - Convert the SoC-on-ontology direction into a first concrete example path that can be explained to RTL/IP engineers.
+      - Keep Milano/RTL task progress visible while preparing Codex enablement material.
+      - Track whether the Claude/Codex paid testing produces reusable outputs for the rollout.
     evidence_refs:
       - source_ai_agent_conversation_20260614_fun_codex_porting_rollout
       - source_ai_agent_conversation_20260614_ontology_ip_agent_repo
@@ -771,6 +928,10 @@ tasks:
       - source_ai_agent_conversation_20260617_codex_two_month_unlimited_use
       - source_ai_agent_conversation_20260617_subsystem_level_ontology_need
       - source_ai_agent_conversation_20260617_soc_on_ontology_direction
+      - source_ai_agent_conversation_20260617_reputation_fear_ai_only
+      - source_ai_agent_conversation_20260617_jeon_yongtae_reputation_fear_full_work
+      - source_ai_agent_conversation_20260617_cursor_seminar_reputation_signal
+      - source_ai_agent_conversation_20260617_personal_ai_tool_cost_400usd
     confidence: medium
     needs_user_review: true
 
@@ -1119,3 +1280,64 @@ project_status_updates:
       - task_ai_agent_soc_ontology_vds_document_design
       - task_ai_agent_company_codex_rollout_support
     source_ref: source_ai_agent_conversation_20260617_codex_seminar_accelerate_soc_ontology_vds
+
+  - id: project_status_ai_agent_20260617_atlas_rtl_generator_step_back_recorded
+    date: 2026-06-17
+    project_ref: project_ai_agent
+    author_ref: person_brian
+    status: active_reflection
+    progress_percent: null
+    summary: Brian clarified that while building an RTL generator in the Atlas context, he decided to step back from the Atlas project and stopped attending related meetings afterward.
+    emotional_context: This memory surfaced while Brian was feeling tired, impatient, and pressured to show AI value properly.
+    lesson_candidate: The Atlas experience should be reviewed as a source of hard-earned lessons, not converted into pressure to overbuild the next Codex demo.
+    next_step: "Capture specific Atlas lessons later: what made the RTL-generator effort hard, why stepping back became necessary, and what a healthier Codex/OAG workflow should preserve or avoid."
+    related_experience_ref: experience_ai_agent_atlas_soc_ui_rtl_implementation
+    related_task_refs:
+      - task_ai_agent_common_ai_agent_codex_port
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+    related_mind_record_ref: mood_20260617_low_margin_impatience_ai_reputation_pressure
+    source_ref: source_ai_agent_conversation_20260617_atlas_rtl_generator_step_back
+
+  - id: project_status_ai_agent_20260617_reputation_pressure_and_visibility_strategy
+    date: 2026-06-17
+    project_ref: project_ai_agent
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: Brian feels pressure to show AI value to stakeholders while also worrying that teammates may think he is doing only AI work.
+    interpretation: The right strategy is not to overbuild a broad AI product demo; keep Milano/RTL execution visible, then show one bounded AI artifact as a practical work accelerator.
+    people_refs:
+      - person_hoyun
+      - person_cho_seungdeok
+      - person_gu_injae
+      - person_jeon_yongtae
+    positive_signal: Brian believes the successful Cursor seminar already made his AI capability visible to coworkers.
+    next_step: Prepare a small stakeholder-facing artifact for Codex enablement and connect it directly to real engineering workflow; avoid using exhaustion as fuel for proving value.
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+    related_mind_record_ref: mood_20260617_low_margin_impatience_ai_reputation_pressure
+    source_refs:
+      - source_ai_agent_conversation_20260617_ai_stakeholder_visibility_pressure
+      - source_ai_agent_conversation_20260617_reputation_fear_ai_only
+      - source_ai_agent_conversation_20260617_jeon_yongtae_reputation_fear_full_work
+      - source_ai_agent_conversation_20260617_cursor_seminar_reputation_signal
+      - source_ai_agent_conversation_20260617_ai_show_properly_tired_ambition
+
+  - id: project_status_ai_agent_20260617_personal_ai_tool_testing_spend
+    date: 2026-06-17
+    project_ref: project_ai_agent
+    author_ref: person_brian
+    status: active_tracking
+    progress_percent: null
+    summary: Brian is personally testing Claude and Codex with about 200 USD each, about 400 USD total.
+    interpretation: Treat this as career-capability investment and tool-trial evidence linked to Codex seminar preparation and AI-agent development.
+    risk: Personal spend can create pressure to prove value quickly; review against concrete outputs instead of emotional pressure alone.
+    next_step: Review in about one month whether the spend produced reusable rules, skills, guide material, demo slices, or real workflow gains.
+    related_finance_record_ref: spending_20260617_ai_tool_testing_claude_codex_400usd
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_codex_ontology_development_plugin
+    source_ref: source_ai_agent_conversation_20260617_personal_ai_tool_cost_400usd

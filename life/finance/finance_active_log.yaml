@@ -1,0 +1,114 @@
+schema_version: 1
+status: active
+updated_at: 2026-06-17
+area: FINANCE
+secondary_areas:
+  - CAREER
+  - MIND
+profile_ref: person_brian
+title: Finance active log
+current_phase: Tracking AI-tool testing spend, future investment records, and finance decisions with thesis/evidence links.
+
+source_records:
+  - id: source_finance_conversation_20260617_ai_tool_testing_cost_400usd
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "클로드 코덱스도 200불씩 쓰면서 테스트 중이다 400불"
+    interpreted_amount:
+      currency: USD
+      total_amount: 400
+      line_items:
+        - tool_name: Claude
+          amount_usd: 200
+          amount_precision: user_reported
+        - tool_name: Codex
+          amount_usd: 200
+          amount_precision: user_reported
+      amount_precision: user_reported
+      needs_user_review: false
+    related_project_refs:
+      - project_ai_agent
+      - project_company_ai_transformation
+
+spending_records:
+  - id: spending_20260617_ai_tool_testing_claude_codex_400usd
+    object_type: SpendingRecord
+    date: 2026-06-17
+    area: FINANCE
+    secondary_areas:
+      - CAREER
+      - MIND
+    category: career_capability_investment
+    subcategory: ai_tool_testing
+    title: Claude and Codex AI-tool testing spend
+    amount_usd: 400
+    currency: USD
+    amount_precision: user_reported
+    items:
+      - id: spending_item_20260617_claude_testing_200usd
+        tool_name: Claude
+        amount_usd: 200
+        purpose: Test AI-agent and coding-agent workflows.
+      - id: spending_item_20260617_codex_testing_200usd
+        tool_name: Codex
+        amount_usd: 200
+        purpose: Test Codex-based AI-agent and company rollout workflows.
+    decision_type: capability_testing
+    reason:
+      - Brian is testing Claude and Codex deeply for AI-agent development and company AI enablement.
+      - The spend is linked to Codex seminar preparation, common_ai_agent migration, and ontology_ip_agent development.
+    risks:
+      - Personal spend may increase pressure to make the AI work visibly valuable.
+      - The spend should be reviewed against actual outputs rather than emotional pressure alone.
+    review_date: 2026-07-17
+    related_project_refs:
+      - project_ai_agent
+      - project_company_ai_transformation
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_common_ai_agent_codex_port
+    related_mood_ref: mood_20260617_low_margin_impatience_ai_reputation_pressure
+    source_ref: source_finance_conversation_20260617_ai_tool_testing_cost_400usd
+    confidence: high
+    needs_user_review: false
+
+tool_trials:
+  - id: tool_trial_20260617_claude_codex_paid_testing
+    object_type: ToolTrial
+    date: 2026-06-17
+    status: active
+    tools:
+      - Claude
+      - Codex
+    total_spend_ref: spending_20260617_ai_tool_testing_claude_codex_400usd
+    purpose:
+      - Compare practical AI-agent and coding-agent workflows.
+      - Prepare better Codex seminar, rules, skills, demos, and guide documents.
+      - Find patterns that can help hardware/IP engineers use AI responsibly and effectively.
+    success_criteria:
+      - Produces a reliable Codex seminar demo slice.
+      - Produces reusable rules or skills that coworkers can adopt.
+      - Reduces Brian's and the team's work friction on real RTL/IP tasks.
+      - Does not push Brian into unsustainable overwork.
+    related_project_refs:
+      - project_ai_agent
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_codex_ontology_development_plugin
+    source_ref: source_finance_conversation_20260617_ai_tool_testing_cost_400usd
+
+finance_status_updates:
+  - id: finance_status_20260617_ai_tool_testing_cost_recorded
+    date: 2026-06-17
+    area: FINANCE
+    status: active_tracking
+    summary: Brian reported spending about 200 USD each on Claude and Codex, about 400 USD total, while testing AI-agent workflows.
+    interpretation: Treat this as a career-capability investment and tool trial, not just consumption expense; review later against seminar, workflow, and productivity outputs.
+    related_spending_ref: spending_20260617_ai_tool_testing_claude_codex_400usd
+    related_mood_ref: mood_20260617_low_margin_impatience_ai_reputation_pressure
+    source_ref: source_finance_conversation_20260617_ai_tool_testing_cost_400usd
