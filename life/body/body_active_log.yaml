@@ -611,6 +611,31 @@ meal_records:
     needs_user_review: false
     notes: Lunch on 2026-06-17 was chicken breast risotto; protein estimate depends on product and chicken breast portion.
 
+  - id: meal_20260617_1500_protein_yogurt_15g
+    object_type: Meal
+    date: 2026-06-17
+    time: "15:00"
+    time_of_day: afternoon
+    area: BODY
+    meal_type: afternoon_protein
+    status: completed
+    items:
+      - name: 프로틴 요거트
+        amount: 1
+        unit: serving
+        calories: null
+        protein_g: 15
+        carbs_g: null
+        fat_g: null
+    supplements: []
+    related_workout: workoutsession_20260617_chest_smith_bench
+    related_nutrition_target_ref: protein_target_20260615
+    protein_g_total: 15
+    protein_g_estimate_range: null
+    confidence: high
+    needs_user_review: false
+    notes: Brian clarified that he ate a protein yogurt with 15g protein around 15:00 on 2026-06-17.
+
   - id: meal_20260617_dinner_keto_egg_gimbap_pork_cutlet_gimbap
     object_type: Meal
     date: 2026-06-17
@@ -1120,6 +1145,14 @@ raw_records:
       - meal_20260617_lunch_chicken_breast_risotto
     related_workout: workoutsession_20260617_chest_smith_bench
     text: "점심은 닭가슴살 리조또 그리고 오전에 쉐이크 20g(단백질) 먹음"
+  - id: raw_body_record_20260617_1500_protein_yogurt_15g
+    date: 2026-06-17
+    time: "15:00"
+    time_of_day: afternoon
+    source: codex_conversation
+    related_meal: meal_20260617_1500_protein_yogurt_15g
+    related_workout: workoutsession_20260617_chest_smith_bench
+    text: "프로틴 요거트(15g) 세시쯤 먹음"
   - id: raw_body_record_20260617_chest_workout_load_detail
     date: 2026-06-17
     time: null
