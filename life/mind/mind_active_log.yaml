@@ -115,6 +115,24 @@ source_records:
     related_finance_record_ref: spending_20260617_ai_tool_testing_claude_codex_400usd
     related_project_refs:
       - project_ai_agent
+  - id: source_mind_conversation_20260617_multi_month_ai_dawn_night_weekend_effort
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "진짜 몇 달동안 AI 만 새벽이고 밤이거 주말이고 했거든 :)"
+    interpreted_context:
+      duration: several_months
+      time_patterns:
+        - dawn
+        - night
+        - weekends
+      activity_focus: AI development and testing
+      meaning: Sustained off-hours investment into AI work, not a short burst.
+      related_mood_ref: mood_20260617_low_margin_impatience_ai_reputation_pressure
+    related_project_refs:
+      - project_ai_agent
+      - project_company_ai_transformation
 
 mood_entries:
   - id: mood_20260617_low_margin_impatience_ai_reputation_pressure
@@ -165,8 +183,9 @@ mood_entries:
       - Concern that some teammates may see Brian as doing only AI work, even while Brian is handling Milano/RTL work fully.
       - Atlas RTL generator / project step-back memory may be feeding the current urge to prove something with AI.
       - Personal testing cost of Claude and Codex, about 400 USD total, increases the sense that the AI work should produce visible value.
-    note: Brian feels low energy, low mental margin, impatience, and fatigue; the emotion is connected to wanting to show AI value, fear of being perceived as doing only AI, and a prior Atlas RTL-generator step-back experience.
-    raw_text: "d오늘 왜이리 힘이 빠질까 / 마음의 여유가 살짝 없다 / AI로 뭐라도 보여주고 싶다는 생각에 :) / 조급하다 / 그리고 RTL 생성기 만들다가... atlas project 난 일단 빠지기로 그 다음부터 관련 화의에 안들어감 ㅠㅜ / 팀원들이 나를 일안하고 AI만 하는거 아닌가 생각이 들까봐 살짝 두렵다 / 그래서 살짝 지치기도 / 이걸 제대로 보여주려ㅜ해서 지치나 :) 욕심인가 ㅎㅎ"
+      - Several months of AI work during dawn, night, and weekends may be a primary fatigue source.
+    note: Brian feels low energy, low mental margin, impatience, and fatigue; the emotion is connected to wanting to show AI value, fear of being perceived as doing only AI, a prior Atlas RTL-generator step-back experience, and several months of off-hours AI work.
+    raw_text: "d오늘 왜이리 힘이 빠질까 / 마음의 여유가 살짝 없다 / AI로 뭐라도 보여주고 싶다는 생각에 :) / 조급하다 / 그리고 RTL 생성기 만들다가... atlas project 난 일단 빠지기로 그 다음부터 관련 화의에 안들어감 ㅠㅜ / 팀원들이 나를 일안하고 AI만 하는거 아닌가 생각이 들까봐 살짝 두렵다 / 그래서 살짝 지치기도 / 이걸 제대로 보여주려ㅜ해서 지치나 :) 욕심인가 ㅎㅎ / 진짜 몇 달동안 AI 만 새벽이고 밤이거 주말이고 했거든 :)"
     source_refs:
       - source_mind_conversation_20260617_low_energy_question
       - source_mind_conversation_20260617_low_margin
@@ -179,6 +198,7 @@ mood_entries:
       - source_mind_conversation_20260617_tired_but_ai_reputation_signal
       - source_mind_conversation_20260617_want_to_show_properly_tired
       - source_mind_conversation_20260617_personal_ai_tool_cost_400usd
+      - source_mind_conversation_20260617_multi_month_ai_dawn_night_weekend_effort
     confidence: high
     needs_user_review: false
 
@@ -244,16 +264,30 @@ observations:
       mood_ref: mood_20260617_low_margin_impatience_ai_reputation_pressure
     confidence: medium
     needs_user_review: true
+  - id: observation_20260617_multi_month_ai_effort_fatigue
+    object_type: Observation
+    date: 2026-06-17
+    observation_type: sustained_effort_fatigue
+    area: MIND
+    value: Brian's fatigue is likely affected by several months of AI-focused work during dawn, night, and weekends; treat the current tiredness as cumulative load, not simple lack of discipline.
+    linked_context:
+      mood_ref: mood_20260617_low_margin_impatience_ai_reputation_pressure
+      source_ref: source_mind_conversation_20260617_multi_month_ai_dawn_night_weekend_effort
+      related_project_refs:
+        - project_ai_agent
+        - project_company_ai_transformation
+    confidence: high
 
 patterns:
   - id: pattern_candidate_20260617_ai_demo_pressure_low_margin
     object_type: Pattern
-    statement: When Brian feels he needs to prove or show visible AI value quickly, mental margin can drop and impatience can rise, especially after intense work or unresolved prior project experiences.
+    statement: When Brian feels he needs to prove or show visible AI value quickly, mental margin can drop and impatience can rise, especially after intense work, unresolved prior project experiences, or long off-hours AI effort.
     evidence:
       - mood_20260617_low_margin_impatience_ai_reputation_pressure
       - source_mind_conversation_20260617_ai_show_something_pressure
       - source_mind_conversation_20260617_atlas_rtl_generator_step_back
       - source_mind_conversation_20260617_want_to_show_properly_tired
+      - source_mind_conversation_20260617_multi_month_ai_dawn_night_weekend_effort
     confidence: medium
     related_entities:
       - project_ai_agent
@@ -263,11 +297,12 @@ patterns:
     needs_user_review: true
   - id: pattern_candidate_20260617_reputation_anxiety_overwork
     object_type: Pattern
-    statement: When Brian worries that AI work may be perceived as avoiding normal work, he may compensate by spending extra time to do both full project execution and AI enablement, increasing fatigue.
+    statement: When Brian worries that AI work may be perceived as avoiding normal work, he may compensate by spending extra time to do both full project execution and AI enablement, including dawn/night/weekend work, increasing fatigue.
     evidence:
       - source_mind_conversation_20260617_reputation_fear_ai_only
       - source_mind_conversation_20260617_jeon_yongtae_perception_fear
       - source_mind_conversation_20260617_tired_but_ai_reputation_signal
+      - source_mind_conversation_20260617_multi_month_ai_dawn_night_weekend_effort
     confidence: medium
     related_entities:
       - project_milano
@@ -279,11 +314,12 @@ patterns:
 identity_statements:
   - id: identity_statement_20260617_full_work_plus_ai_enablement
     object_type: IdentityStatement
-    statement: Brian sees himself as handling full engineering work while also investing extra personal time, money, and energy into AI enablement; the AI work is intended to amplify team work, not replace responsibility.
+    statement: Brian sees himself as handling full engineering work while also investing extra personal time, money, and energy into AI enablement over months; the AI work is intended to amplify team work, not replace responsibility.
     evidence:
       - source_mind_conversation_20260617_jeon_yongtae_perception_fear
       - source_mind_conversation_20260617_personal_ai_tool_cost_400usd
       - source_mind_conversation_20260617_cursor_seminar_reputation_signal
+      - source_mind_conversation_20260617_multi_month_ai_dawn_night_weekend_effort
     confidence: high
     status: candidate
     needs_user_review: true

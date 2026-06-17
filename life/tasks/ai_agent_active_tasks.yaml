@@ -332,6 +332,26 @@ source_records:
       - task_ai_agent_codex_seminar_prepare
       - task_ai_agent_company_codex_rollout_support
       - task_ai_agent_codex_ontology_development_plugin
+  - id: source_ai_agent_conversation_20260617_multi_month_ai_dawn_night_weekend_effort
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "진짜 몇 달동안 AI 만 새벽이고 밤이거 주말이고 했거든 :)"
+    interpreted_context:
+      duration: several_months
+      time_patterns:
+        - dawn
+        - night
+        - weekends
+      activity_focus: AI development, testing, and enablement
+      interpretation: This is sustained off-hours investment, not a short experiment.
+      related_mind_record_ref: mood_20260617_low_margin_impatience_ai_reputation_pressure
+    related_task_refs:
+      - task_ai_agent_common_ai_agent_codex_port
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
 
 summary:
   current_state:
@@ -359,6 +379,7 @@ summary:
     - Brian reports that he is still fully handling normal work while spending significant time on AI enablement.
     - Brian considers the successful Cursor seminar a reputation asset: coworkers already know he uses AI well.
     - Brian is personally testing Claude and Codex, about 200 USD each and 400 USD total, which is now tracked as a career-capability tool trial.
+    - Brian clarified that he has spent several months working on AI during dawn, night, and weekends, so current fatigue should be treated as cumulative sustained effort.
     - Codex has a two-month unlimited-use period; the exact start date and operational scope still need confirmation.
     - Brian identified that subsystem-level ontology should be improved for the hardware IP agent direction.
     - Brian further clarified the longer-term direction as SoC on top of ontology: SoC-level structure and reasoning should be built above the ontology layer.
@@ -375,6 +396,7 @@ summary:
     - Cursor seminar success and Codex seminar preparation
     - company Codex adoption support preparation
     - AI reputation management: show AI as work accelerator while keeping Milano/RTL execution visible
+    - sustainable AI enablement after several months of dawn/night/weekend work
     - next-week Codex seminar package with rules, skills, demo, and guide docs
     - subsystem-level ontology improvement for hardware IP workflows
     - SoC-on-ontology hardware IP agent direction
@@ -388,6 +410,7 @@ summary:
     - The company rollout creates a near-term opportunity for Brian to turn personal experimentation into practical support.
     - A successful Cursor seminar shows that Brian can translate the hard-earned agent workflow experience into useful enablement for others.
     - Brian's personal Claude/Codex testing spend shows serious commitment to learning the tools, but should be reviewed against concrete outputs rather than emotional pressure alone.
+    - Several months of dawn/night/weekend AI work is evidence of commitment and accumulated learning, but also a sustainability risk.
     - A two-month unlimited-use period creates a window for real adoption experiments, not just one-time seminar exposure.
   open_questions:
     - id: oq_ai_agent_common_ai_agent_port_scope
@@ -820,6 +843,7 @@ tasks:
       - The active local implementation context includes ontology_ip_agent at /Users/brian/Desktop/Project/ontology_ip_agent.
       - ontology_ip_agent already contains OAG/Codex workflow assets and hardware IP examples.
       - Brian is personally testing Claude and Codex with about 400 USD total spend, so review outputs against concrete workflow/seminar value rather than pressure alone.
+      - Brian has also spent several months working on AI during dawn, night, and weekends.
     expected_outputs:
       - Codex-based common_ai_agent workflow
       - migration notes or repeatable porting guidance
@@ -839,6 +863,7 @@ tasks:
       - Keep experiments small while tired; avoid large architecture changes late in the day.
       - Convert reusable learnings into guidance for company rollout support.
       - Capture the Atlas RTL-generator step-back lesson without turning it into pressure to overbuild the next demo.
+      - Convert the multi-month off-hours AI effort into a smaller sustainable weekly cadence after the Codex seminar package is shaped.
     evidence_refs:
       - source_ai_agent_conversation_20260614_fun_codex_porting_rollout
       - source_ai_agent_conversation_20260614_common_ai_agent_origin_history
@@ -851,6 +876,7 @@ tasks:
       - source_ai_agent_local_repo_inspection_20260614_ontology_ip_agent
       - source_ai_agent_conversation_20260617_atlas_rtl_generator_step_back
       - source_ai_agent_conversation_20260617_personal_ai_tool_cost_400usd
+      - source_ai_agent_conversation_20260617_multi_month_ai_dawn_night_weekend_effort
     confidence: high
     needs_user_review: false
 
@@ -920,6 +946,7 @@ tasks:
       - Convert the SoC-on-ontology direction into a first concrete example path that can be explained to RTL/IP engineers.
       - Keep Milano/RTL task progress visible while preparing Codex enablement material.
       - Track whether the Claude/Codex paid testing produces reusable outputs for the rollout.
+      - Protect sustainability by not making dawn/night/weekend AI work the default operating mode.
     evidence_refs:
       - source_ai_agent_conversation_20260614_fun_codex_porting_rollout
       - source_ai_agent_conversation_20260614_ontology_ip_agent_repo
@@ -932,6 +959,7 @@ tasks:
       - source_ai_agent_conversation_20260617_jeon_yongtae_reputation_fear_full_work
       - source_ai_agent_conversation_20260617_cursor_seminar_reputation_signal
       - source_ai_agent_conversation_20260617_personal_ai_tool_cost_400usd
+      - source_ai_agent_conversation_20260617_multi_month_ai_dawn_night_weekend_effort
     confidence: medium
     needs_user_review: true
 
@@ -1341,3 +1369,21 @@ project_status_updates:
       - task_ai_agent_company_codex_rollout_support
       - task_ai_agent_codex_ontology_development_plugin
     source_ref: source_ai_agent_conversation_20260617_personal_ai_tool_cost_400usd
+
+  - id: project_status_ai_agent_20260617_multi_month_off_hours_effort
+    date: 2026-06-17
+    project_ref: project_ai_agent
+    author_ref: person_brian
+    status: active_reflection
+    progress_percent: null
+    summary: Brian clarified that he has spent several months working on AI during dawn, night, and weekends.
+    interpretation: This explains current fatigue as cumulative sustained effort and commitment, not a simple lack of motivation or one-day tiredness.
+    risk: If this becomes the default operating mode, AI enablement may remain productive but become unsustainable.
+    next_step: After shaping the Codex seminar package, convert the off-hours AI effort into a smaller sustainable cadence and one reliable stakeholder-visible artifact.
+    related_mind_record_ref: mood_20260617_low_margin_impatience_ai_reputation_pressure
+    related_task_refs:
+      - task_ai_agent_common_ai_agent_codex_port
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+    source_ref: source_ai_agent_conversation_20260617_multi_month_ai_dawn_night_weekend_effort
