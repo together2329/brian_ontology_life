@@ -1466,6 +1466,61 @@ entities:
       confirmed_at: 2026-06-18
       notes: Generation pattern where the agent uses a high-quality existing site, deck, document, or visual artifact as a style/layout reference while applying Brian's own structured content and review loop.
 
+    - id: concept_soc_on_ontology
+      object_type: Concept
+      display_name: SoC on ontology
+      area: CAREER
+      aliases:
+        - SoC on ontology
+        - SoC-on-ontology
+        - ontology-based SoC
+        - Ontology 위에 SoC
+        - 온톨로지 위에 SoC
+        - 온톨로지 위의 SoC
+      confidence: medium
+      needs_user_review: true
+      notes: Brian's hardware-agent direction to build SoC-level design reasoning on top of the ontology, so the ontology becomes the substrate connecting SoC, subsystems, IPs, interfaces, requirements, verification, evidence, ownership, and decisions. Stub created 2026-06-18 to resolve previously dangling related_concept_refs; final wording pending Brian's review.
+
+    - id: concept_subsystem_level_ontology
+      object_type: Concept
+      display_name: Subsystem-level ontology
+      area: CAREER
+      aliases:
+        - subsystem-level ontology
+        - subsystem ontology
+        - 서브시스템 온톨로지
+        - 서브시스템 레벨 온톨로지
+      confidence: medium
+      needs_user_review: true
+      notes: Ontology modeled at the subsystem level inside a SoC (SoC -> subsystems -> IPs), so design reasoning can connect subsystem requirements, interfaces, and verification. Stub created 2026-06-18 to resolve dangling related_concept_refs; pending Brian's review.
+
+    - id: concept_hardware_ip_agent
+      object_type: Concept
+      display_name: Hardware IP agent
+      area: CAREER
+      aliases:
+        - hardware IP agent
+        - HW IP agent
+        - IP agent
+        - 하드웨어 IP 에이전트
+        - IP 에이전트
+      confidence: medium
+      needs_user_review: true
+      notes: An AI agent for hardware IP / SoC design reasoning grounded in the ontology substrate. Stub created 2026-06-18 to resolve dangling related_concept_refs; pending Brian's review.
+
+    - id: concept_vds_document_layer
+      object_type: Concept
+      display_name: VDS document layer
+      area: CAREER
+      aliases:
+        - VDS document layer
+        - VDS document
+        - VDS 문서
+        - VDS 문서 계층
+      confidence: medium
+      needs_user_review: true
+      notes: VDS documents considered as a presentation/document layer over the SoC-level ontology, showing SoC/subsystem/IP/interface/requirement/evidence relationships in an engineering-readable form. Status candidate pending VDS definition. Stub created 2026-06-18 to resolve dangling related_concept_refs; pending Brian's review.
+
 link_relations:
   Person: associated_person
   CompanionAnimal: associated_companion_animal
