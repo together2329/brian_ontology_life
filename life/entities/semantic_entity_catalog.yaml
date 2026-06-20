@@ -1063,6 +1063,155 @@ entities:
       confirmed_at: 2026-06-15
       notes: Brian's direction that ontology object and relation design is more important than the export format, because it determines whether the agent can continue, query, and recommend well.
 
+    - id: concept_advanced_operational_ontology
+      object_type: Concept
+      display_name: Advanced operational ontology
+      area: CAREER
+      aliases:
+        - Advanced Ontology
+        - advanced ontology
+        - operational ontology
+        - Palantir-style ontology
+        - semantic kinetic dynamic ontology
+        - semantic/kinetic/dynamic ontology
+        - semantic kinetic dynamic model
+        - semantic/kinetic/dynamic model
+        - semantic kinetic dynamic
+        - sematic kinetic dynamic
+        - operational layer ontology
+        - 의사결정 온톨로지
+        - 운영 계층 온톨로지
+      confidence: medium
+      needs_user_review: true
+      confirmed_at: 2026-06-19
+      notes: "Candidate Brian Ontology Agent direction inspired by Palantir Foundry framing: basic ontology objects/links should be extended with semantic, kinetic, and dynamic layers so decisions, actions, permissions, current state, evidence, and feedback loops become first-class."
+
+    - id: concept_palantir_platform_stack
+      object_type: Concept
+      display_name: Palantir platform stack
+      area: CAREER
+      aliases:
+        - Palantir platform stack
+        - Palantir products
+        - Palantir AIP Foundry Apollo Gotham
+        - Foundry AIP Apollo Gotham
+        - 팔란티어 제품군
+        - 팔란티어 플랫폼
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-19
+      notes: "Brian's working mental model of Palantir's product stack: Foundry as operational data/ontology platform, AIP as agent/AI layer, Apollo as deployment/runtime operations layer, and Gotham as domain-specific operational cockpit."
+
+    - id: concept_operational_decision_system
+      object_type: Concept
+      display_name: Operational decision system
+      area: CAREER
+      aliases:
+        - operational decision system
+        - operational decision loop
+        - operational operating system
+        - decision action feedback loop
+        - data to decision to action loop
+        - Palantir core
+        - 팔란티어 핵심
+        - 운영 의사결정 시스템
+        - 운영 의사결정 루프
+        - 업무 객체 기반 운영 시스템
+        - 판단 액션 피드백 루프
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-20
+      notes: "Brian's distilled understanding that the core value is turning customer/work data into real-world operational objects, then supporting human or agent-assisted judgment, action/writeback, evidence/audit, and feedback for the next decision. Company value depends on repeated decision and execution quality; AIP-like agents should amplify this loop rather than replace it."
+
+    - id: concept_cognitive_load_aware_ai_output
+      object_type: Concept
+      display_name: Cognitive-load-aware AI output
+      area: MIND
+      aliases:
+        - cognitive-load-aware output
+        - cognitive bandwidth bottleneck
+        - AI information overload
+        - AI output overload
+        - information digestion layer
+        - core 3 plus next action
+        - one-liner mental model 3 key points action archive
+        - 인지 대역폭 병목
+        - AI 정보 과부하
+        - AI 출력 과부하
+        - 정보 소화
+        - 핵심 3개 다음 액션 1개
+        - 소화 가능한 지식
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-20
+      notes: "Brian's assistant-design principle that AI should not maximize output volume; it should filter information into a small decision/action/memory shape. Ontology is the digestion layer that converts AI output into durable concepts, relations, actions, evidence, and archive material."
+
+    - id: concept_foundry_like_operational_data_layer
+      object_type: Concept
+      display_name: Foundry-like operational data layer
+      area: CAREER
+      aliases:
+        - Foundry-like layer
+        - Foundry-like local data layer
+        - Foundry-like operational platform
+        - Foundry-like ontology platform
+        - 파운드리 같은 운영 데이터 계층
+        - 파운드리식 로컬 데이터 계층
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-19
+      notes: "Brian's local equivalent of Foundry: connect engineering data, notes, logs, reports, tasks, decisions, and evidence into the canonical ontology rather than starting with a separate database or app."
+
+    - id: concept_aip_like_agent_layer
+      object_type: Concept
+      display_name: AIP-like agent layer
+      area: CAREER
+      aliases:
+        - AIP-like layer
+        - AIP-like agent workflow
+        - AIP-like Codex agent layer
+        - AI agent layer over ontology
+        - AIP식 에이전트 계층
+        - 온톨로지 위의 에이전트 계층
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-19
+      notes: "Brian's local equivalent of AIP: Codex, Solution RAG, LLM Wiki, debug/checklist agents, and ontology promotion workflows operating over structured ontology records."
+
+    - id: concept_apollo_like_deployment_layer
+      object_type: Concept
+      display_name: Apollo-like deployment layer
+      area: CAREER
+      aliases:
+        - Apollo-like layer
+        - Apollo-like runtime layer
+        - Apollo-like deployment and operations
+        - deployment operations layer
+        - 아폴로식 배포 운영 계층
+        - 반복 실행 운영 계층
+      confidence: medium
+      needs_user_review: false
+      confirmed_at: 2026-06-19
+      notes: "Brian's future equivalent of Apollo: packaging repeatable workflows as skills/plugins, adding validation and monitoring, and making ontology-agent execution reliable across environments after the local loop is stable."
+
+    - id: concept_gotham_like_soc_operation_cockpit
+      object_type: Concept
+      display_name: Gotham-like SoC operation cockpit
+      area: CAREER
+      aliases:
+        - Gotham-like layer
+        - Gotham-like SoC cockpit
+        - SoC operation cockpit
+        - SoC debug cockpit
+        - SoC signoff cockpit
+        - Milano debug operation cockpit
+        - 고담 같은 SoC 작전 상황판
+        - SoC 개발 상황판
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-19
+      notes: "Candidate Brian-specific projection over the SoC ontology: a domain cockpit for debug, signoff, blocker/risk/owner/evidence tracking, and next-action triage. It should be generated from ontology records rather than replacing the ontology."
+
     - id: concept_okf_export_layer
       object_type: Concept
       display_name: OKF export layer
@@ -1135,6 +1284,24 @@ entities:
       needs_user_review: false
       confirmed_at: 2026-06-16
       notes: Brian Ontology Agent's current direction; local YAML ontology is the source of truth and agentic retrieval follows structured objects, refs, source records, and backlinks.
+
+    - id: concept_solution_rag
+      object_type: Concept
+      display_name: Solution RAG
+      area: CAREER
+      aliases:
+        - Solution RAG
+        - solution RAG
+        - solution_rag
+        - solution-based RAG
+        - solution memory RAG
+        - 솔루션 RAG
+        - 해결책 RAG
+        - 해결 사례 RAG
+      confidence: medium
+      needs_user_review: true
+      confirmed_at: 2026-06-19
+      notes: Candidate Brian-coined pattern where prior solved cases are retrieved as Problem/Context/Attempt/Resolution/Evidence records, then used to propose ontology objects, links, reusable patterns, and reviewable schema updates.
 
     - id: concept_day_graph_traversal
       object_type: Concept
@@ -1433,6 +1600,78 @@ entities:
         using stable ontology IDs, source/evidence refs, branch/worktree refs, current status,
         decisions, blockers, validation, and next actions.
 
+    - id: concept_codex_subagent_toml_settings
+      object_type: Concept
+      display_name: Codex subagent TOML settings
+      area: CAREER
+      aliases:
+        - Codex subagent settings
+        - subagent TOML
+        - custom agent TOML
+        - custom subagent
+        - Codex custom agents
+        - .codex/agents
+        - ~/.codex/agents
+        - 서브에이전트 설정
+        - 서브에이전트 TOML
+        - 커스텀 에이전트 설정
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-20
+      notes: >
+        Practical Codex seminar topic for configuring subagent workflows with TOML:
+        global [agents] limits control thread/depth/runtime behavior, while project or
+        personal custom agent TOML files define specialized agents with name, description,
+        developer instructions, model/reasoning, sandbox, MCP, skills, and optional nicknames.
+
+    - id: concept_codex_thread_worktree_orchestration
+      object_type: Concept
+      display_name: Codex thread/worktree orchestration
+      area: CAREER
+      aliases:
+        - Codex thread management
+        - coordinator thread
+        - Codex manages Codex
+        - thread listing
+        - thread search
+        - thread pin archive
+        - App Server thread API
+        - background worktree thread
+        - worktree-backed worker thread
+        - 쓰레드 관리
+        - 스레드 관리
+        - 워크트리 쓰레드
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-20
+      notes: >
+        Codex operating pattern where a coordinator thread or Codex App/App Server
+        surface inventories, searches, organizes, names, pins, archives, resumes, or forks
+        threads, and dispatches independent work into separate worktree-backed worker
+        threads so parallel tasks stay isolated and handoff state remains explicit.
+
+    - id: concept_lazycodex_agent_harness
+      object_type: Concept
+      display_name: LazyCodex agent harness
+      area: CAREER
+      aliases:
+        - LazyCodex
+        - OmO Codex harness
+        - ultrawork
+        - ulw-plan
+        - start-work
+        - ulw-loop
+        - init-deep
+        - Hephaestus
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-20
+      notes: >
+        Third-party Codex harness reference for project memory, plan-before-edit
+        workflows, durable execution state, parallel specialist subagents, worktree-based
+        execution, hooks, model routing, and evidence gates. Useful as seminar inspiration,
+        while official OpenAI Codex docs remain the canonical behavior source.
+
     - id: concept_soc_knowledge_graph
       object_type: Concept
       display_name: SoC Knowledge Graph
@@ -1520,6 +1759,58 @@ entities:
       confidence: medium
       needs_user_review: true
       notes: VDS documents considered as a presentation/document layer over the SoC-level ontology, showing SoC/subsystem/IP/interface/requirement/evidence relationships in an engineering-readable form. Status candidate pending VDS definition. Stub created 2026-06-18 to resolve dangling related_concept_refs; pending Brian's review.
+
+    - id: concept_expertise_amplifies_ai_leverage
+      object_type: Concept
+      display_name: Expertise amplifies AI leverage
+      area: MIND
+      aliases:
+        - expertise amplifies AI
+        - experts use AI better
+        - expertise and AI effectiveness
+        - paradox of supervision
+        - steering over speed
+        - 전문가가 AI 더 잘 쓴다
+        - 전문성이 AI 레버리지를 증폭
+        - 감독의 역설
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-20
+      notes: "Anthropic finding (How AI Is Transforming Work at Anthropic, Aug 2025) that AI amplifies rather than replaces expertise: experienced people get more leverage because they understand the problem, steer troubled agent sessions instead of abandoning them, and validate/supervise output better. Caveat: the study does not directly quantify novice-vs-expert productivity and warns about juniors not developing skills."
+
+    - id: concept_reading_to_operational_knowledge
+      object_type: Concept
+      display_name: Reading to operational knowledge
+      area: MIND
+      aliases:
+        - reading to operational knowledge
+        - preservation and use over volume
+        - study as preserve-repeat-question-connect
+        - 보존과 활용
+        - 활용 가능한 지식
+        - 금방 까먹을 것은 읽지도 마라
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-20
+      notes: "Reading/study reframed as preservation, reuse, repetition, questioning, key-term/definition/relation modeling, and fermentation into usable knowledge (from 장경철's '금방 까먹을 것은 읽지도 마라'), mapped onto LLM Wiki, ontology-first notes, Graph RAG, and the agent loop. Defined 2026-06-20 to resolve dangling related_concept_refs."
+
+    - id: concept_tacit_knowledge_capture_for_ai
+      object_type: Concept
+      display_name: Tacit knowledge capture for AI
+      area: MIND
+      aliases:
+        - tacit knowledge capture
+        - tacit knowledge for AI
+        - capturing expert know-how
+        - expert know-how to AI
+        - 암묵지
+        - 암묵지 수집
+        - 암묵지 데이터화
+        - 경력직 노하우 학습
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-20
+      notes: "Deliberately collecting and structuring the tacit know-how (암묵지) of experienced professionals so AI/agents can learn and reuse it. For Brian Ontology Agent this maps to capturing decisions, actions, failure learning, and Solution RAG cases as reusable ontology objects and skills. Pairs with concept_expertise_amplifies_ai_leverage. Source: YouTube '경력직의 노하우를 AI가 배우게 하는 법 | 암묵지 수집/설계 팁' (2026-06-20) plus related industry context."
 
 link_relations:
   Person: associated_person

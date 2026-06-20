@@ -1,6 +1,6 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-17
+updated_at: 2026-06-19
 area: RELATION
 secondary_areas:
   - BODY
@@ -38,6 +38,53 @@ source_records:
         - person_wife
       related_meal_ref: meal_20260617_dinner_keto_egg_gimbap_pork_cutlet_gimbap
 
+  - id: source_relation_conversation_20260618_team_dinner
+    source_type: chat
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "회식 했어 18:00 - 21:00 (전용태 TL님(파트장님), 김성현TL님(동갑 동료), 박길봉 TL님(2살 어린 동료), 김성아TL님(29살), 변승현 TL님(32살), 김승훈TL님(27살)) 나 38살 :) 1차로 양갈비 + 2차로 치맥 굿굿 재밌었습니다!"
+    interpreted_interaction:
+      interaction_type: work_dinner
+      attendees:
+        - person_brian
+        - person_jeon_yongtae
+        - person_byun_seunghyun
+        - person_kim_sungah
+        - person_park_gilbong
+        - 김성현 TL님
+        - 김승훈 TL님
+      event_window:
+        start: "18:00"
+        end: "21:00"
+        date: 2026-06-18
+      location_context: company_dinner
+      mood: enjoyable
+      participant_ages:
+        kim_sungah: 29
+        byun_seunghyun: 32
+        kim_seunghun: 27
+        brian: 38
+    note: Work dinner with Milano colleagues; course sequence was 1차 양갈비, 2차 치맥, and Brian reported it was fun.
+
+  - id: source_relation_conversation_20260619_morning_coffee_cho_seungdeok
+    source_type: chat
+    original_date: 2026-06-19
+    imported_at: 2026-06-19
+    parse_status: parsed
+    raw_text: "조승덕 팀장님과 아침에 커피 한 잔함"
+    interpreted_interaction:
+      interaction_type: morning_coffee
+      participants:
+        - person_brian
+        - person_cho_seungdeok
+      event_time:
+        date: 2026-06-19
+        time_of_day: morning
+        precision: approximate
+      relationship_area: professional
+      context: work relationship touchpoint
+
 social_interactions:
   - id: socialinteraction_20260617_evening_walk_miya_jigu_haei
     object_type: SocialInteraction
@@ -71,6 +118,40 @@ social_interactions:
     notes: Brian ate keto egg gimbap and pork cutlet gimbap with Miya.
     related_meal_ref: meal_20260617_dinner_keto_egg_gimbap_pork_cutlet_gimbap
     source_ref: source_relation_conversation_20260617_dinner_with_miya
+    confidence: high
+    needs_user_review: false
+
+  - id: socialinteraction_20260618_team_dinner_1800_2100
+    object_type: SocialInteraction
+    date: 2026-06-18
+    people_refs:
+      - person_jeon_yongtae
+      - person_kim_sungah
+      - person_byun_seunghyun
+      - person_park_gilbong
+    interaction_type: work_dinner
+    relationship_area: professional
+    quality_score: 5
+    emotion_after: happy
+    follow_up_tasks: []
+    notes: "18:00-21:00 회식 참여. 1차는 양갈비, 2차는 치맥. 참석자: 전용태TL님(파트장님), 김성현TL님(동갑 동료), 박길봉TL님(2살 어린 동료), 김성아TL님(29), 변승현TL님(32), 김승훈TL님(27). "
+    related_meal_ref: meal_20260618_team_dinner_lamb_and_chimaek
+    source_ref: source_relation_conversation_20260618_team_dinner
+    confidence: high
+    needs_user_review: false
+
+  - id: socialinteraction_20260619_morning_coffee_cho_seungdeok
+    object_type: SocialInteraction
+    date: 2026-06-19
+    people_refs:
+      - person_cho_seungdeok
+    interaction_type: morning_coffee
+    relationship_area: professional
+    quality_score: null
+    emotion_after: null
+    follow_up_tasks: []
+    notes: Brian had morning coffee with 조승덕 팀장님.
+    source_ref: source_relation_conversation_20260619_morning_coffee_cho_seungdeok
     confidence: high
     needs_user_review: false
 

@@ -1,6 +1,6 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-17
+updated_at: 2026-06-18
 area: CAREER
 project_ref: project_work_general
 title: Career daily work log
@@ -106,6 +106,29 @@ source_records:
       needs_user_review: true
     related_task_ref: task_career_20260616_codex_usage_guidance_rtl_design_members
 
+  - id: source_career_daily_20260618_ainp_multi_vf_mapping_gap
+    source_type: chat
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "AIN-P Project에서 SRIOV(VF)가 안된다고 해서 새로 가이드 만들어 전달함. PCIe Multi VF 관련 Internal Address Mapping 가이드(VF Bar size + Offset)이 누락 되어 그런듯."
+    interpreted_issue:
+      project_ref: project_work_general
+      symptom: SRIOV VF not working
+      hypothesized_root_cause: "Internal Address Mapping section missing VF Bar size + Offset items."
+      action: guide_prepared_and_shared
+
+  - id: source_career_daily_20260618_andes_ip_loop_eval_env_test
+    source_type: chat
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "오후엔 Andes IP 가지고 Spec Loop + Auto Research 관련 된 것을 합쳐서 Loop로 Evaluation 환경 만들어서 테스트 중."
+    interpreted_task:
+      project_hint: Andes IP
+      target: Spec Loop + Auto Research integration
+      objective: Build evaluation environment and run tests
+
 tasks:
   - id: task_career_20260616_cursor_csr_guidance_kim_sungah
     title: 김성아 TL님에게 Cursor 기반 CSR 작업 방법 안내
@@ -208,6 +231,70 @@ tasks:
       - source_career_daily_20260617_codex_two_month_unlimited_use
     confidence: high
     needs_user_review: true
+
+  - id: task_career_20260618_ainp_multi_vf_internal_addr_mapping_guide
+    title: AIN-P SRIOV Multi VF Internal Address Mapping 가이드 작성 및 전달
+    area: CAREER
+    status: completed
+    priority: high
+    energy: communication
+    estimated_minutes: null
+    due_date: 2026-06-18
+    tracking_level: lightweight
+    project_ref: project_work_general
+    owner_ref: person_brian
+    tags:
+      - ainp
+      - pcie
+      - sriov
+      - vf
+      - internal_address_mapping
+      - spec
+      - guide
+    context:
+      - AIN-P에서 SRIOV(VF) 동작 문제가 발생했고, PCIe Multi VF 내부 주소 매핑 가이드에서 VF BAR Size 및 Offset 항목 누락 가능성이 확인됨.
+      - 임시 대응으로 PCIe Multi VF 관련 가이드를 새로 작성해 전달함.
+    expected_outputs:
+      - VF BAR size + Offset가 포함된 가이드 문서 전달 완료.
+      - 관련 팀/프로젝트가 누락 항목을 반영했는지 확인.
+    next_actions:
+      - AIN-P 쪽에서 가이드 반영 여부와 동작 회복 여부를 확인.
+      - 필요 시 가이드를 버전 관리하고 체크리스트 기반 추적.
+    evidence_refs:
+      - source_career_daily_20260618_ainp_multi_vf_mapping_gap
+    confidence: high
+    needs_user_review: false
+
+  - id: task_career_20260618_andes_ip_spec_loop_auto_research_eval
+    title: Andes IP 기반 Spec Loop + Auto Research 통합 Evaluation 환경 구성 및 테스트
+    area: CAREER
+    status: in_progress
+    priority: medium
+    energy: deep_work
+    estimated_minutes: null
+    due_date: 2026-06-18
+    tracking_level: detailed
+    project_ref: project_work_general
+    owner_ref: person_brian
+    tags:
+      - andes_ip
+      - spec_loop
+      - auto_research
+      - evaluation_environment
+      - testing
+    context:
+      - 오후 작업으로 Andes IP에서 Spec Loop와 Auto Research를 통합해 Loop 기반 evaluation 환경을 만들고 테스트 중.
+    expected_outputs:
+      - Integrated evaluation environment for Andes IP loop tests.
+      - Test execution log/result and blockers list.
+    next_actions:
+      - Finalize integration points for Spec Loop and Auto Research.
+      - Run a minimal set of validation tests and capture pass/fail.
+      - Record if any environment mismatch blocks test execution.
+    evidence_refs:
+      - source_career_daily_20260618_andes_ip_loop_eval_env_test
+    confidence: high
+    needs_user_review: false
 
 recurring_meetings:
   - id: recurring_meeting_company_ai_transformation_weekly_activists
@@ -322,4 +409,40 @@ work_sessions:
     findings: []
     next_steps: []
     source_ref: source_career_daily_20260615_aix_meeting_weekly_report
+    needs_user_review: false
+
+  - id: worksession_20260618_ainp_sriov_mapping_gap
+    date: 2026-06-18
+    project_ref: project_work_general
+    start: "15:00"
+    end: "15:30"
+    actual_minutes: null
+    time_quality: approximate
+    task_refs:
+      - task_career_20260618_ainp_multi_vf_internal_addr_mapping_guide
+    focus_level: technical
+    summary: AIN-P SRIOV Multi VF 가이드 작성 후 내부 주소 매핑 누락 항목(VF BAR size/Offset) 공유.
+    findings:
+      - 가이드 전달 후 VF 매핑 누락 항목 반영 필요성 인지 공유 완료.
+    next_steps:
+      - AIN-P 쪽 반영 여부/동작 회복 결과 확인.
+    source_ref: source_career_daily_20260618_ainp_multi_vf_mapping_gap
+    needs_user_review: false
+
+  - id: worksession_20260618_andes_ip_spec_loop_auto_research_eval
+    date: 2026-06-18
+    project_ref: project_work_general
+    start: "15:30"
+    end: "17:30"
+    actual_minutes: null
+    time_quality: approximate
+    task_refs:
+      - task_career_20260618_andes_ip_spec_loop_auto_research_eval
+    focus_level: deep_work
+    summary: Andes IP Spec Loop와 Auto Research를 통합해 Loop 기반 Evaluation 환경을 만들고 테스트 중.
+    findings:
+      - 통합 환경 구성 및 테스트 실행 경로를 작업 중.
+    next_steps:
+      - 최소 검증 테스트를 실행하고 block 여부/로그를 기록.
+    source_ref: source_career_daily_20260618_andes_ip_loop_eval_env_test
     needs_user_review: false

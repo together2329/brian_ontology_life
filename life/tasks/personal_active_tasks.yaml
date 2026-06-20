@@ -1,6 +1,6 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-16
+updated_at: 2026-06-18
 area: MAINTENANCE
 secondary_areas:
   - BODY
@@ -8,7 +8,7 @@ secondary_areas:
   - FINANCE
 project_ref: project_personal_life_admin
 title: Personal life admin active tasks
-current_phase: 2026-06-16 afternoon health and insurance errands
+current_phase: 2026-06-18 오전 등운동 + 건강/회복 추적
 
 source_records:
   - id: source_personal_admin_conversation_20260616_afternoon_eye_derm_receipt
@@ -38,14 +38,45 @@ source_records:
       - pet_dog_1
       - pet_dog_2
 
+  - id: source_personal_body_conversation_20260618_gym_and_eyedrops_and_meal
+    source_type: chat
+    original_date: 2026-06-18
+    imported_at: 2026-06-18
+    parse_status: parsed
+    raw_text: "618 아침에 등운동 했는데? 불확실 한세트는 30kg 10개 렛풀다운 맞아. 점심은 김치말이 국수 느낌 먹음, 수육 조금이랑, 달걀1개. 그리고 오후에 HYDRO WHEY 30g 단백질 먹음. 안약 2번 넣었음."
+    interpreted_health:
+      date: 2026-06-18
+      workout:
+        area: back
+        exercise: lat_pulldown
+        confirmed_set:
+          weight_kg: 30
+          reps: 10
+          certainty: high
+        deadlift_count: unknown
+        note: 데드리프트 총 횟수는 추후 보완 필요.
+      nutrition:
+        lunch:
+          description: 김치말이 국수 느낌, 수육 조금, 달걀 1개
+        supplement:
+          product: HYDRO WHEY
+          amount: 30g
+          time: afternoon
+      eye:
+        symptom: eyelid_inflammation
+        ointment_count: 2
+        trend: improving
+
+
 summary:
   current_focus:
-    date: 2026-06-16
+    date: 2026-06-18
     primary_tasks:
-      - task_personal_20260616_ophthalmology_stye_check
-      - task_personal_20260616_dermatology_receipt_for_miya_insurance
-    note: Afternoon personal errands should be protected alongside Milano work so health/admin items do not get missed.
-    source_ref: source_personal_admin_conversation_20260616_afternoon_eye_derm_receipt
+      - task_personal_20260618_morning_back_workout
+      - task_personal_20260618_eyedrops_and_muscle_recovery
+      - task_personal_20260617_gym_fingerprint_reregistration
+    note: 운동, 안약 투여, 영양 보강 기록을 개인 라이프 로그로 반영함.
+    source_ref: source_personal_body_conversation_20260618_gym_and_eyedrops_and_meal
 
 tasks:
   - id: task_personal_20260617_gym_fingerprint_reregistration
@@ -155,6 +186,70 @@ tasks:
     confidence: high
     needs_user_review: false
 
+  - id: task_personal_20260618_morning_back_workout
+    object_type: Task
+    title: 6/18 아침 등운동 수행
+    area: BODY
+    secondary_areas:
+      - BODY
+    status: completed
+    priority: medium
+    energy: routine
+    estimated_minutes: 45
+    due_date: 2026-06-18
+    tracking_level: simple
+    project_ref: project_personal_life_admin
+    owner_ref: person_brian
+    progress_percent: 100
+    tags:
+      - body
+      - workout
+      - back
+      - lat_pulldown
+    context:
+      - 아침 등운동 실시.
+      - 렛풀다운 30kg 10개 1세트 확인.
+      - 데드리프트 총 횟수/세트는 추가 확인 필요.
+    expected_outputs:
+      - 운동 루틴 수행 로그 기록.
+    next_actions:
+      - 데드리프트 정확한 횟수 추정치 보완.
+    evidence_refs:
+      - source_personal_body_conversation_20260618_gym_and_eyedrops_and_meal
+    confidence: high
+    needs_user_review: false
+
+  - id: task_personal_20260618_eyedrops_and_muscle_recovery
+    object_type: Task
+    title: 안약 투여 및 눈꺼풀 염증/회복 추적
+    area: BODY
+    secondary_areas:
+      - MAINTENANCE
+    status: in_progress
+    priority: medium
+    energy: maintenance
+    estimated_minutes: null
+    due_date: 2026-06-18
+    tracking_level: simple
+    project_ref: project_personal_life_admin
+    owner_ref: person_brian
+    progress_percent: 80
+    tags:
+      - eye
+      - stye
+      - eyedrop
+      - recovery
+    context:
+      - 안약 2회 투여, 눈꺼풀 염증은 호전 중.
+    expected_outputs:
+      - 하루 증상 추이와 처치 기록 유지.
+    next_actions:
+      - 증상 경과를 계속 추적하고 필요 시 안과 follow-up.
+    evidence_refs:
+      - source_personal_body_conversation_20260618_gym_and_eyedrops_and_meal
+    confidence: high
+    needs_user_review: false
+
 planned_time_blocks:
   - id: timeblock_20260616_afternoon_personal_health_admin_errands
     date: 2026-06-16
@@ -181,6 +276,32 @@ planned_time_blocks:
         actual_minutes: null
         status: planned
     source_ref: source_personal_admin_conversation_20260616_afternoon_eye_derm_receipt
+    confidence: high
+    needs_user_review: false
+
+  - id: timeblock_20260618_morning_back_workout
+    date: 2026-06-18
+    start: "07:00"
+    end: "08:00"
+    area: MAINTENANCE
+    secondary_areas:
+      - BODY
+    mode: routine_health
+    project_ref: project_personal_life_admin
+    items:
+      - type: task
+        ref: task_personal_20260618_morning_back_workout
+        title: 6/18 아침 등운동 수행
+        planned_minutes: 45
+        actual_minutes: 45
+        status: completed
+      - type: task
+        ref: task_personal_20260618_eyedrops_and_muscle_recovery
+        title: 안약 투여 및 회복 추적
+        planned_minutes: 5
+        actual_minutes: 5
+        status: in_progress
+    source_ref: source_personal_body_conversation_20260618_gym_and_eyedrops_and_meal
     confidence: high
     needs_user_review: false
 
@@ -218,6 +339,29 @@ task_status_updates:
     next_step: Get the dermatology 진료비 영수증 and keep it for the insurance claim.
     source_ref: source_personal_admin_conversation_20260616_afternoon_eye_derm_receipt
 
+  - id: status_task_personal_20260618_morning_back_workout_completed
+    date: 2026-06-18
+    task_ref: task_personal_20260618_morning_back_workout
+    author_ref: person_brian
+    status: completed
+    progress_percent: 100
+    summary: 6/18 아침 등운동을 완료했고 렛풀다운 30kg 10개 1세트를 확인함.
+    blockers: []
+    next_step: 데드리프트 총 횟수/세트 정리를 보완.
+    source_ref: source_personal_body_conversation_20260618_gym_and_eyedrops_and_meal
+
+  - id: status_task_personal_20260618_eyedrops_in_progress
+    date: 2026-06-18
+    task_ref: task_personal_20260618_eyedrops_and_muscle_recovery
+    author_ref: person_brian
+    status: in_progress
+    progress_percent: 80
+    summary: 안약 2회 투여 기록, 눈꺼풀 염증은 호전 흐름으로 정리됨.
+    blockers:
+      - 데드리프트 회복/운동량 추가 정합성 미기록.
+    next_step: 증상 경과 및 총 운동량을 다음 세션에 보강.
+    source_ref: source_personal_body_conversation_20260618_gym_and_eyedrops_and_meal
+
 project_status_updates:
   - id: project_status_personal_life_admin_20260616_afternoon_health_admin_errands
     date: 2026-06-16
@@ -228,3 +372,13 @@ project_status_updates:
     summary: Afternoon errands include Brian's ophthalmology stye check and a dermatology receipt pickup for Miya's 실비보험 claim.
     next_step: Complete both clinic errands before they are crowded out by Milano work.
     source_ref: source_personal_admin_conversation_20260616_afternoon_eye_derm_receipt
+
+  - id: project_status_personal_life_admin_20260618_morning_health_and_recovery
+    date: 2026-06-18
+    project_ref: project_personal_life_admin
+    author_ref: person_brian
+    status: active
+    progress_percent: 100
+    summary: 6/18 아침 등운동, 눈꺼풀 염증 안약 2회 투여, 점심/보충제 기록을 반영하여 건강 루틴 상태를 정리함.
+    next_step: 운동량·증상 경과 기록을 다음 루틴 계획에 반영.
+    source_ref: source_personal_body_conversation_20260618_gym_and_eyedrops_and_meal

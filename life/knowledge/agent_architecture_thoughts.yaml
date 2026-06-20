@@ -1,6 +1,6 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-18
+updated_at: 2026-06-20
 area: MIND
 secondary_areas:
   - CAREER
@@ -87,6 +87,24 @@ source_records:
     imported_at: 2026-06-16
     parse_status: parsed
     raw_text: "이 개념들 다 연결해서 저장해두고 우리의 대화 흐름도 같이 :)"
+  - id: source_knowledge_conversation_20260617_subsystem_level_ontology_need
+    source_type: chat
+    original_date: 2026-06-17
+    imported_at: 2026-06-17
+    parse_status: parsed
+    raw_text: "서브 시스템 레벨의 Ontology 높일 필요 있음 :)"
+    interpreted_direction:
+      topic: subsystem-level ontology improvement
+      statement: Hardware IP agent ontology should better model subsystem-level objects, relationships, evidence, and workflows rather than only low-level tasks or files.
+      related_scope:
+        - subsystem
+        - IP block
+        - interface
+        - requirement
+        - integration
+        - verification
+        - evidence
+      confidence: high
   - id: source_knowledge_conversation_20260617_soc_on_ontology_direction
     source_type: chat
     original_date: 2026-06-17
@@ -189,6 +207,34 @@ source_records:
       caution: Treat external design references as inspiration and analysis unless the source permits reuse.
       seminar_section: Document and deck generation with skills
     related_task_ref: task_ai_agent_codex_seminar_prepare
+  - id: source_knowledge_external_reference_20260619_codex_complete_guide_video
+    source_type: chat_and_external_video
+    original_date: 2026-06-19
+    imported_at: 2026-06-19
+    parse_status: parsed
+    raw_text: "Brian shared a Codex complete-guide YouTube video and said the content is very good."
+    external_reference:
+      platform: YouTube
+      url: https://youtu.be/Z3z93bKMh_I?si=M_XLnSjD4BlLWdTO
+      observed_title: "Codex 완벽 가이드 2026: 지금은 코덱스가 최강인 것 같네요."
+      observed_at: 2026-06-19
+    interpreted_transfer:
+      source_role: high_quality_external_codex_usage_reference
+      seminar_section: Codex setup and operating surfaces
+      principle: Use strong external Codex guide material for basic onboarding, while Brian's seminar adds company-specific RTL/IP workflow, ontology/OKF, evaluation, monitoring, and SoC Knowledge Graph content.
+    extracted_content_summary:
+      - The video starts by explaining why Codex is gaining attention in comparison with Claude Code, then introduces recent OpenAI model/image-generation context as a reason to revisit Codex CLI.
+      - The setup section shows launching Codex CLI and walks through permission modes, including default, auto-review, and full-access style operation.
+      - The daily-use section covers statusline/status, prompt queueing, response copy, context clearing, prompt history search, prompt draft handling, session resume, and session fork.
+      - The control section covers model selection, reasoning levels, fast mode, Plan mode, shell/IDE integration, review presets, and compacting long sessions.
+      - The review section is especially useful for Brian's seminar because it connects local uncommitted review, branch/commit review, custom review instruction, and GitHub PR review.
+      - The strongest seminar reuse points are Plan mode, review workflow, context hygiene, session continuity, visible resource/status monitoring, and practical command-level onboarding.
+    brian_extraction_notes:
+      - Use this video as a pre-watch/reference for Codex command basics.
+      - Extract screenshots or examples later only if allowed and needed; otherwise recreate Brian's own examples using local demo material.
+      - Do not let this replace Brian's differentiated story: ontology-backed RTL/IP workflows, OKF/Obsidian/HTML views, evaluation/monitoring, and SoC Knowledge Graph assets.
+      - Use the video's chapter order as a practical setup/onboarding skeleton, then insert Brian's operating-pattern and hardware-specific layers after the command basics.
+    related_task_ref: task_ai_agent_codex_seminar_prepare
   - id: source_knowledge_conversation_20260618_agent_workflow_knowhow
     source_type: chat
     original_date: 2026-06-18
@@ -256,6 +302,397 @@ source_records:
       - Treat thread linking as a continuity and handoff problem across Codex conversations, subagents, git worktrees, and ontology objects.
       - Use stable IDs, source refs, evidence refs, decisions, blockers, validation, and next actions as the bridge between threads.
     related_task_ref: task_ai_agent_codex_seminar_prepare
+  - id: source_knowledge_conversation_20260619_codex_open_source_llm_wiki_interest
+    source_type: chat
+    original_date: 2026-06-19
+    imported_at: 2026-06-19
+    parse_status: parsed
+    raw_text: "코덱스가 오픈소스인걸 알려줘야 겠다. 세미나에서. 다들 LLM Wiki에 대해 관심이 많네. 알려줘야 겠다."
+    interpreted_direction:
+      - Add Codex open-source scope as a seminar talking point.
+      - Keep the wording precise: key Codex components are developed in the open, but not every Codex surface or the model/service itself is open-source.
+      - Audience interest in LLM Wiki means the LLM Wiki/OKF/ontology layering should be presented as a central concept.
+    official_source_refs:
+      - https://developers.openai.com/codex/open-source
+      - https://github.com/openai/codex
+      - https://github.com/openai/skills
+      - https://github.com/openai/codex-universal
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+  - id: source_knowledge_conversation_20260619_rtl_tooling_install_requirements
+    source_type: chat
+    original_date: 2026-06-19
+    imported_at: 2026-06-19
+    parse_status: parsed
+    raw_text: "verilator, iverilog, pyslang 등도 설치해야됨."
+    interpreted_direction:
+      - Add Verilator, Icarus Verilog/iverilog, and pyslang as hardware-demo tooling prerequisites.
+      - Treat tool installation as a prerequisite for reliable RTL/IP parsing, lint/simulation, and subsystem ontology demos.
+      - Keep "etc." open for future tool expansion.
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+  - id: source_knowledge_conversation_20260619_subsystem_level_ontology_importance
+    source_type: chat
+    original_date: 2026-06-19
+    imported_at: 2026-06-19
+    parse_status: parsed
+    raw_text: "Sub System Level Ontology 아주 중요함 :)"
+    interpreted_direction:
+      - Brian reaffirmed subsystem-level ontology as a critical part of the hardware-agent architecture.
+      - Subsystem-level ontology is the practical bridge from concrete RTL/IP work to SoC-level reasoning and VDS-style documentation.
+      - The seminar/demo should include a concrete subsystem-level slice rather than jumping directly from low-level tool usage to abstract SoC ontology.
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+  - id: source_knowledge_conversation_20260619_solution_rag_ontology_build
+    source_type: chat
+    original_date: 2026-06-19
+    imported_at: 2026-06-19
+    parse_status: parsed
+    raw_text: "Solution RAG를 이용해서 온톨로지 구축해보자:)"
+    interpreted_direction:
+      - Use Solution RAG as an ontology-building method.
+      - Interpret Solution RAG as retrieving prior solved cases with Problem/Context/Attempt/Resolution/Evidence structure.
+      - Use retrieved solution cases to propose ontology objects, links, patterns, decisions, and skill/rule updates.
+      - Keep the first version local and lightweight, using existing ontology files and review flags instead of adding a new app or database.
+    related_task_ref: task_ai_agent_solution_rag_ontology_builder
+  - id: source_knowledge_conversation_20260619_ontology_study
+    source_type: chat
+    original_date: 2026-06-19
+    imported_at: 2026-06-19
+    parse_status: parsed
+    raw_text: "Ontology 공부"
+    interpreted_direction:
+      - Brian studied ontology as the meaning/modeling layer behind LLM Wiki, OKF, Graph DB, YAML, JSON, MD, DB storage, and Solution RAG.
+      - This study reinforces the distinction between ontology objects/links and their storage or document representations.
+      - It should feed the Codex seminar explanation and the local Solution RAG ontology-building pilot.
+    related_task_ref: task_ai_agent_solution_rag_ontology_builder
+  - id: source_knowledge_conversation_20260619_ontology_llm_wiki_obsidian_note_taking
+    source_type: chat
+    original_date: 2026-06-19
+    imported_at: 2026-06-19
+    parse_status: parsed
+    raw_text: "세미나에서 Ontology + LLM WIki + Obsidian 으로 노트 기록 하는 방법 도 세미나에 포함하면 좋을듯"
+    interpreted_direction:
+      - Add a practical seminar section for recording notes with Ontology, LLM Wiki, and Obsidian.
+      - Treat Obsidian as the human note-taking surface, LLM Wiki/OKF-style pages as the shareable knowledge layer, and ontology as the object/link layer that agents can reason over.
+      - Preserve raw notes first, then promote stable structure into ontology objects, source refs, evidence refs, tasks, issues, decisions, and concepts.
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+  - id: source_knowledge_conversation_20260619_palantir_advanced_ontology_apply_now
+    source_type: chat
+    original_date: 2026-06-19
+    imported_at: 2026-06-19
+    parse_status: parsed
+    raw_text: |-
+      오 바로 적용 해야겠다
+      꽤 찮은데 ?
+    interpreted_direction:
+      - Brian decided to immediately apply the Palantir-style advanced ontology framing to Brian Ontology Agent.
+      - The key upgrade is to move from basic ontology as object/link modeling into operational ontology with semantic, kinetic, and dynamic layers.
+      - Semantic means objects/properties/links; kinetic means actions/functions/workflows/writeback; dynamic means current state, permissions, scenarios, feedback, and decision context.
+      - Interpret "꽤 찮은데" as "꽤 괜찮은데" / the idea looks useful.
+    related_task_ref: task_ai_agent_codex_ontology_development_plugin
+  - id: source_knowledge_conversation_20260619_palantir_platform_soc_mapping
+    source_type: chat_and_assistant_synthesis
+    original_date: 2026-06-19
+    imported_at: 2026-06-19
+    parse_status: parsed
+    raw_text: |-
+      팔란티어 AIP 는 뭐야?
+      팔란티어는 제품 몇개 있니 ?
+      아  Foundry 는 기존 운영 플랫폼. 데이터는 고객 회사 데이터지?
+      그걸 온톨로지에 올려서 운영한다?
+      AIP 는 그걸 Agent가 도와준다?
+      Apollo , 고담은 뭐야?
+      고담이랑 뭐가 다르지? 파운드리도 충분하지 않나
+      고담 처럼 해야하나? SOC 개발
+      파운드리랑 무슨 차이일까?
+      sematic ? kinetic ? 이게 그 개념 ?
+      개념 정리해서 저장 좀
+    interpreted_direction:
+      - Brian clarified Palantir's platform stack and mapped it onto Brian Ontology Agent and SoC development.
+      - Foundry is understood as the operational data and ontology platform that connects customer/company data and makes it usable.
+      - AIP is understood as the AI/agent layer that reads, reasons over, and helps act on top of the Ontology.
+      - Apollo is understood as the deployment, upgrade, monitoring, and runtime operations layer for the platform.
+      - Gotham is understood as a domain-specific operational cockpit, especially for defense/intelligence/mission workflows, not the base platform Brian must copy wholesale.
+      - For SoC development, the useful borrowing is a Gotham-like debug/signoff cockpit on top of a Foundry-like local data layer, Ontology, and AIP-like Codex agent.
+      - Semantic, kinetic, and dynamic are the right conceptual frame: semantic is what exists, kinetic is what can be done, and dynamic is what is true now.
+    distilled_summary_ko:
+      - "Foundry: 고객/회사 데이터와 운영 시스템을 연결하고 Ontology로 업무 객체화하는 기반."
+      - "Ontology: IP, Subsystem, Task, Issue, Evidence, Decision, Action, State 같은 업무 세계 모델."
+      - "AIP: Agent/LLM이 Ontology 위에서 질문, 추론, 자동화, 액션 제안을 수행하는 계층."
+      - "Apollo: 이 플랫폼을 여러 환경에 배포, 업데이트, 모니터링하는 운영 엔진."
+      - "Gotham: 특정 도메인의 작전 상황판/의사결정 UX. SoC에서는 debug/signoff cockpit으로 참고."
+      - "Semantic은 지도, Kinetic은 조작 버튼, Dynamic은 현재 상황판."
+    external_source_refs:
+      - https://www.palantir.com/docs/foundry/architecture-center/platforms
+      - https://www.palantir.com/docs/foundry/aip/overview
+      - https://palantir.com/docs/apollo/core/introduction/
+      - https://www.palantir.com/platforms/gotham/
+    related_task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_solution_rag_ontology_builder
+  - id: source_knowledge_conversation_20260620_palantir_operational_decision_core
+    source_type: chat_and_assistant_synthesis
+    original_date: 2026-06-20
+    imported_at: 2026-06-20
+    parse_status: parsed
+    raw_text: |-
+      AIP 가 없을때도 잘 되었지? 팔란티어?
+      고객 데이터를 현실 업무 객체로 만들고 , 그 위에서 사람이 판단하고 액션하게 하는 운영 시스템. 이게 핵심인가 ? 팔란티어?
+      그리고 위의 개념들 정리해줘 저장해줘
+      회사는 의사결정이 매우 중요하다 그지?
+    interpreted_direction:
+      - Brian identified the deeper Palantir core as an operational decision system rather than only a data platform, dashboard, graph database, or AI chatbot.
+      - Palantir worked before AIP because Foundry/Gotham/Ontology already supported customer data integration, real-world object modeling, human decision-making, action/workflow, security/audit, and feedback.
+      - AIP should be understood as a later accelerator that adds LLM/agent capability on top of an already useful operational ontology and workflow substrate.
+      - For Brian Ontology Agent, the architectural lesson is to build the ontology and operational loop first, then use Codex/AIP-like agents as an amplifier.
+      - Brian connected the concept to company reality: a company is fundamentally a repeated decision-making and execution system, so ontology is valuable when it improves decision quality, speed, traceability, and feedback.
+    core_loop:
+      - customer_or_work_data
+      - real_world_operational_objects
+      - current_state_and_context
+      - human_or_agent_assisted_judgment
+      - action_or_writeback
+      - evidence_audit_and_feedback
+      - improved_next_decision
+    soc_translation:
+      - "RTL/spec/SDC/filelist/sim log/timing report/issue tracker become SoC ontology objects."
+      - "SoC/IP/subsystem/interface/requirement/test/issue/evidence/decision/action/state become the shared model."
+      - "Engineers and agents decide blockers, owners, next actions, and validation gaps from that model."
+      - "Actions such as rerun sim, update SDC, disable VIP config path, create issue, and capture decision write back into the operational loop."
+    related_concept_refs:
+      - concept_operational_decision_system
+      - concept_palantir_platform_stack
+      - concept_foundry_like_operational_data_layer
+      - concept_aip_like_agent_layer
+      - concept_advanced_operational_ontology
+      - concept_soc_on_ontology
+    related_task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_solution_rag_ontology_builder
+  - id: source_knowledge_conversation_20260620_ai_information_overload_cognitive_bandwidth
+    source_type: pasted_note_and_chat
+    original_date: 2026-06-20
+    imported_at: 2026-06-20
+    parse_status: parsed
+    raw_text: |-
+      맞아요. 이게 요즘 AI 쓰는 사람들의 진짜 병목이에요.
+      예전 병목은 정보가 부족함이었는데, 지금 병목은 AI가 너무 많이 말함 -> 내가 소화 못함 -> 기억 안 남 -> 실행으로 안 이어짐 -> 피곤함입니다.
+      즉 문제는 AI 성능 부족이 아니라, 인간의 인지 대역폭 부족이에요.
+      핵심은 "AI에게 많이 말하게 하지 말고, 걸러서 주게 해야 함".
+      내가 지금 의사결정할 수 있게 3개만 줘.
+      지금 당장 알아야 할 것 / 나중에 저장할 것 / 버려도 되는 것으로 나누기.
+      One-liner, Mental Model, 3 Key Points, Action, Archive.
+      개인 AI 비서는 정보를 많이 주는 존재가 아니라, 내 인지 부하를 줄이는 존재여야 해요.
+      AI는 정보를 쏟아내고, 온톨로지는 그것을 소화 가능한 지식으로 바꾼다. 이거 좋은데?
+    interpreted_direction:
+      - Brian identified AI information overload as a practical bottleneck: AI can generate more context than a human can digest, remember, and convert into action.
+      - The important design target is not more output, but filtered output that supports memory, decision, and execution.
+      - Brian liked the framing that AI emits information while ontology digests it into usable knowledge.
+      - Brian's personal assistant should default to cognitive-load-aware responses: one-liner, mental model, three key points, one next action, and archive details only when useful.
+      - The output triage should separate what matters now, what should be saved, and what can be discarded.
+    preferred_output_contract:
+      one_liner: one sentence conclusion
+      mental_model: compact structure that can be remembered
+      key_points_max: 3
+      action_count: 1
+      archive: optional details for later storage or review
+    related_concept_refs:
+      - concept_cognitive_load_aware_ai_output
+      - concept_ontology_first_agent_memory
+      - concept_operational_decision_system
+      - concept_llm_wiki
+      - concept_solution_rag
+    related_task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_solution_rag_ontology_builder
+  - id: source_knowledge_conversation_20260620_codex_subagent_toml_settings
+    source_type: chat
+    original_date: 2026-06-20
+    imported_at: 2026-06-20
+    parse_status: parsed
+    raw_text: "toml 로 subagent setting 하는 것도 코덱스 세미나에 넣을래"
+    interpreted_direction:
+      - Add TOML-based Codex subagent settings to the seminar.
+      - Teach both global `[agents]` controls and custom agent TOML files under `.codex/agents/` or `~/.codex/agents/`.
+      - Position this after Plan mode, thread linking, and handoff skills because it is an advanced control surface for specialized parallel agents.
+      - Include cautions that subagents must be explicitly requested, consume additional tokens, and should be used first for read-heavy exploration, review, triage, testing, and summarization.
+    official_source_refs:
+      - https://developers.openai.com/codex/subagents
+      - https://developers.openai.com/codex/concepts/subagents
+      - https://developers.openai.com/codex/config-basic
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+  - id: source_knowledge_conversation_20260620_codex_thread_subagent_worktree_harness
+    source_type: chat_and_local_research
+    original_date: 2026-06-20
+    imported_at: 2026-06-20
+    parse_status: parsed
+    raw_text: "sub agent, thread 관리 + worktree 등 이런 것도 다 저장좀 개념 그리고 codex 세미나에 다 연결해주고, sub agent toml 이거 설정법도 lazy codex 참고해서 뭔가 정리좀"
+    interpreted_direction:
+      - Store subagents, thread management, and worktree orchestration as connected Codex seminar concepts.
+      - Treat coordinator-thread operation as a practical pattern: ask Codex to list/search/organize/name/pin/archive/resume threads, then dispatch independent work into worktree-backed background threads.
+      - Connect subagent TOML settings to a lightweight harness model inspired by LazyCodex: project memory, plan-before-edit, specialist roles, execution loops, evidence gates, and verification.
+      - Keep official OpenAI Codex docs as the canonical source for Codex behavior, and treat LazyCodex as an external implementation/reference pattern.
+      - Preserve the setup as conceptual seminar material for now; do not install or scaffold LazyCodex unless Brian explicitly asks.
+    official_source_refs:
+      - https://developers.openai.com/codex/subagents
+      - https://developers.openai.com/codex/app/features
+      - https://developers.openai.com/codex/app/worktrees
+      - https://developers.openai.com/codex/app-server
+    external_source_refs:
+      - https://lazycodex.ai/
+      - https://github.com/code-yeongyu/lazycodex
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+  - id: source_knowledge_external_reference_20260620_lazycodex_harness
+    source_type: external_reference
+    original_date: 2026-06-20
+    imported_at: 2026-06-20
+    parse_status: parsed
+    external_reference:
+      name: LazyCodex
+      primary_site: https://lazycodex.ai/
+      github_repo: https://github.com/code-yeongyu/lazycodex
+      observed_at: 2026-06-20
+    extracted_takeaways:
+      - LazyCodex frames itself as a Codex harness for project memory, planning, execution, and verified completion.
+      - Its visible workflow commands include `$init-deep`, `$ulw-plan`, `$start-work`, and `$ulw-loop`.
+      - It uses specialist roles such as explorer, librarian, planner, critic/reviewer, and evidence-oriented agents, with roles installed under `~/.codex/agents/`.
+      - It emphasizes plan-before-edit, parallel exploration, worktree-aware execution, hooks/skills, model routing, and evidence gates.
+      - For Brian's seminar, this is useful as a reference mapping, not as a dependency or canonical OpenAI feature description.
+    external_source_refs:
+      - https://lazycodex.ai/
+      - https://github.com/code-yeongyu/lazycodex
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+  - id: source_knowledge_external_reference_20260620_a16z_app_layer_not_dead
+    source_type: chat_and_external_article
+    original_date: 2026-06-20
+    imported_at: 2026-06-20
+    parse_status: parsed
+    raw_text: "최근 실리콘 밸리의 유명 벤쳐캐피털인 a16z 가 앱 레이어는 죽지 않았다로 글을 씀"
+    external_reference:
+      publisher: Andreessen Horowitz / a16z
+      author: Joe Schmidt
+      url: https://a16z.com/avoiding-death-on-the-yellow-brick-road/
+      observed_title: "Avoiding Death on the Yellow Brick Road"
+      published_at: 2026-05-27
+      observed_at: 2026-06-20
+    interpreted_takeaway:
+      - The article is a useful external signal for Brian's AI app and agent architecture thinking.
+      - The practical distinction is not "models versus apps" in general, but horizontal low-step-count app surfaces on the labs' "Yellow Brick Road" versus domain-specific, operational, vertical workflows outside that path.
+      - This supports Brian's ontology-first direction because durable AI apps are not thin model wrappers; they package domain context, workflow integration, evidence, state, action, trust, and compliance around models.
+      - For the Codex seminar, this can frame why generic model/tool-call agents are only one layer and why LLM Wiki, ontology memory, Solution RAG, and SoC/subsystem ontology matter.
+    external_source_refs:
+      - https://a16z.com/avoiding-death-on-the-yellow-brick-road/
+      - https://a16z.com/notes-on-ai-apps-in-2026/
+      - https://a16z.com/good-news-ai-will-eat-application-software/
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+  - id: source_knowledge_book_note_20260620_dont_read_what_will_be_forgotten
+    source_type: user_provided_book_summary
+    original_date: 2026-06-20
+    imported_at: 2026-06-20
+    parse_status: parsed
+    raw_text: |-
+      Brian summarized 장경철's book "금방 까먹을 것은 읽지도 마라" as: reading is not a competition over volume; real study means selecting important material, preserving it, repeating it, questioning it, and connecting it to one's life and work as usable knowledge. Brian connected the book's ideas of preservation, use, repetition, questioning, key terms, definitions, relationships, issues, alternatives, and fermentation to LLM Wiki, ontology, Graph RAG, Operational Ontology, Decision Platform, and Agent Loop.
+    book_reference:
+      title: 금방 까먹을 것은 읽지도 마라
+      author: 장경철
+      original_publisher: 낮은울타리
+      original_published_at: 1997-10-31
+      original_isbn: "9788986052589"
+      original_page_count: 108
+      later_edition:
+        publisher: 비전과리더십
+        observed_year: 2010
+      user_supplied_source_notes:
+        - YES24 original listing shows 1997-10-31 publication and ISBN 9788986052589.
+        - Aladin shows a 2010 비전과리더십 edition as used/revised edition context.
+      verification_status: user_supplied_not_rechecked
+    core_claim_ko: "독서는 양보다 보존과 활용이 중요하다."
+    one_sentence_summary_ko: "독서는 많이 읽는 경쟁이 아니라, 중요한 것을 골라 반복하고, 메모하고, 자기 삶과 사고에 연결해 활용 가능한 지식으로 만드는 과정이다."
+    extracted_concepts:
+      - 보존
+      - 활용
+      - 반복
+      - 질문
+      - 정의와 관계
+      - 핵심 단어
+      - 쟁점과 대안
+      - 발효
+    brian_interpretation:
+      - Reading is raw input; notes are first preservation; key terms/definitions/relations are ontology promotion.
+      - Repetition, questioning, and application are the retrieval and review loop.
+      - Life and work decisions are where knowledge becomes operational.
+      - The book can be treated as an older human-study framing for Brian's current LLM Wiki, ontology, Graph RAG, and agent-loop direction.
+    related_concept_refs:
+      - concept_reading_to_operational_knowledge
+      - concept_llm_wiki
+      - concept_ontology_first_agent_memory
+      - concept_agentic_retrieval_substrate
+      - concept_advanced_operational_ontology
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+  - id: source_knowledge_external_research_20260620_anthropic_expertise_amplifies_ai
+    source_type: web_research
+    original_date: 2026-06-20
+    imported_at: 2026-06-20
+    parse_status: parsed
+    raw_text: "앤트로픽의 실험결과. 전문가가 AI 더 잘 쓰더라 / 웹 검색 좀 / 이거 잘 정리해줘 / node !"
+    interpreted_direction:
+      - Brian shared an Anthropic finding that experts/experienced people use AI more effectively, then asked to research it, summarize it cleanly, and store it as an ontology node.
+    study_reference:
+      publisher: Anthropic
+      title: How AI Is Transforming Work at Anthropic
+      observed_published_at: 2025-08
+      methodology:
+        - surveyed 132 engineers and researchers (August 2025)
+        - 53 in-depth interviews
+        - analysis of ~200,000 Claude Code transcripts (February-August 2025)
+      verification_status: web_fetched_2026_06_20_primary_article_plus_korean_translation
+    key_findings:
+      - AI does not make expertise worthless; it makes it more valuable because success comes from understanding the problem, and AI rewards that understanding with more leverage.
+      - Experienced users salvage troubled agent sessions by steering, while novices abandon them (reported roughly 3-4x more often), so steering/recovery is a core value of expertise.
+      - Paradox of supervision -- deep domain knowledge makes humans better at validating and correcting AI output, so skill atrophy is itself a risk to safe AI use.
+      - The study does not directly quantify novice-vs-expert productivity gains; its emphasis is on steering and supervision, and it warns that future juniors may not grow skills if they blindly accept model output.
+    distilled_claim_ko: "전문가가 AI를 더 잘 쓰는 건 맞지만, 이유는 속도가 아니라 방향을 잡고 결과를 검증하는 판단력 때문이다."
+    external_source_refs:
+      - https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic
+      - https://ebadak.news/2025/12/06/how-ai-is-transforming-work/
+    related_concept_refs:
+      - concept_expertise_amplifies_ai_leverage
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+  - id: source_knowledge_external_reference_20260620_tacit_knowledge_for_ai_video
+    source_type: chat_and_external_video
+    original_date: 2026-06-20
+    imported_at: 2026-06-20
+    parse_status: parsed
+    raw_text: "https://www.youtube.com/watch?v=CNcbudRbpXg 이거 가져와서 반영좀 :)"
+    external_reference:
+      platform: YouTube
+      url: https://www.youtube.com/watch?v=CNcbudRbpXg
+      observed_title: "경력직의 '노하우'를 AI가 배우게 하는 법 | '암묵지' 수집/설계 팁"
+      observed_at: 2026-06-20
+      verification_status: title_and_topic_fetched_2026_06_20_transcript_not_retrieved
+    interpreted_takeaway:
+      - The video addresses how to make AI learn the tacit know-how (암묵지) of experienced professionals, with practical tips for collecting and designing that knowledge.
+      - It frames expert know-how capture as a deliberate data/knowledge-design problem, not something AI absorbs automatically.
+      - This pairs directly with the Anthropic finding that expertise amplifies AI leverage -- if expertise is the differentiator, then capturing and structuring expert tacit knowledge becomes a core asset.
+      - For Brian Ontology Agent, it reinforces capturing common_ai_agent and ontology_ip_agent know-how, Solution RAG case structure, decisions, and failure learning as the mechanism that turns tacit expert judgment into reusable ontology objects and skills.
+    related_industry_context:
+      note: General industry context from 2026-06-20 web search, not confirmed as this specific video's content.
+      points:
+        - 암묵지 is experience-embodied knowledge that is hard to formalize or verbalize.
+        - Some firms capture keyboard/mouse/click/screen interaction data so AI can learn how work is actually performed.
+        - Korea's MOTIE is funding a manufacturing 명장 tacit-knowledge dataset project (~48.0 billion KRW, 2026) to preserve expert know-how at risk from aging and workforce loss.
+        - Promise is reusing departed employees' know-how and building role-specific "digital employees"; concern is privacy and corporate reuse of personal expertise.
+      external_source_refs:
+        - https://biz.heraldcorp.com/article/10726837
+        - https://www.asiatoday.co.kr/kn/view.php?key=20260612010004392
+        - https://www.ekoreanews.co.kr/news/articleView.html?idxno=85707
+    related_concept_refs:
+      - concept_tacit_knowledge_capture_for_ai
+      - concept_expertise_amplifies_ai_leverage
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_solution_rag_ontology_builder
 
 thought_threads:
   - id: thought_thread_20260615_okf_llm_wiki_ontology
@@ -353,6 +790,7 @@ thought_threads:
       - "Brian moved the hardware IP agent direction from subsystem-level ontology toward a higher target: SoC on top of ontology."
       - The intended layering is not only task/file tracking, but an ontology substrate that can represent SoC, subsystems, IP blocks, interfaces, requirements, integration constraints, verification evidence, ownership, and decisions.
       - This direction makes the ontology the semantic operating layer, with SoC-level design reasoning and workflow support built above it.
+      - Brian later reaffirmed that Sub System Level Ontology is very important, making it the practical bridge from IP-level work to the SoC-on-ontology target.
     conversation_flow:
       - The discussion first identified that subsystem-level ontology needs to be improved.
       - Brian then summarized the broader destination as "Ontology 위에 SoC".
@@ -360,6 +798,7 @@ thought_threads:
       - "This also gives the Codex seminar/demo a stronger story: show how ontology connects SoC-level intent down to concrete implementation/evidence objects."
       - Brian then connected this direction to Codex seminar preparation and VDS document thinking.
       - The emerging idea is that VDS can be treated as a document layer over SoC ontology, rather than a separate static artifact disconnected from requirements, implementation, and evidence.
+      - On 2026-06-19, Brian emphasized Sub System Level Ontology again as a critical focus, strengthening the need for a concrete subsystem-level demo slice.
     related_concept_refs:
       - concept_ontology_first_agent_memory
       - concept_agentic_retrieval_substrate
@@ -376,8 +815,10 @@ thought_threads:
     prior_thread_refs:
       - thought_thread_20260616_agentic_rag_graphrag_ontology_mapping
     source_refs:
+      - source_knowledge_conversation_20260617_subsystem_level_ontology_need
       - source_knowledge_conversation_20260617_soc_on_ontology_direction
       - source_knowledge_conversation_20260617_codex_seminar_soc_ontology_vds
+      - source_knowledge_conversation_20260619_subsystem_level_ontology_importance
     confidence: high
     needs_user_review: false
   - id: thought_thread_20260618_codex_seminar_ontology_demo_stack
@@ -400,6 +841,16 @@ thought_threads:
       - Brian identified the central method as refining one small real task until it works, then distilling that workflow into a reusable skill.
       - Brian also identified handoff skills, skill-making skills, and conversation-driven failure learning as patterns for scaling agent workflows.
       - Brian added practical Codex operating patterns: Plan mode, one-shot/two-shot prompting, git worktree experiments, and thread-to-thread continuity.
+      - Brian added a high-quality external Codex complete-guide video as onboarding reference material for the seminar.
+      - The video content reinforces several already-planned seminar points: permissions, statusline/status monitoring, context hygiene, resume/fork/compact continuity, Plan mode, review presets, and resource tradeoffs.
+      - Brian added that the seminar should explain Codex open-source scope and that participants are interested in LLM Wiki.
+      - Brian added Verilator, Icarus Verilog/iverilog, and pyslang as hardware-demo setup requirements.
+      - Brian reaffirmed Sub System Level Ontology as a central bridge between hardware workflow demos and SoC-on-ontology architecture.
+      - Brian added a practical seminar section for recording notes with Ontology, LLM Wiki, and Obsidian.
+      - Brian added TOML-based Codex subagent settings as an advanced seminar topic for configuring global subagent limits and reusable custom agent profiles.
+      - Brian connected subagents, thread management, and worktrees into a "Codex managing Codex" operating pattern for the seminar.
+      - Brian added LazyCodex as an external harness reference for project memory, plan-before-edit execution, specialist roles, worktree dispatch, and evidence gates.
+      - Brian added 장경철's "금방 까먹을 것은 읽지도 마라" as a useful reading/study philosophy basis for LLM Wiki, ontology-first notes, and operational knowledge.
     conversation_flow:
       - Brian first listed Codex seminar topics from setup through LLM/RAG trends and agent-control primitives.
       - The discussion then moved from tools to knowledge architecture: Knowledge Graph, SoC Knowledge Graph, Agentic RAG, OKF, LLM Wiki, and ontology.
@@ -412,6 +863,17 @@ thought_threads:
       - The workflow construction idea evolved into task-to-skill distillation, handoff skills between subagents, and a skill-making skill.
       - Brian then added that conversation and trial-and-error should continuously improve the system so future runs do not repeat known mistakes.
       - Brian then added Plan mode, one-shot/two-shot examples, git worktree usage, and thread-linking methods as practical controls participants should learn.
+      - Brian then shared a Codex complete-guide video and marked it as strong reference material for the setup/onboarding part.
+      - The video's detailed command walkthrough was mapped into Brian's seminar as pre-watch material plus extracted talking points for setup, Plan mode, review, and session continuity.
+      - Brian then added a precise open-source talking point for Codex and noted strong audience interest in LLM Wiki.
+      - Brian then added RTL/IP tooling prerequisites for reliable demos: Verilator, iverilog, and pyslang.
+      - Brian then emphasized that Sub System Level Ontology is very important, so the seminar should not jump directly from tool usage to abstract SoC ontology.
+      - Brian then added that the seminar should include how to record notes using Ontology + LLM Wiki + Obsidian, turning the knowledge architecture into a daily operating method.
+      - Brian then investigated Palantir Foundry's Ontology framing and decided to immediately apply the semantic/kinetic/dynamic operational ontology model to Brian Ontology Agent.
+      - Brian then added TOML-based subagent settings so the seminar covers not only asking for parallel agents, but also defining specialized custom agents and safe limits.
+      - Brian then noted a recent a16z article arguing that the AI application layer is not dead, adding an external VC thesis that supports the seminar's emphasis on domain-specific application/workflow layers over generic model wrappers.
+      - Brian then asked to store subagent, thread-management, worktree, and LazyCodex-inspired harness concepts together and connect them back to the Codex seminar.
+      - Brian then supplied a book summary that reframes reading as preservation, reuse, key-term definition, relation modeling, questioning, repetition, and fermentation, matching the seminar's Ontology + LLM Wiki + Obsidian note-taking section.
     architecture_layering:
       explanation_layer:
         - LLM Wiki
@@ -419,11 +881,29 @@ thought_threads:
         - guide docs
       semantic_work_layer:
         - ontology objects
+        - Sub System Level Ontology
         - SoC Knowledge Graph
         - tasks, issues, evidence, owners, decisions
+        - semantic nouns such as Project, Task, Requirement, Issue, Evidence, Subsystem, IP, and Interface
+      kinetic_work_layer:
+        - actions
+        - functions
+        - validation runs
+        - config changes
+        - issue creation
+        - decision capture
+        - writeback or ontology update
+      dynamic_work_layer:
+        - current state
+        - owner and permission boundary
+        - scenario or what-if state
+        - confidence
+        - needs_user_review
+        - feedback from pass/fail and completed workflows
       human_view_layer:
         - Obsidian graph view
         - Obsidian Bases
+        - Obsidian markdown notes with lightweight frontmatter and refs
         - Interactive HTML graph
         - Word/PPT artifacts
         - presentation-generation workflow examples
@@ -432,6 +912,13 @@ thought_threads:
         - prompt
         - one-shot/two-shot examples
         - Plan mode
+        - subagent TOML settings
+        - custom agent files
+        - coordinator thread
+        - thread listing and search
+        - thread naming, pinning, archiving, resuming, and forking
+        - App Server thread APIs
+        - background worktree thread dispatch
         - rules
         - hooks
         - skills
@@ -441,10 +928,16 @@ thought_threads:
         - common_ai_agent lessons
         - ontology_ip_agent lessons
         - git worktree isolation
+        - worktree-backed worker threads
         - one small task
         - stable workflow
         - task-to-skill distillation
         - handoff skill
+        - custom subagent profiles
+        - LazyCodex-style harness reference
+        - plan-before-edit execution loop
+        - role-based subagent TOML profiles
+        - verification and evidence gates
         - skill creation skill
         - thread handoff summary
       evaluation_layer:
@@ -454,8 +947,12 @@ thought_threads:
         - attempts
         - wall time
         - failure/retry rate
+        - evidence gates
+        - thread/worktree status inventory
       learning_layer:
         - conversation memory
+        - raw note capture
+        - ontology promotion from stable notes
         - failure records
         - corrections
         - skill updates
@@ -485,9 +982,14 @@ thought_threads:
       - concept_prompt_shot_pattern
       - concept_git_worktree_codex_workflow
       - concept_codex_thread_linking
+      - concept_codex_subagent_toml_settings
+      - concept_codex_thread_worktree_orchestration
+      - concept_lazycodex_agent_harness
       - concept_reference_design_guided_generation
+      - concept_reading_to_operational_knowledge
       - concept_soc_knowledge_graph
       - concept_soc_on_ontology
+      - concept_subsystem_level_ontology
       - concept_hardware_ip_agent
     prior_thread_refs:
       - thought_thread_20260615_okf_llm_wiki_ontology
@@ -500,13 +1002,550 @@ thought_threads:
       - source_knowledge_conversation_20260618_one_hour_day_scope_estimate
       - source_knowledge_external_reference_20260618_claude_ppt_codex_transfer
       - source_knowledge_external_reference_20260618_claude_ppt_reference_design
+      - source_knowledge_external_reference_20260619_codex_complete_guide_video
       - source_knowledge_conversation_20260618_agent_workflow_knowhow
       - source_knowledge_conversation_20260618_task_to_skill_principle
       - source_knowledge_conversation_20260618_handoff_skill_skill_maker
       - source_knowledge_conversation_20260618_feedback_loop_failure_learning
       - source_knowledge_conversation_20260618_plan_mode_shot_worktree_usage
       - source_knowledge_conversation_20260618_thread_linking_methods
+      - source_knowledge_conversation_20260619_codex_open_source_llm_wiki_interest
+      - source_knowledge_conversation_20260619_rtl_tooling_install_requirements
+      - source_knowledge_conversation_20260619_subsystem_level_ontology_importance
+      - source_knowledge_conversation_20260619_ontology_llm_wiki_obsidian_note_taking
+      - source_knowledge_conversation_20260619_palantir_advanced_ontology_apply_now
+      - source_knowledge_conversation_20260620_codex_subagent_toml_settings
+      - source_knowledge_conversation_20260620_codex_thread_subagent_worktree_harness
+      - source_knowledge_external_reference_20260620_lazycodex_harness
+      - source_knowledge_external_reference_20260620_a16z_app_layer_not_dead
+      - source_knowledge_book_note_20260620_dont_read_what_will_be_forgotten
     status: active_seminar_design
+    confidence: high
+    needs_user_review: false
+  - id: thought_thread_20260619_advanced_operational_ontology
+    object_type: ThoughtThread
+    date: 2026-06-19
+    area: MIND
+    secondary_areas:
+      - CAREER
+    topic: Palantir-style advanced operational ontology
+    summary:
+      - Brian identified Palantir Foundry's ontology framing as directly useful for Brian Ontology Agent.
+      - The important distinction is basic ontology versus advanced operational ontology.
+      - Basic ontology models objects and relationships; advanced operational ontology adds action, logic/function, state, security/permission, feedback, and decision context.
+      - Brian decided this should be applied immediately, not only presented in the seminar.
+    layer_model:
+      semantic:
+        definition: Objects, properties, links, and shared concepts; the nouns of the work.
+        brian_examples:
+          - Project
+          - Task
+          - Subsystem
+          - IP
+          - Interface
+          - Requirement
+          - Issue
+          - Evidence
+          - Decision
+      kinetic:
+        definition: Actions, functions, workflows, writeback, and structured changes; the verbs of the work.
+        brian_examples:
+          - run simulation
+          - check SDC
+          - update NVMe VIP config
+          - create issue
+          - capture decision
+          - promote note into ontology
+      dynamic:
+        definition: Current state, permissions, scenarios, confidence, feedback, and decision context.
+        brian_examples:
+          - task status
+          - owner/reviewer
+          - pass/fail result
+          - needs_user_review
+          - confidence
+          - blocker
+          - validation evidence freshness
+    first_application_candidates:
+      - Milano SDC cleanup and GEN7 PHY SDC/link0/filelist/timing review.
+      - NVMe VIP setup where PCIe IB/OB are enabled and other paths are disabled.
+      - Solution RAG pilot that extracts not only objects/links but also decisions, actions, and feedback loops from solved cases.
+    related_concept_refs:
+      - concept_advanced_operational_ontology
+      - concept_ontology_first_agent_memory
+      - concept_solution_rag
+      - concept_subsystem_level_ontology
+      - concept_soc_on_ontology
+    related_task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_solution_rag_ontology_builder
+      - task_ai_agent_codex_seminar_prepare
+    source_refs:
+      - source_knowledge_conversation_20260619_palantir_advanced_ontology_apply_now
+    status: active_architecture_direction
+    confidence: medium
+    needs_user_review: true
+  - id: thought_thread_20260619_palantir_platform_mapping_for_soc
+    object_type: ThoughtThread
+    date: 2026-06-19
+    area: CAREER
+    secondary_areas:
+      - MIND
+    topic: Palantir platform mapping for Brian Ontology Agent and SoC development
+    summary:
+      - Brian clarified the distinction between Palantir Foundry, AIP, Apollo, and Gotham and asked whether SoC development should be modeled like Gotham.
+      - The working conclusion is that Brian should not copy Gotham as a product, but should borrow the idea of a domain-specific operational cockpit after the Foundry-like/Ontology/AIP-like base is mature enough.
+      - Foundry-like work is the current priority: connect local engineering data, logs, docs, tasks, decisions, and evidence into a durable ontology.
+      - AIP-like work is the agent layer: Codex, Solution RAG, LLM Wiki, and validation/checklist agents operate over the ontology.
+      - Gotham-like work becomes useful later as a SoC debug/signoff operation cockpit that shows current blockers, risks, owners, evidence, and next actions.
+    platform_mapping:
+      foundry:
+        brian_interpretation: Operational data and ontology platform.
+        brian_equivalent:
+          - local YAML ontology records
+          - markdown notes and Obsidian views
+          - RTL/spec/filelist/SDC/sim/timing/coverage evidence
+          - task, issue, decision, action, and evidence records
+      ontology:
+        brian_interpretation: The business/engineering world model that turns raw data into objects, links, actions, and states.
+        brian_equivalent:
+          - Project
+          - Task
+          - Subsystem
+          - IP
+          - Interface
+          - Requirement
+          - Issue
+          - Evidence
+          - Decision
+          - OperationalAction
+          - OperationalState
+      aip:
+        brian_interpretation: Agent/LLM layer that uses the ontology to answer, reason, propose actions, run workflows, and collect feedback.
+        brian_equivalent:
+          - Codex
+          - Solution RAG
+          - LLM Wiki
+          - debug/checklist agents
+          - ontology promotion workflows
+      apollo:
+        brian_interpretation: Runtime/deployment/upgrade/monitoring layer for keeping the platform reliable.
+        brian_equivalent:
+          - repeatable local workflows
+          - validation commands
+          - skill/plugin packaging when needed
+          - future deployment or automation environment
+      gotham:
+        brian_interpretation: Domain-specific operational cockpit over the shared ontology, not the required base layer.
+        brian_equivalent:
+          - Milano debug operation cockpit
+          - SDC/timing/signoff status board
+          - NVMe/PCIe setup and issue triage board
+          - subsystem risk/owner/evidence/next-action dashboard
+    semantic_kinetic_dynamic_model:
+      semantic:
+        definition: What exists; the nouns, properties, links, and stable model.
+        simple_metaphor_ko: 지도
+        soc_examples:
+          - SoC
+          - Subsystem
+          - IP
+          - Interface
+          - SFR
+          - Clock
+          - Reset
+          - Requirement
+          - Test
+          - Issue
+          - Evidence
+      kinetic:
+        definition: What can be done; actions, functions, workflows, and writeback.
+        simple_metaphor_ko: 조작 버튼
+        soc_examples:
+          - run simulation
+          - rerun synthesis
+          - update SDC
+          - disable VIP config path
+          - create issue
+          - capture decision
+          - promote note to ontology
+      dynamic:
+        definition: What is true now; current state, risk, confidence, permission, feedback, and decision context.
+        simple_metaphor_ko: 현재 상황판
+        soc_examples:
+          - pass/fail
+          - owner
+          - blocker
+          - risk
+          - due date
+          - confidence
+          - needs_user_review
+          - latest evidence
+    soc_design_conclusion:
+      - SoC development needs Foundry-like data and ontology first, because Gotham-like UX is weak without stable objects, links, evidence, and state.
+      - The near-term path is Foundry-like local data layer + Ontology + AIP-like Codex/Solution RAG agents.
+      - A Gotham-like SoC cockpit should be added only when repeated operational slices exist, such as Milano debug, SDC cleanup, GEN7 PHY review, NVMe VIP setup, and signoff tracking.
+    related_concept_refs:
+      - concept_palantir_platform_stack
+      - concept_foundry_like_operational_data_layer
+      - concept_aip_like_agent_layer
+      - concept_apollo_like_deployment_layer
+      - concept_gotham_like_soc_operation_cockpit
+      - concept_advanced_operational_ontology
+      - concept_soc_on_ontology
+      - concept_subsystem_level_ontology
+    related_task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_solution_rag_ontology_builder
+    source_refs:
+      - source_knowledge_conversation_20260619_palantir_platform_soc_mapping
+      - source_knowledge_conversation_20260619_palantir_advanced_ontology_apply_now
+    status: active_architecture_direction
+    confidence: high
+    needs_user_review: false
+  - id: thought_thread_20260620_palantir_as_operational_decision_system
+    object_type: ThoughtThread
+    date: 2026-06-20
+    area: CAREER
+    secondary_areas:
+      - MIND
+    topic: Palantir as an operational decision system
+    summary:
+      - Brian refined the Palantir interpretation from product taxonomy into the deeper operating principle.
+      - The key idea is that Palantir turns customer data into real-world operational objects, then lets people and agents judge, act, write back, audit, and learn from feedback.
+      - This explains why Palantir was useful before AIP: the operational ontology and workflow loop existed before LLM/agent acceleration.
+      - AIP is therefore not the foundation; it is an accelerator over a Foundry/Gotham/Ontology-style operational substrate.
+      - Brian Ontology Agent should follow the same order: build a useful operational ontology and evidence/action loop first, then amplify it with Codex/Solution RAG/LLM Wiki agents.
+      - Company value is created through repeated decisions and execution; ontology matters because it makes decisions grounded, traceable, repeatable, and improvable.
+    deeper_model:
+      not_only:
+        - database
+        - dashboard
+        - graph database
+        - AI chatbot
+        - document search
+      core_identity: operational decision system
+      loop:
+        raw_data:
+          meaning: Customer or work data from operational systems, documents, logs, and tools.
+          soc_examples:
+            - RTL
+            - spec
+            - SDC
+            - filelist
+            - sim log
+            - timing report
+            - bug or issue tracker
+        operational_objects:
+          meaning: Real-world nouns and relationships that users recognize as their actual work.
+          soc_examples:
+            - SoC
+            - Subsystem
+            - IP
+            - Interface
+            - Requirement
+            - Test
+            - Issue
+            - Evidence
+            - Decision
+            - OperationalAction
+            - OperationalState
+        judgment:
+          meaning: Human or agent-assisted decision-making over current state, evidence, constraints, and risk.
+          soc_questions:
+            - What is the blocker?
+            - Which path or interface is risky?
+            - Who owns the next decision?
+            - What evidence is missing?
+            - What action should happen next?
+        action:
+          meaning: Workflow, command, configuration change, issue creation, approval, or writeback to an operational system.
+          soc_examples:
+            - rerun simulation
+            - update SDC
+            - disable non-IB/OB VIP paths
+            - create issue
+            - capture decision
+            - promote note to ontology
+      feedback:
+        meaning: Result, audit trail, evidence, pass/fail, confidence, and lessons that improve the next decision.
+        soc_examples:
+          - validation result
+          - latest log
+          - status update
+          - confidence
+          - needs_user_review
+          - next action
+    company_decision_view:
+      statement: A company is a repeated decision-making and execution system, not only a collection of data, documents, dashboards, or meetings.
+      ontology_value:
+        - provides a shared model of the real operating world
+        - connects evidence to decisions
+        - makes ownership and next actions explicit
+        - records why a decision was made
+        - lets future decisions reuse prior outcomes and feedback
+      soc_examples:
+        - decide whether an SDC exception is real or noise
+        - decide which IP/subsystem owns a failure
+        - decide whether a VIP setup path should be enabled or disabled
+        - decide whether timing evidence is sufficient for the next review
+        - decide what needs human review before automation writes back
+    platform_layer_reinterpretation:
+      foundry: Builds the data-to-operational-object substrate and keeps lineage, logic, ontology, workflow, and apps connected.
+      ontology: Defines the shared operational language of objects, relationships, states, actions, and evidence.
+      gotham: A domain-specific operational cockpit that uses the shared ontology for mission-style decision workflows.
+      aip: Adds LLM/agent acceleration to the existing operational loop; it helps query, reason, summarize, propose actions, and evaluate outputs.
+      apollo: Keeps the operational software reliable through deployment, versioning, monitoring, and updates.
+    brian_design_principles:
+      - Do not start with a chatbot; start with durable ontology objects, evidence, actions, and feedback.
+      - Do not start with a dashboard; generate views from ontology state after repeated operational slices exist.
+      - Treat Codex/AIP-like agents as amplifiers of the ontology loop, not as replacements for the loop.
+      - Use live SoC work such as Milano SDC, GEN7 PHY, link0 wrapper, filelist, timing, SFR/handler, and NVMe VIP setup to grow the model.
+    related_concept_refs:
+      - concept_operational_decision_system
+      - concept_palantir_platform_stack
+      - concept_advanced_operational_ontology
+      - concept_foundry_like_operational_data_layer
+      - concept_aip_like_agent_layer
+      - concept_gotham_like_soc_operation_cockpit
+      - concept_soc_on_ontology
+      - concept_subsystem_level_ontology
+    related_task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_solution_rag_ontology_builder
+    source_refs:
+      - source_knowledge_conversation_20260620_palantir_operational_decision_core
+      - source_knowledge_conversation_20260619_palantir_platform_soc_mapping
+      - source_knowledge_conversation_20260619_palantir_advanced_ontology_apply_now
+    status: active_architecture_direction
+    confidence: high
+    needs_user_review: false
+  - id: thought_thread_20260620_ai_information_overload_and_ontology_digest
+    object_type: ThoughtThread
+    date: 2026-06-20
+    area: MIND
+    secondary_areas:
+      - CAREER
+    topic: AI information overload and ontology as digestion layer
+    summary:
+      - Brian identified a modern AI usage bottleneck: information is no longer scarce, but human attention, memory, judgment, and execution bandwidth are scarce.
+      - The failure mode is AI over-output: too much explanation leads to weak digestion, low retention, poor execution, and fatigue.
+      - The useful assistant should filter and stage information instead of maximizing completeness in every answer.
+      - Ontology becomes the digestion layer: it turns AI output into Concepts, Relations, Actions, Evidence, Decisions, and Archive material.
+      - Brian liked the phrase that AI pours out information and ontology converts it into digestible knowledge.
+    core_model:
+      one_liner_ko: "AI 시대의 병목은 정보 생산이 아니라 정보 소화다."
+      mental_model:
+        - AI is an information generation engine.
+        - Human attention and memory are the bottleneck.
+        - Ontology is the digestion layer that turns output into usable knowledge, decisions, and actions.
+      overload_chain:
+        - AI says too much.
+        - Brian cannot digest all of it.
+        - The material is not remembered.
+        - It does not become execution.
+        - The user becomes tired.
+      output_triage:
+        now: current decision or action support
+        save: durable Concept, Relation, Action, Decision, or Evidence
+        archive: background detail to keep out of the main answer
+        discard: low-value expansion
+    preferred_answer_shape:
+      - One-liner
+      - Mental Model
+      - 3 Key Points
+      - Action
+      - Archive
+    assistant_design_principles:
+      - Default to the smallest useful answer when Brian is exploring or deciding.
+      - Use "core 3 + next action 1" unless Brian asks for depth, implementation, or a full artifact.
+      - Separate answer content into now/save/archive/discard instead of giving every related idea equal weight.
+      - Treat verbosity as a cost when the user's current bottleneck is attention or energy.
+      - Preserve detailed material in ontology/archive when it is useful, but keep the working answer digestible.
+    seminar_use:
+      - This is a strong explanation for why ontology matters in the AI era.
+      - LLM Wiki explains, but ontology filters, structures, remembers, and connects to action.
+      - A personal AI assistant should reduce cognitive load, not behave like a high-volume search result generator.
+    related_concept_refs:
+      - concept_cognitive_load_aware_ai_output
+      - concept_ontology_first_agent_memory
+      - concept_llm_wiki
+      - concept_operational_decision_system
+      - concept_solution_rag
+    related_task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_solution_rag_ontology_builder
+    source_refs:
+      - source_knowledge_conversation_20260620_ai_information_overload_cognitive_bandwidth
+    status: active_design_principle
+    confidence: high
+    needs_user_review: false
+  - id: thought_thread_20260619_solution_rag_ontology_builder
+    object_type: ThoughtThread
+    date: 2026-06-19
+    area: MIND
+    secondary_areas:
+      - CAREER
+    topic: Solution RAG for ontology construction
+    summary:
+      - Brian proposed using Solution RAG to build the ontology.
+      - The emerging interpretation is that Solution RAG retrieves solved cases, not just raw documents, and uses them as structured evidence for ontology construction.
+      - A solution case should preserve problem, context, attempts, chosen solution, validation evidence, reusable pattern, and candidate ontology objects/links.
+      - This extends local ontology-first Agentic RAG: retrieval is used not only to answer questions, but also to propose and improve the ontology itself.
+      - The first version should stay lightweight and local, using existing Issue, Resolution, WorkSession, Artifact, Decision, SourceRecord, evidence_refs, and needs_user_review fields.
+    conversation_flow:
+      - Previous discussions established local ontology-first Agentic RAG and day_graph traversal as the retrieval substrate.
+      - Brian then emphasized Sub System Level Ontology as the practical bridge to SoC-on-ontology.
+      - Brian now proposed Solution RAG as the method for building ontology from real solved cases.
+      - Brian then logged explicit ontology study across the surrounding concept boundaries: LLM Wiki/OKF, Graph DB, YAML/JSON/MD, DB storage, and Solution RAG.
+      - Brian then decided to apply Palantir-style advanced operational ontology, so Solution RAG should identify semantic objects, kinetic actions, and dynamic state/feedback in each solved case.
+      - The design implication is to build ontology bottom-up from verified solution cases instead of inventing a large schema upfront.
+      - The pilot should retrieve one or a few solved hardware/IP or agent-workflow cases and manually promote only reviewable, evidence-backed ontology candidates.
+    solution_case_shape:
+      - problem_or_question
+      - context
+      - attempts
+      - chosen_solution
+      - evidence_or_validation
+      - reusable_pattern
+      - ontology_objects_and_links_to_promote
+    related_concept_refs:
+      - concept_solution_rag
+      - concept_advanced_operational_ontology
+      - concept_local_ontology_first_agentic_rag
+      - concept_agentic_retrieval_substrate
+      - concept_ontology_first_agent_memory
+      - concept_subsystem_level_ontology
+      - concept_soc_on_ontology
+    related_project_refs:
+      - project_ai_agent
+    related_task_refs:
+      - task_ai_agent_solution_rag_ontology_builder
+      - task_ai_agent_agentic_retrieval_planner
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_soc_ontology_vds_document_design
+    prior_thread_refs:
+      - thought_thread_20260616_agentic_rag_graphrag_ontology_mapping
+      - thought_thread_20260617_soc_on_ontology_direction
+      - thought_thread_20260618_codex_seminar_ontology_demo_stack
+      - thought_thread_20260619_advanced_operational_ontology
+    source_refs:
+      - source_knowledge_conversation_20260619_solution_rag_ontology_build
+      - source_knowledge_conversation_20260619_ontology_study
+      - source_knowledge_conversation_20260619_palantir_advanced_ontology_apply_now
+    status: active_architecture_direction
+    confidence: medium
+    needs_user_review: true
+  - id: thought_thread_20260620_reading_as_operational_knowledge
+    object_type: ThoughtThread
+    date: 2026-06-20
+    area: MIND
+    secondary_areas:
+      - CAREER
+    topic: Reading as preservation, ontology, and operational knowledge
+    summary:
+      - Brian supplied a structured summary of "금방 까먹을 것은 읽지도 마라" and connected it to his current LLM Wiki, ontology, Graph RAG, Operational Ontology, Decision Platform, and Agent Loop thinking.
+      - The central interpretation is that reading is only raw input unless it is preserved, repeated, questioned, connected, and applied.
+      - The book's emphasis on important words, definitions, relationships, issues, alternatives, and classics maps directly onto ontology nodes, definitions, edges, decision criteria, and durable knowledge views.
+      - '"금방 까먹을 것은 읽지도 마라" should be treated as attention-budget discipline, not anti-reading: avoid spending limited attention on material that will not be promoted into memory, action, or judgment.'
+      - '"발효" maps to long-term synthesis: retrieved notes and ontology links become more valuable as they repeatedly connect across projects, decisions, work, and life.'
+    brian_llm_wiki_mapping:
+      reading: Raw Input collection.
+      memo: Evidence and first preservation.
+      key_terms: Ontology nodes.
+      definitions_and_relations: Schema, edges, and relation semantics.
+      questions: Query, evaluation, and validator seeds.
+      repetition: Retrieval and review loop.
+      application: Decision, action, task, and workflow conversion.
+      fermentation: Longitudinal synthesis that creates later insight from connected knowledge.
+    book_note_template:
+      - Why am I reading this book?
+      - What are the three core questions connected to my current problem?
+      - What are the ten key terms?
+      - What is each term's definition?
+      - How do the terms relate to each other?
+      - What are the author's three core claims?
+      - What are the opposing claims, issues, or alternatives?
+      - What action applies to my life or work?
+      - What should I review one week later?
+      - What nodes should remain in my knowledge graph?
+    connected_projects:
+      - Personal Ontology
+      - LLM Wiki
+      - Operational Ontology
+      - Decision Platform
+      - Agent Loop
+    related_concept_refs:
+      - concept_reading_to_operational_knowledge
+      - concept_llm_wiki
+      - concept_ontology_first_agent_memory
+      - concept_agentic_retrieval_substrate
+      - concept_advanced_operational_ontology
+      - concept_operational_decision_system
+      - concept_conversation_knowledge_memory
+    related_project_refs:
+      - project_ai_agent
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_okf_export_layer
+      - task_ai_agent_solution_rag_ontology_builder
+    prior_thread_refs:
+      - thought_thread_20260615_okf_llm_wiki_ontology
+      - thought_thread_20260618_codex_seminar_ontology_demo_stack
+      - thought_thread_20260619_solution_rag_ontology_builder
+      - thought_thread_20260620_palantir_as_operational_decision_system
+    source_refs:
+      - source_knowledge_book_note_20260620_dont_read_what_will_be_forgotten
+    status: active_architecture_direction
+    confidence: high
+    needs_user_review: false
+  - id: thought_thread_20260620_expertise_amplifies_ai_leverage
+    object_type: ThoughtThread
+    date: 2026-06-20
+    area: MIND
+    secondary_areas:
+      - CAREER
+    topic: Anthropic finding that expertise amplifies AI leverage
+    summary:
+      - Brian shared an Anthropic experiment result -- "experts use AI better" -- and asked to research and store it.
+      - The relevant study is Anthropic's "How AI Is Transforming Work at Anthropic" (Aug 2025), based on 132 surveys, 53 interviews, and ~200k Claude Code transcripts.
+      - The core finding is that expertise is amplified rather than replaced -- AI gives more leverage to people who deeply understand the problem.
+      - The main mechanism is steering and supervision, not raw speed -- experienced users recover troubled agent sessions while novices abandon them (~3-4x more often).
+      - The paradox of supervision means domain depth is what lets a human validate and correct AI output, so skill atrophy is itself a safety risk.
+      - Caveat -- the study does not directly quantify novice-vs-expert productivity gains and warns that future juniors may struggle to grow skills if they blindly accept model output.
+    distilled_summary_ko:
+      - "전문가가 AI를 더 잘 쓰는 건 맞지만, 이유는 속도가 아니라 방향을 잡고 검증하는 판단력 때문이다."
+      - "막힌 세션을 살리는 조종 능력과 잘못된 출력을 잡아내는 감독 능력이 전문성의 핵심 가치다."
+      - "AI는 실력을 대체하는 게 아니라 증폭하는 도구이므로 기본기 투자는 여전히 유효하다."
+    brian_relevance:
+      - Supports the Codex seminar message that agent rollout still depends on engineer expertise, steering, and verification rather than replacing them.
+      - Reinforces the ontology/evaluation direction -- evidence, verification gates, and decision quality matter more than raw automation.
+      - Connects to the reading-to-operational-knowledge theme that durable skill and structured knowledge compound human+AI leverage.
+      - Pairs with a YouTube reference on capturing experts' tacit know-how (암묵지) for AI -- if expertise is the differentiator, deliberately collecting and structuring that tacit knowledge becomes the next move.
+    conversation_flow:
+      - Brian stated the Anthropic result casually, then asked for a web search.
+      - The agent fetched the primary Anthropic article and a Korean translation to verify the claim.
+      - The agent produced a structured Korean summary, highlighting the steering/supervision mechanism and the no-direct-quantification caveat.
+      - Brian asked to organize it cleanly and then to store it as an ontology node.
+    related_concept_refs:
+      - concept_expertise_amplifies_ai_leverage
+      - concept_tacit_knowledge_capture_for_ai
+      - concept_agent_evaluation_monitoring
+      - concept_reading_to_operational_knowledge
+      - concept_agent_workflow_knowhow_capture
+    related_project_refs:
+      - project_ai_agent
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+    prior_thread_refs:
+      - thought_thread_20260618_codex_seminar_ontology_demo_stack
+    source_refs:
+      - source_knowledge_external_research_20260620_anthropic_expertise_amplifies_ai
+      - source_knowledge_external_reference_20260620_tacit_knowledge_for_ai_video
+    status: active
     confidence: high
     needs_user_review: false
 
@@ -727,6 +1766,166 @@ understandings:
       - source_knowledge_external_reference_20260618_claude_ppt_reference_design
     confidence: high
     needs_user_review: false
+  - id: understanding_20260619_external_codex_guide_is_onboarding_reference
+    object_type: Understanding
+    date: 2026-06-19
+    area: CAREER
+    secondary_areas:
+      - MIND
+    statement: "A strong external Codex guide video can be used as onboarding reference material, but Brian's seminar should differentiate itself through company-specific RTL/IP workflows, ontology, OKF, evaluation/monitoring, and SoC Knowledge Graph examples."
+    brian_wording_ko: "이거 내용 너무 좋은데?"
+    status: inferred_from_brian_reference
+    related_thread_ref: thought_thread_20260618_codex_seminar_ontology_demo_stack
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+    related_concept_refs:
+      - concept_agent_skills
+      - concept_codex_plan_mode
+      - concept_agent_workflow_knowhow_capture
+      - concept_soc_knowledge_graph
+    source_refs:
+      - source_knowledge_external_reference_20260619_codex_complete_guide_video
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260619_codex_guide_reinforces_operating_controls
+    object_type: Understanding
+    date: 2026-06-19
+    area: CAREER
+    secondary_areas:
+      - MIND
+    statement: "The Codex guide video's most useful content for Brian's seminar is not only command memorization; it reinforces operating controls: permissions, context hygiene, session continuity, Plan mode, review presets, visible status/resource monitoring, and speed/reasoning tradeoffs."
+    brian_wording_ko: "내용도 가져와줘."
+    status: assistant_extracted_from_reference
+    related_thread_ref: thought_thread_20260618_codex_seminar_ontology_demo_stack
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+    related_concept_refs:
+      - concept_codex_plan_mode
+      - concept_codex_thread_linking
+      - concept_agent_evaluation_monitoring
+      - concept_resource_efficiency_to_threshold
+      - concept_agent_skills
+    source_refs:
+      - source_knowledge_external_reference_20260619_codex_complete_guide_video
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260619_codex_guide_is_useful_seminar_skeleton
+    object_type: Understanding
+    date: 2026-06-19
+    area: CAREER
+    secondary_areas:
+      - MIND
+    statement: "The Codex guide video is useful for seminar structure because its chapter order forms a clear beginner-to-practical skeleton: motivation, setup, permissions, daily controls, context hygiene, Plan mode, review, compact, and final positioning."
+    brian_wording_ko: "세미나 구성할 때 아주 유용할듯?"
+    status: confirmed_by_brian
+    related_thread_ref: thought_thread_20260618_codex_seminar_ontology_demo_stack
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+    related_concept_refs:
+      - concept_codex_plan_mode
+      - concept_codex_thread_linking
+      - concept_agent_workflow_knowhow_capture
+      - concept_agent_skills
+    source_refs:
+      - source_knowledge_external_reference_20260619_codex_complete_guide_video
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260619_codex_open_source_scope_for_seminar
+    object_type: Understanding
+    date: 2026-06-19
+    area: CAREER
+    secondary_areas:
+      - MIND
+    statement: "The Codex seminar should mention Codex open source precisely: key components such as Codex CLI, Codex SDK, Codex App Server, Skills, and codex-universal are public, while the IDE extension and Codex web are not open-source."
+    brian_wording_ko: "코덱스가 오픈소스인걸 알려줘야 겠다. 세미나에서."
+    status: confirmed_by_brian_with_official_scope_note
+    related_thread_ref: thought_thread_20260618_codex_seminar_ontology_demo_stack
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+    related_concept_refs:
+      - concept_agent_skills
+      - concept_codex_plan_mode
+    source_refs:
+      - source_knowledge_conversation_20260619_codex_open_source_llm_wiki_interest
+    official_source_refs:
+      - https://developers.openai.com/codex/open-source
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260619_llm_wiki_interest_is_audience_signal
+    object_type: Understanding
+    date: 2026-06-19
+    area: MIND
+    secondary_areas:
+      - CAREER
+    statement: "Participant interest in LLM Wiki is a signal that Brian's seminar should clearly explain the LLM Wiki/OKF/ontology layering, not treat it as optional background."
+    brian_wording_ko: "다들 LLM Wiki에 대해 관심이 많네. 알려줘야 겠다."
+    status: confirmed_by_brian
+    related_thread_ref: thought_thread_20260618_codex_seminar_ontology_demo_stack
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+    related_concept_refs:
+      - concept_llm_wiki
+      - concept_okf_open_knowledge_format
+      - concept_ontology_first_agent_memory
+    source_refs:
+      - source_knowledge_conversation_20260619_codex_open_source_llm_wiki_interest
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260619_subsystem_level_ontology_is_critical_bridge
+    object_type: Understanding
+    date: 2026-06-19
+    area: CAREER
+    secondary_areas:
+      - MIND
+    statement: "Sub System Level Ontology is a critical bridge between concrete RTL/IP workflows and the broader SoC-on-ontology architecture; the seminar should show it through a narrow subsystem-level slice."
+    brian_wording_ko: "Sub System Level Ontology 아주 중요함 :)"
+    status: confirmed_by_brian
+    related_thread_ref: thought_thread_20260617_soc_on_ontology_direction
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+    related_concept_refs:
+      - concept_subsystem_level_ontology
+      - concept_soc_on_ontology
+      - concept_soc_knowledge_graph
+      - concept_hardware_ip_agent
+    source_refs:
+      - source_knowledge_conversation_20260617_subsystem_level_ontology_need
+      - source_knowledge_conversation_20260619_subsystem_level_ontology_importance
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260619_rtl_tooling_is_demo_prerequisite
+    object_type: Understanding
+    date: 2026-06-19
+    area: CAREER
+    secondary_areas:
+      - MIND
+    statement: "Reliable hardware/IP demos for the Codex seminar need a local tooling checklist that includes Verilator, Icarus Verilog/iverilog, and pyslang before live parsing, lint/simulation, waveform/MCP, or subsystem ontology demos."
+    brian_wording_ko: "verilator, iverilog, pyslang 등도 설치해야됨."
+    status: confirmed_by_brian
+    related_thread_ref: thought_thread_20260618_codex_seminar_ontology_demo_stack
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+    related_concept_refs:
+      - concept_hardware_ip_agent
+      - concept_subsystem_level_ontology
+    source_refs:
+      - source_knowledge_conversation_20260619_rtl_tooling_install_requirements
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260619_solution_rag_builds_ontology_from_cases
+    object_type: Understanding
+    date: 2026-06-19
+    area: CAREER
+    secondary_areas:
+      - MIND
+    statement: "Solution RAG should be used as an ontology construction loop: retrieve prior solved cases, extract problem/context/attempt/resolution/evidence structure, propose ontology objects and links, then promote only reviewed evidence-backed candidates."
+    brian_wording_ko: "Solution RAG를 이용해서 온톨로지 구축해보자:)"
+    status: confirmed_by_brian_with_inferred_definition
+    related_thread_ref: thought_thread_20260619_solution_rag_ontology_builder
+    related_task_ref: task_ai_agent_solution_rag_ontology_builder
+    related_concept_refs:
+      - concept_solution_rag
+      - concept_local_ontology_first_agentic_rag
+      - concept_agentic_retrieval_substrate
+      - concept_ontology_first_agent_memory
+      - concept_subsystem_level_ontology
+    source_refs:
+      - source_knowledge_conversation_20260619_solution_rag_ontology_build
+    confidence: medium
+    needs_user_review: true
   - id: understanding_20260618_agent_workflow_knowhow_is_teachable_asset
     object_type: Understanding
     date: 2026-06-18
@@ -847,8 +2046,353 @@ understandings:
       - source_knowledge_conversation_20260618_thread_linking_methods
     confidence: high
     needs_user_review: false
+  - id: understanding_20260619_advanced_ontology_is_operational_layer
+    object_type: Understanding
+    date: 2026-06-19
+    area: CAREER
+    secondary_areas:
+      - MIND
+    statement: "Advanced ontology should be treated as an operational layer: semantic objects/links must be paired with kinetic actions/functions and dynamic state/feedback so the system can support decisions, not only descriptions."
+    brian_wording_ko: "오 바로 적용 해야겠다. 꽤 괜찮은데?"
+    status: confirmed_by_brian_direction
+    related_thread_ref: thought_thread_20260619_advanced_operational_ontology
+    related_task_ref: task_ai_agent_codex_ontology_development_plugin
+    related_concept_refs:
+      - concept_advanced_operational_ontology
+      - concept_ontology_first_agent_memory
+      - concept_solution_rag
+    source_refs:
+      - source_knowledge_conversation_20260619_palantir_advanced_ontology_apply_now
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260619_palantir_stack_soc_boundary
+    object_type: Understanding
+    date: 2026-06-19
+    area: CAREER
+    secondary_areas:
+      - MIND
+    statement: "For Brian Ontology Agent and SoC development, Foundry-like data/ontology and AIP-like agent workflows are the near-term base; Gotham should be treated as a later domain-specific SoC operation cockpit, not as the initial product to clone."
+    brian_wording_ko: "고담 처럼 해야하나? SOC 개발. 파운드리랑 무슨 차이일까? semantic/kinetic/dynamic이 그 개념?"
+    compact_model_ko:
+      - "Foundry: 회사/로컬 운영 데이터를 Ontology로 올리는 기반."
+      - "AIP: Agent가 Ontology를 읽고 추론하고 액션을 돕는 계층."
+      - "Apollo: 반복 실행, 배포, 업데이트, 모니터링 계층."
+      - "Gotham: 특정 도메인의 작전 상황판. SoC에서는 debug/signoff cockpit 후보."
+      - "Semantic: 무엇이 존재하는가."
+      - "Kinetic: 무엇을 할 수 있는가."
+      - "Dynamic: 지금 상태가 어떤가."
+    status: confirmed_by_brian_question_flow
+    related_thread_ref: thought_thread_20260619_palantir_platform_mapping_for_soc
+    related_task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+    related_concept_refs:
+      - concept_palantir_platform_stack
+      - concept_foundry_like_operational_data_layer
+      - concept_aip_like_agent_layer
+      - concept_gotham_like_soc_operation_cockpit
+      - concept_advanced_operational_ontology
+      - concept_soc_on_ontology
+    source_refs:
+      - source_knowledge_conversation_20260619_palantir_platform_soc_mapping
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260620_palantir_core_is_operational_decision_system
+    object_type: Understanding
+    date: 2026-06-20
+    area: CAREER
+    secondary_areas:
+      - MIND
+    statement: "Palantir's deeper core is an operational decision system: it turns customer data into real-world operational objects, lets people and agents judge and act on those objects, writes state back when appropriate, and preserves evidence and feedback for the next decision."
+    brian_wording_ko: "고객 데이터를 현실 업무 객체로 만들고, 그 위에서 사람이 판단하고 액션하게 하는 운영 시스템. 이게 핵심인가? 팔란티어? 회사는 의사결정이 매우 중요하다 그지?"
+    implications:
+      - AIP was not the original foundation; it is an LLM/agent accelerator over an already useful operational ontology and workflow substrate.
+      - Foundry-like ontology and evidence/action loops should come before any chatbot or dashboard-first implementation.
+      - For SoC development, the corresponding loop is raw engineering data -> SoC ontology objects -> current state/judgment -> action/writeback -> evidence/feedback.
+      - The company-level framing is decision quality and execution quality: ontology is valuable when it makes decisions grounded, traceable, owned, and improvable.
+    status: confirmed_by_brian_question_flow
+    related_thread_ref: thought_thread_20260620_palantir_as_operational_decision_system
+    related_task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+    related_concept_refs:
+      - concept_operational_decision_system
+      - concept_palantir_platform_stack
+      - concept_advanced_operational_ontology
+      - concept_foundry_like_operational_data_layer
+      - concept_aip_like_agent_layer
+      - concept_soc_on_ontology
+    source_refs:
+      - source_knowledge_conversation_20260620_palantir_operational_decision_core
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260620_ai_bottleneck_is_cognitive_bandwidth
+    object_type: Understanding
+    date: 2026-06-20
+    area: MIND
+    secondary_areas:
+      - CAREER
+    statement: "The practical bottleneck in modern AI use is often not information scarcity or model capability, but human cognitive bandwidth: AI output must be filtered into a small decision/action/memory shape."
+    brian_wording_ko: "AI는 정보를 쏟아내고, 온톨로지는 그것을 소화 가능한 지식으로 바꾼다."
+    implications:
+      - Brian Ontology Agent should avoid overwhelming Brian with long answers unless depth is requested.
+      - Default answers should support a current decision, a durable memory, or one concrete next action.
+      - The preferred response pattern is one-liner, mental model, three key points, one action, and optional archive.
+      - Ontology should absorb extra detail into structured memory so the working answer remains small.
+    status: confirmed_by_brian_positive_reaction
+    related_thread_ref: thought_thread_20260620_ai_information_overload_and_ontology_digest
+    related_task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+    related_concept_refs:
+      - concept_cognitive_load_aware_ai_output
+      - concept_ontology_first_agent_memory
+      - concept_operational_decision_system
+    source_refs:
+      - source_knowledge_conversation_20260620_ai_information_overload_cognitive_bandwidth
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260620_ai_app_layer_not_dead_thesis
+    object_type: Understanding
+    date: 2026-06-20
+    area: MIND
+    secondary_areas:
+      - CAREER
+    statement: "Brian is tracking the AI application-layer debate; the useful takeaway from the recent a16z article is that generic horizontal wrappers near model-lab roadmaps are vulnerable, while domain-specific operational application layers can remain valuable when they own context, workflow, data, evidence, trust, and distribution."
+    brian_wording_ko: "a16z가 앱 레이어는 죽지 않았다로 글을 씀."
+    status: inferred_from_brian_reference_and_external_article
+    related_thread_ref: thought_thread_20260618_codex_seminar_ontology_demo_stack
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+    related_concept_refs:
+      - concept_ontology_first_agent_memory
+      - concept_agentic_retrieval_substrate
+      - concept_solution_rag
+      - concept_subsystem_level_ontology
+      - concept_agent_skills
+    source_refs:
+      - source_knowledge_external_reference_20260620_a16z_app_layer_not_dead
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260620_reading_becomes_knowledge_when_operationalized
+    object_type: Understanding
+    date: 2026-06-20
+    area: MIND
+    secondary_areas:
+      - CAREER
+    statement: "For Brian, useful reading is not measured by pages completed; it becomes knowledge only when key claims, terms, definitions, relationships, questions, evidence, and applications are preserved in a retrievable structure and reused for decisions or actions."
+    brian_wording_ko: "읽었다가 중요한 게 아니라, 읽은 것을 보존하고 활용할 수 있어야 진짜 공부다."
+    compact_model_ko:
+      - "읽기: 비정형 입력."
+      - "메모: 1차 보존과 evidence."
+      - "핵심어/정의/관계: ontology node/schema/edge."
+      - "질문: query/evaluation/validator."
+      - "반복: retrieval + review loop."
+      - "활용: decision/action/task 변환."
+      - "발효: 시간이 지나며 연결되는 insight."
+    status: confirmed_by_brian_book_summary
+    related_thread_ref: thought_thread_20260620_reading_as_operational_knowledge
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+    related_concept_refs:
+      - concept_reading_to_operational_knowledge
+      - concept_llm_wiki
+      - concept_ontology_first_agent_memory
+      - concept_agentic_retrieval_substrate
+      - concept_advanced_operational_ontology
+    source_refs:
+      - source_knowledge_book_note_20260620_dont_read_what_will_be_forgotten
+    confidence: high
+    needs_user_review: false
 
 architecture_directions:
+  - id: architecture_direction_20260619_advanced_operational_ontology
+    object_type: ArchitectureDirection
+    date: 2026-06-19
+    area: CAREER
+    secondary_areas:
+      - MIND
+    project_ref: project_ai_agent
+    title: Advanced operational ontology for Brian Ontology Agent
+    statement: "Upgrade Brian Ontology Agent from basic object/link ontology toward an operational ontology that separates semantic nouns, kinetic verbs, and dynamic state/feedback."
+    rationale:
+      - Palantir's framing makes clear why object/link modeling alone is not enough for decision support.
+      - Brian's current ontology already stores many dynamic fields such as status, confidence, needs_user_review, blockers, evidence_refs, and source_refs.
+      - Brian's current task records already imply kinetic actions, but actions/functions/writeback are not yet separated as a first-class ontology layer.
+      - Applying this model immediately can make Milano and AI-agent work records more useful for decisions, not only recall.
+    implementation_direction:
+      semantic_layer:
+        - stable object types and links
+        - project/task/component/subsystem/IP/interface/requirement/issue/evidence/decision concepts
+      kinetic_layer:
+        - action records
+        - function or workflow definitions
+        - validation runs
+        - config changes
+        - note promotion and ontology edit operations
+      dynamic_layer:
+        - current task/project state
+        - owner and review state
+        - confidence and needs_user_review
+        - pass/fail evidence
+        - feedback from completed work
+        - scenario or what-if state when available
+      first_slice: Model one live Milano workflow as Decision -> Action -> Evidence -> Feedback, starting with either NVMe VIP setup or SDC/GEN7 PHY review.
+    tradeoffs:
+      - The first implementation should stay YAML/local and should not require a service or graph database.
+      - Do not over-schema every note; promote stable patterns from real work sessions and solution cases.
+      - Keep raw source records intact so future schema changes can reinterpret old events.
+    follow_up_task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_solution_rag_ontology_builder
+      - task_ai_agent_codex_seminar_prepare
+    source_refs:
+      - source_knowledge_conversation_20260619_palantir_advanced_ontology_apply_now
+    status: active_direction_candidate
+    confidence: high
+    needs_user_review: true
+  - id: architecture_direction_20260619_foundry_aip_gotham_soc_stack
+    object_type: ArchitectureDirection
+    date: 2026-06-19
+    area: CAREER
+    secondary_areas:
+      - MIND
+    project_ref: project_ai_agent
+    title: Foundry/AIP/Gotham boundary for SoC ontology work
+    statement: "Build Brian's SoC ontology platform as a Foundry-like local data and ontology substrate plus AIP-like Codex agents first; defer Gotham-like cockpit UX until repeated operational slices prove the needed status, risk, owner, and next-action views."
+    rationale:
+      - Foundry-like ontology work is foundational because SoC debug/signoff views need stable objects, links, current state, and evidence.
+      - AIP-like agent workflows become useful as soon as tasks, issues, evidence, decisions, and actions are queryable.
+      - Gotham-like UX is valuable for daily operations, but it should be a projection over the ontology rather than a separate source of truth.
+      - SoC development has a natural operational cockpit shape: regression fail triage, SDC/timing status, VIP setup validation, SFR/handler investigation, subsystem blockers, owners, and signoff evidence.
+    implementation_direction:
+      phase_1_foundry_like_base:
+        - keep YAML ontology as canonical source
+        - link RTL/spec/filelist/SDC/log/report/task/issue/evidence records
+        - model semantic objects and links first enough for useful retrieval
+      phase_2_aip_like_agent_layer:
+        - use Codex and Solution RAG to query, summarize, validate, and propose next actions
+        - model kinetic actions and feedback records for live Milano work
+        - attach evidence and confidence to agent outputs
+      phase_3_gotham_like_soc_cockpit:
+        - build status boards only after multiple live workflows share common state fields
+        - show blocker/risk/owner/evidence/next-action views for Milano and future SoC work
+        - keep cockpit views generated from ontology records, not manually maintained
+      apollo_like_future_layer:
+        - package repeatable workflows as skills/plugins only when the local loop is stable
+        - add validation/monitoring around repeated execution
+    first_slice_candidates:
+      - NVMe VIP setup with PCIe IB/OB enabled and all other paths disabled.
+      - 2026-06-22 Milano SDC cleanup, PHY GEN7 SDC, link0 wrapper, filelist, and timing review.
+      - SFR/handler investigation as a semantic/kinetic/dynamic example.
+    follow_up_task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_solution_rag_ontology_builder
+      - task_ai_agent_codex_seminar_prepare
+    source_refs:
+      - source_knowledge_conversation_20260619_palantir_platform_soc_mapping
+      - source_knowledge_conversation_20260619_palantir_advanced_ontology_apply_now
+    status: active_direction
+    confidence: high
+    needs_user_review: false
+  - id: architecture_direction_20260620_operational_decision_loop_first
+    object_type: ArchitectureDirection
+    date: 2026-06-20
+    area: CAREER
+    secondary_areas:
+      - MIND
+    project_ref: project_ai_agent
+    title: Operational decision loop before chatbot or dashboard
+    statement: "Build Brian Ontology Agent around the operational decision loop first: convert work data into operational objects, support judgment, record actions/writeback, preserve evidence, and feed results into the next decision; treat Codex/AIP-like agents and Gotham-like cockpits as layers over that loop."
+    rationale:
+      - Palantir's success before AIP suggests the durable value is not the LLM layer alone but the operational ontology and workflow loop beneath it.
+      - A chatbot without stable objects, state, evidence, and actions becomes a weak Q&A wrapper.
+      - A dashboard without authoritative ontology state becomes a manually maintained view rather than an operating system.
+      - SoC development needs traceable decisions and evidence because debug, SDC, timing, VIP setup, and signoff work must survive handoff and review.
+    implementation_direction:
+      step_1_model_operational_objects:
+        - SoC
+        - Subsystem
+        - IP
+        - Interface
+        - Requirement
+        - Test
+        - Issue
+        - Evidence
+        - Decision
+        - OperationalAction
+        - OperationalState
+      step_2_record_current_state:
+        - status
+        - owner
+        - blocker
+        - risk
+        - confidence
+        - needs_user_review
+        - latest evidence
+      step_3_record_actions_and_feedback:
+        - action intent
+        - input refs
+        - expected effects
+        - execution or validation result
+        - feedback to next decision
+      step_4_add_agent_help:
+        - Codex can query, summarize, check gaps, propose next actions, and promote notes once the loop exists.
+      step_5_generate_views:
+        - Obsidian, LLM Wiki/OKF, HTML, and future Gotham-like cockpit views should be generated projections over ontology state.
+    first_live_use_cases:
+      - NVMe VIP setup with PCIe IB/OB only enabled.
+      - Milano SDC cleanup and 2026-06-22 GEN7 PHY/link0/filelist/timing review.
+      - Handler and SFR investigation.
+      - Solution RAG case extraction into semantic objects, kinetic actions, and dynamic feedback.
+    follow_up_task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_solution_rag_ontology_builder
+      - task_ai_agent_codex_seminar_prepare
+    source_refs:
+      - source_knowledge_conversation_20260620_palantir_operational_decision_core
+      - source_knowledge_conversation_20260619_palantir_platform_soc_mapping
+    status: active_direction
+    confidence: high
+    needs_user_review: false
+  - id: architecture_direction_20260620_cognitive_load_aware_assistant_output
+    object_type: ArchitectureDirection
+    date: 2026-06-20
+    area: CAREER
+    secondary_areas:
+      - MIND
+    project_ref: project_ai_agent
+    title: Cognitive-load-aware assistant output protocol
+    statement: "Design Brian Ontology Agent to reduce cognitive load: provide the smallest useful answer for the current decision, store durable structure in ontology, and keep optional detail in an archive layer."
+    rationale:
+      - AI can generate more explanation, alternatives, and examples than Brian can use in one sitting.
+      - Excessive output can reduce memory, execution, and energy even when the content is correct.
+      - Ontology-first memory allows the assistant to preserve detail without forcing all detail into the immediate answer.
+      - This response discipline aligns with the operational decision loop: output should help Brian decide, act, or save durable knowledge.
+    default_protocol:
+      one_liner: one sentence conclusion
+      mental_model: compact memorable structure
+      key_points: maximum 3 unless Brian asks for more
+      action: one concrete next action
+      archive: optional detail, citations, examples, or ontology records
+    triage_policy:
+      now: answer content needed for the current decision or task
+      save: concept, relation, decision, action, evidence, or rule worth preserving
+      archive: useful background that should not dominate the main answer
+      discard: related but low-value expansion
+    implementation_direction:
+      - Add response templates for concept questions, decision questions, and ontology-save requests.
+      - Use long-form output only when Brian asks for deep research, implementation, seminar material, or a generated artifact.
+      - When saving a large concept, store source/distillation in ontology and return a compact confirmation.
+      - In Codex seminar material, explain this as the reason ontology is useful: it converts AI output into memory/action, not just more text.
+    follow_up_task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_solution_rag_ontology_builder
+    source_refs:
+      - source_knowledge_conversation_20260620_ai_information_overload_cognitive_bandwidth
+    status: active_direction
+    confidence: high
+    needs_user_review: false
+
   - id: architecture_direction_20260615_ontology_first_okf_export
     object_type: ArchitectureDirection
     date: 2026-06-15
@@ -905,6 +2449,7 @@ architecture_directions:
     follow_up_task_refs:
       - task_ai_agent_agentic_retrieval_planner
       - task_ai_agent_okf_export_layer
+      - task_ai_agent_solution_rag_ontology_builder
     source_refs:
       - source_knowledge_conversation_20260616_agentic_rag_similarity_question
       - source_knowledge_conversation_20260616_agentic_rag_mapping_answer
@@ -912,6 +2457,57 @@ architecture_directions:
     status: active_direction
     confidence: high
     needs_user_review: false
+  - id: architecture_direction_20260619_solution_rag_ontology_builder
+    object_type: ArchitectureDirection
+    date: 2026-06-19
+    area: CAREER
+    secondary_areas:
+      - MIND
+    project_ref: project_ai_agent
+    title: Solution RAG for ontology construction
+    statement: "Build the ontology from retrieved solution cases: use solved problems and validated workflows as evidence-backed seeds for ontology objects, relationships, decisions, patterns, and reusable skills."
+    rationale:
+      - Solution cases contain higher-signal structure than arbitrary notes because they include problem context, attempted paths, selected resolution, and validation evidence.
+      - Brian's existing ontology already supports Issue, Resolution, WorkSession, Artifact, Decision, SourceRecord, evidence refs, and review flags, so the first version can stay local and lightweight.
+      - This reduces the risk of inventing an abstract hardware ontology upfront; the ontology grows from real solved cases and keeps evidence attached.
+      - The method is especially useful for Sub System Level Ontology because subsystem/IP relationships become clear when traced through actual solved integration, verification, or documentation problems.
+    implementation_direction:
+      solution_case_index:
+        - Problem or question
+        - Context and scope
+        - Attempts and rejected paths
+        - Chosen solution
+        - Validation evidence
+        - Reusable pattern
+        - Candidate ontology objects and links
+      retrieval_inputs:
+        - source_records
+        - issues and resolutions
+        - work sessions
+        - artifacts and validation logs
+        - decisions and status updates
+        - concept refs and semantic entity refs
+      promotion_policy:
+        - preserve raw records
+        - keep candidate links reviewable
+        - attach source_refs and evidence_refs
+        - use confidence and needs_user_review
+        - promote only narrow objects or links that survive review
+      first_slice_candidate: Use one known solved case, such as AIN-P Multi VF mapping or SpecLoop/OAG elite_merge, to produce a SolutionCase-style record and candidate subsystem ontology objects.
+    tradeoffs:
+      - Stronger grounding than schema-first modeling, but it depends on having enough well-recorded solution cases.
+      - Retrieval can surface similar cases, but promotion still needs human review because solution similarity can hide important context differences.
+      - This should complement Agentic RAG/GraphRAG retrieval, not replace the canonical ontology or evidence policy.
+    follow_up_task_refs:
+      - task_ai_agent_solution_rag_ontology_builder
+      - task_ai_agent_agentic_retrieval_planner
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_soc_ontology_vds_document_design
+    source_refs:
+      - source_knowledge_conversation_20260619_solution_rag_ontology_build
+    status: active_direction_candidate
+    confidence: medium
+    needs_user_review: true
   - id: architecture_direction_20260617_soc_on_ontology_layer
     object_type: ArchitectureDirection
     date: 2026-06-17
@@ -924,6 +2520,7 @@ architecture_directions:
     rationale:
       - Hardware design work becomes valuable when the agent understands relationships across SoC, subsystem, IP block, interface, requirement, implementation, verification, evidence, owner, and decision objects.
       - Subsystem-level ontology is a necessary intermediate step, but the broader destination is SoC-level reasoning and workflow support.
+      - Brian explicitly reaffirmed Sub System Level Ontology as very important on 2026-06-19, so the first useful slice should be subsystem-level rather than only low-level files or abstract SoC models.
       - A SoC-on-ontology demo can show why this is more powerful than a TODO tracker, file search tool, or fixed-script planner.
     implementation_direction:
       ontology_substrate:
@@ -962,8 +2559,10 @@ architecture_directions:
       - task_ai_agent_company_codex_rollout_support
       - task_ai_agent_soc_ontology_vds_document_design
     source_refs:
+      - source_knowledge_conversation_20260617_subsystem_level_ontology_need
       - source_knowledge_conversation_20260617_soc_on_ontology_direction
       - source_knowledge_conversation_20260617_codex_seminar_soc_ontology_vds
+      - source_knowledge_conversation_20260619_subsystem_level_ontology_importance
     status: active_direction
     confidence: high
     needs_user_review: false
@@ -1028,6 +2627,36 @@ knowledge_interests:
       - source_knowledge_conversation_20260616_record_agentic_rag_flow
     confidence: high
     needs_user_review: false
+  - id: knowledge_interest_20260619_solution_rag_ontology_construction
+    object_type: KnowledgeInterest
+    date: 2026-06-19
+    area: MIND
+    secondary_areas:
+      - CAREER
+    topic: Solution RAG for ontology construction
+    current_interest:
+      - Using Solution RAG to build ontology from solved cases instead of only from abstract schema design.
+      - Treating problems, attempted fixes, resolutions, validation evidence, and reusable lessons as high-signal ontology construction material.
+      - Connecting Solution RAG to Sub System Level Ontology and SoC-on-ontology for hardware/IP workflows.
+    development_direction:
+      - Start with one manually reviewed seed case.
+      - Extract candidate Issue, Resolution, Artifact, Decision, Concept, Pattern, and relation objects.
+      - Add review/promotion rules before automating extraction.
+      - Later use retrieval to find similar solution cases when designing a new ontology slice.
+    related_project_refs:
+      - project_ai_agent
+    related_concept_refs:
+      - concept_solution_rag
+      - concept_local_ontology_first_agentic_rag
+      - concept_agentic_retrieval_substrate
+      - concept_ontology_first_agent_memory
+      - concept_subsystem_level_ontology
+      - concept_soc_on_ontology
+    status: active_interest
+    source_refs:
+      - source_knowledge_conversation_20260619_solution_rag_ontology_build
+    confidence: medium
+    needs_user_review: true
   - id: knowledge_interest_20260617_soc_ontology_hardware_agent
     object_type: KnowledgeInterest
     date: 2026-06-17
@@ -1039,6 +2668,7 @@ knowledge_interests:
       - Building a hardware IP/design agent whose core model is ontology, not TODO lists or file search.
       - Raising the model from subsystem-level objects toward SoC-level structure and reasoning.
       - Making SoC, subsystem, IP block, interface, requirement, verification, evidence, owner, and decision objects queryable and connected.
+      - Treating Sub System Level Ontology as a critical practical bridge, not only a transitional schema detail.
     development_direction:
       - Use subsystem-level ontology as the next practical slice.
       - Build toward SoC-on-ontology as the longer-term architecture.
@@ -1052,7 +2682,9 @@ knowledge_interests:
       - concept_ontology_first_agent_memory
     status: active_interest
     source_refs:
+      - source_knowledge_conversation_20260617_subsystem_level_ontology_need
       - source_knowledge_conversation_20260617_soc_on_ontology_direction
+      - source_knowledge_conversation_20260619_subsystem_level_ontology_importance
     confidence: high
     needs_user_review: false
   - id: knowledge_interest_20260618_codex_seminar_knowledge_asset_stack
@@ -1067,6 +2699,7 @@ knowledge_interests:
       - Showing LLM Wiki, OKF, ontology, Obsidian, Interactive HTML, and Word/PPT skills as connected layers.
       - Explaining evaluation and monitoring so engineers can judge whether an agent reached quality and how much resource it consumed.
       - Making SoC Knowledge Graph and hardware-IP examples concrete enough for RTL/IP engineers.
+      - Using the a16z "application layer is not dead" thesis as external framing for why domain-specific AI workflows and ontology-backed app layers still matter.
       - Teaching Brian's common_ai_agent and ontology_ip_agent know-how as workflow construction patterns.
       - Turning one small reliable task into a reusable skill.
       - Designing handoff skills, skill-making skills, and feedback learning loops so workflows improve through use.
@@ -1112,6 +2745,36 @@ knowledge_interests:
       - source_knowledge_conversation_20260618_feedback_loop_failure_learning
       - source_knowledge_conversation_20260618_plan_mode_shot_worktree_usage
       - source_knowledge_conversation_20260618_thread_linking_methods
+      - source_knowledge_external_reference_20260620_a16z_app_layer_not_dead
+    confidence: high
+    needs_user_review: false
+  - id: knowledge_interest_20260620_ai_application_layer_strategy
+    object_type: KnowledgeInterest
+    date: 2026-06-20
+    area: MIND
+    secondary_areas:
+      - CAREER
+    topic: AI application layer strategy
+    current_interest:
+      - Understanding whether the AI app layer is being killed by foundation model labs or being reshaped into thicker, domain-specific products.
+      - Tracking a16z's framing that the dangerous path is the labs' horizontal "Yellow Brick Road," not every application-layer opportunity.
+      - Connecting this debate to Brian's own ontology-first agent direction, where value comes from domain workflow, state, evidence, and reusable knowledge rather than a thin prompt wrapper.
+    development_direction:
+      - Use this as a strategic frame for the Codex seminar: generic AI tools are necessary but not sufficient.
+      - Emphasize domain-specific app layers such as SoC/subsystem ontology, Solution RAG, LLM Wiki, workflow skills, validation evidence, and operational state.
+      - Compare future AI-agent ideas against the question: is this on a model lab's obvious horizontal path, or does it own domain context and workflow depth?
+    related_project_refs:
+      - project_ai_agent
+    related_task_ref: task_ai_agent_codex_seminar_prepare
+    related_concept_refs:
+      - concept_ontology_first_agent_memory
+      - concept_agentic_retrieval_substrate
+      - concept_solution_rag
+      - concept_subsystem_level_ontology
+      - concept_agent_skills
+    status: active_interest
+    source_refs:
+      - source_knowledge_external_reference_20260620_a16z_app_layer_not_dead
     confidence: high
     needs_user_review: false
 

@@ -1,5 +1,5 @@
 schema_version: 1
-updated_at: 2026-06-18
+updated_at: 2026-06-20
 profile_ref: person_brian
 area: BODY
 
@@ -19,13 +19,16 @@ training_programs:
     status: active
     start_date_estimate: 2026-03-25
     start_date_precision: approximate_late_march
-    sessions_completed_estimate: 16
+    sessions_completed_estimate: 21
+    paper_records_imported_count: 18
+    paper_records_imported_date: 2026-06-20
+    latest_recorded_session_date: 2026-06-20
     baseline_frequency_per_week: 2
     current_frequency_per_week: 3
     recent_frequency_change_date_estimate: 2026-06
     frequency_change_reason: Started going with a coworker at the company gym, increasing recent training frequency.
     confidence: medium
-    notes: Brian reports receiving PT from late March 2026 through 2026-06-15, about 16 sessions; baseline was twice weekly and recently increased toward three times weekly.
+    notes: Brian reports receiving PT from late March 2026; handwritten PT records and recent conversation now cover 21 completed PT-program workouts through 2026-06-20, plus one 2026-06-15 access issue and home fallback.
 
 body_composition_records:
   - id: body_composition_20260618_0700_inbody_app
@@ -120,6 +123,8 @@ exercise_catalog:
       - 불스스
       - Bulgarian split squat
       - split squat
+      - 스플릿 스쿼트
+      - 스미스 머신 스플릿 스쿼트
     muscle_groups:
       - quads
       - glutes
@@ -199,6 +204,8 @@ exercise_catalog:
       - 케이블 암 풀다운
       - 암 풀다운
       - 암풀다운
+      - 일자바 암풀다운
+      - 케이블 스트레이트 암 풀다운 일자바
       - 스트레이트 암 풀다운
       - cable arm pulldown
       - straight-arm pulldown
@@ -256,8 +263,210 @@ exercise_catalog:
       - core
     equipment: barbell_or_unspecified
     notes: Use when Brian records deadlift work; capture empty-bar work separately when exact bar weight is not specified.
+  - id: exercise_cable_crossover
+    object_type: ExerciseCatalog
+    name: Cable crossover
+    aliases:
+      - 케이블 크로스오버
+      - 케이블크로스오버
+      - 케이블 크로스
+      - 케이블크로스
+      - cable crossover
+    muscle_groups:
+      - chest
+      - shoulders
+      - core
+    equipment: cable_machine
+    notes: Confirmed by Brian for the handwritten PT sheets.
+  - id: exercise_side_lateral_raise
+    object_type: ExerciseCatalog
+    name: Side lateral raise
+    aliases:
+      - 사이드 레터럴 레이즈
+      - 사레레
+      - 사이드레터럴레이즈
+      - side lateral raise
+      - lateral raise
+    muscle_groups:
+      - side_delts
+      - shoulders
+      - traps
+    equipment: dumbbells_or_machine
+    notes: Confirmed by Brian for the handwritten PT sheets.
+  - id: exercise_free_squat
+    object_type: ExerciseCatalog
+    name: Free squat
+    aliases:
+      - 프리 스쿼트
+      - 프리스쿼트
+      - 바벨 백 스쿼트
+      - 백 스쿼트
+      - free squat
+      - back squat
+    muscle_groups:
+      - quads
+      - glutes
+      - hamstrings
+      - core
+    equipment: barbell_or_bodyweight
+    notes: Confirmed by Brian as the movement previously misread as hip thrust.
+  - id: exercise_leg_extension
+    object_type: ExerciseCatalog
+    name: Leg extension
+    aliases:
+      - 레그익스텐션
+      - 레그 익스텐션
+      - leg extension
+    muscle_groups:
+      - quads
+    equipment: machine
+    notes: Machine knee extension.
+  - id: exercise_dumbbell_curl
+    object_type: ExerciseCatalog
+    name: Dumbbell curl
+    aliases:
+      - 덤벨컬
+      - 덤벨 컬
+      - dumbbell curl
+    muscle_groups:
+      - biceps
+      - forearms
+    equipment: dumbbells
+    notes: Use for dumbbell biceps curls.
+  - id: exercise_cable_triceps_pushdown
+    object_type: ExerciseCatalog
+    name: Cable triceps pushdown
+    aliases:
+      - 케이블 푸쉬다운
+      - 케이블푸쉬다운
+      - 케이블 푸시다운
+      - 케이블푸시다운
+      - 케이블 푸쉬다운 로프
+      - triceps pushdown
+      - cable triceps pushdown
+    muscle_groups:
+      - triceps
+      - shoulders
+      - core
+    equipment: cable_machine
+    notes: Use for rope or bar cable triceps pushdown.
+  - id: exercise_cable_curl
+    object_type: ExerciseCatalog
+    name: Cable curl
+    aliases:
+      - 케이블컬
+      - 케이블 컬
+      - cable curl
+    muscle_groups:
+      - biceps
+      - forearms
+    equipment: cable_machine
+    notes: Use for cable biceps curls.
+  - id: exercise_dumbbell_shoulder_press
+    object_type: ExerciseCatalog
+    name: Dumbbell shoulder press
+    aliases:
+      - 덤벨숄더프레스
+      - 덤벨 숄더 프레스
+      - shoulder press
+      - dumbbell shoulder press
+    muscle_groups:
+      - shoulders
+      - triceps
+      - upper_chest
+    equipment: dumbbells
+    notes: Use when shoulder press appears in the PT sheets.
+  - id: exercise_incline_bench_press
+    object_type: ExerciseCatalog
+    name: Incline bench press
+    aliases:
+      - 인클라인 벤치
+      - 인클라인벤치
+      - 인클라인 벤치 프레스
+      - incline bench press
+    muscle_groups:
+      - upper_chest
+      - shoulders
+      - triceps
+    equipment: barbell_or_dumbbells_or_machine
+    notes: Use when the exact incline bench equipment is not specified.
+  - id: exercise_unknown_pt_movement
+    object_type: ExerciseCatalog
+    name: Unknown PT movement
+    aliases:
+      - 판독 필요 PT 운동
+      - 확인 필요 운동
+    muscle_groups:
+      - unknown
+    equipment: unknown
+    notes: Temporary placeholder for handwritten PT rows that need Brian review.
 
 workout_records:
+  - id: workoutsession_20260620_pt_lower_body_arms_paper
+    object_type: WorkoutSession
+    date: 2026-06-20
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: 오늘 PT 운동 - 하체와 팔 보조운동
+    tags: [pt, pt_program_2026_spring, pt_record, handwritten_pt_record, lower_body, arms, needs_review]
+    training_program_ref: pt_program_2026_spring
+    location: PT center
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    source: handwritten_pt_record_photo
+    source_photo_ref: photo_20260620_pt_record
+    source_parse_confidence: medium
+    needs_user_review: true
+    performance_note: Today workout shared by Brian on 2026-06-20. Leg extension, barbell back squat, Smith-machine split squat, cable triceps pushdown with rope, and cable curl were transcribed from the PT record photo.
+    source_raw_text: |
+      2026-06-20 오늘 운동 사진 판독:
+      - 레그 익스텐션: 25?/35?/40/30kg x 20/15/12/20
+      - 바벨 백 스쿼트: 20kg 빈봉/40/50/60kg x 15/12/12/12
+      - 스플릿 스쿼트(스미스 머신): 20/30kg x ?/10
+      - 케이블 푸쉬다운(로프): 20/25/25/20kg x 15/15/15/15
+      - 케이블컬: 20/25/25/20kg x 15/12/12/15
+    exercises:
+      - exercise_ref: exercise_leg_extension
+        sequence_order: 1
+        variant: machine
+        equipment: machine
+        confidence: medium
+        needs_user_review: true
+        notes: First two weight cells are overwritten in the photo and are read as 25kg and 35kg.
+        sets: [{set: 1, weight_kg: 25, reps: 20, needs_user_review: true}, {set: 2, weight_kg: 35, reps: 15, needs_user_review: true}, {set: 3, weight_kg: 40, reps: 12}, {set: 4, weight_kg: 30, reps: 20}]
+      - exercise_ref: exercise_free_squat
+        sequence_order: 2
+        variant: barbell_back_squat
+        equipment: barbell
+        confidence: high
+        notes: 바벨 백 스쿼트. First 20kg set is marked 빈봉 in the photo.
+        sets: [{set: 1, weight_kg: 20, reps: 15, load_description: empty_bar}, {set: 2, weight_kg: 40, reps: 12}, {set: 3, weight_kg: 50, reps: 12}, {set: 4, weight_kg: 60, reps: 12}]
+      - exercise_ref: exercise_bulgarian_split_squat
+        sequence_order: 3
+        variant: smith_machine_split_squat
+        equipment: smith_machine
+        confidence: medium
+        needs_user_review: true
+        notes: 스플릿 스쿼트(스미스 머신). First rep cell is crossed/unclear; second rep appears to be 10.
+        sets: [{set: 1, weight_kg: 20, reps: null, needs_user_review: true}, {set: 2, weight_kg: 30, reps: 10}]
+      - exercise_ref: exercise_cable_triceps_pushdown
+        sequence_order: 4
+        variant: rope
+        equipment: cable_machine
+        confidence: high
+        notes: 케이블 푸쉬다운(로프).
+        sets: [{set: 1, weight_kg: 20, reps: 15}, {set: 2, weight_kg: 25, reps: 15}, {set: 3, weight_kg: 25, reps: 15}, {set: 4, weight_kg: 20, reps: 15}]
+      - exercise_ref: exercise_cable_curl
+        sequence_order: 5
+        variant: cable
+        equipment: cable_machine
+        confidence: high
+        notes: 케이블컬.
+        sets: [{set: 1, weight_kg: 20, reps: 15}, {set: 2, weight_kg: 25, reps: 12}, {set: 3, weight_kg: 25, reps: 12}, {set: 4, weight_kg: 20, reps: 15}]
+
   - id: workoutsession_20260618_back_cable_pulldown_seated_row
     object_type: WorkoutSession
     date: 2026-06-18
@@ -266,6 +475,7 @@ workout_records:
     end: null
     status: completed
     title: 등 운동 - 케이블 암 풀다운, 시티드로우, 렛풀다운, 데드리프트
+    tags: [pt, pt_program_2026_spring, self_report, back, deadlift]
     training_program_ref: pt_program_2026_spring
     location: null
     duration_minutes: null
@@ -361,16 +571,14 @@ workout_records:
             is_warmup: false
             is_pr: null
           - set: 3
-            weight_kg: 15
-            reps: null
-            reported_quantity: "1개더"
-            quantity_interpretation: one_additional_set_or_rep_unclear
+            weight_kg: 30
+            reps: 10
             rpe: null
             rest_seconds: null
             is_warmup: false
             is_pr: null
-            needs_user_review: true
-            notes: Brian confirmed this 15kg extra item was lat pulldown; whether "1개더" means one additional set or one additional rep still needs review.
+            needs_user_review: false
+            notes: Confirmed as 30kg x 10.
           - set: 4
             weight_kg: 30
             reps: 10
@@ -430,6 +638,7 @@ workout_records:
     end: null
     status: completed
     title: 가슴 운동 - 스미스 머신 프레스와 벤치 프레스
+    tags: [pt, pt_program_2026_spring, self_report, chest, needs_review]
     training_program_ref: pt_program_2026_spring
     location: null
     duration_minutes: null
@@ -555,6 +764,7 @@ workout_records:
     end: "12:20"
     status: completed
     title: 하체 운동 빡세게
+    tags: [pt, pt_program_2026_spring, self_report, lower_body, hard_session, needs_review]
     training_program_ref: pt_program_2026_spring
     location: null
     duration_minutes: 60
@@ -700,6 +910,7 @@ workout_records:
     planned_start: "06:35"
     status: blocked_or_delayed
     title: Morning PT shop workout access issue
+    tags: [pt, pt_program_2026_spring, access_issue, blocked]
     training_program_ref: pt_program_2026_spring
     location: PT shop
     duration_minutes: null
@@ -715,6 +926,7 @@ workout_records:
     end: null
     status: completed
     title: Home fallback workout after PT shop access issue
+    tags: [pt, pt_program_2026_spring, home_fallback, lower_body, chest, bodyweight]
     training_program_ref: pt_program_2026_spring
     location: home
     duration_minutes: null
@@ -806,6 +1018,909 @@ workout_records:
         notes: Short recovery and relationship walk; duration not specified.
         sets: []
 
+  - id: workoutsession_20260609_pt_chest_shoulders_paper
+    object_type: WorkoutSession
+    date: 2026-06-09
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: PT 기록지 - 가슴/어깨 운동
+    tags: [pt, pt_program_2026_spring, pt_record, handwritten_pt_record, chest, shoulders, needs_review]
+    training_program_ref: pt_program_2026_spring
+    location: PT center
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    source: handwritten_pt_record_photo
+    source_photo_ref: photo5_top_left
+    source_parse_confidence: medium
+    needs_user_review: true
+    performance_note: Hand-transcribed from PT paper record. Date, cable crossover, side lateral raise, straight-arm pulldown, and free squat naming were reviewed with Brian; remaining equipment variants may need review.
+    exercises:
+      - exercise_ref: exercise_cable_crossover
+        sequence_order: 1
+        variant: cable
+        equipment: cable_machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 15, reps: 15}, {set: 2, weight_kg: 20, reps: 12}, {set: 3, weight_kg: 20, reps: 12}, {set: 4, weight_kg: 15, reps: 15}]
+      - exercise_ref: exercise_bench_press
+        sequence_order: 2
+        variant: bench_press_equipment_unspecified
+        equipment: unspecified
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 20, reps: 12}, {set: 2, weight_kg: 30, reps: 15}, {set: 3, weight_kg: 40, reps: 12}, {set: 4, weight_kg: 40, reps: 12}]
+      - exercise_ref: exercise_incline_bench_press
+        sequence_order: 3
+        variant: incline_press_or_incline_bench
+        equipment: unspecified
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 30, reps: 15}, {set: 2, weight_kg: 40, reps: 10}, {set: 3, weight_kg: 40, reps: 12}, {set: 4, weight_kg: 35, reps: 12}]
+      - exercise_ref: exercise_side_lateral_raise
+        sequence_order: 4
+        variant: dumbbell_or_machine
+        equipment: unspecified
+        confidence: high
+        sets: [{set: 1, weight_kg: 2, reps: 20}, {set: 2, weight_kg: 4, reps: 20}, {set: 3, weight_kg: 4, reps: 20}, {set: 4, weight_kg: 2, reps: 20}]
+
+  - id: workoutsession_20260606_pt_back_paper
+    object_type: WorkoutSession
+    date: 2026-06-06
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: PT 기록지 - 등 운동
+    tags: [pt, pt_program_2026_spring, pt_record, handwritten_pt_record, back, needs_review]
+    training_program_ref: pt_program_2026_spring
+    location: PT center
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    source: handwritten_pt_record_photo
+    source_photo_ref: photo4_bottom_right
+    source_parse_confidence: medium
+    needs_user_review: true
+    performance_note: Hand-transcribed from PT paper record. Main back movements are readable; one row appears to be a row variation and needs review.
+    exercises:
+      - exercise_ref: exercise_cable_straight_arm_pulldown
+        sequence_order: 1
+        variant: straight_bar
+        equipment: cable_machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 20, reps: 15}, {set: 2, weight_kg: 25, reps: 12}, {set: 3, weight_kg: 30, reps: 12}, {set: 4, weight_kg: 25, reps: 12}]
+      - exercise_ref: exercise_seated_row
+        sequence_order: 2
+        variant: seated_row
+        equipment: cable_or_row_machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 40, reps: 15}, {set: 2, weight_kg: 50, reps: 12}, {set: 3, weight_kg: 50, reps: 12}, {set: 4, weight_kg: 40, reps: 15}, {set: 5, weight_kg: 40, reps: 15}]
+      - exercise_ref: exercise_seated_row
+        sequence_order: 3
+        variant: row_variant
+        equipment: cable_or_machine
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 20, reps: 15}, {set: 2, weight_kg: 30, reps: 12}, {set: 3, weight_kg: 40, reps: 12}, {set: 4, weight_kg: 25, reps: 12}]
+      - exercise_ref: exercise_unknown_pt_movement
+        sequence_order: 4
+        variant: handwritten_row_unclear
+        equipment: unknown
+        confidence: low
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 20, reps: 15}, {set: 2, weight_kg: 25, reps: 12}, {set: 3, weight_kg: 20, reps: null}, {set: 4, weight_kg: 20, reps: null}]
+
+  - id: workoutsession_20260603_pt_lower_body_paper
+    object_type: WorkoutSession
+    date: 2026-06-03
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: PT 기록지 - 하체 운동
+    tags: [pt, pt_program_2026_spring, pt_record, handwritten_pt_record, lower_body, needs_review]
+    training_program_ref: pt_program_2026_spring
+    location: PT center
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    source: handwritten_pt_record_photo
+    source_photo_ref: photo4_bottom_left
+    source_parse_confidence: medium
+    needs_user_review: true
+    performance_note: Date confirmed by Brian as 2026-06-03. A movement first read as hip thrust was corrected by Brian to free squat.
+    exercises:
+      - exercise_ref: exercise_leg_curl
+        sequence_order: 1
+        variant: machine
+        equipment: machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 20, reps: 15}, {set: 2, weight_kg: 25, reps: 12}, {set: 3, weight_kg: 20, reps: 12}]
+      - exercise_ref: exercise_deadlift
+        sequence_order: 2
+        variant: dumbbell_or_db_deadlift
+        equipment: dumbbells_or_unspecified
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 40, reps: 12}, {set: 2, weight_kg: 60, reps: 12}]
+      - exercise_ref: exercise_free_squat
+        sequence_order: 3
+        variant: free_squat
+        equipment: barbell_or_unspecified
+        confidence: high
+        sets: [{set: 1, weight_kg: 30, reps: 12}, {set: 2, weight_kg: 40, reps: 12}]
+      - exercise_ref: exercise_leg_press
+        sequence_order: 4
+        variant: machine
+        equipment: machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 60, reps: 12}, {set: 2, weight_kg: 40, reps: 12}]
+      - exercise_ref: exercise_unknown_pt_movement
+        sequence_order: 5
+        variant: lower_body_assistance_unclear
+        equipment: unknown
+        confidence: low
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 10, reps: 10}]
+      - exercise_ref: exercise_unknown_pt_movement
+        sequence_order: 6
+        variant: lower_body_assistance_unclear
+        equipment: unknown
+        confidence: low
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: null, reps: 10}]
+      - exercise_ref: exercise_unknown_pt_movement
+        sequence_order: 7
+        variant: kettlebell_or_cable_assistance_unclear
+        equipment: unknown
+        confidence: low
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 15, reps: 15}, {set: 2, weight_kg: 20, reps: 12}, {set: 3, weight_kg: 20, reps: 12}]
+
+  - id: workoutsession_20260519_pt_chest_shoulders_paper
+    object_type: WorkoutSession
+    date: 2026-05-19
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: PT 기록지 - 가슴/어깨 운동
+    tags: [pt, pt_program_2026_spring, pt_record, handwritten_pt_record, chest, shoulders, arms, needs_review]
+    training_program_ref: pt_program_2026_spring
+    location: PT center
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    source: handwritten_pt_record_photo
+    source_photo_ref: photo4_top_right
+    source_parse_confidence: medium
+    needs_user_review: true
+    performance_note: Hand-transcribed from PT paper record. Chest and shoulder movement names are mostly readable; some equipment variants need review.
+    exercises:
+      - exercise_ref: exercise_cable_crossover
+        sequence_order: 1
+        variant: cable
+        equipment: cable_machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 10, reps: 20}, {set: 2, weight_kg: 15, reps: 15}, {set: 3, weight_kg: 20, reps: 12}]
+      - exercise_ref: exercise_bench_press
+        sequence_order: 2
+        variant: bench_press_equipment_unspecified
+        equipment: unspecified
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 25, reps: 15}, {set: 2, weight_kg: 30, reps: 15}, {set: 3, weight_kg: 35, reps: 10}]
+      - exercise_ref: exercise_incline_bench_press
+        sequence_order: 3
+        variant: incline_bench
+        equipment: unspecified
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 25, reps: 15}, {set: 2, weight_kg: 30, reps: 12}, {set: 3, weight_kg: 35, reps: 12}]
+      - exercise_ref: exercise_dumbbell_shoulder_press
+        sequence_order: 4
+        variant: dumbbell_press
+        equipment: dumbbells
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 9, reps: 12}, {set: 2, weight_kg: 9, reps: 12}, {set: 3, weight_kg: 9, reps: 10}]
+      - exercise_ref: exercise_side_lateral_raise
+        sequence_order: 5
+        variant: dumbbell_or_machine
+        equipment: unspecified
+        confidence: high
+        sets: [{set: 1, weight_kg: 2, reps: 20}, {set: 2, weight_kg: 4, reps: null}, {set: 3, weight_kg: 4, reps: 15}]
+      - exercise_ref: exercise_dumbbell_curl
+        sequence_order: 6
+        variant: dumbbell
+        equipment: dumbbells
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 15, reps: 15}, {set: 2, weight_kg: 20, reps: 15}, {set: 3, weight_kg: null, reps: 10}]
+
+  - id: workoutsession_20260516_pt_back_deadlift_paper
+    object_type: WorkoutSession
+    date: 2026-05-16
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: PT 기록지 - 등 운동과 데드리프트
+    tags: [pt, pt_program_2026_spring, pt_record, handwritten_pt_record, back, deadlift, needs_review]
+    training_program_ref: pt_program_2026_spring
+    location: PT center
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    source: handwritten_pt_record_photo
+    source_photo_ref: photo4_top_left
+    source_parse_confidence: medium
+    needs_user_review: true
+    performance_note: Hand-transcribed from PT paper record.
+    exercises:
+      - exercise_ref: exercise_cable_straight_arm_pulldown
+        sequence_order: 1
+        variant: straight_bar
+        equipment: cable_machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 20, reps: 15}, {set: 2, weight_kg: 30, reps: 12}, {set: 3, weight_kg: 30, reps: 12}, {set: 4, weight_kg: 20, reps: 15}]
+      - exercise_ref: exercise_lat_pulldown
+        sequence_order: 2
+        variant: cable_or_machine
+        equipment: cable_or_lat_pulldown_machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 20, reps: 15}, {set: 2, weight_kg: 25, reps: 12}, {set: 3, weight_kg: 25, reps: 12}, {set: 4, weight_kg: 20, reps: 15}]
+      - exercise_ref: exercise_deadlift
+        sequence_order: 3
+        variant: barbell_or_unspecified
+        equipment: barbell_or_unspecified
+        confidence: high
+        sets: [{set: 1, weight_kg: 20, reps: 15}, {set: 2, weight_kg: 30, reps: 12}, {set: 3, weight_kg: 35, reps: 12}, {set: 4, weight_kg: 30, reps: 12}]
+      - exercise_ref: exercise_unknown_pt_movement
+        sequence_order: 4
+        variant: assistance_movement_unclear
+        equipment: unknown
+        confidence: low
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: null, reps: 10}, {set: 2, weight_kg: null, reps: 8}, {set: 3, weight_kg: null, reps: 8}]
+      - exercise_ref: exercise_seated_row
+        sequence_order: 5
+        variant: cable_row_or_row_variant
+        equipment: cable_or_row_machine
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 15, reps: 15}, {set: 2, weight_kg: 20, reps: 15}, {set: 3, weight_kg: 20, reps: 12}, {set: 4, weight_kg: 15, reps: 15}]
+
+  - id: workoutsession_20260513_pt_lower_body_paper
+    object_type: WorkoutSession
+    date: 2026-05-13
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: PT 기록지 - 하체 운동
+    tags: [pt, pt_program_2026_spring, pt_record, handwritten_pt_record, lower_body, needs_review]
+    training_program_ref: pt_program_2026_spring
+    location: PT center
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    source: handwritten_pt_record_photo
+    source_photo_ref: photo3_bottom_right
+    source_parse_confidence: medium
+    needs_user_review: true
+    performance_note: A movement first read as hip thrust was corrected by Brian to free squat.
+    exercises:
+      - exercise_ref: exercise_leg_extension
+        sequence_order: 1
+        variant: machine
+        equipment: machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 20, reps: 20}, {set: 2, weight_kg: 30, reps: 15}, {set: 3, weight_kg: 40, reps: 12}]
+      - exercise_ref: exercise_leg_press
+        sequence_order: 2
+        variant: machine
+        equipment: machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 40, reps: 12}, {set: 2, weight_kg: 60, reps: 12}, {set: 3, weight_kg: 60, reps: 12}]
+      - exercise_ref: exercise_free_squat
+        sequence_order: 3
+        variant: free_squat
+        equipment: barbell_or_unspecified
+        confidence: high
+        sets: [{set: 1, weight_kg: 20, reps: 12}, {set: 2, weight_kg: 30, reps: 12}, {set: 3, weight_kg: 30, reps: 10}]
+      - exercise_ref: exercise_bulgarian_split_squat
+        sequence_order: 4
+        variant: split_squat_or_lunge
+        equipment: external_load_unspecified
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 15, reps: 12}, {set: 2, weight_kg: 20, reps: 10}, {set: 3, weight_kg: 20, reps: 10}]
+      - exercise_ref: exercise_unknown_pt_movement
+        sequence_order: 5
+        variant: cable_or_leg_curl_assistance_unclear
+        equipment: unknown
+        confidence: low
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 15, reps: 15}, {set: 2, weight_kg: 20, reps: 12}, {set: 3, weight_kg: 25, reps: 12}, {set: 4, weight_kg: 25, reps: 12}]
+
+  - id: workoutsession_20260509_pt_chest_shoulders_paper
+    object_type: WorkoutSession
+    date: 2026-05-09
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: PT 기록지 - 가슴/어깨 운동
+    tags: [pt, pt_program_2026_spring, pt_record, handwritten_pt_record, chest, shoulders, needs_review]
+    training_program_ref: pt_program_2026_spring
+    location: PT center
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    source: handwritten_pt_record_photo
+    source_photo_ref: photo3_bottom_left
+    source_parse_confidence: medium
+    needs_user_review: true
+    performance_note: Hand-transcribed from PT paper record.
+    exercises:
+      - exercise_ref: exercise_cable_crossover
+        sequence_order: 1
+        variant: cable
+        equipment: cable_machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 10, reps: 15}, {set: 2, weight_kg: 15, reps: 12}, {set: 3, weight_kg: 15, reps: 12}, {set: 4, weight_kg: 10, reps: 15}]
+      - exercise_ref: exercise_bench_press
+        sequence_order: 2
+        variant: bench_press_equipment_unspecified
+        equipment: unspecified
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 20, reps: 15}, {set: 2, weight_kg: 30, reps: 12}, {set: 3, weight_kg: 35, reps: 10}, {set: 4, weight_kg: 35, reps: 10}]
+      - exercise_ref: exercise_dumbbell_shoulder_press
+        sequence_order: 3
+        variant: dumbbell_press
+        equipment: dumbbells
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 7, reps: 15}, {set: 2, weight_kg: 9, reps: 12}, {set: 3, weight_kg: 9, reps: 12}, {set: 4, weight_kg: 7, reps: 12}]
+      - exercise_ref: exercise_incline_bench_press
+        sequence_order: 4
+        variant: incline_bench
+        equipment: unspecified
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 30, reps: 12}, {set: 2, weight_kg: 35, reps: 12}, {set: 3, weight_kg: 25, reps: 15}]
+      - exercise_ref: exercise_side_lateral_raise
+        sequence_order: 5
+        variant: dumbbell_or_machine
+        equipment: unspecified
+        confidence: high
+        sets: [{set: 1, weight_kg: 2, reps: 20}, {set: 2, weight_kg: 4, reps: 15}, {set: 3, weight_kg: 4, reps: 12}, {set: 4, weight_kg: 2, reps: 15}]
+
+  - id: workoutsession_20260430_pt_back_paper
+    object_type: WorkoutSession
+    date: 2026-04-30
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: PT 기록지 - 등 운동
+    tags: [pt, pt_program_2026_spring, pt_record, handwritten_pt_record, back, needs_review]
+    training_program_ref: pt_program_2026_spring
+    location: PT center
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    source: handwritten_pt_record_photo
+    source_photo_ref: photo3_top_right
+    source_parse_confidence: medium
+    needs_user_review: true
+    performance_note: Hand-transcribed from PT paper record.
+    exercises:
+      - exercise_ref: exercise_cable_straight_arm_pulldown
+        sequence_order: 1
+        variant: straight_bar
+        equipment: cable_machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 20, reps: 15}, {set: 2, weight_kg: 30, reps: 12}, {set: 3, weight_kg: 25, reps: 12}, {set: 4, weight_kg: 20, reps: 12}]
+      - exercise_ref: exercise_seated_row
+        sequence_order: 2
+        variant: seated_row
+        equipment: cable_or_row_machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 35, reps: 15}, {set: 2, weight_kg: 40, reps: 12}, {set: 3, weight_kg: 40, reps: 12}, {set: 4, weight_kg: 30, reps: 18}]
+      - exercise_ref: exercise_seated_row
+        sequence_order: 3
+        variant: row_variant
+        equipment: cable_or_machine
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 20, reps: 15}, {set: 2, weight_kg: 30, reps: 12}, {set: 3, weight_kg: 30, reps: 12}, {set: 4, weight_kg: 25, reps: 12}]
+      - exercise_ref: exercise_seated_row
+        sequence_order: 4
+        variant: cable_row_variant
+        equipment: cable_machine
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 15, reps: 15}, {set: 2, weight_kg: 20, reps: 15}, {set: 3, weight_kg: 20, reps: 12}, {set: 4, weight_kg: 15, reps: 15}]
+
+  - id: workoutsession_20260425_pt_lower_body_paper
+    object_type: WorkoutSession
+    date: 2026-04-25
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: PT 기록지 - 하체 운동
+    tags: [pt, pt_program_2026_spring, pt_record, handwritten_pt_record, lower_body, needs_review]
+    training_program_ref: pt_program_2026_spring
+    location: PT center
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    source: handwritten_pt_record_photo
+    source_photo_ref: photo3_top_left
+    source_parse_confidence: medium
+    needs_user_review: true
+    performance_note: Date confirmed by Brian as 2026-04-25.
+    exercises:
+      - exercise_ref: exercise_leg_curl
+        sequence_order: 1
+        variant: machine
+        equipment: machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 15, reps: 15}, {set: 2, weight_kg: 20, reps: 12}, {set: 3, weight_kg: 20, reps: 15}]
+      - exercise_ref: exercise_leg_press
+        sequence_order: 2
+        variant: machine
+        equipment: machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 40, reps: 15}, {set: 2, weight_kg: 60, reps: 12}, {set: 3, weight_kg: 60, reps: 12}]
+      - exercise_ref: exercise_free_squat
+        sequence_order: 3
+        variant: free_squat
+        equipment: barbell_or_unspecified
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 20, reps: 15}, {set: 2, weight_kg: 30, reps: 15}, {set: 3, weight_kg: 40, reps: 12}]
+      - exercise_ref: exercise_bulgarian_split_squat
+        sequence_order: 4
+        variant: split_squat_or_lunge
+        equipment: external_load_unspecified
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 0, reps: 12}, {set: 2, weight_kg: 4, reps: 10}]
+      - exercise_ref: exercise_unknown_pt_movement
+        sequence_order: 5
+        variant: assistance_movement_unclear
+        equipment: unknown
+        confidence: low
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 20, reps: 15}, {set: 2, weight_kg: 10, reps: 12}, {set: 3, weight_kg: 0, reps: 12}]
+
+  - id: workoutsession_20260416_pt_chest_shoulders_paper
+    object_type: WorkoutSession
+    date: 2026-04-16
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: PT 기록지 - 가슴/어깨 운동
+    tags: [pt, pt_program_2026_spring, pt_record, handwritten_pt_record, chest, shoulders, needs_review]
+    training_program_ref: pt_program_2026_spring
+    location: PT center
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    source: handwritten_pt_record_photo
+    source_photo_ref: photo2_bottom_right
+    source_parse_confidence: medium
+    needs_user_review: true
+    performance_note: Hand-transcribed from PT paper record.
+    exercises:
+      - exercise_ref: exercise_cable_crossover
+        sequence_order: 1
+        variant: cable
+        equipment: cable_machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 10, reps: 15}, {set: 2, weight_kg: 15, reps: 12}, {set: 3, weight_kg: 15, reps: 12}]
+      - exercise_ref: exercise_bench_press
+        sequence_order: 2
+        variant: bench_press_equipment_unspecified
+        equipment: unspecified
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 20, reps: 15}, {set: 2, weight_kg: 25, reps: 12}, {set: 3, weight_kg: 30, reps: 12}, {set: 4, weight_kg: 30, reps: 1}]
+      - exercise_ref: exercise_incline_bench_press
+        sequence_order: 3
+        variant: incline_or_machine_press
+        equipment: unspecified
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 25, reps: 15}, {set: 2, weight_kg: 30, reps: 12}, {set: 3, weight_kg: 30, reps: 12}]
+      - exercise_ref: exercise_push_up
+        sequence_order: 4
+        variant: bodyweight
+        equipment: bodyweight
+        confidence: high
+        sets: [{set: 1, weight_kg: null, reps: 10}, {set: 2, weight_kg: null, reps: 8}, {set: 3, weight_kg: null, reps: 8}]
+      - exercise_ref: exercise_side_lateral_raise
+        sequence_order: 5
+        variant: dumbbell_or_machine
+        equipment: unspecified
+        confidence: high
+        sets: [{set: 1, weight_kg: 2, reps: 20}, {set: 2, weight_kg: 4, reps: 15}, {set: 3, weight_kg: 2, reps: 20}, {set: 4, weight_kg: 4, reps: 15}]
+
+  - id: workoutsession_20260414_pt_back_paper
+    object_type: WorkoutSession
+    date: 2026-04-14
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: PT 기록지 - 등 운동
+    tags: [pt, pt_program_2026_spring, pt_record, handwritten_pt_record, back, arms, needs_review]
+    training_program_ref: pt_program_2026_spring
+    location: PT center
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    source: handwritten_pt_record_photo
+    source_photo_ref: photo2_bottom_left
+    source_parse_confidence: medium
+    needs_user_review: true
+    performance_note: Hand-transcribed from PT paper record.
+    exercises:
+      - exercise_ref: exercise_cable_straight_arm_pulldown
+        sequence_order: 1
+        variant: straight_bar
+        equipment: cable_machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 20, reps: 15}, {set: 2, weight_kg: 25, reps: 12}, {set: 3, weight_kg: 30, reps: 10}, {set: 4, weight_kg: 25, reps: 12}]
+      - exercise_ref: exercise_lat_pulldown
+        sequence_order: 2
+        variant: cable_or_machine
+        equipment: cable_or_lat_pulldown_machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 20, reps: 15}, {set: 2, weight_kg: 25, reps: 12}, {set: 3, weight_kg: 25, reps: 12}]
+      - exercise_ref: exercise_unknown_pt_movement
+        sequence_order: 3
+        variant: assistance_movement_unclear
+        equipment: unknown
+        confidence: low
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 4, reps: 15}, {set: 2, weight_kg: null, reps: 12}, {set: 3, weight_kg: null, reps: 12}]
+      - exercise_ref: exercise_seated_row
+        sequence_order: 4
+        variant: seated_row
+        equipment: cable_or_row_machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 35, reps: 15}, {set: 2, weight_kg: 40, reps: 12}, {set: 3, weight_kg: 45, reps: 12}]
+      - exercise_ref: exercise_seated_row
+        sequence_order: 5
+        variant: cable_one_arm_or_row_variant
+        equipment: cable_or_row_machine
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 15, reps: 12}, {set: 2, weight_kg: 25, reps: 12}, {set: 3, weight_kg: 25, reps: 12}]
+      - exercise_ref: exercise_dumbbell_curl
+        sequence_order: 6
+        variant: dumbbell
+        equipment: dumbbells
+        confidence: high
+        sets: [{set: 1, weight_kg: 5, reps: 18}, {set: 2, weight_kg: 6, reps: 12}, {set: 3, weight_kg: 6, reps: 12}]
+
+  - id: workoutsession_20260409_pt_shoulders_lower_body_paper
+    object_type: WorkoutSession
+    date: 2026-04-09
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: PT 기록지 - 어깨/하체 운동
+    tags: [pt, pt_program_2026_spring, pt_record, handwritten_pt_record, shoulders, lower_body, needs_review]
+    training_program_ref: pt_program_2026_spring
+    location: PT center
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    source: handwritten_pt_record_photo
+    source_photo_ref: photo2_top_right
+    source_parse_confidence: medium
+    needs_user_review: true
+    performance_note: Handwritten memo appears to mention shoulder muscle weakness and avoiding excessive training; exact Korean memo needs review.
+    exercises:
+      - exercise_ref: exercise_unknown_pt_movement
+        sequence_order: 1
+        variant: face_pull_or_shoulder_assistance_unclear
+        equipment: cable_or_machine
+        confidence: low
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 15, reps: 15}, {set: 2, weight_kg: 25, reps: 20}, {set: 3, weight_kg: 20, reps: 15}, {set: 4, weight_kg: 20, reps: 15}]
+      - exercise_ref: exercise_side_lateral_raise
+        sequence_order: 2
+        variant: dumbbell_or_machine
+        equipment: unspecified
+        confidence: high
+        sets: [{set: 1, weight_kg: 1.5, reps: 20}, {set: 2, weight_kg: 2, reps: 15}, {set: 3, weight_kg: 2, reps: 15}, {set: 4, weight_kg: 1.5, reps: 20}]
+      - exercise_ref: exercise_dumbbell_shoulder_press
+        sequence_order: 3
+        variant: shoulder_press
+        equipment: dumbbells_or_machine
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 5, reps: 15}, {set: 2, weight_kg: 10, reps: 18}, {set: 3, weight_kg: 8, reps: 15}]
+      - exercise_ref: exercise_leg_extension
+        sequence_order: 4
+        variant: machine
+        equipment: machine
+        confidence: medium
+        sets: [{set: 1, weight_kg: 20, reps: null}, {set: 2, weight_kg: 30, reps: 15}, {set: 3, weight_kg: 20, reps: 20}]
+      - exercise_ref: exercise_leg_press
+        sequence_order: 5
+        variant: machine
+        equipment: machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 40, reps: 15}, {set: 2, weight_kg: 60, reps: 12}, {set: 3, weight_kg: 65, reps: 15}]
+      - exercise_ref: exercise_leg_curl
+        sequence_order: 6
+        variant: machine
+        equipment: machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 15, reps: 12}, {set: 2, weight_kg: 20, reps: 12}, {set: 3, weight_kg: 20, reps: 12}]
+
+  - id: workoutsession_20260407_pt_chest_shoulders_paper
+    object_type: WorkoutSession
+    date: 2026-04-07
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: PT 기록지 - 가슴/어깨 운동
+    tags: [pt, pt_program_2026_spring, pt_record, handwritten_pt_record, chest, shoulders, needs_review]
+    training_program_ref: pt_program_2026_spring
+    location: PT center
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    source: handwritten_pt_record_photo
+    source_photo_ref: photo2_top_left
+    source_parse_confidence: medium
+    needs_user_review: true
+    performance_note: Hand-transcribed from PT paper record.
+    exercises:
+      - exercise_ref: exercise_cable_crossover
+        sequence_order: 1
+        variant: cable
+        equipment: cable_machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 10, reps: 15}, {set: 2, weight_kg: 10, reps: 15}, {set: 3, weight_kg: 15, reps: 8}]
+      - exercise_ref: exercise_bench_press
+        sequence_order: 2
+        variant: bench_press_equipment_unspecified
+        equipment: unspecified
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 20, reps: 15}, {set: 2, weight_kg: 25, reps: 12}, {set: 3, weight_kg: 25, reps: 12}, {set: 4, weight_kg: 20, reps: 15}]
+      - exercise_ref: exercise_dumbbell_shoulder_press
+        sequence_order: 3
+        variant: shoulder_press
+        equipment: dumbbells_or_machine
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 4, reps: 15}, {set: 2, weight_kg: null, reps: 12}, {set: 3, weight_kg: null, reps: 12}, {set: 4, weight_kg: null, reps: 12}]
+      - exercise_ref: exercise_unknown_pt_movement
+        sequence_order: 4
+        variant: assistance_movement_unclear
+        equipment: unknown
+        confidence: low
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 10, reps: 13}, {set: 2, weight_kg: 10, reps: 12}, {set: 3, weight_kg: 10, reps: 12}]
+      - exercise_ref: exercise_unknown_pt_movement
+        sequence_order: 5
+        variant: assistance_movement_unclear
+        equipment: unknown
+        confidence: low
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 15, reps: 15}, {set: 2, weight_kg: 20, reps: 12}, {set: 3, weight_kg: 20, reps: 12}, {set: 4, weight_kg: 15, reps: 15}]
+
+  - id: workoutsession_20260404_pt_back_paper
+    object_type: WorkoutSession
+    date: 2026-04-04
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: PT 기록지 - 등 운동
+    tags: [pt, pt_program_2026_spring, pt_record, handwritten_pt_record, back, needs_review]
+    training_program_ref: pt_program_2026_spring
+    location: PT center
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    source: handwritten_pt_record_photo
+    source_photo_ref: photo1_bottom_right
+    source_parse_confidence: medium
+    needs_user_review: true
+    performance_note: Hand-transcribed from PT paper record.
+    exercises:
+      - exercise_ref: exercise_cable_straight_arm_pulldown
+        sequence_order: 1
+        variant: straight_bar
+        equipment: cable_machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 15, reps: 15}, {set: 2, weight_kg: 20, reps: 15}, {set: 3, weight_kg: 25, reps: 12}, {set: 4, weight_kg: 20, reps: 15}]
+      - exercise_ref: exercise_seated_row
+        sequence_order: 2
+        variant: seated_row
+        equipment: cable_or_row_machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 30, reps: 15}, {set: 2, weight_kg: 40, reps: 12}, {set: 3, weight_kg: 40, reps: 12}, {set: 4, weight_kg: 35, reps: 15}]
+      - exercise_ref: exercise_lat_pulldown
+        sequence_order: 3
+        variant: cable_or_machine
+        equipment: cable_or_lat_pulldown_machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 15, reps: 15}, {set: 2, weight_kg: 20, reps: 12}, {set: 3, weight_kg: 20, reps: 12}]
+      - exercise_ref: exercise_unknown_pt_movement
+        sequence_order: 4
+        variant: assistance_movement_unclear
+        equipment: unknown
+        confidence: low
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 4, reps: 15}, {set: 2, weight_kg: null, reps: 12}, {set: 3, weight_kg: 4, reps: 15}]
+      - exercise_ref: exercise_seated_row
+        sequence_order: 5
+        variant: cable_or_rope_row
+        equipment: cable_machine
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 15, reps: 15}, {set: 2, weight_kg: 20, reps: 12}, {set: 3, weight_kg: 15, reps: 12}, {set: 4, weight_kg: 10, reps: 15}]
+
+  - id: workoutsession_20260331_pt_lower_body_paper
+    object_type: WorkoutSession
+    date: 2026-03-31
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: PT 기록지 - 하체 운동
+    tags: [pt, pt_program_2026_spring, pt_record, handwritten_pt_record, lower_body, arms, needs_review]
+    training_program_ref: pt_program_2026_spring
+    location: PT center
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    source: handwritten_pt_record_photo
+    source_photo_ref: photo1_bottom_left
+    source_parse_confidence: medium
+    needs_user_review: true
+    performance_note: Hand-transcribed from PT paper record.
+    exercises:
+      - exercise_ref: exercise_leg_curl
+        sequence_order: 1
+        variant: machine
+        equipment: machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 15, reps: 15}, {set: 2, weight_kg: 20, reps: 12}, {set: 3, weight_kg: 15, reps: 12}]
+      - exercise_ref: exercise_leg_press
+        sequence_order: 2
+        variant: machine
+        equipment: machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 20, reps: 13}, {set: 2, weight_kg: 40, reps: 12}, {set: 3, weight_kg: 40, reps: 12}]
+      - exercise_ref: exercise_bulgarian_split_squat
+        sequence_order: 3
+        variant: bodyweight_or_split_squat
+        equipment: bodyweight_or_unspecified
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 0, reps: 12}]
+      - exercise_ref: exercise_dumbbell_curl
+        sequence_order: 4
+        variant: dumbbell
+        equipment: dumbbells
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 4, reps: 13}, {set: 2, weight_kg: 5, reps: 12}, {set: 3, weight_kg: 5, reps: 12}]
+
+  - id: workoutsession_20260328_pt_chest_paper
+    object_type: WorkoutSession
+    date: 2026-03-28
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: PT 기록지 - 가슴 운동
+    tags: [pt, pt_program_2026_spring, pt_record, handwritten_pt_record, chest, needs_review]
+    training_program_ref: pt_program_2026_spring
+    location: PT center
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    source: handwritten_pt_record_photo
+    source_photo_ref: photo1_top_right
+    source_parse_confidence: medium
+    needs_user_review: true
+    performance_note: Date corrected by Brian from 3/29 to 2026-03-28. Hand-transcribed from PT paper record.
+    exercises:
+      - exercise_ref: exercise_cable_crossover
+        sequence_order: 1
+        variant: cable
+        equipment: cable_machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 10, reps: 12}, {set: 2, weight_kg: 10, reps: 15}, {set: 3, weight_kg: 10, reps: 15}, {set: 4, weight_kg: 10, reps: 12}]
+      - exercise_ref: exercise_bench_press
+        sequence_order: 2
+        variant: bench_press_equipment_unspecified
+        equipment: unspecified
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 20, reps: 15}, {set: 2, weight_kg: 30, reps: 12}, {set: 3, weight_kg: 35, reps: 12}, {set: 4, weight_kg: 25, reps: 15}]
+      - exercise_ref: exercise_push_up
+        sequence_order: 3
+        variant: bodyweight
+        equipment: bodyweight
+        confidence: high
+        sets: [{set: 1, weight_kg: null, reps: 12}, {set: 2, weight_kg: null, reps: 8}, {set: 3, weight_kg: null, reps: 6}]
+      - exercise_ref: exercise_unknown_pt_movement
+        sequence_order: 4
+        variant: cable_or_chest_assistance_unclear
+        equipment: cable_or_machine
+        confidence: low
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 10, reps: 15}, {set: 2, weight_kg: 15, reps: 12}, {set: 3, weight_kg: 10, reps: 15}]
+
+  - id: workoutsession_20260326_pt_back_paper
+    object_type: WorkoutSession
+    date: 2026-03-26
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: PT 기록지 - 등 운동
+    tags: [pt, pt_program_2026_spring, pt_record, handwritten_pt_record, back, needs_review]
+    training_program_ref: pt_program_2026_spring
+    location: PT center
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    source: handwritten_pt_record_photo
+    source_photo_ref: photo1_top_left
+    source_parse_confidence: medium
+    needs_user_review: true
+    performance_note: Hand-transcribed from PT paper record. The first movement was confirmed by Brian as straight-arm pulldown with a straight bar.
+    exercises:
+      - exercise_ref: exercise_cable_straight_arm_pulldown
+        sequence_order: 1
+        variant: straight_bar
+        equipment: cable_machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 15, reps: 15}, {set: 2, weight_kg: 20, reps: 15}, {set: 3, weight_kg: 20, reps: 15}]
+      - exercise_ref: exercise_seated_row
+        sequence_order: 2
+        variant: seated_row
+        equipment: cable_or_row_machine
+        confidence: high
+        sets: [{set: 1, weight_kg: 30, reps: 15}, {set: 2, weight_kg: 35, reps: 15}, {set: 3, weight_kg: 35, reps: 15}]
+      - exercise_ref: exercise_lat_pulldown
+        sequence_order: 3
+        variant: cable_or_machine
+        equipment: cable_or_lat_pulldown_machine
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 15, reps: 15}, {set: 2, weight_kg: 15, reps: 12}, {set: 3, weight_kg: 15, reps: 12}]
+      - exercise_ref: exercise_seated_row
+        sequence_order: 4
+        variant: cable_row_variant
+        equipment: cable_machine
+        confidence: medium
+        needs_user_review: true
+        sets: [{set: 1, weight_kg: 10, reps: 15}, {set: 2, weight_kg: 15, reps: 12}, {set: 3, weight_kg: null, reps: 10}, {set: 4, weight_kg: 15, reps: 12}]
+
 meal_records:
   - id: meal_20260618_post_back_workout_the_danbaek_120g
     object_type: Meal
@@ -832,6 +1947,109 @@ meal_records:
     confidence: medium
     needs_user_review: true
     notes: Brian drank one 120g 더단백 item after the 2026-06-18 back workout. The 120g value is treated as product weight/size, not confirmed protein grams.
+
+  - id: meal_20260618_lunch_kimchi_malic_noodle_pork_with_egg
+    object_type: Meal
+    date: 2026-06-18
+    time: null
+    time_of_day: lunch
+    area: BODY
+    meal_type: lunch
+    status: completed
+    items:
+      - name: 김치말이 국수 느낌
+        amount: 1
+        unit: serving
+        calories: null
+        protein_g: null
+        carbs_g: null
+        fat_g: null
+      - name: 수육
+        amount: 1
+        unit: serving
+        calories: null
+        protein_g: null
+        carbs_g: null
+        fat_g: null
+        portion_note: small
+      - name: 달걀
+        amount: 1
+        unit: piece
+        calories: null
+        protein_g: 6
+        carbs_g: null
+        fat_g: null
+    supplements: []
+    related_nutrition_target_ref: protein_target_20260615
+    protein_g_total: null
+    protein_g_estimate_range: [20, 40]
+    confidence: medium
+    needs_user_review: true
+    notes: 김치말이 국수 느낌에 수육 조금, 달걀 1개를 점심에 섭취.
+
+  - id: meal_20260618_afternoon_hydro_whey_30g
+    object_type: Meal
+    date: 2026-06-18
+    time: null
+    time_of_day: afternoon
+    area: BODY
+    meal_type: afternoon_protein
+    status: completed
+    items:
+      - name: HYDRO WHEY
+        amount: 30
+        unit: g
+        calories: null
+        protein_g: 30
+        carbs_g: null
+        fat_g: null
+    supplements: []
+    related_nutrition_target_ref: protein_target_20260615
+    protein_g_total: 30
+    protein_g_estimate_range: null
+    confidence: high
+    needs_user_review: false
+    notes: Brian drank HYDRO WHEY containing 30g protein in the afternoon on 2026-06-18.
+
+  - id: meal_20260618_team_dinner_lamb_and_chimaek
+    object_type: Meal
+    date: 2026-06-18
+    time: "20:00"
+    time_of_day: evening
+    area: BODY
+    secondary_areas:
+      - RELATION
+    meal_type: dinner
+    status: completed
+    items:
+      - name: 양갈비
+        amount: 1
+        unit: serving
+        calories: null
+        protein_g: null
+        carbs_g: null
+        fat_g: null
+      - name: 치킨
+        amount: null
+        unit: serving
+        calories: null
+        protein_g: null
+        carbs_g: null
+        fat_g: null
+      - name: 맥주
+        amount: null
+        unit: serving
+        calories: null
+        protein_g: 0
+        carbs_g: null
+        fat_g: 0
+    supplements: []
+    related_nutrition_target_ref: protein_target_20260615
+    protein_g_total: null
+    protein_g_estimate_range: [30, 60]
+    confidence: medium
+    needs_user_review: true
+    notes: "회식(18:00-21:00): 1차 양갈비, 2차 치맥. 참석자: 전용태/김성현/박길봉/김성아/변승현/김승훈 TL님. 동료들과 ㅎㅎ."
 
   - id: meal_20260617_morning_protein_shake_20g
     object_type: Meal
@@ -1562,3 +2780,19 @@ raw_records:
     related_meal: meal_20260618_post_back_workout_the_danbaek_120g
     related_workout: workoutsession_20260618_back_cable_pulldown_seated_row
     text: "더 단백 120그램 짜리 하나 마심."
+
+  - id: raw_body_record_20260618_lunch_kimchi_malic_noodles
+    date: 2026-06-18
+    time: null
+    time_of_day: lunch
+    source: codex_conversation
+    related_meal: meal_20260618_lunch_kimchi_malic_noodle_pork_with_egg
+    text: "점심은 김치말이 국수 느낌 먹음. 수육 조금이랑. 달걀1개"
+
+  - id: raw_body_record_20260618_afternoon_hydro_whey_30g
+    date: 2026-06-18
+    time: null
+    time_of_day: afternoon
+    source: codex_conversation
+    related_meal: meal_20260618_afternoon_hydro_whey_30g
+    text: "오후에 HYDRO WHEY 30g 단백질 먹음."

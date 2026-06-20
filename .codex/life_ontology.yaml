@@ -31,6 +31,114 @@ conventions:
   raw_text_policy: preserve_when_available
   causality_policy: use_confidence_and_evidence_do_not_overclaim
 
+operational_layer_model:
+  purpose: >
+    Advanced operational ontology layer inspired by Palantir-style semantic,
+    kinetic, and dynamic ontology framing. This stays lightweight and local:
+    YAML remains the canonical draft, while operational records make decisions,
+    actions, current state, evidence, and feedback queryable.
+  semantic_layer:
+    meaning: Stable nouns of Brian's world and work.
+    examples:
+      - Project
+      - Task
+      - Person
+      - Component
+      - DesignItem
+      - Requirement
+      - Issue
+      - EvidenceLink
+      - Decision
+      - Concept
+  kinetic_layer:
+    meaning: Verbs that change state or move work forward.
+    examples:
+      - OperationalAction
+      - FunctionDefinition
+      - WorkflowRun
+      - action_types
+      - validation runs
+      - config changes
+      - ontology edits
+  dynamic_layer:
+    meaning: Current operational state, permission/review boundaries, scenario state, and feedback.
+    examples:
+      - OperationalState
+      - Scenario
+      - FeedbackRecord
+      - StatusUpdate
+      - confidence
+      - needs_user_review
+      - blocker state
+      - pass/fail evidence
+  operational_decision_loop:
+    meaning: >
+      The core loop is not data storage or dashboarding; it is turning raw
+      customer/work data into real-world operational objects, supporting human
+      or agent-assisted judgment, executing or proposing actions, writing state
+      back when appropriate, and preserving feedback for the next decision.
+    stages:
+      - raw_data
+      - ontology_objects
+      - current_state
+      - decision_context
+      - human_or_agent_judgment
+      - action_or_writeback
+      - evidence_and_audit
+      - feedback_to_next_decision
+    soc_examples:
+      raw_data:
+        - RTL
+        - spec
+        - SDC
+        - filelist
+        - simulation log
+        - timing report
+        - issue tracker
+      ontology_objects:
+        - SoC
+        - Subsystem
+        - IP
+        - Interface
+        - Requirement
+        - Issue
+        - Evidence
+        - Decision
+        - OperationalAction
+        - OperationalState
+      actions:
+        - rerun simulation
+        - update SDC
+        - disable unused VIP config path
+        - create issue
+        - capture decision
+        - promote note to ontology
+  cognitive_load_policy:
+    purpose: >
+      AI should reduce Brian's cognitive load, not maximize output volume. The
+      default assistant behavior should filter, structure, and stage information
+      so Brian can remember, decide, and act without information overload.
+    default_response_contract:
+      - one_liner
+      - mental_model
+      - key_points_max_3
+      - next_action_one
+      - archive_optional
+    information_triage:
+      now: What Brian needs for the current decision or next action.
+      save: Concepts, relations, decisions, actions, or evidence worth preserving in ontology.
+      archive: Detailed background that may be useful later but should not dominate the main answer.
+      discard: Nice-to-know expansion that does not support a decision, memory, or action.
+    expansion_policy:
+      - Start with the smallest useful answer.
+      - Expand only after Brian asks for depth, examples, or implementation.
+      - Prefer "core 3 + next action 1" for complex concepts unless a broader deliverable is requested.
+  initial_policy:
+    - Preserve raw SourceRecord or ImportedRecord text before deriving operational records.
+    - Keep OperationalAction separate from Task; Task is intent/work item, OperationalAction is a specific verb/change.
+    - Record FeedbackRecord even when validation is pending, so open loops are visible.
+    - Do not add a service, graph database, or workflow engine until a repeated local pattern proves useful.
+
 core_object_types:
   Area:
     fields: [id, purpose]
@@ -248,6 +356,132 @@ knowledge_object_types:
       - confidence
       - needs_user_review
 
+operational_object_types:
+  OperationalAction:
+    purpose: A specific action/function/workflow step that changes state, executes a decision, or writes back to an ontology/system.
+    layer: kinetic
+    fields:
+      - id
+      - date
+      - area
+      - project_ref
+      - component_ref
+      - task_ref
+      - decision_ref
+      - action_type
+      - title
+      - intent
+      - actor_ref
+      - owner_ref
+      - target_refs
+      - input_refs
+      - preconditions
+      - expected_effects
+      - status
+      - tool_or_system
+      - execution_ref
+      - source_refs
+      - evidence_refs
+      - confidence
+      - needs_user_review
+  FunctionDefinition:
+    purpose: A reusable logic/function/policy description that can support an OperationalAction.
+    layer: kinetic
+    fields:
+      - id
+      - title
+      - area
+      - project_ref
+      - function_type
+      - inputs
+      - outputs
+      - logic_summary
+      - validation_policy
+      - owner_ref
+      - source_refs
+      - confidence
+      - needs_user_review
+  WorkflowRun:
+    purpose: A concrete execution instance of one or more OperationalActions.
+    layer: kinetic
+    fields:
+      - id
+      - date
+      - project_ref
+      - task_refs
+      - action_refs
+      - start
+      - end
+      - status
+      - tool_or_system
+      - logs
+      - artifact_refs
+      - evidence_refs
+      - feedback_refs
+      - source_ref
+      - confidence
+      - needs_user_review
+  OperationalState:
+    purpose: Snapshot of current or intended state for an object, task, workflow, or system boundary.
+    layer: dynamic
+    fields:
+      - id
+      - date
+      - area
+      - project_ref
+      - component_ref
+      - subject_ref
+      - state_type
+      - status
+      - enabled_refs
+      - disabled_refs
+      - owner_ref
+      - permission_or_review_boundary
+      - blocker_refs
+      - evidence_refs
+      - source_refs
+      - confidence
+      - needs_user_review
+  Scenario:
+    purpose: A proposed or staged what-if state used before committing an action or decision.
+    layer: dynamic
+    fields:
+      - id
+      - date
+      - project_ref
+      - title
+      - baseline_state_ref
+      - proposed_changes
+      - affected_refs
+      - expected_outcome
+      - risk_notes
+      - decision_ref
+      - status
+      - source_refs
+      - confidence
+      - needs_user_review
+  FeedbackRecord:
+    purpose: Result, validation, telemetry, or learning gathered after an action, workflow, or decision.
+    layer: dynamic
+    fields:
+      - id
+      - date
+      - project_ref
+      - task_ref
+      - action_ref
+      - workflow_run_ref
+      - decision_ref
+      - feedback_type
+      - result
+      - evidence_refs
+      - metrics
+      - lessons
+      - next_action_refs
+      - promotion_candidate_refs
+      - source_refs
+      - confidence
+      - needs_user_review
+
 career_object_types:
   Project:
     fields:
@@ -424,6 +658,7 @@ body_object_types:
       - training_program_ref
       - status
       - title
+      - tags
       - location
       - duration_minutes
       - perceived_energy
@@ -855,6 +1090,25 @@ link_types:
   pattern_informs_rule:
     from: Pattern
     to: OperatingRule
+  decision_triggers_action:
+    from: Decision
+    to: OperationalAction
+    via: OperationalAction.decision_ref
+  action_updates_state:
+    from: OperationalAction
+    to: OperationalState
+    via: OperationalState.subject_ref or OperationalState.source_refs
+  action_produces_feedback:
+    from: OperationalAction
+    to: FeedbackRecord
+    via: FeedbackRecord.action_ref
+  feedback_informs_decision:
+    from: FeedbackRecord
+    to: Decision | Task | ArchitectureDirection
+  scenario_stages_action:
+    from: Scenario
+    to: OperationalAction
+    via: Scenario.decision_ref or OperationalAction.input_refs
 
 action_types:
   log_day:
@@ -907,6 +1161,24 @@ action_types:
   recommend_intervention:
     uses: [MoodEntry, Pattern, OperatingRule, Day, TimeBlock]
     creates: [Intervention]
+  log_operational_action:
+    uses: [Task, Decision, OperationalState, Source]
+    creates: [OperationalAction]
+    may_update: [OperationalState, StatusUpdate, Artifact]
+  capture_operational_state:
+    uses: [Task, OperationalAction, EvidenceLink, Source]
+    creates_or_updates: [OperationalState, StatusUpdate]
+  record_feedback:
+    uses: [OperationalAction, WorkflowRun, Decision, Task, EvidenceLink]
+    creates: [FeedbackRecord]
+    may_update: [Task, Issue, Resolution, PatternCandidate, OperationalState]
+  stage_scenario:
+    uses: [OperationalState, Decision, Task]
+    creates: [Scenario]
+    may_update: [OperationalAction]
+  promote_note_to_ontology:
+    uses: [Note, ThoughtThread, Source, EvidenceLink]
+    creates_or_updates: [Concept, Task, Issue, Decision, OperationalAction, OperationalState, FeedbackRecord]
 
 query_types:
   today_plan:
@@ -924,6 +1196,9 @@ query_types:
   project_status:
     input: project_ref
     uses: [Project, Task, StatusUpdate, Issue, Assignment, WorkSession]
+  operational_decision_loop:
+    input: task_ref | decision_ref | action_ref
+    uses: [Decision, OperationalAction, OperationalState, FeedbackRecord, Task, EvidenceLink, StatusUpdate]
   person_context:
     input: person_ref
     uses: [Person, Relationship, Assignment, Meeting, SocialInteraction, MoodEntry]
