@@ -537,11 +537,11 @@ workout_records:
             notes: Final drop/back-off set; interpreted as incline bench continuation from message context.
       - exercise_ref: exercise_bench_press
         sequence_order: 4
-        variant: dumbbell_flat_press_or_dumbbell_bench_press
+        variant: dumbbell_bench_press
         equipment: dumbbells
-        confidence: medium
-        needs_user_review: true
-        notes: 누워서 덤벨을 드는 미는 운동. Interpreted as dumbbell bench/chest press; confirm later whether this was on a bench or floor.
+        confidence: high
+        needs_user_review: false
+        notes: 덤벨 프레스. Brian clarified this was a dumbbell press done lying on a bench.
         sets:
           - set: 1
             weight_kg: 7
@@ -549,6 +549,12 @@ workout_records:
             weight_basis: per_dumbbell
             total_external_load_kg: 14
             notes: Brian reported holding 7kg in each hand.
+          - set: 2
+            weight_kg: 9
+            reps: 12
+            weight_basis: per_dumbbell
+            total_external_load_kg: 18
+            notes: Brian reported holding 9kg in each hand while lying on a bench.
 
   - id: workoutsession_20260620_pt_lower_body_arms_paper
     object_type: WorkoutSession
@@ -3079,3 +3085,10 @@ raw_records:
     source: codex_conversation
     related_workout: workoutsession_20260621_chest_cable_crossover_self_report
     text: "누워서 덤벨 들거 미는 운동 7kg 양쪽 들고 12개함"
+
+  - id: raw_body_record_20260621_dumbbell_bench_press_9kg_set
+    date: 2026-06-21
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260621_chest_cable_crossover_self_report
+    text: "덤벨프레스 9kg 씩 12회 벤치에 누워서 하는 덤벨 프레스"
