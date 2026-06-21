@@ -507,7 +507,7 @@ workout_records:
         equipment: unspecified
         confidence: medium
         needs_user_review: true
-        notes: 인클라인 벤치. Brian reported 40kg x 10, 50kg x 5, and then 60kg x 3. Equipment variant was not specified, so confirm later whether this was barbell, Smith machine, dumbbell, or machine. The 60kg x 3 set is interpreted as continuation of the incline bench sequence based on message context.
+        notes: 인클라인 벤치. Brian reported 40kg x 10, 50kg x 5, 60kg x 3, and then 50kg x 5. Equipment variant was not specified, so confirm later whether this was barbell, Smith machine, dumbbell, or machine. The 60kg x 3 and final 50kg x 5 sets are interpreted as continuation of the incline bench sequence based on message context.
         sets:
           - set: 1
             weight_kg: 40
@@ -519,6 +519,10 @@ workout_records:
             weight_kg: 60
             reps: 3
             notes: Highest recorded incline bench load so far; interpreted as incline bench continuation from message context. Top set, not formal 1RM.
+          - set: 4
+            weight_kg: 50
+            reps: 5
+            notes: Additional back-off set after the 60kg top-load set; interpreted as incline bench continuation from message context.
 
   - id: workoutsession_20260620_pt_lower_body_arms_paper
     object_type: WorkoutSession
@@ -3018,3 +3022,11 @@ raw_records:
     related_workout: workoutsession_20260621_chest_cable_crossover_self_report
     related_trend_observation_ref: body_trend_20260621_incline_bench_top_load_progression
     text: "60kg 3개"
+
+  - id: raw_body_record_20260621_incline_bench_extra_50kg_set
+    date: 2026-06-21
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260621_chest_cable_crossover_self_report
+    related_trend_observation_ref: body_trend_20260621_incline_bench_top_load_progression
+    text: "50kg 5개"
