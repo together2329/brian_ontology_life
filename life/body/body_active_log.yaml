@@ -1,5 +1,5 @@
 schema_version: 1
-updated_at: 2026-06-20
+updated_at: 2026-06-21
 profile_ref: person_brian
 area: BODY
 
@@ -8,9 +8,9 @@ body_profile:
   id: body_profile_brian
   profile_ref: person_brian
   height_cm: 175
-  latest_weight_kg: 77.6
-  latest_weight_record_ref: body_composition_20260618_0700_inbody_app
-  notes: Height is self-reported by Brian; latest weight is from the 2026-06-18 InBody app screenshot.
+  latest_weight_kg: 78.8
+  latest_weight_record_ref: body_composition_20260621_1131_inbody270_printout
+  notes: Height is self-reported by Brian; latest weight is from the 2026-06-21 InBody270 printout photo.
 
 training_programs:
   - id: pt_program_2026_spring
@@ -31,6 +31,32 @@ training_programs:
     notes: Brian reports receiving PT from late March 2026; handwritten PT records and recent conversation now cover 21 completed PT-program workouts through 2026-06-20, plus one 2026-06-15 access issue and home fallback.
 
 body_composition_records:
+  - id: body_composition_20260621_1131_inbody270_printout
+    object_type: BodyCompositionRecord
+    date: 2026-06-21
+    time: "11:31"
+    source: inbody270_printout_photo
+    weight_kg: 78.8
+    skeletal_muscle_mass_kg: 34.4
+    body_fat_mass_kg: 18.2
+    body_fat_percent: 23.1
+    bmi: 25.7
+    waist_cm: null
+    basal_metabolic_rate_kcal: 1679
+    visceral_fat_level: 7
+    abdominal_fat_ratio: 0.89
+    inbody_score: 76
+    total_body_water_l: 44.4
+    protein_kg: 12.1
+    minerals_kg: 4.13
+    fat_free_mass_kg: 60.6
+    obesity_degree_percent: 117
+    recommended_calorie_intake_kcal: 2259
+    weight_control_kg: -7.5
+    fat_control_kg: -7.5
+    muscle_control_kg: 0.0
+    condition: midday_measurement_after_recent_high_frequency_training_and_protein_focus
+    notes: 2026-06-21 InBody270 printout. Compared with the 2026-06-18 07:00 InBody app record, weight increased by 1.2kg, skeletal muscle mass increased by 1.2kg, body fat mass decreased by 0.9kg, body fat percent decreased by 1.5 percentage points, InBody score increased from 73 to 76, and abdominal fat ratio improved from 0.90 to 0.89. Treat the 3-day jump as encouraging but hydration/glycogen/time-of-day sensitive.
   - id: body_composition_20260618_0700_inbody_app
     object_type: BodyCompositionRecord
     date: 2026-06-18
@@ -2494,6 +2520,24 @@ sleep_records:
     sleep_type: recovery_nap
 
 trend_observations:
+  - id: body_trend_20260621_inbody_recomposition_signal
+    object_type: BodyTrendObservation
+    date: 2026-06-21
+    observation_type: inbody_recomposition_signal
+    summary: Today InBody printout shows weight up to 78.8kg while skeletal muscle mass rose to 34.4kg and body fat percent fell to 23.1%, supporting a stronger recomposition signal than the 2026-06-18 mixed result.
+    positive_signals:
+      - skeletal muscle mass increased from 33.2kg on 2026-06-18 to 34.4kg on 2026-06-21
+      - body fat mass decreased from 19.1kg on 2026-06-18 to 18.2kg on 2026-06-21
+      - body fat percent decreased from 24.6% to 23.1%
+      - InBody score improved from 73 to 76
+      - abdominal fat ratio improved from 0.90 to 0.89 while visceral fat level stayed at 7
+      - recent workout records show progressive loading and a higher short-term training frequency
+    uncertain_signals:
+      - the measurement was only three days after the 2026-06-18 scan, so hydration, sodium, glycogen, time-of-day, and recent training can explain part of the jump
+      - the 2026-06-21 measurement was at 11:31, while the prior 2026-06-18 measurement was at 07:00
+      - body weight increased by 1.2kg, so scale weight alone still should not be used as the success metric
+    interpretation: Stronger recomposition signal than before; treat it as encouraging evidence, not a final conclusion until the next 2-4 week trend confirms muscle retention or gain with falling fat mass and body fat percent.
+    confidence: medium
   - id: body_trend_20260618_current_big_lift_snapshot
     object_type: BodyTrendObservation
     date: 2026-06-18
@@ -2796,3 +2840,11 @@ raw_records:
     source: codex_conversation
     related_meal: meal_20260618_afternoon_hydro_whey_30g
     text: "오후에 HYDRO WHEY 30g 단백질 먹음."
+
+  - id: raw_body_record_20260621_inbody_printout_photo
+    date: 2026-06-21
+    time: "11:31"
+    source: codex_conversation
+    related_body_composition_ref: body_composition_20260621_1131_inbody270_printout
+    related_trend_observation_ref: body_trend_20260621_inbody_recomposition_signal
+    text: "오늘자 인바디 사진 공유. InBody270 printout: weight 78.8kg, skeletal muscle mass 34.4kg, body fat mass 18.2kg, body fat percent 23.1%, BMI 25.7, InBody score 76, waist-hip ratio 0.89, visceral fat level 7, basal metabolic rate 1679kcal."
