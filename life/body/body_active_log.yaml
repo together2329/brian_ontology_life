@@ -507,7 +507,7 @@ workout_records:
         equipment: unspecified
         confidence: medium
         needs_user_review: true
-        notes: 인클라인 벤치. Brian reported 40kg x 10 and 50kg x 5. Equipment variant was not specified, so confirm later whether this was barbell, Smith machine, dumbbell, or machine.
+        notes: 인클라인 벤치. Brian reported 40kg x 10, 50kg x 5, and then 60kg x 3. Equipment variant was not specified, so confirm later whether this was barbell, Smith machine, dumbbell, or machine. The 60kg x 3 set is interpreted as continuation of the incline bench sequence based on message context.
         sets:
           - set: 1
             weight_kg: 40
@@ -515,7 +515,10 @@ workout_records:
           - set: 2
             weight_kg: 50
             reps: 5
-            notes: Highest recorded incline bench load so far; top set, not formal 1RM.
+          - set: 3
+            weight_kg: 60
+            reps: 3
+            notes: Highest recorded incline bench load so far; interpreted as incline bench continuation from message context. Top set, not formal 1RM.
 
   - id: workoutsession_20260620_pt_lower_body_arms_paper
     object_type: WorkoutSession
@@ -2613,16 +2616,17 @@ trend_observations:
     object_type: BodyTrendObservation
     date: 2026-06-21
     observation_type: incline_bench_top_load_progression
-    summary: Brian recorded incline bench work at 40kg x 10 and 50kg x 5, making 50kg the highest incline bench load currently recorded in the local workout history.
+    summary: Brian recorded incline bench work at 40kg x 10, 50kg x 5, and 60kg x 3, making 60kg the highest incline bench load currently recorded in the local workout history.
     positive_signals:
       - 2026-06-09 incline bench reached 40kg x 10 and 40kg x 12
-      - 2026-06-21 incline bench reached 50kg x 5 after flat bench top sets
+      - 2026-06-21 incline bench reached 50kg x 5 and then 60kg x 3 after flat bench top sets
       - upper-chest pressing strength appears to be moving up alongside flat bench progression
     uncertain_signals:
       - equipment variant was not specified, so barbell, Smith machine, dumbbell, or machine needs later confirmation
+      - the 60kg x 3 set is inferred as incline bench continuation from message context and should be corrected if Brian meant flat bench
       - this is a top-set performance record, not a formal one-rep max
       - the set came after substantial chest work, so fatigue state was high
-    interpretation: Incline pressing strength is likely improving; keep 50kg x 5 as a current top-load benchmark and confirm equipment variant later.
+    interpretation: Incline pressing strength is likely improving; keep 60kg x 3 as a current top-load benchmark and confirm equipment variant later.
     confidence: medium
   - id: body_trend_20260621_bench_press_top_load_progression
     object_type: BodyTrendObservation
@@ -3006,3 +3010,11 @@ raw_records:
     related_workout: workoutsession_20260621_chest_cable_crossover_self_report
     related_trend_observation_ref: body_trend_20260621_incline_bench_top_load_progression
     text: "벤치 다시 40kg 로 10개. 인클라인 벤치 40kg 10개, 50kg 5개"
+
+  - id: raw_body_record_20260621_incline_bench_60kg_set
+    date: 2026-06-21
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260621_chest_cable_crossover_self_report
+    related_trend_observation_ref: body_trend_20260621_incline_bench_top_load_progression
+    text: "60kg 3개"
