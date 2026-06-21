@@ -428,6 +428,47 @@ exercise_catalog:
     notes: Temporary placeholder for handwritten PT rows that need Brian review.
 
 workout_records:
+  - id: workoutsession_20260621_chest_cable_crossover_self_report
+    object_type: WorkoutSession
+    date: 2026-06-21
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: 가슴 운동 - 케이블 크로스오버
+    tags: [self_report, chest, cable_crossover]
+    training_program_ref: null
+    location: null
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    performance_note: Brian reported cable crossover sets using one-side cable-stack weight as the basis. This is a controlled chest accessory volume record rather than a clear new top-load record, because prior PT sheet history includes 20kg x 12 cable crossover sets on 2026-06-09.
+    exercises:
+      - exercise_ref: exercise_cable_crossover
+        sequence_order: 1
+        variant: cable
+        equipment: cable_machine
+        confidence: high
+        notes: 케이블 크로스오버. Weight is recorded per side / per cable stack based on Brian's clarification "한쪽 무게 기준".
+        sets:
+          - set: 1
+            weight_kg: 15
+            reps: 12
+            weight_basis: per_side_cable_stack
+          - set: 2
+            weight_kg: 10
+            reps: 15
+            weight_basis: per_side_cable_stack
+          - set: 3
+            weight_kg: 10
+            reps: 15
+            weight_basis: per_side_cable_stack
+          - set: 4
+            weight_kg: 15
+            reps: 12
+            weight_basis: per_side_cable_stack
+            notes: 마무리 세트.
+
   - id: workoutsession_20260620_pt_lower_body_arms_paper
     object_type: WorkoutSession
     date: 2026-06-20
@@ -2857,3 +2898,10 @@ raw_records:
     related_body_composition_ref: body_composition_20260621_1131_inbody270_printout
     related_trend_observation_ref: body_trend_20260621_inbody_recomposition_signal
     text: "리컴프 맞는가? 눈으로는 몸을 봤을때 좋아지고 있어 보여서"
+
+  - id: raw_body_record_20260621_cable_crossover_sets
+    date: 2026-06-21
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260621_chest_cable_crossover_self_report
+    text: "오늘 케이블 크로스 오버 각각 15kg 12회 1세트, 10kg 15회 2세트, 마무리 다시 15kg 12회 1세트. 한쪽 무게 기준."
