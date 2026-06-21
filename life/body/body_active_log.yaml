@@ -473,7 +473,7 @@ workout_records:
         variant: barbell_bench_press
         equipment: barbell
         confidence: high
-        notes: 벤치프레스. Brian reported empty bar for 20 reps, then 40kg x 10, 50kg x 5, 60kg x 3, and 60kg x 2. Weight is interpreted as total barbell load because Brian specified empty bar separately.
+        notes: 벤치프레스. Brian reported empty bar for 20 reps, then 40kg x 10, 50kg x 5, 60kg x 3, 60kg x 2, and an additional 50kg x 5 back-off set. Weight is interpreted as total barbell load because Brian specified empty bar separately.
         sets:
           - set: 1
             weight_kg: 20
@@ -493,6 +493,10 @@ workout_records:
             weight_kg: 60
             reps: 2
             notes: Second 60kg top-load set.
+          - set: 6
+            weight_kg: 50
+            reps: 5
+            notes: Additional back-off set after the 60kg top-load sets.
 
   - id: workoutsession_20260620_pt_lower_body_arms_paper
     object_type: WorkoutSession
@@ -2953,3 +2957,10 @@ raw_records:
     related_workout: workoutsession_20260621_chest_cable_crossover_self_report
     related_trend_observation_ref: body_trend_20260621_bench_press_top_load_progression
     text: "벤치 빈봉 20, 40kg 10, 50kg 5, 60kg 3, 60kg 2"
+
+  - id: raw_body_record_20260621_bench_press_extra_50kg_set
+    date: 2026-06-21
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260621_chest_cable_crossover_self_report
+    text: "50kg 5개 더"
