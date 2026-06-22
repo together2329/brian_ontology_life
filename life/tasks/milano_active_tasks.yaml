@@ -1,11 +1,11 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-19
+updated_at: 2026-06-22
 area: CAREER
 project_ref: project_milano
 component_ref: component_milano_pcie
 title: Milano active task list
-current_phase: 합성 터미널 종료 후 synthesis를 재시작했고, Handler + SFR 전수조사는 1차 완료. GEN7 PHY top simulation pass 및 FPGA file-list no-issue context는 유지 중. NVMe VIP setup task가 추가됨.
+current_phase: link0 wrapper 합성은 한 번 완료되었으나 IDE 누락이 발견되어 IDE 포함 재합성을 급히 진행 중. ARIR 신뢰 전 ETC area bucket breakdown 분석이 필요함.
 source_records:
   - id: source_milano_conversation_20260614_current_tasks
     source_type: chat
@@ -412,6 +412,32 @@ source_records:
           - all other paths/features/ports outside PCIe IB and PCIe OB
       verification_need: Confirm only PCIe IB/OB are open and all other unrelated paths/features are disabled before trusting NVMe VIP setup.
 
+  - id: source_milano_conversation_20260622_link0_wrapper_ide_resynth_etc_area
+    source_type: chat
+    original_date: 2026-06-22
+    imported_at: 2026-06-22
+    parse_status: parsed
+    raw_text: "Milano link0 wrapper 합성 완료. IDE 가 빠져 다시 급하게 넣고 합성 중. ETC 부분 Area 분석 필요."
+    interpreted_update:
+      task_refs:
+        - task_milano_sdc_dual_profile_synth_rerun
+        - task_milano_arir_precheck
+        - task_milano_link0_wrapper_etc_area_analysis
+      issue_ref: issue_milano_link0_wrapper_ide_missing_from_synthesis_20260622
+      artifact_refs:
+        - artifact_milano_link0_wrapper_synthesis_no_ide_20260622
+        - artifact_milano_link0_wrapper_synthesis_ide_included_rerun_20260622
+        - artifact_milano_link0_wrapper_etc_area_breakdown_20260622
+      synthesis_state:
+        completed_scope: link0_wrapper
+        completed_run_gap: IDE was missing from the completed link0 wrapper synthesis scope.
+        corrective_action: IDE was added back and synthesis rerun was started urgently.
+        current_status: ide_inclusive_resynthesis_running
+      area_analysis:
+        target_bucket: ETC
+        required_action: Break down the ETC area bucket before trusting ARIR or area comparison.
+        dependency: Compare the completed IDE-missing result with the IDE-inclusive rerun after reports are available.
+
 summary:
   recently_completed:
     - task_milano_3nm_synth_env_setup
@@ -439,10 +465,15 @@ summary:
     - Handler + SFR exhaustive survey first pass completed on 2026-06-19
     - Planned 2026-06-22 arrival focus: SDC cleanup repeat pass, PHY GEN7 SDC, link0 wrapper, filelist, and visible timing issue checks
     - NVMe VIP setup task added with PCIe IB/OB-only enable requirement
+    - On 2026-06-22, link0 wrapper synthesis completed once, but IDE was missing from that completed scope
+    - IDE has been added back and an urgent IDE-inclusive link0 wrapper resynthesis is running
+    - ETC area bucket analysis is now required before ARIR/area confidence is trusted
   current_focus:
-    date: 2026-06-19
+    date: 2026-06-22
     primary_tasks:
       - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_link0_wrapper_etc_area_analysis
+      - task_milano_arir_precheck
       - task_milano_gen7_phy_db_synthesis
     supporting_tasks:
       - task_milano_firenze_handler_reflection_check
@@ -454,6 +485,7 @@ summary:
       - task_milano_port1_interrupt_requirement
       - task_milano_pcie_doe_reg_top_axi_bridge_dcg_power_optimization
     source_refs:
+      - source_milano_conversation_20260622_link0_wrapper_ide_resynth_etc_area
       - source_milano_conversation_20260618_gen7_phy_top_sim_pass_handler_review
       - source_milano_conversation_20260619_synth_terminal_restart_handler_sfr_first_pass
       - source_milano_conversation_20260619_next_monday_sdc_phy_link0_filelist_timing_plan
@@ -569,6 +601,9 @@ tasks:
       - After completing the initial DB release on 2026-06-17, Brian reset the Milano focus back to SDC clean-up.
       - On 2026-06-19, the synthesis terminal/session ended and Brian restarted synthesis.
       - Brian planned a 2026-06-22 arrival pass for SDC cleanup, PHY GEN7 SDC, link0 wrapper, filelist, and visible timing issue checks.
+      - On 2026-06-22, link0 wrapper synthesis completed once, but Brian found that IDE was missing from that completed run.
+      - Brian added IDE back and started an urgent IDE-inclusive synthesis rerun.
+      - The IDE-missing completed result should be treated as incomplete evidence for final area/timing confidence.
     tooling_notes:
       - Cursor was useful for SDC porting, but needed examples and iteration.
       - Python scripting helped stabilize or automate parts of the SDC porting flow.
@@ -592,6 +627,9 @@ tasks:
       - Capture the restarted synthesis log/report path and restart time if the run becomes important evidence.
       - If the synthesis terminal/session ends again, record it as a repeatability or environment issue.
       - On 2026-06-22, run one more SDC clean-up pass and inspect PHY GEN7 SDC and link0 wrapper before trusting the synthesis/timing path.
+      - Let the IDE-inclusive link0 wrapper rerun finish before closing the link0 wrapper synthesis path.
+      - Compare IDE-missing versus IDE-inclusive area/timing deltas, especially the ETC area bucket.
+      - Use the IDE-inclusive result as the baseline for ARIR and downstream GEN7 PHY DB synthesis confidence.
     depends_on:
       - task_milano_3nm_synth_env_setup
     evidence_refs:
@@ -605,13 +643,14 @@ tasks:
       - source_milano_conversation_20260617_focus_sdc_cleanup
       - source_milano_conversation_20260619_synth_terminal_restart_handler_sfr_first_pass
       - source_milano_conversation_20260619_next_monday_sdc_phy_link0_filelist_timing_plan
+      - source_milano_conversation_20260622_link0_wrapper_ide_resynth_etc_area
     confidence: high
     needs_user_review: false
 
   - id: task_milano_arir_precheck
     title: 합성 재시도 결과로 ARIR area/instance count 사전 확인
     area: CAREER
-    status: waiting_on_synthesis
+    status: in_progress
     priority: high
     energy: deep_work
     estimated_minutes: null
@@ -619,7 +658,7 @@ tasks:
     tracking_level: detailed
     project_ref: project_milano
     component_ref: component_milano_pcie
-    progress_percent: 10
+    progress_percent: 20
     tags:
       - milano
       - synthesis
@@ -630,22 +669,96 @@ tasks:
     expected_outputs:
       - area report or area summary from synthesis rerun
       - instance count report or instance summary from synthesis rerun
+      - ETC area bucket breakdown for link0 wrapper synthesis
+      - IDE-missing versus IDE-inclusive area/timing delta summary
       - risk list before final DB synthesis
     next_actions:
-      - Wait for SDC synthesis results to complete.
+      - Wait for the IDE-inclusive link0 wrapper synthesis rerun to complete.
       - Collect area results from the synthesis rerun.
       - Collect instance count results from the synthesis rerun.
+      - Break down the ETC area bucket and identify whether it is real IDE logic, wrapper miscellaneous logic, unmapped hierarchy, library/cell grouping, or report categorization noise.
+      - Compare the completed IDE-missing run against the IDE-inclusive rerun so the expected IDE area delta is not mistaken for an unexplained ETC increase.
       - Compare area and instance count against expected baseline or prior run if available.
       - Identify early blockers before final DB synthesis.
       - Convert any blocker into Issue objects when concrete failure evidence exists.
     depends_on:
       - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_link0_wrapper_etc_area_analysis
     evidence_refs:
       - source_milano_conversation_20260614_current_tasks
       - source_milano_conversation_20260614_arir_definition
       - source_milano_conversation_20260614_multi_hour_progress_update
       - source_milano_conversation_20260619_synth_terminal_restart_handler_sfr_first_pass
+      - source_milano_conversation_20260622_link0_wrapper_ide_resynth_etc_area
     confidence: medium
+    needs_user_review: false
+
+  - id: task_milano_link0_wrapper_etc_area_analysis
+    title: link0 wrapper 합성 리포트 ETC Area breakdown 분석
+    area: CAREER
+    status: in_progress
+    priority: high
+    energy: review
+    estimated_minutes: null
+    due_date: null
+    tracking_level: detailed
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    progress_percent: 10
+    owner_ref: person_brian
+    tags:
+      - milano
+      - link0_wrapper
+      - synthesis
+      - area
+      - arir
+      - etc_bucket
+      - ide
+      - report_analysis
+    context:
+      - Link0 wrapper synthesis completed once on 2026-06-22.
+      - Brian found that IDE was missing from the completed synthesis scope.
+      - IDE was added back and urgent resynthesis is running.
+      - ETC area must be analyzed before the area result is trusted for ARIR or final synthesis judgment.
+    scope:
+      - Use the IDE-inclusive rerun as the trusted baseline once it finishes.
+      - Keep the IDE-missing completed run only as a comparison point, not as final closure evidence.
+      - Break down the ETC area bucket into concrete contributors wherever the synthesis report allows.
+      - Classify ETC contributors as expected IDE area, wrapper miscellaneous logic, ungrouped or unmapped hierarchy, library/report categorization, constraint/setup artifact, or unresolved.
+      - Check whether any large ETC contributor indicates filelist/hierarchy/ungrouping/setup mistakes rather than real logic.
+    expected_outputs:
+      - ETC area contributor list with top instances or categories.
+      - IDE-missing versus IDE-inclusive area delta.
+      - Classification of expected versus suspicious ETC area.
+      - Follow-up issue list if ETC contains abnormal or unexplained growth.
+    acceptance_criteria:
+      - IDE-inclusive synthesis report is reviewed before final area confidence is claimed.
+      - ETC area is not left as a single opaque bucket if the report can expose lower-level contributors.
+      - Expected IDE area growth is separated from unexplained ETC growth.
+      - Any suspicious ETC contributor has an owner, next action, or issue record.
+    blockers:
+      - IDE-inclusive link0 wrapper synthesis rerun is still running.
+      - Exact synthesis report paths and area report format are not recorded yet.
+      - ETC bucket semantics depend on the synthesis tool/report configuration and need local report inspection.
+    next_actions:
+      - Let the IDE-inclusive rerun finish.
+      - Capture report paths for both the completed IDE-missing run and the IDE-inclusive rerun.
+      - Extract top-level area and instance count first, then drill down into the ETC bucket.
+      - Compare IDE-missing and IDE-inclusive reports to isolate expected IDE area delta.
+      - If ETC remains too large or opaque, inspect hierarchy/ungrouping/report grouping and filelist inclusion before assuming it is real logic area.
+    related_task_refs:
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_arir_precheck
+      - task_milano_gen7_phy_db_synthesis
+    related_issue_refs:
+      - issue_milano_link0_wrapper_ide_missing_from_synthesis_20260622
+    artifact_refs:
+      - artifact_milano_link0_wrapper_synthesis_no_ide_20260622
+      - artifact_milano_link0_wrapper_synthesis_ide_included_rerun_20260622
+      - artifact_milano_link0_wrapper_etc_area_breakdown_20260622
+    evidence_refs:
+      - source_milano_conversation_20260622_link0_wrapper_ide_resynth_etc_area
+    confidence: high
     needs_user_review: false
 
   - id: task_milano_lint_ip_rev_0_1_rerun
@@ -1485,6 +1598,8 @@ tasks:
 
 recommended_execution_order:
   - task_milano_sdc_dual_profile_synth_rerun
+  - task_milano_link0_wrapper_etc_area_analysis
+  - task_milano_arir_precheck
   - task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
   - task_milano_audit_missed_brian_owned_followups_common_module_etc
   - task_milano_lint_ip_rev_0_1_rerun
@@ -1493,7 +1608,6 @@ recommended_execution_order:
   - task_milano_nvme_vip_setup_pcie_ib_ob_only
   - task_milano_firenze_handler_reflection_check
   - task_milano_mse_pf_bar0_overlap_guard
-  - task_milano_arir_precheck
   - task_milano_gen7_phy_db_synthesis
   - task_milano_pcie_doe_reg_top_axi_bridge_dcg_power_optimization
   - task_milano_port1_interrupt_requirement
@@ -1521,13 +1635,23 @@ planned_time_blocks:
         planned_minutes: null
         actual_minutes: null
         status: planned
+      - type: task
+        ref: task_milano_link0_wrapper_etc_area_analysis
+        title: IDE-inclusive link0 wrapper rerun and ETC area breakdown
+        planned_minutes: null
+        actual_minutes: null
+        status: in_progress
     checklist:
       - SDC Clean Up 다시 한 번 수행
       - PHY GEN7 SDC 점검
       - link0 wrapper 점검
+      - IDE 포함 link0 wrapper 재합성 결과 확인
+      - ETC area bucket breakdown 분석
       - filelist 점검
       - timing 관련 보이는 이슈가 있으면 점검
-    source_ref: source_milano_conversation_20260619_next_monday_sdc_phy_link0_filelist_timing_plan
+    source_refs:
+      - source_milano_conversation_20260619_next_monday_sdc_phy_link0_filelist_timing_plan
+      - source_milano_conversation_20260622_link0_wrapper_ide_resynth_etc_area
     confidence: high
     needs_user_review: false
 
@@ -1551,6 +1675,38 @@ planned_time_blocks:
     needs_user_review: false
 
 work_sessions:
+  - id: worksession_20260622_milano_link0_ide_resynth_etc_area
+    date: 2026-06-22
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    start: null
+    end: null
+    actual_minutes: null
+    time_quality: checkpoint
+    task_refs:
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_link0_wrapper_etc_area_analysis
+      - task_milano_arir_precheck
+      - task_milano_gen7_phy_db_synthesis
+    focus_level: urgent_resynthesis_and_area_review
+    summary: link0 wrapper synthesis completed once, but IDE was missing, so Brian added IDE back and started urgent resynthesis; ETC area bucket analysis is needed before trusting ARIR.
+    findings:
+      - Completed link0 wrapper synthesis exists, but it is missing IDE and should not be treated as final evidence.
+      - IDE-inclusive resynthesis is currently running.
+      - ETC area needs breakdown because an opaque ETC bucket can hide filelist/hierarchy/grouping/setup issues as well as real IDE logic.
+    next_steps:
+      - Wait for the IDE-inclusive rerun to finish.
+      - Capture both IDE-missing and IDE-inclusive report paths.
+      - Compare area/timing deltas and drill down into the ETC bucket.
+      - Convert abnormal ETC contributors into issues or follow-up tasks.
+    issue_refs:
+      - issue_milano_link0_wrapper_ide_missing_from_synthesis_20260622
+    artifact_refs:
+      - artifact_milano_link0_wrapper_synthesis_no_ide_20260622
+      - artifact_milano_link0_wrapper_synthesis_ide_included_rerun_20260622
+      - artifact_milano_link0_wrapper_etc_area_breakdown_20260622
+    source_ref: source_milano_conversation_20260622_link0_wrapper_ide_resynth_etc_area
+
   - id: worksession_20260619_milano_synth_restart_handler_sfr_first_pass
     date: 2026-06-19
     project_ref: project_milano
@@ -1787,6 +1943,61 @@ work_sessions:
       - source_milano_conversation_20260617_initial_db_release_completed_rest
 
 task_status_updates:
+  - id: status_task_milano_sdc_20260622_link0_wrapper_ide_resynth
+    date: 2026-06-22
+    task_ref: task_milano_sdc_dual_profile_synth_rerun
+    author_ref: person_brian
+    status: in_progress
+    progress_percent: 80
+    summary: link0 wrapper synthesis completed once, but IDE was missing; Brian added IDE back and started urgent IDE-inclusive resynthesis.
+    blockers:
+      - IDE-inclusive synthesis rerun result is not yet recorded.
+      - Exact report paths for the IDE-missing and IDE-inclusive runs are not yet recorded.
+    next_step: Let the IDE-inclusive rerun finish, then compare area/timing reports and use the IDE-inclusive report as the trusted baseline.
+    related_task_refs:
+      - task_milano_link0_wrapper_etc_area_analysis
+      - task_milano_arir_precheck
+    issue_refs:
+      - issue_milano_link0_wrapper_ide_missing_from_synthesis_20260622
+    artifact_refs:
+      - artifact_milano_link0_wrapper_synthesis_no_ide_20260622
+      - artifact_milano_link0_wrapper_synthesis_ide_included_rerun_20260622
+    source_ref: source_milano_conversation_20260622_link0_wrapper_ide_resynth_etc_area
+
+  - id: status_task_milano_etc_area_20260622_opened
+    date: 2026-06-22
+    task_ref: task_milano_link0_wrapper_etc_area_analysis
+    author_ref: person_brian
+    status: in_progress
+    progress_percent: 10
+    summary: ETC area bucket analysis was opened for the link0 wrapper synthesis report after the IDE omission was found.
+    blockers:
+      - IDE-inclusive rerun is still in progress.
+      - ETC lower-level contributor report path and format are not recorded yet.
+    next_step: After rerun completion, extract ETC contributors and classify expected IDE growth separately from suspicious or unexplained ETC area.
+    related_task_refs:
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_arir_precheck
+    artifact_refs:
+      - artifact_milano_link0_wrapper_etc_area_breakdown_20260622
+    source_ref: source_milano_conversation_20260622_link0_wrapper_ide_resynth_etc_area
+
+  - id: status_task_milano_arir_20260622_etc_area_analysis_needed
+    date: 2026-06-22
+    task_ref: task_milano_arir_precheck
+    author_ref: person_brian
+    status: in_progress
+    progress_percent: 20
+    summary: ARIR area/instance count review now needs ETC area breakdown and IDE-missing versus IDE-inclusive comparison before confidence can be claimed.
+    blockers:
+      - IDE-inclusive synthesis output is pending.
+      - ETC bucket contributors are not yet classified.
+    next_step: Use the IDE-inclusive report as baseline, compare against the IDE-missing completed run, and split ETC area into expected versus suspicious contributors.
+    related_task_refs:
+      - task_milano_link0_wrapper_etc_area_analysis
+      - task_milano_sdc_dual_profile_synth_rerun
+    source_ref: source_milano_conversation_20260622_link0_wrapper_ide_resynth_etc_area
+
   - id: status_task_milano_nvme_vip_setup_20260619_added
     date: 2026-06-19
     task_ref: task_milano_nvme_vip_setup_pcie_ib_ob_only
@@ -2282,6 +2493,49 @@ task_status_updates:
     source_ref: source_milano_conversation_20260616_late_night_tired_missed_brian_owned_followups
 
 issues:
+  - id: issue_milano_link0_wrapper_ide_missing_from_synthesis_20260622
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_sdc_dual_profile_synth_rerun
+    title: link0 wrapper synthesis completed without IDE included
+    status: mitigation_in_progress
+    severity: high
+    discovered_on: 2026-06-22
+    recorded_on: 2026-06-22
+    discovered_in_session: source_milano_conversation_20260622_link0_wrapper_ide_resynth_etc_area
+    blocker_for:
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_arir_precheck
+      - task_milano_link0_wrapper_etc_area_analysis
+      - task_milano_gen7_phy_db_synthesis
+    observed_behavior:
+      - Link0 wrapper synthesis completed once.
+      - IDE was missing from the completed synthesis scope.
+    impact:
+      - The completed link0 wrapper synthesis result cannot be used as final area/timing evidence.
+      - ARIR area and instance-count confidence must wait for the IDE-inclusive rerun.
+      - ETC area analysis must distinguish expected IDE area from unexplained ETC contributors.
+    mitigation:
+      - Brian added IDE back into the scope.
+      - IDE-inclusive link0 wrapper resynthesis is running urgently.
+    next_diagnostic_questions:
+      - Which filelist, hierarchy, or wrapper integration point excluded IDE from the completed run?
+      - Does IDE inclusion change top-level area only as expected, or does it inflate ETC unexpectedly?
+      - Does the synthesis report expose enough hierarchy to split the ETC bucket?
+      - Should a future pre-run checklist explicitly include IDE scope verification?
+    tracking:
+      method: local_ontology
+      status: open_until_ide_inclusive_report_reviewed
+      artifact_refs:
+        - artifact_milano_link0_wrapper_synthesis_no_ide_20260622
+        - artifact_milano_link0_wrapper_synthesis_ide_included_rerun_20260622
+        - artifact_milano_link0_wrapper_etc_area_breakdown_20260622
+    source_ref: source_milano_conversation_20260622_link0_wrapper_ide_resynth_etc_area
+    evidence_refs:
+      - source_milano_conversation_20260622_link0_wrapper_ide_resynth_etc_area
+    confidence: high
+    needs_user_review: false
+
   - id: issue_firenze_mse0_pf_bar0_disabled
     project_ref: project_firenze
     related_project_refs:
@@ -2381,6 +2635,48 @@ issues:
     needs_user_review: false
 
 artifact_candidates:
+  - id: artifact_milano_link0_wrapper_synthesis_no_ide_20260622
+    title: Link0 wrapper synthesis completed without IDE
+    artifact_type: synthesis_run
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_sdc_dual_profile_synth_rerun
+    issue_ref: issue_milano_link0_wrapper_ide_missing_from_synthesis_20260622
+    path_or_uri: null
+    created_on: 2026-06-22
+    status: completed_but_scope_incomplete
+    notes: Link0 wrapper synthesis completed, but IDE was missing from scope; use only for comparison against the IDE-inclusive rerun, not final area/timing closure.
+
+  - id: artifact_milano_link0_wrapper_synthesis_ide_included_rerun_20260622
+    title: Link0 wrapper IDE-inclusive synthesis rerun
+    artifact_type: synthesis_run
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_sdc_dual_profile_synth_rerun
+    issue_ref: issue_milano_link0_wrapper_ide_missing_from_synthesis_20260622
+    path_or_uri: null
+    created_on: 2026-06-22
+    status: running
+    notes: IDE was added back and synthesis is running urgently; final report path, WNS/TNS, area, and instance count are not recorded yet.
+
+  - id: artifact_milano_link0_wrapper_etc_area_breakdown_20260622
+    title: Link0 wrapper ETC area breakdown
+    artifact_type: area_analysis
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_link0_wrapper_etc_area_analysis
+    issue_ref: issue_milano_link0_wrapper_ide_missing_from_synthesis_20260622
+    path_or_uri: null
+    created_on: 2026-06-22
+    status: needed
+    analysis_targets:
+      - ETC area bucket
+      - IDE-missing completed run
+      - IDE-inclusive rerun
+      - area delta
+      - instance-count delta
+    notes: Needed to separate expected IDE area from suspicious ETC contributors before ARIR or final synthesis confidence is claimed.
+
   - id: artifact_milano_pd_pcie_sdc_unmapped_file_cleanup_20260616
     title: PD PCIe SDC error cleanup via farm DC unmapped file
     artifact_type: sdc_cleanup_evidence
@@ -2742,6 +3038,33 @@ feedback_records:
     needs_user_review: false
 
 project_status_updates:
+  - id: project_status_milano_20260622_link0_wrapper_ide_resynth_etc_area
+    date: 2026-06-22
+    project_ref: project_milano
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: link0 wrapper synthesis completed once, but IDE was missing; IDE was added back and urgent resynthesis is running, while ETC area bucket analysis is now required before ARIR confidence.
+    risk: The IDE-missing completed report can make area/timing look cleaner than the real scope, and an opaque ETC bucket can hide either expected IDE area or abnormal hierarchy/filelist/report-grouping issues.
+    priority_order:
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_link0_wrapper_etc_area_analysis
+      - task_milano_arir_precheck
+      - task_milano_gen7_phy_db_synthesis
+    next_step: Wait for the IDE-inclusive rerun, capture both report paths, compare area/timing deltas, and drill into ETC contributors before trusting ARIR.
+    related_task_refs:
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_link0_wrapper_etc_area_analysis
+      - task_milano_arir_precheck
+      - task_milano_gen7_phy_db_synthesis
+    related_issue_refs:
+      - issue_milano_link0_wrapper_ide_missing_from_synthesis_20260622
+    artifact_refs:
+      - artifact_milano_link0_wrapper_synthesis_no_ide_20260622
+      - artifact_milano_link0_wrapper_synthesis_ide_included_rerun_20260622
+      - artifact_milano_link0_wrapper_etc_area_breakdown_20260622
+    source_ref: source_milano_conversation_20260622_link0_wrapper_ide_resynth_etc_area
+
   - id: project_status_milano_20260619_nvme_vip_setup_task_added
     date: 2026-06-19
     project_ref: project_milano
