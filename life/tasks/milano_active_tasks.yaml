@@ -5,7 +5,7 @@ area: CAREER
 project_ref: project_milano
 component_ref: component_milano_pcie
 title: Milano active task list
-current_phase: link0 wrapper 합성은 한 번 완료되었으나 IDE 누락이 발견되어 IDE 포함 재합성을 급히 진행 중. ARIR 신뢰 전 ETC area bucket breakdown 분석이 필요함.
+current_phase: 2026년 6월 말까지는 Area/ARIR, SDC, link0 wrapper, pd_pcie synthesis에 집중. link0 wrapper는 IDE 포함 재합성 중이며, ARIR 신뢰 전 ETC area bucket breakdown 분석이 필요함.
 source_records:
   - id: source_milano_conversation_20260614_current_tasks
     source_type: chat
@@ -438,6 +438,34 @@ source_records:
         required_action: Break down the ETC area bucket before trusting ARIR or area comparison.
         dependency: Compare the completed IDE-missing result with the IDE-inclusive rerun after reports are available.
 
+  - id: source_milano_conversation_20260622_june_focus_area_sdc_link0_pd_pcie_synth
+    source_type: chat
+    original_date: 2026-06-22
+    imported_at: 2026-06-22
+    parse_status: parsed
+    raw_text: "일단 6월까지는 Area, SDC, link0 wrapper, pd_pcie 합성에 집중"
+    interpreted_focus_policy:
+      target_window:
+        start: 2026-06-22
+        end: 2026-06-30
+        basis: User said "6월까지" on 2026-06-22; interpreted as through the end of June 2026.
+      project_ref: project_milano
+      primary_focus:
+        - Area / ARIR / ETC area breakdown
+        - SDC cleanup and synthesis constraints
+        - link0 wrapper synthesis and report review
+        - pd_pcie synthesis
+      related_task_refs:
+        - task_milano_link0_wrapper_etc_area_analysis
+        - task_milano_arir_precheck
+        - task_milano_sdc_dual_profile_synth_rerun
+        - task_milano_gen7_phy_db_synthesis
+      deprioritized_for_window:
+        - task_milano_nvme_vip_setup_pcie_ib_ob_only
+        - task_milano_mse_pf_bar0_overlap_guard
+        - task_milano_pcie_doe_reg_top_axi_bridge_dcg_power_optimization
+        - task_milano_port1_interrupt_requirement
+
 summary:
   recently_completed:
     - task_milano_3nm_synth_env_setup
@@ -468,8 +496,18 @@ summary:
     - On 2026-06-22, link0 wrapper synthesis completed once, but IDE was missing from that completed scope
     - IDE has been added back and an urgent IDE-inclusive link0 wrapper resynthesis is running
     - ETC area bucket analysis is now required before ARIR/area confidence is trusted
+    - Through the end of June 2026, Brian's Milano focus is narrowed to Area/ARIR, SDC, link0 wrapper, and pd_pcie synthesis
   current_focus:
     date: 2026-06-22
+    target_window:
+      start: 2026-06-22
+      end: 2026-06-30
+      focus_statement: 6월 말까지 Area, SDC, link0 wrapper, pd_pcie 합성에 집중
+    focus_scope:
+      - Area / ARIR / ETC area breakdown
+      - SDC cleanup and synthesis constraints
+      - link0 wrapper synthesis and report review
+      - pd_pcie synthesis
     primary_tasks:
       - task_milano_sdc_dual_profile_synth_rerun
       - task_milano_link0_wrapper_etc_area_analysis
@@ -480,11 +518,13 @@ summary:
       - task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
       - task_milano_audit_missed_brian_owned_followups_common_module_etc
       - task_milano_lint_ip_rev_0_1_rerun
-      - task_milano_nvme_vip_setup_pcie_ib_ob_only
     deferred_tasks:
+      - task_milano_nvme_vip_setup_pcie_ib_ob_only
+      - task_milano_mse_pf_bar0_overlap_guard
       - task_milano_port1_interrupt_requirement
       - task_milano_pcie_doe_reg_top_axi_bridge_dcg_power_optimization
     source_refs:
+      - source_milano_conversation_20260622_june_focus_area_sdc_link0_pd_pcie_synth
       - source_milano_conversation_20260622_link0_wrapper_ide_resynth_etc_area
       - source_milano_conversation_20260618_gen7_phy_top_sim_pass_handler_review
       - source_milano_conversation_20260619_synth_terminal_restart_handler_sfr_first_pass
@@ -498,18 +538,24 @@ summary:
       - source_milano_conversation_20260617_initial_db_release_completed_rest
       - source_milano_conversation_20260617_focus_sdc_cleanup
   planned_next_focus:
-    date: 2026-06-22
-    trigger: when_arriving_next_monday
+    target_window:
+      start: 2026-06-22
+      end: 2026-06-30
+    trigger: june_end_focus_policy
     primary_tasks:
       - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_link0_wrapper_etc_area_analysis
+      - task_milano_arir_precheck
       - task_milano_gen7_phy_db_synthesis
     checklist:
+      - Area / ARIR / ETC area breakdown
       - SDC clean-up repeat pass
-      - PHY GEN7 SDC review
-      - link0 wrapper review
-      - filelist review
-      - timing-related visible issue review
-    source_ref: source_milano_conversation_20260619_next_monday_sdc_phy_link0_filelist_timing_plan
+      - link0 wrapper IDE-inclusive synthesis/report review
+      - pd_pcie synthesis review
+      - filelist and visible timing-related issue review only as needed for those synthesis paths
+    source_refs:
+      - source_milano_conversation_20260622_june_focus_area_sdc_link0_pd_pcie_synth
+      - source_milano_conversation_20260619_next_monday_sdc_phy_link0_filelist_timing_plan
   open_questions:
     - id: oq_milano_gen7_phy_term
       question: "'제7파이'를 GEN7 PHY로 해석하는 것이 맞는지 확인 필요."
@@ -604,6 +650,7 @@ tasks:
       - On 2026-06-22, link0 wrapper synthesis completed once, but Brian found that IDE was missing from that completed run.
       - Brian added IDE back and started an urgent IDE-inclusive synthesis rerun.
       - The IDE-missing completed result should be treated as incomplete evidence for final area/timing confidence.
+      - Through the end of June 2026, Brian narrowed Milano execution focus to Area/ARIR, SDC, link0 wrapper, and pd_pcie synthesis.
     tooling_notes:
       - Cursor was useful for SDC porting, but needed examples and iteration.
       - Python scripting helped stabilize or automate parts of the SDC porting flow.
@@ -630,6 +677,7 @@ tasks:
       - Let the IDE-inclusive link0 wrapper rerun finish before closing the link0 wrapper synthesis path.
       - Compare IDE-missing versus IDE-inclusive area/timing deltas, especially the ETC area bucket.
       - Use the IDE-inclusive result as the baseline for ARIR and downstream GEN7 PHY DB synthesis confidence.
+      - Keep adjacent tasks such as NVMe VIP setup, MSE/PF BAR0, DCG power optimization, and Port 1 requirement out of the main June path unless they directly block area/SDC/link0/pd_pcie synthesis.
     depends_on:
       - task_milano_3nm_synth_env_setup
     evidence_refs:
@@ -644,6 +692,7 @@ tasks:
       - source_milano_conversation_20260619_synth_terminal_restart_handler_sfr_first_pass
       - source_milano_conversation_20260619_next_monday_sdc_phy_link0_filelist_timing_plan
       - source_milano_conversation_20260622_link0_wrapper_ide_resynth_etc_area
+      - source_milano_conversation_20260622_june_focus_area_sdc_link0_pd_pcie_synth
     confidence: high
     needs_user_review: false
 
@@ -1600,15 +1649,15 @@ recommended_execution_order:
   - task_milano_sdc_dual_profile_synth_rerun
   - task_milano_link0_wrapper_etc_area_analysis
   - task_milano_arir_precheck
+  - task_milano_gen7_phy_db_synthesis
   - task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
   - task_milano_audit_missed_brian_owned_followups_common_module_etc
   - task_milano_lint_ip_rev_0_1_rerun
   - task_milano_release_readiness_compile_lint_sim_20260617
   - task_milano_disparity_error_injection_debug_followup
-  - task_milano_nvme_vip_setup_pcie_ib_ob_only
   - task_milano_firenze_handler_reflection_check
+  - task_milano_nvme_vip_setup_pcie_ib_ob_only
   - task_milano_mse_pf_bar0_overlap_guard
-  - task_milano_gen7_phy_db_synthesis
   - task_milano_pcie_doe_reg_top_axi_bridge_dcg_power_optimization
   - task_milano_port1_interrupt_requirement
 
@@ -3038,6 +3087,32 @@ feedback_records:
     needs_user_review: false
 
 project_status_updates:
+  - id: project_status_milano_20260622_june_focus_area_sdc_link0_pd_pcie_synth
+    date: 2026-06-22
+    project_ref: project_milano
+    author_ref: person_brian
+    status: active
+    target_window:
+      start: 2026-06-22
+      end: 2026-06-30
+    summary: 2026년 6월 말까지 Milano 작업은 Area/ARIR, SDC, link0 wrapper, pd_pcie 합성에 집중하기로 했다.
+    rationale:
+      - link0 wrapper IDE-inclusive resynthesis and ETC area analysis are immediate blockers for trustworthy area/timing confidence.
+      - SDC and pd_pcie synthesis quality are the highest-value closure path before widening back to adjacent tasks.
+      - NVMe VIP IB/OB-only setup remains recorded, but is not the primary June focus unless it becomes necessary for the synthesis path.
+    priority_order:
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_link0_wrapper_etc_area_analysis
+      - task_milano_arir_precheck
+      - task_milano_gen7_phy_db_synthesis
+    deprioritized_for_window:
+      - task_milano_nvme_vip_setup_pcie_ib_ob_only
+      - task_milano_mse_pf_bar0_overlap_guard
+      - task_milano_pcie_doe_reg_top_axi_bridge_dcg_power_optimization
+      - task_milano_port1_interrupt_requirement
+    next_step: Keep June execution centered on area/SDC/link0/pd_pcie synthesis reports; only pull in deferred items if they directly block that path.
+    source_ref: source_milano_conversation_20260622_june_focus_area_sdc_link0_pd_pcie_synth
+
   - id: project_status_milano_20260622_link0_wrapper_ide_resynth_etc_area
     date: 2026-06-22
     project_ref: project_milano
