@@ -1224,11 +1224,12 @@ source_records:
       duration_seconds: 753.6
 
   - id: source_ai_agent_conversation_20260624_codex_ip_dev_fix_pl330_generation
-    source_type: chat
+    source_type: chat_and_pasted_codex_transcript
     original_date: 2026-06-24
     imported_at: 2026-06-24
     parse_status: parsed
     raw_text: "새벽 3:00 - 4:20 까지 codex ip dev 고치기 ( pl330 생성하면서 )"
+    clarification_raw_text: "정확히는 new2_ip_dev 로 해보고 있고 ... 이런거 시켜서 테스트 중 (붙여넣은 Codex OAG PL330 closure 세션 로그)"
     interpreted_time:
       date: 2026-06-24
       start: "03:00"
@@ -1236,16 +1237,38 @@ source_records:
       actual_minutes: 80
       time_quality: exact_user_reported
       part_of_day: dawn_off_hours
+      note: "Pasted transcript file mtimes reach ~04:29 and the session ended on a Codex usage limit (~04:56 retry), so actual end may be slightly later than the reported 04:20."
     interpreted_work:
-      activity: Debugging/fixing the Codex-based IP development tool in ontology_ip_agent.
-      driving_example: PL330 generation used as the working test case.
-      what_was_fixed: not_specified
+      workspace_path: /Users/brian/Desktop/Project/new_ip_dev2
+      user_shorthand: new2_ip_dev
+      repo_ref: repo_new_ip_dev2
+      ip: pl330
+      tool: Codex-based OAG (ontology-anchored generation) hardware IP dev pipeline
+      what_brian_is_doing: Testing the OAG pipeline by having Codex autonomously drive PL330 toward OAG closure with native RTL/TB subagents under dispatch scope control.
       pl330_interpretation:
         term: PL330
-        assumed_meaning: ARM PrimeCell PL330 DMA controller (DMA-330)
-        needs_user_review: true
+        confirmed_meaning: ARM PrimeCell PL330 / DMA-330 DMA controller
+        evidence: Transcript references req/extraction/DDI0424D_dma330_r1p2_trm.
+        needs_user_review: false
+    session_distilled_evidence:
+      orchestration: Codex parent orchestrated native OAG subagents (oag-rtl-implementation-agent, oag-tb-implementation-agent on gpt-5.5 xhigh) and re-ran independent static gates instead of trusting worker receipts.
+      rtl_owner_trace_progress: Contracts owner-marked in RTL went 55/105 then 91/105 then 105/105 across three bounded RTL repair dispatches.
+      rtl_repairs:
+        - Removed watchdog tie-off; routed bounded MFIFO/load-starvation faults into APB-visible fault/stat.
+        - Removed function/task helper constructs from pl330_axi_master, pl330_channel_thread, pl330_apb_regblock to satisfy the OAG SV-lite subset.
+        - Design facts grew from 340 to 363 ports and 13 to 34 registers.
+      protected_ontology_fix: Updated RULE_RTL_LANGUAGE_SUBSET in pl330/ontology/design_rules.yaml to add function and task to forbidden_constructs so oag.compile matches the active checker; recorded as a rule-alignment decision in the evidence ledger, explicitly NOT a requirement closure.
+      static_gates_passing:
+        - oag.compile (105 requirements / 105 obligations / 105 contracts)
+        - Verilator lint clean (no stderr)
+        - PPA and SV-lite pass
+        - domain-crossing pass
+        - dispatch verify pass (no out-of-scope writes)
+      evidence_and_closure_state: Scoreboard and coverage were static development matrices and formal was not_run, so closure stayed 0/105; the TB agent then produced the first live HDL scoreboard row plus a bounded formal pass for OBL_PL330_PRODUCT_DDI0424D_R1P2_A4D5C9 (HANDOFF_PASS for that one product/top contract only). Remaining obligations still need fresh executable ROCEV evidence, a gate decision, and a validation report.
+      session_end: Codex usage limit reached (~04:56 retry window).
+      transcript_status: Self-reported Codex session log pasted by Brian; recorded as session evidence, not independently re-verified inside this ontology repo.
     pattern_note: Another dawn off-hours AI-development session, consistent with the recorded multi-month dawn/night/weekend effort pattern.
-    related_repo_ref: repo_ontology_ip_agent
+    related_repo_ref: repo_new_ip_dev2
     related_task_refs:
       - task_ai_agent_codex_ontology_development_plugin
 
@@ -1537,6 +1560,24 @@ repositories:
     source_refs:
       - source_ai_agent_conversation_20260614_ontology_ip_agent_repo
       - source_ai_agent_local_repo_inspection_20260614_ontology_ip_agent
+
+  - id: repo_new_ip_dev2
+    title: new_ip_dev2
+    repo_type: implementation_repo
+    project_ref: project_ai_agent
+    path: /Users/brian/Desktop/Project/new_ip_dev2
+    status: active_development
+    observed_at: 2026-06-24
+    user_shorthand: new2_ip_dev
+    purpose: Current Codex-based OAG (ontology-anchored generation) hardware IP development workspace; successor working tree to ontology_ip_agent. Drives ontology to RTL to evidence to closure for hardware IP under OAG scope control with native Codex subagents.
+    notable_contents:
+      - .codex/scripts/oag_*.py OAG tooling (compile, check, closure_check, dispatch, domain_crossing, ppa, trace_graph)
+      - .codex/AGENTS.md and OAG SKILL.md workflow guidance
+      - pl330/ ARM PrimeCell DMA-330 (TRM DDI0424D r1p2) IP under active OAG closure
+      - knowledge/dispatches, knowledge/subagents receipts, evidence_ledger.jsonl
+    related_repo_ref: repo_ontology_ip_agent
+    source_refs:
+      - source_ai_agent_conversation_20260624_codex_ip_dev_fix_pl330_generation
 
 tasks:
   - id: task_ai_agent_codex_ontology_development_plugin
@@ -3031,6 +3072,7 @@ work_sessions:
   - id: worksession_20260624_0300_0420_codex_ip_dev_fix_pl330
     date: 2026-06-24
     project_ref: project_ai_agent
+    repository_ref: repo_new_ip_dev2
     start: "03:00"
     end: "04:20"
     actual_minutes: 80
@@ -3038,16 +3080,21 @@ work_sessions:
     location: null
     task_refs:
       - task_ai_agent_codex_ontology_development_plugin
-    focus_level: dawn_off_hours_debugging
-    summary: 새벽 3:00-4:20 Codex 기반 IP 개발 도구(ontology_ip_agent)를 수정하며 PL330 생성을 테스트 케이스로 사용함.
+    focus_level: dawn_off_hours_oag_closure_testing
+    summary: 새벽 세션. new_ip_dev2에서 Codex 기반 OAG 하드웨어 IP 파이프라인을 테스트하며 PL330(ARM DMA-330)을 OAG closure 방향으로 진행. native RTL/TB 서브에이전트를 dispatch scope 아래 돌리고 parent에서 독립 static gate 재검증.
     findings:
-      - PL330(ARM PrimeCell DMA 컨트롤러로 해석)이 timer APB3 / mctp_assembler에 이어 새 IP 생성 예제로 등장함.
-      - 구체적으로 무엇을 고쳤는지는 아직 기록되지 않음.
-      - 새벽 off-hours 세션으로, 이미 기록된 다년간 새벽/밤/주말 AI 개발 패턴과 일치함.
+      - PL330 = ARM PrimeCell DMA-330 (TRM DDI0424D r1p2)로 확인됨 (이전 needs_user_review 해소).
+      - RTL owner-trace 마킹 55/105 -> 91/105 -> 105/105로 완료 (3회 bounded RTL repair dispatch).
+      - SV-lite 위반(function/task helper) 제거, watchdog tie-off 제거, fault를 APB-visible fault/stat로 라우팅.
+      - protected design_rules.yaml의 RULE_RTL_LANGUAGE_SUBSET에 function/task를 forbidden으로 추가해 oag.compile 정합화 (closure가 아니라 rule-alignment 결정으로 ledger 기록).
+      - static gate 전부 pass (oag.compile 105/105/105, Verilator lint, PPA/SV-lite, domain-crossing, dispatch verify).
+      - 그러나 closure는 여전히 0/105 - scoreboard/coverage가 static matrix였고 formal=not_run. TB agent가 첫 product obligation에 live HDL scoreboard 1행 + bounded formal pass만 확보.
+      - 세션은 Codex usage limit으로 종료(~04:56).
     next_steps:
-      - 다음 기록 시 PL330 생성에서 고친 구체 항목과 통과/실패 evidence를 남기기.
-      - PL330을 repo의 정식 예제 IP로 승격할지 결정.
-    pl330_interpretation_needs_user_review: true
+      - 나머지 obligation에 대한 fresh executable ROCEV evidence(live sim + formal)와 gate decision/validation report 생성.
+      - 첫 live-HDL evidence 패턴을 나머지 product/protocol obligation으로 확장.
+      - OAG closure 0/105에서 단계적으로 closed validation 기록.
+    evidence_note: Codex 세션 로그(Brian이 붙여넣음) 기반 기록으로, 이 ontology repo에서 독립 재검증한 것은 아님.
     source_ref: source_ai_agent_conversation_20260624_codex_ip_dev_fix_pl330_generation
 
   - id: worksession_20260619_ontology_study
