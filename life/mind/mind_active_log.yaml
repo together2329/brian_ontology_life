@@ -1,6 +1,6 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-17
+updated_at: 2026-06-23
 area: MIND
 secondary_areas:
   - CAREER
@@ -162,8 +162,75 @@ source_records:
       assistant_recommendation: Rest now; stop screen-heavy AI development for the night if possible.
       reason: Headache and low mental margin after sustained work.
     related_mood_ref: mood_20260617_low_margin_impatience_ai_reputation_pressure
+  - id: source_mind_conversation_20260623_dawn_wake_testing_fatigue
+    source_type: chat
+    original_date: 2026-06-23
+    imported_at: 2026-06-23
+    parse_status: parsed
+    raw_text: "새벽에 잠이 깬김에 이것저것 테스트하니 피곤하네 ㅠ_ㅠ"
+    interpreted_state:
+      context: Brian woke during the dawn/early morning period and used the awake time to test various Codex/AI-related items.
+      symptom: tiredness
+      interpretation: Treat this as an interrupted-sleep plus off-hours-testing fatigue signal, not as a productivity target.
+      related_body_sleep_ref: sleep_20260623_dawn_awake_testing_fatigue
+    related_project_refs:
+      - project_ai_agent
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_codex_two_month_asset_capture_program
+    related_pattern_refs:
+      - pattern_candidate_20260617_reputation_anxiety_overwork
+      - pattern_candidate_20260617_ai_demo_pressure_low_margin
+  - id: source_mind_conversation_20260623_morning_reset_priority
+    source_type: chat
+    original_date: 2026-06-23
+    imported_at: 2026-06-23
+    parse_status: parsed
+    raw_text: "아침에 일어나서 중요하게 생각한게 결국 명상 쉼호흡 행복꾸러미 챙기자"
+    interpreted_state:
+      context: Brian woke in the morning and identified meditation, slow 쉼호흡, and tending the happiness bundle as important anchors.
+      intention: morning_mind_reset
+      related_concept_refs:
+        - concept_fulfilled_mind
+        - happiness_bundle
+      related_happiness_trigger_refs:
+        - happiness_trigger_021
+      confidence: high
 
 mood_entries:
+  - id: mood_20260623_dawn_wake_testing_fatigue
+    object_type: MoodEntry
+    date: 2026-06-23
+    time: null
+    valence_score: -1
+    arousal_score: 3
+    stress_score: 4
+    energy_score: 3
+    emotions:
+      - tired
+      - sleep_interrupted
+      - mild_fatigue
+      - off_hours_ai_testing
+    linked_context:
+      career_task_refs:
+        - task_ai_agent_codex_seminar_prepare
+        - task_ai_agent_company_codex_rollout_support
+        - task_ai_agent_codex_two_month_asset_capture_program
+      body_context_refs:
+        - sleep_20260623_dawn_awake_testing_fatigue
+      related_project_refs:
+        - project_ai_agent
+    possible_triggers:
+      - Woke during the dawn/early morning period.
+      - Used the awake time to test various Codex/AI-related items.
+      - Existing Codex seminar and rollout preparation pressure may make it easier to continue testing when awake.
+    note: Brian woke at dawn/early morning, tested various things, and felt tired afterward.
+    raw_text: "새벽에 잠이 깬김에 이것저것 테스트하니 피곤하네 ㅠ_ㅠ"
+    source_refs:
+      - source_mind_conversation_20260623_dawn_wake_testing_fatigue
+    confidence: high
+    needs_user_review: false
   - id: mood_20260617_low_margin_impatience_ai_reputation_pressure
     object_type: MoodEntry
     date: 2026-06-17
@@ -324,6 +391,35 @@ observations:
       related_project_refs:
         - project_ai_agent
     confidence: high
+  - id: observation_20260623_dawn_testing_sleep_interruption_fatigue
+    object_type: Observation
+    date: 2026-06-23
+    observation_type: sleep_work_boundary_signal
+    area: MIND
+    value: Waking at dawn and using that time for Codex/AI testing produced tiredness; this is a useful signal to protect sleep boundaries during the Codex seminar and two-month asset window.
+    linked_context:
+      mood_ref: mood_20260623_dawn_wake_testing_fatigue
+      source_ref: source_mind_conversation_20260623_dawn_wake_testing_fatigue
+      sleep_ref: sleep_20260623_dawn_awake_testing_fatigue
+      related_task_refs:
+        - task_ai_agent_codex_seminar_prepare
+        - task_ai_agent_codex_two_month_asset_capture_program
+    confidence: high
+  - id: observation_20260623_morning_mind_reset_anchors
+    object_type: Observation
+    date: 2026-06-23
+    observation_type: morning_priority
+    area: MIND
+    value: Brian identified meditation, slow 쉼호흡, and a happiness-bundle check-in as important morning anchors after waking.
+    linked_context:
+      source_ref: source_mind_conversation_20260623_morning_reset_priority
+      related_concept_refs:
+        - concept_fulfilled_mind
+        - happiness_bundle
+      related_happiness_trigger_refs:
+        - happiness_trigger_021
+    confidence: high
+    needs_user_review: false
 
 patterns:
   - id: pattern_candidate_20260617_ai_demo_pressure_low_margin
@@ -407,6 +503,24 @@ operating_rules:
       - observation_20260617_cursor_seminar_is_reputation_asset
     confidence: medium
     needs_user_review: true
+  - id: operating_rule_20260623_morning_reset_before_ai_push
+    object_type: OperatingRule
+    statement: Morning starts should first protect MIND through meditation, slow 쉼호흡, and one light happiness-bundle check-in before AI/work urgency takes over.
+    applies_when:
+      - morning wake-up
+      - sleep was interrupted or off-hours AI testing happened
+      - CAREER pressure or AI-demo urgency is active
+    recommended_actions:
+      - Do a short meditation or quiet sitting block.
+      - Practice slow 쉼호흡 and notice the breath.
+      - Choose one gentle happiness-bundle anchor without turning it into an obligation.
+    derived_from:
+      - source_mind_conversation_20260623_morning_reset_priority
+      - observation_20260623_dawn_testing_sleep_interruption_fatigue
+      - happiness_trigger_021
+      - happiness_bundle
+    confidence: high
+    needs_user_review: false
 
 interventions:
   - id: intervention_20260617_low_margin_reset
@@ -456,3 +570,16 @@ interventions:
     source_refs:
       - source_mind_conversation_20260617_stakeholder_show_question
       - source_mind_conversation_20260617_reputation_fear_ai_only
+  - id: intervention_20260623_dawn_testing_stop_and_sleep
+    object_type: Intervention
+    date: 2026-06-23
+    trigger_pattern_ref: pattern_candidate_20260617_reputation_anxiety_overwork
+    recommendation: "Stop further testing for this dawn block. Capture only the next idea in one line if needed, then return to sleep or at least lie down without screens; resume with one bounded task after proper rest."
+    accepted: null
+    outcome_check_time: null
+    outcome: null
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_codex_two_month_asset_capture_program
+    source_refs:
+      - source_mind_conversation_20260623_dawn_wake_testing_fatigue

@@ -1,11 +1,11 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-22
+updated_at: 2026-06-23
 area: CAREER
 project_ref: project_milano
 component_ref: component_milano_pcie
 title: Milano active task list
-current_phase: 2026년 6월 말까지는 Area/ARIR, SDC, link0 wrapper, pd_pcie synthesis에 집중. link0 wrapper는 IDE 포함 재합성 중이며, ARIR 신뢰 전 ETC area bucket breakdown 분석이 필요함.
+current_phase: 2026년 6월 말까지는 Area/ARIR, SDC, link0 wrapper, pd_pcie synthesis에 집중. IDE Lint Critical은 다 잡았고, link0/pd_pcie synthesis rerun 결과와 report path를 기다리는 중이며, PCIe TLP bus downsizing 이슈는 MPS 제한으로 임시 진행하고 bus fix를 기다리기로 함. ARIR 신뢰 전 ETC area bucket breakdown 분석이 필요함.
 source_records:
   - id: source_milano_conversation_20260614_current_tasks
     source_type: chat
@@ -466,6 +466,176 @@ source_records:
         - task_milano_pcie_doe_reg_top_axi_bridge_dcg_power_optimization
         - task_milano_port1_interrupt_requirement
 
+  - id: source_milano_conversation_20260623_synthesis_ok_ide_lint_critical
+    source_type: chat
+    original_date: 2026-06-23
+    imported_at: 2026-06-23
+    parse_status: parsed
+    raw_text: "회사 와서 합성 잘 되고 있는 것은 확인, 하지만 IDE Lint Critical 이 있어서 이건 Fix 하고 다시 돌려야 할듯"
+    interpreted_update:
+      task_refs:
+        - task_milano_sdc_dual_profile_synth_rerun
+        - task_milano_lint_ip_rev_0_1_rerun
+        - task_milano_link0_wrapper_etc_area_analysis
+      issue_ref: issue_milano_ide_lint_critical_20260623
+      artifact_refs:
+        - artifact_milano_link0_wrapper_synthesis_ide_included_rerun_20260622
+        - artifact_milano_ide_lint_critical_20260623
+      synthesis_state:
+        checked_at: company_arrival
+        status_signal: progressing_well
+        confidence: medium
+      lint_state:
+        tool_scope: IDE Lint
+        severity: critical
+        status: blocking
+      next_step: Fix the IDE Lint Critical issue, then rerun before trusting the synthesis/area closure path.
+
+  - id: source_milano_conversation_20260623_ide_lint_fix_lint_tool_running
+    source_type: chat
+    original_date: 2026-06-23
+    imported_at: 2026-06-23
+    parse_status: parsed
+    raw_text: "IDE lint fix하고 lint tool 돌리는중 , 잡으면 합성 다시 돌려야 할듯"
+    interpreted_update:
+      task_refs:
+        - task_milano_lint_ip_rev_0_1_rerun
+        - task_milano_sdc_dual_profile_synth_rerun
+      issue_ref: issue_milano_ide_lint_critical_20260623
+      artifact_refs:
+        - artifact_milano_ide_lint_critical_20260623
+        - artifact_milano_link0_wrapper_synthesis_ide_included_rerun_20260622
+      lint_state:
+        fix_status: fix_applied
+        rerun_status: lint_tool_running
+        result_status: pending
+      next_step: If lint is clean or the Critical is confirmed fixed, rerun the affected synthesis flow before trusting area/timing closure.
+      confidence: high
+
+  - id: source_milano_conversation_20260623_ide_lint_nearly_fixed_synthesis_rerun_link0_pd_pcie
+    source_type: chat
+    original_date: 2026-06-23
+    imported_at: 2026-06-23
+    parse_status: parsed
+    raw_text: "일단 ide lint 거의 fix. synthesis 다시 돌림. link0, pd_pcie"
+    interpreted_update:
+      task_refs:
+        - task_milano_lint_ip_rev_0_1_rerun
+        - task_milano_sdc_dual_profile_synth_rerun
+        - task_milano_link0_wrapper_etc_area_analysis
+        - task_milano_gen7_phy_db_synthesis
+      issue_ref: issue_milano_ide_lint_critical_20260623
+      artifact_refs:
+        - artifact_milano_link0_synthesis_rerun_after_ide_lint_near_fix_20260623
+        - artifact_milano_pd_pcie_synthesis_rerun_after_ide_lint_near_fix_20260623
+      lint_state:
+        tool_scope: IDE Lint
+        fix_status: nearly_fixed
+        closure_status: not_yet_confirmed_clean
+      synthesis_state:
+        rerun_status: running
+        rerun_targets:
+          - link0
+          - pd_pcie
+        reason: Rerun after IDE Lint Critical fix is mostly applied.
+      next_step: Monitor link0 and pd_pcie synthesis reruns, capture report/log paths, confirm IDE Lint closure, then review area/timing/ETC deltas.
+      confidence: high
+
+  - id: source_milano_conversation_20260623_pcie_tlp_axi_split_bus_downsizing_mps_limit
+    source_type: chat
+    original_date: 2026-06-23
+    imported_at: 2026-06-23
+    parse_status: parsed
+    raw_text: "그리고 sim 중에 pcie tlp가 불필요한 bus unsizing downsizg으로 2개 axi로 split. 근데 bus fix 예정. mps 좀 리밋 걸고 기다릴까"
+    interpreted_issue:
+      task_refs:
+        - task_milano_gen7_phy_db_synthesis
+        - task_milano_sdc_dual_profile_synth_rerun
+      issue_ref: issue_milano_pcie_tlp_axi_split_bus_downsizing_20260623
+      decision_ref: decision_milano_mps_limit_temporary_workaround_20260623
+      simulation_observation:
+        symptom: PCIe TLP is split into two AXI transactions.
+        suspected_cause: unnecessary bus unsizing/downsizing
+        spelling_note: raw text says "unsizing downsizg"; interpreted as bus unsizing/downsizing.
+      planned_fix:
+        target: bus fix
+        status: planned
+      workaround_candidate:
+        action: temporarily limit MPS
+        purpose: reduce or avoid the split/noise while waiting for the bus fix
+        caution: Treat as temporary simulation/debug workaround, not final design closure.
+      question: Whether to limit MPS and wait for the planned bus fix.
+      confidence: medium
+
+  - id: source_milano_conversation_20260623_uio_free_variant_prepare
+    source_type: chat
+    original_date: 2026-06-23
+    imported_at: 2026-06-23
+    parse_status: parsed
+    raw_text: "UIO 없는 버젼도 준비중. 안쓸지도 모르는 feature 미리 제거를 위해."
+    interpreted_update:
+      task_refs:
+        - task_milano_uio_free_variant_prepare
+        - task_milano_sdc_dual_profile_synth_rerun
+        - task_milano_arir_precheck
+      artifact_refs:
+        - artifact_milano_uio_free_variant_20260623
+      feature_pruning:
+        target_feature: UIO
+        variant: no_uio
+        status: preparing
+        reason: Remove a feature that may not be used before it adds unnecessary integration, lint, synthesis, or area burden.
+        requirement_status: not_confirmed_needed
+      next_step: Keep the no-UIO version as a tracked variant, confirm whether UIO is truly unused, and compare lint/synthesis/area impact before treating removal as final.
+      confidence: medium
+
+  - id: source_milano_conversation_20260623_bus_downsizing_mps_limit_wait_bus_fix
+    source_type: chat
+    original_date: 2026-06-23
+    imported_at: 2026-06-23
+    parse_status: parsed
+    raw_text: "busdownsizing 이슈는 mps 제한하고 bus 기다리기로 함"
+    interpreted_update:
+      task_refs:
+        - task_milano_gen7_phy_db_synthesis
+        - task_milano_sdc_dual_profile_synth_rerun
+      issue_ref: issue_milano_pcie_tlp_axi_split_bus_downsizing_20260623
+      decision_ref: decision_milano_mps_limit_temporary_workaround_20260623
+      workaround_state:
+        action: limit_mps
+        status: selected
+        mps_value: null
+        waiting_for: bus_fix
+        closure_policy: After bus fix, rerun without the MPS workaround before final closure.
+      next_step: Record the exact MPS value if used, keep the run labeled workaround-enabled, and validate again after the bus fix without the workaround.
+      confidence: high
+
+  - id: source_milano_conversation_20260623_ide_lint_critical_all_fixed
+    source_type: chat
+    original_date: 2026-06-23
+    imported_at: 2026-06-23
+    parse_status: parsed
+    raw_text: "IDE lint critical 다 잡음"
+    interpreted_update:
+      task_refs:
+        - task_milano_lint_ip_rev_0_1_rerun
+        - task_milano_sdc_dual_profile_synth_rerun
+        - task_milano_link0_wrapper_etc_area_analysis
+        - task_milano_gen7_phy_db_synthesis
+      issue_ref: issue_milano_ide_lint_critical_20260623
+      lint_state:
+        tool_scope: IDE Lint
+        critical_status: fixed
+        closure_scope: critical_violations
+        report_path: null
+      synthesis_state:
+        rerun_targets:
+          - link0
+          - pd_pcie
+        blocker_removed: IDE Lint Critical
+      next_step: Capture IDE Lint report/result path and continue monitoring link0/pd_pcie synthesis reruns for report, area, timing, and ETC deltas.
+      confidence: high
+
 summary:
   recently_completed:
     - task_milano_3nm_synth_env_setup
@@ -497,8 +667,12 @@ summary:
     - IDE has been added back and an urgent IDE-inclusive link0 wrapper resynthesis is running
     - ETC area bucket analysis is now required before ARIR/area confidence is trusted
     - Through the end of June 2026, Brian's Milano focus is narrowed to Area/ARIR, SDC, link0 wrapper, and pd_pcie synthesis
+    - On 2026-06-23, synthesis was checked after arriving at the company and appeared to be progressing well, but an IDE Lint Critical issue must be fixed and rerun before closure.
+    - IDE Lint Critical violations are now fixed; IDE Lint report/result path and link0/pd_pcie synthesis rerun reports are still pending.
+    - During simulation, PCIe TLP is being split into two AXI transactions due to suspected unnecessary bus unsizing/downsizing; Brian chose temporary MPS limiting while waiting for the bus fix.
+    - A no-UIO variant is being prepared to remove a feature that may not be used before it adds integration, synthesis, or area burden.
   current_focus:
-    date: 2026-06-22
+    date: 2026-06-23
     target_window:
       start: 2026-06-22
       end: 2026-06-30
@@ -518,6 +692,9 @@ summary:
       - task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
       - task_milano_audit_missed_brian_owned_followups_common_module_etc
       - task_milano_lint_ip_rev_0_1_rerun
+      - task_milano_uio_free_variant_prepare
+    blocking_issues:
+      - issue_milano_pcie_tlp_axi_split_bus_downsizing_20260623
     deferred_tasks:
       - task_milano_nvme_vip_setup_pcie_ib_ob_only
       - task_milano_mse_pf_bar0_overlap_guard
@@ -526,6 +703,13 @@ summary:
     source_refs:
       - source_milano_conversation_20260622_june_focus_area_sdc_link0_pd_pcie_synth
       - source_milano_conversation_20260622_link0_wrapper_ide_resynth_etc_area
+      - source_milano_conversation_20260623_synthesis_ok_ide_lint_critical
+      - source_milano_conversation_20260623_ide_lint_fix_lint_tool_running
+      - source_milano_conversation_20260623_ide_lint_nearly_fixed_synthesis_rerun_link0_pd_pcie
+      - source_milano_conversation_20260623_pcie_tlp_axi_split_bus_downsizing_mps_limit
+      - source_milano_conversation_20260623_uio_free_variant_prepare
+      - source_milano_conversation_20260623_bus_downsizing_mps_limit_wait_bus_fix
+      - source_milano_conversation_20260623_ide_lint_critical_all_fixed
       - source_milano_conversation_20260618_gen7_phy_top_sim_pass_handler_review
       - source_milano_conversation_20260619_synth_terminal_restart_handler_sfr_first_pass
       - source_milano_conversation_20260619_next_monday_sdc_phy_link0_filelist_timing_plan
@@ -556,6 +740,8 @@ summary:
     source_refs:
       - source_milano_conversation_20260622_june_focus_area_sdc_link0_pd_pcie_synth
       - source_milano_conversation_20260619_next_monday_sdc_phy_link0_filelist_timing_plan
+      - source_milano_conversation_20260623_ide_lint_nearly_fixed_synthesis_rerun_link0_pd_pcie
+      - source_milano_conversation_20260623_ide_lint_critical_all_fixed
   open_questions:
     - id: oq_milano_gen7_phy_term
       question: "'제7파이'를 GEN7 PHY로 해석하는 것이 맞는지 확인 필요."
@@ -576,6 +762,10 @@ summary:
     - id: oq_milano_pdci_pdbci_name
       question: "PDCI와 기존 기록의 PDBCI가 같은 SDC profile을 의미하는지 확인 필요."
       related_task_ref: task_milano_sdc_dual_profile_synth_rerun
+      needs_user_review: true
+    - id: oq_milano_uio_feature_scope
+      question: "UIO가 정확히 어떤 feature/interface/hierarchy를 의미하는지, Milano에서 최종적으로 미사용 확정 가능한지 확인 필요."
+      related_task_ref: task_milano_uio_free_variant_prepare
       needs_user_review: true
     - id: oq_milano_mse_pf_bar0_expected_behavior
       question: "MSE=0/1 상태별 PF BAR0 overlap 방지 조건과 BAR0 사용 가능 상태를 behavior table로 확정 필요."
@@ -621,7 +811,7 @@ tasks:
     tracking_level: detailed
     project_ref: project_milano
     component_ref: component_milano_pcie
-    progress_percent: 75
+    progress_percent: 86
     tags:
       - milano
       - synthesis
@@ -651,6 +841,11 @@ tasks:
       - Brian added IDE back and started an urgent IDE-inclusive synthesis rerun.
       - The IDE-missing completed result should be treated as incomplete evidence for final area/timing confidence.
       - Through the end of June 2026, Brian narrowed Milano execution focus to Area/ARIR, SDC, link0 wrapper, and pd_pcie synthesis.
+      - On 2026-06-23, Brian checked after arriving at the company and confirmed synthesis appears to be progressing well.
+      - However, IDE Lint Critical is present, so the current path needs a fix and rerun before final synthesis/area confidence.
+      - Brian applied an IDE Lint fix and started running the lint tool; synthesis should be rerun after lint confirms the fix or remaining blockers are resolved.
+      - Later on 2026-06-23, IDE Lint was almost fixed and synthesis was restarted for link0 and pd_pcie.
+      - IDE Lint Critical violations are now fixed; link0/pd_pcie synthesis rerun report paths and area/timing results remain pending.
     tooling_notes:
       - Cursor was useful for SDC porting, but needed examples and iteration.
       - Python scripting helped stabilize or automate parts of the SDC porting flow.
@@ -675,6 +870,13 @@ tasks:
       - If the synthesis terminal/session ends again, record it as a repeatability or environment issue.
       - On 2026-06-22, run one more SDC clean-up pass and inspect PHY GEN7 SDC and link0 wrapper before trusting the synthesis/timing path.
       - Let the IDE-inclusive link0 wrapper rerun finish before closing the link0 wrapper synthesis path.
+      - Fix the IDE Lint Critical issue before treating the IDE-inclusive synthesis path as closure evidence.
+      - Rerun the affected lint/synthesis flow after the IDE Lint Critical fix.
+      - Wait for the current lint tool rerun result.
+      - If lint is clean or the Critical is fixed, rerun the affected synthesis flow before area/timing closure.
+      - Monitor the restarted link0 and pd_pcie synthesis runs.
+      - Capture link0/pd_pcie synthesis report and log paths once the reruns finish.
+      - Capture the IDE Lint report/result path showing Critical closure.
       - Compare IDE-missing versus IDE-inclusive area/timing deltas, especially the ETC area bucket.
       - Use the IDE-inclusive result as the baseline for ARIR and downstream GEN7 PHY DB synthesis confidence.
       - Keep adjacent tasks such as NVMe VIP setup, MSE/PF BAR0, DCG power optimization, and Port 1 requirement out of the main June path unless they directly block area/SDC/link0/pd_pcie synthesis.
@@ -693,6 +895,10 @@ tasks:
       - source_milano_conversation_20260619_next_monday_sdc_phy_link0_filelist_timing_plan
       - source_milano_conversation_20260622_link0_wrapper_ide_resynth_etc_area
       - source_milano_conversation_20260622_june_focus_area_sdc_link0_pd_pcie_synth
+      - source_milano_conversation_20260623_synthesis_ok_ide_lint_critical
+      - source_milano_conversation_20260623_ide_lint_fix_lint_tool_running
+      - source_milano_conversation_20260623_ide_lint_nearly_fixed_synthesis_rerun_link0_pd_pcie
+      - source_milano_conversation_20260623_ide_lint_critical_all_fixed
     confidence: high
     needs_user_review: false
 
@@ -753,7 +959,7 @@ tasks:
     tracking_level: detailed
     project_ref: project_milano
     component_ref: component_milano_pcie
-    progress_percent: 10
+    progress_percent: 20
     owner_ref: person_brian
     tags:
       - milano
@@ -768,6 +974,8 @@ tasks:
       - Link0 wrapper synthesis completed once on 2026-06-22.
       - Brian found that IDE was missing from the completed synthesis scope.
       - IDE was added back and urgent resynthesis is running.
+      - On 2026-06-23, IDE Lint was almost fixed and link0 synthesis was restarted alongside pd_pcie.
+      - IDE Lint Critical violations are now fixed, so the remaining link0 blocker is report availability and ETC/area analysis.
       - ETC area must be analyzed before the area result is trusted for ARIR or final synthesis judgment.
     scope:
       - Use the IDE-inclusive rerun as the trusted baseline once it finishes.
@@ -786,11 +994,12 @@ tasks:
       - Expected IDE area growth is separated from unexplained ETC growth.
       - Any suspicious ETC contributor has an owner, next action, or issue record.
     blockers:
-      - IDE-inclusive link0 wrapper synthesis rerun is still running.
+      - IDE-inclusive link0 wrapper synthesis rerun result and report paths are not recorded yet.
       - Exact synthesis report paths and area report format are not recorded yet.
       - ETC bucket semantics depend on the synthesis tool/report configuration and need local report inspection.
     next_actions:
       - Let the IDE-inclusive rerun finish.
+      - Capture the latest link0 synthesis rerun report/log path separately from the older IDE-missing and IDE-inclusive attempts.
       - Capture report paths for both the completed IDE-missing run and the IDE-inclusive rerun.
       - Extract top-level area and instance count first, then drill down into the ETC bucket.
       - Compare IDE-missing and IDE-inclusive reports to isolate expected IDE area delta.
@@ -807,6 +1016,8 @@ tasks:
       - artifact_milano_link0_wrapper_etc_area_breakdown_20260622
     evidence_refs:
       - source_milano_conversation_20260622_link0_wrapper_ide_resynth_etc_area
+      - source_milano_conversation_20260623_ide_lint_nearly_fixed_synthesis_rerun_link0_pd_pcie
+      - source_milano_conversation_20260623_ide_lint_critical_all_fixed
     confidence: high
     needs_user_review: false
 
@@ -821,7 +1032,7 @@ tasks:
     tracking_level: detailed
     project_ref: project_milano
     component_ref: component_milano_pcie
-    progress_percent: 90
+    progress_percent: 95
     tags:
       - milano
       - lint
@@ -835,6 +1046,11 @@ tasks:
       - R001 IP Diff reflection for core, link, link wrapper, and ips may need to be included before final lint confidence is claimed.
       - Brian later noticed possible missed Brian-owned follow-ups around common module and related work; this audit should be considered before closing lint confidence.
       - At 22:38 on 2026-06-16, compile passed and lint was running; Brian plans to review lint on 2026-06-17 before release.
+      - On 2026-06-23, an IDE Lint Critical issue was found while synthesis itself appeared to be progressing well.
+      - The lint task is reopened as a blocker for the current synthesis closure path until the Critical issue is fixed and rerun.
+      - Brian applied a fix for the IDE Lint issue and is running the lint tool again; result is pending.
+      - IDE Lint is now almost fixed; link0 and pd_pcie synthesis reruns have started before final lint closure is recorded, so lint closure remains near-fixed but pending confirmation.
+      - IDE Lint Critical violations are now fixed; report/result path and any residual non-critical items are not yet recorded.
     expected_outputs:
       - lint rerun report after IP rev 0.1
       - new violations list
@@ -848,6 +1064,14 @@ tasks:
       - Capture lint report path, result summary, and remaining violation or waiver status.
       - If clean, mark the lint task completed.
       - If residual issues remain, classify them into fix, waive, or owner handoff.
+      - Fix the IDE Lint Critical issue.
+      - Rerun IDE Lint after the fix and capture the result summary.
+      - Rerun the affected synthesis path if the fix changes RTL, filelist, constraints, or IDE integration scope.
+      - Wait for the current lint tool rerun result.
+      - If clean, record the lint result and move to affected synthesis rerun.
+      - If residual lint issues remain, classify and fix before synthesis rerun.
+      - Capture the IDE Lint report/result path showing Critical closure.
+      - Classify any remaining non-critical lint items as fix, waive, defer, or owner handoff.
     evidence_refs:
       - source_milano_conversation_20260614_current_tasks
       - source_milano_conversation_20260616_today_focus_sdc_interrupt_handler_lint
@@ -855,6 +1079,10 @@ tasks:
       - source_milano_conversation_20260616_r001_ip_diff_gray_cross_check
       - source_milano_conversation_20260616_late_night_tired_missed_brian_owned_followups
       - source_milano_conversation_20260616_2238_compile_pass_lint_sim_running_release_tomorrow
+      - source_milano_conversation_20260623_synthesis_ok_ide_lint_critical
+      - source_milano_conversation_20260623_ide_lint_fix_lint_tool_running
+      - source_milano_conversation_20260623_ide_lint_nearly_fixed_synthesis_rerun_link0_pd_pcie
+      - source_milano_conversation_20260623_ide_lint_critical_all_fixed
     confidence: high
     needs_user_review: false
 
@@ -1092,7 +1320,7 @@ tasks:
     tracking_level: milestone
     project_ref: project_milano
     component_ref: component_milano_pcie
-    progress_percent: 60
+    progress_percent: 68
     tags:
       - milano
       - gen7
@@ -1110,6 +1338,8 @@ tasks:
       - FPGA File List review completed with no issues.
       - On 2026-06-19, synthesis was restarted after the synthesis terminal/session ended.
       - Brian planned a 2026-06-22 follow-up to re-check PHY GEN7 SDC, link0 wrapper, filelist, and timing-visible issues.
+      - On 2026-06-23, pd_pcie synthesis was restarted alongside link0 after IDE Lint was almost fixed.
+      - For the PCIe TLP-to-AXI split caused by suspected bus downsizing, Brian chose temporary MPS limiting while waiting for the bus fix.
     next_actions:
       - Confirm whether "제7파이" means GEN7 PHY.
       - Record the initial DB release artifact path/version when available.
@@ -1119,6 +1349,8 @@ tasks:
       - Keep handler reflection evidence in one checklist before closing synthesis confidence.
       - Confirm the restarted synthesis run is still connected to the intended GEN7 PHY DB synthesis scope.
       - On 2026-06-22, re-check the PHY GEN7 SDC and filelist, then inspect any visible timing-related issue before closure.
+      - Capture the latest pd_pcie synthesis rerun report/log path and connect it to final GEN7 PHY DB synthesis confidence.
+      - Record the exact MPS value if the workaround is used, and rerun without the workaround after the bus fix.
     depends_on:
       - task_milano_sdc_dual_profile_synth_rerun
       - task_milano_arir_precheck
@@ -1135,6 +1367,8 @@ tasks:
       - source_milano_conversation_20260618_gen7_phy_top_sim_pass_handler_review
       - source_milano_conversation_20260619_synth_terminal_restart_handler_sfr_first_pass
       - source_milano_conversation_20260619_next_monday_sdc_phy_link0_filelist_timing_plan
+      - source_milano_conversation_20260623_ide_lint_nearly_fixed_synthesis_rerun_link0_pd_pcie
+      - source_milano_conversation_20260623_bus_downsizing_mps_limit_wait_bus_fix
     confidence: medium
     needs_user_review: true
 
@@ -1645,6 +1879,68 @@ tasks:
     confidence: high
     needs_user_review: false
 
+  - id: task_milano_uio_free_variant_prepare
+    title: UIO 없는 Milano variant 준비
+    area: CAREER
+    status: in_progress
+    priority: medium
+    energy: review
+    estimated_minutes: null
+    due_date: null
+    tracking_level: detailed
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    progress_percent: 15
+    tags:
+      - milano
+      - uio
+      - feature_pruning
+      - no_uio
+      - variant
+      - rtl_cleanup
+      - synthesis
+      - area
+    context:
+      - Brian is preparing a version without UIO.
+      - The intent is to remove a feature that may not be used before it adds unnecessary integration, lint, synthesis, or area burden.
+      - The exact UIO feature scope and final requirement status are not yet recorded.
+    scope:
+      - Identify the UIO-related feature/interface/hierarchy/configuration surface.
+      - Prepare or track a no-UIO variant separately from the current synthesis baseline.
+      - Keep the removal reversible or clearly reviewable until UIO is confirmed unused.
+      - Compare lint, synthesis, timing, and area impact if the variant reaches a runnable state.
+    expected_outputs:
+      - UIO dependency or hierarchy checklist.
+      - no-UIO patch/branch/config note or equivalent artifact path.
+      - Lint/build/synthesis comparison against the baseline when available.
+      - Decision note if UIO is finally removed from the active Milano path.
+    acceptance_criteria:
+      - UIO scope is clear enough that unrelated logic is not removed accidentally.
+      - Any compile/lint fallout from removing UIO is classified as expected cleanup, real dependency, or blocker.
+      - Area/timing impact is compared before using the no-UIO version as the trusted synthesis baseline.
+      - The no-UIO variant is not treated as final product behavior until the requirement/owner confirms UIO is unused or optional.
+    blockers:
+      - UIO exact feature scope is not recorded.
+      - Requirement or owner confirmation for whether UIO is unused is not recorded.
+      - no-UIO lint/synthesis report paths are not recorded yet.
+    next_actions:
+      - List UIO touch points: files, modules, configs, ports, constraints, and testbench assumptions.
+      - Keep a baseline versus no-UIO comparison path so area/timing/lint deltas are explainable.
+      - Capture the no-UIO artifact path and any compile/lint/synthesis report path once available.
+      - Confirm whether UIO is truly unused before finalizing feature removal.
+    related_task_refs:
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_arir_precheck
+      - task_milano_lint_ip_rev_0_1_rerun
+      - task_milano_link0_wrapper_etc_area_analysis
+      - task_milano_gen7_phy_db_synthesis
+    artifact_refs:
+      - artifact_milano_uio_free_variant_20260623
+    evidence_refs:
+      - source_milano_conversation_20260623_uio_free_variant_prepare
+    confidence: medium
+    needs_user_review: false
+
 recommended_execution_order:
   - task_milano_sdc_dual_profile_synth_rerun
   - task_milano_link0_wrapper_etc_area_analysis
@@ -1653,6 +1949,7 @@ recommended_execution_order:
   - task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
   - task_milano_audit_missed_brian_owned_followups_common_module_etc
   - task_milano_lint_ip_rev_0_1_rerun
+  - task_milano_uio_free_variant_prepare
   - task_milano_release_readiness_compile_lint_sim_20260617
   - task_milano_disparity_error_injection_debug_followup
   - task_milano_firenze_handler_reflection_check
@@ -2509,6 +2806,198 @@ task_status_updates:
       - artifact_milano_latch_std_icg_cell_replacement_20260616
     source_ref: source_milano_conversation_20260616_latch_std_icg_cell_clear
 
+  - id: status_task_milano_sdc_lint_20260623_synthesis_ok_ide_lint_critical
+    date: 2026-06-23
+    task_ref: task_milano_sdc_dual_profile_synth_rerun
+    author_ref: person_brian
+    status: blocked_by_lint_critical
+    progress_percent: 78
+    summary: 회사 도착 후 합성은 잘 진행되는 것으로 확인했지만, IDE Lint Critical이 있어서 fix 후 다시 돌려야 하는 상태다.
+    positive_signal:
+      - Synthesis appears to be progressing well.
+    blockers:
+      - IDE Lint Critical must be fixed before closure confidence.
+      - Affected lint/synthesis flow needs rerun after the fix.
+    next_step: Fix IDE Lint Critical, rerun IDE Lint, then rerun the affected synthesis path if the fix changes RTL/filelist/constraint scope.
+    related_task_refs:
+      - task_milano_lint_ip_rev_0_1_rerun
+      - task_milano_link0_wrapper_etc_area_analysis
+    related_issue_refs:
+      - issue_milano_ide_lint_critical_20260623
+    artifact_refs:
+      - artifact_milano_link0_wrapper_synthesis_ide_included_rerun_20260622
+      - artifact_milano_ide_lint_critical_20260623
+    source_ref: source_milano_conversation_20260623_synthesis_ok_ide_lint_critical
+
+  - id: status_task_milano_lint_20260623_ide_lint_critical_found
+    date: 2026-06-23
+    task_ref: task_milano_lint_ip_rev_0_1_rerun
+    author_ref: person_brian
+    status: blocker_found
+    progress_percent: 70
+    summary: IDE Lint에서 Critical이 발견되어 현재 lint closure는 보류하고 fix 및 rerun이 필요하다.
+    blockers:
+      - IDE Lint Critical details/report path are not recorded yet.
+      - Fix must be applied before rerun.
+    next_step: Capture the Critical violation detail, fix it, rerun IDE Lint, and record clean/fixed/remaining status.
+    related_issue_refs:
+      - issue_milano_ide_lint_critical_20260623
+    artifact_refs:
+      - artifact_milano_ide_lint_critical_20260623
+    source_ref: source_milano_conversation_20260623_synthesis_ok_ide_lint_critical
+
+  - id: status_task_milano_lint_20260623_fix_applied_lint_tool_running
+    date: 2026-06-23
+    task_ref: task_milano_lint_ip_rev_0_1_rerun
+    author_ref: person_brian
+    status: lint_rerun_running
+    progress_percent: 82
+    summary: IDE Lint Critical fix를 적용했고 lint tool을 다시 돌리는 중이다.
+    blockers:
+      - Lint rerun result is still pending.
+      - Synthesis rerun should wait until the Critical fix is confirmed or any residual lint issue is handled.
+    next_step: Wait for lint tool result; if clean or Critical is fixed, rerun the affected synthesis flow and capture report paths/results.
+    related_issue_refs:
+      - issue_milano_ide_lint_critical_20260623
+    artifact_refs:
+      - artifact_milano_ide_lint_critical_20260623
+      - artifact_milano_link0_wrapper_synthesis_ide_included_rerun_20260622
+    source_ref: source_milano_conversation_20260623_ide_lint_fix_lint_tool_running
+
+  - id: status_task_milano_sdc_20260623_synthesis_rerun_pending_after_lint
+    date: 2026-06-23
+    task_ref: task_milano_sdc_dual_profile_synth_rerun
+    author_ref: person_brian
+    status: synthesis_rerun_pending_after_lint
+    progress_percent: 80
+    summary: IDE Lint fix 후 lint tool rerun 결과를 기다리고 있으며, lint가 잡히면/확인되면 합성을 다시 돌려야 할 것으로 판단했다.
+    blockers:
+      - Current lint rerun is not complete.
+      - Affected synthesis rerun is pending lint confirmation.
+    next_step: After lint rerun confirms the fix or exposes residual issues, either rerun synthesis or fix remaining lint blockers first.
+    related_task_refs:
+      - task_milano_lint_ip_rev_0_1_rerun
+      - task_milano_link0_wrapper_etc_area_analysis
+      - task_milano_arir_precheck
+    related_issue_refs:
+      - issue_milano_ide_lint_critical_20260623
+    artifact_refs:
+      - artifact_milano_link0_wrapper_synthesis_ide_included_rerun_20260622
+    source_ref: source_milano_conversation_20260623_ide_lint_fix_lint_tool_running
+
+  - id: status_task_milano_lint_20260623_nearly_fixed_synthesis_rerun_started
+    date: 2026-06-23
+    task_ref: task_milano_lint_ip_rev_0_1_rerun
+    author_ref: person_brian
+    status: nearly_fixed_synthesis_rerun_started
+    progress_percent: 88
+    summary: IDE Lint Critical은 거의 fix되었고, link0/pd_pcie synthesis를 다시 돌리기 시작했다.
+    blockers:
+      - Final clean or remaining lint result is not yet recorded.
+      - link0/pd_pcie synthesis rerun report paths and results are pending.
+    next_step: Confirm IDE Lint closure, monitor link0/pd_pcie synthesis reruns, and capture report/log paths before trusting area/timing closure.
+    related_task_refs:
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_link0_wrapper_etc_area_analysis
+      - task_milano_gen7_phy_db_synthesis
+    related_issue_refs:
+      - issue_milano_ide_lint_critical_20260623
+    artifact_refs:
+      - artifact_milano_link0_synthesis_rerun_after_ide_lint_near_fix_20260623
+      - artifact_milano_pd_pcie_synthesis_rerun_after_ide_lint_near_fix_20260623
+    source_ref: source_milano_conversation_20260623_ide_lint_nearly_fixed_synthesis_rerun_link0_pd_pcie
+
+  - id: status_task_milano_sdc_20260623_link0_pd_pcie_synthesis_rerun_running
+    date: 2026-06-23
+    task_ref: task_milano_sdc_dual_profile_synth_rerun
+    author_ref: person_brian
+    status: synthesis_rerun_running_link0_pd_pcie
+    progress_percent: 82
+    summary: link0와 pd_pcie synthesis rerun이 시작되었고, IDE Lint는 거의 fix된 상태지만 final clean 확인은 아직 남아 있다.
+    blockers:
+      - link0/pd_pcie synthesis rerun results are pending.
+      - Final IDE Lint clean or residual status is not yet recorded.
+      - Area/timing/ETC deltas cannot be trusted until rerun reports are captured.
+    next_step: Monitor link0/pd_pcie reruns, capture report/log paths, then review area, timing, and ETC bucket deltas.
+    related_task_refs:
+      - task_milano_lint_ip_rev_0_1_rerun
+      - task_milano_link0_wrapper_etc_area_analysis
+      - task_milano_arir_precheck
+      - task_milano_gen7_phy_db_synthesis
+    related_issue_refs:
+      - issue_milano_ide_lint_critical_20260623
+    artifact_refs:
+      - artifact_milano_link0_synthesis_rerun_after_ide_lint_near_fix_20260623
+      - artifact_milano_pd_pcie_synthesis_rerun_after_ide_lint_near_fix_20260623
+    source_ref: source_milano_conversation_20260623_ide_lint_nearly_fixed_synthesis_rerun_link0_pd_pcie
+
+  - id: status_task_milano_lint_20260623_ide_lint_critical_fixed
+    date: 2026-06-23
+    task_ref: task_milano_lint_ip_rev_0_1_rerun
+    author_ref: person_brian
+    status: ide_lint_critical_fixed
+    progress_percent: 95
+    summary: IDE Lint Critical은 모두 잡혔다. 이제 Critical blocker는 해제됐고, report/result path와 잔여 non-critical 여부를 기록하면 된다.
+    blockers:
+      - IDE Lint report/result path is not recorded yet.
+      - Any residual non-critical lint item list is not recorded yet.
+    next_step: Capture the IDE Lint report path/result summary, then keep link0/pd_pcie synthesis rerun review focused on area, timing, and ETC deltas.
+    related_task_refs:
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_link0_wrapper_etc_area_analysis
+      - task_milano_gen7_phy_db_synthesis
+    related_issue_refs:
+      - issue_milano_ide_lint_critical_20260623
+    artifact_refs:
+      - artifact_milano_ide_lint_critical_20260623
+      - artifact_milano_link0_synthesis_rerun_after_ide_lint_near_fix_20260623
+      - artifact_milano_pd_pcie_synthesis_rerun_after_ide_lint_near_fix_20260623
+    source_ref: source_milano_conversation_20260623_ide_lint_critical_all_fixed
+
+  - id: status_task_milano_gen7_20260623_mps_limit_waiting_bus_fix
+    date: 2026-06-23
+    task_ref: task_milano_gen7_phy_db_synthesis
+    author_ref: person_brian
+    status: mps_limit_workaround_waiting_bus_fix
+    progress_percent: 68
+    summary: bus downsizing으로 PCIe TLP가 2개 AXI로 split되는 이슈는 MPS를 제한하고 bus fix를 기다리기로 했다.
+    blockers:
+      - Exact MPS value is not recorded yet.
+      - Bus fix is pending.
+      - Final validation without the MPS workaround is still required after the bus fix.
+    next_step: Record the MPS value/config if applied, keep this run labeled workaround-enabled, and rerun without MPS limiting after the bus fix.
+    related_task_refs:
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_arir_precheck
+    related_issue_refs:
+      - issue_milano_pcie_tlp_axi_split_bus_downsizing_20260623
+    decision_refs:
+      - decision_milano_mps_limit_temporary_workaround_20260623
+    artifact_refs:
+      - artifact_milano_mps_limit_workaround_20260623
+    source_ref: source_milano_conversation_20260623_bus_downsizing_mps_limit_wait_bus_fix
+
+  - id: status_task_milano_uio_20260623_free_variant_preparing
+    date: 2026-06-23
+    task_ref: task_milano_uio_free_variant_prepare
+    author_ref: person_brian
+    status: preparing_no_uio_variant
+    progress_percent: 15
+    summary: UIO 없는 버전도 준비 중이며, 안 쓸지도 모르는 feature를 미리 제거해 integration/synthesis/area 부담을 줄이려는 목적이다.
+    blockers:
+      - UIO exact feature scope is not recorded.
+      - Requirement or owner confirmation that UIO is unused is not recorded.
+      - no-UIO lint/synthesis reports are not recorded yet.
+    next_step: Track UIO touch points, keep baseline versus no-UIO comparison evidence, and confirm whether UIO is truly unused before final removal.
+    related_task_refs:
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_arir_precheck
+      - task_milano_lint_ip_rev_0_1_rerun
+      - task_milano_gen7_phy_db_synthesis
+    artifact_refs:
+      - artifact_milano_uio_free_variant_20260623
+    source_ref: source_milano_conversation_20260623_uio_free_variant_prepare
+
   - id: status_task_milano_r001_ip_diff_20260616_added
     date: 2026-06-16
     task_ref: task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
@@ -2583,6 +3072,100 @@ issues:
     evidence_refs:
       - source_milano_conversation_20260622_link0_wrapper_ide_resynth_etc_area
     confidence: high
+    needs_user_review: false
+
+  - id: issue_milano_ide_lint_critical_20260623
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_lint_ip_rev_0_1_rerun
+    related_task_refs:
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_link0_wrapper_etc_area_analysis
+      - task_milano_arir_precheck
+    title: IDE Lint Critical fixed for current synthesis closure path
+    status: resolved_critical_fixed_report_path_pending
+    severity: critical
+    discovered_on: 2026-06-23
+    recorded_on: 2026-06-23
+    discovered_in_session: source_milano_conversation_20260623_synthesis_ok_ide_lint_critical
+    was_blocker_for:
+      - task_milano_lint_ip_rev_0_1_rerun
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_link0_wrapper_etc_area_analysis
+      - task_milano_arir_precheck
+    observed_behavior:
+      - Synthesis appeared to be progressing well after Brian checked it at the company.
+      - IDE Lint reported a Critical issue.
+    impact:
+      - The Critical lint issue blocked synthesis/area closure until fixed.
+      - ARIR/ETC area review still depends on rerun reports, but the IDE Lint Critical blocker itself is cleared.
+    mitigation:
+      - IDE Lint Critical violations are fixed.
+      - IDE Lint report/result path is not yet recorded.
+      - link0 and pd_pcie synthesis reruns have started.
+    next_diagnostic_questions:
+      - What exact IDE Lint rule or violation ID is Critical?
+      - Which file/module/hierarchy is affected?
+      - Is the Critical caused by RTL, filelist, constraint/setup, or IDE integration scope?
+      - Does fixing it require rerunning only lint, or both lint and synthesis?
+    tracking:
+      method: local_ontology
+      status: critical_fixed_open_until_report_path_and_synthesis_rerun_complete
+      artifact_refs:
+        - artifact_milano_ide_lint_critical_20260623
+        - artifact_milano_link0_wrapper_synthesis_ide_included_rerun_20260622
+        - artifact_milano_link0_synthesis_rerun_after_ide_lint_near_fix_20260623
+        - artifact_milano_pd_pcie_synthesis_rerun_after_ide_lint_near_fix_20260623
+    source_ref: source_milano_conversation_20260623_synthesis_ok_ide_lint_critical
+    evidence_refs:
+      - source_milano_conversation_20260623_synthesis_ok_ide_lint_critical
+      - source_milano_conversation_20260623_ide_lint_fix_lint_tool_running
+      - source_milano_conversation_20260623_ide_lint_nearly_fixed_synthesis_rerun_link0_pd_pcie
+      - source_milano_conversation_20260623_ide_lint_critical_all_fixed
+    confidence: high
+    needs_user_review: false
+
+  - id: issue_milano_pcie_tlp_axi_split_bus_downsizing_20260623
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_gen7_phy_db_synthesis
+    related_task_refs:
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_arir_precheck
+    title: PCIe TLP splits into two AXI transactions due to suspected unnecessary bus downsizing
+    status: mps_workaround_selected_waiting_bus_fix
+    severity: medium
+    discovered_on: 2026-06-23
+    recorded_on: 2026-06-23
+    discovered_in_session: source_milano_conversation_20260623_pcie_tlp_axi_split_bus_downsizing_mps_limit
+    observed_behavior:
+      - During simulation, a PCIe TLP is split into two AXI transactions.
+      - Brian suspects unnecessary bus unsizing/downsizing is causing the split.
+    expected_behavior:
+      - TLP-to-AXI behavior should avoid unnecessary splitting once the bus path is fixed, unless a real width/MPS/alignment boundary requires it.
+    impact:
+      - Simulation/debug results can be noisy or misleading if the split is treated as intended behavior.
+      - Area/timing/synthesis closure should not encode an MPS workaround as the final fix if the real issue is bus width/downsizing.
+    planned_resolution:
+      - Bus fix is planned.
+      - Brian chose to limit MPS as a temporary workaround while waiting for the bus fix.
+      - The exact MPS value is not recorded yet.
+      - Final closure requires rerun without the MPS workaround after the bus fix.
+    next_diagnostic_questions:
+      - Which bus width conversion point causes the split?
+      - Is the split driven by MPS, AXI data width, alignment, payload size, or a bridge policy?
+      - What MPS value avoids the split, and does that value hide a real design bug?
+      - After the bus fix, does the same test pass without MPS limiting?
+    tracking:
+      method: local_ontology
+      status: open_until_bus_fix_validated_without_temporary_mps_limit
+      artifact_refs:
+        - artifact_milano_mps_limit_workaround_20260623
+    source_ref: source_milano_conversation_20260623_pcie_tlp_axi_split_bus_downsizing_mps_limit
+    evidence_refs:
+      - source_milano_conversation_20260623_pcie_tlp_axi_split_bus_downsizing_mps_limit
+      - source_milano_conversation_20260623_bus_downsizing_mps_limit_wait_bus_fix
+    confidence: medium
     needs_user_review: false
 
   - id: issue_firenze_mse0_pf_bar0_disabled
@@ -2705,8 +3288,80 @@ artifact_candidates:
     issue_ref: issue_milano_link0_wrapper_ide_missing_from_synthesis_20260622
     path_or_uri: null
     created_on: 2026-06-22
-    status: running
-    notes: IDE was added back and synthesis is running urgently; final report path, WNS/TNS, area, and instance count are not recorded yet.
+    status: running_report_pending_critical_fixed
+    notes: IDE was added back and synthesis is running urgently. On 2026-06-23 Brian fixed the IDE Lint Critical violations; final synthesis report path, WNS/TNS, area, and instance count are not recorded yet.
+
+  - id: artifact_milano_ide_lint_critical_20260623
+    title: Milano IDE Lint Critical finding
+    artifact_type: lint_report_or_finding
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_lint_ip_rev_0_1_rerun
+    issue_ref: issue_milano_ide_lint_critical_20260623
+    path_or_uri: null
+    created_on: 2026-06-23
+    status: critical_fixed_report_path_pending
+    severity: critical
+    notes: Brian reported an IDE Lint Critical after checking that synthesis itself was progressing well. Later he applied fixes, restarted link0/pd_pcie synthesis, and reported that the IDE Lint Critical violations were all fixed. Exact rule, file, module, and report path are not recorded yet.
+
+  - id: artifact_milano_link0_synthesis_rerun_after_ide_lint_near_fix_20260623
+    title: Link0 synthesis rerun after IDE Lint near-fix
+    artifact_type: synthesis_run
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_sdc_dual_profile_synth_rerun
+    related_task_refs:
+      - task_milano_link0_wrapper_etc_area_analysis
+      - task_milano_arir_precheck
+    issue_ref: issue_milano_ide_lint_critical_20260623
+    path_or_uri: null
+    created_on: 2026-06-23
+    status: running_report_pending
+    notes: Brian restarted link0 synthesis after IDE Lint was almost fixed. Report/log path, WNS/TNS, area, instance count, and ETC breakdown are not recorded yet.
+    source_ref: source_milano_conversation_20260623_ide_lint_nearly_fixed_synthesis_rerun_link0_pd_pcie
+
+  - id: artifact_milano_pd_pcie_synthesis_rerun_after_ide_lint_near_fix_20260623
+    title: pd_pcie synthesis rerun after IDE Lint near-fix
+    artifact_type: synthesis_run
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_gen7_phy_db_synthesis
+    related_task_refs:
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_arir_precheck
+    issue_ref: issue_milano_ide_lint_critical_20260623
+    path_or_uri: null
+    created_on: 2026-06-23
+    status: running_report_pending
+    notes: Brian restarted pd_pcie synthesis after IDE Lint was almost fixed. Report/log path, timing, area, and relationship to final GEN7 PHY DB synthesis confidence are not recorded yet.
+    source_ref: source_milano_conversation_20260623_ide_lint_nearly_fixed_synthesis_rerun_link0_pd_pcie
+
+  - id: artifact_milano_mps_limit_workaround_20260623
+    title: MPS limit workaround for PCIe TLP split while waiting for bus fix
+    artifact_type: simulation_configuration_or_workaround
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_gen7_phy_db_synthesis
+    issue_ref: issue_milano_pcie_tlp_axi_split_bus_downsizing_20260623
+    decision_ref: decision_milano_mps_limit_temporary_workaround_20260623
+    path_or_uri: null
+    created_on: 2026-06-23
+    status: selected_value_pending
+    mps_value: null
+    notes: Brian decided to limit MPS for the bus downsizing/TLP-to-AXI split issue and wait for the bus fix. The exact MPS value and config path are not recorded yet; final validation should rerun without the workaround after the bus fix.
+    source_ref: source_milano_conversation_20260623_bus_downsizing_mps_limit_wait_bus_fix
+
+  - id: artifact_milano_uio_free_variant_20260623
+    title: Milano no-UIO variant
+    artifact_type: variant_patch_or_config
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_uio_free_variant_prepare
+    path_or_uri: null
+    created_on: 2026-06-23
+    status: preparing_path_pending
+    notes: Brian is preparing a version without UIO to remove a feature that may not be used. Exact branch/patch/config path, UIO dependency list, and lint/synthesis comparison reports are not recorded yet.
+    source_ref: source_milano_conversation_20260623_uio_free_variant_prepare
 
   - id: artifact_milano_link0_wrapper_etc_area_breakdown_20260622
     title: Link0 wrapper ETC area breakdown
@@ -2974,6 +3629,39 @@ artifact_candidates:
     notes: Common module replacement was confirmed complete on 2026-06-15.
 
 decisions:
+  - id: decision_milano_mps_limit_temporary_workaround_20260623
+    object_type: Decision
+    date: 2026-06-23
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    issue_ref: issue_milano_pcie_tlp_axi_split_bus_downsizing_20260623
+    title: Use MPS limiting as temporary workaround while waiting for bus fix
+    status: selected_temporary_workaround
+    decision: Limit MPS as a temporary simulation/debug workaround while waiting for the bus fix; do not treat MPS limiting as final closure for the PCIe TLP-to-AXI split.
+    rationale:
+      - Brian reports the likely root cause is unnecessary bus unsizing/downsizing and a bus fix is already planned.
+      - MPS limiting may hide the split symptom, but it can also mask the real bus-width/conversion bug.
+      - Brian decided to use the temporary limit and wait for the bus fix.
+      - The post-bus-fix test must be rerun without the workaround.
+    conditions_for_use:
+      - Record the exact MPS value used.
+      - Mark the run as workaround-enabled.
+      - Keep a no-workaround rerun as the acceptance target after the bus fix.
+      - Do not base final area/timing/simulation confidence on the workaround-only result.
+    alternatives:
+      - Wait only for the bus fix without changing MPS.
+      - Debug the split with current MPS and no workaround.
+      - Limit MPS permanently, which is not recommended unless it becomes a reviewed requirement.
+    consequences:
+      - Temporary MPS limiting can keep simulation moving while the bus fix is pending.
+      - It adds one more configuration variable that must be removed or explicitly justified before closure.
+      - The exact MPS value still needs to be recorded.
+    source_refs:
+      - source_milano_conversation_20260623_pcie_tlp_axi_split_bus_downsizing_mps_limit
+      - source_milano_conversation_20260623_bus_downsizing_mps_limit_wait_bus_fix
+    confidence: medium
+    needs_user_review: false
+
   - id: decision_milano_nvme_vip_setup_ib_ob_only_20260619
     object_type: Decision
     date: 2026-06-19
@@ -3087,6 +3775,156 @@ feedback_records:
     needs_user_review: false
 
 project_status_updates:
+  - id: project_status_milano_20260623_pcie_tlp_axi_split_mps_workaround_review
+    date: 2026-06-23
+    project_ref: project_milano
+    author_ref: person_brian
+    status: workaround_under_review
+    progress_percent: null
+    summary: Simulation 중 PCIe TLP가 불필요한 bus unsizing/downsizing 때문에 2개 AXI transaction으로 split되는 현상을 확인했고, bus fix가 예정된 상태에서 MPS limit을 임시로 걸지 검토 중이다.
+    recommendation: MPS limit은 임시 workaround로만 사용하고, final closure는 bus fix 후 MPS workaround 없이 rerun한 결과로 판단한다.
+    risk: MPS limit이 symptom을 숨겨 실제 bus downsizing/root-cause fix 검증을 약하게 만들 수 있다.
+    priority_order:
+      - issue_milano_pcie_tlp_axi_split_bus_downsizing_20260623
+      - decision_milano_mps_limit_temporary_workaround_20260623
+      - task_milano_gen7_phy_db_synthesis
+      - task_milano_sdc_dual_profile_synth_rerun
+    next_step: If progress is blocked, apply a clearly labeled temporary MPS limit and record the value; after the bus fix, rerun without the MPS workaround and compare TLP-to-AXI behavior.
+    related_task_refs:
+      - task_milano_gen7_phy_db_synthesis
+      - task_milano_sdc_dual_profile_synth_rerun
+    related_issue_refs:
+      - issue_milano_pcie_tlp_axi_split_bus_downsizing_20260623
+    decision_refs:
+      - decision_milano_mps_limit_temporary_workaround_20260623
+    source_ref: source_milano_conversation_20260623_pcie_tlp_axi_split_bus_downsizing_mps_limit
+
+  - id: project_status_milano_20260623_mps_limit_selected_waiting_bus_fix
+    date: 2026-06-23
+    project_ref: project_milano
+    author_ref: person_brian
+    status: mps_workaround_selected_waiting_bus_fix
+    progress_percent: null
+    summary: bus downsizing 이슈는 MPS를 제한해서 임시 진행하고 bus fix를 기다리기로 했다.
+    closure_policy: Final closure requires rerun without the MPS workaround after the bus fix.
+    open_follow_up:
+      - Record the exact MPS value and config path if applied.
+      - Keep workaround-enabled simulation/debug results labeled as such.
+      - Rerun after bus fix without MPS limiting and compare TLP-to-AXI behavior.
+    related_task_refs:
+      - task_milano_gen7_phy_db_synthesis
+      - task_milano_sdc_dual_profile_synth_rerun
+    related_issue_refs:
+      - issue_milano_pcie_tlp_axi_split_bus_downsizing_20260623
+    decision_refs:
+      - decision_milano_mps_limit_temporary_workaround_20260623
+    artifact_refs:
+      - artifact_milano_mps_limit_workaround_20260623
+    source_ref: source_milano_conversation_20260623_bus_downsizing_mps_limit_wait_bus_fix
+
+  - id: project_status_milano_20260623_synthesis_ok_ide_lint_critical
+    date: 2026-06-23
+    project_ref: project_milano
+    author_ref: person_brian
+    status: lint_rerun_running_after_fix
+    progress_percent: null
+    summary: 회사 도착 후 합성은 잘 되고 있는 것으로 확인했고, 이후 IDE Lint Critical fix를 적용해 lint tool을 다시 돌리는 중이다.
+    positive_signal: Synthesis appears to be progressing well.
+    blocker: Lint rerun result is pending; synthesis rerun is still needed after the fix is confirmed or remaining lint blockers are resolved.
+    priority_order:
+      - issue_milano_ide_lint_critical_20260623
+      - task_milano_lint_ip_rev_0_1_rerun
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_link0_wrapper_etc_area_analysis
+      - task_milano_arir_precheck
+    next_step: Wait for the lint tool rerun result; if the Critical is fixed/clean, rerun the affected synthesis flow and then resume area/timing/ETC review.
+    related_task_refs:
+      - task_milano_lint_ip_rev_0_1_rerun
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_link0_wrapper_etc_area_analysis
+      - task_milano_arir_precheck
+    related_issue_refs:
+      - issue_milano_ide_lint_critical_20260623
+    artifact_refs:
+      - artifact_milano_ide_lint_critical_20260623
+      - artifact_milano_link0_wrapper_synthesis_ide_included_rerun_20260622
+    source_refs:
+      - source_milano_conversation_20260623_synthesis_ok_ide_lint_critical
+      - source_milano_conversation_20260623_ide_lint_fix_lint_tool_running
+
+  - id: project_status_milano_20260623_ide_lint_critical_fixed
+    date: 2026-06-23
+    project_ref: project_milano
+    author_ref: person_brian
+    status: ide_lint_critical_fixed
+    progress_percent: null
+    summary: IDE Lint Critical은 모두 fix되어 synthesis closure path의 Critical blocker는 해제됐다.
+    remaining_follow_up:
+      - Capture IDE Lint report/result path.
+      - Record any residual non-critical lint items if present.
+      - Continue monitoring link0/pd_pcie synthesis rerun report, area, timing, and ETC deltas.
+    related_task_refs:
+      - task_milano_lint_ip_rev_0_1_rerun
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_link0_wrapper_etc_area_analysis
+      - task_milano_gen7_phy_db_synthesis
+    related_issue_refs:
+      - issue_milano_ide_lint_critical_20260623
+    artifact_refs:
+      - artifact_milano_ide_lint_critical_20260623
+    source_ref: source_milano_conversation_20260623_ide_lint_critical_all_fixed
+
+  - id: project_status_milano_20260623_ide_lint_nearly_fixed_link0_pd_pcie_rerun
+    date: 2026-06-23
+    project_ref: project_milano
+    author_ref: person_brian
+    status: synthesis_rerun_running_after_near_lint_fix
+    progress_percent: null
+    summary: IDE Lint Critical은 거의 fix되었고 link0/pd_pcie synthesis를 다시 돌리는 중이다.
+    positive_signal: The flow moved from waiting on lint rerun to rerunning the synthesis targets that matter for the June focus.
+    open_follow_up:
+      - Confirm final IDE Lint clean or residual status.
+      - Capture link0 and pd_pcie synthesis log/report paths.
+      - Review area/timing/ETC deltas after rerun completes.
+    priority_order:
+      - task_milano_lint_ip_rev_0_1_rerun
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_link0_wrapper_etc_area_analysis
+      - task_milano_gen7_phy_db_synthesis
+    related_task_refs:
+      - task_milano_lint_ip_rev_0_1_rerun
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_link0_wrapper_etc_area_analysis
+      - task_milano_gen7_phy_db_synthesis
+    related_issue_refs:
+      - issue_milano_ide_lint_critical_20260623
+    artifact_refs:
+      - artifact_milano_link0_synthesis_rerun_after_ide_lint_near_fix_20260623
+      - artifact_milano_pd_pcie_synthesis_rerun_after_ide_lint_near_fix_20260623
+    source_ref: source_milano_conversation_20260623_ide_lint_nearly_fixed_synthesis_rerun_link0_pd_pcie
+
+  - id: project_status_milano_20260623_uio_free_variant_preparing
+    date: 2026-06-23
+    project_ref: project_milano
+    author_ref: person_brian
+    status: optional_feature_pruning_variant_preparing
+    progress_percent: null
+    summary: UIO 없는 버전을 준비 중이며, 미사용 가능성이 있는 feature를 미리 제거해 불필요한 integration/synthesis/area 부담을 줄이려는 흐름이다.
+    caution: Treat the no-UIO version as a tracked variant until UIO requirement status and owner confirmation are clear.
+    open_follow_up:
+      - Identify UIO touch points and dependencies.
+      - Record the no-UIO branch/patch/config path.
+      - Compare lint/synthesis/area/timing impact against the baseline.
+      - Confirm whether UIO is truly unused before final removal.
+    related_task_refs:
+      - task_milano_uio_free_variant_prepare
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_arir_precheck
+      - task_milano_lint_ip_rev_0_1_rerun
+    artifact_refs:
+      - artifact_milano_uio_free_variant_20260623
+    source_ref: source_milano_conversation_20260623_uio_free_variant_prepare
+
   - id: project_status_milano_20260622_june_focus_area_sdc_link0_pd_pcie_synth
     date: 2026-06-22
     project_ref: project_milano

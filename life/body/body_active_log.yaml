@@ -1,5 +1,5 @@
 schema_version: 1
-updated_at: 2026-06-21
+updated_at: 2026-06-23
 profile_ref: person_brian
 area: BODY
 
@@ -432,6 +432,95 @@ exercise_catalog:
     notes: Temporary placeholder for handwritten PT rows that need Brian review.
 
 workout_records:
+  - id: workoutsession_20260623_lower_body_leg_press_in_progress
+    object_type: WorkoutSession
+    date: 2026-06-23
+    planned_start: null
+    start: null
+    end: null
+    status: in_progress
+    title: 하체 운동 - 레그 프레스, 레그컬
+    tags: [self_report, lower_body, leg_press, leg_curl, in_progress]
+    training_program_ref: null
+    location: gym
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    performance_note: Brian came to do a lower-body workout and recorded leg press sets up to 120kg x 10 for 3 sets, then leg curl sets up to 40kg x 10 for 3 sets.
+    exercises:
+      - exercise_ref: exercise_leg_press
+        sequence_order: 1
+        variant: machine
+        equipment: machine
+        confidence: high
+        notes: 레그 프레스. Brian reported 60kg x 15, 80kg x 10, 100kg x 10, 110kg x 10, then 120kg x 10 for 3 sets.
+        sets:
+          - set: 1
+            weight_kg: 60
+            reps: 15
+          - set: 2
+            weight_kg: 80
+            reps: 10
+          - set: 3
+            weight_kg: 100
+            reps: 10
+          - set: 4
+            weight_kg: 110
+            reps: 10
+          - set: 5
+            weight_kg: 120
+            reps: 10
+          - set: 6
+            weight_kg: 120
+            reps: 10
+          - set: 7
+            weight_kg: 120
+            reps: 10
+      - exercise_ref: exercise_leg_curl
+        sequence_order: 2
+        variant: machine
+        equipment: machine
+        confidence: high
+        notes: 레그컬. Brian reported 30kg x 15, then 40kg x 10 for 3 sets.
+        sets:
+          - set: 1
+            weight_kg: 30
+            reps: 15
+          - set: 2
+            weight_kg: 40
+            reps: 10
+          - set: 3
+            weight_kg: 40
+            reps: 10
+          - set: 4
+            weight_kg: 40
+            reps: 10
+
+  - id: workoutsession_20260623_morning_walk_jigu_haei
+    object_type: WorkoutSession
+    date: 2026-06-23
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: Morning walk with Jigu and Haei
+    tags: [self_report, walking, morning, companion_animals, recovery]
+    training_program_ref: null
+    location: outside
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    performance_note: Brian went out in the morning and took a walk with Jigu and Haei.
+    companion_refs:
+      - pet_dog_1
+      - pet_dog_2
+    exercises:
+      - exercise_ref: walking
+        variant: casual_morning_walk
+        equipment: none
+        notes: Morning companion-animal walk; duration not specified.
+        sets: []
+
   - id: workoutsession_20260621_chest_cable_crossover_self_report
     object_type: WorkoutSession
     date: 2026-06-21
@@ -2076,6 +2165,57 @@ workout_records:
         sets: [{set: 1, weight_kg: 10, reps: 15}, {set: 2, weight_kg: 15, reps: 12}, {set: 3, weight_kg: null, reps: 10}, {set: 4, weight_kg: 15, reps: 12}]
 
 meal_records:
+  - id: meal_20260623_breakfast_salad_protein_bagel_pumpkin_egg
+    object_type: Meal
+    date: 2026-06-23
+    time: null
+    time_of_day: morning
+    area: BODY
+    secondary_areas:
+      - RELATION
+    meal_type: breakfast
+    status: completed
+    items:
+      - name: 샐러드
+        amount: 1
+        unit: serving
+        calories: null
+        protein_g: null
+        carbs_g: null
+        fat_g: null
+      - name: 단백질 함유된 베이글
+        amount: 1
+        unit: serving
+        calories: null
+        protein_g: null
+        carbs_g: null
+        fat_g: null
+        protein_note: contains_protein
+      - name: 단호박
+        amount: 1
+        unit: serving
+        calories: null
+        protein_g: null
+        carbs_g: null
+        fat_g: null
+      - name: 계란
+        amount: 1
+        unit: piece
+        calories: null
+        protein_g: 6
+        carbs_g: null
+        fat_g: null
+    supplements: []
+    shared_with_refs:
+      - person_wife
+    related_social_interaction_ref: socialinteraction_20260623_relaxed_breakfast_with_wife
+    related_nutrition_target_ref: protein_target_20260615
+    protein_g_total: null
+    protein_g_estimate_range: [15, 35]
+    confidence: medium
+    needs_user_review: true
+    notes: "Brian ate a relaxed breakfast with Areum: salad, a protein-containing bagel, sweet pumpkin, and one egg. Exact product and protein amount are not specified."
+
   - id: meal_20260618_post_back_workout_the_danbaek_120g
     object_type: Meal
     date: 2026-06-18
@@ -2636,6 +2776,19 @@ meal_records:
     notes: Brian clarified an additional 30g protein intake at night on 2026-06-16.
 
 sleep_records:
+  - id: sleep_20260623_dawn_awake_testing_fatigue
+    object_type: SleepRecord
+    date: 2026-06-23
+    sleep_start: null
+    sleep_end: null
+    wake_time_estimate: dawn
+    duration_minutes: null
+    quality_score: null
+    notes: Brian woke during the dawn/early morning period, used the awake time to test various things, and felt tired afterward.
+    related_mind_record_ref: mood_20260623_dawn_wake_testing_fatigue
+    sleep_type: interrupted_night_sleep
+    confidence: medium
+    needs_user_review: true
   - id: sleep_20260616_post_lower_body_workout_recovery_nap
     object_type: SleepRecord
     date: 2026-06-16
@@ -3092,3 +3245,42 @@ raw_records:
     source: codex_conversation
     related_workout: workoutsession_20260621_chest_cable_crossover_self_report
     text: "덤벨프레스 9kg 씩 12회 벤치에 누워서 하는 덤벨 프레스"
+
+  - id: raw_body_record_20260623_dawn_awake_testing_fatigue
+    date: 2026-06-23
+    time: null
+    time_of_day: dawn
+    source: codex_conversation
+    related_sleep_record_ref: sleep_20260623_dawn_awake_testing_fatigue
+    text: "새벽에 잠이 깬김에 이것저것 테스트하니 피곤하네 ㅠ_ㅠ"
+
+  - id: raw_body_record_20260623_morning_walk_jigu_haei
+    date: 2026-06-23
+    time: null
+    time_of_day: morning
+    source: codex_conversation
+    related_workout: workoutsession_20260623_morning_walk_jigu_haei
+    related_companion_animal_refs:
+      - pet_dog_1
+      - pet_dog_2
+    text: "아침에 나가서 지구 해이와 산책 :)"
+  - id: raw_body_record_20260623_breakfast_salad_protein_bagel_pumpkin_egg
+    date: 2026-06-23
+    time: null
+    time_of_day: morning
+    source: codex_conversation
+    related_meal: meal_20260623_breakfast_salad_protein_bagel_pumpkin_egg
+    related_social_interaction_ref: socialinteraction_20260623_relaxed_breakfast_with_wife
+    text: "오늘 아침 아름이와 여유롭게 아침(샐러드 +단백질 함유된 베이글 + 단호박 + 계란) 먹고, 출근하면서 AI 동향 살피고, 회사옴"
+  - id: raw_body_record_20260623_lower_body_leg_press_sets
+    date: 2026-06-23
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260623_lower_body_leg_press_in_progress
+    text: "오늘 60 15 , 80 10, 100 10 110 10 120 10 3세트"
+  - id: raw_body_record_20260623_lower_body_leg_curl_sets
+    date: 2026-06-23
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260623_lower_body_leg_press_in_progress
+    text: "레그컬 30 15회 40 10회 3세트"

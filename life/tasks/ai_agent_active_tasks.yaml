@@ -777,6 +777,31 @@ source_records:
       - task_ai_agent_codex_seminar_prepare
       - task_ai_agent_company_codex_rollout_support
 
+  - id: source_ai_agent_conversation_20260623_codex_masterclass_harness_service_video
+    source_type: chat_and_external_video
+    original_date: 2026-06-23
+    imported_at: 2026-06-23
+    parse_status: parsed
+    raw_text: "https://youtu.be/wScdyoQjj8E?si=WJFKRo-FbWprh77q 이것도 :)"
+    external_reference:
+      platform: YouTube
+      url: https://youtu.be/wScdyoQjj8E?si=WJFKRo-FbWprh77q
+      observed_title: "Codex 마스터 클래스 1시간 편집본 | 하네스 설계부터 서비스 배포까지"
+      observed_at: 2026-06-23
+    interpreted_focus:
+      - Brian added this as another Codex seminar reference video.
+      - Based on the title, treat it as a candidate advanced reference for Codex harness design and service deployment, not only basic CLI onboarding.
+      - Extract chapters or captions later before citing detailed claims in seminar material.
+      - Likely seminar placement is after Basic Codex operation, near harness/workflow architecture, app/service deployment, LazyCodex comparison, or two-month asset packaging.
+    related_concept_refs:
+      - concept_agent_workflow_knowhow_capture
+      - concept_codex_thread_worktree_orchestration
+      - concept_lazycodex_agent_harness
+      - concept_agent_skills
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+
   - id: source_ai_agent_conversation_20260619_codex_open_source_llm_wiki_interest
     source_type: chat
     original_date: 2026-06-19
@@ -2104,6 +2129,10 @@ tasks:
             source_tool: Codex
             url: https://youtu.be/Z3z93bKMh_I?si=M_XLnSjD4BlLWdTO
             seminar_use: Use as a high-quality external onboarding/pre-watch reference, then differentiate Brian's session through company RTL/IP workflow, ontology, OKF, evaluation, and SoC Knowledge Graph examples.
+          - title: "Codex 마스터 클래스 1시간 편집본 | 하네스 설계부터 서비스 배포까지"
+            source_tool: Codex
+            url: https://youtu.be/wScdyoQjj8E?si=WJFKRo-FbWprh77q
+            seminar_use: Use as a candidate advanced reference for harness design, workflow packaging, and service-deployment framing after the Basic Codex operating section.
         codex_subagent_toml_settings:
           purpose: Show advanced Codex control by defining safe global subagent limits and reusable custom agent roles in TOML.
           file_locations:
@@ -2222,6 +2251,7 @@ tasks:
         - https://youtu.be/BboGm3FR4hw?si=TE8mol6GZzynd8Jm
         - https://youtu.be/aITV54CLc_U?si=4oGKBn_AJXXYxLTs
         - https://youtu.be/Z3z93bKMh_I?si=M_XLnSjD4BlLWdTO
+        - https://youtu.be/wScdyoQjj8E?si=WJFKRo-FbWprh77q
         - https://www.microsoft.com/en-us/microsoft-365/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/
         - https://support.microsoft.com/en-US/PowerPoint/copilot/create-a-new-presentation-with-copilot-in-powerpoint
       related_concept_refs:

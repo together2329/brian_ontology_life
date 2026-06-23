@@ -1,6 +1,6 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-19
+updated_at: 2026-06-23
 area: RELATION
 secondary_areas:
   - BODY
@@ -84,8 +84,83 @@ source_records:
         precision: approximate
       relationship_area: professional
       context: work relationship touchpoint
+  - id: source_relation_conversation_20260623_morning_walk_jigu_haei
+    source_type: chat
+    original_date: 2026-06-23
+    imported_at: 2026-06-23
+    parse_status: parsed
+    raw_text: "아침에 나가서 지구 해이와 산책 :)"
+    interpreted_interaction:
+      interaction_type: morning_walk
+      participants:
+        - person_brian
+        - pet_dog_1
+        - pet_dog_2
+      event_time:
+        date: 2026-06-23
+        time_of_day: morning
+        precision: approximate
+      relationship_area: companion_animals
+      mood: positive
+      related_workout_ref: workoutsession_20260623_morning_walk_jigu_haei
+      related_happiness_trigger_refs:
+        - happiness_trigger_065
+  - id: source_relation_conversation_20260623_relaxed_breakfast_with_wife
+    source_type: chat
+    original_date: 2026-06-23
+    imported_at: 2026-06-23
+    parse_status: parsed
+    raw_text: "오늘 아침 아름이와 여유롭게 아침(샐러드 +단백질 함유된 베이글 + 단호박 + 계란) 먹고, 출근하면서 AI 동향 살피고, 회사옴"
+    interpreted_interaction:
+      interaction_type: relaxed_breakfast_together
+      participants:
+        - person_brian
+        - person_wife
+      event_time:
+        date: 2026-06-23
+        time_of_day: morning
+        precision: approximate
+      relationship_area: spouse
+      mood: relaxed
+      related_meal_ref: meal_20260623_breakfast_salad_protein_bagel_pumpkin_egg
 
 social_interactions:
+  - id: socialinteraction_20260623_relaxed_breakfast_with_wife
+    object_type: SocialInteraction
+    date: 2026-06-23
+    people_refs:
+      - person_wife
+    companion_animal_refs: []
+    interaction_type: relaxed_breakfast_together
+    relationship_area: spouse
+    quality_score: null
+    emotion_after: relaxed
+    follow_up_tasks: []
+    notes: Brian had a relaxed breakfast with Areum. The meal included salad, a protein-containing bagel, sweet pumpkin, and egg.
+    related_meal_ref: meal_20260623_breakfast_salad_protein_bagel_pumpkin_egg
+    source_ref: source_relation_conversation_20260623_relaxed_breakfast_with_wife
+    confidence: high
+    needs_user_review: false
+
+  - id: socialinteraction_20260623_morning_walk_jigu_haei
+    object_type: SocialInteraction
+    date: 2026-06-23
+    people_refs: []
+    companion_animal_refs:
+      - pet_dog_1
+      - pet_dog_2
+    interaction_type: morning_walk
+    relationship_area: companion_animals
+    quality_score: null
+    emotion_after: positive
+    follow_up_tasks: []
+    notes: Brian went out in the morning and took a walk with Jigu and Haei.
+    related_workout_ref: workoutsession_20260623_morning_walk_jigu_haei
+    related_happiness_trigger_refs:
+      - happiness_trigger_065
+    source_ref: source_relation_conversation_20260623_morning_walk_jigu_haei
+    confidence: high
+    needs_user_review: false
   - id: socialinteraction_20260617_evening_walk_miya_jigu_haei
     object_type: SocialInteraction
     date: 2026-06-17
@@ -156,6 +231,20 @@ social_interactions:
     needs_user_review: false
 
 care_activities:
+  - id: careactivity_20260623_morning_walk_jigu_haei
+    object_type: CareActivity
+    date: 2026-06-23
+    subjects:
+      - pet_dog_1
+      - pet_dog_2
+    activity_type: walk
+    duration_minutes: null
+    area: RELATION
+    notes: Morning walk with Jigu and Haei.
+    related_workout_ref: workoutsession_20260623_morning_walk_jigu_haei
+    source_ref: source_relation_conversation_20260623_morning_walk_jigu_haei
+    confidence: high
+    needs_user_review: false
   - id: careactivity_20260617_walk_jigu_haei
     object_type: CareActivity
     date: 2026-06-17
