@@ -1,6 +1,6 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-20
+updated_at: 2026-06-24
 area: CAREER
 secondary_areas:
   - MIND
@@ -1222,6 +1222,32 @@ source_records:
       tool_calls: 48
       total_tokens: 1218543
       duration_seconds: 753.6
+
+  - id: source_ai_agent_conversation_20260624_codex_ip_dev_fix_pl330_generation
+    source_type: chat
+    original_date: 2026-06-24
+    imported_at: 2026-06-24
+    parse_status: parsed
+    raw_text: "새벽 3:00 - 4:20 까지 codex ip dev 고치기 ( pl330 생성하면서 )"
+    interpreted_time:
+      date: 2026-06-24
+      start: "03:00"
+      end: "04:20"
+      actual_minutes: 80
+      time_quality: exact_user_reported
+      part_of_day: dawn_off_hours
+    interpreted_work:
+      activity: Debugging/fixing the Codex-based IP development tool in ontology_ip_agent.
+      driving_example: PL330 generation used as the working test case.
+      what_was_fixed: not_specified
+      pl330_interpretation:
+        term: PL330
+        assumed_meaning: ARM PrimeCell PL330 DMA controller (DMA-330)
+        needs_user_review: true
+    pattern_note: Another dawn off-hours AI-development session, consistent with the recorded multi-month dawn/night/weekend effort pattern.
+    related_repo_ref: repo_ontology_ip_agent
+    related_task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
 
 summary:
   current_state:
@@ -3002,6 +3028,28 @@ tasks:
     needs_user_review: false
 
 work_sessions:
+  - id: worksession_20260624_0300_0420_codex_ip_dev_fix_pl330
+    date: 2026-06-24
+    project_ref: project_ai_agent
+    start: "03:00"
+    end: "04:20"
+    actual_minutes: 80
+    time_quality: exact_user_reported
+    location: null
+    task_refs:
+      - task_ai_agent_codex_ontology_development_plugin
+    focus_level: dawn_off_hours_debugging
+    summary: 새벽 3:00-4:20 Codex 기반 IP 개발 도구(ontology_ip_agent)를 수정하며 PL330 생성을 테스트 케이스로 사용함.
+    findings:
+      - PL330(ARM PrimeCell DMA 컨트롤러로 해석)이 timer APB3 / mctp_assembler에 이어 새 IP 생성 예제로 등장함.
+      - 구체적으로 무엇을 고쳤는지는 아직 기록되지 않음.
+      - 새벽 off-hours 세션으로, 이미 기록된 다년간 새벽/밤/주말 AI 개발 패턴과 일치함.
+    next_steps:
+      - 다음 기록 시 PL330 생성에서 고친 구체 항목과 통과/실패 evidence를 남기기.
+      - PL330을 repo의 정식 예제 IP로 승격할지 결정.
+    pl330_interpretation_needs_user_review: true
+    source_ref: source_ai_agent_conversation_20260624_codex_ip_dev_fix_pl330_generation
+
   - id: worksession_20260619_ontology_study
     date: 2026-06-19
     project_ref: project_ai_agent
