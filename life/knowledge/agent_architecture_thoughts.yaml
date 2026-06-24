@@ -1,6 +1,6 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-24
+updated_at: 2026-06-25
 area: MIND
 secondary_areas:
   - CAREER
@@ -735,6 +735,27 @@ source_records:
       - concept_agent_skills
       - concept_task_to_skill_distillation
       - concept_conversation_feedback_learning_loop
+
+  - id: source_knowledge_conversation_20260625_obsidian_okf_readable_management
+    source_type: chat
+    original_date: 2026-06-25
+    imported_at: 2026-06-25
+    parse_status: parsed
+    raw_text: "내가 BRIAN_CONTOLOG_AGENT 시스템을 obsidian 위에서 google open knowledge format 으로 관리하고 싶은데, yaml 도 좋은데, 내가 읽고 보기에 뭔가 가독성이 좀 ㅠ_ㅠ obsidian skill, obsidian base, task 등등을 잘 이용하고 싶어. yaml formatter 로 위에 쓰고 밑에는 md로 읽을 수 있는 그 history 로 잘 따라가고, 그래프 연결은 backlink 등으로."
+    interpreted_request:
+      goal: Manage BRIAN_ONTOLOGY_AGENT on Obsidian using Google OKF, driven by a YAML readability pain.
+      desired_format: An OKF-style file = YAML frontmatter (formatter-written) on top + a readable Markdown body below.
+      readability_pain: Brian finds raw YAML hard to read and view.
+      view_tools:
+        - Obsidian skills
+        - Obsidian Bases
+        - Obsidian tasks
+      history: The Markdown body should let Brian follow a record's history easily.
+      graph: Connections via Obsidian backlinks, complementing the existing id refs.
+      note: "Brian wrote BRIAN_CONTOLOG_AGENT; interpreted as the BRIAN_ONTOLOGY_AGENT system."
+    knowledge_thread_ref: thought_thread_20260625_obsidian_okf_readable_management
+    related_task_refs:
+      - task_ai_agent_okf_export_layer
 
 thought_threads:
   - id: thought_thread_20260615_okf_llm_wiki_ontology
@@ -1588,6 +1609,45 @@ thought_threads:
       - source_knowledge_external_research_20260620_anthropic_expertise_amplifies_ai
       - source_knowledge_external_reference_20260620_tacit_knowledge_for_ai_video
     status: active
+    confidence: high
+    needs_user_review: false
+  - id: thought_thread_20260625_obsidian_okf_readable_management
+    object_type: ThoughtThread
+    date: 2026-06-25
+    area: MIND
+    secondary_areas:
+      - CAREER
+    topic: Managing BRIAN_ONTOLOGY_AGENT on Obsidian via OKF for readability
+    summary:
+      - Brian wants to manage the BRIAN_ONTOLOGY_AGENT system on top of Obsidian using Google Open Knowledge Format (OKF).
+      - YAML is fine structurally, but its readability and viewing experience is hard for Brian (가독성 pain point).
+      - Target format is an OKF-style file = YAML frontmatter on top (structured, formatter-written) plus a readable Markdown body below.
+      - The Markdown body should let Brian follow a record's history easily.
+      - Graph connections should come from Obsidian backlinks rather than only id refs in YAML.
+      - Brian wants to use Obsidian skills, Obsidian Bases, and Obsidian tasks well as the human-facing view layer.
+    conversation_flow:
+      - Brian restated the OKF-on-Obsidian direction, now driven explicitly by his own readability need, not only interoperability.
+      - The canonical ontology can stay structured while OKF gives a portable, human-readable file shape.
+      - Frontmatter holds the structured layer; the Markdown body holds the readable narrative and history.
+      - Obsidian Bases provide filterable table/card views over frontmatter properties (task lists, etc.).
+      - Obsidian backlinks provide the graph view, complementing the id refs in the ontology.
+    open_questions:
+      - Whether OKF becomes the canonical store or a generated readable view layer over the current YAML ontology.
+      - How to keep YAML frontmatter and the Markdown history body in sync without losing raw data.
+      - Which records become Bases (tasks, people, issues) versus plain notes.
+    related_concept_refs:
+      - concept_okf_open_knowledge_format
+      - concept_obsidian_bases
+      - concept_llm_wiki
+      - concept_ontology_first_agent_memory
+      - concept_interactive_html_knowledge_viewer
+    related_project_refs:
+      - project_ai_agent
+    related_task_refs:
+      - task_ai_agent_okf_export_layer
+      - task_ai_agent_codex_ontology_development_plugin
+    source_refs:
+      - source_knowledge_conversation_20260625_obsidian_okf_readable_management
     confidence: high
     needs_user_review: false
 
