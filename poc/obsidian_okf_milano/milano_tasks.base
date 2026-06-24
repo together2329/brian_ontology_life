@@ -1,0 +1,56 @@
+filters:
+  and:
+    - 'type == "task"'
+    - 'project == "project_milano"'
+
+properties:
+  file.name:
+    displayName: Task
+  status:
+    displayName: Status
+  priority:
+    displayName: Priority
+  progress:
+    displayName: "Progress %"
+  component:
+    displayName: Component
+  needs_user_review:
+    displayName: "Review?"
+
+formulas:
+  open: 'if(status == "completed", "✓", "·")'
+
+views:
+  - type: table
+    name: "All Milano tasks"
+    order:
+      - file.name
+      - status
+      - priority
+      - progress
+      - component
+      - needs_user_review
+    summaries:
+      progress: Average
+
+  - type: cards
+    name: "Board by status"
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - file.name
+      - priority
+      - progress
+
+  - type: table
+    name: "Open & high priority"
+    filters:
+      and:
+        - 'status != "completed"'
+        - 'priority == "high"'
+    order:
+      - file.name
+      - status
+      - progress
+      - component
