@@ -1,6 +1,6 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-20
+updated_at: 2026-06-24
 area: MIND
 secondary_areas:
   - CAREER
@@ -714,6 +714,27 @@ source_records:
     related_task_refs:
       - task_ai_agent_codex_seminar_prepare
       - task_ai_agent_solution_rag_ontology_builder
+  - id: source_knowledge_conversation_20260624_codex_skill_long_term_process_memory
+    source_type: chat
+    original_date: 2026-06-24
+    imported_at: 2026-06-24
+    parse_status: parsed
+    raw_text: "개발 과정에 대한 장기 메모리 ( 구글 포맷 + llm wiki ) ... 이거면 시작점 ... plan permission goal"
+    interpreted_direction:
+      - Brian identified development-process memory as a starting point for the first Codex skill workflow.
+      - The memory layer should use Google OKF-style format and LLM Wiki-style notes so the process is durable, browsable, and reusable.
+      - The workflow should explicitly preserve goal, plan, permission boundary, evidence, decisions, implementation result, review, and follow-up.
+      - This turns a one-off MAS/DOC/RTL diff task into a reusable skill-building and long-term learning loop.
+    related_task_refs:
+      - task_ai_agent_codex_skill_mas_doc_rtl_diff_prepare
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_okf_export_layer
+    related_concept_refs:
+      - concept_llm_wiki
+      - concept_okf_open_knowledge_format
+      - concept_agent_skills
+      - concept_task_to_skill_distillation
+      - concept_conversation_feedback_learning_loop
 
 thought_threads:
   - id: thought_thread_20260615_okf_llm_wiki_ontology
@@ -1638,6 +1659,28 @@ understandings:
     source_refs:
       - source_knowledge_conversation_20260616_agentic_rag_mapping_answer
       - source_knowledge_conversation_20260616_record_agentic_rag_flow
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260624_development_process_memory_starts_skill_loop
+    object_type: Understanding
+    date: 2026-06-24
+    area: MIND
+    secondary_areas:
+      - CAREER
+    statement: "For Codex skill preparation, the development process itself should become long-term memory: goal, plan, permission boundary, evidence, decisions, implementation, review, and follow-up should be captured in OKF/LLM Wiki-style records."
+    brian_wording_ko: "개발 과정에 대한 장기 메모리 ( 구글 포맷 + llm wiki ) ... 이거면 시작점 ... plan permission goal"
+    status: active_direction
+    related_thread_ref: thought_thread_20260618_codex_seminar_ontology_demo_stack
+    related_task_ref: task_ai_agent_codex_skill_mas_doc_rtl_diff_prepare
+    related_concept_refs:
+      - concept_llm_wiki
+      - concept_okf_open_knowledge_format
+      - concept_agent_skills
+      - concept_task_to_skill_distillation
+      - concept_conversation_feedback_learning_loop
+      - concept_codex_plan_mode
+    source_refs:
+      - source_knowledge_conversation_20260624_codex_skill_long_term_process_memory
     confidence: high
     needs_user_review: false
   - id: understanding_20260617_soc_on_top_of_ontology
@@ -2731,6 +2774,7 @@ knowledge_interests:
       - Use skill-based Word/PPT generation to show how structured knowledge becomes deliverables.
       - Keep evaluation/monitoring metrics in the story: quality threshold, tokens, tool calls, attempts, time, and failure/retry rate.
       - Add a workflow-construction recipe: choose one real task, stabilize it, distill to skill, add handoff, monitor failures, update ontology/rules/skills.
+      - Use the MAS/DOC/RTL diff workflow as the first concrete Codex skill seed, with deep interview before implementation and OKF/LLM Wiki process memory from the start.
       - Treat failed attempts and conversation corrections as structured learning material, not as throwaway chat history.
       - Teach Codex operating controls explicitly: Plan mode for scope, one/two-shot examples for steering, git worktree for isolation, and thread linking for continuity.
     related_project_refs:
@@ -2767,6 +2811,7 @@ knowledge_interests:
       - source_knowledge_conversation_20260618_plan_mode_shot_worktree_usage
       - source_knowledge_conversation_20260618_thread_linking_methods
       - source_knowledge_external_reference_20260620_a16z_app_layer_not_dead
+      - source_knowledge_conversation_20260624_codex_skill_long_term_process_memory
     confidence: high
     needs_user_review: false
   - id: knowledge_interest_20260620_ai_application_layer_strategy

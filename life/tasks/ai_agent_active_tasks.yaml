@@ -1272,6 +1272,68 @@ source_records:
     related_task_refs:
       - task_ai_agent_codex_ontology_development_plugin
 
+  - id: source_ai_agent_conversation_20260624_codex_skill_mas_doc_rtl_diff_start
+    source_type: chat
+    original_date: 2026-06-24
+    imported_at: 2026-06-24
+    parse_status: parsed
+    raw_text: |-
+      codex 스킬 준비 이걸 가장 먼저 해야 할 듯 오전 8:08 최정윤 mas -> doc ( with image )
+      doc -> mas ( with image )
+      오전 8:08 최정윤 이건 툴이 해야할듯
+      오전 8:08 최정윤 아니면 변환없이 꽤 md로
+      오전 8:09 최정윤 그리고 mas , rtl diff
+      오전 8:09 최정윤 diff 중 우선 순위 추천 그리고 그 이유
+      오전 8:09 최정윤 선정해서 구현
+      오전 8:09 최정윤 구현한거 원래 의도랑 맞는지 보고 리뷰
+      오전 8:09 최정윤 구현 전에 구현 가능한 수준인지 deep interview
+      오전 8:16 최정윤 개발 과정에 대한 장기 메모리 ( 구글 포맷 + llm wiki )
+      오전 8:16 최정윤 어거면 시작점
+      오전 8:16 최정윤 plan
+      오전 8:16 최정윤 permission
+      오전 8:16 최정윤 goal
+    speaker_display_name: 최정윤
+    interpreted_time:
+      date: 2026-06-24
+      start: "08:08"
+      end: "08:16"
+      time_quality: chat_timestamp
+    interpreted_priority:
+      statement: Codex skill preparation should be the first practical work item before broader seminar packaging.
+      confidence: high
+    interpreted_skill_starting_point:
+      seed_workflow_candidates:
+        - mas_to_doc_with_image
+        - doc_to_mas_with_image
+        - markdown_direct_path_if_conversion_is_not_needed
+        - mas_rtl_diff
+      required_workflow_behaviors:
+        - Do a deep interview before implementation to check whether the requested implementation is feasible and scoped enough.
+        - Compare MAS and RTL diffs.
+        - Recommend diff priorities and explain the reason.
+        - Select an implementation target.
+        - Implement the selected change.
+        - Review whether the implementation still matches the original intent.
+      tool_boundary:
+        - MAS/DOC conversion with images likely needs a tool-backed workflow rather than only text prompting.
+        - If conversion is unnecessary or too heavy, a markdown-based intermediate representation may be acceptable.
+      long_term_memory_layer:
+        - Capture the development process as long-term memory.
+        - Use Google OKF-style format and LLM Wiki-style notes as the durable knowledge layer.
+      codex_operating_controls:
+        - plan
+        - permission
+        - goal
+    uncertainty:
+      - MAS exact file format/tool meaning needs confirmation before implementation.
+      - DOC target may mean Word .docx, internal design document, or another document format; needs confirmation.
+      - Image preservation requirements need sample files and expected output criteria.
+    related_task_refs:
+      - task_ai_agent_codex_skill_mas_doc_rtl_diff_prepare
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_okf_export_layer
+
 summary:
   current_state:
     - Brian is continuing AI Agent development while tired from work, but the activity feels fun.
@@ -1311,6 +1373,7 @@ summary:
     - Brian identified that subsystem-level ontology should be improved for the hardware IP agent direction.
     - Brian further clarified the longer-term direction as SoC on top of ontology: SoC-level structure and reasoning should be built above the ontology layer.
     - Brian wants to accelerate Codex seminar preparation and connect the seminar to SoC-level ontology and VDS document thinking.
+    - On 2026-06-24, Brian identified Codex skill preparation as the first practical starting point, centered on MAS/DOC conversion with images, MAS/RTL diff prioritization, implementation, intent review, deep interview before implementation, and OKF/LLM Wiki long-term process memory.
     - The active local implementation repo is /Users/brian/Desktop/Project/ontology_ip_agent.
     - ontology_ip_agent is a .codex-first OAG test pack with hardware IP examples and ontology/knowledge ledger workflows.
   active_threads:
@@ -1319,6 +1382,7 @@ summary:
     - Atlas SOC project experience and lessons from UI-assisted RTL implementation
     - Atlas RTL-generator step-back memory and its possible link to current AI-demo pressure
     - Codex ontology-based development plugin design
+    - Codex skill preparation from MAS/DOC/RTL diff workflow seed
     - recovery from missed demos and server/multi-user scaling lessons
     - Cursor seminar success and Codex seminar preparation
     - company Codex adoption support preparation
@@ -1580,6 +1644,71 @@ repositories:
       - source_ai_agent_conversation_20260624_codex_ip_dev_fix_pl330_generation
 
 tasks:
+  - id: task_ai_agent_codex_skill_mas_doc_rtl_diff_prepare
+    title: "Codex skill 준비: MAS/DOC 변환과 MAS/RTL diff workflow"
+    area: CAREER
+    secondary_areas:
+      - MIND
+    status: planned
+    priority: high
+    energy: system_design
+    estimated_minutes: null
+    due_date: 2026-06-24
+    tracking_level: detailed
+    project_ref: project_ai_agent
+    progress_percent: 0
+    tags:
+      - codex
+      - skill
+      - mas
+      - doc
+      - image_preservation
+      - rtl_diff
+      - deep_interview
+      - okf
+      - llm_wiki
+      - long_term_memory
+      - plan
+      - permission
+      - goal
+    context:
+      - Brian wants Codex skill preparation to be the first practical task.
+      - The seed workflow is MAS -> DOC with images, DOC -> MAS with images, and possibly markdown as a simpler intermediate path if conversion is not needed.
+      - The workflow should also compare MAS and RTL diffs, recommend priority among diffs with reasons, select an implementation target, implement it, and review whether the implementation matches the original intent.
+      - A deep interview is required before implementation to determine whether the request is feasible and sufficiently scoped.
+      - Development process memory should be captured as a long-term asset using Google OKF-style format and LLM Wiki-style notes.
+      - Codex operating controls to teach and encode include plan, permission, and goal.
+    expected_outputs:
+      - Deep interview checklist for MAS/DOC/RTL workflow feasibility.
+      - Decision on whether the first workflow uses direct conversion tooling or a markdown intermediate representation.
+      - MAS/DOC conversion requirements covering image preservation, target file format, fidelity, and validation.
+      - MAS/RTL diff triage rubric with priority recommendation criteria and rationale template.
+      - Implementation loop that selects one diff, implements it, and reviews original-intent alignment.
+      - Initial Codex skill instruction draft after one real sample workflow is validated.
+      - OKF/LLM Wiki process-memory template for recording goal, plan, permission, evidence, decisions, implementation, review, and follow-up.
+    next_actions:
+      - Ask or collect a concrete MAS sample, target DOC sample, RTL sample, and expected image behavior before implementation.
+      - Define what MAS means in this workflow and which tool can read/write it.
+      - Decide whether DOC means .docx or a broader design-document artifact.
+      - Run the deep interview before making any conversion or implementation tool.
+      - Start with one small MAS/RTL diff case and record the full plan-permission-goal loop.
+      - Promote the validated workflow into a Codex skill only after the sample case works and review passes.
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_okf_export_layer
+      - task_ai_agent_solution_rag_ontology_builder
+    related_concept_refs:
+      - concept_agent_skills
+      - concept_task_to_skill_distillation
+      - concept_llm_wiki
+      - concept_okf_open_knowledge_format
+      - concept_codex_plan_mode
+    evidence_refs:
+      - source_ai_agent_conversation_20260624_codex_skill_mas_doc_rtl_diff_start
+    confidence: medium
+    needs_user_review: true
+
   - id: task_ai_agent_codex_ontology_development_plugin
     title: Codex용 ontology 기반 개발 플러그인 설계/구현
     area: CAREER
