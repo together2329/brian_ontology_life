@@ -132,13 +132,22 @@ source_records:
     raw_text: "AIX 회식."
     full_message: "AIX 회식. 내가 마음만 먹으면 할 수 있다."
     follow_up_raw_text: "부문장님까지 참석 :)"
+    attendee_raw_text: "조승덕 팀장님,강민성 팀장님, 최현우 TL님, 김성찬TL님, 배문식TL님, 배현수TL님, 김천성 부문장님, 최우식 TL님, 최호윤 TL님 :) 참석. SK Hynix Solution 부문, SoC 사업부 AIX"
     interpreted_interaction:
       interaction_type: work_dinner
-      group: AIX (전사 AI Transformation 활동가)
-      attendees:
-        notable: 부문장님 (division head) attended - a notable leadership-presence signal.
-        others: not_specified
-        person_object_note: "No person object for the division head yet; name unknown, needs_user_review."
+      group: AIX (AI Transformation)
+      org_context: SK Hynix, Solution 부문, SoC 사업부
+      attendee_refs:
+        - person_cho_seungdeok
+        - person_kang_minseong
+        - person_choi_hyunwoo
+        - person_kim_sungchan
+        - person_bae_munsik
+        - person_bae_hyunsu
+        - person_kim_cheonseong
+        - person_choi_woosik
+        - person_hoyun
+      division_head_ref: person_kim_cheonseong
       date_precision: "assumed 2026-06-24; exact date/time not given, needs_user_review."
     related_recurring_meeting_ref: recurring_meeting_company_ai_transformation_weekly_activists
     related_social_interaction_ref: socialinteraction_20260624_aix_hoesik
@@ -252,20 +261,31 @@ social_interactions:
   - id: socialinteraction_20260624_aix_hoesik
     object_type: SocialInteraction
     date: 2026-06-24
-    people_refs: []
+    people_refs:
+      - person_cho_seungdeok
+      - person_kang_minseong
+      - person_choi_hyunwoo
+      - person_kim_sungchan
+      - person_bae_munsik
+      - person_bae_hyunsu
+      - person_kim_cheonseong
+      - person_choi_woosik
+      - person_hoyun
     interaction_type: work_dinner
     relationship_area: professional
+    org_context: SK Hynix, Solution 부문, SoC 사업부, AIX (AI Transformation)
     quality_score: null
     emotion_after: positive
     follow_up_tasks: []
-    notes: AIX(전사 AI Transformation 활동가) 회식. 부문장님(division head)까지 참석. 정확한 참석자 명단과 시간은 미기록.
+    notes: "AIX 회식 (SK Hynix Solution 부문 SoC 사업부). 참석: 조승덕 팀장님, 강민성 팀장님, 최현우 TL님, 김성찬 TL님, 배문식 TL님, 배현수 TL님, 김천성 부문장님, 최우식 TL님, 최호윤 TL님. 정확한 날짜/시간은 미기록(2026-06-24 가정)."
     notable_attendees:
-      - 부문장님 (division head; no person object yet, name needs_user_review)
-    significance: Division-head presence is a positive leadership-visibility signal; relates to Brian's earlier executive/division-head demo context, but no causal claim is made.
+      - person_kim_cheonseong (김천성 부문장님 / division head)
+    division_head_ref: person_kim_cheonseong
+    significance: Division-head (김천성 부문장님) presence is a positive leadership-visibility signal; relates to Brian's earlier executive/division-head demo context, but no causal claim is made.
     related_recurring_meeting_ref: recurring_meeting_company_ai_transformation_weekly_activists
     source_ref: source_relation_conversation_20260624_aix_hoesik
-    confidence: medium
-    needs_user_review: true
+    confidence: high
+    needs_user_review: false
 
 care_activities:
   - id: careactivity_20260623_morning_walk_jigu_haei
