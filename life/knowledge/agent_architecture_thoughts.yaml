@@ -772,6 +772,22 @@ source_records:
     related_task_refs:
       - task_ai_agent_okf_export_layer
 
+  - id: source_knowledge_conversation_20260625_decision_keep_yaml_agent_query_over_obsidian
+    source_type: chat
+    original_date: 2026-06-25
+    imported_at: 2026-06-25
+    parse_status: parsed
+    raw_text: "그냥 yaml 로 해야겠다 ㅎㅎ"
+    follow_up_raw_text: "obsidian으로 보는것 보다 너한테 물어서 보는게 훨 좋네"
+    interpreted_decision:
+      decision: Keep YAML as the canonical ontology store; do not adopt the Obsidian/OKF management approach for now.
+      reason: Brian finds querying the agent to view and navigate the ontology much better than browsing it in Obsidian.
+      implication: The agent (conversational query) is Brian's preferred access/view layer over a visual Obsidian vault; this validates the ontology-first plus agent-query design.
+      poc_outcome: The Milano Obsidian+OKF POC served as the evaluation that led to this decision; it was then removed (available in git history).
+    knowledge_thread_ref: thought_thread_20260625_obsidian_okf_readable_management
+    related_task_refs:
+      - task_ai_agent_okf_export_layer
+
 thought_threads:
   - id: thought_thread_20260615_okf_llm_wiki_ontology
     object_type: ThoughtThread
@@ -1667,6 +1683,15 @@ thought_threads:
     source_refs:
       - source_knowledge_conversation_20260625_obsidian_okf_readable_management
       - source_knowledge_conversation_20260625_obsidian_cli_git_trackability
+      - source_knowledge_conversation_20260625_decision_keep_yaml_agent_query_over_obsidian
+    resolution:
+      date: 2026-06-25
+      decision: Stay with YAML as the canonical store; set aside the Obsidian/OKF management direction for now.
+      reason: After the Milano-task Obsidian+OKF POC, Brian found that querying the agent to view and navigate the ontology is much better for him than browsing Obsidian. Making Obsidian more than a read-only view would need a two-way sync, and the readability gain did not justify it.
+      kept: YAML canonical store, edited by Codex/Claude, accessed mainly by asking the agent; git history for trackability.
+      set_aside: OKF-as-canonical, Obsidian as the management surface, Obsidian CLI workflow, and two-way sync.
+      poc_note: Built poc/obsidian_okf_milano to evaluate the approach, then removed after the decision; recoverable from git history.
+      status: closed
     confidence: high
     needs_user_review: false
 
