@@ -1,6 +1,6 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-23
+updated_at: 2026-06-24
 area: CAREER
 project_ref: project_milano
 component_ref: component_milano_pcie
@@ -635,6 +635,33 @@ source_records:
         blocker_removed: IDE Lint Critical
       next_step: Capture IDE Lint report/result path and continue monitoring link0/pd_pcie synthesis reruns for report, area, timing, and ETC deltas.
       confidence: high
+
+  - id: source_milano_conversation_20260624_multi_pf_separated_bar0_size_mux
+    source_type: chat
+    original_date: 2026-06-24
+    imported_at: 2026-06-24
+    parse_status: parsed
+    raw_text: "Milano에서 multi pf에 separated bar size 넣어야해 PF0 64KB, PF1~127 32KB 되도록. Bar0 한정으로. muxing해서 default, option 선택할 수 있게 하고, requirement로 꼼꼼하게 확인하기"
+    interpreted_requirement:
+      feature: Per-PF separated BAR size for multi-PF on Milano PCIe.
+      scope: BAR0 only.
+      bar0_size_map:
+        - pf: PF0
+          size: "64KB"
+        - pf: PF1..PF127
+          size: "32KB"
+      pf_range_assumption: "PF0..PF127 = 128 PFs total; exact PF count needs_user_review."
+      selectability:
+        mechanism: muxing
+        modes:
+          - default
+          - option
+        intent: Make the BAR0 size configuration selectable between a default and an option config via mux.
+        default_vs_option_mapping: "not_specified; which config is default vs option needs_user_review."
+      verification_expectation: Confirm meticulously at the requirement level (requirement-driven check).
+    related_component_ref: component_milano_pcie
+    related_task_refs:
+      - task_milano_pcie_multi_pf_separated_bar0_size_mux
 
 summary:
   recently_completed:
@@ -1940,6 +1967,80 @@ tasks:
       - source_milano_conversation_20260623_uio_free_variant_prepare
     confidence: medium
     needs_user_review: false
+
+  - id: task_milano_pcie_multi_pf_separated_bar0_size_mux
+    title: Milano multi-PF BAR0 size 분리 (PF0 64KB / PF1~127 32KB) + default/option mux
+    area: CAREER
+    status: todo
+    priority: high
+    energy: deep_work
+    estimated_minutes: null
+    due_date: null
+    tracking_level: detailed
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    progress_percent: 0
+    tags:
+      - milano
+      - pcie
+      - multi_pf
+      - pf
+      - bar0
+      - bar_size
+      - mux
+      - configurable
+      - requirement
+      - rtl
+    requirement_spec:
+      scope: BAR0 only; all other BARs keep their existing sizes.
+      bar0_size_map:
+        - pf: PF0
+          size: "64KB"
+        - pf: PF1..PF127
+          size: "32KB"
+      pf_range_assumption: "PF0..PF127 = 128 PFs total; confirm exact PF count and that PF127 is the last."
+      selectability:
+        mechanism: muxing
+        modes:
+          - default
+          - option
+        note: "default and option BAR0-size configs must be selectable; which config maps to default vs option needs confirmation."
+    context:
+      - Milano multi-PF needs per-PF separated BAR0 sizing instead of one uniform BAR0 size.
+      - PF0 should expose a 64KB BAR0; PF1 through PF127 should expose a 32KB BAR0.
+      - Only BAR0 is in scope.
+      - The sizing must be muxable so a default config and an option config can be selected.
+      - Brian wants this checked meticulously at the requirement level through implementation.
+      - Same PCIe component as the existing MSE-linked PF BAR0 overlap-prevention task.
+    failure_modes_to_avoid:
+      - Changing BAR sizes other than BAR0.
+      - Off-by-one in the PF range (PF127 missing, or PF0 wrongly grouped with PF1-127).
+      - Mux wired so the unintended config (default vs option) is active.
+      - Address-map/overlap breakage because PF0 BAR0 (64KB) is larger than PF1-127 BAR0 (32KB).
+    expected_outputs:
+      - Requirement entry capturing BAR0-only scope, the PF0=64KB / PF1-127=32KB size map, and the default/option mux.
+      - Per-PF BAR0 size table plus address-map/alignment/overlap implication review.
+      - RTL/config implementation of the muxed separated BAR0 sizing.
+      - Requirement-level verification evidence per PF group and per mux mode.
+    acceptance_criteria:
+      - PF0 BAR0 decodes as 64KB and PF1 through PF127 BAR0 decode as 32KB in the separated config.
+      - Only BAR0 is affected; other BARs keep their existing sizes.
+      - default and option configs are both selectable via the mux and produce the intended BAR0 sizing.
+      - Exact PF count/range and the default-vs-option mapping are confirmed with owner/requirement before closure.
+      - Build/lint/requirement-check evidence is captured before marking complete.
+    next_actions:
+      - Confirm PF count/range (exactly PF0-PF127 / 128 PFs?) and which mode is default vs option.
+      - Locate the Milano PCIe multi-PF BAR0 size config/decode path.
+      - Define the per-PF BAR0 size requirement table and address-map/alignment implications.
+      - Add the mux select for default vs option BAR0 sizing.
+      - Implement and verify each PF-group size and each mux mode at the requirement level.
+      - Record Issue/Resolution evidence after implementation and verification artifacts exist.
+    related_task_refs:
+      - task_milano_mse_pf_bar0_overlap_guard
+    evidence_refs:
+      - source_milano_conversation_20260624_multi_pf_separated_bar0_size_mux
+    confidence: high
+    needs_user_review: true
 
 recommended_execution_order:
   - task_milano_sdc_dual_profile_synth_rerun
