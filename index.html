@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Milano Task Summary</title>
+  <style>
+    :root {
+      --ink: #17211d;
+      --muted: #5f6d67;
+      --line: #d8e0dc;
+      --paper: #fbfcfa;
+      --surface: #ffffff;
+      --soft: #eef5f1;
+      --green: #0a7a58;
+      --blue: #286b94;
+      --amber: #b97812;
+      --red: #b94b43;
+      --slate: #415064;
+      --shadow: 0 18px 50px rgba(29, 42, 36, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        linear-gradient(135deg, rgba(10, 122, 88, 0.08), transparent 38%),
+        linear-gradient(315deg, rgba(185, 75, 67, 0.08), transparent 42%),
+        #f3f6f4;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+
+    .page {
+      width: min(1180px, calc(100vw - 32px));
+      margin: 12px auto;
+      padding: 18px;
+      background: var(--paper);
+      border: 1px solid rgba(216, 224, 220, 0.9);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .topline,
+    .meta-row,
+    .kpi-grid,
+    .focus-grid,
+    .progress-grid,
+    .work-grid,
+    .next-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .topline {
+      grid-template-columns: 1.35fr 0.95fr;
+      align-items: stretch;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 4.2vw, 58px);
+      line-height: 0.96;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 690px;
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+    }
+
+    .status-panel {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      min-height: 172px;
+    }
+
+    .meta-row {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin: 10px 0;
+    }
+
+    .meta {
+      padding: 10px;
+      background: #f6faf7;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .label {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .value {
+      display: block;
+      margin-top: 5px;
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .stackbar {
+      display: flex;
+      height: 16px;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #e8eeeb;
+      border: 1px solid var(--line);
+    }
+
+    .stackbar span {
+      min-width: 4px;
+    }
+
+    .done { background: var(--green); }
+    .doing { background: var(--blue); }
+    .todo { background: var(--amber); }
+    .planned { background: var(--slate); }
+    .deferred { background: var(--red); }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .legend i {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      margin-right: 5px;
+      border-radius: 2px;
+      vertical-align: -1px;
+    }
+
+    .chip-map {
+      width: 100%;
+      height: 116px;
+      min-height: 0;
+      display: block;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 12px 0 7px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.2;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .kpi-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .kpi {
+      min-height: 86px;
+      border-left: 5px solid var(--green);
+    }
+
+    .kpi:nth-child(2) { border-color: var(--blue); }
+    .kpi:nth-child(3) { border-color: var(--amber); }
+    .kpi:nth-child(4) { border-color: var(--red); }
+
+    .kpi strong {
+      display: block;
+      margin-top: 7px;
+      font-size: 23px;
+      line-height: 1;
+    }
+
+    .kpi p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .focus-grid {
+      grid-template-columns: 1.05fr 1fr;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 9px;
+      align-items: stretch;
+      margin-top: 4px;
+    }
+
+    .step {
+      position: relative;
+      min-height: 68px;
+      padding: 9px;
+      background: #f6faf7;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow-wrap: anywhere;
+    }
+
+    .step:not(:last-child)::after {
+      content: none;
+    }
+
+    .step b {
+      display: block;
+      font-size: 13px;
+    }
+
+    .step span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.3;
+    }
+
+    .progress-grid {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+    .progress-card {
+      display: grid;
+      grid-template-columns: 54px minmax(0, 1fr);
+      grid-template-rows: auto auto;
+      align-items: center;
+      justify-items: start;
+      gap: 2px 8px;
+      padding: 6px 4px;
+      text-align: left;
+    }
+
+    .ring {
+      --value: 50;
+      --color: var(--green);
+      position: relative;
+      display: grid;
+      place-items: center;
+      grid-row: 1 / 3;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: conic-gradient(var(--color) calc(var(--value) * 1%), #e5ece8 0);
+    }
+
+    .ring::before {
+      content: "";
+      position: absolute;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--surface);
+    }
+
+    .ring span {
+      position: relative;
+      z-index: 1;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .progress-card b {
+      font-size: 12px;
+      line-height: 1.25;
+    }
+
+    .progress-card small {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.25;
+    }
+
+    .work-grid {
+      grid-template-columns: 1.15fr 0.85fr;
+    }
+
+    .lane {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 12px;
+      padding: 7px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .lane:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .lane b {
+      color: var(--green);
+      font-size: 13px;
+    }
+
+    .lane p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.38;
+    }
+
+    .bullets {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .bullets li {
+      position: relative;
+      margin: 0;
+      padding: 6px 0 6px 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.38;
+    }
+
+    .bullets li:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--amber);
+    }
+
+    .next-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .dashboard-grid .progress-zone {
+      grid-column: 1 / -1;
+    }
+
+    .panel-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 9px;
+    }
+
+    .panel-head h2 {
+      margin: 0;
+    }
+
+    .compact-actions {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: actions;
+    }
+
+    .compact-actions li {
+      counter-increment: actions;
+      min-height: 66px;
+      padding: 8px;
+      background: #f7faf8;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.28;
+      overflow-wrap: anywhere;
+    }
+
+    .compact-actions li::before {
+      content: counter(actions);
+      display: inline-grid;
+      place-items: center;
+      width: 21px;
+      height: 21px;
+      margin: 0 5px 5px 0;
+      color: white;
+      background: var(--green);
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .compact-actions b {
+      display: block;
+      color: var(--ink);
+      font-size: 12px;
+      line-height: 1.25;
+    }
+
+    .next {
+      min-height: 76px;
+      padding: 10px;
+      background: #f7faf8;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .next em {
+      display: inline-grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      margin-bottom: 6px;
+      color: white;
+      background: var(--green);
+      border-radius: 50%;
+      font-style: normal;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .next b {
+      display: block;
+      font-size: 13px;
+      line-height: 1.3;
+    }
+
+    .next span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.28;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 900px) {
+      .topline,
+      .focus-grid,
+      .work-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .meta-row,
+      .kpi-grid,
+      .progress-grid,
+      .next-grid,
+      .compact-actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      .step:not(:last-child)::after {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        width: min(100vw - 18px, 1180px);
+        padding: 16px;
+      }
+
+      .meta-row,
+      .kpi-grid,
+      .progress-grid,
+      .next-grid,
+      .compact-actions,
+      .dashboard-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dashboard-grid .progress-zone {
+        grid-column: auto;
+      }
+
+      .lane {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 10mm;
+      }
+
+      body {
+        background: white;
+      }
+
+      .page {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+      }
+
+      .panel,
+      .meta,
+      .step,
+      .next {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="topline">
+      <div>
+        <p class="eyebrow">Milano task cockpit</p>
+        <h1>June closeout: Area, SDC, link0, pd_pcie</h1>
+        <p class="lead">
+          Current execution is narrowed through 2026-06-30: finish SDC cleanup,
+          review link0/pd_pcie synthesis reports, break down ETC area, and use
+          the IDE-inclusive rerun as the trusted ARIR baseline.
+        </p>
+      </div>
+
+      <aside class="panel status-panel" aria-label="Milano status visual">
+        <div>
+          <span class="label">Task mix</span>
+          <span class="value">20 tracked tasks</span>
+        </div>
+        <svg class="chip-map" viewBox="0 0 520 190" role="img" aria-label="Milano task flow map">
+          <defs>
+            <linearGradient id="chipFill" x1="0" x2="1">
+              <stop offset="0%" stop-color="#eef7f2"/>
+              <stop offset="100%" stop-color="#f8f2e7"/>
+            </linearGradient>
+          </defs>
+          <rect x="22" y="20" width="476" height="150" rx="10" fill="url(#chipFill)" stroke="#cfdad5"/>
+          <rect x="62" y="52" width="108" height="42" rx="8" fill="#ffffff" stroke="#0a7a58" stroke-width="2"/>
+          <rect x="206" y="52" width="108" height="42" rx="8" fill="#ffffff" stroke="#286b94" stroke-width="2"/>
+          <rect x="350" y="52" width="108" height="42" rx="8" fill="#ffffff" stroke="#b97812" stroke-width="2"/>
+          <rect x="62" y="112" width="108" height="42" rx="8" fill="#ffffff" stroke="#286b94" stroke-width="2"/>
+          <rect x="206" y="112" width="108" height="42" rx="8" fill="#ffffff" stroke="#b94b43" stroke-width="2"/>
+          <rect x="350" y="112" width="108" height="42" rx="8" fill="#ffffff" stroke="#0a7a58" stroke-width="2"/>
+          <path d="M170 73 H206 M314 73 H350 M116 94 V112 M260 94 V112 M314 133 H350" fill="none" stroke="#8fa19a" stroke-width="3"/>
+          <text x="116" y="78" text-anchor="middle" fill="#17211d" font-size="15" font-weight="800">SDC</text>
+          <text x="260" y="78" text-anchor="middle" fill="#17211d" font-size="15" font-weight="800">Lint</text>
+          <text x="404" y="78" text-anchor="middle" fill="#17211d" font-size="15" font-weight="800">link0</text>
+          <text x="116" y="138" text-anchor="middle" fill="#17211d" font-size="15" font-weight="800">pd_pcie</text>
+          <text x="260" y="138" text-anchor="middle" fill="#17211d" font-size="15" font-weight="800">ETC</text>
+          <text x="404" y="138" text-anchor="middle" fill="#17211d" font-size="15" font-weight="800">ARIR</text>
+        </svg>
+        <div>
+          <div class="stackbar" aria-label="Task status distribution">
+            <span class="done" style="flex: 5"></span>
+            <span class="doing" style="flex: 10"></span>
+            <span class="todo" style="flex: 3"></span>
+            <span class="planned" style="flex: 1"></span>
+            <span class="deferred" style="flex: 1"></span>
+          </div>
+          <div class="legend">
+            <span><i class="done"></i>5 done</span>
+            <span><i class="doing"></i>10 active</span>
+            <span><i class="todo"></i>3 todo</span>
+            <span><i class="planned"></i>1 planned</span>
+            <span><i class="deferred"></i>1 deferred</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="meta-row" aria-label="Milano metadata">
+      <div class="meta">
+        <span class="label">Source updated</span>
+        <span class="value">2026-06-23</span>
+      </div>
+      <div class="meta">
+        <span class="label">Focus window</span>
+        <span class="value">2026-06-22 to 06-30</span>
+      </div>
+      <div class="meta">
+        <span class="label">Latest closure signal</span>
+        <span class="value">IDE Lint Critical fixed</span>
+      </div>
+      <div class="meta">
+        <span class="label">Known blocker</span>
+        <span class="value">TLP split / bus downsizing</span>
+      </div>
+    </section>
+
+    <section class="dashboard-grid">
+      <div class="panel progress-zone">
+        <div class="panel-head">
+          <h2>Active Progress</h2>
+          <span class="hint">Progress from life/tasks/milano_active_tasks.yaml</span>
+        </div>
+        <div class="progress-grid" aria-label="Task progress rings">
+          <div class="progress-card">
+            <div class="ring" style="--value: 86; --color: var(--green)"><span>86%</span></div>
+            <b>SDC cleanup</b>
+            <small>Dual profile rerun path</small>
+          </div>
+          <div class="progress-card">
+            <div class="ring" style="--value: 95; --color: var(--green)"><span>95%</span></div>
+            <b>IP rev lint</b>
+            <small>Critical fixed, report pending</small>
+          </div>
+          <div class="progress-card">
+            <div class="ring" style="--value: 68; --color: var(--blue)"><span>68%</span></div>
+            <b>GEN7 PHY DB</b>
+            <small>Top sim pass, synthesis review next</small>
+          </div>
+          <div class="progress-card">
+            <div class="ring" style="--value: 70; --color: var(--blue)"><span>70%</span></div>
+            <b>Handler + SFR</b>
+            <small>First pass completed</small>
+          </div>
+          <div class="progress-card">
+            <div class="ring" style="--value: 20; --color: var(--amber)"><span>20%</span></div>
+            <b>ETC area</b>
+            <small>Needs report drilldown</small>
+          </div>
+          <div class="progress-card">
+            <div class="ring" style="--value: 20; --color: var(--amber)"><span>20%</span></div>
+            <b>ARIR</b>
+            <small>Blocked on trusted data</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Closure Flow</h2>
+          <span class="hint">Operating order</span>
+        </div>
+        <div class="flow" aria-label="Milano closure flow">
+          <div class="step">
+            <b>1. Clean SDC</b>
+            <span>PDBCI/link wrapper constraints and PHY GEN7 SDC.</span>
+          </div>
+          <div class="step">
+            <b>2. Confirm lint</b>
+            <span>Record IDE Lint Critical closure report.</span>
+          </div>
+          <div class="step">
+            <b>3. Review reruns</b>
+            <span>Capture link0 and pd_pcie reports.</span>
+          </div>
+          <div class="step">
+            <b>4. Split ETC</b>
+            <span>Classify IDE area vs unexplained growth.</span>
+          </div>
+          <div class="step">
+            <b>5. Trust ARIR</b>
+            <span>Use IDE-inclusive data for closure.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Scope</h2>
+          <span class="hint">Done, support, defer</span>
+        </div>
+        <div class="lane">
+          <b>Completed</b>
+          <p>3nm env, common module, crossing naming, standard ICG, initial DB.</p>
+        </div>
+        <div class="lane">
+          <b>Support</b>
+          <p>Firenze handler, R001 Diff, missed-followup audit, no-UIO variant.</p>
+        </div>
+        <div class="lane">
+          <b>Deferred</b>
+          <p>NVMe VIP, MSE/PF BAR0, Port 1 interrupt, DCG power unless blocking June closure.</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Next Actions</h2>
+          <span class="hint">Smallest useful steps</span>
+        </div>
+        <ol class="compact-actions" aria-label="Next action cards">
+          <li><b>Capture paths</b>Lint closure, link0 rerun, pd_pcie rerun.</li>
+          <li><b>Compare link0</b>IDE-missing vs IDE-inclusive area.</li>
+          <li><b>Review pd_pcie</b>Synthesis, timing, warnings, constraints.</li>
+          <li><b>Label MPS</b>Record exact value and rerun policy.</li>
+          <li><b>Open issues</b>Track abnormal ETC, R001, handler, or TLP findings.</li>
+        </ol>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Watch Items</h2>
+          <span class="hint">Keep visible</span>
+        </div>
+        <ul class="bullets">
+          <li>Do not treat link0 synthesis as final because IDE was missing from that completed scope.</li>
+          <li>Keep MPS as a workaround and rerun without it after the bus fix.</li>
+          <li>No-UIO needs scope, owner expectation, and baseline-vs-variant deltas.</li>
+          <li>Disparity Jira, R001 source split, and report paths are still pending.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Source: life/tasks/milano_active_tasks.yaml and life/entities/semantic_entity_catalog.yaml.</span>
+      <span>Standalone local page. No external assets, fonts, scripts, or network calls.</span>
+    </footer>
+  </main>
+</body>
+</html>
