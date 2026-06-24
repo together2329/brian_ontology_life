@@ -1354,6 +1354,21 @@ source_records:
     related_task_refs:
       - task_ai_agent_codex_ontology_development_plugin
 
+  - id: source_ai_agent_conversation_20260624_company_ai_innovator_award
+    source_type: chat
+    original_date: 2026-06-24
+    imported_at: 2026-06-24
+    parse_status: parsed
+    raw_text: "얼마전에 AI Innovator 상 받음 회사에서 :)"
+    interpreted_event:
+      event_type: award
+      award_name: AI Innovator
+      awarded_by: company
+      timing: "얼마전 (recently, as of 2026-06-24); exact date needs_user_review."
+      sentiment: positive
+    related_event_ref: event_ai_agent_company_ai_innovator_award
+    related_mood_ref: mood_20260624_self_efficacy_confidence
+
 summary:
   current_state:
     - Brian is continuing AI Agent development while tired from work, but the activity feels fun.
@@ -1508,6 +1523,28 @@ summary:
       needs_user_review: true
 
 event_records:
+  - id: event_ai_agent_company_ai_innovator_award
+    event_type: award
+    area: CAREER
+    secondary_areas:
+      - MIND
+    date: null
+    date_precision: "recently as of 2026-06-24 (얼마전); exact date needs_user_review."
+    title: AI Innovator 상 (company AI Innovator award)
+    awarded_by: company
+    status: received
+    context:
+      - Brian received an AI Innovator award at the company recently (as of 2026-06-24).
+      - Recognizes Brian's AI work and enablement contribution.
+    significance:
+      - Positive company-level recognition of Brian's AI work and reputation.
+      - Counters the earlier worry that teammates might view him as doing AI instead of core engineering work (see mood_20260617_low_margin_impatience_ai_reputation_pressure).
+      - Aligns with the 2026-06-24 self-efficacy statement, though no causal claim is made.
+    related_mood_refs:
+      - mood_20260617_low_margin_impatience_ai_reputation_pressure
+      - mood_20260624_self_efficacy_confidence
+    source_ref: source_ai_agent_conversation_20260624_company_ai_innovator_award
+
   - id: event_ai_agent_cursor_seminar_success_20260612
     event_type: seminar
     area: CAREER
