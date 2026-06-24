@@ -663,6 +663,37 @@ source_records:
     related_task_refs:
       - task_milano_pcie_multi_pf_separated_bar0_size_mux
 
+  - id: source_milano_conversation_20260624_doe_reg_top_axi_bridge_pptx_material
+    source_type: chat
+    original_date: 2026-06-24
+    imported_at: 2026-06-24
+    parse_status: parsed
+    raw_text: "그리고 DOE, REG TOP AXI Bridge 관련해서 PPTX 자료 만들기 :)"
+    interpreted_task:
+      deliverable: PPTX presentation material
+      topics:
+        - PCIe DOE
+        - REG TOP AXI Bridge
+      purpose_and_audience: "not_specified; needs_user_review."
+    related_component_ref: component_milano_pcie
+    related_task_refs:
+      - task_milano_pcie_doe_reg_top_axi_bridge_pptx
+
+  - id: source_milano_conversation_20260624_pcie_db_delivery_to_be_team
+    source_type: chat
+    original_date: 2026-06-24
+    imported_at: 2026-06-24
+    parse_status: parsed
+    raw_text: "Milano PCIe DB 전달하기 ( BE 팀에 .db 다 만들어서 )"
+    follow_up_raw_text: "이것도 task 로"
+    interpreted_task:
+      deliverable: Generate all Milano PCIe .db files and deliver them to the BE (back-end) team.
+      recipient: BE team (back-end / physical design)
+      db_type: ".db exact type (Synopsys Liberty .db, synthesized design DB, or other) needs_user_review."
+    related_component_ref: component_milano_pcie
+    related_task_refs:
+      - task_milano_pcie_db_delivery_to_be_team
+
 summary:
   recently_completed:
     - task_milano_3nm_synth_env_setup
@@ -2039,6 +2070,89 @@ tasks:
       - task_milano_mse_pf_bar0_overlap_guard
     evidence_refs:
       - source_milano_conversation_20260624_multi_pf_separated_bar0_size_mux
+    confidence: high
+    needs_user_review: true
+
+  - id: task_milano_pcie_doe_reg_top_axi_bridge_pptx
+    title: DOE / REG TOP AXI Bridge 관련 PPTX 자료 만들기
+    area: CAREER
+    status: todo
+    priority: medium
+    energy: communication
+    estimated_minutes: null
+    due_date: null
+    tracking_level: lightweight
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    progress_percent: 0
+    tags:
+      - milano
+      - pcie
+      - doe
+      - reg_top_axi_bridge
+      - pptx
+      - presentation
+      - documentation
+    context:
+      - Brian wants to make PPTX material related to PCIe DOE and REG TOP AXI Bridge.
+      - These are the same blocks Brian owns for Milano DCG/power-optimization work.
+      - Purpose and audience (design review, team share, status report, or seminar) are not yet specified.
+    expected_outputs:
+      - PPTX deck covering DOE and REG TOP AXI Bridge structure, function, and the relevant Milano work.
+      - Source content and outline gathered before slide generation.
+    acceptance_criteria:
+      - Deck clearly explains DOE and REG TOP AXI Bridge at the intended audience level.
+      - Content is grounded in the actual Milano DOE / REG TOP AXI Bridge design and DCG/power work, not generic.
+      - No private/DRM raw material is copied into a shareable deck without review.
+    next_actions:
+      - Confirm purpose and audience (design review / team share / status / seminar).
+      - Collect source material - DOE and REG TOP AXI Bridge structure, DCG/power scope, current status.
+      - Draft an outline and slide intent before generating slides.
+      - Generate the PPTX and do a visual review/iteration pass.
+    related_task_refs:
+      - task_milano_pcie_doe_reg_top_axi_bridge_dcg_power_optimization
+    evidence_refs:
+      - source_milano_conversation_20260624_doe_reg_top_axi_bridge_pptx_material
+    confidence: high
+    needs_user_review: true
+
+  - id: task_milano_pcie_db_delivery_to_be_team
+    title: Milano PCIe .db 전체 생성 후 BE 팀 전달
+    area: CAREER
+    status: todo
+    priority: high
+    energy: deep_work
+    estimated_minutes: null
+    due_date: null
+    tracking_level: detailed
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    progress_percent: 0
+    tags:
+      - milano
+      - pcie
+      - db
+      - backend_handoff
+      - be_team
+      - deliverable
+    context:
+      - Brian needs to generate all Milano PCIe .db files and deliver them to the BE (back-end / physical design) team.
+      - This is a cross-team handoff deliverable.
+      - The exact .db type (Synopsys Liberty .db, synthesized design DB, or another format) is not yet confirmed.
+    expected_outputs:
+      - Complete set of Milano PCIe .db files.
+      - Handoff to the BE team with scope, version, and any caveats noted.
+    acceptance_criteria:
+      - All required Milano PCIe .db files are generated with no missing blocks or corners.
+      - The .db set is delivered to the BE team and the handoff/receipt is confirmed.
+      - The .db version/scope matches the intended synthesis baseline.
+    next_actions:
+      - Confirm exactly which .db type, corners, and blocks the BE team needs.
+      - Generate the full .db set.
+      - Verify completeness (all blocks and corners present, none broken or missing).
+      - Deliver to the BE team and record the handoff (date, version, recipient).
+    evidence_refs:
+      - source_milano_conversation_20260624_pcie_db_delivery_to_be_team
     confidence: high
     needs_user_review: true
 
