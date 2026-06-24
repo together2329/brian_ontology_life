@@ -198,7 +198,46 @@ source_records:
         - happiness_trigger_021
       confidence: high
 
+  - id: source_mind_conversation_20260624_self_efficacy_confidence
+    source_type: chat
+    original_date: 2026-06-24
+    imported_at: 2026-06-24
+    parse_status: parsed
+    raw_text: "내가 마음만 먹으면 할 수 있다."
+    full_message: "AIX 회식. 내가 마음만 먹으면 할 수 있다."
+    interpreted_mood:
+      statement_type: self_efficacy_belief
+      valence: positive
+      co_stated_with: "AIX 회식 (recorded in relation_active_log)"
+      causal_claim: none
+    related_social_interaction_ref: socialinteraction_20260624_aix_hoesik
+    related_mood_ref: mood_20260624_self_efficacy_confidence
+
 mood_entries:
+  - id: mood_20260624_self_efficacy_confidence
+    object_type: MoodEntry
+    date: 2026-06-24
+    time: null
+    valence_score: 2
+    arousal_score: null
+    stress_score: null
+    energy_score: null
+    emotions:
+      - confident
+      - self_efficacy
+      - determined
+    linked_context:
+      related_social_interaction_ref: socialinteraction_20260624_aix_hoesik
+      related_mood_refs:
+        - mood_20260617_low_margin_impatience_ai_reputation_pressure
+    possible_triggers:
+      - Stated alongside the AIX 회식; may reflect a positive shift, but no causal link is asserted.
+    note: Brian expressed self-efficacy ("내가 마음만 먹으면 할 수 있다"). Recorded as a positive counter-statement to the earlier AI-reputation-pressure mood; treat as belief/attitude, not a verified outcome.
+    raw_text: "내가 마음만 먹으면 할 수 있다."
+    source_refs:
+      - source_mind_conversation_20260624_self_efficacy_confidence
+    confidence: medium
+    needs_user_review: false
   - id: mood_20260623_dawn_wake_testing_fatigue
     object_type: MoodEntry
     date: 2026-06-23
