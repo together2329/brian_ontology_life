@@ -131,10 +131,14 @@ source_records:
     parse_status: parsed
     raw_text: "AIX 회식."
     full_message: "AIX 회식. 내가 마음만 먹으면 할 수 있다."
+    follow_up_raw_text: "부문장님까지 참석 :)"
     interpreted_interaction:
       interaction_type: work_dinner
       group: AIX (전사 AI Transformation 활동가)
-      attendees: not_specified
+      attendees:
+        notable: 부문장님 (division head) attended - a notable leadership-presence signal.
+        others: not_specified
+        person_object_note: "No person object for the division head yet; name unknown, needs_user_review."
       date_precision: "assumed 2026-06-24; exact date/time not given, needs_user_review."
     related_recurring_meeting_ref: recurring_meeting_company_ai_transformation_weekly_activists
     related_social_interaction_ref: socialinteraction_20260624_aix_hoesik
@@ -252,9 +256,12 @@ social_interactions:
     interaction_type: work_dinner
     relationship_area: professional
     quality_score: null
-    emotion_after: null
+    emotion_after: positive
     follow_up_tasks: []
-    notes: AIX(전사 AI Transformation 활동가) 회식. 참석자와 시간은 미기록.
+    notes: AIX(전사 AI Transformation 활동가) 회식. 부문장님(division head)까지 참석. 정확한 참석자 명단과 시간은 미기록.
+    notable_attendees:
+      - 부문장님 (division head; no person object yet, name needs_user_review)
+    significance: Division-head presence is a positive leadership-visibility signal; relates to Brian's earlier executive/division-head demo context, but no causal claim is made.
     related_recurring_meeting_ref: recurring_meeting_company_ai_transformation_weekly_activists
     source_ref: source_relation_conversation_20260624_aix_hoesik
     confidence: medium
