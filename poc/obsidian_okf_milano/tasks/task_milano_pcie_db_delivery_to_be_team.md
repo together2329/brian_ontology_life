@@ -14,33 +14,35 @@ confidence: high
 needs_user_review: true
 updated: 2026-06-25
 ---
+# Milano PCIe .db 전체 생성 후 BE 팀 전달
 
-# Milano PCIe `.db` 전체 생성 후 BE 팀 전달
-
-> [!summary] One-liner
-> Milano PCIe `.db` 파일을 **전부 생성**해서 **BE(back-end) 팀에 전달**하는 cross-team handoff.
+> [!summary] Status
+> **todo · high priority · 0%**
 
 ## Context
-- Generate all Milano PCIe `.db` files and deliver them to the BE (back-end / physical design) team.
-- Cross-team handoff deliverable.
-- ⚠️ Exact `.db` type (Synopsys Liberty `.db`, synthesized design DB, or other) not yet confirmed.
+- Brian needs to generate all Milano PCIe .db files and deliver them to the BE (back-end / physical design) team.
+- This is a cross-team handoff deliverable.
+- The exact .db type (Synopsys Liberty .db, synthesized design DB, or another format) is not yet confirmed.
+
+## Expected outputs
+- Complete set of Milano PCIe .db files.
+- Handoff to the BE team with scope, version, and any caveats noted.
 
 ## Acceptance criteria
-- [ ] All required Milano PCIe `.db` files generated — no missing blocks or corners.
-- [ ] `.db` set delivered to the BE team; handoff/receipt confirmed.
-- [ ] `.db` version/scope matches the intended synthesis baseline.
+- [ ] All required Milano PCIe .db files are generated with no missing blocks or corners.
+- [ ] The .db set is delivered to the BE team and the handoff/receipt is confirmed.
+- [ ] The .db version/scope matches the intended synthesis baseline.
 
 ## Next actions
-- [ ] Confirm exactly which `.db` type, corners, and blocks the BE team needs.
-- [ ] Generate the full `.db` set.
-- [ ] Verify completeness (all blocks and corners present, none broken/missing).
+- [ ] Confirm exactly which .db type, corners, and blocks the BE team needs.
+- [ ] Generate the full .db set.
+- [ ] Verify completeness (all blocks and corners present, none broken or missing).
 - [ ] Deliver to the BE team and record the handoff (date, version, recipient).
 
 ## Links
 - Component: [[component_milano_pcie]]
-- Related synthesis work: [[task_milano_sdc_dual_profile_synth_rerun]]
 - Index: [[index]]
 
 ## History
-- **2026-06-24** — Recorded as a `todo` handoff task.
-- **2026-06-25** — Converted to OKF/Obsidian POC note.
+- **2026-06-25** — Generated from `life/tasks/milano_active_tasks.yaml`.
+

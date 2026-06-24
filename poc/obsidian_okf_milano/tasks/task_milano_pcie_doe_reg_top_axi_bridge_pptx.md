@@ -15,25 +15,28 @@ confidence: high
 needs_user_review: true
 updated: 2026-06-25
 ---
+# DOE / REG TOP AXI Bridge 관련 PPTX 자료 만들기
 
-# DOE / REG TOP AXI Bridge PPTX 자료 만들기
-
-> [!summary] One-liner
-> PCIe **DOE** 와 **REG TOP AXI Bridge** 에 대한 **PPTX 발표자료** 제작.
+> [!summary] Status
+> **todo · medium priority · 0%**
 
 ## Context
-- Make PPTX material on PCIe DOE and REG TOP AXI Bridge.
-- Same blocks Brian owns for Milano DCG/power work → [[task_milano_pcie_doe_reg_top_axi_bridge_dcg_power_optimization]].
-- ⚠️ Purpose and audience (design review / team share / status / seminar) not yet specified.
+- Brian wants to make PPTX material related to PCIe DOE and REG TOP AXI Bridge.
+- These are the same blocks Brian owns for Milano DCG/power-optimization work.
+- Purpose and audience (design review, team share, status report, or seminar) are not yet specified.
+
+## Expected outputs
+- PPTX deck covering DOE and REG TOP AXI Bridge structure, function, and the relevant Milano work.
+- Source content and outline gathered before slide generation.
 
 ## Acceptance criteria
 - [ ] Deck clearly explains DOE and REG TOP AXI Bridge at the intended audience level.
-- [ ] Content grounded in the actual Milano DOE / REG TOP AXI Bridge design + DCG/power work (not generic).
-- [ ] No private/DRM raw material copied into a shareable deck without review.
+- [ ] Content is grounded in the actual Milano DOE / REG TOP AXI Bridge design and DCG/power work, not generic.
+- [ ] No private/DRM raw material is copied into a shareable deck without review.
 
 ## Next actions
-- [ ] Confirm purpose and audience.
-- [ ] Collect source material — DOE + REG TOP AXI Bridge structure, DCG/power scope, current status.
+- [ ] Confirm purpose and audience (design review / team share / status / seminar).
+- [ ] Collect source material - DOE and REG TOP AXI Bridge structure, DCG/power scope, current status.
 - [ ] Draft an outline and slide intent before generating slides.
 - [ ] Generate the PPTX and do a visual review/iteration pass.
 
@@ -43,5 +46,5 @@ updated: 2026-06-25
 - Index: [[index]]
 
 ## History
-- **2026-06-24** — Recorded as a `todo` documentation task.
-- **2026-06-25** — Converted to OKF/Obsidian POC note.
+- **2026-06-25** — Generated from `life/tasks/milano_active_tasks.yaml`.
+
