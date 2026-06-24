@@ -757,6 +757,21 @@ source_records:
     related_task_refs:
       - task_ai_agent_okf_export_layer
 
+  - id: source_knowledge_conversation_20260625_obsidian_cli_git_trackability
+    source_type: chat
+    original_date: 2026-06-25
+    imported_at: 2026-06-25
+    parse_status: parsed
+    raw_text: "그리고 obsidian cli 등도 적극적으로 활용해서 쓰고 싶어."
+    follow_up_raw_text: "그래야 뭔가 진짜 추적 가능 할 듯 + .git 도 :)"
+    interpreted_request:
+      obsidian_cli: Brian wants to actively use Obsidian CLI and similar tooling, not only the GUI.
+      rationale: CLI tooling plus version control would make the system truly trackable.
+      version_control: Keep git (.git) version control on the Obsidian/OKF representation, as the current YAML ontology already is.
+    knowledge_thread_ref: thought_thread_20260625_obsidian_okf_readable_management
+    related_task_refs:
+      - task_ai_agent_okf_export_layer
+
 thought_threads:
   - id: thought_thread_20260615_okf_llm_wiki_ontology
     object_type: ThoughtThread
@@ -1625,6 +1640,9 @@ thought_threads:
       - The Markdown body should let Brian follow a record's history easily.
       - Graph connections should come from Obsidian backlinks rather than only id refs in YAML.
       - Brian wants to use Obsidian skills, Obsidian Bases, and Obsidian tasks well as the human-facing view layer.
+      - Brian also wants to actively use the Obsidian CLI and similar tooling, not only the GUI.
+      - The motivation is true trackability - Obsidian CLI plus git (.git) version control over the OKF/Markdown files.
+      - The current YAML ontology is already git-tracked; Brian wants to keep that version-control trackability in the Obsidian/OKF setup.
     conversation_flow:
       - Brian restated the OKF-on-Obsidian direction, now driven explicitly by his own readability need, not only interoperability.
       - The canonical ontology can stay structured while OKF gives a portable, human-readable file shape.
@@ -1648,6 +1666,7 @@ thought_threads:
       - task_ai_agent_codex_ontology_development_plugin
     source_refs:
       - source_knowledge_conversation_20260625_obsidian_okf_readable_management
+      - source_knowledge_conversation_20260625_obsidian_cli_git_trackability
     confidence: high
     needs_user_review: false
 
