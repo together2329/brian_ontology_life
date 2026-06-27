@@ -1,5 +1,5 @@
 schema_version: 1
-updated_at: 2026-06-23
+updated_at: 2026-06-27
 profile_ref: person_brian
 area: BODY
 
@@ -420,6 +420,40 @@ exercise_catalog:
       - triceps
     equipment: barbell_or_dumbbells_or_machine
     notes: Use when the exact incline bench equipment is not specified.
+  - id: exercise_romanian_deadlift
+    object_type: ExerciseCatalog
+    name: Romanian deadlift
+    aliases:
+      - 루마니안 데드리프트
+      - 루마니안 데드
+      - 루마니안데드리프트
+      - RDL
+      - romanian deadlift
+    muscle_groups:
+      - hamstrings
+      - glutes
+      - lower_back
+      - core
+    equipment: barbell_or_dumbbells_or_unspecified
+    notes: Hip-hinge deadlift variant emphasizing hamstrings/glutes; distinct from conventional deadlift.
+  - id: exercise_incline_dumbbell_row
+    object_type: ExerciseCatalog
+    name: Incline dumbbell row
+    aliases:
+      - 인클라인 덤벨로우
+      - 인클라인 덤벨 로우
+      - 인클라인 벤치 덤벨로우
+      - 인클라인 벤치 덤벨 로우
+      - incline dumbbell row
+      - chest supported dumbbell row
+    muscle_groups:
+      - lats
+      - rhomboids
+      - traps
+      - rear_delts
+      - biceps
+    equipment: dumbbells_and_incline_bench
+    notes: Chest-supported row performed lying prone on an incline bench with dumbbells; record per-hand (양쪽) weight.
   - id: exercise_unknown_pt_movement
     object_type: ExerciseCatalog
     name: Unknown PT movement
@@ -432,6 +466,162 @@ exercise_catalog:
     notes: Temporary placeholder for handwritten PT rows that need Brian review.
 
 workout_records:
+  - id: workoutsession_20260627_back_arm_pulldown_in_progress
+    object_type: WorkoutSession
+    date: 2026-06-27
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: 등 운동 - 암풀다운, 렛풀다운, RDL, 인클라인 덤벨로우, 사레레
+    tags: [self_report, back, shoulders, arm_pulldown, lat_pulldown, romanian_deadlift, incline_dumbbell_row, side_lateral_raise, completed]
+    training_program_ref: null
+    location: gym
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    performance_note: Brian started a back workout, beginning with cable straight-arm pulldown at 25kg x 15, then 30kg x 12 for 2 sets, finishing with 25kg x 12 where the PT coach gave assisted (forced) reps from around rep 8-9.
+    exercises:
+      - exercise_ref: exercise_cable_straight_arm_pulldown
+        sequence_order: 1
+        variant: cable_machine
+        equipment: cable_machine
+        confidence: high
+        notes: 암풀다운. Brian reported 25kg x 15, then 30kg x 12 for 2 sets, then 25kg x 12 with PT coach support from rep 8-9 (felt hard).
+        sets:
+          - set: 1
+            weight_kg: 25
+            reps: 15
+          - set: 2
+            weight_kg: 30
+            reps: 12
+          - set: 3
+            weight_kg: 30
+            reps: 12
+          - set: 4
+            weight_kg: 25
+            reps: 12
+            assisted: true
+            assisted_from_rep: 8
+            assistance_note: PT coach provided support from around rep 8-9; felt hard (forced reps).
+      - exercise_ref: exercise_lat_pulldown
+        sequence_order: 2
+        variant: cable_or_lat_pulldown_machine
+        equipment: cable_or_lat_pulldown_machine
+        confidence: high
+        notes: 렛풀다운. Brian reported 25kg x 15, then 30kg x 12 with PT support on the last 3-4 reps, then 25kg x 12 with PT support from rep 8, finishing with a drop set of 25kg x 10 into 20kg x 5.
+        sets:
+          - set: 1
+            weight_kg: 25
+            reps: 15
+          - set: 2
+            weight_kg: 30
+            reps: 12
+            assisted: true
+            assisted_last_reps: 4
+            assistance_note: PT coach supported the last 3-4 reps.
+          - set: 3
+            weight_kg: 25
+            reps: 12
+            assisted: true
+            assisted_from_rep: 8
+            assistance_note: PT coach provided support from rep 8.
+          - set: 4
+            set_label: "4 (drop set)"
+            weight_kg: 25
+            reps: 10
+            drop_set: true
+            drop_set_group: 1
+            drop_set_position: 1
+            notes: Set 4 is a single drop set - part 1 - 25kg x 10.
+          - set: 4
+            set_label: "4 (drop set)"
+            weight_kg: 20
+            reps: 5
+            drop_set: true
+            drop_set_group: 1
+            drop_set_position: 2
+            notes: Set 4 is a single drop set - part 2 - dropped to 20kg x 5 immediately after 25kg x 10 (no rest). Combined drop set total reps 10+5=15.
+          - set: 5
+            weight_kg: 20
+            reps: 10
+            notes: Additional set after the drop set - 20kg x 10.
+          - set: 6
+            weight_kg: 20
+            reps: 10
+            notes: One more set at 20kg x 10.
+          - set: 7
+            weight_kg: 20
+            reps: 10
+            notes: One more set at 20kg x 10.
+          - set: 8
+            weight_kg: 20
+            reps: 10
+            notes: One more set at 20kg x 10.
+      - exercise_ref: exercise_romanian_deadlift
+        sequence_order: 3
+        variant: barbell_or_unspecified
+        equipment: barbell_or_unspecified
+        confidence: high
+        notes: 루마니안 데드리프트(RDL). Brian reported 30kg x 15, then 40kg x 12, then 50kg x 10 with lifting straps for 2 sets.
+        sets:
+          - set: 1
+            weight_kg: 30
+            reps: 15
+          - set: 2
+            weight_kg: 40
+            reps: 12
+          - set: 3
+            weight_kg: 50
+            reps: 10
+            equipment_aids:
+              - lifting_straps
+            notes: 50kg x 10 with lifting straps (스트랩 사용).
+          - set: 4
+            weight_kg: 50
+            reps: 10
+            equipment_aids:
+              - lifting_straps
+            notes: 50kg x 10 with lifting straps - second set at 50kg (스트랩 사용).
+      - exercise_ref: exercise_incline_dumbbell_row
+        sequence_order: 4
+        variant: dumbbells_and_incline_bench
+        equipment: dumbbells_and_incline_bench
+        confidence: high
+        notes: 인클라인 벤치 덤벨로우. Brian reported 7kg per hand (양쪽) x 15, then 7kg x 12 for 2 sets.
+        sets:
+          - set: 1
+            weight_kg: 7
+            weight_basis: per_hand
+            reps: 15
+          - set: 2
+            weight_kg: 7
+            weight_basis: per_hand
+            reps: 12
+          - set: 3
+            weight_kg: 7
+            weight_basis: per_hand
+            reps: 12
+      - exercise_ref: exercise_side_lateral_raise
+        sequence_order: 5
+        variant: dumbbells_or_machine
+        equipment: dumbbells
+        confidence: high
+        notes: 사레레(side lateral raise). Brian reported 2kg per hand (양쪽) x 30, then 4kg x 20 for 2 sets.
+        sets:
+          - set: 1
+            weight_kg: 2
+            weight_basis: per_hand
+            reps: 30
+          - set: 2
+            weight_kg: 4
+            weight_basis: per_hand
+            reps: 20
+          - set: 3
+            weight_kg: 4
+            weight_basis: per_hand
+            reps: 20
+
   - id: workoutsession_20260623_lower_body_leg_press_in_progress
     object_type: WorkoutSession
     date: 2026-06-23
