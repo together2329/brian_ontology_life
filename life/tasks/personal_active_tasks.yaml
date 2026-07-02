@@ -158,6 +158,31 @@ source_records:
       completed_date_precision: unknown
       note: Brian confirmed civil defense training is completed, but did not provide the exact completion date.
 
+  - id: source_personal_vehicle_notice_20260702_kotsa_inspection
+    source_type: external_notice
+    original_date: 2026-07-02
+    imported_at: 2026-07-02
+    parse_status: parsed
+    raw_text: |-
+      [한국교통안전공단] 자동차검사 안내
+      - 자동차번호 : [235머4853]
+      - 검사유효기간만료일 : 2026.07.02
+      - 검사가능기간 : 2026.04.03~2026.08.02
+      - 준비물 : 보험 가입증명서(전산 조회 불가 시)
+      - 미수검시 관련 법령에 따라 과태료가 부과됨.
+      - 공단 검사소는 예약제이며, 공단검사소 또는 민간검사소 검사 가능.
+    interpreted_vehicle_inspection_notice:
+      vehicle_registration_number: 235머4853
+      inspection_validity_expiry_date: 2026-07-02
+      inspection_available_start_date: 2026-04-03
+      inspection_available_end_date: 2026-08-02
+      required_item_if_needed: 보험 가입증명서(전산 조회 불가 시)
+      inspection_options:
+        - 공단 검사소 예약 후 방문
+        - 민간 지정검사소 검사
+      reservation_url: https://main.kotsa.or.kr/popup/carInspPop.do
+      note: 검사 가능 기간 안에 미수검 시 과태료 리스크가 있으므로 2026-08-02 전 검사 완료 필요.
+
 
 summary:
   current_focus:
@@ -169,8 +194,8 @@ summary:
       - task_personal_20260702_drive_belt_replacement_followup
       - task_personal_20260702_tire_condition_check
       - task_personal_20260702_ac_smell_internal_air_path_check
-    note: 민방위는 이수 완료로 확인했고, 7월 차량 정비 중 오일류 교체와 세차는 완료, 구동벨트/타이어/에어컨 냄새는 후속 점검 루프로 분리함.
-    source_ref: source_personal_admin_conversation_20260702_civil_defense_completed
+    note: 민방위는 이수 완료로 확인했고, 자동차 검사는 2026-08-02까지 수검 가능하므로 예약/방문 필요. 7월 차량 정비 중 오일류 교체와 세차는 완료, 구동벨트/타이어/에어컨 냄새는 후속 점검 루프로 분리함.
+    source_ref: source_personal_vehicle_notice_20260702_kotsa_inspection
 
 tasks:
   - id: task_personal_20260617_gym_fingerprint_reregistration
@@ -442,11 +467,11 @@ tasks:
     priority: high
     energy: admin
     estimated_minutes: 25
-    due_date: 2026-07-05
+    due_date: 2026-08-02
     tracking_level: lightweight
     project_ref: project_personal_life_admin
     owner_ref: person_brian
-    progress_percent: 70
+    progress_percent: 85
     tags:
       - vehicle
       - 자동차
@@ -455,12 +480,17 @@ tasks:
       - schedule_check
       - transmission_oil
       - clutch_oil
+      - legal_admin
+      - kotsa
     context:
       - 2026-01-05 Daily note에 차량 정비 계획이 있었음.
       - 기존 계획에는 2026년 7월 미션오일/클러치 오일 정비가 포함됨.
       - 2026-07-02에 미션오일, 브레이크 오일, 클러치 오일, 엔진오일 교체와 세차를 완료함.
       - 법정 자동차 검사유효기간은 TS 사이버검사소에서 자동차 등록번호로 확인해야 함.
       - 공식 안내상 정기/종합검사는 검사유효기간 만료일 전 90일, 후 31일 이내 수검해야 함.
+      - 한국교통안전공단 안내 기준 자동차번호 235머4853의 검사유효기간만료일은 2026-07-02이고 검사가능기간은 2026-04-03~2026-08-02임.
+      - 공단 검사소는 예약제이며 공단검사소 또는 민간 지정검사소에서 검사 가능함.
+      - 보험 가입증명서는 전산 조회 불가 시 준비 필요.
     completed_items:
       - transmission_oil_replaced
       - brake_oil_replaced
@@ -468,18 +498,21 @@ tasks:
       - engine_oil_replaced
       - car_wash_completed
     reference_urls:
+      - https://main.kotsa.or.kr/popup/carInspPop.do
       - https://www.cyberts.kr/is/pvi/pvi/readIsPviPrsecValidityInqireView.do
     expected_outputs:
-      - 법정 자동차 검사유효기간 시작일/만료일 확인.
+      - 2026-08-02 전 자동차 검사 수검 완료.
+      - 공단 검사소 예약 또는 민간 지정검사소 방문 일정 확보.
       - 2026년 7월 차량 정비 항목 중 실제 필요한 항목 확정.
-      - 필요 시 정비소 또는 검사소 예약 후보 일정 확보.
     next_actions:
-      - TS 사이버검사소에서 차량 등록번호로 검사유효기간 확인.
+      - 2026-08-02 전 자동차 검사 수검 완료.
+      - 공단 검사소 예약 또는 민간 지정검사소 방문 가능 일정을 잡기.
+      - 보험 가입증명서는 전산 조회가 안 될 경우에만 준비.
       - 구동벨트, 타이어, 에어컨 냄새 후속 점검 태스크의 실제 예약일을 확정.
-      - 법정 검사 또는 추가 정비가 필요하면 예약 가능일과 예상 비용을 기록.
     evidence_refs:
       - source_personal_admin_conversation_20260702_civil_defense_vehicle_license_schedule_check
       - source_personal_vehicle_conversation_20260702_oils_wash_belt_tire_ac_followups
+      - source_personal_vehicle_notice_20260702_kotsa_inspection
       - obsidian_daily_20260105_timeblock_006
     confidence: high
     needs_user_review: true
@@ -893,6 +926,18 @@ task_status_updates:
     next_step: TS 사이버검사소에서 법정 검사유효기간 확인.
     source_ref: source_personal_vehicle_conversation_20260702_oils_wash_belt_tire_ac_followups
 
+  - id: status_task_personal_20260702_vehicle_inspection_notice_received
+    date: 2026-07-02
+    task_ref: task_personal_20260702_vehicle_inspection_schedule_check
+    author_ref: person_brian
+    status: in_progress
+    progress_percent: 85
+    summary: 한국교통안전공단 안내문으로 자동차번호 235머4853의 검사유효기간만료일이 2026-07-02, 검사가능기간이 2026-04-03~2026-08-02임을 확인함.
+    blockers:
+      - 실제 자동차 검사 예약 또는 수검 완료가 아직 기록되지 않음.
+    next_step: 2026-08-02 전 공단 검사소 예약 또는 민간 지정검사소 방문으로 자동차 검사 수검 완료.
+    source_ref: source_personal_vehicle_notice_20260702_kotsa_inspection
+
   - id: status_task_personal_20260702_drive_belt_replacement_followup_created
     date: 2026-07-02
     task_ref: task_personal_20260702_drive_belt_replacement_followup
@@ -991,3 +1036,13 @@ project_status_updates:
     summary: 민방위 이수 완료를 확인하여 생활 행정 일정 확인 묶음에서 민방위 항목을 닫음.
     next_step: 남은 생활 행정 확인 항목은 자동차 법정 검사유효기간과 운전면허 갱신기간 확인.
     source_ref: source_personal_admin_conversation_20260702_civil_defense_completed
+
+  - id: project_status_personal_life_admin_20260702_vehicle_inspection_period_confirmed
+    date: 2026-07-02
+    project_ref: project_personal_life_admin
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: 자동차 검사 안내문을 반영하여 자동차번호 235머4853의 검사가능기간을 2026-04-03~2026-08-02로 확정함.
+    next_step: 2026-08-02 전 자동차 검사를 완료하고, 남은 행정 확인 항목은 운전면허 갱신기간 확인으로 좁힘.
+    source_ref: source_personal_vehicle_notice_20260702_kotsa_inspection
