@@ -1,0 +1,29 @@
+# OS/editor noise
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Private local records
+.codex/identity_profile.yaml
+life/**/*.local.yaml
+life/**/*private*.yaml
+life/imports/**/*.jsonl
+
+# Raw source material must stay local by default.
+raw_data/**
+!raw_data/
+!raw_data/README.md
+
+# Generated reports/exports
+exports/
+reports/
+*.log
+

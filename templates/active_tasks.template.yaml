@@ -1,0 +1,41 @@
+schema_version: 1
+status: template
+
+projects:
+  - id: project_example
+    title: "<project title>"
+    area: CAREER
+    project_type: example
+    status: active
+    current_phase: planning
+    due_date:
+    responsible_person_ref: person_self
+    member_refs: []
+    notes: []
+
+tasks:
+  - id: task_example
+    title: "<task title>"
+    area: CAREER
+    status: todo
+    priority: medium
+    energy: medium
+    estimated_minutes: 60
+    due_date:
+    project_ref: project_example
+    owner_ref: person_self
+    progress_percent: 0
+    tags: []
+
+task_status_updates:
+  - id: status_update_example
+    date: YYYY-MM-DD
+    project_ref: project_example
+    task_ref: task_example
+    status: todo
+    progress_percent: 0
+    summary: "<what changed>"
+    blockers: []
+    next_step: "<next small action>"
+    source_ref:
+

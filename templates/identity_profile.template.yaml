@@ -1,0 +1,33 @@
+schema_version: 1
+status: template
+
+profile:
+  id: profile_self
+  display_name: "<your_name_or_alias>"
+  timezone: "<region/city>"
+  primary_language: "<language>"
+  secondary_languages: []
+  notes: []
+
+current_context:
+  active_areas: []
+  active_project_refs: []
+  active_relationship_refs: []
+  active_health_context_refs: []
+
+identity_statements:
+  - id: identity_statement_example
+    statement: "<stable self-description to review later>"
+    evidence: []
+    confidence: 0.5
+    status: candidate
+    needs_user_review: true
+
+operating_rules:
+  - id: operating_rule_example
+    statement: "<rule that helps the assistant plan or respond>"
+    applies_when: []
+    recommended_actions: []
+    derived_from: []
+    confidence: 0.5
+

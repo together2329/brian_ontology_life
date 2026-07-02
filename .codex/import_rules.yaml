@@ -1,0 +1,37 @@
+schema_version: 1
+status: skeleton
+
+raw_data_policy:
+  default_location: raw_data/
+  commit_raw_data: false
+  preserve_originals: true
+  store_hashes_when_possible: true
+  notes:
+    - Raw records may contain personal, health, financial, or relationship information.
+    - Keep raw files local unless there is an explicit reason to publish them.
+
+normalization_policy:
+  preserve_raw_before_parsing: true
+  output_locations:
+    normalized_records: life/imports/
+    entity_catalog: life/entities/
+    pattern_candidates: life/patterns/
+  uncertainty:
+    confidence_field: confidence
+    review_flag: needs_user_review
+
+privacy_policy:
+  public_repo_allowed:
+    - schema files
+    - templates
+    - tools
+    - documentation
+  public_repo_blocked:
+    - real identity profile
+    - raw source files
+    - health records
+    - finance records
+    - relationship records
+    - private task logs
+    - imported JSONL indexes derived from private records
+

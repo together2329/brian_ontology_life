@@ -1,0 +1,33 @@
+schema_version: 1
+status: template
+
+people:
+  - id: person_self
+    name: "<self>"
+    aliases: []
+    relationship_types: [self]
+    org:
+    notes: []
+
+projects:
+  - id: project_example
+    title: "<project title>"
+    aliases: []
+    area: CAREER
+    notes: []
+
+activities:
+  - id: activity_example
+    title: "<activity title>"
+    aliases: []
+    area: FUN
+    notes: []
+
+link_relations:
+  - relation: mentions
+    description: Record mentions the entity.
+  - relation: about
+    description: Record is primarily about the entity.
+  - relation: evidence_for
+    description: Record supports a concept, pattern, or identity statement.
+

@@ -1,0 +1,42 @@
+schema_version: 1
+status: template
+
+days:
+  - date: YYYY-MM-DD
+    summary: "<day summary>"
+    happiness_score:
+    stress_score:
+    energy_score:
+    dominant_emotions: []
+    notes: []
+
+time_blocks:
+  - id: timeblock_YYYYMMDD_0900
+    date: YYYY-MM-DD
+    start: "09:00"
+    end: "10:00"
+    area: CAREER
+    mode: focus
+    items:
+      - type: Task
+        ref: task_example
+        title: "<what happened>"
+        planned_minutes: 60
+        actual_minutes:
+        status: planned
+        session_ref:
+
+mood_entries:
+  - id: mood_YYYYMMDD_0900
+    date: YYYY-MM-DD
+    time: "09:00"
+    valence_score:
+    arousal_score:
+    stress_score:
+    energy_score:
+    emotions: []
+    linked_context: []
+    possible_triggers: []
+    note: "<optional>"
+    raw_text:
+
