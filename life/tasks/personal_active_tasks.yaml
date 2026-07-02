@@ -8,7 +8,7 @@ secondary_areas:
   - FINANCE
 project_ref: project_personal_life_admin
 title: Personal life admin active tasks
-current_phase: "2026-07-02 생활 행정 일정 확인: 민방위/자동차/운전면허"
+current_phase: "2026-07-02 차량 소모품 교체 완료 + 후속 점검"
 
 source_records:
   - id: source_personal_admin_conversation_20260616_afternoon_eye_derm_receipt
@@ -114,16 +114,48 @@ source_records:
         source_url: https://www.safedriving.or.kr/diGuide/selectDiGuide01.do?menuCd=MN-PO-1211
     privacy_note: Personal identifiers such as vehicle registration number, license information, and civil defense notice details were not sent to external services.
 
+  - id: source_personal_vehicle_conversation_20260702_oils_wash_belt_tire_ac_followups
+    source_type: chat
+    original_date: 2026-07-02
+    imported_at: 2026-07-02
+    parse_status: parsed
+    raw_text: "아 오늘 미션 오일, 브레이크 오일, 클러치 오일, 엔진 오일 이렇게 다 갈았어. 그리고 세차도 했어. 그리고 아가 장비소에서 그 구동벨트 그거 갈아라 해서 좀 가, 그거 한 내년 초쯤 한 번 갈아야 될 것 같고, 그 전에 타이어도 한 번 점검해서 타이어도 한 번 갈아야 되는지 확인을 갈 예정이야. 그리고 에어컨 냄새나는 거는 좀 확인을 해보려고. 에바포레이터도 교체한 지 한 4, 5개월밖에 안 됐는데, 그 내부에 통로에 뭔가 걸려 있는 것 같아. 내부 한번 확인해보려고."
+    interpreted_vehicle_maintenance:
+      completed_on: 2026-07-02
+      completed_items:
+        - transmission_oil_replaced
+        - brake_oil_replaced
+        - clutch_oil_replaced
+        - engine_oil_replaced
+        - car_wash_completed
+      follow_up_items:
+        - topic: drive_belt_replacement
+          recommendation_source: repair_shop
+          target_window: early_2027
+          note: User said the shop recommended replacing the drive belt around early next year.
+        - topic: tire_condition_check
+          target_window: before_drive_belt_replacement
+          note: Check whether tires also need replacement before the early-2027 drive belt work.
+        - topic: air_conditioner_odor_internal_air_path_check
+          target_window: 2026-07
+          note: Evaporator was replaced about 4-5 months ago; user suspects something may be caught or remaining in an internal air path.
+      uncertain_parse:
+        - phrase: "아가 장비소"
+          interpreted_as: "아까 정비소"
+          confidence: medium
+
 
 summary:
   current_focus:
     date: 2026-07-02
     primary_tasks:
-      - task_personal_20260702_civil_defense_schedule_check
       - task_personal_20260702_vehicle_inspection_schedule_check
-      - task_personal_20260702_driver_license_renewal_check
-    note: 민방위, 자동차 점검/검사, 운전면허증 갱신은 개인별 기한 조회 후 실행 일정으로 확정해야 하는 생활 행정 루프로 정리함.
-    source_ref: source_personal_admin_conversation_20260702_civil_defense_vehicle_license_schedule_check
+      - task_personal_20260702_vehicle_oil_replacements_and_car_wash
+      - task_personal_20260702_drive_belt_replacement_followup
+      - task_personal_20260702_tire_condition_check
+      - task_personal_20260702_ac_smell_internal_air_path_check
+    note: 7월 차량 정비 중 오일류 교체와 세차는 완료했고, 구동벨트/타이어/에어컨 냄새는 후속 점검 루프로 분리함.
+    source_ref: source_personal_vehicle_conversation_20260702_oils_wash_belt_tire_ac_followups
 
 tasks:
   - id: task_personal_20260617_gym_fingerprint_reregistration
@@ -386,7 +418,7 @@ tasks:
     area: MAINTENANCE
     secondary_areas:
       - FINANCE
-    status: todo
+    status: in_progress
     priority: high
     energy: admin
     estimated_minutes: 25
@@ -394,7 +426,7 @@ tasks:
     tracking_level: lightweight
     project_ref: project_personal_life_admin
     owner_ref: person_brian
-    progress_percent: 0
+    progress_percent: 70
     tags:
       - vehicle
       - 자동차
@@ -406,8 +438,15 @@ tasks:
     context:
       - 2026-01-05 Daily note에 차량 정비 계획이 있었음.
       - 기존 계획에는 2026년 7월 미션오일/클러치 오일 정비가 포함됨.
+      - 2026-07-02에 미션오일, 브레이크 오일, 클러치 오일, 엔진오일 교체와 세차를 완료함.
       - 법정 자동차 검사유효기간은 TS 사이버검사소에서 자동차 등록번호로 확인해야 함.
       - 공식 안내상 정기/종합검사는 검사유효기간 만료일 전 90일, 후 31일 이내 수검해야 함.
+    completed_items:
+      - transmission_oil_replaced
+      - brake_oil_replaced
+      - clutch_oil_replaced
+      - engine_oil_replaced
+      - car_wash_completed
     reference_urls:
       - https://www.cyberts.kr/is/pvi/pvi/readIsPviPrsecValidityInqireView.do
     expected_outputs:
@@ -416,13 +455,177 @@ tasks:
       - 필요 시 정비소 또는 검사소 예약 후보 일정 확보.
     next_actions:
       - TS 사이버검사소에서 차량 등록번호로 검사유효기간 확인.
-      - 현재 주행거리와 최근 정비 이력을 보고 미션오일/클러치 오일 정비 필요성을 확인.
-      - 검사 또는 정비가 필요하면 예약 가능일과 예상 비용을 기록.
+      - 구동벨트, 타이어, 에어컨 냄새 후속 점검 태스크의 실제 예약일을 확정.
+      - 법정 검사 또는 추가 정비가 필요하면 예약 가능일과 예상 비용을 기록.
     evidence_refs:
       - source_personal_admin_conversation_20260702_civil_defense_vehicle_license_schedule_check
+      - source_personal_vehicle_conversation_20260702_oils_wash_belt_tire_ac_followups
       - obsidian_daily_20260105_timeblock_006
     confidence: high
     needs_user_review: true
+
+  - id: task_personal_20260702_vehicle_oil_replacements_and_car_wash
+    object_type: Task
+    title: 차량 오일류 교체 및 세차 완료
+    area: MAINTENANCE
+    secondary_areas:
+      - FINANCE
+    status: completed
+    priority: high
+    energy: errand
+    estimated_minutes: null
+    due_date: 2026-07-02
+    completed_date: 2026-07-02
+    tracking_level: simple
+    project_ref: project_personal_life_admin
+    owner_ref: person_brian
+    progress_percent: 100
+    tags:
+      - vehicle
+      - 자동차
+      - oil_change
+      - transmission_oil
+      - brake_oil
+      - clutch_oil
+      - engine_oil
+      - car_wash
+    completed_items:
+      - 미션 오일 교체
+      - 브레이크 오일 교체
+      - 클러치 오일 교체
+      - 엔진 오일 교체
+      - 세차 완료
+    context:
+      - 2026-01-05 Daily note의 7월 차량 정비 계획 중 미션오일/클러치 오일 관련 항목이 실제 수행됨.
+      - 2026-07-02에 브레이크 오일, 엔진 오일, 세차까지 함께 완료함.
+    expected_outputs:
+      - 2026년 7월 주요 차량 소모품 교체 기록 보존.
+    next_actions:
+      - 정비 영수증/주행거리 기록이 있으면 비용과 주행거리 보완.
+      - 다음 후속 점검은 구동벨트, 타이어, 에어컨 냄새 쪽으로 분리 관리.
+    evidence_refs:
+      - source_personal_vehicle_conversation_20260702_oils_wash_belt_tire_ac_followups
+      - obsidian_daily_20260105_timeblock_006
+    confidence: high
+    needs_user_review: false
+
+  - id: task_personal_20260702_drive_belt_replacement_followup
+    object_type: Task
+    title: 구동벨트 교체 시기 확인 및 내년 초 교체 준비
+    area: MAINTENANCE
+    secondary_areas:
+      - FINANCE
+    status: todo
+    priority: medium
+    energy: errand
+    estimated_minutes: null
+    due_date: 2027-02-28
+    target_window:
+      start: 2027-01-01
+      end: 2027-02-28
+      precision: approximate
+    tracking_level: lightweight
+    project_ref: project_personal_life_admin
+    owner_ref: person_brian
+    progress_percent: 0
+    tags:
+      - vehicle
+      - 자동차
+      - drive_belt
+      - 구동벨트
+      - repair_shop_recommendation
+      - future_maintenance
+    context:
+      - 정비소에서 구동벨트 교체를 권장함.
+      - Brian은 내년 초쯤 한 번 교체해야 할 것 같다고 판단함.
+    expected_outputs:
+      - 2027년 초 구동벨트 교체 여부 확인.
+      - 교체 필요 시 정비소 예약 및 비용 기록.
+    next_actions:
+      - 2026년 말 또는 2027년 초에 구동벨트 상태를 다시 확인.
+      - 타이어 점검 결과와 함께 정비 예약을 묶을지 판단.
+    evidence_refs:
+      - source_personal_vehicle_conversation_20260702_oils_wash_belt_tire_ac_followups
+    confidence: medium
+    needs_user_review: true
+
+  - id: task_personal_20260702_tire_condition_check
+    object_type: Task
+    title: 타이어 상태 점검 및 교체 필요 여부 확인
+    area: MAINTENANCE
+    secondary_areas:
+      - FINANCE
+    status: todo
+    priority: medium
+    energy: errand
+    estimated_minutes: null
+    due_date: 2026-12-15
+    target_window:
+      start: 2026-11-01
+      end: 2026-12-15
+      precision: approximate
+    tracking_level: lightweight
+    project_ref: project_personal_life_admin
+    owner_ref: person_brian
+    progress_percent: 0
+    tags:
+      - vehicle
+      - 자동차
+      - tire
+      - 타이어
+      - inspection
+      - replacement_check
+    context:
+      - 구동벨트 교체 예정 시점 전에 타이어도 한 번 점검하기로 함.
+      - 교체 필요 여부는 실제 마모 상태와 정비소/타이어샵 점검 결과로 확정해야 함.
+    expected_outputs:
+      - 타이어 마모 상태, 교체 필요 여부, 예상 비용 확인.
+      - 교체가 필요하면 구동벨트 정비 전 또는 같은 방문에 처리할지 결정.
+    next_actions:
+      - 2026년 말 전에 타이어 마모 상태를 점검.
+      - 교체 필요 시 규격/브랜드/예산 후보를 기록.
+    evidence_refs:
+      - source_personal_vehicle_conversation_20260702_oils_wash_belt_tire_ac_followups
+    confidence: high
+    needs_user_review: true
+
+  - id: task_personal_20260702_ac_smell_internal_air_path_check
+    object_type: Task
+    title: 차량 에어컨 냄새 원인 및 내부 통로 점검
+    area: MAINTENANCE
+    secondary_areas:
+      - BODY
+    status: todo
+    priority: medium
+    energy: errand
+    estimated_minutes: null
+    due_date: 2026-07-31
+    tracking_level: lightweight
+    project_ref: project_personal_life_admin
+    owner_ref: person_brian
+    progress_percent: 0
+    tags:
+      - vehicle
+      - 자동차
+      - air_conditioner
+      - ac_odor
+      - evaporator
+      - internal_air_path
+    context:
+      - 차량 에어컨 냄새가 나서 확인 예정.
+      - 에바포레이터는 약 4~5개월 전에 교체했음.
+      - Brian은 내부 통로에 뭔가 걸려 있거나 남아 있는 가능성을 의심하고 있음.
+    expected_outputs:
+      - 에어컨 냄새 원인 후보 확인.
+      - 내부 통로/덕트 쪽 점검 결과 기록.
+      - 추가 청소, 필터 확인, 정비소 방문 여부 결정.
+    next_actions:
+      - 에어컨 필터와 내부 통로 상태를 먼저 확인.
+      - 직접 확인으로 해결되지 않으면 정비소에 냄새 원인 점검 요청.
+    evidence_refs:
+      - source_personal_vehicle_conversation_20260702_oils_wash_belt_tire_ac_followups
+    confidence: high
+    needs_user_review: false
 
   - id: task_personal_20260702_driver_license_renewal_check
     object_type: Task
@@ -541,9 +744,9 @@ planned_time_blocks:
       - type: task
         ref: task_personal_20260702_vehicle_inspection_schedule_check
         title: 자동차 검사/정비 일정 확인 및 예약
-        planned_minutes: 25
+        planned_minutes: 10
         actual_minutes: null
-        status: todo
+        status: in_progress
       - type: task
         ref: task_personal_20260702_driver_license_renewal_check
         title: 운전면허 적성검사/갱신 기간 확인 및 예약
@@ -636,6 +839,65 @@ task_status_updates:
     next_step: TS 사이버검사소 검사유효기간 조회 후 7월 정비 예약 필요성 판단.
     source_ref: source_personal_admin_conversation_20260702_civil_defense_vehicle_license_schedule_check
 
+  - id: status_task_personal_20260702_vehicle_oil_replacements_car_wash_completed
+    date: 2026-07-02
+    task_ref: task_personal_20260702_vehicle_oil_replacements_and_car_wash
+    author_ref: person_brian
+    status: completed
+    progress_percent: 100
+    summary: 미션 오일, 브레이크 오일, 클러치 오일, 엔진 오일을 모두 교체했고 세차도 완료함.
+    blockers: []
+    next_step: 영수증/주행거리/비용 정보가 있으면 보완하고, 구동벨트/타이어/에어컨 냄새 후속 점검을 별도 관리.
+    source_ref: source_personal_vehicle_conversation_20260702_oils_wash_belt_tire_ac_followups
+
+  - id: status_task_personal_20260702_vehicle_inspection_schedule_check_in_progress
+    date: 2026-07-02
+    task_ref: task_personal_20260702_vehicle_inspection_schedule_check
+    author_ref: person_brian
+    status: in_progress
+    progress_percent: 70
+    summary: 7월 차량 정비 항목 중 오일류 교체와 세차는 완료했으나, 법정 자동차 검사유효기간 조회는 아직 남아 있음.
+    blockers:
+      - 차량 등록번호 기반 검사유효기간 조회 필요.
+    next_step: TS 사이버검사소에서 법정 검사유효기간 확인.
+    source_ref: source_personal_vehicle_conversation_20260702_oils_wash_belt_tire_ac_followups
+
+  - id: status_task_personal_20260702_drive_belt_replacement_followup_created
+    date: 2026-07-02
+    task_ref: task_personal_20260702_drive_belt_replacement_followup
+    author_ref: person_brian
+    status: todo
+    progress_percent: 0
+    summary: 정비소 권장에 따라 구동벨트 교체를 2027년 초 후보로 잡아둠.
+    blockers:
+      - 실제 교체 필요 시점과 비용 미확정.
+    next_step: 2026년 말 또는 2027년 초에 구동벨트 상태 확인 후 예약 여부 결정.
+    source_ref: source_personal_vehicle_conversation_20260702_oils_wash_belt_tire_ac_followups
+
+  - id: status_task_personal_20260702_tire_condition_check_created
+    date: 2026-07-02
+    task_ref: task_personal_20260702_tire_condition_check
+    author_ref: person_brian
+    status: todo
+    progress_percent: 0
+    summary: 구동벨트 교체 전 타이어 상태를 점검하고 교체 필요 여부를 확인하기로 함.
+    blockers:
+      - 타이어 마모 상태와 교체 비용 미확인.
+    next_step: 2026년 말 전에 타이어 상태 점검.
+    source_ref: source_personal_vehicle_conversation_20260702_oils_wash_belt_tire_ac_followups
+
+  - id: status_task_personal_20260702_ac_smell_internal_air_path_check_created
+    date: 2026-07-02
+    task_ref: task_personal_20260702_ac_smell_internal_air_path_check
+    author_ref: person_brian
+    status: todo
+    progress_percent: 0
+    summary: 에바포레이터 교체 후 4~5개월밖에 지나지 않았지만 에어컨 냄새가 있어 내부 통로 쪽을 확인하기로 함.
+    blockers:
+      - 내부 통로/필터/덕트 상태 미확인.
+    next_step: 에어컨 필터와 내부 통로 상태를 먼저 확인하고 필요 시 정비소 점검 요청.
+    source_ref: source_personal_vehicle_conversation_20260702_oils_wash_belt_tire_ac_followups
+
   - id: status_task_personal_20260702_driver_license_renewal_check_created
     date: 2026-07-02
     task_ref: task_personal_20260702_driver_license_renewal_check
@@ -678,3 +940,13 @@ project_status_updates:
     summary: 민방위, 자동차 검사/정비, 운전면허 갱신을 개인별 기한 확인 후 일정화해야 하는 생활 행정 묶음으로 정리함.
     next_step: 2026-07-05 일정 확인 블록에서 각 공식/개인 조회를 완료하고 실제 due date와 예약 후보를 갱신.
     source_ref: source_personal_admin_conversation_20260702_civil_defense_vehicle_license_schedule_check
+
+  - id: project_status_personal_life_admin_20260702_vehicle_maintenance_completed
+    date: 2026-07-02
+    project_ref: project_personal_life_admin
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: 차량 미션오일, 브레이크오일, 클러치오일, 엔진오일 교체와 세차를 완료했고, 구동벨트/타이어/에어컨 냄새는 후속 점검 항목으로 분리함.
+    next_step: 법정 검사유효기간 조회를 마저 하고, 에어컨 냄새는 7월 중 확인, 타이어는 2026년 말 전 점검, 구동벨트는 2027년 초 교체 후보로 관리.
+    source_ref: source_personal_vehicle_conversation_20260702_oils_wash_belt_tire_ac_followups
