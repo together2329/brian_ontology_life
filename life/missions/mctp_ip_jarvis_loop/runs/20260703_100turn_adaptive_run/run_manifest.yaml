@@ -1,0 +1,124 @@
+schema_version: 1
+run_id: mctp_ip_jarvis_loop_20260703_100turn_adaptive_run
+created_at: 2026-07-03
+paused_at: 2026-07-03T12:18:31Z
+resumed_at: 2026-07-03T12:10:28Z
+status: paused_pending_approval
+mode: adaptive_read_only_with_approval_gates
+controller_repo: /Users/brian/Desktop/Project/BRIAN_ONTOLOGY_AGENT
+target_thread:
+  title: MCTP IP 개발
+  thread_id: 019f1dce-6a25-7eb3-9f54-2b6c9d5291f9
+  cwd: /Users/brian/Desktop/Project/new_ip_dev3
+target_repo_codex:
+  path: /Users/brian/Desktop/Project/new_ip_dev3/.codex
+  symlink_target: ../ip_dev/.codex
+source_run:
+  run_id: mctp_ip_jarvis_loop_20260703_10turn_dry_run
+  summary_ref: life/missions/mctp_ip_jarvis_loop/runs/20260703_10turn_dry_run/summary.md
+mission_intent: >
+  Continue the existing MCTP IP development thread as a Jarvis-style adaptive
+  loop. Generate the best next prompt from prior results, send it to the target
+  thread, save the response and controller evaluation, learn from each turn, and
+  move the mission forward without crossing permission boundaries.
+current_technical_hypothesis: >
+  The current APB CSR CDC RTL handoff is source/dispatch/receipt consistent,
+  but closure evidence for CON_APB_CSR_CDC predates the RTL handoff and is stale
+  until a fresh verification dispatch is approved and executed.
+turn_budget:
+  planned: 100
+  completed: 2
+  stop_early_if:
+    - explicit Brian approval required for write/test/commit/closure
+    - same blocker repeats 3 times
+    - target thread becomes unavailable
+    - marginal value remains low for 3 consecutive turns
+prompt_generation:
+  primary: local_controller
+  external_generators:
+    claude_p:
+      status: disabled_by_default
+      reason: >
+        Do not send private IP or personal ontology context to external services
+        unless Brian explicitly approves a sanitized-input prompt generator run.
+      allowed_input_if_enabled:
+        - mission intent summary
+        - prior turn receipt summaries
+        - permission boundaries
+        - no source code
+        - no raw private transcript
+permissions:
+  automatic:
+    - read target thread result
+    - generate next prompt locally from saved receipts
+    - send read-only prompts to target thread
+    - save run receipts, prompt logs, summaries, lessons
+    - ask for approval when required
+  requires_brian_approval:
+    - create or edit files in /Users/brian/Desktop/Project/new_ip_dev3
+    - create OAG dispatch/receipt artifacts in target repo
+    - run UVM, formal, simulation, compile, or long verification
+    - git stage, commit, push, closure, signoff, or oag.decide in target repo
+quality_rubric:
+  max_score: 10
+  dimensions:
+    - name: mission_progress
+      points: 2
+      description: Moves closer to the mission rather than repeating prior conclusions.
+    - name: evidence_grounding
+      points: 2
+      description: Grounds claims in concrete prior receipts or target-thread evidence.
+    - name: prompt_adaptation
+      points: 2
+      description: Uses the prior result to generate a sharper next objective.
+    - name: permission_safety
+      points: 2
+      description: Keeps read-only/write/test/commit/closure boundaries clear.
+    - name: learning_quality
+      points: 2
+      description: Extracts a reusable lesson or controller rule from the turn.
+outputs:
+  prompt_log: life/missions/mctp_ip_jarvis_loop/runs/20260703_100turn_adaptive_run/prompts.md
+  receipt_log: life/missions/mctp_ip_jarvis_loop/runs/20260703_100turn_adaptive_run/turn_receipts.md
+  summary: life/missions/mctp_ip_jarvis_loop/runs/20260703_100turn_adaptive_run/summary.md
+approval_gate:
+  reached: true
+  reached_on_turn: 2
+  reason: >
+    TURN 2 attempted to proceed under Brian's bounded approval, but a
+    pre-dispatch probe of `python3 formal/run_formal.py --help` executed the full
+    formal script and changed formal output files before an OAG dispatch/receipt
+    was created. Further progress requires Brian to decide whether to quarantine
+    or accept this accidental pre-dispatch formal rerun state before creating a
+    fresh bounded dispatch.
+  precise_question: >
+    Brian, approve proceeding from the current worktree by treating the accidental
+    formal rerun as quarantined pre-dispatch evidence, then creating a fresh
+    bounded OAG dispatch/receipt for CON_APB_CSR_CDC only?
+  approved:
+    approved_at: 2026-07-03
+    approved_by: Brian
+    approval_text: "승인 함"
+    allowed_now:
+      - create one bounded OAG verification dispatch for CON_APB_CSR_CDC / OBL_CONFIG_APB_CDC
+      - generate fresh APB CSR evidence
+      - generate receipt
+      - run only the minimum verification needed for that bounded dispatch
+    still_forbidden:
+      - closure or signoff
+      - git stage, commit, push
+      - unrelated RTL/TB edits
+      - broad random regression unless scope is expanded by Brian
+      - static CDC/RDC signoff
+      - timing/STA
+turn_2_incident:
+  thread_turn_id: 019f27e8-72e9-70d0-a23a-81659359c28e
+  completed_at: 2026-07-03T12:18:31.505Z
+  summary: >
+    Target thread expected `python3 formal/run_formal.py --help` to be help-only,
+    but the script executed 3 formal jobs and changed formal output files before
+    creating the approved OAG dispatch/receipt.
+  bounded_dispatch_result: inconclusive
+  formal_result: pass
+  changed_formal_files_reported: 37
+  controller_decision: pause_and_ask
