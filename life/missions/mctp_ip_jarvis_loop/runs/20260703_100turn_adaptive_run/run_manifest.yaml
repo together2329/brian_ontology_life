@@ -27,7 +27,7 @@ current_technical_hypothesis: >
   until a fresh verification dispatch is approved and executed.
 turn_budget:
   planned: 100
-  completed: 10
+  completed: 11
   stop_early_if:
     - explicit Brian approval required for write/test/commit/closure
     - same blocker repeats 3 times
@@ -306,3 +306,48 @@ turn_10_result:
   new_formal_proof_run: false
   final_closure_signoff: not_claimed
   controller_decision: continue_to_read_only_integration_commit_readiness_audit
+turn_11_result:
+  thread_turn_id: 019f2833-d8c2-7eb3-bc7b-0187036e2c70
+  completed_at: 2026-07-03T13:42:52.273Z
+  summary: >
+    Target thread completed a read-only integration and commit-readiness audit.
+    The latest bounded gate review is hash-consistent and gate-verifier clean,
+    but a target-repo commit is only conditionally ready because the target
+    worktree is broad and dirty.
+  readiness_result: conditionally_ready
+  branch: master
+  upstream: none_configured
+  git_status_summary: broad_dirty_worktree_55_tracked_modified_many_untracked_oag_artifacts
+  candidate_commit_groups:
+    group_a: assertion_repair_and_apb_proof_evidence
+    group_b: duplicate_run_reconciliation_audit_trail
+    group_c: validator_and_bounded_gate_refresh
+  recommended_commit_scope: groups_a_b_c_only
+  exclude_from_commit:
+    - .omo/ulw-loop/**
+    - rtl/mctp_rx_apb_regs.sv
+    - ontology/design_rules.yaml
+    - ontology/generated/**
+    - ontology/runs/**
+    - knowledge/actions/**
+    - knowledge/decisions/**
+    - knowledge/missions/**
+    - knowledge/operations/**
+    - knowledge/run_frames/**
+    - knowledge/wavefront/**
+    - knowledge/gate_reviews/oag_gate_decision.json
+    - formal/formal_axi_read_body.log
+    - formal/formal_axi_write_ingress.log
+    - formal/runs/formal_axi_read_body/**
+    - formal/runs/formal_axi_write_ingress/**
+    - prior/superseded_non_assertion_apb_artifacts_122411Z_122815Z_123919Z_124954Z_125022Z
+  checks_passed:
+    - canonical_artifact_json_parse
+    - git_diff_check_assertion_repair_files
+    - sha256_match_against_latest_gate_review_hashes
+    - latest_gate_dispatch_verify
+  target_repo_git_action: requires_explicit_brian_approval
+  precise_approval_question: >
+    Brian, do you approve staging and committing only Candidate Groups A-C,
+    excluding every path listed in EXCLUDE_FROM_COMMIT?
+  controller_decision: pause_for_target_repo_git_approval

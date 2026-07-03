@@ -12,7 +12,7 @@ Initial verdict inherited from the 10-turn run: `go-with-approval-gates`.
 
 ## Current Status
 
-Completed turns: `10/100`
+Completed turns: `11/100`
 
 Previous pause reason: Turn 1 reached the approval gate. The target thread identified the next bounded mission-progress action as creating one OAG verification/evidence dispatch for `CON_APB_CSR_CDC` / `OBL_CONFIG_APB_CDC`.
 
@@ -339,6 +339,47 @@ Next action:
 
 Run a read-only integration/commit-readiness audit for the APB CSR CDC assertion repair and refreshed OAG artifacts.
 
+## Turn 11 Result
+
+Read-only integration and commit-readiness audit completed.
+
+Result:
+
+- Readiness: `conditionally_ready`
+- Scope: human-approved bounded APB CSR CDC assertion-repair/OAG-evidence commit only
+- Latest bounded gate review: hash-consistent and gate-verifier clean
+- Target repo branch: `master`
+- Target repo upstream: none configured
+- Target repo status: broad dirty worktree, with 55 tracked files modified plus many untracked OAG artifacts
+
+Candidate commit groups:
+
+- Group A: assertion repair and APB proof evidence
+- Group B: duplicate-run reconciliation audit trail
+- Group C: validator and bounded gate refresh
+
+Preferred target commit:
+
+- Stage Groups A-C together because Group C hashes and validates Groups A-B.
+- Exclude unrelated RTL, ontology, mission, AXI formal, ULW, and prior superseded non-assertion APB artifacts.
+
+Minimum pre-commit checks before target repo commit:
+
+- `git diff --staged --name-only`
+- `git diff --staged --stat`
+- Confirm no excluded path slipped into staging.
+
+Hard boundary:
+
+- No target-repo git stage or commit was performed.
+- Target-repo commit now needs explicit approval for the exact Groups A-C scope.
+
+Approval question:
+
+```text
+Brian, do you approve staging and committing only Candidate Groups A-C, excluding every path listed in EXCLUDE_FROM_COMMIT?
+```
+
 ## Controller Lesson
 
 When a handoff is newer than contract evidence, route to fresh verification dispatch before integration or closure.
@@ -350,3 +391,7 @@ Never probe repo-local execution scripts with `--help` unless the script is know
 Additional lesson from Turn 8:
 
 When an app handler reports no registered handler after appending a prompt, mark the appended turn as pending/unsafe before starting a CLI fallback.
+
+Additional lesson from Turn 11:
+
+When OAG evidence is sequential, verify the newest parent gate as the commit anchor; older dispatch verify may fail from later in-scope artifacts and should be interpreted by sequence.

@@ -972,3 +972,91 @@ A downstream decision could mistake bounded development approval for release-gra
 17. QUALITY_SELF_SCORE
 9/10. Gate evidence is dispatch-clean and scoped correctly; remaining risk is only the intentionally bounded scope.
 ```
+
+### Turn 11/100
+
+Target turn id: `019f2833-d8c2-7eb3-bc7b-0187036e2c70`
+
+Completed at: `2026-07-03T13:42:52.273Z`
+
+Target self-score: `8/10`
+
+Controller quality score: `8/10`
+
+Controller rubric:
+
+- `mission_progress`: 2/2
+- `evidence_grounding`: 2/2
+- `prompt_adaptation`: 2/2
+- `permission_safety`: 2/2
+- `learning_quality`: 0/2
+
+Controller notes:
+
+- Turn 11 completed the requested read-only integration and commit-readiness audit.
+- The latest bounded gate review remains hash-consistent and gate-verifier clean.
+- The target repo is only `conditionally_ready` for commit because the worktree is broad and dirty.
+- The preferred commit scope is Candidate Groups A-C together because Group C hashes and validates Groups A-B.
+- No target-repo file writes, staging, commit, cleanup, formal rerun, or release/signoff claim occurred.
+- The next action is a target-repo git stage/commit of Groups A-C only, but this requires explicit approval because it touches a broad dirty repo.
+
+Controller local verification:
+
+- Target JSONL contains Turn 11 `task_complete` at `2026-07-03T13:42:52.273Z`.
+- Target response reports read-only checks passed: JSON parse, `git diff --check` on assertion repair files, SHA-256 match against latest gate review hashes, and latest gate dispatch verify.
+- No target-repo git action was taken by the controller after receiving the commit-readiness audit.
+
+Target response:
+
+```text
+1. CURRENT_STATE:
+Read-only audit complete. Latest bounded gate review for `CON_APB_CSR_CDC` / `OBL_CONFIG_APB_CDC` is still hash-consistent and gate-verifier clean. This remains bounded development-gate approval only, not release/signoff CDC/RDC closure.
+
+2. READ_ONLY_AUDIT_SCOPE:
+Git status/diff metadata, APB CSR CDC assertion repair source changes, canonical Turn 7-10 OAG artifacts, JSON parse checks, hash checks, latest OAG dispatch verification.
+
+3. EVIDENCE_REVIEWED:
+`ASSERT_Q_CONFIG_ONLY_GLOBAL_IDLE` is added to `formal/mctp_rx_formal_harness.sv`, registered in `formal/run_formal.py`, and present in `formal/formal_status.json`. APB bounded proof log ends `DONE (PASS, rc=0)` at depth 24 with `smtbmc z3`. Latest gate review says `APPROVE`, `may_claim_complete=false`.
+
+4. GIT_STATUS_SUMMARY:
+Branch is `master`; no upstream configured. Worktree is broad and dirty: 55 tracked files modified plus many untracked OAG artifacts. The assertion repair subset is identifiable, but there are unrelated RTL, ontology, mission, AXI formal, and ULW artifacts present.
+
+5. CANDIDATE_COMMIT_GROUPS:
+Preferred target commit is Groups A-C together, because C hashes and validates A/B.
+
+Group A, assertion repair and APB proof evidence:
+`formal/mctp_rx_formal_harness.sv`, `formal/run_formal.py`, `formal/formal_status.json`, `formal/formal_apb_counter_priority.log`, `formal/runs/formal_apb_counter_priority/**`, `formal/apb_csr_cdc_assertion_status_20260703T130210Z.json`, `knowledge/dispatches/DISPATCH_NEW_IP_DEV3_CUSTOM_WORKER_20260703T130224Z_16719DC0.json`, `knowledge/subagents/apb_csr_cdc_assertion_repair_receipt_20260703T130210Z.json`.
+
+Group B, duplicate-run reconciliation audit trail:
+`knowledge/dispatches/DISPATCH_NEW_IP_DEV3_CUSTOM_WORKER_20260703T130145Z_467B5CC2.json`, `formal/apb_q_config_only_global_idle_status_20260703T130138Z.json`, `knowledge/subagents/apb_q_config_only_global_idle_formal_receipt_20260703T130138Z.json`, `knowledge/dispatches/DISPATCH_NEW_IP_DEV3_CUSTOM_REVIEWER_20260703T131734Z_7AE54106.json`, `knowledge/dispatches/DISPATCH_NEW_IP_DEV3_CUSTOM_REVIEWER_20260703T131854Z_D0ED2889.json`, `knowledge/validations/apb_csr_cdc_turn7_duplicate_reconciliation_20260703T131725Z.json`, `knowledge/subagents/apb_csr_cdc_turn7_duplicate_reconciliation_receipt_20260703T131725Z.json`.
+
+Group C, validator and bounded gate refresh:
+`knowledge/dispatches/DISPATCH_NEW_IP_DEV3_EVIDENCE_VALIDATOR_20260703T132330Z_D8C0AD7C.json`, `knowledge/validations/apb_csr_cdc_assertion_validator_refresh_20260703T132324Z.json`, `knowledge/subagents/apb_csr_cdc_assertion_evidence_validator_receipt_20260703T132324Z.json`, `knowledge/dispatches/DISPATCH_NEW_IP_DEV3_GATE_REVIEWER_20260703T133055Z_6293ED1C.json`, `knowledge/gate_reviews/apb_csr_cdc_assertion_bounded_gate_review_20260703T133050Z.json`, `knowledge/subagents/apb_csr_cdc_assertion_gate_review_receipt_20260703T133050Z.json`.
+
+6. EXCLUDE_FROM_COMMIT:
+Exclude unrelated or separately reviewable paths: `.omo/ulw-loop/**`, `rtl/mctp_rx_apb_regs.sv`, `ontology/design_rules.yaml`, `ontology/generated/**`, `ontology/runs/**`, `knowledge/actions/**`, `knowledge/decisions/**`, `knowledge/missions/**`, `knowledge/operations/**`, `knowledge/run_frames/**`, `knowledge/wavefront/**`, `knowledge/gate_reviews/oag_gate_decision.json`, `formal/formal_axi_read_body.log`, `formal/formal_axi_write_ingress.log`, `formal/runs/formal_axi_read_body/**`, `formal/runs/formal_axi_write_ingress/**`, prior/superseded non-assertion APB artifacts from `122411Z`, `122815Z`, `123919Z`, `124954Z`, `125022Z` unless Brian wants a separate historical OAG commit.
+
+7. MINIMUM_PRE_COMMIT_CHECKS:
+Already passed read-only: JSON parse for canonical artifacts, `git diff --check` on assertion repair files, SHA-256 match against latest gate review hashes, and latest gate dispatch verify. Before committing, after staging only Groups A-C, run `git diff --staged --name-only` and `git diff --staged --stat` to prove no excluded paths slipped in.
+
+8. READINESS_RESULT:
+`conditionally_ready` for a human-approved bounded APB CSR CDC assertion-repair/OAG-evidence commit. Condition: stage only Groups A-C and keep all excludes out. No release/signoff claim.
+
+9. PERMISSION_BOUNDARY_STATUS:
+Complied. No writes, no staging, no commit, no push, no cleanup/reset, no RTL/formal edits, no proof rerun.
+
+10. NEXT_BOUNDED_ACTION:
+Stage only Groups A-C, audit staged diff, then commit as bounded APB CSR CDC assertion repair evidence.
+
+11. ASK_FIRST:
+Brian, do you approve staging and committing only Candidate Groups A-C above, excluding every path listed in EXCLUDE_FROM_COMMIT?
+
+12. LESSON_FOR_CONTROLLER:
+When OAG evidence is sequential, verify the newest parent gate as the commit anchor; older dispatch verify may fail from later in-scope artifacts and should be interpreted by sequence.
+
+13. RISK_IF_WRONG:
+An overly broad commit could mix unrelated RTL/ontology/AXI generated state with the APB CSR CDC assertion repair, making rollback and OAG traceability unreliable.
+
+14. QUALITY_SELF_SCORE:
+8/10. Strong hash/status/gate evidence; residual risk is that prior untracked OAG history may need a separate policy decision before broader repo cleanup.
+```
