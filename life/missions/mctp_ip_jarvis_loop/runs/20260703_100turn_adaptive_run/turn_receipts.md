@@ -781,3 +781,98 @@ A gate reviewer could accidentally treat both duplicate proof sets as independen
 15. QUALITY_SELF_SCORE
 8/10. The duplicate state is cleanly routed and verified, but one superseded reconciliation dispatch artifact remains as harmless audit-trail noise.
 ```
+
+### Turn 9/100
+
+Target turn id: `019f2825-615c-7b22-9a36-2eefda7de467`
+
+Completed at: `2026-07-03T13:28:36.111Z`
+
+Target self-score: `9/10`
+
+Controller quality score: `9/10`
+
+Controller rubric:
+
+- `mission_progress`: 2/2
+- `evidence_grounding`: 2/2
+- `prompt_adaptation`: 2/2
+- `permission_safety`: 2/2
+- `learning_quality`: 1/2
+
+Controller notes:
+
+- Turn 9 consumed exactly one canonical proof-strength path: the CLI fallback `130224Z` status/receipt plus Turn 8 reconciliation record.
+- The delayed app artifacts were classified as superseded audit trail only and explicitly non-additive.
+- A new bounded evidence-validator dispatch was created and verified cleanly.
+- The prior `ASSERT_Q_CONFIG_ONLY_GLOBAL_IDLE` gap is now resolved and non-blocking for bounded development-gate refresh only.
+- No formal proof rerun, RTL/TB behavior edit, deletion, git action, closure/signoff, or static CDC/RDC claim occurred.
+
+Controller local verification:
+
+- Target JSONL contains Turn 9 `task_started` at `2026-07-03T13:22:46.243Z` and `task_complete` at `2026-07-03T13:28:36.111Z`.
+- Target response reports `oag_dispatch.py verify` passed with `issues=[]`, `out_of_scope_paths=[]`.
+- Controller read the generated receipt and validation files; JSON parse passed and receipt status is `HANDOFF_PASS`, `may_claim_complete=false`.
+
+Target response:
+
+```text
+1. CURRENT_STATE
+Turn 9 evidence-validator refresh is complete. The validator dispatch passed cleanly with `issues=[]` and `out_of_scope_paths=[]`.
+
+2. CANONICAL_INPUTS_USED
+- `formal/apb_csr_cdc_assertion_status_20260703T130210Z.json`
+- `knowledge/subagents/apb_csr_cdc_assertion_repair_receipt_20260703T130210Z.json`
+- `knowledge/validations/apb_csr_cdc_turn7_duplicate_reconciliation_20260703T131725Z.json`
+- `knowledge/subagents/apb_csr_cdc_turn7_duplicate_reconciliation_receipt_20260703T131725Z.json`
+
+3. ACTIONS_TAKEN
+Created bounded `oag-evidence-validator` dispatch, ran a native validator worker, hashed/read canonical inputs, recorded duplicate handling, classified the assertion gap, and verified the validator receipt.
+
+4. FILES_CHANGED
+- `knowledge/dispatches/DISPATCH_NEW_IP_DEV3_EVIDENCE_VALIDATOR_20260703T132330Z_D8C0AD7C.json`
+- `knowledge/validations/apb_csr_cdc_assertion_validator_refresh_20260703T132324Z.json`
+- `knowledge/subagents/apb_csr_cdc_assertion_evidence_validator_receipt_20260703T132324Z.json`
+
+5. CHECKS_RUN
+- `oag_orchestration_guard.py audit`: pass
+- `oag_agent_catalog_check.py`: pass
+- JSON parse for validation + receipt: pass
+- `oag_dispatch.py verify` for validator dispatch: pass, `issues=[]`, `out_of_scope_paths=[]`
+- No new formal proof run.
+
+6. OAG_ARTIFACTS
+Dispatch: `DISPATCH_NEW_IP_DEV3_EVIDENCE_VALIDATOR_20260703T132330Z_D8C0AD7C`
+Validation: `apb_csr_cdc_assertion_validator_refresh_20260703T132324Z.json`
+Receipt: `apb_csr_cdc_assertion_evidence_validator_receipt_20260703T132324Z.json`
+
+7. VALIDATOR_RESULT
+pass, scoped only to bounded development-gate refresh for `CON_APB_CSR_CDC` / `OBL_CONFIG_APB_CDC`.
+
+8. COVERAGE_GAP_STATUS
+resolved and non-blocking for bounded development gate. The named assertion is now in the harness, APB formal job metadata, and `formal_status.json`, and the canonical APB bounded SBY result passed at depth 24.
+
+9. DUPLICATE_ARTIFACT_HANDLING
+Delayed app artifacts are superseded audit trail only. They are not counted as additive independent proof strength. CLI fallback evidence is canonical.
+
+10. RESIDUAL_RISKS
+Still not release/signoff CDC/RDC closure. Proof is APB-only bounded BMC, not full CSR formal closure. Old Turn 7 worker dispatches remain historically unclean if reverified in the current dirty workspace.
+
+11. PERMISSION_BOUNDARY_STATUS
+No delete/move/rewrite of duplicate artifacts. No git stage/commit/push. No RTL/TB behavior edits. No formal rerun. No final closure/signoff claim.
+
+12. NEXT_BOUNDED_ACTION
+Create a bounded gate-review refresh using the canonical CLI evidence, Turn 8 reconciliation, and Turn 9 validator artifact.
+
+13. ASK_FIRST
+None.
+
+14. LESSON_FOR_CONTROLLER
+After duplicate execution reconciliation, make the next validator consume exactly one canonical evidence set and explicitly mark sibling artifacts as non-additive audit trail.
+
+15. RISK_IF_WRONG
+Gate review could over-credit duplicate proof artifacts and overstate closure strength.
+
+16. QUALITY_SELF_SCORE
+9/10. Validator path is clean and dispatch-verified; remaining limits are scope limits, not execution errors.
+```

@@ -12,7 +12,7 @@ Initial verdict inherited from the 10-turn run: `go-with-approval-gates`.
 
 ## Current Status
 
-Completed turns: `8/100`
+Completed turns: `9/100`
 
 Previous pause reason: Turn 1 reached the approval gate. The target thread identified the next bounded mission-progress action as creating one OAG verification/evidence dispatch for `CON_APB_CSR_CDC` / `OBL_CONFIG_APB_CDC`.
 
@@ -267,6 +267,41 @@ Open a fresh bounded evidence-validator refresh for `CON_APB_CSR_CDC` / `OBL_CON
 - `knowledge/subagents/apb_csr_cdc_assertion_repair_receipt_20260703T130210Z.json`
 - `knowledge/validations/apb_csr_cdc_turn7_duplicate_reconciliation_20260703T131725Z.json`
 - `knowledge/subagents/apb_csr_cdc_turn7_duplicate_reconciliation_receipt_20260703T131725Z.json`
+
+## Turn 9 Result
+
+Bounded evidence-validator refresh completed cleanly.
+
+Artifacts:
+
+- Dispatch: `knowledge/dispatches/DISPATCH_NEW_IP_DEV3_EVIDENCE_VALIDATOR_20260703T132330Z_D8C0AD7C.json`
+- Validation: `knowledge/validations/apb_csr_cdc_assertion_validator_refresh_20260703T132324Z.json`
+- Receipt: `knowledge/subagents/apb_csr_cdc_assertion_evidence_validator_receipt_20260703T132324Z.json`
+
+Result:
+
+- Validator result: `pass`
+- Scope: bounded development-gate refresh for `CON_APB_CSR_CDC` / `OBL_CONFIG_APB_CDC`
+- Coverage gap: `ASSERT_Q_CONFIG_ONLY_GLOBAL_IDLE` is resolved and non-blocking for the bounded development gate.
+- Duplicate handling: delayed app artifacts are superseded audit trail only and are not additive independent proof strength.
+
+Checks:
+
+- `oag_orchestration_guard.py audit`: pass
+- `oag_agent_catalog_check.py`: pass
+- JSON parse for validation and receipt: pass
+- `oag_dispatch.py verify`: pass, `issues=[]`, `out_of_scope_paths=[]`
+- No new formal proof run.
+
+Residual risks:
+
+- Still not release/signoff CDC/RDC closure.
+- Proof remains APB-only bounded BMC, not full CSR formal closure.
+- Old Turn 7 worker dispatches remain historically unclean if reverified in the current dirty workspace.
+
+Next action:
+
+Create a bounded gate-review refresh using the canonical CLI evidence, Turn 8 reconciliation, and Turn 9 validator artifact.
 
 ## Controller Lesson
 

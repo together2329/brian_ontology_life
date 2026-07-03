@@ -27,7 +27,7 @@ current_technical_hypothesis: >
   until a fresh verification dispatch is approved and executed.
 turn_budget:
   planned: 100
-  completed: 8
+  completed: 9
   stop_early_if:
     - explicit Brian approval required for write/test/commit/closure
     - same blocker repeats 3 times
@@ -252,3 +252,30 @@ turn_8_result:
     - knowledge/subagents/apb_csr_cdc_turn7_duplicate_reconciliation_receipt_20260703T131725Z.json
   final_closure_signoff: not_claimed
   controller_decision: continue_to_bounded_validator_gate_refresh_using_canonical_cli_fallback_evidence
+turn_9_result:
+  thread_turn_id: 019f2825-615c-7b22-9a36-2eefda7de467
+  completed_at: 2026-07-03T13:28:36.111Z
+  summary: >
+    Target thread created a fresh bounded evidence-validator refresh using the
+    canonical Turn 7 CLI fallback proof set plus Turn 8 reconciliation record.
+    The validator dispatch verified cleanly with no out-of-scope paths.
+  validator_dispatch: knowledge/dispatches/DISPATCH_NEW_IP_DEV3_EVIDENCE_VALIDATOR_20260703T132330Z_D8C0AD7C.json
+  validation_artifact: knowledge/validations/apb_csr_cdc_assertion_validator_refresh_20260703T132324Z.json
+  validator_receipt: knowledge/subagents/apb_csr_cdc_assertion_evidence_validator_receipt_20260703T132324Z.json
+  canonical_inputs_used:
+    - formal/apb_csr_cdc_assertion_status_20260703T130210Z.json
+    - knowledge/subagents/apb_csr_cdc_assertion_repair_receipt_20260703T130210Z.json
+    - knowledge/validations/apb_csr_cdc_turn7_duplicate_reconciliation_20260703T131725Z.json
+    - knowledge/subagents/apb_csr_cdc_turn7_duplicate_reconciliation_receipt_20260703T131725Z.json
+  validator_result: pass
+  coverage_gap_status: resolved_non_blocking_for_bounded_development_gate
+  duplicate_artifact_handling: delayed_app_artifacts_superseded_audit_trail_only
+  checks:
+    oag_orchestration_guard_audit: pass
+    oag_agent_catalog_check: pass
+    validation_and_receipt_json_parse: pass
+    validator_dispatch_verify: pass
+  out_of_scope_paths: []
+  new_formal_proof_run: false
+  final_closure_signoff: not_claimed
+  controller_decision: continue_to_bounded_gate_review_refresh_using_canonical_cli_turn8_turn9_artifacts
