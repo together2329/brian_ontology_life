@@ -1,6 +1,6 @@
 # MCTP IP Jarvis Loop 100-Turn Adaptive Run Summary
 
-Status: running
+Status: paused_usage_limit
 
 Run ID: `mctp_ip_jarvis_loop_20260703_100turn_adaptive_run`
 
@@ -13,6 +13,8 @@ Initial verdict inherited from the 10-turn run: `go-with-approval-gates`.
 ## Current Status
 
 Completed turns: `11/100`
+
+Attempted turns: `12/100`
 
 Previous pause reason: Turn 1 reached the approval gate. The target thread identified the next bounded mission-progress action as creating one OAG verification/evidence dispatch for `CON_APB_CSR_CDC` / `OBL_CONFIG_APB_CDC`.
 
@@ -379,6 +381,53 @@ Approval question:
 ```text
 Brian, do you approve staging and committing only Candidate Groups A-C, excluding every path listed in EXCLUDE_FROM_COMMIT?
 ```
+
+## Target Repo Commit After Turn 11
+
+Brian's latest instruction was interpreted as approval for the exact Turn 11 Candidate Groups A-C target-repo commit.
+
+Commit created in `/Users/brian/Desktop/Project/new_ip_dev3`:
+
+- `f465dff Refresh APB CSR CDC assertion gate evidence`
+
+Pre-commit scope checks:
+
+- Staged files: 36
+- `git diff --staged --check`: pass
+- Exclude check against Turn 11 `EXCLUDE_FROM_COMMIT`: pass
+
+Remaining target dirty scope after commit:
+
+- AXI formal logs/runs
+- `knowledge/gate_reviews/oag_gate_decision.json`
+- mission/run-frame/role-health records
+- `ontology/design_rules.yaml`
+- `ontology/generated/**`
+- `rtl/mctp_rx_apb_regs.sv`
+- historical/superseded OAG artifacts not included in Groups A-C
+
+## Turn 12 Attempt
+
+Turn 12 prompt was generated and sent through `codex exec resume`.
+
+Target thread event:
+
+- Turn id: `019f283d-1dc9-7e00-a7bc-8dffb5c8fb06`
+- Started: `2026-07-03T13:48:41.810Z`
+- Completed: `2026-07-03T13:48:46.923Z`
+- Agent response: none
+
+CLI result:
+
+```text
+You've hit your usage limit. Visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at Jul 4th, 2026 1:22 AM.
+```
+
+Controller decision:
+
+- Do not count Turn 12 as a completed mission turn.
+- Pause the 100-turn loop until Codex usage limit resets.
+- On resume, retry Turn 12 or continue from the saved Turn 12 prompt.
 
 ## Controller Lesson
 

@@ -1060,3 +1060,34 @@ An overly broad commit could mix unrelated RTL/ontology/AXI generated state with
 14. QUALITY_SELF_SCORE:
 8/10. Strong hash/status/gate evidence; residual risk is that prior untracked OAG history may need a separate policy decision before broader repo cleanup.
 ```
+
+### Turn 12/100 Attempt
+
+Target turn id: `019f283d-1dc9-7e00-a7bc-8dffb5c8fb06`
+
+Started at: `2026-07-03T13:48:41.810Z`
+
+Completed at: `2026-07-03T13:48:46.923Z`
+
+Target self-score: `n/a`
+
+Controller quality score: `n/a`
+
+Controller notes:
+
+- The controller generated and sent the Turn 12 post-commit read-only audit prompt.
+- The CLI returned a Codex usage limit error before any agent response was produced.
+- The target JSONL recorded the user prompt and a task completion event with `last_agent_message=null`.
+- This attempt is not counted as a completed mission turn.
+- The saved Turn 12 prompt can be retried after the usage limit resets.
+
+CLI error:
+
+```text
+You've hit your usage limit. Visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at Jul 4th, 2026 1:22 AM.
+```
+
+Controller decision:
+
+- Pause the 100-turn adaptive loop at `11/100` completed turns.
+- Resume by retrying Turn 12 or continuing from the saved Turn 12 prompt after the usage limit reset.

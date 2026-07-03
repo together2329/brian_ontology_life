@@ -1,9 +1,9 @@
 schema_version: 1
 run_id: mctp_ip_jarvis_loop_20260703_100turn_adaptive_run
 created_at: 2026-07-03
-paused_at: null
+paused_at: 2026-07-03T13:48:46.923Z
 resumed_at: 2026-07-03T21:22:14+09:00
-status: running
+status: paused_usage_limit
 mode: adaptive_read_only_with_approval_gates
 controller_repo: /Users/brian/Desktop/Project/BRIAN_ONTOLOGY_AGENT
 target_thread:
@@ -27,6 +27,7 @@ current_technical_hypothesis: >
   until a fresh verification dispatch is approved and executed.
 turn_budget:
   planned: 100
+  attempted: 12
   completed: 11
   stop_early_if:
     - explicit Brian approval required for write/test/commit/closure
@@ -350,4 +351,26 @@ turn_11_result:
   precise_approval_question: >
     Brian, do you approve staging and committing only Candidate Groups A-C,
     excluding every path listed in EXCLUDE_FROM_COMMIT?
-  controller_decision: pause_for_target_repo_git_approval
+  controller_decision: target_repo_commit_approved_by_latest_broad_user_instruction
+target_repo_commit_after_turn_11:
+  commit: f465dff
+  message: Refresh APB CSR CDC assertion gate evidence
+  approved_by: Brian
+  approval_text: "다승인 믿어 계속해"
+  staged_count: 36
+  staged_diff_check: pass
+  exclude_check: pass
+  scope: turn_11_candidate_groups_a_b_c_only
+  remaining_dirty_scope: excluded_axi_formal_ontology_generated_mission_run_frame_rtl_historical_oag_artifacts
+turn_12_attempt:
+  thread_turn_id: 019f283d-1dc9-7e00-a7bc-8dffb5c8fb06
+  started_at: 2026-07-03T13:48:41.810Z
+  completed_at: 2026-07-03T13:48:46.923Z
+  result: failed_no_agent_message
+  cli_error: >
+    You've hit your usage limit. Visit https://chatgpt.com/codex/settings/usage
+    to purchase more credits or try again at Jul 4th, 2026 1:22 AM.
+  prompt_recorded_in_target_jsonl: true
+  agent_response_recorded: false
+  counted_as_completed_turn: false
+  controller_decision: pause_until_codex_usage_limit_resets_then_retry_turn_12_or_continue_from_prompt
