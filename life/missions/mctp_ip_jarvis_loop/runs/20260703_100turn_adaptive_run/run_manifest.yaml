@@ -1,9 +1,9 @@
 schema_version: 1
 run_id: mctp_ip_jarvis_loop_20260703_100turn_adaptive_run
 created_at: 2026-07-03
-paused_at: 2026-07-03T12:18:31Z
-resumed_at: 2026-07-03T12:10:28Z
-status: paused_pending_approval
+paused_at: null
+resumed_at: 2026-07-03T21:22:14+09:00
+status: running
 mode: adaptive_read_only_with_approval_gates
 controller_repo: /Users/brian/Desktop/Project/BRIAN_ONTOLOGY_AGENT
 target_thread:
@@ -27,7 +27,7 @@ current_technical_hypothesis: >
   until a fresh verification dispatch is approved and executed.
 turn_budget:
   planned: 100
-  completed: 2
+  completed: 7
   stop_early_if:
     - explicit Brian approval required for write/test/commit/closure
     - same blocker repeats 3 times
@@ -82,7 +82,7 @@ outputs:
   receipt_log: life/missions/mctp_ip_jarvis_loop/runs/20260703_100turn_adaptive_run/turn_receipts.md
   summary: life/missions/mctp_ip_jarvis_loop/runs/20260703_100turn_adaptive_run/summary.md
 approval_gate:
-  reached: true
+  reached: false
   reached_on_turn: 2
   reason: >
     TURN 2 attempted to proceed under Brian's bounded approval, but a
@@ -96,21 +96,33 @@ approval_gate:
     formal rerun as quarantined pre-dispatch evidence, then creating a fresh
     bounded OAG dispatch/receipt for CON_APB_CSR_CDC only?
   approved:
-    approved_at: 2026-07-03
+    approved_at: 2026-07-03T21:22:14+09:00
     approved_by: Brian
-    approval_text: "승인 함"
+    approval_text: "다승인 믿어 계속해"
     allowed_now:
+      - treat the accidental formal rerun as quarantined pre-dispatch evidence
       - create one bounded OAG verification dispatch for CON_APB_CSR_CDC / OBL_CONFIG_APB_CDC
       - generate fresh APB CSR evidence
       - generate receipt
       - run only the minimum verification needed for that bounded dispatch
+      - keep progressing across similar bounded OAG steps without re-asking
     still_forbidden:
-      - closure or signoff
       - git stage, commit, push
-      - unrelated RTL/TB edits
-      - broad random regression unless scope is expanded by Brian
-      - static CDC/RDC signoff
-      - timing/STA
+      - destructive reset, checkout, clean, or deletion
+      - unrelated RTL/TB edits outside the MCTP/OAG mission
+      - force push or external publication
+      - sending private repo records to external services
+      - broad unrelated regressions outside the approved OAG mission
+global_approval_policy:
+  status: active
+  approved_by: Brian
+  approval_text: "다승인 믿어 계속해"
+  meaning: >
+    Continue the adaptive Jarvis loop autonomously for the MCTP/OAG mission.
+    Do not stop merely for routine bounded OAG dispatch, evidence, receipt, or
+    verification actions. Preserve hard stops for destructive git/file actions,
+    unrelated scope expansion, force push/publication, external sharing of private
+    records, or ambiguous actions with high irreversible risk.
 turn_2_incident:
   thread_turn_id: 019f27e8-72e9-70d0-a23a-81659359c28e
   completed_at: 2026-07-03T12:18:31.505Z
@@ -122,3 +134,93 @@ turn_2_incident:
   formal_result: pass
   changed_formal_files_reported: 37
   controller_decision: pause_and_ask
+turn_3_result:
+  thread_turn_id: 019f27ee-a5c3-7f21-ae34-4ba285b1423d
+  completed_at: 2026-07-03T12:31:54.486Z
+  summary: >
+    Target thread created a corrected fresh bounded OAG formal dispatch for
+    CON_APB_CSR_CDC / OBL_CONFIG_APB_CDC and produced dispatch-owned HANDOFF_PASS
+    evidence. This is not final closure/signoff.
+  valid_dispatch: knowledge/dispatches/DISPATCH_NEW_IP_DEV3_CUSTOM_WORKER_20260703T122815Z_AAFF5A5C.json
+  valid_evidence_status: formal/apb_csr_cdc_bounded_status_20260703T122815Z.json
+  valid_receipt: knowledge/subagents/apb_csr_cdc_bounded_formal_receipt_20260703T122815Z.json
+  superseded_dispatch: knowledge/dispatches/DISPATCH_NEW_IP_DEV3_CUSTOM_WORKER_20260703T122411Z_39AAD80B.json
+  result: HANDOFF_PASS
+  closure_signoff: not_claimed
+  controller_decision: continue_to_read_only_evidence_closure_review
+turn_4_result:
+  thread_turn_id: 019f27f8-addc-70f1-95dc-ae48829c2451
+  completed_at: 2026-07-03T12:37:01.978Z
+  summary: >
+    Target thread performed read-only evidence-closure review over the corrected
+    122815Z bounded formal dispatch and found the evidence sufficient as fresh
+    bounded input but insufficient for direct closure/gate update.
+  evidence_adequacy: insufficient
+  files_changed: none
+  recommended_next_action: >
+    Create one bounded oag-evidence-validator dispatch to refresh APB CSR CDC
+    validation/hash evidence and classify whether the formal assertion coverage
+    gap blocks gate refresh.
+  controller_decision: continue_to_bounded_evidence_validator_refresh
+turn_5_result:
+  thread_turn_id: 019f27fc-b5cd-7782-bc43-1333694b7324
+  completed_at: 2026-07-03T12:46:50.247Z
+  summary: >
+    Target thread created bounded APB CSR CDC evidence-validator dispatch,
+    validation artifact, and receipt. Validator result is pass for bounded
+    development-gate readiness, with mixed freshness because global closure/gate
+    records remain stale.
+  validator_dispatch: knowledge/dispatches/DISPATCH_NEW_IP_DEV3_EVIDENCE_VALIDATOR_20260703T123919Z_FA089B2A.json
+  validation_artifact: knowledge/validations/apb_csr_cdc_validation_refresh_20260703T123919Z.json
+  validator_receipt: knowledge/subagents/apb_csr_cdc_evidence_validator_receipt_20260703T123919Z.json
+  validation_result: pass
+  freshness_result: mixed
+  coverage_gap_classification: non-blocking_for_bounded_development_gate_refresh
+  final_closure_signoff: not_claimed
+  controller_decision: continue_to_bounded_gate_review_refresh
+turn_6_result:
+  thread_turn_id: 019f2806-675f-7f92-9efe-f5278de8e463
+  completed_at: 2026-07-03T12:57:53.727Z
+  summary: >
+    Target thread created bounded APB CSR CDC gate-review dispatch, gate-review
+    artifact, and receipt. Gate review result is APPROVE for bounded development
+    handoff refresh only, with release/signoff explicitly disclaimed.
+  gate_review_dispatch: knowledge/dispatches/DISPATCH_NEW_IP_DEV3_GATE_REVIEWER_20260703T125022Z_C39EA56D.json
+  gate_review_artifact: knowledge/gate_reviews/apb_csr_cdc_bounded_gate_review_20260703T124954Z.json
+  gate_review_receipt: knowledge/subagents/apb_csr_cdc_bounded_gate_review_receipt_20260703T124954Z.json
+  gate_review_result: pass
+  bounded_gate_decision: APPROVE
+  may_claim_complete: false
+  residual_gap: ASSERT_Q_CONFIG_ONLY_GLOBAL_IDLE_missing_from_aggregate_formal_status
+  final_closure_signoff: not_claimed
+  controller_decision: continue_to_bounded_formal_strength_repair_dispatch
+turn_7_result:
+  thread_turn_id: 019f2811-9623-73d1-84e5-caaff107ed22
+  completed_at: 2026-07-03T13:13:28.630Z
+  duplicate_execution_incident:
+    occurred: true
+    cause: >
+      The app send_message tool returned a handler error after appending the
+      Turn 7 user message. The controller used `codex exec resume` as fallback,
+      but the app-appended message later started as a separate target turn.
+    delayed_app_run_turn_id: 019f2810-3d6c-7970-9ff3-1886050efb9e
+    delayed_app_run_completed_at: 2026-07-03T13:09:04.957Z
+    cli_fallback_run_turn_id: 019f2811-9623-73d1-84e5-caaff107ed22
+    cli_fallback_run_completed_at: 2026-07-03T13:13:28.630Z
+  summary: >
+    The missing `ASSERT_Q_CONFIG_ONLY_GLOBAL_IDLE` proof-strength gap was
+    repaired at the raw bounded APB formal level. APB-only SBY passed and the
+    assertion now appears in APB formal metadata/status. OAG handoff remains
+    unclean because duplicate/out-of-scope artifacts were created during the
+    duplicate Turn 7 execution.
+  primary_dispatch: knowledge/dispatches/DISPATCH_NEW_IP_DEV3_CUSTOM_WORKER_20260703T130224Z_16719DC0.json
+  primary_evidence_status: formal/apb_csr_cdc_assertion_status_20260703T130210Z.json
+  primary_receipt: knowledge/subagents/apb_csr_cdc_assertion_repair_receipt_20260703T130210Z.json
+  delayed_app_dispatch: knowledge/dispatches/DISPATCH_NEW_IP_DEV3_CUSTOM_WORKER_20260703T130145Z_467B5CC2.json
+  delayed_app_status: formal/apb_q_config_only_global_idle_status_20260703T130138Z.json
+  delayed_app_receipt: knowledge/subagents/apb_q_config_only_global_idle_formal_receipt_20260703T130138Z.json
+  formal_strength_result: raw_bounded_apb_proof_pass
+  parent_oag_dispatch_verify: fail_due_out_of_scope_artifacts
+  cleanup_status: not_deleted
+  final_closure_signoff: not_claimed
+  controller_decision: continue_to_non_destructive_oag_reconciliation_or_pause_for_cleanup_approval
