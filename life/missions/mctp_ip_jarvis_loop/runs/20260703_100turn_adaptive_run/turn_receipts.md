@@ -690,3 +690,94 @@ If the out-of-scope artifacts are ignored, OAG may treat stale or unowned eviden
 14. QUALITY_SELF_SCORE:
 8/10.
 ```
+
+### Turn 8/100
+
+Target turn id: `019f281f-c54f-7a23-ab3e-aa3bd32a203c`
+
+Completed at: `2026-07-03T13:19:41.585Z`
+
+Target self-score: `8/10`
+
+Controller quality score: `8/10`
+
+Controller rubric:
+
+- `mission_progress`: 2/2
+- `evidence_grounding`: 2/2
+- `prompt_adaptation`: 2/2
+- `permission_safety`: 1/2
+- `learning_quality`: 1/2
+
+Controller notes:
+
+- Turn 8 resolved the Turn 7 duplicate state without deletion, movement, rewrite, git action, or new formal proof run.
+- The corrected reconciliation dispatch verified cleanly with `issues=[]` and `out_of_scope_paths=[]`.
+- The delayed app run is now classified as valid child evidence but superseded for the canonical parent flow.
+- The CLI fallback run is the canonical input for the next validator/gate refresh.
+- Old worker dispatches still cannot be made clean in-place without destructive cleanup or changing historical baselines, so future reviewers must consume the reconciliation record instead of treating both proof sets as independent evidence.
+
+Controller local verification:
+
+- Target JSONL contains Turn 8 `task_started` at `2026-07-03T13:16:38.614Z` and `task_complete` at `2026-07-03T13:19:41.585Z`.
+- Turn 8 was sent with `codex exec resume`, not `send_message_to_thread`, to avoid repeating the app-handler duplicate append race.
+- Target response names corrected reconciliation dispatch `DISPATCH_NEW_IP_DEV3_CUSTOM_REVIEWER_20260703T131854Z_D0ED2889`.
+- Target response reports corrected reconciliation dispatch verify passed with `issues=[]`, `out_of_scope_paths=[]`.
+
+Target response:
+
+```text
+1. CURRENT_STATE
+Turn 7 duplicate artifacts are now classified non-destructively. The corrected reconciliation dispatch verifies cleanly, and the canonical next input is the CLI fallback evidence set.
+
+2. DUPLICATE_EXECUTION_CAUSE
+Controller/app race: the app appended Turn 7 but returned `No handler registered`; CLI fallback ran; then the delayed app-appended prompt also ran independently.
+
+3. ARTIFACT_CLASSIFICATION
+- Delayed app run `130145Z`: valid child evidence, but superseded for canonical parent flow. Preserved as audit trail.
+- CLI fallback run `130224Z`: canonical for next validator/gate refresh, with hygiene caveat.
+- Old worker dispatches cannot be made clean in-place without deleting/rewriting artifacts or changing historical baselines.
+
+4. ACTIONS_TAKEN
+Read both duplicate artifact sets, compared dispatch/status/receipt metadata, ran parent verify on both, created a bounded reconciliation dispatch, wrote classification evidence and receipt, then verified the corrected reconciliation dispatch.
+
+5. FILES_CHANGED
+- `knowledge/dispatches/DISPATCH_NEW_IP_DEV3_CUSTOM_REVIEWER_20260703T131854Z_D0ED2889.json`
+- `knowledge/validations/apb_csr_cdc_turn7_duplicate_reconciliation_20260703T131725Z.json`
+- `knowledge/subagents/apb_csr_cdc_turn7_duplicate_reconciliation_receipt_20260703T131725Z.json`
+- Superseded metadata attempt preserved: `knowledge/dispatches/DISPATCH_NEW_IP_DEV3_CUSTOM_REVIEWER_20260703T131734Z_7AE54106.json`
+
+6. CHECKS_RUN
+- Delayed app parent verify: fail, out-of-scope caused by later CLI artifacts.
+- CLI fallback parent verify: fail, out-of-scope caused by delayed app plus later reconciliation artifacts.
+- Reconciliation JSON parse: pass.
+- Corrected reconciliation dispatch verify: pass, `issues=[]`, `out_of_scope_paths=[]`.
+
+7. OAG_ARTIFACTS
+Canonical reconciliation dispatch: `DISPATCH_NEW_IP_DEV3_CUSTOM_REVIEWER_20260703T131854Z_D0ED2889`.
+Validation record and receipt are the two files listed above.
+
+8. RECONCILIATION_RESULT
+pass. The duplicate execution is classified, the audit trail is preserved, and the corrected reconciliation dispatch is clean. This does not retroactively make either old Turn 7 worker dispatch clean.
+
+9. CAN_CONTINUE_TO_VALIDATOR_GATE_REFRESH
+yes, conditionally: validator/gate refresh must consume the CLI fallback set `formal/apb_csr_cdc_assertion_status_20260703T130210Z.json` + `apb_csr_cdc_assertion_repair_receipt_20260703T130210Z.json`, and record delayed app artifacts as superseded audit-trail evidence.
+
+10. PERMISSION_BOUNDARY_STATUS
+No delete/move/rewrite of duplicate artifacts. No git stage/commit/push. No RTL/TB behavior edit. No new formal proof run. No release/signoff or static CDC/RDC claim.
+
+11. NEXT_BOUNDED_ACTION
+Open a fresh bounded evidence-validator refresh for `CON_APB_CSR_CDC` / `OBL_CONFIG_APB_CDC` using the canonical CLI fallback evidence and the Turn 8 reconciliation record.
+
+12. ASK_FIRST
+None for the validator/gate refresh path. Ask only if Brian wants destructive cleanup to make old worker dispatches reverify clean.
+
+13. LESSON_FOR_CONTROLLER
+When an app handler reports no registered handler after appending a prompt, mark the appended turn as pending/unsafe before starting a CLI fallback.
+
+14. RISK_IF_WRONG
+A gate reviewer could accidentally treat both duplicate proof sets as independent evidence and overstate proof strength.
+
+15. QUALITY_SELF_SCORE
+8/10. The duplicate state is cleanly routed and verified, but one superseded reconciliation dispatch artifact remains as harmless audit-trail noise.
+```

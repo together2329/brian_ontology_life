@@ -12,7 +12,7 @@ Initial verdict inherited from the 10-turn run: `go-with-approval-gates`.
 
 ## Current Status
 
-Completed turns: `7/100`
+Completed turns: `8/100`
 
 Previous pause reason: Turn 1 reached the approval gate. The target thread identified the next bounded mission-progress action as creating one OAG verification/evidence dispatch for `CON_APB_CSR_CDC` / `OBL_CONFIG_APB_CDC`.
 
@@ -229,6 +229,45 @@ Next safe action:
 
 Perform a non-destructive OAG reconciliation/quarantine/routing step that classifies the duplicate artifacts and reruns parent verification if the repo-local workflow supports reconciliation without deletion.
 
+## Turn 8 Result
+
+Non-destructive duplicate-artifact reconciliation completed.
+
+Artifacts:
+
+- Corrected reconciliation dispatch: `knowledge/dispatches/DISPATCH_NEW_IP_DEV3_CUSTOM_REVIEWER_20260703T131854Z_D0ED2889.json`
+- Validation/reconciliation record: `knowledge/validations/apb_csr_cdc_turn7_duplicate_reconciliation_20260703T131725Z.json`
+- Receipt: `knowledge/subagents/apb_csr_cdc_turn7_duplicate_reconciliation_receipt_20260703T131725Z.json`
+- Superseded metadata attempt preserved: `knowledge/dispatches/DISPATCH_NEW_IP_DEV3_CUSTOM_REVIEWER_20260703T131734Z_7AE54106.json`
+
+Classification:
+
+- Delayed app run `130145Z`: valid child evidence, but superseded for canonical parent flow and preserved as audit trail.
+- CLI fallback run `130224Z`: canonical for the next validator/gate refresh, with hygiene caveat.
+- Old worker dispatches cannot be made clean in place without deleting/rewriting artifacts or changing historical baselines.
+
+Checks:
+
+- Delayed app parent verify: failed because later CLI artifacts were out of scope.
+- CLI fallback parent verify: failed because delayed app plus later reconciliation artifacts were out of scope.
+- Reconciliation JSON parse: pass.
+- Corrected reconciliation dispatch verify: pass, `issues=[]`, `out_of_scope_paths=[]`.
+
+Result:
+
+- Reconciliation result: `pass`
+- Continue to validator/gate refresh: `yes`, conditional on consuming the CLI fallback set plus Turn 8 reconciliation record.
+- No deletion, move, rewrite, git action, new proof run, RTL/TB behavior edit, release/signoff, or static CDC/RDC claim occurred.
+
+Next action:
+
+Open a fresh bounded evidence-validator refresh for `CON_APB_CSR_CDC` / `OBL_CONFIG_APB_CDC` using:
+
+- `formal/apb_csr_cdc_assertion_status_20260703T130210Z.json`
+- `knowledge/subagents/apb_csr_cdc_assertion_repair_receipt_20260703T130210Z.json`
+- `knowledge/validations/apb_csr_cdc_turn7_duplicate_reconciliation_20260703T131725Z.json`
+- `knowledge/subagents/apb_csr_cdc_turn7_duplicate_reconciliation_receipt_20260703T131725Z.json`
+
 ## Controller Lesson
 
 When a handoff is newer than contract evidence, route to fresh verification dispatch before integration or closure.
@@ -236,3 +275,7 @@ When a handoff is newer than contract evidence, route to fresh verification disp
 Additional lesson from Turn 2:
 
 Never probe repo-local execution scripts with `--help` unless the script is known argparse-safe; inspect the file first or use documented commands only.
+
+Additional lesson from Turn 8:
+
+When an app handler reports no registered handler after appending a prompt, mark the appended turn as pending/unsafe before starting a CLI fallback.
