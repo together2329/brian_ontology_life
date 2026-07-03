@@ -1,0 +1,63 @@
+schema_version: 1
+run_id: mctp_ip_jarvis_loop_20260703_10turn_dry_run
+created_at: 2026-07-03
+completed_at: 2026-07-03T09:36:02+09:00
+status: completed
+mode: read_only_dry_run
+controller_repo: /Users/brian/Desktop/Project/BRIAN_ONTOLOGY_AGENT
+target_thread:
+  title: MCTP IP 개발
+  thread_id: 019f1dce-6a25-7eb3-9f54-2b6c9d5291f9
+  cwd: /Users/brian/Desktop/Project/new_ip_dev3
+target_repo_codex:
+  path: /Users/brian/Desktop/Project/new_ip_dev3/.codex
+  symlink_target: ../ip_dev/.codex
+objective: >
+  Test whether the existing MCTP IP development Codex thread can use its repo-local
+  .codex/OAG context naturally across repeated read-only turns, without creating
+  new implementation work or modifying RTL/TB/OAG artifacts.
+permissions:
+  allowed:
+    - read target thread context
+    - inspect repo state conceptually through the target thread
+    - identify blockers and next actions
+    - propose OAG-compliant next steps
+  forbidden:
+    - edit files in /Users/brian/Desktop/Project/new_ip_dev3
+    - run long simulations or destructive commands
+    - create commits
+    - change locked truth, RTL, TB, evidence, dispatch, or receipts in the target repo
+turns_planned: 10
+turns_completed: 10
+controller_quality:
+  total_score: 98
+  max_score: 100
+  average_score: 9.8
+  target_self_score_average: 8.6
+  go_no_go: go-with-approval-gates
+  notes:
+    - Target thread used local .codex/OAG/ontology/records naturally under the exact `oag` prompt.
+    - Read-only reasoning loop is viable.
+    - Write/test/commit/closure phases need explicit approval gates.
+    - Turn 7 duplicated once because the controller fell back before confirming app-tool completion in session JSONL.
+quality_rubric:
+  max_score: 10
+  dimensions:
+    - name: read_only_compliance
+      points: 2
+      description: Stays within read-only dry-run and does not claim edits/tests/commits.
+    - name: oag_context_use
+      points: 2
+      description: Explicitly applies target repo OAG/.codex concepts such as lock, dispatch, evidence, receipts, gate, or scoped next action.
+    - name: evidence_specificity
+      points: 2
+      description: Grounds claims in concrete thread/repo/OAG evidence rather than vague advice.
+    - name: next_action_quality
+      points: 2
+      description: Produces one bounded, high-leverage next action suitable for a future write-enabled turn.
+    - name: uncertainty_and_ask_first
+      points: 2
+      description: Separates known facts from uncertainty and identifies decisions requiring Brian approval.
+outputs:
+  receipt_log: life/missions/mctp_ip_jarvis_loop/runs/20260703_10turn_dry_run/turn_receipts.md
+  summary: life/missions/mctp_ip_jarvis_loop/runs/20260703_10turn_dry_run/summary.md
