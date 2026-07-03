@@ -1,6 +1,6 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-25
+updated_at: 2026-07-03
 area: MIND
 secondary_areas:
   - CAREER
@@ -787,6 +787,60 @@ source_records:
     knowledge_thread_ref: thought_thread_20260625_obsidian_okf_readable_management
     related_task_refs:
       - task_ai_agent_okf_export_layer
+  - id: source_knowledge_conversation_20260703_jarvis_style_persistent_mission_automation
+    source_type: chat
+    original_date: 2026-07-03
+    imported_at: 2026-07-03
+    parse_status: parsed
+    raw_text: "요즘 구현하고 싶은 것은 automation 이야. 자비스 같이 계속 생각해서 미션을 수행하는 것"
+    interpreted_direction:
+      - Brian's current automation goal is not simple reminders or one-shot scheduled prompts.
+      - The desired system is a Jarvis-style persistent mission agent that keeps state, periodically rethinks, and performs bounded work toward an explicit mission.
+      - This direction extends the prior goal/plan/permission/evidence development-process memory into an always-on operational loop.
+      - The first implementation should stay local and lightweight: mission objects, state, wake/check policy, allowed actions, ask-first permissions, evidence receipts, and human review boundaries.
+    related_task_refs:
+      - task_ai_agent_persistent_mission_automation_jarvis
+    related_concept_refs:
+      - concept_ontology_first_agent_memory
+      - concept_conversation_feedback_learning_loop
+      - concept_agentic_retrieval_substrate
+      - concept_agent_evaluation_monitoring
+      - concept_codex_plan_mode
+
+  - id: source_knowledge_conversation_20260703_mctp_thread_jarvis_anthropic_loop
+    source_type: chat_and_external_research
+    original_date: 2026-07-03
+    imported_at: 2026-07-03
+    parse_status: parsed
+    raw_text: "그거를 기반으로 뭔가 자비스처럼 루프를 돌리고 싶은데 최근에 앤트로픽 기반 루프 엔지니어링 혹은 자비스"
+    interpreted_direction:
+      - Brian wants to use the current MCTP IP development Codex thread as the first persistent Jarvis-style mission loop.
+      - The primary thread candidate is "MCTP IP 개발" with thread id 019f1dce-6a25-7eb3-9f54-2b6c9d5291f9 and cwd /Users/brian/Desktop/Project/new_ip_dev3.
+      - Recent Anthropic agent-harness guidance suggests keeping the loop simple, using durable external state/progress files, feature or evidence ledgers, context-on-demand, and bounded turns instead of relying on one long autonomous session.
+      - The Codex thread should be treated as the reasoning/execution surface; durable mission state should live in local files and receipts so future turns can resume safely.
+    official_source_refs:
+      - https://www.anthropic.com/engineering/building-effective-agents
+      - https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents
+      - https://www.anthropic.com/engineering/harness-design-long-running-apps
+      - https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
+      - https://code.claude.com/docs/en/agent-sdk/overview
+    codex_thread_candidate:
+      title: MCTP IP 개발
+      thread_id: 019f1dce-6a25-7eb3-9f54-2b6c9d5291f9
+      cwd: /Users/brian/Desktop/Project/new_ip_dev3
+      role: primary_persistent_mission_thread
+    related_task_refs:
+      - task_ai_agent_mctp_ip_persistent_mission_loop
+      - task_ai_agent_persistent_mission_automation_jarvis
+      - task_ai_agent_ssot_deep_interview_to_verify_pilot
+    related_concept_refs:
+      - concept_ontology_first_agent_memory
+      - concept_conversation_feedback_learning_loop
+      - concept_agentic_retrieval_substrate
+      - concept_agent_evaluation_monitoring
+      - concept_codex_thread_linking
+      - concept_hardware_ip_agent
+      - concept_soc_on_ontology
 
 thought_threads:
   - id: thought_thread_20260615_okf_llm_wiki_ontology
@@ -1696,6 +1750,53 @@ thought_threads:
     needs_user_review: false
 
 understandings:
+  - id: understanding_20260703_mctp_thread_as_persistent_jarvis_pilot
+    object_type: Understanding
+    date: 2026-07-03
+    area: MIND
+    secondary_areas:
+      - CAREER
+    statement: "Brian's first concrete Jarvis-style automation pilot should be the MCTP IP development thread: Codex resumes the same thread for reasoning, but reliable long-running state lives in repo-local progress, requirement/evidence ledgers, receipts, and permission gates."
+    brian_wording_ko: "그거를 기반으로 뭔가 자비스처럼 루프를 돌리고 싶은데 최근에 앤트로픽 기반 루프 엔지니어링 혹은 자비스"
+    status: active_direction
+    related_task_ref: task_ai_agent_mctp_ip_persistent_mission_loop
+    related_codex_thread:
+      title: MCTP IP 개발
+      thread_id: 019f1dce-6a25-7eb3-9f54-2b6c9d5291f9
+      cwd: /Users/brian/Desktop/Project/new_ip_dev3
+    related_concept_refs:
+      - concept_ontology_first_agent_memory
+      - concept_conversation_feedback_learning_loop
+      - concept_agentic_retrieval_substrate
+      - concept_agent_evaluation_monitoring
+      - concept_codex_thread_linking
+      - concept_hardware_ip_agent
+    source_refs:
+      - source_knowledge_conversation_20260703_mctp_thread_jarvis_anthropic_loop
+      - source_knowledge_conversation_20260703_jarvis_style_persistent_mission_automation
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260703_automation_as_persistent_mission_agent
+    object_type: Understanding
+    date: 2026-07-03
+    area: MIND
+    secondary_areas:
+      - CAREER
+    statement: "Brian's automation direction is a persistent mission agent: a system that keeps state, wakes up or resumes, rethinks the mission, plans bounded actions, respects permission gates, executes when allowed, and records evidence for review."
+    brian_wording_ko: "요즘 구현하고 싶은 것은 automation 이야. 자비스 같이 계속 생각해서 미션을 수행하는 것"
+    status: active_direction
+    related_task_ref: task_ai_agent_persistent_mission_automation_jarvis
+    related_concept_refs:
+      - concept_ontology_first_agent_memory
+      - concept_conversation_feedback_learning_loop
+      - concept_agentic_retrieval_substrate
+      - concept_agent_evaluation_monitoring
+      - concept_codex_plan_mode
+    source_refs:
+      - source_knowledge_conversation_20260703_jarvis_style_persistent_mission_automation
+      - source_knowledge_conversation_20260624_codex_skill_long_term_process_memory
+    confidence: high
+    needs_user_review: false
   - id: understanding_20260615_okf_llm_wiki_ontology_layering
     object_type: Understanding
     date: 2026-06-15
@@ -2736,6 +2837,70 @@ architecture_directions:
     needs_user_review: false
 
 knowledge_interests:
+  - id: knowledge_interest_20260703_mctp_ip_jarvis_loop_harness
+    object_type: KnowledgeInterest
+    date: 2026-07-03
+    area: MIND
+    secondary_areas:
+      - CAREER
+    topic: MCTP IP persistent Jarvis loop and Anthropic-style harness engineering
+    current_interest:
+      - Applying recent long-running agent harness ideas to Brian's MCTP IP development thread.
+      - Treating the Codex thread as a resumable reasoning surface, not the only state store.
+      - Using durable state artifacts such as mission state, progress note, requirement/evidence ledger, receipt log, and stop/ask-first policy.
+      - Keeping each wake-up as one bounded engineering turn with explicit validation and evidence expectations.
+    development_direction:
+      - Start with one local-only MCTP mission loop before adding broader automation.
+      - Add repo-local or ontology-local MissionState and receipt files before any autonomous write loop.
+      - Use just-in-time context retrieval: file paths, tests, evidence logs, thread summaries, and ontology object refs instead of loading everything.
+      - Use a watchdog and stop condition so long turns become interrupted receipts rather than silent runaway work.
+    related_project_refs:
+      - project_ai_agent
+    related_task_ref: task_ai_agent_mctp_ip_persistent_mission_loop
+    related_concept_refs:
+      - concept_ontology_first_agent_memory
+      - concept_conversation_feedback_learning_loop
+      - concept_agentic_retrieval_substrate
+      - concept_agent_evaluation_monitoring
+      - concept_codex_thread_linking
+      - concept_hardware_ip_agent
+      - concept_soc_on_ontology
+    status: active_interest
+    source_refs:
+      - source_knowledge_conversation_20260703_mctp_thread_jarvis_anthropic_loop
+    confidence: high
+    needs_user_review: false
+  - id: knowledge_interest_20260703_persistent_mission_automation
+    object_type: KnowledgeInterest
+    date: 2026-07-03
+    area: MIND
+    secondary_areas:
+      - CAREER
+    topic: Persistent mission automation / Jarvis-style agent
+    current_interest:
+      - Automation that continues thinking over time instead of answering once.
+      - Mission objects with objective, context refs, state, evidence, retry, permission, and stop conditions.
+      - Wakeups, recurring automations, monitors, and follow-ups as a possible execution substrate.
+      - Human review and safety boundaries before writeback, external service use, or irreversible action.
+    development_direction:
+      - Start with local YAML and Obsidian-readable records before adding any service, database, or external automation layer.
+      - Define a minimal Mission schema with objective, context refs, current state, next_check_at, allowed_actions, permissions, evidence_refs, and stop_conditions.
+      - Pick one local pilot mission such as weekday life briefing, Codex skill preparation, or deep-focus recovery.
+      - Capture every run as a receipt so Brian can inspect what the agent thought, did, skipped, and why.
+    related_project_refs:
+      - project_ai_agent
+    related_task_ref: task_ai_agent_persistent_mission_automation_jarvis
+    related_concept_refs:
+      - concept_ontology_first_agent_memory
+      - concept_conversation_feedback_learning_loop
+      - concept_agentic_retrieval_substrate
+      - concept_agent_evaluation_monitoring
+      - concept_codex_plan_mode
+    status: active_interest
+    source_refs:
+      - source_knowledge_conversation_20260703_jarvis_style_persistent_mission_automation
+    confidence: high
+    needs_user_review: false
   - id: knowledge_interest_20260615_agent_memory_architecture
     object_type: KnowledgeInterest
     date: 2026-06-15
@@ -2949,6 +3114,91 @@ knowledge_interests:
     needs_user_review: false
 
 follow_up_tasks:
+  - id: task_ai_agent_mctp_ip_persistent_mission_loop
+    object_type: Task
+    title: MCTP IP 개발 Jarvis loop pilot 설계
+    area: CAREER
+    secondary_areas:
+      - MIND
+    status: candidate
+    priority: high
+    energy: system_design
+    estimated_minutes: null
+    due_date: null
+    tracking_level: project
+    project_ref: project_ai_agent
+    progress_percent: 0
+    tags:
+      - mctp_ip
+      - codex_thread
+      - persistent_agent
+      - jarvis
+      - anthropic_harness
+      - evidence
+      - permission
+      - wake_loop
+    codex_thread_candidate:
+      title: MCTP IP 개발
+      thread_id: 019f1dce-6a25-7eb3-9f54-2b6c9d5291f9
+      cwd: /Users/brian/Desktop/Project/new_ip_dev3
+    expected_outputs:
+      - MCTP MissionState schema
+      - MCTP progress/state file
+      - Requirement and evidence ledger format
+      - Per-turn receipt format
+      - Durable wake-up prompt for thread_resume plus turn_start
+      - Ask-first permission table for write, test, archive, handoff, and external actions
+    next_actions:
+      - Read current MCTP thread and repo state without modifying files.
+      - Define the first mission state fields: objective, thread_id, cwd, last_receipt_ref, next_check_at, allowed_actions, ask_first_actions, stop_conditions.
+      - Choose the durable state artifact location, either repo-local under new_ip_dev3 or ontology-local under BRIAN_ONTOLOGY_AGENT.
+      - Draft the first wake-up prompt that requests summary, blocker, next bounded action, evidence, and ask-first decisions.
+      - Run one dry-read turn before allowing autonomous edits.
+    source_refs:
+      - source_knowledge_conversation_20260703_mctp_thread_jarvis_anthropic_loop
+      - source_knowledge_conversation_20260703_jarvis_style_persistent_mission_automation
+    confidence: high
+    needs_user_review: true
+  - id: task_ai_agent_persistent_mission_automation_jarvis
+    object_type: Task
+    title: Jarvis-style persistent mission automation 설계
+    area: CAREER
+    secondary_areas:
+      - MIND
+    status: candidate
+    priority: high
+    energy: system_design
+    estimated_minutes: null
+    due_date: null
+    tracking_level: concept
+    project_ref: project_ai_agent
+    progress_percent: 0
+    tags:
+      - automation
+      - persistent_agent
+      - mission
+      - jarvis
+      - ontology
+      - permission
+      - evidence
+      - wake_loop
+    expected_outputs:
+      - Mission object schema
+      - Wake/check loop policy
+      - Permission and action boundary table
+      - Evidence/receipt log format
+      - First local-only pilot mission
+    next_actions:
+      - Define what "mission" means in Brian's ontology.
+      - Choose the first pilot mission.
+      - Separate allowed actions from ask-first actions.
+      - Add minimal MissionState, AutomationRun, and Receipt schema candidates.
+      - Test with one local-only automation before any external action.
+    source_refs:
+      - source_knowledge_conversation_20260703_jarvis_style_persistent_mission_automation
+      - source_knowledge_conversation_20260624_codex_skill_long_term_process_memory
+    confidence: high
+    needs_user_review: true
   - id: task_ai_agent_okf_export_layer
     object_type: Task
     title: Brian Ontology Agent OKF export layer 설계
