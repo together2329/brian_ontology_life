@@ -12,7 +12,7 @@ Initial verdict inherited from the 10-turn run: `go-with-approval-gates`.
 
 ## Current Status
 
-Completed turns: `9/100`
+Completed turns: `10/100`
 
 Previous pause reason: Turn 1 reached the approval gate. The target thread identified the next bounded mission-progress action as creating one OAG verification/evidence dispatch for `CON_APB_CSR_CDC` / `OBL_CONFIG_APB_CDC`.
 
@@ -302,6 +302,42 @@ Residual risks:
 Next action:
 
 Create a bounded gate-review refresh using the canonical CLI evidence, Turn 8 reconciliation, and Turn 9 validator artifact.
+
+## Turn 10 Result
+
+Bounded gate-review refresh completed cleanly.
+
+Artifacts:
+
+- Dispatch: `knowledge/dispatches/DISPATCH_NEW_IP_DEV3_GATE_REVIEWER_20260703T133055Z_6293ED1C.json`
+- Gate review: `knowledge/gate_reviews/apb_csr_cdc_assertion_bounded_gate_review_20260703T133050Z.json`
+- Receipt: `knowledge/subagents/apb_csr_cdc_assertion_gate_review_receipt_20260703T133050Z.json`
+
+Result:
+
+- Gate review result: `pass`
+- Bounded gate decision: `APPROVE`
+- Exact meaning: the bounded APB CSR CDC development gate remains approved after the `ASSERT_Q_CONFIG_ONLY_GLOBAL_IDLE` validator refresh.
+- Assertion gap in gate: resolved and non-blocking for the bounded gate.
+- Duplicate handling: delayed app artifacts remain superseded audit trail only and are not additive independent proof strength.
+
+Checks:
+
+- `oag_orchestration_guard.py audit`: pass
+- `oag_agent_catalog_check.py`: pass
+- Gate JSON parse: pass
+- `oag_dispatch.py verify`: pass, `issues=[]`, `out_of_scope_paths=[]`
+- No formal proof rerun.
+
+Residual risks:
+
+- This is not release/signoff CDC/RDC closure.
+- This is not full CSR formal closure.
+- Old duplicate Turn 7 worker dispatches remain historically unclean if directly reverified in the current workspace.
+
+Next action:
+
+Run a read-only integration/commit-readiness audit for the APB CSR CDC assertion repair and refreshed OAG artifacts.
 
 ## Controller Lesson
 

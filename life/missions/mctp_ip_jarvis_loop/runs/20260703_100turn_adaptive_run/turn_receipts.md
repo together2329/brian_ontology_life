@@ -876,3 +876,99 @@ Gate review could over-credit duplicate proof artifacts and overstate closure st
 16. QUALITY_SELF_SCORE
 9/10. Validator path is clean and dispatch-verified; remaining limits are scope limits, not execution errors.
 ```
+
+### Turn 10/100
+
+Target turn id: `019f282c-59fc-7a11-b13f-7e93d03d3a2a`
+
+Completed at: `2026-07-03T13:36:18.094Z`
+
+Target self-score: `9/10`
+
+Controller quality score: `9/10`
+
+Controller rubric:
+
+- `mission_progress`: 2/2
+- `evidence_grounding`: 2/2
+- `prompt_adaptation`: 2/2
+- `permission_safety`: 2/2
+- `learning_quality`: 1/2
+
+Controller notes:
+
+- Turn 10 refreshed the bounded APB CSR CDC development gate after the assertion-gap validator pass.
+- The bounded gate remains `APPROVE`, but the result is explicitly not release/signoff CDC/RDC closure.
+- The gate review consumed canonical CLI evidence, Turn 8 reconciliation, and Turn 9 validator artifact.
+- Parent `oag_dispatch.py verify` passed with no issues and no out-of-scope paths.
+- No formal proof rerun, RTL/TB/formal input edit, duplicate artifact rewrite, git action, release claim, or static CDC/RDC claim occurred.
+
+Controller local verification:
+
+- Target JSONL contains Turn 10 `task_started` at `2026-07-03T13:30:23.110Z` and `task_complete` at `2026-07-03T13:36:18.094Z`.
+- Controller parsed the gate review and receipt JSON directly.
+- Gate review JSON records `bounded_gate_decision.decision=APPROVE`, `may_claim_complete=false`.
+- Receipt status is `HANDOFF_PASS`, `may_claim_complete=false`.
+
+Target response:
+
+```text
+1. CURRENT_STATE
+Turn 10 bounded gate-review refresh is complete. Parent OAG dispatch verification passed with `issues=[]` and `out_of_scope_paths=[]`.
+
+2. GATE_REVIEW_INPUTS_USED
+Used the required canonical CLI evidence, Turn 8 reconciliation, and Turn 9 validator artifacts. The delayed app artifacts were read only as superseded audit trail.
+
+3. ACTIONS_TAKEN
+Created an `oag-gate-reviewer` dispatch, ran a native gate-review worker, generated the bounded gate-review artifact and receipt, then verified the receipt from the parent thread.
+
+4. FILES_CHANGED
+- `knowledge/dispatches/DISPATCH_NEW_IP_DEV3_GATE_REVIEWER_20260703T133055Z_6293ED1C.json`
+- `knowledge/gate_reviews/apb_csr_cdc_assertion_bounded_gate_review_20260703T133050Z.json`
+- `knowledge/subagents/apb_csr_cdc_assertion_gate_review_receipt_20260703T133050Z.json`
+
+5. CHECKS_RUN
+- `oag_orchestration_guard.py audit`: pass
+- `oag_agent_catalog_check.py`: pass
+- Gate JSON parse: pass
+- `oag_dispatch.py verify` for gate dispatch: pass, no issues, no out-of-scope paths
+- No formal proof rerun.
+
+6. OAG_ARTIFACTS
+Dispatch: `DISPATCH_NEW_IP_DEV3_GATE_REVIEWER_20260703T133055Z_6293ED1C`
+Gate review: `knowledge/gate_reviews/apb_csr_cdc_assertion_bounded_gate_review_20260703T133050Z.json`
+Receipt: `knowledge/subagents/apb_csr_cdc_assertion_gate_review_receipt_20260703T133050Z.json`
+
+7. GATE_REVIEW_RESULT
+pass, scoped only to bounded APB CSR CDC development-gate refresh for `CON_APB_CSR_CDC` / `OBL_CONFIG_APB_CDC`.
+
+8. BOUNDED_GATE_DECISION
+APPROVE. Exact meaning: the bounded APB CSR CDC development gate remains approved after the `ASSERT_Q_CONFIG_ONLY_GLOBAL_IDLE` validator refresh. This is not final closure or signoff.
+
+9. ASSERTION_GAP_STATUS_IN_GATE
+Resolved and non-blocking for the bounded gate. The gate relies on the canonical CLI fallback proof plus Turn 9 validator classification.
+
+10. DUPLICATE_ARTIFACT_HANDLING
+Delayed app artifacts remain preserved as superseded audit trail only. They are not counted as additive independent proof strength.
+
+11. RESIDUAL_RISKS
+Not release/signoff CDC/RDC closure. Not full CSR formal closure. Old duplicate Turn 7 worker dispatches remain historically unclean if reverified directly in the current workspace.
+
+12. PERMISSION_BOUNDARY_STATUS
+No delete/move/rewrite of duplicate artifacts. No git stage/commit/push. No RTL/TB/formal input edits. No formal rerun. No release/static CDC/RDC signoff claim.
+
+13. NEXT_BOUNDED_ACTION
+Run a read-only integration/commit-readiness audit for the APB CSR CDC assertion repair and refreshed OAG artifacts.
+
+14. ASK_FIRST
+None for the read-only audit. Git stage/commit still needs explicit approval.
+
+15. LESSON_FOR_CONTROLLER
+Gate refresh should consume validator output, not raw duplicate proof sets, and must hash the canonical evidence set it actually relies on.
+
+16. RISK_IF_WRONG
+A downstream decision could mistake bounded development approval for release-grade CDC/RDC signoff.
+
+17. QUALITY_SELF_SCORE
+9/10. Gate evidence is dispatch-clean and scoped correctly; remaining risk is only the intentionally bounded scope.
+```
