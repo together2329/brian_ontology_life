@@ -1,11 +1,11 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-24
+updated_at: 2026-07-08
 area: CAREER
 project_ref: project_milano
 component_ref: component_milano_pcie
 title: Milano active task list
-current_phase: 2026년 6월 말까지는 Area/ARIR, SDC, link0 wrapper, pd_pcie synthesis에 집중. IDE Lint Critical은 다 잡았고, link0/pd_pcie synthesis rerun 결과와 report path를 기다리는 중이며, PCIe TLP bus downsizing 이슈는 MPS 제한으로 임시 진행하고 bus fix를 기다리기로 함. ARIR 신뢰 전 ETC area bucket breakdown 분석이 필요함.
+current_phase: 2026-07-08 현재 Milano는 pd_pcie GCA 결과 리뷰 후 comment 남기기를 최우선 단기 실행 항목으로 두고, 기존 Area/ARIR, SDC, link0 wrapper, pd_pcie synthesis closure 흐름을 이어간다. IDE Lint Critical은 다 잡혔고, link0/pd_pcie synthesis rerun 결과와 report path, ETC area bucket breakdown, PCIe TLP bus downsizing/MPS workaround follow-up은 계속 추적한다.
 source_records:
   - id: source_milano_conversation_20260614_current_tasks
     source_type: chat
@@ -694,6 +694,38 @@ source_records:
     related_task_refs:
       - task_milano_pcie_db_delivery_to_be_team
 
+  - id: source_milano_conversation_20260708_task_cleanup_request
+    source_type: chat
+    original_date: 2026-07-08
+    imported_at: 2026-07-08
+    parse_status: parsed
+    raw_text: "Milano Task 정리좀"
+    interpreted_action:
+      action_type: organize_active_task_list
+      target_project_ref: project_milano
+      target_component_ref: component_milano_pcie
+      intent: Refresh Milano active task ordering and surface the next actionable work.
+    related_component_ref: component_milano_pcie
+
+  - id: source_milano_conversation_20260708_pd_pcie_gca_review_comment
+    source_type: chat
+    original_date: 2026-07-08
+    imported_at: 2026-07-08
+    parse_status: parsed
+    raw_text: "pd_pcie gca 결과 리뷰 후 comment 남긱ㅣ"
+    normalized_text: "pd_pcie GCA 결과 리뷰 후 comment 남기기"
+    interpreted_task:
+      task_ref: task_milano_pd_pcie_gca_result_review_comment
+      action: Review the pd_pcie GCA result, extract actionable findings, and leave comments in the appropriate review channel.
+      artifact_refs:
+        - artifact_milano_pd_pcie_gca_result_20260708
+        - artifact_milano_pd_pcie_gca_review_comment_20260708
+      assumptions:
+        - GCA is treated as a Milano pd_pcie review/report artifact; exact expansion, path, and comment destination are not recorded yet.
+    related_component_ref: component_milano_pcie
+    related_task_refs:
+      - task_milano_pd_pcie_gca_result_review_comment
+
 summary:
   recently_completed:
     - task_milano_3nm_synth_env_setup
@@ -729,18 +761,21 @@ summary:
     - IDE Lint Critical violations are now fixed; IDE Lint report/result path and link0/pd_pcie synthesis rerun reports are still pending.
     - During simulation, PCIe TLP is being split into two AXI transactions due to suspected unnecessary bus unsizing/downsizing; Brian chose temporary MPS limiting while waiting for the bus fix.
     - A no-UIO variant is being prepared to remove a feature that may not be used before it adds integration, synthesis, or area burden.
+    - On 2026-07-08, pd_pcie GCA result review and comment writing became the immediate Milano follow-up task.
   current_focus:
-    date: 2026-06-23
+    date: 2026-07-08
     target_window:
-      start: 2026-06-22
-      end: 2026-06-30
-      focus_statement: 6월 말까지 Area, SDC, link0 wrapper, pd_pcie 합성에 집중
+      start: 2026-07-08
+      end: 2026-07-08
+      focus_statement: pd_pcie GCA 결과를 리뷰하고 필요한 comment를 남기는 것을 최우선으로 처리
     focus_scope:
+      - pd_pcie GCA result review and comment closure
       - Area / ARIR / ETC area breakdown
       - SDC cleanup and synthesis constraints
       - link0 wrapper synthesis and report review
       - pd_pcie synthesis
     primary_tasks:
+      - task_milano_pd_pcie_gca_result_review_comment
       - task_milano_sdc_dual_profile_synth_rerun
       - task_milano_link0_wrapper_etc_area_analysis
       - task_milano_arir_precheck
@@ -759,6 +794,8 @@ summary:
       - task_milano_port1_interrupt_requirement
       - task_milano_pcie_doe_reg_top_axi_bridge_dcg_power_optimization
     source_refs:
+      - source_milano_conversation_20260708_task_cleanup_request
+      - source_milano_conversation_20260708_pd_pcie_gca_review_comment
       - source_milano_conversation_20260622_june_focus_area_sdc_link0_pd_pcie_synth
       - source_milano_conversation_20260622_link0_wrapper_ide_resynth_etc_area
       - source_milano_conversation_20260623_synthesis_ok_ide_lint_critical
@@ -781,26 +818,36 @@ summary:
       - source_milano_conversation_20260617_focus_sdc_cleanup
   planned_next_focus:
     target_window:
-      start: 2026-06-22
-      end: 2026-06-30
-    trigger: june_end_focus_policy
+      start: 2026-07-08
+      end: 2026-07-12
+    trigger: current_pd_pcie_gca_review_then_synthesis_closure
     primary_tasks:
+      - task_milano_pd_pcie_gca_result_review_comment
       - task_milano_sdc_dual_profile_synth_rerun
       - task_milano_link0_wrapper_etc_area_analysis
       - task_milano_arir_precheck
       - task_milano_gen7_phy_db_synthesis
     checklist:
+      - Locate latest pd_pcie GCA result/report and confirm review target
+      - Review GCA findings by severity/actionability
+      - Leave comments with owner/action/closure condition
       - Area / ARIR / ETC area breakdown
       - SDC clean-up repeat pass
       - link0 wrapper IDE-inclusive synthesis/report review
       - pd_pcie synthesis review
       - filelist and visible timing-related issue review only as needed for those synthesis paths
     source_refs:
+      - source_milano_conversation_20260708_task_cleanup_request
+      - source_milano_conversation_20260708_pd_pcie_gca_review_comment
       - source_milano_conversation_20260622_june_focus_area_sdc_link0_pd_pcie_synth
       - source_milano_conversation_20260619_next_monday_sdc_phy_link0_filelist_timing_plan
       - source_milano_conversation_20260623_ide_lint_nearly_fixed_synthesis_rerun_link0_pd_pcie
       - source_milano_conversation_20260623_ide_lint_critical_all_fixed
   open_questions:
+    - id: oq_milano_pd_pcie_gca_artifact_and_comment_channel
+      question: "pd_pcie GCA 결과 report/path와 comment를 남길 채널 또는 review system 위치 확인 필요."
+      related_task_ref: task_milano_pd_pcie_gca_result_review_comment
+      needs_user_review: true
     - id: oq_milano_gen7_phy_term
       question: "'제7파이'를 GEN7 PHY로 해석하는 것이 맞는지 확인 필요."
       related_task_ref: task_milano_gen7_phy_db_synthesis
@@ -2156,7 +2203,64 @@ tasks:
     confidence: high
     needs_user_review: true
 
+  - id: task_milano_pd_pcie_gca_result_review_comment
+    title: pd_pcie GCA 결과 리뷰 후 comment 남기기
+    area: CAREER
+    status: todo
+    priority: high
+    energy: review
+    estimated_minutes: null
+    due_date: 2026-07-08
+    tracking_level: lightweight
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    progress_percent: 0
+    owner_ref: person_brian
+    tags:
+      - milano
+      - pd_pcie
+      - gca
+      - review
+      - comment
+      - synthesis
+      - closure
+    context:
+      - Brian asked to organize Milano tasks and specifically added a pd_pcie GCA result review/comment follow-up.
+      - Treat this as the top short-term Milano action before widening back to the existing synthesis/ARIR closure queue.
+      - Exact GCA report path, acronym expansion, and comment destination are not yet recorded.
+    expected_outputs:
+      - pd_pcie GCA result/report reviewed.
+      - Review comments left in the appropriate channel or review system.
+      - Any actionable GCA finding split into a concrete follow-up task or issue if it cannot be closed by comment alone.
+    acceptance_criteria:
+      - Latest intended pd_pcie GCA result is identified before review.
+      - Comments include finding, expected action or owner, and closure condition.
+      - Non-actionable or informational findings are clearly separated from blockers.
+      - Any blocker that affects synthesis/ARIR/DB confidence is linked back to the relevant Milano task or issue.
+    blockers:
+      - GCA report/path is not recorded yet.
+      - Comment destination or review system is not recorded yet.
+    next_actions:
+      - Locate the latest pd_pcie GCA result/report.
+      - Review findings and group them by blocker, required fix, waiver/justification, or informational comment.
+      - Leave comments with owner/action/closure condition.
+      - Record any new blocker as an Issue or task status update.
+    related_task_refs:
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_arir_precheck
+      - task_milano_gen7_phy_db_synthesis
+      - task_milano_lint_ip_rev_0_1_rerun
+    artifact_refs:
+      - artifact_milano_pd_pcie_gca_result_20260708
+      - artifact_milano_pd_pcie_gca_review_comment_20260708
+    evidence_refs:
+      - source_milano_conversation_20260708_task_cleanup_request
+      - source_milano_conversation_20260708_pd_pcie_gca_review_comment
+    confidence: high
+    needs_user_review: false
+
 recommended_execution_order:
+  - task_milano_pd_pcie_gca_result_review_comment
   - task_milano_sdc_dual_profile_synth_rerun
   - task_milano_link0_wrapper_etc_area_analysis
   - task_milano_arir_precheck
@@ -2174,6 +2278,32 @@ recommended_execution_order:
   - task_milano_port1_interrupt_requirement
 
 planned_time_blocks:
+  - id: timeblock_20260708_milano_pd_pcie_gca_review_comment
+    date: 2026-07-08
+    start: null
+    end: null
+    area: CAREER
+    mode: planned_review
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    items:
+      - type: task
+        ref: task_milano_pd_pcie_gca_result_review_comment
+        title: pd_pcie GCA 결과 리뷰 후 comment 남기기
+        planned_minutes: null
+        actual_minutes: null
+        status: planned
+    checklist:
+      - Latest pd_pcie GCA result/report path 확인
+      - Findings를 blocker / fix needed / waiver or justification / info로 분류
+      - Comment에 owner, action, closure condition 포함
+      - Blocker가 있으면 기존 synthesis/ARIR/DB task 또는 새 issue로 연결
+    source_refs:
+      - source_milano_conversation_20260708_task_cleanup_request
+      - source_milano_conversation_20260708_pd_pcie_gca_review_comment
+    confidence: high
+    needs_user_review: false
+
   - id: timeblock_20260622_milano_sdc_phy_link0_filelist_timing_review
     date: 2026-06-22
     start: null
@@ -2504,6 +2634,28 @@ work_sessions:
       - source_milano_conversation_20260617_initial_db_release_completed_rest
 
 task_status_updates:
+  - id: status_task_milano_pd_pcie_gca_review_comment_20260708_added
+    date: 2026-07-08
+    task_ref: task_milano_pd_pcie_gca_result_review_comment
+    author_ref: person_brian
+    status: todo
+    progress_percent: 0
+    summary: pd_pcie GCA 결과를 리뷰하고 필요한 comment를 남기는 작업을 Milano 최우선 단기 실행 항목으로 추가했다.
+    blockers:
+      - Latest pd_pcie GCA result/report path is not recorded yet.
+      - Comment destination or review system is not recorded yet.
+    next_step: Locate the latest pd_pcie GCA result, review findings, leave comments with owner/action/closure condition, and split blockers into follow-up issues if needed.
+    related_task_refs:
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_arir_precheck
+      - task_milano_gen7_phy_db_synthesis
+    artifact_refs:
+      - artifact_milano_pd_pcie_gca_result_20260708
+      - artifact_milano_pd_pcie_gca_review_comment_20260708
+    source_refs:
+      - source_milano_conversation_20260708_task_cleanup_request
+      - source_milano_conversation_20260708_pd_pcie_gca_review_comment
+
   - id: status_task_milano_sdc_20260622_link0_wrapper_ide_resynth
     date: 2026-06-22
     task_ref: task_milano_sdc_dual_profile_synth_rerun
@@ -3482,6 +3634,30 @@ issues:
     needs_user_review: false
 
 artifact_candidates:
+  - id: artifact_milano_pd_pcie_gca_result_20260708
+    title: pd_pcie GCA result/report
+    artifact_type: gca_result_or_report
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_pd_pcie_gca_result_review_comment
+    path_or_uri: null
+    created_on: 2026-07-08
+    status: path_pending_review_needed
+    notes: Latest pd_pcie GCA result/report to review before leaving comments. Exact path, report owner, and GCA expansion are not recorded yet.
+    source_ref: source_milano_conversation_20260708_pd_pcie_gca_review_comment
+
+  - id: artifact_milano_pd_pcie_gca_review_comment_20260708
+    title: pd_pcie GCA review comments
+    artifact_type: review_comment
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_pd_pcie_gca_result_review_comment
+    path_or_uri: null
+    created_on: 2026-07-08
+    status: to_be_written
+    notes: Comment output after Brian reviews the pd_pcie GCA result. Comment channel or review system location is not recorded yet.
+    source_ref: source_milano_conversation_20260708_pd_pcie_gca_review_comment
+
   - id: artifact_milano_link0_wrapper_synthesis_no_ide_20260622
     title: Link0 wrapper synthesis completed without IDE
     artifact_type: synthesis_run
@@ -3990,6 +4166,36 @@ feedback_records:
     needs_user_review: false
 
 project_status_updates:
+  - id: project_status_milano_20260708_pd_pcie_gca_review_comment_focus
+    date: 2026-07-08
+    project_ref: project_milano
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: Milano task list was refreshed and the immediate focus is pd_pcie GCA result review followed by leaving actionable comments.
+    priority_order:
+      - task_milano_pd_pcie_gca_result_review_comment
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_link0_wrapper_etc_area_analysis
+      - task_milano_arir_precheck
+      - task_milano_gen7_phy_db_synthesis
+    open_follow_up:
+      - Locate the latest pd_pcie GCA report/path.
+      - Confirm where comments should be left.
+      - Split any blocker found in GCA review into an Issue or task status update.
+      - Resume existing Area/ARIR/SDC/link0/pd_pcie synthesis closure after the GCA comment loop is handled.
+    related_task_refs:
+      - task_milano_pd_pcie_gca_result_review_comment
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_arir_precheck
+      - task_milano_gen7_phy_db_synthesis
+    artifact_refs:
+      - artifact_milano_pd_pcie_gca_result_20260708
+      - artifact_milano_pd_pcie_gca_review_comment_20260708
+    source_refs:
+      - source_milano_conversation_20260708_task_cleanup_request
+      - source_milano_conversation_20260708_pd_pcie_gca_review_comment
+
   - id: project_status_milano_20260623_pcie_tlp_axi_split_mps_workaround_review
     date: 2026-06-23
     project_ref: project_milano
