@@ -770,6 +770,19 @@ source_records:
       - task_milano_gen7_phy_db_synthesis
       - task_milano_lint_ip_rev_0_1_rerun
 
+  - id: source_milano_conversation_20260708_firenze_handler_completed
+    source_type: chat
+    original_date: 2026-07-08
+    imported_at: 2026-07-08
+    parse_status: parsed
+    raw_text: "Firenze Handler도 끝."
+    interpreted_completion:
+      completed_task_ref: task_milano_firenze_handler_reflection_check
+      completion_meaning: Firenze handler reflection/review for Milano is complete.
+    related_component_ref: component_milano_pcie
+    related_task_refs:
+      - task_milano_firenze_handler_reflection_check
+
 summary:
   recently_completed:
     - task_milano_3nm_synth_env_setup
@@ -777,6 +790,7 @@ summary:
     - task_milano_arir_precheck
     - task_milano_gen7_phy_db_synthesis
     - task_milano_lint_ip_rev_0_1_rerun
+    - task_milano_firenze_handler_reflection_check
     - task_milano_cross_domain_signal_naming_cleanup
     - task_milano_common_module_replacement
     - task_milano_standard_cell_replacement
@@ -785,7 +799,6 @@ summary:
     - R001 IP Diff reflection for core, link, link wrapper, and ips with gray-area cross-check
     - Late-night audit of possible Brian-owned follow-ups that may have been missed, including common module-related items
     - Initial DB release completed on 2026-06-17; artifact path/version is not yet recorded
-    - Firenze handler reflection check in Milano
     - Port 1 interrupt requirement deferred to the 2026-07-16 to 2026-08-16 window
     - MSE-linked PF BAR0 address overlap prevention with Firenze failure-mode regression
     - PCIe DOE DCG and REG TOP AXI Bridge DCG ownership for Milano power optimization after high Firenze power
@@ -807,6 +820,7 @@ summary:
     - A no-UIO variant is being prepared to remove a feature that may not be used before it adds integration, synthesis, or area burden.
     - On 2026-07-08, pd_pcie GCA result review/comment writing and pd_pcie LDRC review became the immediate Milano follow-up tasks.
     - On 2026-07-08, SDC clean-up, Area/Instance Count, GEN7 PHY DB synthesis, and IP rev 0.1 lint re-check were marked complete.
+    - On 2026-07-08, Firenze handler reflection/review was marked complete.
   current_focus:
     date: 2026-07-08
     target_window:
@@ -823,7 +837,6 @@ summary:
       - task_milano_pd_pcie_ldrc_result_review
       - task_milano_link0_wrapper_etc_area_analysis
     supporting_tasks:
-      - task_milano_firenze_handler_reflection_check
       - task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
       - task_milano_audit_missed_brian_owned_followups_common_module_etc
       - task_milano_uio_free_variant_prepare
@@ -839,6 +852,7 @@ summary:
       - source_milano_conversation_20260708_pd_pcie_gca_review_comment
       - source_milano_conversation_20260708_pd_pcie_ldrc_review
       - source_milano_conversation_20260708_sdc_arir_gen7_lint_completed
+      - source_milano_conversation_20260708_firenze_handler_completed
       - source_milano_conversation_20260622_june_focus_area_sdc_link0_pd_pcie_synth
       - source_milano_conversation_20260622_link0_wrapper_ide_resynth_etc_area
       - source_milano_conversation_20260623_synthesis_ok_ide_lint_critical
@@ -898,10 +912,6 @@ summary:
     - id: oq_milano_sync_5v_term
       question: "'싱크 5V'가 정확한 모듈명인지, 음성 전사 오류인지 확인 필요."
       related_task_ref: task_milano_common_module_replacement
-      needs_user_review: true
-    - id: oq_milano_firenze_handler_scope
-      question: "Firenze에 적용한 handler가 msg handler, security handler, event handler 중 어느 범위인지 확인 필요. 우선 handler 변경 전체를 후보 범위로 둔다."
-      related_task_ref: task_milano_firenze_handler_reflection_check
       needs_user_review: true
     - id: oq_milano_port1_interrupt_requirement_destination
       question: "Port 1 interrupt requirement를 어느 spec 문서/요구사항 표에 반영할지 확인 필요."
@@ -1196,7 +1206,7 @@ tasks:
   - id: task_milano_firenze_handler_reflection_check
     title: Firenze에 적용한 handler 변경점이 Milano에 모두 반영되었는지 확인
     area: CAREER
-    status: in_progress
+    status: completed
     priority: high
     energy: deep_work
     estimated_minutes: null
@@ -1206,7 +1216,8 @@ tasks:
     component_ref: component_milano_pcie
     related_project_refs:
       - project_firenze
-    progress_percent: 70
+    progress_percent: 100
+    completed_on: 2026-07-08
     tags:
       - milano
       - firenze
@@ -1218,6 +1229,7 @@ tasks:
       - Firenze has prior handler-related implementation work.
       - Milano needs a parity check so relevant Firenze handler changes are not missed before lint and DB synthesis.
       - On 2026-06-19, Handler + SFR exhaustive survey reached first-pass completion.
+      - On 2026-07-08, Brian marked the Firenze handler review complete.
     scope:
       - Identify handler changes applied in Firenze.
       - Decide which Firenze handler changes are applicable to Milano.
@@ -1230,21 +1242,15 @@ tasks:
       - missing or not_applicable handler change list
       - Handler + SFR first-pass audit checklist
       - issue list for missing critical changes
-    next_actions:
-      - Collect Firenze handler-related CLs, notes, or source file changes.
-      - Compare Firenze handler implementation against Milano RTL/config/register integration.
-      - Mark each handler delta as reflected, missing, or not_applicable.
-      - ECO11은 반영 완료 상태로 분류하고, ECO18은 parity 정책 미확정으로 미반영 상태를 유지하면서 추적.
-      - MF Handler DCG 누락 옵션은 수정 반영 완료로 기록.
-      - L0p Handler와 Event Handler 담당 조사자(변승현 TL님, 김성현 TL님) 결과를 기준으로 후속 반영을 정리.
-      - Review the first-pass Handler + SFR checklist and split remaining gaps into issues if concrete evidence exists.
-      - Capture Confluence/artifact refs for the first-pass audit result.
-      - Create Issue objects for missing Milano changes when concrete evidence exists.
+    outcome: Firenze handler reflection/review for Milano is complete.
+    remaining_metadata:
+      - Record Confluence/artifact refs later if needed for audit or handoff.
     evidence_refs:
       - source_milano_conversation_20260614_firenze_handler_reflection
       - source_milano_conversation_20260618_gen7_phy_top_sim_pass_handler_review
       - source_milano_conversation_20260618_handler_eco_audit
       - source_milano_conversation_20260619_synth_terminal_restart_handler_sfr_first_pass
+      - source_milano_conversation_20260708_firenze_handler_completed
     confidence: high
     needs_user_review: false
 
@@ -2320,7 +2326,6 @@ recommended_execution_order:
   - task_milano_audit_missed_brian_owned_followups_common_module_etc
   - task_milano_uio_free_variant_prepare
   - task_milano_disparity_error_injection_debug_followup
-  - task_milano_firenze_handler_reflection_check
   - task_milano_pcie_db_delivery_to_be_team
   - task_milano_pcie_multi_pf_separated_bar0_size_mux
   - task_milano_nvme_vip_setup_pcie_ib_ob_only
@@ -2771,6 +2776,17 @@ task_status_updates:
       - Final report/artifact paths can be recorded later if needed for audit or handoff.
       - New findings from GCA/LDRC should be tracked as separate follow-up issues rather than reopening these completed tasks.
     source_ref: source_milano_conversation_20260708_sdc_arir_gen7_lint_completed
+
+  - id: status_task_milano_firenze_handler_20260708_completed
+    date: 2026-07-08
+    task_ref: task_milano_firenze_handler_reflection_check
+    author_ref: person_brian
+    status: completed
+    progress_percent: 100
+    summary: Brian marked the Firenze handler reflection/review task complete.
+    remaining_metadata:
+      - Confluence/checklist/artifact references can be recorded later if needed.
+    source_ref: source_milano_conversation_20260708_firenze_handler_completed
 
   - id: status_task_milano_sdc_20260622_link0_wrapper_ide_resynth
     date: 2026-06-22
@@ -4312,7 +4328,7 @@ project_status_updates:
     author_ref: person_brian
     status: active
     progress_percent: null
-    summary: Milano task list was refreshed. SDC Clean-Up, Area/Instance Count, GEN7 PHY DB synthesis, and IP rev 0.1 lint re-check are complete; the immediate remaining focus is pd_pcie GCA/LDRC review followed by actionable comments or follow-ups.
+    summary: Milano task list was refreshed. SDC Clean-Up, Area/Instance Count, GEN7 PHY DB synthesis, IP rev 0.1 lint re-check, and Firenze handler review are complete; the immediate remaining focus is pd_pcie GCA/LDRC review followed by actionable comments or follow-ups.
     priority_order:
       - task_milano_pd_pcie_gca_result_review_comment
       - task_milano_pd_pcie_ldrc_result_review
@@ -4333,6 +4349,7 @@ project_status_updates:
       - task_milano_arir_precheck
       - task_milano_gen7_phy_db_synthesis
       - task_milano_lint_ip_rev_0_1_rerun
+      - task_milano_firenze_handler_reflection_check
     artifact_refs:
       - artifact_milano_pd_pcie_gca_result_20260708
       - artifact_milano_pd_pcie_gca_review_comment_20260708
@@ -4343,6 +4360,7 @@ project_status_updates:
       - source_milano_conversation_20260708_pd_pcie_gca_review_comment
       - source_milano_conversation_20260708_pd_pcie_ldrc_review
       - source_milano_conversation_20260708_sdc_arir_gen7_lint_completed
+      - source_milano_conversation_20260708_firenze_handler_completed
 
   - id: project_status_milano_20260623_pcie_tlp_axi_split_mps_workaround_review
     date: 2026-06-23
