@@ -5,7 +5,7 @@ area: CAREER
 project_ref: project_milano
 component_ref: component_milano_pcie
 title: Milano active task list
-current_phase: 2026-07-08 현재 Milano는 pd_pcie GCA/LDRC 결과 리뷰 후 필요한 comment를 남기는 것을 최우선 단기 실행 항목으로 두고, 기존 Area/ARIR, SDC, link0 wrapper, pd_pcie synthesis closure 흐름을 이어간다. IDE Lint Critical은 다 잡혔고, link0/pd_pcie synthesis rerun 결과와 report path, ETC area bucket breakdown, PCIe TLP bus downsizing/MPS workaround follow-up은 계속 추적한다.
+current_phase: 2026-07-08 현재 Milano는 SDC Clean-Up, Area/Instance Count, GEN7 PHY DB synthesis, IP rev 0.1 lint re-check가 완료된 상태다. 남은 단기 우선순위는 pd_pcie GCA/LDRC 결과 리뷰 후 필요한 comment/follow-up을 남기는 것이며, link0 ETC area/report follow-up과 남은 RTL/requirement/delivery 항목은 별도 queue로 추적한다.
 source_records:
   - id: source_milano_conversation_20260614_current_tasks
     source_type: chat
@@ -745,22 +745,47 @@ source_records:
     related_task_refs:
       - task_milano_pd_pcie_ldrc_result_review
 
+  - id: source_milano_conversation_20260708_sdc_arir_gen7_lint_completed
+    source_type: chat
+    original_date: 2026-07-08
+    imported_at: 2026-07-08
+    parse_status: parsed
+    raw_text: "SDC Clean-Up, Aread Instance Count는 끝. 6도 끝. 7도 끝."
+    normalized_text: "SDC Clean-Up, Area Instance Count, previous list item 6, and previous list item 7 are complete."
+    interpreted_completion:
+      completed_task_refs:
+        - task_milano_sdc_dual_profile_synth_rerun
+        - task_milano_arir_precheck
+        - task_milano_gen7_phy_db_synthesis
+        - task_milano_lint_ip_rev_0_1_rerun
+      list_reference_basis:
+        item_6_ref: task_milano_gen7_phy_db_synthesis
+        item_7_ref: task_milano_lint_ip_rev_0_1_rerun
+        basis: Previous assistant item list numbered 6 as GEN7 PHY DB synthesis and 7 as IP rev 0.1 lint re-check.
+      note: "Aread Instance Count is interpreted as Area Instance Count / ARIR area and instance count pre-check."
+    related_component_ref: component_milano_pcie
+    related_task_refs:
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_arir_precheck
+      - task_milano_gen7_phy_db_synthesis
+      - task_milano_lint_ip_rev_0_1_rerun
+
 summary:
   recently_completed:
     - task_milano_3nm_synth_env_setup
+    - task_milano_sdc_dual_profile_synth_rerun
+    - task_milano_arir_precheck
+    - task_milano_gen7_phy_db_synthesis
+    - task_milano_lint_ip_rev_0_1_rerun
     - task_milano_cross_domain_signal_naming_cleanup
     - task_milano_common_module_replacement
     - task_milano_standard_cell_replacement
     - task_milano_release_readiness_compile_lint_sim_20260617
   active_threads:
-    - 3nm synthesis rerun using two SDC profiles
-    - ARIR area and instance count pre-check from synthesis results
-    - lint re-check after new IP revision 0.1 integration
     - R001 IP Diff reflection for core, link, link wrapper, and ips with gray-area cross-check
     - Late-night audit of possible Brian-owned follow-ups that may have been missed, including common module-related items
     - Initial DB release completed on 2026-06-17; artifact path/version is not yet recorded
     - Firenze handler reflection check in Milano
-    - final GEN7 PHY DB synthesis integration
     - Port 1 interrupt requirement deferred to the 2026-07-16 to 2026-08-16 window
     - MSE-linked PF BAR0 address overlap prevention with Firenze failure-mode regression
     - PCIe DOE DCG and REG TOP AXI Bridge DCG ownership for Milano power optimization after high Firenze power
@@ -781,6 +806,7 @@ summary:
     - During simulation, PCIe TLP is being split into two AXI transactions due to suspected unnecessary bus unsizing/downsizing; Brian chose temporary MPS limiting while waiting for the bus fix.
     - A no-UIO variant is being prepared to remove a feature that may not be used before it adds integration, synthesis, or area burden.
     - On 2026-07-08, pd_pcie GCA result review/comment writing and pd_pcie LDRC review became the immediate Milano follow-up tasks.
+    - On 2026-07-08, SDC clean-up, Area/Instance Count, GEN7 PHY DB synthesis, and IP rev 0.1 lint re-check were marked complete.
   current_focus:
     date: 2026-07-08
     target_window:
@@ -790,22 +816,16 @@ summary:
     focus_scope:
       - pd_pcie GCA result review and comment closure
       - pd_pcie LDRC result review and comment/follow-up capture
-      - Area / ARIR / ETC area breakdown
-      - SDC cleanup and synthesis constraints
       - link0 wrapper synthesis and report review
-      - pd_pcie synthesis
+      - remaining synthesis/report follow-up only where it affects open review items
     primary_tasks:
       - task_milano_pd_pcie_gca_result_review_comment
       - task_milano_pd_pcie_ldrc_result_review
-      - task_milano_sdc_dual_profile_synth_rerun
       - task_milano_link0_wrapper_etc_area_analysis
-      - task_milano_arir_precheck
-      - task_milano_gen7_phy_db_synthesis
     supporting_tasks:
       - task_milano_firenze_handler_reflection_check
       - task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
       - task_milano_audit_missed_brian_owned_followups_common_module_etc
-      - task_milano_lint_ip_rev_0_1_rerun
       - task_milano_uio_free_variant_prepare
     blocking_issues:
       - issue_milano_pcie_tlp_axi_split_bus_downsizing_20260623
@@ -818,6 +838,7 @@ summary:
       - source_milano_conversation_20260708_task_cleanup_request
       - source_milano_conversation_20260708_pd_pcie_gca_review_comment
       - source_milano_conversation_20260708_pd_pcie_ldrc_review
+      - source_milano_conversation_20260708_sdc_arir_gen7_lint_completed
       - source_milano_conversation_20260622_june_focus_area_sdc_link0_pd_pcie_synth
       - source_milano_conversation_20260622_link0_wrapper_ide_resynth_etc_area
       - source_milano_conversation_20260623_synthesis_ok_ide_lint_critical
@@ -846,10 +867,7 @@ summary:
     primary_tasks:
       - task_milano_pd_pcie_gca_result_review_comment
       - task_milano_pd_pcie_ldrc_result_review
-      - task_milano_sdc_dual_profile_synth_rerun
       - task_milano_link0_wrapper_etc_area_analysis
-      - task_milano_arir_precheck
-      - task_milano_gen7_phy_db_synthesis
     checklist:
       - Locate latest pd_pcie GCA result/report and confirm review target
       - Review GCA findings by severity/actionability
@@ -857,15 +875,13 @@ summary:
       - Locate latest pd_pcie LDRC result/report and confirm review target
       - Review LDRC findings by severity/actionability
       - Capture LDRC comments or follow-up issues with owner/action/closure condition
-      - Area / ARIR / ETC area breakdown
-      - SDC clean-up repeat pass
-      - link0 wrapper IDE-inclusive synthesis/report review
-      - pd_pcie synthesis review
-      - filelist and visible timing-related issue review only as needed for those synthesis paths
+      - link0 wrapper ETC area/report review if still needed
+      - filelist and visible timing-related issue review only if it directly blocks open review items
     source_refs:
       - source_milano_conversation_20260708_task_cleanup_request
       - source_milano_conversation_20260708_pd_pcie_gca_review_comment
       - source_milano_conversation_20260708_pd_pcie_ldrc_review
+      - source_milano_conversation_20260708_sdc_arir_gen7_lint_completed
       - source_milano_conversation_20260622_june_focus_area_sdc_link0_pd_pcie_synth
       - source_milano_conversation_20260619_next_monday_sdc_phy_link0_filelist_timing_plan
       - source_milano_conversation_20260623_ide_lint_nearly_fixed_synthesis_rerun_link0_pd_pcie
@@ -879,10 +895,6 @@ summary:
       question: "pd_pcie LDRC 결과 report/path와 comment 또는 follow-up을 남길 채널 위치 확인 필요."
       related_task_ref: task_milano_pd_pcie_ldrc_result_review
       needs_user_review: true
-    - id: oq_milano_gen7_phy_term
-      question: "'제7파이'를 GEN7 PHY로 해석하는 것이 맞는지 확인 필요."
-      related_task_ref: task_milano_gen7_phy_db_synthesis
-      needs_user_review: true
     - id: oq_milano_sync_5v_term
       question: "'싱크 5V'가 정확한 모듈명인지, 음성 전사 오류인지 확인 필요."
       related_task_ref: task_milano_common_module_replacement
@@ -894,10 +906,6 @@ summary:
     - id: oq_milano_port1_interrupt_requirement_destination
       question: "Port 1 interrupt requirement를 어느 spec 문서/요구사항 표에 반영할지 확인 필요."
       related_task_ref: task_milano_port1_interrupt_requirement
-      needs_user_review: true
-    - id: oq_milano_pdci_pdbci_name
-      question: "PDCI와 기존 기록의 PDBCI가 같은 SDC profile을 의미하는지 확인 필요."
-      related_task_ref: task_milano_sdc_dual_profile_synth_rerun
       needs_user_review: true
     - id: oq_milano_uio_feature_scope
       question: "UIO가 정확히 어떤 feature/interface/hierarchy를 의미하는지, Milano에서 최종적으로 미사용 확정 가능한지 확인 필요."
@@ -939,7 +947,7 @@ tasks:
   - id: task_milano_sdc_dual_profile_synth_rerun
     title: 링크형 레퍼용/PDBCI용 SDC clean-up 및 3nm 합성 재시도
     area: CAREER
-    status: in_progress
+    status: completed
     priority: high
     energy: deep_work
     estimated_minutes: null
@@ -947,7 +955,8 @@ tasks:
     tracking_level: detailed
     project_ref: project_milano
     component_ref: component_milano_pcie
-    progress_percent: 86
+    progress_percent: 100
+    completed_on: 2026-07-08
     tags:
       - milano
       - synthesis
@@ -982,6 +991,7 @@ tasks:
       - Brian applied an IDE Lint fix and started running the lint tool; synthesis should be rerun after lint confirms the fix or remaining blockers are resolved.
       - Later on 2026-06-23, IDE Lint was almost fixed and synthesis was restarted for link0 and pd_pcie.
       - IDE Lint Critical violations are now fixed; link0/pd_pcie synthesis rerun report paths and area/timing results remain pending.
+      - On 2026-07-08, Brian marked SDC Clean-Up complete.
     tooling_notes:
       - Cursor was useful for SDC porting, but needed examples and iteration.
       - Python scripting helped stabilize or automate parts of the SDC porting flow.
@@ -990,32 +1000,9 @@ tasks:
       - SDC profile comparison result
       - synthesis rerun result
       - synthesis log/report artifacts
-    next_actions:
-      - Validate whether the PD PCIe SDC error cleanup is reflected in the next synthesis or lint output.
-      - Track link0 wrapper synthesis to completion and capture the actual WNS/TNS/report path when available.
-      - Wait for synthesis run completion.
-      - Collect synthesis logs and reports.
-      - Compare failures, warnings, and timing/synthesis report deltas.
-      - Review whether the ported GEN7 PHY SDC works after synthesis completes.
-      - Clean up SDC warnings, mismatches, portability issues, and profile differences before trusting final synthesis.
-      - Continue checking whether the PD PCIe SDC cleanup fully resolves downstream synthesis or lint symptoms.
-      - Capture effective few-shot examples and Python script usage as repeatable porting guidance if results are good.
-      - Decide which SDC profile should be the working baseline or whether both must remain.
-      - Use SDC clean-up as the next primary Milano workstream after the initial DB release and rest.
-      - Capture the restarted synthesis log/report path and restart time if the run becomes important evidence.
-      - If the synthesis terminal/session ends again, record it as a repeatability or environment issue.
-      - On 2026-06-22, run one more SDC clean-up pass and inspect PHY GEN7 SDC and link0 wrapper before trusting the synthesis/timing path.
-      - Let the IDE-inclusive link0 wrapper rerun finish before closing the link0 wrapper synthesis path.
-      - Fix the IDE Lint Critical issue before treating the IDE-inclusive synthesis path as closure evidence.
-      - Rerun the affected lint/synthesis flow after the IDE Lint Critical fix.
-      - Wait for the current lint tool rerun result.
-      - If lint is clean or the Critical is fixed, rerun the affected synthesis flow before area/timing closure.
-      - Monitor the restarted link0 and pd_pcie synthesis runs.
-      - Capture link0/pd_pcie synthesis report and log paths once the reruns finish.
-      - Capture the IDE Lint report/result path showing Critical closure.
-      - Compare IDE-missing versus IDE-inclusive area/timing deltas, especially the ETC area bucket.
-      - Use the IDE-inclusive result as the baseline for ARIR and downstream GEN7 PHY DB synthesis confidence.
-      - Keep adjacent tasks such as NVMe VIP setup, MSE/PF BAR0, DCG power optimization, and Port 1 requirement out of the main June path unless they directly block area/SDC/link0/pd_pcie synthesis.
+    remaining_metadata:
+      - Record final SDC/synthesis report paths later if they are needed for audit or handoff.
+      - Keep any residual report-specific issue under link0 ETC/GCA/LDRC review tasks rather than reopening the SDC cleanup task.
     depends_on:
       - task_milano_3nm_synth_env_setup
     evidence_refs:
@@ -1041,7 +1028,7 @@ tasks:
   - id: task_milano_arir_precheck
     title: 합성 재시도 결과로 ARIR area/instance count 사전 확인
     area: CAREER
-    status: in_progress
+    status: completed
     priority: high
     energy: deep_work
     estimated_minutes: null
@@ -1049,7 +1036,8 @@ tasks:
     tracking_level: detailed
     project_ref: project_milano
     component_ref: component_milano_pcie
-    progress_percent: 20
+    progress_percent: 100
+    completed_on: 2026-07-08
     tags:
       - milano
       - synthesis
@@ -1063,15 +1051,10 @@ tasks:
       - ETC area bucket breakdown for link0 wrapper synthesis
       - IDE-missing versus IDE-inclusive area/timing delta summary
       - risk list before final DB synthesis
-    next_actions:
-      - Wait for the IDE-inclusive link0 wrapper synthesis rerun to complete.
-      - Collect area results from the synthesis rerun.
-      - Collect instance count results from the synthesis rerun.
-      - Break down the ETC area bucket and identify whether it is real IDE logic, wrapper miscellaneous logic, unmapped hierarchy, library/cell grouping, or report categorization noise.
-      - Compare the completed IDE-missing run against the IDE-inclusive rerun so the expected IDE area delta is not mistaken for an unexplained ETC increase.
-      - Compare area and instance count against expected baseline or prior run if available.
-      - Identify early blockers before final DB synthesis.
-      - Convert any blocker into Issue objects when concrete failure evidence exists.
+    outcome: Area and instance count pre-check is complete.
+    remaining_metadata:
+      - Record final area/instance report path later if needed.
+      - Keep link0-specific ETC bucket questions under task_milano_link0_wrapper_etc_area_analysis if still open.
     depends_on:
       - task_milano_sdc_dual_profile_synth_rerun
       - task_milano_link0_wrapper_etc_area_analysis
@@ -1160,7 +1143,7 @@ tasks:
   - id: task_milano_lint_ip_rev_0_1_rerun
     title: 신규 IP revision 0.1 반영 후 lint 재확인
     area: CAREER
-    status: in_progress
+    status: completed
     priority: high
     energy: deep_work
     estimated_minutes: null
@@ -1168,7 +1151,8 @@ tasks:
     tracking_level: detailed
     project_ref: project_milano
     component_ref: component_milano_pcie
-    progress_percent: 95
+    progress_percent: 100
+    completed_on: 2026-07-08
     tags:
       - milano
       - lint
@@ -1187,27 +1171,14 @@ tasks:
       - Brian applied a fix for the IDE Lint issue and is running the lint tool again; result is pending.
       - IDE Lint is now almost fixed; link0 and pd_pcie synthesis reruns have started before final lint closure is recorded, so lint closure remains near-fixed but pending confirmation.
       - IDE Lint Critical violations are now fixed; report/result path and any residual non-critical items are not yet recorded.
+      - On 2026-07-08, Brian marked item 7 from the previous list, the IP rev 0.1 lint re-check, complete.
     expected_outputs:
       - lint rerun report after IP rev 0.1
       - new violations list
       - waived or fixed issue list
-    next_actions:
-      - Let the current lint run finish.
-      - Review lint result on 2026-06-17 before release.
-      - Complete Brian's final lint confirmation after 박길봉 TL님의 completion report.
-      - Check whether R001 IP Diff reflection and gray-area cross-check affect the final lint confirmation.
-      - Check whether the Brian-owned missed-followup audit exposes any common module or integration item that affects lint closure.
-      - Capture lint report path, result summary, and remaining violation or waiver status.
-      - If clean, mark the lint task completed.
-      - If residual issues remain, classify them into fix, waive, or owner handoff.
-      - Fix the IDE Lint Critical issue.
-      - Rerun IDE Lint after the fix and capture the result summary.
-      - Rerun the affected synthesis path if the fix changes RTL, filelist, constraints, or IDE integration scope.
-      - Wait for the current lint tool rerun result.
-      - If clean, record the lint result and move to affected synthesis rerun.
-      - If residual lint issues remain, classify and fix before synthesis rerun.
-      - Capture the IDE Lint report/result path showing Critical closure.
-      - Classify any remaining non-critical lint items as fix, waive, defer, or owner handoff.
+    remaining_metadata:
+      - Record lint report/result path later if it is needed for audit or handoff.
+      - Track any new lint-related finding from GCA/LDRC review as a separate follow-up issue rather than reopening this task.
     evidence_refs:
       - source_milano_conversation_20260614_current_tasks
       - source_milano_conversation_20260616_today_focus_sdc_interrupt_handler_lint
@@ -1448,7 +1419,7 @@ tasks:
   - id: task_milano_gen7_phy_db_synthesis
     title: GEN7 PHY를 함께 DB로 최종 합성
     area: CAREER
-    status: in_progress
+    status: completed
     priority: high
     energy: deep_work
     estimated_minutes: null
@@ -1456,7 +1427,8 @@ tasks:
     tracking_level: milestone
     project_ref: project_milano
     component_ref: component_milano_pcie
-    progress_percent: 68
+    progress_percent: 100
+    completed_on: 2026-07-08
     tags:
       - milano
       - gen7
@@ -1476,17 +1448,11 @@ tasks:
       - Brian planned a 2026-06-22 follow-up to re-check PHY GEN7 SDC, link0 wrapper, filelist, and timing-visible issues.
       - On 2026-06-23, pd_pcie synthesis was restarted alongside link0 after IDE Lint was almost fixed.
       - For the PCIe TLP-to-AXI split caused by suspected bus downsizing, Brian chose temporary MPS limiting while waiting for the bus fix.
-    next_actions:
-      - Confirm whether "제7파이" means GEN7 PHY.
-      - Record the initial DB release artifact path/version when available.
-      - Confirm whether the initial DB release includes the intended GEN7 PHY scope or whether a later final DB synthesis remains.
-      - Review synthesis reports after the run completes.
-      - Record failures as Issue objects with logs/artifacts.
-      - Keep handler reflection evidence in one checklist before closing synthesis confidence.
-      - Confirm the restarted synthesis run is still connected to the intended GEN7 PHY DB synthesis scope.
-      - On 2026-06-22, re-check the PHY GEN7 SDC and filelist, then inspect any visible timing-related issue before closure.
-      - Capture the latest pd_pcie synthesis rerun report/log path and connect it to final GEN7 PHY DB synthesis confidence.
-      - Record the exact MPS value if the workaround is used, and rerun without the workaround after the bus fix.
+      - On 2026-07-08, Brian marked item 6 from the previous list, GEN7 PHY DB synthesis, complete.
+    remaining_metadata:
+      - Record final DB synthesis artifact/report path later if it is needed for audit, BE handoff, or review.
+      - Keep BE delivery under task_milano_pcie_db_delivery_to_be_team.
+      - Keep any bus-fix/MPS validation issue under the existing PCIe TLP split issue if it resurfaces.
     depends_on:
       - task_milano_sdc_dual_profile_synth_rerun
       - task_milano_arir_precheck
@@ -1505,8 +1471,8 @@ tasks:
       - source_milano_conversation_20260619_next_monday_sdc_phy_link0_filelist_timing_plan
       - source_milano_conversation_20260623_ide_lint_nearly_fixed_synthesis_rerun_link0_pd_pcie
       - source_milano_conversation_20260623_bus_downsizing_mps_limit_wait_bus_fix
-    confidence: medium
-    needs_user_review: true
+    confidence: high
+    needs_user_review: false
 
   - id: task_milano_common_module_replacement
     title: PCI 내부용 common module을 ASIC common module로 교체
@@ -2349,20 +2315,19 @@ tasks:
 recommended_execution_order:
   - task_milano_pd_pcie_gca_result_review_comment
   - task_milano_pd_pcie_ldrc_result_review
-  - task_milano_sdc_dual_profile_synth_rerun
   - task_milano_link0_wrapper_etc_area_analysis
-  - task_milano_arir_precheck
-  - task_milano_gen7_phy_db_synthesis
   - task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
   - task_milano_audit_missed_brian_owned_followups_common_module_etc
-  - task_milano_lint_ip_rev_0_1_rerun
   - task_milano_uio_free_variant_prepare
-  - task_milano_release_readiness_compile_lint_sim_20260617
   - task_milano_disparity_error_injection_debug_followup
   - task_milano_firenze_handler_reflection_check
+  - task_milano_pcie_db_delivery_to_be_team
+  - task_milano_pcie_multi_pf_separated_bar0_size_mux
   - task_milano_nvme_vip_setup_pcie_ib_ob_only
   - task_milano_mse_pf_bar0_overlap_guard
+  - task_milano_doe_configuration_request_completion_policy
   - task_milano_pcie_doe_reg_top_axi_bridge_dcg_power_optimization
+  - task_milano_pcie_doe_reg_top_axi_bridge_pptx
   - task_milano_port1_interrupt_requirement
 
 planned_time_blocks:
@@ -2790,6 +2755,22 @@ task_status_updates:
       - artifact_milano_pd_pcie_ldrc_review_comment_20260708
     source_refs:
       - source_milano_conversation_20260708_pd_pcie_ldrc_review
+
+  - id: status_task_milano_sdc_arir_gen7_lint_20260708_completed
+    date: 2026-07-08
+    author_ref: person_brian
+    status: completed
+    progress_percent: 100
+    summary: Brian marked SDC Clean-Up, Area/Instance Count, previous list item 6, and previous list item 7 complete. Based on the previous item list, item 6 is GEN7 PHY DB synthesis and item 7 is IP rev 0.1 lint re-check.
+    completed_task_refs:
+      - task_milano_sdc_dual_profile_synth_rerun
+      - task_milano_arir_precheck
+      - task_milano_gen7_phy_db_synthesis
+      - task_milano_lint_ip_rev_0_1_rerun
+    remaining_metadata:
+      - Final report/artifact paths can be recorded later if needed for audit or handoff.
+      - New findings from GCA/LDRC should be tracked as separate follow-up issues rather than reopening these completed tasks.
+    source_ref: source_milano_conversation_20260708_sdc_arir_gen7_lint_completed
 
   - id: status_task_milano_sdc_20260622_link0_wrapper_ide_resynth
     date: 2026-06-22
@@ -4331,26 +4312,27 @@ project_status_updates:
     author_ref: person_brian
     status: active
     progress_percent: null
-    summary: Milano task list was refreshed and the immediate focus is pd_pcie GCA/LDRC result review followed by leaving actionable comments or follow-ups.
+    summary: Milano task list was refreshed. SDC Clean-Up, Area/Instance Count, GEN7 PHY DB synthesis, and IP rev 0.1 lint re-check are complete; the immediate remaining focus is pd_pcie GCA/LDRC review followed by actionable comments or follow-ups.
     priority_order:
       - task_milano_pd_pcie_gca_result_review_comment
       - task_milano_pd_pcie_ldrc_result_review
-      - task_milano_sdc_dual_profile_synth_rerun
       - task_milano_link0_wrapper_etc_area_analysis
-      - task_milano_arir_precheck
-      - task_milano_gen7_phy_db_synthesis
+      - task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
+      - task_milano_audit_missed_brian_owned_followups_common_module_etc
     open_follow_up:
       - Locate the latest pd_pcie GCA report/path.
       - Locate the latest pd_pcie LDRC report/path.
       - Confirm where comments should be left.
       - Split any blocker found in GCA or LDRC review into an Issue or task status update.
-      - Resume existing Area/ARIR/SDC/link0/pd_pcie synthesis closure after the GCA/LDRC review loop is handled.
+      - Review link0 ETC area/report details only if still needed after GCA/LDRC.
+      - Record final report/artifact paths for completed SDC/Area-Instance/GEN7/lint tasks later if needed.
     related_task_refs:
       - task_milano_pd_pcie_gca_result_review_comment
       - task_milano_pd_pcie_ldrc_result_review
       - task_milano_sdc_dual_profile_synth_rerun
       - task_milano_arir_precheck
       - task_milano_gen7_phy_db_synthesis
+      - task_milano_lint_ip_rev_0_1_rerun
     artifact_refs:
       - artifact_milano_pd_pcie_gca_result_20260708
       - artifact_milano_pd_pcie_gca_review_comment_20260708
@@ -4360,6 +4342,7 @@ project_status_updates:
       - source_milano_conversation_20260708_task_cleanup_request
       - source_milano_conversation_20260708_pd_pcie_gca_review_comment
       - source_milano_conversation_20260708_pd_pcie_ldrc_review
+      - source_milano_conversation_20260708_sdc_arir_gen7_lint_completed
 
   - id: project_status_milano_20260623_pcie_tlp_axi_split_mps_workaround_review
     date: 2026-06-23
