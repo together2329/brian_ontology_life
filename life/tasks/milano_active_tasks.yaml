@@ -5,7 +5,7 @@ area: CAREER
 project_ref: project_milano
 component_ref: component_milano_pcie
 title: Milano active task list
-current_phase: 2026-07-08 현재 Milano는 SDC Clean-Up, Area/Instance Count, GEN7 PHY DB synthesis, IP rev 0.1 lint re-check가 완료된 상태다. 남은 단기 우선순위는 pd_pcie GCA/LDRC 결과 리뷰 후 필요한 comment/follow-up을 남기는 것이며, link0 ETC area/report follow-up과 남은 RTL/requirement/delivery 항목은 별도 queue로 추적한다.
+current_phase: 2026-07-08 현재 Milano는 SDC Clean-Up, Area/Instance Count, GEN7 PHY DB synthesis, IP rev 0.1 lint re-check가 완료된 상태다. 남은 단기 우선순위는 pd_pcie GCA/LDRC 결과 리뷰 후 필요한 comment/follow-up을 남기고, IDE bypass module 및 Static Clock Gating RTL 작업을 진행하는 것이다. link0 ETC area/report follow-up과 남은 RTL/requirement/delivery 항목은 별도 queue로 추적한다.
 source_records:
   - id: source_milano_conversation_20260614_current_tasks
     source_type: chat
@@ -783,6 +783,26 @@ source_records:
     related_task_refs:
       - task_milano_firenze_handler_reflection_check
 
+  - id: source_milano_conversation_20260708_ide_bypass_static_clock_gating
+    source_type: chat
+    original_date: 2026-07-08
+    imported_at: 2026-07-08
+    parse_status: parsed
+    raw_text: "IDE 우회 모듈 만들기 Static Clock Gating"
+    normalized_text: "IDE bypass module 만들기 + Static Clock Gating"
+    interpreted_task:
+      task_ref: task_milano_ide_bypass_module_static_clock_gating
+      action: Create or implement an IDE bypass module and apply/review Static Clock Gating behavior.
+      artifact_refs:
+        - artifact_milano_ide_bypass_module_static_clock_gating_20260708
+        - artifact_milano_ide_bypass_static_clock_gating_review_20260708
+      assumptions:
+        - IDE is treated as the existing Milano PCIe IDE block/scope unless Brian later narrows it.
+        - Static Clock Gating is treated as RTL/design work requiring functional, lint, timing, and power-safety review.
+    related_component_ref: component_milano_pcie
+    related_task_refs:
+      - task_milano_ide_bypass_module_static_clock_gating
+
 summary:
   recently_completed:
     - task_milano_3nm_synth_env_setup
@@ -821,6 +841,7 @@ summary:
     - On 2026-07-08, pd_pcie GCA result review/comment writing and pd_pcie LDRC review became the immediate Milano follow-up tasks.
     - On 2026-07-08, SDC clean-up, Area/Instance Count, GEN7 PHY DB synthesis, and IP rev 0.1 lint re-check were marked complete.
     - On 2026-07-08, Firenze handler reflection/review was marked complete.
+    - On 2026-07-08, IDE bypass module creation with Static Clock Gating was added as an active RTL/power-oriented task.
   current_focus:
     date: 2026-07-08
     target_window:
@@ -830,11 +851,13 @@ summary:
     focus_scope:
       - pd_pcie GCA result review and comment closure
       - pd_pcie LDRC result review and comment/follow-up capture
+      - IDE bypass module and Static Clock Gating RTL work
       - link0 wrapper synthesis and report review
       - remaining synthesis/report follow-up only where it affects open review items
     primary_tasks:
       - task_milano_pd_pcie_gca_result_review_comment
       - task_milano_pd_pcie_ldrc_result_review
+      - task_milano_ide_bypass_module_static_clock_gating
       - task_milano_link0_wrapper_etc_area_analysis
     supporting_tasks:
       - task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
@@ -853,6 +876,7 @@ summary:
       - source_milano_conversation_20260708_pd_pcie_ldrc_review
       - source_milano_conversation_20260708_sdc_arir_gen7_lint_completed
       - source_milano_conversation_20260708_firenze_handler_completed
+      - source_milano_conversation_20260708_ide_bypass_static_clock_gating
       - source_milano_conversation_20260622_june_focus_area_sdc_link0_pd_pcie_synth
       - source_milano_conversation_20260622_link0_wrapper_ide_resynth_etc_area
       - source_milano_conversation_20260623_synthesis_ok_ide_lint_critical
@@ -881,6 +905,7 @@ summary:
     primary_tasks:
       - task_milano_pd_pcie_gca_result_review_comment
       - task_milano_pd_pcie_ldrc_result_review
+      - task_milano_ide_bypass_module_static_clock_gating
       - task_milano_link0_wrapper_etc_area_analysis
     checklist:
       - Locate latest pd_pcie GCA result/report and confirm review target
@@ -889,6 +914,8 @@ summary:
       - Locate latest pd_pcie LDRC result/report and confirm review target
       - Review LDRC findings by severity/actionability
       - Capture LDRC comments or follow-up issues with owner/action/closure condition
+      - Define IDE bypass behavior and Static Clock Gating enable/disable conditions
+      - Implement/review IDE bypass module RTL and clock gating safety
       - link0 wrapper ETC area/report review if still needed
       - filelist and visible timing-related issue review only if it directly blocks open review items
     source_refs:
@@ -896,6 +923,7 @@ summary:
       - source_milano_conversation_20260708_pd_pcie_gca_review_comment
       - source_milano_conversation_20260708_pd_pcie_ldrc_review
       - source_milano_conversation_20260708_sdc_arir_gen7_lint_completed
+      - source_milano_conversation_20260708_ide_bypass_static_clock_gating
       - source_milano_conversation_20260622_june_focus_area_sdc_link0_pd_pcie_synth
       - source_milano_conversation_20260619_next_monday_sdc_phy_link0_filelist_timing_plan
       - source_milano_conversation_20260623_ide_lint_nearly_fixed_synthesis_rerun_link0_pd_pcie
@@ -908,6 +936,10 @@ summary:
     - id: oq_milano_pd_pcie_ldrc_artifact_and_comment_channel
       question: "pd_pcie LDRC 결과 report/path와 comment 또는 follow-up을 남길 채널 위치 확인 필요."
       related_task_ref: task_milano_pd_pcie_ldrc_result_review
+      needs_user_review: true
+    - id: oq_milano_ide_bypass_static_clock_gating_scope
+      question: "IDE bypass module의 정확한 bypass 조건, clock gating enable 조건, scan/test mode 처리, 검증 기준 확인 필요."
+      related_task_ref: task_milano_ide_bypass_module_static_clock_gating
       needs_user_review: true
     - id: oq_milano_sync_5v_term
       question: "'싱크 5V'가 정확한 모듈명인지, 음성 전사 오류인지 확인 필요."
@@ -2318,9 +2350,70 @@ tasks:
     confidence: high
     needs_user_review: false
 
+  - id: task_milano_ide_bypass_module_static_clock_gating
+    title: IDE bypass module 만들기 및 Static Clock Gating 적용
+    area: CAREER
+    status: todo
+    priority: high
+    energy: deep_work
+    estimated_minutes: null
+    due_date: null
+    tracking_level: detailed
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    progress_percent: 0
+    owner_ref: person_brian
+    tags:
+      - milano
+      - pcie
+      - ide
+      - bypass
+      - static_clock_gating
+      - rtl
+      - power
+      - lint
+      - timing
+    context:
+      - Brian added a task to create an IDE bypass module and apply or review Static Clock Gating.
+      - Treat this as an RTL/power-oriented follow-up after the major SDC/Area/GEN7/lint closure items were completed.
+      - Exact bypass condition, gated clock enable condition, scan/test handling, and verification target are not yet recorded.
+    expected_outputs:
+      - IDE bypass module RTL or patch.
+      - Static Clock Gating implementation or design review note.
+      - Bypass behavior table and clock gating enable/disable condition summary.
+      - Verification evidence covering normal path, bypass path, reset, scan/test mode, lint, and timing/power risk.
+    acceptance_criteria:
+      - IDE bypass behavior is explicit and does not silently change normal IDE data/control behavior.
+      - Static Clock Gating condition is safe for reset, scan/test mode, low-power state, and functional enable/disable transitions.
+      - The implementation has lint/timing/CDC or equivalent sanity evidence before closure.
+      - Any area/power/timing delta or residual risk is recorded before handoff.
+    blockers:
+      - Exact IDE bypass requirement is not recorded yet.
+      - Static Clock Gating enable/disable condition and scan/test policy are not recorded yet.
+      - Target RTL path/module name and verification owner are not recorded yet.
+    next_actions:
+      - Define bypass mode, normal mode, reset/default behavior, and control signal ownership.
+      - Define Static Clock Gating enable condition and scan/test override behavior.
+      - Locate IDE path RTL and decide whether the bypass module is wrapper-level or internal to the IDE path.
+      - Implement or review the RTL patch.
+      - Run or collect lint/timing/functional sanity evidence and split blockers into Issues if found.
+    related_task_refs:
+      - task_milano_pd_pcie_gca_result_review_comment
+      - task_milano_pd_pcie_ldrc_result_review
+      - task_milano_link0_wrapper_etc_area_analysis
+      - task_milano_pcie_doe_reg_top_axi_bridge_dcg_power_optimization
+    artifact_refs:
+      - artifact_milano_ide_bypass_module_static_clock_gating_20260708
+      - artifact_milano_ide_bypass_static_clock_gating_review_20260708
+    evidence_refs:
+      - source_milano_conversation_20260708_ide_bypass_static_clock_gating
+    confidence: high
+    needs_user_review: false
+
 recommended_execution_order:
   - task_milano_pd_pcie_gca_result_review_comment
   - task_milano_pd_pcie_ldrc_result_review
+  - task_milano_ide_bypass_module_static_clock_gating
   - task_milano_link0_wrapper_etc_area_analysis
   - task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
   - task_milano_audit_missed_brian_owned_followups_common_module_etc
@@ -2384,6 +2477,32 @@ planned_time_blocks:
       - Blocker가 있으면 기존 synthesis/ARIR/DB task 또는 새 issue로 연결
     source_refs:
       - source_milano_conversation_20260708_pd_pcie_ldrc_review
+    confidence: high
+    needs_user_review: false
+
+  - id: timeblock_20260708_milano_ide_bypass_static_clock_gating
+    date: 2026-07-08
+    start: null
+    end: null
+    area: CAREER
+    mode: planned_deep_work
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    items:
+      - type: task
+        ref: task_milano_ide_bypass_module_static_clock_gating
+        title: IDE bypass module 만들기 및 Static Clock Gating 적용
+        planned_minutes: null
+        actual_minutes: null
+        status: planned
+    checklist:
+      - IDE bypass mode / normal mode / reset default 정의
+      - Static Clock Gating enable 조건과 scan/test override 조건 정의
+      - IDE path RTL 위치와 wrapper/internal 적용 위치 결정
+      - RTL patch 작성 또는 review
+      - lint/timing/functional sanity evidence 확인
+    source_refs:
+      - source_milano_conversation_20260708_ide_bypass_static_clock_gating
     confidence: high
     needs_user_review: false
 
@@ -2787,6 +2906,27 @@ task_status_updates:
     remaining_metadata:
       - Confluence/checklist/artifact references can be recorded later if needed.
     source_ref: source_milano_conversation_20260708_firenze_handler_completed
+
+  - id: status_task_milano_ide_bypass_static_clock_gating_20260708_added
+    date: 2026-07-08
+    task_ref: task_milano_ide_bypass_module_static_clock_gating
+    author_ref: person_brian
+    status: todo
+    progress_percent: 0
+    summary: Added an RTL/power follow-up to create an IDE bypass module and apply or review Static Clock Gating.
+    blockers:
+      - Exact IDE bypass requirement is not recorded yet.
+      - Static Clock Gating enable/disable and scan/test policy are not recorded yet.
+      - Target RTL path/module name is not recorded yet.
+    next_step: Define bypass behavior and clock gating conditions first, then implement/review the RTL patch and collect lint/timing/functional sanity evidence.
+    related_task_refs:
+      - task_milano_pd_pcie_gca_result_review_comment
+      - task_milano_pd_pcie_ldrc_result_review
+      - task_milano_link0_wrapper_etc_area_analysis
+    artifact_refs:
+      - artifact_milano_ide_bypass_module_static_clock_gating_20260708
+      - artifact_milano_ide_bypass_static_clock_gating_review_20260708
+    source_ref: source_milano_conversation_20260708_ide_bypass_static_clock_gating
 
   - id: status_task_milano_sdc_20260622_link0_wrapper_ide_resynth
     date: 2026-06-22
@@ -3814,6 +3954,37 @@ artifact_candidates:
     notes: Comment/follow-up output after Brian reviews the pd_pcie LDRC result. Channel or review system location is not recorded yet.
     source_ref: source_milano_conversation_20260708_pd_pcie_ldrc_review
 
+  - id: artifact_milano_ide_bypass_module_static_clock_gating_20260708
+    title: IDE bypass module with Static Clock Gating
+    artifact_type: rtl_patch_or_module
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_ide_bypass_module_static_clock_gating
+    path_or_uri: null
+    created_on: 2026-07-08
+    status: to_be_created_or_linked
+    notes: RTL/module artifact for IDE bypass and Static Clock Gating. Exact path/module name is not recorded yet.
+    source_ref: source_milano_conversation_20260708_ide_bypass_static_clock_gating
+
+  - id: artifact_milano_ide_bypass_static_clock_gating_review_20260708
+    title: IDE bypass Static Clock Gating review notes
+    artifact_type: review_checklist
+    project_ref: project_milano
+    component_ref: component_milano_pcie
+    task_ref: task_milano_ide_bypass_module_static_clock_gating
+    path_or_uri: null
+    created_on: 2026-07-08
+    status: needed
+    review_targets:
+      - bypass behavior
+      - static clock gating condition
+      - reset/default behavior
+      - scan/test override
+      - lint/timing/functional sanity
+      - power/area/timing delta
+    notes: Review checklist needed before the IDE bypass/static clock gating change is closed.
+    source_ref: source_milano_conversation_20260708_ide_bypass_static_clock_gating
+
   - id: artifact_milano_link0_wrapper_synthesis_no_ide_20260622
     title: Link0 wrapper synthesis completed without IDE
     artifact_type: synthesis_run
@@ -4328,10 +4499,11 @@ project_status_updates:
     author_ref: person_brian
     status: active
     progress_percent: null
-    summary: Milano task list was refreshed. SDC Clean-Up, Area/Instance Count, GEN7 PHY DB synthesis, IP rev 0.1 lint re-check, and Firenze handler review are complete; the immediate remaining focus is pd_pcie GCA/LDRC review followed by actionable comments or follow-ups.
+    summary: Milano task list was refreshed. SDC Clean-Up, Area/Instance Count, GEN7 PHY DB synthesis, IP rev 0.1 lint re-check, and Firenze handler review are complete; the immediate remaining focus is pd_pcie GCA/LDRC review, IDE bypass module with Static Clock Gating, and actionable comments or follow-ups.
     priority_order:
       - task_milano_pd_pcie_gca_result_review_comment
       - task_milano_pd_pcie_ldrc_result_review
+      - task_milano_ide_bypass_module_static_clock_gating
       - task_milano_link0_wrapper_etc_area_analysis
       - task_milano_r001_ip_diff_core_link_link_wrapper_ips_reflection
       - task_milano_audit_missed_brian_owned_followups_common_module_etc
@@ -4340,11 +4512,13 @@ project_status_updates:
       - Locate the latest pd_pcie LDRC report/path.
       - Confirm where comments should be left.
       - Split any blocker found in GCA or LDRC review into an Issue or task status update.
+      - Define IDE bypass behavior and Static Clock Gating conditions before RTL closure.
       - Review link0 ETC area/report details only if still needed after GCA/LDRC.
       - Record final report/artifact paths for completed SDC/Area-Instance/GEN7/lint tasks later if needed.
     related_task_refs:
       - task_milano_pd_pcie_gca_result_review_comment
       - task_milano_pd_pcie_ldrc_result_review
+      - task_milano_ide_bypass_module_static_clock_gating
       - task_milano_sdc_dual_profile_synth_rerun
       - task_milano_arir_precheck
       - task_milano_gen7_phy_db_synthesis
@@ -4355,12 +4529,15 @@ project_status_updates:
       - artifact_milano_pd_pcie_gca_review_comment_20260708
       - artifact_milano_pd_pcie_ldrc_result_20260708
       - artifact_milano_pd_pcie_ldrc_review_comment_20260708
+      - artifact_milano_ide_bypass_module_static_clock_gating_20260708
+      - artifact_milano_ide_bypass_static_clock_gating_review_20260708
     source_refs:
       - source_milano_conversation_20260708_task_cleanup_request
       - source_milano_conversation_20260708_pd_pcie_gca_review_comment
       - source_milano_conversation_20260708_pd_pcie_ldrc_review
       - source_milano_conversation_20260708_sdc_arir_gen7_lint_completed
       - source_milano_conversation_20260708_firenze_handler_completed
+      - source_milano_conversation_20260708_ide_bypass_static_clock_gating
 
   - id: project_status_milano_20260623_pcie_tlp_axi_split_mps_workaround_review
     date: 2026-06-23
