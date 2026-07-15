@@ -1,0 +1,206 @@
+schema_version: 1
+status: active
+updated_at: 2026-07-15
+area: FINANCE
+secondary_areas:
+  - MAINTENANCE
+  - MIND
+title: 2026-07 cashflow normalization
+current_phase: July month-end fixed-cost reset and spending review
+
+source_records:
+  - id: source_finance_conversation_20260715_cashflow_normalization_commitment
+    object_type: Source
+    source_type: chat
+    original_date: 2026-07-15
+    imported_at: 2026-07-15
+    parse_status: parsed
+    raw_text: |-
+      요즘 거의 월급은 다 쓰고 있거든.. 저축은 못함 ㅎㅎ ...
+      정상화해야지 조금씩.
+      7월말에 gpt 요금제도 변경하고, 휴대폰 요금제도 변경한다.
+      그리고 지출 내역도 함께 기록하고 고민한다.
+    interpretation:
+      current_monthly_cashflow_margin: near_zero_user_reported
+      current_savings_flow: none_or_near_zero_user_reported
+      direction: gradual_normalization
+      commitment_window: 2026-07 month end
+      commitments:
+        - Lower the personal GPT/Codex subscription tier.
+        - Lower the mobile phone plan after checking actual usage.
+        - Record and review July spending before setting the August baseline.
+    confidence: high_for_user_stated_direction
+    needs_user_review: false
+    privacy_note: This personal finance record remains local.
+
+observations:
+  - id: observation_finance_20260715_monthly_cashflow_near_zero
+    object_type: Observation
+    date: 2026-07-15
+    observation_type: monthly_cashflow_state
+    area: FINANCE
+    value: Brian reports currently spending nearly all monthly salary and not building savings.
+    unit: qualitative_user_report
+    linked_context:
+      source_ref: source_finance_conversation_20260715_cashflow_normalization_commitment
+      related_spending_ref: spending_20260617_ai_tool_testing_claude_codex_400usd
+    confidence: high_for_user_reported_state_amounts_unverified
+
+decisions:
+  - id: decision_finance_20260715_july_month_end_fixed_cost_reset
+    object_type: Decision
+    date: 2026-07-15
+    title: Reset selected fixed costs at the end of July
+    decision:
+      - Change the personal GPT/Codex subscription to a lower-cost tier by 2026-07-31.
+      - Change the mobile phone plan to a lower-cost tier by 2026-07-31.
+      - Review actual July spending before deciding the August savings baseline.
+    rationale:
+      - Monthly salary is currently almost fully consumed.
+      - The paid AI-tool trial has already produced useful learning and reusable assets.
+      - Lower recurring costs create monthly margin without requiring repeated willpower.
+    alternatives:
+      - Keep the current GPT/Codex tier only if measured personal usage justifies it.
+      - Use a middle GPT/Codex tier temporarily if the lower tier creates repeated material limits.
+    consequences:
+      - Record the actual new plans, effective dates, and recurring fees after each change.
+      - Keep personal records on the personal/local side rather than moving them to a company account.
+      - Review savings capacity after the July ledger is complete.
+    source_refs:
+      - source_finance_conversation_20260715_cashflow_normalization_commitment
+
+tasks:
+  - id: task_finance_20260731_change_personal_gpt_plan
+    object_type: Task
+    title: 개인 GPT/Codex 요금제 하향 변경
+    area: FINANCE
+    status: todo
+    priority: high
+    energy: admin
+    estimated_minutes: 15
+    due_date: 2026-07-31
+    due_date_precision: user_said_july_month_end
+    tracking_level: lightweight
+    project_ref: project_personal_life_admin
+    owner_ref: person_brian
+    progress_percent: 0
+    tags:
+      - subscription
+      - fixed_cost
+      - chatgpt
+      - codex
+      - cost_reduction
+    context:
+      - The working preference from the conversation is to use a lower personal tier as the baseline.
+      - Use Chat first, Luna first, and Fast off; escalate models or tier only when measured need appears.
+      - The exact account-visible tier, tax, billing date, and effective date must be confirmed during the change.
+    next_actions:
+      - Check the current renewal date and cancellation or downgrade effective date.
+      - Select the lower-cost personal tier shown in the account.
+      - Record the actual new tier, recurring fee, and effective date locally.
+    completion_criteria:
+      - Subscription change is confirmed in the account.
+      - New plan, price, and effective date are recorded.
+    source_ref: source_finance_conversation_20260715_cashflow_normalization_commitment
+    confidence: high
+    needs_user_review: false
+
+  - id: task_finance_20260731_change_mobile_phone_plan
+    object_type: Task
+    title: 휴대폰 요금제 하향 변경
+    area: MAINTENANCE
+    secondary_areas:
+      - FINANCE
+    status: todo
+    priority: high
+    energy: admin
+    estimated_minutes: 30
+    due_date: 2026-07-31
+    due_date_precision: user_said_july_month_end
+    tracking_level: lightweight
+    project_ref: project_personal_life_admin
+    owner_ref: person_brian
+    progress_percent: 0
+    tags:
+      - subscriptions
+      - mobile_phone
+      - telecom
+      - fixed_cost
+      - cost_reduction
+    context:
+      - Current carrier, plan name, monthly fee, benefits, and recent data usage are not yet recorded.
+      - Choose a lower plan only after checking real usage and any contract or benefit tradeoffs.
+    next_actions:
+      - Check the last three months of data and call usage.
+      - Record the current plan fee and benefits that would be lost.
+      - Compare eligible lower-cost plans and change to the selected plan.
+      - Record the actual new fee and effective date locally.
+    completion_criteria:
+      - Mobile plan change is confirmed.
+      - Old and new monthly fees, expected monthly savings, and effective date are recorded.
+    source_ref: source_finance_conversation_20260715_cashflow_normalization_commitment
+    confidence: high_for_commitment_plan_details_unknown
+    needs_user_review: true
+
+  - id: task_finance_20260731_record_and_review_july_spending
+    object_type: Task
+    title: 7월 지출 내역 기록 및 월 현금흐름 검토
+    area: FINANCE
+    status: todo
+    priority: high
+    energy: admin
+    estimated_minutes: 45
+    due_date: 2026-07-31
+    due_date_precision: user_said_july_month_end
+    tracking_level: standard
+    project_ref: project_personal_life_admin
+    owner_ref: person_brian
+    progress_percent: 0
+    tags:
+      - spending_review
+      - cashflow
+      - savings
+      - monthly_close
+      - fixed_cost
+    next_actions:
+      - Gather July card, bank, cash, and subscription spending locally.
+      - Separate fixed, essential variable, discretionary, and one-off trial spending.
+      - Calculate take-home income, total outflow, savings, and month-end surplus.
+      - Identify recurring costs to keep, reduce, pause, or cancel.
+      - Set a realistic August automatic-savings candidate after reviewing the actual margin.
+    completion_criteria:
+      - July income and spending totals are recorded with no invented amounts.
+      - Recurring subscriptions and fixed costs are listed.
+      - August cashflow adjustment and savings candidate are documented.
+    source_ref: source_finance_conversation_20260715_cashflow_normalization_commitment
+    confidence: high
+    needs_user_review: false
+
+monthly_spending_review:
+  month: 2026-07
+  status: awaiting_actuals
+  currency: KRW
+  take_home_income_krw: null
+  fixed_expenses_krw: null
+  essential_variable_expenses_krw: null
+  discretionary_expenses_krw: null
+  one_off_trial_expenses_krw: null
+  debt_payments_krw: null
+  savings_krw: null
+  total_outflow_krw: null
+  month_end_surplus_krw: null
+  spending_entries: []
+  recurring_costs_to_review:
+    - personal_gpt_codex_subscription
+    - mobile_phone_plan
+    - other_ai_subscriptions
+    - other_low_use_subscriptions
+  reflection_questions:
+    - Which expenses were intentional experiments and which became automatic habits?
+    - Which recurring costs still provide distinct value?
+    - What can be reduced without harming health, relationships, or sustainable work?
+    - What August savings amount can be automated without creating a rebound cycle?
+  proposed_starting_point:
+    savings_rate_percent: 5
+    status: discussion_candidate_not_yet_committed
+  source_ref: source_finance_conversation_20260715_cashflow_normalization_commitment

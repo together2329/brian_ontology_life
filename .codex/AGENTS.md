@@ -36,6 +36,7 @@ Use historical memory indexes when they exist:
 - `life/body/body_active_log.yaml`: current BODY status, PT trend, body metrics, protein targets, and recent workout records.
 - `life/mind/mind_active_log.yaml`: current MIND status, mood records, pressure patterns, operating rules, and interventions.
 - `life/finance/finance_active_log.yaml`: current FINANCE status, AI-tool testing spend, future holdings/decisions, and spending records.
+- `life/finance/cashflow_normalization_202607.yaml`: July 2026 fixed-cost reset commitments, spending-review template, and month-end GPT/mobile plan change tasks.
 - `life/relation/relation_active_log.yaml`: current RELATION records such as spouse/family/pet interactions, walks, meals together, and care activities.
 - `life/tasks/career_daily_work_log.yaml`: current CAREER daily work sessions, meetings, and reports not yet mapped to a specific active project.
 - `life/tasks/personal_active_tasks.yaml`: current MAINTENANCE/BODY/RELATION/FINANCE personal errands, health admin, family paperwork, receipts, and insurance tasks.
