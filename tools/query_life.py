@@ -86,6 +86,7 @@ KNOWLEDGE_SEARCH_SECTIONS = [
     "understandings",
     "architecture_directions",
     "knowledge_interests",
+    "promoted_records",
     "follow_up_tasks",
 ]
 MIND_SEARCH_SECTIONS = [

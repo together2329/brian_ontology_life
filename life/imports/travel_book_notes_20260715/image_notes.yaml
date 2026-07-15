@@ -1,0 +1,427 @@
+schema_version: 1
+id: normalized_travel_book_notes_20260715
+object_type: ImportIndex
+status: parsed_with_review_queue
+import_ref: import_travel_book_notes_20260715
+title: 2026년 7월 여행 책 여백 메모 - 사진별 판독
+created_at: '2026-07-15T23:07:36+09:00'
+
+interpretation_legend:
+  high_confidence: 사진에서 문구나 구조가 비교적 명확히 읽힘.
+  partial: 핵심 뜻은 보이지만 일부 낱말이나 약어가 불명확함.
+  synthesis: 사진의 메모를 기존 Brian ontology 문맥에 연결한 해석이며 원문 인용이 아님.
+  candidate: 아이디어는 기록하되 현재 정책, 상태, 태스크로 활성화하지 않음.
+
+records:
+  - id: travel_book_note_img_1823_20260715
+    object_type: Note
+    source_ref: source_travel_book_note_img_1823_20260715
+    image_file: IMG_1823.jpeg
+    request_order: 2
+    capture_sequence: 1
+    area_refs: [MIND, CAREER]
+    printed_context:
+      visible_page_number: 191
+      topic_summary: 멀티태스킹보다 시간을 나누고 한 번에 한 가지 일에 충실할 때 집중과 즐거움이 커진다는 내용.
+    handwriting:
+      high_confidence:
+        - "가장 좋은지 판단하고, 앞으로 종이와 펜을 좀 더 들고 다니고."
+        - "그리고 연결을 명확히 하자."
+        - "쓰레드를 해도 된다. 소화하라."
+        - "이 소화라는 기반으로 AI를 무궁무진하게 사용해보자."
+      partial_or_uncertain:
+        - "좋은 새 방향을 보면 그것을 적고, 그 순간을 어떻게 관리할지에 관한 문장."
+        - "유추와 판단을 유연하게 연결하는 것으로 보이는 문장."
+      correction_note: 처음에는 "소회"로 보였으나 확대 확인 결과 핵심 단어는 "소화"로 판독했다.
+    core_interpretation:
+      - 한 번에 한 가지에 집중한다.
+      - 옆으로 새는 좋은 생각은 종이와 펜으로 빠르게 포착한다.
+      - 메모를 쓰레드와 명시적 연결로 소화한 뒤 AI 활용을 확장한다.
+      - AI 출력의 양보다 인간이 이해하고 연결해 다시 쓸 수 있는 상태가 중요하다.
+    related_concept_refs:
+      - concept_cognitive_load_aware_ai_output
+      - concept_conversation_knowledge_memory
+    promoted_record_refs:
+      - principle_single_task_and_digest_ai
+    confidence: high
+    needs_user_review: false
+
+  - id: travel_book_note_img_1824_20260715
+    object_type: Note
+    source_ref: source_travel_book_note_img_1824_20260715
+    image_file: IMG_1824.jpeg
+    request_order: 1
+    capture_sequence: 2
+    area_refs: [BODY, MIND]
+    printed_context:
+      visible_page_number: 182
+      topic_summary: 긴장을 낮추고 느긋하게 대응하는 태도가 실수와 삶의 압박을 줄일 수 있다는 내용.
+    handwriting:
+      high_confidence:
+        - "식단, 근력운동, 유산소 운동."
+        - "식물 음식이란 것은 무엇일까?"
+        - "어느 정도 식단이 좋은가?"
+        - "어느 정도 근력운동이 좋은가?"
+        - "어느 정도 유산소 운동이 좋은가?"
+        - "유산소를 왜 해야 하는가."
+        - "여기 기반으로 어떻게 운동하면 좋을까."
+      partial_or_uncertain:
+        - "각 항목 옆에 적정량, 빈도, 횟수, 원리를 묻는 가지 메모가 있다."
+    core_interpretation:
+      - 건강 조언을 바로 실행 규칙으로 받기보다 정의, 이유, 적정량, 빈도, 원리를 먼저 묻는다.
+      - 식단, 근력, 유산소를 하나의 BODY 운영 체계로 연결하려는 연구 질문이다.
+      - 현재 사진은 질문의 증거이며 개인 처방이나 확정 목표의 증거는 아니다.
+    promoted_record_refs:
+      - health_question_definition_dose_reason
+    confidence: high
+    needs_user_review: false
+
+  - id: travel_book_note_img_1825_20260715
+    object_type: Note
+    source_ref: source_travel_book_note_img_1825_20260715
+    image_file: IMG_1825.jpeg
+    request_order: 3
+    capture_sequence: 3
+    area_refs: [MIND, CAREER]
+    printed_context:
+      visible_section_number: 63
+      visible_section_title: 느긋해져라
+      topic_summary: 느긋함을 단순 휴식으로 답하지 말고 그 의미를 깊이 생각해 보라는 내용.
+    handwriting:
+      high_confidence:
+        - "한 가지 개념에 대해 깊이 생각해 보도록. (reasoning effort)"
+        - "reasoning effort → 매우 매우 중요하다."
+        - "매일 매일 깊이 생각하라."
+        - "왜 이게 필요한지?"
+        - "큰 그림에서는 어떻게 흘러가고 있는지."
+        - "visual thinking이 정말 필요한지?"
+      partial_or_uncertain:
+        - "방콕호텔에서의 생각과 몰입을 연결한 것으로 보이는 문장."
+        - "직접 그려보거나 설명할 수 있어야 한다는 뜻으로 보이는 문장."
+        - "깊이 생각이 부족한 이유와 문제 해결의 오류를 묻는 것으로 보이는 문장."
+    core_interpretation:
+      - reasoning effort는 답을 길게 만드는 일이 아니라 왜 필요한지와 큰 흐름을 이해하는 일이다.
+      - 이해 여부는 스스로 그리거나 설명할 수 있는지로 점검한다.
+      - 느긋함과 몰입은 반대가 아니라 깊게 생각하기 위한 조건이 될 수 있다는 가설이다.
+    promoted_record_refs:
+      - principle_deep_reasoning_whole_picture
+    confidence: medium
+    needs_user_review: true
+
+  - id: travel_book_note_img_1826_20260715
+    object_type: Note
+    source_ref: source_travel_book_note_img_1826_20260715
+    image_file: IMG_1826.jpeg
+    request_order: 4
+    capture_sequence: 4
+    area_refs: [CAREER, MIND]
+    project_refs:
+      - project_ai_agent
+    printed_context:
+      visible_page_number: 180
+      topic_summary: 운전 시간과 느긋한 삶에 관한 본문 위에 Brian의 agent/IP 설계 흐름이 크게 작성되어 있다.
+    handwriting:
+      high_confidence:
+        - "Human input/spec → Requirement → Obligation → Contract → Evidence → Validation → Review."
+        - "Requirement: 요구사항."
+        - "Obligation: 기계가 이해할 수 있는 수준의 표현."
+        - "Contract: 규칙? 계약/약속."
+        - "Evidence: 증거."
+        - "Validation: 진짜로 검증돼?"
+        - "하나의 개념에 대해 깊이 파고들고 왜 필요한지 알아야 한다."
+        - "Action - requirement 작성 (from spec)."
+        - "Action - obligation 작성 (from req)."
+        - "Action - contract 작성 (from obl)."
+        - "Action - run formal / run sim / imple rtl / imple tb."
+        - "IP top module을 submodule, interface, feature와 세부 설계 관점으로 분해한 트리."
+      component_tree_reading:
+        high_confidence:
+          - ip top module
+          - submodule
+          - interface
+          - feature
+          - clk/rst
+          - FSM
+          - stream
+          - interrupt
+          - memory map
+          - registers
+          - debugging
+          - performance
+          - area
+          - power
+        partial_or_uncertain:
+          - hole
+          - design/spec로 보이는 마지막 항목
+      partial_or_uncertain:
+        - "일을 주는 시작이 명확하지 않으면 모든 것이 불명확한 채 흘러간다는 뜻의 문장."
+        - "Lazy Codex, give a code, subagent를 어떤 방식으로 써야 하는지 묻는 문장."
+    core_interpretation:
+      - 자연어 의도를 기계가 실행하고 사람이 검토할 수 있는 단계로 점차 구체화한다.
+      - Contract는 단순 문서가 아니라 Evidence가 무엇이어야 하는지 결정하는 검증 경계다.
+      - Review는 결과만 보는 끝 단계가 아니라 Contract와 Evidence를 다시 고치는 피드백 루프다.
+      - IP reasoning은 top-down 구성요소 트리와 assurance loop를 함께 사용해야 한다.
+    related_concept_refs:
+      - concept_operational_decision_system
+      - concept_advanced_operational_ontology
+    promoted_record_refs:
+      - architecture_dual_loop_brian_agent_system
+      - architecture_ip_component_reasoning_tree
+    confidence: high
+    needs_user_review: false
+
+  - id: travel_book_note_img_1827_20260715
+    object_type: Note
+    source_ref: source_travel_book_note_img_1827_20260715
+    image_file: IMG_1827.jpeg
+    request_order: 5
+    capture_sequence: 5
+    area_refs: [CAREER, MIND]
+    project_refs:
+      - project_ai_agent
+    printed_context:
+      topic_summary: 여유 있는 운전자가 되겠다는 결심과 운전 중 생각 정리에 관한 내용.
+    handwriting:
+      high_confidence:
+        - "Agent = Brian이 어떻게 일해야 하나?"
+        - "먼저 Mission을 받아야 하지."
+        - "Mission에 대한 Action까지 구체화."
+        - "스스로 Action을 계획하고 실행하고."
+        - "이 rule을 지켜야 해."
+        - "Requirement → Obligation → Contract → Evidence → Validation."
+      partial_or_uncertain:
+        - "Brian 1, Brian 2처럼 여러 Brian/agent가 일을 나누는 구조로 보이는 메모."
+        - "workflow를 어떤 규칙으로 적용하고 리뷰할지에 관한 문장."
+    core_interpretation:
+      - Agent는 Brian의 판단 방식을 대신하는 존재가 아니라 Brian의 일하는 법을 명시적으로 실행하는 확장이다.
+      - Mission을 바로 실행하지 않고 계획 가능한 Action으로 구체화한다.
+      - 각 Action은 requirement부터 validation까지 동일한 규칙을 통과한다.
+      - 여러 agent가 있어도 공통 rule과 review 경계가 필요하다.
+    related_concept_refs:
+      - concept_aip_like_agent_layer
+      - concept_operational_decision_system
+    promoted_record_refs:
+      - architecture_dual_loop_brian_agent_system
+    confidence: high
+    needs_user_review: true
+
+  - id: travel_book_note_img_1829_20260715
+    object_type: Note
+    source_ref: source_travel_book_note_img_1829_20260715
+    image_file: IMG_1829.jpeg
+    request_order: 6
+    capture_sequence: 6
+    area_refs: [CAREER, MIND]
+    project_refs:
+      - project_ai_agent
+    printed_context:
+      visible_section_number: 62
+      visible_section_title: 여유 있는 운전자가 되라
+      topic_summary: 조급한 운전 대신 여유와 관찰을 선택하는 내용.
+    handwriting:
+      high_confidence:
+        - "Codex로 Block Diagram, logic gate, 신호선, 설명 표현하는 법 다스리기?"
+        - "pptx가 component를 그리는 원리 이해하기?"
+        - "이미지 생성의 어떤 프로그램으로 그려?"
+        - "pptx ↔ md를 만들기 (md에 모든 detail 넣기)."
+        - "Research는 무엇인가?"
+    core_interpretation:
+      - Markdown을 상세 내용의 원본으로 두고 PPTX와 다이어그램을 시각 projection으로 만드는 방향이다.
+      - 회로 설명은 블록, 게이트, 신호선, 문장 설명을 같은 의미 모델에서 뽑아야 한다.
+      - Research의 정의와 종료 조건을 별도로 명확히 해야 한다.
+    promoted_record_refs:
+      - architecture_markdown_visual_projection
+      - operating_definition_research
+    confidence: high
+    needs_user_review: false
+
+  - id: travel_book_note_img_1830_20260715
+    object_type: Note
+    source_ref: source_travel_book_note_img_1830_20260715
+    image_file: IMG_1830.jpeg
+    request_order: 7
+    capture_sequence: 7
+    area_refs: [MIND, CAREER]
+    project_refs:
+      - project_ai_agent
+    printed_context:
+      visible_section_number: 54
+      visible_section_title: 비판하고 싶은 충동을 떨쳐 버려라
+      topic_summary: 타인을 비판하는 충동을 내려놓는 내용.
+    handwriting:
+      high_confidence:
+        - "AI 시대의 가장 토큰 효율적인 방법은 나의 영어 말하기/듣기/쓰기/읽기 실력을 키우는 것이다."
+        - "매일매일 공부하고."
+        - "지금부터 모든 기록은 영어로 하고 / 모든 정책도 영어로 한다."
+      partial_or_uncertain:
+        - "첫 문장은 AI 훈련 또는 AI 개발을 영어 기반으로 한다는 뜻으로 보인다."
+        - "마지막 문장은 영어를 극단적으로 많이 쓰는 방법이라는 뜻으로 보이나 정확한 낱말은 불명확하다."
+    core_interpretation:
+      - 영어 능력을 AI 시대의 인간 인터페이스 역량과 토큰 효율 문제로 본다.
+      - 다만 모든 개인 기록과 정책을 즉시 영어로 바꾸자는 확정 결정인지는 확인되지 않았다.
+      - 현재 한국어 중심 개인 온톨로지의 언어 정책은 유지하고, 영어 적용 범위를 검토 후보로 둔다.
+    promoted_record_refs:
+      - candidate_english_first_ai_working_language
+    confidence: medium
+    needs_user_review: true
+
+  - id: travel_book_note_img_1831_20260715
+    object_type: Note
+    source_ref: source_travel_book_note_img_1831_20260715
+    image_file: IMG_1831.jpeg
+    request_order: 8
+    capture_sequence: 8
+    area_refs: [MIND, BODY, CAREER, FINANCE, RELATION, MAINTENANCE, FUN]
+    printed_context:
+      visible_page_number: 156
+      inferred_section_number: 53
+      topic_summary: 세상과 사람의 가치를 더 넓고 섬세하게 바라보는 내용.
+    handwriting:
+      high_confidence:
+        - "Mind, Body, Career, Finance, Relation, Maintenance, Fun."
+        - "Mission, Timeline, Energy (Happy)."
+        - "Brian, Brian 1, Brian 2, Brian 3."
+        - "행복꾸러미를 진짜 많이 보고 실천하라. (시각화/생각)"
+        - "행복/지구/미야 사진, 가족들 사진 + 좋은 기억들."
+      partial_or_uncertain:
+        - "궁극적인 가치를 삶을 포괄한 여러 주체 또는 존재의 에너지를 높이는 것으로 설명한 문장."
+        - "여러 Brian 표기가 역할별 agent인지, 시간별 자아인지, 복제된 실행 주체인지는 불명확하다."
+        - "token 축적 가능성과 Codex customizing을 묻는 것으로 보이는 하단 메모."
+    core_interpretation:
+      - 모든 Mission은 Timeline뿐 아니라 Energy/Happiness 관점으로 함께 평가한다.
+      - 7개 life area는 생산성 바깥의 삶 전체를 보호하는 범위다.
+      - 행복꾸러미는 보관 자료가 아니라 사진, 좋은 기억, 시각화를 통해 실제로 다시 느끼는 운영 도구다.
+      - agent 확장은 Brian의 삶과 관계의 에너지를 높이는 방향에 종속되어야 한다.
+    activity_ref: activity_happiness_bundle
+    related_concept_refs:
+      - concept_fulfilled_mind
+    promoted_record_refs:
+      - principle_happiness_bundle_active_visualization
+      - architecture_life_mission_timeline_energy
+    confidence: high
+    needs_user_review: true
+
+  - id: travel_book_note_img_1832_20260715
+    object_type: Note
+    source_ref: source_travel_book_note_img_1832_20260715
+    image_file: IMG_1832.jpeg
+    request_order: 9
+    capture_sequence: 9
+    area_refs: [CAREER]
+    project_refs:
+      - project_milano
+      - project_firenze
+    printed_context:
+      visible_section_number: 53
+      visible_section_title: 모든 것에는 신의 지문이 찍혀 있다는 것을 명심하라
+      topic_summary: 아름다움과 긍정적 의미를 발견하는 시각에 관한 내용.
+    handwriting:
+      high_confidence:
+        - "Power, Area, Performance."
+        - "Area Optimization."
+        - "SFR Debugging 정리."
+        - "PCIe etc module 만들기."
+        - "FPGA support."
+        - "PCIe sub support."
+        - "SI support."
+        - "Milano 일정에서 bottleneck이 무엇일까?"
+        - "FPGA."
+        - "Implementation."
+        - "power."
+        - "E2E Simulation."
+        - "Firenze랑 비교 분석 필요함."
+      partial_or_uncertain:
+        - "DCG, SCG와 IPE/BDE/SFR Debug로 보이는 약어 묶음."
+        - "PFO, PPI와 Pad Size로 보이는 항목."
+        - "MSE 기반 BAR overlap 방지로 보이는 항목."
+        - "HLT 또는 유사 약어 support."
+        - "PCIe PAD 줄이기와 logic 분석으로 보이는 항목."
+        - "CSR follow up 및 TL/HAL/AXI/IDE follow up으로 보이는 항목."
+        - "FLD를 연결해 simulation한다는 뜻으로 보이는 bottleneck 항목."
+        - "E2E Simulation 옆의 추가 검증 항목은 판독 불가."
+    core_interpretation:
+      - Milano 일정 병목을 개별 태스크 나열이 아니라 FPGA, implementation, simulation, power의 시스템 관점에서 보려는 메모다.
+      - Firenze와 비교해 재사용 가능한 패턴과 차이를 찾으려는 방향이다.
+      - 약어와 우선순위가 불확실하므로 현재 Milano 상태나 활성 태스크를 덮어쓰지 않는다.
+    promoted_record_refs:
+      - candidate_milano_bottleneck_inventory_20260715
+    confidence: medium
+    needs_user_review: true
+
+  - id: travel_book_note_img_1833_20260715
+    object_type: Note
+    source_ref: source_travel_book_note_img_1833_20260715
+    image_file: IMG_1833.jpeg
+    request_order: 10
+    capture_sequence: 10
+    area_refs: [CAREER, MIND]
+    project_refs:
+      - project_ai_agent
+      - project_milano
+      - project_firenze
+    printed_context:
+      visible_page_number: 154
+      inferred_section_number: 53
+      topic_summary: 자신의 한계를 받아들이면서 다른 사람과 세상을 더 넓게 보는 내용.
+    handwriting:
+      high_confidence:
+        - "Confluence에 md file로 저장 + Automation 넣기."
+        - "Context."
+        - "어떻게 debugging 하지?"
+        - "어떻게 PCIe flow(PPA) 돌리지?"
+        - "어떻게 db화?"
+        - "Solution RAG!"
+        - "Mission - Plan - Action - Review."
+        - "Requirement, Obligation, Contract, Evidence, Validation."
+        - "Confluence + Jira + Solution RAG 등의 metadata layer."
+        - "기존의 data를 reuse 하는 방법 / 팔란티어."
+        - "Perforce도 실시간 연동 + metadata."
+        - "GitLab도 실시간 연동 + metadata."
+        - "Data와 version control을 어떻게 할 것인가?"
+      candidate_markdown_inventory:
+        high_confidence:
+          - pcie_guide.md
+          - pcie_str.md
+          - pcie_spec.md
+          - lesson_learn.md
+          - power.md
+          - area.md
+          - AI_db.md
+          - testbench.md
+          - requirement.md
+          - test_case.md
+          - sdc.md
+          - dc.md
+          - icc2.md
+          - lint.md
+          - cdc.md
+          - tdc.md
+          - interrupt.md
+          - stream_req.md
+          - bus_req.md
+          - pmc/sbc.md
+          - ocp.md
+        partial_or_uncertain:
+          - cadence_doc.md 아래 ctrl.md와 phy.md로 보이는 하위 파일
+          - pt.md 또는 유사 구현 도구 파일
+          - Jira.md, Confluence.md, Issue.md, PA.md의 정확한 역할
+      partial_or_uncertain:
+        - "서버 받기 또는 서버 기반 유지보수를 묻는 항목."
+        - "기존 파일을 기반으로 Claude Code를 쓰는 것으로 보이는 항목."
+        - "현실 세계의 Markdown/대화 기반 DB를 구축한다는 뜻으로 보이는 문장."
+    core_interpretation:
+      - 파일을 늘어놓는 것보다 공통 metadata와 안정적 ID로 Confluence, Jira, Solution RAG, Perforce, GitLab을 연결하는 것이 핵심이다.
+      - Markdown은 사람이 읽고 Git으로 버전 관리하는 정제 지식층이며, 원본 시스템의 권한과 이력은 유지해야 한다.
+      - Mission 실행 루프와 assurance loop가 같은 metadata/evidence 층에 기록되어야 재사용이 가능하다.
+      - 현재 단계는 DB나 서비스를 만드는 것이 아니라 파일 분류, source metadata, evidence, version 정책의 최소 형식을 확정하는 것이다.
+    related_concept_refs:
+      - concept_foundry_like_operational_data_layer
+      - concept_solution_rag
+      - concept_operational_decision_system
+    related_task_refs:
+      - task_ai_agent_soc_knowledge_format_db_pilot
+      - task_ai_agent_solution_rag_ontology_builder
+    promoted_record_refs:
+      - architecture_engineering_metadata_reuse_layer
+    confidence: high
+    needs_user_review: true

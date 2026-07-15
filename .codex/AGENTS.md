@@ -22,6 +22,8 @@ Use historical memory indexes when they exist:
 - `life/imports/happiness_bundle/parsed_items.yaml`: structured happiness trigger list extracted from the PDF.
 - `life/imports/happiness_bundle/image_index.jsonl`: page-level image/visual evidence index for the PDF.
 - `life/imports/happiness_bundle/page_index.jsonl`: page-level text index for the PDF.
+- `life/imports/travel_book_notes_20260715/image_notes.yaml`: Brian's July 2026 travel book-margin notes, with image-by-image handwriting reads, uncertainty, and ontology links.
+- `life/knowledge/travel_reflection_operating_system_202607.yaml`: promoted travel-note principles covering single-task knowledge digestion, Mission/Action and Requirement/Evidence loops, happiness/energy, and engineering metadata reuse.
 - `life/concepts/fulfilled_mind.yaml`: promoted concept for Brian's recurring "충만한 마음" / fulfilled mind pattern.
 - `life/knowledge/agent_architecture_thoughts.yaml`: Brian's AI-agent architecture thought threads, understandings, knowledge interests, and OKF/LLM Wiki/ontology-first conversation memory.
 - `life/knowledge/agent_tool_capabilities.yaml`: locally installed agent/tool capabilities, retrieval aliases, tested workflows, operating boundaries, and reusable usage playbooks.

@@ -1,0 +1,518 @@
+schema_version: 1
+id: knowledge_travel_reflection_operating_system_202607
+object_type: KnowledgeBundle
+status: active_with_candidate_items
+updated_at: '2026-07-15'
+title: 2026년 7월 여행에서 정리한 Brian 운영 체계
+area: MIND
+secondary_areas: [BODY, CAREER, FINANCE, RELATION, MAINTENANCE, FUN]
+area_refs: [MIND, BODY, CAREER, FINANCE, RELATION, MAINTENANCE, FUN]
+project_refs:
+  - project_ai_agent
+  - project_milano
+  - project_firenze
+activity_ref: activity_travel
+source_refs:
+  - source_travel_book_note_img_1823_20260715
+  - source_travel_book_note_img_1824_20260715
+  - source_travel_book_note_img_1825_20260715
+  - source_travel_book_note_img_1826_20260715
+  - source_travel_book_note_img_1827_20260715
+  - source_travel_book_note_img_1829_20260715
+  - source_travel_book_note_img_1830_20260715
+  - source_travel_book_note_img_1831_20260715
+  - source_travel_book_note_img_1832_20260715
+  - source_travel_book_note_img_1833_20260715
+related_file_refs:
+  - life/imports/travel_book_notes_20260715/manifest.yaml
+  - life/imports/travel_book_notes_20260715/image_notes.yaml
+  - life/imports/travel_book_notes_20260715/summary.yaml
+  - life/concepts/happiness_bundle.yaml
+  - life/knowledge/agent_architecture_thoughts.yaml
+  - life/knowledge/soc_knowledge_db_design.yaml
+
+purpose: >
+  여행 중 책 여백에 적은 Brian의 개인 운영 원칙, agent/IP 개발 흐름,
+  행복꾸러미 사용법, 건강 연구 질문, 엔지니어링 metadata 방향을
+  기존 ontology에 중복 없이 연결한다. 확정 원칙, architecture direction,
+  연구 질문, 검토 후보를 분리해 이후 대화에서 바로 꺼내 쓸 수 있게 한다.
+
+central_synthesis:
+  statement: >
+    Brian의 시스템은 더 많은 일을 동시에 처리하는 체계가 아니라,
+    한 가지를 깊이 소화하고 Mission을 검증 가능한 Action으로 바꾸며,
+    그 결과가 삶 전체의 Energy/Happiness를 높이는지 Review하는 체계다.
+  stack:
+    - layer: attention_and_digestion
+      flow: "Single task → Capture side thought → Explicit connection → Digest → Reuse"
+      question: 지금 정보가 많아진 것인가, Brian이 실제로 이해하고 다시 쓸 수 있게 된 것인가?
+    - layer: mission_execution
+      flow: "Mission → Plan → Action → Review"
+      question: 큰 의도가 다음에 실행할 수 있는 bounded action으로 구체화됐는가?
+    - layer: engineering_assurance
+      flow: "Human input/spec → Requirement → Obligation → Contract → Evidence → Validation → Review"
+      question: 무엇을 만들고 지켜야 하며 어떤 증거가 충분한지 기계와 사람이 함께 확인할 수 있는가?
+    - layer: life_governance
+      flow: "7 Life Areas + Mission + Timeline + Energy/Happiness"
+      question: 일정과 성과뿐 아니라 몸, 관계, 마음, 즐거움의 에너지도 좋아지는가?
+    - layer: memory_and_reuse
+      flow: "Local source → Markdown/YAML → Metadata/Version → Agent/View → Feedback"
+      question: 이번 판단과 증거가 다음 작업에서 재사용 가능한 자산으로 남았는가?
+
+assistant_default_use:
+  - 과부하 상태에서는 한 번에 하나의 핵심 작업과 옆 생각 capture 공간을 먼저 제안한다.
+  - 복잡한 주제에는 why, whole picture, explain/draw, evidence의 네 질문을 사용한다.
+  - Agent/업무 설계에는 Mission 실행 루프와 engineering assurance loop를 함께 보여준다.
+  - 계획에는 Mission과 Timeline만이 아니라 Energy/Happiness와 7개 life area를 함께 본다.
+  - 행복/회복 질문에는 행복꾸러미의 미야·지구·가족 사진과 좋은 기억 시각화를 가볍게 제안한다.
+  - 시스템 통합 질문에는 새 DB부터 만들지 않고 source metadata, stable ID, evidence, version, permission을 먼저 정한다.
+
+promoted_records:
+  - id: principle_single_task_and_digest_ai
+    object_type: Concept
+    title: 한 가지 집중과 AI 정보 소화
+    status: active_principle
+    area_refs: [MIND, CAREER]
+    statement: >
+      한 번에 한 가지 일에 집중하고, 옆으로 생긴 좋은 생각은 짧게 포착한 뒤
+      쓰레드와 명시적 연결을 통해 소화한다. AI 활용의 확장은 출력량이 아니라
+      Brian이 이해하고 연결하고 다시 사용할 수 있는 소화 기반 위에서 이루어진다.
+    operating_rules:
+      - 현재 시간창의 main task는 하나만 둔다.
+      - 옆 생각은 버리거나 즉시 전환하지 않고 capture queue에 한 줄로 적는다.
+      - 기록을 concept, project, task, evidence 중 적어도 하나와 연결한다.
+      - 소화가 끝났다는 기준은 한 문장 설명, 핵심 3개, 다음 action 1개로 다시 표현할 수 있는가이다.
+      - 긴 AI 산출물은 지금 필요한 것, 저장할 것, 버릴 것으로 나눈다.
+    failure_modes:
+      - 좋은 생각이 나올 때마다 main task를 바꾸는 것
+      - 연결되지 않은 메모를 계속 쌓는 것
+      - 이해하지 못한 AI 출력을 곧바로 정책이나 작업으로 승격하는 것
+    related_concept_refs:
+      - concept_cognitive_load_aware_ai_output
+      - concept_conversation_knowledge_memory
+    source_refs:
+      - source_travel_book_note_img_1823_20260715
+    confidence: high
+    needs_user_review: false
+
+  - id: principle_deep_reasoning_whole_picture
+    object_type: Concept
+    title: Why와 큰 그림을 포함한 deep reasoning
+    status: active_principle
+    area_refs: [MIND, CAREER]
+    statement: >
+      reasoning effort는 답을 길게 만들거나 계산을 많이 시키는 일이 아니라,
+      한 가지 개념이 왜 필요한지, 큰 시스템에서 어떻게 흐르는지,
+      스스로 그리거나 설명할 수 있는지를 끝까지 확인하는 일이다.
+    four_question_check:
+      - 왜 필요한가?
+      - 큰 그림에서 어디에 있고 앞뒤로 무엇과 연결되는가?
+      - 내가 직접 그리거나 다른 사람에게 설명할 수 있는가?
+      - 어떤 evidence가 내 이해와 결과를 반박하거나 확인하는가?
+    use_cases:
+      - 새로운 agent architecture 개념을 배울 때
+      - RTL/IP requirement와 contract rationale을 만들 때
+      - 연구 결과를 의사결정이나 교육 자료로 바꿀 때
+    source_refs:
+      - source_travel_book_note_img_1825_20260715
+      - source_travel_book_note_img_1826_20260715
+    confidence: high
+    needs_user_review: false
+
+  - id: health_question_definition_dose_reason
+    object_type: KnowledgeInterest
+    title: 식단·근력·유산소의 정의, 이유, 적정량, 빈도 연구
+    status: open_research_question
+    area_refs: [BODY, MIND]
+    statement: >
+      건강 운영 규칙을 만들기 전에 식물성 음식, 근력운동, 유산소운동의
+      정의와 목적, Brian에게 맞는 적정량, 빈도, 원리를 근거와 현재 상태에 맞춰 검토한다.
+    question_set:
+      diet:
+        - 식물성 음식과 plant-forward 식단은 무엇을 포함하는가?
+        - 현재 식사와 단백질 목표에서 무엇을 늘리고 줄일 것인가?
+        - 일주일 또는 끼니 기준의 현실적인 적용량은 어느 정도인가?
+      strength:
+        - 근력운동이 필요한 이유와 현재 목표는 무엇인가?
+        - 주당 빈도, 주요 움직임, 회복 기준은 무엇인가?
+      cardio:
+        - 유산소를 왜 해야 하며 건강과 회복에서 어떤 역할을 기대하는가?
+        - 강도와 주당 시간 또는 빈도를 어떻게 정할 것인가?
+      integration:
+        - 식단, 근력, 유산소를 현재 수면, 체성분, 일정, 에너지와 어떻게 함께 조절할 것인가?
+    activation_boundary:
+      - 이 기록 자체는 의료 조언이나 운동 처방이 아니다.
+      - 구체 기준을 만들 때는 최신 신뢰 가능한 근거와 Brian의 현재 BODY 기록을 확인한다.
+      - 무리한 일괄 변경보다 한 번에 한 변수씩 시험하고 feedback을 기록한다.
+    related_file_refs:
+      - life/body/body_active_log.yaml
+    source_refs:
+      - source_travel_book_note_img_1824_20260715
+    confidence: high
+    needs_user_review: false
+
+  - id: architecture_dual_loop_brian_agent_system
+    object_type: ArchitectureDirection
+    title: Brian Agent dual loop
+    status: active_direction
+    area_refs: [CAREER, MIND]
+    project_ref: project_ai_agent
+    statement: >
+      Brian의 Agent는 Mission을 계획하고 실행하는 outer loop와,
+      각 Action을 requirement부터 validation까지 보증하는 inner loop를 함께 가진다.
+    outer_loop:
+      name: mission_execution_loop
+      flow:
+        - Mission
+        - Plan
+        - Action
+        - Review
+      role: 큰 의도를 bounded action으로 바꾸고 진행 상태와 다음 action을 관리한다.
+    inner_loop:
+      name: engineering_assurance_loop
+      flow:
+        - Human input or spec
+        - Requirement
+        - Obligation
+        - Contract
+        - Evidence
+        - Validation
+        - Review
+      semantics:
+        requirement: 무엇이 필요한가.
+        obligation: 요구를 만족하기 위해 반드시 지켜야 하는 기계가 다룰 수 있는 책임은 무엇인가.
+        contract: 입력, 출력, 불변조건, 금지조건, 완료 기준을 어떤 규칙과 약속으로 고정하는가.
+        evidence: 구현이나 행동이 contract를 만족한다는 어떤 관측 자료를 남기는가.
+        validation: evidence가 충분하고 올바르며 현재 상태를 실제로 증명하는가.
+        review: 실패와 빈틈을 requirement, obligation, contract, evidence에 다시 반영하는가.
+    action_generation_examples:
+      - spec에서 requirement 작성
+      - requirement에서 obligation 작성
+      - obligation에서 contract 작성
+      - RTL/TB 구현
+      - formal 또는 simulation 실행
+      - evidence 수집과 validator review
+    human_boundary:
+      - Agent는 Brian의 판단을 제거하지 않는다.
+      - Mission 의미, contract rationale, 충분한 evidence, 위험한 action의 승인에는 인간 review가 남는다.
+      - 여러 subagent도 같은 stable IDs, contracts, evidence paths, review rules를 공유해야 한다.
+    related_concept_refs:
+      - concept_operational_decision_system
+      - concept_advanced_operational_ontology
+      - concept_aip_like_agent_layer
+    source_refs:
+      - source_travel_book_note_img_1826_20260715
+      - source_travel_book_note_img_1827_20260715
+      - source_travel_book_note_img_1833_20260715
+    confidence: high
+    needs_user_review: false
+
+  - id: architecture_ip_component_reasoning_tree
+    object_type: ArchitectureDirection
+    title: IP top-down component reasoning tree
+    status: active_direction
+    area_refs: [CAREER]
+    project_ref: project_ai_agent
+    statement: >
+      IP 작업은 top module에서 submodule, interface, feature로 분해하고,
+      각 노드에서 구조, 동작, 검증, PPA와 debug 관점을 함께 확인한다.
+    hierarchy:
+      - ip_top_module
+      - submodule
+      - interface
+      - feature
+    cross_cutting_questions:
+      - clock_and_reset
+      - state_machine
+      - stream_or_dataflow
+      - interrupt
+      - memory_map
+      - registers
+      - debugging
+      - performance
+      - area
+      - power
+      - design_spec
+    relation_to_assurance_loop: >
+      각 hierarchy node와 feature가 requirement, obligation, contract,
+      evidence, validation을 가져야 top-down 설계와 검증이 분리되지 않는다.
+    source_refs:
+      - source_travel_book_note_img_1826_20260715
+    confidence: high
+    needs_user_review: false
+
+  - id: architecture_markdown_visual_projection
+    object_type: ArchitectureDirection
+    title: Markdown SSOT에서 PPTX와 engineering visual로 projection
+    status: active_direction
+    area_refs: [CAREER, MIND]
+    project_ref: project_ai_agent
+    statement: >
+      모든 상세 의미와 출처는 Markdown/YAML에 두고, PPTX, block diagram,
+      logic gate, signal line, 설명 문장은 목적별 visual projection으로 생성한다.
+    canonical_layer:
+      content:
+        - detailed explanation
+        - component and interface semantics
+        - source and evidence links
+        - assumptions and unresolved questions
+        - version metadata
+      formats:
+        - Markdown
+        - YAML
+    projection_layer:
+      outputs:
+        - PPTX component view
+        - block diagram
+        - logic gate and signal-line explanation
+        - generated image when code-native drawing is insufficient
+      rule: projection은 canonical detail을 잃지 않으며 수정 사항은 source layer로 writeback한다.
+    validation:
+      - diagram node와 source section을 추적할 수 있는가.
+      - signal direction과 naming이 source와 일치하는가.
+      - PPTX에서 생략된 detail이 Markdown에 남아 있는가.
+      - 그림이 설명을 꾸미는가, 실제 판단과 이해를 돕는가.
+    source_refs:
+      - source_travel_book_note_img_1829_20260715
+    confidence: high
+    needs_user_review: false
+
+  - id: operating_definition_research
+    object_type: KnowledgeInterest
+    title: Research를 의사결정 불확실성 감소 루프로 정의
+    status: proposed_definition
+    area_refs: [MIND, CAREER]
+    question_from_note: Research는 무엇인가?
+    proposed_definition: >
+      Research는 자료를 많이 모으는 활동이 아니라, 명확한 질문과 결정의
+      불확실성을 신뢰 가능한 evidence로 줄이고 결론, 남은 불확실성,
+      다음 action을 재사용 가능한 기록으로 남기는 bounded loop다.
+    proposed_flow:
+      - Mission 또는 결정 질문을 한 문장으로 고정한다.
+      - 범위, 시간, 필요한 신뢰도, 제외 범위를 정한다.
+      - 서로 다른 근거와 반례를 수집한다.
+      - Source와 주장, confidence를 연결한다.
+      - 결론과 alternatives를 비교한다.
+      - 남은 unknown과 invalidation condition을 적는다.
+      - next action과 archive record를 남긴다.
+    stop_conditions:
+      - 현재 결정을 내릴 만큼 핵심 불확실성이 줄었다.
+      - 추가 조사 비용이 예상 의사결정 가치보다 커졌다.
+      - 필요한 primary evidence가 없어서 명시적으로 blocked 상태가 됐다.
+    source_refs:
+      - source_travel_book_note_img_1829_20260715
+    confidence: medium
+    needs_user_review: true
+
+  - id: candidate_english_first_ai_working_language
+    object_type: Concept
+    title: AI 작업 영어 우선 후보 정책
+    status: candidate_not_active
+    area_refs: [MIND, CAREER]
+    project_ref: project_ai_agent
+    handwritten_direction: >
+      영어 말하기, 듣기, 쓰기, 읽기를 매일 훈련하고 모든 기록과 정책을
+      영어로 만드는 것이 AI 시대의 토큰 효율적인 방법이라는 여행 메모.
+    current_system_policy: >
+      Brian이 범위를 확인하기 전까지 개인 온톨로지는 한국어 또는 자연스러운 혼합 언어를 유지한다.
+      기존 기록과 정책을 일괄 번역하거나 영어 전용으로 바꾸지 않는다.
+    narrower_experiment_candidates:
+      - 코드 identifier, schema field, contract 이름은 영어를 우선한다.
+      - 회사 공유용 기술 artifact는 영어 초안과 한국어 설명을 필요에 따라 병행한다.
+      - 하루 한 개의 technical summary만 영어로 다시 써본다.
+      - 같은 작업을 한국어와 영어로 수행해 토큰, 정확도, 수정량, 이해도를 비교한다.
+    decision_questions:
+      - 목표가 영어 능력 향상인가, AI token 효율인가, 회사 협업인가?
+      - 개인 감정과 관계 기록까지 영어로 바꿀 필요가 있는가?
+      - 영어 우선이 사고의 정밀도와 기록 지속성을 낮추지는 않는가?
+    activation_condition: Brian이 적용 범위와 시험 기간을 명시적으로 선택한다.
+    source_refs:
+      - source_travel_book_note_img_1830_20260715
+    confidence: medium
+    needs_user_review: true
+
+  - id: principle_happiness_bundle_active_visualization
+    object_type: Concept
+    title: 행복꾸러미를 사진과 좋은 기억으로 다시 느끼기
+    status: active_principle
+    area_refs: [MIND, RELATION, FUN]
+    activity_ref: activity_happiness_bundle
+    statement: >
+      행복꾸러미는 읽고 보관하는 문서가 아니라 미야, 지구, 가족 사진과
+      좋은 기억을 자주 보고 생각하고 시각화해 충만한 상태를 다시 불러오는 도구다.
+    gentle_practice:
+      - 에너지가 낮을 때 사진 또는 좋은 기억 하나만 1-3분 본다.
+      - 그 장면에서 고마운 점, 느껴지는 감각, 오늘 재현할 수 있는 작은 행동을 하나 적는다.
+      - 관계 사진을 볼 때 상대에게 할 수 있는 작은 감사 또는 돌봄 action을 연결할 수 있다.
+      - 새 행복 장면이 생기면 사진과 짧은 문장으로 행복꾸러미 evidence 후보에 남긴다.
+    non_pressure_boundary:
+      - 행복꾸러미를 매일 지켜야 하는 의무로 만들지 않는다.
+      - 우울하거나 지친 감정을 억지로 부정하는 용도로 쓰지 않는다.
+      - 현재 감정을 인정한 뒤 회복 선택지 중 하나로 가볍게 제안한다.
+    related_concept_refs:
+      - concept_fulfilled_mind
+    source_refs:
+      - source_travel_book_note_img_1831_20260715
+    confidence: high
+    needs_user_review: false
+
+  - id: architecture_life_mission_timeline_energy
+    object_type: ArchitectureDirection
+    title: Mission, Timeline, Energy로 삶과 agent를 함께 운영
+    status: active_planning_lens
+    area_refs: [MIND, BODY, CAREER, FINANCE, RELATION, MAINTENANCE, FUN]
+    statement: >
+      Mission과 Timeline만 최적화하면 삶의 에너지가 소진될 수 있으므로,
+      모든 계획과 agent 실행을 Energy/Happiness 및 7개 life area와 함께 검토한다.
+    planning_fields:
+      mission: 왜 이 일을 하는가.
+      timeline: 언제까지 어떤 순서와 cadence로 진행하는가.
+      energy: 수행 전후 Brian과 관계된 존재들의 에너지가 어떻게 달라지는가.
+      areas: 어떤 life area를 강화하고 어떤 area에 비용을 만드는가.
+      evidence: 완료와 실제 효과를 무엇으로 확인하는가.
+      review: 다음 계획에서 무엇을 유지하거나 조절하는가.
+    assistant_questions:
+      - 이 Mission은 지금 Brian에게 정말 중요한가?
+      - Timeline이 몸과 관계를 과도하게 압박하지 않는가?
+      - 실행 후 Energy/Happiness가 오를 가능성이 있는가, 낮아진다면 회복 장치는 무엇인가?
+      - CAREER 이외 area 중 이번 주 보호할 하나는 무엇인가?
+    source_refs:
+      - source_travel_book_note_img_1831_20260715
+    confidence: high
+    needs_user_review: false
+
+  - id: candidate_milano_bottleneck_inventory_20260715
+    object_type: KnowledgeInterest
+    title: 여행 메모 기반 Milano 병목 후보
+    status: candidate_not_current_project_status
+    area_refs: [CAREER]
+    project_refs:
+      - project_milano
+      - project_firenze
+    high_confidence_candidates:
+      - FPGA
+      - implementation
+      - E2E simulation
+      - power
+      - Firenze와 비교 분석
+    supporting_topics:
+      - PPA와 area optimization
+      - SFR debugging 정리
+      - PCIe module과 support 구조
+      - BAR overlap 예방으로 보이는 항목
+      - CSR 및 interface follow-up으로 보이는 항목
+    uncertain_acronyms:
+      - DCG/SCG 및 괄호 안 세부 항목
+      - PFO/PPI 또는 유사 표기
+      - HLT 또는 유사 support 항목
+      - FLD를 simulation에 연결한다는 것으로 보이는 항목
+      - E2E simulation 옆 추가 검증 항목
+    promotion_gate:
+      - 현재 Milano task/status records와 대조한다.
+      - 각 병목의 owner, due date, evidence gap을 확인한다.
+      - Brian이 지금도 유효하다고 확인한 항목만 Issue 또는 Task로 승격한다.
+      - 불확실 약어는 원문 사진과 업무 문맥을 함께 보고 확정한다.
+    source_refs:
+      - source_travel_book_note_img_1832_20260715
+    confidence: medium
+    needs_user_review: true
+
+  - id: architecture_engineering_metadata_reuse_layer
+    object_type: ArchitectureDirection
+    title: Engineering source metadata와 reuse layer
+    status: active_direction
+    area_refs: [CAREER, MIND]
+    project_refs:
+      - project_ai_agent
+      - project_milano
+      - project_firenze
+    statement: >
+      Confluence, Jira, Solution RAG, Perforce, GitLab과 분야별 Markdown을
+      하나로 복사해 새 저장소를 만드는 대신, 각 원본의 stable identity,
+      version, permission, context, evidence를 공통 metadata layer로 연결해 재사용한다.
+    source_systems:
+      - name: Confluence
+        likely_role: 문서, 설명, 결정 배경
+      - name: Jira
+        likely_role: issue, status, owner, workflow
+      - name: Solution RAG
+        likely_role: solved case, context, attempt, resolution, evidence
+      - name: Perforce
+        likely_role: RTL와 회사 코드 version
+      - name: GitLab
+        likely_role: Git code, merge, CI, version metadata
+      - name: local_markdown_yaml
+        likely_role: Brian의 정제 지식, ontology, 가이드, lesson
+    minimum_metadata:
+      - stable_id
+      - object_type
+      - title
+      - source_system
+      - source_locator
+      - source_version
+      - project_and_component_context
+      - owner_and_reviewer
+      - requirement_or_issue_refs
+      - evidence_refs
+      - status_and_freshness
+      - access_policy
+      - last_reviewed
+    candidate_knowledge_families:
+      domain:
+        - PCIe guide
+        - PCIe structure
+        - PCIe specification
+        - Cadence control and PHY notes
+      engineering:
+        - requirement
+        - testbench
+        - test case
+        - SDC
+        - synthesis and implementation
+        - lint and CDC
+        - interrupt, stream, bus, PMC/SBC, OCP
+      operations:
+        - issue
+        - debugging
+        - lesson learned
+        - power
+        - area
+        - PPA flow
+    relation_to_agent_loops:
+      - Mission, Plan, Action, Review records share the same IDs and context.
+      - Requirement, Obligation, Contract, Evidence, Validation records provide traceability and closure.
+      - Solution RAG reuses reviewed resolution and evidence records rather than ungrounded summaries.
+      - Generated PPTX, dashboard, or agent answer is a view over the same metadata, not a second truth store.
+    lightweight_implementation_order:
+      - 먼저 YAML에서 minimum metadata와 stable IDs를 검토한다.
+      - 기존 source를 복사하지 않고 metadata-only stub과 local distilled note를 연결한다.
+      - 한 개의 Firenze 또는 Milano 사례에서 source-to-evidence trace를 시험한다.
+      - 반복 가치가 확인된 source에만 connector나 automation을 추가한다.
+      - query scale이 실제 병목이 될 때에만 generated SQLite 또는 승인된 DB를 검토한다.
+    boundaries:
+      - 현재 작업에서 app, service, database를 새로 만들지 않는다.
+      - 회사 원본의 권한, DRM, access policy를 우회하지 않는다.
+      - 실시간 연동은 metadata model과 permission review가 안정된 뒤의 후보 단계다.
+      - 개인 life ontology와 회사 공유 지식을 access scope로 분리한다.
+    related_concept_refs:
+      - concept_foundry_like_operational_data_layer
+      - concept_solution_rag
+      - concept_operational_decision_system
+      - concept_advanced_operational_ontology
+    related_task_refs:
+      - task_ai_agent_soc_knowledge_format_db_pilot
+      - task_ai_agent_solution_rag_ontology_builder
+    source_refs:
+      - source_travel_book_note_img_1833_20260715
+      - source_travel_book_note_img_1826_20260715
+      - source_travel_book_note_img_1827_20260715
+    confidence: high
+    needs_user_review: false
+
+integration_boundaries:
+  - 원본 사진은 private raw 경로에만 두고 외부 서비스나 Git에 올리지 않는다.
+  - 영어 우선 메모는 검토 후보이며 현재 개인 기록 언어를 바꾸지 않는다.
+  - Milano brainstorm은 현재 project status나 active task를 덮어쓰지 않는다.
+  - 건강 질문은 research queue이며 처방으로 활성화하지 않는다.
+  - 새 DB나 app을 만들지 않고 기존 YAML ontology와 source metadata 구조를 사용한다.
+  - 행복꾸러미는 회복 선택지이며 의무나 압박으로 만들지 않는다.
