@@ -33,6 +33,29 @@ source_records:
     needs_user_review: false
     privacy_note: This personal finance record remains local.
 
+  - id: source_mind_conversation_20260715_recording_clarity_control_energy_100
+    object_type: Source
+    source_type: chat
+    original_date: 2026-07-15
+    imported_at: 2026-07-15
+    parse_status: parsed
+    raw_text: "그리고 오늘 이렇게 쭉 기록하니 훨씬 정리되고 통제되는 느낌이라 기분이 좋음. 에너지 100"
+    interpreted_mood:
+      valence: strongly_positive
+      arousal: high
+      emotions:
+        - organized
+        - in_control
+        - satisfied
+        - energized
+      reported_energy_raw: 100
+      reported_energy_scale: assumed_0_to_100_from_wording
+      context: Sustained local ontology recording and review during the 2026-07-15 session.
+      causal_claim: none
+    confidence: high
+    needs_user_review: false
+    privacy_note: This personal mind-state record remains local.
+
 observations:
   - id: observation_finance_20260715_monthly_cashflow_near_zero
     object_type: Observation
@@ -45,6 +68,56 @@ observations:
       source_ref: source_finance_conversation_20260715_cashflow_normalization_commitment
       related_spending_ref: spending_20260617_ai_tool_testing_claude_codex_400usd
     confidence: high_for_user_reported_state_amounts_unverified
+
+  - id: observation_mind_20260715_structured_recording_control_signal
+    object_type: Observation
+    date: 2026-07-15
+    observation_type: structured_recording_control_and_energy_signal
+    area: MIND
+    secondary_areas:
+      - FINANCE
+    value: Brian reports feeling substantially more organized, in control, and happy after recording and reviewing today's items, with energy reported as 100.
+    unit: qualitative_state_plus_user_reported_energy
+    linked_context:
+      mood_ref: mood_20260715_recording_clarity_control_energy_100
+      related_decision_ref: decision_finance_20260715_july_month_end_fixed_cost_reset
+      source_ref: source_mind_conversation_20260715_recording_clarity_control_energy_100
+    interpretation: The positive state occurred alongside structured local recording and review. Preserve it as an association and do not yet generalize it into a causal pattern.
+    confidence: high_for_current_state_low_for_generalized_pattern
+
+mind_state_updates:
+  - id: mood_20260715_recording_clarity_control_energy_100
+    object_type: MoodEntry
+    date: 2026-07-15
+    time: null
+    valence_score: 3
+    arousal_score: 5
+    stress_score: null
+    energy_score: 5
+    reported_energy_raw: 100
+    reported_energy_scale: assumed_0_to_100_from_wording
+    emotions:
+      - organized
+      - in_control
+      - satisfied
+      - happy
+      - energized
+    linked_context:
+      related_decision_ref: decision_finance_20260715_july_month_end_fixed_cost_reset
+      related_task_refs:
+        - task_finance_20260731_change_personal_gpt_plan
+        - task_finance_20260731_change_mobile_phone_plan
+        - task_finance_20260731_record_and_review_july_spending
+      source_ref: source_mind_conversation_20260715_recording_clarity_control_energy_100
+    possible_triggers:
+      - Today's extended local recording and review session may be associated with greater clarity and perceived control.
+      - Turning vague spending concerns into dated, reviewable tasks may be associated with the positive state.
+    note: Record the positive state without claiming that recording alone caused it. Repeated observations would be needed before promoting a pattern.
+    raw_text: "그리고 오늘 이렇게 쭉 기록하니 훨씬 정리되고 통제되는 느낌이라 기분이 좋음. 에너지 100"
+    source_refs:
+      - source_mind_conversation_20260715_recording_clarity_control_energy_100
+    confidence: high
+    needs_user_review: false
 
 decisions:
   - id: decision_finance_20260715_july_month_end_fixed_cost_reset
