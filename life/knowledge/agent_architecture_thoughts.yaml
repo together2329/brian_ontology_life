@@ -787,6 +787,148 @@ source_records:
     knowledge_thread_ref: thought_thread_20260625_obsidian_okf_readable_management
     related_task_refs:
       - task_ai_agent_okf_export_layer
+
+  - id: source_knowledge_conversation_20260628_visual_thinking_view_layer
+    source_type: chat
+    original_date: 2026-06-28
+    imported_at: 2026-06-28
+    parse_status: parsed
+    raw_text: "YAML은 저장 형식이고, visual thinking은 사고 인터페이스다. ontology는 전체 지식의 구조이고, visual thinking은 그중 지금 필요한 관계만 꺼내 보는 사고 렌즈다."
+    interpreted_direction:
+      title: YAML ontology over human visual thinking view layer
+      core_model:
+        - YAML ontology is the source-of-truth storage structure.
+        - AI reads the ontology as a reasoning/retrieval user.
+        - Brian should also see selected ontology structures through a human visual-thinking layer.
+        - The system should not render the whole ontology as a hairball; it should generate question-specific partial views.
+        - View specs should define focus nodes, depth, node types, relation types, intended use, and output format.
+        - Brian reviews the generated view visually, records insights/questions/decisions, proposes ontology patches, and can convert the reviewed result into a presentation.
+      compact_loop: "Ontology -> View -> Review -> Patch -> Presentation -> Feedback -> Ontology"
+      layer_model:
+        ontology: Canonical knowledge structure; concepts, relations, source refs, rules, state.
+        view: Question-specific extracted subgraph for thinking, diagnosis, risk, decision, or action planning.
+        review: Brian's visual-thinking traces such as observations, questions, contradictions, insights, decisions, and confidence changes.
+        patch: Review-derived ontology changes such as added nodes, edge updates, reclassification, importance changes, status updates, or confidence changes.
+        presentation: Audience-specific storyline that explains the problem, extracted structure, discovery, interpretation, recommendation, and ask.
+        feedback: Questions, objections, or new information from others that can become another ontology patch.
+      key_distinctions:
+        - Thinking view is exploratory, may be messy, and is for Brian's own reasoning.
+        - Presentation view is selective, narrative, and designed to help another person form a mental model.
+        - Presentation is not graph export; it is interpretation export.
+      candidate_object_types:
+        - OntologyView
+        - ReviewSession
+        - OntologyPatch
+        - PresentationPlan
+        - FeedbackItem
+      candidate_relation_types:
+        - causes
+        - caused_by
+        - leads_to
+        - prevents
+        - depends_on
+        - blocks
+        - requires
+        - supports
+        - contradicts
+        - assumes
+        - evidences
+        - mitigated_by
+        - solved_by
+        - owned_by
+        - next_step
+      candidate_file_structure:
+        - life/views/*.yaml
+        - life/views/generated/*.mmd
+        - life/reviews/*.yaml
+        - life/patches/*.yaml
+        - life/presentations/*.yaml
+      related_concept_refs:
+        - concept_visual_thinking_view_layer
+        - concept_ontology_first_agent_memory
+        - concept_cognitive_load_aware_ai_output
+        - concept_interactive_html_knowledge_viewer
+        - concept_conversation_feedback_learning_loop
+      related_task_refs:
+        - task_ai_agent_visual_thinking_view_layer_design
+
+  - id: source_knowledge_codex_thread_inventory_20260629_recent_conversations
+    source_type: codex_thread_review
+    original_date: 2026-06-29
+    imported_at: 2026-06-29
+    parse_status: parsed
+    raw_text: "Brian asked Codex to list and review recent threads, then asked to record the important outcomes."
+    interpreted_thread_map:
+      central_line: "Full-capacity Codex use -> bounded overnight asset pipeline -> SSOT deep interview -> Feature/Requirement/Obligation/Contract lock preview -> RTL/DVS/TB/TC/verify evidence."
+      thread_inventory_as_memory_operation:
+        - Recent Codex conversations should be periodically summarized into source records, thought threads, task status, open questions, and evidence links.
+        - Thread linking is not only navigation; it is a continuity layer between isolated Codex sessions and the canonical ontology.
+        - Important outcomes should be promoted, while full raw transcripts should stay out of the ontology unless specifically needed.
+      reviewed_clusters:
+        - name: full_capacity_codex_activation
+          summary: Codex entered company use on 2026-06-29, felt fast/good, and triggered a full-capacity fast/5.5 xhigh unlimited-use strategy.
+        - name: oag_ip_workflow_hardening
+          summary: OAG IP workflow now needs explicit Feature -> Requirement -> Atom -> Obligation -> Contract tracing, IP-local git discipline, Windows git.exe compatibility, and IP-XACT projection boundaries.
+        - name: prelock_review_frame
+          summary: Before implementation lock, Brian wants a clear document frame showing what is being locked, including features, requirements, obligations, contracts, assumptions, unresolved decisions, and verification intent.
+        - name: mctp_rx_assembler_case
+          summary: MCTP RX assembler recent work has pass/closure evidence and may become a reusable OAG case study if finalized cleanly.
+        - name: life_ontology_supporting_records
+          summary: Body workout, morning briefing, and deck-generation threads are supporting evidence that Codex thread outcomes can feed local life ontology records and reusable workflows.
+    related_task_refs:
+      - task_ai_agent_ssot_deep_interview_to_verify_pilot
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_codex_ontology_development_plugin
+    related_ai_agent_source_ref: source_ai_agent_codex_thread_inventory_20260629_recent_conversations
+  - id: source_knowledge_codex_thread_deep_dive_20260629_operating_model
+    source_type: codex_thread_review
+    original_date: 2026-06-29
+    imported_at: 2026-06-29
+    parse_status: parsed
+    raw_text: "Brian asked to go deeper into recent local Codex threads after the first thread inventory."
+    interpreted_operating_model:
+      title: Brian IP Agent Flow v0.1
+      core_claim: Brian's next full-power use of Codex is not simply more runtime; it is an operating model that turns Brian's hardware/IP judgment into a traceable agent workflow.
+      observed_progression:
+        - MCTP RX assembler started with implementation questions such as interface, register, bit field, module split, parser, assembler, and dataflow.
+        - The thread then moved upward into requirement readiness, obligation and contract rationale, wavefront dispatch, formal/TB planning, UVM-style regression, and evidence closure.
+        - The later questions shifted from "can Codex implement this" to "why did holes appear and how should gater, validator, contract, receipt, and pre-lock review prevent recurrence."
+        - The SSOT/deep-interview direction is therefore a formalization of Brian's real interactive design behavior, not a new unrelated process.
+      full_power_loop:
+        - large intent
+        - Deep Interview decision extraction
+        - SSOT lock candidate
+        - requirement / obligation / contract projection
+        - human visual review before lock
+        - RTL / DVS / TB / TC wavefront execution
+        - evidence / receipt / validator / gate
+        - case study / skill / seminar asset distillation
+      failure_pattern:
+        - Recent blockers were mostly operating-schema failures rather than model-intelligence failures.
+        - Repeated issues included receipt missing required fields, wavefront task ID mismatch, missing blockers for blocked receipts, out-of-scope writes, missing evidence markers, and gate/retry stuck states.
+        - This implies the next improvement should harden dispatch IDs, allowed write paths, receipt schema, stop conditions, and morning review rather than only increasing model capability.
+      deep_interview_rule:
+        - Ask the single most important unresolved decision at that moment.
+        - Offer three to four options with a recommended default and room for custom user input.
+        - Record the chosen decision, rejected alternatives, rationale, tradeoffs, assumptions, and verification impact.
+        - Continue only to the next most important question after the current decision is captured.
+      visual_review_role:
+        - YAML ontology remains the canonical storage format.
+        - Excalidraw, HTML review frames, Obsidian graph, or other views are human reasoning interfaces over selected ontology slices.
+        - The most important visual role in the IP workflow is pre-lock review: Brian should inspect what will be locked before agents fan out into RTL/TB/verification work.
+      next_model_name: Brian IP Agent Flow v0.1
+    related_task_refs:
+      - task_ai_agent_ssot_deep_interview_to_verify_pilot
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+    related_concept_refs:
+      - concept_visual_thinking_view_layer
+      - concept_hardware_ip_agent
+      - concept_subsystem_level_ontology
+      - concept_soc_on_ontology
+    related_ai_agent_source_ref: source_ai_agent_codex_thread_deep_dive_20260629_operating_model
   - id: source_knowledge_conversation_20260703_jarvis_style_persistent_mission_automation
     source_type: chat
     original_date: 2026-07-03
@@ -806,7 +948,6 @@ source_records:
       - concept_agentic_retrieval_substrate
       - concept_agent_evaluation_monitoring
       - concept_codex_plan_mode
-
   - id: source_knowledge_conversation_20260703_mctp_thread_jarvis_anthropic_loop
     source_type: chat_and_external_research
     original_date: 2026-07-03
@@ -841,6 +982,137 @@ source_records:
       - concept_codex_thread_linking
       - concept_hardware_ip_agent
       - concept_soc_on_ontology
+  - id: source_knowledge_screenshot_20260703_loop_engineering_playbook_threads
+    source_type: screenshot_attachment
+    original_date: 2026-07-03
+    imported_at: 2026-07-03
+    parse_status: parsed_from_screenshot
+    raw_text: "Brian attached screenshots about Loop Engineering, five loop principles, generator/evaluator separation, six loop parts, loop risks, and barbell model routing."
+    source_artifact_paths:
+      - raw_data/images/agent_loop_engineering_20260703/01-loop-engineering-playbook.jpg
+      - raw_data/images/agent_loop_engineering_20260703/02-principles-generator-evaluator.jpg
+      - raw_data/images/agent_loop_engineering_20260703/03-parts-risks-token-cost.jpg
+      - raw_data/images/agent_loop_engineering_20260703/04-barbell-model-routing.jpg
+    source_verification:
+      status: screenshot_only_not_externally_checked
+      note: Source screenshots were preserved locally; the underlying article/thread URL was not externally verified in this turn.
+    extracted_claims:
+      loop_engineering_definition:
+        - The practitioner no longer only prompts the agent; the practitioner designs the loop that prompts, checks, and re-runs agents.
+        - The scarce resource becomes judgment and verification, because generation becomes increasingly cheap.
+      five_principles:
+        discovery: Let agents find bounded work from CI failures, issues, commits, evidence gaps, or task queues.
+        handoff: Give each task an isolated execution context such as a git worktree and explicit task packet.
+        verification: Do not let the generator be the sole grader; use a separate skeptical evaluator.
+        persistence: Write durable state to disk through markdown, board, YAML, receipt, or ontology records.
+        scheduling: Run bounded loops on a timer or overnight queue so work progresses while Brian is away.
+      six_parts:
+        - automations
+        - worktrees
+        - skills
+        - connectors
+        - sub-agents
+        - memory
+      risk_cluster:
+        - verification debt
+        - losing understanding of the codebase
+        - token cost blowout
+        - cognitive surrender
+      cost_control:
+        - Use the strongest model for judgment-heavy or complex tasks.
+        - Use cheaper workers for routine execution only when the loop has state, verification, and review.
+    brian_oag_mapping:
+      discovery: OAG issue/evidence/coverage scan and SSOT gap discovery.
+      handoff: Worktree-backed wavefront task packet with allowed paths and receipt schema.
+      verification: Independent validator/gater separate from RTL/TB/TC generator.
+      persistence: Ontology, evidence ledger, task receipts, and knowledge graph writeback.
+      scheduling: Bounded all-day or overnight Codex queue with morning review.
+      six_parts_to_brian_stack:
+        automations: persistent mission loop and timers
+        worktrees: isolated Codex worker attempts
+        skills: reusable OAG/Codex workflows and review frames
+        connectors: GitHub, Linear, browser, files, and verification tools
+        sub_agents: generator, evaluator, planner, reviewer, librarian, and repair workers
+        memory: YAML ontology, evidence, source records, task status, and artifacts
+    strategic_interpretation:
+      - This is the operational counterpart to Token Capital: loops should convert agent activity into durable memory, evidence, validators, and skills.
+      - The strongest Brian-specific rule is generator/evaluator separation; validators should act by running tests, inspecting artifacts, and recording evidence.
+      - Overnight operation is valid only when bounded by discovery scope, isolated worktrees, durable state, independent verification, stop conditions, and morning review.
+      - Cognitive surrender is a core risk; Brian's hardware judgment remains the scarce resource that decides what evidence is sufficient.
+    related_task_refs:
+      - task_ai_agent_mctp_ip_persistent_mission_loop
+      - task_ai_agent_persistent_mission_automation_jarvis
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_ssot_deep_interview_to_verify_pilot
+    related_concept_refs:
+      - concept_loop_engineering
+      - concept_generator_evaluator_separation
+      - concept_loop_engineering_risk_debt
+      - concept_loop_engineering_barbell_model_routing
+      - concept_codex_thread_worktree_orchestration
+      - concept_git_worktree_codex_workflow
+      - concept_agent_skills
+      - concept_token_capital
+      - concept_ai_capability_learning_loop
+  - id: source_knowledge_conversation_20260703_microsoft_frontier_token_capital_oag_alignment
+    source_type: chat
+    original_date: 2026-07-03
+    imported_at: 2026-07-03
+    parse_status: parsed
+    raw_text: "이 문장에서 가장 중요한 부분은 'AI를 도입하는 회사'가 아니라 'AI 자체를 회사의 자산으로 축적하는 회사'라는 발상입니다."
+    source_verification:
+      status: verified_2026_07_03
+      verified_at: 2026-07-03
+      official_blog_url: https://blogs.microsoft.com/blog/2026/07/02/microsoft-frontier-company-ai-engineering-that-amplifies-and-protects-your-intelligence/
+      social_post_url: https://x.com/satyanadella/status/2072708957077176563
+      source_split:
+        official_blog:
+          - Microsoft announced Microsoft Frontier Company on 2026-07-02 as an AI engineering business for Frontier Transformation.
+          - The blog describes a $2.5B investment and 6,000 industry and engineering experts embedded with customers to co-design, deploy, and continuously improve AI systems at scale.
+          - The blog says companies need an intelligence platform where proprietary data, expertise, workflows, and decision-making processes compound over time.
+          - The blog emphasizes protecting each customer's intelligence, data, IP, and competitive advantage.
+        satya_social_post:
+          - The exact Human Capital plus Token Capital framing comes from Satya Nadella's linked social post, not the body text of the Microsoft blog.
+          - Verified key phrase excerpt: "human capital and token capital compound"
+          - Verified direction: enterprises should build their own AI capability and turn knowledge, workflows, and judgment into continuously improving AI systems.
+      note: Brian's OAG interpretation is now grounded against the official Microsoft blog plus Satya Nadella social-post language supplied by Brian.
+    raw_note_summary:
+      - Microsoft Frontier Company framing was interpreted as treating AI not merely as Copilot/chatbot, but as a company-built learning system.
+      - Human Capital plus Token Capital was identified as the future firm learning loop where human knowledge and AI-generated reasoning/workflow/evaluation/memory/artifacts compound.
+      - Token Capital was defined as the reusable company asset extracted from AI token usage: reasoning, workflows, evaluation, correction, review, feedback, memory, and artifacts.
+      - AI Capability was distinguished from simple AI usage: people, workflow, knowledge, memory, evaluation, agents, and continuous improvement.
+      - Brian's OAG direction was mapped onto this frame: Knowledge -> Ontology, Workflow -> OAG Process, Judgment -> Validator.
+      - Continuous improvement was described as Question -> Answer -> Evidence -> Review -> Correction -> Memory -> Better Answer.
+      - Brian's Requirement -> Ontology -> Task Graph -> Agent -> RTL -> TB -> Evidence -> Validator -> Memory -> Knowledge Graph -> Scheduler -> Next Task loop was identified as a learning loop.
+    interpreted_direction:
+      central_insight: The highest-value company AI strategy is to accumulate AI capability as structured memory, workflows, evaluations, artifacts, and reusable agent skills, not merely to deploy AI tools.
+      brian_oag_mapping:
+        token_capital: AI-produced reasoning, workflow, evaluation, correction, review, feedback, memory, and artifact traces.
+        ontology: Structured knowledge/memory layer where token capital becomes reusable.
+        oag_process: Workflow layer for turning requirements and tasks into traceable engineering actions.
+        validator: Judgment layer that decides whether evidence is sufficient and how the next loop should improve.
+        agent_skills: Reusable capability units distilled from successful workflows.
+      strategic_implication:
+        - Codex/OAG work should be evaluated by how much reusable Token Capital it produces.
+        - Every high-value run should leave structured artifacts, evidence, corrections, and lessons that improve the next run.
+        - The company asset is not only final RTL/TB/output, but the learning loop that produced and validated it.
+      relation_to_brian_ip_agent_flow:
+        - Requirement -> Obligation -> Contract -> Evidence -> Validation is a company learning-loop skeleton.
+        - SSOT -> RTL -> DVS -> TB/TC -> verify becomes stronger when every stage writes back reusable memory.
+        - The long-term target is a self-improving engineering system that designs and verifies better across projects.
+    related_concept_refs:
+      - concept_frontier_company_learning_system
+      - concept_token_capital
+      - concept_ai_capability_learning_loop
+      - concept_ontology_first_agent_memory
+      - concept_conversation_feedback_learning_loop
+      - concept_agent_workflow_knowhow_capture
+      - concept_hardware_ip_agent
+    related_task_refs:
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_ssot_deep_interview_to_verify_pilot
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_company_codex_rollout_support
 
 thought_threads:
   - id: thought_thread_20260615_okf_llm_wiki_ontology
@@ -1749,6 +2021,241 @@ thought_threads:
     confidence: high
     needs_user_review: false
 
+  - id: thought_thread_20260628_visual_thinking_view_layer
+    object_type: ThoughtThread
+    date: 2026-06-28
+    area: MIND
+    secondary_areas:
+      - CAREER
+    topic: Human visual-thinking view layer over YAML ontology
+    summary:
+      - Brian clarified that YAML ontology should stay as the source-of-truth storage format, while visual thinking should become the human-facing thinking interface.
+      - The ontology is already a graph-like structure of nodes and relations; the useful visual layer should extract question-specific partial graphs rather than rendering the whole ontology.
+      - View specs should act as thinking lenses over the ontology, such as causal maps, decision maps, risk maps, action-plan maps, and presentation views.
+      - Brian's visual review should produce structured observations, questions, contradictions, insights, decisions, and confidence changes.
+      - Those review outputs should become ontology patches, and mature reviewed structures can become audience-specific presentations.
+      - Presentation is not a raw graph export; it is a selective interpretation story that helps another person form the intended mental model and provide feedback.
+    core_loop:
+      - Ontology
+      - View
+      - Review
+      - Patch
+      - Presentation
+      - Feedback
+      - Ontology
+    layer_roles:
+      ontology: Source of truth for durable concepts, relations, rules, state, source refs, and confidence.
+      view: Question-specific extracted structure for the current thinking task.
+      review: Brian's human visual-thinking trace over that view.
+      patch: Review-derived updates proposed back into the ontology.
+      presentation: Audience-specific narrative view for sharing, teaching, decision-making, or feedback.
+      feedback: Social review material that can update the ontology again.
+    important_distinctions:
+      - "Thinking view = exploratory graph for Brian's own reasoning."
+      - "Presentation view = concise story for another person's understanding and decision."
+      - "AI knowledge graph = relation-based reasoning substrate."
+      - "Human visual graph = relation-based thought-organization surface."
+    related_concept_refs:
+      - concept_visual_thinking_view_layer
+      - concept_ontology_first_agent_memory
+      - concept_interactive_html_knowledge_viewer
+      - concept_cognitive_load_aware_ai_output
+      - concept_conversation_feedback_learning_loop
+      - concept_agentic_retrieval_substrate
+    related_project_refs:
+      - project_ai_agent
+    related_task_refs:
+      - task_ai_agent_visual_thinking_view_layer_design
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+    prior_thread_refs:
+      - thought_thread_20260625_obsidian_okf_readable_management
+      - thought_thread_20260620_ai_information_overload_and_ontology_digest
+      - thought_thread_20260618_codex_seminar_ontology_demo_stack
+    source_refs:
+      - source_knowledge_conversation_20260628_visual_thinking_view_layer
+    status: active_architecture_direction
+    confidence: high
+    needs_user_review: false
+
+  - id: thought_thread_20260629_codex_thread_consolidation_and_oag_direction
+    object_type: ThoughtThread
+    date: 2026-06-29
+    area: MIND
+    secondary_areas:
+      - CAREER
+    topic: Recent Codex thread consolidation and OAG full-capacity direction
+    summary:
+      - Brian asked Codex to inspect recent local Codex threads and then explicitly asked to record the important outcomes.
+      - The thread map showed a convergence between personal thinking, Codex company rollout, OAG/IP workflow design, MCTP RX assembler evidence closure, and local life ontology maintenance.
+      - The central strategic line is to use fast/5.5 xhigh unlimited Codex capacity as a bounded asset-producing system, not merely as unlimited runtime.
+      - The flagship engineering path is SSOT deep interview -> pre-lock review frame -> canonical lock -> RTL -> DVS -> TB/TC -> verify -> evidence ledger -> morning/human review.
+      - The deeper thread review reframed Brian's "Full Power" as an operating model: convert Brian's design judgment into repeatable agent workflows, not just run more agents.
+      - The MCTP RX assembler conversation shows a clear abstraction climb from interface/register/module/dataflow decisions to OAG contracts, wavefront execution, verification evidence, and system-level gate/validator design.
+      - The repeated blockers were mostly schema and orchestration failures: missing receipt fields, wavefront task mismatch, missing blockers, out-of-scope writes, missing evidence markers, and stuck gate retries.
+      - Visual thinking should serve as a pre-lock reasoning interface over the ontology; YAML is the canonical store, while Excalidraw/HTML/Obsidian-style views help Brian inspect and correct the structure before lock.
+      - OAG lock readiness should include a human-readable review frame that makes feature, requirement, atom, obligation, contract, assumption, unresolved decision, verification intent, and IP-XACT projection boundaries inspectable before lock.
+      - IP-XACT is useful as a standard projection for interface/register/memory/parameter/file/hierarchy/generator metadata, while OAG remains the authority for feature intent, requirement semantics, obligation ownership, contract rationale, evidence sufficiency, and validation logic.
+      - The recent MCTP RX assembler thread suggests a possible case study because it already has regression pass evidence and closure-refresh behavior.
+      - Thread inventory itself is now part of the ontology workflow: list recent threads, summarize outcomes, promote durable state, preserve open loops, and connect next actions.
+    conversation_flow:
+      - Brian first asked whether other threads could be referenced and recorded into this ontology.
+      - The current thread listing confirmed that Codex can inspect recent local Codex thread summaries and selected turns.
+      - The review grouped recent conversations into career/OAG work, body/morning briefing records, and presentation asset creation.
+      - Brian then asked to record these findings so the cross-thread state becomes queryable later.
+      - Brian then asked to go deeper, which produced the Brian IP Agent Flow v0.1 interpretation and separated runtime enthusiasm from the need for a reliable SSOT-to-evidence operating model.
+      - The resulting ontology update records the thread inventory as both a source record and a thought thread, and connects it to active AI Agent tasks.
+    related_concept_refs:
+      - concept_ontology_first_agent_memory
+      - concept_codex_thread_linking
+      - concept_codex_thread_worktree_orchestration
+      - concept_agent_workflow_knowhow_capture
+      - concept_conversation_feedback_learning_loop
+      - concept_hardware_ip_agent
+      - concept_subsystem_level_ontology
+      - concept_visual_thinking_view_layer
+    related_project_refs:
+      - project_ai_agent
+    related_task_refs:
+      - task_ai_agent_ssot_deep_interview_to_verify_pilot
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_codex_ontology_development_plugin
+    prior_thread_refs:
+      - thought_thread_20260618_codex_seminar_ontology_demo_stack
+      - thought_thread_20260628_visual_thinking_view_layer
+      - thought_thread_20260617_soc_on_ontology_direction
+    source_refs:
+      - source_knowledge_codex_thread_inventory_20260629_recent_conversations
+      - source_knowledge_codex_thread_deep_dive_20260629_operating_model
+      - source_ai_agent_codex_thread_inventory_20260629_recent_conversations
+    status: active_architecture_direction
+    confidence: high
+    needs_user_review: false
+
+  - id: thought_thread_20260703_token_capital_frontier_company_oag_alignment
+    object_type: ThoughtThread
+    date: 2026-07-03
+    area: MIND
+    secondary_areas:
+      - CAREER
+    topic: Token Capital, Frontier Company, and OAG as company learning loop
+    summary:
+      - Brian connected Microsoft's Frontier Company / Token Capital framing to his OAG and ontology-first hardware-agent direction.
+      - The important shift is from "a company that adopts AI" to "a company that accumulates AI itself as an asset."
+      - Token Capital was interpreted as reusable value extracted from token usage: reasoning, workflows, evaluations, corrections, reviews, feedback, memory, and artifacts.
+      - AI Capability was framed as people, workflow, knowledge, memory, evaluation, agents, and continuous improvement, not as one-shot AI usage.
+      - Brian's OAG loop maps closely to this: Knowledge -> Ontology, Workflow -> OAG Process, Judgment -> Validator.
+      - Requirement -> Obligation -> Contract -> Evidence -> Validation can be understood as a learning-loop skeleton for turning AI-assisted engineering work into reusable company capability.
+      - The SSOT -> RTL -> DVS -> TB/TC -> verify direction becomes more valuable when each stage writes back structured evidence, review, correction, and memory for the next project.
+      - This strengthens the two-month Codex asset-capture program: the goal is not usage volume but durable Token Capital and reusable AI capability.
+    brian_project_mapping:
+      human_capital:
+        - Brian's hardware/IP design judgment
+        - engineer review and domain decisions
+        - tacit design/verification know-how
+      token_capital:
+        - Codex/OAG conversations and reasoning traces
+        - generated requirements, RTL, TB, TC, review notes, coverage, and evidence
+        - corrections, failed attempts, validator decisions, and improved prompts/skills
+      company_learning_loop:
+        - people do engineering work
+        - agents assist and generate token traces
+        - useful traces are distilled into ontology, workflow, evidence, validators, and skills
+        - later agents and engineers reuse the improved memory
+        - the next project starts from a stronger capability base
+    oag_alignment:
+      knowledge: ontology
+      workflow: OAG process
+      judgment: validator
+      memory: evidence ledger and knowledge graph
+      reusable_capability: agent skills and case studies
+    related_concept_refs:
+      - concept_frontier_company_learning_system
+      - concept_token_capital
+      - concept_ai_capability_learning_loop
+      - concept_ontology_first_agent_memory
+      - concept_conversation_feedback_learning_loop
+      - concept_agent_workflow_knowhow_capture
+      - concept_hardware_ip_agent
+      - concept_tacit_knowledge_capture_for_ai
+    related_project_refs:
+      - project_ai_agent
+      - project_company_ai_transformation
+    related_task_refs:
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_ssot_deep_interview_to_verify_pilot
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_company_codex_rollout_support
+    prior_thread_refs:
+      - thought_thread_20260629_codex_thread_consolidation_and_oag_direction
+      - thought_thread_20260618_codex_seminar_ontology_demo_stack
+      - thought_thread_20260617_soc_on_ontology_direction
+    source_refs:
+      - source_knowledge_conversation_20260703_microsoft_frontier_token_capital_oag_alignment
+    status: active_architecture_direction
+    confidence: high
+    needs_user_review: false
+
+  - id: thought_thread_20260703_loop_engineering_oag_operating_model
+    object_type: ThoughtThread
+    date: 2026-07-03
+    area: MIND
+    secondary_areas:
+      - CAREER
+    topic: Loop Engineering as OAG/Codex operating model
+    summary:
+      - Brian attached Loop Engineering screenshots that frame the next level of agent work as designing loops that prompt, hand off, verify, persist, and schedule agents.
+      - This extends the prior Jarvis-style persistent mission direction: the mission loop should discover work, dispatch safe workers, verify independently, write state, and resume later.
+      - The five useful operating moves are discovery, handoff, verification, persistence, and scheduling.
+      - The six implementation parts map naturally to Brian's stack: automations, worktrees, skills, connectors, sub-agents, and memory.
+      - The strongest rule for Brian's OAG flow is generator/evaluator separation; the evaluator must act through tests, screenshots, lint/formal/sim checks, evidence review, and gate decisions.
+      - The key risks are verification debt, losing codebase understanding, token cost blowout, and cognitive surrender.
+      - The model-routing barbell fits Codex full-capacity use: spend the strongest model on judgment-heavy steps and use cheaper workers only where the loop has strict state and verification.
+    oag_operating_mapping:
+      discovery: CI failure, issue, coverage gap, SSOT hole, or evidence gap scan
+      handoff: isolated worktree plus task packet, allowed paths, expected artifact, and receipt schema
+      generation: RTL, DVS, TB, TC, review draft, or repair patch generation
+      verification: separate validator/gater that runs checks and records evidence
+      persistence: YAML ontology, task status, evidence ledger, source record, and artifact links
+      scheduling: bounded overnight/all-day queue with stop conditions and morning review
+    token_capital_connection:
+      - Loop Engineering is the execution mechanism that turns token usage into Token Capital.
+      - A loop is valuable only if it leaves reusable state: decisions, corrections, evidence, validators, skills, and case studies.
+      - If the loop only burns tokens and produces unreviewed output, it creates verification debt rather than capital.
+    brian_guardrails:
+      - Never let the generator claim its own signoff.
+      - Keep Brian's hardware judgment at the review and gate layer.
+      - Persist every loop's state before scheduling another run.
+      - Make each overnight loop disposable, isolated, and reviewable.
+      - Track cost and comprehension; stop when Brian no longer understands what the loop is changing.
+    related_concept_refs:
+      - concept_loop_engineering
+      - concept_generator_evaluator_separation
+      - concept_loop_engineering_risk_debt
+      - concept_loop_engineering_barbell_model_routing
+      - concept_token_capital
+      - concept_ai_capability_learning_loop
+      - concept_codex_thread_worktree_orchestration
+      - concept_agent_skills
+      - concept_hardware_ip_agent
+    related_project_refs:
+      - project_ai_agent
+    related_task_refs:
+      - task_ai_agent_mctp_ip_persistent_mission_loop
+      - task_ai_agent_persistent_mission_automation_jarvis
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_ssot_deep_interview_to_verify_pilot
+    prior_thread_refs:
+      - thought_thread_20260703_token_capital_frontier_company_oag_alignment
+      - thought_thread_20260629_codex_thread_consolidation_and_oag_direction
+    source_refs:
+      - source_knowledge_screenshot_20260703_loop_engineering_playbook_threads
+      - source_knowledge_conversation_20260703_mctp_thread_jarvis_anthropic_loop
+    status: active_architecture_direction
+    confidence: high
+    needs_user_review: false
+
 understandings:
   - id: understanding_20260703_mctp_thread_as_persistent_jarvis_pilot
     object_type: Understanding
@@ -1795,6 +2302,58 @@ understandings:
     source_refs:
       - source_knowledge_conversation_20260703_jarvis_style_persistent_mission_automation
       - source_knowledge_conversation_20260624_codex_skill_long_term_process_memory
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260703_loop_engineering_as_token_capital_execution
+    object_type: Understanding
+    date: 2026-07-03
+    area: MIND
+    secondary_areas:
+      - CAREER
+    statement: "Brian's Loop Engineering frame is the execution layer for Token Capital: agent loops must discover bounded work, hand it off safely, verify independently, persist state, and schedule repeat runs so token usage becomes durable capability instead of verification debt."
+    brian_wording_ko: "Loop Engineering 내용을 OAG/Codex full-power 흐름에도 기록."
+    status: active_direction
+    related_thread_ref: thought_thread_20260703_loop_engineering_oag_operating_model
+    related_task_refs:
+      - task_ai_agent_mctp_ip_persistent_mission_loop
+      - task_ai_agent_persistent_mission_automation_jarvis
+      - task_ai_agent_codex_two_month_asset_capture_program
+    related_concept_refs:
+      - concept_loop_engineering
+      - concept_generator_evaluator_separation
+      - concept_loop_engineering_risk_debt
+      - concept_token_capital
+      - concept_ai_capability_learning_loop
+    source_refs:
+      - source_knowledge_screenshot_20260703_loop_engineering_playbook_threads
+    confidence: high
+    needs_user_review: false
+  - id: understanding_20260703_token_capital_as_ai_asset_loop
+    object_type: Understanding
+    date: 2026-07-03
+    area: MIND
+    secondary_areas:
+      - CAREER
+    statement: Brian interprets Token Capital as the reusable company asset created when AI-assisted work leaves behind structured reasoning, workflows, evaluations, corrections, reviews, feedback, memory, and artifacts that improve future agents and engineers.
+    brian_oag_mapping:
+      - "Knowledge -> Ontology"
+      - "Workflow -> OAG Process"
+      - "Judgment -> Validator"
+      - "Continuous improvement -> Evidence/Review/Correction/Memory loop"
+    status: active_understanding
+    related_thread_ref: thought_thread_20260703_token_capital_frontier_company_oag_alignment
+    related_task_refs:
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_ssot_deep_interview_to_verify_pilot
+      - task_ai_agent_codex_ontology_development_plugin
+    related_concept_refs:
+      - concept_token_capital
+      - concept_ai_capability_learning_loop
+      - concept_frontier_company_learning_system
+      - concept_ontology_first_agent_memory
+      - concept_conversation_feedback_learning_loop
+    source_refs:
+      - source_knowledge_conversation_20260703_microsoft_frontier_token_capital_oag_alignment
     confidence: high
     needs_user_review: false
   - id: understanding_20260615_okf_llm_wiki_ontology_layering
@@ -2471,8 +3030,92 @@ understandings:
       - source_knowledge_book_note_20260620_dont_read_what_will_be_forgotten
     confidence: high
     needs_user_review: false
+  - id: understanding_20260628_yaml_is_storage_visual_thinking_is_interface
+    object_type: Understanding
+    date: 2026-06-28
+    area: MIND
+    secondary_areas:
+      - CAREER
+    statement: "For Brian Ontology Agent, YAML ontology should remain the source-of-truth storage structure, while a visual-thinking view layer should become the human thinking interface that extracts question-specific subgraphs for review, patching, presentation, and feedback."
+    brian_wording_ko: "YAML은 저장 형식이고, visual thinking은 사고 인터페이스다."
+    compact_model_ko:
+      - "ontology: 전체 지식 구조."
+      - "view: 지금 질문에 맞게 꺼낸 부분 구조."
+      - "review: 내가 visual thinking으로 깊게 검토한 흔적."
+      - "patch: ontology에 반영할 변경 제안."
+      - "presentation: 다른 사람에게 전달할 이야기 구조."
+      - "feedback: 발표 후 받은 질문/반박/추가 정보."
+    status: confirmed_by_brian
+    related_thread_ref: thought_thread_20260628_visual_thinking_view_layer
+    related_task_ref: task_ai_agent_visual_thinking_view_layer_design
+    related_concept_refs:
+      - concept_visual_thinking_view_layer
+      - concept_ontology_first_agent_memory
+      - concept_cognitive_load_aware_ai_output
+      - concept_interactive_html_knowledge_viewer
+      - concept_conversation_feedback_learning_loop
+    source_refs:
+      - source_knowledge_conversation_20260628_visual_thinking_view_layer
+    confidence: high
+    needs_user_review: false
 
 architecture_directions:
+  - id: architecture_direction_20260628_visual_thinking_view_layer
+    object_type: ArchitectureDirection
+    date: 2026-06-28
+    area: CAREER
+    secondary_areas:
+      - MIND
+    project_ref: project_ai_agent
+    title: Human visual-thinking view layer over YAML ontology
+    statement: "Add a lightweight human-facing view/review/patch/presentation loop over the canonical YAML ontology, so Brian and AI can use the same source of truth while Brian reasons through question-specific visual structures."
+    rationale:
+      - Raw YAML is a good local source of truth for AI and git, but it is not always the best human thinking surface.
+      - Rendering the whole ontology would create graph hairballs; useful thinking needs question-specific partial views.
+      - Brian's deep review should be captured as structured observations, questions, contradictions, insights, decisions, and patch proposals.
+      - Presentation should explain the reviewed interpretation, not expose the raw ontology graph.
+      - Feedback from presentations can improve the ontology as a social review loop.
+    implementation_direction:
+      first_slice:
+        - Define a minimal ViewSpec schema for focus_refs, include_node_types, include_relations, depth, intended_use, and output_format.
+        - Generate a Mermaid diagram from one existing concept or project slice.
+        - Add a ReviewSession record beside the generated view.
+        - Convert one review into an OntologyPatch proposal.
+        - Convert the same review into a small PresentationPlan.
+      candidate_objects:
+        - OntologyView
+        - ReviewSession
+        - OntologyPatch
+        - PresentationPlan
+        - FeedbackItem
+      candidate_storage:
+        - life/views/*.yaml
+        - life/views/generated/*.mmd
+        - life/reviews/*.yaml
+        - life/patches/*.yaml
+        - life/presentations/*.yaml
+      relation_policy:
+        - Avoid generic related_to where reasoning meaning matters.
+        - Prefer relations such as causes, blocks, supports, contradicts, assumes, evidences, mitigated_by, owned_by, and next_step.
+    tradeoffs:
+      - Keep the first implementation local and file-based; do not scaffold an app, database, or service.
+      - Treat generated diagrams as views, not canonical data.
+      - Separate thinking views from presentation views to avoid mixing exploratory clutter with audience-facing story.
+    follow_up_task_refs:
+      - task_ai_agent_visual_thinking_view_layer_design
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+    related_concept_refs:
+      - concept_visual_thinking_view_layer
+      - concept_ontology_first_agent_memory
+      - concept_interactive_html_knowledge_viewer
+      - concept_conversation_feedback_learning_loop
+      - concept_cognitive_load_aware_ai_output
+    source_refs:
+      - source_knowledge_conversation_20260628_visual_thinking_view_layer
+    status: active_direction_candidate
+    confidence: high
+    needs_user_review: false
   - id: architecture_direction_20260619_advanced_operational_ontology
     object_type: ArchitectureDirection
     date: 2026-06-19
@@ -2901,6 +3544,36 @@ knowledge_interests:
       - source_knowledge_conversation_20260703_jarvis_style_persistent_mission_automation
     confidence: high
     needs_user_review: false
+  - id: knowledge_interest_20260628_visual_thinking_view_layer
+    object_type: KnowledgeInterest
+    date: 2026-06-28
+    area: MIND
+    secondary_areas:
+      - CAREER
+    topic: Visual thinking view layer for ontology-backed reasoning
+    current_interest:
+      - Turning the canonical YAML ontology into human-facing visual thinking views.
+      - Using question-specific views instead of whole-graph visualization.
+      - Capturing Brian's visual review as structured insight, question, decision, and patch material.
+      - Translating reviewed structures into presentation plans that help others understand and provide feedback.
+    development_direction:
+      - Start with a small ViewSpec and Mermaid output over one ontology slice.
+      - Keep generated views read-only and regenerate them from YAML source.
+      - Add ReviewSession and OntologyPatch records before building richer UI.
+      - Use presentation plans as interpretation exports, not raw graph exports.
+    related_project_refs:
+      - project_ai_agent
+    related_task_ref: task_ai_agent_visual_thinking_view_layer_design
+    related_concept_refs:
+      - concept_visual_thinking_view_layer
+      - concept_ontology_first_agent_memory
+      - concept_interactive_html_knowledge_viewer
+      - concept_conversation_feedback_learning_loop
+    status: active_interest
+    source_refs:
+      - source_knowledge_conversation_20260628_visual_thinking_view_layer
+    confidence: high
+    needs_user_review: false
   - id: knowledge_interest_20260615_agent_memory_architecture
     object_type: KnowledgeInterest
     date: 2026-06-15
@@ -3199,6 +3872,42 @@ follow_up_tasks:
       - source_knowledge_conversation_20260624_codex_skill_long_term_process_memory
     confidence: high
     needs_user_review: true
+  - id: task_ai_agent_visual_thinking_view_layer_design
+    object_type: Task
+    title: Brian Ontology Agent visual thinking view layer 설계
+    area: CAREER
+    secondary_areas:
+      - MIND
+    status: candidate
+    priority: medium
+    energy: system_design
+    estimated_minutes: null
+    due_date: null
+    tracking_level: concept
+    project_ref: project_ai_agent
+    progress_percent: 0
+    tags:
+      - ontology
+      - visual_thinking
+      - view_layer
+      - review_loop
+      - presentation
+    expected_outputs:
+      - Minimal ViewSpec schema
+      - One generated Mermaid view from existing YAML ontology
+      - ReviewSession schema for Brian's visual-thinking notes
+      - OntologyPatch proposal format
+      - PresentationPlan format for audience-specific sharing
+    next_actions:
+      - Choose one narrow ontology slice for the first view.
+      - Define focus_refs, include_node_types, include_relations, depth, intended_use, and output_format.
+      - Generate the first Mermaid diagram as a read-only view.
+      - Record Brian's observations/questions/insights after visual review.
+      - Convert the review into one patch proposal and one presentation plan.
+    source_refs:
+      - source_knowledge_conversation_20260628_visual_thinking_view_layer
+    confidence: high
+    needs_user_review: false
   - id: task_ai_agent_okf_export_layer
     object_type: Task
     title: Brian Ontology Agent OKF export layer 설계

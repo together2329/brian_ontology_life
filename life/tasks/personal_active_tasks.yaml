@@ -1,6 +1,6 @@
 schema_version: 1
 status: active
-updated_at: 2026-07-02
+updated_at: 2026-07-15
 area: MAINTENANCE
 secondary_areas:
   - BODY
@@ -8,7 +8,7 @@ secondary_areas:
   - FINANCE
 project_ref: project_personal_life_admin
 title: Personal life admin active tasks
-current_phase: "2026-07-02 민방위 이수 확인 + 차량 후속 점검"
+current_phase: "2026-07-15 태국 방콕 여행 완료"
 
 source_records:
   - id: source_personal_admin_conversation_20260616_afternoon_eye_derm_receipt
@@ -183,19 +183,230 @@ source_records:
       reservation_url: https://main.kotsa.or.kr/popup/carInspPop.do
       note: 검사 가능 기간 안에 미수검 시 과태료 리스크가 있으므로 2026-08-02 전 검사 완료 필요.
 
+  - id: source_personal_travel_conversation_20260703_thailand_preparation
+    source_type: chat
+    original_date: 2026-07-03
+    imported_at: 2026-07-03
+    parse_status: parsed
+    raw_text: "태국 여행 준비"
+    interpreted_task:
+      goal: Prepare for a Thailand trip with lightweight travel-admin, health, safety, and packing checks.
+      assumed_trip_type: tourism
+      destination_country: Thailand
+      destination_country_ko: 태국
+      exact_dates: unknown
+      destination_cities_or_regions: unknown
+      traveler_nationality: unknown
+      companion_refs: []
+      related_task_ref: task_personal_20260703_thailand_travel_preparation
+      needs_user_review: true
+    official_context_checked_at: 2026-07-03
+    official_context:
+      - domain: entry_tdac
+        summary: All non-Thai nationals entering Thailand must submit the Thailand Digital Arrival Card online before entry; the official guide says submission is required within 3 days before arrival and needs passport, personal, travel, accommodation, and health declaration information.
+        source_url: https://tdac.immigration.go.th/manual/en/index.html
+      - domain: tdac_fee_warning
+        summary: 주태국 대한민국 대사관은 TDAC가 무료이며, 공식 홈페이지 외 유료 대행/사칭 사이트에 주의하라고 안내함.
+        source_url: https://tha.mofa.go.kr/th-ko/brd/m_25795/view.do?seq=1347255
+      - domain: visa_policy_korean_passport_context
+        summary: 주한태국대사관 관광비자 안내는 2026-06-16 기준 한국 국적은 무비자 협정으로 최대 90일 체류 가능하므로 관광비자 없이 입국 가능하다고 안내함. 단, 국적/여권종류/체류목적/정책변경 여부는 출국 전 재확인 필요.
+        source_url: https://seoul.thaiembassy.org/kr/publicservice/%EA%B4%80%EA%B4%91%EB%B9%84%EC%9E%90-tourist-visa
+      - domain: visa_policy_change_context
+        summary: 태국 외교부는 2026-05-19 브리핑에서 비자면제/도착비자 제도 개정을 승인했다고 발표했으며, 60일 비자면제 제도 폐지 등 세부사항은 Royal Gazette 공표 후 발효된다고 안내함.
+        source_url: https://www.mfa.go.th/en/content/summary-press-briefing-190526
+      - domain: korea_mofa_safety
+        summary: 외교부 해외안전여행은 태국 일반 지역은 여행유의로 두고, 말레이시아 접경 남부 일부와 태국-캄보디아 국경 50km 이내는 출국권고, 일부 국경 지역은 특별여행주의보로 안내함.
+        source_url: https://0404.go.kr/ntnSafetyInfo/260/detail
+      - domain: travel_health
+        summary: CDC Thailand traveler view recommends checking routine vaccines, Hepatitis A, Hepatitis B, typhoid, and activity/region-dependent vaccines or malaria prevention; mosquito-bite prevention is important for dengue, Zika, and other vector risks.
+        source_url: https://wwwnc.cdc.gov/travel/destinations/traveler/none/thailand
+    privacy_note: No personal passport, booking, medical, payment, or itinerary details were sent to external services.
+
+  - id: source_personal_travel_conversation_20260703_thailand_restaurants_food
+    source_type: chat
+    original_date: 2026-07-03
+    imported_at: 2026-07-03
+    parse_status: parsed
+    raw_text: "식당 + 음식점"
+    interpreted_task_update:
+      task_ref: task_personal_20260703_thailand_travel_preparation
+      added_scope:
+        - restaurants
+        - local_food
+        - food_shortlist
+      note: Add restaurant and food-place planning to the Thailand travel preparation task.
+      needs_destination_city: true
+
+  - id: source_personal_travel_conversation_20260703_bangkok_itinerary_shortlist
+    source_type: chat
+    original_date: 2026-07-03
+    imported_at: 2026-07-03
+    parse_status: parsed
+    raw_text: |-
+      방콕 여행 계획 세울꺼 아이콘 시암
+      have a zeed 갈까하는데
+      프림 파빌리온 마사지샵도
+      아난타라 리버사이드에서 묶는데 그 옆에 뭐 뷰 좋은 곳이 있나
+      블루엘리펀트 왕립 레스토랑?
+      룽르엉은 뭐야?
+      방콕 나파 마사지 룽르엉 근처
+      카오산 로드 할명수 나와 파타이 그 근처 마사지 샵은 반 타이 마사지
+      그다음 푸파퐁커리 서치좀 맛집
+      쏭왓로드 새로운 뷰 좋은 길? 왓아룬 뷰
+      펍
+      엘리펀트 파크 코끼리 보호소도 가려고
+      태국 공항에서 픽업 예약 해야함 숙소까지
+      마사지 샵 머머 이야기했지
+      시암 나파 마사지 napar
+      룽르엉 근처 다시 한 번
+      송완 로드 비프누들 할명수 방콕 편
+      대화한거 저장좀
+    interpreted_trip_memory:
+      related_task_ref: task_personal_20260703_thailand_travel_preparation
+      destination_city: Bangkok
+      destination_city_ko: 방콕
+      accommodation:
+        name: Anantara Riverside Bangkok Resort
+        neighborhood_context: Chao Phraya riverside / Thonburi
+        note: 숙소 기준으로 공항 픽업, 리버사이드 바, 루프탑 뷰 동선을 잡는 중.
+      planning_style:
+        - 지역별로 하루를 나누고 과하게 몰아넣지 않기.
+        - 식사 직후에는 전신 마사지보다 발/목어깨 마사지 우선.
+        - 뷰 좋은 술/맥주는 왓아룬, 강변, 루프탑 동선에 붙이기.
+        - 동물복지 기준으로 코끼리 타기, 쇼, 그림 그리기, 과한 접촉형 프로그램은 피하기.
+      neighborhood_shortlist:
+        - area: IconSiam / Charoen Nakhon
+          candidates:
+            - Have A Zeed: casual Thai/Isan meal inside ICONSIAM.
+            - Preme Pavilion: massage near ICONSIAM; good before dinner.
+            - HOBS ICONSIAM: beer after mall/dinner if staying in the area.
+            - SOOKSIAM / River Park / fountain show: light walk and night view.
+        - area: Anantara Riverside / Avani+ Riverside
+          candidates:
+            - Longtail River Bar: easiest riverside beer near the hotel.
+            - SEEN Bangkok: Avani+ Riverside rooftop skyline/river view.
+            - Manohra Dinner Cruise: dinner-cruise option departing from Anantara.
+            - Asiatique: casual riverfront night walk nearby.
+        - area: Sathorn
+          candidates:
+            - Blue Elephant Bangkok: formal Royal Thai Cuisine meal; separate fine-dining night.
+        - area: Phrom Phong / Sukhumvit
+          candidates:
+            - Rung Rueang Pork Noodle: famous pork noodle near Sukhumvit 26/Phrom Phong.
+            - Asia Herb Association Sukhumvit 24: first-choice massage near Rung Rueang.
+            - Once Upon A Thai Spa Phrom Phong: prettier spa alternative.
+            - Oasis Spa Sukhumvit 31: higher-end spa with Phrom Phong transfer option.
+            - EmQuartier / EmSphere: easy post-meal walking option.
+          note: NAPAR Massage is in Siam, not near Rung Rueang.
+        - area: Siam / Pathumwan
+          candidates:
+            - NAPAR Massage Siam: value massage near BTS Siam Exit 4 / Siam Square.
+            - Siam Paragon / Siam Square / CentralWorld: shopping-walk context before or after NAPAR.
+        - area: Old City / Khao San / Tha Tien
+          candidates:
+            - Nava Pad Thai: Halmyungsoo-linked Old City/Khao San pad thai candidate.
+            - Ban Thai Masaje: massage near Khao San / Nava Pad Thai route.
+            - Krua Apsorn Dinso: nearby pu pad pong curry / crab curry candidate; check Sunday closure.
+            - sala rattanakosin Rooftop Bar: Wat Arun view drinks.
+            - View ARUN / Eagle Nest Bar: Wat Arun view alternatives.
+          note: Khao San itself is better for one casual beer than a serious beer plan.
+        - area: Song Wat / Talat Noi / Chinatown
+          candidates:
+            - Rong Klan Nuea: Song Wat beef noodle candidate associated with the Halmyungsoo Bangkok route.
+            - Woodbrook Bangkok / Hong Sieng Kong / River Vibe: river-view cafe/bar options.
+            - Tai Soon Bar: beer-focused Chinatown craft beer option.
+            - Opium Bar: Chinatown speakeasy option if booking a stronger bar night.
+            - Very Nice Bar: quieter Talat Noi beer/sake/light-bites option.
+          note: Song Wat is a trendy old Chinatown/riverside street, while direct Wat Arun front-view bars are across near Tha Tien/Maha Rat.
+        - area: Elephant sanctuary day trip
+          candidates:
+            - Somboon Legacy Foundation: preferred ethical hands-off elephant sanctuary option.
+            - WFFT: longer rescue-center day trip with elephants and other wildlife.
+            - Bangkok Elephant Park: more convenient Bangkok-area option but includes hands-on feeding/mud/bathing interactions.
+          note: Treat this as a full-day or heavy half-day plan; do not stack with a packed city itinerary.
+        - area: Airport transfer
+          candidates:
+            - Klook or KKday private airport transfer: practical first choice for airport-to-Anantara with luggage.
+            - Hotel transfer via Anantara: easiest but likely more expensive.
+            - Airport public taxi: fallback; meter plus airport surcharge/tolls.
+          needed_details:
+            - Arrival airport: BKK or DMK.
+            - Arrival date and time.
+            - Passenger count.
+            - Luggage count.
+      open_decisions:
+        - Exact trip dates and arrival/departure times.
+        - Arrival airport for pickup booking.
+        - Traveler count and luggage count.
+        - Which food/spa/bar candidates to reserve.
+        - Whether elephant experience should prioritize convenience or strict hands-off animal welfare.
+      needs_user_review: true
+    source_urls:
+      - https://www.iconsiam.com/
+      - https://www.anantara.com/en/riverside-bangkok
+      - https://www.avanihotels.com/en/riverside-bangkok/restaurants/seen-bangkok
+      - https://www.salahospitality.com/rattanakosin-bangkok/eat-drink/rooftop-bar/
+      - https://asiaherb.asia/en/shop/phrom-phong/
+      - https://www.onceuponathaispa.com/
+      - https://oasisspa.net/en/destination/bangkok/Sukhumvit31/
+      - https://page.line.me/027owstc
+      - https://somboon.org/plan-your-visit/
+      - https://www.wfft.org/projects/elephant-refuge/
+      - https://www.bangkokelephant.com/
+      - https://www.klook.com/en-US/airport-transfers/city/4-bangkok-airport/
+      - https://www.instagram.com/rongklannuea/
+
+  - id: source_personal_travel_conversation_20260703_bangkok_dates_confirmed
+    source_type: chat
+    original_date: 2026-07-03
+    imported_at: 2026-07-03
+    parse_status: parsed
+    raw_text: "7월 11일 토요일 부터 7월 14일 화요일 밤까지"
+    interpreted_trip_dates:
+      related_task_ref: task_personal_20260703_thailand_travel_preparation
+      destination_city: Bangkok
+      start_date: 2026-07-11
+      start_weekday_ko: 토요일
+      end_date: 2026-07-14
+      end_weekday_ko: 화요일
+      end_time_context: night
+      date_range_precision: date_confirmed_time_approximate
+      note: 2026년 달력 기준 2026-07-11은 토요일, 2026-07-14는 화요일로 사용자 입력 요일과 일치함.
+      needs_user_review: false
+
+  - id: source_personal_travel_conversation_20260715_thailand_trip_completed
+    source_type: chat
+    original_date: 2026-07-15
+    imported_at: 2026-07-15
+    parse_status: parsed
+    raw_text: "태국 여행 잘 다녀옴 :)"
+    interpreted_trip_update:
+      related_task_ref: task_personal_20260703_thailand_travel_preparation
+      destination_country: Thailand
+      destination_city: Bangkok
+      trip_start_date: 2026-07-11
+      trip_end_date: 2026-07-14
+      status: completed
+      experience_sentiment: positive
+      completion_confirmed_at: 2026-07-15
+      note: Brian confirmed that he returned safely and described the trip positively.
+      confidence: high
+      needs_user_review: false
+
 
 summary:
   current_focus:
-    date: 2026-07-02
+    date: 2026-07-03
     primary_tasks:
+      - task_personal_20260703_thailand_travel_preparation
       - task_personal_20260702_civil_defense_schedule_check
       - task_personal_20260702_vehicle_inspection_schedule_check
       - task_personal_20260702_vehicle_oil_replacements_and_car_wash
       - task_personal_20260702_drive_belt_replacement_followup
       - task_personal_20260702_tire_condition_check
       - task_personal_20260702_ac_smell_internal_air_path_check
-    note: 민방위는 이수 완료로 확인했고, 자동차 검사는 2026-08-02까지 수검 가능하므로 예약/방문 필요. 7월 차량 정비 중 오일류 교체와 세차는 완료, 구동벨트/타이어/에어컨 냄새는 후속 점검 루프로 분리함.
-    source_ref: source_personal_vehicle_notice_20260702_kotsa_inspection
+    note: 태국 여행 준비를 새 생활 행정/FUN 체크리스트로 만들었고, 식당/음식점 후보 수집도 범위에 추가함. 일정·지역·여권 국적·동행자는 아직 확인 필요. 민방위는 이수 완료로 확인했고, 자동차 검사는 2026-08-02까지 수검 가능하므로 예약/방문 필요. 7월 차량 정비 중 오일류 교체와 세차는 완료, 구동벨트/타이어/에어컨 냄새는 후속 점검 루프로 분리함.
+    source_ref: source_personal_travel_conversation_20260703_bangkok_itinerary_shortlist
 
 tasks:
   - id: task_personal_20260617_gym_fingerprint_reregistration
@@ -721,6 +932,77 @@ tasks:
     confidence: high
     needs_user_review: true
 
+  - id: task_personal_20260703_thailand_travel_preparation
+    object_type: Task
+    title: 태국 여행 준비
+    area: MAINTENANCE
+    secondary_areas:
+      - FUN
+      - BODY
+      - FINANCE
+      - RELATION
+    status: completed
+    priority: high
+    energy: admin
+    estimated_minutes: 90
+    due_date: null
+    tracking_level: lightweight
+    project_ref: project_personal_life_admin
+    owner_ref: person_brian
+    progress_percent: 100
+    tags:
+      - travel
+      - thailand
+      - 태국
+      - TDAC
+      - passport
+      - travel_insurance
+      - health
+      - packing
+      - trip_admin
+      - restaurants
+      - food
+      - local_food
+      - 맛집
+    context:
+      - Brian asked to prepare for Thailand travel on 2026-07-03.
+      - Brian added restaurant and food-place planning to the Thailand trip preparation scope.
+      - Brian is planning a Bangkok trip from 2026-07-11 Saturday to 2026-07-14 Tuesday night and mentioned staying at Anantara Riverside Bangkok Resort.
+      - On 2026-07-15, Brian confirmed that he returned safely and enjoyed the Thailand trip.
+      - Exact arrival airport/time, traveler nationality, passport type, and companions are not yet provided.
+      - Use the official TDAC website only; TDAC is free and should be submitted within 3 days before arrival.
+      - If Brian is traveling on a Korean ordinary passport for tourism, current embassy guidance says visa-free entry is possible up to 90 days, but Thailand announced visa-policy revisions in May 2026, so entry conditions should be rechecked close to departure.
+      - Avoid or reassess southern border areas and Thailand-Cambodia border regions flagged by Korea MOFA travel advisories.
+      - Current Bangkok shortlist includes ICONSIAM/Have A Zeed/Preme Pavilion, Anantara Riverside/SEEN/Longtail, Phrom Phong/Rung Rueang/Asia Herb, Siam/NAPAR, Old City/Nava Pad Thai/Ban Thai Masaje/Krua Apsorn/Wat Arun bars, Song Wat/Rong Klan Nuea/Chinatown bars, and elephant sanctuary options.
+    reference_urls:
+      - https://tdac.immigration.go.th/
+      - https://tdac.immigration.go.th/manual/en/index.html
+      - https://tha.mofa.go.kr/th-ko/brd/m_25795/view.do?seq=1347255
+      - https://seoul.thaiembassy.org/kr/publicservice/%EA%B4%80%EA%B4%91%EB%B9%84%EC%9E%90-tourist-visa
+      - https://www.mfa.go.th/en/content/summary-press-briefing-190526
+      - https://0404.go.kr/ntnSafetyInfo/260/detail
+      - https://wwwnc.cdc.gov/travel/destinations/traveler/none/thailand
+    expected_outputs:
+      - Trip dates, destination cities or regions, traveler list, and passport nationality confirmed.
+      - Passport validity, flight, accommodation, return/onward travel, travel insurance, payment, and communication setup checked.
+      - TDAC submitted through the official site within 3 days before arrival.
+      - Health preparation checked, including routine vaccines, Hepatitis A/B, typhoid, mosquito-bite prevention, medications, and travel clinic review if rural/outdoor travel is planned.
+      - Safety plan prepared with Korea MOFA emergency contacts, tourist police contact, insurance emergency number, and local hospital options.
+      - Packing list finalized for hot and rainy weather, temple dress code, sunscreen, insect repellent, light rain gear, and backup documents.
+      - Restaurant and food-place shortlist created by city/neighborhood, with meal type, reservation need, travel distance, price level, and backup options.
+      - Airport pickup option chosen and booked from BKK or DMK to Anantara Riverside.
+      - Massage, bar, elephant sanctuary, and one formal-meal candidate selected with reservation needs checked.
+    next_actions: []
+    blockers: []
+    evidence_refs:
+      - source_personal_travel_conversation_20260703_thailand_preparation
+      - source_personal_travel_conversation_20260703_thailand_restaurants_food
+      - source_personal_travel_conversation_20260703_bangkok_itinerary_shortlist
+      - source_personal_travel_conversation_20260703_bangkok_dates_confirmed
+      - source_personal_travel_conversation_20260715_thailand_trip_completed
+    confidence: high
+    needs_user_review: false
+
 planned_time_blocks:
   - id: timeblock_20260616_afternoon_personal_health_admin_errands
     date: 2026-06-16
@@ -986,6 +1268,67 @@ task_status_updates:
     next_step: 개인 갱신기간 확인 후 온라인 신청 또는 방문예약 여부 결정.
     source_ref: source_personal_admin_conversation_20260702_civil_defense_vehicle_license_schedule_check
 
+  - id: status_task_personal_20260703_thailand_travel_preparation_created
+    date: 2026-07-03
+    task_ref: task_personal_20260703_thailand_travel_preparation
+    author_ref: person_brian
+    status: todo
+    progress_percent: 10
+    summary: 태국 여행 준비를 개인 생활 행정/FUN 체크리스트로 생성하고, TDAC, 비자/입국, 안전경보, 건강 준비 공식 링크를 함께 기록함.
+    blockers:
+      - 정확한 여행 날짜, 도시/지역, 여권 국적, 여권 만료일, 동행자 정보가 아직 없음.
+    next_step: 여행 날짜와 목적지 지역을 확정한 뒤 항공/숙소/보험/TDAC 일정으로 분해.
+    source_ref: source_personal_travel_conversation_20260703_thailand_preparation
+
+  - id: status_task_personal_20260703_thailand_restaurants_food_added
+    date: 2026-07-03
+    task_ref: task_personal_20260703_thailand_travel_preparation
+    author_ref: person_brian
+    status: todo
+    progress_percent: 10
+    summary: 태국 여행 준비 범위에 식당/음식점 후보 수집을 추가함.
+    blockers:
+      - 목적 도시, 숙소 위치, 동선, 식사 취향/예산이 아직 없음.
+    next_step: 도시와 숙소 위치가 정해지면 지역별 식당 후보를 예약 필요/동선/가격대 기준으로 정리.
+    source_ref: source_personal_travel_conversation_20260703_thailand_restaurants_food
+
+  - id: status_task_personal_20260703_bangkok_itinerary_shortlist_recorded
+    date: 2026-07-03
+    task_ref: task_personal_20260703_thailand_travel_preparation
+    author_ref: person_brian
+    status: todo
+    progress_percent: 25
+    summary: 방콕 숙소를 Anantara Riverside로 두고 ICONSIAM, Phrom Phong, Siam, Old City/Khao San, Song Wat/Chinatown, Wat Arun view, riverside bars, elephant sanctuary, airport pickup 후보를 지역별 shortlist로 저장함.
+    blockers:
+      - 정확한 여행 날짜, 도착 공항/시간, 인원, 캐리어 수가 아직 없음.
+      - 최종 예약 대상 식당, 마사지샵, 바, 코끼리 보호소가 아직 확정되지 않음.
+    next_step: 도착 공항/시간/인원/짐 개수로 공항 픽업을 먼저 확정하고, 방콕 후보를 날짜별 동선으로 배치.
+    source_ref: source_personal_travel_conversation_20260703_bangkok_itinerary_shortlist
+
+  - id: status_task_personal_20260703_bangkok_dates_confirmed
+    date: 2026-07-03
+    task_ref: task_personal_20260703_thailand_travel_preparation
+    author_ref: person_brian
+    status: todo
+    progress_percent: 35
+    summary: 방콕 여행 날짜를 2026-07-11 토요일부터 2026-07-14 화요일 밤까지로 확정하고, 지도 HTML에 날짜별 동선 탭을 추가함.
+    blockers:
+      - 도착 공항/시간, 인원, 캐리어 수가 아직 없음.
+      - 최종 예약 대상 공항픽업, 코끼리 보호소, 뷰 바, 마사지샵이 아직 확정되지 않음.
+    next_step: 도착 공항/시간/인원/캐리어 수를 기준으로 공항 픽업 예약부터 확정.
+    source_ref: source_personal_travel_conversation_20260703_bangkok_dates_confirmed
+
+  - id: status_task_personal_20260715_thailand_trip_completed
+    date: 2026-07-15
+    task_ref: task_personal_20260703_thailand_travel_preparation
+    author_ref: person_brian
+    status: completed
+    progress_percent: 100
+    summary: 2026-07-11부터 2026-07-14까지의 태국 방콕 여행을 잘 마치고 귀국했다고 확인함.
+    blockers: []
+    next_step: null
+    source_ref: source_personal_travel_conversation_20260715_thailand_trip_completed
+
 project_status_updates:
   - id: project_status_personal_life_admin_20260616_afternoon_health_admin_errands
     date: 2026-06-16
@@ -1046,3 +1389,33 @@ project_status_updates:
     summary: 자동차 검사 안내문을 반영하여 자동차번호 235머4853의 검사가능기간을 2026-04-03~2026-08-02로 확정함.
     next_step: 2026-08-02 전 자동차 검사를 완료하고, 남은 행정 확인 항목은 운전면허 갱신기간 확인으로 좁힘.
     source_ref: source_personal_vehicle_notice_20260702_kotsa_inspection
+
+  - id: project_status_personal_life_admin_20260703_thailand_travel_preparation_created
+    date: 2026-07-03
+    project_ref: project_personal_life_admin
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: 태국 여행 준비를 여권/항공/숙소/보험/TDAC/건강/안전/짐 체크리스트로 시작함.
+    next_step: 여행 날짜, 도시/지역, 여권 국적, 동행자를 확인해 실제 출국 전 일정으로 쪼개기.
+    source_ref: source_personal_travel_conversation_20260703_thailand_preparation
+
+  - id: project_status_personal_life_admin_20260703_thailand_restaurants_food_added
+    date: 2026-07-03
+    project_ref: project_personal_life_admin
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: 태국 여행 준비에 식당/음식점 후보 수집을 추가함.
+    next_step: 목적 도시와 숙소 위치를 기준으로 식당 후보를 실제 동선에 맞게 고르기.
+    source_ref: source_personal_travel_conversation_20260703_thailand_restaurants_food
+
+  - id: project_status_personal_life_admin_20260703_bangkok_itinerary_shortlist_recorded
+    date: 2026-07-03
+    project_ref: project_personal_life_admin
+    author_ref: person_brian
+    status: active
+    progress_percent: null
+    summary: 방콕 여행 대화 내용을 Anantara Riverside 숙소 기준의 지역별 음식/마사지/뷰/맥주/코끼리/공항픽업 후보로 저장함.
+    next_step: 공항 픽업 예약 정보와 최종 방문 후보를 확정해 일자별 동선으로 변환.
+    source_ref: source_personal_travel_conversation_20260703_bangkok_itinerary_shortlist

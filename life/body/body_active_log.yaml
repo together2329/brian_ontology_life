@@ -1,5 +1,5 @@
 schema_version: 1
-updated_at: 2026-06-27
+updated_at: 2026-07-15
 profile_ref: person_brian
 area: BODY
 
@@ -8,9 +8,9 @@ body_profile:
   id: body_profile_brian
   profile_ref: person_brian
   height_cm: 175
-  latest_weight_kg: 78.8
-  latest_weight_record_ref: body_composition_20260621_1131_inbody270_printout
-  notes: Height is self-reported by Brian; latest weight is from the 2026-06-21 InBody270 printout photo.
+  latest_weight_kg: 78.2
+  latest_weight_record_ref: body_composition_20260627_1000_inbody270_printout
+  notes: Height is self-reported by Brian; latest weight is from the 2026-06-27 InBody270 printout photo.
 
 training_programs:
   - id: pt_program_2026_spring
@@ -19,18 +19,54 @@ training_programs:
     status: active
     start_date_estimate: 2026-03-25
     start_date_precision: approximate_late_march
-    sessions_completed_estimate: 21
+    sessions_completed_estimate: 22
     paper_records_imported_count: 18
     paper_records_imported_date: 2026-06-20
-    latest_recorded_session_date: 2026-06-20
+    latest_recorded_session_date: 2026-07-14
     baseline_frequency_per_week: 2
     current_frequency_per_week: 3
     recent_frequency_change_date_estimate: 2026-06
     frequency_change_reason: Started going with a coworker at the company gym, increasing recent training frequency.
+    current_focus: progressive_strength_and_lean_mass_gain_over_scale_weight_change
+    desired_outcome: increase_skeletal_muscle_mass_while_reducing_body_fat_percent
+    focus_reason: Recent InBody trend suggests recomposition, so Brian decided to prioritize increasing strength and lean mass while preserving recovery and protein consistency instead of chasing short-term scale weight loss.
+    guardrails:
+      - keep progressive overload gradual
+      - maintain protein consistency
+      - protect sleep and recovery
+      - avoid pushing through joint pain or form breakdown
     confidence: medium
-    notes: Brian reports receiving PT from late March 2026; handwritten PT records and recent conversation now cover 21 completed PT-program workouts through 2026-06-20, plus one 2026-06-15 access issue and home fallback.
+    notes: Brian reports receiving PT/strength training from late March 2026; by late June he reports training more often recently and eating protein consistently. Handwritten PT records and recent conversation now cover 21 completed PT-program workouts through 2026-06-20, plus one 2026-06-15 access issue and home fallback, and a 2026-07-04 PT self-report.
 
 body_composition_records:
+  - id: body_composition_20260627_1000_inbody270_printout
+    object_type: BodyCompositionRecord
+    date: 2026-06-27
+    time: "10:00"
+    source: inbody270_printout_photo
+    source_file_path: raw_data/images/body/inbody_20260627_1000.jpg
+    source_sha256: bb4be7668c9c9ee6ecab94b3558ebd661deee9065616d2f40fc410e3fdbaa4fc
+    weight_kg: 78.2
+    skeletal_muscle_mass_kg: 34.2
+    body_fat_mass_kg: 17.9
+    body_fat_percent: 22.9
+    bmi: 25.5
+    waist_cm: null
+    basal_metabolic_rate_kcal: 1672
+    visceral_fat_level: 7
+    abdominal_fat_ratio: 0.90
+    inbody_score: 76
+    total_body_water_l: 44.2
+    protein_kg: 12.0
+    minerals_kg: 4.12
+    fat_free_mass_kg: 60.3
+    obesity_degree_percent: 116
+    recommended_calorie_intake_kcal: 2248
+    weight_control_kg: -7.3
+    fat_control_kg: -7.3
+    muscle_control_kg: 0.0
+    condition: late_morning_measurement_after_recent_high_frequency_training
+    notes: 2026-06-27 InBody270 printout. Compared with the 2026-06-21 printout, weight decreased by 0.6kg, skeletal muscle mass decreased by 0.2kg, body fat mass decreased by 0.3kg, body fat percent decreased by 0.2 percentage points, and InBody score stayed at 76. Compared with the 2026-06-18 07:00 app record, weight increased by 0.6kg, skeletal muscle mass increased by 1.0kg, body fat mass decreased by 1.2kg, and body fat percent decreased by 1.7 percentage points. Treat this as a favorable short-term recomposition continuation while still allowing for hydration, glycogen, sodium, recent training, and measurement-time effects.
   - id: body_composition_20260621_1131_inbody270_printout
     object_type: BodyCompositionRecord
     date: 2026-06-21
@@ -86,6 +122,74 @@ body_composition_records:
     body_fat_percent: null
     waist_cm: null
     notes: Body weight is unchanged recently, while Brian subjectively feels his body is improving.
+  - id: body_composition_20260521_0811_inbody_app_trend
+    object_type: BodyCompositionRecord
+    date: 2026-05-21
+    time: "08:11"
+    source: inbody_app_trend_screenshot
+    source_file_path: raw_data/images/body/inbody_trend_20260627_app.jpg
+    source_sha256: 6d54bce76a82f37e0ef60499cfc65ccae8f1fa96c03e32dd5b0169cfbfeffced
+    weight_kg: 76.7
+    skeletal_muscle_mass_kg: 32.8
+    body_fat_mass_kg: 18.8
+    body_fat_percent: null
+    bmi: null
+    waist_cm: null
+    basal_metabolic_rate_kcal: null
+    visceral_fat_level: null
+    condition: partial_values_from_inbody_app_trend_graph
+    notes: Partial body composition point read from the InBody app trend screenshot shared on 2026-06-27; only weight, skeletal muscle mass, and body fat mass were visible.
+  - id: body_composition_20260509_1006_inbody_app_trend
+    object_type: BodyCompositionRecord
+    date: 2026-05-09
+    time: "10:06"
+    source: inbody_app_trend_screenshot
+    source_file_path: raw_data/images/body/inbody_trend_20260627_app.jpg
+    source_sha256: 6d54bce76a82f37e0ef60499cfc65ccae8f1fa96c03e32dd5b0169cfbfeffced
+    weight_kg: 77.3
+    skeletal_muscle_mass_kg: 33.5
+    body_fat_mass_kg: 18.3
+    body_fat_percent: null
+    bmi: null
+    waist_cm: null
+    basal_metabolic_rate_kcal: null
+    visceral_fat_level: null
+    condition: partial_values_from_inbody_app_trend_graph
+    notes: Partial body composition point read from the InBody app trend screenshot shared on 2026-06-27; only weight, skeletal muscle mass, and body fat mass were visible.
+  - id: body_composition_20260320_1710_inbody_app_trend
+    object_type: BodyCompositionRecord
+    date: 2026-03-20
+    time: "17:10"
+    source: inbody_app_trend_screenshot
+    source_file_path: raw_data/images/body/inbody_trend_20260627_app.jpg
+    source_sha256: 6d54bce76a82f37e0ef60499cfc65ccae8f1fa96c03e32dd5b0169cfbfeffced
+    weight_kg: 78.1
+    skeletal_muscle_mass_kg: 33.2
+    body_fat_mass_kg: 19.5
+    body_fat_percent: null
+    bmi: null
+    waist_cm: null
+    basal_metabolic_rate_kcal: null
+    visceral_fat_level: null
+    condition: late_march_strength_training_baseline_candidate
+    notes: Partial body composition point read from the InBody app trend screenshot shared on 2026-06-27. This is close to Brian's reported late-March strength-training start and is useful as a baseline candidate.
+  - id: body_composition_20240817_0743_inbody_app_trend
+    object_type: BodyCompositionRecord
+    date: 2024-08-17
+    time: "07:43"
+    source: inbody_app_trend_screenshot
+    source_file_path: raw_data/images/body/inbody_trend_20260627_app.jpg
+    source_sha256: 6d54bce76a82f37e0ef60499cfc65ccae8f1fa96c03e32dd5b0169cfbfeffced
+    weight_kg: 75.1
+    skeletal_muscle_mass_kg: 32.5
+    body_fat_mass_kg: 17.8
+    body_fat_percent: null
+    bmi: null
+    waist_cm: null
+    basal_metabolic_rate_kcal: null
+    visceral_fat_level: null
+    condition: older_reference_point_from_inbody_app_trend_graph
+    notes: Older partial body composition point read from the InBody app trend screenshot shared on 2026-06-27; only weight, skeletal muscle mass, and body fat mass were visible.
 
 nutrition_targets:
   - id: protein_target_20260615
@@ -141,6 +245,27 @@ exercise_catalog:
       - core
     equipment: mixed_or_unknown
     notes: Use this when Brian records a lower-body workout without exercise-level set details.
+  - id: exercise_shoulder_training_unspecified
+    object_type: ExerciseCatalog
+    name: Shoulder training unspecified
+    aliases: [어깨 운동, 어깨운동]
+    muscle_groups: [shoulders]
+    equipment: mixed_or_unknown
+    notes: Use when a shoulder workout is confirmed but exercise-level details are unavailable.
+  - id: exercise_chest_training_unspecified
+    object_type: ExerciseCatalog
+    name: Chest training unspecified
+    aliases: [가슴 운동, 가슴운동]
+    muscle_groups: [chest, triceps, shoulders]
+    equipment: mixed_or_unknown
+    notes: Use when a chest workout is confirmed but exercise-level details are unavailable.
+  - id: exercise_machine_squat
+    object_type: ExerciseCatalog
+    name: Machine squat
+    aliases: [머신 스쿼트, 스쿼트 머신]
+    muscle_groups: [quads, glutes, hamstrings, core]
+    equipment: squat_machine_unspecified
+    notes: Keep separate from free squat until the exact machine variant is known.
   - id: exercise_bulgarian_split_squat
     object_type: ExerciseCatalog
     name: Bulgarian split squat
@@ -210,6 +335,22 @@ exercise_catalog:
       - shoulders
     equipment: smith_machine
     notes: Use when Brian records a chest press movement on a Smith machine.
+  - id: exercise_machine_chest_press
+    object_type: ExerciseCatalog
+    name: Machine chest press
+    aliases:
+      - 기구로 가슴 미는 운동
+      - 가슴 미는 기구
+      - 머신 체스트 프레스
+      - 체스트 프레스 머신
+      - machine chest press
+      - chest press machine
+    muscle_groups:
+      - chest
+      - triceps
+      - shoulders
+    equipment: machine
+    notes: Use when Brian records a chest-pressing machine but the exact machine type is not specified.
   - id: exercise_bench_press
     object_type: ExerciseCatalog
     name: Bench press
@@ -323,6 +464,21 @@ exercise_catalog:
       - traps
     equipment: dumbbells_or_machine
     notes: Confirmed by Brian for the handwritten PT sheets.
+  - id: exercise_rear_delt_movement
+    object_type: ExerciseCatalog
+    name: Rear delt movement
+    aliases:
+      - 후면 어깨 운동
+      - 후면어깨
+      - 후면 어깨
+      - rear delt
+      - rear delt exercise
+    muscle_groups:
+      - rear_delts
+      - upper_back
+      - shoulders
+    equipment: machine_cable_dumbbells_or_unknown
+    notes: Use when Brian records rear-shoulder/rear-delt work but the exact movement, such as reverse pec deck, face pull, or bent-over rear delt raise, is not specified.
   - id: exercise_free_squat
     object_type: ExerciseCatalog
     name: Free squat
@@ -406,6 +562,24 @@ exercise_catalog:
       - upper_chest
     equipment: dumbbells
     notes: Use when shoulder press appears in the PT sheets.
+  - id: exercise_treadmill_incline_run
+    object_type: ExerciseCatalog
+    name: Treadmill incline run
+    aliases:
+      - 트레드밀 경사 달리기
+      - 스레드밀 경사 달리기
+      - 트레드밀
+      - 스레드밀
+      - treadmill
+      - incline treadmill
+      - treadmill incline run
+    muscle_groups:
+      - cardiovascular
+      - calves
+      - quads
+      - glutes
+    equipment: treadmill
+    notes: Use for short treadmill runs or incline treadmill finishers.
   - id: exercise_incline_bench_press
     object_type: ExerciseCatalog
     name: Incline bench press
@@ -454,6 +628,23 @@ exercise_catalog:
       - biceps
     equipment: dumbbells_and_incline_bench
     notes: Chest-supported row performed lying prone on an incline bench with dumbbells; record per-hand (양쪽) weight.
+  - id: exercise_back_training_unspecified
+    object_type: ExerciseCatalog
+    name: Back training unspecified
+    aliases:
+      - 등 운동
+      - 등운동
+      - back workout
+      - back training
+    muscle_groups:
+      - lats
+      - upper_back
+      - rhomboids
+      - traps
+      - rear_delts
+      - biceps
+    equipment: mixed_or_unknown
+    notes: Use only as a temporary placeholder when Brian records that a back workout happened but exercise-level details are not yet available.
   - id: exercise_unknown_pt_movement
     object_type: ExerciseCatalog
     name: Unknown PT movement
@@ -466,6 +657,549 @@ exercise_catalog:
     notes: Temporary placeholder for handwritten PT rows that need Brian review.
 
 workout_records:
+  - id: workoutsession_20260714_lower_body_machine_squat_pr
+    object_type: WorkoutSession
+    date: 2026-07-14
+    status: completed
+    title: 하체 운동 - 머신 스쿼트 100kg 신기록
+    tags: [self_report, travel_workout, lower_body, machine_squat, personal_record, completed]
+    training_program_ref: null
+    location: Bangkok
+    duration_minutes: null
+    confidence: high
+    performance_note: "하체 운동 중 머신 스쿼트 100kg을 5회씩 5세트 수행해 신기록을 세움. 정확한 머신 종류는 미확인."
+    exercises:
+      - exercise_ref: exercise_machine_squat
+        sequence_order: 1
+        variant: squat_machine_unspecified
+        equipment: machine
+        confidence: high
+        needs_user_review: true
+        sets:
+          - {set: 1, weight_kg: 100, reps: 5, is_pr: true}
+          - {set: 2, weight_kg: 100, reps: 5, is_pr: true}
+          - {set: 3, weight_kg: 100, reps: 5, is_pr: true}
+          - {set: 4, weight_kg: 100, reps: 5, is_pr: true}
+          - {set: 5, weight_kg: 100, reps: 5, is_pr: true}
+
+  - id: workoutsession_20260712_anantara_bangkok_chest
+    object_type: WorkoutSession
+    date: 2026-07-12
+    status: completed
+    title: 가슴 운동 - 방콕 아난타라 호텔 헬스장
+    tags: [self_report, travel_workout, chest, hotel_gym, bangkok, completed]
+    training_program_ref: null
+    location: Anantara Riverside Bangkok Resort gym
+    duration_minutes: null
+    confidence: high
+    performance_note: 방콕 아난타라 호텔 헬스장에서 가슴 운동을 완료함. 벤치프레스 계열 체스트 프레스 머신에서 60kg x 10회 수행한 1세트가 확인됨. 다른 종목과 세트는 미기록.
+    exercises:
+      - exercise_ref: exercise_machine_chest_press
+        sequence_order: 1
+        variant: bench_press_machine_unspecified
+        equipment: machine
+        confidence: high
+        needs_user_review: true
+        notes: 벤치프레스 계열 머신으로 기록했으나 정확한 머신 종류와 더 수행한 세트/종목은 미확인.
+        sets:
+          - set: 1
+            weight_kg: 60
+            reps: 10
+
+  - id: workoutsession_20260710_shoulder_with_myeongjae_tl
+    object_type: WorkoutSession
+    date: 2026-07-10
+    status: completed
+    title: 명재 TL님과 어깨 운동
+    tags: [self_report, shoulder, shared_workout, colleague, completed]
+    training_program_ref: null
+    location: gym
+    participant_refs: [person_myeongjae_tl]
+    duration_minutes: null
+    confidence: high
+    needs_user_review: true
+    performance_note: 명재 TL님과 어깨 운동을 완료함. 세부 종목과 세트, 명재 TL님의 전체 이름은 미확인.
+    exercises:
+      - exercise_ref: exercise_shoulder_training_unspecified
+        sequence_order: 1
+        variant: shared_shoulder_workout_unspecified
+        equipment: mixed_or_unknown
+        confidence: high
+        sets: []
+
+  - id: workoutsession_20260709_chest_bench_machine_incline
+    object_type: WorkoutSession
+    date: 2026-07-09
+    planned_start: null
+    start: null
+    end: null
+    time_of_day: unknown
+    status: completed
+    title: 가슴 운동 - 벤치프레스, 머신 체스트 프레스, 인클라인 벤치프레스
+    tags: [self_report, chest, bench_press, machine_chest_press, incline_bench_press, completed]
+    training_program_ref: null
+    location: gym
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    confidence: high
+    performance_note: "Brian reported a chest workout on 2026-07-09: bench press 40kg x 10 for 3 sets, a chest-pressing machine movement with set details not specified, and incline bench press 30kg for 10, 8, and 6 reps."
+    exercises:
+      - exercise_ref: exercise_bench_press
+        sequence_order: 1
+        variant: barbell_bench_press_or_unspecified
+        equipment: barbell_or_unspecified
+        confidence: high
+        notes: 벤치 프레스. Brian reported 40kg x 10 for 3 sets.
+        sets:
+          - set: 1
+            weight_kg: 40
+            reps: 10
+          - set: 2
+            weight_kg: 40
+            reps: 10
+          - set: 3
+            weight_kg: 40
+            reps: 10
+      - exercise_ref: exercise_machine_chest_press
+        sequence_order: 2
+        variant: chest_press_machine_unspecified
+        equipment: machine
+        confidence: medium
+        needs_user_review: true
+        notes: Brian said "기구로 가슴 미는 운동"; exact machine, load, reps, and set count were not provided.
+        sets: []
+      - exercise_ref: exercise_incline_bench_press
+        sequence_order: 3
+        variant: incline_bench_press_unspecified
+        equipment: barbell_dumbbells_or_machine_unspecified
+        confidence: high
+        notes: 인클라인 벤치프레스. Brian reported 30kg for 10, 8, and 6 reps.
+        sets:
+          - set: 1
+            weight_kg: 30
+            reps: 10
+          - set: 2
+            weight_kg: 30
+            reps: 8
+          - set: 3
+            weight_kg: 30
+            reps: 6
+
+  - id: workoutsession_20260706_lower_body_squat_80_leg_press_120
+    object_type: WorkoutSession
+    date: 2026-07-06
+    planned_start: null
+    start: null
+    end: null
+    time_of_day: unknown
+    status: completed
+    title: 하체 운동 - 이너타이, 스쿼트 80kg, 레그 프레스 120kg
+    tags: [self_report, lower_body, hip_adductor, squat, leg_press, strength_progression, soreness_after, completed]
+    training_program_ref: null
+    location: gym
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    performance_note: "Brian reported that on Monday 2026-07-06 he did lower-body training: a leg-closing movement interpreted as hip adductor machine, squat 80kg for 10 reps x 3 sets, and leg press 120kg for 10, 15, and 15 reps. He later reported some muscle soreness after lower-body training."
+    recovery_note: "Some DOMS/muscle soreness after lower-body training; severity and duration not specified."
+    exercises:
+      - exercise_ref: exercise_hip_adductor_machine
+        sequence_order: 1
+        variant: hip_adductor_machine_leg_closing
+        equipment: machine
+        confidence: medium_high
+        notes: Brian said he also did "다리 모으는 운동" in the lower-body workout; interpreted as hip adductor/inner-thigh machine. Sets, weight, and reps were not provided.
+        sets: []
+      - exercise_ref: exercise_free_squat
+        sequence_order: 2
+        variant: barbell_back_squat_or_unspecified
+        equipment: barbell_or_unspecified
+        confidence: high
+        notes: 월요일 하체 운동. Brian reported 80kg x 10 for 3 sets.
+        sets:
+          - set: 1
+            weight_kg: 80
+            reps: 10
+          - set: 2
+            weight_kg: 80
+            reps: 10
+          - set: 3
+            weight_kg: 80
+            reps: 10
+      - exercise_ref: exercise_leg_press
+        sequence_order: 3
+        variant: machine_leg_press
+        equipment: machine
+        confidence: high
+        notes: Brian reported 120kg for 10 reps, then 15 reps, then 15 reps.
+        sets:
+          - set: 1
+            weight_kg: 120
+            reps: 10
+          - set: 2
+            weight_kg: 120
+            reps: 15
+          - set: 3
+            weight_kg: 120
+            reps: 15
+
+  - id: workoutsession_20260704_pt_chest_press_rear_delt
+    object_type: WorkoutSession
+    date: 2026-07-04
+    planned_start: null
+    start: null
+    end: null
+    time_of_day: unknown
+    status: completed
+    title: PT - 케이블 크로스오버, 덤벨/벤치 프레스, 인클라인 덤벨 프레스, 후면 어깨
+    tags: [pt, pt_program_2026_spring, self_report, chest, shoulders, rear_delts, cable_crossover, dumbbell_press, bench_press, incline_dumbbell_press, soreness_after, completed]
+    training_program_ref: pt_program_2026_spring
+    location: PT center
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    confidence: high
+    needs_user_review: false
+    performance_note: "Brian reported that last Saturday, resolved as 2026-07-04 from the 2026-07-09 conversation date, he had PT and did cable crossover, dumbbell press, bench press, incline dumbbell press, and a rear-shoulder movement. Loads and reps were not provided. He later reported some muscle soreness after chest training."
+    recovery_note: "Some DOMS/muscle soreness after chest training; severity and duration not specified."
+    exercises:
+      - exercise_ref: exercise_cable_crossover
+        sequence_order: 1
+        variant: cable_crossover
+        equipment: cable_machine
+        confidence: high
+        sets: []
+      - exercise_ref: exercise_bench_press
+        sequence_order: 2
+        variant: dumbbell_chest_press
+        equipment: dumbbells
+        confidence: high
+        notes: Brian said "덤벨 프레스"; interpreted as dumbbell chest press within a chest PT session.
+        sets: []
+      - exercise_ref: exercise_bench_press
+        sequence_order: 3
+        variant: bench_press
+        equipment: barbell_or_unspecified
+        confidence: high
+        sets: []
+      - exercise_ref: exercise_incline_bench_press
+        sequence_order: 4
+        variant: incline_dumbbell_press
+        equipment: dumbbells_and_incline_bench
+        confidence: high
+        sets: []
+      - exercise_ref: exercise_rear_delt_movement
+        sequence_order: 5
+        variant: rear_shoulder_movement_unspecified
+        equipment: unknown
+        confidence: medium
+        needs_user_review: true
+        notes: Exact rear-delt exercise was not specified.
+        sets: []
+
+  - id: workoutsession_20260702_lunch_shoulder_lateral_raise_press_treadmill
+    object_type: WorkoutSession
+    date: 2026-07-02
+    planned_start: null
+    start: null
+    end: null
+    time_of_day: lunch
+    status: completed
+    title: 점심 어깨 운동 - 사이드 레터럴 레이즈, 덤벨 숄더프레스, 경사 트레드밀
+    tags: [self_report, shoulders, side_lateral_raise, dumbbell_shoulder_press, treadmill, incline_run, completed]
+    training_program_ref: null
+    location: gym
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    performance_note: "Brian reported a lunch shoulder workout on 2026-07-02: side lateral raise at 4kg per hand for 30 reps, about 3-4 sets; dumbbell shoulder press around 4 sets of 10 reps with 16kg, 14kg, and 10kg per hand mentioned; finished with about 5 minutes of high-incline treadmill running that felt breathless."
+    exercises:
+      - exercise_ref: exercise_side_lateral_raise
+        sequence_order: 1
+        variant: dumbbell_side_lateral_raise
+        equipment: dumbbells
+        confidence: medium
+        notes: 사이드 레터럴 레이즈. Brian reported 4kg x 30 reps for about 3-4 sets. Modeled as 3 confirmed sets plus one possible extra set.
+        set_count_estimate: 3_to_4
+        sets:
+          - set: 1
+            weight_kg: 4
+            weight_basis: per_hand
+            reps: 30
+          - set: 2
+            weight_kg: 4
+            weight_basis: per_hand
+            reps: 30
+          - set: 3
+            weight_kg: 4
+            weight_basis: per_hand
+            reps: 30
+          - set: 4
+            weight_kg: 4
+            weight_basis: per_hand
+            reps: 30
+            possible_extra_set: true
+            confidence: low
+            notes: Brian said "3세트, 4세트 정도"; this fourth set is possible but not certain.
+      - exercise_ref: exercise_dumbbell_shoulder_press
+        sequence_order: 2
+        variant: seated_or_standing_dumbbell_shoulder_press_unclear
+        equipment: dumbbells
+        confidence: medium
+        needs_user_review: true
+        notes: 덤벨 숄더프레스/어깨로 덤벨 드는 동작. Brian reported about 4 sets, using 16kg per hand for about 10 reps, then 14kg and 10kg mentioned, and said to record as 10 reps per set. Exact set-by-set weights after the first set are approximate.
+        set_count_estimate: 4
+        sets:
+          - set: 1
+            weight_kg: 16
+            weight_basis: per_hand
+            reps: 10
+            reps_confidence: medium
+          - set: 2
+            weight_kg: 14
+            weight_basis: per_hand
+            reps: 10
+            reps_confidence: medium
+          - set: 3
+            weight_kg: 10
+            weight_basis: per_hand
+            reps: 10
+            reps_confidence: medium
+          - set: 4
+            weight_kg: null
+            weight_basis: per_hand
+            reps: 10
+            weight_confidence: low
+            notes: Fourth set weight was not explicit; likely another back-off set around 10kg based on message context.
+      - exercise_ref: exercise_treadmill_incline_run
+        sequence_order: 3
+        variant: high_incline_treadmill_run
+        equipment: treadmill
+        confidence: high
+        duration_minutes: 5
+        incline: high_unspecified
+        intensity: hard_breathless
+        notes: 마지막에 약 5분 정도 경사를 높게 잡고 트레드밀을 달림. 숨이 가쁠 정도였다고 기록.
+
+  - id: workoutsession_20260701_back_unspecified_self_report
+    object_type: WorkoutSession
+    date: 2026-07-01
+    planned_start: null
+    start: null
+    end: null
+    time_of_day: unknown
+    status: completed
+    title: 등 운동 - 시티드로우, 암풀다운, 원암 등 당기기, 렛풀다운
+    tags: [self_report, back, seated_row, arm_pulldown, single_arm_row_candidate, lat_pulldown, completed]
+    training_program_ref: null
+    location: gym
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    confidence: medium
+    needs_user_review: true
+    performance_note: "Brian later clarified that the 2026-07-01 back workout had four movements: seated row, cable straight-arm pulldown, a one-arm back pulling movement, and an overhead bar pulldown interpreted as lat pulldown. Each movement was about 3-4 sets. Loads and reps were not provided."
+    exercises:
+      - exercise_ref: exercise_seated_row
+        sequence_order: 1
+        variant: seated_row
+        equipment: cable_or_row_machine
+        confidence: high
+        set_count_estimate: 3_to_4
+        notes: 시티드로우. Brian reported this as one of four back movements, about 3-4 sets.
+        sets: []
+      - exercise_ref: exercise_cable_straight_arm_pulldown
+        sequence_order: 2
+        variant: cable_straight_arm_pulldown
+        equipment: cable_machine
+        confidence: high
+        set_count_estimate: 3_to_4
+        notes: 암풀다운. Brian reported this as one of four back movements, about 3-4 sets.
+        sets: []
+      - exercise_ref: exercise_seated_row
+        sequence_order: 3
+        variant: single_arm_back_pull_or_one_arm_cable_row_candidate
+        equipment: cable_or_row_machine
+        unilateral: true
+        confidence: medium
+        needs_user_review: true
+        set_count_estimate: 3_to_4
+        notes: Brian described "등 한 팔씩 이렇게 등 당기는 거"; interpreted as a one-arm cable row/back-pull variant. Exact machine and direction need review.
+        sets: []
+      - exercise_ref: exercise_lat_pulldown
+        sequence_order: 4
+        variant: overhead_bar_lat_pulldown
+        equipment: cable_or_lat_pulldown_machine
+        confidence: high
+        set_count_estimate: 3_to_4
+        notes: 위에서 바를 내리는 동작을 렛풀다운/랫풀다운으로 해석. Brian reported this as one of four back movements, about 3-4 sets.
+        sets: []
+
+  - id: workoutsession_20260629_chest_cable_bench_smith_incline
+    object_type: WorkoutSession
+    date: 2026-06-29
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: 가슴 운동 - 케이블 크로스오버, 벤치프레스, 스미스 머신 인클라인 벤치프레스
+    tags: [self_report, chest, cable_crossover, bench_press, incline_bench_press, smith_machine, completed]
+    training_program_ref: null
+    location: gym
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    performance_note: "Brian reported a 2026-06-29 chest workout: cable crossover up to 20kg x 10 for 2 sets, bench press 40kg x 10 for 3 sets after a 20kg x 20 warm-up, and Smith-machine incline bench press 40kg x 10 for 3 sets."
+    exercises:
+      - exercise_ref: exercise_cable_crossover
+        sequence_order: 1
+        variant: cable
+        equipment: cable_machine
+        confidence: medium
+        notes: 케이블 크로스오버. Weight basis was not explicitly restated in this message; recorded as per-side cable stack based on Brian's prior cable crossover convention.
+        sets:
+          - set: 1
+            weight_kg: 15
+            weight_basis: per_side_cable_stack
+            reps: 15
+          - set: 2
+            weight_kg: 20
+            weight_basis: per_side_cable_stack
+            reps: 10
+          - set: 3
+            weight_kg: 20
+            weight_basis: per_side_cable_stack
+            reps: 10
+      - exercise_ref: exercise_bench_press
+        sequence_order: 2
+        variant: barbell_bench_press
+        equipment: barbell
+        confidence: high
+        notes: 벤치 프레스. Brian reported 20kg x 20, then 40kg x 10 for 3 sets.
+        sets:
+          - set: 1
+            weight_kg: 20
+            reps: 20
+            load_description: empty_bar
+            is_warmup: true
+          - set: 2
+            weight_kg: 40
+            reps: 10
+          - set: 3
+            weight_kg: 40
+            reps: 10
+          - set: 4
+            weight_kg: 40
+            reps: 10
+      - exercise_ref: exercise_incline_bench_press
+        sequence_order: 3
+        variant: smith_machine_incline_bench_press
+        equipment: smith_machine
+        confidence: high
+        notes: 스미스 머신 인클라인 벤치 프레스. Brian reported 40kg x 10 for 3 sets.
+        sets:
+          - set: 1
+            weight_kg: 40
+            reps: 10
+          - set: 2
+            weight_kg: 40
+            reps: 10
+          - set: 3
+            weight_kg: 40
+            reps: 10
+
+  - id: workoutsession_20260628_lower_body_squat_leg_press_split_squat
+    object_type: WorkoutSession
+    date: 2026-06-28
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: 하체 운동 - 레그 익스텐션 추정, 스쿼트, 레그 프레스, 기구 스플릿 스쿼트
+    tags: [self_report, lower_body, leg_extension_candidate, squat, leg_press, split_squat, completed]
+    training_program_ref: null
+    location: gym
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    performance_note: Brian reported a lower-body workout on 2026-06-28. The first movement was described as "다리 관절로만 밑에서 위로 미는 운동" and is interpreted as leg extension pending review. Squat reached 70kg x 10 for 2 sets, leg press reached 110kg x 15 for 2 sets, and machine split squat was 40kg for 10 reps per side for 2 sets.
+    exercises:
+      - exercise_ref: exercise_leg_extension
+        sequence_order: 1
+        variant: machine_knee_extension_candidate
+        equipment: machine
+        confidence: medium
+        needs_user_review: true
+        notes: Brian described this as "다리 관절로만 밑에서 위로 미는 운동"; interpreted as leg extension because it sounds like knee-extension-only machine work.
+        sets:
+          - set: 1
+            weight_kg: 30
+            reps: 15
+          - set: 2
+            weight_kg: 40
+            reps: 10
+          - set: 3
+            weight_kg: 50
+            reps: 10
+      - exercise_ref: exercise_free_squat
+        sequence_order: 2
+        variant: barbell_back_squat_or_unspecified
+        equipment: barbell_or_unspecified
+        confidence: high
+        notes: 스쿼트. Brian reported 40kg x 12, 60kg x 10, then 70kg x 10 for 2 sets.
+        sets:
+          - set: 1
+            weight_kg: 40
+            reps: 12
+          - set: 2
+            weight_kg: 60
+            reps: 10
+          - set: 3
+            weight_kg: 70
+            reps: 10
+          - set: 4
+            weight_kg: 70
+            reps: 10
+      - exercise_ref: exercise_leg_press
+        sequence_order: 3
+        variant: machine
+        equipment: machine
+        confidence: high
+        notes: 레그 프레스. Brian reported 70kg x 15, then 110kg x 15 for 2 sets.
+        sets:
+          - set: 1
+            weight_kg: 70
+            reps: 15
+          - set: 2
+            weight_kg: 110
+            reps: 15
+          - set: 3
+            weight_kg: 110
+            reps: 15
+      - exercise_ref: exercise_bulgarian_split_squat
+        sequence_order: 4
+        variant: machine_split_squat
+        equipment: machine
+        unilateral: true
+        confidence: high
+        notes: 기구 스플릿 스쿼트 40kg. Brian reported 10 reps on each side for 2 sets.
+        sets:
+          - set: 1
+            weight_kg: 40
+            reps: 10
+            reps_basis: per_side
+            reps_per_side: 10
+            left_reps: 10
+            right_reps: 10
+          - set: 2
+            weight_kg: 40
+            reps: 10
+            reps_basis: per_side
+            reps_per_side: 10
+            left_reps: 10
+            right_reps: 10
+
   - id: workoutsession_20260627_back_arm_pulldown_in_progress
     object_type: WorkoutSession
     date: 2026-06-27
@@ -621,6 +1355,74 @@ workout_records:
             weight_kg: 4
             weight_basis: per_hand
             reps: 20
+
+  - id: workoutsession_20260625_chest_self_report
+    object_type: WorkoutSession
+    date: 2026-06-25
+    planned_start: null
+    start: null
+    end: null
+    status: completed
+    title: 가슴 운동 - 벤치프레스, 인클라인 벤치프레스(머신), 케이블 크로스오버
+    tags: [self_report, chest, bench_press, incline_bench_press, cable_crossover, completed]
+    training_program_ref: null
+    location: null
+    duration_minutes: null
+    perceived_energy: null
+    digestion: null
+    performance_note: Brian reported a chest workout on 2026-06-25 - bench press 40kg x 10 for 3 sets, machine incline bench press 40kg x 10 for 3 sets, and cable crossover 15 (per-side cable stack) for 3 sets.
+    exercises:
+      - exercise_ref: exercise_bench_press
+        sequence_order: 1
+        variant: barbell_dumbbell_machine_or_unspecified
+        equipment: barbell_dumbbell_machine_or_unspecified
+        confidence: high
+        notes: 벤치프레스. Brian reported 40kg x 10 for 3 sets.
+        sets:
+          - set: 1
+            weight_kg: 40
+            reps: 10
+          - set: 2
+            weight_kg: 40
+            reps: 10
+          - set: 3
+            weight_kg: 40
+            reps: 10
+      - exercise_ref: exercise_incline_bench_press
+        sequence_order: 2
+        variant: machine
+        equipment: machine
+        confidence: high
+        notes: 인클라인 벤치프레스 머신. Brian reported 40kg x 10 for 3 sets.
+        sets:
+          - set: 1
+            weight_kg: 40
+            reps: 10
+          - set: 2
+            weight_kg: 40
+            reps: 10
+          - set: 3
+            weight_kg: 40
+            reps: 10
+      - exercise_ref: exercise_cable_crossover
+        sequence_order: 3
+        variant: cable
+        equipment: cable_machine
+        confidence: medium
+        notes: 케이블 크로스오버. Brian reported 15 for 3 sets; interpreted as per-side cable-stack weight 15 (reps not specified).
+        sets:
+          - set: 1
+            weight_kg: 15
+            weight_basis: per_side_cable_stack
+            reps: null
+          - set: 2
+            weight_kg: 15
+            weight_basis: per_side_cable_stack
+            reps: null
+          - set: 3
+            weight_kg: 15
+            weight_basis: per_side_cable_stack
+            reps: null
 
   - id: workoutsession_20260623_lower_body_leg_press_in_progress
     object_type: WorkoutSession
@@ -2991,6 +3793,76 @@ sleep_records:
     sleep_type: recovery_nap
 
 trend_observations:
+  - id: body_trend_20260714_machine_squat_100kg_pr
+    object_type: BodyTrendObservation
+    date: 2026-07-14
+    observation_type: strength_progression
+    summary: 머신 스쿼트 100kg을 5회씩 5세트 수행해 신기록을 세움.
+    evidence:
+      - workoutsession_20260714_lower_body_machine_squat_pr
+    interpretation: 해당 머신 스쿼트 종목의 확인된 개인 기록. 머신 종류와 역학이 다르므로 프리 스쿼트 중량과 직접 비교하지 않음.
+    confidence: high
+
+  - id: body_trend_20260709_visible_body_change_protein_soreness
+    object_type: BodyTrendObservation
+    date: 2026-07-09
+    observation_type: visible_body_change_and_recovery_signal
+    summary: Brian reports consistently taking protein drinks, receiving comments from people around him that his body looks improved, and feeling some muscle soreness after chest and lower-body workouts.
+    positive_signals:
+      - Protein drink intake is being maintained consistently, supporting the current protein-consistency guardrail.
+      - People around Brian are commenting that his body has improved, which is a useful external visual feedback signal.
+      - Recent chest and lower-body sessions produced some soreness, consistent with meaningful training stimulus.
+      - This aligns with the 2026-06-27 recomposition trend and recent lower-body strength progression.
+    uncertain_signals:
+      - Exact protein drink amount, product, and timing are not recorded for this update.
+      - External feedback source, number of people, and exact wording are not recorded.
+      - Muscle soreness severity, duration, and whether it affects movement quality are not recorded.
+      - Soreness is not automatically better; if it persists, worsens, or affects joints/form, recovery should take priority.
+    interpretation: "The body-change signal is now supported by three channels: InBody trend, load progression, and external visual feedback. Keep protein consistency and progressive overload, but protect sleep/recovery because soreness plus high work load can accumulate."
+    related_trend_refs:
+      - body_trend_20260627_inbody_recomposition_continuation
+      - body_trend_20260706_squat_leg_press_progression
+    related_workout_refs:
+      - workoutsession_20260704_pt_chest_press_rear_delt
+      - workoutsession_20260706_lower_body_squat_80_leg_press_120
+    confidence: medium_high
+  - id: body_trend_20260706_squat_leg_press_progression
+    object_type: BodyTrendObservation
+    date: 2026-07-06
+    observation_type: lower_body_strength_progression
+    summary: Brian recorded lower-body work with hip adductor/leg-closing movement, squat 80kg x 10 for 3 sets, and leg press 120kg for 10, 15, and 15 reps.
+    positive_signals:
+      - Squat working weight increased from the recent 70kg x 10 sets on 2026-06-28 to 80kg x 10 for 3 sets on 2026-07-06.
+      - Leg press increased from 110kg x 15 sets on 2026-06-28 to 120kg for 10/15/15 reps on 2026-07-06.
+      - The progression fits the current focus on strength and lean-mass gain rather than scale-weight reduction.
+    uncertain_signals:
+      - Squat variant, depth, rest time, and spotter/support were not specified.
+      - Leg press machine type and range of motion were not specified.
+      - Hip adductor/leg-closing movement sets, load, and reps were not specified.
+      - This is a self-reported training update, not a formal strength test.
+    interpretation: Lower-body strength is progressing, but recovery should be protected because Milano and AI workload are also high.
+    linked_workout_ref: workoutsession_20260706_lower_body_squat_80_leg_press_120
+    confidence: medium_high
+  - id: body_trend_20260627_inbody_recomposition_continuation
+    object_type: BodyTrendObservation
+    date: 2026-06-27
+    observation_type: inbody_recomposition_continuation
+    summary: The 2026-06-27 InBody printout shows 78.2kg body weight, 34.2kg skeletal muscle mass, 17.9kg body fat mass, and 22.9% body fat, mostly holding the 2026-06-21 improvement while improving clearly versus the 2026-06-18 mixed result.
+    positive_signals:
+      - compared with the near-start 2026-03-20 app trend point, 2026-06-27 shows similar body weight at 78.1kg to 78.2kg while skeletal muscle mass increased from 33.2kg to 34.2kg and body fat mass decreased from 19.5kg to 17.9kg
+      - skeletal muscle mass stayed high at 34.2kg, which is +1.0kg versus 2026-06-18 and only -0.2kg versus the 2026-06-21 spike
+      - body fat mass decreased from 19.1kg on 2026-06-18 to 17.9kg on 2026-06-27
+      - body fat percent decreased from 24.6% on 2026-06-18 to 22.9% on 2026-06-27
+      - body weight decreased by 0.6kg versus 2026-06-21 while body fat mass and body fat percent also decreased
+      - InBody score stayed at 76 and visceral fat level stayed at 7
+      - Brian reports strength training from late March, higher recent training frequency, and better protein consistency, which plausibly supports the trend without proving direct causality
+    uncertain_signals:
+      - the 2026-06-21 to 2026-06-27 interval is short, so hydration, glycogen, sodium, recent training, and measurement timing can still explain part of the movement
+      - abdominal fat ratio returned from 0.89 on 2026-06-21 to 0.90 on 2026-06-27, so waist or abdominal trend should not be declared improved yet
+      - segmental lean and fat labels were visible in the photo, but exact segmental numeric values were not captured into this record
+      - the app trend screenshot gives only partial values for 2024-08-17, 2026-03-20, 2026-05-09, and 2026-05-21, so body fat percent and other full InBody metrics are not available for those points
+    interpretation: Favorable continuation of the recomposition signal. From the late-March baseline candidate to 2026-06-27, the pattern looks like muscle gain with fat loss at almost unchanged body weight; still treat this as an evidence-backed trend, not a precise causal proof.
+    confidence: medium
   - id: body_trend_20260621_incline_bench_top_load_progression
     object_type: BodyTrendObservation
     date: 2026-06-21
@@ -3091,6 +3963,16 @@ trend_observations:
     confidence: medium
 
 raw_records:
+  - id: raw_body_record_20260715_recent_workouts_0710_0712_0714
+    date: 2026-07-15
+    time: null
+    source: codex_conversation
+    related_workout_refs:
+      - workoutsession_20260710_shoulder_with_myeongjae_tl
+      - workoutsession_20260712_anantara_bangkok_chest
+      - workoutsession_20260714_lower_body_machine_squat_pr
+    text: "10일 명재TL님과 어깨 운동, 12일 ( 가슴 운동 - 방콕 아난타라 호텔 헬스장 ), 14일 ( 하체 운동, 100kg 머신 스쿼트 5회씩 5세트 - 신기록 )"
+
   - id: raw_body_record_20260615_0635
     date: 2026-06-15
     time: "06:35"
@@ -3474,3 +4356,115 @@ raw_records:
     source: codex_conversation
     related_workout: workoutsession_20260623_lower_body_leg_press_in_progress
     text: "레그컬 30 15회 40 10회 3세트"
+  - id: raw_body_record_20260627_inbody_printout_photo
+    date: 2026-06-27
+    time: "10:00"
+    source: codex_conversation
+    related_body_composition_ref: body_composition_20260627_1000_inbody270_printout
+    related_trend_observation_ref: body_trend_20260627_inbody_recomposition_continuation
+    attachment_paths:
+      - raw_data/images/body/inbody_20260627_1000.jpg
+    source_sha256: bb4be7668c9c9ee6ecab94b3558ebd661deee9065616d2f40fc410e3fdbaa4fc
+    text: "InBody270 printout photo shared in conversation. Parsed values: date 2026-06-27 10:00, height 175cm, age 36, male, weight 78.2kg, skeletal muscle mass 34.2kg, body fat mass 17.9kg, body fat percent 22.9%, BMI 25.5, InBody score 76, waist-hip ratio 0.90, visceral fat level 7, basal metabolic rate 1672kcal, total body water 44.2L, protein 12.0kg, minerals 4.12kg, fat-free mass 60.3kg. Visible member/phone number was intentionally not transcribed into the structured record."
+  - id: raw_body_record_20260627_strength_training_protein_context
+    date: 2026-06-27
+    time: null
+    source: codex_conversation_with_inbody_app_trend_screenshot
+    related_body_composition_refs:
+      - body_composition_20260320_1710_inbody_app_trend
+      - body_composition_20260509_1006_inbody_app_trend
+      - body_composition_20260521_0811_inbody_app_trend
+      - body_composition_20260618_0700_inbody_app
+      - body_composition_20260621_1131_inbody270_printout
+      - body_composition_20260627_1000_inbody270_printout
+    related_trend_observation_ref: body_trend_20260627_inbody_recomposition_continuation
+    attachment_paths:
+      - raw_data/images/body/inbody_trend_20260627_app.jpg
+    source_sha256: 6d54bce76a82f37e0ef60499cfc65ccae8f1fa96c03e32dd5b0169cfbfeffced
+    text: "Brian said he has been doing strength training since late March, has been training a lot recently, and has been consistently eating protein. InBody app trend screenshot values visible: weight 75.1kg / SMM 32.5kg / BFM 17.8kg on 2024-08-17 07:43; weight 78.1kg / SMM 33.2kg / BFM 19.5kg on 2026-03-20 17:10; weight 77.3kg / SMM 33.5kg / BFM 18.3kg on 2026-05-09 10:06; weight 76.7kg / SMM 32.8kg / BFM 18.8kg on 2026-05-21 08:11; weight 77.6kg / SMM 33.2kg / BFM 19.1kg on 2026-06-18 07:00; weight 78.8kg / SMM 34.4kg / BFM 18.2kg on 2026-06-21 11:31; weight 78.2kg / SMM 34.2kg / BFM 17.9kg on 2026-06-27 10:00."
+  - id: raw_body_record_20260627_strength_gain_priority_decision
+    date: 2026-06-27
+    time: null
+    source: codex_conversation
+    related_training_program_ref: pt_program_2026_spring
+    related_trend_observation_ref: body_trend_20260627_inbody_recomposition_continuation
+    text: "무조건 근력 늘리는데 집중해야겠다"
+  - id: raw_body_record_20260627_wants_muscle_gain_too
+    date: 2026-06-27
+    time: null
+    source: codex_conversation
+    related_training_program_ref: pt_program_2026_spring
+    related_trend_observation_ref: body_trend_20260627_inbody_recomposition_continuation
+    text: "근육도 늘리고 싶은데"
+  - id: raw_body_record_20260628_lower_body_squat_leg_press_split_squat
+    date: 2026-06-28
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260628_lower_body_squat_leg_press_split_squat
+    text: "6/28\n다리 관절로만 밑에서 위로 미는 운동\n30 15개\n40 10개\n50 10개\n\n스쿼트 \n40kg 12개\n60kg 10개\n70kg 10개\n70kg 10개\n\n레그 프레스\n70kg 15개\n110kg 15개\n110kg 15개\n\n기구 스플릿 스쿼트 40kg\n양쪽 10개씩 두세트"
+  - id: raw_body_record_20260629_chest_cable_bench_smith_incline
+    date: 2026-06-29
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260629_chest_cable_bench_smith_incline
+    text: "6/29\n\n케이블 크로스 오버\n15kg 15개\n20kg 10개\n20kg 10개\n\n벤치 프레스\n20kg 20개\n40kg 10개\n40kg 10개\n40kg 10개\n\n스미스 머신 인클라인 벤치 프레스\n40kg 10개 x 3세트"
+  - id: raw_body_record_20260701_back_unspecified_self_report
+    date: 2026-07-01
+    original_relative_date: yesterday
+    interpreted_on: 2026-07-02
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260701_back_unspecified_self_report
+    text: "운동 그리고 어제는 어 등 운동을 했고, 등 운동 했는데 기록이 되어 있나 모르겠는데."
+  - id: raw_body_record_20260701_back_details_self_report
+    date: 2026-07-01
+    original_relative_date: yesterday
+    interpreted_on: 2026-07-02
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260701_back_unspecified_self_report
+    text: "등 운동은 그 이 시티 로우랑 그다음에 암 풀다운이랑, 또 뭐 했지? 어 그다음에 등 한 팔씩 이렇게 등 당기는 거랑, 이거. 이거 위에 있는 그 바 같은 걸 내리는 거. 그런 거를 이제 한 세 세 세트, 네 세트씩 네 종류로 이렇게 했다고 보면 될 것 같아."
+  - id: raw_body_record_20260702_lunch_shoulder_lateral_raise_press_treadmill
+    date: 2026-07-02
+    time: null
+    time_of_day: lunch
+    source: codex_conversation
+    related_workout: workoutsession_20260702_lunch_shoulder_lateral_raise_press_treadmill
+    text: "그리고 오늘 점심에 어깨 운동을 했고, 사이드 레터럴 레이즈인가? 그거 4kg으로 30개, 3세트, 4세트 정도 했고, 그다음에 어깨 덤벨로 어깨 이렇게 드는 거 16kg 양쪽에서 한 10개 정도 하고, 그다음에 또 14kg, 뭐 10kg 뭐 이렇게 한 4세트 정도 한 거 같아. 10개로 하자고. 그리고 마지막에 5분 정도 스레드밀 해서 높이 좀 높게 해가지고 달렸어. 좀 숨가쁘게. 그리고 일단 이렇게 기록해주고."
+  - id: raw_body_record_20260704_pt_chest_press_rear_delt
+    date: 2026-07-04
+    original_relative_date: last_saturday
+    interpreted_on: 2026-07-09
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260704_pt_chest_press_rear_delt
+    text: "지난주 토요일에 PT 했어. 케이블 크로스 오버, 덤벨 프레스, 벤치 프레스, 인클라인 덤벨 프레스, 후면 어깨 운동 했고."
+  - id: raw_body_record_20260706_lower_body_squat_80_leg_press_120
+    date: 2026-07-06
+    original_relative_date: monday
+    interpreted_on: 2026-07-09
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260706_lower_body_squat_80_leg_press_120
+    text: "월요일엔 하체 운동 했어. 스쿼트 80kg 10개씩 3세트, 레그 프레스 120kg 10개, 15개, 15개"
+  - id: raw_body_record_20260709_protein_visible_change_soreness
+    date: 2026-07-09
+    time: null
+    source: codex_conversation
+    related_trend_ref: body_trend_20260709_visible_body_change_protein_soreness
+    related_workout_refs:
+      - workoutsession_20260704_pt_chest_press_rear_delt
+      - workoutsession_20260706_lower_body_squat_80_leg_press_120
+    text: "하체에 다리 모으는 운동도 했고, 단백질 음료 꾸준히 챙겨먹고 있고, 주변에서 몸이 좋아졌다는 이야기를 하고 있어. 그리고 가슴 운동 , 하체 운동 후에 알이 좀 배김 :)"
+  - id: raw_body_record_20260709_chest_bench_machine_incline
+    date: 2026-07-09
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260709_chest_bench_machine_incline
+    text: "가슴 운동 벤치 프레스 40kg 10회씩 3번, 기구로 가슴 미는 운동, 인클라인 벤치프레스 30kg 10회, 8회 6회"
+  - id: raw_body_record_20260712_machine_bench_press_60kg
+    date: 2026-07-12
+    time: null
+    source: codex_conversation
+    related_workout: workoutsession_20260712_anantara_bangkok_chest
+    text: "최근 7/12 에 벤치할때 머신이긴 하지만 60kg 로 10개함. + 알파"

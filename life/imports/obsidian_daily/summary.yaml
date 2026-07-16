@@ -1,5 +1,5 @@
 schema_version: 1
-generated_at: '2026-06-14T22:19:02'
+generated_at: '2026-07-10T21:32:07'
 import_scope:
   source_root: raw_data/obsidian/01_Daily
   raw_file_count: 263
@@ -22,8 +22,8 @@ records:
   total: 1547
   time_blocks: 1305
   section_records: 242
-  with_semantic_links: 846
-  without_semantic_links: 701
+  with_semantic_links: 866
+  without_semantic_links: 681
   with_review_needed: 4
   by_year:
     '2025': 1427
@@ -77,22 +77,22 @@ daily_summary:
   daily_summary_ref: life/imports/obsidian_daily/daily_summary.jsonl
   day_count: 227
   days_with_time_blocks: 143
-  days_with_semantic_links: 192
+  days_with_semantic_links: 193
 link_counts:
   by_object_type:
     Activity: 698
-    Person: 63
+    Person: 93
     Component: 325
-    Project: 163
+    Project: 192
     CompanionAnimal: 68
-    Concept: 9
+    Concept: 18
   by_relation:
     involves_activity: 698
-    associated_person: 63
+    associated_person: 93
     targets_component: 325
-    belongs_to_project: 163
+    belongs_to_project: 192
     associated_companion_animal: 68
-    expresses_concept: 9
+    expresses_concept: 18
 top_entities:
 - entity_ref: activity_meal
   display_name: Meal
@@ -186,22 +186,22 @@ top_entities:
     date: '2026-01-05'
     area: CAREER
     title: 업무
-    matched_alias: firenze
+    matched_alias: Firenze
   - record_ref: obsidian_daily_20260106_section_three_important_goal
     date: '2026-01-06'
     area: CAREER
     title: Three Important Goal
-    matched_alias: firenze
+    matched_alias: Firenze
   - record_ref: obsidian_daily_20260107_section_three_important_goal
     date: '2026-01-07'
     area: CAREER
     title: Three Important Goal
-    matched_alias: firenze
+    matched_alias: Firenze
   - record_ref: obsidian_daily_20260108_section_three_important_goal
     date: '2026-01-08'
     area: CAREER
     title: Three Important Goal
-    matched_alias: firenze
+    matched_alias: Firenze
 - entity_ref: activity_conversation
   display_name: Conversation
   object_type: Activity
@@ -499,6 +499,33 @@ top_entities:
     area: BODY
     title: 운동
     matched_alias: 스쿼트
+- entity_ref: project_work_general
+  display_name: General work
+  object_type: Project
+  records: 24
+  hours: 11.72
+  needs_user_review_records: 0
+  examples:
+  - record_ref: obsidian_daily_20260105_timeblock_010
+    date: '2026-01-05'
+    area: CAREER
+    title: 업무
+    matched_alias: weekly report
+  - record_ref: obsidian_daily_20260105_section_three_important_goal
+    date: '2026-01-05'
+    area: CAREER
+    title: Three Important Goal
+    matched_alias: weekly report
+  - record_ref: obsidian_daily_20260115_section_three_important_goal
+    date: '2026-01-15'
+    area: BODY
+    title: Three Important Goal
+    matched_alias: 주간 보고
+  - record_ref: obsidian_daily_20260303_timeblock_001
+    date: '2026-03-03'
+    area: CAREER
+    title: 업무
+    matched_alias: weekly report
 - entity_ref: project_ai_agent
   display_name: AI Agent Development
   object_type: Project
@@ -574,12 +601,12 @@ top_entities:
     date: '2025-05-08'
     area: FUN
     title: 휴식 & 쉼호흡
-    matched_alias: 경주
+    matched_alias: 유럽
   - record_ref: obsidian_daily_20250508_section_happiness_point
     date: '2025-05-08'
     area: FUN
     title: Happiness Point
-    matched_alias: 경주
+    matched_alias: 유럽
 - entity_ref: component_dma
   display_name: DMA
   object_type: Component
@@ -607,6 +634,33 @@ top_entities:
     area: CAREER
     title: Three Important Goal
     matched_alias: DMA
+- entity_ref: person_choi_hyunwoo
+  display_name: 최현우 TL님
+  object_type: Person
+  records: 13
+  hours: 1.5
+  needs_user_review_records: 0
+  examples:
+  - record_ref: obsidian_daily_20260106_section_three_important_goal
+    date: '2026-01-06'
+    area: CAREER
+    title: Three Important Goal
+    matched_alias: 현우 TL님
+  - record_ref: obsidian_daily_20260107_section_three_important_goal
+    date: '2026-01-07'
+    area: CAREER
+    title: Three Important Goal
+    matched_alias: 현우 TL님
+  - record_ref: obsidian_daily_20250731_section_three_important_goal
+    date: '2025-07-31'
+    area: CAREER
+    title: Three Important Goal
+    matched_alias: 최현우 TL님
+  - record_ref: obsidian_daily_20250801_section_three_important_goal
+    date: '2025-08-01'
+    area: CAREER
+    title: Three Important Goal
+    matched_alias: 최현우 TL님
 - entity_ref: project_milano
   display_name: Milano
   object_type: Project
@@ -634,6 +688,33 @@ top_entities:
     area: CAREER
     title: Three Important Goal
     matched_alias: 밀라노
+- entity_ref: person_kim_sungah
+  display_name: 김성아 TL님
+  object_type: Person
+  records: 10
+  hours: 4.08
+  needs_user_review_records: 0
+  examples:
+  - record_ref: obsidian_daily_20250414_timeblock_006
+    date: '2025-04-14'
+    area: RELATION
+    title: Data Link Dayer 질의 응답 ( with 김성아 TL님 )
+    matched_alias: 김성아 TL님
+  - record_ref: obsidian_daily_20250425_timeblock_004
+    date: '2025-04-25'
+    area: RELATION
+    title: byte enable 관련 설명 ( to 김성아TL님 )
+    matched_alias: 김성아TL님
+  - record_ref: obsidian_daily_20250613_timeblock_011
+    date: '2025-06-13'
+    area: CAREER
+    title: 미팅 or 세미나
+    matched_alias: 김성아TL님
+  - record_ref: obsidian_daily_20250707_timeblock_008
+    date: '2025-07-07'
+    area: CAREER
+    title: 업무
+    matched_alias: 김성아TL님
 - entity_ref: concept_fulfilled_mind
   display_name: 충만한 마음
   object_type: Concept
@@ -742,6 +823,60 @@ top_entities:
     area: CAREER
     title: 업무
     matched_alias: Brian
+- entity_ref: project_personal_life_admin
+  display_name: Personal life admin
+  object_type: Project
+  records: 5
+  hours: 0.67
+  needs_user_review_records: 0
+  examples:
+  - record_ref: obsidian_daily_20260115_section_three_important_goal
+    date: '2026-01-15'
+    area: BODY
+    title: Three Important Goal
+    matched_alias: 피부과
+  - record_ref: obsidian_daily_20250507_timeblock_010
+    date: '2025-05-07'
+    area: BODY
+    title: 치료
+    matched_alias: 피부과
+  - record_ref: obsidian_daily_20250507_section_thank_you
+    date: '2025-05-07'
+    area: BODY
+    title: Thank You
+    matched_alias: 피부과
+  - record_ref: obsidian_daily_20250521_timeblock_008
+    date: '2025-05-21'
+    area: BODY
+    title: 치료
+    matched_alias: 피부과
+- entity_ref: concept_obsidian_bases
+  display_name: Obsidian Bases
+  object_type: Concept
+  records: 5
+  hours: 0.15
+  needs_user_review_records: 0
+  examples:
+  - record_ref: obsidian_daily_20250531_timeblock_008
+    date: '2025-05-31'
+    area: FINANCE
+    title: 공부
+    matched_alias: Obsidian Base
+  - record_ref: obsidian_daily_20250727_section_review
+    date: '2025-07-27'
+    area: CAREER
+    title: Review
+    matched_alias: .base
+  - record_ref: obsidian_daily_20250728_section_three_important_goal
+    date: '2025-07-28'
+    area: CAREER
+    title: Three Important Goal
+    matched_alias: .base
+  - record_ref: obsidian_daily_20250729_section_three_important_goal
+    date: '2025-07-29'
+    area: CAREER
+    title: Three Important Goal
+    matched_alias: .base
 - entity_ref: activity_gratitude
   display_name: Gratitude
   object_type: Activity
@@ -769,106 +904,6 @@ top_entities:
     area: CAREER
     title: Three Important Goal
     matched_alias: 감사하기
-- entity_ref: person_tony
-  display_name: Tony
-  object_type: Person
-  records: 4
-  hours: 4.83
-  needs_user_review_records: 4
-  examples:
-  - record_ref: obsidian_daily_20250511_timeblock_007
-    date: '2025-05-11'
-    area: CAREER
-    title: Custom TC Debugging
-    matched_alias: Tony
-  - record_ref: obsidian_daily_20250530_timeblock_004
-    date: '2025-05-30'
-    area: CAREER
-    title: 업무
-    matched_alias: Tony
-  - record_ref: obsidian_daily_20250614_timeblock_007
-    date: '2025-06-14'
-    area: CAREER
-    title: 업무
-    matched_alias: Tony
-  - record_ref: obsidian_daily_20250910_section_three_important_goal
-    date: '2025-09-10'
-    area: CAREER
-    title: Three Important Goal
-    matched_alias: Tony
-- entity_ref: activity_sleep
-  display_name: Sleep
-  object_type: Activity
-  records: 3
-  hours: 0.83
-  needs_user_review_records: 0
-  examples:
-  - record_ref: obsidian_daily_20260101_timeblock_001
-    date: '2026-01-01'
-    area: BODY
-    title: 일상
-    matched_alias: 수면
-  - record_ref: obsidian_daily_20250705_timeblock_001
-    date: '2025-07-05'
-    area: CAREER
-    title: 기상 및 준비
-    matched_alias: 수면
-  - record_ref: obsidian_daily_20250705_section_three_important_goal
-    date: '2025-07-05'
-    area: CAREER
-    title: Three Important Goal
-    matched_alias: 수면
-- entity_ref: activity_goal_review
-  display_name: Goal setting and review
-  object_type: Activity
-  records: 2
-  hours: 0.92
-  needs_user_review_records: 0
-  examples:
-  - record_ref: obsidian_daily_20260105_timeblock_002
-    date: '2026-01-05'
-    area: MIND
-    title: 목표 & 계획
-    matched_alias: 목표 & 계획
-  - record_ref: obsidian_daily_20250511_timeblock_013
-    date: '2025-05-11'
-    area: CAREER
-    title: Flit Timing
-    matched_alias: 반성하기
-- entity_ref: person_father_in_law
-  display_name: Father-in-law
-  object_type: Person
-  records: 2
-  hours: 1.67
-  needs_user_review_records: 0
-  examples:
-  - record_ref: obsidian_daily_20250606_timeblock_001
-    date: '2025-06-06'
-    area: RELATION
-    title: 미야와 함께 하기
-    matched_alias: 장인어른
-  - record_ref: obsidian_daily_20250606_section_three_important_goal
-    date: '2025-06-06'
-    area: RELATION
-    title: Three Important Goal
-    matched_alias: 장인어른
-- entity_ref: component_cpuss
-  display_name: CPUSS
-  object_type: Component
-  records: 2
-  hours: 5.08
-  needs_user_review_records: 0
-  examples:
-  - record_ref: obsidian_daily_20250617_timeblock_001
-    date: '2025-06-17'
-    area: CAREER
-    title: 업무
-    matched_alias: CPU
-  - record_ref: obsidian_daily_20250617_section_three_important_goal
-    date: '2025-06-17'
-    area: CAREER
-    title: Three Important Goal
-    matched_alias: CPU
 outputs:
   manifest_ref: life/imports/obsidian_daily/manifest.yaml
   normalized_records_ref: life/imports/obsidian_daily/normalized_records.jsonl

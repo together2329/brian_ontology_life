@@ -1,6 +1,6 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-23
+updated_at: 2026-07-09
 area: MIND
 secondary_areas:
   - CAREER
@@ -8,7 +8,7 @@ secondary_areas:
   - FINANCE
 profile_ref: person_brian
 title: Mind active log
-current_phase: Low mental margin and impatience after Milano initial DB release, with pressure to show AI value and unresolved Atlas/RTL-generator experience.
+current_phase: Codex company rollout and Milano execution remain active, while Brian reports reduced happiness recently. Deep-focus protection, recovery, and gentle happiness-bundle anchors are important so productivity, AI activation, and training progress do not crowd out felt happiness.
 
 source_records:
   - id: source_mind_conversation_20260617_low_energy_question
@@ -212,8 +212,222 @@ source_records:
       causal_claim: none
     related_social_interaction_ref: socialinteraction_20260624_aix_hoesik
     related_mood_ref: mood_20260624_self_efficacy_confidence
+  - id: source_mind_conversation_20260627_deep_focus_decline_concern
+    source_type: chat
+    original_date: 2026-06-27
+    imported_at: 2026-06-27
+    parse_status: parsed
+    raw_text: "요즘 가장 고민이 되는 것은, 내가 깊이 고민하고 몰입하는 시간이 줄어든다는거야"
+    interpreted_state:
+      topic: deep_focus_decline_concern
+      concern: Brian feels that his time for deep thinking and immersion has been decreasing recently.
+      causal_claim: none
+      possible_related_context_refs:
+        - mood_20260617_low_margin_impatience_ai_reputation_pressure
+        - mood_20260623_dawn_wake_testing_fatigue
+        - observation_20260623_morning_mind_reset_anchors
+      needs_user_review: false
+  - id: source_mind_conversation_20260629_codex_company_arrival_gratitude
+    source_type: chat
+    original_date: 2026-06-29
+    imported_at: 2026-06-29
+    parse_status: parsed
+    raw_text: "오늘 codex 회사에 들어옴. 미친듯이 빠르고 좋음. 무제한 너무 감사"
+    interpreted_mood:
+      topic: codex_company_arrival_gratitude
+      valence: positive
+      arousal: high
+      emotions:
+        - grateful
+        - excited
+        - energized
+      related_project_refs:
+        - project_ai_agent
+      related_task_refs:
+        - task_ai_agent_company_codex_rollout_support
+        - task_ai_agent_codex_two_month_asset_capture_program
+  - id: source_mind_conversation_20260629_codex_full_throttle_overnight_intent
+    source_type: chat
+    original_date: 2026-06-29
+    imported_at: 2026-06-29
+    parse_status: parsed
+    raw_text: "codex fast로 무제한 5.5 xhigh 임.. full... full... 로 쓰자. 미친듯이 굴리자. / 밤에도 하루 종일 돌아가게 하기 !!"
+    interpreted_mood:
+      topic: codex_full_capacity_activation
+      valence: positive
+      arousal: very_high
+      emotions:
+        - highly_activated
+        - ambitious
+        - excited
+        - urgency_candidate
+      possible_risk: Very high activation can produce useful momentum, but should be routed into bounded overnight pipelines and morning review rather than unbounded overwork.
+      related_project_refs:
+        - project_ai_agent
+      related_task_refs:
+        - task_ai_agent_codex_two_month_asset_capture_program
+        - task_ai_agent_ssot_deep_interview_to_verify_pilot
+  - id: source_mind_conversation_20260709_happiness_down_recently
+    source_type: chat
+    original_date: 2026-07-09
+    imported_at: 2026-07-09
+    parse_status: parsed
+    raw_text: "그렇구나. 근데 행복감은 좀 떨어져. 아참 그리고 지난주 토요일에 PT 했어. 케이블 크로스 오버, 덤벨 프레스, 벤치 프레스,  인클라인 덤벨 프레스, 후면 어깨 운동 했고. 월요일엔 하체 운동 했어. 스쿼트 80kg 10개씩 3세트, 레그 프레스 120kg 10개, 15개, 15개"
+    interpreted_mood:
+      topic: happiness_down_recently
+      valence: negative
+      arousal: null
+      emotions:
+        - reduced_happiness
+        - reflective
+      causal_claim: none
+      possible_related_context_refs:
+        - mood_20260627_deep_focus_decline_concern
+        - mood_20260629_codex_full_throttle_activation
+        - pattern_candidate_20260627_deep_focus_erosion_under_ai_work_pressure
+      related_concept_refs:
+        - happiness_bundle
+        - concept_fulfilled_mind
+      related_body_context_refs:
+        - workoutsession_20260704_pt_chest_press_rear_delt
+        - workoutsession_20260706_lower_body_squat_80_leg_press_120
+      needs_user_review: false
 
 mood_entries:
+  - id: mood_20260709_happiness_down_recently
+    object_type: MoodEntry
+    date: 2026-07-09
+    time: null
+    valence_score: -1
+    arousal_score: null
+    stress_score: null
+    energy_score: null
+    emotions:
+      - reduced_happiness
+      - reflective
+    linked_context:
+      related_project_refs:
+        - project_milano
+        - project_ai_agent
+      related_mood_refs:
+        - mood_20260627_deep_focus_decline_concern
+        - mood_20260629_codex_full_throttle_activation
+      related_observation_refs:
+        - observation_20260627_deep_focus_is_primary_mind_need
+      related_concept_refs:
+        - happiness_bundle
+        - concept_fulfilled_mind
+      body_context_refs:
+        - workoutsession_20260704_pt_chest_press_rear_delt
+        - workoutsession_20260706_lower_body_squat_80_leg_press_120
+    possible_triggers:
+      - Recent Milano execution, AI/Codex activation, and workout progression may be raising output while reducing felt spaciousness.
+      - Brian recently reported concern that deep thinking and immersion time are decreasing.
+      - High-intensity productive activity may not be converting into felt happiness unless recovery, relation, fun, and happiness-bundle anchors are protected.
+    note: Brian directly reported that happiness has dropped recently. Do not infer a single cause; treat this as a signal to rebalance productivity with recovery and concrete happiness anchors.
+    raw_text: "근데 행복감은 좀 떨어져."
+    source_refs:
+      - source_mind_conversation_20260709_happiness_down_recently
+    confidence: high
+    needs_user_review: false
+  - id: mood_20260629_codex_full_throttle_activation
+    object_type: MoodEntry
+    date: 2026-06-29
+    time: null
+    valence_score: 3
+    arousal_score: 5
+    stress_score: null
+    energy_score: 5
+    emotions:
+      - excited
+      - highly_activated
+      - ambitious
+      - full_capacity_intent
+      - urgency_candidate
+    linked_context:
+      related_project_refs:
+        - project_ai_agent
+        - project_company_ai_transformation
+      related_task_refs:
+        - task_ai_agent_codex_two_month_asset_capture_program
+        - task_ai_agent_company_codex_rollout_support
+        - task_ai_agent_ssot_deep_interview_to_verify_pilot
+      related_mood_refs:
+        - mood_20260629_codex_company_arrival_gratitude
+        - mood_20260627_deep_focus_decline_concern
+    possible_triggers:
+      - Codex became available at company with unlimited use.
+      - Brian described the experience as fast/5.5 xhigh and wants to use it at full capacity.
+      - Brian wants workflows to run all day and overnight.
+    note: Treat this as useful activation and ambition, but route it into bounded, logged, reviewable Codex pipelines so it creates assets instead of unsustainable overwork.
+    raw_text: "codex fast로 무제한 5.5 xhigh 임.. full... full... 로 쓰자. 미친듯이 굴리자. / 밤에도 하루 종일 돌아가게 하기 !!"
+    source_refs:
+      - source_mind_conversation_20260629_codex_full_throttle_overnight_intent
+    confidence: high
+    needs_user_review: false
+  - id: mood_20260629_codex_company_arrival_gratitude
+    object_type: MoodEntry
+    date: 2026-06-29
+    time: null
+    valence_score: 3
+    arousal_score: 4
+    stress_score: null
+    energy_score: 5
+    emotions:
+      - grateful
+      - excited
+      - energized
+      - positive_tool_experience
+    linked_context:
+      related_project_refs:
+        - project_ai_agent
+        - project_company_ai_transformation
+      related_task_refs:
+        - task_ai_agent_company_codex_rollout_support
+        - task_ai_agent_codex_two_month_asset_capture_program
+      related_event_ref: event_ai_agent_codex_company_arrival_20260629
+    possible_triggers:
+      - Codex came into company use on 2026-06-29.
+      - Brian experienced Codex as extremely fast and good.
+      - Unlimited use felt deeply appreciated.
+    note: Positive counter-signal to earlier AI reputation pressure; use it to create durable assets and team enablement, not only more runtime.
+    raw_text: "오늘 codex 회사에 들어옴. 미친듯이 빠르고 좋음. 무제한 너무 감사"
+    source_refs:
+      - source_mind_conversation_20260629_codex_company_arrival_gratitude
+    confidence: high
+    needs_user_review: false
+  - id: mood_20260627_deep_focus_decline_concern
+    object_type: MoodEntry
+    date: 2026-06-27
+    time: null
+    valence_score: -1
+    arousal_score: 3
+    stress_score: 5
+    energy_score: null
+    emotions:
+      - concerned
+      - reflective
+      - desire_for_deep_focus
+      - attention_fragmentation_concern
+    linked_context:
+      related_mood_refs:
+        - mood_20260617_low_margin_impatience_ai_reputation_pressure
+        - mood_20260623_dawn_wake_testing_fatigue
+      related_observation_refs:
+        - observation_20260623_morning_mind_reset_anchors
+      related_project_refs:
+        - project_ai_agent
+        - project_milano
+    possible_triggers:
+      - Recent pressure to show AI value and maintain Milano/Codex execution may be competing with long uninterrupted thinking blocks.
+      - Off-hours testing and fragmented tool exploration may be reducing perceived deep immersion time.
+      - This is a possible connection only; Brian did not state a specific cause.
+    note: Brian identified a current primary concern that time spent deeply thinking and immersing himself is decreasing.
+    raw_text: "요즘 가장 고민이 되는 것은, 내가 깊이 고민하고 몰입하는 시간이 줄어든다는거야"
+    source_refs:
+      - source_mind_conversation_20260627_deep_focus_decline_concern
+    confidence: high
+    needs_user_review: false
   - id: mood_20260624_self_efficacy_confidence
     object_type: MoodEntry
     date: 2026-06-24
@@ -343,6 +557,99 @@ mood_entries:
     needs_user_review: false
 
 observations:
+  - id: observation_20260709_output_up_happiness_down
+    object_type: Observation
+    date: 2026-07-09
+    observation_type: output_happiness_balance_signal
+    area: MIND
+    secondary_areas:
+      - CAREER
+      - BODY
+      - FUN
+    value: Brian's recent output signals are strong across Milano, AI/Codex work, and strength training, but he reports that felt happiness is lower.
+    linked_context:
+      mood_ref: mood_20260709_happiness_down_recently
+      related_mood_refs:
+        - mood_20260627_deep_focus_decline_concern
+        - mood_20260629_codex_full_throttle_activation
+      related_workout_refs:
+        - workoutsession_20260704_pt_chest_press_rear_delt
+        - workoutsession_20260706_lower_body_squat_80_leg_press_120
+      related_concept_refs:
+        - happiness_bundle
+        - concept_fulfilled_mind
+      source_ref: source_mind_conversation_20260709_happiness_down_recently
+    interpretation: High execution is not the same as happiness. The near-term adjustment should add small, concrete recovery and happiness anchors without turning them into another performance obligation.
+    confidence: high
+    needs_user_review: false
+  - id: observation_20260629_full_capacity_codex_needs_asset_pipeline
+    object_type: Observation
+    date: 2026-06-29
+    observation_type: high_activation_operating_signal
+    area: MIND
+    secondary_areas:
+      - CAREER
+    value: Brian's full-capacity Codex activation is a major opportunity if converted into bounded asset-producing pipelines, especially the SSOT deep-interview -> RTL -> DVS -> TB/TC -> verify pilot.
+    linked_context:
+      mood_ref: mood_20260629_codex_full_throttle_activation
+      related_mood_ref: mood_20260629_codex_company_arrival_gratitude
+      related_task_refs:
+        - task_ai_agent_codex_two_month_asset_capture_program
+        - task_ai_agent_ssot_deep_interview_to_verify_pilot
+      source_refs:
+        - source_mind_conversation_20260629_codex_company_arrival_gratitude
+        - source_mind_conversation_20260629_codex_full_throttle_overnight_intent
+    interpretation: Use the excitement as fuel for a structured production system; keep sleep, morning review, and human signoff boundaries explicit.
+    confidence: high
+    needs_user_review: false
+  - id: observation_20260629_thread_inventory_reduces_codex_fragmentation
+    object_type: Observation
+    date: 2026-06-29
+    observation_type: attention_and_memory_management
+    area: MIND
+    secondary_areas:
+      - CAREER
+    value: Reviewing recent Codex threads and promoting only durable outcomes into ontology can reduce fragmentation, because separate fast-moving conversations become one visible state map with open questions and next actions.
+    linked_context:
+      related_observation_ref: observation_20260629_full_capacity_codex_needs_asset_pipeline
+      related_task_refs:
+        - task_ai_agent_codex_two_month_asset_capture_program
+        - task_ai_agent_ssot_deep_interview_to_verify_pilot
+    source_ref: source_ai_agent_codex_thread_inventory_20260629_recent_conversations
+    interpretation: Treat periodic thread inventory as a grounding ritual during high Codex activation, especially before starting more overnight or parallel work.
+    confidence: high
+    needs_user_review: false
+  - id: observation_20260629_full_power_requires_operating_model
+    object_type: Observation
+    date: 2026-06-29
+    observation_type: high_activation_operating_signal
+    area: MIND
+    secondary_areas:
+      - CAREER
+    value: Brian's "Full Power" Codex use is most useful when routed into an operating model that converts his own hardware/IP judgment into repeatable Deep Interview, SSOT, visual pre-lock review, wavefront execution, evidence, and skill/case-study loops.
+    linked_context:
+      related_observation_refs:
+        - observation_20260629_full_capacity_codex_needs_asset_pipeline
+        - observation_20260629_thread_inventory_reduces_codex_fragmentation
+      related_mood_ref: mood_20260629_codex_full_throttle_activation
+      related_task_refs:
+        - task_ai_agent_ssot_deep_interview_to_verify_pilot
+        - task_ai_agent_codex_two_month_asset_capture_program
+      source_ref: source_ai_agent_codex_thread_deep_dive_20260629_operating_model
+    interpretation: Treat "run Codex all day/night" as a queue-and-review system with bounded worktrees, strict receipts, evidence summaries, and morning decisions; otherwise the activation can fragment into many fast threads without durable memory.
+    confidence: high
+    needs_user_review: false
+  - id: observation_20260627_deep_focus_is_primary_mind_need
+    object_type: Observation
+    date: 2026-06-27
+    observation_type: attention_and_focus_signal
+    area: MIND
+    value: Brian's current concern is not merely productivity volume; it is the loss of protected time for deep thinking and immersion.
+    linked_context:
+      mood_ref: mood_20260627_deep_focus_decline_concern
+      source_ref: source_mind_conversation_20260627_deep_focus_decline_concern
+    confidence: high
+    needs_user_review: false
   - id: observation_20260617_low_energy_pressure_not_laziness
     object_type: Observation
     date: 2026-06-17
@@ -461,6 +768,21 @@ observations:
     needs_user_review: false
 
 patterns:
+  - id: pattern_candidate_20260627_deep_focus_erosion_under_ai_work_pressure
+    object_type: Pattern
+    statement: When AI/Codex/Milano work pressure and tool exploration expand into many fragmented sessions, Brian may feel that long deep-thinking and immersion time is shrinking.
+    evidence:
+      - mood_20260627_deep_focus_decline_concern
+      - source_mind_conversation_20260627_deep_focus_decline_concern
+      - mood_20260617_low_margin_impatience_ai_reputation_pressure
+      - mood_20260623_dawn_wake_testing_fatigue
+    confidence: medium
+    related_entities:
+      - project_ai_agent
+      - project_milano
+      - task_ai_agent_codex_two_month_asset_capture_program
+    last_reviewed: 2026-06-27
+    needs_user_review: true
   - id: pattern_candidate_20260617_ai_demo_pressure_low_margin
     object_type: Pattern
     statement: When Brian feels he needs to prove or show visible AI value quickly, mental margin can drop and impatience can rise, especially after intense work, unresolved prior project experiences, or long off-hours AI effort.
@@ -508,6 +830,44 @@ identity_statements:
     needs_user_review: true
 
 operating_rules:
+  - id: operating_rule_20260629_overnight_codex_bounded_pipeline
+    object_type: OperatingRule
+    statement: When using unlimited Codex all day or overnight, convert the run into a bounded pipeline with explicit input, expected artifacts, stop condition, logs, and morning human review.
+    applies_when:
+      - Brian wants Codex to run overnight or all day
+      - Codex unlimited-use window is active
+      - task involves RTL, DVS, TB/TC, verification, guide generation, rule/skill generation, or asset capture
+    recommended_actions:
+      - Choose one worktree or branch for the run.
+      - Write the queue before starting: objective, allowed files, forbidden actions, expected artifacts, max attempts, and stop conditions.
+      - Require an output bundle: summary, diffs, logs, evidence, blockers, and recommended next action.
+      - Review in the morning before merge, publish, share, signoff, or verification closure claims.
+      - Keep at least one protected sleep block; do not use nighttime wakeups as the default control loop.
+    derived_from:
+      - mood_20260629_codex_full_throttle_activation
+      - observation_20260629_full_capacity_codex_needs_asset_pipeline
+      - pattern_candidate_20260617_reputation_anxiety_overwork
+      - pattern_candidate_20260627_deep_focus_erosion_under_ai_work_pressure
+    confidence: high
+    needs_user_review: false
+  - id: operating_rule_20260627_protect_deep_focus_before_tool_exploration
+    object_type: OperatingRule
+    statement: When Brian is concerned that deep thinking time is shrinking, protect one uninterrupted thinking block before opening tool exploration, chat threads, or broad implementation work.
+    applies_when:
+      - Brian says deep thinking or immersion time is decreasing
+      - AI/Codex/Milano tasks feel fragmented
+      - many small tests or tool explorations are competing for attention
+    recommended_actions:
+      - Reserve one 45-90 minute no-notification deep thinking block.
+      - Start with one handwritten question or one plain text thinking note.
+      - Define the thinking output before coding or tool use: decision, model, plan, or evidence checklist.
+      - Batch shallow tool checks after the deep block instead of letting them start the day.
+    derived_from:
+      - mood_20260627_deep_focus_decline_concern
+      - observation_20260627_deep_focus_is_primary_mind_need
+      - pattern_candidate_20260627_deep_focus_erosion_under_ai_work_pressure
+    confidence: medium
+    needs_user_review: true
   - id: operating_rule_20260617_ai_demo_pressure_small_slice
     object_type: OperatingRule
     statement: When Brian feels pressure to show something with AI, reduce scope to one small reliable demo slice and one visible artifact instead of expanding architecture.
@@ -562,6 +922,30 @@ operating_rules:
     needs_user_review: false
 
 interventions:
+  - id: intervention_20260709_happiness_anchor_reset
+    object_type: Intervention
+    date: 2026-07-09
+    trigger_mood_ref: mood_20260709_happiness_down_recently
+    recommendation: "For today, add one small non-productive happiness anchor: 10-20 minutes of quiet breath, a short walk, music, or one happiness-bundle memory/photo check. Do not measure it as output."
+    accepted: null
+    outcome_check_time: null
+    outcome: null
+    related_concept_refs:
+      - happiness_bundle
+      - concept_fulfilled_mind
+    source_refs:
+      - source_mind_conversation_20260709_happiness_down_recently
+  - id: intervention_20260627_one_deep_focus_block
+    object_type: Intervention
+    date: 2026-06-27
+    trigger_pattern_ref: pattern_candidate_20260627_deep_focus_erosion_under_ai_work_pressure
+    recommendation: "Today, protect one 45-minute deep-focus block with no tools except a note. Write one question at the top, think before searching/coding, and stop with a single next-action decision."
+    accepted: null
+    outcome_check_time: null
+    outcome: null
+    related_mood_ref: mood_20260627_deep_focus_decline_concern
+    source_refs:
+      - source_mind_conversation_20260627_deep_focus_decline_concern
   - id: intervention_20260617_low_margin_reset
     object_type: Intervention
     date: 2026-06-17

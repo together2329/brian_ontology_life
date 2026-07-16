@@ -280,6 +280,14 @@ entities:
       confirmed_at: 2026-06-15
       notes: AI Transformation activist meeting member.
 
+    - id: person_myeongjae_tl
+      object_type: Person
+      display_name: 명재 TL님
+      aliases: [명재TL님, 명재 TL님, 명재]
+      confidence: medium
+      needs_user_review: true
+      notes: Brian reported doing a shoulder workout together on 2026-07-10; full name is not yet confirmed.
+
     - id: person_kim_sungah
       object_type: Person
       display_name: 김성아 TL님
@@ -504,6 +512,10 @@ entities:
       object_type: CompanionAnimal
       display_name: 지구
       species: dog
+      breed: 비숑 프리제
+      sex: male
+      age_years_reported: 7
+      age_as_of: 2026-07-15
       aliases:
         - 지구
       negative_aliases:
@@ -540,6 +552,10 @@ entities:
       object_type: CompanionAnimal
       display_name: 해이
       species: dog
+      breed: 비숑 프리제
+      sex: female
+      age_years_reported: 5
+      age_as_of: 2026-07-15
       aliases:
         - 해이랑
         - 해이와
@@ -1486,6 +1502,28 @@ entities:
       confirmed_at: 2026-06-18
       notes: Seminar demo concept where an ontology or OKF bundle is rendered as an interactive HTML graph so engineers can understand task, issue, evidence, owner, and requirement relationships visually.
 
+    - id: concept_visual_thinking_view_layer
+      object_type: Concept
+      display_name: Visual thinking view layer
+      area: MIND
+      aliases:
+        - visual thinking view layer
+        - human visual thinking layer
+        - ontology visual thinking
+        - ontology view layer
+        - thinking view
+        - presentation view
+        - ViewSpec
+        - YAML은 저장 형식
+        - visual thinking은 사고 인터페이스
+        - 사고 렌즈
+        - 질문별 view
+        - 질문별 부분 그래프
+      confidence: high
+      needs_user_review: false
+      confirmed_at: 2026-06-28
+      notes: Brian's architecture direction that canonical YAML ontology should remain the source of truth, while question-specific visual views act as a human thinking interface. The loop is Ontology -> View -> Review -> Patch -> Presentation -> Feedback -> Ontology; thinking views are exploratory, presentation views are audience-facing interpretation exports.
+
     - id: concept_agent_skills
       object_type: Concept
       display_name: Agent Skills
@@ -1875,6 +1913,153 @@ entities:
       needs_user_review: false
       confirmed_at: 2026-06-20
       notes: "Deliberately collecting and structuring the tacit know-how (암묵지) of experienced professionals so AI/agents can learn and reuse it. For Brian Ontology Agent this maps to capturing decisions, actions, failure learning, and Solution RAG cases as reusable ontology objects and skills. Pairs with concept_expertise_amplifies_ai_leverage. Source: YouTube '경력직의 노하우를 AI가 배우게 하는 법 | 암묵지 수집/설계 팁' (2026-06-20) plus related industry context."
+
+    - id: concept_loop_engineering
+      object_type: Concept
+      display_name: Loop Engineering
+      area: CAREER
+      aliases:
+        - Loop Engineering
+        - loop engineering
+        - agent loop engineering
+        - self-running agent loops
+        - autonomous coding loop design
+        - 루프 엔지니어링
+        - 에이전트 루프 설계
+      confidence: medium
+      needs_user_review: true
+      notes: >
+        Screenshot-derived concept supplied by Brian on 2026-07-03. Loop
+        Engineering reframes agent work from prompting a single agent behavior
+        to designing the surrounding system that discovers work, hands it off,
+        verifies it independently, persists state, and schedules repeated
+        execution. External source verification was not performed for the
+        screenshot material in this turn.
+
+    - id: concept_generator_evaluator_separation
+      object_type: Concept
+      display_name: Generator/evaluator separation
+      area: CAREER
+      aliases:
+        - generator evaluator separation
+        - generator-evaluator split
+        - separate generator from evaluator
+        - independent evaluator
+        - skeptical judge agent
+        - 생성기 평가기 분리
+        - 독립 평가 에이전트
+      confidence: high
+      needs_user_review: false
+      notes: >
+        Agent-loop operating principle that the agent or model producing an
+        output should not be the only judge of that output. For Brian's OAG
+        direction this maps to separating RTL/TB/TC generation from validators,
+        gate checks, evidence review, screenshots, tests, and human signoff.
+
+    - id: concept_loop_engineering_risk_debt
+      object_type: Concept
+      display_name: Loop engineering risk debt
+      area: CAREER
+      aliases:
+        - verification debt
+        - comprehension rot
+        - cognitive surrender
+        - token blowout
+        - loop engineering risks
+        - 검증 부채
+        - 이해도 저하
+        - 인지 위임
+        - 토큰 비용 폭증
+      confidence: medium
+      needs_user_review: true
+      notes: >
+        Screenshot-derived risk cluster for self-running agent loops: verification
+        debt, losing understanding of the codebase, token cost blowout, and
+        cognitive surrender when humans stop thinking because the loop appears
+        to handle the work. These risks directly constrain Brian's overnight and
+        all-day Codex loop direction.
+
+    - id: concept_loop_engineering_barbell_model_routing
+      object_type: Concept
+      display_name: Loop engineering barbell model routing
+      area: CAREER
+      aliases:
+        - barbell approach to loop engineering
+        - loop engineering barbell
+        - expensive model for hardest tasks
+        - cheap model for gruntwork
+        - model routing for agent loops
+        - 모델 라우팅 바벨 전략
+      confidence: medium
+      needs_user_review: true
+      notes: >
+        Screenshot-derived cost-control principle: reserve the strongest or most
+        expensive model for the most complex judgment-heavy tasks, and route
+        routine execution or cleanup work to cheaper models or workers when the
+        harness can still enforce state, verification, and review.
+
+    - id: concept_frontier_company_learning_system
+      object_type: Concept
+      display_name: Frontier Company as learning system
+      area: CAREER
+      aliases:
+        - Frontier Company
+        - Microsoft Frontier Company
+        - AI learning system company
+        - learning system company
+        - 학습하는 회사
+        - 회사 자체가 학습 시스템
+      confidence: high
+      needs_user_review: false
+      notes: >
+        Brian-provided interpretation of Microsoft's Frontier Company framing:
+        the important shift is from a company that adopts AI tools to a company
+        that accumulates AI capability as a learning system. Verified against
+        Microsoft's 2026-07-02 Frontier Company announcement and Satya Nadella's
+        linked social post language supplied by Brian.
+
+    - id: concept_token_capital
+      object_type: Concept
+      display_name: Token Capital
+      area: CAREER
+      aliases:
+        - Token Capital
+        - token capital
+        - 토큰 자본
+        - AI memory capital
+        - workflow memory capital
+      confidence: high
+      needs_user_review: false
+      notes: >
+        Brian-provided concept that reasoning, workflow, evaluation, correction,
+        review, feedback, memory, and artifacts produced through AI token usage
+        can become a reusable company asset. In Brian's OAG direction this maps
+        to structured ontology records, evidence, validators, skills, and
+        learning loops. The "human capital and token capital compound" phrase
+        was verified as Satya Nadella social-post language linked to Microsoft's
+        2026-07-02 Frontier Company announcement.
+
+    - id: concept_ai_capability_learning_loop
+      object_type: Concept
+      display_name: AI capability learning loop
+      area: CAREER
+      aliases:
+        - AI Capability
+        - AI capability
+        - enterprise AI capability
+        - human capital and token capital
+        - knowledge workflow judgment
+        - self-improving engineering system
+        - AI 역량 구축
+        - 지식 워크플로우 판단
+      confidence: high
+      needs_user_review: false
+      notes: >
+        Brian's reusable frame that AI value compounds when human work,
+        workflows, knowledge, memory, evaluation, agents, correction, and
+        artifacts feed back into the next task. For OAG this maps to
+        Requirement -> Obligation -> Contract -> Evidence -> Validation plus
+        Ontology -> Knowledge Graph -> Artifact -> Validator -> Learning.
 
 link_relations:
   Person: associated_person

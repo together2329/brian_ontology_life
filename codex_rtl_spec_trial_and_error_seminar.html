@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI 기반 검증 업무에서 고민해볼 지점들</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #eef2f6;
+      --paper: #ffffff;
+      --ink: #111827;
+      --muted: #5b6472;
+      --line: #d9e0ea;
+      --teal: #0f766e;
+      --blue: #1d4ed8;
+      --amber: #c2410c;
+      --red: #be123c;
+      --green: #047857;
+      --navy: #0f172a;
+      --soft: #f8fafc;
+      --shadow: 0 24px 70px rgba(15, 23, 42, 0.14);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+        linear-gradient(180deg, #f8fafc 0%, var(--bg) 100%);
+      background-size: 28px 28px, 28px 28px, auto;
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .shell {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      width: min(1220px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 18px 0 10px;
+      color: var(--muted);
+    }
+
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .brand strong {
+      color: var(--ink);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      font-size: 12px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .counter {
+      font-variant-numeric: tabular-nums;
+      font-size: 12px;
+      font-weight: 750;
+      white-space: nowrap;
+    }
+
+    .deck {
+      width: min(1220px, calc(100vw - 32px));
+      margin: 0 auto;
+      display: grid;
+      align-items: center;
+      min-height: calc(100vh - 120px);
+    }
+
+    .slide {
+      display: none;
+      background: var(--paper);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      min-height: min(700px, calc(100vh - 150px));
+      aspect-ratio: 16 / 9;
+      max-height: calc(100vh - 132px);
+      padding: clamp(32px, 4vw, 62px) clamp(28px, 4.6vw, 76px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide.active {
+      display: grid;
+      align-content: center;
+      gap: 24px;
+    }
+
+    .slide::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 8px;
+      background: linear-gradient(180deg, var(--teal), var(--blue), var(--amber), var(--red));
+    }
+
+    .slide::after {
+      content: "";
+      position: absolute;
+      inset: 0 0 0 auto;
+      width: 32%;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, transparent 0, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+        linear-gradient(180deg, transparent 0, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+      background-size: 26px 26px;
+      mask-image: linear-gradient(90deg, transparent, #000 44%);
+      opacity: 0.55;
+    }
+
+    .eyebrow {
+      color: var(--teal);
+      font-weight: 800;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+      line-height: 1.05;
+      letter-spacing: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      max-width: 940px;
+      font-size: clamp(36px, 5.4vw, 74px);
+    }
+
+    h2 {
+      max-width: 900px;
+      font-size: clamp(29px, 4.1vw, 54px);
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(17px, 1.8vw, 24px);
+      line-height: 1.46;
+      max-width: 860px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .lead {
+      color: #334155;
+      font-size: clamp(19px, 2vw, 28px);
+      line-height: 1.35;
+    }
+
+    .quote {
+      border-left: 5px solid var(--teal);
+      padding: 18px 20px 18px 24px;
+      background: var(--soft);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      color: var(--ink);
+      font-weight: 800;
+      font-size: clamp(25px, 3vw, 42px);
+      line-height: 1.25;
+      max-width: 980px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      min-height: 112px;
+      background: var(--soft);
+    }
+
+    .panel strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .panel p,
+    .panel li {
+      font-size: 17px;
+      line-height: 1.45;
+    }
+
+    ul,
+    ol {
+      margin: 0;
+      padding-left: 1.15em;
+    }
+
+    li {
+      margin: 8px 0;
+      font-size: clamp(17px, 1.8vw, 23px);
+      line-height: 1.35;
+    }
+
+    .compact li {
+      font-size: clamp(16px, 1.55vw, 21px);
+      margin: 7px 0;
+    }
+
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: 10px;
+      max-width: 1040px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step {
+      position: relative;
+      min-width: 150px;
+      flex: 1 1 150px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 15px 16px 17px;
+      background: var(--soft);
+      font-weight: 750;
+      line-height: 1.25;
+    }
+
+    .step::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 3px;
+      background: var(--teal);
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
+
+    .step small {
+      display: block;
+      color: var(--muted);
+      font-weight: 600;
+      margin-top: 6px;
+      line-height: 1.3;
+    }
+
+    .matrix {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #fff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .matrix > div {
+      padding: 18px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      min-height: 76px;
+    }
+
+    .matrix > div:nth-child(3n) {
+      border-right: 0;
+    }
+
+    .matrix .head {
+      color: #fff;
+      background: var(--navy);
+      font-weight: 800;
+      min-height: auto;
+    }
+
+    .matrix strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .metric {
+      display: grid;
+      gap: 12px;
+      max-width: 880px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeitem {
+      display: grid;
+      grid-template-columns: 76px 54px 1fr;
+      align-items: start;
+      gap: 10px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--soft);
+      padding: 10px 12px;
+      min-height: 58px;
+    }
+
+    .timeitem strong {
+      font-size: 14px;
+      color: var(--navy);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .timeitem em {
+      color: var(--teal);
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 850;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .timeitem span {
+      color: #334155;
+      font-size: 13px;
+      line-height: 1.32;
+    }
+
+    .bar {
+      display: grid;
+      grid-template-columns: 140px 1fr 64px;
+      align-items: center;
+      gap: 14px;
+      font-size: 16px;
+      font-weight: 750;
+    }
+
+    .track {
+      height: 16px;
+      border-radius: 999px;
+      background: #e2e8f0;
+      overflow: hidden;
+    }
+
+    .fill {
+      height: 100%;
+      border-radius: 999px;
+      background: var(--teal);
+    }
+
+    .fill.amber {
+      background: var(--amber);
+    }
+
+    .fill.blue {
+      background: var(--blue);
+    }
+
+    .fill.red {
+      background: var(--red);
+    }
+
+    .tagrow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tag {
+      border: 1px solid var(--line);
+      background: var(--soft);
+      border-radius: 999px;
+      padding: 9px 13px;
+      font-size: 15px;
+      font-weight: 800;
+      color: #1f2937;
+    }
+
+    .accent {
+      color: var(--teal);
+    }
+
+    .danger {
+      color: var(--red);
+    }
+
+    .warn {
+      color: var(--amber);
+    }
+
+    .success {
+      color: var(--green);
+    }
+
+    code,
+    pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    }
+
+    pre {
+      margin: 0;
+      max-width: 980px;
+      overflow: auto;
+      border: 1px solid #27272a;
+      border-radius: var(--radius);
+      padding: 18px;
+      background: var(--navy);
+      color: #f8fafc;
+      font-size: clamp(15px, 1.45vw, 20px);
+      line-height: 1.45;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      width: min(1220px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 10px 0 18px;
+    }
+
+    .progress {
+      flex: 1;
+      height: 6px;
+      background: rgba(15, 23, 42, 0.12);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress span {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--teal), var(--amber), var(--blue));
+      border-radius: 999px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 8px;
+    }
+
+    .nav button {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      cursor: pointer;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .nav button:hover {
+      border-color: var(--teal);
+    }
+
+    @media (max-width: 760px) {
+      .topbar {
+        width: min(100vw - 20px, 1180px);
+        padding: 12px 0 8px;
+      }
+
+      .brand span {
+        display: none;
+      }
+
+      .deck {
+        width: min(100vw - 20px, 1180px);
+        min-height: calc(100vh - 108px);
+      }
+
+      .slide {
+        aspect-ratio: auto;
+        min-height: calc(100vh - 132px);
+        padding: 28px 20px;
+      }
+
+      .grid.two,
+      .grid.three,
+      .matrix {
+        grid-template-columns: 1fr;
+      }
+
+      .matrix > div,
+      .matrix > div:nth-child(3n) {
+        border-right: 0;
+      }
+
+      .bar {
+        grid-template-columns: 100px 1fr 48px;
+      }
+
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .footer {
+        width: min(100vw - 20px, 1180px);
+        padding: 8px 0 12px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .topbar,
+      .footer {
+        display: none;
+      }
+
+      .deck {
+        width: 100%;
+        min-height: 0;
+      }
+
+      .slide,
+      .slide.active {
+        display: grid;
+        min-height: 100vh;
+        box-shadow: none;
+        border: 0;
+        page-break-after: always;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <strong>AI Development Seminar</strong>
+        <span>Verification / Evidence / Review / Spec-RTL feedback</span>
+      </div>
+      <div class="counter" id="counter">01 / 16</div>
+    </header>
+
+    <main class="deck" id="deck">
+      <section class="slide active" data-title="Title">
+        <div class="eyebrow">Seminar Note</div>
+        <h1>AI 기반 검증 업무에서<br>고민해볼 지점들</h1>
+        <p class="lead">Verification first, Spec/RTL은 다음 단계</p>
+        <div class="tagrow">
+          <span class="tag">Verification triage</span>
+          <span class="tag">Evidence summary</span>
+          <span class="tag">Review / Gate</span>
+          <span class="tag">Spec / RTL feedback</span>
+        </div>
+      </section>
+
+      <section class="slide" data-title="Current Reality">
+        <div class="eyebrow">Current Reality</div>
+        <h2>현재 시작점은 Spec/RTL 자동화보다 검증이다</h2>
+        <div class="matrix">
+          <div class="head">구분</div>
+          <div class="head">현재 현실</div>
+          <div class="head">세미나 메시지</div>
+          <div><strong>Verification</strong></div>
+          <div>log, test, evidence 중심</div>
+          <div>바로 시작하기 좋음</div>
+          <div><strong>Spec</strong></div>
+          <div>contract와 ambiguity가 중요</div>
+          <div>agent가 결정하지 말고 드러내야 함</div>
+          <div><strong>RTL</strong></div>
+          <div>agent 직접 적용은 아직 어려움</div>
+          <div>수정보다 review/근거 정리부터</div>
+          <div><strong>Learning</strong></div>
+          <div>실패가 흩어지기 쉬움</div>
+          <div>rule/wiki/ontology로 남겨야 함</div>
+        </div>
+      </section>
+
+      <section class="slide" data-title="Thesis">
+        <div class="eyebrow">Thesis</div>
+        <h2>검증 loop를 먼저 안정화한다</h2>
+        <div class="flow">
+          <div class="step">Verification input<small>log / failing command</small></div>
+          <div class="step">Triage<small>failure group</small></div>
+          <div class="step">Evidence<small>first signal</small></div>
+          <div class="step">Next check<small>safe rerun</small></div>
+          <div class="step">Decision boundary<small>human needed</small></div>
+          <div class="step">Next turn<small>Spec/RTL feedback</small></div>
+        </div>
+        <p>Agent가 바로 고치기보다, 관찰된 실패와 근거, 다음 확인 지점, 사람이 판단할 지점을 나눈다.</p>
+      </section>
+
+      <section class="slide" data-title="Evidence">
+        <div class="eyebrow">Evidence</div>
+        <h2>Git history에서 보이는 시행착오의 방향</h2>
+        <div class="tagrow">
+          <span class="tag">Brian local experiment</span>
+          <span class="tag">local history: 4.6k+ commits</span>
+          <span class="tag">agent workflow: 3.3k+ commits</span>
+          <span class="tag">IP workflow: 80+ commits</span>
+        </div>
+        <div class="timeline">
+          <div class="timeitem"><strong>2025-10</strong><em>10</em><span>AXI write/read generator 실험 시작</span></div>
+          <div class="timeitem"><strong>2025-11</strong><em>64</em><span>packet/header/error/mismatch 직접 구현 시행착오</span></div>
+          <div class="timeitem"><strong>2025-12</strong><em>105</em><span>memory, Verilog analysis, RAG, sub-agent, Plan mode 실험</span></div>
+          <div class="timeitem"><strong>2026-03</strong><em>245</em><span>spec navigation, skill routing, plan/todo 정리</span></div>
+          <div class="timeitem"><strong>2026-04</strong><em>1,229</em><span>tool/parser/streaming 안정화, generation/evidence 실험 확대</span></div>
+          <div class="timeitem"><strong>2026-05</strong><em>1,929</em><span>SSOT->RTL, todo/gate/evidence pipeline 확대</span></div>
+          <div class="timeitem"><strong>2026-06</strong><em>1,072</em><span>설계 수렴 루프, silent-pass hardening, ontology/evidence 기반 완료 판단 정리</span></div>
+        </div>
+      </section>
+
+      <section class="slide" data-title="Verification Pain">
+        <div class="eyebrow">Pain 1</div>
+        <h2>검증 loop에서 요구의 빈틈이 먼저 드러날 수 있다</h2>
+        <div class="tagrow">
+          <span class="tag">failing log</span>
+          <span class="tag">mismatch</span>
+          <span class="tag">missing assumption</span>
+          <span class="tag">unclear acceptance</span>
+          <span class="tag">owner decision</span>
+        </div>
+        <div class="quote">Agent가 design intent를 추측해 고치는 것이 아니라, 어떤 요구가 불명확한지와 어떤 evidence가 있는지를 분리한다.</div>
+      </section>
+
+      <section class="slide" data-title="Agent Pain">
+        <div class="eyebrow">Pain 2</div>
+        <h2>AI workflow에서는 생성 속도와 운영 복잡도가 함께 늘어날 수 있다</h2>
+        <div class="grid two">
+          <div class="panel">
+            <strong>속도가 만든 것</strong>
+            <ul class="compact">
+              <li>ReAct loop</li>
+              <li>RAG / memory</li>
+              <li>subagent</li>
+              <li>Plan mode</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <strong>새 failure mode</strong>
+            <ul class="compact">
+              <li>hallucinated observation</li>
+              <li>infinite loop</li>
+              <li>stale state</li>
+              <li>context pollution</li>
+            </ul>
+          </div>
+        </div>
+        <p>검증 triage 속도를 높이더라도 loop control, context, evidence, stale state 문제를 함께 봐야 한다.</p>
+      </section>
+
+      <section class="slide" data-title="Question Bottleneck">
+        <div class="eyebrow">Pain 3</div>
+        <h2>마음대로 만들게 해도, 전부 묻게 해도 문제가 생긴다</h2>
+        <pre>1차: 의도만 전달 -> Agent가 빈칸을 마음대로 채움
+2차: 모호하면 질문 -> 질문 폭주
+3차: test pass 확인 -> 의도 충족 장치가 필요해 보임
+4차: 같은 실수 반복 -> rule / skill / wiki / ontology가 도움</pre>
+        <div class="quote">검증 agent는 evidence로 판단 가능한 것, 사람이 결정할 것, intent-conformance 확인 지점을 나누는 쪽이 좋아 보인다.</div>
+      </section>
+
+      <section class="slide" data-title="Decision Boundary">
+        <div class="eyebrow">Decision Boundary</div>
+        <h2>Decision type별로 처리 방식을 나눠볼 수 있다</h2>
+        <div class="matrix">
+          <div class="head">Decision Type</div>
+          <div class="head">Handling</div>
+          <div class="head">Goal</div>
+          <div><strong>Product-defining</strong></div>
+          <div>ask human</div>
+          <div>contract 보호</div>
+          <div><strong>Repo-local fact</strong></div>
+          <div>cite local evidence</div>
+          <div>근거 유지</div>
+          <div><strong>Reversible internal</strong></div>
+          <div>parameterize / generated option</div>
+          <div>질문 폭주 감소</div>
+          <div><strong>Verification next check</strong></div>
+          <div>propose with evidence</div>
+          <div>safe rerun</div>
+          <div><strong>Architecture/PPA</strong></div>
+          <div>future topic, human-led</div>
+          <div>후속 확장</div>
+        </div>
+      </section>
+
+      <section class="slide" data-title="Verification Evidence">
+        <div class="eyebrow">Practical Loop</div>
+        <h2>검증 evidence를 구조화한다</h2>
+        <pre>failing command / log
+-> first evidence line
+-> suspected area
+-> related spec/test/RTL context
+-> safe next check
+-> human decision needed</pre>
+        <p>Agent가 RTL을 고치는 장면보다, 검증 실패를 구조화하고 사람이 볼 결정을 표시하는 장면이 더 현실에 맞을 수 있다.</p>
+      </section>
+
+      <section class="slide" data-title="Triage Assistant">
+        <div class="eyebrow">AI Usage</div>
+        <h2>AI는 verification triage assistant로 먼저 쓴다</h2>
+        <div class="flow">
+          <div class="step">Input<small>lint / compile / sim</small></div>
+          <div class="step">Group failures</div>
+          <div class="step">First evidence</div>
+          <div class="step">Link context</div>
+          <div class="step">Next check</div>
+          <div class="step">Evidence summary</div>
+        </div>
+      </section>
+
+      <section class="slide" data-title="Worktree">
+        <div class="eyebrow">Worktree</div>
+        <h2>Worktree는 첫 demo보다 후속 단계다</h2>
+        <div class="flow">
+          <div class="step">read-only triage</div>
+          <div class="step">plan-only</div>
+          <div class="step">small reviewed change</div>
+          <div class="step">validation evidence</div>
+          <div class="step">optional worktree<small>risky experiment</small></div>
+        </div>
+        <p>수정 후보나 병렬 실험이 필요해질 때 main workspace와 product artifact를 보호하는 장치로 꺼내볼 수 있다.</p>
+      </section>
+
+      <section class="slide" data-title="Review Bottleneck">
+        <div class="eyebrow">Review</div>
+        <h2>Review도 계층화해볼 수 있다</h2>
+        <div class="flow">
+          <div class="step">Many findings</div>
+          <div class="step">auto compile / lint / test</div>
+          <div class="step">AI review</div>
+          <div class="step">risk / evidence table</div>
+          <div class="step">human key decisions</div>
+        </div>
+        <p>사람은 모든 log line보다 agent가 정리한 evidence와 decision point를 중심으로 판단해볼 수 있다.</p>
+      </section>
+
+      <section class="slide" data-title="Ontology">
+        <div class="eyebrow">Ontology</div>
+        <h2>검증 실패를 다음 개선으로 이어보는 구조</h2>
+        <div class="flow">
+          <div class="step">Failure</div>
+          <div class="step">Cause</div>
+          <div class="step">Assumption</div>
+          <div class="step">Fix</div>
+          <div class="step">Evidence</div>
+          <div class="step">Decision</div>
+          <div class="step">Rule / Skill</div>
+          <div class="step">Ontology / Wiki</div>
+        </div>
+        <div class="quote">검증 실패와 해결 과정을 남기면 다음 비슷한 실패를 더 빨리 다룰 수 있다.</div>
+      </section>
+
+      <section class="slide" data-title="Spec RTL Feedback">
+        <div class="eyebrow">Looping Back</div>
+        <h2>검증 evidence가 Spec/RTL review로 돌아간다</h2>
+        <pre>Verification evidence
+-> unclear requirement
+-> missing assumption
+-> test expectation
+-> owner decision
+-> Spec/RTL review item</pre>
+        <p>검증 업무가 단순 후처리가 아니라 설계 품질을 높이는 feedback loop가 된다.</p>
+      </section>
+
+      <section class="slide" data-title="Tomorrow Action">
+        <div class="eyebrow">Demo / Tomorrow</div>
+        <h2>작게 시작해서 닫는 방식으로 시도해볼 수 있다</h2>
+        <ol>
+          <li>작은 verification task 하나를 고른다.</li>
+          <li>log, failing command, 관련 spec/test context를 준다.</li>
+          <li>failure group, first evidence, suspected area를 정리한다.</li>
+          <li>safe next check와 human decision needed를 분리한다.</li>
+          <li>evidence summary와 unresolved assumption을 남긴다.</li>
+        </ol>
+      </section>
+
+      <section class="slide" data-title="Closing">
+        <div class="eyebrow">Closing</div>
+        <h2>마무리</h2>
+        <div class="quote">AI 적용의 첫 현실적 후보는 검증으로 보인다. 검증 loop에서 evidence와 decision boundary를 안정화하면, 그 결과가 나중에 Spec/RTL review로 돌아갈 수 있다.</div>
+        <div class="tagrow">
+          <span class="tag">AI = 검증 triage</span>
+          <span class="tag">Gate = 추정/검증 분리</span>
+          <span class="tag">Evidence = 판단 근거</span>
+          <span class="tag">Ontology/Wiki = 기억</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="progress" aria-hidden="true"><span id="progress"></span></div>
+      <div class="nav">
+        <button type="button" id="prev" aria-label="Previous slide">‹</button>
+        <button type="button" id="next" aria-label="Next slide">›</button>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    const counter = document.getElementById("counter");
+    const progress = document.getElementById("progress");
+    const prev = document.getElementById("prev");
+    const next = document.getElementById("next");
+    let index = Math.max(0, Math.min(slides.length - 1, Number(location.hash.replace("#", "")) - 1 || 0));
+
+    function show(nextIndex) {
+      index = Math.max(0, Math.min(slides.length - 1, nextIndex));
+      slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle("active", slideIndex === index);
+      });
+      counter.textContent = `${String(index + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
+      progress.style.width = `${((index + 1) / slides.length) * 100}%`;
+      history.replaceState(null, "", `#${index + 1}`);
+    }
+
+    prev.addEventListener("click", () => show(index - 1));
+    next.addEventListener("click", () => show(index + 1));
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowRight" || event.key === "PageDown" || event.key === " ") show(index + 1);
+      if (event.key === "ArrowLeft" || event.key === "PageUp") show(index - 1);
+      if (event.key === "Home") show(0);
+      if (event.key === "End") show(slides.length - 1);
+    });
+
+    show(index);
+  </script>
+</body>
+</html>

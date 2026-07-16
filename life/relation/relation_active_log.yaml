@@ -10,6 +10,25 @@ title: Relation active log
 current_phase: Family, spouse, and companion animal interaction records.
 
 source_records:
+  - id: source_relation_conversation_20260715_companion_animal_profiles
+    source_type: chat
+    original_date: 2026-07-15
+    imported_at: 2026-07-15
+    parse_status: parsed
+    raw_text: "반려견 두마리 키우고 있어. 7살 지구(비숑 남), 5살 해이(비숑 여)"
+    interpreted_companion_animals:
+      - companion_animal_ref: pet_dog_1
+        display_name: 지구
+        breed: 비숑 프리제
+        sex: male
+        age_years_reported: 7
+      - companion_animal_ref: pet_dog_2
+        display_name: 해이
+        breed: 비숑 프리제
+        sex: female
+        age_years_reported: 5
+    confidence: high
+
   - id: source_relation_conversation_20260617_family_walk_gym_fingerprint
     source_type: chat
     original_date: 2026-06-17

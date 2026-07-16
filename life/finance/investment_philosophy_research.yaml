@@ -1,0 +1,332 @@
+schema_version: 1
+status: active_research
+updated_at: 2026-07-15
+area: FINANCE
+secondary_areas:
+  - CAREER
+  - MIND
+profile_ref: person_brian
+title: Brian investment philosophy research
+summary: >
+  Stanley Druckenmiller, Warren Buffett, Philip Fisher, and Charlie Munger research
+  preserved separately from Brian's confirmed rules. The working synthesis combines
+  forward-looking trend selection, qualitative business research, quality and valuation,
+  position sizing, liquidity, humility, and protection against permanent capital loss.
+
+source_records:
+  - id: source_investment_philosophy_conversation_20260715
+    source_type: chat
+    captured_at: 2026-07-15
+    raw_text: "드러켄 밀러 조사 자료도 저장좀 해주고 동시에 진행해"
+    parse_status: parsed
+    user_intent: Preserve Druckenmiller research locally while continuing the multi-investor philosophy synthesis.
+
+research_profiles:
+  - id: investor_research_stanley_druckenmiller_20260715
+    investor_name: Stanley Druckenmiller
+    research_status: reviewed
+    core_philosophy: >
+      Look ahead to large two-to-four-year changes, take meaningful size when conviction
+      and asymmetry are unusually strong, preserve liquidity, and change course quickly
+      when the thesis or market evidence changes.
+    verified_principles:
+      - id: druck_principle_forward_change
+        principle: Focus on what will change and how market perception may change, rather than extrapolating today's visible results.
+      - id: druck_principle_sizing
+        principle: Results depend not only on being right, but on position size when right and loss size when wrong.
+      - id: druck_principle_concentration
+        principle: A small number of exceptional opportunities can justify concentration when they are understood and watched closely.
+      - id: druck_principle_invest_then_investigate
+        principle: A meaningful but non-fatal initial position can focus research; add after confirmation or exit after disconfirmation.
+      - id: druck_principle_liquidity
+        principle: Liquidity matters because it preserves the ability to change one's mind when wrong.
+      - id: druck_principle_thesis_over_cost
+        principle: If the original reason for owning an asset disappears, the purchase price should not anchor the decision.
+      - id: druck_principle_price_as_information
+        principle: Price action and reactions to news are evidence to investigate, not noise to dismiss automatically.
+      - id: druck_principle_contrarianism
+        principle: Being contrary is not inherently valuable; an out-of-consensus position matters only with unusually strong evidence and conviction.
+      - id: druck_principle_humility
+        principle: Mistakes and emotion are unavoidable; recover, update, and avoid turning a mistake into permanent damage.
+    ai_view:
+      summary: >
+        Druckenmiller has expressed strong belief in AI's long-run importance while also
+        expressing uncertainty about which layer and which firms are the best current way
+        to capture the economics. Belief in a technology does not automatically validate
+        every current technology holding or valuation.
+      observed_chain:
+        - talent migration toward AI was treated as an early signal
+        - initial picks-and-shovels exposure led to research across power and uranium
+        - large model-provider capital spending raised questions about winner economics
+        - future applications may capture value that current infrastructure leaders do not
+      brian_relevance: >
+        Brian's AI thesis can justify a meaningful conviction allocation, but the household
+        must aggregate employer income, expected bonus, direct SK hynix, semiconductor/HBM/AI
+        ETFs, spouse holdings, and broad-index embedded exposure before sizing it.
+    sources:
+      - source_id: source_druck_morgan_stanley_2026
+        title: "Hard Lessons: Stan Druckenmiller"
+        publisher: Morgan Stanley
+        source_type: primary_interview_transcript
+        url: https://www.morganstanley.com/insights/videos/hard-lessons/duquesne-stan-druckenmiller-iliana-bouzali
+        recorded_at: 2026-01-30
+        accessed_at: 2026-07-15
+      - source_id: source_druck_goldman_2021
+        title: Talks at GS with Stanley Druckenmiller
+        publisher: Goldman Sachs
+        source_type: primary_interview_transcript
+        url: https://www.goldmansachs.com/pdfs/insights/goldman-sachs-talks/stanley-druckenmiller-f/transcript.pdf
+        recorded_at: 2021-01-21
+        accessed_at: 2026-07-15
+      - source_id: source_druck_nbim_2024_transcription
+        title: "In Good Company: Inside the mind of a legendary investor"
+        publisher: Norges Bank Investment Management / third-party transcript
+        source_type: primary_interview_with_third_party_transcription
+        url: https://podscripts.co/podcasts/in-good-company-with-nicolai-tangen/stan-druckenmiller-inside-the-mind-of-a-legendary-investor
+        episode_date: 2024-11-06
+        accessed_at: 2026-07-15
+        caveat: Wording should be checked against the original audio before using as an exact quotation.
+
+  - id: investor_research_warren_buffett_20260715
+    investor_name: Warren Buffett
+    research_status: reviewed
+    core_philosophy: Treat shares as ownership in businesses, prefer durable high-return businesses at rational prices, allow compounding time to work, use little debt, and retain ample liquidity.
+    verified_principles:
+      - Think and measure like a business owner rather than a trader in price movements.
+      - Prefer businesses that can consistently earn above-average returns on capital.
+      - Short-term price declines can be opportunities when long-term business expectations remain intact.
+      - Avoid leverage that can cause permanent loss or forced action.
+      - Maintain more liquidity than conventional optimization might suggest.
+    sources:
+      - title: Berkshire Hathaway Owner's Manual
+        source_type: primary_company_document
+        url: https://berkshirehathaway.com/ownman.pdf
+        accessed_at: 2026-07-15
+      - title: Berkshire Hathaway 2023 Shareholder Letter
+        source_type: primary_shareholder_letter
+        url: https://www.berkshirehathaway.com/letters/2023ltr.pdf
+        accessed_at: 2026-07-15
+      - title: Berkshire Hathaway 2022 Shareholder Letter
+        source_type: primary_shareholder_letter
+        url: https://www.berkshirehathaway.com/letters/2022ltr.pdf
+        accessed_at: 2026-07-15
+
+  - id: investor_research_philip_fisher_20260715
+    investor_name: Philip Fisher
+    research_status: reviewed_with_secondary_source_support
+    core_philosophy: Find a small number of exceptional growth businesses through deep qualitative investigation of customers, competitors, suppliers, employees, management, R&D, margins, and growth runway, then hold while the business quality remains exceptional.
+    verified_principles:
+      - Long-term sales runway must be supported by products, research, and organizational capacity.
+      - Management quality, candor, talent depth, and capital allocation matter alongside reported numbers.
+      - Scuttlebutt means triangulating claims through the company's ecosystem, not following rumors.
+      - Growth without durable margins or shareholder economics is insufficient.
+    sources:
+      - title: Common Stocks and Uncommon Profits
+        author: Philip A. Fisher
+        source_type: original_book
+        first_published: 1958
+      - title: "Philip Fisher: Growth Stock Investigator"
+        publisher: Forbes
+        source_type: secondary_summary
+        url: https://www.forbes.com/2009/02/23/philip-fisher-growth-personal-finance_philip_fisher.html
+        accessed_at: 2026-07-15
+
+  - id: investor_research_charlie_munger_20260715
+    investor_name: Charlie Munger
+    research_status: reviewed
+    core_philosophy: Use a latticework of multidisciplinary mental models, respect incentives and psychology, seek quality at a rational price with a margin of safety, avoid leverage and stupidity, and let a few great decisions compound.
+    verified_principles:
+      - Facts need to be connected through multiple mental models rather than forced into one favored explanation.
+      - Incentives, competitive position, accounting limitations, technology, and psychology must be analyzed together.
+      - A wonderful business can still be a bad investment at an extreme price.
+      - Long holding periods can improve compounding by reducing taxes, costs, and decision errors.
+      - Avoiding major mistakes is at least as important as finding brilliance.
+    sources:
+      - title: A Lesson on Elementary, Worldly Wisdom as It Relates to Investment Management and Business
+        speaker: Charlie Munger
+        source_type: lecture_transcript
+        venue: USC Marshall School of Business
+        lecture_year: 1994
+        url: https://worldlypartners.com/wp-content/uploads/2024/01/1994-lecture-by-charlie-munger-at-usc-a-lesson-on-elementary-worldly-wisdom-as-it-relates-to-investment.pdf
+        accessed_at: 2026-07-15
+      - title: Berkshire Hathaway 2023 Shareholder Letter
+        source_type: primary_shareholder_letter_with_munger_influence_summary
+        url: https://www.berkshirehathaway.com/letters/2023ltr.pdf
+        accessed_at: 2026-07-15
+
+source_retrieval_index:
+  purpose: >
+    Re-find and verify the research even if a saved URL moves. Search by the exact
+    title, publisher, date, and locator below; use mirrors only for discovery and
+    confirm quotations against the primary document or original audio.
+  retrieval_rules:
+    - Prefer primary publisher pages, original PDFs, and original audio over summaries or transcript mirrors.
+    - Before using exact wording, re-open the source and verify the cited page, section, or timestamp.
+    - If a URL fails, search the exact_title together with publisher_or_host and publication_date_or_year.
+    - Third-party transcripts and archive copies are discovery aids, not authoritative quotation sources.
+  sources:
+    - source_id: source_druck_morgan_stanley_2026
+      investor: Stanley Druckenmiller
+      exact_title: "Hard Lessons: Stan Druckenmiller"
+      publisher_or_host: Morgan Stanley
+      publication_date_or_year: 2026-02-27
+      recording_date: 2026-01-30
+      canonical_url: https://www.morganstanley.com/insights/videos/hard-lessons/duquesne-stan-druckenmiller-iliana-bouzali
+      source_authority: primary_interview_and_transcript
+      find_cues:
+        - "Invest, Then Investigate"
+        - contrarianism is overrated
+        - sizing lessons and emotional mistakes
+        - AI compared with the 1999-2000 technology cycle
+      fallback_search_query: 'site:morganstanley.com "Hard Lessons" "Stan Druckenmiller"'
+
+    - source_id: source_druck_goldman_2021
+      investor: Stanley Druckenmiller
+      exact_title: "Talks at GS with Stanley Druckenmiller"
+      publisher_or_host: Goldman Sachs
+      publication_date_or_year: 2021-02-03
+      recording_date: 2021-01-21
+      canonical_landing_url: https://www.goldmansachs.com/insights/talks-at-gs/stanley-druckenmiller.html
+      canonical_transcript_url: https://www.goldmansachs.com/pdfs/insights/goldman-sachs-talks/stanley-druckenmiller-f/transcript.pdf
+      source_authority: primary_interview_transcript
+      relevant_locations:
+        - "PDF pages 4-5: multi-asset flexibility, liquidity, changing one's mind"
+        - "PDF pages 4-5: concentration, position sizing, and watching profit and loss"
+      fallback_search_query: 'site:goldmansachs.com "Stanley Druckenmiller" "Talks at GS" transcript'
+
+    - source_id: source_druck_nbim_2024_transcription
+      investor: Stanley Druckenmiller
+      exact_title: "Stan Druckenmiller: Inside the mind of a legendary investor"
+      publisher_or_host: Norges Bank Investment Management / In Good Company with Nicolai Tangen
+      episode_date: 2024-11-06
+      official_episode_url: https://shows.acast.com/in-good-company-with-nicolai-tangen/episodes/stan-druckenmiller-inside-the-mind-of-a-legendary-investor
+      official_series_index_url: https://www.nbim.no/en/news-and-insights/podcast/
+      apple_episode_url: https://podcasts.apple.com/no/podcast/stan-druckenmiller-inside-the-mind-of-a-legendary-investor/id1614211565?i=1000675883446
+      transcript_mirror_url: https://podscripts.co/podcasts/in-good-company-with-nicolai-tangen/stan-druckenmiller-inside-the-mind-of-a-legendary-investor
+      source_authority: original_audio_with_unofficial_transcript_mirror
+      relevant_timestamps:
+        - "11:47-16:07: AI, talent migration, Nvidia, picks and shovels, and uncertainty about value capture"
+        - "17:47-19:28: invest then investigate and initial position size"
+        - "23:53-25:48: technical tops and willingness to buy again at a higher price"
+        - "28:24-32:27: thesis invalidation, humility, concentration, flexibility, and liquidity"
+        - "32:53-40:47: Soros, position sizing, the pound trade, and theme dominoes"
+      quotation_caveat: Verify exact wording against the original audio; timestamps were located with a third-party transcript.
+      fallback_search_query: '"Stan Druckenmiller: Inside the mind of a legendary investor" Nicolai Tangen'
+
+    - source_id: source_buffett_owners_manual
+      investors: [Warren Buffett, Charlie Munger]
+      exact_title: Berkshire Hathaway Owner's Manual
+      publisher_or_host: Berkshire Hathaway
+      canonical_url: https://berkshirehathaway.com/ownman.pdf
+      source_authority: primary_company_document
+      relevant_locations:
+        - "PDF pages 1-2: business-owner mindset and long-term business progress"
+        - "PDF pages 1-2: businesses with above-average returns on capital"
+        - "PDF pages 2-3: restrained use of debt"
+      fallback_search_query: 'site:berkshirehathaway.com/ownman.pdf "Owner\u0027s Manual"'
+
+    - source_id: source_berkshire_letter_2023
+      investors: [Warren Buffett, Charlie Munger]
+      exact_title: Berkshire Hathaway Inc. 2023 Annual Letter
+      publisher_or_host: Berkshire Hathaway
+      publication_date_or_year: 2024
+      canonical_url: https://www.berkshirehathaway.com/letters/2023ltr.pdf
+      archive_index_url: https://www.berkshirehathaway.com/letters/letters.html
+      source_authority: primary_shareholder_letter
+      relevant_locations:
+        - "PDF page 1: Munger's advice on wonderful businesses and fair prices"
+        - "PDF page 7: cash and U.S. Treasury bills, liquidity, and avoiding permanent damage"
+      fallback_search_query: 'site:berkshirehathaway.com/letters/2023ltr.pdf Buffett 2023 annual letter'
+
+    - source_id: source_berkshire_letter_2022
+      investor: Warren Buffett
+      exact_title: Berkshire Hathaway Inc. 2022 Annual Letter
+      publisher_or_host: Berkshire Hathaway
+      publication_date_or_year: 2023
+      canonical_url: https://www.berkshirehathaway.com/letters/2022ltr.pdf
+      archive_index_url: https://www.berkshirehathaway.com/letters/letters.html
+      source_authority: primary_shareholder_letter
+      relevant_locations:
+        - "PDF page 3: wonderful businesses can be bought at foolish prices"
+        - "PDF page 3: a small number of truly good decisions can drive long-term results"
+      fallback_search_query: 'site:berkshirehathaway.com/letters/2022ltr.pdf Buffett 2022 annual letter'
+
+    - source_id: source_fisher_book_1958
+      investor: Philip Fisher
+      exact_title: Common Stocks and Uncommon Profits
+      author: Philip A. Fisher
+      first_publication_year: 1958
+      source_authority: original_book
+      identifiers_and_find_cues:
+        - "ISBN and edition vary; search by exact title plus author"
+        - "Key topics: fifteen points, scuttlebutt, when to buy, and when to sell"
+      fallback_search_query: '"Common Stocks and Uncommon Profits" "Philip A. Fisher"'
+
+    - source_id: source_fisher_forbes_interview_1987
+      investor: Philip Fisher
+      exact_title: A talk with Phil Fisher
+      original_publisher: Forbes
+      original_publication_date: 1987-10-19
+      archive_copy_url: https://rlaexp.com/studio/biz/financial_investing/see/articles/phil-fisher-87.html
+      alternate_commentary_url: https://www.investmenttalk.co/p/a-rare-interview-with-phil-fisher
+      source_authority: archived_republication_of_original_interview
+      caveat: Archive and commentary copies help re-find the interview; verify quotations against a licensed Forbes archive when possible.
+      fallback_search_query: '"A talk with Phil Fisher" Forbes "October 19, 1987"'
+
+    - source_id: source_fisher_forbes_summary_2009
+      investor: Philip Fisher
+      exact_title: "Philip Fisher: Growth Stock Investigator"
+      publisher_or_host: Forbes
+      publication_date_or_year: 2009-02-23
+      canonical_url: https://www.forbes.com/2009/02/23/philip-fisher-growth-personal-finance_philip_fisher.html
+      source_authority: secondary_summary
+      fallback_search_query: 'site:forbes.com "Philip Fisher: Growth Stock Investigator"'
+
+    - source_id: source_munger_usc_1994
+      investor: Charlie Munger
+      exact_title: A Lesson on Elementary, Worldly Wisdom as It Relates to Investment Management and Business
+      speaker: Charlie Munger
+      venue: USC Marshall School of Business
+      lecture_year: 1994
+      transcript_host_url: https://worldlypartners.com/wp-content/uploads/2024/01/1994-lecture-by-charlie-munger-at-usc-a-lesson-on-elementary-worldly-wisdom-as-it-relates-to-investment.pdf
+      source_authority: third_party_hosted_lecture_transcript
+      transcript_provenance_note: The hosted PDF identifies the text as a transcript associated with Outstanding Investor Digest.
+      relevant_locations:
+        - "PDF pages 3-5: latticework of mental models and probability"
+        - "PDF pages 27-28: margin of safety and technological disruption"
+        - "PDF pages 32-33: a few great investments, taxes, and paying too high a price"
+      quotation_caveat: Confirm exact quotations against the best available authorized transcript or recording.
+      fallback_search_query: '"A Lesson on Elementary, Worldly Wisdom" Munger USC 1994 transcript'
+
+working_synthesis:
+  id: brian_investment_philosophy_candidate_v0_2
+  status: candidate_not_confirmed
+  title: Brian investment philosophy candidate v0.2
+  role_mapping:
+    trend_and_timing: Stanley Druckenmiller
+    qualitative_growth_research: Philip Fisher
+    business_quality_and_compounding: Warren Buffett
+    valuation_psychology_and_error_avoidance: Charlie Munger
+  candidate_rules:
+    - Invest in large long-run changes, but do not buy merely because an asset carries an AI label.
+    - Treat every stock as a fractional business ownership interest.
+    - Start new trend ideas with a limited research position; scale only after evidence improves.
+    - Aggregate household AI exposure across employment, bonus, direct stocks, ETFs, spouse holdings, and index overlap.
+    - Write the thesis, evidence, valuation assumptions, and invalidation conditions before assigning material size.
+    - Allow meaningful concentration only inside a pre-defined household survival boundary.
+    - Do not use leverage or money needed within three years for conviction investments.
+    - Separate long-duration compounders from two-to-four-year trend positions and use different review and exit rules.
+    - Use only public information and comply with employer trading and information-handling rules.
+    - Preserve liquidity so a wrong thesis never forces harm to housing, family, or companion-animal care.
+  proposed_structure_not_yet_confirmed:
+    cash_bonds_deposits_percent: 25
+    global_core_compounders_percent: 35
+    ai_conviction_total_percent: 35
+    gold_and_other_percent: 5
+  status_note: These percentages and rules remain research-derived candidates until Brian explicitly confirms them.
+
+next_research_actions:
+  - Calculate look-through overlap across Brian and spouse holdings before setting a final AI concentration ceiling.
+  - Separate holdings into long-duration compounders, trend positions, diversifiers, and liquidity.
+  - Create a one-page pre-investment checklist and review template after Brian confirms the philosophy.
+  - Review the selected philosophy against actual behavior during the next investment decision.

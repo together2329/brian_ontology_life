@@ -1,0 +1,2003 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bangkok Route Map</title>
+  <style>
+    :root {
+      --bg: #eef2f3;
+      --surface: #ffffff;
+      --ink: #182027;
+      --muted: #64707b;
+      --line: #d8e0e5;
+      --soft: #f5f8f9;
+      --teal: #0f766e;
+      --red: #ba3e44;
+      --amber: #b97012;
+      --green: #2f7d4f;
+      --blue: #316fa6;
+      --plum: #73558f;
+      --dark: #25313a;
+      --shadow: 0 18px 50px rgba(24, 32, 39, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+
+    button,
+    input {
+      font: inherit;
+      letter-spacing: 0;
+    }
+
+    .app {
+      height: 100vh;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: minmax(360px, 430px) minmax(0, 1fr);
+      overflow: hidden;
+    }
+
+    .sidebar {
+      position: relative;
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      min-height: 100vh;
+      background: var(--surface);
+      border-right: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .header {
+      padding: 18px 18px 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.05;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .subtitle {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+      word-break: keep-all;
+    }
+
+    .quick-facts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .fact {
+      min-height: 64px;
+      padding: 10px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .fact span {
+      display: block;
+    }
+
+    .fact .label {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .fact .value {
+      margin-top: 6px;
+      font-size: 16px;
+      font-weight: 900;
+      line-height: 1.15;
+    }
+
+    .route-tabs {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .route-button {
+      min-height: 42px;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--ink);
+      background: #fbfcfd;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 850;
+      text-align: left;
+      word-break: keep-all;
+      transition: background 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
+    }
+
+    .route-button:hover {
+      border-color: #9fb1bc;
+      background: #f3f7f7;
+    }
+
+    .route-button.active {
+      color: #ffffff;
+      border-color: var(--dark);
+      background: var(--dark);
+    }
+
+    .route-button:active {
+      transform: translateY(1px);
+    }
+
+    .route-button:focus-visible,
+    .tool-button:focus-visible,
+    .map-card a:focus-visible,
+    .stop-card:focus-visible {
+      outline: 3px solid rgba(15, 118, 110, 0.34);
+      outline-offset: 2px;
+    }
+
+    .content {
+      min-height: 0;
+      overflow: auto;
+      padding: 16px 18px 20px;
+    }
+
+    .route-summary {
+      padding: 13px;
+      background: #f7faf9;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--teal);
+      border-radius: 8px;
+      margin-bottom: 14px;
+    }
+
+    .route-summary h2 {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .route-summary p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+      word-break: keep-all;
+    }
+
+    .route-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .tool-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 7px 10px;
+      color: #ffffff;
+      background: var(--teal);
+      border: 1px solid var(--teal);
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .tool-button.secondary {
+      color: var(--ink);
+      background: #ffffff;
+      border-color: var(--line);
+    }
+
+    .route-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .stop-card {
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr);
+      gap: 10px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      cursor: pointer;
+      transition: background 160ms ease, border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+    }
+
+    .stop-card:hover {
+      border-color: #9fb1bc;
+      background: #fbfcfd;
+    }
+
+    .stop-card.selected {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+    }
+
+    .stop-card:active {
+      transform: translateY(1px);
+    }
+
+    .stop-index {
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      background: var(--teal);
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .stop-title {
+      display: flex;
+      gap: 8px;
+      align-items: baseline;
+      justify-content: space-between;
+      min-width: 0;
+    }
+
+    .stop-title h3 {
+      min-width: 0;
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .category {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      min-height: 23px;
+      padding: 4px 7px;
+      border-radius: 999px;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .category.hotel { background: var(--dark); }
+    .category.food { background: var(--red); }
+    .category.massage { background: var(--green); }
+    .category.bar { background: var(--amber); }
+    .category.view { background: var(--blue); }
+    .category.activity { background: var(--plum); }
+    .category.transfer { background: #4d6470; }
+
+    .stop-note {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.42;
+      word-break: keep-all;
+    }
+
+    .stop-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 9px;
+    }
+
+    .meta-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 4px 7px;
+      color: #31404a;
+      background: #edf3f4;
+      border: 1px solid #d6e2e5;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .map-wrap {
+      position: relative;
+      min-width: 0;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      background:
+        linear-gradient(120deg, rgba(49, 111, 166, 0.09), transparent 38%),
+        linear-gradient(320deg, rgba(15, 118, 110, 0.11), transparent 40%),
+        #dce8e8;
+    }
+
+    #map {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      min-height: 100%;
+    }
+
+    .schematic {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .schematic-bg {
+      fill: #e9f0ef;
+    }
+
+    .schematic-grid {
+      stroke: rgba(86, 103, 112, 0.12);
+      stroke-width: 1;
+    }
+
+    .schematic-river {
+      fill: none;
+      stroke: #a7d7e5;
+      stroke-width: 58;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .schematic-river-line {
+      fill: none;
+      stroke: rgba(49, 111, 166, 0.72);
+      stroke-width: 5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .schematic-river-edge {
+      fill: none;
+      stroke: rgba(255, 255, 255, 0.55);
+      stroke-width: 64;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .schematic-road {
+      fill: none;
+      stroke: rgba(96, 111, 119, 0.34);
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 9 9;
+    }
+
+    .schematic-road.solid {
+      stroke-dasharray: 0;
+      stroke-width: 3;
+    }
+
+    .schematic-road-label {
+      fill: rgba(24, 32, 39, 0.42);
+      font-size: 11px;
+      font-weight: 900;
+      text-anchor: middle;
+      paint-order: stroke;
+      stroke: rgba(255, 255, 255, 0.82);
+      stroke-width: 4px;
+      stroke-linejoin: round;
+    }
+
+    .schematic-district ellipse {
+      fill: rgba(255, 255, 255, 0.58);
+      stroke: rgba(86, 103, 112, 0.2);
+      stroke-width: 1;
+    }
+
+    .schematic-district text {
+      fill: rgba(24, 32, 39, 0.58);
+      font-size: 12px;
+      font-weight: 900;
+      text-anchor: middle;
+      dominant-baseline: central;
+      paint-order: stroke;
+      stroke: rgba(255, 255, 255, 0.82);
+      stroke-width: 4px;
+      stroke-linejoin: round;
+    }
+
+    .schematic-route {
+      fill: none;
+      stroke-width: 5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 0;
+    }
+
+    .schematic-route.far {
+      stroke-dasharray: 9 10;
+    }
+
+    .schematic-label {
+      fill: rgba(24, 32, 39, 0.5);
+      font-size: 13px;
+      font-weight: 850;
+      paint-order: stroke;
+      stroke: rgba(255, 255, 255, 0.72);
+      stroke-width: 4px;
+      stroke-linejoin: round;
+    }
+
+    .schematic-water-label {
+      fill: rgba(49, 111, 166, 0.64);
+      font-size: 13px;
+      font-weight: 950;
+      text-anchor: middle;
+      paint-order: stroke;
+      stroke: rgba(255, 255, 255, 0.74);
+      stroke-width: 4px;
+      stroke-linejoin: round;
+    }
+
+    .schematic-marker {
+      cursor: pointer;
+    }
+
+    .schematic-marker circle {
+      stroke: #ffffff;
+      stroke-width: 3;
+      filter: drop-shadow(0 7px 10px rgba(24, 32, 39, 0.28));
+    }
+
+    .schematic-marker text {
+      fill: #ffffff;
+      font-size: 12px;
+      font-weight: 950;
+      text-anchor: middle;
+      dominant-baseline: central;
+      pointer-events: none;
+    }
+
+    .schematic-marker.hotel circle { fill: var(--dark); }
+    .schematic-marker.food circle { fill: var(--red); }
+    .schematic-marker.massage circle { fill: var(--green); }
+    .schematic-marker.bar circle { fill: var(--amber); }
+    .schematic-marker.view circle { fill: var(--blue); }
+    .schematic-marker.activity circle { fill: var(--plum); }
+    .schematic-marker.transfer circle { fill: #4d6470; }
+
+    .schematic-marker.selected circle {
+      stroke: #12191f;
+      stroke-width: 4;
+    }
+
+    .schematic-name {
+      fill: #24323a;
+      font-size: 12px;
+      font-weight: 850;
+      paint-order: stroke;
+      stroke: rgba(255, 255, 255, 0.88);
+      stroke-width: 4px;
+      stroke-linejoin: round;
+    }
+
+    .map-card {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 8;
+      width: min(340px, calc(100% - 36px));
+      padding: 13px;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 14px 32px rgba(24, 32, 39, 0.16);
+    }
+
+    .map-card h2 {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .map-card p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.42;
+      word-break: keep-all;
+    }
+
+    .map-card a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      margin-top: 10px;
+      padding: 6px 9px;
+      color: #ffffff;
+      background: var(--teal);
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .map-overlay {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      z-index: 10;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: end;
+      pointer-events: none;
+    }
+
+    .route-note,
+    .legend {
+      pointer-events: auto;
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 12px 28px rgba(24, 32, 39, 0.15);
+    }
+
+    .route-note {
+      padding: 12px 13px;
+      max-width: 720px;
+    }
+
+    .route-note strong {
+      display: block;
+      font-size: 14px;
+      line-height: 1.25;
+    }
+
+    .route-note span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+      word-break: keep-all;
+    }
+
+    .legend {
+      display: grid;
+      grid-template-columns: repeat(2, max-content);
+      gap: 7px 10px;
+      padding: 10px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #374550;
+      font-size: 12px;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--dark);
+    }
+
+    .dot.food { background: var(--red); }
+    .dot.massage { background: var(--green); }
+    .dot.bar { background: var(--amber); }
+    .dot.view { background: var(--blue); }
+    .dot.activity { background: var(--plum); }
+    .dot.transfer { background: #4d6470; }
+
+    .empty-state {
+      padding: 20px;
+      color: var(--muted);
+      text-align: center;
+      background: #f8fafb;
+      border: 1px dashed #cbd7dc;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 980px) {
+      .app {
+        grid-template-columns: 1fr;
+        height: auto;
+        overflow: visible;
+      }
+
+      .sidebar {
+        height: auto;
+        min-height: auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .map-wrap {
+        height: auto;
+        min-height: 64vh;
+      }
+
+      .content {
+        max-height: 52vh;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .header {
+        padding: 15px 14px 12px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .quick-facts,
+      .route-tabs {
+        grid-template-columns: 1fr;
+      }
+
+      .route-tabs,
+      .content {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .map-overlay {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        grid-template-columns: 1fr;
+      }
+
+      .legend {
+        grid-template-columns: repeat(3, max-content);
+        overflow-x: auto;
+      }
+
+      .map-card {
+        top: 10px;
+        left: 10px;
+        width: calc(100% - 20px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <aside class="sidebar">
+      <section class="header">
+        <p class="eyebrow">Bangkok Trip</p>
+        <h1>방콕 7/11-7/14 동선 지도</h1>
+        <p class="subtitle">2026년 7월 11일 토요일부터 7월 14일 화요일 밤까지, 아난타라 리버사이드 숙소 기준 날짜별 동선.</p>
+        <div class="quick-facts" aria-label="Trip facts">
+          <div class="fact">
+            <span class="label">일정</span>
+            <span class="value">7/11 토 - 7/14 화 밤</span>
+          </div>
+          <div class="fact">
+            <span class="label">숙소</span>
+            <span class="value">Anantara Riverside</span>
+          </div>
+          <div class="fact">
+            <span class="label">예약 필요</span>
+            <span class="value">픽업/뷰/스파</span>
+          </div>
+        </div>
+      </section>
+
+      <nav class="route-tabs" aria-label="Route filters">
+        <button class="route-button active" type="button" data-route="day1">7/11 토 도착/강변</button>
+        <button class="route-button" type="button" data-route="day2">7/12 일 아이콘시암</button>
+        <button class="route-button" type="button" data-route="day3">7/13 월 코끼리</button>
+        <button class="route-button" type="button" data-route="day4">7/14 화 쏭왓/왓아룬</button>
+        <button class="route-button" type="button" data-route="recommended">추천 추가 음식/마사지</button>
+        <button class="route-button" type="button" data-route="all">전체 후보</button>
+        <button class="route-button" type="button" data-route="riverside">리버사이드 + 아이콘시암</button>
+        <button class="route-button" type="button" data-route="phromphong">룽르엉 + 시암</button>
+        <button class="route-button" type="button" data-route="oldcity">카오산 + 왓아룬</button>
+        <button class="route-button" type="button" data-route="songwat">쏭왓 + 차이나타운</button>
+        <button class="route-button" type="button" data-route="elephant">코끼리 보호소</button>
+        <button class="route-button" type="button" data-route="airport">공항 픽업</button>
+      </nav>
+
+      <section class="content">
+        <div class="route-summary" id="routeSummary"></div>
+        <div class="route-list" id="routeList"></div>
+      </section>
+    </aside>
+
+    <section class="map-wrap" aria-label="Bangkok route map">
+      <div id="map"></div>
+      <div class="map-overlay">
+        <div class="route-note" id="mapNote"></div>
+        <div class="legend" aria-label="Map legend">
+          <span class="legend-item"><i class="dot"></i>숙소</span>
+          <span class="legend-item"><i class="dot food"></i>음식</span>
+          <span class="legend-item"><i class="dot massage"></i>마사지</span>
+          <span class="legend-item"><i class="dot bar"></i>맥주/바</span>
+          <span class="legend-item"><i class="dot view"></i>뷰</span>
+          <span class="legend-item"><i class="dot activity"></i>액티비티</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <noscript>
+    <div class="empty-state">JavaScript가 꺼져 있으면 지도와 동선 필터가 표시되지 않습니다.</div>
+  </noscript>
+
+  <script>
+    const routes = {
+      day1: {
+        title: "7/11 토요일 - 도착 + 강변 적응",
+        subtitle: "도착 시간 미정이므로 첫날은 공항픽업, 체크인, 숙소 근처 맥주/뷰 정도로 가볍게 둔다.",
+        note: "추천 흐름: 공항 픽업 - Anantara 체크인 - Longtail River Bar 또는 SEEN - 컨디션 되면 Asiatique.",
+        color: "#4d6470",
+        order: ["bkk", "dmk", "anantara", "longtail", "seen", "asiatique"]
+      },
+      day2: {
+        title: "7/12 일요일 - 아이콘시암 + 마사지 + 캐주얼 저녁",
+        subtitle: "일요일은 멀리 이동하지 않고 리버사이드 쪽에서 쇼핑, 마사지, Have A Zeed, 맥주를 붙인다.",
+        note: "기본 길찾기는 Let's Relax 기준. Preme Pavilion은 같은 구역의 대안으로 따로 확인.",
+        color: "#0f766e",
+        directionsOrder: ["anantara", "iconsiam", "letsrelax_iconsiam", "haveazeed", "hobs"],
+        order: ["anantara", "iconsiam", "preme", "letsrelax_iconsiam", "haveazeed", "hobs"]
+      },
+      day3: {
+        title: "7/13 월요일 - 코끼리 보호소 데이",
+        subtitle: "코끼리 보호소는 하루를 따로 빼는 게 안전하다. 저녁은 숙소 근처에서 가볍게 마무리.",
+        note: "추천 판단: 동물복지 우선이면 Somboon Legacy, 구조센터까지 보면 WFFT, 편의성은 Bangkok Elephant Park.",
+        color: "#73558f",
+        order: ["anantara", "somboon_legacy", "wfft", "bangkok_elephant", "longtail"]
+      },
+      day4: {
+        title: "7/14 화요일 - 쏭왓 + 올드시티 + 왓아룬 뷰",
+        subtitle: "밤까지 일정이 있으니 점심부터 저녁 뷰까지 쓰고, 출국/이동 전에는 숙소 복귀 시간을 남긴다.",
+        note: "기본 길찾기는 Nai Ek 기준. Rong Klan Nuea는 비프누들 대안으로 따로 비교.",
+        color: "#316fa6",
+        directionsOrder: ["anantara", "nai_ek", "hongsiengkong", "kruaapsorn", "sala", "watarun", "anantara"],
+        order: ["anantara", "rongklan", "nai_ek", "hongsiengkong", "kruaapsorn", "sala", "watarun", "anantara"]
+      },
+      recommended: {
+        title: "추가 추천 - 음식 + 마사지",
+        subtitle: "기존 후보에 바로 붙일 수 있는 예약/백업 후보만 모았다. 일정이 빡빡하면 이 탭에서 하나만 고르면 된다.",
+        note: "추천 우선순위: ICONSIAM은 Let's Relax, 시암은 Treasure Spa/One More Thai, 프롬퐁은 Makkha, 카오산은 Shewa 발마사지 + Jok Pochana 저녁, 푸팟퐁커리는 Somboon.",
+        color: "#ba3e44",
+        order: [
+          "letsrelax_iconsiam", "treasure_siam", "one_more_chitlom", "makkha_sukhumvit24",
+          "healthland_sathorn", "somboon_surawong", "baan_somtum_sathorn", "nai_ek",
+          "ten_suns", "shewa_khaosan", "pai_spa_khaosan", "khao_san_thai_massage",
+          "jok_pochana", "supanniga_tha_tien", "taling_pling_siam"
+        ]
+      },
+      all: {
+        title: "방콕 시내 전체 후보",
+        subtitle: "방콕 시내 후보를 한 번에 본 뒤, 왼쪽 탭으로 하루 단위 동선을 줄이면 된다.",
+        note: "숙소는 강변 서쪽, 주요 식당/마사지/뷰 포인트는 강변, 프롬퐁, 시암, 올드시티, 송왓으로 나뉜다. 공항과 코끼리 보호소는 별도 탭.",
+        color: "#25313a",
+        order: [
+          "anantara", "iconsiam", "preme", "letsrelax_iconsiam", "seen", "rung", "asiaherb",
+          "makkha_sukhumvit24", "napar", "treasure_siam", "one_more_chitlom", "nava", "banthai",
+          "shewa_khaosan", "pai_spa_khaosan", "khao_san_thai_massage", "jok_pochana",
+          "kruaapsorn", "somboon_surawong", "baan_somtum_sathorn", "sala", "supanniga_tha_tien",
+          "rongklan", "nai_ek", "ten_suns", "river_vibe", "taisoon"
+        ]
+      },
+      riverside: {
+        title: "리버사이드 + 아이콘시암",
+        subtitle: "숙소에서 쉬운 날. 아이콘시암, 마사지, 저녁, 강변 맥주를 한 줄로 붙인다.",
+        note: "추천 흐름: Anantara - ICONSIAM - Preme Pavilion 또는 Let's Relax - Have A Zeed - HOBS 또는 Longtail/SEEN.",
+        color: "#0f766e",
+        order: ["anantara", "iconsiam", "haveazeed", "preme", "letsrelax_iconsiam", "hobs", "longtail", "seen", "asiatique"]
+      },
+      phromphong: {
+        title: "룽르엉 + 프롬퐁 + 시암",
+        subtitle: "룽르엉은 프롬퐁, NAPAR는 시암. 같은 날 가능하지만 택시/BTS 이동을 감안한다.",
+        note: "추천 흐름: Rung Rueang - Asia Herb 또는 Makkha - EmQuartier/EmSphere - Siam - NAPAR/Treasure Spa.",
+        color: "#2f7d4f",
+        order: ["rung", "asiaherb", "makkha_sukhumvit24", "onceupon", "oasis", "emquartier", "siam", "napar", "treasure_siam", "one_more_chitlom", "taling_pling_siam"]
+      },
+      oldcity: {
+        title: "카오산 + 왓아룬 뷰",
+        subtitle: "나와팟타이, 카오산 발마사지, Jok Pochana, 푸팟퐁커리, 왓아룬 뷰 바를 한 구역으로 본다.",
+        note: "추천 흐름: Nava Pad Thai - Shewa/Pai/Khao San Thai 중 발마사지 1곳 - Jok Pochana 또는 Krua Apsorn - sala rattanakosin/View ARUN.",
+        color: "#316fa6",
+        order: ["khaosan", "ten_suns", "nava", "banthai", "shewa_khaosan", "pai_spa_khaosan", "khao_san_thai_massage", "jok_pochana", "kruaapsorn", "somboon_surawong", "watpho", "watarun", "sala", "supanniga_tha_tien", "viewarun", "eaglenest"]
+      },
+      songwat: {
+        title: "쏭왓 + 차이나타운",
+        subtitle: "할명수 비프누들 후보와 강변 카페/바, 차이나타운 맥주를 묶는다.",
+        note: "추천 흐름: Rong Klan Nuea 또는 Nai Ek - Song Wat 산책 - Hong Sieng Kong/Woodbrook - River Vibe 또는 Tai Soon.",
+        color: "#b97012",
+        order: ["rongklan", "nai_ek", "hongsiengkong", "woodbrook", "river_vibe", "verynice", "taisoon", "opium"]
+      },
+      elephant: {
+        title: "코끼리 보호소",
+        subtitle: "하루를 따로 빼는 옵션. 동물복지 우선이면 hands-off 성격을 먼저 확인한다.",
+        note: "추천 판단: Somboon Legacy 우선, 구조센터까지 보면 WFFT, 편의성은 Bangkok Elephant Park.",
+        color: "#73558f",
+        order: ["anantara", "somboon_legacy", "wfft", "bangkok_elephant"]
+      },
+      airport: {
+        title: "공항 픽업",
+        subtitle: "공항에서 아난타라까지는 짐이 있으면 프라이빗 픽업이 가장 단순하다.",
+        note: "예약 전 확인: BKK/DMK, 도착 날짜/시간, 인원, 캐리어 개수.",
+        color: "#4d6470",
+        order: ["bkk", "dmk", "anantara"]
+      }
+    };
+
+    const places = [
+      {
+        id: "anantara",
+        name: "Anantara Riverside Bangkok Resort",
+        ko: "아난타라 리버사이드",
+        lat: 13.7041841,
+        lng: 100.4919868,
+        category: "hotel",
+        area: "숙소",
+        note: "이번 방콕 동선의 기준점. 공항픽업, 강변 바, SEEN/Avani, Asiatique가 붙는다.",
+        time: "체크인/휴식",
+        query: "Anantara Riverside Bangkok Resort"
+      },
+      {
+        id: "iconsiam",
+        name: "ICONSIAM",
+        ko: "아이콘시암",
+        lat: 13.7268227,
+        lng: 100.510294,
+        category: "activity",
+        area: "리버사이드",
+        note: "SOOKSIAM, 쇼핑, River Park, 분수쇼, Have A Zeed/HOBS를 한 번에 처리.",
+        time: "오후-저녁",
+        query: "ICONSIAM Bangkok"
+      },
+      {
+        id: "haveazeed",
+        name: "Have A Zeed ICONSIAM",
+        ko: "Have A Zeed",
+        lat: 13.72636,
+        lng: 100.51078,
+        category: "food",
+        area: "아이콘시암",
+        note: "캐주얼 태국/이산 음식. 쇼핑 후 저녁으로 붙이기 좋다.",
+        time: "저녁",
+        query: "Have A Zeed ICONSIAM"
+      },
+      {
+        id: "preme",
+        name: "Preme Pavilion",
+        ko: "프림 파빌리온",
+        lat: 13.7187,
+        lng: 100.5074,
+        category: "massage",
+        area: "아이콘시암 근처",
+        note: "아이콘시암 근처 마사지 후보. 정확 위치는 예약 전 지도 검색으로 확인.",
+        time: "저녁 전",
+        query: "Preme Pavilion massage Bangkok"
+      },
+      {
+        id: "letsrelax_iconsiam",
+        name: "Let's Relax Spa Icon Charoen Nakhon",
+        ko: "Let's Relax ICONSIAM",
+        lat: 13.7271,
+        lng: 100.5072,
+        category: "massage",
+        area: "아이콘시암 맞은편",
+        note: "ICONSIAM 맞은편 공식 지점. BTS Charoen Nakhon Exit 1 도보권이라 예약형 대안으로 안정적.",
+        time: "쇼핑 전후",
+        query: "Let's Relax Spa Icon Charoen Nakhon Bangkok"
+      },
+      {
+        id: "hobs",
+        name: "HOBS ICONSIAM",
+        ko: "HOBS",
+        lat: 13.72611,
+        lng: 100.51024,
+        category: "bar",
+        area: "아이콘시암",
+        note: "아이콘시암 안에서 맥주 한 잔. Have A Zeed 뒤에 붙이기 쉽다.",
+        time: "저녁-밤",
+        query: "HOBS ICONSIAM"
+      },
+      {
+        id: "longtail",
+        name: "Longtail River Bar",
+        ko: "롱테일 리버 바",
+        lat: 13.70434,
+        lng: 100.49255,
+        category: "bar",
+        area: "숙소",
+        note: "숙소에서 제일 쉬운 강변 맥주. 피곤한 날 1순위.",
+        time: "저녁-밤",
+        query: "Longtail River Bar Anantara Riverside Bangkok"
+      },
+      {
+        id: "seen",
+        name: "SEEN Bangkok",
+        ko: "SEEN",
+        lat: 13.70462,
+        lng: 100.49211,
+        category: "view",
+        area: "Avani+ Riverside",
+        note: "숙소 근처 루프탑 뷰. 맥주보다 야경/칵테일 느낌.",
+        time: "해질녘-밤",
+        query: "SEEN Restaurant and Bar Bangkok Avani Riverside"
+      },
+      {
+        id: "asiatique",
+        name: "Asiatique The Riverfront",
+        ko: "아시아티크",
+        lat: 13.7042169,
+        lng: 100.5028259,
+        category: "activity",
+        area: "강변",
+        note: "숙소 근처 야간 산책 후보. 가볍게 보고 빠지는 정도.",
+        time: "밤 산책",
+        query: "Asiatique The Riverfront Bangkok"
+      },
+      {
+        id: "blueelephant",
+        name: "Blue Elephant Bangkok",
+        ko: "블루 엘리펀트",
+        lat: 13.71795,
+        lng: 100.52174,
+        category: "food",
+        area: "Sathorn",
+        note: "포멀한 Royal Thai Cuisine 후보. Have A Zeed와 성격이 다르다.",
+        time: "예약 저녁",
+        query: "Blue Elephant Bangkok Sathorn"
+      },
+      {
+        id: "rung",
+        name: "Rung Rueang Pork Noodle",
+        ko: "룽르엉",
+        lat: 13.7291,
+        lng: 100.5692,
+        category: "food",
+        area: "Phrom Phong",
+        note: "프롬퐁 Sukhumvit 26 쪽 돼지고기 국수. 빠른 점심으로 좋다.",
+        time: "점심",
+        query: "Rung Rueang Pork Noodle Sukhumvit 26 Bangkok"
+      },
+      {
+        id: "asiaherb",
+        name: "Asia Herb Association Sukhumvit 24",
+        ko: "Asia Herb Sukhumvit 24",
+        lat: 13.72753,
+        lng: 100.56774,
+        category: "massage",
+        area: "Phrom Phong",
+        note: "룽르엉 근처 1순위 마사지. 밥 직후는 발/목어깨가 편하다.",
+        time: "점심 후",
+        query: "Asia Herb Association Sukhumvit 24 Bangkok"
+      },
+      {
+        id: "onceupon",
+        name: "Once Upon A Thai Spa Phrom Phong",
+        ko: "Once Upon A Thai Spa",
+        lat: 13.72772,
+        lng: 100.56989,
+        category: "massage",
+        area: "Phrom Phong",
+        note: "Sukhumvit 28 쪽 예쁜 스파 느낌 대안.",
+        time: "오후",
+        query: "Once Upon A Thai Spa Phrom Phong"
+      },
+      {
+        id: "oasis",
+        name: "Oasis Spa Sukhumvit 31",
+        ko: "Oasis Spa",
+        lat: 13.73542,
+        lng: 100.56741,
+        category: "massage",
+        area: "Sukhumvit 31",
+        note: "더 고급 스파 느낌. 프롬퐁역 셔틀 여부 확인.",
+        time: "여유 있는 날",
+        query: "Oasis Spa Sukhumvit 31 Bangkok"
+      },
+      {
+        id: "emquartier",
+        name: "EmQuartier / EmSphere",
+        ko: "엠쿼티어/엠스피어",
+        lat: 13.73118,
+        lng: 100.56974,
+        category: "activity",
+        area: "Phrom Phong",
+        note: "룽르엉/마사지 뒤에 걷기 쉬운 실내 쇼핑 동선.",
+        time: "오후",
+        query: "EmQuartier Bangkok"
+      },
+      {
+        id: "siam",
+        name: "Siam Paragon / Siam Square",
+        ko: "시암",
+        lat: 13.7467785,
+        lng: 100.534954,
+        category: "activity",
+        area: "Siam",
+        note: "NAPAR를 붙이기 좋은 쇼핑 구역.",
+        time: "오후",
+        query: "Siam Paragon Bangkok"
+      },
+      {
+        id: "napar",
+        name: "NAPAR Massage Siam",
+        ko: "NAPAR Massage",
+        lat: 13.74492,
+        lng: 100.53278,
+        category: "massage",
+        area: "Siam Square",
+        note: "시암 쇼핑날 마사지. 룽르엉 근처는 아니다.",
+        time: "쇼핑 중간",
+        query: "NAPAR Massage Siam Square Bangkok"
+      },
+      {
+        id: "treasure_siam",
+        name: "Treasure Spa Siam Square One",
+        ko: "Treasure Spa Siam",
+        lat: 13.7467,
+        lng: 100.534,
+        category: "massage",
+        area: "Siam Square One",
+        note: "Siam Square One 6층의 예약형 스파. NAPAR보다 조금 더 정돈된 스파 느낌의 시암 대안.",
+        time: "쇼핑 중간",
+        query: "Treasure Spa Siam Square One Bangkok"
+      },
+      {
+        id: "one_more_chitlom",
+        name: "One More Thai Massage & Spa Chit Lom",
+        ko: "One More Thai Chit Lom",
+        lat: 13.744,
+        lng: 100.5416,
+        category: "massage",
+        area: "Chit Lom",
+        note: "시암에서 동쪽으로 한 정거장. 시암 마사지가 꽉 찼거나 Chit Lom/Gaysorn 쪽 쇼핑이면 좋은 백업.",
+        time: "오후",
+        query: "One More Thai Massage and Spa Chit Lom Bangkok"
+      },
+      {
+        id: "taling_pling_siam",
+        name: "Taling Pling Siam Paragon",
+        ko: "Taling Pling Siam",
+        lat: 13.7465,
+        lng: 100.5352,
+        category: "food",
+        area: "Siam Paragon",
+        note: "시암 쇼핑/마사지 사이에 넣기 쉬운 태국식 백업. 동선이 꼬이면 mall meal로 쓰기 좋다.",
+        time: "점심/저녁",
+        query: "Taling Pling Siam Paragon Bangkok"
+      },
+      {
+        id: "makkha_sukhumvit24",
+        name: "Makkha Health & Spa Sukhumvit 24",
+        ko: "Makkha Sukhumvit 24",
+        lat: 13.7252,
+        lng: 100.5688,
+        category: "massage",
+        area: "Phrom Phong",
+        note: "룽르엉 뒤 프롬퐁 마사지 업그레이드 후보. Sukhumvit 24라 EmQuartier/Emporium와 붙이기 쉽다.",
+        time: "점심 후",
+        query: "Makkha Health and Spa Sukhumvit 24 Bangkok"
+      },
+      {
+        id: "healthland_sathorn",
+        name: "Health Land Sathorn",
+        ko: "Health Land Sathorn",
+        lat: 13.7212,
+        lng: 100.5265,
+        category: "massage",
+        area: "Sathorn",
+        note: "사톤/실롬 쪽 대형 마사지 체인. Blue Elephant, Somboon Surawong, Sky Bar 쪽으로 움직이는 날 백업.",
+        time: "저녁 전",
+        query: "Health Land Sathorn Bangkok"
+      },
+      {
+        id: "khaosan",
+        name: "Khao San Road",
+        ko: "카오산 로드",
+        lat: 13.7589052,
+        lng: 100.4972746,
+        category: "activity",
+        area: "Old City",
+        note: "한 잔만 하고 빠지는 정도가 적당한 관광지 성격.",
+        time: "오후-밤",
+        query: "Khao San Road Bangkok"
+      },
+      {
+        id: "nava",
+        name: "Nava Pad Thai",
+        ko: "나와팟타이",
+        lat: 13.75837,
+        lng: 100.49888,
+        category: "food",
+        area: "Khao San",
+        note: "할명수 동선 후보. 카오산/반 타이 마사지와 묶는다.",
+        time: "점심",
+        query: "Nava Pad Thai Bangkok"
+      },
+      {
+        id: "banthai",
+        name: "Ban Thai Masaje",
+        ko: "반 타이 마사지",
+        lat: 13.7581,
+        lng: 100.49692,
+        category: "massage",
+        area: "Khao San",
+        note: "나와팟타이와 카오산 사이에 붙이는 마사지 후보.",
+        time: "점심 후",
+        query: "Ban Thai Masaje Bangkok"
+      },
+      {
+        id: "shewa_khaosan",
+        name: "Shewa Spa",
+        ko: "Shewa Spa",
+        lat: 13.7602,
+        lng: 100.497,
+        category: "massage",
+        area: "Rambuttri / Khao San",
+        note: "카오산 발마사지 1순위. 공식 주소가 Rambuttri Road라 카오산 소음에서 살짝 빠져 쉬기 좋다.",
+        time: "걷고 난 뒤 60분",
+        query: "Shewa Spa 108 Rambutri Road Bangkok"
+      },
+      {
+        id: "pai_spa_khaosan",
+        name: "Pai Spa",
+        ko: "Pai Spa",
+        lat: 13.7597,
+        lng: 100.4956,
+        category: "massage",
+        area: "Rambuttri / Khao San",
+        note: "조금 더 스파 느낌. 공식 프로모션에 발마사지 포함 콤보가 있어 예약형 백업으로 좋다.",
+        time: "오후/저녁",
+        query: "Pai Spa 156 Rambuttri Road Bangkok"
+      },
+      {
+        id: "khao_san_thai_massage",
+        name: "Khao San Thai Massage",
+        ko: "Khao San Thai Massage",
+        lat: 13.7585,
+        lng: 100.4978,
+        category: "massage",
+        area: "Khao San",
+        note: "가볍게 들어가는 발마사지 후보. 밤에는 대기가 생길 수 있어 지나가며 상태를 보고 결정.",
+        time: "밤 산책 중",
+        query: "Khao San Thai Massage Bangkok"
+      },
+      {
+        id: "jok_pochana",
+        name: "Jok Pochana",
+        ko: "쪽 포차나",
+        lat: 13.7626,
+        lng: 100.499,
+        category: "food",
+        area: "Samsen / Banglamphu",
+        note: "카오산 북쪽 Samsen Road의 캐주얼 태국식/해산물 후보. 발마사지 뒤 저녁이나 늦은 식사로 좋고, 현금 여부와 당일 영업시간 확인.",
+        time: "저녁/야식",
+        query: "Jok Pochana 34 Samsen Road Bangkok"
+      },
+      {
+        id: "kruaapsorn",
+        name: "Krua Apsorn Dinso",
+        ko: "크루아 압손 딘소",
+        lat: 13.7552412,
+        lng: 100.501761,
+        category: "food",
+        area: "Old City",
+        note: "푸팟퐁커리/게살 커리 후보. 일요일 휴무 여부 확인.",
+        time: "이른 저녁",
+        query: "Krua Apsorn Dinso Bangkok"
+      },
+      {
+        id: "somboon_surawong",
+        name: "Somboon Seafood Surawong",
+        ko: "Somboon Surawong",
+        lat: 13.7294,
+        lng: 100.5263,
+        category: "food",
+        area: "Surawong",
+        note: "푸팟퐁커리 대표 백업. 올드시티에서 바로 걷는 거리는 아니지만 택시로 Sathorn/Silom 쪽 이동 때 붙이기 좋다.",
+        time: "점심/저녁",
+        query: "Somboon Seafood Surawong Bangkok"
+      },
+      {
+        id: "baan_somtum_sathorn",
+        name: "Baan Somtum Sathorn",
+        ko: "Baan Somtum Sathorn",
+        lat: 13.7208,
+        lng: 100.5223,
+        category: "food",
+        area: "Sathorn",
+        note: "사톤의 이산 음식 백업. Blue Elephant가 너무 포멀하거나 가볍게 먹고 싶을 때 좋다.",
+        time: "점심/저녁",
+        query: "Baan Somtum Sathorn Bangkok"
+      },
+      {
+        id: "watpho",
+        name: "Wat Pho",
+        ko: "왓포",
+        lat: 13.74651,
+        lng: 100.49307,
+        category: "activity",
+        area: "Tha Tien",
+        note: "왓아룬 뷰 바로 넘어가기 전 붙이기 좋은 올드시티 포인트.",
+        time: "오후",
+        query: "Wat Pho Bangkok"
+      },
+      {
+        id: "watarun",
+        name: "Wat Arun",
+        ko: "왓아룬",
+        lat: 13.7438976,
+        lng: 100.4885137,
+        category: "view",
+        area: "Chao Phraya",
+        note: "뷰 바에서 바라보는 기준점.",
+        time: "해질녘",
+        query: "Wat Arun Bangkok"
+      },
+      {
+        id: "sala",
+        name: "sala rattanakosin Rooftop Bar",
+        ko: "sala rattanakosin",
+        lat: 13.74452,
+        lng: 100.49167,
+        category: "bar",
+        area: "Tha Tien",
+        note: "왓아룬 정면 뷰 맥주/드링크. 해질녘은 예약이나 이른 도착 필요.",
+        time: "해질녘-밤",
+        query: "sala rattanakosin rooftop bar Bangkok"
+      },
+      {
+        id: "supanniga_tha_tien",
+        name: "Supanniga Eating Room Tha Tien",
+        ko: "Supanniga Tha Tien",
+        lat: 13.7459,
+        lng: 100.4915,
+        category: "food",
+        area: "Tha Tien",
+        note: "왓아룬 뷰를 보면서 먹는 태국식 백업. sala/View ARUN이 술 위주라면 식사 쪽 대안.",
+        time: "해질녘 저녁",
+        query: "Supanniga Eating Room Tha Tien Bangkok"
+      },
+      {
+        id: "viewarun",
+        name: "View ARUN",
+        ko: "View ARUN",
+        lat: 13.74474,
+        lng: 100.4918,
+        category: "bar",
+        area: "Tha Tien",
+        note: "왓아룬 뷰 대안. 사진 목적이면 확인.",
+        time: "해질녘",
+        query: "View ARUN Bangkok"
+      },
+      {
+        id: "eaglenest",
+        name: "Eagle Nest Bar",
+        ko: "Eagle Nest",
+        lat: 13.74421,
+        lng: 100.49158,
+        category: "bar",
+        area: "Tha Tien",
+        note: "왓아룬 뷰 루프탑 대안.",
+        time: "저녁",
+        query: "Eagle Nest Bar Bangkok"
+      },
+      {
+        id: "rongklan",
+        name: "Rong Klan Nuea",
+        ko: "롱끌란느아 비프누들",
+        lat: 13.73968,
+        lng: 100.50859,
+        category: "food",
+        area: "Song Wat",
+        note: "쏭왓로드 비프누들 후보. 룽르엉과 다른 집.",
+        time: "점심",
+        query: "Rong Klan Nuea Song Wat Bangkok"
+      },
+      {
+        id: "nai_ek",
+        name: "Nai Ek Roll Noodles",
+        ko: "Nai Ek Roll Noodles",
+        lat: 13.7401,
+        lng: 100.5103,
+        category: "food",
+        area: "Yaowarat",
+        note: "차이나타운 구아이잡/돼지고기 국수 후보. Rong Klan Nuea가 비프누들이라면 여기는 야오와랏 국수 백업.",
+        time: "점심/야식",
+        query: "Nai Ek Roll Noodles Yaowarat Bangkok"
+      },
+      {
+        id: "ten_suns",
+        name: "Ten Suns",
+        ko: "Ten Suns 비프누들",
+        lat: 13.7662,
+        lng: 100.5023,
+        category: "food",
+        area: "Old City",
+        note: "카오산/올드시티 쪽 비프누들 추가 후보. 쏭왓의 Rong Klan과 다른 날 대체로 좋다.",
+        time: "점심",
+        query: "Ten Suns beef noodles Bangkok"
+      },
+      {
+        id: "hongsiengkong",
+        name: "Hong Sieng Kong",
+        ko: "홍시앙콩",
+        lat: 13.73774,
+        lng: 100.50973,
+        category: "view",
+        area: "Song Wat",
+        note: "쏭왓/탈랏노이 강변 카페 후보.",
+        time: "오후",
+        query: "Hong Sieng Kong Bangkok"
+      },
+      {
+        id: "woodbrook",
+        name: "Woodbrook Bangkok",
+        ko: "Woodbrook",
+        lat: 13.73236,
+        lng: 100.51331,
+        category: "view",
+        area: "Talat Noi",
+        note: "리버시티 쪽 강변 카페 후보.",
+        time: "오후",
+        query: "Woodbrook Bangkok"
+      },
+      {
+        id: "river_vibe",
+        name: "River Vibe Restaurant & Bar",
+        ko: "River Vibe",
+        lat: 13.73364,
+        lng: 100.51143,
+        category: "bar",
+        area: "Talat Noi",
+        note: "쏭왓/탈랏노이에서 강변 맥주 한 잔.",
+        time: "저녁",
+        query: "River Vibe Restaurant and Bar Bangkok"
+      },
+      {
+        id: "verynice",
+        name: "Very Nice Bar",
+        ko: "Very Nice Bar",
+        lat: 13.73547,
+        lng: 100.51213,
+        category: "bar",
+        area: "Talat Noi",
+        note: "조용한 술집 후보. 월요일 휴무 여부 확인.",
+        time: "밤",
+        query: "Very Nice Bar Talat Noi Bangkok"
+      },
+      {
+        id: "taisoon",
+        name: "Tai Soon Bar",
+        ko: "Tai Soon Bar",
+        lat: 13.74091,
+        lng: 100.51085,
+        category: "bar",
+        area: "Chinatown",
+        note: "맥주 맛 중심이면 좋은 차이나타운 크래프트 맥주 후보.",
+        time: "밤",
+        query: "Tai Soon Bar Bangkok"
+      },
+      {
+        id: "opium",
+        name: "Opium Bar",
+        ko: "Opium Bar",
+        lat: 13.74034,
+        lng: 100.5104,
+        category: "bar",
+        area: "Chinatown",
+        note: "Potong 쪽 스피크이지 후보. 예약 필요 가능성이 높다.",
+        time: "밤",
+        query: "Opium Bar Potong Bangkok"
+      },
+      {
+        id: "somboon_legacy",
+        name: "Somboon Legacy Foundation",
+        ko: "Somboon Legacy",
+        lat: 14.0587,
+        lng: 99.4289,
+        category: "activity",
+        area: "Kanchanaburi",
+        note: "동물복지 우선 hands-off 성격의 코끼리 보호소 후보. 하루를 따로 빼기.",
+        time: "반일-하루",
+        query: "Somboon Legacy Foundation Kanchanaburi"
+      },
+      {
+        id: "wfft",
+        name: "WFFT Wildlife Rescue Centre",
+        ko: "WFFT",
+        lat: 12.8159,
+        lng: 99.7821,
+        category: "activity",
+        area: "Phetchaburi",
+        note: "코끼리와 야생동물 구조센터까지 보는 긴 하루 코스.",
+        time: "하루",
+        query: "Wildlife Friends Foundation Thailand WFFT"
+      },
+      {
+        id: "bangkok_elephant",
+        name: "Bangkok Elephant Park",
+        ko: "Bangkok Elephant Park",
+        lat: 13.891,
+        lng: 100.723,
+        category: "activity",
+        area: "Bangkok outskirts",
+        note: "접근성은 좋지만 먹이주기/목욕 등 hands-on 프로그램 여부를 확인.",
+        time: "반일",
+        query: "Bangkok Elephant Park"
+      },
+      {
+        id: "bkk",
+        name: "Suvarnabhumi Airport",
+        ko: "수완나품 공항 BKK",
+        lat: 13.689999,
+        lng: 100.750112,
+        category: "transfer",
+        area: "Airport",
+        note: "BKK 도착이면 아난타라까지 프라이빗 픽업 또는 택시.",
+        time: "도착일",
+        query: "Suvarnabhumi Airport Bangkok"
+      },
+      {
+        id: "dmk",
+        name: "Don Mueang Airport",
+        ko: "돈므앙 공항 DMK",
+        lat: 13.91326,
+        lng: 100.6042,
+        category: "transfer",
+        area: "Airport",
+        note: "DMK 도착이면 이동 시간이 더 길 수 있어 픽업 예약이 편하다.",
+        time: "도착일",
+        query: "Don Mueang Airport Bangkok"
+      }
+    ];
+
+    const byId = new Map(places.map((place) => [place.id, place]));
+    let activeRoute = "all";
+    let selectedId = null;
+    const mapElement = document.getElementById("map");
+    const routeSummary = document.getElementById("routeSummary");
+    const routeList = document.getElementById("routeList");
+    const mapNote = document.getElementById("mapNote");
+    const routeButtons = [...document.querySelectorAll(".route-button")];
+    const viewBox = { width: 1000, height: 720, padding: 86 };
+    const chaoPhrayaRiver = [
+      { lat: 13.768, lng: 100.503 },
+      { lat: 13.758, lng: 100.493 },
+      { lat: 13.746, lng: 100.491 },
+      { lat: 13.737, lng: 100.507 },
+      { lat: 13.727, lng: 100.511 },
+      { lat: 13.704, lng: 100.497 },
+      { lat: 13.685, lng: 100.508 }
+    ];
+    const roughDistricts = [
+      { label: "Thonburi / 숙소", lat: 13.704, lng: 100.491, rx: 82, ry: 34 },
+      { label: "ICONSIAM", lat: 13.727, lng: 100.51, rx: 72, ry: 30 },
+      { label: "Song Wat / Yaowarat", lat: 13.739, lng: 100.511, rx: 92, ry: 34 },
+      { label: "Old City / Khao San", lat: 13.759, lng: 100.499, rx: 98, ry: 36 },
+      { label: "Tha Tien / Wat Arun", lat: 13.745, lng: 100.491, rx: 92, ry: 32 },
+      { label: "Sathorn / Silom", lat: 13.722, lng: 100.525, rx: 86, ry: 34 },
+      { label: "Siam", lat: 13.746, lng: 100.535, rx: 66, ry: 30 },
+      { label: "Phrom Phong", lat: 13.729, lng: 100.568, rx: 86, ry: 32 },
+      { label: "BKK", lat: 13.69, lng: 100.75, rx: 52, ry: 26, routes: ["airport", "day1"] },
+      { label: "DMK", lat: 13.913, lng: 100.604, rx: 52, ry: 26, routes: ["airport", "day1"] }
+    ];
+    const roughCorridors = [
+      {
+        label: "Siam - Sukhumvit",
+        points: [
+          { lat: 13.746, lng: 100.535 },
+          { lat: 13.736, lng: 100.552 },
+          { lat: 13.729, lng: 100.569 }
+        ],
+        routes: ["phromphong", "recommended", "all"]
+      },
+      {
+        label: "Old City - Song Wat",
+        points: [
+          { lat: 13.759, lng: 100.499 },
+          { lat: 13.748, lng: 100.503 },
+          { lat: 13.739, lng: 100.511 }
+        ],
+        routes: ["day4", "oldcity", "songwat", "recommended", "all"]
+      },
+      {
+        label: "Sathorn / Silom",
+        points: [
+          { lat: 13.718, lng: 100.521 },
+          { lat: 13.723, lng: 100.526 },
+          { lat: 13.729, lng: 100.526 }
+        ],
+        routes: ["recommended", "oldcity", "all"]
+      },
+      {
+        label: "BKK pickup",
+        className: "solid",
+        points: [
+          { lat: 13.69, lng: 100.75 },
+          { lat: 13.704, lng: 100.492 }
+        ],
+        routes: ["airport", "day1"]
+      },
+      {
+        label: "DMK pickup",
+        className: "solid",
+        points: [
+          { lat: 13.913, lng: 100.604 },
+          { lat: 13.704, lng: 100.492 }
+        ],
+        routes: ["airport", "day1"]
+      }
+    ];
+    const contextIds = [
+      "anantara", "iconsiam", "watarun", "sala", "khaosan", "rongklan",
+      "siam", "rung", "blueelephant", "somboon_surawong", "healthland_sathorn"
+    ];
+    const denseMarkerOffsets = {
+      recommended: {
+        letsrelax_iconsiam: { x: -28, y: 10 },
+        treasure_siam: { x: -32, y: -26 },
+        one_more_chitlom: { x: 8, y: -50 },
+        makkha_sukhumvit24: { x: 24, y: 14 },
+        healthland_sathorn: { x: -30, y: 18 },
+        somboon_surawong: { x: 10, y: -34 },
+        baan_somtum_sathorn: { x: 38, y: 14 },
+        nai_ek: { x: -30, y: 8 },
+        ten_suns: { x: 24, y: -28 },
+        shewa_khaosan: { x: -26, y: 22 },
+        pai_spa_khaosan: { x: 8, y: -46 },
+        khao_san_thai_massage: { x: 28, y: 18 },
+        jok_pochana: { x: 50, y: -8 },
+        supanniga_tha_tien: { x: -14, y: 34 },
+        taling_pling_siam: { x: 38, y: -8 }
+      },
+      all: {
+        letsrelax_iconsiam: { x: -20, y: 14 },
+        napar: { x: -22, y: -20 },
+        treasure_siam: { x: 18, y: -24 },
+        one_more_chitlom: { x: 30, y: 8 },
+        somboon_surawong: { x: 14, y: -26 },
+        baan_somtum_sathorn: { x: 34, y: 10 },
+        nai_ek: { x: -20, y: 12 },
+        ten_suns: { x: 22, y: -20 },
+        shewa_khaosan: { x: -24, y: 8 },
+        pai_spa_khaosan: { x: 18, y: -28 },
+        khao_san_thai_massage: { x: 34, y: 20 },
+        jok_pochana: { x: 48, y: -4 }
+      }
+    };
+
+    function googleMapsUrl(place) {
+      return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(place.query || place.name);
+    }
+
+    function markerLabel(place, index) {
+      if (activeRoute === "all") {
+        const labels = {
+          hotel: "H",
+          food: "F",
+          massage: "M",
+          bar: "B",
+          view: "V",
+          activity: "A",
+          transfer: "T"
+        };
+        return labels[place.category] || String(index + 1);
+      }
+      return String(index + 1);
+    }
+
+    function getRoutePlaces(routeKey) {
+      const route = routes[routeKey];
+      return route.order.map((id) => byId.get(id)).filter(Boolean);
+    }
+
+    function getDirectionsPlaces(route) {
+      return (route.directionsOrder || []).map((id) => byId.get(id)).filter(Boolean);
+    }
+
+    function routeBounds(routePlaces) {
+      const lats = routePlaces.map((place) => place.lat);
+      const lngs = routePlaces.map((place) => place.lng);
+      let minLat = Math.min(...lats);
+      let maxLat = Math.max(...lats);
+      let minLng = Math.min(...lngs);
+      let maxLng = Math.max(...lngs);
+      const latPad = Math.max((maxLat - minLat) * 0.18, 0.018);
+      const lngPad = Math.max((maxLng - minLng) * 0.18, 0.018);
+      minLat -= latPad;
+      maxLat += latPad;
+      minLng -= lngPad;
+      maxLng += lngPad;
+      return { minLat, maxLat, minLng, maxLng };
+    }
+
+    function contextForRoute(routeKey, routePlaces) {
+      const context = routeKey === "elephant"
+        ? []
+        : contextIds.map((id) => byId.get(id)).filter(Boolean);
+      const riverPoints = routeKey === "elephant" ? [] : chaoPhrayaRiver;
+      return [...routePlaces, ...context, ...riverPoints];
+    }
+
+    function project(place, bounds) {
+      const usableWidth = viewBox.width - viewBox.padding * 2;
+      const usableHeight = viewBox.height - viewBox.padding * 2;
+      const lngRange = Math.max(bounds.maxLng - bounds.minLng, 0.001);
+      const latRange = Math.max(bounds.maxLat - bounds.minLat, 0.001);
+      const x = viewBox.padding + ((place.lng - bounds.minLng) / lngRange) * usableWidth;
+      const y = viewBox.padding + ((bounds.maxLat - place.lat) / latRange) * usableHeight;
+      return { x, y };
+    }
+
+    function projectedPlace(place, bounds) {
+      const point = project(place, bounds);
+      const offset = denseMarkerOffsets[activeRoute]?.[place.id];
+      if (!offset) {
+        return { place, ...point };
+      }
+      return {
+        place,
+        x: Math.min(Math.max(point.x + offset.x, 42), viewBox.width - 42),
+        y: Math.min(Math.max(point.y + offset.y, 42), viewBox.height - 42)
+      };
+    }
+
+    function polylinePoints(geoPoints, bounds) {
+      return geoPoints.map((point) => {
+        const projected = project(point, bounds);
+        return `${projected.x.toFixed(1)},${projected.y.toFixed(1)}`;
+      }).join(" ");
+    }
+
+    function isInView(point, margin = 110) {
+      return point.x >= -margin &&
+        point.x <= viewBox.width + margin &&
+        point.y >= -margin &&
+        point.y <= viewBox.height + margin;
+    }
+
+    function isActiveContext(item) {
+      return !item.routes || item.routes.includes(activeRoute) || activeRoute === "all";
+    }
+
+    function renderDistricts(bounds) {
+      if (activeRoute === "elephant") {
+        return "";
+      }
+      return roughDistricts.filter(isActiveContext).map((district) => {
+        const point = project(district, bounds);
+        if (!isInView(point, 80)) {
+          return "";
+        }
+        return `
+          <g class="schematic-district" transform="translate(${point.x.toFixed(1)} ${point.y.toFixed(1)})">
+            <ellipse rx="${district.rx}" ry="${district.ry}"></ellipse>
+            <text>${escapeHtml(district.label)}</text>
+          </g>
+        `;
+      }).join("");
+    }
+
+    function renderCorridors(bounds) {
+      return roughCorridors.filter(isActiveContext).map((corridor) => {
+        const projectedPoints = corridor.points.map((point) => project(point, bounds));
+        if (!projectedPoints.some((point) => isInView(point))) {
+          return "";
+        }
+        const mid = projectedPoints[Math.floor(projectedPoints.length / 2)];
+        return `
+          <polyline class="schematic-road ${corridor.className || ""}" points="${projectedPoints.map((point) => `${point.x.toFixed(1)},${point.y.toFixed(1)}`).join(" ")}"></polyline>
+          <text class="schematic-road-label" x="${mid.x.toFixed(1)}" y="${(mid.y - 10).toFixed(1)}">${escapeHtml(corridor.label)}</text>
+        `;
+      }).join("");
+    }
+
+    function renderRiver(bounds) {
+      if (activeRoute === "elephant") {
+        return "";
+      }
+      const points = polylinePoints(chaoPhrayaRiver, bounds);
+      const labelPoint = project({ lat: 13.735, lng: 100.501 }, bounds);
+      const label = isInView(labelPoint, 70)
+        ? `<text class="schematic-water-label" x="${labelPoint.x.toFixed(1)}" y="${(labelPoint.y + 16).toFixed(1)}">Chao Phraya River</text>`
+        : "";
+      return `
+        <polyline class="schematic-river-edge" points="${points}"></polyline>
+        <polyline class="schematic-river" points="${points}"></polyline>
+        <polyline class="schematic-river-line" points="${points}"></polyline>
+        ${label}
+      `;
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function labelOffset(index) {
+      const offsets = [
+        { x: 20, y: -17, anchor: "start" },
+        { x: 20, y: 25, anchor: "start" },
+        { x: -20, y: -17, anchor: "end" },
+        { x: -20, y: 25, anchor: "end" },
+        { x: 0, y: -28, anchor: "middle" },
+        { x: 0, y: 36, anchor: "middle" }
+      ];
+      return offsets[index % offsets.length];
+    }
+
+    function mapCard(place) {
+      if (!place) {
+        return "";
+      }
+      return `
+        <article class="map-card">
+          <h2>${escapeHtml(place.ko)}</h2>
+          <p>${escapeHtml(place.name)}<br>${escapeHtml(categoryLabel(place.category))} - ${escapeHtml(place.area)}<br>${escapeHtml(place.note)}</p>
+          <a href="${googleMapsUrl(place)}" target="_blank" rel="noopener">Google Maps에서 보기</a>
+        </article>
+      `;
+    }
+
+    function drawRoute() {
+      const route = routes[activeRoute];
+      const routePlaces = getRoutePlaces(activeRoute);
+      if (!routePlaces.length) {
+        mapElement.innerHTML = "";
+        return;
+      }
+
+      const bounds = routeBounds(contextForRoute(activeRoute, routePlaces));
+      const points = routePlaces.map((place) => projectedPlace(place, bounds));
+      const directionsPoints = getDirectionsPlaces(route).map((place) => projectedPlace(place, bounds));
+      const selectedPlace = selectedId ? byId.get(selectedId) : routePlaces[0];
+      const linePoints = directionsPoints.map((point) => `${point.x.toFixed(1)},${point.y.toFixed(1)}`).join(" ");
+      const showRouteLine = directionsPoints.length > 1;
+      const showLabels = activeRoute !== "all" && activeRoute !== "recommended" && points.length <= 6;
+      const routeClass = "schematic-route";
+      const markerGroups = [];
+      points.forEach((point, index) => {
+        const existing = markerGroups.find((group) => group.place.id === point.place.id);
+        if (existing) {
+          existing.indices.push(index);
+          return;
+        }
+        markerGroups.push({ ...point, indices: [index] });
+      });
+      const markers = markerGroups.map((point) => {
+        const selected = point.place.id === selectedId ? " selected" : "";
+        const firstIndex = point.indices[0];
+        const offset = labelOffset(firstIndex);
+        const name = escapeHtml(point.place.ko);
+        const label = showLabels || point.place.id === selectedPlace?.id
+          ? `<text class="schematic-name" x="${(point.x + offset.x).toFixed(1)}" y="${(point.y + offset.y).toFixed(1)}" text-anchor="${offset.anchor}">${name}</text>`
+          : "";
+        const displayLabel = activeRoute === "all"
+          ? markerLabel(point.place, firstIndex)
+          : point.indices.map((index) => index + 1).join("/");
+        return `
+          <g class="schematic-marker ${point.place.category}${selected}" data-place-id="${point.place.id}" role="button" tabindex="0" aria-label="${name} 선택" transform="translate(${point.x.toFixed(1)} ${point.y.toFixed(1)})">
+            <title>${name}</title>
+            <circle r="17"></circle>
+            <text>${displayLabel}</text>
+          </g>
+          ${label}
+        `;
+      }).join("");
+
+      mapElement.innerHTML = `
+        <svg class="schematic" viewBox="0 0 ${viewBox.width} ${viewBox.height}" role="img" aria-label="${escapeHtml(route.title)} 동선 지도">
+          <rect class="schematic-bg" width="${viewBox.width}" height="${viewBox.height}"></rect>
+          <g aria-hidden="true">
+            ${gridLines()}
+            ${renderRiver(bounds)}
+            ${renderCorridors(bounds)}
+            ${renderDistricts(bounds)}
+            <text class="schematic-label" x="38" y="44">Fast local schematic</text>
+            <text class="schematic-label" x="38" y="66">River / districts are approximate</text>
+          </g>
+          ${showRouteLine ? `<polyline class="${routeClass}" points="${linePoints}" stroke="${route.color}" opacity="0.84"></polyline>` : ""}
+          <g>${markers}</g>
+        </svg>
+        ${mapCard(selectedPlace)}
+      `;
+
+      mapElement.querySelectorAll("[data-place-id]").forEach((marker) => {
+        marker.addEventListener("click", () => selectPlace(marker.dataset.placeId));
+        marker.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            selectPlace(marker.dataset.placeId);
+          }
+        });
+      });
+    }
+
+    function gridLines() {
+      const vertical = Array.from({ length: 8 }, (_, index) => {
+        const x = 100 + index * 120;
+        return `<line class="schematic-grid" x1="${x}" y1="0" x2="${x}" y2="${viewBox.height}"></line>`;
+      }).join("");
+      const horizontal = Array.from({ length: 6 }, (_, index) => {
+        const y = 90 + index * 110;
+        return `<line class="schematic-grid" x1="0" y1="${y}" x2="${viewBox.width}" y2="${y}"></line>`;
+      }).join("");
+      return vertical + horizontal;
+    }
+
+    function routeActionsHtml(route) {
+      const directionsPlaces = getDirectionsPlaces(route);
+      const searchButton = `<a class="tool-button secondary" href="${searchAreaUrl(route.title)}" target="_blank" rel="noopener">${directionsPlaces.length > 1 ? "지역 검색" : "후보 검색"}</a>`;
+      if (directionsPlaces.length <= 1) {
+        return `<div class="route-actions">${searchButton}</div>`;
+      }
+      return `
+        <div class="route-actions">
+          <a class="tool-button" href="${directionsUrl(directionsPlaces)}" target="_blank" rel="noopener">기본 동선 길찾기</a>
+          ${searchButton}
+        </div>
+      `;
+    }
+
+    function renderSidebar() {
+      const route = routes[activeRoute];
+      const routePlaces = getRoutePlaces(activeRoute);
+      routeSummary.style.borderLeftColor = route.color;
+      routeSummary.innerHTML = `
+        <h2>${escapeHtml(route.title)}</h2>
+        <p>${escapeHtml(route.subtitle)}</p>
+        ${routeActionsHtml(route)}
+      `;
+
+      routeList.innerHTML = "";
+      routePlaces.forEach((place, index) => {
+        const card = document.createElement("article");
+        card.className = "stop-card" + (place.id === selectedId ? " selected" : "");
+        card.dataset.placeId = place.id;
+        card.tabIndex = 0;
+        card.setAttribute("role", "button");
+        card.setAttribute("aria-label", `${place.ko} 선택`);
+        card.innerHTML = `
+          <span class="stop-index" style="background:${route.color}">${escapeHtml(activeRoute === "all" ? markerLabel(place, index) : index + 1)}</span>
+          <div>
+            <div class="stop-title">
+              <h3>${escapeHtml(place.ko)}</h3>
+              <span class="category ${place.category}">${escapeHtml(categoryLabel(place.category))}</span>
+            </div>
+            <p class="stop-note">${escapeHtml(place.note)}</p>
+            <div class="stop-meta">
+              <span class="meta-chip">${escapeHtml(place.area)}</span>
+              <span class="meta-chip">${escapeHtml(place.time)}</span>
+            </div>
+          </div>
+        `;
+        card.addEventListener("click", () => selectPlace(place.id, true));
+        card.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            selectPlace(place.id, true);
+          }
+        });
+        routeList.appendChild(card);
+      });
+
+      if (!routePlaces.length) {
+        routeList.innerHTML = '<div class="empty-state">표시할 장소가 없습니다.</div>';
+      }
+
+      mapNote.innerHTML = `<strong>${escapeHtml(route.title)}</strong><span>${escapeHtml(route.note)}</span>`;
+    }
+
+    function categoryLabel(category) {
+      return {
+        hotel: "숙소",
+        food: "음식",
+        massage: "마사지",
+        bar: "맥주/바",
+        view: "뷰",
+        activity: "활동",
+        transfer: "이동"
+      }[category] || "장소";
+    }
+
+    function directionsUrl(routePlaces) {
+      if (!routePlaces.length) {
+        return "https://www.google.com/maps";
+      }
+      if (routePlaces.length === 1) {
+        return googleMapsUrl(routePlaces[0]);
+      }
+      const origin = routePlaces[0].query || routePlaces[0].name;
+      const destination = routePlaces[routePlaces.length - 1].query || routePlaces[routePlaces.length - 1].name;
+      const waypointPlaces = routePlaces.slice(1, -1).map((place) => place.query || place.name);
+      const params = new URLSearchParams({
+        api: "1",
+        origin,
+        destination,
+        travelmode: "transit"
+      });
+      if (waypointPlaces.length) {
+        params.set("waypoints", waypointPlaces.join("|"));
+      }
+      return "https://www.google.com/maps/dir/?" + params.toString();
+    }
+
+    function searchAreaUrl(title) {
+      return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(`${title} Bangkok`);
+    }
+
+    function selectRoute(routeKey) {
+      activeRoute = routeKey;
+      selectedId = null;
+      routeButtons.forEach((button) => {
+        button.classList.toggle("active", button.dataset.route === routeKey);
+      });
+      drawRoute();
+      renderSidebar();
+    }
+
+    function selectPlace(placeId) {
+      selectedId = placeId;
+      const place = byId.get(placeId);
+      if (!place) return;
+      renderSidebar();
+      drawRoute();
+    }
+
+    routeButtons.forEach((button) => {
+      button.addEventListener("click", () => selectRoute(button.dataset.route));
+    });
+
+    selectRoute("day1");
+  </script>
+</body>
+</html>

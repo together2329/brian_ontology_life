@@ -1,23 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Milano Task Summary</title>
+  <title>Milano Task Dashboard</title>
   <style>
     :root {
-      --ink: #17211d;
-      --muted: #5f6d67;
-      --line: #d8e0dc;
-      --paper: #fbfcfa;
-      --surface: #ffffff;
-      --soft: #eef5f1;
-      --green: #0a7a58;
-      --blue: #286b94;
-      --amber: #b97812;
-      --red: #b94b43;
-      --slate: #415064;
-      --shadow: 0 18px 50px rgba(29, 42, 36, 0.14);
+      --bg: #f5f7f8;
+      --paper: #ffffff;
+      --ink: #172027;
+      --muted: #5d6873;
+      --line: #dce3e8;
+      --soft: #eef4f6;
+      --green: #12715f;
+      --blue: #286da8;
+      --amber: #b36b00;
+      --red: #b0443f;
+      --violet: #6657a8;
+      --cyan: #087789;
+      --shadow: 0 18px 42px rgba(23, 32, 39, 0.1);
     }
 
     * {
@@ -29,42 +30,66 @@
       min-height: 100vh;
       color: var(--ink);
       background:
-        linear-gradient(135deg, rgba(10, 122, 88, 0.08), transparent 38%),
-        linear-gradient(315deg, rgba(185, 75, 67, 0.08), transparent 42%),
-        #f3f6f4;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        linear-gradient(130deg, rgba(18, 113, 95, 0.08), transparent 34%),
+        linear-gradient(320deg, rgba(40, 109, 168, 0.08), transparent 38%),
+        var(--bg);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       letter-spacing: 0;
     }
 
+    a {
+      color: inherit;
+    }
+
     .page {
-      width: min(1180px, calc(100vw - 32px));
-      margin: 12px auto;
+      width: min(1280px, calc(100vw - 28px));
+      margin: 14px auto;
       padding: 18px;
-      background: var(--paper);
-      border: 1px solid rgba(216, 224, 220, 0.9);
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--line);
       border-radius: 8px;
       box-shadow: var(--shadow);
     }
 
-    .topline,
-    .meta-row,
-    .kpi-grid,
-    .focus-grid,
-    .progress-grid,
-    .work-grid,
-    .next-grid {
+    .top {
       display: grid;
-      gap: 14px;
-    }
-
-    .topline {
-      grid-template-columns: 1.35fr 0.95fr;
+      grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+      gap: 16px;
       align-items: stretch;
     }
 
+    .hero {
+      min-height: 260px;
+      padding: 20px;
+      color: white;
+      background:
+        linear-gradient(135deg, rgba(12, 35, 43, 0.96), rgba(13, 72, 82, 0.92)),
+        radial-gradient(circle at 74% 22%, rgba(255, 255, 255, 0.16), transparent 31%);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      opacity: 0.28;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.14) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.14) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(90deg, transparent 0, black 18%, black 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+    }
+
     .eyebrow {
-      margin: 0 0 8px;
-      color: var(--green);
+      margin: 0 0 10px;
+      color: #9ee3d1;
       font-size: 12px;
       font-weight: 800;
       letter-spacing: 0.08em;
@@ -73,42 +98,91 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(34px, 4.2vw, 58px);
-      line-height: 0.96;
+      max-width: 820px;
+      font-size: clamp(34px, 5vw, 66px);
+      line-height: 0.98;
       letter-spacing: 0;
     }
 
     .lead {
-      max-width: 690px;
-      margin: 12px 0 0;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.4;
+      max-width: 740px;
+      margin: 14px 0 0;
+      color: #d7edf0;
+      font-size: 17px;
+      line-height: 1.46;
+    }
+
+    .quick-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 6px 10px;
+      color: #08252b;
+      background: #dff7ef;
+      border: 1px solid rgba(255,255,255,0.55);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
     }
 
     .panel {
-      background: var(--surface);
+      background: var(--paper);
       border: 1px solid var(--line);
       border-radius: 8px;
-      padding: 12px;
+      padding: 14px;
     }
 
-    .status-panel {
+    .panel-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      font-size: 18px;
+    }
+
+    h3 {
+      font-size: 15px;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-align: right;
+    }
+
+    .meta-grid {
       display: grid;
-      grid-template-rows: auto 1fr auto;
-      min-height: 172px;
-    }
-
-    .meta-row {
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      margin: 10px 0;
+      gap: 10px;
+      margin: 14px 0;
     }
 
     .meta {
-      padding: 10px;
-      background: #f6faf7;
+      padding: 12px;
+      background: #fbfcfd;
       border: 1px solid var(--line);
       border-radius: 8px;
+      min-height: 78px;
     }
 
     .label {
@@ -122,428 +196,836 @@
 
     .value {
       display: block;
-      margin-top: 5px;
-      font-size: 16px;
+      margin-top: 7px;
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 1.18;
+    }
+
+    .status-board {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .status-tile {
+      min-height: 88px;
+      padding: 10px;
+      background: #f8fafb;
+      border: 1px solid var(--line);
+      border-top: 5px solid var(--blue);
+      border-radius: 8px;
+    }
+
+    .status-tile.done { border-top-color: var(--green); }
+    .status-tile.doing { border-top-color: var(--blue); }
+    .status-tile.todo { border-top-color: var(--amber); }
+    .status-tile.planned { border-top-color: var(--violet); }
+    .status-tile.deferred { border-top-color: var(--red); }
+
+    .status-tile strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .status-tile span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
       font-weight: 800;
     }
 
     .stackbar {
       display: flex;
-      height: 16px;
+      height: 18px;
       overflow: hidden;
-      border-radius: 8px;
-      background: #e8eeeb;
+      margin-top: 12px;
+      background: #e8eef2;
       border: 1px solid var(--line);
+      border-radius: 999px;
     }
 
     .stackbar span {
-      min-width: 4px;
+      min-width: 6px;
     }
 
-    .done { background: var(--green); }
-    .doing { background: var(--blue); }
-    .todo { background: var(--amber); }
-    .planned { background: var(--slate); }
-    .deferred { background: var(--red); }
+    .done-bg { background: var(--green); }
+    .doing-bg { background: var(--blue); }
+    .todo-bg { background: var(--amber); }
+    .planned-bg { background: var(--violet); }
+    .deferred-bg { background: var(--red); }
 
-    .legend {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 12px;
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .legend i {
-      display: inline-block;
-      width: 9px;
-      height: 9px;
-      margin-right: 5px;
-      border-radius: 2px;
-      vertical-align: -1px;
-    }
-
-    .chip-map {
+    .map {
       width: 100%;
-      height: 116px;
-      min-height: 0;
+      min-height: 210px;
       display: block;
     }
 
-    .section-title {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 16px;
-      margin: 12px 0 7px;
-    }
-
-    h2 {
-      margin: 0;
-      font-size: 17px;
-      line-height: 1.2;
-    }
-
-    .hint {
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .kpi-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    .kpi {
-      min-height: 86px;
-      border-left: 5px solid var(--green);
-    }
-
-    .kpi:nth-child(2) { border-color: var(--blue); }
-    .kpi:nth-child(3) { border-color: var(--amber); }
-    .kpi:nth-child(4) { border-color: var(--red); }
-
-    .kpi strong {
-      display: block;
-      margin-top: 7px;
-      font-size: 23px;
-      line-height: 1;
-    }
-
-    .kpi p {
-      margin: 6px 0 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.35;
-    }
-
-    .focus-grid {
-      grid-template-columns: 1.05fr 1fr;
-    }
-
-    .flow {
+    .main-grid {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 9px;
-      align-items: stretch;
-      margin-top: 4px;
-    }
-
-    .step {
-      position: relative;
-      min-height: 68px;
-      padding: 9px;
-      background: #f6faf7;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      overflow-wrap: anywhere;
-    }
-
-    .step:not(:last-child)::after {
-      content: none;
-    }
-
-    .step b {
-      display: block;
-      font-size: 13px;
-    }
-
-    .step span {
-      display: block;
-      margin-top: 7px;
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.3;
-    }
-
-    .progress-grid {
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-    }
-
-    .progress-card {
-      display: grid;
-      grid-template-columns: 54px minmax(0, 1fr);
-      grid-template-rows: auto auto;
-      align-items: center;
-      justify-items: start;
-      gap: 2px 8px;
-      padding: 6px 4px;
-      text-align: left;
-    }
-
-    .ring {
-      --value: 50;
-      --color: var(--green);
-      position: relative;
-      display: grid;
-      place-items: center;
-      grid-row: 1 / 3;
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: conic-gradient(var(--color) calc(var(--value) * 1%), #e5ece8 0);
-    }
-
-    .ring::before {
-      content: "";
-      position: absolute;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: var(--surface);
-    }
-
-    .ring span {
-      position: relative;
-      z-index: 1;
-      font-size: 13px;
-      font-weight: 900;
-    }
-
-    .progress-card b {
-      font-size: 12px;
-      line-height: 1.25;
-    }
-
-    .progress-card small {
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.25;
-    }
-
-    .work-grid {
-      grid-template-columns: 1.15fr 0.85fr;
-    }
-
-    .lane {
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 12px;
-      padding: 7px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .lane:first-child {
-      border-top: 0;
-      padding-top: 0;
-    }
-
-    .lane b {
-      color: var(--green);
-      font-size: 13px;
-    }
-
-    .lane p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.38;
-    }
-
-    .bullets {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .bullets li {
-      position: relative;
-      margin: 0;
-      padding: 6px 0 6px 18px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.38;
-    }
-
-    .bullets li:first-child {
-      border-top: 0;
-      padding-top: 0;
-    }
-
-    .bullets li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 12px;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--amber);
-    }
-
-    .next-grid {
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-    }
-
-    .dashboard-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 12px;
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      gap: 14px;
       align-items: start;
     }
 
-    .dashboard-grid .progress-zone {
+    .wide {
       grid-column: 1 / -1;
     }
 
-    .panel-head {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 9px;
-    }
-
-    .panel-head h2 {
-      margin: 0;
-    }
-
-    .compact-actions {
+    .now-list,
+    .issue-list,
+    .decision-list,
+    .questions,
+    .next-list {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 8px;
       margin: 0;
       padding: 0;
       list-style: none;
-      counter-reset: actions;
     }
 
-    .compact-actions li {
-      counter-increment: actions;
-      min-height: 66px;
-      padding: 8px;
-      background: #f7faf8;
+    .now-list li,
+    .issue-list li,
+    .decision-list li,
+    .questions li,
+    .next-list li {
+      padding: 10px 11px;
+      background: #fbfcfd;
       border: 1px solid var(--line);
       border-radius: 8px;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.28;
-      overflow-wrap: anywhere;
+      line-height: 1.38;
     }
 
-    .compact-actions li::before {
-      content: counter(actions);
-      display: inline-grid;
-      place-items: center;
-      width: 21px;
-      height: 21px;
-      margin: 0 5px 5px 0;
+    .now-list b,
+    .issue-list b,
+    .decision-list b,
+    .next-list b {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--ink);
+      font-size: 13px;
+    }
+
+    .now-list span,
+    .issue-list span,
+    .decision-list span,
+    .questions span,
+    .next-list span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-right: 6px;
+      padding: 3px 7px;
+      border-radius: 999px;
       color: white;
-      background: var(--green);
-      border-radius: 50%;
       font-size: 11px;
       font-weight: 900;
+      line-height: 1.2;
+      vertical-align: 1px;
+      white-space: nowrap;
     }
 
-    .compact-actions b {
-      display: block;
-      color: var(--ink);
+    .tag.done { background: var(--green); }
+    .tag.doing { background: var(--blue); }
+    .tag.todo { background: var(--amber); }
+    .tag.planned { background: var(--violet); }
+    .tag.deferred { background: var(--red); }
+    .tag.issue { background: var(--red); }
+    .tag.decision { background: var(--cyan); }
+
+    .task-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .task-table th,
+    .task-table td {
+      padding: 9px 10px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: middle;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .task-table th {
+      color: var(--muted);
+      background: #f3f7f9;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .task-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .task-table td:first-child,
+    .task-table th:first-child {
+      width: 108px;
+    }
+
+    .task-table td:nth-child(3),
+    .task-table th:nth-child(3) {
+      width: 150px;
+    }
+
+    .task-table td:nth-child(4),
+    .task-table th:nth-child(4) {
+      width: 112px;
+    }
+
+    .progress {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr);
+      gap: 8px;
+      align-items: center;
+    }
+
+    .progress b {
       font-size: 12px;
-      line-height: 1.25;
+      text-align: right;
     }
 
-    .next {
-      min-height: 76px;
+    .bar {
+      height: 9px;
+      overflow: hidden;
+      background: #e9eef2;
+      border-radius: 999px;
+    }
+
+    .bar i {
+      display: block;
+      height: 100%;
+      background: var(--blue);
+      border-radius: inherit;
+    }
+
+    .bar.done i { background: var(--green); }
+    .bar.todo i { background: var(--amber); }
+    .bar.planned i { background: var(--violet); }
+    .bar.deferred i { background: var(--red); }
+
+    .task-name {
+      font-weight: 800;
+    }
+
+    .task-note {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .focus-strip {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .focus-step {
+      min-height: 94px;
       padding: 10px;
-      background: #f7faf8;
+      background: #fbfcfd;
       border: 1px solid var(--line);
       border-radius: 8px;
     }
 
-    .next em {
+    .focus-step em {
       display: inline-grid;
       place-items: center;
       width: 24px;
       height: 24px;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       color: white;
       background: var(--green);
-      border-radius: 50%;
+      border-radius: 999px;
       font-style: normal;
       font-size: 12px;
       font-weight: 900;
     }
 
-    .next b {
+    .focus-step b {
       display: block;
       font-size: 13px;
-      line-height: 1.3;
+      line-height: 1.28;
     }
 
-    .next span {
+    .focus-step span {
       display: block;
       margin-top: 6px;
       color: var(--muted);
       font-size: 12px;
-      line-height: 1.28;
+      line-height: 1.3;
     }
 
     .footer {
       display: flex;
       justify-content: space-between;
       gap: 16px;
-      margin-top: 10px;
+      margin-top: 12px;
       color: var(--muted);
       font-size: 11px;
       line-height: 1.4;
     }
 
-    @media (max-width: 900px) {
-      .topline,
-      .focus-grid,
-      .work-grid {
+    @media (max-width: 1040px) {
+      .top,
+      .main-grid {
         grid-template-columns: 1fr;
       }
 
-      .meta-row,
-      .kpi-grid,
-      .progress-grid,
-      .next-grid,
-      .compact-actions {
+      .focus-strip,
+      .status-board {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .flow {
-        grid-template-columns: 1fr;
-      }
-
-      .step:not(:last-child)::after {
-        display: none;
       }
     }
 
-    @media (max-width: 560px) {
+    @media (max-width: 760px) {
       .page {
-        width: min(100vw - 18px, 1180px);
+        width: min(100vw - 18px, 1280px);
+        padding: 12px;
+      }
+
+      .hero {
+        min-height: auto;
         padding: 16px;
       }
 
-      .meta-row,
-      .kpi-grid,
-      .progress-grid,
-      .next-grid,
-      .compact-actions,
-      .dashboard-grid {
+      .meta-grid,
+      .focus-strip,
+      .status-board {
         grid-template-columns: 1fr;
       }
 
-      .dashboard-grid .progress-zone {
-        grid-column: auto;
+      .task-table,
+      .task-table tbody,
+      .task-table tr,
+      .task-table td {
+        display: block;
+        width: 100%;
       }
 
-      .lane {
+      .task-table thead {
+        display: none;
+      }
+
+      .task-table tr {
+        border-bottom: 1px solid var(--line);
+        padding: 8px 0;
+      }
+
+      .task-table td {
+        border-bottom: 0;
+        padding: 6px 10px;
+      }
+
+      .task-table td::before {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--muted);
+        font-size: 10px;
+        font-weight: 900;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .task-table td:nth-child(1)::before { content: "Status"; }
+      .task-table td:nth-child(2)::before { content: "Task"; }
+      .task-table td:nth-child(3)::before { content: "Progress"; }
+      .task-table td:nth-child(4)::before { content: "Priority"; }
+
+      .footer {
+        display: block;
+      }
+
+      .footer span {
+        display: block;
+        margin-top: 5px;
+      }
+    }
+
+    /* Visual polish pass: keep the page dense, but make the information hierarchy clearer. */
+    :root {
+      --bg: #0d141b;
+      --paper: #ffffff;
+      --ink: #111922;
+      --muted: #5d6977;
+      --line: #d9e2e8;
+      --soft: #f3f7fa;
+      --green: #0f7a62;
+      --blue: #226cae;
+      --amber: #b46b00;
+      --red: #ba423b;
+      --violet: #6652a8;
+      --cyan: #087b8e;
+      --shadow: 0 26px 70px rgba(4, 12, 19, 0.24);
+      --card-shadow: 0 12px 28px rgba(18, 31, 43, 0.08);
+    }
+
+    body {
+      padding: 22px 0;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(135deg, #0c1218 0%, #13202b 48%, #122826 100%);
+      background-size: 40px 40px, 40px 40px, auto;
+    }
+
+    .page {
+      width: min(1320px, calc(100vw - 34px));
+      margin: 0 auto;
+      padding: 20px;
+      background: linear-gradient(180deg, #f8fbfd 0%, #eef3f7 100%);
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .top {
+      grid-template-columns: minmax(0, 1.18fr) minmax(340px, 0.82fr);
+      gap: 14px;
+    }
+
+    .hero {
+      min-height: 318px;
+      padding: 30px;
+      background:
+        linear-gradient(135deg, rgba(9, 22, 31, 0.98) 0%, rgba(10, 62, 72, 0.96) 52%, rgba(34, 44, 35, 0.96) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 8px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: 22px;
+      bottom: 20px;
+      width: min(42%, 330px);
+      height: 170px;
+      opacity: 0.38;
+      background:
+        linear-gradient(90deg, transparent 0 16px, rgba(167, 231, 217, 0.55) 16px 18px, transparent 18px 48px),
+        linear-gradient(0deg, transparent 0 22px, rgba(167, 231, 217, 0.45) 22px 24px, transparent 24px 58px);
+      border: 1px solid rgba(167, 231, 217, 0.28);
+      border-radius: 8px;
+      transform: skewX(-8deg);
+    }
+
+    .hero-grid {
+      opacity: 0.2;
+      background-size: 28px 28px;
+    }
+
+    .eyebrow {
+      color: #8ee5d1;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+    }
+
+    h1 {
+      max-width: 820px;
+      font-size: clamp(38px, 4.8vw, 68px);
+      line-height: 1;
+      word-break: keep-all;
+    }
+
+    .lead {
+      max-width: 710px;
+      color: #cfe7ec;
+      font-size: 16px;
+      word-break: keep-all;
+    }
+
+    .quick-row {
+      gap: 9px;
+      margin-top: 24px;
+    }
+
+    .pill {
+      min-height: 32px;
+      padding: 7px 10px;
+      color: #eafff8;
+      background: rgba(223, 247, 239, 0.12);
+      border-color: rgba(194, 248, 234, 0.36);
+      border-radius: 6px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    }
+
+    .panel,
+    .meta {
+      background: rgba(255, 255, 255, 0.96);
+      border-color: rgba(205, 218, 228, 0.9);
+      border-radius: 8px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .panel {
+      position: relative;
+      overflow: hidden;
+      padding: 16px;
+    }
+
+    .panel::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--blue), var(--amber));
+    }
+
+    .panel-title {
+      margin-bottom: 14px;
+    }
+
+    .panel-title h2 {
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    .hint {
+      color: #73808e;
+      font-size: 11px;
+    }
+
+    .meta-grid {
+      gap: 12px;
+      margin: 14px 0;
+    }
+
+    .meta {
+      position: relative;
+      min-height: 86px;
+      padding: 14px 14px 12px;
+      overflow: hidden;
+    }
+
+    .meta::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, rgba(15, 122, 98, 0.9), rgba(34, 108, 174, 0.9));
+    }
+
+    .label {
+      color: #73808e;
+      font-size: 10px;
+      letter-spacing: 0.09em;
+    }
+
+    .value {
+      margin-top: 8px;
+      font-size: 17px;
+      line-height: 1.22;
+      overflow-wrap: anywhere;
+    }
+
+    .map {
+      min-height: 230px;
+      margin: 2px 0 6px;
+      padding: 6px;
+      background:
+        linear-gradient(180deg, #f9fcfd, #edf5f6);
+      border: 1px solid #dbe6eb;
+      border-radius: 8px;
+    }
+
+    .status-board {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 7px;
+    }
+
+    .status-tile {
+      min-height: 82px;
+      padding: 11px;
+      background: linear-gradient(180deg, #ffffff, #f5f8fa);
+      border-color: #dce5eb;
+      border-radius: 8px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    .status-tile strong {
+      font-size: 31px;
+      letter-spacing: 0;
+    }
+
+    .status-tile span {
+      margin-top: 7px;
+      font-size: 11px;
+    }
+
+    .stackbar {
+      height: 12px;
+      margin-top: 13px;
+      border: 0;
+      border-radius: 6px;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12);
+    }
+
+    .main-grid {
+      gap: 14px;
+    }
+
+    .next-list {
+      counter-reset: action;
+    }
+
+    .next-list li {
+      counter-increment: action;
+      position: relative;
+      min-height: 70px;
+      padding: 13px 13px 13px 58px;
+      background: linear-gradient(180deg, #ffffff, #f7fafc);
+      border-color: #dbe5eb;
+    }
+
+    .next-list li::before {
+      content: counter(action);
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      color: white;
+      background: linear-gradient(135deg, var(--green), var(--blue));
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 900;
+      box-shadow: 0 8px 16px rgba(15, 122, 98, 0.22);
+    }
+
+    .now-list li,
+    .issue-list li,
+    .decision-list li,
+    .questions li,
+    .next-list li,
+    .focus-step {
+      border-radius: 8px;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+    }
+
+    .focus-step {
+      position: relative;
+      min-height: 108px;
+      padding: 13px;
+      background:
+        linear-gradient(180deg, #ffffff 0%, #f7fafc 100%);
+      border-color: #dce6ed;
+    }
+
+    .focus-step::after {
+      content: "";
+      position: absolute;
+      left: 13px;
+      right: 13px;
+      bottom: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green), transparent);
+      border-radius: 6px 6px 0 0;
+    }
+
+    .focus-step em {
+      width: 28px;
+      height: 28px;
+      background: #122633;
+      border-radius: 6px;
+    }
+
+    .focus-step b,
+    .now-list b,
+    .issue-list b,
+    .decision-list b,
+    .next-list b {
+      font-weight: 900;
+    }
+
+    .task-table {
+      border: 0;
+      border-radius: 8px;
+      box-shadow: 0 12px 28px rgba(18, 31, 43, 0.06);
+    }
+
+    .task-table th {
+      padding: 11px 12px;
+      color: #647282;
+      background: #eaf1f5;
+      border-bottom: 1px solid #d5e1e9;
+      font-size: 10px;
+    }
+
+    .task-table td {
+      padding: 11px 12px;
+      background: #ffffff;
+      border-bottom-color: #e3ebf0;
+    }
+
+    .task-table tbody tr:nth-child(even) td {
+      background: #fbfdfe;
+    }
+
+    .task-table tbody tr:hover td {
+      background: #f2f8f8;
+    }
+
+    .task-name {
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .task-note {
+      color: #6c7886;
+      font-size: 12px;
+    }
+
+    .tag {
+      min-width: 42px;
+      padding: 4px 7px;
+      border-radius: 6px;
+      text-align: center;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    }
+
+    .progress {
+      grid-template-columns: 42px minmax(0, 1fr);
+    }
+
+    .progress b {
+      color: #394856;
+      font-weight: 900;
+    }
+
+    .bar {
+      height: 8px;
+      background: #e3ebf0;
+      border-radius: 6px;
+    }
+
+    .issue-list li,
+    .decision-list li,
+    .questions li {
+      position: relative;
+      padding: 12px 13px 12px 16px;
+      background: linear-gradient(180deg, #ffffff, #f8fbfc);
+      border-color: #dbe5eb;
+    }
+
+    .issue-list li {
+      border-left: 4px solid var(--red);
+    }
+
+    .decision-list li {
+      border-left: 4px solid var(--cyan);
+    }
+
+    .questions li {
+      border-left: 4px solid #b8c5cf;
+    }
+
+    .issue-list span,
+    .decision-list span,
+    .questions span,
+    .next-list span,
+    .focus-step span {
+      color: #5f6d7b;
+    }
+
+    .footer {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(217, 226, 232, 0.9);
+      color: #6d7a88;
+    }
+
+    @media (max-width: 1040px) {
+      body {
+        padding: 10px 0;
+      }
+
+      .top {
         grid-template-columns: 1fr;
-        gap: 4px;
+      }
+
+      .hero {
+        min-height: 270px;
+      }
+
+      .focus-strip,
+      .status-board {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        width: min(100vw - 14px, 1320px);
+        padding: 12px;
+      }
+
+      .hero {
+        padding: 18px;
+      }
+
+      .hero::after {
+        display: none;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .map {
+        min-height: 170px;
+      }
+
+      .status-board {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .status-tile {
+        min-height: 68px;
+      }
+
+      .status-tile strong {
+        font-size: 24px;
+      }
+
+      .meta-grid,
+      .focus-strip {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .status-board {
+        grid-template-columns: 1fr;
       }
     }
 
     @media print {
       @page {
         size: A4 landscape;
-        margin: 10mm;
+        margin: 9mm;
       }
 
       body {
@@ -558,10 +1040,20 @@
         box-shadow: none;
       }
 
+      .hero {
+        color: var(--ink);
+        background: white;
+        border: 1px solid var(--line);
+      }
+
+      .lead {
+        color: var(--muted);
+      }
+
       .panel,
       .meta,
-      .step,
-      .next {
+      .focus-step,
+      .status-tile {
         break-inside: avoid;
       }
     }
@@ -569,201 +1061,310 @@
 </head>
 <body>
   <main class="page">
-    <section class="topline">
-      <div>
-        <p class="eyebrow">Milano task cockpit</p>
-        <h1>June closeout: Area, SDC, link0, pd_pcie</h1>
-        <p class="lead">
-          Current execution is narrowed through 2026-06-30: finish SDC cleanup,
-          review link0/pd_pcie synthesis reports, break down ETC area, and use
-          the IDE-inclusive rerun as the trusted ARIR baseline.
-        </p>
+    <section class="top">
+      <div class="hero">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Milano task dashboard</p>
+          <h1>Milano 6월 Closure Board</h1>
+          <p class="lead">
+            최신 기준일은 2026-06-23입니다. IDE Lint Critical은 잡았고, 이제는
+            link0/pd_pcie 합성 rerun 결과와 report path를 확보한 뒤 ETC area를 쪼개서
+            ARIR 신뢰도를 올리는 흐름입니다.
+          </p>
+          <div class="quick-row" aria-label="current focus tags">
+            <span class="pill">Area / ARIR</span>
+            <span class="pill">SDC cleanup</span>
+            <span class="pill">link0 wrapper</span>
+            <span class="pill">pd_pcie synthesis</span>
+            <span class="pill">ETC breakdown</span>
+          </div>
+        </div>
       </div>
 
-      <aside class="panel status-panel" aria-label="Milano status visual">
-        <div>
-          <span class="label">Task mix</span>
-          <span class="value">20 tracked tasks</span>
+      <aside class="panel" aria-label="status overview">
+        <div class="panel-title">
+          <h2>상태 요약</h2>
+          <span class="hint">20 tracked tasks</span>
         </div>
-        <svg class="chip-map" viewBox="0 0 520 190" role="img" aria-label="Milano task flow map">
+        <svg class="map" viewBox="0 0 560 260" role="img" aria-label="Milano synthesis closure map">
           <defs>
-            <linearGradient id="chipFill" x1="0" x2="1">
-              <stop offset="0%" stop-color="#eef7f2"/>
-              <stop offset="100%" stop-color="#f8f2e7"/>
+            <linearGradient id="mapFill" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" stop-color="#e8f6f2"/>
+              <stop offset="45%" stop-color="#edf4fb"/>
+              <stop offset="100%" stop-color="#fff4df"/>
             </linearGradient>
           </defs>
-          <rect x="22" y="20" width="476" height="150" rx="10" fill="url(#chipFill)" stroke="#cfdad5"/>
-          <rect x="62" y="52" width="108" height="42" rx="8" fill="#ffffff" stroke="#0a7a58" stroke-width="2"/>
-          <rect x="206" y="52" width="108" height="42" rx="8" fill="#ffffff" stroke="#286b94" stroke-width="2"/>
-          <rect x="350" y="52" width="108" height="42" rx="8" fill="#ffffff" stroke="#b97812" stroke-width="2"/>
-          <rect x="62" y="112" width="108" height="42" rx="8" fill="#ffffff" stroke="#286b94" stroke-width="2"/>
-          <rect x="206" y="112" width="108" height="42" rx="8" fill="#ffffff" stroke="#b94b43" stroke-width="2"/>
-          <rect x="350" y="112" width="108" height="42" rx="8" fill="#ffffff" stroke="#0a7a58" stroke-width="2"/>
-          <path d="M170 73 H206 M314 73 H350 M116 94 V112 M260 94 V112 M314 133 H350" fill="none" stroke="#8fa19a" stroke-width="3"/>
-          <text x="116" y="78" text-anchor="middle" fill="#17211d" font-size="15" font-weight="800">SDC</text>
-          <text x="260" y="78" text-anchor="middle" fill="#17211d" font-size="15" font-weight="800">Lint</text>
-          <text x="404" y="78" text-anchor="middle" fill="#17211d" font-size="15" font-weight="800">link0</text>
-          <text x="116" y="138" text-anchor="middle" fill="#17211d" font-size="15" font-weight="800">pd_pcie</text>
-          <text x="260" y="138" text-anchor="middle" fill="#17211d" font-size="15" font-weight="800">ETC</text>
-          <text x="404" y="138" text-anchor="middle" fill="#17211d" font-size="15" font-weight="800">ARIR</text>
+          <rect x="18" y="18" width="524" height="224" rx="12" fill="url(#mapFill)" stroke="#cdd8df"/>
+          <rect x="54" y="58" width="116" height="56" rx="8" fill="#fff" stroke="#12715f" stroke-width="3"/>
+          <rect x="224" y="58" width="116" height="56" rx="8" fill="#fff" stroke="#286da8" stroke-width="3"/>
+          <rect x="394" y="58" width="116" height="56" rx="8" fill="#fff" stroke="#b36b00" stroke-width="3"/>
+          <rect x="54" y="154" width="116" height="56" rx="8" fill="#fff" stroke="#286da8" stroke-width="3"/>
+          <rect x="224" y="154" width="116" height="56" rx="8" fill="#fff" stroke="#b0443f" stroke-width="3"/>
+          <rect x="394" y="154" width="116" height="56" rx="8" fill="#fff" stroke="#12715f" stroke-width="3"/>
+          <path d="M170 86 H224 M340 86 H394 M112 114 V154 M282 114 V154 M340 182 H394" fill="none" stroke="#8496a1" stroke-width="4"/>
+          <text x="112" y="80" text-anchor="middle" fill="#172027" font-size="16" font-weight="900">SDC</text>
+          <text x="112" y="99" text-anchor="middle" fill="#5d6873" font-size="11" font-weight="800">86%</text>
+          <text x="282" y="80" text-anchor="middle" fill="#172027" font-size="16" font-weight="900">Lint</text>
+          <text x="282" y="99" text-anchor="middle" fill="#5d6873" font-size="11" font-weight="800">95%</text>
+          <text x="452" y="80" text-anchor="middle" fill="#172027" font-size="16" font-weight="900">link0</text>
+          <text x="452" y="99" text-anchor="middle" fill="#5d6873" font-size="11" font-weight="800">report</text>
+          <text x="112" y="176" text-anchor="middle" fill="#172027" font-size="16" font-weight="900">pd_pcie</text>
+          <text x="112" y="195" text-anchor="middle" fill="#5d6873" font-size="11" font-weight="800">rerun</text>
+          <text x="282" y="176" text-anchor="middle" fill="#172027" font-size="16" font-weight="900">ETC</text>
+          <text x="282" y="195" text-anchor="middle" fill="#5d6873" font-size="11" font-weight="800">breakdown</text>
+          <text x="452" y="176" text-anchor="middle" fill="#172027" font-size="16" font-weight="900">ARIR</text>
+          <text x="452" y="195" text-anchor="middle" fill="#5d6873" font-size="11" font-weight="800">trust</text>
         </svg>
-        <div>
-          <div class="stackbar" aria-label="Task status distribution">
-            <span class="done" style="flex: 5"></span>
-            <span class="doing" style="flex: 10"></span>
-            <span class="todo" style="flex: 3"></span>
-            <span class="planned" style="flex: 1"></span>
-            <span class="deferred" style="flex: 1"></span>
-          </div>
-          <div class="legend">
-            <span><i class="done"></i>5 done</span>
-            <span><i class="doing"></i>10 active</span>
-            <span><i class="todo"></i>3 todo</span>
-            <span><i class="planned"></i>1 planned</span>
-            <span><i class="deferred"></i>1 deferred</span>
-          </div>
+        <div class="status-board">
+          <div class="status-tile done"><strong>5</strong><span>완료</span></div>
+          <div class="status-tile doing"><strong>10</strong><span>진행 중</span></div>
+          <div class="status-tile todo"><strong>3</strong><span>TODO</span></div>
+          <div class="status-tile planned"><strong>1</strong><span>Planned</span></div>
+          <div class="status-tile deferred"><strong>1</strong><span>Deferred</span></div>
+        </div>
+        <div class="stackbar" aria-label="task distribution">
+          <span class="done-bg" style="flex: 5"></span>
+          <span class="doing-bg" style="flex: 10"></span>
+          <span class="todo-bg" style="flex: 3"></span>
+          <span class="planned-bg" style="flex: 1"></span>
+          <span class="deferred-bg" style="flex: 1"></span>
         </div>
       </aside>
     </section>
 
-    <section class="meta-row" aria-label="Milano metadata">
+    <section class="meta-grid" aria-label="Milano metadata">
       <div class="meta">
-        <span class="label">Source updated</span>
+        <span class="label">Source</span>
+        <span class="value">life/tasks/milano_active_tasks.yaml</span>
+      </div>
+      <div class="meta">
+        <span class="label">Updated</span>
         <span class="value">2026-06-23</span>
       </div>
       <div class="meta">
         <span class="label">Focus window</span>
-        <span class="value">2026-06-22 to 06-30</span>
+        <span class="value">2026-06-22 - 06-30</span>
       </div>
       <div class="meta">
-        <span class="label">Latest closure signal</span>
-        <span class="value">IDE Lint Critical fixed</span>
-      </div>
-      <div class="meta">
-        <span class="label">Known blocker</span>
-        <span class="value">TLP split / bus downsizing</span>
+        <span class="label">Open issues</span>
+        <span class="value">6개</span>
       </div>
     </section>
 
-    <section class="dashboard-grid">
-      <div class="panel progress-zone">
-        <div class="panel-head">
-          <h2>Active Progress</h2>
-          <span class="hint">Progress from life/tasks/milano_active_tasks.yaml</span>
-        </div>
-        <div class="progress-grid" aria-label="Task progress rings">
-          <div class="progress-card">
-            <div class="ring" style="--value: 86; --color: var(--green)"><span>86%</span></div>
-            <b>SDC cleanup</b>
-            <small>Dual profile rerun path</small>
-          </div>
-          <div class="progress-card">
-            <div class="ring" style="--value: 95; --color: var(--green)"><span>95%</span></div>
-            <b>IP rev lint</b>
-            <small>Critical fixed, report pending</small>
-          </div>
-          <div class="progress-card">
-            <div class="ring" style="--value: 68; --color: var(--blue)"><span>68%</span></div>
-            <b>GEN7 PHY DB</b>
-            <small>Top sim pass, synthesis review next</small>
-          </div>
-          <div class="progress-card">
-            <div class="ring" style="--value: 70; --color: var(--blue)"><span>70%</span></div>
-            <b>Handler + SFR</b>
-            <small>First pass completed</small>
-          </div>
-          <div class="progress-card">
-            <div class="ring" style="--value: 20; --color: var(--amber)"><span>20%</span></div>
-            <b>ETC area</b>
-            <small>Needs report drilldown</small>
-          </div>
-          <div class="progress-card">
-            <div class="ring" style="--value: 20; --color: var(--amber)"><span>20%</span></div>
-            <b>ARIR</b>
-            <small>Blocked on trusted data</small>
-          </div>
-        </div>
-      </div>
-
+    <section class="main-grid">
       <div class="panel">
-        <div class="panel-head">
-          <h2>Closure Flow</h2>
-          <span class="hint">Operating order</span>
+        <div class="panel-title">
+          <h2>지금 볼 것</h2>
+          <span class="hint">next useful checks</span>
         </div>
-        <div class="flow" aria-label="Milano closure flow">
-          <div class="step">
-            <b>1. Clean SDC</b>
-            <span>PDBCI/link wrapper constraints and PHY GEN7 SDC.</span>
-          </div>
-          <div class="step">
-            <b>2. Confirm lint</b>
-            <span>Record IDE Lint Critical closure report.</span>
-          </div>
-          <div class="step">
-            <b>3. Review reruns</b>
-            <span>Capture link0 and pd_pcie reports.</span>
-          </div>
-          <div class="step">
-            <b>4. Split ETC</b>
-            <span>Classify IDE area vs unexplained growth.</span>
-          </div>
-          <div class="step">
-            <b>5. Trust ARIR</b>
-            <span>Use IDE-inclusive data for closure.</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel">
-        <div class="panel-head">
-          <h2>Scope</h2>
-          <span class="hint">Done, support, defer</span>
-        </div>
-        <div class="lane">
-          <b>Completed</b>
-          <p>3nm env, common module, crossing naming, standard ICG, initial DB.</p>
-        </div>
-        <div class="lane">
-          <b>Support</b>
-          <p>Firenze handler, R001 Diff, missed-followup audit, no-UIO variant.</p>
-        </div>
-        <div class="lane">
-          <b>Deferred</b>
-          <p>NVMe VIP, MSE/PF BAR0, Port 1 interrupt, DCG power unless blocking June closure.</p>
-        </div>
-      </div>
-
-      <div class="panel">
-        <div class="panel-head">
-          <h2>Next Actions</h2>
-          <span class="hint">Smallest useful steps</span>
-        </div>
-        <ol class="compact-actions" aria-label="Next action cards">
-          <li><b>Capture paths</b>Lint closure, link0 rerun, pd_pcie rerun.</li>
-          <li><b>Compare link0</b>IDE-missing vs IDE-inclusive area.</li>
-          <li><b>Review pd_pcie</b>Synthesis, timing, warnings, constraints.</li>
-          <li><b>Label MPS</b>Record exact value and rerun policy.</li>
-          <li><b>Open issues</b>Track abnormal ETC, R001, handler, or TLP findings.</li>
+        <ol class="next-list">
+          <li><b>Report path 확보</b><span>IDE Lint closure, link0 rerun, pd_pcie rerun report/log path를 먼저 기록.</span></li>
+          <li><b>link0 비교</b><span>IDE-missing 결과와 IDE-inclusive rerun의 area/timing delta를 분리.</span></li>
+          <li><b>ETC bucket drilldown</b><span>IDE area, wrapper miscellaneous logic, ungrouped hierarchy, report grouping noise를 구분.</span></li>
+          <li><b>pd_pcie synthesis review</b><span>timing, warning, constraint mismatch, filelist issue를 synthesis closure 관점에서 확인.</span></li>
+          <li><b>MPS workaround label</b><span>bus fix 전 임시 MPS 제한값을 기록하고, bus fix 후 workaround 없이 재검증.</span></li>
         </ol>
       </div>
 
       <div class="panel">
-        <div class="panel-head">
-          <h2>Watch Items</h2>
-          <span class="hint">Keep visible</span>
+        <div class="panel-title">
+          <h2>이번 주 closure flow</h2>
+          <span class="hint">2026-06-22 - 06-30</span>
         </div>
-        <ul class="bullets">
-          <li>Do not treat link0 synthesis as final because IDE was missing from that completed scope.</li>
-          <li>Keep MPS as a workaround and rerun without it after the bus fix.</li>
-          <li>No-UIO needs scope, owner expectation, and baseline-vs-variant deltas.</li>
-          <li>Disparity Jira, R001 source split, and report paths are still pending.</li>
+        <div class="focus-strip">
+          <div class="focus-step"><em>1</em><b>SDC clean-up</b><span>PDBCI/link wrapper, PHY GEN7 SDC 정리.</span></div>
+          <div class="focus-step"><em>2</em><b>Lint closure</b><span>IDE Lint Critical closure report 확보.</span></div>
+          <div class="focus-step"><em>3</em><b>Rerun review</b><span>link0, pd_pcie 합성 결과 확인.</span></div>
+          <div class="focus-step"><em>4</em><b>ETC split</b><span>opaque area bucket을 contributor별로 분해.</span></div>
+          <div class="focus-step"><em>5</em><b>ARIR trust</b><span>IDE-inclusive 결과를 기준선으로 사용.</span></div>
+        </div>
+      </div>
+
+      <div class="panel wide">
+        <div class="panel-title">
+          <h2>전체 태스크</h2>
+          <span class="hint">status, progress, priority</span>
+        </div>
+        <table class="task-table">
+          <thead>
+            <tr>
+              <th>Status</th>
+              <th>Task</th>
+              <th>Progress</th>
+              <th>Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="tag done">완료</span></td>
+              <td><span class="task-name">3nm 공정 합성 환경 셋업</span><span class="task-note">3nm synthesis environment ready.</span></td>
+              <td><div class="progress"><b>100%</b><span class="bar done"><i style="width:100%"></i></span></div></td>
+              <td>high</td>
+            </tr>
+            <tr>
+              <td><span class="tag doing">진행</span></td>
+              <td><span class="task-name">링크형 레퍼용/PDBCI용 SDC clean-up 및 3nm 합성 재시도</span><span class="task-note">IDE Critical fixed, link0/pd_pcie rerun report pending.</span></td>
+              <td><div class="progress"><b>86%</b><span class="bar"><i style="width:86%"></i></span></div></td>
+              <td>high</td>
+            </tr>
+            <tr>
+              <td><span class="tag doing">진행</span></td>
+              <td><span class="task-name">ARIR area/instance count 사전 확인</span><span class="task-note">Trusted data waits for IDE-inclusive rerun and ETC breakdown.</span></td>
+              <td><div class="progress"><b>20%</b><span class="bar"><i style="width:20%"></i></span></div></td>
+              <td>high</td>
+            </tr>
+            <tr>
+              <td><span class="tag doing">진행</span></td>
+              <td><span class="task-name">link0 wrapper ETC Area breakdown 분석</span><span class="task-note">Report paths and ETC contributor list still needed.</span></td>
+              <td><div class="progress"><b>20%</b><span class="bar"><i style="width:20%"></i></span></div></td>
+              <td>high</td>
+            </tr>
+            <tr>
+              <td><span class="tag doing">진행</span></td>
+              <td><span class="task-name">신규 IP revision 0.1 반영 후 lint 재확인</span><span class="task-note">IDE Lint Critical fixed; report/result path pending.</span></td>
+              <td><div class="progress"><b>95%</b><span class="bar"><i style="width:95%"></i></span></div></td>
+              <td>high</td>
+            </tr>
+            <tr>
+              <td><span class="tag doing">진행</span></td>
+              <td><span class="task-name">Firenze handler 변경점 Milano 반영 확인</span><span class="task-note">Handler + SFR first pass complete; ECO18 waits on parity policy.</span></td>
+              <td><div class="progress"><b>70%</b><span class="bar"><i style="width:70%"></i></span></div></td>
+              <td>high</td>
+            </tr>
+            <tr>
+              <td><span class="tag todo">TODO</span></td>
+              <td><span class="task-name">MSE 연동 PF BAR0 address overlap 방지</span><span class="task-note">Avoid Firenze MSE=0 BAR0 unusable failure mode.</span></td>
+              <td><div class="progress"><b>0%</b><span class="bar todo"><i style="width:0%"></i></span></div></td>
+              <td>high</td>
+            </tr>
+            <tr>
+              <td><span class="tag planned">Planned</span></td>
+              <td><span class="task-name">PCIe DOE DCG 및 REG TOP AXI Bridge DCG Power Optimization</span><span class="task-note">Later work; not part of the June synthesis closure unless blocking.</span></td>
+              <td><div class="progress"><b>0%</b><span class="bar planned"><i style="width:0%"></i></span></div></td>
+              <td>medium</td>
+            </tr>
+            <tr>
+              <td><span class="tag doing">진행</span></td>
+              <td><span class="task-name">DOE Configuration Request 완료 정책 정의</span><span class="task-note">SC, UR, RRS(CRS) options; default RRS.</span></td>
+              <td><div class="progress"><b>20%</b><span class="bar"><i style="width:20%"></i></span></div></td>
+              <td>medium</td>
+            </tr>
+            <tr>
+              <td><span class="tag doing">진행</span></td>
+              <td><span class="task-name">GEN7 PHY 포함 DB 최종 합성</span><span class="task-note">Top simulation pass; pd_pcie rerun and MPS workaround tracking remain.</span></td>
+              <td><div class="progress"><b>68%</b><span class="bar"><i style="width:68%"></i></span></div></td>
+              <td>high</td>
+            </tr>
+            <tr>
+              <td><span class="tag done">완료</span></td>
+              <td><span class="task-name">PCI 내부용 common module을 ASIC common module로 교체</span><span class="task-note">Use later lint/build/synthesis to catch residual integration issues.</span></td>
+              <td><div class="progress"><b>100%</b><span class="bar done"><i style="width:100%"></i></span></div></td>
+              <td>high</td>
+            </tr>
+            <tr>
+              <td><span class="tag done">완료</span></td>
+              <td><span class="task-name">PD_PCI/PD_HGT/PD_NVMe crossing signal naming rule 재정비</span><span class="task-note">Cross-power-domain signal naming cleanup completed.</span></td>
+              <td><div class="progress"><b>100%</b><span class="bar done"><i style="width:100%"></i></span></div></td>
+              <td>high</td>
+            </tr>
+            <tr>
+              <td><span class="tag deferred">Deferred</span></td>
+              <td><span class="task-name">Port 1용 interrupt requirement 작성</span><span class="task-note">Revisit around 2026-07-16 to 2026-08-16.</span></td>
+              <td><div class="progress"><b>0%</b><span class="bar deferred"><i style="width:0%"></i></span></div></td>
+              <td>high</td>
+            </tr>
+            <tr>
+              <td><span class="tag done">완료</span></td>
+              <td><span class="task-name">latch 등 standard cell로 교체</span><span class="task-note">Latch-related replacement updated as standard ICG cell and clear.</span></td>
+              <td><div class="progress"><b>100%</b><span class="bar done"><i style="width:100%"></i></span></div></td>
+              <td>high</td>
+            </tr>
+            <tr>
+              <td><span class="tag todo">TODO</span></td>
+              <td><span class="task-name">R001 IP Diff core/link/link wrapper/ips 반영 및 gray 영역 cross-check</span><span class="task-note">Exact diff source path and gray-area list not recorded yet.</span></td>
+              <td><div class="progress"><b>0%</b><span class="bar todo"><i style="width:0%"></i></span></div></td>
+              <td>high</td>
+            </tr>
+            <tr>
+              <td><span class="tag doing">진행</span></td>
+              <td><span class="task-name">Brian-owned 누락 가능 항목 audit</span><span class="task-note">Common module and related follow-up evidence gaps need quick checklist.</span></td>
+              <td><div class="progress"><b>10%</b><span class="bar"><i style="width:10%"></i></span></div></td>
+              <td>high</td>
+            </tr>
+            <tr>
+              <td><span class="tag done">완료</span></td>
+              <td><span class="task-name">Compile/Lint/Simulation 확인 후 Milano release</span><span class="task-note">Initial DB release completed on 2026-06-17.</span></td>
+              <td><div class="progress"><b>100%</b><span class="bar done"><i style="width:100%"></i></span></div></td>
+              <td>high</td>
+            </tr>
+            <tr>
+              <td><span class="tag doing">진행</span></td>
+              <td><span class="task-name">Disparity Error Injection 미발생 이슈 디버깅 follow-up</span><span class="task-note">Debug requested from 변승현 TL님; Jira tracking planned.</span></td>
+              <td><div class="progress"><b>30%</b><span class="bar"><i style="width:30%"></i></span></div></td>
+              <td>high</td>
+            </tr>
+            <tr>
+              <td><span class="tag todo">TODO</span></td>
+              <td><span class="task-name">NVMe VIP setup: PCIe IB/OB만 enable하고 나머지 disable</span><span class="task-note">Decision exists; execution deferred out of the June focus path.</span></td>
+              <td><div class="progress"><b>0%</b><span class="bar todo"><i style="width:0%"></i></span></div></td>
+              <td>high</td>
+            </tr>
+            <tr>
+              <td><span class="tag doing">진행</span></td>
+              <td><span class="task-name">UIO 없는 Milano variant 준비</span><span class="task-note">Confirm feature scope and compare lint/synthesis/area impact.</span></td>
+              <td><div class="progress"><b>15%</b><span class="bar"><i style="width:15%"></i></span></div></td>
+              <td>medium</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">
+          <h2>이슈 보드</h2>
+          <span class="hint">6 open/tracked</span>
+        </div>
+        <ul class="issue-list">
+          <li><b><span class="tag issue">high</span>link0 wrapper 합성에 IDE 누락</b><span>IDE-inclusive rerun report를 보기 전까지 final area/timing evidence로 쓰면 안 됨.</span></li>
+          <li><b><span class="tag issue">critical</span>IDE Lint Critical</b><span>Critical은 fixed 상태지만 closure report/result path가 아직 비어 있음.</span></li>
+          <li><b><span class="tag issue">medium</span>PCIe TLP가 2개 AXI로 split</b><span>MPS 제한은 임시 workaround이며 bus fix 후 workaround 없이 재검증 필요.</span></li>
+          <li><b><span class="tag issue">high</span>Firenze MSE=0 PF BAR0 실패 모드</b><span>Milano BAR0 overlap guard에서 같은 failure를 피하도록 behavior table 필요.</span></li>
+          <li><b><span class="tag issue">medium</span>Handler ECO18 parity blocked</b><span>Parity policy 확정 후 ECO18 handler 반영 재검토.</span></li>
+          <li><b><span class="tag issue">high</span>Disparity Error Injection 미발생</b><span>기대 error가 발생하지 않아 변승현 TL님 debug, Jira tracking planned.</span></li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">
+          <h2>결정 기록</h2>
+          <span class="hint">2 decisions</span>
+        </div>
+        <ul class="decision-list">
+          <li><b><span class="tag decision">2026-06-23</span>MPS 제한은 임시 workaround</b><span>정확한 MPS 값을 기록하고, bus fix 후 제한 없이 rerun하는 것이 acceptance target.</span></li>
+          <li><b><span class="tag decision">2026-06-19</span>NVMe VIP는 PCIe IB/OB만 open</b><span>나머지 path/feature/port는 disable하고 예외는 별도 추적.</span></li>
+        </ul>
+      </div>
+
+      <div class="panel wide">
+        <div class="panel-title">
+          <h2>확인 질문</h2>
+          <span class="hint">needs user review</span>
+        </div>
+        <ul class="questions">
+          <li><span>'제7파이'를 GEN7 PHY로 해석하는 것이 맞는지 확인.</span></li>
+          <li><span>'싱크 5V'가 정확한 모듈명인지, 음성 전사 오류인지 확인.</span></li>
+          <li><span>Firenze handler 범위가 msg/security/event handler 중 어디까지인지 확인.</span></li>
+          <li><span>PDCI와 PDBCI가 같은 SDC profile을 의미하는지 확인.</span></li>
+          <li><span>UIO가 정확히 어떤 feature/interface/hierarchy인지, 최종 미사용 확정 가능한지 확인.</span></li>
+          <li><span>MSE=0/1 상태별 PF BAR0 overlap 방지 조건과 BAR0 사용 가능 상태를 behavior table로 확정.</span></li>
         </ul>
       </div>
     </section>
 
     <footer class="footer">
-      <span>Source: life/tasks/milano_active_tasks.yaml and life/entities/semantic_entity_catalog.yaml.</span>
-      <span>Standalone local page. No external assets, fonts, scripts, or network calls.</span>
+      <span>Source: life/tasks/milano_active_tasks.yaml. Local standalone HTML; no external assets, scripts, or network calls.</span>
+      <span>View: open index.html directly in a browser.</span>
     </footer>
   </main>
 </body>

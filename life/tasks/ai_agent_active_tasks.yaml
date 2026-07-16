@@ -1,13 +1,13 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-24
+updated_at: 2026-07-09
 area: CAREER
 secondary_areas:
   - MIND
   - FUN
 project_ref: project_ai_agent
 title: AI Agent active task list
-current_phase: Codex-based ontology development plugin, common_ai_agent migration, and company rollout support preparation
+current_phase: Codex company rollout is active; Brian delivered a Codex seminar on 2026-07-08, attended a Codex meetup that evening, and is now in post-seminar capture plus rollout/asset-building mode.
 
 source_records:
   - id: source_ai_agent_conversation_20260614_fun_codex_porting_rollout
@@ -1368,6 +1368,327 @@ source_records:
       sentiment: positive
     related_event_ref: event_ai_agent_company_ai_innovator_award
     related_mood_ref: mood_20260624_self_efficacy_confidence
+  - id: source_ai_agent_conversation_20260629_codex_company_arrival_fast_unlimited_gratitude
+    source_type: chat
+    original_date: 2026-06-29
+    imported_at: 2026-06-29
+    parse_status: parsed
+    raw_text: "오늘 codex 회사에 들어옴. 미친듯이 빠르고 좋음. 무제한 너무 감사"
+    interpreted_event:
+      topic: Codex company arrival
+      date: 2026-06-29
+      status: arrived_or_enabled_at_company
+      performance_signal: Brian experienced Codex as extremely fast and good.
+      access_model_signal: unlimited_use
+      sentiment:
+        - grateful
+        - excited
+        - positive_tool_experience
+      policy_scope_note: Exact company rollout scope, user count, and policy details are not restated in this message.
+    related_event_ref: event_ai_agent_codex_company_arrival_20260629
+    related_task_refs:
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_codex_two_month_asset_capture_program
+    related_mood_ref: mood_20260629_codex_company_arrival_gratitude
+  - id: source_ai_agent_conversation_20260629_codex_fast_55_xhigh_full_use_intent
+    source_type: chat
+    original_date: 2026-06-29
+    imported_at: 2026-06-29
+    parse_status: parsed
+    raw_text: "codex fast로 무제한 5.5 xhigh 임.. full... full... 로 쓰자. 미친듯이 굴리자."
+    interpreted_intent:
+      topic: Codex full-capacity use
+      access_model: unlimited_use
+      user_stated_mode_or_capacity: "fast / 5.5 xhigh"
+      intention: Use Codex at full capacity during the unlimited window.
+      sentiment:
+        - highly_activated
+        - excited
+        - ambitious
+      operating_interpretation: Convert full-capacity use into bounded asset-producing workstreams rather than scattered tool burning.
+    related_task_refs:
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_ssot_deep_interview_to_verify_pilot
+    related_mood_ref: mood_20260629_codex_full_throttle_activation
+  - id: source_ai_agent_conversation_20260629_overnight_allday_codex_pipeline_intent
+    source_type: chat
+    original_date: 2026-06-29
+    imported_at: 2026-06-29
+    parse_status: parsed
+    raw_text: "밤에도 하루 종일 돌아가게 하기 !!"
+    interpreted_intent:
+      topic: overnight and all-day Codex operation
+      intention: Keep Codex-driven workflows running beyond normal working hours.
+      recommended_constraint: Overnight runs should be bounded, logged, non-destructive, and reviewed by Brian before merge/share/signoff.
+    related_task_refs:
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_ssot_deep_interview_to_verify_pilot
+    related_mood_ref: mood_20260629_codex_full_throttle_activation
+  - id: source_ai_agent_conversation_20260629_ssot_deep_interview_to_verify_pilot
+    source_type: chat
+    original_date: 2026-06-29
+    imported_at: 2026-06-29
+    parse_status: parsed
+    raw_text: "그리고 ssot (deep interview) -> rtl -> dvs -> tb, tc -> verify 그런걸 한 번 해보자고."
+    interpreted_workflow:
+      topic: SSOT-to-verify OAG pilot
+      proposed_pipeline:
+        - SSOT from deep interview
+        - RTL generation or implementation
+        - DVS artifact
+        - TB and TC generation
+        - verification
+      unresolved_terms:
+        - term: DVS
+          issue: Acronym not expanded in source; likely verification/design-spec related in this context.
+          needs_user_review: true
+      strategic_role: Candidate flagship workflow for Codex full-capacity unlimited-use asset capture.
+    related_task_ref: task_ai_agent_ssot_deep_interview_to_verify_pilot
+  - id: source_ai_agent_codex_thread_inventory_20260629_recent_conversations
+    source_type: codex_thread_review
+    original_date: 2026-06-29
+    imported_at: 2026-06-29
+    parse_status: parsed
+    raw_text: "다른 thread list up 해서 최근에 어떤 대화했는지 검토좀 / 좋아 우선 이런 것 들 기록하자"
+    review_scope:
+      method: local_codex_thread_list_and_read_summary
+      copied_full_transcripts: false
+      note: Thread contents were summarized as ontology-relevant state, decisions, open loops, and next actions rather than copied wholesale.
+    reviewed_threads:
+      - thread_id: 019f0bbf-68b5-7f90-a587-772743e75a62
+        title: 사고의 확장
+        cwd: /Users/brian/Desktop/Project/BRIAN_ONTOLOGY_AGENT
+        latest_update_kst: "2026-06-29 21:48"
+        status: interrupted_after_thread_review_request
+        summary: Codex company arrival, fast/5.5 xhigh unlimited use, full-capacity/overnight operation intent, and SSOT deep interview -> RTL -> DVS -> TB/TC -> verify pilot were recorded into the ontology.
+      - thread_id: 019f077f-300f-75f0-b8c4-df642c58058d
+        title: MCTP RX assembler
+        cwd: /Users/brian/Desktop/Project/new_ip_dev2
+        latest_update_kst: "2026-06-29 21:48"
+        status: interrupted_after_oag_green_state
+        summary: MCTP RX assembler split/regression work showed UVM pass evidence, 1084/1084 pass and 0 fail, then stale closure records were refreshed so OAG and closure checks returned ok.
+      - thread_id: 019f077f-3ac3-7b10-bc51-3588b55a08d5
+        title: Codex로 IP 개발
+        cwd: /Users/brian/Desktop/Project/ip_dev
+        latest_update_kst: "2026-06-29 21:48"
+        status: interrupted_during_prelock_review_frame_design
+        summary: OAG IP development was extended with IP-local git discipline, Windows/PowerShell-compatible git.exe discovery, Feature -> Requirement -> Atom -> Obligation -> Contract tracing, IP-XACT projection policy, and the need for a pre-lock review frame skill.
+      - thread_id: 019f10b5-8907-7b93-95f3-d693055f2c50
+        title: 운동 기록
+        cwd: /Users/brian/Desktop/Project/BRIAN_ONTOLOGY_AGENT
+        latest_update_kst: "2026-06-29 09:17"
+        status: completed
+        summary: 2026-06-29 chest workout was stored in body_active_log and validated.
+      - thread_id: 019f1077-f05f-7d82-9476-71c052c49827
+        title: 평일 아침 라이프 브리핑
+        cwd: /Users/brian/Desktop/Project/BRIAN_ONTOLOGY_AGENT
+        latest_update_kst: "2026-06-29 08:05"
+        status: completed
+        summary: Morning briefing used local ontology records only, noted missing 2026-06-28 direct journal evidence, and proposed deep-focus, Codex rollout, recovery, and relationship priorities.
+      - thread_id: 019f0879-517b-7d61-a5be-0546b5f9533a
+        title: 어때
+        cwd: /Users/brian/Desktop/Project/BRIAN_ONTOLOGY_AGENT
+        latest_update_kst: "2026-06-27 19:26"
+        status: completed
+        summary: Body recomposition guidance favored weak calorie deficit, higher protein, progressive overload, and recovery over aggressive weight loss.
+      - thread_id: 019f07b5-5468-7483-9c8d-fb26c9a08aed
+        title: LazyCodex PPT
+        cwd: /Users/brian/Desktop/Project/ip_dev_lazy_codex
+        latest_update_kst: "2026-06-27 15:39"
+        status: completed
+        summary: LazyCodex explanation deck v3 was generated with speaker notes, citations, references, and QA pass.
+      - thread_id: 019efb57-5dad-7010-aaf9-02f3b97b45dd
+        title: MCTP scaffold and generated file cleanup
+        cwd: /Users/brian/Desktop/Project/ip_dev
+        latest_update_kst: "2026-06-27 14:04"
+        status: interrupted_on_macos_permission_issue
+        summary: mctp_rx_assembler draft scaffold and IP-local git initialization were attempted, but macOS folder permission/xattr access blocked cleanup and amend work.
+    consolidated_themes:
+      - Full-capacity Codex use should become bounded asset-producing pipelines, not only high-volume tool usage.
+      - OAG/IP development is converging on Feature -> Requirement -> Atom -> Obligation -> Contract -> Evidence -> Validation, with IP-XACT as integration metadata projection.
+      - Lock should happen only after a clear pre-lock review frame shows feature, requirement, obligation, contract, verification intent, assumptions, unresolved decisions, and evidence gaps.
+      - Thread inventory itself is useful memory work: recent conversations should be periodically promoted into ontology records, open questions, and task next actions.
+      - BODY and MIND records remain important boundaries while CAREER/Codex activation is high.
+    related_task_refs:
+      - task_ai_agent_ssot_deep_interview_to_verify_pilot
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_codex_ontology_development_plugin
+    related_knowledge_thread_ref: thought_thread_20260629_codex_thread_consolidation_and_oag_direction
+  - id: source_ai_agent_codex_thread_deep_dive_20260629_operating_model
+    source_type: codex_thread_review
+    original_date: 2026-06-29
+    imported_at: 2026-06-29
+    parse_status: parsed
+    raw_text: "좀 더 deep 하게 더 들어가보자 / okay 기록좀"
+    review_scope:
+      method: local_codex_session_deep_dive
+      date_range: 2026-06-27_to_2026-06-29
+      sessions_with_user_messages_observed: 137
+      dominant_session_clusters:
+        - cwd: /Users/brian/Desktop/Project/new_ip_dev2
+          observed_sessions: 114
+          topic: MCTP RX assembler OAG/IP development and verification wavefronts
+        - cwd: /Users/brian/.codex/worktrees/b6f3ae66-ca1d-4e51-9c39-d8764b5152c0/ip_dev
+          observed_sessions: 12
+          topic: simple_dma_axi OAG baseline, TB, repair, evidence, and gate lessons
+      copied_full_transcripts: false
+      note: The deep dive summarized durable operating patterns, failure patterns, and next workflow design rather than copying raw private transcripts.
+    interpreted_operating_model:
+      model_name: Brian IP Agent Flow v0.1
+      core_conclusion: Brian's full-power Codex use should become a traceable IP development operating system, not only high-volume model/runtime usage.
+      thread_progression:
+        - Initial MCTP RX assembler questions covered interface, register list, bit fields, queue details, module split, parser, assembler, dataflow, and requirement readiness.
+        - The thread then escalated into obligation/contract approval reason, subagent wavefront execution, formal opportunities, UVM-style TB/TC planning, random regression, padding/PCIe VDM edge cases, and closure evidence.
+        - Later questions focused on why holes appeared and how gater, validator, receipt schema, pre-lock review, Deep Interview, SSOT, and IP-XACT-like required sections should prevent recurrence.
+      full_power_loop:
+        - large intent
+        - Deep Interview decision extraction
+        - SSOT draft
+        - requirement / obligation / contract projection
+        - human visual pre-lock review
+        - RTL / DVS / TB / TC wavefront execution
+        - evidence / receipt / validator / gate
+        - case study / skill / seminar asset distillation
+      main_failure_pattern:
+        - The repeated blockers were mostly operating-schema failures, not raw LLM capability failures.
+        - Observed blocker classes included missing receipt fields, wavefront task mismatch, missing blockers on blocked receipts, out-of-scope writes, missing evidence marker, and stuck gate/retry tasks.
+      deep_interview_principle:
+        - Ask one most important unresolved decision at a time.
+        - Present three to four concrete options with a recommended default and room for custom input.
+        - Record decision, rationale, rejected alternatives, assumptions, tradeoffs, and verification impact before moving on.
+      visual_thinking_role:
+        - YAML ontology remains the canonical source of truth.
+        - Excalidraw, HTML review frames, Obsidian graph, and similar views are human reasoning interfaces.
+        - The highest-value view for IP development is the pre-lock review frame before RTL/TB/verification fanout.
+    related_task_refs:
+      - task_ai_agent_ssot_deep_interview_to_verify_pilot
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+    related_knowledge_thread_ref: thought_thread_20260629_codex_thread_consolidation_and_oag_direction
+  - id: source_ai_agent_conversation_20260703_microsoft_frontier_token_capital_oag_alignment
+    source_type: chat
+    original_date: 2026-07-03
+    imported_at: 2026-07-03
+    parse_status: parsed
+    raw_text: "AI를 도입하는 회사가 아니라 AI 자체를 회사의 자산으로 축적하는 회사라는 발상. Human Capital + Token Capital, AI Capability, Continuous Improvement, OAG와의 연결."
+    source_verification:
+      status: verified_2026_07_03
+      verified_at: 2026-07-03
+      official_blog_url: https://blogs.microsoft.com/blog/2026/07/02/microsoft-frontier-company-ai-engineering-that-amplifies-and-protects-your-intelligence/
+      social_post_url: https://x.com/satyanadella/status/2072708957077176563
+      note: >
+        Official Microsoft blog verifies the Frontier Company announcement,
+        $2.5B investment, embedded engineering model, continuous improvement
+        of AI systems, customer intelligence compounding, and protected IP
+        framing. Satya Nadella's linked social post verifies the Human Capital
+        plus Token Capital wording supplied by Brian.
+    interpreted_business_frame:
+      central_claim: The strategic target is not only AI adoption but accumulating AI capability as company capital.
+      token_capital_definition: Reasoning, workflows, evaluations, corrections, reviews, feedback, memory, and artifacts created during AI-assisted work become reusable assets.
+      learning_loop:
+        - human work
+        - AI-assisted token generation
+        - knowledge extraction
+        - structured memory and workflow update
+        - smarter next agent and better human work
+      ai_capability_components:
+        - people
+        - workflow
+        - knowledge
+        - memory
+        - evaluation
+        - agents
+        - continuous improvement
+    brian_oag_mapping:
+      knowledge: Ontology
+      workflow: OAG Process
+      judgment: Validator
+      continuous_improvement: Evidence -> Review -> Correction -> Memory -> Better Answer
+      hardware_loop: Requirement -> Ontology -> Task Graph -> Agent -> RTL -> TB -> Evidence -> Validator -> Memory -> Knowledge Graph -> Scheduler -> Next Task
+    strategic_implication:
+      - Codex/OAG runs should be measured by durable Token Capital, not only by outputs or speed.
+      - Requirement, RTL, TB, review, coverage, signoff, correction, and validation should be structured into reusable knowledge.
+      - The two-month Codex asset-capture program should explicitly produce company-shareable AI capability, not only demos.
+    related_task_refs:
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_ssot_deep_interview_to_verify_pilot
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_company_codex_rollout_support
+    related_knowledge_thread_ref: thought_thread_20260703_token_capital_frontier_company_oag_alignment
+  - id: source_ai_agent_screenshot_20260703_loop_engineering_playbook
+    source_type: screenshot_attachment
+    original_date: 2026-07-03
+    imported_at: 2026-07-03
+    parse_status: parsed_from_screenshot
+    raw_text: "Screenshots about Loop Engineering: discovery, handoff, verification, persistence, scheduling, generator/evaluator separation, six loop parts, loop risks, and model-routing barbell."
+    source_artifact_paths:
+      - raw_data/images/agent_loop_engineering_20260703/01-loop-engineering-playbook.jpg
+      - raw_data/images/agent_loop_engineering_20260703/02-principles-generator-evaluator.jpg
+      - raw_data/images/agent_loop_engineering_20260703/03-parts-risks-token-cost.jpg
+      - raw_data/images/agent_loop_engineering_20260703/04-barbell-model-routing.jpg
+    source_verification:
+      status: screenshot_only_not_externally_checked
+      note: The attached screenshots were preserved locally; underlying public thread/article URL was not checked in this turn.
+    interpreted_operating_model:
+      central_claim: Loop Engineering shifts the work from prompting an agent once to designing the system that repeatedly prompts, hands off, verifies, persists, and schedules agent work.
+      five_principles:
+        discovery: Agent finds bounded work from CI failures, issues, commits, coverage gaps, or evidence holes.
+        handoff: Each task gets an isolated git worktree or equivalent execution context.
+        verification: A separate skeptical evaluator checks the generator's output through real actions.
+        persistence: State is written to durable files or boards between runs.
+        scheduling: Bounded loops can run on a timer or overnight queue.
+      six_parts:
+        - automations
+        - worktrees
+        - skills
+        - connectors
+        - sub-agents
+        - memory
+      risks:
+        - verification debt
+        - losing understanding of the codebase
+        - token cost blowout
+        - cognitive surrender
+      cost_strategy: Use the strongest model for the hardest judgment-heavy tasks and cheaper workers for routine work only when the loop has strict verification and state.
+    brian_oag_mapping:
+      discovery: SSOT/OAG gap scan, issue scan, coverage hole scan, or evidence ledger scan.
+      handoff: Wavefront task packet with worktree, branch, allowed paths, expected artifacts, and receipt schema.
+      verification: Validator/gater separate from RTL/TB/TC generator; tests, screenshots, formal/sim checks, and evidence review must be actions, not opinions.
+      persistence: Ontology records, source records, task status, evidence receipts, and reusable skills.
+      scheduling: Bounded all-day or overnight Codex queue with stop conditions and morning review.
+      token_capital_relation: Good loops convert token usage into reusable workflows, validators, evidence patterns, skills, and case studies.
+    related_task_refs:
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_ssot_deep_interview_to_verify_pilot
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_codex_ontology_development_plugin
+    related_knowledge_thread_ref: thought_thread_20260703_loop_engineering_oag_operating_model
+  - id: source_ai_agent_conversation_20260709_codex_seminar_meetup_yesterday
+    source_type: chat
+    original_date: 2026-07-09
+    imported_at: 2026-07-09
+    parse_status: parsed
+    raw_text: "그리고 어제 코덱스 세미나도 진행했고, 저녁에 코덱스 밋업도 다녀옴"
+    interpreted_dates:
+      codex_seminar:
+        phrase: 어제
+        resolved_date: 2026-07-08
+        basis: Conversation date is 2026-07-09 in Asia/Seoul.
+      codex_meetup:
+        phrase: 어제 저녁
+        resolved_date: 2026-07-08
+        time_of_day: evening
+        basis: Conversation date is 2026-07-09 in Asia/Seoul.
+    interpreted_events:
+      - event_ai_agent_codex_seminar_completed_20260708
+      - event_ai_agent_codex_meetup_20260708
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_codex_two_month_asset_capture_program
 
 summary:
   current_state:
@@ -1391,6 +1712,8 @@ summary:
     - Brian expects to run a Codex seminar as a next step.
     - The Codex seminar is now planned for the week of 2026-06-22 to 2026-06-28.
     - The planned Codex seminar package includes rule distribution, skill distribution, a demo, and guide document distribution.
+    - On 2026-07-08, Brian delivered a Codex seminar.
+    - On the evening of 2026-07-08, Brian attended a Codex meetup.
     - On 2026-06-17, Brian felt pressure to show AI value properly to stakeholders and worried that teammates might perceive him as doing only AI work rather than normal engineering work.
     - Brian reports that he is still fully handling normal work while spending significant time on AI enablement.
     - Brian considers the successful Cursor seminar a reputation asset: coworkers already know he uses AI well.
@@ -1401,6 +1724,13 @@ summary:
     - Brian clarified that the two-month unlimited Codex period starts next week from 2026-06-17, meaning the start window is 2026-06-22 to 2026-06-28 unless the exact date changes.
     - Brian wants the two-month Codex window to leave durable assets, not only usage volume.
     - Brian clarified that about 70-80 company developers may be able to use Codex during this period.
+    - On 2026-06-29, Brian reported that Codex came into the company, felt extremely fast and good, and that he is very grateful for unlimited use.
+    - Brian then clarified that Codex should be used at full capacity in fast/5.5 xhigh mode during the unlimited window.
+    - Brian wants Codex-driven workflows to run all day and even overnight, but this should be converted into bounded, logged, reviewable asset pipelines.
+    - Brian proposed a concrete flagship pilot: SSOT from deep interview -> RTL -> DVS -> TB/TC -> verify.
+    - On 2026-06-29, a recent Codex thread inventory confirmed that the current work is clustering around full-capacity Codex operation, OAG/IP workflow hardening, pre-lock review frames, MCTP RX assembler evidence closure, and ontology promotion of important thread outcomes.
+    - On 2026-07-03, Brian connected Microsoft Frontier Company / Token Capital framing to OAG: AI work should produce reusable company assets such as reasoning, workflows, evaluation, correction, review, feedback, memory, artifacts, validators, and skills.
+    - On 2026-07-03, Brian added Loop Engineering screenshots as an operating-model layer for Codex/OAG: discovery, handoff, verification, persistence, scheduling, generator/evaluator separation, durable memory, and bounded overnight loops.
     - Brian clarified that these assets should become one collaborative SoC Knowledge base, not only individual Codex usage materials.
     - Brian identified that the SoC Knowledge base needs a canonical format and DB representation.
     - Brian selected Firenze as the first pilot target and Milano as the second expansion target.
@@ -1419,12 +1749,21 @@ summary:
     - Codex ontology-based development plugin design
     - Codex skill preparation from MAS/DOC/RTL diff workflow seed
     - recovery from missed demos and server/multi-user scaling lessons
-    - Cursor seminar success and Codex seminar preparation
-    - company Codex adoption support preparation
+    - Cursor seminar success and Codex seminar post-delivery capture
+    - company Codex adoption support and rollout asset capture
     - AI reputation management: show AI as work accelerator while keeping Milano/RTL execution visible
     - sustainable AI enablement after several months of dawn/night/weekend work
     - home/off-hours AI development boundary after headache signal
     - two-month Codex unlimited-use asset capture program
+    - full-capacity fast/5.5 xhigh Codex usage with overnight bounded pipelines
+    - SSOT deep-interview to RTL/DVS/TB/TC/verify OAG pilot
+    - recent Codex thread inventory and promotion of important thread outcomes into ontology records
+    - Brian IP Agent Flow v0.1 as the operating model distilled from recent Codex/OAG sessions
+    - Token Capital / Frontier Company framing for turning Codex/OAG traces into reusable company AI capability
+    - Loop Engineering as the execution discipline for Token Capital: discovery, handoff, independent verification, persistence, scheduling, memory, and cost-aware model routing
+    - OAG pre-lock review frame skill for human-readable lock preview before canonical implementation lock
+    - MCTP RX assembler regression/evidence closure follow-up
+    - IP-local git/versioning discipline for OAG IP folders, including Windows/PowerShell-compatible git.exe use
     - collaborative SoC Knowledge format/DB design with Firenze pilot and Milano expansion
     - next-week Codex seminar package with rules, skills, demo, and guide docs
     - subsystem-level ontology improvement for hardware IP workflows
@@ -1444,6 +1783,11 @@ summary:
     - Headache after home AI development is a concrete signal to stop screen-heavy work and recover before further architecture decisions.
     - A two-month unlimited-use period creates a window for real adoption experiments, reusable asset capture, and company enablement beyond a one-time seminar.
     - A 70-80 developer audience means self-serve onboarding assets matter; Brian should not become the only live support path.
+    - Codex entering the company on 2026-06-29 is a concrete positive signal that the planned rollout/asset-capture window has moved from preparation into real usage.
+    - Delivering the Codex seminar on 2026-07-08 is a concrete execution signal that Brian's AI enablement work has moved from preparation into socialized company learning.
+    - Attending the Codex meetup on the evening of 2026-07-08 adds external/community learning and networking input that can improve the rollout material if captured while fresh.
+    - Brian now has a concrete end-to-end pilot candidate, so the unlimited window can be evaluated by artifacts produced rather than only usage volume.
+    - Recent thread inventory showed that several separate Codex conversations are already producing reusable assets: OAG rules, regression evidence, deck QA patterns, workout/body records, and morning briefing logic.
     - Starting the SoC Knowledge DB with Firenze lowers schema risk before applying it to live Milano work.
     - DRM is a real operational constraint, so the design should use metadata stubs, reviewed distilled knowledge, and permission-preserving retrieval instead of raw unauthorized ingestion.
   open_questions:
@@ -1517,12 +1861,102 @@ summary:
       question: "Confirm what VDS means in this context and whether the target is manual VDS writing, ontology-generated VDS drafting, or VDS review/checking."
       related_task_ref: task_ai_agent_soc_ontology_vds_document_design
       needs_user_review: true
+    - id: oq_ai_agent_dvs_artifact_meaning
+      question: "Confirm what DVS means in the SSOT -> RTL -> DVS -> TB/TC -> verify workflow and what artifact template should represent it."
+      related_task_ref: task_ai_agent_ssot_deep_interview_to_verify_pilot
+      needs_user_review: true
+    - id: oq_ai_agent_oag_prelock_review_frame_skill
+      question: "Define the OAG pre-lock review frame skill: what Markdown/JSON frame should show before Brian locks feature, requirement, obligation, contract, assumptions, unresolved decisions, verification intent, and IP-XACT projection metadata?"
+      related_task_ref: task_ai_agent_ssot_deep_interview_to_verify_pilot
+      source_ref: source_ai_agent_codex_thread_inventory_20260629_recent_conversations
+      needs_user_review: true
+    - id: oq_ai_agent_mctp_rx_assembler_followup_state
+      question: "Decide whether the MCTP RX assembler thread's green OAG/regression state should be finalized into a clean handoff note, commit, or reusable OAG case study."
+      related_task_ref: task_ai_agent_codex_ontology_development_plugin
+      source_ref: source_ai_agent_codex_thread_inventory_20260629_recent_conversations
+      needs_user_review: true
     - id: oq_ai_agent_okf_export_scope
       question: "Define first OKF export scope: projects/tasks/concepts only, or include people/body/daily summaries as well."
       related_task_ref: task_ai_agent_okf_export_layer
       needs_user_review: true
 
 event_records:
+  - id: event_ai_agent_codex_company_arrival_20260629
+    event_type: company_tool_rollout
+    area: CAREER
+    secondary_areas:
+      - MIND
+    date: 2026-06-29
+    title: Codex entered company use
+    status: started_or_enabled
+    context:
+      - Brian reported that Codex came into the company today.
+      - Brian experienced it as extremely fast and good.
+      - Brian expressed strong gratitude for unlimited use.
+    significance:
+      - Converts earlier rollout preparation and two-month unlimited-use planning into an active usage window.
+      - Creates a practical opportunity to capture reusable guides, rules, skills, demos, FAQs, and workflow examples from real company usage.
+      - Acts as a positive emotional counter-signal to the earlier AI-demo pressure, while still requiring sustainable boundaries.
+    related_task_refs:
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_codex_two_month_asset_capture_program
+    related_mood_ref: mood_20260629_codex_company_arrival_gratitude
+    source_ref: source_ai_agent_conversation_20260629_codex_company_arrival_fast_unlimited_gratitude
+
+  - id: event_ai_agent_codex_seminar_completed_20260708
+    event_type: seminar
+    area: CAREER
+    secondary_areas:
+      - MIND
+    date: 2026-07-08
+    title: Codex seminar delivered
+    status: completed
+    context:
+      - Brian reported on 2026-07-09 that he delivered the Codex seminar yesterday.
+      - The record resolves "yesterday" to 2026-07-08 based on the conversation date.
+      - The exact audience size, materials, Q&A, and feedback are not yet captured.
+    significance:
+      - Converts the Codex seminar thread from planned enablement into an executed company-learning artifact.
+      - Provides concrete evidence for Brian's AI enablement role during the company Codex rollout.
+      - Creates post-seminar material to mine for FAQs, guide improvements, examples, rules, skills, and follow-up sessions.
+    follow_up:
+      - Capture participant questions, feedback, demo issues, and useful examples while the session is still fresh.
+      - Decide which seminar materials should become reusable rollout assets.
+      - Link any new guide, rule, skill, or deck artifact back to this event.
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_codex_two_month_asset_capture_program
+    source_ref: source_ai_agent_conversation_20260709_codex_seminar_meetup_yesterday
+
+  - id: event_ai_agent_codex_meetup_20260708
+    event_type: meetup
+    area: CAREER
+    secondary_areas:
+      - MIND
+      - FUN
+      - RELATION
+    date: 2026-07-08
+    time_of_day: evening
+    title: Codex meetup attended
+    status: attended
+    context:
+      - Brian reported on 2026-07-09 that he attended a Codex meetup on the evening of the previous day.
+      - The record resolves "yesterday evening" to the evening of 2026-07-08.
+      - Specific people met, topics discussed, and takeaways are not yet captured.
+    significance:
+      - Adds external/community learning input after the same-day Codex seminar.
+      - May provide fresh adoption patterns, examples, or framing for company rollout material.
+      - Also functions as a social and curiosity-driven AI event, not only individual tool work.
+    follow_up:
+      - Capture memorable ideas, people, questions, demos, or phrases from the meetup.
+      - Separate immediately useful rollout material from background inspiration.
+    related_task_refs:
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_codex_seminar_prepare
+    source_ref: source_ai_agent_conversation_20260709_codex_seminar_meetup_yesterday
+
   - id: event_ai_agent_company_ai_innovator_award
     event_type: award
     area: CAREER
@@ -1936,11 +2370,12 @@ tasks:
     area: CAREER
     secondary_areas:
       - MIND
-    status: planned
+    status: completed_initial_delivery
     priority: high
     energy: communication_and_system_design
     estimated_minutes: null
     due_date: null
+    completed_on: 2026-07-08
     target_window:
       phrase: 차주
       week_start: 2026-06-22
@@ -1949,7 +2384,7 @@ tasks:
       confidence: medium
     tracking_level: detailed
     project_ref: project_ai_agent
-    progress_percent: 30
+    progress_percent: 70
     tags:
       - codex
       - seminar
@@ -1981,6 +2416,8 @@ tasks:
       - Cursor seminar can provide the concrete before/after bridge for Codex adoption.
       - As of 2026-06-17, the Codex seminar is planned for the week of 2026-06-22 to 2026-06-28.
       - Brian expects to distribute rules, skills, a demo, and guide documents.
+      - On 2026-07-08, Brian delivered the Codex seminar.
+      - On the evening of 2026-07-08, Brian also attended a Codex meetup; useful takeaways should be captured if they affect rollout material.
       - A two-month unlimited-use period is expected, but the exact start date and scope need confirmation.
       - The two-month unlimited-use period should be treated as an asset-capture window, not only a usage benefit.
       - The seminar should explain why subsystem-level ontology matters for hardware IP workflows.
@@ -2012,8 +2449,10 @@ tasks:
       id: seminar_codex_202606_next_week
       object_type: Seminar
       title: Codex 세미나 - setup, agent workflow, ontology/OKF, and engineering assets
-      status: planning
+      status: delivered_initial_session
       owner_ref: person_brian
+      actual_date: 2026-07-08
+      source_ref: source_ai_agent_conversation_20260709_codex_seminar_meetup_yesterday
       target_window:
         week_start: 2026-06-22
         week_end: 2026-06-28
@@ -2615,6 +3054,9 @@ tasks:
       - Sub System Level Ontology demo slice that bridges RTL/IP work to SoC-on-ontology
       - practical note-taking workflow showing Ontology + LLM Wiki + Obsidian as one path from raw notes to agent-usable knowledge
     next_actions:
+      - Capture the 2026-07-08 Codex seminar Q&A, participant questions, feedback, material list, and any demo issues while they are still fresh.
+      - Convert the 2026-07-08 Codex meetup takeaways into rollout notes if they changed the recommended setup, workflow, or adoption framing.
+      - Decide whether the first delivered Codex seminar should become a follow-up series, a reusable guide package, or a lighter FAQ/update note.
       - Write down what worked in the 2026-06-12 Cursor seminar.
       - Decide whether the Codex seminar should focus on usage, workflow design, hardware IP examples, or ontology-backed development.
       - Prepare one reliable Codex demo slice rather than a broad product demo.
@@ -2684,6 +3126,7 @@ tasks:
       - source_ai_agent_conversation_20260620_codex_subagent_toml_settings
       - source_ai_agent_conversation_20260620_codex_thread_subagent_worktree_harness
       - source_ai_agent_external_reference_20260620_lazycodex_harness
+      - source_ai_agent_conversation_20260709_codex_seminar_meetup_yesterday
     confidence: high
     needs_user_review: true
 
@@ -2884,7 +3327,7 @@ tasks:
     area: CAREER
     secondary_areas:
       - MIND
-    status: planned
+    status: in_progress
     priority: high
     energy: communication_and_system_design
     estimated_minutes: null
@@ -2897,7 +3340,7 @@ tasks:
     rollout_usage_window:
       duration_months: 2
       access_model: unlimited_use
-      exact_start_date: null
+      exact_start_date: 2026-06-29
       start_window:
         phrase: 다음주부터
         week_start: 2026-06-22
@@ -2905,10 +3348,11 @@ tasks:
         date_precision: week
         basis: Conversation date is 2026-06-17.
       asset_capture_task_ref: task_ai_agent_codex_two_month_asset_capture_program
-      needs_user_review: true
+      arrival_event_ref: event_ai_agent_codex_company_arrival_20260629
+      needs_user_review: false
     tracking_level: detailed
     project_ref: project_ai_agent
-    progress_percent: 0
+    progress_percent: 25
     tags:
       - codex
       - company_rollout
@@ -2928,6 +3372,8 @@ tasks:
       - The rollout/support framing should account for a two-month unlimited-use period.
       - Brian wants the two-month unlimited-use period to become durable assets: guides, rules, skills, demos, FAQs, workflow cookbooks, and ontology patterns.
       - About 70-80 company developers may be able to use Codex, so materials should support self-serve onboarding and repeated questions.
+      - On 2026-06-29, Brian reported that Codex came into the company and felt extremely fast and good.
+      - On 2026-07-08, Brian delivered a Codex seminar and attended a Codex meetup the same evening.
       - Subsystem-level ontology should be elevated so hardware/IP users see how Codex workflows connect across requirements, RTL, verification, evidence, and ownership.
       - "SoC-on-ontology should be the long-term framing: users should see that Codex workflows can connect SoC intent down to IP-level evidence and decisions."
       - Brian is concerned that some teammates may perceive AI work as distraction, so rollout support should visibly connect to real engineering work and not look detached from project execution.
@@ -2951,6 +3397,7 @@ tasks:
       - Select one small ontology_ip_agent demo path that shows the value of OAG/Codex workflow without overwhelming users.
       - Prepare a concise support script for the first rollout week.
       - Track repeated questions from coworkers as future agent/tooling requirements.
+      - Capture the 2026-07-08 seminar questions, feedback, and meetup takeaways as rollout FAQ and guide material.
       - "Define how users should spend the two-month unlimited-use period: first week setup, second week real task adoption, later weeks repeatable workflow capture."
       - Start the two-month asset capture program with a week-one asset list and weekly review cadence.
       - Convert subsystem-level ontology into one practical demo story for hardware/IP engineers.
@@ -2974,9 +3421,119 @@ tasks:
       - source_ai_agent_conversation_20260617_cursor_seminar_reputation_signal
       - source_ai_agent_conversation_20260617_personal_ai_tool_cost_400usd
       - source_ai_agent_conversation_20260617_multi_month_ai_dawn_night_weekend_effort
+      - source_ai_agent_conversation_20260629_codex_company_arrival_fast_unlimited_gratitude
+      - source_ai_agent_conversation_20260709_codex_seminar_meetup_yesterday
     related_task_refs:
       - task_ai_agent_codex_two_month_asset_capture_program
     confidence: medium
+    needs_user_review: true
+
+  - id: task_ai_agent_ssot_deep_interview_to_verify_pilot
+    title: "SSOT deep interview -> RTL -> DVS -> TB/TC -> verify OAG 파일럿"
+    area: CAREER
+    secondary_areas:
+      - MIND
+    status: planned
+    priority: high
+    energy: system_design
+    estimated_minutes: null
+    due_date: null
+    tracking_level: detailed
+    project_ref: project_ai_agent
+    progress_percent: 0
+    tags:
+      - codex
+      - oag
+      - ssot
+      - deep_interview
+      - rtl
+      - dvs
+      - testbench
+      - testcase
+      - verification
+      - overnight_pipeline
+    context:
+      - Brian wants to use the unlimited Codex window at full capacity, including fast/5.5 xhigh mode and bounded overnight operation.
+      - The proposed flagship experiment is an end-to-end hardware workflow: SSOT from deep interview, then RTL, DVS, TB/TC, and verification.
+      - This can become a concrete company-shareable example that explains why Codex is not only a coding tool but an engineering workflow system.
+      - DVS is not yet expanded in the source message; treat the artifact meaning/template as an open question before standardizing it.
+      - A later OAG/IP development thread clarified that lock should not happen immediately after deep interview; a human-readable pre-lock review frame should first show proposed features, requirements, atoms, obligations, contracts, assumptions, unresolved decisions, verification intent, evidence gaps, and IP-XACT projection metadata.
+      - IP-XACT should be treated as an integration metadata projection for interface, register, memory map, parameters, hierarchy, files, and generator flow, not as the canonical owner of feature intent, requirement semantics, obligation ownership, contract rationale, evidence sufficiency, or validation logic.
+      - A deeper 2026-06-29 local Codex session review reframed this pilot as Brian IP Agent Flow v0.1: a way to convert Brian's hardware/IP design judgment into a repeatable SSOT-to-evidence operating system.
+      - The review showed that recent blocker patterns were mainly orchestration and schema issues such as receipt fields, wavefront task IDs, blockers, allowed paths, evidence markers, and stuck gate retries.
+      - Visual thinking is part of the engineering control loop here: the highest-value view is a pre-lock review frame that Brian can inspect before agents fan out into RTL, TB, TC, and verification work.
+    workflow_stages:
+      - stage: ssot_deep_interview
+        goal: Extract requirements, intent, constraints, interfaces, assumptions, and acceptance criteria into a single source of truth.
+        expected_artifacts:
+          - interview transcript or distilled Q/A
+          - SSOT YAML/Markdown spec
+          - requirement and assumption list
+      - stage: prelock_visual_review
+        goal: Present the proposed SSOT, features, requirements, obligations, contracts, assumptions, unresolved decisions, verification intent, and IP-XACT projection boundary in a human-readable review frame before canonical lock.
+        expected_artifacts:
+          - Markdown or HTML review frame
+          - machine-readable review sidecar
+          - Brian decision notes and lock/no-lock outcome
+      - stage: rtl
+        goal: Generate or implement RTL from the reviewed SSOT, preserving trace links back to requirements and assumptions.
+        expected_artifacts:
+          - RTL files
+          - traceability map from SSOT items to RTL modules/signals/logic
+      - stage: dvs
+        goal: Produce the verification/design-spec artifact implied by DVS once the acronym/template is confirmed.
+        expected_artifacts:
+          - DVS draft
+          - verification intent map
+        needs_user_review: true
+      - stage: tb_tc
+        goal: Generate testbench and testcases from SSOT/DVS, with each TC linked to requirements and expected behavior.
+        expected_artifacts:
+          - testbench
+          - testcase list
+          - coverage or requirement mapping
+      - stage: verify
+        goal: Run available checks, collect evidence, and classify pass/fail/blocker status without overstating closure.
+        expected_artifacts:
+          - verification logs
+          - evidence ledger entries
+          - failure analysis and next actions
+    expected_outputs:
+      - One end-to-end demo branch or worktree for the SSOT-to-verify flow.
+      - A reviewed SSOT template produced from deep interview.
+      - A pre-lock review frame in Markdown plus machine-readable sidecar form, suitable for Brian to inspect before canonical lock.
+      - RTL/DVS/TB/TC artifacts with traceability back to SSOT.
+      - Verification evidence ledger with pass/fail/blocker status.
+      - A short guide explaining how to run the workflow safely in Codex.
+      - An overnight-run checklist and morning-review checklist.
+      - Brian IP Agent Flow v0.1 one-page flow/spec explaining how deep interview, visual review, OAG lock, wavefront execution, evidence, and skill distillation fit together.
+    overnight_run_policy:
+      - Only run bounded non-destructive tasks overnight.
+      - Use a dedicated branch or worktree per overnight attempt.
+      - Define success criteria, stop conditions, max attempts, and expected artifacts before starting.
+      - Require logs, diffs, and evidence summaries for morning review.
+      - Do not merge, publish, delete, or claim verification closure without Brian review.
+      - Keep company/private data handling within approved local and company policy boundaries.
+    next_actions:
+      - Choose the first small IP/example for the pilot.
+      - Confirm what DVS means and define its minimum artifact template.
+      - Write the deep-interview question set that creates the SSOT.
+      - Define the Deep Interview decision policy: one most important question at a time, three to four options, recommended default, custom input path, decision rationale, tradeoff, and verification impact capture.
+      - Define the pre-lock review frame schema and decide whether it becomes a new OAG skill or an extension of the existing deep-interview/contract-projection/authoring-packet sequence.
+      - Define the SSOT schema and traceability IDs before generating RTL.
+      - Create one dry-run prompt pack for Codex fast/5.5 xhigh.
+      - Create an overnight-run checklist with stop conditions and morning review steps.
+    related_task_refs:
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_codex_ontology_development_plugin
+    evidence_refs:
+      - source_ai_agent_conversation_20260629_codex_fast_55_xhigh_full_use_intent
+      - source_ai_agent_conversation_20260629_overnight_allday_codex_pipeline_intent
+      - source_ai_agent_conversation_20260629_ssot_deep_interview_to_verify_pilot
+      - source_ai_agent_codex_thread_inventory_20260629_recent_conversations
+      - source_ai_agent_codex_thread_deep_dive_20260629_operating_model
+    confidence: high
     needs_user_review: true
 
   - id: task_ai_agent_okf_export_layer
@@ -3032,9 +3589,10 @@ tasks:
     target_window:
       phrase: 다음주부터 2개월
       start_week: 2026-06-22_to_2026-06-28
+      observed_start_date: 2026-06-29
       duration_months: 2
-      date_precision: start_week
-      confidence: medium
+      date_precision: observed_start_date
+      confidence: high
     tracking_level: program
     project_ref: project_ai_agent
     progress_percent: 0
@@ -3054,6 +3612,9 @@ tasks:
       - This should convert several months of dawn/night/weekend AI effort into reusable company and personal assets.
       - The program should support Codex seminar preparation, company rollout support, and the SoC-on-ontology hardware IP agent direction.
       - Sustainability matters: the two-month window should reduce repeated manual explanation and overwork, not create more unsustainable off-hours work.
+      - On 2026-06-29, Brian reported that Codex had entered company use, felt extremely fast and good, and that unlimited use felt deeply appreciated.
+      - Brian wants to use Codex full-capacity in fast/5.5 xhigh mode and have bounded workflows run all day or overnight.
+      - The first flagship asset candidate is the SSOT deep-interview -> RTL -> DVS -> TB/TC -> verify OAG pilot.
     expected_outputs:
       - Codex seminar deck or outline
       - Codex guide document for RTL/IP engineers
@@ -3067,6 +3628,8 @@ tasks:
       - self-serve onboarding material for a 70-80 developer audience
       - SoC-on-ontology example path
       - VDS/documentation example if scope is confirmed
+      - SSOT deep-interview to RTL/DVS/TB/TC/verify pilot package
+      - overnight-run checklist and morning-review checklist
       - asset index that maps each output to source conversations, tasks, examples, and review status
     asset_principles:
       - Capture before optimizing.
@@ -3075,12 +3638,17 @@ tasks:
       - Tie every AI example to real engineering work.
       - Keep private Brian life ontology separate from company-shareable assets.
       - Review outputs weekly so usage becomes knowledge assets.
+      - Full-capacity Codex use should be judged by reviewed artifacts, not raw runtime.
+      - Overnight runs need a bounded queue, stop conditions, logs, diffs, and morning human review.
+      - Do not let overnight automation make irreversible changes or claim signoff without review.
     next_actions:
       - Define the asset index format for the two-month Codex window.
       - Pick the first five assets to produce during week one.
       - Decide which assets are company-shareable and which remain personal/private.
       - Connect each seminar/demo/rule/skill artifact to a source task or concrete engineering use case.
       - Schedule a weekly Friday review to record what was learned, what became reusable, and what should be discarded.
+      - Define the first overnight Codex queue for the SSOT-to-verify pilot.
+      - Run one small dry-run before leaving anything to execute overnight.
     related_task_refs:
       - task_ai_agent_codex_seminar_prepare
       - task_ai_agent_company_codex_rollout_support
@@ -3092,6 +3660,10 @@ tasks:
       - source_ai_agent_conversation_20260617_codex_company_developer_audience_70_80
       - source_ai_agent_conversation_20260617_multi_month_ai_dawn_night_weekend_effort
       - source_ai_agent_conversation_20260617_personal_ai_tool_cost_400usd
+      - source_ai_agent_conversation_20260629_codex_company_arrival_fast_unlimited_gratitude
+      - source_ai_agent_conversation_20260629_codex_fast_55_xhigh_full_use_intent
+      - source_ai_agent_conversation_20260629_overnight_allday_codex_pipeline_intent
+      - source_ai_agent_conversation_20260629_ssot_deep_interview_to_verify_pilot
     success_criteria:
       - Brian can point to durable artifacts after the two-month period.
       - Coworkers can reuse at least one guide/rule/skill/demo without Brian explaining everything live.
@@ -3099,6 +3671,8 @@ tasks:
       - The work improves real RTL/IP workflows rather than staying as tool enthusiasm.
       - The program reduces Brian's reputation anxiety by making normal work and AI enablement visibly connected.
       - The cadence becomes sustainable enough not to depend on constant dawn/night/weekend work.
+      - Overnight runs produce reviewable diffs, evidence logs, and morning decisions rather than unbounded churn.
+      - At least one SSOT-to-verify pilot shows traceability from deep interview requirements through RTL, DVS, TB/TC, and verification evidence.
     confidence: high
     needs_user_review: true
 
@@ -3460,6 +4034,175 @@ work_sessions:
     source_ref: source_ai_agent_conversation_20260614_fun_codex_porting_rollout
 
 project_status_updates:
+  - id: project_status_ai_agent_20260629_codex_full_capacity_ssot_to_verify_direction
+    date: 2026-06-29
+    project_ref: project_ai_agent
+    author_ref: person_brian
+    status: active_direction
+    progress_percent: null
+    summary: Brian wants to use the newly available unlimited Codex capacity at full force, including fast/5.5 xhigh mode and bounded all-day or overnight operation, with SSOT deep interview -> RTL -> DVS -> TB/TC -> verify as the first end-to-end pilot.
+    strategic_interpretation: The highest-leverage use of unlimited Codex is not raw runtime; it is an artifact-producing pipeline that converts deep interview intent into traceable engineering outputs and verification evidence.
+    operating_constraint:
+      - Overnight operation should use dedicated worktrees or branches.
+      - Each run should have a bounded queue, stop condition, expected artifacts, and logs.
+      - Morning review should decide whether to keep, refine, rerun, discard, or share the outputs.
+      - Human review remains required before merge, publication, signoff, or verification closure claims.
+    next_step: Define the first small IP/example, DVS artifact meaning, SSOT schema, deep interview questions, and one dry-run before starting a full overnight queue.
+    related_task_refs:
+      - task_ai_agent_ssot_deep_interview_to_verify_pilot
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_company_codex_rollout_support
+    related_mind_record_ref: mood_20260629_codex_full_throttle_activation
+    source_refs:
+      - source_ai_agent_conversation_20260629_codex_fast_55_xhigh_full_use_intent
+      - source_ai_agent_conversation_20260629_overnight_allday_codex_pipeline_intent
+      - source_ai_agent_conversation_20260629_ssot_deep_interview_to_verify_pilot
+
+  - id: project_status_ai_agent_20260629_recent_codex_thread_consolidation
+    date: 2026-06-29
+    project_ref: project_ai_agent
+    author_ref: person_brian
+    status: active_review
+    progress_percent: null
+    summary: Brian asked to list and review recent Codex threads, then requested that the important outcomes be recorded. The review showed converging work around Codex full-capacity use, OAG/IP workflow hardening, MCTP RX assembler evidence closure, pre-lock review frames, and local life ontology continuity.
+    strategic_interpretation: "Codex thread inventory should be treated as part of the ontology workflow: important conversations become source records, active threads, open questions, task next actions, and reusable case studies rather than remaining isolated chat history."
+    notable_outcomes:
+      - Codex company rollout and unlimited fast/5.5 xhigh use became the current activation context.
+      - The SSOT deep-interview -> RTL -> DVS -> TB/TC -> verify pilot remains the flagship full-capacity workflow candidate.
+      - OAG IP development now needs a clear pre-lock review frame before canonical lock.
+      - IP-local git and Windows/PowerShell-compatible git.exe usage are part of the OAG IP workflow discipline.
+      - MCTP RX assembler has recent pass/closure evidence that may become a reusable case study if finalized cleanly.
+      - Body, morning briefing, and deck-generation threads remain useful supporting records rather than the main career thread.
+    next_step: Turn the pre-lock review frame into either a dedicated OAG skill or a strict extension of existing deep-interview/contract-projection/authoring-packet flow, then choose whether MCTP RX assembler becomes the first documented case study.
+    related_task_refs:
+      - task_ai_agent_ssot_deep_interview_to_verify_pilot
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_codex_ontology_development_plugin
+    source_ref: source_ai_agent_codex_thread_inventory_20260629_recent_conversations
+
+  - id: project_status_ai_agent_20260629_codex_deep_dive_operating_model
+    date: 2026-06-29
+    project_ref: project_ai_agent
+    author_ref: person_brian
+    status: active_architecture_direction
+    progress_percent: null
+    summary: >
+      A deeper review of recent Codex sessions showed that Brian's key opportunity is to turn
+      full-capacity Codex into a Brian IP Agent Flow v0.1 operating model: Deep Interview -> SSOT
+      -> pre-lock visual review -> requirement/obligation/contract lock -> RTL/DVS/TB/TC wavefront
+      -> evidence/receipt/validator/gate -> case study/skill/seminar asset.
+    strategic_interpretation: The limiting factor is no longer only LLM capability. The recent MCTP RX assembler and simple_dma_axi sessions show that orchestration contracts, receipt schema, wavefront IDs, allowed write paths, stop conditions, and human review frames determine whether high-volume Codex work becomes trustworthy engineering output.
+    distilled_principles:
+      - Deep Interview should ask one most important unresolved design decision at a time.
+      - Each decision should capture options, recommendation, selected choice, rejected alternatives, rationale, assumptions, tradeoffs, and verification impact.
+      - Visual thinking should be used as a pre-lock engineering review interface, not only as a presentation decoration.
+      - Overnight/all-day Codex runs need bounded queues, isolated worktrees, receipt discipline, evidence summaries, and morning review.
+      - Successful runs should be distilled into reusable case studies, skills, rules, and seminar assets.
+    next_step: Draft Brian IP Agent Flow v0.1 as a small reviewable spec and choose whether MCTP RX assembler or a smaller fresh IP becomes the first clean SSOT-to-evidence demonstration.
+    related_task_refs:
+      - task_ai_agent_ssot_deep_interview_to_verify_pilot
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_codex_seminar_prepare
+    source_refs:
+      - source_ai_agent_codex_thread_inventory_20260629_recent_conversations
+      - source_ai_agent_codex_thread_deep_dive_20260629_operating_model
+
+  - id: project_status_ai_agent_20260703_token_capital_oag_alignment
+    date: 2026-07-03
+    project_ref: project_ai_agent
+    author_ref: person_brian
+    status: active_architecture_direction
+    progress_percent: null
+    summary: >
+      Brian connected Microsoft Frontier Company / Token Capital framing to OAG
+      and Codex asset capture: the goal is not only to use AI, but to accumulate
+      AI-produced reasoning, workflow, evaluation, correction, review, feedback,
+      memory, artifacts, validators, and skills as reusable company capability.
+    strategic_interpretation: >
+      Brian's OAG loop can be positioned as a practical Token Capital engine
+      for hardware engineering. Requirement -> Obligation -> Contract ->
+      Evidence -> Validation is the governance spine; Ontology -> Knowledge
+      Graph -> Artifact -> Validator -> Learning is the compounding memory loop.
+    oag_mapping:
+      knowledge: Ontology and Knowledge Graph
+      workflow: OAG process and wavefront execution
+      judgment: Validator and gate review
+      token_capital: reasoning traces, workflow decisions, review corrections, evidence, coverage, signoff records, and reusable skills
+      learning_loop: Evidence -> Review -> Correction -> Memory -> Better Next Task
+    next_step: >
+      Make the two-month Codex asset-capture program explicitly measure durable
+      Token Capital: which runs produced reusable workflows, validators, skills,
+      evidence patterns, case studies, or knowledge graph entries.
+    related_task_refs:
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_ssot_deep_interview_to_verify_pilot
+      - task_ai_agent_codex_ontology_development_plugin
+      - task_ai_agent_company_codex_rollout_support
+    source_ref: source_ai_agent_conversation_20260703_microsoft_frontier_token_capital_oag_alignment
+
+  - id: project_status_ai_agent_20260703_loop_engineering_oag_execution_model
+    date: 2026-07-03
+    project_ref: project_ai_agent
+    author_ref: person_brian
+    status: active_architecture_direction
+    progress_percent: null
+    summary: >
+      Brian added Loop Engineering screenshots as the execution discipline for
+      Codex/OAG full-capacity use. The useful loop is not only "agent runs"; it
+      is discovery, handoff, independent verification, persistence, scheduling,
+      memory, and cost-aware model routing.
+    strategic_interpretation: >
+      Loop Engineering is the practical mechanism that turns Token Capital from
+      an abstract idea into a repeatable operating system. Every loop should
+      leave durable state, evidence, validators, corrections, and reusable
+      skills; otherwise it creates verification debt and token cost instead of
+      compound capability.
+    operating_rules:
+      - Discover bounded work from CI, issues, coverage holes, SSOT gaps, or evidence gaps.
+      - Hand off each unit into an isolated worktree or equivalent safe execution context.
+      - Separate generator from evaluator; the evaluator must run checks or inspect artifacts, not only give opinions.
+      - Persist state to files, receipts, ontology records, and evidence ledgers before the next loop.
+      - Schedule only bounded loops with stop conditions, cost awareness, and morning human review.
+      - Route the strongest model to high-judgment steps and cheaper workers only to routine tasks with strict verification.
+    risk_controls:
+      - Avoid verification debt by requiring evaluator evidence.
+      - Avoid comprehension rot by stopping when Brian no longer understands what changed.
+      - Avoid cognitive surrender by keeping Brian's hardware judgment at review and signoff gates.
+      - Avoid token blowout by measuring which loops create reusable assets.
+    related_task_refs:
+      - task_ai_agent_codex_two_month_asset_capture_program
+      - task_ai_agent_ssot_deep_interview_to_verify_pilot
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_codex_ontology_development_plugin
+    source_ref: source_ai_agent_screenshot_20260703_loop_engineering_playbook
+
+  - id: project_status_ai_agent_20260708_codex_seminar_and_meetup
+    date: 2026-07-08
+    project_ref: project_ai_agent
+    author_ref: person_brian
+    status: delivered_and_socialized
+    progress_percent: null
+    summary: Brian delivered a Codex seminar and attended a Codex meetup in the evening on 2026-07-08.
+    strategic_interpretation: The Codex rollout thread has crossed from preparation into real teaching, community contact, and post-event asset capture. The next leverage point is to turn seminar Q&A, feedback, examples, and meetup takeaways into reusable guides, FAQs, rules, skills, and follow-up session material.
+    positive_signals:
+      - The planned Codex seminar became an actual delivered artifact.
+      - Brian's company AI enablement role is now supported by both internal seminar execution and external/community Codex contact.
+      - This can compound into the two-month Codex asset-capture program if the immediate takeaways are recorded.
+    risks:
+      - The same period includes high Milano load, recent workouts, and reduced happiness, so post-event capture should be lightweight and bounded.
+      - Without quick capture, Q&A, feedback, and meetup-specific insights may decay into vague memory.
+    next_step: Spend a short bounded session capturing participant questions, useful examples, material links, demo issues, and meetup takeaways, then choose the smallest reusable rollout artifact to produce first.
+    related_event_refs:
+      - event_ai_agent_codex_seminar_completed_20260708
+      - event_ai_agent_codex_meetup_20260708
+    related_task_refs:
+      - task_ai_agent_codex_seminar_prepare
+      - task_ai_agent_company_codex_rollout_support
+      - task_ai_agent_codex_two_month_asset_capture_program
+    source_ref: source_ai_agent_conversation_20260709_codex_seminar_meetup_yesterday
+
   - id: project_status_ai_agent_20260614_codex_porting_and_rollout
     date: 2026-06-14
     project_ref: project_ai_agent

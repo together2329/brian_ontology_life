@@ -35,3 +35,13 @@ Rules:
   - Copied: 2026-06-13
   - Scope: BKE Group 2019 gratitude diary campaign document
   - SHA-256: `f725a7a272839b5e7537cb9f7a9c3cc4a140ea8cf1a3764da3c293e7e6adcde9`
+- `images/body/inbody_20260627_1000.jpg`
+  - Source: Codex conversation image attachment
+  - Copied: 2026-06-27
+  - Scope: InBody270 printout photo used by `body_composition_20260627_1000_inbody270_printout`
+  - SHA-256: `bb4be7668c9c9ee6ecab94b3558ebd661deee9065616d2f40fc410e3fdbaa4fc`
+- `images/body/inbody_trend_20260627_app.jpg`
+  - Source: Codex conversation image attachment
+  - Copied: 2026-06-27
+  - Scope: InBody app trend screenshot used for partial historical body composition records from 2024-08-17 through 2026-06-27
+  - SHA-256: `6d54bce76a82f37e0ef60499cfc65ccae8f1fa96c03e32dd5b0169cfbfeffced`

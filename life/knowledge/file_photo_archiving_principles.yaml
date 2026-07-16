@@ -1,0 +1,134 @@
+schema_version: 1
+status: active
+updated_at: 2026-06-26
+area_refs:
+  - MAINTENANCE
+  - MIND
+title: 파일과 사진 저장 및 검색 원칙
+summary: >
+  최정윤 폴더의 이미지 자료 2개에서 추출한 파일/사진 저장 규칙.
+  핵심은 저장 시점에 미래 검색을 설계하는 것이다. 파일 내부 제목,
+  작성일, 파일명, 폴더 트리, 이벤트 키워드가 서로 맞아야 10년 뒤에도
+  몇 초 안에 자료를 찾을 수 있다.
+
+source_records:
+  - id: source_choi_jungyoon_file_naming_method_20260626
+    title: 파일 저장하는 법
+    source_type: image_png
+    original_local_path: "/Volumes/X31/Brian's Life/정리 필요/최정윤/파일 저장하는 법.png"
+    preserved_copy_ref: raw_data/images/choi_jungyoon_file_archiving/file_naming_method.png
+    imported_at: 2026-06-26
+    parse_status: summarized_from_image
+    summary: 파일 내부 상단의 Title/날짜와 파일명을 일치시키고, 파일명은 Title + 작성날짜로 만든다는 규칙.
+  - id: source_choi_jungyoon_photo_archiving_search_method_20260626
+    title: 사진 저장 법 및 검색 법
+    source_type: image_png
+    original_local_path: "/Volumes/X31/Brian's Life/정리 필요/최정윤/사전 저장 법 및 검색 법.png"
+    preserved_copy_ref: raw_data/images/choi_jungyoon_file_archiving/photo_archiving_search_method.png
+    imported_at: 2026-06-26
+    parse_status: summarized_from_image
+    summary: 사진은 국가별 폴더, 연도별 폴더, 월별 이벤트 폴더 구조로 저장하고 폴더명에 검색 가능한 이벤트를 넣는다는 규칙.
+
+core_principle:
+  id: concept_search_designed_at_save_time
+  display_name: 저장 시점에 검색을 설계한다
+  area_refs:
+    - MAINTENANCE
+    - MIND
+  definition: >
+    파일을 저장하는 순간 내부 제목, 날짜, 파일명, 폴더명에 미래의 검색어를
+    심어 둔다. 자료 정리는 예쁘게 분류하는 일이 아니라, 오래 지난 뒤에도
+    검색과 몇 번의 클릭으로 정확한 자료를 찾게 만드는 검색 설계다.
+  evidence_refs:
+    - source_choi_jungyoon_file_naming_method_20260626
+    - source_choi_jungyoon_photo_archiving_search_method_20260626
+
+file_naming_rules:
+  - id: file_rule_internal_title_required
+    rule: 문서 상단에 내용을 함축하는 Title을 적는다.
+    rationale: 검색 전에 문서를 열었을 때도 이 파일이 무엇인지 즉시 알 수 있어야 한다.
+  - id: file_rule_internal_date_required
+    rule: 문서 상단 Title 근처에 작성일을 적는다.
+    example: "2013.07.23"
+    rationale: 오래된 자료를 시점으로 필터링할 수 있어야 한다.
+  - id: file_rule_filename_equals_title_plus_date
+    rule: 파일명은 내부 Title과 작성일을 조합한다.
+    pattern: "{Title}({YYYY.MM.DD}).{ext}"
+    example: "A호텔 원가 절감 내역(2013.07.23).xls"
+    rationale: 파일명과 내부 제목이 다르면 검색 결과와 실제 내용이 어긋난다.
+  - id: file_rule_avoid_ambiguous_names
+    rule: 애매한 파일명을 피한다.
+    bad_example: "A호텔 P/J 관련"
+    good_example: "A호텔 원가 절감 내역"
+    rationale: 검색어가 프로젝트명, 주제명, 날짜 중 어디에서 들어와도 걸려야 한다.
+  - id: file_rule_same_day_revision_suffix
+    rule: 같은 날 여러 번 수정하면 -1, -2처럼 구분한다.
+    example: "A호텔 원가 절감 내역(2013.07.23-1).xls"
+    rationale: 같은 날짜의 여러 버전 중 어느 것이 최신인지 알 수 있어야 한다.
+
+photo_archiving_rules:
+  - id: photo_rule_country_folder
+    rule: 사진은 먼저 포함 국가별 폴더로 나눈다.
+    example: "13. China"
+    rationale: 큰 범위의 장소 검색을 빠르게 한다.
+  - id: photo_rule_year_folder
+    rule: 국가 폴더 아래에 연도별 폴더를 만든다.
+    example: "2011년"
+    rationale: 시간 범위를 좁혀 검색/탐색한다.
+  - id: photo_rule_month_event_folder
+    rule: 연도 폴더 아래에 월별 폴더를 만들고 폴더명에 이벤트를 적는다.
+    examples:
+      - "2011.01(동동 결혼)"
+      - "2011.07(집수리)"
+      - "2011.09(자전거, 마6 스피라, 파라리 사진)"
+    rationale: 기억나는 단서가 월이든 이벤트든 검색에 걸리게 한다.
+  - id: photo_rule_individual_photo_inside_event_folder
+    rule: 개별 사진은 이벤트 폴더 안에 저장한다.
+    example_path: "1. digital photos(2013.06.19)/13. China/2011년/2011.01(동동 결혼)/개별사진.jpg"
+    rationale: 사진 파일명 자체가 평범해도 상위 폴더 경로가 검색 맥락을 제공한다.
+
+search_rules:
+  - id: search_rule_project_or_topic_keyword
+    rule: 프로젝트명이나 주제명으로 검색해 3초 안에 후보를 좁힐 수 있게 한다.
+    examples:
+      - "A호텔"
+      - "원가 절감"
+  - id: search_rule_date_keyword
+    rule: 연도나 작성일로 검색해 오래된 자료를 좁힐 수 있게 한다.
+    examples:
+      - "2013"
+      - "2013.07.23"
+  - id: search_rule_location_event_keyword
+    rule: 사진은 장소와 이벤트 키워드가 모두 경로에 남아 있어야 한다.
+    examples:
+      - "China"
+      - "동동 결혼"
+      - "집수리"
+  - id: search_rule_latest_version_discovery
+    rule: 유사 파일이 여러 개 있을 때 날짜와 revision suffix로 최신본을 식별한다.
+    rationale: 검색 결과가 많아도 최신본과 과거본을 구분할 수 있어야 한다.
+
+brian_adaptation:
+  default_document_pattern: "{topic} - {artifact_type}({YYYY.MM.DD}).{ext}"
+  examples:
+    - context: Milano synthesis report
+      filename: "Milano link0 IDE-inclusive synthesis report(2026.06.26).txt"
+    - context: 보험 청구 자료
+      filename: "실손보험 청구 영수증 정리(2026.06.26).xlsx"
+    - context: 가족 사진
+      folder_path: "photos/한국/2026년/2026.06(가족 식사)"
+  operating_checklist:
+    - 내부 Title이 있는가?
+    - 내부 작성일이 있는가?
+    - 파일명이 내부 Title과 일치하는가?
+    - 파일명에 작성일이 있는가?
+    - 폴더 경로에 장소/프로젝트/이벤트가 있는가?
+    - 10년 뒤 떠올릴 검색어가 파일명 또는 폴더명에 들어 있는가?
+
+assistant_usage:
+  - Brian이 파일, 사진, 문서 산출물을 만들 때 저장명 추천에 이 규칙을 적용한다.
+  - Obsidian, 업무 report, Milano evidence path, 가족/사진 정리, 보험/영수증 정리에 사용할 수 있다.
+  - 검색이 안 되는 자료는 내용 문제가 아니라 저장 시점의 검색 설계 문제로 진단한다.
+
+confidence: high
+needs_user_review: false

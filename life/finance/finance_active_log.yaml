@@ -1,15 +1,319 @@
 schema_version: 1
 status: active
-updated_at: 2026-06-17
+updated_at: 2026-07-15
 area: FINANCE
 secondary_areas:
   - CAREER
   - MIND
 profile_ref: person_brian
 title: Finance active log
-current_phase: Tracking AI-tool testing spend, future investment records, and finance decisions with thesis/evidence links.
+current_phase: Current stock/ETF/gold holdings snapshot captured; build thesis, risk, overlap, and learning links before future trades.
+
+investment_philosophy_research_refs:
+  - life/finance/investment_philosophy_research.yaml
+  - life/finance/memory_ai_investor_views_research.yaml
+  - life/finance/global_macro_research_20260715.yaml
 
 source_records:
+  - id: source_finance_conversation_20260715_prior_ps_deferred_payment
+    source_type: chat
+    original_date: 2026-07-15
+    imported_at: 2026-07-15
+    parse_status: parsed
+    raw_text: "그 전해에 이연 된 것도 있어 :)"
+    interpreted_deferred_bonus:
+      owner_ref: person_brian
+      employer: SK하이닉스
+      related_prior_year_ps_rate_percent: 2900
+      deferred_payment_exists: true
+      assumed_annual_deferred_share_percent_of_total_award: 10
+      assumed_monthly_ps_base_krw: 4500000
+      estimated_early_2027_deferred_gross_payment_krw: 13050000
+      estimate_status: derived_until_actual_deferred_schedule_or_amount_confirmed
+      confidence: high_for_existence_low_medium_for_amount
+
+  - id: source_finance_conversation_20260715_2027_ps_planning_rate_12000_percent
+    source_type: chat
+    original_date: 2026-07-15
+    imported_at: 2026-07-15
+    parse_status: parsed
+    raw_text: "아... 4배로 계산해도 될듯. 12000%로 계산."
+    interpreted_bonus_planning_basis:
+      owner_ref: person_brian
+      employer: SK하이닉스
+      prior_year_ps_rate_percent: 2900
+      selected_multiplier: 4
+      selected_2027_ps_rate_percent: 12000
+      assumed_monthly_ps_base_krw: 4500000
+      estimated_total_gross_amount_krw: 540000000
+      assumed_initial_payment_percent: 80
+      estimated_initial_gross_payment_krw: 432000000
+      estimated_deferred_gross_amount_krw: 108000000
+      estimate_type: user_selected_conservative_planning_scenario
+      employer_confirmed: false
+      confidence: medium_for_planning_low_for_actual_payment
+
+  - id: source_finance_conversation_20260715_prior_year_ps_2900_percent
+    source_type: chat
+    original_date: 2026-07-15
+    imported_at: 2026-07-15
+    parse_status: parsed
+    raw_text: "아.. 작년에 2900% 받음. 기준으로 살짝 보수적으로 얼마?"
+    interpreted_prior_bonus:
+      owner_ref: person_brian
+      employer: SK하이닉스
+      prior_year_ps_rate_percent: 2900
+      amount_krw: unknown
+      basis_amount: company_ps_base_salary_unknown
+      confidence: high_for_rate
+    revised_conservative_estimate:
+      expected_window: early_2027
+      estimated_total_gross_amount_krw: 500000000
+      estimated_total_gross_range_krw: [450000000, 550000000]
+      assumed_initial_payment_percent: 80
+      estimated_initial_gross_payment_krw: 400000000
+      estimate_type: conservative_round_number_based_on_prior_2900_percent_and_2026_profit_scenario
+      employer_confirmed: false
+      confidence: low_medium
+      next_review_trigger: actual_ps_rate_or_company_bonus_notice
+
+  - id: source_finance_conversation_20260715_2027_bonus_conservative_estimate
+    source_type: chat
+    original_date: 2026-07-15
+    imported_at: 2026-07-15
+    parse_status: parsed
+    raw_text: "그래 보수 기준으로 잡고."
+    context: Brian accepted using the conservative scenario discussed for the expected early-2027 SK hynix performance bonus as a planning estimate.
+    interpreted_bonus_estimate:
+      owner_ref: person_brian
+      employer: SK하이닉스
+      expected_window: early_2027
+      estimated_total_gross_amount_krw: 400000000
+      assumed_initial_payment_percent: 80
+      estimated_initial_gross_payment_krw: 320000000
+      conservative_immediately_investable_planning_amount_krw: 200000000
+      estimate_type: conservative_planning_scenario
+      employer_confirmed: false
+      included_in_current_assets: false
+      confidence: low_medium
+      next_review_trigger: employer_bonus_notice_or_actual_payment
+
+  - id: source_finance_conversation_20260715_salary_and_2027_bonus_expectation
+    source_type: chat
+    original_date: 2026-07-15
+    imported_at: 2026-07-15
+    parse_status: parsed
+    raw_text: "내년초에 성과급을 꽤 받을 예정이야. 연봉은 한 9000만원 정도 대략? 추가 연봉 협상 진행하면 업데이트 할께"
+    interpreted_income:
+      owner_ref: person_brian
+      employer: SK하이닉스
+      annual_salary_estimate_krw: 90000000
+      salary_precision: approximate_user_report
+      salary_basis: unknown_whether_base_or_total_contract_salary
+      salary_negotiation_status: planned_or_in_progress
+      update_after_negotiation: true
+    interpreted_bonus:
+      expected_window: early_2027
+      expected_amount_krw: unknown
+      qualitative_size: substantial_user_expectation
+      status: expected_not_received
+      included_in_current_assets: false
+      confidence: high_for_expectation_low_for_amount
+
+  - id: source_finance_conversation_20260715_niro_vehicle_asset
+    source_type: chat
+    original_date: 2026-07-15
+    imported_at: 2026-07-15
+    parse_status: parsed
+    raw_text: "차는 자산에서 뺄까? ㅎㅎ 니로 20년도 7월 구매. 12만 정도 탐. 그래도 넣어두면 좋을듯"
+    interpreted_vehicle:
+      owner_ref: person_brian
+      model: 기아 니로
+      purchased_year_month: 2020-07
+      odometer_km_approximate: 120000
+      powertrain: unknown
+      trim: unknown
+      accident_and_condition_history: unknown
+      include_in_expanded_net_worth: true
+      classification: depreciating_lifestyle_asset
+      confidence: high
+      needs_user_review: true
+
+  - id: source_finance_conversation_20260715_sk_hynix_employment_and_full_asset_calculation
+    source_type: chat
+    original_date: 2026-07-15
+    imported_at: 2026-07-15
+    parse_status: parsed
+    raw_text: "이거 다 포함해서 자산 계산 좀 해주고. 그리고 .. 난 sk 하이닉스 다니는 중"
+    interpreted_context:
+      owner_ref: person_brian
+      current_employer: SK하이닉스
+      employment_status: employed
+      calculation_scope_requested: include_all_reported_assets_including_estimated_severance
+      confidence: high
+
+  - id: source_finance_conversation_20260715_yongho_building_floor_view
+    source_type: chat
+    original_date: 2026-07-15
+    imported_at: 2026-07-15
+    parse_status: parsed
+    raw_text: "122동이고 10층 이상이야. 뷰 좋음 :)"
+    interpreted_property_detail:
+      property_ref: real_estate_holding_yongho_e편한세상_24pyeong
+      building: 122동
+      floor_band: 10층_이상
+      view_quality: good
+      exact_unit_and_floor_not_stored: true
+      confidence: high
+    market_estimate_context:
+      comparable_area_sqm: 59.895
+      estimated_value_range_krw: [480000000, 500000000]
+      working_estimate_krw: 490000000
+      valuation_date: 2026-07-15
+      rationale: Recent 2026 mid/high-floor transactions cluster near 4.7-5.0억원; high floor and good view support using the upper part of the range, while the latest lower-floor and 6th-floor trades suggest avoiding a value above recent evidence without an appraisal.
+      source_urls:
+        - https://dapt.kr/%EC%95%84%ED%8C%8C%ED%8A%B8/%EA%B2%BD%EA%B8%B0%EB%8F%84/%EA%B5%B0%ED%8F%AC%EC%8B%9C/%EB%8B%B9%EB%8F%99/%EC%9A%A9%ED%98%B8%EB%A7%88%EC%9D%84e%ED%8E%B8%ED%95%9C%EC%84%B8%EC%83%81/BiA018
+        - https://myhome.beforeforget.co.kr/transactions/region/41410/area/59
+
+  - id: source_finance_conversation_20260715_estimated_severance_54_months
+    source_type: chat
+    original_date: 2026-07-15
+    imported_at: 2026-07-15
+    parse_status: parsed
+    raw_text: "그리고... 내 퇴직금이 54개월 x 900만원 / 12 정도 될듯."
+    interpreted_severance_estimate:
+      owner_ref: person_brian
+      service_months: 54
+      assumed_monthly_wage_krw: 9000000
+      calculation: 54_months_x_9000000_krw_divided_by_12
+      estimated_gross_severance_krw: 40500000
+      estimate_basis: user_estimated_simple_formula
+      tax_not_deducted: true
+      confidence: high_for_arithmetic_medium_for_actual_payout
+      needs_user_review: true
+
+  - id: source_finance_conversation_20260715_yongho_emart_house_mortgages
+    source_type: chat
+    original_date: 2026-07-15
+    imported_at: 2026-07-15
+    parse_status: parsed
+    raw_text: "그리고 용호마을 e편한세상 24평 보유 중. 담보대출 2.2%로 보금자리론 35107479, 디딤돌 193888171 남음."
+    interpreted_property:
+      owner_scope: household_unspecified
+      property_name: 용호마을 e편한세상
+      size_pyeong: 24
+      ownership_status: owned
+      current_market_value_krw: unknown
+    interpreted_mortgages:
+      reported_interest_rate_percent: 2.2
+      interest_rate_scope: unclear_whether_both_loans
+      loans:
+        - product_name: 보금자리론
+          outstanding_principal_krw: 35107479
+        - product_name: 디딤돌대출
+          outstanding_principal_krw: 193888171
+      total_outstanding_principal_krw: 228995650
+      maturity_dates: unknown
+      monthly_payments: unknown
+      repayment_methods: unknown
+      confidence: high
+      needs_user_review: true
+
+  - id: source_finance_conversation_20260715_workplace_pension_43_payments
+    source_type: chat
+    original_date: 2026-07-15
+    imported_at: 2026-07-15
+    parse_status: parsed
+    raw_text: "그리고 직장인 연금 43회 납입. 7974041 ( 해지 환급금 기준 )"
+    interpreted_pension:
+      owner_ref: person_brian
+      product_type: personal_pension
+      payment_count: 43
+      surrender_refund_value_krw: 7974041
+      valuation_basis: surrender_refund
+      institution: unknown
+      product_name: unknown
+      contribution_amounts: unknown
+      confidence: high
+      separate_from_retirement_pension_and_severance: true
+      needs_user_review: false
+
+  - id: source_finance_conversation_20260715_personal_pension_clarification
+    source_type: chat
+    original_date: 2026-07-15
+    imported_at: 2026-07-15
+    parse_status: parsed
+    raw_text: "43회는 개인 연금. 퇴직연금과 따로임."
+    interpreted_correction:
+      pension_ref: pension_holding_person_brian_20260715_workplace_pension
+      corrected_pension_type: personal_pension
+      separate_from_retirement_pension: true
+      separate_from_estimated_severance: true
+      double_count_with_estimated_severance: false
+      confidence: high
+
+  - id: source_finance_conversation_20260715_wife_stock_holdings_estimate
+    source_type: chat
+    original_date: 2026-07-15
+    imported_at: 2026-07-15
+    parse_status: parsed
+    raw_text: "와이프가 한 1억 1500만원 정도 주식 보유 중. 대부분 sk하이닉스 혹은 삼성전자 + 코스피200 위주 + 일부 미국 우량주."
+    interpreted_holdings:
+      owner_ref: person_wife
+      asset_type: stocks_and_equity_etfs
+      estimated_evaluation_amount_krw: 115000000
+      amount_precision: approximate_user_report
+      main_exposures:
+        - SK하이닉스
+        - 삼성전자
+        - KOSPI_200
+      secondary_exposure:
+        - US_blue_chip_stocks
+      exact_assets_quantities_weights_cost_basis: unknown
+      confidence: medium_high
+      needs_user_review: true
+
+  - id: source_finance_conversation_20260715_deposits
+    source_type: chat
+    original_date: 2026-07-15
+    imported_at: 2026-07-15
+    parse_status: parsed
+    raw_text: "예금으로 9000000, 5185299"
+    interpreted_deposits:
+      currency: KRW
+      amounts_krw:
+        - 9000000
+        - 5185299
+      total_krw: 14185299
+      institution: unknown
+      product_type: deposit_unspecified
+      maturity_dates: unknown
+      interest_rates: unknown
+      confidence: high
+      needs_user_review: false
+
+  - id: source_finance_holdings_screenshots_20260715
+    source_type: image_set
+    original_date: 2026-07-15
+    imported_at: 2026-07-15
+    parse_status: parsed_with_review_items
+    raw_user_text: "이게 지금 주식 보유 현황"
+    attachment_paths:
+      - raw_data/images/finance/holdings_20260715/IMG_1814.jpeg
+      - raw_data/images/finance/holdings_20260715/IMG_1815.jpeg
+      - raw_data/images/finance/holdings_20260715/IMG_1816.jpeg
+      - raw_data/images/finance/holdings_20260715/IMG_1817.jpeg
+      - raw_data/images/finance/holdings_20260715/IMG_1818.jpeg
+      - raw_data/images/finance/holdings_20260715/IMG_1819.jpeg
+      - raw_data/images/finance/holdings_20260715/IMG_1820.jpeg
+      - raw_data/images/finance/holdings_20260715/IMG_1821.jpeg
+      - raw_data/images/finance/holdings_20260715/IMG_1822.jpeg
+    privacy_note: Images were read and copied locally only. No account identifiers were transcribed or sent externally.
+    parse_notes:
+      - IMG_1814 is a portfolio summary and overlaps the detailed holding screens, so it is not added again.
+      - Detailed screens appear to cover multiple account or product views; lots are preserved separately before aggregation.
+      - Evaluation values can differ between screens because capture times or product views may differ; no values were normalized to a live price.
+
   - id: source_finance_conversation_20260617_ai_tool_testing_cost_400usd
     source_type: chat
     original_date: 2026-06-17
@@ -31,6 +335,475 @@ source_records:
     related_project_refs:
       - project_ai_agent
       - project_company_ai_transformation
+
+holding_snapshots:
+  - id: holding_snapshot_20260715_current_portfolio
+    object_type: HoldingSnapshot
+    date: 2026-07-15
+    owner_ref: person_brian
+    currency: KRW
+    source_ref: source_finance_holdings_screenshots_20260715
+    status: current_user_reported
+    account_scope: multiple_account_or_product_views
+    account_identifiers_stored: false
+    lots:
+      - {id: lot_sk_hynix_special_27, asset_name: SK하이닉스 보통주, quantity: 27, average_cost_krw: 518603.70, purchase_amount_krw: 14002300, evaluation_amount_krw: 56214000, evaluation_profit_krw: 42211700, return_percent: 301.46, source_image: IMG_1822.jpeg}
+      - {id: lot_sk_hynix_regular_6, asset_name: SK하이닉스, quantity: 6, average_cost_krw: 954583, evaluation_profit_krw: 6404500, return_percent: 111.82, source_image: IMG_1817.jpeg, needs_user_review: true}
+      - {id: lot_rise_samsung_sk_bond_mix_125, asset_name: RISE 삼성전자SK하이닉스채권혼합50, quantity: 125, average_cost_krw: 10412, evaluation_profit_krw: 455430, return_percent: 34.99, source_image: IMG_1815.jpeg}
+      - {id: lot_rise_samsung_sk_bond_mix_82, asset_name: RISE 삼성전자SK하이닉스채권혼합50, quantity: 82, average_cost_krw: 9912, evaluation_profit_krw: 339726, return_percent: 41.80, source_image: IMG_1820.jpeg}
+      - {id: lot_rise_samsung_sk_bond_mix_305, asset_name: RISE 삼성전자SK하이닉스채권혼합50, quantity: 305, average_cost_krw: 11174, evaluation_profit_krw: 878522, return_percent: 25.78, source_image: IMG_1821.jpeg}
+      - {id: lot_kodex_200_1, asset_name: KODEX 200, quantity: 1, average_cost_krw: 81725, evaluation_profit_krw: 35010, return_percent: 42.84, source_image: IMG_1815.jpeg}
+      - {id: lot_kodex_200_28, asset_name: KODEX 200, quantity: 28, average_cost_krw: 81759, evaluation_profit_krw: 979321, return_percent: 42.78, source_image: IMG_1820.jpeg}
+      - {id: lot_tiger_philadelphia_semiconductor_15, asset_name: TIGER 미국필라델피아반도체나스닥, quantity: 15, average_cost_krw: 40740, evaluation_profit_krw: 146400, return_percent: 23.96, source_image: IMG_1821.jpeg}
+      - {id: lot_plus_global_hbm_20, asset_name: PLUS 글로벌HBM반도체, quantity: 20, average_cost_krw: 89561, evaluation_profit_krw: 572876, return_percent: 31.98, source_image: IMG_1821.jpeg}
+      - {id: lot_plus_global_hbm_36, asset_name: PLUS 글로벌HBM반도체, quantity: 36, average_cost_krw: 84833, evaluation_profit_krw: 1201388, return_percent: 39.34, source_image: IMG_1818.jpeg}
+      - {id: lot_time_global_ai_33, asset_name: TIME 글로벌AI인공지능액티브, quantity: 33, average_cost_krw: 55867, evaluation_profit_krw: 334525, return_percent: 18.14, source_image: IMG_1821.jpeg}
+      - {id: lot_time_global_ai_75, asset_name: TIME 글로벌AI인공지능액티브, quantity: 75, average_cost_krw: 53228, evaluation_profit_krw: 958296, return_percent: 24.00, source_image: IMG_1819.jpeg}
+      - {id: lot_ace_nvidia_value_chain_73, asset_name: ACE 엔비디아밸류체인액티브, quantity: 73, average_cost_krw: 24355, evaluation_profit_krw: 219361, return_percent: 12.34, source_image: IMG_1821.jpeg}
+      - {id: lot_ace_nvidia_value_chain_211, asset_name: ACE 엔비디아밸류체인액티브, quantity: 211, average_cost_krw: 20162, evaluation_profit_krw: 1518735, return_percent: 35.70, source_image: IMG_1819.jpeg}
+      - {id: lot_ace_google_value_chain_64, asset_name: ACE 구글밸류체인액티브, quantity: 64, average_cost_krw: 23156, evaluation_profit_krw: 129163, return_percent: 8.72, source_image: IMG_1821.jpeg}
+      - {id: lot_ace_google_value_chain_179, asset_name: ACE 구글밸류체인액티브, quantity: 179, average_cost_krw: 22267, evaluation_profit_krw: 520576, return_percent: 13.06, source_image: IMG_1819.jpeg}
+      - {id: lot_rise_us_semiconductor_nyse_h_72, asset_name: RISE 미국반도체NYSE(H), quantity: 72, average_cost_krw: 23835, evaluation_profit_krw: 818288, return_percent: 47.68, source_image: IMG_1819.jpeg}
+      - {id: lot_kodex_us_ai_power_infra_170, asset_name: KODEX 미국AI전력핵심인프라, quantity: 170, average_cost_krw: 22665, evaluation_profit_krw: 203966, return_percent: 5.29, source_image: IMG_1819.jpeg}
+      - {id: lot_kiwoom_global_grid_22, asset_name: KIWOOM 글로벌전력GRID인프라, quantity: 22, average_cost_krw: 16210, evaluation_profit_krw: 8800, return_percent: 2.47, source_image: IMG_1819.jpeg}
+      - {id: lot_kodex_us_ai_network_154, asset_name: KODEX 미국AI광통신네트워크, quantity: 154, average_cost_krw: 12282, evaluation_profit_krw: 108287, return_percent: 5.73, source_image: IMG_1818.jpeg}
+      - {id: lot_koact_ai_memory_semiconductor_27, asset_name: KoAct 글로벌AI메모리반도체액티브, quantity: 27, average_cost_krw: 14602, evaluation_profit_krw: 65286, return_percent: 16.56, source_image: IMG_1818.jpeg}
+      - {id: lot_hanaro_us_ai_memory_top4_2, asset_name: HANARO 미국AI메모리반도체TOP4, quantity: 2, average_cost_krw: 10284, evaluation_profit_krw: 3653, return_percent: 17.76, source_image: IMG_1818.jpeg}
+      - {id: lot_kodex_us_semiconductor_69, asset_name: KODEX 미국반도체, quantity: 69, average_cost_krw: 46523, evaluation_profit_krw: 1081738, return_percent: 33.70, source_image: IMG_1818.jpeg}
+      - {id: lot_rise_global_nuclear_44, asset_name: RISE 글로벌원자력, quantity: 44, average_cost_krw: 44557, evaluation_profit_krw: -332495, return_percent: -16.96, source_image: IMG_1818.jpeg}
+      - {id: lot_gold_9999_1kg_4, asset_name: 금 99.99_1kg, quantity: 4, average_cost_krw: 202017.5, purchase_amount_krw: 808070, evaluation_amount_krw: 768000, evaluation_profit_krw: -40070, return_percent: -4.96, source_image: IMG_1816.jpeg}
+    aggregated_quantities:
+      SK하이닉스: 33
+      RISE_삼성전자SK하이닉스채권혼합50: 512
+      KODEX_200: 29
+      PLUS_글로벌HBM반도체: 56
+      TIME_글로벌AI인공지능액티브: 108
+      ACE_엔비디아밸류체인액티브: 284
+      ACE_구글밸류체인액티브: 243
+      TIGER_미국필라델피아반도체나스닥: 15
+      RISE_미국반도체NYSE_H: 72
+      KODEX_미국AI전력핵심인프라: 170
+      KIWOOM_글로벌전력GRID인프라: 22
+      KODEX_미국AI광통신네트워크: 154
+      KoAct_글로벌AI메모리반도체액티브: 27
+      HANARO_미국AI메모리반도체TOP4: 2
+      KODEX_미국반도체: 69
+      RISE_글로벌원자력: 44
+      금_99_99_1kg: 4
+    initial_observations:
+      - Portfolio has strong concentration and overlap across SK하이닉스, semiconductors, AI, memory/HBM, and AI infrastructure ETFs.
+      - Several ETFs may hold overlapping underlying companies; ticker-level constituent and weight analysis is required before claiming diversification.
+      - The direct SK하이닉스 position is likely the largest visible exposure by evaluation amount.
+      - These are observations for study and risk review, not buy/sell instructions.
+    confidence: medium_high
+    needs_user_review: true
+
+deposit_holdings:
+  - id: deposit_holding_20260715_01
+    object_type: Holding
+    asset_type: deposit
+    date: 2026-07-15
+    owner_ref: person_brian
+    currency: KRW
+    balance_krw: 9000000
+    institution: unknown
+    product_name: unknown
+    maturity_date: null
+    interest_rate_percent: null
+    liquidity: unknown
+    source_ref: source_finance_conversation_20260715_deposits
+    confidence: high
+
+  - id: deposit_holding_20260715_02
+    object_type: Holding
+    asset_type: deposit
+    date: 2026-07-15
+    owner_ref: person_brian
+    currency: KRW
+    balance_krw: 5185299
+    institution: unknown
+    product_name: unknown
+    maturity_date: null
+    interest_rate_percent: null
+    liquidity: unknown
+    source_ref: source_finance_conversation_20260715_deposits
+    confidence: high
+
+liquid_asset_summaries:
+  - id: liquid_asset_summary_20260715_deposits
+    object_type: AssetSummary
+    date: 2026-07-15
+    currency: KRW
+    deposit_total_krw: 14185299
+    holding_refs:
+      - deposit_holding_20260715_01
+      - deposit_holding_20260715_02
+    source_ref: source_finance_conversation_20260715_deposits
+
+household_external_holdings:
+  - id: holding_snapshot_person_wife_20260715_equities_estimate
+    object_type: HoldingSnapshot
+    date: 2026-07-15
+    owner_ref: person_wife
+    ownership_scope: spouse_separate_holding
+    asset_type: stocks_and_equity_etfs
+    currency: KRW
+    estimated_evaluation_amount_krw: 115000000
+    amount_precision: approximate_user_report
+    composition:
+      primary:
+        - SK하이닉스
+        - 삼성전자
+        - KOSPI 200 products
+      secondary:
+        - selected US blue-chip stocks
+    exact_holdings: unknown
+    source_ref: source_finance_conversation_20260715_wife_stock_holdings_estimate
+    confidence: medium_high
+    needs_user_review: true
+
+pension_holdings:
+  - id: pension_holding_person_brian_20260715_workplace_pension
+    object_type: Holding
+    date: 2026-07-15
+    owner_ref: person_brian
+    asset_type: pension
+    pension_type: personal_pension
+    currency: KRW
+    payment_count: 43
+    current_value_krw: 7974041
+    current_value_basis: surrender_refund
+    separate_from_retirement_pension: true
+    separate_from_estimated_severance: true
+    institution: unknown
+    product_name: unknown
+    monthly_contribution_krw: null
+    total_contributions_krw: null
+    start_date: null
+    maturity_or_pension_start_date: null
+    surrender_penalty_or_tax: unknown
+    liquidity: restricted_or_costly_to_surrender
+    source_ref: source_finance_conversation_20260715_workplace_pension_43_payments
+    confidence: high
+    needs_user_review: false
+
+employment_benefit_estimates:
+  - id: employment_income_snapshot_person_brian_20260715
+    object_type: IncomeSnapshot
+    as_of_date: 2026-07-15
+    owner_ref: person_brian
+    employer: SK하이닉스
+    currency: KRW
+    estimated_annual_salary_krw: 90000000
+    amount_precision: approximate
+    basis: unknown_whether_base_or_total_contract_salary
+    negotiation_status: update_pending
+    source_ref: source_finance_conversation_20260715_salary_and_2027_bonus_expectation
+    confidence: medium
+    needs_user_review: true
+
+  - id: employment_bonus_expectation_person_brian_early_2027
+    object_type: FinancialEstimate
+    as_of_date: 2026-07-15
+    owner_ref: person_brian
+    employer: SK하이닉스
+    estimate_type: performance_bonus
+    expected_receipt_window: early_2027
+    expected_gross_amount_krw: 540000000
+    expected_gross_amount_range_krw: [500000000, 580000000]
+    amount_status: user_selected_12000_percent_planning_estimate_not_employer_confirmed
+    prior_year_ps_rate_percent: 2900
+    selected_planning_ps_rate_percent: 12000
+    assumed_monthly_ps_base_krw: 4500000
+    assumed_initial_payment_percent: 80
+    estimated_initial_gross_payment_krw: 432000000
+    estimated_deferred_gross_payment_krw: 108000000
+    estimated_prior_award_deferred_gross_payment_early_2027_krw: 13050000
+    estimated_total_early_2027_gross_cash_inflow_krw: 445050000
+    conservative_immediately_investable_planning_amount_krw: 250000000
+    qualitative_expectation: substantial
+    status: expected_not_received
+    included_in_current_assets: false
+    included_in_net_worth: false
+    next_review_trigger: salary_negotiation_employer_bonus_notice_or_actual_payment
+    source_refs:
+      - source_finance_conversation_20260715_salary_and_2027_bonus_expectation
+      - source_finance_conversation_20260715_2027_bonus_conservative_estimate
+      - source_finance_conversation_20260715_prior_year_ps_2900_percent
+      - source_finance_conversation_20260715_2027_ps_planning_rate_12000_percent
+      - source_finance_conversation_20260715_prior_ps_deferred_payment
+    confidence: high_for_expectation_low_medium_for_amount
+    needs_user_review: true
+
+  - id: employment_benefit_estimate_person_brian_severance_20260715
+    object_type: FinancialEstimate
+    as_of_date: 2026-07-15
+    owner_ref: person_brian
+    estimate_type: severance_pay
+    currency: KRW
+    service_months: 54
+    assumed_monthly_wage_krw: 9000000
+    estimated_gross_amount_krw: 40500000
+    calculation_formula: service_months_x_monthly_wage_divided_by_12
+    liquidity: unavailable_until_eligible_separation_or_plan_event
+    included_in_current_liquid_assets: false
+    included_in_confirmed_household_asset_total: false
+    caveats:
+      - This is Brian's rough estimate, not an employer or retirement-plan statement.
+      - Actual amount may differ based on average-wage rules, bonuses, allowances, plan type, service-date calculation, and taxes.
+      - Do not treat the gross estimate as immediately spendable cash.
+    source_ref: source_finance_conversation_20260715_estimated_severance_54_months
+    confidence: medium
+    needs_user_review: true
+
+real_estate_holdings:
+  - id: real_estate_holding_yongho_e편한세상_24pyeong
+    object_type: RealEstateHolding
+    as_of_date: 2026-07-15
+    owner_scope: household_unspecified
+    property_name: 용호마을 e편한세상
+    property_type: apartment
+    size_pyeong: 24
+    exclusive_area_sqm: 59.895
+    building: 122동
+    floor_band: 10층_이상
+    view_quality: good
+    ownership_status: owned
+    current_market_value_krw: 490000000
+    current_market_value_range_krw: [480000000, 500000000]
+    valuation_basis: recent_comparable_transactions_adjusted_for_high_floor_and_good_view
+    valuation_date: 2026-07-15
+    acquisition_price_krw: null
+    ownership_share_percent: null
+    linked_liability_refs:
+      - liability_bogeumjari_loan_20260715
+      - liability_didimdol_loan_20260715
+    source_refs:
+      - source_finance_conversation_20260715_yongho_emart_house_mortgages
+      - source_finance_conversation_20260715_yongho_building_floor_view
+    confidence: high
+    needs_user_review: true
+
+vehicle_holdings:
+  - id: vehicle_holding_person_brian_niro_20260715
+    object_type: VehicleHolding
+    as_of_date: 2026-07-15
+    owner_ref: person_brian
+    manufacturer: 기아
+    model: 니로
+    purchase_year_month: 2020-07
+    odometer_km: 120000
+    odometer_precision: approximate
+    powertrain: unknown
+    trim: unknown
+    accident_history: unknown
+    condition: unknown
+    currency: KRW
+    current_market_value_working_estimate_krw: 15000000
+    current_market_value_range_krw: [13000000, 17500000]
+    valuation_basis: comparable_2020_niro_used_vehicle_listings_adjusted_for_approximately_120000km
+    valuation_caveat: The range assumes a 2020 Niro hybrid context; EV or PHEV, trim, accident history, battery condition, options, and dealer versus private-sale channel can materially change value.
+    asset_classification: depreciating_lifestyle_asset
+    include_in_expanded_net_worth: true
+    include_in_investable_financial_assets: false
+    source_ref: source_finance_conversation_20260715_niro_vehicle_asset
+    valuation_source_urls:
+      - https://web.joongna.com/search/%EB%8B%88%EB%A1%9C%202020
+      - https://www.hankyung.com/article/2020051763651
+    confidence: low_medium
+    needs_user_review: true
+
+liabilities:
+  - id: liability_bogeumjari_loan_20260715
+    object_type: Liability
+    as_of_date: 2026-07-15
+    liability_type: mortgage
+    product_name: 보금자리론
+    secured_by_ref: real_estate_holding_yongho_e편한세상_24pyeong
+    outstanding_principal_krw: 35107479
+    interest_rate_percent: 2.2
+    interest_rate_needs_user_review: true
+    maturity_date: null
+    monthly_payment_krw: null
+    repayment_method: unknown
+    source_ref: source_finance_conversation_20260715_yongho_emart_house_mortgages
+    confidence: high
+
+  - id: liability_didimdol_loan_20260715
+    object_type: Liability
+    as_of_date: 2026-07-15
+    liability_type: mortgage
+    product_name: 디딤돌대출
+    secured_by_ref: real_estate_holding_yongho_e편한세상_24pyeong
+    outstanding_principal_krw: 193888171
+    interest_rate_percent: 2.2
+    interest_rate_needs_user_review: true
+    maturity_date: null
+    monthly_payment_krw: null
+    repayment_method: unknown
+    source_ref: source_finance_conversation_20260715_yongho_emart_house_mortgages
+    confidence: high
+
+liability_summaries:
+  - id: household_liability_summary_20260715_partial
+    object_type: LiabilitySummary
+    as_of_date: 2026-07-15
+    currency: KRW
+    mortgage_outstanding_principal_krw: 228995650
+    liability_refs:
+      - liability_bogeumjari_loan_20260715
+      - liability_didimdol_loan_20260715
+    caveats:
+      - The reported 2.2% rate may apply to one or both loans; exact loan-specific rates need confirmation.
+      - Other liabilities, if any, have not been reported.
+    source_ref: source_finance_conversation_20260715_yongho_emart_house_mortgages
+
+net_worth_estimates:
+  - id: household_net_worth_estimate_20260715_all_reported_items_with_vehicle
+    object_type: NetWorthEstimate
+    as_of_date: 2026-07-15
+    currency: KRW
+    calculation_scope: all_reported_items_including_estimated_severance_and_vehicle
+    total_assets_before_vehicle_estimated_krw: 791108049
+    vehicle_market_value_working_estimate_krw: 15000000
+    total_assets_estimated_krw: 806108049
+    total_liabilities_known_krw: 228995650
+    estimated_net_worth_krw: 577112399
+    estimated_net_worth_range_krw: [565112399, 589612399]
+    investable_financial_assets_unchanged: true
+    caveats:
+      - Vehicle is included as a depreciating lifestyle asset, not an investable asset.
+      - Vehicle value is provisional until powertrain, trim, accident history, options, and condition are confirmed.
+      - Range also includes the existing 4.8-5.0억원 home-value uncertainty.
+      - Gross estimated severance is included only because Brian requested all reported items be included.
+    source_refs:
+      - source_finance_conversation_20260715_niro_vehicle_asset
+      - household_net_worth_estimate_20260715_all_reported_items
+
+  - id: household_net_worth_estimate_20260715_all_reported_items
+    object_type: NetWorthEstimate
+    as_of_date: 2026-07-15
+    currency: KRW
+    calculation_scope: all_reported_items_including_estimated_severance
+    assets:
+      brian_stocks_etfs_gold_estimated_krw: 123448709
+      brian_deposits_krw: 14185299
+      brian_pension_surrender_value_krw: 7974041
+      brian_estimated_gross_severance_krw: 40500000
+      wife_equity_assets_estimated_krw: 115000000
+      home_market_value_working_estimate_krw: 490000000
+    total_assets_estimated_krw: 791108049
+    liabilities:
+      mortgage_outstanding_principal_krw: 228995650
+    total_liabilities_known_krw: 228995650
+    estimated_net_worth_krw: 562112399
+    estimated_net_worth_range_krw: [552112399, 572112399]
+    non_liquid_or_contingent_components:
+      - brian_pension_surrender_value_krw
+      - brian_estimated_gross_severance_krw
+      - home_market_value_working_estimate_krw
+    caveats:
+      - Severance is a rough gross estimate and is included only because Brian explicitly requested all reported items be included.
+      - Home value uses a 4.8-5.0억원 comparable-transaction range with 4.9억원 as the working estimate.
+      - Wife's holdings are approximate and exact asset weights are unknown.
+      - Securities values reflect screenshots captured at potentially slightly different times.
+      - Taxes, sale costs, early-surrender effects, and unreported assets or liabilities are excluded.
+    source_refs:
+      - source_finance_conversation_20260715_sk_hynix_employment_and_full_asset_calculation
+      - household_financial_asset_summary_20260715_partial
+      - source_finance_conversation_20260715_estimated_severance_54_months
+      - source_finance_conversation_20260715_yongho_building_floor_view
+      - household_liability_summary_20260715_partial
+
+  - id: household_net_worth_estimate_20260715_current_known_scope
+    object_type: NetWorthEstimate
+    as_of_date: 2026-07-15
+    currency: KRW
+    known_financial_assets_estimated_krw: 260608049
+    home_market_value_working_estimate_krw: 490000000
+    mortgage_outstanding_principal_krw: 228995650
+    estimated_net_worth_krw: 521612399
+    estimated_net_worth_range_krw: [511612399, 531612399]
+    excluded_estimated_severance_krw: 40500000
+    caveats:
+      - Home value is a transaction-comparable estimate, not an appraisal or confirmed sale price.
+      - Wife's equity assets are approximate and Brian's securities snapshot contains small timing differences across screens.
+      - Unreported assets, liabilities, taxes, transaction costs, pensions, insurance values, and deposits may change the result.
+      - Estimated severance is excluded because it is contingent and not currently liquid.
+    source_refs:
+      - source_finance_conversation_20260715_yongho_building_floor_view
+      - household_financial_asset_summary_20260715_partial
+      - household_liability_summary_20260715_partial
+
+portfolio_risk_observations:
+  - id: portfolio_risk_observation_20260715_employer_stock_sector_concentration
+    object_type: RiskObservation
+    as_of_date: 2026-07-15
+    owner_scope: household
+    risk_type: correlated_employment_and_investment_exposure
+    observed_links:
+      - Brian is currently employed by SK하이닉스.
+      - Brian directly holds SK하이닉스 shares and multiple semiconductor, memory, HBM, AI, and infrastructure ETFs.
+      - Wife's approximate portfolio is also centered on SK하이닉스, 삼성전자, and KOSPI 200 products.
+      - Employment income, estimated severance, and a substantial share of household market assets may respond to the same company and semiconductor-cycle conditions.
+    interpretation: Household diversification is likely lower than the number of tickers suggests. Exact look-through exposure must be calculated from ETF constituents before quantifying concentration.
+    action_boundary: This is a risk-study observation, not a buy or sell instruction.
+    confidence: high_for_direction_low_for_exact_weight
+    needs_user_review: true
+    source_refs:
+      - source_finance_conversation_20260715_sk_hynix_employment_and_full_asset_calculation
+      - source_finance_holdings_screenshots_20260715
+      - source_finance_conversation_20260715_wife_stock_holdings_estimate
+
+household_asset_summaries:
+  - id: household_financial_asset_summary_20260715_partial
+    object_type: AssetSummary
+    date: 2026-07-15
+    currency: KRW
+    scope: partial_known_financial_assets
+    brian_known_assets_estimated_krw: 145608049
+    wife_equity_assets_estimated_krw: 115000000
+    household_known_assets_estimated_krw: 260608049
+    caveats:
+      - Brian's stock, ETF, and gold values are derived from screenshots that may have slightly different capture times.
+      - Wife's equity value and composition are approximate user reports without exact quantities or cost basis.
+      - Brian's workplace pension is valued at its reported surrender-refund amount, which may differ from contributions paid or future pension value.
+      - This summary excludes any unreported cash, deposits, pensions, insurance cash value, real estate, debt, or other assets and liabilities.
+      - Ownership remains separated between Brian and wife; the household total is an analytical roll-up only.
+    source_refs:
+      - source_finance_holdings_screenshots_20260715
+      - source_finance_conversation_20260715_deposits
+      - source_finance_conversation_20260715_wife_stock_holdings_estimate
+      - source_finance_conversation_20260715_workplace_pension_43_payments
+
+investment_theses:
+  - id: investment_thesis_brian_memory_structural_advantage_20260715
+    object_type: Thesis
+    date: 2026-07-15
+    owner_ref: person_brian
+    status: active_user_stated_thesis
+    title: AI-era memory market structural advantage
+    raw_user_text: "투자 이유는 요즘 메모리가 너무 너무 우위 시장이라서 :)"
+    thesis: Brian believes memory suppliers currently hold unusually strong market power and that this advantage supports his semiconductor and SK hynix exposure.
+    supporting_user_statement: "AI에서 이게 너무나 중요해서."
+    causal_chain_as_understood:
+      - AI workloads require rapidly increasing movement and storage of data.
+      - Compute performance can be constrained when memory bandwidth and capacity do not keep pace.
+      - HBM and other advanced-memory products therefore become critical AI-system components rather than interchangeable supporting parts.
+      - Brian expects this importance to support durable demand and stronger economics for leading memory suppliers.
+    linked_exposures:
+      - SK하이닉스 direct shares
+      - memory and HBM semiconductor ETFs
+      - broader semiconductor ETFs
+    thesis_review_questions:
+      - Is HBM and advanced-memory demand still growing faster than effective supply?
+      - Are pricing power, margins, and customer commitments remaining durable?
+      - Is new capacity likely to weaken the supply-demand balance?
+      - Does the market price already assume an unusually optimistic outcome?
+      - Has household exposure become too large even if the thesis remains correct?
+    interpretation: A strong industry thesis can justify holding exposure, but it does not by itself determine valuation, position size, or household concentration limits.
+    confidence: high_for_user_belief_unreviewed_for_market_conclusion
+    needs_user_review: false
 
 spending_records:
   - id: spending_20260617_ai_tool_testing_claude_codex_400usd

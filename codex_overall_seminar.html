@@ -1,0 +1,923 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ontology Based IP DEV with Codex</title>
+  <style>
+    :root {
+      --ink: #17211f;
+      --muted: #5e6b66;
+      --line: #d7ddd7;
+      --paper: #f7f8f5;
+      --panel: #ffffff;
+      --green: #1f6f50;
+      --mint: #dff0e8;
+      --blue: #255f91;
+      --blue-soft: #e0eef8;
+      --coral: #b24f3f;
+      --coral-soft: #f6e5df;
+      --gold: #8a6420;
+      --gold-soft: #f4ecd8;
+      --violet: #5a5f99;
+      --violet-soft: #e8e8f4;
+      --shadow: 0 16px 45px rgba(29, 38, 35, 0.11);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(215, 221, 215, 0.9);
+      background: rgba(247, 248, 245, 0.94);
+      backdrop-filter: blur(16px);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 24px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      min-width: 220px;
+    }
+
+    .brand strong {
+      font-size: 15px;
+      letter-spacing: 0;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 10px;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    nav a:hover {
+      border-color: var(--line);
+      background: #fff;
+      color: var(--ink);
+    }
+
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 32px 24px 72px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.06fr) minmax(330px, 0.94fr);
+      gap: 28px;
+      align-items: stretch;
+      min-height: 520px;
+      padding: 22px 0 26px;
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .eyebrow {
+      width: fit-content;
+      border: 1px solid #c6d7ca;
+      border-radius: 999px;
+      padding: 5px 10px;
+      background: #fff;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(40px, 6vw, 76px);
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 700px;
+      margin: 0;
+      color: #3f4d48;
+      font-size: 19px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      border-radius: 7px;
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 4px 18px rgba(29, 38, 35, 0.05);
+    }
+
+    .pill-link.primary {
+      border-color: #1f6f50;
+      background: #1f6f50;
+      color: #fff;
+    }
+
+    .map-panel {
+      align-self: stretch;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      overflow: hidden;
+    }
+
+    .map-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .map-title h2 {
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+
+    .tag {
+      border-radius: 999px;
+      padding: 4px 8px;
+      background: var(--mint);
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .flow-step {
+      position: relative;
+      display: grid;
+      grid-template-columns: 38px minmax(0, 1fr);
+      gap: 12px;
+      min-height: 72px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      background: #fbfcfa;
+    }
+
+    .flow-step:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      left: 30px;
+      bottom: -11px;
+      width: 2px;
+      height: 10px;
+      background: #c4ccc5;
+    }
+
+    .node {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .n1 { background: var(--green); }
+    .n2 { background: var(--blue); }
+    .n3 { background: var(--coral); }
+    .n4 { background: var(--gold); }
+    .n5 { background: var(--violet); }
+
+    .flow-step h3 {
+      margin: 0 0 2px;
+      font-size: 15px;
+      letter-spacing: 0;
+    }
+
+    .flow-step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    section {
+      margin-top: 56px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(24px, 3vw, 38px);
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      max-width: 560px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .grid.cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid.cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tile {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 18px;
+      min-height: 158px;
+    }
+
+    .tile h3 {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+
+    .marker {
+      flex: 0 0 auto;
+      width: 10px;
+      height: 28px;
+      border-radius: 2px;
+      background: var(--green);
+    }
+
+    .tile:nth-child(2n) .marker { background: var(--blue); }
+    .tile:nth-child(3n) .marker { background: var(--coral); }
+    .tile:nth-child(4n) .marker { background: var(--gold); }
+
+    .tile p,
+    .tile li {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .tile ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(118px, 1fr));
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+
+    .stage {
+      min-height: 180px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 14px;
+    }
+
+    .stage span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      border-radius: 999px;
+      padding: 3px 8px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .stage h3 {
+      min-height: 46px;
+      margin: 10px 0 8px;
+      font-size: 16px;
+      line-height: 1.32;
+      letter-spacing: 0;
+    }
+
+    .stage p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .sessions {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .session {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 14px;
+      min-height: 146px;
+    }
+
+    .session .num {
+      color: var(--coral);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .session h3 {
+      margin: 7px 0 7px;
+      font-size: 15px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    .session p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .callout {
+      border: 1px solid #c5d7ce;
+      border-radius: 8px;
+      background: var(--mint);
+      padding: 20px;
+    }
+
+    .callout h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+
+    .callout p {
+      margin: 0;
+      color: #2f4e43;
+    }
+
+    .matrix {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .matrix-item {
+      border-radius: 8px;
+      padding: 14px;
+      min-height: 128px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .matrix-item h4 {
+      margin: 0 0 8px;
+      font-size: 15px;
+      letter-spacing: 0;
+    }
+
+    .matrix-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .soft-blue { background: var(--blue-soft); border-color: #c7d8e5; }
+    .soft-coral { background: var(--coral-soft); border-color: #e5c8be; }
+    .soft-gold { background: var(--gold-soft); border-color: #decfa8; }
+    .soft-violet { background: var(--violet-soft); border-color: #cfd0e5; }
+
+    .source-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .source {
+      display: block;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 14px;
+      color: var(--muted);
+      font-size: 13px;
+      word-break: keep-all;
+    }
+
+    .source strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    footer {
+      margin-top: 56px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: unset;
+      }
+
+      .grid.cols-3,
+      .grid.cols-2,
+      .sessions,
+      .source-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 12px 16px;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+
+      main {
+        padding: 24px 16px 54px;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      .lead {
+        font-size: 16px;
+      }
+
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .grid.cols-3,
+      .grid.cols-2,
+      .sessions,
+      .source-list,
+      .matrix {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline {
+        grid-template-columns: repeat(7, 78vw);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top" aria-label="Codex seminar overview home">
+        <strong>Ontology Based IP DEV with Codex</strong>
+        <span>Thread, ontology, evidence, HW/IP workflow</span>
+      </a>
+      <nav aria-label="Page sections">
+        <a href="#map">지도</a>
+        <a href="#sixty">60분 구성</a>
+        <a href="#series">12회 시리즈</a>
+        <a href="#ip">HW/IP</a>
+        <a href="#actions">다음 액션</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow">2026-07-08 seminar topic</div>
+        <h1 id="hero-title">Ontology Based IP DEV with Codex</h1>
+        <p class="lead">
+          이 세미나는 Codex가 RTL을 자동으로 작성한다는 이야기가 아니라,
+          IP 개발에 필요한 requirement, interface, design decision, verification evidence를
+          ontology로 연결하고 Codex가 그 기준 안에서 설계, 검증, 리뷰 loop를 돌게 하는 방법을 설명한다.
+        </p>
+        <div class="hero-actions">
+          <a class="pill-link primary" href="#sixty">60분 발표안 보기</a>
+          <a class="pill-link" href="#series">확장 시리즈 보기</a>
+          <a class="pill-link" href="#ip">HW/IP 적용 보기</a>
+        </div>
+      </div>
+
+      <aside id="map" class="map-panel" aria-label="Codex seminar flow map">
+        <div class="map-title">
+          <h2>전체 지도</h2>
+          <span class="tag">one-page map</span>
+        </div>
+        <div class="flow">
+          <div class="flow-step">
+            <div class="node n1">1</div>
+            <div>
+              <h3>Surface</h3>
+              <p>App, CLI, IDE, Cloud, App Server를 업무 위치와 위험도 기준으로 구분한다.</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="node n2">2</div>
+            <div>
+              <h3>Operating Loop</h3>
+              <p>Goal, context, constraints, done-when, plan, validation, review를 한 loop로 묶는다.</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="node n3">3</div>
+            <div>
+              <h3>Team Rules</h3>
+              <p>AGENTS.md, permission, sandbox, review 기준으로 반복 지시를 팀 자산화한다.</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="node n4">4</div>
+            <div>
+              <h3>Advanced Orchestration</h3>
+              <p>Worktree, subagent, skill, plugin, MCP는 복잡도가 올라갈 때 쓰는 운영 장치다.</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="node n5">5</div>
+            <div>
+          <h3>Ontology Based IP DEV</h3>
+              <p>검증 triage와 evidence를 시작점으로 SSOT, IP ontology, SoC Knowledge로 확장한다.</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="principles">
+      <div class="section-head">
+        <h2>핵심 메시지</h2>
+        <p>청중이 가져가야 할 메시지는 Codex 기능 암기가 아니라, IP 개발 기준을 ontology와 evidence로 남기는 구조다.</p>
+      </div>
+      <div class="grid cols-3">
+        <article class="tile">
+          <h3><span class="marker"></span>Prompt가 아니라 계약</h3>
+          <p>좋은 요청은 긴 문장이 아니라 Goal, Context, Constraints, Done when을 갖춘 실행 계약이다.</p>
+        </article>
+        <article class="tile">
+          <h3><span class="marker"></span>Plan before edit</h3>
+          <p>복잡하거나 위험한 작업은 바로 수정하지 않고 ambiguity, assumption, validation을 먼저 나눈다.</p>
+        </article>
+        <article class="tile">
+          <h3><span class="marker"></span>Review first</h3>
+          <p>사람은 모든 라인을 처음부터 읽기보다 Codex가 찾은 risk, missing test, decision point를 본다.</p>
+        </article>
+        <article class="tile">
+          <h3><span class="marker"></span>Evidence 연결</h3>
+          <p>test pass를 완료 주장으로 바로 바꾸지 않고, 어떤 claim을 어떤 evidence가 지지하는지 확인한다.</p>
+        </article>
+        <article class="tile">
+          <h3><span class="marker"></span>반복은 Skill로</h3>
+          <p>2~3회 반복 성공한 workflow는 prompt 모음이 아니라 skill, rule, guide로 승격한다.</p>
+        </article>
+        <article class="tile">
+          <h3><span class="marker"></span>자산을 남긴다</h3>
+          <p>2개월 rollout의 성공 기준은 사용량보다 guide, FAQ, rule, skill, evidence pattern이 남는 것이다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="sixty">
+      <div class="section-head">
+        <h2>60분 발표 구성</h2>
+        <p>첫 세미나는 기능 전체를 깊게 파기보다, 바로 적용 가능한 기본기와 안전한 첫 workflow를 보여주는 편이 좋다.</p>
+      </div>
+      <div class="timeline" aria-label="60 minute agenda">
+        <article class="stage">
+          <span>0-5분</span>
+          <h3>Why Codex</h3>
+          <p>AI가 대신 코딩한다는 이야기가 아니라, 검증 가능한 작업 loop를 빠르게 돈다는 관점으로 시작한다.</p>
+        </article>
+        <article class="stage">
+          <span>5-15분</span>
+          <h3>Surfaces</h3>
+          <p>App, CLI, IDE, Cloud를 언제 쓰는지 설명하고, thread와 context 개념을 잡는다.</p>
+        </article>
+        <article class="stage">
+          <span>15-22분</span>
+          <h3>Prompt Contract</h3>
+          <p>Goal, Context, Constraints, Done when과 Plan mode를 기본 작업 문법으로 소개한다.</p>
+        </article>
+        <article class="stage">
+          <span>22-30분</span>
+          <h3>Team Rule</h3>
+          <p>AGENTS.md, config, sandbox, approval, review가 agent를 안전하게 움직이는 경계임을 설명한다.</p>
+        </article>
+        <article class="stage">
+          <span>30-42분</span>
+          <h3>Verification Demo</h3>
+          <p>RTL 자동 구현보다 lint, compile, simulation log triage와 evidence 정리부터 보여준다.</p>
+        </article>
+        <article class="stage">
+          <span>42-50분</span>
+          <h3>Advanced</h3>
+          <p>Worktree, subagent, skill, plugin, MCP, App Server는 복잡도에 맞춰 꺼내는 장치로 소개한다.</p>
+        </article>
+        <article class="stage">
+          <span>50-60분</span>
+          <h3>Asset Program</h3>
+          <p>개인 사용 경험을 guide, FAQ, skill, ontology, SoC Knowledge asset으로 남기는 다음 행동을 제시한다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="series">
+      <div class="section-head">
+        <h2>12회 확장 시리즈</h2>
+        <p>첫 세미나 이후에는 기능 설명이 아니라 산출물 중심의 학습 프로그램으로 확장한다.</p>
+      </div>
+      <div class="sessions">
+        <article class="session">
+          <div class="num">Session 1</div>
+          <h3>Why Codex now</h3>
+          <p>LLM/RAG/coding agent trend와 Codex adoption frame.</p>
+        </article>
+        <article class="session">
+          <div class="num">Session 2</div>
+          <h3>Setup and surfaces</h3>
+          <p>App, CLI, IDE, Cloud, permission, sandbox, status.</p>
+        </article>
+        <article class="session">
+          <div class="num">Session 3</div>
+          <h3>Agent loop</h3>
+          <p>Prompt, context, plan, validation, review, stop condition.</p>
+        </article>
+        <article class="session">
+          <div class="num">Session 4</div>
+          <h3>Workflow to skill</h3>
+          <p>작은 task를 반복 성공시킨 뒤 skill recipe로 정리.</p>
+        </article>
+        <article class="session">
+          <div class="num">Session 5</div>
+          <h3>Evaluation</h3>
+          <p>Quality threshold, token, tool call, attempt, wall time.</p>
+        </article>
+        <article class="session">
+          <div class="num">Session 6</div>
+          <h3>HW/IP demo</h3>
+          <p>SDC cleanup, lint triage, compile error, evidence capture.</p>
+        </article>
+        <article class="session">
+          <div class="num">Session 7</div>
+          <h3>LLM Wiki and ontology</h3>
+          <p>OKF-style markdown/YAML, object, relation, evidence.</p>
+        </article>
+        <article class="session">
+          <div class="num">Session 8</div>
+          <h3>Obsidian views</h3>
+          <p>Graph, Bases, reviewed object promotion, local views.</p>
+        </article>
+        <article class="session">
+          <div class="num">Session 9</div>
+          <h3>HTML viewer</h3>
+          <p>Task, issue, evidence, owner graph를 self-contained HTML로 설명.</p>
+        </article>
+        <article class="session">
+          <div class="num">Session 10</div>
+          <h3>Docs and deck</h3>
+          <p>Source knowledge, outline, slide intent, artifact review.</p>
+        </article>
+        <article class="session">
+          <div class="num">Session 11</div>
+          <h3>SoC Knowledge</h3>
+          <p>Canonical object format, DB representation, weekly asset review.</p>
+        </article>
+        <article class="session">
+          <div class="num">Session 12</div>
+          <h3>Orchestration</h3>
+          <p>Subagents, worktree threads, handoff, coordinator pattern.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="ip">
+      <div class="section-head">
+        <h2>HW/IP 적용 방향</h2>
+        <p>Spec/RTL agent 구현은 가능성이 있지만 난도가 높다. 첫 적용은 검증, 리뷰, evidence 정리부터 잡는다.</p>
+      </div>
+      <div class="split">
+        <div class="callout">
+          <h3>첫 메시지</h3>
+          <p>
+            지금 단계에서 세미나의 신뢰 포인트는 "AI가 RTL을 자동 생성한다"가 아니다.
+            실제 엔지니어가 바로 써볼 수 있는 read-heavy triage, review, evidence 정리,
+            반복 실수 지식화부터 보여주는 것이다.
+          </p>
+        </div>
+        <div class="matrix">
+          <div class="matrix-item soft-blue">
+            <h4>Verification-first</h4>
+            <p>Lint, compile, simulation, formal log를 분류하고 first evidence와 safe next check를 분리한다.</p>
+          </div>
+          <div class="matrix-item soft-coral">
+            <h4>Decision boundary</h4>
+            <p>Interface, protocol, PPA intent, product behavior는 사람이 잠그고 내부 detail은 option으로 둔다.</p>
+          </div>
+          <div class="matrix-item soft-gold">
+            <h4>SSOT to RTL</h4>
+            <p>Requirement, assumption, interface, parameter, open decision을 기준으로 RTL candidate를 만든다.</p>
+          </div>
+          <div class="matrix-item soft-violet">
+            <h4>Ontology layer</h4>
+            <p>SoC, subsystem, IPBlock, interface, requirement, verification case, evidence, owner를 연결한다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="actions">
+      <div class="section-head">
+        <h2>세미나 후 남길 자산</h2>
+        <p>발표가 끝난 뒤 남아야 하는 것은 감상이 아니라, 다음 사람이 바로 쓰는 시작 패키지다.</p>
+      </div>
+      <div class="grid cols-2">
+        <article class="tile">
+          <h3><span class="marker"></span>Week-one asset list</h3>
+          <ul>
+            <li>Codex setup checklist</li>
+            <li>첫 prompt template</li>
+            <li>AGENTS.md starter</li>
+            <li>review/evidence checklist</li>
+            <li>verification demo script</li>
+          </ul>
+        </article>
+        <article class="tile">
+          <h3><span class="marker"></span>Skill 후보</h3>
+          <ul>
+            <li>rtl-log-triage</li>
+            <li>sdc-cleanup-planner</li>
+            <li>evidence-reviewer</li>
+            <li>handoff-writer</li>
+            <li>guide-writer</li>
+          </ul>
+        </article>
+        <article class="tile">
+          <h3><span class="marker"></span>Success criteria</h3>
+          <ul>
+            <li>작은 task가 검증 가능한 evidence와 함께 닫힌다.</li>
+            <li>반복 질문이 FAQ나 rule로 이동한다.</li>
+            <li>반복 workflow가 skill 후보로 추출된다.</li>
+            <li>private 자료와 company-shareable 자료가 분리된다.</li>
+          </ul>
+        </article>
+        <article class="tile">
+          <h3><span class="marker"></span>Closing line</h3>
+          <p>
+            Codex adoption은 사용량을 늘리는 일이 아니라, 검증 가능한 작업 loop를
+            팀이 다시 쓸 수 있는 workflow package와 SoC Knowledge asset으로 남기는 일이다.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="section-head">
+        <h2>Local source files</h2>
+        <p>이 HTML은 현재 repo의 세미나 MD 자료를 압축해 만든 로컬 briefing이다.</p>
+      </div>
+      <div class="source-list">
+        <a class="source" href="codex_seminar.md">
+          <strong>codex_seminar.md</strong>
+          메인 43장 덱과 12회 세미나 시리즈, appendix.
+        </a>
+        <a class="source" href="codex_basic_usage_for_seminar.md">
+          <strong>codex_basic_usage_for_seminar.md</strong>
+          Thread, prompt, AGENTS.md, worktree, subagent, MCP, skill 설명.
+        </a>
+        <a class="source" href="codex_thread_subagent_ontology_ip_short_seminar.md">
+          <strong>codex_thread_subagent_ontology_ip_short_seminar.md</strong>
+          Thread/subagent와 ontology 기반 IP 설계 연결.
+        </a>
+        <a class="source" href="codex_verification_first_4_5page_summary.md">
+          <strong>codex_verification_first_4_5page_summary.md</strong>
+          검증 우선 적용 방향 4-5 page 요약.
+        </a>
+        <a class="source" href="codex_ssot_rtl_trial_lessons_5slides.md">
+          <strong>codex_ssot_rtl_trial_lessons_5slides.md</strong>
+          SSOT, RTL 시행착오, evidence/gate 학습 loop.
+        </a>
+        <a class="source" href="codex_agent_trial_lessons_5slides.md">
+          <strong>codex_agent_trial_lessons_5slides.md</strong>
+          임원 보고용 agent workflow 시행착오 5장 컷.
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      Generated as a local static HTML briefing. No external assets or private product IP details are embedded.
+    </footer>
+  </main>
+</body>
+</html>
