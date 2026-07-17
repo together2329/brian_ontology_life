@@ -1,0 +1,44 @@
+schema_version: 1
+status: imported_with_candidate_classification
+imported_at: 2026-07-17
+profile_ref: person_brian
+title: Claude local session and user-input import
+source_scope:
+  direct_user_history:
+    path: /Users/brian/.claude/history.jsonl
+    role: Canonical local Claude prompt history
+    messages: 11385
+    sessions: 268
+    projects: 44
+    period: 2025-10-31_to_2026-06-29
+  project_transcripts:
+    path: /Users/brian/.claude/projects
+    role: Main-session, assistant, tool, attachment, and subagent execution records
+    jsonl_files: 2098
+    rows: 567576
+    imported_content: metadata_and_counts_only
+  auxiliary_transcripts:
+    path: /Users/brian/.claude/transcripts
+    role: Auxiliary tool-execution transcripts containing mixed direct, delegated, and automated user-role rows
+    files: 261
+    rows: 43584
+    imported_content: metadata_and_counts_only
+privacy:
+  processing: local_only
+  external_services_used: false
+  credentials_copied: false
+outputs:
+  user_message_index_ref: life/imports/claude_sessions_20260717/claude_user_message_index.jsonl
+  input_analysis_ref: life/imports/claude_sessions_20260717/claude_input_analysis.jsonl
+  session_index_ref: life/imports/claude_sessions_20260717/claude_session_index.jsonl
+  auxiliary_transcript_index_ref: life/imports/claude_sessions_20260717/claude_auxiliary_transcript_index.jsonl
+  machine_report_ref: life/imports/claude_sessions_20260717/claude_analysis_report.json
+  analysis_ref: life/imports/claude_sessions_20260717/analysis.yaml
+  combined_analysis_ref: life/imports/agent_sessions_20260717/combined_analysis.yaml
+  generator_ref: scripts/analyze_claude_sessions.py
+interpretation_policy:
+  - history.jsonl display values are treated as Brian's canonical direct Claude inputs.
+  - pastedContents values are retained as attached context but are not automatically treated as Brian-authored beliefs.
+  - Project transcript user rows include tool results, compaction summaries, command expansions, and task notifications; they are not merged into the canonical direct-input corpus.
+  - Auxiliary transcript user rows include delegated and automated prompts; they are inventoried separately.
+  - Requests and plans are evidence of intent and activity, not proof that assistant or tool outcomes succeeded.

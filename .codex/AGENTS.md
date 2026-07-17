@@ -37,6 +37,8 @@ Use historical memory indexes when they exist:
 - `life/imports/obsidian_daily/daily_summary.jsonl`: daily aggregate index for Daily notes, time blocks, energy, emotions, areas, and entity refs.
 - `life/imports/codex_threads_20260717/summary.yaml`: local Codex thread activity timeline and candidate thought patterns derived from the thread and user-message indexes.
 - `life/imports/codex_threads_20260717/deep_analysis.yaml`: comprehensive local analysis of Codex user inputs, including origin/intent statistics, workspace activity, thought evolution, operating loops, principle candidates, and source evidence refs.
+- `life/imports/claude_sessions_20260717/analysis.yaml`: comprehensive local analysis of Claude user inputs and session activity, with direct-input evidence separated from assistant, tool, subagent, and automated transcript rows.
+- `life/imports/agent_sessions_20260717/combined_analysis.yaml`: cross-tool synthesis of Brian's Codex and Claude thought evolution, operating patterns, tool roles, and unresolved loops.
 - `life/imports/codex_threads_20260717/thread_index.jsonl`: merged list of Codex UI/imported threads and history-backed sessions.
 - `life/imports/codex_threads_20260717/user_message_index.jsonl`: raw local user-prompt index with candidate Area and record-type labels.
 - `life/body/body_active_log.yaml`: current BODY status, PT trend, body metrics, protein targets, and recent workout records.

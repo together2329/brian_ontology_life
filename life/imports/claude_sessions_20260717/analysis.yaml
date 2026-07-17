@@ -1,0 +1,255 @@
+schema_version: 1
+status: comprehensive_user_input_analysis_with_candidates
+updated_at: 2026-07-17
+profile_ref: person_brian
+title: Brian's local Claude session analysis
+source_manifest_ref: life/imports/claude_sessions_20260717/manifest.yaml
+raw_message_index_ref: life/imports/claude_sessions_20260717/claude_user_message_index.jsonl
+row_analysis_ref: life/imports/claude_sessions_20260717/claude_input_analysis.jsonl
+machine_report_ref: life/imports/claude_sessions_20260717/claude_analysis_report.json
+
+scope:
+  canonical_direct_input_source: /Users/brian/.claude/history.jsonl
+  period: 2025-10-31_to_2026-06-29
+  direct_input_count: 11385
+  session_count: 268
+  project_count: 44
+  processing: local_only
+  external_models_or_services_used: false
+  execution_storage_reviewed:
+    project_jsonl_files: 2098
+    project_rows: 567576
+    auxiliary_transcript_files: 261
+    auxiliary_rows: 43584
+  boundary: Semantic interpretation is based on canonical direct inputs; assistant, tool, subagent, and auxiliary rows contribute storage and activity metadata only.
+
+executive_read:
+  - >-
+    Claude history supplies the missing early half of Brian's agent-development story. It begins with hardware and
+    Brian Coder use, quickly moves into persistent history, token-aware compression, memory, and iteration control,
+    and then expands into a full Common AI Agent and Atlas product.
+  - >-
+    The archive is intensely product- and mechanism-oriented. Brian repeatedly tests streaming, Linux/Windows
+    compatibility, session state, UI rendering, approval visibility, multi-user behavior, model routing, database
+    latency, orchestration, and real browser usage.
+  - >-
+    By June, Claude inputs contain the same Requirement -> Obligation -> Contract -> Evidence -> Validation model
+    later developed more formally in Codex. This shows continuity across tools rather than independent experiments.
+  - >-
+    Claude was often used as a rapid interactive builder and debugger. Brian's prompts are even shorter than in
+    Codex, but they form dense steering chains in which explanation, implementation, testing, rejection, and Git
+    checkpoints happen repeatedly.
+
+quantitative_overview:
+  monthly_inputs:
+    2025-10: 41
+    2025-11: 256
+    2025-12: 571
+    2026-01: 39
+    2026-02: 29
+    2026-03: 1672
+    2026-04: 3000
+    2026-05: 3904
+    2026-06_through_29: 1873
+  concentration:
+    march_through_may_inputs: 8576
+    march_through_may_share_percent: 75.3
+    interpretation: Claude usage peaked during productization of the agent runtime and Atlas UI.
+  text_shape:
+    total_characters_in_display: 460738
+    median_characters: 23
+    p90_characters: 66
+    p99_characters: 180
+    maximum_characters: 48053
+    pasted_context_messages: 947
+    interpretation: Claude history is primarily a sequence of very short steering turns, with pasted content stored separately.
+  origin_candidates:
+    direct_user_input: 8691
+    ui_command_or_control: 1108
+    direct_input_with_pasted_context: 934
+    direct_input_with_attachment_reference: 626
+    other_long_or_attachment_candidates: 26
+  intent_candidates_overlap:
+    question_or_exploration: 4087
+    action_request: 1186
+    feedback_or_correction: 713
+    decision_or_approval: 367
+    status_or_result_check: 158
+    personal_fact_or_experience: 75
+    unclassified: 5951
+  topic_candidates_overlap:
+    agent_architecture: 861
+    verification_evidence: 638
+    ontology_memory: 492
+    semiconductor_ip: 464
+    orchestration_parallelism: 148
+    maintenance_admin: 113
+    career_learning: 91
+    finance_investing: 16
+    mind_happiness: 13
+    unclassified: 8986
+    caution: Most unclassified items are short context-dependent turns such as approvals, commands, status checks, and Git actions.
+
+workspace_activity:
+  - workspace: /Users/brian/Desktop/Project/brian_hw/common_ai_agent
+    inputs: 4147
+    share_percent: 36.4
+    activity_read: Persistent agent runtime, workflow engine, Atlas integration, multi-user operation, performance, and product stabilization.
+  - workspace: /Users/brian/Desktop/Project/brian_hw
+    inputs: 3786
+    share_percent: 33.3
+    activity_read: Early Common AI Agent work, portability, session and model behavior, UI/TUI, modularization, and hardware-related experimentation.
+  - workspace: /Users/brian/Desktop/Project/CLAUDE_ATLAS_TEST
+    inputs: 986
+    share_percent: 8.7
+    activity_read: Long-running Atlas and IP-workflow testing, including golden-model and evidence questions.
+  - workspace: /Users/brian/Desktop/Project/NEW_ATLAS
+    inputs: 222
+    share_percent: 2.0
+    activity_read: UI formatting, rendering, workflow control, and dashboard experimentation.
+  - workspace: /Users/brian/Desktop/Project/brian_hw/brian_coder
+    inputs: 274
+    share_percent: 2.4
+    activity_read: Memory, compression, iteration control, RAG, and the earliest agent-learning experiments.
+  - workspace: Finance_Strategy_Obsidian
+    inputs: 222
+    share_percent: 2.0
+    activity_read: A historical 2026 portfolio strategy session, including temporary geopolitical and bond-allocation rules.
+  - workspace_group: semiconductor_IP_and_verification_experiments
+    representative_workspaces: [IVERILOG_UVM, HW_IP_textual, ip_dev_claude, ontology_ip_agent_dev, new_ip_dev2]
+    activity_read: UVM, RTL generation, verification methodology, OAG, ontology, and cross-tool development flows.
+
+activity_timeline:
+  - period: 2025-10_to_2025-11
+    activities:
+      - Asked detailed Verilog, simulation, hardware testbench, and context-memory questions.
+      - Began shaping Brian Coder with configurable rate limits, iterations, persistent history, and memory.
+    interpretation: Claude began as a hardware and coding copilot, then became an object of system design itself.
+    confidence: high
+  - period: 2025-12
+    activities:
+      - Investigated real token-based compression, smart compression, memory, procedural learning, RAG, and adaptive iteration behavior.
+      - Compared mechanical agent behavior with human importance-based memory and judgment.
+    interpretation: The central concern shifted from answer quality to whether an agent could preserve meaning and learn operationally.
+    confidence: high
+  - period: 2026-03
+    activities:
+      - Worked heavily on provider and model configuration, Linux and Windows behavior, output rendering, concurrency, and reliability.
+      - Requested modular, test-driven decomposition of an oversized main.py and version control for agent file edits.
+      - Conducted a concentrated historical finance-strategy session.
+    interpretation: The project moved from prototype experimentation toward portable, maintainable software and explicit operating rules.
+    confidence: high
+  - period: 2026-04
+    activities:
+      - Built named sessions, todo state, keep-alive, streaming, async input, project trees, approval/rejection visibility, and orchestrator/job-agent roles.
+      - Repeatedly debugged UI behavior and system performance.
+    interpretation: Brian was designing a visible multi-agent operating environment, not just a CLI wrapper.
+    confidence: high
+  - period: 2026-05
+    activities:
+      - Intensively developed and tested Common AI Agent, Atlas, multi-user chat, permissions, workers, databases, web UI, IP workflows, and model backends.
+      - Used wiki context, multi-worker and subagent experiments, deep tests, and real user-flow testing.
+      - Asked whether loops and checkers truly improved RTL quality rather than merely adding process.
+    interpretation: Product and engineering workflow experimentation reached maximum breadth and intensity.
+    confidence: high
+  - period: 2026-06_through_29
+    activities:
+      - Connected requirements, obligations, contracts, evidence, validation, stage artifacts, and ontology.
+      - Explored Cursor, Codex, Claude Code, skills, hooks, agents, OAG, UVM, and cross-tool workflow portability.
+      - Started the personal ontology agent and transferred the engineering traceability model into life records.
+    interpretation: The accumulated product experience crystallized into a tool-independent engineering and ontology philosophy.
+    confidence: high
+
+thought_evolution:
+  - phase: persistent_context_and_memory
+    statement: An agent should remember context across sessions and manage history and compression by real meaning and token state.
+    evidence_refs:
+      - claude_user_message_eddcc35b-e675-4e1e-ae7b-31d68ecba709_000152
+      - claude_user_message_30130dfb-fae6-4af5-b5ff-1a7f178a05da_000232
+      - claude_user_message_30130dfb-fae6-4af5-b5ff-1a7f178a05da_000301
+    confidence: high
+  - phase: maintainable_test_driven_agent
+    statement: Large agent code should be decomposed into testable modules, developed incrementally, and protected by version control.
+    evidence_refs:
+      - claude_user_message_d0117b8e-dd6b-4946-9fa0-908bd4c19954_002070
+      - claude_user_message_cd95e2d8-13db-42dd-a980-512e16132479_002598
+    confidence: high
+  - phase: visible_persistent_operating_environment
+    statement: Sessions, todo state, orchestration, approvals, rejections, and project progress should be visible and recoverable.
+    evidence_refs:
+      - claude_user_message_93e135ca-2d64-48ec-854b-ae5a24ac222e_003478
+      - claude_user_message_53706208-a697-4dcf-a7e2-6889f54d8f3e_004438
+      - claude_user_message_16306090-2e6b-455a-b8d8-16e604ccd1f3_004612
+    confidence: high
+  - phase: dependency_aware_parallel_work
+    statement: Parallel execution should be selected based on dependency and represented as a todo or workflow graph with clear ownership and collection behavior.
+    evidence_refs:
+      - claude_user_message_bd5bcd9c-034f-465d-b707-40851013e83e_000794
+      - claude_user_message_16306090-2e6b-455a-b8d8-16e604ccd1f3_005069
+    confidence: high
+  - phase: evidence_bound_engineering
+    statement: AI-generated RTL should be trusted only through requirement, obligation, contract, evidence, and validation traceability.
+    evidence_refs:
+      - claude_user_message_12fc1094-de6a-473a-9b9f-18bfe74ef706_009703
+      - claude_user_message_fb9fcc45-d9af-4c68-844a-cb142ff66f54_010111
+      - claude_user_message_9ec3736d-dc5b-410b-be78-b34659246f43_010193
+      - claude_user_message_fb9fcc45-d9af-4c68-844a-cb142ff66f54_010211
+    confidence: high
+  - phase: ontology_and_tool_independence
+    statement: The engineering method should be represented as a reusable ontology and carried across Cursor, Codex, Claude Code, skills, hooks, agents, and project environments.
+    evidence_refs:
+      - claude_user_message_9ec3736d-dc5b-410b-be78-b34659246f43_010266
+      - claude_user_message_9df2be31-4be2-4c68-8efb-4f8b5670d7ff_010726
+    confidence: high
+  - phase: personal_ontology
+    statement: The connected operating model should extend beyond IP development into a personal ontology agent.
+    evidence_refs:
+      - claude_user_message_d32a382a-77a3-466b-b3f8-42e6f09b7703_010561
+    confidence: high
+
+interaction_operating_model:
+  dominant_loop:
+    - inspect_or_try_a_feature
+    - report_the_observed_failure_or_friction
+    - ask_for_the_mechanism_or_root_cause
+    - authorize_a_bounded_fix
+    - test_again_in_the_UI_or_runtime
+    - demand_deeper_testing_or_quality_review
+    - checkpoint_with_Git
+  repeated_input_examples:
+    usage_command: 179
+    quit: 163
+    compact_command: 136
+    model_command: 80
+    keep_going_case_variants: 94
+    git_push: 48
+    go_ahead: 43
+    git_add_commit_push: 34
+    status: 34
+    git_commit_push: 29
+  style_candidates:
+    - The median prompt is only 23 characters; context is built through rapid iterative turns.
+    - Brian frequently tests immediately and reports visible behavior with images or pasted logs.
+    - Root-cause explanations are valued, but they are expected to lead into an implementation or verification action.
+    - Completion claims are challenged when the UI, runtime, or evidence does not match them.
+    - Brian regularly moves between conceptual architecture and tiny product details without treating them as separate concerns.
+    - Git commits are used as recoverable reasoning checkpoints throughout experimentation.
+
+finance_history_note:
+  historical_decision: A March 2026 strategy session proposed keeping 50 percent in bonds until a specified geopolitical condition changed.
+  evidence_ref: claude_user_message_6f5cc352-b490-4b93-a7fd-b629940236cf_000958
+  status: historical_context_not_current_policy
+  caution: Do not apply this as Brian's present allocation rule without reconfirmation.
+
+open_loops:
+  - Establish whether all older Claude project transcripts should be archived before local retention or cleanup removes more main-session files.
+  - Audit assistant and tool outcomes separately if proof of completed implementations, tests, or commits is required.
+  - Promote only confirmed recurring principles into canonical identity and operating-rule records.
+  - Consolidate the cross-tool engineering method so Claude, Codex, and other agents share the same truth and evidence model without duplicated maintenance.
+
+limitations:
+  - Claude history ends on 2026-06-29 even though other local Claude storage may contain generated or auxiliary execution records.
+  - Only 85 of 268 canonical history sessions retain a matching top-level project transcript in the current projects directory.
+  - Project transcript user rows are not reliable direct-authorship evidence because tool results, skill expansions, task notifications, and compaction summaries use the user role.
+  - Topic and intent labels are keyword-based overlapping candidates.
+  - Requests and test instructions do not prove that the requested outcome succeeded.
