@@ -2,12 +2,12 @@ schema_version: 1
 id: conversation_corpus_codex_claude_20250731_20260717
 object_type: ConversationCorpus
 status: imported_and_promoted_to_ontology
-generated_at: '2026-07-17T18:14:07+09:00'
+generated_at: '2026-07-17T18:29:30+09:00'
 profile_ref: person_brian
 title: Brian's local Codex and Claude conversation ontology corpus
 period: 2025-07-31_to_2026-07-17
 tools: [codex, claude]
-direct_input_count: 17854
+direct_input_count: 17856
 session_count: 445
 raw_index_refs:
   - life/imports/codex_threads_20260717/user_message_index.jsonl
@@ -19,22 +19,23 @@ analysis_refs:
   - life/imports/codex_threads_20260717/deep_analysis.yaml
   - life/imports/claude_sessions_20260717/analysis.yaml
   - life/imports/agent_sessions_20260717/combined_analysis.yaml
+  - life/imports/agent_sessions_20260717/direction_analysis_report.json
 promotion_policy: Preserve raw input first; promote explicit or repeated meaning with exact evidence; require review for identity-level interpretation.
 
 scope:
-  direct_input_count: 17854
+  direct_input_count: 17856
   session_count: 445
   meaningful_session_count: 245
   contextual_session_count: 200
   by_tool:
     codex:
-      direct_inputs: 6469
+      direct_inputs: 6471
       sessions: 177
     claude:
       direct_inputs: 11385
       sessions: 268
-  promoted_object_count: 15
-  promotion_evidence_link_count: 41
+  promoted_object_count: 16
+  promotion_evidence_link_count: 46
   count_note: Source-record counts include repeated commands and copied context; they are not unique-thought counts.
 
 source_refs:
@@ -68,8 +69,11 @@ ontology_outputs:
   promotion_map_ref: life/imports/agent_sessions_20260717/promotion_map.yaml
   promotion_evidence_links_ref: life/imports/agent_sessions_20260717/promotion_evidence_links.jsonl
   ontology_report_ref: life/imports/agent_sessions_20260717/ontology_report.json
+  direction_analysis_ref: life/imports/agent_sessions_20260717/direction_analysis_report.json
   promoted_knowledge_ref: life/knowledge/evidence_backed_brian_os.yaml
+  next_direction_ref: life/knowledge/brian_os_next_direction_202607.yaml
   generator_ref: scripts/build_agent_session_ontology.py
+  direction_analysis_generator_ref: scripts/analyze_brian_os_direction.py
 
 object_model:
   - ConversationCorpus contains the complete local direct-input and session indexes.

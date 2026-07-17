@@ -1,0 +1,391 @@
+schema_version: 1
+id: knowledge_brian_os_next_direction_202607
+object_type: KnowledgeBundle
+status: proposed_direction_needs_pilot_validation
+updated_at: '2026-07-17'
+title: Brian OS 다음 방향 — 축적에서 폐루프 학습으로
+profile_ref: person_brian
+area: MIND
+secondary_areas: [CAREER, BODY, FINANCE, RELATION, MAINTENANCE, FUN]
+project_refs: [project_ai_agent]
+parent_concept_ref: concept_evidence_backed_brian_os
+source_corpus_ref: conversation_corpus_codex_claude_20250731_20260717
+source_knowledge_ref: life/knowledge/evidence_backed_brian_os.yaml
+direction_analysis_ref: life/imports/agent_sessions_20260717/direction_analysis_report.json
+source_refs:
+  - codex_user_message_019e18d8-5339-7343-85e2-d84d6a5d1b81_001227
+  - claude_user_message_fb9fcc45-d9af-4c68-844a-cb142ff66f54_010211
+  - codex_user_message_019efb57-5dad-7010-aaf9-02f3b97b45dd_005493
+  - codex_user_message_019f0bbf-68b5-7f90-a587-772743e75a62_005673
+  - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006471
+
+executive_direction:
+  statement: >-
+    Brian OS의 다음 단계는 더 많은 기록, agent, schema, UI를 추가하는 것이 아니라
+    이미 축적한 기억이 실제 결정으로 이어지고, 결정이 행동과 결과를 만들며,
+    그 결과가 다음 판단을 바꾸는 두 개의 작은 폐루프를 끝까지 증명하는 것이다.
+  recommended_phase_name: closed_loop_validation
+  north_star: 더 적은 인지 부담으로 더 나은 결정을 내리고, 그 이유와 결과를 다시 찾을 수 있는가?
+  primary_bottleneck_hypothesis: >-
+    현재 병목은 capture나 raw memory 부족보다 promotion 품질, current-state freshness,
+    decision-to-action 연결, outcome feedback 회수에 있다.
+  confidence: medium_high
+  needs_user_review: true
+
+quantitative_anchors:
+  corpus:
+    direct_inputs: 17856
+    sessions: 445
+    march_through_june_share_percent: 90.9
+  depth_and_concentration:
+    median_inputs_per_session: 10
+    p90_inputs_per_session: 105
+    sessions_at_least_100_inputs: 46
+    share_of_inputs_in_sessions_at_least_100_percent: 59.2
+    top_ten_sessions_share_percent: 27.4
+  interaction_sequence_signals:
+    exploration_followed_by_action_or_decision_within_five_turns_percent: 53.0
+    action_request_followed_by_feedback_or_status_within_five_turns_percent: 39.7
+    decision_followed_by_action_request_within_five_turns_percent: 48.7
+    interpretation_boundary: Turn proximity is a workflow signal, not proof of causality or successful outcomes.
+  persistent_theme_reach:
+    agent_architecture_sessions: 265
+    verification_evidence_sessions: 180
+    ontology_memory_sessions: 160
+    autonomy_and_assurance_cooccurrence_sessions: 154
+    memory_and_action_cooccurrence_sessions: 146
+  inference: >-
+    Brian은 탐색을 행동으로 바꾸는 힘이 강하지만, 장기 대화와 반복 구축에 비해
+    결과 회수와 학습 승격이 상대적으로 약할 가능성이 있다. 실제 outcome audit로 확인해야 한다.
+
+deep_diagnosis:
+  - id: diagnosis_capture_is_no_longer_the_main_constraint
+    statement: 기록을 잃는 문제가 완전히 끝난 것은 아니지만, 17,856개 입력과 세션 인덱스가 생긴 현재는 더 많이 저장하는 것보다 정확히 꺼내 판단에 쓰는 능력이 더 중요한 제약이다.
+    evidence_refs:
+      - life/imports/agent_sessions_20260717/ontology_manifest.yaml
+      - life/imports/agent_sessions_20260717/direction_analysis_report.json
+    confidence: high
+
+  - id: diagnosis_exploration_strength_can_create_convergence_debt
+    statement: 깊고 반복적인 탐색은 Brian의 강점이지만, 장기 세션이 합성·결정·폐기 기준 없이 이어지면 convergence debt와 유지 비용을 만들 수 있다.
+    evidence_refs:
+      - life/imports/agent_sessions_20260717/direction_analysis_report.json
+      - pattern_mechanism_before_trust
+    confidence: medium_high
+    needs_user_review: true
+
+  - id: diagnosis_evidence_model_is_ahead_of_outcome_evidence
+    statement: evidence와 validation을 설계하는 언어는 충분히 성숙했지만, 과거 요청의 실제 성공·실패·재사용 효과는 아직 전수 audit되지 않았다.
+    evidence_refs:
+      - understanding_completion_requires_fresh_traceable_evidence
+      - life/imports/agent_sessions_20260717/combined_analysis.yaml
+    confidence: high
+
+  - id: diagnosis_one_kernel_is_valid_but_domain_cycles_differ
+    statement: Work와 Life가 같은 증거 원칙을 공유하는 것은 유효하지만, 업무의 contract closure와 삶의 느리고 확률적인 outcome을 같은 속도와 판정 기준으로 강제하면 안 된다.
+    evidence_refs:
+      - architecture_direction_one_ontology_work_and_life_surfaces
+      - life/imports/agent_sessions_20260717/direction_analysis_report.json
+    confidence: medium_high
+    needs_user_review: true
+
+critical_tensions:
+  - id: tension_autonomy_vs_assurance
+    false_choice: LLM에 많이 맡기거나 모든 것을 script로 통제하는 양자택일
+    synthesis: reasoning은 LLM에 맡기고 permission, provenance, freshness, required closure만 결정적으로 검증한다.
+    direction_ref: architecture_direction_llm_judgment_with_deterministic_boundaries
+
+  - id: tension_expansion_vs_convergence
+    false_choice: 계속 탐색하거나 너무 일찍 하나로 고정하는 양자택일
+    synthesis: 일정 시간은 넓게 탐색하되 synthesis gate에서 keep, merge, reject, test를 명시하고 다음 wave를 연다.
+
+  - id: tension_memory_vs_identity
+    false_choice: 모든 기록을 정체성으로 만들거나 아무 해석도 하지 않는 양자택일
+    synthesis: raw history, pattern candidate, confirmed principle, current identity를 단계적으로 분리하고 counterevidence와 review date를 둔다.
+
+  - id: tension_work_power_vs_life_balance
+    false_choice: CAREER 집중을 줄이거나 삶 전체를 같은 양으로 기록하는 양자택일
+    synthesis: 대화량이 아니라 decision importance와 feedback cycle에 따라 각 Area의 최소 관측 수준을 정한다.
+
+  - id: tension_ai_leverage_vs_cognitive_load
+    false_choice: AI 출력을 최대화하거나 활용을 제한하는 양자택일
+    synthesis: AI는 선택지를 넓히되 Brian에게 전달되는 기본 출력은 핵심 3개, 결정 1개, 다음 행동 1개로 압축한다.
+
+architecture_directions:
+  - id: architecture_direction_closed_loop_pilots_before_platform_expansion
+    object_type: ArchitectureDirection
+    date: '2026-07-17'
+    area: MIND
+    secondary_areas: [CAREER, BODY, FINANCE]
+    project_ref: project_ai_agent
+    title: 플랫폼 확장보다 두 개의 폐루프 pilot 우선
+    statement: >-
+      새 app, DB, service, 범용 UI를 늘리기 전에 한 개의 Work pilot과 한 개의 Life pilot에서
+      Memory → State → Decision → Action → Evidence → Feedback → Promotion 루프를 끝까지 검증한다.
+    rationale:
+      - capture와 architecture 탐색은 이미 충분한 규모에 도달했다.
+      - 장기 세션 집중과 미감사 outcome은 consolidation과 feedback 회수가 다음 병목일 가능성을 보여준다.
+      - 두 vertical slice는 공통 커널의 실제 재사용성과 도메인별 차이를 동시에 드러낸다.
+    implementation_direction:
+      - 최근 의미 세션 20개를 표본 audit해 request와 verified outcome의 차이를 측정한다.
+      - Work pilot은 requirement-to-evidence closure가 명확한 단일 IP feature로 제한한다.
+      - Life pilot은 짧은 feedback cycle과 낮은 비가역성을 가진 BODY 주간 의사결정으로 시작한다.
+      - FINANCE는 실제 거래 자동화 없이 thesis-review shadow mode로 병행할 수 있다.
+      - 매주 keep, merge, reject, test 결정을 남겨 ontology와 rule 수를 의도적으로 줄인다.
+    tradeoffs:
+      - 범용 플랫폼 진척은 잠시 느려 보일 수 있다.
+      - 작은 pilot 결과가 모든 업무와 삶에 일반화되지 않을 수 있다.
+      - 수동 feedback 기록이 초기에는 번거로울 수 있다.
+    follow_up_task_refs:
+      - task_brian_os_recent_session_outcome_audit
+      - task_brian_os_select_two_pilots
+      - task_brian_os_define_pilot_scorecard
+    source_refs:
+      - codex_user_message_019e18d8-5339-7343-85e2-d84d6a5d1b81_001227
+      - claude_user_message_fb9fcc45-d9af-4c68-844a-cb142ff66f54_010211
+      - codex_user_message_019efb57-5dad-7010-aaf9-02f3b97b45dd_005493
+      - codex_user_message_019f0bbf-68b5-7f90-a587-772743e75a62_005673
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006471
+    status: proposed_for_validation
+    confidence: medium_high
+    needs_user_review: true
+
+closed_loop_kernel:
+  memory_and_meaning_loop:
+    flow: RawInput -> SessionContext -> CandidateMeaning -> EvidenceReview -> PromotedObject -> RetrievalTest
+    success_condition: 새 질문에서 정확한 원문과 현재 의미를 빠르게 찾고 오래된 해석을 구분한다.
+  decision_and_feedback_loop:
+    flow: CurrentState -> DecisionQuestion -> Options -> Decision -> Action -> Outcome -> FeedbackRecord -> RuleUpdate
+    success_condition: 판단 이유와 실제 결과가 연결되고 다음 유사 결정이 달라진다.
+  assurance_loop:
+    flow: Intent -> Requirement -> Obligation -> Contract -> Evidence -> Validation -> ClosureOrExplicitBlock
+    success_condition: 필요한 항목이 fresh evidence로 닫히거나 사람의 명시적 block/waiver로 남는다.
+  synthesis_gate:
+    cadence: end_of_significant_session_or_weekly_review
+    decisions: [keep, merge, reject, test, archive]
+    required_output:
+      - 가장 중요한 새 이해 1개
+      - 실제로 바뀐 결정 또는 상태 1개
+      - 검증되지 않은 가설 1개 이하
+      - 다음 bounded action 1개
+      - 버리거나 합칠 기록
+
+pilot_scenarios:
+  - id: scenario_work_single_ip_feature_closed_loop
+    object_type: Scenario
+    date: '2026-07-17'
+    project_ref: project_ai_agent
+    title: 단일 IP feature의 evidence-bound 폐루프 pilot
+    baseline_state_ref: architecture_direction_llm_judgment_with_deterministic_boundaries
+    proposed_changes:
+      - MCTP RX assembler 같은 한 개 feature만 선택한다.
+      - Requirement, obligation, contract, implementation, evidence, validation, decision과 feedback을 한 줄기로 연결한다.
+      - 기존 OAG 전체를 다시 설계하지 않고 현재 파일과 도구를 사용한다.
+    affected_refs: [project_ai_agent]
+    expected_outcome: 실제 환경에서 closure가 재현되고, 다음 feature에서 이전 지식이 재사용된다.
+    risk_notes:
+      - pilot 범위를 다시 framework 개발로 넓힐 위험
+      - evidence 수집이 목적이 되어 실제 quality improvement를 놓칠 위험
+    decision_ref: null
+    status: candidate_recommended
+    source_refs:
+      - codex_user_message_019f4408-5eb4-7c20-b8f9-d2a64c2a306a_006120
+    confidence: medium_high
+    needs_user_review: true
+
+  - id: scenario_life_body_weekly_decision_loop
+    object_type: Scenario
+    date: '2026-07-17'
+    project_ref: null
+    title: BODY 주간 training·recovery 의사결정 pilot
+    baseline_state_ref: life/body/body_active_log.yaml
+    proposed_changes:
+      - 주간 운동, 수행량, 회복, 단백질, 체중·체성분과 기분을 현재 상태로 요약한다.
+      - 다음 주에 바꿀 변수는 한 개만 선택한다.
+      - 1주 뒤 실제 수행과 느낌을 FeedbackRecord로 남긴다.
+    affected_refs: [BODY, MIND]
+    expected_outcome: 낮은 위험과 짧은 주기로 personal decision-feedback loop의 유용성을 검증한다.
+    risk_notes:
+      - 건강 지표의 자연 변동을 인과로 오해할 위험
+      - 기록 자체가 운동보다 부담이 될 위험
+    decision_ref: null
+    status: candidate_recommended
+    source_refs:
+      - life/body/body_active_log.yaml
+    confidence: high
+    needs_user_review: true
+
+  - id: scenario_finance_thesis_review_shadow_mode
+    object_type: Scenario
+    date: '2026-07-17'
+    project_ref: null
+    title: 실제 거래 없는 FINANCE thesis-review shadow pilot
+    baseline_state_ref: life/finance/finance_active_log.yaml
+    proposed_changes:
+      - 보유 이유, invalidation condition, concentration risk, 신규 자금 원칙을 기록한다.
+      - 매수·매도 명령 없이 당시 판단과 이후 시장·기업 증거를 비교한다.
+      - 최신 가격·실적·시장 자료가 필요한 판단은 별도 현재 출처 검증을 거친다.
+    affected_refs: [FINANCE, MIND]
+    expected_outcome: 강한 AI·메모리 확신과 가계 전체 위험을 분리해 판단 품질을 검증한다.
+    risk_notes:
+      - 짧은 가격 움직임을 투자 원칙의 성공·실패로 오해할 위험
+      - 과거 전략을 현재 정책으로 잘못 승격할 위험
+    decision_ref: null
+    status: candidate_after_body_pilot
+    source_refs:
+      - knowledge_interest_household_investment_policy
+    confidence: medium_high
+    needs_user_review: true
+
+priority_stack:
+  now_p0:
+    - id: task_brian_os_recent_session_outcome_audit
+      title: 최근 의미 세션 20개의 request, claimed result, verified evidence, actual reuse를 표본 audit
+      reason: 가장 큰 불확실성은 과거 실행 결과가 실제로 닫혔는지 여부다.
+    - id: task_brian_os_select_two_pilots
+      title: Work 1개와 Life 1개의 90일 pilot 확정
+      reason: 공통 커널의 실제 가치를 작은 vertical slice로 검증한다.
+    - id: task_brian_os_define_pilot_scorecard
+      title: pilot 시작 전 baseline과 성공·중단 기준 확정
+      reason: 방향이 맞았다는 사후 합리화를 방지한다.
+  next_p1:
+    - current-state freshness 표시와 stale-state query
+    - Decision에서 Action과 FeedbackRecord까지의 누락 링크 보완
+    - significant session 종료 시 synthesis gate 적용
+  later_p2:
+    - 검증된 반복 조회만 자동화 또는 UI로 승격
+    - 두 pilot에서 공통으로 실제 사용된 object/link만 shared kernel에 유지
+    - outcome data가 쌓인 뒤 operating rule과 identity candidate 재검토
+  explicitly_not_now:
+    - 새 graph database 또는 상시 service 구축
+    - 모든 과거 assistant/tool output의 전수 의미 분석
+    - life 전 영역을 동시에 자동 운영
+    - 검증되지 않은 identity 자동 확정
+    - boundary가 불명확한 agent 수 증가
+
+ninety_day_roadmap:
+  - id: milestone_brian_os_days_0_14_baseline
+    object_type: Milestone
+    project_ref: project_ai_agent
+    title: 방향 확인, outcome 표본 audit, 두 pilot과 scorecard 확정
+    due_date: '2026-07-31'
+    status: proposed
+    related_tasks:
+      - task_brian_os_recent_session_outcome_audit
+      - task_brian_os_select_two_pilots
+      - task_brian_os_define_pilot_scorecard
+
+  - id: milestone_brian_os_days_15_45_close_two_loops
+    object_type: Milestone
+    project_ref: project_ai_agent
+    title: Work feature 1개와 BODY 주간 review 4회의 폐루프 실행
+    due_date: '2026-08-31'
+    status: proposed
+    related_tasks:
+      - work_pilot_requirement_to_feedback
+      - body_pilot_four_weekly_reviews
+
+  - id: milestone_brian_os_days_46_75_feedback_and_pruning
+    object_type: Milestone
+    project_ref: project_ai_agent
+    title: feedback 누락 보완, 사용되지 않은 schema·rule 제거, FINANCE shadow pilot 판단
+    due_date: '2026-09-30'
+    status: proposed
+    related_tasks:
+      - audit_decision_action_feedback_coverage
+      - prune_unused_ontology_objects
+      - decide_finance_shadow_pilot
+
+  - id: milestone_brian_os_day_90_scale_gate
+    object_type: Milestone
+    project_ref: project_ai_agent
+    title: 유지·확장·수정·중단 결정
+    due_date: '2026-10-15'
+    status: proposed
+    related_tasks:
+      - evaluate_brian_os_pilot_scorecard
+      - decide_next_platform_investment
+
+pilot_scorecard:
+  status: proposed_thresholds_need_baseline
+  measures:
+    - id: metric_source_retrieval_hit_rate
+      question: 표본 질문 20개에서 정확한 source와 current object를 찾을 수 있는가?
+      proposed_target: at_least_90_percent
+    - id: metric_decision_trace_completeness
+      question: 중요한 결정에 state, alternatives, rationale, action, evidence가 연결되는가?
+      proposed_target: at_least_80_percent
+    - id: metric_feedback_coverage
+      question: 실행한 pilot action에 실제 outcome 또는 explicit pending이 남는가?
+      proposed_target: at_least_70_percent
+    - id: metric_critical_stale_state
+      question: 의사결정에 사용한 critical state가 오래되었는데 표시되지 않은 경우가 있는가?
+      proposed_target: zero
+    - id: metric_evidence_freshness
+      question: Work pilot closure의 required evidence가 현재 implementation version과 일치하는가?
+      proposed_target: 100_percent_for_required_contracts
+    - id: metric_weekly_maintenance_cost
+      question: Life pilot의 수동 정리 비용이 지속 가능한가?
+      proposed_target: no_more_than_30_minutes_per_week
+    - id: metric_cognitive_load_change
+      question: 중요한 다음 행동을 정하는 주관적 부담이 baseline보다 줄었는가?
+      proposed_target: improve_by_at_least_one_on_five_point_scale
+    - id: metric_reuse_event
+      question: 과거 decision, evidence, lesson이 실제 새 판단을 한 번 이상 바꾸었는가?
+      proposed_target: at_least_one_verified_reuse_per_pilot
+
+decision_gates:
+  - gate: day_14_start
+    pass_when: 두 pilot, baseline, success/stop criteria, owner와 review cadence가 명확하다.
+    fail_action: 범위를 하나의 pilot로 줄인다.
+  - gate: day_45_loop_closure
+    pass_when: 두 pilot 모두 decision-action-feedback 한 주기를 실제 evidence로 닫았다.
+    fail_action: 새 기능을 중단하고 누락 링크와 기록 부담의 root cause만 수정한다.
+  - gate: day_75_value
+    pass_when: retrieval, trace, feedback, maintenance 지표가 baseline보다 실질적으로 개선됐다.
+    fail_action: 사용되지 않은 schema와 automation을 제거하고 수동 최소 루프로 축소한다.
+  - gate: day_90_scale
+    pass_when: 두 도메인에서 재사용 사건이 있고 유지 비용이 허용 범위다.
+    fail_action: 플랫폼 확장을 보류하고 archive plus targeted retrieval로 유지한다.
+
+candidate_operating_rules:
+  - id: rule_candidate_no_platform_expansion_before_two_closed_loops
+    object_type: OperatingRule
+    statement: Work와 Life의 작은 pilot 두 개가 실제 decision-action-feedback 가치를 증명하기 전에는 범용 플랫폼 인프라를 늘리지 않는다.
+    applies_when: [new_database_proposal, new_service_proposal, general_ui_proposal, broad_agent_framework_expansion]
+    recommended_actions:
+      - 먼저 현재 파일과 도구로 pilot을 실행한다.
+      - 추가 인프라가 해결할 관측된 병목과 성공 지표를 적는다.
+      - day-90 scale gate 전에는 reversible prototype만 허용한다.
+    derived_from:
+      - architecture_direction_closed_loop_pilots_before_platform_expansion
+      - diagnosis_exploration_strength_can_create_convergence_debt
+    confidence: medium_high
+    needs_user_review: true
+
+  - id: rule_candidate_significant_session_requires_synthesis_gate
+    object_type: OperatingRule
+    statement: 긴 세션이나 중요한 결정을 마칠 때 keep, merge, reject, test, next action을 남기고 단순한 대화 종료를 completion으로 보지 않는다.
+    applies_when: [session_inputs_greater_than_40, important_decision, architecture_change, investment_thesis_change]
+    recommended_actions:
+      - 새 이해와 바뀐 상태를 각각 한 개로 제한해 기록한다.
+      - 검증하지 않은 가설은 candidate로 남긴다.
+      - 중복 객체와 버릴 방향을 명시한다.
+    derived_from:
+      - life/imports/agent_sessions_20260717/direction_analysis_report.json
+    confidence: medium_high
+    needs_user_review: true
+
+open_decisions_for_brian:
+  - Work pilot을 MCTP RX assembler 또는 다른 실제 업무 feature 중 무엇으로 할 것인가?
+  - 첫 Life pilot을 BODY 주간 loop로 할 것인가, 더 시급한 FINANCE shadow review로 할 것인가?
+  - 주간 maintenance budget을 30분으로 제한하는 것이 현실적인가?
+  - AI가 판단 후보를 자동 승격해도 되는 최대 단계는 Understanding candidate까지인가, OperatingRule candidate까지인가?
+  - 90일 동안 새 범용 UI·DB 구축을 보류하는 방향에 동의하는가?
+
+interpretation_boundaries:
+  - 이 방향은 기록에서 추론한 proposed architecture direction이며 Brian의 확정 결정이 아니다.
+  - 39.7% sequence rate는 actual feedback coverage가 아니며 audit 우선순위를 정하기 위한 신호다.
+  - 기술 대화량이 BODY, RELATION, FUN보다 많다는 사실은 가치의 우선순위를 뜻하지 않는다.
+  - Work와 Life pilot의 outcome은 서로 다른 시간축과 불확실성을 가진다.
+  - 건강과 투자 판단은 각각 현재 근거와 필요 시 전문가 검토를 별도로 요구한다.

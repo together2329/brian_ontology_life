@@ -193,3 +193,17 @@ promotions:
       - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006469
     confidence: high
     needs_user_review: false
+
+  - id: promotion_brian_os_closed_loop_direction
+    target_ref: architecture_direction_closed_loop_pilots_before_platform_expansion
+    target_type: ArchitectureDirection
+    relation: supports_direction_exploration
+    rationale: Brian explicitly asked to go deeper and identify the next direction after the full conversation corpus had been connected to the ontology.
+    source_refs:
+      - codex_user_message_019e18d8-5339-7343-85e2-d84d6a5d1b81_001227
+      - claude_user_message_fb9fcc45-d9af-4c68-844a-cb142ff66f54_010211
+      - codex_user_message_019efb57-5dad-7010-aaf9-02f3b97b45dd_005493
+      - codex_user_message_019f0bbf-68b5-7f90-a587-772743e75a62_005673
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006471
+    confidence: medium_high
+    needs_user_review: true

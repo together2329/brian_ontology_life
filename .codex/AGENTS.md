@@ -43,6 +43,8 @@ Use historical memory indexes when they exist:
 - `life/imports/agent_sessions_20260717/user_input_semantic_index.jsonl`: every locally imported direct Codex/Claude input as a `UserInputRecord` pointer with session, workspace, topic, intent, Area, and promotion links.
 - `life/imports/agent_sessions_20260717/conversation_session_index.jsonl`: all tool-specific sessions as `ConversationSession` objects with significance, project candidates, and promoted knowledge links.
 - `life/knowledge/evidence_backed_brian_os.yaml`: promoted cross-tool model of Brian's evolving thought threads, understandings, architecture directions, patterns, operating rules, and the decision to make conversation history part of the ontology.
+- `life/knowledge/brian_os_next_direction_202607.yaml`: proposed next phase for Brian OS, centered on two closed-loop pilots, outcome audit, synthesis gates, scorecard metrics, and a 90-day scale decision.
+- `life/imports/agent_sessions_20260717/direction_analysis_report.json`: reproducible local metrics for session depth, interaction sequences, theme reach, cross-domain overlap, and direction-setting tensions.
 - `life/imports/codex_threads_20260717/thread_index.jsonl`: merged list of Codex UI/imported threads and history-backed sessions.
 - `life/imports/codex_threads_20260717/user_message_index.jsonl`: raw local user-prompt index with candidate Area and record-type labels.
 - `life/body/body_active_log.yaml`: current BODY status, PT trend, body metrics, protein targets, and recent workout records.

@@ -54,7 +54,7 @@ historical_memory:
     status: imported_and_promoted_to_ontology
     date_range: 2025-07-31_to_2026-07-17
     tools: [codex, claude]
-    direct_input_count: 17854
+    direct_input_count: 17856
     session_count: 445
     meaningful_session_count: 245
     corpus_manifest_ref: life/imports/agent_sessions_20260717/ontology_manifest.yaml
@@ -63,6 +63,7 @@ historical_memory:
     promotion_map_ref: life/imports/agent_sessions_20260717/promotion_map.yaml
     promotion_evidence_links_ref: life/imports/agent_sessions_20260717/promotion_evidence_links.jsonl
     promoted_knowledge_ref: life/knowledge/evidence_backed_brian_os.yaml
+    next_direction_ref: life/knowledge/brian_os_next_direction_202607.yaml
     raw_policy: Tool-specific raw input indexes remain local; assistant, tool, subagent, and automated rows are not treated as Brian-authored truth.
 
 known_context:
@@ -77,7 +78,9 @@ known_context:
   knowledge:
     active_thought_threads_ref: life/knowledge/agent_architecture_thoughts.yaml
     evidence_backed_brian_os_ref: life/knowledge/evidence_backed_brian_os.yaml
+    brian_os_next_direction_ref: life/knowledge/brian_os_next_direction_202607.yaml
     conversation_corpus_manifest_ref: life/imports/agent_sessions_20260717/ontology_manifest.yaml
+    direction_analysis_ref: life/imports/agent_sessions_20260717/direction_analysis_report.json
     current_interest_refs:
       - knowledge_interest_20260615_agent_memory_architecture
       - knowledge_interest_20260616_agentic_rag_graphrag_personal_memory
@@ -91,6 +94,7 @@ known_context:
       - architecture_direction_20260616_agentic_retrieval_substrate
       - architecture_direction_one_ontology_work_and_life_surfaces
       - architecture_direction_llm_judgment_with_deterministic_boundaries
+      - architecture_direction_closed_loop_pilots_before_platform_expansion
     operating_rule_refs:
       - rule_conversation_memory_preserve_raw_then_promote
       - rule_evidence_before_completion

@@ -11,7 +11,7 @@ machine_report_ref: life/imports/codex_threads_20260717/deep_analysis_report.jso
 scope:
   source: /Users/brian/.codex/history.jsonl
   period: 2025-07-31_to_2026-07-17
-  user_input_count: 6469
+  user_input_count: 6471
   session_count: 177
   sessions_with_rollout_metadata: 173
   processing: local_only
@@ -56,9 +56,9 @@ quantitative_overview:
     2025-12: 56
     2026-05: 2335
     2026-06: 3444
-    2026-07_through_17: 626
+    2026-07_through_17: 628
   text_shape:
-    total_characters: 6072403
+    total_characters: 6072444
     median_characters: 26
     p90_characters: 96
     p99_characters: 15385
@@ -67,7 +67,7 @@ quantitative_overview:
     messages_at_least_5000_characters: 135
     interpretation: Most inputs are compact steering turns, with a small long-tail of pasted transcripts, specifications, and logs.
   origin_candidates:
-    direct_user_input: 5987
+    direct_user_input: 5989
     direct_or_composed_long_input: 146
     pasted_transcript_or_tool_log: 127
     pasted_document_or_long_context: 79
@@ -76,13 +76,13 @@ quantitative_overview:
     delegated_or_automated_task_prompt: 3
     caution: Origin labels are deterministic candidates, not authorship proof.
   intent_candidates_overlap:
-    question_or_exploration: 3166
+    question_or_exploration: 3167
     action_request: 969
     feedback_or_correction: 706
     decision_or_approval: 456
     status_or_result_check: 267
     personal_fact_or_experience: 89
-    unclassified: 2361
+    unclassified: 2362
     interpretation: Exploration dominates, but it is repeatedly converted into implementation, correction, decision, and verification turns.
   topic_candidates_overlap:
     semiconductor_ip: 878
@@ -97,7 +97,7 @@ quantitative_overview:
     mind_happiness: 30
     relations_pets: 8
     travel_fun: 3
-    unclassified: 4180
+    unclassified: 4182
     caution: Short commands such as "go ahead" or "push" are context-dependent and therefore often unclassified.
 
 workspace_activity_map:
@@ -110,11 +110,11 @@ workspace_activity_map:
       NEW_ATLAS: 510
     activity_read: Agent runtime, Atlas UI, sessions, memory, workflows, multi-user operation, and product UX formed the largest workstream.
   - group: ontology_and_ip_development_family
-    messages: 1555
-    share_percent: 24.1
+    messages: 1556
+    share_percent: 24.0
     activity_read: OAG, RTL/TB generation, MCTP and other IP pilots, contracts, evidence, gates, and wavefront work formed the second major workstream.
   - group: life_ontology_repository
-    messages: 573
+    messages: 574
     share_percent: 8.9
     activity_read: Historical imports and current BODY, MIND, FINANCE, RELATION, FUN, and identity records were brought into a connected local ontology.
   - group: codex_source_and_agent_framework_experiments
@@ -364,7 +364,7 @@ retrieval_guidance:
 
 limitations:
   - The topic and intent rules are keyword-based and overlap by design.
-  - The 4180 unclassified topic candidates are mostly short context-dependent steering turns, not evidence that the content lacks meaning.
+  - The 4182 unclassified topic candidates are mostly short context-dependent steering turns, not evidence that the content lacks meaning.
   - Pasted assistant text can resemble Brian-authored statements; origin candidates reduce but do not eliminate this ambiguity.
   - Workspace counts show where conversations occurred, not how much code or successful output each workspace produced.
   - The archive begins sparsely and is not a complete record of Brian's life or all agent activity.
