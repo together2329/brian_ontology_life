@@ -97,6 +97,465 @@ global_market_baseline:
       url: https://www.srgresearch.com/articles/hyperscale-data-center-count-hits-1136-average-size-increases-us-accounts-for-54-of-total-capacity
 
 campus_profiles:
+  - id: dc_data4_european_portfolio
+    name: DATA4 European data-center portfolio
+    record_granularity: regional_operator_portfolio_not_one_physical_campus
+    operator: DATA4
+    lifecycle_as_of_2026_07_18: operating_and_expanding_with_announced_development
+    location:
+      current_operator_headline:
+        campuses: 10
+        countries: 6
+        countries_list: [France, Italy, Spain, Poland, Germany, Greece]
+      current_ten_campus_label_reconciliation:
+        France:
+          PAR01: {address: 3_Route_de_Marcoussis_91620_Nozay_France, headline_power_mw: 250, land_ha: 110}
+          PAR02: {address: 15_rue_Angiboust_91460_Marcoussis_France, headline_power_mw: 5, land_ha: 1}
+          PAR03: {address: 7_Route_Villejust_91620_Nozay_France, headline_power_mw: 250, land_ha: 22}
+        Italy:
+          MIL01: {address: Via_Monzoro_101_105_20007_Cornaredo_MI_Italy, headline_power_mw: 170, land_ha: 20}
+          MIL02: {address: Vittuone_20007_MI_Italy, headline_power_mw: 100, land_ha: 8}
+        Spain:
+          MAD01: {address: Avenida_de_la_Industria_15_28108_Alcobendas_Spain, headline_power_mw: 50, land_ha: 4}
+          MAD02: {address: San_Agustin_del_Guadalix_28750_Madrid_Spain, headline_power_mw: 50, land_ha: 6.7}
+        Poland:
+          Warsaw_Jawczyce: {address: Przyparkowa_21_05_850_Jawczyce_Poland, headline_power_mw_up_to: 60, land_ha: 4}
+        Germany:
+          Frankfurt_Hanau: {address: Depotstrasse_63457_Hanau_Germany, available_electricity_reserve_mw: 180, land_ha: 25}
+        Greece:
+          Athens_Peania: {address: Agiou_Louka_33_19002_Peania_Greece, available_electricity_reserve_mw: 90, bullet_land_ha: 7.5, hero_counter_land_ha_as_rendered: 7}
+      label_boundary: >-
+        The named subcampus and city labels reconcile arithmetically to the
+        current ten-campus headline, but they do not constitute a verified list
+        of ten fully operating sites. PAR03 is under construction and the Hanau
+        page still says its first module was planned for 2025. The current status
+        of each building must be reconciled separately.
+      announced_additional_development:
+        Escaudain_France:
+          address_scope: former_Parc_des_Soufflantes_Usinor_industrial_site_Escaudain_Hauts_de_France
+          campus_ref: dc_data4_escaudain_ai_campus
+          included_in_current_ten_campus_headline: false
+    portfolio_scale:
+      current_homepage_as_of_2026_07_18:
+        campuses: 10
+        IT_space_sqm: 165000
+        available_energy_gw: 1.5
+        land_bank_ha: 200
+        additional_data_center_buildings: 21
+        cloud_providers_and_carriers: 220
+      latest_exact_building_count_as_of_2025_11_18:
+        data_centers: 38
+        countries: 6
+        total_power_capacity_gw: 1.5
+      current_city_page_ledger:
+        Paris: {headline_power_mw: 505, land_ha: 133, named_component_sum_mw_derived: 505}
+        Milan: {headline_electrical_reserve_mw: 317, land_ha: 28, named_component_sum_mw_derived: 270, unexplained_difference_mw_derived: 47}
+        Madrid: {headline_electrical_reserve_mw: 100, land_ha: 10.7, named_component_sum_mw_derived: 100}
+        Warsaw: {available_IT_power_mw_up_to: 60, land_ha: 4}
+        Frankfurt_Hanau: {available_electricity_reserve_mw: 180, land_ha: 25}
+        Athens_Peania: {available_electricity_reserve_mw: 90, bullet_land_ha: 7.5, hero_counter_land_ha_as_rendered: 7}
+      city_headline_power_sum_mw_derived: 1252
+      named_subcampus_component_sum_mw_derived: 1205
+      difference_from_1_5GW_to_city_headlines_mw_derived: 248
+      difference_from_1_5GW_to_named_components_mw_derived: 295
+      scope_boundary: >-
+        Homepage, press-release, city and subcampus figures use total power,
+        available energy, electrical reserve, capacity and available IT power
+        language. They are preserved as published and are not treated as
+        interchangeable energized IT load. The 47 MW Milan gap explains the
+        full difference between the city and named-component sums. Athens also
+        renders a 7-hectare hero counter beside a 7.5-hectare bullet. No reviewed
+        primary source maps all 38 buildings to the ten labels or identifies
+        their operating, energized, leased and utilized state.
+    selected_operating_milestone:
+      Warsaw_Jawczyce_as_of_2026_04_09:
+        first_building_launched: 2023
+        second_data_center_inaugurated: true
+        second_data_center_capacity_mw: 10
+        planned_campus_capacity_mw_up_to: 60
+        planned_gross_space_sqm: 50000
+        planned_IT_space_sqm: 15000
+        invested_to_date_eur_million_approximate: 200
+        planned_investment_by_2030_eur_million_approximate: 600
+        first_building_PUE: 1.27
+        new_site_target_PUE_less_than: 1.3
+    accelerators:
+      exact_operator_owned_or_customer_GPU_inventory_models_racks_utilization_and_site_allocation: undisclosed
+      only_exact_design_accommodation_disclosure:
+        site: PAR03
+        accelerator_type: GPU_model_unspecified
+        GPU_count_nearly: 200000
+        compute_design_petaFLOPS: 4000000
+        lifecycle: planned_design_accommodation_not_installed_inventory
+        site_ref: dc_data4_paris_saclay_cluster
+      boundary: >-
+        The PAR03 figure states what the 250 MW design could house. It does not
+        prove procurement, delivery, installation, customer ownership, live
+        operation or utilization and is not extrapolated to the portfolio.
+    electrical_cooling_and_sustainability:
+      group_2025_operating_indicators:
+        PUE: 1.434
+        PUE_change_since_2021_percent: -10.7
+        WUE: 0.034
+        WUE_change_since_2021_percent: -44
+        WUE_unit_context: report_compares_result_with_industry_benchmark_of_approximately_1_L_per_kWh_IT
+        new_design_PUE_target_less_than: 1.3
+        cooling_tower_systems: not_used_at_group_level
+      power_procurement:
+        low_carbon_electricity_percent: 100
+        PPAs_signed_over_prior_two_years: 5
+        named_PPA_counterparties: [EDF, TotalEnergies, Edison_Energia, Eurowatt, Photosol]
+        France_EDF_CAPN:
+          duration_years: 12
+          existing_nuclear_capacity_mw: 40
+        Spain_TotalEnergies_PPA:
+          duration_years: 10
+          renewable_energy_gwh: 610
+      liquid_cooling:
+        direct_liquid_cooling_design_projects_in_progress_mw: 250
+        first_DLC_by_design_deployment: DC01_Marcoussis_PAR01
+        optimized_components: [cooling_distribution_units, stainless_steel_distribution_network, hybrid_air_liquid_load_banks]
+        validated_by: Uptime_Institute
+        LCA_overall_environmental_impact_reduction_vs_air_only_percent: 40
+      backup_power_supply_chain:
+        framework_supplier: Caterpillar
+        relationship_years_more_than: 15
+        framework_scope: pan_European_generator_set_procurement_and_innovation
+        joint_projects: [HVO_fuel, intelligent_monitoring]
+      exact_portfolio_grid_feeds_substations_transformers_switchgear_UPS_batteries_generators_fuel_cooling_units_CDU_counts_ratings_and_OEM_allocation: undisclosed
+    ownership_and_financial_boundary:
+      Brookfield_acquisition_completed: 2023-08-01
+      BIP_effective_interest_percent_at_acquisition: 19
+      consortium_total_consideration_usd_billion: 3
+      stabilized_Paris_Milan_Madrid_contracted_capacity_mw: 244
+      stabilized_asset_partners: [Brookfield, Arjun_Infrastructure_Partners, Interogo_Holding]
+      exact_stabilized_asset_ownership_percentages: undisclosed
+      current_DATA4_standalone_revenue_operating_income_net_income_capex_debt_and_cash_flow: undisclosed
+      financial_profile_refs: [company_data4]
+    linked_companies:
+      operator_and_investors: [DATA4, Brookfield_Infrastructure, Brookfield_managed_funds, Arjun_Infrastructure_Partners, Interogo_Holding]
+      power_and_grid: [RTE, ENEDIS, EDF, TotalEnergies, Edison_Energia, Eurowatt, Photosol]
+      electrical_and_backup: [Caterpillar, Schneider_Electric]
+      liquid_cooling_ecosystem: [Danfoss, Ceme, Victaulic, Belimo, Rentaload, APL_Data_Center, Uptime_Institute, OVHcloud]
+      financial_profile_refs: [company_data4]
+    sources:
+      - title: DATA4 homepage and current portfolio headline
+        publisher: DATA4
+        date: 2026-07-18_accessed
+        url: https://www.data4group.com/en/
+      - title: DATA4 at the European Summit on Digital Sovereignty
+        publisher: DATA4
+        date: 2025-11-18
+        url: https://www.data4group.com/wp-content/uploads/2025/11/PR_Data4-Summit-on-European-Digital-Sovereignty_ENG_2025.11.18.pdf
+      - title: Paris data-center campuses
+        publisher: DATA4
+        date: 2026-07-18_accessed
+        url: https://www.data4group.com/en/data-center-in-paris-france/
+      - title: Milan data-center campuses
+        publisher: DATA4
+        date: 2026-07-18_accessed
+        url: https://www.data4group.com/en/data-center-in-milan-italy/
+      - title: Madrid data-center campuses
+        publisher: DATA4
+        date: 2026-07-18_accessed
+        url: https://www.data4group.com/en/data-center-in-madrid-spain-2/
+      - title: Warsaw data-center campus
+        publisher: DATA4
+        date: 2026-07-18_accessed
+        url: https://www.data4group.com/en/data-centers-warsaw-poland/
+      - title: Frankfurt Hanau data-center campus
+        publisher: DATA4
+        date: 2026-07-18_accessed
+        url: https://www.data4group.com/en/data-center-in-frankfurt-germany/
+      - title: Athens Peania data-center campus
+        publisher: DATA4
+        date: 2026-07-18_accessed
+        url: https://www.data4group.com/en/data-center-athens-greece/
+      - title: Second Warsaw data center inauguration
+        publisher: DATA4
+        date: 2026-04-09
+        url: https://www.data4group.com/en/news-data4/data4-expands-in-poland-with-second-data-center-near-warsaw/
+      - title: ESG Report 2025
+        publisher: DATA4
+        date: 2026-07-07
+        url: https://www.data4group.com/wp-content/uploads/2025/05/data4-esg-report-2025-en.pdf
+      - title: First DLC design at Marcoussis
+        publisher: DATA4
+        date: 2025-06-02
+        url: https://www.data4group.com/en/ai/first-dlc-design-data4-takes-its-commitment-to-sustainable-innovation-to-the-next-level/
+      - title: DATA4 and Caterpillar pan-European framework
+        publisher: DATA4
+        date: 2025-07-10
+        url: https://www.data4group.com/en/news-data4/data4-caterpillar-strategic-alliance-powering-europes-digital-infrastructure/
+      - title: DATA4 welcomes Arjun and Interogo
+        publisher: DATA4
+        date: 2025-08-01
+        url: https://www.data4group.com/en/news-data4/data4-welcomes-arjun-and-interogo-to-accelerate-its-growth-in-europe/
+    confidence: high_for_current_operator_headlines_city_pages_ESG_metrics_and_named_partnerships_medium_for_ten_label_reconciliation_low_for_building_lifecycle_utilized_load_GPU_inventory_and_complete_equipment_BOM
+
+  - id: dc_data4_paris_saclay_cluster
+    name: DATA4 Paris-Saclay Marcoussis-Nozay cluster
+    record_granularity: three_campus_cluster_with_historical_audited_building_designs
+    operator: DATA4
+    lifecycle_as_of_2026_07_18: operating_and_expanding_with_PAR03_under_construction
+    location:
+      region: Paris_Saclay_Essonne_France
+      cluster_land_ha: 133
+      subcampuses:
+        PAR01:
+          address: 3_Route_de_Marcoussis_91620_Nozay_France
+          headline_power_mw: 250
+          land_ha: 110
+          lifecycle: operating_and_expanding
+        PAR02:
+          address: 15_rue_Angiboust_91460_Marcoussis_France
+          headline_power_mw: 5
+          land_ha: 1
+          lifecycle: current_operator_listed_lifecycle_not_reconciled
+        PAR03:
+          address: 7_Route_Villejust_91620_Nozay_France
+          headline_power_mw: 250
+          land_ha: 22
+          lifecycle: construction_announced_2025_05_16
+      intercampus_context:
+        PAR01_to_PAR03_distance_km: 3
+        PAR01_PAR03_combined_power_mw: 500
+        operator_description: twin_infrastructures_with_fast_reliable_secure_interconnection
+      coordinate_boundary: Exact building polygons and reviewed primary-source coordinates remain undisclosed.
+    capacity_and_accelerators:
+      cluster_headline_power_mw: 505
+      PAR03_design:
+        power_capacity_mw: 250
+        GPU_accommodation_nearly: 200000
+        GPU_model: undisclosed
+        compute_capacity_petaFLOPS: 4000000
+        initial_investment_eur_billion: 1
+        revised_investment_eur_billion: 2
+        intended_workload: AI_dedicated_campus
+        heat_reuse_destination: future_Nozay_eco_district
+      ownership_and_inventory_boundary: >-
+        Nearly 200,000 GPUs and four million petaFLOPS describe PAR03 design
+        accommodation, not a purchase order, installed fleet or live computing
+        inventory. GPU models, server and rack counts, customer ownership,
+        delivery schedule, utilization and measured load are undisclosed.
+    audited_operating_building_scope:
+      assurance_period: 2023-11-01_to_2024-10-31
+      assurance_standard: ISAE_3402_Type_II
+      declared_facilities_in_operation: 20
+      design_identifiers:
+        design_X: [DC01, DC02, DC03, DC04, DC07, DC08, Dual_Building]
+        design_Y: [DC05, DC06, DC09, DC10]
+        design_Y_prime: [DC11, DC12, DC14, DC15, DC16, DC17, DC19]
+        design_Y_double_prime: [DC18, DC20]
+      source_internal_count_conflict: >-
+        The audit text declares 20 operating facilities and its identifier lists
+        total 20, but the rendered category labels say four design-Y-prime
+        buildings while listing seven and one design-Y-double-prime building
+        while listing two. Identifier lists are preserved; the category-count
+        typography is not silently corrected.
+      mapping_boundary: >-
+        The report covers Marcoussis and the Dual Building but does not map every
+        DC identifier to PAR01 or PAR02. These 20 audited 2024 facilities are not
+        added to PAR03's future capacity or to the later 38-center group count.
+    electrical_and_backup_power:
+      campus_grid_path_as_of_2024_audit:
+        Marcoussis_high_voltage_feeds: two_dedicated_direct_underground_90kV_feeds_from_Villejust_substation
+        high_voltage_substation_wording_as_rendered: 2_x_2_substation_with_high_voltage
+        voltage_conversion: 90kV_to_20kV
+        downstream_distribution: multiple_20kV_loops_feeding_each_data_center_by_two_routes
+        Marcoussis_grid_operator: RTE
+        Dual_Building_supply: two_20kV_substations
+        Dual_Building_grid_operator: ENEDIS
+      common_resilience_as_of_2024_audit:
+        transformer_feed: double
+        switchboards: doubled_and_paired
+        UPS_for_all_IT_space: true
+        UPS_battery_autonomy_minutes_at_full_load: 10
+        UPS_and_battery_rooms: separated_by_chain
+        IT_room_power_paths: two_different_UPS_chains
+        minimum_diesel_fuel_autonomy_hours: 72
+      detailed_design_table_as_rendered:
+        design_X:
+          density_kw_per_sqm: 1.5
+          power_distribution: 2N
+          redundant_electrical_chains_per_block: 2
+          transformers_per_block_as_rendered: 2_x_2_units_at_3150_kVA
+          UPS_per_block_as_rendered: 6_x_3_units_at_1500_kVA
+          standby_generators: {count: 3, unit_rating_kVA: 2500, redundancy: N_plus_1}
+          fuel_tanks: {count: 2, liters_each: 50000, autonomy_hours: 94}
+          cooling:
+            chillers: {count: 4, rating_as_rendered: 1100_kVa, redundancy: N_plus_1_at_building}
+            CRAH_per_room: {count: 6, unit_rating_kWf: 101, redundancy: N_plus_2}
+        design_Y:
+          density_kw_per_sqm: 1.8
+          power_distribution: shared_3N_over_2
+          transformers_per_UPS_chain: {count: 2, unit_rating_kVA: 2000, topology_label: 2N}
+          UPS_as_rendered: 3_chains_4_UPS_per_chain_4500_kVA_label_N_plus_1
+          standby_generators: {count: 4, unit_rating_kVA: 2500, redundancy: N_plus_2}
+          fuel_tanks: {count: 2, liters_each: 50000, autonomy_hours: 94}
+          cooling:
+            AHU_per_datahall: {count: 10, unit_rating_kWf: 225, method: free_cooling, redundancy: N_plus_2}
+            total_AHU_as_rendered: {count: 20, redundancy: N_plus_4}
+        design_Y_prime:
+          density_kw_per_sqm: 2.0
+          power_distribution: shared_3_plus_1
+          transformer_per_UPS_chain: {count: 1, unit_rating_kVA: 2750, redundancy: N_plus_1}
+          UPS_as_rendered: 4_chains_6_x_250_kVA_per_chain_4_x_1_5_MVA_total_label_N_plus_1
+          standby_generators: {count: 4, unit_rating_kVA: 2500, redundancy: N_plus_1}
+          fuel_tanks: {count: 2, liters_each: 50000, autonomy_hours: 94}
+          cooling:
+            AHU_per_datahall: {count: 10, unit_rating_kWf: 300, method: indirect_free_cooling, redundancy: N_plus_2}
+            total_AHU: {count: 20, redundancy: N_plus_2}
+        design_Y_double_prime:
+          density_kw_per_sqm: 2.5
+          power_distribution: 2_times_3_plus_1
+          transformer_per_UPS_chain: {count: 1, unit_rating_kVA: 2900, redundancy: N_plus_1}
+          UPS_as_rendered: 8_chains_5_x_400_kVA_per_chain_8_x_2_MVA_total_label_N_plus_1
+          standby_generators: {count: 8, unit_rating_kVA: 3250, redundancy: N_plus_1}
+          fuel_tanks: {count: 8, liters_each: 40000, autonomy_hours: 72}
+          cooling:
+            fanwalls_per_datahall: {count: 12, unit_rating_kWf: 300, method: indirect_free_cooling, redundancy: N_plus_2}
+            AHU_for_IT_rooms: {count: 5, backup_units: 1, redundancy: N_plus_1}
+      audit_internal_equipment_conflict: >-
+        The report's general generator summary says design X uses four 2,500-kVA
+        units and design Y/Y-prime three units, while the later detailed pages
+        say design X has three, design Y four and design Y-prime four. The
+        detailed table is recorded as rendered but the conflict prevents an
+        exact current portfolio equipment count. The design-X chiller unit is
+        rendered as kVa rather than a thermal unit and is not reinterpreted.
+      exact_current_substation_transformer_switchgear_UPS_battery_generator_and_fuel_inventory_by_building_and_equipment_OEM: undisclosed
+    liquid_cooling_and_heat_reuse:
+      DC01_Marcoussis_DLC_by_design:
+        implementation_status_in_ESG_2025: successfully_implemented_in_2025
+        cooling_type: direct_liquid_cooling_with_hybrid_air_liquid_testing
+        co_developers: [Schneider_Electric, Danfoss]
+        optimized_component: cooling_distribution_unit
+        implementation_partner: Ceme
+        supporting_partners: [Victaulic, Belimo, Rentaload, APL_Data_Center]
+        commissioning_validation: Uptime_Institute
+        Rentaload_test_capability:
+          liquid_load_kw_per_simulated_rack_up_to: 140
+          air_load_kw_per_simulated_rack_up_to: 60
+        LCA_overall_environmental_impact_reduction_vs_air_only_percent: 40
+      OVHcloud_Marcoussis_deployment:
+        customer: OVHcloud
+        integration: OVHcloud_proprietary_liquid_cooling_connected_to_DATA4_cold_water_loops
+        electricity_saving_vs_conventional_air_cooling_percent_approximate: 25
+        reported_Marcoussis_WUE_L_per_kWh_IT: 0.06
+        GPU_or_server_inventory: undisclosed
+      PAR03_heat_reuse:
+        source: excess_server_heat
+        destination: future_Nozay_eco_district
+        thermal_capacity_timeline_and_revenue: undisclosed
+    linked_companies:
+      operator_and_investor: [DATA4, Brookfield]
+      grid_and_power: [RTE, ENEDIS, Caterpillar]
+      liquid_cooling_and_validation: [Schneider_Electric, Danfoss, Ceme, Victaulic, Belimo, Rentaload, APL_Data_Center, Uptime_Institute, OVHcloud]
+      financial_profile_refs: [company_data4]
+      supplier_boundary: >-
+        Caterpillar has a pan-European generator framework with DATA4, but the
+        reviewed evidence does not assign current Caterpillar models or unit
+        counts to these audited buildings. Cooling-partner roles are limited to
+        the named DC01 or OVHcloud projects and are not generalized to PAR03.
+    sources:
+      - title: Paris data-center campuses
+        publisher: DATA4
+        date: 2026-07-18_accessed
+        url: https://www.data4group.com/en/data-center-in-paris-france/
+      - title: PAR03 AI campus announcement
+        publisher: DATA4
+        date: 2025-05-16
+        url: https://www.data4group.com/wp-content/uploads/2025/06/CP-PAR03-ENG.pdf
+      - title: ISAE 3402 Type II report for Marcoussis and Dual Building
+        publisher: DATA4_and_Grant_Thornton_France
+        date: 2024-12-05
+        url: https://www.data4group.com/wp-content/uploads/2025/07/DATA-4-ISAE-3402-Type-II-report_2024_Marcoussis-1.pdf
+      - title: ESG Report 2025
+        publisher: DATA4
+        date: 2026-07-07
+        url: https://www.data4group.com/wp-content/uploads/2025/05/data4-esg-report-2025-en.pdf
+      - title: First DLC design at Marcoussis
+        publisher: DATA4
+        date: 2025-06-02
+        url: https://www.data4group.com/en/ai/first-dlc-design-data4-takes-its-commitment-to-sustainable-innovation-to-the-next-level/
+      - title: OVHcloud liquid-cooling partnership at Marcoussis
+        publisher: DATA4
+        date: 2024-03-13
+        url: https://www.data4group.com/en/news-data4/data4-enters-the-liquid-cooling-adventure-in-partnership-with-ovhcloud/
+      - title: DATA4 and Caterpillar pan-European framework
+        publisher: DATA4
+        date: 2025-07-10
+        url: https://www.data4group.com/en/news-data4/data4-caterpillar-strategic-alliance-powering-europes-digital-infrastructure/
+    confidence: high_for_published_cluster_scale_PAR03_design_and_2024_audited_power_cooling_architecture_medium_for_current_building_mapping_low_for_installed_GPU_inventory_utilized_load_and_current_equipment_OEM_allocation
+
+  - id: dc_data4_escaudain_ai_campus
+    name: DATA4 Escaudain AI campus
+    record_granularity: announced_multi_building_campus_development
+    operator: DATA4
+    lifecycle_as_of_2026_07_18: feasibility_confirmed_preliminary_studies_and_construction_preparation
+    location:
+      city: Escaudain
+      region: Hauts_de_France
+      country: France
+      site: former_Parc_des_Soufflantes_Usinor_industrial_brownfield
+      land_ha: 33
+      strategic_context: intersection_of_Frankfurt_London_Amsterdam_Paris_markets
+      exact_street_address_coordinates_and_parcel_boundary: undisclosed_in_reviewed_primary_sources
+    development_scale:
+      ultimate_capacity_mw: 700
+      planned_next_generation_data_centers: 4
+      investment_eur_billion: 5
+      permanent_jobs_upon_completion: 2400
+      operator_description: largest_DATA4_project_in_France
+      feasibility_studies_confirmed_conditions_met: true
+      studies_and_preliminary_construction_window_from_2026_06_months: 12
+      first_building_completion_and_full_campus_completion_dates: undisclosed
+      capacity_boundary: >-
+        The 700 MW is the future campus capacity at completion. It is not
+        operating, energized, leased, utilized or billed IT load and is not added
+        to DATA4's current 1.5-GW headline because scope overlap is undisclosed.
+    accelerators:
+      intended_workloads: [artificial_intelligence, cloud]
+      exact_GPU_or_other_accelerator_models_counts_servers_racks_ownership_customers_delivery_and_utilization: undisclosed
+      boundary: AI-dedicated positioning is not evidence of installed accelerator inventory.
+    electrical_and_cooling:
+      grid_context:
+        transmission_system_operator: RTE
+        program: French_government_and_RTE_fast_track_ready_to_use_site_procedure
+        operator_claim: reliable_decarbonized_available_energy_in_region
+        exact_grid_connection_voltage_MVA_service_schedule_substation_transformers_switchgear_and_tariff: undisclosed
+      building_design_signals:
+        low_carbon_concrete: planned
+        residual_server_heat_recycling: planned
+        direct_liquid_cooling_and_CDU_design: undisclosed
+      backup_and_distribution:
+        exact_UPS_battery_generator_fuel_runtime_redundancy_and_equipment_OEMs: undisclosed
+      cooling_performance:
+        exact_PUE_WUE_water_consumption_heat_reuse_MW_and_cooling_equipment: undisclosed
+    ownership_and_financial_boundary:
+      owner_operator: DATA4
+      project_investment_eur_billion: 5
+      funding_mix_debt_equity_committed_spend_incurred_capex_and_project_revenue_operating_profit: undisclosed
+      parent_financial_profile_refs: [company_data4]
+    linked_companies_and_public_partners:
+      owner_operator: [DATA4]
+      grid: [RTE]
+      public_partner: [La_Communaute_d_Agglomeration_de_La_Porte_du_Hainaut]
+      financial_profile_refs: [company_data4]
+      boundary: >-
+        DATA4's portfolio agreements with Caterpillar and liquid-cooling partners
+        are not assigned to Escaudain without a project-specific award.
+    sources:
+      - title: DATA4 confirms its largest data-center project in Northern France
+        publisher: DATA4
+        date: 2026-06-12
+        url: https://www.data4group.com/wp-content/uploads/2026/06/Press-release_Data4-launches-a-new-campus-in-France.pdf
+      - title: Escaudain campus web announcement
+        publisher: DATA4
+        date: 2026-06-12
+        url: https://www.data4group.com/en/news-data4/in-northern-france-data4-launches-its-largest-data-center-campus-to-support-europes-ai-growth/
+    confidence: high_for_location_land_capacity_building_count_investment_and_current_development_stage_low_for_energization_customer_GPU_and_equipment_details
+
   - id: dc_coresite_american_tower_us_portfolio
     name: CoreSite and American Tower United States data-center portfolio
     record_granularity: national_operator_portfolio_not_one_physical_campus
@@ -10827,6 +11286,15 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
+    - DATA4_38_data_centers_to_exact_building_ID_address_coordinate_ownership_and_lifecycle_reconciliation
+    - DATA4_1_5GW_portfolio_headline_to_1252MW_city_pages_1205MW_named_components_and_current_energized_leased_utilized_IT_load
+    - DATA4_ten_campus_labels_to_operating_construction_and_announced_status_including_PAR03_and_Hanau
+    - DATA4_per_building_rack_GPU_server_customer_utilization_PUE_WUE_water_and_power_cooling_equipment_BOM
+    - DATA4_PAR03_nearly_200000_GPU_design_to_actual_procurement_models_ownership_delivery_installation_and_live_utilization
+    - DATA4_Paris_20_audited_building_IDs_to_PAR01_PAR02_mapping_and_generator_category_count_conflict_resolution
+    - DATA4_Milan_317MW_headline_to_270MW_named_subcampus_component_gap_reconciliation
+    - DATA4_Escaudain_grid_connection_voltage_MVA_schedule_substation_UPS_generator_liquid_cooling_customer_and_GPU_awards
+    - DATA4_244MW_stabilized_portfolio_exact_partner_stakes_building_roster_and_operating_economics
     - CoreSite_30_operating_facilities_to_27_visible_operating_cards_and_three_uncarded_Silicon_Valley_IDs_reconciliation
     - CoreSite_3_773_million_SEC_NRSF_to_4_8_million_marketing_gross_area_and_market_card_scope_reconciliation
     - CoreSite_per_site_energized_leased_utilized_IT_load_rack_count_PUE_WUE_water_and_power_cooling_equipment_BOM
