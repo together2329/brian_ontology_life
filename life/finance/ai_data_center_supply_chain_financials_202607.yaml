@@ -1237,16 +1237,32 @@ financial_profiles:
     data_center_exposure:
       roles: [hyperscale_owner_operator, AI_accelerator_buyer, custom_silicon_designer]
       confirmed_campus_refs:
+        - dc_meta_global_data_center_portfolio
+        - dc_meta_sturgeon_county
         - dc_meta_hyperion_richland_parish
         - dc_reliance_intelligence_jamnagar
         - dc_meta_prometheus_new_albany
       accelerator_portfolio: [NVIDIA_GPUs, AMD_Instinct_future_deployments, Meta_MTIA]
+      current_global_GPU_scale_language: hundreds_of_thousands
+      exact_current_global_GPU_and_MTIA_inventory: undisclosed
+      disclosed_H100_cluster_milestones:
+        two_clusters_each: 24000
+        later_single_cluster: 129000
+        boundary: Build milestones are not summed into current inventory because overlap, retirement, upgrades, and site allocation are undisclosed.
       AMD_agreement_capacity_gw_up_to: 6
+      current_global_location_rows: 33
+      exact_current_operating_owned_leased_buildings: undisclosed
+      owned_online_site_baseline_from_2024_environmental_index: 18
+      2024_data_center_electricity_mwh: 18061781
+      2024_data_center_PUE: 1.08
+      2024_data_center_WUE_l_per_kwh: 0.19
       boundary: Revenue is predominantly advertising; data centers are a cost and capability base rather than a separately reported revenue segment.
     management_outlook:
       period: FY2026_raised
       total_expenses_usd_million_range: [162000, 169000]
       capital_expenditures_including_finance_lease_principal_usd_million_range: [125000, 145000]
+      capex_growth_over_FY2025_percent_range_derived: [73.1, 100.8]
+      derivation: FY2026_range_divided_by_FY2025_72220_minus_one
       operating_income_expected_above_FY2025: true
     watch_items:
       - return_on_AI_infrastructure_spend
@@ -1257,6 +1273,12 @@ financial_profiles:
       - https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Fourth-Quarter-and-Full-Year-2025-Results/
       - https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-First-Quarter-2026-Results/
       - https://about.fb.com/news/2026/02/meta-amd-partner-longterm-ai-infrastructure-agreement/
+      - https://datacenters.atmeta.com/all-locations/
+      - https://about.fb.com/news/2026/07/breaking-ground-on-metas-first-data-center-in-canada/
+      - https://sustainability.atmeta.com/wp-content/uploads/2025/10/Meta_2025-Environmental-Data-Index.pdf
+      - https://engineering.fb.com/2025/09/29/data-infrastructure/metas-infrastructure-evolution-and-the-advent-of-ai/
+      - https://engineering.fb.com/2025/11/21/data-infrastructure/zoomer-powering-ai-performance-meta-intelligent-debugging-optimization/
+      - https://engineering.fb.com/2026/07/01/data-infrastructure/metas-ai-storage-blueprint-at-scale/
     confidence: high
 
   - id: company_amazon
@@ -4602,6 +4624,8 @@ cross_company_read_through:
     - Hyperscale buyers are funding the demand wave directly: Meta raised its 2026 capex range, Amazon's free cash flow fell as AI property investment rose, and Oracle is financing rapid OCI expansion against a very large AI-heavy RPO.
     - AWS currently reports 39 Regions and 123 Availability Zones, Microsoft more than 500 datacenters in 34 countries, and Google 30 active location headlines. Those disclosures use different physical and logical scopes, so fleet size cannot be ranked safely without building, ownership, and lifecycle reconciliation.
     - Amazon, Microsoft, and Alphabet all show strong current cloud earnings while accelerating infrastructure: AWS produced $14.16 billion of Q1 2026 operating income, Microsoft Intelligent Cloud $13.75 billion, and Google Cloud $6.60 billion. These segment results include services beyond physical data centers and do not reveal campus-level return on capital.
+    - Meta's current public roster reaches 33 data-center locations, but its 2024 Environmental Data Index individually reported only 18 owned online sites plus aggregated leased facilities. The 33-location page mixes operating and future projects, so it is not a current operating-building count. Meta's FY2026 capex outlook of $125-$145 billion is a derived 73%-101% increase over FY2025 and makes delivery, utilization, and depreciation central return-on-capital variables.
+    - Meta engineering provides unusually concrete accelerator milestones: two 24,000-H100 clusters, a later 129,000-H100 cluster spanning five emptied production data centers, and a Blackwell pod example with 72 GPUs drawing about 140 kW across two GPU racks plus four air-assisted liquid-cooling racks. Its current fleet is described only as hundreds of thousands of GPUs; these milestones cannot be summed into an exact live global inventory.
     - Public accelerator figures remain asymmetric. Amazon disclosed more than 2.1 million accelerated chips landed over 12 months, Microsoft hundreds of thousands of liquid-cooled Grace Blackwell GPUs deployed in under a year, and Google network capability beyond one million TPUs or up to 960,000 Vera Rubin GPUs. The Amazon and Microsoft figures are deployment-flow statements; Google's are architecture or logical-cluster ceilings, and none is an exact live global site inventory.
     - Google provides unusually deep power and cooling architecture evidence: more than 100 million rack-battery cells, distributed 48 VDC BBUs, more than 2,000 liquid-cooled TPU Pods at gigawatt scale, and a next-generation plus-or-minus-400 VDC path to 1 MW racks. These fleet and design disclosures still do not identify per-site grid capacity, UPS/generator counts, or equipment suppliers.
     - Oracle's five disclosed US OpenAI campuses now have different power paths: ERCOT plus GE Vernova backup turbines in Abilene, a VoltaGrid reciprocating-engine microgrid block at Frontier, Bloom fuel cells at Project Jupiter, WEC grid expansion at Lighthouse, and DTE grid plus matching storage at The Barn. Their IT, generation, grid-demand, and storage figures are intentionally kept separate.
