@@ -4826,6 +4826,310 @@ campus_profiles:
         url: https://www.portwashingtonwi.gov/home/showpublisheddocument/6064/638912112748970000
     confidence: high_for_design_scale_land_schedule_utility_demand_and_cooling_low_for_installed_IT_load_and_accelerator_inventory
 
+  - id: dc_stack_global_data_center_portfolio
+    name: STACK Infrastructure global data-center portfolio
+    record_granularity: global_operator_portfolio_not_one_physical_campus
+    operator: STACK_Infrastructure
+    private_owner_and_sponsor: IPI_Partners
+    lifecycle_as_of_2026_07_18: mixed_operating_under_development_planned_and_potential
+    location:
+      current_homepage_headline_global_markets: 24
+      current_navigation_market_labels_derived: 22
+      current_navigation_markets:
+        Americas: [Atlanta, Calgary, Chicago, Dallas_Fort_Worth, New_Albany, Northern_Virginia, Phoenix, Portland, Silicon_Valley, Toronto]
+        APAC: [Johor_Bahru, Melbourne, Osaka, Sydney, Tokyo]
+        EMEA: [Copenhagen, Frankfurt, Geneva, Milan, Oslo, Stockholm, Zurich]
+      impact_report_as_of_2025_09_30:
+        markets: 25
+        map_labels: [Calgary, Hillsboro_OR, Silicon_Valley, Phoenix, Southern_New_Mexico, Dallas, Atlanta, Chicago, New_Albany, Northern_Virginia, Toronto, Stockholm, Zurich, Geneva, Milan, Oslo, Copenhagen, Frankfurt, Seoul, Tokyo, Osaka, Canberra, Sydney, Melbourne, Johor_Bahru]
+        anticipated_market_entry_subject_to_final_approvals: [Southern_New_Mexico, Sydney]
+      reconciliation_boundary: >-
+        The current homepage headline, current navigation, and September 2025
+        Impact Report have different dates and scopes. Southern New Mexico, Seoul,
+        and Canberra appear on the report map but not the current navigation. The
+        24-market headline therefore cannot be reconstructed exactly from the 22
+        visible current labels or treated as a physical-campus count.
+    portfolio_scale:
+      current_homepage:
+        built_and_under_development_gw_more_than: 8.5
+        planned_and_potential_development_gw_more_than: 8.5
+      current_regional_page_headlines:
+        Americas: {capacity_mw: 3200, campuses: 23, acres: 1360}
+        EMEA: {capacity_mw: 643, campuses: 19, acres: 280}
+        APAC: {capacity_mw: 470, campuses: 4, acres: 81}
+        global_capacity_mw_derived: 4313
+        global_campuses_derived: 46
+        global_acres_derived: 1721
+      current_market_cards:
+        Americas:
+          Atlanta: {sites: 2, capacity_mw: 180}
+          Calgary: {sites: undisclosed, capacity_mw: undisclosed}
+          Chicago: {sites: 2, capacity_mw: 76}
+          Dallas_Fort_Worth: {sites: 2, capacity_mw: 580}
+          New_Albany: {sites: 1, capacity_mw: 60}
+          Northern_Virginia: {sites: 7, capacity_mw: 2400}
+          Phoenix: {sites: 2, capacity_mw: 500}
+          Portland: {sites: 3, capacity_mw: 250}
+          Silicon_Valley: {sites: 2, capacity_mw: 200}
+          Toronto: {sites: 1, capacity_mw: 56}
+          known_card_total_excluding_Calgary: {sites: 22, capacity_mw: 4302}
+        EMEA:
+          Copenhagen: {sites: 1, capacity_mw: 72}
+          Frankfurt: {sites: 1, capacity_mw: 96}
+          Geneva: {sites: 3, capacity_mw: 42}
+          Milan: {sites: 9, capacity_mw: 299}
+          Oslo: {sites: 2, capacity_mw: 40}
+          Stockholm: {sites: 1, capacity_mw: 18}
+          Zurich: {sites: 3, capacity_mw: 76}
+          card_total_derived: {sites: 20, capacity_mw: 643}
+        APAC:
+          Johor_Bahru: {sites: 1, capacity_mw: 216}
+          Melbourne: {sites: 2, capacity_mw: 432}
+          Osaka: {sites: 1, capacity_mw: 78}
+          Sydney: {sites: 1, capacity_mw: 360}
+          Tokyo: {sites: 1, capacity_mw: 36}
+          card_total_derived: {sites: 6, capacity_mw: 1122}
+        known_global_card_total_excluding_Calgary_derived: {sites: 48, capacity_mw: 6067}
+      impact_report_as_of_2025_09_30:
+        active_or_under_development_data_centers_more_than: 100
+        employees_more_than: 1000
+      scope_boundary: >-
+        Regional headline totals and individual market-card totals conflict on
+        the same current pages: Americas cards exceed the 3,200 MW headline,
+        EMEA cards match 643 MW but total 20 rather than 19 sites, and APAC cards
+        total 1,122 MW and six sites versus a 470 MW/four-campus headline. These
+        figures likely mix different lifecycle and full-buildout scopes. Neither
+        set is treated as operating, energized, leased, or utilized capacity.
+    accelerators:
+      target_workloads: [AI, machine_learning, cloud, high_density_compute]
+      exact_GPU_or_accelerator_vendors_models_counts_racks_and_site_allocation: undisclosed
+      portfolio_design_cooling_options:
+        traditional_air_cooling_kw_per_rack_up_to: 30
+        rear_door_heat_exchanger_kw_per_rack_up_to: 50
+        direct_to_chip_liquid_cooling_kw_per_rack_up_to: 100
+        future_immersion_cooling_kw_per_rack_up_to_or_exceeding: 300
+      boundary: >-
+        Portfolio-level cooling design options demonstrate supported rack density,
+        not installed GPU inventory or deployment at every STACK campus.
+    electrical_cooling_and_environmental_performance:
+      data_period: calendar_2024
+      climate_risk_assessments:
+        Americas_sites: 73
+        APAC_sites: 9
+        EMEA_sites: 33
+        global_sites: 115
+        owned_site_portfolio_coverage_percent: 100
+        boundary: The 115 assessed owned sites are not equivalent to the current campus or active-data-center counts.
+      energy:
+        electricity_use_mwh: {Americas: 1068062, APAC: 24270, EMEA: 459004, global: 1551336}
+        diesel_gallons: {Americas: 141359, APAC: 20077, EMEA: 76867, global: 238303}
+        HVO_gallons: {Americas: 59728, APAC: 0, EMEA: 9570, global: 69298}
+        natural_gas_therms: {Americas: 44548, APAC: 943, EMEA: 10867, global: 56358}
+        design_PUE: {Americas: 1.30, APAC: 1.30, EMEA: 1.30, global: 1.30}
+        operational_PUE: {Americas: 1.30, APAC: 1.28, EMEA: 1.31, global: 1.30}
+        operational_metric_boundary: excludes_site_months_with_partial_load
+        renewable_procurement_mwh: {Americas: 1067725, APAC: 24140, EMEA: 458814, global: 1550679}
+        renewable_procurement_percent: 100
+        renewable_instruments: [renewable_energy_certificates, guarantees_of_origin, onsite_solar]
+        HVO_backup_generator_locations: [San_Jose_California, Oslo_Norway]
+      water:
+        potable_gallons: {Americas: 196024224, APAC: 6257840, EMEA: 44837394, global: 247119458}
+        nonpotable_gallons: {Americas: 42531990, APAC: 311459, EMEA: not_currently_tracked, global: 42843449}
+        total_gallons: {Americas: 238556214, APAC: 6569298, EMEA: 44837394, global: 289962906}
+        operational_WUE: {Americas: 1.62, APAC: 1.38, EMEA: 0.40, global: 1.32}
+        estimated_water_saved_2024_gallons_more_than: 40000000
+        basis_of_design: prioritizes_air_cooled_over_evaporative_systems_with_little_or_no_water
+      site_specific_substations_transformers_switchgear_UPS_generators_CDUs_OEMs_and_GPU_power: mostly_undisclosed
+    linked_companies:
+      operator: [STACK_Infrastructure]
+      private_owner_and_sponsor: [IPI_Partners]
+      financial_profile_refs: [company_stack_infrastructure]
+    sources:
+      - title: STACK Infrastructure homepage
+        publisher: STACK_Infrastructure
+        date: 2026-07-18_accessed
+        url: https://www.stackinfra.com/
+      - title: STACK Americas locations
+        publisher: STACK_Infrastructure
+        date: 2026-07-18_accessed
+        url: https://www.stackinfra.com/locations/americas/
+      - title: STACK EMEA locations
+        publisher: STACK_Infrastructure
+        date: 2026-07-18_accessed
+        url: https://www.stackinfra.com/locations/emea/
+      - title: STACK Asia Pacific locations
+        publisher: STACK_Infrastructure
+        date: 2026-07-18_accessed
+        url: https://www.stackinfra.com/locations/asia-pacific/
+      - title: STACK 2025 Impact Report
+        publisher: STACK_Infrastructure
+        date: 2025-10
+        url: https://www.stackinfra.com/wp-content/uploads/2025/10/STACK-2025-Impact-Report-Built-to-Scale-Engineered-for-Impact.pdf
+      - title: STACK AI-ready high-density cooling capabilities
+        publisher: STACK_Infrastructure
+        date: 2024-01
+        url: https://www.stackinfra.com/wp-content/uploads/2024/01/PR-STACK-Infrastructure-Expands-its-AI-Ready-Data-Center-Capabilities-to-Support-Machine-Learning-and-Related-High-Density-Workloads.pdf
+      - title: STACK Infrastructure ESG Policy
+        publisher: STACK_Infrastructure
+        date: 2024-07
+        url: https://www.stackinfra.com/wp-content/uploads/2024/09/STACK-Infrastructure-ESG-Policy-v1.0_July-2024.pdf
+    confidence: high_for_current_published_portfolio_scopes_and_2024_environmental_metrics_low_for_scope_reconciliation_operating_capacity_and_GPU_inventory
+
+  - id: dc_stack_stafford_technology_campus
+    name: STACK Stafford Technology Campus
+    record_granularity: four_subcampus_nineteen_data_center_full_buildout_program
+    operator_and_developer: STACK_Infrastructure
+    country: US
+    region: Virginia
+    locality: Stafford_County
+    lifecycle_as_of_2026_07_18: announced_and_under_development
+    location:
+      campus_land_acres: 500
+      exact_address_coordinates_and_parcel_boundary: undisclosed_in_reviewed_operator_sources
+    campus_scale:
+      full_buildout_capacity_gw: 1.1
+      capacity_definition: operator_published_capacity_not_explicitly_identified_as_energized_IT_load
+      subcampuses: 4
+      data_centers_at_full_buildout: 19
+      tax_revenue_at_full_buildout_usd_million_per_year_more_than: 80
+      peak_construction_jobs_more_than: 1000
+      current_operating_energized_leased_and_utilized_capacity: undisclosed
+    accelerators:
+      target_workloads: [hyperscale, AI, machine_learning, cloud]
+      exact_customers_GPU_or_accelerator_vendors_models_counts_racks_and_density: undisclosed
+      portfolio_AI_ready_cooling_does_not_prove_site_deployment: true
+    electrical_and_generation:
+      retail_utility: Dominion_Energy
+      committed_substations: 6
+      each_substation_nameplate_mw: 300
+      total_substation_nameplate_mw_derived: 1800
+      campus_published_capacity_mw: 1100
+      boundary: >-
+        The six-substation 1,800 MW nameplate sum is grid infrastructure and may
+        include redundancy, phasing, and non-IT loads. It is not an additional
+        1.8 GW of IT capacity and is not added to the 1.1 GW campus figure.
+      grid_energization_schedule_transformers_switchgear_UPS_generators_CDUs_and_OEMs: undisclosed
+    cooling_and_water:
+      permanent_industrial_cooling_water: reclaimed_purple_pipe_system
+      potable_water_for_industrial_cooling: avoided_by_design
+      exact_cooling_topology_PUE_WUE_flow_and_OEMs: undisclosed
+    financing:
+      March_2025_green_financing_usd_billion: 4
+      financing_scope: Stafford_plus_Portland_and_Toronto_not_assignable_wholly_to_Stafford
+    linked_companies:
+      operator_and_developer: [STACK_Infrastructure]
+      private_owner_and_sponsor: [IPI_Partners]
+      utility: [Dominion_Energy]
+      proposed_future_utility_parent_if_transaction_closes: [NextEra_Energy]
+      financial_profile_refs: [company_stack_infrastructure, company_dominion_energy, company_nextera_energy]
+    sources:
+      - title: STACK Stafford campus
+        publisher: STACK_Infrastructure
+        date: 2026-07-18_accessed
+        url: https://www.stackinfra.com/locations/americas/northern-virginia/stc/
+      - title: STACK announces landmark Stafford Technology Campus
+        publisher: STACK_Infrastructure
+        date: 2025-01-16
+        url: https://www.stackinfra.com/about/news-press/press-releases/stack-infrastructure-announces-landmark-1gw-stafford-technology-campus-in-northern-virginia/
+      - title: STACK secures four billion dollars of multi-campus green financing
+        publisher: STACK_Infrastructure
+        date: 2025-03-19
+        url: https://www.stackinfra.com/about/news-press/press-releases/stack-infrastructure-secures-4-billion-in-green-financing-strengthening-its-position-as-the-largest-private-data-center-developer-in-virginia-and-beyond/
+    confidence: high_for_full_buildout_land_building_and_substation_scale_low_for_live_capacity_GPU_inventory_and_electrical_BOM
+
+  - id: dc_stack_johor_bahru_iskandar_puteri
+    name: STACK Johor Bahru flagship campus
+    record_granularity: two_building_data_center_campus
+    operator_and_developer: STACK_Infrastructure
+    country: MY
+    region: Johor
+    locality: Iskandar_Puteri
+    lifecycle_as_of_2026_07_18: under_development_initial_delivery_target_Q4_2026
+    location:
+      campus_land_hectares: 10.8
+      proximity: approximately_10_minutes_from_Malaysia_Singapore_border_crossing
+      exact_address_coordinates_and_parcel_boundary: undisclosed_in_reviewed_operator_sources
+    campus_scale:
+      announcement_capacity_mw: 220
+      current_APAC_market_card_capacity_mw: 216
+      capacity_discrepancy_mw: 4
+      capacity_reconciliation: unreconciled_operator_publication_difference
+      buildings: 2
+      total_building_area_sqft: 1000000
+      first_building: {capacity_mw: 120, stories: 2, electrical_yard: multilevel_external}
+      second_building: {capacity_mw: 100}
+      building_capacity_sum_mw_derived: 220
+      deployment_models: [shell, build_to_suit, turnkey]
+      operating_energized_leased_and_utilized_capacity: none_publicly_confirmed_before_initial_delivery
+    accelerators:
+      target_workloads: [cloud, AI, machine_learning, hyperscale]
+      exact_customers_GPU_or_accelerator_vendors_models_counts_racks_and_density: undisclosed
+    electrical_and_network:
+      utility: Tenaga_Nasional_Berhad
+      utility_infrastructure_voltage_kv: 275
+      onsite_substation: planned
+      first_building_external_electrical_yard: multilevel
+      network_points_of_entry: redundant
+      network_topology: fiber_ring_to_multiple_telco_networks
+      transformer_switchgear_UPS_backup_generation_CDU_OEMs_and_energization_phasing: undisclosed
+      boundary: The 275 kV figure is utility connection voltage, not campus IT load.
+    cooling_and_water:
+      architecture_PUE_WUE_water_source_and_OEMs: undisclosed
+    linked_companies:
+      operator_and_developer: [STACK_Infrastructure]
+      utility: [Tenaga_Nasional_Berhad]
+      financial_profile_refs: [company_stack_infrastructure, company_tenaga_nasional]
+    sources:
+      - title: STACK announces 220 MW campus in Malaysia
+        publisher: STACK_Infrastructure
+        date: 2025-01-14
+        url: https://www.stackinfra.com/about/news-press/press-releases/stack-infrastructure-announces-220mw-campus-in-malaysia/
+      - title: STACK Asia Pacific locations
+        publisher: STACK_Infrastructure
+        date: 2026-07-18_accessed
+        url: https://www.stackinfra.com/locations/asia-pacific/
+    confidence: high_for_location_building_scale_schedule_voltage_and_network_low_for_live_capacity_GPU_inventory_and_equipment_BOM
+
+  - id: dc_stack_amazon_northwest_louisiana_program
+    name: STACK and Amazon northwest Louisiana multi-campus development
+    record_granularity: multi_campus_multi_parish_program_not_one_physical_site
+    developer: STACK_Infrastructure
+    customer_and_investor: Amazon
+    country: US
+    region: Louisiana
+    locality: [Caddo_Parish, Bossier_Parish]
+    lifecycle_as_of_2026_07_18: announced_and_in_development
+    location:
+      campuses_span_both_sides_of_Red_River: true
+      exact_campus_count_addresses_coordinates_parcels_and_land_area: undisclosed
+    campus_scale:
+      anticipated_capital_investment_usd_billion_approximate: 12
+      capital_attribution: described_by_STACK_as_project_investment_and_by_Amazon_as_Amazon_investment
+      construction_jobs_more_than: 1500
+      permanent_full_time_jobs_more_than: 540
+      exact_MW_building_area_building_count_schedule_and_operating_capacity: undisclosed
+      boundary: The approximately 12 billion dollars is anticipated capital investment, not STACK or Amazon revenue.
+    accelerators:
+      target_workloads: [AI, cloud]
+      exact_GPU_or_accelerator_vendors_models_counts_racks_and_site_allocation: undisclosed
+    electrical_water_and_infrastructure:
+      named_utility: SWEPCO
+      collaboration: [Amazon, STACK_Infrastructure, regional_and_local_utilities, public_partners]
+      project_funded_infrastructure: [water, wastewater, electrical, related_system_upgrades]
+      water_positive_programs: planned
+      exact_grid_service_MW_voltage_substations_transformers_switchgear_UPS_generators_cooling_and_OEMs: undisclosed
+    linked_companies:
+      developer: [STACK_Infrastructure]
+      customer_and_investor: [Amazon]
+      utility: [SWEPCO]
+      financial_profile_refs: [company_stack_infrastructure, company_amazon]
+    sources:
+      - title: STACK announces northwest Louisiana data-center developments
+        publisher: STACK_Infrastructure
+        date: 2026-02-23
+        url: https://www.stackinfra.com/about/news-press/press-releases/stack-infrastructure-announces-data-center-developments-supporting-economic-growth-in-louisiana/
+    confidence: high_for_multi_parish_program_partners_capital_and_jobs_low_for_exact_sites_power_schedule_GPU_inventory_and_equipment_BOM
+
   - id: dc_oracle_related_the_barn_saline_michigan
     name: The Barn Stargate campus
     record_granularity: three_building_AI_data_center_campus
@@ -5333,6 +5637,15 @@ disclosure_gap_register:
   - QTS_Irving_165MW_facility_level_energization_UPS_generator_cooling_and_GPU_inventory
   - Vantage_41_campuses_5888MW_design_to_operating_energized_leased_utilized_capacity_reconciliation
   - Vantage_per_campus_GPU_inventory_substation_UPS_generator_liquid_cooling_and_equipment_OEMs
+  - STACK_24_market_headline_to_22_current_navigation_labels_and_25_Impact_Report_markets_reconciliation
+  - STACK_regional_headline_4313MW_to_known_market_card_6067MW_scope_reconciliation
+  - STACK_current_operating_energized_leased_utilized_capacity_and_per_site_GPU_inventory
+  - STACK_per_site_substation_transformer_switchgear_UPS_generator_CDU_and_cooling_OEMs
+  - Stafford_1_1GW_capacity_to_1800MW_substation_nameplate_phasing_and_grid_energization
+  - Stafford_customer_GPU_inventory_rack_count_and_electrical_cooling_BOM
+  - Johor_220MW_announcement_to_216MW_market_card_reconciliation_and_live_delivery_status
+  - Johor_transformer_switchgear_UPS_generator_CDU_cooling_OEMs_and_GPU_inventory
+  - Louisiana_multi_campus_exact_sites_MW_schedule_power_chain_cooling_and_GPU_inventory
 
 next_research_queue:
   campus_enrichment:
@@ -5374,6 +5687,12 @@ next_research_queue:
     - QTS_Irving_facility_level_power_chain_cooling_performance_customer_and_hardware_inventory
     - Vantage_41_campuses_5888MW_design_to_operating_energized_leased_utilized_capacity_reconciliation
     - Vantage_remaining_per_campus_addresses_GPU_inventory_power_chain_and_liquid_cooling_delivery
+    - STACK_24_market_headline_22_navigation_labels_and_25_Impact_Report_market_reconciliation
+    - STACK_regional_headline_to_market_card_capacity_and_lifecycle_reconciliation
+    - STACK_current_operating_energized_leased_utilized_capacity_by_campus
+    - Stafford_grid_energization_substation_topology_customer_GPU_and_equipment_awards
+    - Johor_220MW_to_216MW_reconciliation_initial_delivery_and_equipment_awards
+    - Louisiana_exact_campuses_MW_power_chain_schedule_and_accelerator_inventory
   company_financials:
     - ByteDance_audited_financials_if_publicly_released
     - Crusoe_QTS_Vantage_VoltaGrid_and_Related_Digital_audited_or_lender_disclosed_financials
@@ -5386,6 +5705,9 @@ next_research_queue:
     - CyrusOne_current_standalone_revenue_operating_profit_debt_and_site_economics_if_disclosed
     - CyrusOne_KEP_joint_venture_revenue_operating_profit_capex_and_customer_contracts
     - NTT_DATA_center_transfer_gain_common_cost_and_third_party_capital_reconciliation
+    - STACK_standalone_audited_revenue_operating_profit_debt_and_campus_economics
+    - Dominion_TNB_and_NextEra_data_center_specific_rate_base_revenue_capex_and_customer_concentration
+    - NextEra_Dominion_transaction_regulatory_approval_and_closing_status
 
 portfolio_relevance:
   interpretation: >-
