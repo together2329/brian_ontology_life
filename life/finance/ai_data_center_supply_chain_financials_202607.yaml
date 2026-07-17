@@ -168,6 +168,32 @@ financial_profiles:
         new_debt_commitments_usd_billion_more_than: 7
         total_new_capital_usd_billion_more_than: 12
         stated_use: accelerate_5_plus_GW_planned_future_capacity_and_innovation
+      BXCI_senior_secured_facility_upsize_2025_08:
+        commitments_usd_billion_more_than: 1
+        capital_provider: Blackstone_Credit_and_Insurance_managed_accounts
+        stated_use: accelerate_planned_5_plus_GW_future_capacity_across_the_Americas
+        exact_rate_maturity_collateral_drawn_amount_and_covenants: undisclosed
+      ODATA_green_financing_2025_09:
+        new_financing_usd_billion: 1.02
+        ODATA_total_financing_reached_usd_billion: 2.25
+        stated_use: sustainable_data_center_projects_across_Latin_America
+        lenders: [Apterra, BNP_Paribas, Credit_Agricole_CIB, Deutsche_Bank, MUFG, Natixis_CIB, Nomura, Societe_Generale, SMBC]
+        exact_rate_maturity_drawn_amount_debt_outstanding_covenants_and_project_allocation: undisclosed
+      Devco_revolving_credit_facility_2026_03:
+        amount_usd_billion: 2.58
+        initial_term_years: 3
+        one_year_extension_options: 2
+        initial_collateral_pool_US_assets: 6
+        asset_description: high_performing_and_well_progressed
+        stated_use: finance_later_stage_US_development_assets_and_expand_borrowing_capacity
+        capital_sources: insurance_pension_and_other_institutional_capital
+        exact_rate_leverage_drawn_amount_named_assets_and_covenants: undisclosed
+      financing_overlap_boundary: >-
+        The BXCI commitment, ODATA financing and Devco facility may overlap the
+        more-than-US$7 billion of debt commitments announced in January 2025 or
+        replace earlier facilities. They are preserved as dated transactions and
+        are not mechanically added to the US$12 billion parent capital raise, the
+        proposed US$40 billion enterprise value or project investment envelopes.
       Macquarie_investment_snapshot_as_of_2023_01_31:
         managed_fund_capital_invested_usd_billion_more_than: 1.3
         use: significant_portion_for_greenfield_expansion
@@ -176,10 +202,29 @@ financial_profiles:
         contracted_leasing_growth_multiple_more_than: 26
         ramped_NOI_definition: revenue_less_operating_expenses_once_a_lease_is_fully_ramped
         exact_base_end_values_and_dollar_NOI: undisclosed
-      current_parent_marketing_snapshot_accessed_2026_07_18:
-        facilities: 87
-        committed_power_capacity_gw_more_than: 6.4
-        scope_boundary: Current marketing does not split operating, construction, planned, owned, leased, energized, contracted or utilized scopes.
+      current_parent_marketing_snapshots_accessed_2026_07_18:
+        homepage:
+          data_centers_under_management_and_future_development: 87
+          operational_and_planned_capacity_gw: 6.4
+          campuses: 51
+        hyperscale_page:
+          facilities: 87
+          committed_power_capacity_gw_more_than: 6.4
+          separate_paragraph_committed_power_capacity_gw_more_than: 5
+        about_page:
+          campuses: 50
+          contracted_and_available_capacity_gw: 5
+        gigascale_page:
+          data_centers: 82
+          campuses: 50
+          FAQ_contracted_and_available_capacity_gw_more_than: 5
+        same_access_date_internal_conflict: true
+        scope_boundary: >-
+          Current marketing does not reconcile 82 versus 87 facilities, 50 versus
+          51 campuses or 5 versus 6.4 GW, and does not split operating,
+          construction, planned, owned, managed, leased, energized, contracted or
+          utilized scopes. These are preserved separately rather than treated as
+          chronological growth.
       transaction_snapshot_2025_10:
         campuses_or_data_centers_reported: 50
         operational_and_planned_capacity_gw_more_than: 5
@@ -191,8 +236,23 @@ financial_profiles:
     data_center_exposure:
       role: pan_Americas_hyperscale_cloud_AI_and_enterprise_data_center_developer_operator
       confirmed_campus_refs:
+        - dc_aligned_north_america_public_directory
+        - dc_aligned_dfw04_plano_lambda
+        - dc_aligned_project_caprock_lbb01
         - dc_odata_aligned_latam_portfolio
         - dc_odata_qr03_queretaro
+      current_public_identifier_coverage:
+        North_America_current_identifiers: 27
+        Latin_America_current_identifiers: 12
+        visible_current_total_derived: 39
+        unique_North_America_published_address_clusters_derived: 21
+        current_87_unit_headline_minus_visible_current_identifiers_derived: 48
+        including_ODATA_BG02_current_directory_and_BG03_announcement_total: 41
+        current_87_unit_headline_minus_current_and_announced_total_derived: 46
+        boundary: >-
+          Identifier cards, address clusters, campuses and the 87-unit management
+          plus future-development headline are different denominators. The gaps
+          are disclosure gaps, not inferred unnamed operating buildings.
       ODATA_public_project_ledger:
         detailed_facility_cards: 12
         detailed_card_IT_power_mw_derived: 602.62
@@ -200,11 +260,41 @@ financial_profiles:
         all_detailed_and_announced_including_BG03_IT_power_mw_derived: 746.62
         boundary: These are mixed-lifecycle full-build project sums, not operating, energized, leased or utilized capacity.
       current_Aligned_parent_marketing:
-        facilities: 87
-        committed_power_capacity_gw_more_than: 6.4
+        homepage: {data_centers_under_management_and_future_development: 87, operational_and_planned_capacity_gw: 6.4, campuses: 51}
+        hyperscale_page: {facilities: 87, committed_power_capacity_gw_more_than: 6.4}
+        gigascale_page: {data_centers: 82, campuses: 50, contracted_and_available_capacity_gw_more_than: 5}
+        about_page: {campuses: 50, contracted_and_available_capacity_gw: 5}
       exact_current_operating_energized_leased_utilized_capacity_customer_concentration_and_site_revenue: undisclosed
     AI_and_infrastructure_program:
       exact_operator_owned_or_customer_GPU_models_counts_servers_racks_utilization_and_site_allocation: undisclosed
+      Aligned_DFW04:
+        announced_customer: Lambda
+        designed_to_support: [NVIDIA_Blackwell, NVIDIA_Blackwell_Ultra, future_AI_platforms]
+        current_operator_area_acres: 44
+        Texas_registered_square_footage_sqft: 425500
+        Texas_estimated_project_cost_usd_million: 161
+        scheduled_completion: 2026-10-01
+        accessibility_record_status: Inspection_Complete
+        operating_and_hardware_delivery_status: not_confirmed
+      Aligned_DFW03:
+        site_acres: 27
+        onsite_substation: true
+        2025_release_initial_capacity_target: Q4_2025
+        air_liquid_hybrid_density_kw_per_rack_upwards_of: 350
+        current_energized_operating_leased_status_and_MW: undisclosed
+      Aligned_Project_Caprock:
+        campus_capacity_mw: 540
+        campus_acres: 313
+        facilities: 6
+        total_capacity_area_sqft: 1650000
+        LBB01_anticipated_service: Q1_2027
+        grid_partner: Xcel_Energy
+        dedicated_electrical_infrastructure_built_and_funded_by_Aligned: true
+        expected_regional_economic_infusion_usd_billion: 5
+        capacity_and_cost_boundary: >-
+          The release does not define 540 MW as IT, utility or critical load, and
+          US$5 billion is a regional economic-infusion or investment anchor rather
+          than audited Aligned capex, recognized revenue or operating profit.
       ODATA_QR03:
         full_build_IT_power_mw: 300
         first_building_IT_power_mw: 72
@@ -235,6 +325,14 @@ financial_profiles:
           generator_mw: 3
           generator_fuel_hours: 24
           air_cooled_chiller_mw: 2
+      ODATA_current_country_page_equipment_disclosure:
+        site_specific_facilities: [SP01, SP02, SP03, SP04, RJ01, ST01, ST02]
+        country_shared_facilities: [BG01, QR01, QR02, QR03, QR04]
+        disclosed_backup_generator_module_rating_range_mw: [1.65, 3]
+        disclosed_UPS_lineup_rating_range_mw: [0.8, 2.4]
+        disclosed_PDU_rating_range_kva: [200, 530]
+        disclosed_rack_distribution_voltages_include: [208V, 220V, 240V, 380V, 415V, 480V]
+        exact_unit_counts_aggregate_installed_capacity_OEMs_and_live_status: undisclosed_except_SP03_two_800kVA_UPS_lineups
       boundary: >-
         Power-density and cooling ceilings are design capabilities, not installed
         GPU counts or utilized rack density. Project investment envelopes are not
@@ -246,6 +344,21 @@ financial_profiles:
       Brazil_wind_partner: Serena_Energia
       Assurua_IV_wind_farm_nameplate_mw: 212
       Brazil_renewable_energy_claim_percent: 100
+      North_America_renewable_claim:
+        load_matched_percent: 100
+        period: annual
+        boundary: annual_matching_does_not_establish_physical_or_hourly_renewable_supply_at_every_site
+      Pacific_Northwest_BESS:
+        high_confidence_site_association: PDX01
+        power_mw: 31
+        energy_mwh: 62
+        planned_operational_year: 2026
+        delivery_partner: Calibrant_Energy
+        US_manufactured_or_assembled_categories: [transformers, switchgear, batteries]
+        exact_OEMs_unit_counts_voltage_chemistry_utility_and_live_status: undisclosed
+      Project_Caprock:
+        utility_partner: Xcel_Energy
+        dedicated_electrical_infrastructure_funder_and_builder: Aligned_Data_Centers
       exact_renewable_contracted_mw_hourly_matching_and_generation_allocation: undisclosed
     outlook:
       demand_tailwinds:
@@ -256,23 +369,34 @@ financial_profiles:
       conversion_tests:
         - close_or_revise_the_USD40_billion_equity_transaction
         - convert_6_4GW_committed_power_marketing_scope_to_operating_energized_leased_and_billed_capacity
+        - reconcile_82_87_data_centers_50_51_campuses_and_5_6_4GW_same_date_marketing_scopes
+        - reconcile_27_North_America_plus_12_Latin_America_public_identifiers_to_the_87_unit_headline
+        - complete_and_accept_DFW04_then_disclose_Lambda_rent_commencement_live_IT_load_and_GPU_delivery
+        - deliver_LBB01_by_Q1_2027_and_reconcile_Caprock_540MW_to_grid_and_IT_load
+        - commission_the_Pacific_Northwest_31MW_62MWh_BESS_and_verify_the_PDX01_association
         - deliver_QR03_remaining_buildings_and_400MW_power_path
         - verify_BG02_BG03_construction_and_end_2026_initial_phases
         - convert_ODATA_project_investment_envelopes_into_incurred_capex_and_revenue
         - disclose_customer_concentration_lease_terms_and_ramp_economics
         - demonstrate_liquid_cooling_demand_and_live_high_density_utilization
         - manage_debt_refinancing_interest_and_supply_chain_execution
+        - reconcile_January_2025_debt_commitments_BXCI_ODATA_green_financing_and_Devco_facility_without_double_counting
       quantitative_revenue_operating_profit_EBITDA_free_cash_flow_or_ROIC_guidance: undisclosed
     watch_items:
       - standalone_Aligned_and_ODATA_audited_revenue_operating_profit_EBITDA_capex_debt_and_cash_flow
       - USD40_billion_transaction_completion_post_close_governance_and_financing
-      - 87_facilities_6_4GW_current_scope_to_50_units_5GW_2025_transaction_scope_reconciliation
+      - 82_87_data_centers_50_51_campuses_and_5_6_4GW_same_date_current_marketing_scope_reconciliation
+      - 27_North_America_plus_12_Latin_America_visible_identifiers_to_87_unit_headline_reconciliation
+      - DFW04_current_delivery_acceptance_live_IT_load_Lambda_lease_and_Blackwell_inventory
+      - Caprock_540MW_scope_grid_interconnection_LBB01_Q1_2027_delivery_and_project_economics
+      - PDX01_31MW_62MWh_BESS_site_mapping_commissioning_OEMs_and_utility
       - ODATA_602_62MW_cards_626_62MW_current_directory_and_746_62MW_announced_scope_reconciliation
       - ODATA_per_site_operating_energized_leased_utilized_capacity_and_customer_concentration
       - exact_GPU_models_counts_ownership_delivery_utilization_and_site_allocation
       - QR03_200MW_energized_400MW_path_300MW_IT_and_72MW_first_building_reconciliation
       - per_site_transformer_switchgear_UPS_battery_generator_CDU_chiller_unit_counts_OEMs_PUE_WUE_and_water
       - Brazil_renewable_contract_exact_MW_hourly_matching_and_project_interest
+      - January_2025_debt_BXCI_ODATA_green_and_Devco_facility_overlap_drawn_amount_rates_maturities_and_covenants
     sources:
       - title: Proposed acquisition of all Aligned equity
         publisher: Aligned_and_buyer_consortium
@@ -290,10 +414,58 @@ financial_profiles:
         publisher: Aligned_Data_Centers
         date: 2025-01-15
         url: https://aligneddc.com/blog/aligned-data-centers-completes-12-billion-capital-raise/
+      - title: Blackstone Credit commitments above USD1 billion
+        publisher: Aligned_and_Blackstone_Credit_and_Insurance
+        date: 2025-08-21
+        url: https://aligneddc.com/press-release/blackstone-credit-insurance-and-aligned-data-centers-expand-financing-partnership-surpassing-1-billion-in-commitments/
+      - title: ODATA USD1.02 billion green financing and USD2.25 billion total
+        publisher: ODATA_and_Aligned
+        date: 2025-09-04
+        url: https://aligneddc.com/press-release/odata-secures-landmark-green-financing/
+      - title: Aligned USD2.58 billion Devco revolving credit facility
+        publisher: Aligned_Data_Centers
+        date: 2026-03-26
+        url: https://aligneddc.com/press-release/aligned-data-centers-closes-on-2-58-billion-credit-facility-to-fuel-continued-u-s-expansion/
+      - title: Current homepage 87 data centers 6.4 GW and 51 campuses
+        publisher: Aligned_Data_Centers
+        date: 2026-07-18_accessed
+        url: https://aligneddc.com/
       - title: Current hyperscale and build-to-scale portfolio headline
         publisher: Aligned_Data_Centers
         date: 2026-07-18_accessed
         url: https://aligneddc.com/hyperscale-and-build-to-scale-campus/
+      - title: Current about page 50 campuses and 5 GW
+        publisher: Aligned_Data_Centers
+        date: 2026-07-18_accessed
+        url: https://aligneddc.com/about-aligned/
+      - title: Current gigascale page 82 data centers 50 campuses and 5 GW plus
+        publisher: Aligned_Data_Centers
+        date: 2026-07-18_accessed
+        url: https://aligneddc.com/gigascale-campuses/
+      - title: Current North America market and facility directory
+        publisher: Aligned_Data_Centers
+        date: 2026-07-18_accessed
+        url: https://aligneddc.com/locations/
+      - title: DFW-04 Lambda AI infrastructure partnership
+        publisher: Aligned_Data_Centers
+        date: 2025-05-07
+        url: https://aligneddc.com/press-release/aligned-and-lambda-partner-to-power-next-generation-ai-infrastructure-6/
+      - title: DFW04 Texas architectural barriers project record
+        publisher: Texas_Department_of_Licensing_and_Regulation
+        date: 2026-07-18_accessed
+        url: https://www.tdlr.texas.gov/TABS/Search/Project/TABS2024021896
+      - title: DFW-03 Mansfield site and 350 kW per rack design
+        publisher: Aligned_Data_Centers
+        date: 2025-02-19
+        url: https://aligneddc.com/press-release/aligned-data-centers-expands-dfw-footprint-with-new-data-center-in-mansfield-tx/
+      - title: Project Caprock 540 MW groundbreaking and LBB-01 target
+        publisher: Aligned_Data_Centers
+        date: 2026-04-09
+        url: https://aligneddc.com/press-release/aligned-breaks-ground-on-project-caprock/
+      - title: Pacific Northwest 31 MW 62 MWh BESS
+        publisher: Aligned_and_Calibrant
+        date: 2025-10-22
+        url: https://aligneddc.com/press-release/aligned-and-calibrant-to-deploy-first-of-its-kind-energy-solution/
       - title: Macquarie Aligned investment snapshot
         publisher: Macquarie_Group
         date: 2023-01-31_snapshot
@@ -310,6 +482,22 @@ financial_profiles:
         publisher: ODATA
         date: 2026-07-18_accessed
         url: https://odatacolocation.com/en/data-center/
+      - title: Current Aligned Brazil site-specific equipment tabs
+        publisher: Aligned_Data_Centers
+        date: 2026-07-18_accessed
+        url: https://aligneddc.com/brazil-data-centers/
+      - title: Current Aligned Chile site-specific equipment tabs
+        publisher: Aligned_Data_Centers
+        date: 2026-07-18_accessed
+        url: https://aligneddc.com/chile-data-centers/
+      - title: Current Aligned Colombia shared equipment block
+        publisher: Aligned_Data_Centers
+        date: 2026-07-18_accessed
+        url: https://aligneddc.com/colombia-data-centers/
+      - title: Current Aligned Mexico shared equipment block
+        publisher: Aligned_Data_Centers
+        date: 2026-07-18_accessed
+        url: https://aligneddc.com/mexico-data-centers/
       - title: QR03 launch and first 72 MW building
         publisher: ODATA
         date: 2025-04-30
@@ -326,6 +514,10 @@ financial_profiles:
         publisher: Aligned_Data_Centers
         date: 2026-07-18_accessed
         url: https://aligneddc.com/adaptive-modular-infrastructure/
+      - title: Annual renewable-energy matching boundary
+        publisher: Aligned_Data_Centers
+        date: 2023-07-20
+        url: https://aligneddc.com/press-release/us-environmental-protection-agency-recognizes-aligned-data-centers-for-leading-green-power-use/
     confidence: high_for_transaction_funding_current_marketing_and_ODATA_project_disclosures_medium_for_pending_transaction_status_and_lifecycle_low_for_standalone_financials_and_GPU_inventory
 
   - id: company_ascenty
@@ -7370,7 +7562,12 @@ cross_company_read_through:
   current_signals:
     - ODATA's 12 current detailed facility cards sum to 602.62 MW of published IT-power nameplates; adding current-directory BG02 yields 626.62 MW, and retaining announcement-only BG03 yields 746.62 MW. These figures mix operating, available, contracted, first-phase, under-development and full-build scopes, so none is treated as current utilized capacity.
     - QR03 is the clearest ODATA power-chain case: a 300 MW five-building campus, a launched 72 MW first building, 200 MW of energized power infrastructure and a path to 400 MW. These four figures describe different scopes and are not added; ODATA also discloses no exact customer GPU model, count, rack allocation or utilization despite three committed hyperscale anchors.
-    - Aligned's current marketing claims 87 facilities and more than 6.4 GW of committed power, versus 50 campuses or data centers and more than 5 GW of operational-plus-planned capacity in the October 2025 sale materials. Audited revenue, operating profit and dollar NOI remain private, while the approximately US$40 billion enterprise value and more-than-US$12 billion 2025 capital raise measure valuation and financing rather than earnings.
+    - Aligned's own pages conflict on the same July 18, 2026 access date: the homepage says 87 data centers under management and future development, 6.4 GW operational plus planned and 51 campuses; the hyperscale page says 87 facilities and over 6.4 GW committed power but also separately says over 5 GW; the about page says 50 campuses and 5 GW; and the gigascale page says 82 data centers across 50 campuses and 5 GW plus. These scopes cannot be ranked as clean current capacity without lifecycle and denominator reconciliation.
+    - The public location cards expose 27 North American identifiers and 12 Latin American identifiers, or 39 versus the 87-unit headline. Adding ODATA BG02 from the current master directory and announcement-only BG03 reaches 41, still leaving 46 units unexplained. Repeated addresses reduce the North American list to 21 public address clusters, but identifiers, clusters, campuses, buildings and managed or future assets remain different measures.
+    - Aligned and ODATA now provide useful module-level power evidence even though exact bills of materials remain hidden. Most North American market pages list 3 MW generator modules, 2 MW UPS lineups, 500 kVA PDUs and 415 V A+B rack distribution; ODATA's site or country pages show generator-module ratings from 1.65 to 3 MW, UPS lineups from 0.8 to 2.4 MW and PDUs from 200 to 530 kVA. SP03 explicitly gives two 800 kVA UPS lineups, but other unit counts, aggregate installed MVA, OEMs and live utilization remain undisclosed.
+    - DFW-04 has an announced Lambda tenancy and design compatibility with NVIDIA Blackwell and Blackwell Ultra, but no disclosed GPU count or live status. The Texas accessibility record gives 425,500 square feet, a US$161 million estimated project cost and an October 1, 2026 scheduled completion while also saying inspection complete; those fields do not prove commercial opening or total project capex.
+    - Project Caprock is a 540 MW, 313-acre, six-facility development with 1.65 million square feet and a Q1 2027 LBB-01 target. Aligned will build and fund dedicated electrical infrastructure with Xcel Energy and use DeltaFlow plus closed-loop cooling, but the source does not define 540 MW as IT load or disclose GPU inventory, equipment counts, grid voltage or incurred capex; the US$5 billion figure is a regional economic-infusion envelope.
+    - Aligned added a US$2.58 billion three-year Devco revolver in March 2026 after more-than-US$1 billion of BXCI commitments and ODATA's US$1.02 billion green financing in 2025. These dated facilities may overlap the more-than-US$7 billion of debt commitments in the January 2025 capital raise, so none is added mechanically; audited revenue, operating profit and dollar NOI remain private, and the approximately US$40 billion enterprise value measures valuation rather than earnings.
     - The agreement for AIP, MGX and BlackRock GIP to acquire 100% of Aligned equity had an original first-half-2026 target but remains pending in this record because no primary completion announcement was located by July 18, 2026. Closing, financing and post-close ownership therefore remain explicit watch items rather than current facts.
     - Ascenty's audited Brazil-and-Chile issuer generated BRL1.714 billion of FY2025 net revenue and BRL508.4 million of operating profit, up 10.7% and 79.8% respectively, and swung from a BRL855.6 million net loss to BRL298.9 million of net profit. A BRL1.273 billion favorable year-on-year change in the foreign-exchange result explains much of the net-income swing, so it is not treated as purely operating improvement.
     - Ascenty ended FY2025 with BRL6.154 billion of borrowings against BRL90.2 million cash and BRL895.9 million of current plus restricted financial investments. It generated BRL544.1 million of operating cash after interest and tax and paid BRL492.0 million for PP&E, making refinancing, interest, FX and preleased-capacity delivery central conversion risks.

@@ -97,6 +97,246 @@ global_market_baseline:
       url: https://www.srgresearch.com/articles/hyperscale-data-center-count-hits-1136-average-size-increases-us-accounts-for-54-of-total-capacity
 
 campus_profiles:
+  - id: dc_aligned_north_america_public_directory
+    name: Aligned Data Centers North America public directory
+    record_granularity: current_marketed_facility_identifier_directory_not_one_physical_campus
+    operator: Aligned_Data_Centers
+    lifecycle_as_of_2026_07_18: mixed_current_marketing_scope_with_per_identifier_operating_construction_and_future_status_not_consistently_labeled
+    location:
+      country: United_States
+      current_market_pages: 10
+      current_facility_identifiers: 27
+      unique_published_address_clusters_derived: 21
+      market_ledger:
+        Abernathy_Texas:
+          - {site_id: LBB01, address: "1498 County Road 315, Abernathy, Texas 79311"}
+        Frederick_Maryland:
+          - {site_id: IAD04, address: "5601 Manor Woods Road, Frederick, MD 21703", campus_acres: 75}
+        Atlanta_Georgia:
+          - {site_id: ATL01, address: "1551 N River Rd., Lithia Springs, GA 30122"}
+        Northeast_Ohio:
+          - {site_id: NEO01, address: "2509 Hayes Ave., Sandusky, OH 44870", campus_acres: 129}
+          - {site_id: CMH02, address: "47201 County Rd 273, Conesville, OH 43811", campus_acres: 197}
+        Chicago_Illinois:
+          - {site_id: ORD01, address: "505 Northwest Ave, Northlake, IL 60164", shared_campus_acres: 18.5}
+          - {site_id: ORD02, address: "501 Northwest Ave, Northlake, IL 60164", shared_campus_acres: 18.5}
+          - {site_id: ORD03, address: "50 NW Point Blvd., Elk Grove Village, IL 60007", campus_acres: 36}
+        Phoenix_Arizona:
+          - {site_ids: [PHX01, PHX02, PHX03], address: "2500 W Union Hills Drive, Phoenix, AZ 85027", shared_campus_acres: 55}
+          - {site_id: PHX04, address: "2501 S Price Rd, Chandler, AZ 85286"}
+          - {site_id: PHX05, address: "2500 W Union Hills Drive, Phoenix, AZ 85027", shared_campus_acres: 55}
+          - {site_id: PHX06, address: "2955 West Innovation Street, Chandler, AZ 85286"}
+          - {site_id: PHX07, address_raw_current_page: "8785 N Reems Rd, Waddell, AZ 85225", address_quality_note: current_page_ZIP_is_preserved_but_not_independently_reconciled}
+        Dallas_Fort_Worth_Texas:
+          - {site_id: DFW01, address: "2800 Summit Ave, Plano, TX 75074", shared_campus_acres: 19}
+          - {site_id: DFW02, address: "2800 Summit Ave, Plano, TX 75074", shared_campus_acres: 19}
+          - {site_id: DFW03, address_raw_current_page: "3801 Britton Rd., Mansfield, TX", campus_acres: 27, ZIP: undisclosed_on_current_page}
+          - {site_id: DFW04, address: "601 North Star Rd, Plano, TX 75074", campus_acres: 44}
+        Salt_Lake_City_Utah:
+          - {site_id: SLC01, address: "3333 W 9000 S, West Jordan, UT 84088", shared_campus_acres: 55}
+          - {site_id: SLC02, address: "3333 W 9000 S, West Jordan, UT 84088", shared_campus_acres: 55}
+          - {site_id: SLC03, address_raw_current_page: "3333 W 9000 S, West Jordan, UT", shared_campus_acres: 55, ZIP: omitted_on_current_page}
+          - {site_id: SLC04, address: "6368 W Beagley Rd, West Valley City, UT 84128"}
+        Hillsboro_Oregon:
+          - {site_id: PDX01, address: "NE 30th Ave. & NE Evergreen Rd., Hillsboro, OR 97124", campus_acres: 27}
+        Northern_Virginia:
+          - {site_id: IAD01, address: "21890 Uunet Drive, Ashburn, VA 20147", shared_campus_acres: 26}
+          - {site_id: IAD02, address: "21821 Uunet Drive, Ashburn, VA 20147", shared_campus_acres: 26}
+          - {site_id: IAD03, address: "22715 Relocation Dr, Sterling, VA 20166", shared_campus_acres: 26}
+      grouping_boundary: >-
+        The 27 count expands the combined PHX-01/02/03 card into three identifiers.
+        Repeated addresses and shared acreage indicate multi-building campuses, but
+        the 21-address calculation is only a public-address grouping and is not a
+        certified campus, parcel, building, ownership or operating count.
+    public_scope_reconciliation:
+      current_North_America_identifiers: 27
+      current_Aligned_Latin_America_identifiers: 12
+      current_detailed_identifier_total_derived: 39
+      current_parent_headline_data_centers_under_management_and_future_development: 87
+      headline_minus_current_detailed_identifier_gap_derived: 48
+      including_ODATA_BG02_current_directory_and_BG03_announcement_total: 41
+      headline_minus_current_and_separately_announced_gap_derived: 46
+      boundary: >-
+        The 87-unit headline explicitly mixes management and future development,
+        while the 39-unit denominator is only the visible current North American
+        and Latin American identifier cards. The gap may contain private customer
+        facilities, development stages, managed assets or hidden identifiers; no
+        physical building, operating status or capacity is inferred for it.
+    accelerators_and_AI:
+      exact_operator_owned_or_customer_GPU_models_counts_servers_racks_delivery_utilization_power_draw_and_site_allocation: undisclosed
+      DFW04: {announced_customer: Lambda, designed_platforms: [NVIDIA_Blackwell, NVIDIA_Blackwell_Ultra, future_AI_platforms], exact_installed_inventory: undisclosed}
+      DFW03: {marketed_density_kw_per_rack_upwards_of: 350, modes: [air, liquid, hybrid], exact_installed_inventory: undisclosed}
+      generic_market_pages: highest_density_GPU_requirements_supported_by_DeltaFlow_secondary_loops
+      boundary: Design compatibility, rack-density ceilings and an announced AI-cloud tenant do not prove hardware delivery, installation, ownership or utilization.
+    electrical_cooling_and_sustainability:
+      standard_current_market_page_architecture_excluding_LBB01:
+        backup_generator_module_rating_mw: 3
+        UPS_lineup_rating_mw: 2
+        topology: N_plus_1_block_redundant
+        PDU_rating_kva: 500
+        rack_distribution: 415V_A_plus_B
+        uptime_SLA_percent: 100
+        carriers: multiple
+        cooling: [Delta3_air_arrays_in_dedicated_mechanical_galleries, DeltaFlow_liquid_secondary_loops_with_valves_and_taps, minimum_N_plus_1, closed_loop_chilled_water]
+        boundary: >-
+          Each current market page publishes this shared architecture below its
+          facility tabs. Ratings are module or lineup sizes, not disclosed unit
+          counts, aggregate installed MVA, commissioned equipment or per-building
+          bills of materials.
+      LBB01_current_page_variant:
+        UPS_lineup_rating_mw: 2
+        topology: N_plus_1_block_redundant
+        critical_distribution_panel_rating_mw: 1
+        rack_distribution_v: 415
+        backup_generator_rating_and_count: undisclosed_on_current_page
+        cooling: [Delta3_air_arrays_in_dedicated_mechanical_galleries, DeltaFlow_liquid_secondary_loops_with_valves_and_taps, minimum_N_plus_1, closed_loop_chilled_water]
+      PDX01_BESS_high_confidence_association:
+        current_PDX01_page_lists_BESS: true
+        separate_Pacific_Northwest_release_BESS_mw: 31
+        separate_Pacific_Northwest_release_BESS_mwh: 62
+        planned_operational_year: 2026
+        delivery_partner: Calibrant_Energy
+        functions: [accelerate_grid_interconnection, discharge_during_peak_demand, grid_reliability, customer_continuity]
+        US_manufactured_or_assembled_categories: [transformers, switchgear, batteries]
+        exact_OEMs_unit_counts_voltage_battery_chemistry_and_utility: undisclosed
+        association_boundary: >-
+          The current Hillsboro page names BESS and the release names Aligned's
+          Pacific Northwest campus without saying PDX-01. Their association is a
+          high-confidence inference, not an explicit release-level site mapping;
+          the release also does not prove that the planned 2026 system is live.
+      renewable_claim_boundary:
+        current_homepage_North_America_load_matched_percent: 100
+        matching_period: annual
+        physical_hourly_or_site_specific_supply: not_established
+    financial_boundary:
+      standalone_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_and_site_economics: undisclosed
+      financial_profile_refs: [company_aligned_data_centers]
+    linked_companies: [Aligned_Data_Centers, Lambda, NVIDIA, Calibrant_Energy]
+    sources:
+      - {title: Current Aligned homepage and public portfolio headline, publisher: Aligned_Data_Centers, date: 2026-07-18_accessed, url: "https://aligneddc.com/"}
+      - {title: Current Abernathy location page, publisher: Aligned_Data_Centers, date: 2026-07-18_accessed, url: "https://aligneddc.com/abernathy-tx-data-center/"}
+      - {title: Current Maryland location page, publisher: Aligned_Data_Centers, date: 2026-07-18_accessed, url: "https://aligneddc.com/maryland-data-centers/"}
+      - {title: Current Atlanta location page, publisher: Aligned_Data_Centers, date: 2026-07-18_accessed, url: "https://aligneddc.com/atlanta-data-centers/"}
+      - {title: Current Northeast Ohio location page, publisher: Aligned_Data_Centers, date: 2026-07-18_accessed, url: "https://aligneddc.com/northeast-ohio-data-centers/"}
+      - {title: Current Chicago location page, publisher: Aligned_Data_Centers, date: 2026-07-18_accessed, url: "https://aligneddc.com/chicago-data-centers/"}
+      - {title: Current Phoenix location page, publisher: Aligned_Data_Centers, date: 2026-07-18_accessed, url: "https://aligneddc.com/phoenix-data-centers/"}
+      - {title: Current Dallas location page, publisher: Aligned_Data_Centers, date: 2026-07-18_accessed, url: "https://aligneddc.com/dallas-data-centers/"}
+      - {title: Current Salt Lake City location page, publisher: Aligned_Data_Centers, date: 2026-07-18_accessed, url: "https://aligneddc.com/salt-lake-city-data-centers/"}
+      - {title: Current Hillsboro location page, publisher: Aligned_Data_Centers, date: 2026-07-18_accessed, url: "https://aligneddc.com/hillsboro-data-centers/"}
+      - {title: Current Northern Virginia location page, publisher: Aligned_Data_Centers, date: 2026-07-18_accessed, url: "https://aligneddc.com/northern-virginia-data-centers/"}
+      - {title: Pacific Northwest 31 MW 62 MWh BESS announcement, publisher: Aligned_and_Calibrant, date: 2025-10-22, url: "https://aligneddc.com/press-release/aligned-and-calibrant-to-deploy-first-of-its-kind-energy-solution/"}
+      - {title: Annual renewable-energy matching boundary, publisher: Aligned_Data_Centers, date: 2023-07-20, url: "https://aligneddc.com/press-release/us-environmental-protection-agency-recognizes-aligned-data-centers-for-leading-green-power-use/"}
+    confidence: high_for_current_identifier_addresses_market_page_reference_architecture_and_BESS_ratings_medium_for_address_cluster_and_PDX01_BESS_association_low_for_per_site_lifecycle_installed_equipment_GPU_inventory_and_economics
+
+  - id: dc_aligned_dfw04_plano_lambda
+    name: Aligned DFW-04 Plano Lambda AI data center
+    record_granularity: named_single_facility_with_public_construction_record_and_announced_customer
+    operator: Aligned_Data_Centers
+    lifecycle_as_of_2026_07_18: delivery_status_unresolved_between_2025_under_construction_release_and_current_TDLR_inspection_complete_record_with_2026_10_01_scheduled_completion
+    location:
+      address: "601 North Star Road, Plano, TX 75074"
+      county: Collin
+      state: Texas
+      country: United_States
+      campus_acres_current_operator_page: 44
+    scale_and_public_project_record:
+      TDLR_project_number: TABS2024021896
+      registration_date: 2024-06-27
+      scheduled_start_date: 2024-10-01
+      scheduled_completion_date: 2026-10-01
+      accessibility_record_status: Inspection_Complete
+      new_construction_scope_sqft: 425000
+      registered_square_footage_sqft: 425500
+      estimated_project_cost_usd_million: 161
+      funding: privately_funded_on_private_land_for_private_use
+      tenant_funds: false
+      TDLR_tenant_field: Not_Assigned
+      owner: Aligned_Data_Centers
+      design_firm: Corgan_Associates
+      boundary: >-
+        The Texas record is an architectural-barriers registration. Its estimated
+        cost, dates, area and inspection status are not a total all-in development
+        budget, IT MW, commercial opening, energized load, tenant acceptance or
+        proof that the facility is operating. The operating page publishes no MW.
+    customer_and_accelerators:
+      announced_customer: Lambda
+      announcement_date: 2025-05-07
+      workload: AI_developer_cloud
+      cooling_intent: liquid_cooled_high_density_AI_and_cloud
+      designed_to_support: [NVIDIA_Blackwell, NVIDIA_Blackwell_Ultra, future_AI_platforms]
+      exact_GPU_models_delivered_counts_servers_racks_ownership_installation_utilization_power_draw_and_AI_IT_MW: undisclosed
+      boundary: The release says the facility can support these platforms; it does not state that any Blackwell GPU was procured, delivered, installed or live.
+    electrical_and_cooling:
+      Dallas_market_page_shared_reference_architecture:
+        backup_generator_module_rating_mw: 3
+        UPS_lineup_rating_mw: 2
+        topology: N_plus_1_block_redundant
+        PDU_rating_kva: 500
+        rack_distribution: 415V_A_plus_B
+        cooling: [Delta3_air, DeltaFlow_liquid_secondary_loops, minimum_N_plus_1, closed_loop_chilled_water]
+      exact_site_grid_feed_substation_transformer_switchgear_generator_UPS_battery_PDU_CDU_chiller_unit_counts_OEMs_PUE_WUE_water_and_live_liquid_cooled_MW: undisclosed
+      boundary: The power block is shared at Dallas market-page level and is not a DFW-04 installed bill of materials.
+    financial_and_revenue_boundary:
+      TDLR_estimated_project_cost_usd_million: 161
+      customer_contract_value_lease_term_rent_commencement_site_revenue_operating_profit_capex_and_return_on_invested_capital: undisclosed
+    linked_companies: [Aligned_Data_Centers, Lambda, NVIDIA, Corgan_Associates]
+    financial_profile_refs: [company_aligned_data_centers]
+    sources:
+      - {title: Current Dallas facility page, publisher: Aligned_Data_Centers, date: 2026-07-18_accessed, url: "https://aligneddc.com/dallas-data-centers/"}
+      - {title: Aligned and Lambda DFW-04 partnership, publisher: Aligned_Data_Centers, date: 2025-05-07, url: "https://aligneddc.com/press-release/aligned-and-lambda-partner-to-power-next-generation-ai-infrastructure-6/"}
+      - {title: DFW04 architectural-barriers project record, publisher: Texas_Department_of_Licensing_and_Regulation, date: 2026-07-18_accessed, url: "https://www.tdlr.texas.gov/TABS/Search/Project/TABS2024021896"}
+    confidence: high_for_address_area_public_project_record_customer_and_design_compatibility_medium_for_current_delivery_status_low_for_live_GPU_equipment_power_and_financials
+
+  - id: dc_aligned_project_caprock_lbb01
+    name: Aligned Project Caprock and LBB-01
+    record_granularity: announced_six_facility_campus_with_first_named_building
+    operator: Aligned_Data_Centers
+    lifecycle_as_of_2026_07_18: under_development_after_2026_04_09_groundbreaking_with_LBB01_service_target_Q1_2027
+    location:
+      named_first_facility_address: "1498 County Road 315, Abernathy, Texas 79311"
+      county: Hale
+      state: Texas
+      country: United_States
+      campus_acres: 313
+    scale:
+      published_campus_capacity_mw: 540
+      facilities_full_build: 6
+      total_capacity_area_sqft: 1650000
+      first_facility: LBB01
+      first_facility_anticipated_service: Q1_2027
+      exact_540MW_scope_IT_utility_critical_or_other: not_explicitly_defined
+      exact_current_construction_percent_energized_leased_and_utilized_MW: undisclosed
+    accelerators_and_AI:
+      intended_workloads: [hyperscale, cloud, AI, advanced_compute]
+      exact_customers_GPU_vendors_models_counts_servers_racks_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+      boundary: AI-workload positioning and liquid-cooling capability do not establish installed accelerator inventory.
+    electrical:
+      grid_partner: Xcel_Energy
+      dedicated_electrical_infrastructure_built_and_funded_by: Aligned_Data_Centers
+      stated_goal: supply_campus_without_ratepayer_cost_impact_and_protect_regional_reliability
+      LBB01_current_page_reference:
+        UPS_lineup_rating_mw: 2
+        topology: N_plus_1_block_redundant
+        critical_distribution_panel_rating_mw: 1
+        rack_distribution_v: 415
+        backup_generator_rating_and_count: undisclosed_on_current_page
+      exact_service_voltage_substation_transformer_switchgear_feeder_generator_battery_unit_counts_ratings_OEMs_and_fuel: undisclosed
+    cooling_and_water:
+      systems: [DeltaFlow_liquid_cooling, advanced_air_cooled_heat_rejection, closed_loop_water_recirculation]
+      stated_water_boundary: recirculates_same_water_to_protect_Ogallala_Aquifer_and_avoid_competing_with_agricultural_or_residential_needs
+      exact_CDU_chiller_dry_cooler_pump_heat_exchanger_unit_counts_live_liquid_cooled_MW_PUE_WUE_and_annual_water: undisclosed
+    financial_and_economic_boundary:
+      expected_regional_economic_infusion_usd_billion: 5
+      exact_Aligned_incurred_or_committed_capex: undisclosed
+      revenue_operating_profit_customer_contract_value_debt_project_return_and_tax_revenue: undisclosed
+      boundary: The US$5 billion figure is an expected regional economic infusion or investment anchor, not audited Aligned capex, recognized revenue or operating profit.
+    linked_companies: [Aligned_Data_Centers, Xcel_Energy, Ryan_Companies]
+    financial_profile_refs: [company_aligned_data_centers]
+    sources:
+      - {title: Project Caprock 540 MW groundbreaking, publisher: Aligned_Data_Centers, date: 2026-04-09, url: "https://aligneddc.com/press-release/aligned-breaks-ground-on-project-caprock/"}
+      - {title: Current LBB-01 location and reference architecture, publisher: Aligned_Data_Centers, date: 2026-07-18_accessed, url: "https://aligneddc.com/abernathy-tx-data-center/"}
+    confidence: high_for_announced_capacity_land_area_facility_count_delivery_target_and_named_power_partner_low_for_current_build_progress_GPU_inventory_exact_power_chain_and_financials
+
   - id: dc_odata_aligned_latam_portfolio
     name: ODATA Aligned Latin America portfolio
     record_granularity: regional_operator_portfolio_not_one_physical_campus
@@ -109,6 +349,7 @@ campus_profiles:
         Brazil:
           - site_id: SP01
             city_or_area: Santana_de_Parnaiba
+            aligned_current_address: "Estr. dos Romeiros, 943, Votuparim, Santana de Parnaíba, SP 06513-001, Brazil"
             lifecycle: operating_current_facility_card
             IT_power_mw: 19.4
             total_area_sqm: 22000
@@ -118,6 +359,7 @@ campus_profiles:
             notes: Tier_III_Design_and_Facility_LEED_Gold_carrier_neutral_and_PIX_IX_br
           - site_id: SP02
             city_or_area: Hortolandia
+            aligned_current_address: "R. José Blumer, 150, Chácaras Assay, Hortolândia, SP 13186-510, Brazil"
             lifecycle: operating_and_expandable_current_facility_card
             IT_power_mw_full_marketed: 40
             IT_power_mw_contracted: 24
@@ -130,6 +372,7 @@ campus_profiles:
             internal_page_conflict: The same current page states 63,000 square meters in its card and 60,000 in its narrative.
           - site_id: SP03
             city_or_area: Barueri
+            aligned_current_address: "Alameda Araguacema, 187, Tamboré, Barueri, SP 06460-070, Brazil"
             lifecycle: operating_dedicated_build_to_suit_current_facility_card
             IT_power_mw: 3.2
             total_area_sqm: 8030
@@ -139,6 +382,7 @@ campus_profiles:
             customer: unnamed_large_IT_services_provider
           - site_id: SP04
             city_or_area: Osasco_Anhanguera_industrial_area
+            aligned_current_address: "R. Herman, 02, Industrial Anhangüera, Osasco, SP 06276-030, Brazil"
             lifecycle: current_page_describes_built_and_operated_after_2025_04_service_target
             IT_power_mw_full_build: 48
             total_area_sqm: 36599
@@ -149,6 +393,7 @@ campus_profiles:
             announced_investment_usd_million_more_than: 450
           - site_id: RJ01
             city_or_area: Sao_Joao_de_Meriti
+            aligned_current_address: "Rodovia Pres. Dutra, 4.648, Jardim Jose Bonifacio, São João de Meriti, RJ, CEP 25565-350, Brazil"
             lifecycle: operating_current_facility_card
             IT_power_mw: 23.4
             total_area_sqm: 20000
@@ -161,17 +406,22 @@ campus_profiles:
             IT_power_mw: 28
             total_area_sqm: 60000
             floor_area_sqm: 40400
-            address: Avenida_Presidente_Eduardo_Frei_Montalva_km_17
+            ODATA_card_address: Avenida_Presidente_Eduardo_Frei_Montalva_km_17
+            aligned_current_address: "Avenida Panamericana Norte 17400, Lampa, Región Metropolitana, Chile"
+            address_reconciliation: alternative_public_address_descriptions_for_same_site_not_independently_reconciled
           - site_id: ST02
             city_or_area: San_Bernardo_Santiago
             lifecycle: operating_current_facility_card
             IT_power_mw: 40.02
             total_area_sqm: 70000
             floor_area_sqm: 27000
-            address: Avenida_Lo_Espejo_03474
+            ODATA_card_address: Avenida_Lo_Espejo_03474
+            aligned_current_address: "Camino San Esteban 01268, San Bernardo, Región Metropolitana, Chile"
+            address_reconciliation: materially_different_public_address_descriptions_for_same_site_require_operator_or_parcel_confirmation
         Colombia:
           - site_id: BG01
             city_or_area: Bogota_Metropolitan_Free_Trade_Zone
+            aligned_current_address: "Zona Franca Metropolitana de Cota, Predio San Rafael, Vda. Vuelta Grande, Cota, Cundinamarca, Colombia"
             lifecycle: operating_current_facility_card
             IT_power_mw: 14.6
             total_area_sqm: 6400
@@ -196,18 +446,21 @@ campus_profiles:
         Mexico:
           - site_id: QR01
             city_or_area: Queretaro_VYNMSA_industrial_park
+            aligned_current_address: "HQMX+R9 Parque Industrial VYNMSA Querétaro, CP 76245, Mexico"
             lifecycle: operating
             IT_power_mw_full_build: 32
             total_area_sqm: 52350
             floor_area_sqm: 20154.30
           - site_id: QR02
             city_or_area: Amexhe_industrial_park_Queretaro_Celaya_corridor
+            aligned_current_address: "Amexhe Industrial Park Lot 24, Carretera Federal 45D Querétaro-Celaya km 19.700, CP 76245, Mexico"
             lifecycle: operating
             IT_power_mw_full_build: 30
             total_area_sqm: 22373.36
             floor_area_sqft_raw: 132622
           - site_id: QR03
             city_or_area: El_Marques_PyME_industrial_park_Queretaro
+            aligned_current_address: "Carretera Estatal 431, Parque Industrial PyME, Los Cues, Querétaro, Mexico"
             lifecycle: first_72MW_building_launched_2025_04_with_remaining_campus_expanding
             IT_power_mw_full_build: 300
             first_building_IT_power_mw_available: 72
@@ -218,6 +471,7 @@ campus_profiles:
             anchor_hyperscale_customers_committed: 3
           - site_id: QR04
             city_or_area: San_Miguel_de_Allende_Guanajuato
+            aligned_current_address: "Av. La Aurora 14-22, Fraccionamiento Polígono Empresarial San Miguel de Allende Etapa 2, San Miguel de Allende, Guanajuato, Mexico"
             lifecycle: first_12MW_phase_operational_since_2025_08_with_24MW_full_build
             IT_power_mw_full_build: 24
             IT_power_mw_operational_first_phase: 12
@@ -273,6 +527,90 @@ campus_profiles:
         model or cooling-unit count at an ODATA customer deployment. No MW-to-GPU
         conversion is made.
     electrical_cooling_and_sustainability:
+      current_Aligned_country_page_marketed_equipment_accessed_2026_07_18:
+        Brazil_site_specific_tabs:
+          SP01:
+            backup_generator_module_rating_kw: 1825
+            UPS_lineup_ratings_mw: [1]
+            topology_raw: N_plus_1_BR_or_Tri_Bus
+            PDU_ratings_kva: [200, 300, 400]
+            rack_distribution_v: [380, 208]
+            cooling: [minimum_N_plus_1, closed_loop_chilled_water]
+            renewable_power_claim_percent: 100
+          SP02:
+            backup_generator_module_rating_kw: 2500
+            UPS_lineup_ratings_mw: [1, 1.33]
+            topology_raw: N_plus_1_BR
+            PDU_ratings_kva: [300, 500, 530]
+            rack_distribution_v: 480
+            cooling: [minimum_N_plus_1, closed_loop_chilled_water]
+            renewable_power_claim_percent: 100
+          SP03:
+            backup_generator_module_rating_kw: 2500
+            UPS_lineups: {count: 2, rating_each_kva: 800}
+            topology_raw: N_plus_1_BR
+            PDU_rating_kva: 350
+            rack_distribution_v: [380, 220]
+            cooling: [minimum_N_plus_1, closed_loop_chilled_water]
+            renewable_power_claim_percent: 100
+          SP04:
+            backup_generator_module_rating_mw: 3
+            UPS_lineup_rating_mw: 2
+            topology_raw: N_plus_1_BR
+            PDU_rating_kva: 530
+            rack_distribution: 415V_240V_A_plus_B
+            cooling: [Delta3_air_arrays_in_dedicated_mechanical_galleries, DeltaFlow_liquid_secondary_loops_with_valves_and_taps, minimum_N_plus_1, closed_loop_chilled_water]
+            renewable_power_claim_percent: 100
+          RJ01:
+            backup_generator_module_rating_kw: 2500
+            UPS_lineup_rating_mw: 1.33
+            topology_raw: N_plus_1_BR
+            PDU_ratings_kva: [400, 500]
+            rack_distribution: 480V_A_plus_B
+            cooling: [minimum_N_plus_1, closed_loop_chilled_water]
+            renewable_power_claim_on_current_site_tab: not_stated
+        Chile_site_specific_tabs:
+          ST01:
+            backup_generator_module_rating_kw: 2800
+            UPS_lineup_ratings_mw: [1, 1.8]
+            topology_raw: N_plus_1_BR
+            PDU_ratings_kva: [400, 415, 530]
+            rack_distribution: 415V_A_plus_B
+            cooling: [minimum_N_plus_1, closed_loop_chilled_water]
+            renewable_power_claim_percent: 100
+          ST02:
+            backup_generator_module_rating_kw: 2800
+            UPS_lineup_rating_mw: 1.33
+            topology_raw: 5N4_DR
+            PDU_rating: not_listed
+            rack_distribution: 415V_A_plus_B
+            cooling: [minimum_N_plus_1, closed_loop_chilled_water]
+            renewable_power_claim_on_current_site_tab: not_stated
+        Colombia_BG01_country_page_shared_block:
+          backup_generator_module_rating_kw: 1650
+          UPS_lineup_rating_mw: 2.4
+          topology_raw: Tri_bus
+          PDU_rating_kva: 500
+          rack_distribution: 415V_A_plus_B
+          cooling: [closed_loop_chilled_water]
+          renewable_power_and_near_zero_WUE_claim_on_current_shared_block: not_stated
+        Mexico_QR01_QR02_QR03_QR04_country_page_shared_block:
+          backup_generator_module_rating_mw: 3
+          UPS_lineup_rating_mw: 2
+          topology: N_plus_1_block_redundant
+          PDU_rating_kva: 500
+          rack_distribution: 415V_A_plus_B
+          cooling: [Delta3_air_arrays_in_dedicated_mechanical_galleries, DeltaFlow_liquid_secondary_loops_with_valves_and_taps, minimum_N_plus_1, closed_loop_chilled_water]
+          renewable_power_claim_percent: 100
+        disclosure_boundary: >-
+          Brazil and Chile place these ratings inside individual site tabs;
+          Colombia and Mexico publish one country-page block, with Mexico's block
+          shared across four facilities. They are marketed module, lineup and
+          distribution ratings, not disclosed unit counts, aggregate installed
+          MVA, equipment OEMs, commissioning evidence or live utilization. The
+          exact meanings of BR, DR, Tri-Bus and 5N4 are preserved as page labels
+          rather than expanded beyond the source. SP03 explicitly gives two
+          800-kVA UPS lineups; other equipment unit counts remain undisclosed.
       QR03_grid_and_power_enablement:
         energy_partner: Ammper
         first_phase_energized_mw_February_2025: 200
@@ -308,7 +646,7 @@ campus_profiles:
         contracted_volume_increase_2024_percent: 135
         exact_contracted_mw_generation_allocation_and_hourly_matching: undisclosed
         boundary: Wind-farm generation nameplate is not ODATA IT capacity and a renewable-use claim does not establish hourly physical matching at every facility.
-      exact_per_site_transformers_switchgear_UPS_batteries_generators_fuel_CDUs_chillers_unit_counts_OEMs_PUE_WUE_water_and_live_liquid_cooled_MW: undisclosed_except_as_noted
+      remaining_exact_per_site_transformers_switchgear_UPS_batteries_generators_fuel_CDUs_chillers_unit_counts_OEMs_PUE_WUE_water_and_live_liquid_cooled_MW: undisclosed_except_for_the_marketed_module_and_lineup_ratings_above
     ownership_and_financial_boundary:
       direct_parent: Aligned_Data_Centers
       ODATA_acquisition_completed: 2023-05-22
@@ -327,6 +665,10 @@ campus_profiles:
       exact_customer_and_GPU_suppliers: undisclosed
       financial_profile_refs: [company_aligned_data_centers]
     sources:
+      - {title: Current Aligned Brazil addresses and site-specific power and cooling tabs, publisher: Aligned_Data_Centers, date: 2026-07-18_accessed, url: "https://aligneddc.com/brazil-data-centers/"}
+      - {title: Current Aligned Chile addresses and site-specific power and cooling tabs, publisher: Aligned_Data_Centers, date: 2026-07-18_accessed, url: "https://aligneddc.com/chile-data-centers/"}
+      - {title: Current Aligned Colombia BG-01 address and shared power and cooling block, publisher: Aligned_Data_Centers, date: 2026-07-18_accessed, url: "https://aligneddc.com/colombia-data-centers/"}
+      - {title: Current Aligned Mexico addresses and shared power and cooling block, publisher: Aligned_Data_Centers, date: 2026-07-18_accessed, url: "https://aligneddc.com/mexico-data-centers/"}
       - {title: Current ODATA home and twelve detailed facility cards, publisher: ODATA, date: 2026-07-18_accessed, url: "https://odatacolocation.com/en/"}
       - {title: Current ODATA data-center master directory including BG02 under development, publisher: ODATA, date: 2026-07-18_accessed, url: "https://odatacolocation.com/en/data-center/"}
       - {title: QR03 first facility launch and 300 MW campus, publisher: ODATA, date: 2025-04-30, url: "https://odatacolocation.com/en/blog/imprensa/odata-announces-the-launch-of-its-largest-data-center-in-mexico-with-300mw-of-it-capacity/"}
@@ -351,6 +693,7 @@ campus_profiles:
       municipality: El_Marques
       state: Queretaro
       country: Mexico
+      aligned_current_address: "Carretera Estatal 431, Parque Industrial PyME, Los Cues, Querétaro, Mexico"
       mapped_public_location_candidate: {source_ref: osm_way_1433631456, latitude: 20.5346228, longitude: -100.2363227, OSM_footprint_area_m2: 139102.946, confidence: high}
     scale:
       buildings_full_build: 5
@@ -373,7 +716,13 @@ campus_profiles:
       switching_substation_voltage_kv: 400
       transmission_line_miles: 6.2
       new_substations: 2
-      exact_transformer_switchgear_UPS_battery_generator_unit_counts_ratings_OEMs_and_redundancy: undisclosed
+      current_Mexico_country_page_shared_reference_design:
+        backup_generator_module_rating_mw: 3
+        UPS_lineup_rating_mw: 2
+        topology: N_plus_1_block_redundant
+        PDU_rating_kva: 500
+        rack_distribution: 415V_A_plus_B
+      exact_transformer_switchgear_UPS_battery_generator_PDU_unit_counts_OEMs_and_commissioned_totals: undisclosed
       scope_boundary: Grid-infrastructure MW, campus full-build IT MW and first-building IT MW are separate measures and are not added.
     cooling:
       primary_named_system: Delta_Cube
@@ -381,6 +730,7 @@ campus_profiles:
       supported_density_kw_per_rack_up_to: 50
       liquid_cooling_integration: seamless
       hybrid_air_liquid_supported: true
+      current_Mexico_country_page_shared_reference: [Delta3_air_arrays_in_dedicated_mechanical_galleries, DeltaFlow_liquid_secondary_loops_with_valves_and_taps, minimum_N_plus_1, closed_loop_chilled_water]
       exact_Delta_Cube_CDU_chiller_pump_heat_exchanger_unit_counts_live_liquid_cooled_MW_PUE_WUE_and_water: undisclosed
     financial_and_delivery:
       announced_investment_usd_billion_more_than: 3
@@ -389,6 +739,7 @@ campus_profiles:
     linked_companies: [ODATA, Aligned_Data_Centers, Ammper, Munters]
     financial_profile_refs: [company_aligned_data_centers]
     sources:
+      - {title: Current Aligned Mexico QR-03 address and shared power and cooling block, publisher: Aligned_Data_Centers, date: 2026-07-18_accessed, url: "https://aligneddc.com/mexico-data-centers/"}
       - {title: Current QR03 facility card, publisher: ODATA, date: 2026-07-18_accessed, url: "https://odatacolocation.com/en/blog/data-center/dc-qr03/"}
       - {title: QR03 first facility launch, publisher: ODATA, date: 2025-04-30, url: "https://odatacolocation.com/en/blog/imprensa/odata-announces-the-launch-of-its-largest-data-center-in-mexico-with-300mw-of-it-capacity/"}
       - {title: QR03 energization and grid infrastructure, publisher: ODATA_and_Aligned, date: 2025-02-27, url: "https://aligneddc.com/press-release/odata-announces-energization-of-mexicos-largest-data-center-campus-solving-energy-scarcity-for-the-development-of-data-centers-in-queretaro/"}
@@ -12155,9 +12506,14 @@ disclosure_gap_register:
   - ODATA_12_detailed_cards_BG02_current_directory_and_BG03_announcement_scope_and_lifecycle_reconciliation
   - ODATA_602_62MW_card_626_62MW_current_directory_and_746_62MW_announced_ledger_to_operating_energized_leased_utilized_IT_load
   - ODATA_exact_GPU_models_counts_ownership_delivery_utilization_power_draw_customers_and_site_allocation
-  - ODATA_per_site_substation_transformer_switchgear_UPS_battery_generator_CDU_chiller_unit_counts_OEMs_PUE_WUE_water_and_live_liquid_cooled_MW
+  - ODATA_market_page_module_ratings_to_per_site_substation_transformer_switchgear_UPS_battery_generator_PDU_CDU_chiller_unit_counts_OEMs_commissioned_totals_PUE_WUE_water_and_live_liquid_cooled_MW
   - ODATA_QR03_200MW_energized_400MW_path_300MW_full_build_and_72MW_first_building_scope_reconciliation
-  - Aligned_87_facilities_6_4GW_current_marketing_to_50_units_5GW_2025_transaction_scope_reconciliation
+  - Aligned_82_87_data_centers_50_51_campuses_and_5_6_4GW_same_date_current_marketing_scope_reconciliation
+  - Aligned_27_North_America_plus_12_Latin_America_current_identifiers_to_87_unit_headline_and_physical_building_lifecycle_reconciliation
+  - Aligned_DFW04_425500sqft_USD161m_TDLR_record_to_commercial_opening_Lambda_lease_live_IT_load_Blackwell_inventory_and_total_capex
+  - Aligned_Project_Caprock_540MW_scope_grid_voltage_substation_equipment_LBB01_delivery_GPU_inventory_and_incurred_capex
+  - Aligned_PDX01_to_Pacific_Northwest_31MW_62MWh_BESS_mapping_commissioning_OEM_utility_and_operating_dispatch
+  - Aligned_January_2025_debt_BXCI_ODATA_green_and_Devco_facility_overlap_drawn_amount_rate_maturity_collateral_and_covenants
   - Aligned_and_ODATA_audited_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_and_site_economics
   - Aligned_USD40_billion_transaction_completion_financing_post_close_ownership_and_governance
   - Ascenty_40_sites_to_exact_building_addresses_coordinates_parcels_ownership_and_27_operating_13_development_lifecycle
@@ -12310,12 +12666,17 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
-    - ODATA_12_current_detailed_facility_cards_exact_addresses_coordinates_parcels_ownership_and_building_lifecycle
+    - Aligned_27_current_North_America_identifiers_exact_coordinates_parcels_ownership_operating_construction_and_future_lifecycle
+    - Aligned_39_visible_current_identifiers_plus_BG02_BG03_to_87_unit_headline_physical_building_and_management_scope_reconciliation
+    - Aligned_DFW04_commercial_opening_Lambda_lease_live_IT_load_Blackwell_delivery_power_chain_CDU_and_total_project_cost
+    - Aligned_Project_Caprock_540MW_definition_grid_service_voltage_substations_equipment_customer_awards_LBB01_progress_and_GPU_delivery
+    - Aligned_PDX01_Pacific_Northwest_BESS_mapping_2026_commissioning_utility_OEM_voltage_battery_chemistry_and_dispatch
+    - ODATA_12_current_detailed_facility_cards_coordinates_parcels_ownership_and_building_lifecycle_plus_ST01_ST02_address_reconciliation
     - ODATA_BG02_current_development_and_BG03_announcement_only_construction_permit_grid_and_end_2026_delivery_status
     - ODATA_602_62MW_cards_626_62MW_current_directory_and_746_62MW_announced_ledger_to_operating_energized_leased_utilized_IT_load
     - ODATA_QR03_remaining_four_buildings_400MW_power_path_customer_ramp_and_current_72MW_utilization
     - ODATA_exact_customer_and_operator_GPU_models_counts_racks_ownership_delivery_utilization_power_draw_and_site_allocation
-    - ODATA_per_site_substation_transformer_switchgear_UPS_battery_generator_CDU_chiller_counts_OEMs_PUE_WUE_water_and_liquid_cooled_MW
+    - ODATA_published_module_and_lineup_ratings_to_per_site_substation_transformer_switchgear_UPS_battery_generator_PDU_CDU_chiller_unit_counts_OEMs_commissioned_totals_PUE_WUE_water_and_liquid_cooled_MW
     - ODATA_Assurua_IV_exact_equity_stake_contracted_MW_generation_allocation_hourly_matching_and_Brazil_facility_mapping
     - Ascenty_40_site_exact_ID_address_coordinate_parcel_ownership_and_27_operating_13_development_lifecycle_ledger
     - Ascenty_703MW_marketed_total_power_350MW_FY2025_ESG_and_per_site_energized_leased_utilized_IT_load_reconciliation
@@ -12456,7 +12817,10 @@ next_research_queue:
   company_financials:
     - Aligned_and_ODATA_standalone_audited_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_and_site_economics
     - Aligned_USD40_billion_transaction_completion_financing_post_close_beneficial_ownership_governance_and_reporting
-    - Aligned_87_facilities_6_4GW_current_scope_to_50_units_5GW_2025_transaction_scope_reconciliation
+    - Aligned_82_87_data_centers_50_51_campuses_5_6_4GW_and_39_visible_current_identifiers_scope_reconciliation
+    - Aligned_DFW04_Lambda_lease_revenue_commencement_live_IT_load_Blackwell_inventory_total_capex_and_return_on_capital
+    - Aligned_Caprock_540MW_scope_power_delivery_LBB01_schedule_customer_awards_capex_financing_and_site_economics
+    - Aligned_2025_2026_debt_facility_overlap_drawn_amount_rates_maturities_collateral_covenants_and_refinancing
     - ODATA_project_investment_envelopes_to_incurred_capex_billed_revenue_operating_profit_lease_terms_and_return_on_capital
     - Ascenty_Mexico_Colombia_entities_revenue_operating_profit_EBITDA_capex_debt_cash_flow_and_site_economics
     - Ascenty_Stellar_JV_current_Brookfield_economic_stake_preferred_terms_distributions_and_governance
