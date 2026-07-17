@@ -14,7 +14,7 @@ source_scope:
   user_history:
     path: /Users/brian/.codex/history.jsonl
     role: Locally stored user prompts
-    messages: 6457
+    messages: 6461
     unique_sessions: 177
   combined_unique_thread_ids: 540
   overlap_between_source_ids: 4
@@ -28,10 +28,16 @@ outputs:
   user_message_index_ref: life/imports/codex_threads_20260717/user_message_index.jsonl
   import_report_ref: life/imports/codex_threads_20260717/import_report.json
   summary_ref: life/imports/codex_threads_20260717/summary.yaml
+  input_analysis_ref: life/imports/codex_threads_20260717/input_analysis.jsonl
+  session_metadata_ref: life/imports/codex_threads_20260717/session_metadata.jsonl
+  deep_analysis_report_ref: life/imports/codex_threads_20260717/deep_analysis_report.json
+  deep_analysis_ref: life/imports/codex_threads_20260717/deep_analysis.yaml
   generator_ref: scripts/import_codex_threads.py
+  analysis_generator_ref: scripts/analyze_codex_inputs.py
 interpretation_policy:
   - Raw user text is preserved in user_message_index.jsonl.
   - Area, thought, activity, and decision labels are keyword-based candidates.
+  - Input origin, topic, and intent labels are deterministic candidates and may overlap.
   - Pasted assistant output may appear inside a user prompt and must not automatically be treated as Brian's own belief.
   - Identity claims require repeated evidence and Brian confirmation.
   - Existing normalized ontology records remain canonical for confirmed BODY, FINANCE, RELATION, and CAREER facts.
@@ -39,4 +45,3 @@ known_storage_mismatch: >
   Codex session_index and history use only partially overlapping IDs. This is
   expected when UI, imported, legacy, archived, and execution sessions coexist;
   the import preserves source membership instead of forcing uncertain joins.
-

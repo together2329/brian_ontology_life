@@ -1,0 +1,368 @@
+schema_version: 1
+status: comprehensive_user_input_analysis_with_candidates
+updated_at: 2026-07-17
+profile_ref: person_brian
+title: Brian's local Codex user-input analysis
+source_manifest_ref: life/imports/codex_threads_20260717/manifest.yaml
+raw_message_index_ref: life/imports/codex_threads_20260717/user_message_index.jsonl
+row_analysis_ref: life/imports/codex_threads_20260717/input_analysis.jsonl
+machine_report_ref: life/imports/codex_threads_20260717/deep_analysis_report.json
+
+scope:
+  source: /Users/brian/.codex/history.jsonl
+  period: 2025-07-31_to_2026-07-17
+  user_input_count: 6461
+  session_count: 177
+  sessions_with_rollout_metadata: 173
+  processing: local_only
+  external_models_or_services_used: false
+  analysis_target: user_inputs_only
+  exclusions:
+    - Assistant and tool outputs were not independently analyzed unless Brian pasted them into a user input.
+    - A request to build, test, or commit something is evidence of intent and activity, not proof that the requested outcome succeeded.
+    - Personality and clinical conclusions are out of scope.
+
+executive_read:
+  - >-
+    The dominant story is not a collection of unrelated coding questions. Brian repeatedly tried to turn an
+    AI coding agent into a trustworthy engineering operating environment: persistent memory, explicit truth,
+    evidence-backed completion, bounded parallel execution, and reusable knowledge.
+  - >-
+    The thought model became progressively sharper: mechanical agent memory concerns in late 2025; an
+    evidence-first persistent agent environment in May 2026; Requirement -> Obligation -> Contract -> Evidence
+    engineering in June; and an ontology-backed personal operating system for work, health, finance, relations,
+    and happiness in July.
+  - >-
+    Brian's characteristic interaction loop is explore -> challenge the explanation -> make the model expose the
+    mechanism -> implement -> test more deeply -> inspect status/evidence -> commit/push. Short commands are common,
+    but they sit inside long iterative reasoning chains.
+  - >-
+    The recurring design preference is controlled autonomy: give the LLM room to reason from principles, but make
+    correctness, freshness, ownership, and completion mechanically checkable.
+  - >-
+    The same need for connected truth and visible control appears outside engineering. Recording life information
+    produced an explicitly positive feeling of organization and control, while finance discussions combined strong
+    AI optimism with a desire for written investment rules and household diversification.
+
+quantitative_overview:
+  activity_concentration:
+    may_and_june_2026_messages: 5779
+    may_and_june_share_percent: 89.4
+    interpretation: The archive is heavily weighted toward an intensive two-month agent and semiconductor-IP development sprint.
+  monthly_messages:
+    2025-07: 1
+    2025-08: 2
+    2025-11: 5
+    2025-12: 56
+    2026-05: 2335
+    2026-06: 3444
+    2026-07_through_17: 618
+  text_shape:
+    total_characters: 6072208
+    median_characters: 26
+    p90_characters: 96
+    p99_characters: 15385
+    maximum_characters: 628998
+    messages_at_least_1000_characters: 262
+    messages_at_least_5000_characters: 135
+    interpretation: Most inputs are compact steering turns, with a small long-tail of pasted transcripts, specifications, and logs.
+  origin_candidates:
+    direct_user_input: 5979
+    direct_or_composed_long_input: 146
+    pasted_transcript_or_tool_log: 127
+    pasted_document_or_long_context: 79
+    ui_command_or_control: 119
+    attachment_or_file_reference: 8
+    delegated_or_automated_task_prompt: 3
+    caution: Origin labels are deterministic candidates, not authorship proof.
+  intent_candidates_overlap:
+    question_or_exploration: 3162
+    action_request: 967
+    feedback_or_correction: 705
+    decision_or_approval: 455
+    status_or_result_check: 266
+    personal_fact_or_experience: 89
+    unclassified: 2360
+    interpretation: Exploration dominates, but it is repeatedly converted into implementation, correction, decision, and verification turns.
+  topic_candidates_overlap:
+    semiconductor_ip: 878
+    agent_architecture: 855
+    verification_evidence: 664
+    ontology_memory: 546
+    orchestration_parallelism: 263
+    maintenance_admin: 202
+    career_learning: 195
+    body_health: 45
+    finance_investing: 31
+    mind_happiness: 30
+    relations_pets: 8
+    travel_fun: 3
+    unclassified: 4174
+    caution: Short commands such as "go ahead" or "push" are context-dependent and therefore often unclassified.
+
+workspace_activity_map:
+  - group: common_ai_agent_and_atlas_family
+    messages: 3952
+    share_percent: 61.2
+    included_workspaces:
+      common_ai_agent: 2767
+      CLAUDE_ATLAS_TEST: 675
+      NEW_ATLAS: 510
+    activity_read: Agent runtime, Atlas UI, sessions, memory, workflows, multi-user operation, and product UX formed the largest workstream.
+  - group: ontology_and_ip_development_family
+    messages: 1555
+    share_percent: 24.1
+    activity_read: OAG, RTL/TB generation, MCTP and other IP pilots, contracts, evidence, gates, and wavefront work formed the second major workstream.
+  - group: life_ontology_repository
+    messages: 570
+    share_percent: 8.8
+    activity_read: Historical imports and current BODY, MIND, FINANCE, RELATION, FUN, and identity records were brought into a connected local ontology.
+  - group: codex_source_and_agent_framework_experiments
+    representative_workspaces: [codex/codex, codex, codex/hermes-agent, brian_coder, gajae-code]
+    activity_read: Brian inspected or compared agent runtimes, source behavior, tools, skills, model backends, and orchestration mechanisms.
+
+thought_evolution:
+  - phase: 1_agent_limitations
+    period: 2025-11_to_2025-12
+    shift: From using an agent to questioning why it feels mechanical.
+    themes:
+      - Important context can be lost through mechanical compression.
+      - Restart persistence is not the same as learning from prior behavior.
+      - Fixed iteration stops and rigid ReAct steps lack human judgment and intuition.
+    evidence_refs:
+      - codex_user_message_019ad4de-6903-7d40-93b1-51e513d96ffa_000010
+    confidence: high
+
+  - phase: 2_persistent_operational_agent
+    period: 2026-05
+    shift: From agent critique to designing a persistent engineering environment.
+    themes:
+      - Sessions and learned context should survive restarts.
+      - UI should expose state, progress, decisions, approvals, and evidence clearly.
+      - Documentation and a maintained LLM wiki should reduce repeated rediscovery.
+      - Tests should run in the same environment users actually operate.
+    evidence_refs:
+      - codex_user_message_019e18d8-5339-7343-85e2-d84d6a5d1b81_001084
+      - codex_user_message_019e18d8-5339-7343-85e2-d84d6a5d1b81_001121
+      - codex_user_message_019e18d8-5339-7343-85e2-d84d6a5d1b81_001227
+    confidence: high
+
+  - phase: 3_evidence_first_completion
+    period: 2026-05_to_2026-06
+    shift: From workflow stages to proof that every required behavior is actually closed.
+    themes:
+      - Evidence should be the default for pipeline, CI, and interactive chat.
+      - File existence or an assistant summary is not completion.
+      - Correctness and evidence freshness both matter.
+      - RTL version, simulation, lint, coverage, and validation history should be traceable.
+    evidence_refs:
+      - codex_user_message_019e18d8-5339-7343-85e2-d84d6a5d1b81_001084
+      - codex_user_message_019e8b3d-eb18-7c21-83d3-c959d41844ae_003005
+    confidence: high
+
+  - phase: 4_truth_decomposition_and_locking
+    period: 2026-06
+    shift: From one large SSOT document to granular, testable truth objects.
+    themes:
+      - Requirements should decompose into obligations, contracts, and evidence.
+      - Lock state should exist per requirement; all-lock means every required unit is truly locked.
+      - Contracts must be strong enough to decide implementation correctness through observable signals, simulation, formal checks, or other evidence.
+      - Completion requires every required obligation to be passed, waived with visibility, or explicitly blocked by a human decision.
+    evidence_refs:
+      - codex_user_message_019e8b3d-eb18-7c21-83d3-c959d41844ae_003296
+      - codex_user_message_019e8b3d-eb18-7c21-83d3-c959d41844ae_003362
+      - codex_user_message_019f4408-5eb4-7c20-b8f9-d2a64c2a306a_006120
+    confidence: high
+
+  - phase: 5_ontology_for_decision_and_action
+    period: 2026-06_to_2026-07
+    shift: From ontology as structured storage to ontology as an operating and decision layer.
+    themes:
+      - Ontology should connect intent, state, decisions, actions, and evidence.
+      - Work execution should be supported, not merely documented.
+      - Historical emotional and work records should contribute to an evolving but evidence-linked sense of identity.
+    evidence_refs:
+      - codex_user_message_019ebfad-1f51-7fc0-8ff4-9ea4142dbfaa_003884
+      - codex_user_message_019efb57-5dad-7010-aaf9-02f3b97b45dd_005493
+    confidence: high
+
+  - phase: 6_bounded_autonomy_and_simplicity
+    period: 2026-05_to_2026-07
+    shift: From adding mechanisms to pruning mechanisms and preserving useful LLM judgment.
+    themes:
+      - Too much script-level control can constrain the agent and increase maintenance.
+      - A default agent reading local docs/wiki may work better than an over-engineered controller.
+      - A local skill or script is preferable to MCP when it solves the problem with fewer failure modes.
+      - Parallelism should follow dependency, ownership, and evidence boundaries; more workers are not automatically better.
+    evidence_refs:
+      - codex_user_message_019e58b9-2c3b-7451-a2b9-2e18d7bbd006_001896
+      - codex_user_message_019e58b9-2c3b-7451-a2b9-2e18d7bbd006_001902
+      - codex_user_message_019ee503-dedf-70b1-ab61-71c4183bcba2_005144
+      - codex_user_message_019f077f-300f-75f0-b8c4-df642c58058d_005578
+    confidence: high
+
+  - phase: 7_full_power_and_decision_quality
+    period: 2026-06_to_2026-07
+    shift: From optimizing the agent to asking how the agent can extend Brian's own thinking.
+    themes:
+      - Research, books, visual thinking, and neuroscience are candidate tools for expanding thought.
+      - Deep Interview should begin with the most important unresolved decision and proceed one question at a time.
+      - The desired system should improve judgment, not merely produce more output.
+    evidence_refs:
+      - codex_user_message_019f0bbf-68b5-7f90-a587-772743e75a62_005673
+      - codex_user_message_019f077f-3ac3-7b10-bc51-3588b55a08d5_005749
+    confidence: high
+
+  - phase: 8_life_and_finance_operating_system
+    period: 2026-07
+    shift: From engineering ontology to a local ontology for the whole life system.
+    themes:
+      - Workouts, mood, travel, relations, pets, assets, debt, retirement, and investments should be retrievable as connected records.
+      - Recording creates a positive feeling of organization and control.
+      - AI and memory are viewed as a major wealth opportunity, but Brian wants explicit principles and diversification rather than purely reactive trading.
+    evidence_refs:
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006232
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006234
+      - codex_user_message_019f65c3-4909-7dc0-b06f-9e834c7baf4c_006293
+    confidence: high
+
+interaction_operating_model:
+  dominant_loop:
+    - explore_the_system_or_problem
+    - ask_why_and_expose_the_mechanism
+    - challenge_complexity_or_weak_assumptions
+    - select_a_direction
+    - implement_incrementally
+    - test_then_deep_test
+    - inspect_status_and_evidence
+    - commit_and_push_a_checkpoint
+  repeated_exact_input_examples:
+    git_commit_push: 27
+    git_add_commit_push: 14
+    commit_push: 13
+    git_push: 11
+    keep_going_case_sensitive_variant: 11
+    status_question: 10
+    implement_the_plan: 9
+    deep_test: 6
+    fix_all: 4
+    merge_into_main: 4
+  style_candidates:
+    - Brian commonly uses very short steering turns after establishing context; the median input is 26 characters.
+    - Korean and English technical shorthand are mixed fluidly.
+    - Brian often begins with a broad intuition, then sharpens it through repeated counterexamples and boundary questions.
+    - He prefers seeing the mechanism, state, or artifact rather than accepting a polished narrative alone.
+    - He frequently authorizes continuation quickly once the direction is understood, then returns to challenge weak evidence or excess complexity.
+    - Git checkpoints are part of the thinking loop, not merely release administration.
+    - Visual clarity, natural interaction, and visible approval/rejection state are recurring product-quality concerns.
+  interpretation_boundary: These are observed interaction patterns, not fixed personality traits.
+
+recurring_principle_candidates:
+  - id: principle_evidence_before_completion
+    statement: Never treat generated files or a completion claim as sufficient; require reproducible and fresh evidence.
+    status: strongly_supported_candidate
+    confidence: high
+  - id: principle_truth_should_be_atomic_and_traceable
+    statement: Decompose intent into requirement, obligation, contract, evidence, validation, and decision links at a useful granularity.
+    status: strongly_supported_candidate
+    confidence: high
+  - id: principle_ontology_should_enable_action
+    statement: Ontology should support decisions and execution, not only store structured facts.
+    status: strongly_supported_candidate
+    confidence: high
+  - id: principle_llm_judgment_with_deterministic_boundaries
+    statement: Give the LLM principles and room to reason while deterministic checks enforce truth, safety, ownership, and closure boundaries.
+    status: inferred_from_repeated_design_choices
+    confidence: medium_high
+    needs_user_review: true
+  - id: principle_test_in_real_environment
+    statement: Validate continuously in the same environment in which the system will actually be used.
+    status: explicit
+    confidence: high
+  - id: principle_prefer_lightweight_mechanisms
+    statement: Prefer docs, local files, skills, or scripts when they solve the problem without an additional MCP or service failure surface.
+    status: explicit_but_context_dependent
+    confidence: high
+  - id: principle_parallelism_needs_boundaries
+    statement: Parallelize only where dependency, ownership, integration, and evidence boundaries are clear.
+    status: strongly_supported_candidate
+    confidence: high
+  - id: principle_ask_the_most_important_question_first
+    statement: Resolve the highest-impact decision first and ask one focused question at a time.
+    status: explicit
+    confidence: high
+  - id: principle_preserve_identity_without_overclaiming
+    statement: Use long-running records to inform identity while keeping raw history, interpretation, and confirmed identity separate.
+    status: inferred_from_ontology_requests
+    confidence: medium_high
+    needs_user_review: true
+
+cross_area_patterns:
+  - pattern: convert_vague_goal_to_operating_model
+    description: Brian repeatedly turns broad goals into objects, links, states, gates, and review loops.
+    observed_in: [CAREER, MIND, FINANCE, BODY]
+    confidence: high
+  - pattern: control_through_observable_state
+    description: Visible state and connected records appear associated with confidence, trust, and a positive sense of control.
+    observed_in: [CAREER, MIND, FINANCE, BODY]
+    causality_claimed: false
+    confidence: high
+  - pattern: expansion_then_diet
+    description: Brian explores many mechanisms aggressively, then deliberately prunes scripts, services, fallbacks, or agents when complexity becomes a maintenance burden.
+    observed_in: [CAREER]
+    confidence: high
+  - pattern: concentrated_conviction_plus_rule_seeking
+    description: Strong conviction, especially about AI and memory, is followed by requests for explicit principles, risk controls, and diversification.
+    observed_in: [FINANCE, MIND]
+    confidence: high
+  - pattern: engineering_model_transfers_to_life
+    description: The evidence-linked ontology model developed for IP engineering is being reused to organize health, mood, finance, relations, travel, and identity.
+    observed_in: [CAREER, MIND, BODY, FINANCE, RELATION, FUN]
+    confidence: high
+
+personal_domain_read:
+  mind:
+    - Brian values a fulfilled, organized state and explicitly reported high energy when records felt connected and under control.
+    - He is interested in extending his own reasoning capacity through research, books, visual thinking, and better questioning.
+  body:
+    - Recent inputs emphasize progressive strength training, muscle gain, protein, and gradual fat reduction without harming performance.
+    - Exercise records include social training, travel-gym workouts, and a machine-squat personal record; canonical details live in the BODY log.
+  finance:
+    - The household has meaningful exposure to semiconductors, Korean equities, property, retirement assets, deposits, and debt; canonical figures live in the FINANCE log.
+    - Brian's employment and portfolio can create correlated income and asset exposure to the memory cycle.
+    - Strong AI optimism is balanced by an emerging desire for written sell/hold rules, valuation discipline, and diversification of new capital.
+  relation_and_fun:
+    - Spouse, two companion dogs, travel, shared activities, and restorative experiences appear as meaningful life context, though they are a small fraction of the technical-heavy Codex archive.
+  career:
+    - The archive shows unusually sustained attention to semiconductor IP automation, verification quality, agent architecture, and knowledge reuse.
+    - The central ambition is a trustworthy, enterprise-capable SoC/IP knowledge and execution system rather than a one-shot code generator.
+
+open_loops:
+  - id: open_canonical_principles
+    description: Decide which recurring principle candidates should be promoted from analysis into Brian's confirmed operating principles.
+    next_review: Ask Brian to confirm, edit, or reject the short principle set.
+  - id: open_full_power_system
+    description: The Full Power question remains broad; the desired research, book, visual-thinking, and reflection workflow is not yet a single confirmed system.
+  - id: open_investment_policy
+    description: AI conviction, concentration limits, profit-taking rules, diversification targets, and review triggers still need one canonical household investment policy.
+  - id: open_mctp_verification
+    description: Multiple July inputs indicate that MCTP implementation and verification depth remain a continuing technical priority.
+  - id: open_memory_promotion_policy
+    description: Raw history is indexed, but the policy for automatically promoting repeated inputs into confirmed identity, principles, and decisions still needs explicit thresholds and review gates.
+  - id: open_assistant_outcome_audit
+    description: This analysis covers user inputs. A separate audit would be required to establish which requested implementations, tests, commits, or research outputs actually succeeded.
+
+retrieval_guidance:
+  - Use user_message_index.jsonl for the exact raw input and timestamp.
+  - Use input_analysis.jsonl to filter by candidate origin, topic, intent, session, or time.
+  - Use session_metadata.jsonl to join a history session to its working directory and runtime metadata.
+  - Treat deep_analysis_report.json as reproducible counts and this file as the human-readable interpretation layer.
+  - Prefer canonical BODY, FINANCE, MIND, RELATION, and CAREER logs for confirmed present-state facts.
+
+limitations:
+  - The topic and intent rules are keyword-based and overlap by design.
+  - The 4174 unclassified topic candidates are mostly short context-dependent steering turns, not evidence that the content lacks meaning.
+  - Pasted assistant text can resemble Brian-authored statements; origin candidates reduce but do not eliminate this ambiguity.
+  - Workspace counts show where conversations occurred, not how much code or successful output each workspace produced.
+  - The archive begins sparsely and is not a complete record of Brian's life or all agent activity.
+  - All interpretations remain revisable when Brian supplies corrections or confirms identity-level statements.
