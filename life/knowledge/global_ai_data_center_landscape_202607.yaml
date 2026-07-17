@@ -13637,9 +13637,431 @@ campus_profiles:
         url: https://www.sebi.gov.in/filings/public-issues/oct-2025/sify-infinit-spaces-limited-drhp_97481.html
     confidence: high_for_14_center_188MW_roster_site_addresses_current_capacity_SEC_financial_link_and_published_topology_medium_for_legacy_equipment_currentness_future_facility_labels_and_later_15_center_scope_low_for_exact_GPU_inventory_installed_liquid_cooled_MW_site_utilization_and_equipment_OEMs
 
+  - id: dc_meeza_qatar_mvault_portfolio
+    name: MEEZA Qatar M-VAULT data-center portfolio
+    record_granularity: listed_operator_portfolio_with_facility_and_pipeline_ledger
+    operator: MEEZA_QSTP
+    lifecycle_as_of_2026_07_18: five_historical_operating_centers_plus_delivered_MV4_expansion_and_MV6_MV7_MV8_development
+    location:
+      country: Qatar
+      current_operating_clusters:
+        Qatar_Science_and_Technology_Park: [MV1, MV3, MV4, MV5]
+        Umm_Karn_or_Um_Garn: [MV2]
+      development_clusters:
+        Qatar_Science_and_Technology_Park: [MV7, MV8, MV9]
+        Um_Garn_next_to_MV2: [MV6]
+      naming_boundary: >-
+        Official certificates use Umm Karn for MV2, while corporate releases and
+        presentations also use Um Garn. These are retained as operator spellings
+        for the same public location cluster; exact parcels and building
+        coordinates are not disclosed.
+    operating_capacity_reconciliation:
+      2022_prospectus_exact_IT_load_mw: 13.5
+      2024_and_2025_rounded_operating_IT_capacity_mw: 14
+      MV4_expansion_RFS_and_handover_date: 2026-06-21
+      MV4_delivered_increment_mw: 4
+      current_operating_IT_capacity_mw_derived: 18
+      derivation: 14_MW_prior_operating_base_plus_4_MW_MV4_expansion
+      derivation_boundary: >-
+        MEEZA announced successful handover of the 4 MW expansion but did not
+        publish a new portfolio total in that release. Eighteen MW is therefore
+        a derived same-scope bridge, not a company-labeled headline, and does not
+        include MV6, MV7 or MV8 until completion evidence exists.
+      utilization:
+        end_2024_percent: 96
+        2025_management_presentation_percent: 97
+        post_MV4_handover_percent: undisclosed
+    facility_capacity_ledger:
+      MV1:
+        cluster: QSTP
+        status: operating
+        2022_exact_IT_load_mw: 0.6
+        current_presentation_rounded_capacity_mw: 1
+      MV2:
+        cluster: Umm_Karn
+        status: operating
+        2022_exact_IT_load_mw: 5.7
+        current_presentation_rounded_capacity_mw: 6
+        2020_to_2021_extension_mw: 0.9
+      MV3:
+        cluster: QSTP
+        status: operating
+        2022_exact_IT_load_mw: 2.0
+        current_presentation_capacity_mw: 2
+      MV4:
+        cluster: QSTP
+        status: operating_original_plus_delivered_expansion
+        original_IT_capacity_mw: 4
+        delivered_2026_expansion_mw: 4
+        current_total_IT_capacity_mw_derived: 8
+      MV5:
+        cluster: QSTP
+        status: operating
+        2022_exact_IT_load_mw: 1.2
+        current_presentation_rounded_capacity_mw: 1
+      MV6:
+        cluster: Um_Garn_next_to_MV2
+        status: foundations_commenced
+        current_phase_design_mw: 24
+        first_delivery_mw: 6
+        first_delivery_target: end_2027
+        ultimate_masterplan_mw: 44
+      MV7:
+        cluster: QSTP
+        status: stage_4_design_with_power_secured
+        full_design_mw: 16
+        first_phase_mw: 4
+        construction_target: H2_2026
+      MV8:
+        cluster: QSTP
+        status: foundations_in_progress
+        full_design_mw: 4
+        first_phase_mw: 2
+        current_RFS_target: Q4_2026
+      MV9:
+        cluster: QSTP
+        status: future_label
+        capacity_mw: TBA
+      ledger_boundary: >-
+        The 2022 exact loads and later rounded presentation capacities use
+        different reporting precision. MV6's 24 MW current phase, 44 MW ultimate
+        masterplan and 6 MW first delivery are nested scopes, not additive.
+    published_capacity_forecasts:
+      Q1_2026_current_chart_mw:
+        2026F: 22
+        2027F: 28
+        2028F: 52
+        2029F: 62
+      FY2025_prior_chart_mw:
+        2026F: 22
+        2027F: 32
+        2028F: 56
+        2029F: 62
+      revision_boundary: >-
+        Q1 2026 moved 4 MW from the 2027 and 2028 portfolio totals without a
+        facility-by-facility reconciliation. The 2026F 22 MW chart also appears
+        to require all 4 MW of MV8 even though the accompanying text calls its
+        first phase 2 MW. Forecast charts are not current operating capacity.
+    accelerators_and_AI:
+      MAI_platform_launch_date: 2025-11-02
+      disclosed_services: [GPU_as_a_Service, sovereign_GPU_stack, managed_AI_services]
+      hosting_country: Qatar
+      MV6_first_6MW_positioning: purpose_built_for_advanced_AI_services
+      exact_GPU_OEM_models_counts_servers_racks_fabric_site_allocation_ownership_utilization_and_power_draw: undisclosed
+      AMD_cooperation_2024:
+        scope: explore_deployment_of_AMD_technologies_in_MEEZA_data_centers
+        boundary: cooperation_agreement_not_proof_of_deployed_AMD_GPUs
+      boundary: >-
+        GPUaaS and AI-platform availability establish a service and sovereign
+        hosting capability, not a physical inventory. No GPU count is inferred
+        from MW, rack density, the AMD agreement or hyperscaler contracts.
+    power_cooling_and_resilience:
+      portfolio_exact_grid_feeds_substation_transformers_switchgear_UPS_batteries_generators_chillers_CDUs_PUE_WUE_and_water: not_disclosed_as_current_per_site_ledger
+      known_engineering_refs: [dc_meeza_mvault2_umm_garn, dc_meeza_mvault4_qstp]
+      utility_dependency: Kahramaa_is_sole_publicly_identified_water_and_electricity_provider
+      climate_risk: hot_GCC_conditions_raise_cooling_and_energy_exposure
+      boundary: Historical MV2 and Vertiv MV2/MV4 project evidence is retained in site profiles and is not promoted to every M-VAULT.
+    capital_contract_and_company_links:
+      MV4_expansion_contract_value_qar_million_more_than: 350
+      MV4_expansion_contract_term_years_more_than: 10
+      MV6_first_6MW_contract_value_qar_million_more_than: 750
+      planned_four_year_spend_qar_billion_up_to: 2
+      long_term_Murabaha_facility_qar_million: 800
+      linked_companies:
+        operator: [MEEZA_QSTP]
+        hyperscaler_customers: [unnamed_global_hyperscaler]
+        technology_and_equipment: [Vertiv, AMD, Microsoft]
+        finance: [Dukhan_Bank]
+        utility: [Kahramaa]
+      financial_profile_refs: [company_meeza_qstp, company_vertiv, company_amd, company_microsoft]
+      boundary: Contract value, financing and investment envelopes are not revenue, incurred capex or current debt balances.
+    sources:
+      - title: Q1 2026 earnings presentation
+        publisher: MEEZA_QSTP
+        date: 2026-04-29
+        url: https://www.meeza.net/wp-content/uploads/2026/04/MZA-Earnings-Presentation-Q1-2026-29-Apr-2026-FINAL.pdf
+      - title: FY2025 earnings presentation
+        publisher: MEEZA_QSTP
+        date: 2026-02-24
+        url: https://www.meeza.net/wp-content/uploads/2026/02/MZA-Earnings-Presentation-Q4-2025-24-Feb-2026-FINAL2.pdf
+      - title: 2024 annual report
+        publisher: MEEZA_QSTP
+        date: 2025
+        url: https://www.meeza.net/wp-content/uploads/Annual-Report-2024/
+      - title: 2023 IPO prospectus
+        publisher: MEEZA_QSTP
+        date: 2023
+        url: https://www.meeza.net/wp-content/uploads/2023/06/Meeza-Prospectus-English.pdf
+      - title: MV4 4 MW expansion completion and hyperscaler handover
+        publisher: MEEZA_QSTP
+        date: 2026-07-01
+        url: https://www.meeza.net/meeza-successfully-delivers-strategic-4mw-data-centre-expansion-to-a-leading-global-hyper-scaler-nine-months-ahead-of-schedule/
+      - title: MAI sovereign AI and GPUaaS launch
+        publisher: MEEZA_QSTP
+        date: 2025-11-02
+        url: https://www.meeza.net/meeza-launches-mai-an-integrated-platform-of-ai-capabilities-from-next-gen-managed-services-to-gpu-as-a-service-reinforcing-qatars-digital-sovereignty-and-innovation-drive-thru-mee/
+    confidence: high_for_historical_operating_capacity_current_MV4_delivery_pipeline_scopes_contracts_and_financial_links_medium_for_18MW_derived_current_total_and_cluster_grouping_low_for_exact_post_handover_utilization_GPU_inventory_and_current_per_site_equipment
+
+  - id: dc_meeza_qstp_mvault_cluster
+    name: MEEZA M-VAULT Qatar Science and Technology Park cluster
+    record_granularity: public_address_cluster_with_multiple_operating_and_future_facilities
+    operator: MEEZA_QSTP
+    location:
+      country: Qatar
+      municipality: Doha
+      zone: 51
+      street: 2322
+      site_label: Qatar_Science_and_Technology_Park
+      operating_facilities: [MV1, MV3, MV4, MV5]
+      development_facilities: [MV7, MV8, MV9]
+      exact_building_addresses_coordinates_parcels_and_boundaries: undisclosed
+      address_boundary: ISO certificates support the common QSTP cluster address but do not assign separate coordinates to each M-VAULT.
+    facility_ledger:
+      MV1: {status: operating, exact_2022_IT_load_mw: 0.6, current_rounded_capacity_mw: 1}
+      MV3: {status: operating, exact_2022_IT_load_mw: 2.0, current_capacity_mw: 2}
+      MV4: {status: operating_after_2026_expansion, current_total_IT_capacity_mw_derived: 8, profile_ref: dc_meeza_mvault4_qstp}
+      MV5: {status: operating, exact_2022_IT_load_mw: 1.2, current_rounded_capacity_mw: 1}
+      MV7: {status: design_and_power_secured, full_design_mw: 16, first_phase_mw: 4}
+      MV8: {status: foundations_in_progress, full_design_mw: 4, first_phase_mw: 2, RFS_target: Q4_2026}
+      MV9: {status: future_label, capacity_mw: TBA}
+    capacity_boundary: >-
+      Current operating, rounded, delivered, first-phase, full-design and future
+      capacities are not one denominator. MV7, MV8 and MV9 are not counted as
+      operating until completion and RFS evidence is published.
+    GPU_and_equipment_disclosure:
+      exact_GPU_inventory_by_building: undisclosed
+      exact_current_power_and_cooling_BOM_by_building: undisclosed_except_dated_MV4_project_evidence
+      MV1_MV3_MV5_PUE_WUE_live_liquid_cooling_and_rack_density: undisclosed
+    sources:
+      - title: ISO 14001 certificate and public site grouping
+        publisher: MEEZA_QSTP
+        date: 2026-05
+        url: https://www.meeza.net/wp-content/uploads/2026/05/MEEZA-%E2%80%93-QSTP-LLC-Public_ISO14001.pdf
+      - title: ISO 20000 certificate and public site grouping
+        publisher: MEEZA_QSTP
+        date: 2025-07
+        url: https://www.meeza.net/wp-content/uploads/2025/07/ISO-20000-Expiry-2028.pdf
+      - title: Q1 2026 capacity and construction update
+        publisher: MEEZA_QSTP
+        date: 2026-04-29
+        url: https://www.meeza.net/wp-content/uploads/2026/04/MZA-Earnings-Presentation-Q1-2026-29-Apr-2026-FINAL.pdf
+    confidence: high_for_cluster_address_facility_labels_and_published_capacity_scopes_low_for_building_coordinates_GPU_inventory_and_current_equipment_BOM
+
+  - id: dc_meeza_mvault4_qstp
+    name: MEEZA M-VAULT 4 at Qatar Science and Technology Park
+    record_granularity: individual_data_center_with_two_dated_capacity_phases
+    operator: MEEZA_QSTP
+    location:
+      country: Qatar
+      site_label: Qatar_Science_and_Technology_Park
+      cluster_address: Zone_51_Street_2322_Doha
+      exact_building_coordinate_and_parcel: undisclosed
+    lifecycle_as_of_2026_07_18: operating_original_4MW_plus_delivered_4MW_expansion
+    capacity:
+      original_greenfield_IT_mw: 4
+      original_potential_IT_mw: 8
+      2026_expansion_delivered_IT_mw: 4
+      current_total_IT_mw_derived: 8
+      expansion_RFS_and_customer_handover_date: 2026-06-21
+      delivery_schedule: nine_months_ahead_of_contract_schedule
+      safety_hours_without_LTI_MTC_or_environmental_incident: 871000
+      boundary: >-
+        The current 8 MW total is derived from the original 4 MW plus the
+        separately delivered 4 MW expansion. The 2026 completion release does
+        not name MV4, but prior official FY2025 and interim disclosures identify
+        the same 4 MW expansion as MV4, providing a high-confidence evidence chain.
+    customer_and_contract:
+      customer: unnamed_leading_global_hyperscaler
+      contract_value_qar_million_more_than: 350
+      term_years_more_than: 10
+      workloads_positioning: [cloud, AI_platforms, high_performance_computing]
+      exact_customer_hardware_revenue_start_utilization_and_pricing: undisclosed
+    original_2021_Vertiv_project_evidence:
+      combined_MV2_extension_and_MV4_project_total_mw: 4.9
+      MV4_greenfield_mw: 4
+      delivery_months: 14
+      prefabricated_modules_combined_project_count: 100
+      buildings_combined_project_count: 3
+      disclosed_equipment:
+        UPS: Vertiv_Liebert_EXL_S1
+        energy_storage: lithium_ion_batteries
+        cooling: Vertiv_Liebert_PDX_dual_fluid_with_condensers
+        transfer_switch: Vertiv_Liebert_CROSS_chassis_static_transfer_switch
+        controls: critical_power_and_thermal_monitoring
+      source_conflict: A_separate_Vertiv_blog_says_80_modules_and_two_modular_buildings
+      boundary: >-
+        The project case and press release's 100-module, three-building statement
+        is retained as preferred combined-project evidence. Unit allocation to
+        MV4 versus MV2 is not disclosed, product efficiency is not site PUE, and
+        the 2021 bill of materials is not assigned to the separate 2026 expansion.
+    accelerators:
+      hyperscaler_owned_or_operator_owned_GPU_models_counts_servers_racks_fabric_power_draw_and_utilization: undisclosed
+      boundary: AI and HPC workload language does not establish installed inventory.
+    undisclosed_current_infrastructure:
+      grid_voltage_substation_transformers_switchgear_UPS_generator_and_battery_unit_counts: undisclosed
+      2026_expansion_equipment_OEMs_and_cooling_mode: undisclosed
+      measured_PUE_WUE_water_and_live_liquid_cooled_mw: undisclosed
+    sources:
+      - title: MV4 expansion completion and handover
+        publisher: MEEZA_QSTP
+        date: 2026-07-01
+        url: https://www.meeza.net/meeza-successfully-delivers-strategic-4mw-data-centre-expansion-to-a-leading-global-hyper-scaler-nine-months-ahead-of-schedule/
+      - title: More-than-QAR350-million MV4 hyperscaler agreement
+        publisher: MEEZA_QSTP
+        date: 2024
+        url: https://www.meeza.net/meeza-signs-agreement-with-a-global-hyper-scaler-to-utilize-the-under-construction-4mw-data-centre-capacity-with-over-qar-350-million-in-contract-value-partnership-to-leverage-expanded-data-centre-ca/
+      - title: Vertiv 4.9 MW MV2 and MV4 modular delivery
+        publisher: Vertiv
+        date: 2022
+        url: https://www.vertiv.com/pt-emea/about/news-and-events/corporate-news/2022/meeza-deploys-4.9-mw-data-centre-capacity-in-qatar-in-just-14-months-by-leveraging-vertiv-integrated-modular-solutions/
+      - title: Vertiv MEEZA project case study
+        publisher: Vertiv
+        date: 2022
+        url: https://www.vertiv.com/4ad109/globalassets/documents/case-studies/vertiv-meeza-case-study-cs-en-emea-ch-00123-web_362721_0.pdf
+    confidence: high_for_capacity_phases_delivery_contract_and_dated_Vertiv_equipment_medium_for_MV4_identity_chain_in_latest_release_low_for_GPU_inventory_and_current_2026_expansion_BOM
+
+  - id: dc_meeza_umm_garn_mvault_cluster
+    name: MEEZA Umm Karn and Um Garn M-VAULT cluster
+    record_granularity: public_location_cluster_with_operating_MV2_and_developing_MV6
+    operator: MEEZA_QSTP
+    location:
+      country: Qatar
+      public_labels: [Umm_Karn, Um_Garn]
+      approximate_distance_from_Doha_km_historical: 30
+      approximate_distance_from_Al_Khor_km_historical: 10
+      exact_address_coordinate_parcel_and_MV6_boundary: undisclosed
+    facility_ledger:
+      MV2:
+        status: operating
+        current_rounded_IT_capacity_mw: 6
+        2022_exact_IT_load_mw: 5.7
+        profile_ref: dc_meeza_mvault2_umm_garn
+      MV6:
+        status: foundations_commenced
+        location_relation: adjacent_to_MV2
+        first_delivery_mw: 6
+        first_delivery_target: end_2027
+        current_phase_design_mw: 24
+        ultimate_masterplan_mw: 44
+        contracted_first_6MW_value_qar_million_more_than: 750
+        first_6MW_positioning: purpose_built_for_advanced_AI_services
+    financing:
+      long_term_Commodity_Murabaha_qar_million: 800
+      lender: Dukhan_Bank
+      announced_scope: add_44MW_with_first_24MW_phase_and_6MW_AI_block
+      association_boundary: >-
+        The financing release does not name MV6, but its 44/24/6 MW scopes match
+        the separately announced MV6 masterplan and contract. The association is
+        high confidence, not an explicit facility allocation; pricing, maturity,
+        collateral, covenants, drawdown and incurred capex are undisclosed.
+    accelerators_and_equipment:
+      MV6_exact_GPU_models_counts_ownership_racks_fabric_power_draw_and_delivery: undisclosed
+      MV6_grid_substation_transformer_switchgear_UPS_battery_generator_cooling_CDU_PUE_WUE_and_water: undisclosed
+      boundary: Purpose-built AI capacity and contracted MW are not installed GPUs or energized IT load.
+    sources:
+      - title: MV6 6 MW hyperscaler agreement
+        publisher: MEEZA_QSTP
+        date: 2025-10-28
+        url: https://www.meeza.net/meeza-signs-new-landmark-data-centre-agreement-worth-over-qar-750-million-to-secure-6-megawatts-of-data-center-services-for-a-global-hyperscaler/
+      - title: QAR800 million Murabaha for data-center and AI expansion
+        publisher: MEEZA_QSTP
+        date: 2025-08-26
+        url: https://www.meeza.net/meeza-secures-qar-800-million-commodity-murabaha-facility-from-dukhan-bank-to-boost-data-centre-capacity-and-ai-infrastructure/
+      - title: Q1 2026 MV6 construction update
+        publisher: MEEZA_QSTP
+        date: 2026-04-29
+        url: https://www.meeza.net/wp-content/uploads/2026/04/MZA-Earnings-Presentation-Q1-2026-29-Apr-2026-FINAL.pdf
+    confidence: high_for_MV2_cluster_MV6_scopes_contract_and_construction_status_medium_for_financing_to_MV6_association_low_for_exact_parcel_GPU_inventory_and_infrastructure_BOM
+
+  - id: dc_meeza_mvault2_umm_garn
+    name: MEEZA M-VAULT 2 at Umm Karn
+    record_granularity: individual_operating_data_center_with_dated_engineering_facts
+    operator: MEEZA_QSTP
+    location:
+      country: Qatar
+      site_label: Umm_Karn_or_Umm_Garn
+      historical_distance_from_Doha_km: 30
+      historical_distance_from_Al_Khor_km: 10
+      exact_address_coordinate_and_parcel: undisclosed
+    lifecycle_as_of_2026_07_18: operating_after_2020_to_2021_extension
+    capacity:
+      2022_exact_IT_load_mw: 5.7
+      current_presentation_rounded_capacity_mw: 6
+      2020_to_2021_extension_mw: 0.9
+      2017_total_facility_power_capacity_mva_high_confidence_cross_document_inference: 15
+      inference_boundary: >-
+        The 15 MVA value appears in a general MEEZA data-center datasheet whose
+        remote-location, DRUPS, fuel and rack details match the MV2-specific
+        sheet. It is retained as a dated high-confidence inference rather than a
+        current post-extension nameplate or IT-load figure.
+    historical_2017_physical_design:
+      building_area_sqm_rounded: 10000
+      building_area_sqft: 107639
+      raised_technical_floor_sqft: 32291
+      data_hall_area_sqft: 5382
+      area_boundary: The datasheet wording does not make clear whether 5,382 square feet is per hall or combined.
+      rack_form_factor_U: 47
+      rack_dimensions_mm: [800, 1200]
+      average_rack_power_kva: 5.7
+      rack_power_upgradeable_kva: 12
+    historical_2017_power_resilience_and_cooling:
+      diesel_rotary_UPS_units: 10
+      onsite_fuel_hours: 72
+      cooling: high_density_cooling_based_on_ASHRAE_2008
+      cooling_redundancy_conflict:
+        heading: N_plus_1
+        body_bullet: N_plus_2
+      monitoring: [advanced_BMS, intelligent_power_monitoring]
+      fire_suppression: high_pressure_water_mist
+      fire_alarm_standard: NFPA
+      network: carrier_neutral_with_two_redundant_dedicated_secure_carrier_PoPs
+      certification: [LEED_Platinum, Uptime_Tier_III]
+      historical_boundary: >-
+        These facts predate the 0.9 MW extension and are not a 2026 bill of
+        materials. The source's N+1/N+2 cooling inconsistency is preserved rather
+        than silently reconciled.
+    2021_extension_project:
+      added_capacity_mw: 0.9
+      combined_with_MV4_delivery_mw: 4.9
+      disclosed_combined_project_equipment:
+        - Vertiv_Liebert_EXL_S1_UPS
+        - lithium_ion_batteries
+        - Vertiv_Liebert_PDX_dual_fluid_cooling
+        - Vertiv_Liebert_CROSS_static_transfer_switch
+      allocation_boundary: Equipment models are confirmed for the combined MV2-extension and MV4 project, but exact unit counts and site allocation are undisclosed.
+    accelerators_and_current_unknowns:
+      exact_GPU_models_counts_servers_racks_ownership_utilization_and_power_draw: undisclosed
+      current_substation_transformer_switchgear_UPS_battery_generator_and_cooling_unit_ledger: undisclosed
+      current_PUE_WUE_water_and_live_liquid_cooled_mw: undisclosed
+    sources:
+      - title: M-VAULT 2 data-center datasheet
+        publisher: MEEZA_QSTP
+        date: 2017
+        url: https://www.meeza.net/wp-content/uploads/2021/03/MZA-MKT-DS-M-Vault-2-Data-Centre_Online.pdf
+      - title: MEEZA data-centers datasheet
+        publisher: MEEZA_QSTP
+        date: 2017
+        url: https://www.meeza.net/wp-content/uploads/2021/03/MZA-MKT-DS-Data-Centres_EN_Online.pdf
+      - title: MV2 launch and LEED Platinum Tier III certification
+        publisher: MEEZA_QSTP
+        date: 2014
+        url: https://www.meeza.net/meeza-unveils-middle-easts-first-leed-platinum-and-tier-iii-certified-data-centre/
+      - title: Vertiv 4.9 MW MV2 and MV4 modular delivery
+        publisher: Vertiv
+        date: 2022
+        url: https://www.vertiv.com/pt-emea/about/news-and-events/corporate-news/2022/meeza-deploys-4.9-mw-data-centre-capacity-in-qatar-in-just-14-months-by-leveraging-vertiv-integrated-modular-solutions/
+    confidence: high_for_historical_design_certification_and_2022_IT_load_medium_for_15MVA_cross_document_inference_low_for_current_equipment_GPU_inventory_and_operating_performance
+
 disclosure_gap_register:
   - exact_global_physical_data_center_count
   - exact_per_campus_GPU_inventory_for_most_hyperscalers
+  - MEEZA_post_MV4_18MW_derived_operating_total_to_2026F_22MW_and_MV8_2MW_first_phase_reconciliation
+  - MEEZA_MV6_44MW_masterplan_24MW_current_phase_and_6MW_first_delivery_schedule_and_scope_reconciliation
+  - MEEZA_MV7_MV8_MV9_exact_parcels_grid_power_permits_construction_energization_and_RFS
+  - MEEZA_MAI_GPUaaS_exact_GPU_OEM_models_counts_servers_racks_fabric_ownership_site_allocation_utilization_power_and_revenue
+  - MEEZA_per_site_substation_transformer_switchgear_UPS_battery_generator_chiller_CDU_PUE_WUE_water_and_live_liquid_cooled_MW
+  - MEEZA_MV4_2026_expansion_equipment_OEM_BOM_and_original_Vertiv_project_unit_allocation
+  - MEEZA_QSTP_and_Umm_Karn_individual_building_addresses_coordinates_parcels_and_boundaries
   - Khazna_30_live_UAE_location_units_to_exact_facility_ID_address_coordinate_building_ownership_and_Tier_award_ledger
   - Khazna_673MW_portfolio_to_operating_energized_leased_utilized_billed_IT_load_and_six_ongoing_project_scope_reconciliation
   - Khazna_per_site_GPU_server_rack_customer_power_draw_and_operator_versus_tenant_hardware_ownership
@@ -13823,6 +14245,12 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
+    - MEEZA_post_MV4_current_operating_energized_leased_utilized_and_billed_IT_load_plus_2026F_22MW_reconciliation
+    - MEEZA_MV6_44_24_6MW_scope_parcel_grid_substation_equipment_construction_and_end_2027_delivery
+    - MEEZA_MV7_MV8_MV9_design_permit_power_construction_RFS_customer_and_capacity_updates
+    - MEEZA_MAI_GPUaaS_exact_hardware_ownership_site_power_cooling_utilization_and_service_revenue
+    - MEEZA_MV1_to_MV8_per_site_power_chain_cooling_PUE_WUE_water_liquid_cooled_MW_and_equipment_OEMs
+    - MEEZA_MV4_2021_Vertiv_project_to_2026_expansion_BOM_unit_allocation_and_current_topology
     - Africa_Data_Centres_five_current_cards_legacy_edge_sites_and_DFC_seven_project_five_country_scope_reconciliation
     - Africa_Data_Centres_current_per_site_installed_energized_leased_utilized_billed_IT_load_and_customer_ramp
     - Africa_Data_Centres_JHB1_JHB2_CPT1_conflicting_capacity_scope_and_expansion_completion_reconciliation
@@ -13994,6 +14422,11 @@ next_research_queue:
     - NTT_India_exact_GPU_inventory_customer_vs_operator_ownership_live_liquid_cooled_MW_CDU_heat_rejection_and_equipment_OEMs
     - NTT_India_transformer_switchgear_UPS_battery_generator_chiller_counts_and_operating_PUE_WUE_water_per_site
   company_financials:
+    - MEEZA_MV4_post_handover_revenue_commencement_utilization_margin_and_customer_concentration
+    - MEEZA_MV6_contract_revenue_schedule_project_capex_cash_flow_and_return_on_invested_capital
+    - MEEZA_QAR800_million_Murabaha_drawdown_rate_maturity_collateral_covenants_and_project_allocation
+    - MEEZA_quarterly_capex_debt_cash_flow_and_62MW_expansion_funding_conversion
+    - MEEZA_MAI_GPUaaS_hardware_ownership_revenue_margin_power_cost_and_utilization
     - Africa_Data_Centres_overdue_FY2025_accounts_current_revenue_operating_profit_cash_flow_debt_and_going_concern_update
     - Africa_Data_Centres_customer_concentration_contract_terms_utilization_site_economics_and_return_on_capital
     - Africa_Data_Centres_DFC_and_ZAR_facility_draws_rates_covenants_refinancing_and_project_allocation
