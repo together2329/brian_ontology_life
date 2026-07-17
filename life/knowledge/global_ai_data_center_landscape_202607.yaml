@@ -240,6 +240,7 @@ campus_profiles:
 
   - id: dc_openai_stargate_abilene
     name: Stargate I Abilene
+    record_granularity: eight_building_AI_data_center_campus
     operator_and_partners: [OpenAI, Oracle, Crusoe]
     country: US
     region: Texas
@@ -249,7 +250,12 @@ campus_profiles:
       exact_coordinate: not_stored_until_primary_or_reliable_public_map_evidence
       osm_record_status: unavailable_in_current_baseline
     campus_scale:
-      exact_site_capacity_mw: undisclosed_in_reviewed_primary_sources
+      buildings: 8
+      land_acres: 1100
+      floor_area_sqft: 4000000
+      design_power_capacity_gw: 1.2
+      design_power_capacity_source: Crusoe_company_timeline_and_2024_impact_report
+      delivered_share_of_total_capacity_percent_as_of_2026_06: 42
       potential_nearby_expansion_mw: 600
       warning: >-
         The more-than-5-GW and more-than-2-million-chip figures apply to Abilene
@@ -261,6 +267,9 @@ campus_profiles:
       portfolio_scope_chip_count_more_than: 2000000
       portfolio_scope_capacity_gw_more_than: 5
       portfolio_scope_partners: [OpenAI, Oracle]
+      chip_count_boundary: >-
+        OpenAI says "chips," not GPUs, and does not disclose the mix, installed
+        status, or site allocation. It must not be assigned wholly to Abilene.
       workload_evidence:
         - early_training_and_inference
         - GPT_5_5_training
@@ -268,27 +277,70 @@ campus_profiles:
       cloud_platform: Oracle_Cloud_Infrastructure
       fabric_details: undisclosed
     electrical_and_generation:
-      utility_capacity_mw: undisclosed
-      power_equipment_oems: undisclosed
+      campus_power_design_capacity_gw: 1.2
+      grid_connection: direct_ERCOT_connection
+      grid_energy_context: substantial_Texas_wind_and_other_renewable_generation
+      backup_generation:
+        supplier: GE_Vernova
+        model: LM2500XPRESS_aeroderivative_gas_turbine
+        units_ordered_for_Abilene: 10
+        approximate_nameplate_mw_each: 35
+        approximate_nameplate_mw_derived: 350
+        fuel: dual_fuel_with_natural_gas_primary_context
+        startup_time_minutes: 5
+        emissions_control: selective_catalytic_reduction
+        operating_role: backup_and_resilience_not_disclosed_as_primary_IT_supply
+      expansion_context_not_Abilene_specific:
+        additional_Crusoe_GE_units: 19
+        Crusoe_total_units_across_sites: 29
+        combined_Crusoe_portfolio_power_nearly_gw: 1
+      transformers_switchgear_UPS_and_rack_distribution_OEMs: undisclosed
+      boundary: >-
+        The 1.2 GW campus design, roughly 350 MW of Abilene backup-turbine
+        nameplate, 42% delivered share, and potential 600 MW expansion are
+        different measures and must not be summed as one operating-load figure.
     cooling_and_water:
-      architecture: closed_loop_non_evaporative_cooling
+      architecture: direct_to_chip_closed_loop_non_evaporative_liquid_cooling
       initial_fill_per_building: approximately_two_olympic_sized_pools
-      annual_full_buildout_water_use: approximately_medium_office_building_or_four_households
+      operational_water_use_current_Oracle_statement_gallons_per_building_per_year_approximate: 50000
+      localized_page_conflict: >-
+        Oracle's English page states about 50,000 gallons per building per year,
+        while a localized page previously displayed a smaller figure; preserve
+        the current English figure but treat exact recurring use as reviewable.
     linked_companies:
       ai_lab: [OpenAI]
       cloud_and_operations: [Oracle]
       accelerator: [NVIDIA]
       developer: [Crusoe]
+      backup_generation_supplier: [GE_Vernova]
       financial_profile_refs:
         - company_oracle
         - company_nvidia
-      private_company_financial_gaps: [OpenAI, Crusoe]
-      financing_and_construction: needs_further_primary_source_enrichment
+        - company_ge_vernova
+        - company_crusoe
+      private_company_financial_gaps: [OpenAI]
+      financing_and_construction: Blue_Owl_and_Primary_Digital_Infrastructure_context_requires_financial_enrichment
     sources:
+      - title: Abilene Texas Data Center
+        publisher: Oracle
+        date: 2026-07-17_accessed
+        url: https://www.oracle.com/data-centers/abilene/
+      - title: About Crusoe company timeline
+        publisher: Crusoe
+        date: 2026-07-17_accessed
+        url: https://www.crusoe.ai/about/company
+      - title: Going Big Crusoe orders flexible gas turbines
+        publisher: GE_Vernova
+        date: 2025-07-24
+        url: https://www.gevernova.com/news/articles/going-big-support-data-center-growth-rising-renewables-crusoe-ordering-flexible-gas
       - title: Stargate advances with 4.5 GW partnership with Oracle
         publisher: OpenAI
         date: 2025-07-22
         url: https://openai.com/index/stargate-advances-with-partnership-with-oracle/
+      - title: Stargate Community campus and power-partner inventory
+        publisher: OpenAI
+        date: 2026-01-20
+        url: https://openai.com/index/stargate-community/
       - title: OpenAI, Oracle, and SoftBank expand Stargate with five new AI data center sites
         publisher: OpenAI
         date: 2025-09-23
@@ -297,7 +349,7 @@ campus_profiles:
         publisher: OpenAI
         date: 2026-04-29
         url: https://openai.com/index/building-the-compute-infrastructure-for-the-intelligence-age/
-    confidence: high_for_hardware_and_cooling_low_for_site_specific_capacity
+    confidence: high_for_building_land_design_capacity_delivery_share_turbine_model_and_cooling_low_for_exact_operating_load_and_site_GPU_inventory
 
   - id: dc_xai_colossus_1_memphis
     name: xAI Colossus 1
@@ -2026,6 +2078,25 @@ campus_profiles:
       OCI_Generative_AI_hosted_commercial_regions: [Sao_Paulo, Frankfurt, Hyderabad, Osaka, Riyadh, Abu_Dhabi, Dubai, London, Ashburn, Chicago, Phoenix]
       OCI_Generative_AI_additional_government_or_sovereign_regions: [UK_Gov_London, EU_Sovereign_Frankfurt]
       exact_AI_hardware_per_region: undisclosed
+    US_OpenAI_AI_campus_program:
+      confirmed_physical_campus_refs:
+        - dc_openai_stargate_abilene
+        - dc_oracle_vantage_frontier_shackelford_texas
+        - dc_oracle_project_jupiter_new_mexico
+        - dc_oracle_vantage_lighthouse_port_washington_wisconsin
+        - dc_oracle_related_the_barn_saline_michigan
+      portfolio_capacity_gw_more_than: 5
+      portfolio_chip_count_more_than: 2000000
+      delivery_status_as_of_2026_06:
+        Abilene: 42_percent_of_total_capacity_delivered
+        Shackelford: 115_MW_available_customer_delivery_begins_H1_2027
+        Dona_Ana: customer_delivery_begins_H1_2027
+        Port_Washington: customer_delivery_begins_H2_2027
+        Saline: network_core_end_2026_customer_delivery_begins_H2_2027
+      boundary: >-
+        The program-level capacity and chip figures are not a sum of the public
+        campus design values and cannot be allocated to sites without disclosure.
+        OpenAI says chips, not GPUs or installed chips.
     accelerators:
       offered_vendors: [NVIDIA, AMD]
       published_OCI_Supercluster_architecture_maxima_not_installed_fleet:
@@ -2063,6 +2134,14 @@ campus_profiles:
         publisher: Oracle
         date: 2026-07-17_accessed
         url: https://www.oracle.com/cloud/compute/gpu/
+      - title: Oracle AI data center locations and delivery status
+        publisher: Oracle
+        date: 2026-07-17_accessed
+        url: https://www.oracle.com/data-centers/
+      - title: Stargate advances with 4.5 GW partnership with Oracle
+        publisher: OpenAI
+        date: 2025-07-22
+        url: https://openai.com/index/stargate-advances-with-partnership-with-oracle/
     confidence: high_for_provider_published_counts_region_rows_and_architecture_maxima_low_for_physical_site_mapping_operating_load_and_installed_GPU_inventory
 
   - id: dc_oracle_project_jupiter_new_mexico
@@ -2163,6 +2242,376 @@ campus_profiles:
         date: 2026
         url: https://www.nmlegis.gov/Sessions/26%20Regular/firs/SB0097.PDF
     confidence: high_for_building_count_revised_generation_and_water_plan_medium_for_investment_bounds_low_for_IT_load_and_accelerator_inventory
+
+  - id: dc_oracle_vantage_frontier_shackelford_texas
+    name: Vantage Frontier Stargate campus
+    record_granularity: ten_building_AI_data_center_campus
+    operator_and_developer: Vantage_Data_Centers
+    tenant_and_cloud_operator: Oracle
+    customer: OpenAI
+    country: US
+    region: Texas
+    locality: Shackelford_County_near_Abilene
+    lifecycle_as_of_2026_07_17: under_construction_with_initial_power_available
+    location:
+      public_permit_address_context: 299_FM_604_Abilene_TX_79601
+      address_boundary: >-
+        The TCEQ application describes the VoltaGrid ABI-1 generating facility as
+        serving a nearby data-center campus at this address. A certified campus
+        parcel boundary or coordinate is not stored yet.
+      osm_record_status: unavailable_in_current_baseline
+    campus_scale:
+      investment_usd_billion: 25
+      land_acres: 1200
+      buildings: 10
+      building_form: single_story
+      floor_area_sqft: 3700000
+      critical_IT_load_mw_at_full_buildout: 1400
+      rack_density_kw_per_sqft_up_to: 1.4
+      rack_power_kw_more_than: 250
+      Vantage_first_building_delivery: H2_2026
+      Oracle_customer_delivery_begins: H1_2027
+      power_available_mw_as_of_Oracle_2026_06_update: 115
+      timing_boundary: >-
+        Vantage's first-building delivery and Oracle's customer-ready delivery
+        are different milestones; 115 MW available is not full-buildout load.
+    accelerators:
+      workload: next_generation_GPU_AI_workloads
+      exact_GPU_vendor_model_chip_count_rack_count_and_building_allocation: undisclosed
+      Oracle_OpenAI_portfolio_chip_count_more_than: 2000000
+      portfolio_boundary: >-
+        The chip count covers Abilene plus Oracle's wider Stargate portfolio and
+        is neither a Frontier GPU count nor evidence that every chip is a GPU.
+    network:
+      nearby_carriers: [AT&T, FiberLight, Windstream, Zayo]
+      meet_me_rooms_per_building: 3
+      points_of_entry_per_building: 1
+      minimum_fiber_paths_per_carrier: 2
+      topology_switch_optics_and_internal_fabric_vendors: undisclosed
+    electrical_and_generation:
+      facility_redundancy: N_plus_1_across_electrical_and_mechanical_systems
+      utility_feeds: multiple_diverse_feeds
+      onsite_prime_power:
+        developer_and_operator: VoltaGrid
+        technology: natural_gas_reciprocating_engine_microgrid
+        TCEQ_ABI_1_standard_permit_block:
+          total_generators: 210
+          maximum_generators_operating_at_once: 197
+          maintenance_or_reserve_generators: 13
+          total_nameplate_capacity_mw: 709
+          fuel: natural_gas_at_or_below_10_grains_total_sulfur_per_100_dscf
+        separate_pending_NSR_application_182467:
+          engine_types: [Jenbacher_J620, Jenbacher_J624]
+          combustion: four_stroke_lean_burn
+          NOx_control: selective_catalytic_reduction
+          CO_and_VOC_control: oxidation_catalyst
+          gas_heaters: Algas_ultra_low_NOx_burners
+          black_start_generators: Caterpillar_C32B_diesel_EPA_Tier_II
+          black_start_operating_hours: limited
+          proposed_annual_emissions_tons_per_year:
+            VOC: 523.08
+            NOx_range: [569.61, 569.94]
+            CO: 917.63
+            PM10: 378.29
+            PM2_5: 378.29
+            SO2: 196.79
+            H2SO4: 127.71
+            CO2e: 10627597.47
+          permit_status_boundary: >-
+            These are proposed maximum annual emissions in a pending application,
+            not measured current emissions or evidence that every unit is operating.
+      portfolio_context:
+        Vantage_VoltaGrid_North_America_agreement_gw_more_than: 1
+        fuels_future_compatible_if_available: [hydrogen, renewable_natural_gas]
+      full_buildout_gap: >-
+        The documented 709 MW permit block is materially below the 1.4 GW critical
+        IT design. Additional utility or onsite power phases, redundancy, losses,
+        and their equipment awards remain undisclosed.
+      substations_transformers_switchgear_UPS_and_rack_distribution_OEMs: undisclosed
+    cooling_and_water:
+      architecture: combined_air_cooled_and_liquid_to_liquid
+      liquid_cooling_use: next_generation_GPU_workloads
+      heat_rejection: closed_loop_chilled_water
+      CRAH_layout: two_galleries_on_opposite_sides_of_each_data_module
+      mechanical_redundancy: N_plus_1
+      WUE_liters_per_kwh: near_zero_company_target
+      cooling_boundary: Near-zero WUE is a design claim, not a measured operating result.
+    linked_companies:
+      customer: [OpenAI]
+      tenant_and_cloud_operator: [Oracle]
+      developer_and_operator: [Vantage_Data_Centers]
+      onsite_power: [VoltaGrid]
+      black_start_equipment: [Caterpillar]
+      financial_profile_refs:
+        - company_oracle
+        - company_vantage_data_centers
+        - company_voltagrid
+        - company_caterpillar
+    sources:
+      - title: Shackelford County Frontier Data Center Campus
+        publisher: Vantage_Data_Centers
+        date: 2026-07-17_accessed
+        url: https://vantage-dc.com/data-center-locations/north-america/shackelford-county-tx/
+      - title: Shackelford County Texas Data Center
+        publisher: Oracle
+        date: 2026-07-17_accessed
+        url: https://www.oracle.com/data-centers/shackelford-county/
+      - title: Vantage and VoltaGrid establish partnership for more than one gigawatt
+        publisher: Vantage_Data_Centers
+        date: 2025-02-11
+        url: https://vantage-dc.com/news/vantage-data-centers-and-voltagrid-establish-partnership-to-deploy-more-than-one-gigawatt-of-power-generation/
+      - title: ABI-1 Electric Generating Unit standard permit record
+        publisher: Texas_Commission_on_Environmental_Quality
+        date: 2026-07-17_accessed
+        url: https://records.tceq.texas.gov/cs/idcplg?IdcService=TCEQ_EXTERNAL_SEARCH_GET_FILE&Rendition=Web&dID=8983248
+      - title: Permit 182467 pending NSR plain language summary
+        publisher: Texas_Commission_on_Environmental_Quality
+        date: 2026-07-17_accessed
+        url: https://www.tceq.texas.gov/downloads/permitting/air/bilingual/pending-permit-notices/182467-pls-english.pdf/%40%40download/file/182467-pls-english.pdf
+      - title: OpenAI Oracle and SoftBank expand Stargate with five sites
+        publisher: OpenAI
+        date: 2025-09-23
+        url: https://openai.com/index/five-new-stargate-sites/
+    confidence: high_for_design_scale_rack_density_power_permit_and_cooling_medium_for_address_boundary_low_for_installed_IT_load_and_accelerator_inventory
+
+  - id: dc_oracle_vantage_lighthouse_port_washington_wisconsin
+    name: Vantage Lighthouse Stargate campus
+    record_granularity: four_building_AI_data_center_campus
+    operator_and_developer: Vantage_Data_Centers
+    tenant_and_cloud_operator: Oracle
+    customer: OpenAI
+    country: US
+    region: Wisconsin
+    locality: Port_Washington
+    lifecycle_as_of_2026_07_17: under_construction
+    location:
+      public_planning_description: south_of_Lake_Drive
+      exact_coordinate: not_stored_until_certified_parcel_or_reliable_public_map_evidence
+      osm_record_status: unavailable_in_current_baseline
+    campus_scale:
+      investment_usd_billion_more_than: 15
+      land_acres_total: 672
+      land_acres_developed: 500
+      land_acres_preserved_or_enhanced: 172
+      buildings: 4
+      building_form: single_story
+      floor_area_sqft: 2500000
+      critical_IT_load_mw: 902
+      Oracle_customer_delivery_begins: H2_2027
+      planned_completion: 2028
+      construction_jobs_up_to: 4000
+      long_term_jobs_approximate: 1000
+      local_infrastructure_commitment_usd_million_at_least: 175
+    accelerators:
+      workload: OpenAI_Stargate_AI_capacity
+      exact_GPU_vendor_model_chip_count_rack_count_and_building_allocation: undisclosed
+      Oracle_OpenAI_portfolio_chip_count_more_than: 2000000
+      portfolio_boundary: >-
+        The portfolio chip count cannot be assigned to Lighthouse and is not
+        synonymous with GPUs, installed inventory, or energized compute.
+    electrical_and_generation:
+      retail_utility: We_Energies_WEC_Energy_Group
+      switchyard_operator: American_Transmission_Company
+      campus_private_substation_responsibility: campus_users
+      dedicated_large_load_rate: proposed_or_regulated_tariff_with_full_Vantage_cost_underwriting
+      critical_IT_design_mw: 902
+      WEC_projected_grid_demand_through_2030_gw: 1.3
+      WEC_potential_incremental_grid_demand_gw: 2.2
+      WEC_total_long_term_grid_demand_gw_up_to: 3.5
+      new_zero_emission_capacity_added_to_Wisconsin_grid_mw_approximate: 2000
+      new_zero_emission_capacity_allocation_percent:
+        Lighthouse: 70
+        existing_Wisconsin_customers: 30
+      remaining_campus_consumption_matching: annual_renewable_energy_purchases
+      WEC_2026_2030_company_capital_plan_context_usd_billion:
+        efficient_natural_gas_generation: 5.4
+        regulated_renewables_and_storage: 12.6
+      WEC_generation_plan_context:
+        combustion_turbines_mw: 3300
+        reciprocating_engines_mw: 180
+        solar_mw: 3850
+        batteries_mw: 2130
+        wind_mw: 555
+      boundary: >-
+        The 902 MW critical IT design, 1.3-3.5 GW utility demand outlook, and
+        roughly 2 GW of new zero-emission resources have different scopes. WEC's
+        full five-year generation portfolio is not wholly dedicated to Lighthouse.
+      substations_transformers_switchgear_UPS_backup_generation_and_OEMs: undisclosed
+    cooling_and_water:
+      architecture: closed_loop_non_evaporative_liquid_cooling
+      water_strategy: water_positive_restoration_commitment
+      projected_average_peak_daily_water_use_gallons_less_than: 22000
+      WUE_PUE_and_measured_operating_water: not_available_before_operation
+    linked_companies:
+      customer: [OpenAI]
+      tenant_and_cloud_operator: [Oracle]
+      developer_and_operator: [Vantage_Data_Centers]
+      retail_utility: [WEC_Energy_Group, We_Energies]
+      transmission_switchyard: [American_Transmission_Company]
+      financial_profile_refs:
+        - company_oracle
+        - company_vantage_data_centers
+        - company_wec_energy_group
+    sources:
+      - title: Port Washington Lighthouse Data Center Campus
+        publisher: Vantage_Data_Centers
+        date: 2026-07-17_accessed
+        url: https://vantage-dc.com/data-center-locations/north-america/port-washington-wisconsin/
+      - title: OpenAI Oracle and Vantage announce Stargate Wisconsin site
+        publisher: Vantage_Data_Centers
+        date: 2025-10-22
+        url: https://vantage-dc.com/news/openai-oracle-and-vantage-data-centers-announce-stargate-data-center-site-in-wisconsin/
+      - title: Port Washington Wisconsin Data Center
+        publisher: Oracle
+        date: 2026-07-17_accessed
+        url: https://www.oracle.com/data-centers/port-washington/
+      - title: Vantage Lighthouse career expo and 902 MW development update
+        publisher: Vantage_Data_Centers
+        date: 2026-03-30
+        url: https://blog.vantage-dc.com/2026/03/30/vantage-data-centers-and-partners-host-career-expo-in-port-washington-wisconsin-to-connect-local-talent-with-lighthouse-opportunities/
+      - title: WEC Energy Group 2025 annual report
+        publisher: WEC_Energy_Group
+        date: 2026
+        url: https://www.wecenergygroup.com/invest/annualreports/wec2025-annual-report.pdf
+      - title: Vantage Lighthouse campus plan application
+        publisher: City_of_Port_Washington
+        date: 2025
+        url: https://www.portwashingtonwi.gov/home/showpublisheddocument/6484/638987284577500000
+      - title: Port Washington data center site report
+        publisher: City_of_Port_Washington
+        date: 2025
+        url: https://www.portwashingtonwi.gov/home/showpublisheddocument/6064/638912112748970000
+    confidence: high_for_design_scale_land_schedule_utility_demand_and_cooling_low_for_installed_IT_load_and_accelerator_inventory
+
+  - id: dc_oracle_related_the_barn_saline_michigan
+    name: The Barn Stargate campus
+    record_granularity: three_building_AI_data_center_campus
+    developer: Related_Digital
+    tenant_and_cloud_operator: Oracle
+    customer: OpenAI
+    country: US
+    region: Michigan
+    locality: Saline_Township_Washtenaw_County
+    lifecycle_as_of_2026_07_17: under_construction
+    location:
+      public_parcel_description: eight_parcels_north_of_Michigan_Avenue_adjacent_to_Bridgewater_Township
+      exact_coordinate: not_stored_until_certified_parcel_or_reliable_public_map_evidence
+      osm_record_status: unavailable_in_current_baseline
+    campus_scale:
+      project_financing_and_development_value_usd_billion: 16
+      campus_land_acres: 575
+      developed_land_acres: 250
+      adjacent_land_preserved_acres_more_than: 750
+      land_boundary: >-
+        Township records identify a 575-acre project parcel; later project
+        materials also count more than 750 adjacent preserved acres. These are
+        not interchangeable site-area figures.
+      buildings: 3
+      building_form: single_story
+      floor_area_sqft_each: 550000
+      first_building_status_as_of_2026_06: nearing_completion
+      customer_delivery_begins: H2_2027
+      network_core_delivery_target: end_of_2026
+      construction_manager: Walbridge
+      onsite_union_workers_as_of_2026_06_more_than: 700
+      construction_labor_hours_as_of_2026_06_more_than: 300000
+      local_property_cost_basis_usd_billion:
+        real_property: 1.311
+        personal_property: 3.5
+      cost_boundary: >-
+        Local property-cost figures, the $16 billion financing announcement, and
+        total future economic impact use different valuation and timing bases.
+    accelerators:
+      workload: OpenAI_Stargate_AI_capacity
+      exact_GPU_vendor_model_chip_count_rack_count_and_building_allocation: undisclosed
+      Oracle_OpenAI_portfolio_chip_count_more_than: 2000000
+      portfolio_boundary: The portfolio chip count is not a Saline GPU or installed-inventory count.
+    electrical_and_generation:
+      utility: DTE_Electric
+      existing_grid_context: adjacent_existing_high_voltage_transmission_with_excess_capacity
+      contracted_load_mw: 1383
+      contractual_protections:
+        minimum_contract_years: 19
+        minimum_billing_demand_percent: 80
+        early_termination_payment_up_to_years_of_minimum_billing: 10
+        emergency_curtailment_priority: required
+      matching_storage_obligation:
+        total_mw: 1383
+        customer_cost_period_years: 15
+        owner_and_operator: DTE_Electric
+        first_approved_projects:
+          Cold_Creek_mw: 100
+          Fish_Creek_mw: 132
+          Pine_River_mw: 100
+        first_approved_total_mw: 332
+        additional_2026_07_projects: [KCE_MI_2, Redstart]
+        additional_2026_07_total_mw: 300
+        additional_2026_07_blended_LCOS_usd_per_kw_month: 15.30
+        approved_or_accepted_total_mw_derived: 632
+        remaining_to_1383_mw_derived: 751
+      emergency_generation_per_current_local_air_permit_scope:
+        diesel_generators: 14
+        diesel_fire_water_pumps: 1
+        permit: EGLE_PTI0000135_v1_0
+        operating_role: emergency_and_daylight_testing_only
+        final_generator_sizing_status: under_review_as_of_2026_07
+      substations_transformers_switchgear_UPS_battery_OEMs_and_final_generator_vendor: undisclosed
+      boundary: >-
+        Contracted utility load is not current energized IT load. Storage MW is
+        a grid-support obligation, not generation energy or accelerator capacity;
+        the current air-permit generator count may cover only a defined phase.
+    cooling_and_water:
+      architecture: closed_loop_non_evaporative_air_cooled_system_circulating_water_or_refrigerant
+      projected_operational_water_gallons_per_day_approximate: 20000
+      initial_fill_source: production_well
+      noise_limit_db_at_property_line: 55
+      measured_PUE_WUE_and_operating_water: not_available_before_operation
+    financing:
+      equity: [Related_Digital, Blackstone_affiliated_funds]
+      debt: PIMCO_anchored_fixed_rate_long_term_financing
+    linked_companies:
+      customer: [OpenAI]
+      tenant_and_cloud_operator: [Oracle]
+      developer: [Related_Digital]
+      utility_and_storage_owner: [DTE_Energy]
+      construction_manager: [Walbridge]
+      equity: [Related_Digital, Blackstone]
+      debt_anchor: [PIMCO]
+      financial_profile_refs:
+        - company_oracle
+        - company_related_digital
+        - company_dte_energy
+        - company_blackstone
+    sources:
+      - title: Oracle Related Digital Blackstone OpenAI and Walbridge celebrate The Barn
+        publisher: Oracle
+        date: 2026-06-01
+        url: https://www.oracle.com/news/announcement/related-digital-oracle-openai-walbridge-and-governor-whitmer-celebrate-construction-of-stargate-campus-in-saline-township-2026-06-01/
+      - title: Saline Township Michigan Data Center
+        publisher: Oracle
+        date: 2026-07-17_accessed
+        url: https://www.oracle.com/data-centers/saline-township/
+      - title: Related Digital financing for 16 billion dollar Oracle campus
+        publisher: Related
+        date: 2026-04-24
+        url: https://www.related.com/press-releases/2026-04-24/related-digital-announces-financing-16-billion-oracle-data-center-project
+      - title: Saline Township data center FAQ
+        publisher: Saline_Township
+        date: 2026-07-17_accessed
+        url: https://salinetownship.org/go.php?id=731&table=page_uploads
+      - title: Saline Township data center construction updates
+        publisher: Saline_Township
+        date: 2026-07-17_accessed
+        url: https://salinetownship.org/data-center-update
+      - title: MPSC approves first 332 MW of data-center storage
+        publisher: Michigan_Public_Service_Commission
+        date: 2026-03-27
+        url: https://www.michigan.gov/mpsc/commission/news-releases/2026/03/27/mpsc-goes-big-on-batteries
+      - title: MPSC July 2026 capacity and additional storage update
+        publisher: Michigan_Public_Service_Commission
+        date: 2026-07-16
+        url: https://www.michigan.gov/mpsc/commission/news-releases/2026/07/16/commission-launches-investigation-into-utility-response-to-fourth-of-july-storms
+    confidence: high_for_financing_building_load_contract_storage_and_cooling_medium_for_land_scope_and_emergency_generator_phase_low_for_installed_IT_load_and_accelerator_inventory
 
   - id: dc_alibaba_cloud_global_region_portfolio
     name: Alibaba Cloud global region and availability-zone portfolio
@@ -2501,12 +2950,20 @@ disclosure_gap_register:
   - Alibaba_Tencent_and_ByteDance_per_site_addresses_MW_and_current_accelerator_inventory
   - ByteDance_audited_consolidated_revenue_operating_profit_and_capex
   - Project_Jupiter_IT_load_and_exact_accelerator_inventory
+  - Oracle_US_five_campus_per_site_accelerator_inventory_and_energized_IT_load
+  - Frontier_power_design_beyond_709_MW_permit_block_and_final_NSR_status
+  - Lighthouse_named_generation_projects_final_PSCW_tariff_and_energization_schedule
+  - Saline_remaining_751_MW_storage_procurement_and_final_substation_generator_equipment
+  - audited_revenue_operating_profit_and_project_economics_for_Crusoe_Vantage_VoltaGrid_and_Related_Digital
 
 next_research_queue:
   campus_enrichment:
     - CoreWeave_per_site_location_and_GPU_inventory_beyond_portfolio_totals
     - Google_TPU_cloud_exact_US_sites_and_TPU_inventory_for_Blackstone_JV
-    - Oracle_Michigan_Texas_Wisconsin_exact_sites_power_GPU_and_build_schedule
+    - Oracle_US_five_campus_per_site_accelerator_inventory_and_energized_IT_load
+    - Frontier_remaining_power_blocks_final_permit_status_and_substation_UPS_vendor_awards
+    - Lighthouse_generation_project_names_PSCW_tariff_status_and_grid_energization
+    - Saline_remaining_751_MW_storage_and_final_generator_substation_equipment
     - Alibaba_per_AZ_physical_addresses_MW_GPU_inventory_and_energized_status
     - Tencent_per_AZ_ownership_MW_GPU_inventory_and_current_Qingyuan_server_count
     - ByteDance_Volcano_Engine_exact_AZs_campuses_MW_and_accelerator_inventory
@@ -2514,6 +2971,7 @@ next_research_queue:
     - CDC_per_campus_capacity_and_customer_hardware_inventory
   company_financials:
     - ByteDance_audited_financials_if_publicly_released
+    - Crusoe_Vantage_VoltaGrid_and_Related_Digital_audited_or_lender_disclosed_financials
 
 portfolio_relevance:
   interpretation: >-

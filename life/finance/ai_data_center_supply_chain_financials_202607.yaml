@@ -72,8 +72,15 @@ stack_layers:
     - Digital_Realty
     - Entergy
     - Constellation_Energy
+    - DTE_Energy
+    - WEC_Energy_Group
     - Galaxy_Digital
     - Bharti_Airtel
+  private_data_center_and_power_developers:
+    - Crusoe
+    - Vantage_Data_Centers
+    - VoltaGrid
+    - Related_Digital
   capital_and_asset_managers:
     - Blackstone
     - Infratil
@@ -417,6 +424,17 @@ financial_profiles:
       data_center_order_comparison: exceeded_all_of_FY2025
     data_center_exposure:
       products: [gas_turbines, transformers, switchgear, substations, HVDC, grid_integration]
+      confirmed_campus_refs:
+        - dc_openai_stargate_abilene
+      confirmed_Abilene_equipment:
+        model: LM2500XPRESS_aeroderivative_gas_turbines
+        units: 10
+        approximate_nameplate_mw_each: 35
+        emissions_control: selective_catalytic_reduction
+        role: backup_and_resilience
+      portfolio_context: >-
+        Another 19 LM2500XPRESS units bring Crusoe's multi-site order to 29 and
+        nearly 1 GW; only the first 10 units are explicitly attributed to Abilene.
       boundary: The disclosed data-center equipment orders are a strong demand signal but company-wide revenue is not data-center revenue.
     management_outlook:
       period: FY2026_raised
@@ -436,6 +454,7 @@ financial_profiles:
       - https://www.sec.gov/Archives/edgar/data/1996810/000199681026000015/gev-20251231.htm
       - https://www.gevernova.com/sites/default/files/gev_webcast_pressrelease_01282026.pdf
       - https://www.gevernova.com/sites/default/files/gev_webcast_pressrelease_04222026.pdf
+      - https://www.gevernova.com/news/articles/going-big-support-data-center-growth-rising-renewables-crusoe-ordering-flexible-gas
     confidence: high
 
   - id: company_equinix
@@ -733,6 +752,9 @@ financial_profiles:
         - dc_stargate_uae_abudhabi
         - dc_oracle_oci_global_region_portfolio
         - dc_oracle_project_jupiter_new_mexico
+        - dc_oracle_vantage_frontier_shackelford_texas
+        - dc_oracle_vantage_lighthouse_port_washington_wisconsin
+        - dc_oracle_related_the_barn_saline_michigan
       boundary: RPO includes large-scale AI contracts, but revenue recognition depends on capacity delivery over time.
     management_outlook:
       Q1_FY2027_total_revenue_growth_percent_range: [27, 29]
@@ -863,10 +885,15 @@ financial_profiles:
       products: [natural_gas_generator_sets, reciprocating_engines, gas_turbines, backup_and_prime_power_systems]
       confirmed_campus_refs:
         - dc_nscale_monarch_west_virginia
+        - dc_oracle_vantage_frontier_shackelford_texas
       confirmed_project:
         equipment: Cat_G3500_natural_gas_generator_sets
         onsite_generation_target_gw: 2
         target_timing: first_half_2028
+      Frontier_permit_context:
+        equipment: Caterpillar_C32B_diesel_black_start_generators
+        role: black_start_with_limited_hours
+        status: named_in_pending_TCEQ_NSR_application_not_confirmed_operating_fleet
       boundary: Power and Energy also serves oil, gas, industrial, and transportation applications; data-center sales are not separately quantified.
     management_outlook:
       signal: record_backlog_and_data_center_driven_power_generation_growth
@@ -879,6 +906,7 @@ financial_profiles:
       - https://investors.caterpillar.com/news/news-details/2026/Caterpillar-Reports-Fourth-Quarter-and-Full-Year-2025-Results/default.aspx
       - https://investors.caterpillar.com/financials/quarterly-results/default.aspx
       - https://www.nscale.com/press-releases/nscale-west-virginia-ai-factory
+      - https://www.tceq.texas.gov/downloads/permitting/air/bilingual/pending-permit-notices/182467-pls-english.pdf/%40%40download/file/182467-pls-english.pdf
     confidence: high_for_financials_and_announced_equipment_plan_medium_for_project_execution
 
   - id: company_reliance_industries
@@ -2857,9 +2885,299 @@ financial_profiles:
       - https://gongyi.bytedance.com/detail/7161987661010602014
     confidence: high_for_public_disclosure_gap_medium_for_cloud_service_regions_low_for_private_financial_and_physical_infrastructure_scale
 
+  - id: company_crusoe
+    company: Crusoe
+    layer: private_data_center_and_power_developers
+    ownership_status: private
+    fiscal_baseline:
+      period: latest_publicly_available_as_of_2026_07_17
+      accounting_basis: no_reviewed_public_audited_consolidated_financial_statements
+      currency: undisclosed
+      revenue: undisclosed
+      operating_income: undisclosed
+      net_income: undisclosed
+      capital_expenditure: undisclosed
+    capital_context:
+      Series_E_announced_usd_billion_more_than: 1
+      boundary: Private funding is financing, not revenue or operating profit.
+    data_center_exposure:
+      roles: [AI_data_center_developer, AI_cloud_operator, onsite_power_developer]
+      confirmed_campus_refs: [dc_openai_stargate_abilene]
+      Abilene_design_power_capacity_gw: 1.2
+      Abilene_buildings: 8
+      Abilene_floor_area_sqft: 4000000
+      Abilene_delivered_capacity_share_percent_as_of_2026_06: 42
+      GE_Vernova_turbines:
+        Abilene_units: 10
+        multi_site_total_units: 29
+        multi_site_combined_power_nearly_gw: 1
+      boundary: >-
+        The 1.2 GW design, delivered share, and gas-turbine backup nameplate use
+        different scopes; Crusoe does not publish site revenue or operating profit.
+    management_outlook:
+      stance: scaling_large_AI_factories_and_managed_cloud_services
+      quantitative_revenue_or_profit_guidance: undisclosed
+    watch_items:
+      - private_company_financial_opacity
+      - capital_intensity_and_external_financing
+      - customer_concentration_at_Abilene
+      - grid_and_behind_the_meter_power_execution
+      - construction_delivery_and_utilization
+      - gas_emissions_and_permitting
+    sources:
+      - https://www.crusoe.ai/about/company
+      - https://www.oracle.com/data-centers/abilene/
+      - https://www.gevernova.com/news/articles/going-big-support-data-center-growth-rising-renewables-crusoe-ordering-flexible-gas
+    confidence: high_for_public_disclosure_gap_and_announced_physical_metrics_low_for_revenue_operating_profit_and_site_economics
+
+  - id: company_vantage_data_centers
+    company: Vantage_Data_Centers
+    layer: private_data_center_and_power_developers
+    ownership_status: private_with_institutional_investors
+    fiscal_baseline:
+      period: latest_publicly_available_as_of_2026_07_17
+      accounting_basis: no_reviewed_public_audited_consolidated_financial_statements
+      currency: undisclosed
+      revenue: undisclosed
+      operating_income: undisclosed
+      net_income: undisclosed
+      capital_expenditure: undisclosed
+    capital_context:
+      largest_North_America_platform_investors: [DigitalBridge, Silver_Lake]
+      Frontier_investment_usd_billion: 25
+      Lighthouse_investment_usd_billion_more_than: 15
+      combined_Frontier_and_Lighthouse_investment_usd_billion_more_than: 40
+      boundary: Project investment is not Vantage revenue, profit, or committed cash spent to date.
+    data_center_exposure:
+      roles: [hyperscale_data_center_developer, owner_operator, colocation_landlord]
+      confirmed_campus_refs:
+        - dc_oracle_vantage_frontier_shackelford_texas
+        - dc_oracle_vantage_lighthouse_port_washington_wisconsin
+      two_campus_critical_IT_design_mw_derived: 2302
+      two_campus_buildings: 14
+      power_partnerships:
+        VoltaGrid_prime_power_gw_more_than: 1
+        Liberty_power_agreements_gw_up_to: 1
+      boundary: >-
+        Design capacity is not energized or leased capacity. The two power
+        agreements cover broader North American activity and are not wholly
+        attributable to Frontier or Lighthouse.
+    management_outlook:
+      stance: rapid_AI_hyperscale_expansion_across_power_constrained_markets
+      quantitative_revenue_or_profit_guidance: undisclosed
+    watch_items:
+      - private_company_financial_opacity
+      - project_financing_and_interest_cost
+      - customer_and_tenant_concentration
+      - grid_interconnection_and_onsite_generation_execution
+      - permitting_and_emissions
+      - design_capacity_conversion_to_delivered_utilized_load
+    sources:
+      - https://vantage-dc.com/data-center-locations/north-america/shackelford-county-tx/
+      - https://vantage-dc.com/data-center-locations/north-america/port-washington-wisconsin/
+      - https://vantage-dc.com/news/openai-oracle-and-vantage-data-centers-announce-stargate-data-center-site-in-wisconsin/
+      - https://vantage-dc.com/news/vantage-data-centers-and-voltagrid-establish-partnership-to-deploy-more-than-one-gigawatt-of-power-generation/
+      - https://vantage-dc.com/news/vantage-data-centers-and-liberty-energy-announce-strategic-partnership-to-develop-and-operate-one-gigawatt-of-power-solutions-for-next-generation-data-centers/
+    confidence: high_for_public_disclosure_gap_investment_design_capacity_and_partnerships_low_for_revenue_operating_profit_leasing_and_utilization
+
+  - id: company_voltagrid
+    company: VoltaGrid
+    layer: private_data_center_and_power_developers
+    ownership_status: private
+    fiscal_baseline:
+      period: latest_publicly_available_as_of_2026_07_17
+      accounting_basis: no_reviewed_public_audited_consolidated_financial_statements
+      currency: undisclosed
+      revenue: undisclosed
+      operating_income: undisclosed
+      net_income: undisclosed
+      capital_expenditure: undisclosed
+    data_center_exposure:
+      roles: [natural_gas_microgrid_developer, portable_and_stationary_prime_power_operator]
+      confirmed_campus_refs: [dc_oracle_vantage_frontier_shackelford_texas]
+      Vantage_North_America_agreement_capacity_gw_more_than: 1
+      ABI_1_TCEQ_permit_block:
+        generators: 210
+        maximum_operating_at_once: 197
+        nameplate_capacity_mw: 709
+      pending_NSR_engine_families: [Jenbacher_J620, Jenbacher_J624]
+      boundary: >-
+        Permitted nameplate and framework-agreement capacity are not operating
+        load, recognized revenue, or proof of the complete Frontier power design.
+    management_outlook:
+      stance: rapid_deployment_into_grid_constrained_AI_markets
+      quantitative_revenue_or_profit_guidance: undisclosed
+    watch_items:
+      - private_company_financial_opacity
+      - natural_gas_supply_and_price
+      - emissions_permitting_and_community_acceptance
+      - equipment_delivery_and_reliability
+      - customer_and_project_concentration
+    sources:
+      - https://vantage-dc.com/news/vantage-data-centers-and-voltagrid-establish-partnership-to-deploy-more-than-one-gigawatt-of-power-generation/
+      - https://records.tceq.texas.gov/cs/idcplg?IdcService=TCEQ_EXTERNAL_SEARCH_GET_FILE&Rendition=Web&dID=8983248
+      - https://www.tceq.texas.gov/downloads/permitting/air/bilingual/pending-permit-notices/182467-pls-english.pdf/%40%40download/file/182467-pls-english.pdf
+    confidence: high_for_public_disclosure_gap_framework_and_permit_metrics_low_for_revenue_operating_profit_and_actual_generation
+
+  - id: company_related_digital
+    company: Related_Digital
+    layer: private_data_center_and_power_developers
+    ownership_status: private_Related_Companies_platform
+    fiscal_baseline:
+      period: latest_publicly_available_as_of_2026_07_17
+      accounting_basis: no_reviewed_public_audited_standalone_financial_statements
+      currency: undisclosed
+      revenue: undisclosed
+      operating_income: undisclosed
+      net_income: undisclosed
+      capital_expenditure: undisclosed
+    capital_context:
+      initial_sponsor_commitment_usd_million_at_least: 500
+      private_capital_raise_target_usd_billion_up_to: 8
+      near_term_development_pipeline_usd_billion: 45
+      near_term_power_pipeline_gw_more_than: 5
+      The_Barn_project_financing_and_development_value_usd_billion: 16
+      The_Barn_equity_partners: [Related_Digital, Blackstone_affiliated_funds]
+      The_Barn_debt_anchor: PIMCO_managed_funds_and_accounts
+      boundary: >-
+        Sponsor capital, fundraising targets, development pipeline, and project
+        financing are not revenue, operating profit, or cash spent to date.
+    data_center_exposure:
+      roles: [data_center_developer, infrastructure_integrator, investment_platform]
+      confirmed_campus_refs: [dc_oracle_related_the_barn_saline_michigan]
+      The_Barn_contracted_utility_load_mw: 1383
+      The_Barn_buildings: 3
+      exact_site_revenue_rent_operating_profit_and_ownership_waterfall: undisclosed
+    management_outlook:
+      stance: execute_more_than_5_GW_near_term_US_and_Canada_pipeline
+      quantitative_revenue_or_profit_guidance: undisclosed
+    watch_items:
+      - private_company_financial_opacity
+      - pipeline_conversion_to_financed_built_and_leased_capacity
+      - hyperscaler_customer_concentration
+      - construction_and_supply_chain_execution
+      - long_duration_financing_cost
+      - utility_and_storage_delivery
+    sources:
+      - https://www.related.com/press-releases/2025-03-27/related-companies-accelerates-push-data-centers-capitalization-related
+      - https://www.related.com/press-releases/2026-04-24/related-digital-announces-financing-16-billion-oracle-data-center-project
+      - https://www.oracle.com/news/announcement/related-digital-oracle-openai-walbridge-and-governor-whitmer-celebrate-construction-of-stargate-campus-in-saline-township-2026-06-01/
+    confidence: high_for_public_disclosure_gap_capital_pipeline_and_project_financing_low_for_revenue_operating_profit_and_site_economics
+
+  - id: company_dte_energy
+    company: DTE_Energy
+    layer: operators_reits_utilities
+    fiscal_baseline:
+      period: FY2025_ended_2025-12-31
+      accounting_basis: US_GAAP_with_separate_non_GAAP_operating_earnings
+      currency: USD
+      revenue_usd_million: 15814
+      operating_income_usd_million: 2374
+      operating_margin_percent_derived: 15.01
+      net_income_attributable_to_DTE_Energy_usd_million: 1462
+      non_GAAP_operating_earnings_usd_million_rounded: 1530
+      company_capital_investment_usd_million_more_than: 4300
+      DTE_Electric:
+        revenue_usd_million: 6935
+        operating_income_usd_million: 1661
+        net_income_usd_million: 1158
+        capital_investment_usd_million_more_than: 3600
+      naming_boundary: DTE_Vantage_is_a_DTE_segment_and_is_unrelated_to_Vantage_Data_Centers
+    latest_update:
+      period: Q1_2026_ended_2026-03-31
+      revenue_usd_million: 5141
+      operating_income_usd_million: 412
+      net_income_usd_million: 247
+      non_GAAP_operating_earnings_usd_million: 407
+      utility_investment_usd_million_more_than: 1200
+    data_center_exposure:
+      role: regulated_electric_utility_and_storage_owner
+      confirmed_campus_refs: [dc_oracle_related_the_barn_saline_michigan]
+      Oracle_Saline_contracted_load_mw: 1383
+      matching_storage_obligation_mw: 1383
+      approved_or_accepted_storage_as_of_2026_07_mw_derived: 632
+      storage_cost_responsibility: Green_Chile_Ventures_Oracle_over_15_years
+      utility_customer_protections: [19_year_minimum_term, 80_percent_minimum_billing_demand, up_to_10_year_termination_payment]
+      boundary: >-
+        Contracted load and approved storage are future regulated-service and
+        asset obligations, not current revenue or operating data-center load.
+    management_outlook:
+      FY2026_operating_EPS_usd_range: [7.59, 7.73]
+      2026_utility_investment_pace_usd_billion_more_than: 6
+      data_center_signal: first_hyperscale_contract_expected_to_spread_fixed_grid_costs
+    watch_items:
+      - regulatory_cost_recovery_and_customer_protection
+      - 1383_MW_storage_procurement_and_delivery
+      - transmission_and_substation_execution
+      - load_ramp_and_minimum_billing_enforcement
+      - financing_cost_and_capital_intensity
+      - severe_weather_reliability
+    sources:
+      - https://www.sec.gov/Archives/edgar/data/936340/000093634026000054/dte-20251231.htm
+      - https://ir.dteenergy.com/news/press-release-details/2026/DTE-Energy-reports-2025-accomplishments-earnings-and-investments/default.aspx
+      - https://ir.dteenergy.com/news/press-release-details/2026/DTE-Energy-reports-first-quarter-2026-accomplishments-investments-and-financial-results/default.aspx
+      - https://www.michigan.gov/mpsc/commission/news-releases/2026/03/27/mpsc-goes-big-on-batteries
+      - https://www.michigan.gov/mpsc/commission/news-releases/2026/07/16/commission-launches-investigation-into-utility-response-to-fourth-of-july-storms
+    confidence: high_for_financials_contract_load_storage_obligation_and_regulatory_terms
+
+  - id: company_wec_energy_group
+    company: WEC_Energy_Group
+    layer: operators_reits_utilities
+    fiscal_baseline:
+      period: FY2025_ended_2025-12-31
+      accounting_basis: US_GAAP_with_separate_adjusted_earnings
+      currency: USD
+      revenue_usd_million: 9800.1
+      operating_income_usd_million: 2244.9
+      operating_margin_percent_derived: 22.91
+      GAAP_net_income_usd_million: 1557.5
+      adjusted_net_income_usd_million: 1706.2
+    latest_update:
+      period: Q1_2026_ended_2026-03-31
+      revenue_usd_million: 3434.2
+      operating_income_usd_million: 980.0
+      net_income_attributed_to_common_shareholders_usd_million: 804.4
+    data_center_exposure:
+      role: regulated_utility_parent_of_We_Energies
+      confirmed_campus_refs: [dc_oracle_vantage_lighthouse_port_washington_wisconsin]
+      Lighthouse_critical_IT_design_mw: 902
+      Port_Washington_projected_grid_demand_through_2030_gw: 1.3
+      Port_Washington_incremental_long_term_potential_gw: 2.2
+      Port_Washington_total_long_term_potential_gw_up_to: 3.5
+      campus_strategy_new_zero_emission_power_mw_approximate: 2000
+      2026_2030_capital_plan_usd_billion:
+        efficient_natural_gas_generation: 5.4
+        regulated_renewables_and_storage: 12.6
+      boundary: >-
+        The full WEC capital plan serves its broader system and cannot be assigned
+        wholly to Lighthouse. Utility demand includes more than critical IT load.
+    management_outlook:
+      FY2026_EPS_usd_range: [5.51, 5.61]
+      five_year_EPS_compound_annual_growth_percent_range: [7, 8]
+      stance: large_load_growth_requires_generation_transmission_and_storage_buildout
+    watch_items:
+      - PSCW_tariff_and_cost_recovery
+      - generation_and_transmission_permitting
+      - data_center_load_ramp_and_customer_concentration
+      - capital_plan_financing_and_rate_base_execution
+      - renewable_and_storage_delivery
+      - design_IT_load_versus_grid_demand_reconciliation
+    sources:
+      - https://www.sec.gov/Archives/edgar/data/783325/000078332526000018/wec-20251231.htm
+      - https://investor.wecenergygroup.com/investors/news-releases/press-release-details/2026/WEC-Energy-Group-posts-2025-results/default.aspx
+      - https://investor.wecenergygroup.com/investors/news-releases/press-release-details/2026/WEC-Energy-Group-reports-first-quarter-results/default.aspx
+      - https://www.wecenergygroup.com/invest/annualreports/wec2025-annual-report.pdf
+      - https://vantage-dc.com/news/openai-oracle-and-vantage-data-centers-announce-stargate-data-center-site-in-wisconsin/
+    confidence: high_for_financials_utility_demand_capital_plan_and_guidance_medium_for_campus_resource_allocation
+
 cross_company_read_through:
   current_signals:
     - Hyperscale buyers are funding the demand wave directly: Meta raised its 2026 capex range, Amazon's free cash flow fell as AI property investment rose, and Oracle is financing rapid OCI expansion against a very large AI-heavy RPO.
+    - Oracle's five disclosed US OpenAI campuses now have different power paths: ERCOT plus GE Vernova backup turbines in Abilene, a VoltaGrid reciprocating-engine microgrid block at Frontier, Bloom fuel cells at Project Jupiter, WEC grid expansion at Lighthouse, and DTE grid plus matching storage at The Barn. Their IT, generation, grid-demand, and storage figures are intentionally kept separate.
+    - Frontier's 1.4 GW critical-IT design is larger than the currently documented 709 MW VoltaGrid permit block, while Lighthouse's 902 MW critical-IT design sits inside WEC's 1.3 GW through-2030 demand forecast and up-to-3.5 GW long-term potential. These gaps are evidence of phased infrastructure, losses, and possible expansion, not grounds for GPU-count inference.
+    - DTE's FY2025 revenue was $15.8 billion and operating income $2.37 billion; its 1,383 MW Saline contract and matching storage obligation create a large regulated growth project, but delivery, cost recovery, and the remaining 751 MW of storage procurement are material execution risks.
+    - WEC's FY2025 revenue was $9.80 billion and operating income $2.24 billion; Lighthouse supports its large-load thesis, but WEC's broader generation and storage capital plan cannot be attributed wholly to one campus.
+    - Crusoe, Vantage Data Centers, VoltaGrid, and Related Digital disclose large project and financing figures but no reviewed public audited consolidated revenue or operating profit. Their project investment, funding, and pipeline values are kept out of earnings comparisons.
     - Oracle's Project Jupiter revised its onsite power plan to as much as 2.45 GW of Bloom solid-oxide fuel cells, making onsite generation a direct AI-campus value pool; nameplate generation includes redundancy and is not disclosed IT load.
     - Bloom Energy's Q1 2026 revenue grew 130.4% and its Oracle master agreement covers up to 2.8 GW, but deployment concentration, natural-gas dependence, and backlog conversion remain central risks.
     - Alibaba Cloud grew FY2026 revenue 34% and adjusted EBITA 35% while Alibaba spent RMB126.1 billion of capex and committed at least RMB380 billion to AI and cloud infrastructure; the capex and investment figures include more than data-center buildings.
