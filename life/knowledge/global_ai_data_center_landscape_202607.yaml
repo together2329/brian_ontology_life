@@ -317,6 +317,169 @@ campus_profiles:
         url: https://newsroom.equinix.com/2024-10-01-Equinix-Agrees-to-Form-Greater-Than-15B-JV-to-Expand-Hyperscale-Data-Centers-in-the-U-S-and-Support-Growing-AI-and-Cloud-Innovation
     confidence: high_for_audited_portfolio_inventory_and_development_metrics_medium_for_current_marketing_snapshot_low_for_per_site_power_cooling_and_GPU_inventory
 
+  - id: dc_equinix_hk6_hong_kong
+    name: Equinix HK6
+    record_granularity: individual_IBX_data_center
+    operator: Equinix
+    country: Hong_Kong
+    region: Hong_Kong
+    locality: Tsuen_Wan
+    lifecycle_as_of_2026_07_17: operating_opened_2026_06_16_with_AI_Discovery_Hub_targeted_H2_2026
+    location:
+      exact_street_address: undisclosed_in_reviewed_primary_sources
+      clustered_IBX_facilities: [HK1, HK2, HK3, HK6]
+      metro_IBX_count_after_opening: 6
+      HSITP_connectivity: direct_interconnection_to_Hong_Kong_Shenzhen_Innovation_and_Technology_Park
+      osm_record_status: not_reconciled
+    facility_scale:
+      initial_investment_usd_million: 124
+      phase_one_cabinets: 1000
+      full_buildout_cabinets: 3550
+      full_buildout_status: expected_not_current
+      IT_load_mw_floor_area_and_rack_density: undisclosed
+    accelerators:
+      planned_AI_Discovery_Hub:
+        partners: [HPE, NVIDIA]
+        target_availability: H2_2026
+        HPE_role: AI_factory_at_scale_infrastructure_software_and_services
+        NVIDIA_role: accelerated_infrastructure_software_networking_and_NemoClaw_reference_stack
+        environments: open_AI_testing_validation_and_scaling
+      exact_GPU_model_chip_count_rack_count_and_installed_status: undisclosed
+      timing_boundary: >-
+        HK6 is operating, but the April announcement said the AI Discovery Hub
+        would become available in the second half of 2026. It is not recorded as
+        installed or generally available without a later confirmation.
+    electrical_and_generation:
+      power_density: AI_ready_high_density_design
+      utility_service_IT_load_substation_transformers_switchgear_UPS_backup_generation_and_OEMs: undisclosed
+    cooling_and_water:
+      architecture: direct_to_chip_liquid_cooling
+      stated_role: support_GPUs_beyond_traditional_air_cooling_thermal_limits
+      deployed_capacity_CDU_OEM_water_source_PUE_and_WUE: undisclosed
+    sustainability:
+      renewable_energy_coverage_percent: 100
+      boundary: Coverage is not proof of onsite generation or hourly matching.
+    linked_companies:
+      operator: [Equinix]
+      AI_Discovery_Hub_partners: [HPE, NVIDIA]
+      financial_profile_refs: [company_equinix, company_hpe, company_nvidia]
+    sources:
+      - title: Equinix launches AI-ready HK6
+        publisher: Equinix
+        date: 2026-06-16
+        url: https://newsroom.equinix.com/2026-06-16-Equinix-Launches-AI-Ready-Data-Center-with-Direct-Connectivity-to-Hong-Kong-Shenzhen-Innovation-and-Technology-Park
+      - title: Equinix introduces AI Discovery Hub with HPE and NVIDIA
+        publisher: Equinix
+        date: 2026-04-23
+        url: https://newsroom.equinix.com/2026-04-23-Equinix-Introduces-AI-Discovery-Hub-to-Accelerate-AI-Innovation-and-Deployment-in-Hong-Kong-with-HPE-and-NVIDIA
+    confidence: high_for_opening_investment_cabinets_cooling_and_partner_plan_low_for_installed_GPU_inventory_power_chain_and_Hub_availability
+
+  - id: dc_equinix_mb3_mumbai_india
+    name: Equinix MB3
+    record_granularity: individual_IBX_data_center
+    operator: Equinix
+    country: India
+    region: Maharashtra
+    locality: Mumbai_Chandivali_Powai
+    lifecycle_as_of_2026_07_17: operating_opened_2026_04_08_with_future_phases
+    location:
+      land_acres_nearly: 4
+      stories: 5
+      adjacency: adjacent_to_MB2_and_1_5_km_from_MB1
+      campus_links: [MB1, MB2, MB4, CN1_Chennai]
+      interbuilding_network: physically_diverse_dark_fiber
+      exact_street_address: undisclosed_in_reviewed_primary_source
+      osm_record_status: not_reconciled
+    facility_scale:
+      initial_investment_usd_million_more_than: 95
+      current_cabinets_more_than: 1370
+      full_buildout_cabinets_more_than: 5475
+      full_buildout_status: designed_not_current
+      Mumbai_and_Chennai_combined_current_cabinets_more_than: 4725
+      combined_capacity_boundary: >-
+        The India combined cabinet count is portfolio context and is not added to
+        MB3's current cabinets. Site IT load, floor area, and rack density are undisclosed.
+    accelerators:
+      intended_workloads: [AI, machine_learning, high_performance_compute, hybrid_multicloud]
+      exact_GPU_vendor_model_chip_count_rack_count_and_installed_status: undisclosed
+      prohibited_inference: Cabinet counts and solar capacity must not be converted into GPU inventory.
+    electrical_and_generation:
+      utility_service_IT_load_substation_transformers_switchgear_UPS_backup_generation_and_OEMs: undisclosed
+    cooling_and_water:
+      capability: liquid_cooling_capable
+      installed_liquid_cooled_capacity_architecture_OEM_water_source_PUE_and_WUE: undisclosed
+      boundary: Liquid-cooling capability is not proof that all current cabinets use liquid cooling.
+    sustainability:
+      MB3_renewable_energy_coverage_percent: 100
+      India_group_captive_solar_project:
+        partner: CleanMax
+        capacity_mwp: 26.4
+        expected_generation_kwh_million_per_year: 41.4
+        expected_emissions_reduction_tonnes_per_year_more_than: 30000
+      allocation_boundary: >-
+        The solar project supports Equinix's India operations; reviewed disclosure
+        does not allocate its generation exclusively to MB3 or prove hourly matching.
+    linked_companies:
+      operator: [Equinix]
+      renewable_energy_partner: [CleanMax]
+      financial_profile_refs: [company_equinix]
+      missing_financial_profiles: [CleanMax]
+    sources:
+      - title: Equinix launches purpose-built MB3 in Mumbai
+        publisher: Equinix
+        date: 2026-04-08
+        url: https://newsroom.equinix.com/2026-04-08-Equinix-Launches-Purpose-Built-IBX-Data-Center-in-Mumbai-to-Accelerate-Indias-AI-and-Cloud-Growth
+    confidence: high_for_opening_investment_cabinets_location_and_renewable_program_low_for_GPU_inventory_IT_load_and_electrical_BOM
+
+  - id: dc_equinix_cn1_chennai_india
+    name: Equinix CN1
+    record_granularity: individual_IBX_data_center
+    operator: Equinix
+    country: India
+    region: Tamil_Nadu
+    locality: Chennai_Siruseri
+    lifecycle_as_of_2026_07_17: operating_opened_2025_09_19_with_future_phases
+    location:
+      land_owner_or_industrial_area: State_Industries_Promotion_Corporation_of_Tamil_Nadu_SIPCOT
+      land_acres_nearly: 6
+      distance_from_Chennai_CBD_km_approximate: 28
+      stories: 4
+      exact_street_address: undisclosed_in_reviewed_primary_source
+      osm_record_status: not_reconciled
+    facility_scale:
+      initial_investment_usd_million: 69
+      phase_one_cabinets: 800
+      full_buildout_cabinets: 4250
+      full_buildout_status: designed_not_current
+      engineered_uptime_percent: 99.999
+      IT_load_mw_floor_area_and_rack_density: undisclosed
+    accelerators:
+      intended_workloads: [AI, high_density_compute, hybrid_multicloud]
+      exact_GPU_vendor_model_chip_count_rack_count_and_installed_status: undisclosed
+      prohibited_inference: Cabinet counts must not be converted into GPU inventory.
+    electrical_and_generation:
+      utility_service_IT_load_substation_transformers_switchgear_UPS_backup_generation_and_OEMs: undisclosed
+    cooling_and_water:
+      design: liquid_cooling_ready
+      installed_liquid_cooled_capacity_architecture_OEM_water_source_PUE_and_WUE: undisclosed
+      boundary: Liquid-cooling readiness is not proof of a currently liquid-cooled GPU fleet.
+    sustainability:
+      Equinix_global_renewable_coverage_2024_percent: 96
+      site_specific_renewable_coverage: undisclosed
+      boundary: The global portfolio percentage must not be attributed to CN1 as site supply.
+    network:
+      services: [Equinix_Fabric, Equinix_Fabric_Cloud_Router]
+      anticipated_proximity: submarine_cable_landing_sites
+    linked_companies:
+      operator: [Equinix]
+      financial_profile_refs: [company_equinix]
+    sources:
+      - title: Equinix opens first AI-ready data center in Chennai
+        publisher: Equinix
+        date: 2025-09-19
+        url: https://newsroom.equinix.com/2025-09-19-Equinix-Opens-First-AI-Ready-Data-Center-in-Chennai
+    confidence: high_for_opening_investment_cabinets_location_and_cooling_readiness_low_for_GPU_inventory_IT_load_and_electrical_BOM
+
   - id: dc_digital_realty_global_portfolio
     name: Digital Realty global data-center portfolio
     record_granularity: global_operator_portfolio_not_one_physical_campus
@@ -487,6 +650,85 @@ campus_profiles:
         url: https://investor.digitalrealty.com/news-releases/news-release-details/digital-realty-publishes-2025-impact-report-highlighting
     confidence: high_for_audited_property_inventory_capacity_and_development_metrics_medium_for_product_and_portfolio_sustainability_claims_low_for_per_site_GPU_and_electrical_BOM
 
+  - id: dc_digital_realty_digital_park_paris
+    name: Digital Realty Digital Park Paris
+    record_granularity: four_building_data_center_campus
+    operator: Digital_Realty
+    country: France
+    region: Ile_de_France
+    locality: La_Courneuve
+    lifecycle_as_of_2026_07_17: operating
+    location:
+      address: 2_Avenue_Marcel_Cachin_93120_La_Courneuve_France
+      buildings: [PAR8, PAR9, PAR10, PAR11]
+      building_area_m2_disclosed_on_current_pages:
+        PAR8: 9670
+        PAR9: 9670
+        PAR10: 8878
+        PAR11: 8878
+      building_area_sum_m2_derived: 37096
+      available_data_hall_area_m2_portfolio_statement: 40000
+      area_boundary: >-
+        Current building-page areas sum to 37,096 square meters while the 2026
+        proxy states 40,000 square meters of available data hall space. The
+        definitions are not reconciled and are not treated as the same measure.
+      osm_record_status: not_reconciled
+    campus_scale:
+      IT_capacity_mw_more_than: 76
+      data_centers: 4
+      PAR8_available_electrical_capacity_mw: 19
+      building_level_IT_capacity_other_than_PAR8: undisclosed
+    accelerators:
+      intended_workloads: [AI, high_performance_compute]
+      exact_customer_GPU_vendor_model_chip_count_rack_count_and_density: undisclosed
+      prohibited_inference: Campus MW and liquid-cooling capability must not be converted into GPU inventory.
+    electrical_and_generation:
+      selected_current_facility_pages:
+        PAR8: {UPS_redundancy: N_plus_1}
+        PAR10: {UPS_redundancy: N_plus_1}
+        PAR11: {UPS_redundancy: N_plus_1}
+      utility_substation_transformers_switchgear_backup_generation_and_OEMs: undisclosed
+    cooling_and_water:
+      campus_architecture: direct_liquid_cooling_infrastructure
+      selected_current_facility_pages:
+        PAR8: {cooling_redundancy: N_plus_1}
+        PAR10: {cooling_redundancy: N_plus_1}
+        PAR11: {cooling_redundancy: N_plus_1}
+      PAR9_redundancy_CDU_capacity_cooling_OEM_water_source_PUE_and_WUE: undisclosed_in_reviewed_sources
+    sustainability:
+      100_percent_renewable_page_claims: [PAR8, PAR10, PAR11]
+      final_two_phases_LEED_certified_in_2025: true
+      boundary: Facility-page matching claims are not assumed for undisclosed PAR9 supply or hourly onsite generation.
+    linked_companies:
+      operator: [Digital_Realty]
+      financial_profile_refs: [company_digital_realty]
+    attribution_boundary: >-
+      Digital Realty separately announced a 10 MW Mistral AI deployment at its
+      Paris South campus. That source does not identify Digital Park Paris, so the
+      deployment is not assigned to this campus.
+    sources:
+      - title: Digital Realty 2026 Proxy Statement
+        publisher: Digital_Realty
+        date: 2026-04
+        url: https://investor.digitalrealty.com/static-files/aae1c531-0644-4193-bd1d-d710640e0dcb
+      - title: Digital Realty PAR8 facility page
+        publisher: Digital_Realty
+        date: 2026-07-17_accessed
+        url: https://www.digitalrealty.com/fr/data-centers/emea/paris/par8
+      - title: Digital Realty Paris metro facility inventory
+        publisher: Digital_Realty
+        date: 2026-07-17_accessed
+        url: https://www.digitalrealty.com/data-centers/emea/paris
+      - title: Digital Realty PAR10 facility page
+        publisher: Digital_Realty
+        date: 2026-07-17_accessed
+        url: https://www.digitalrealty.com/fr/data-centers/emea/paris/par10
+      - title: Digital Realty PAR11 facility page
+        publisher: Digital_Realty
+        date: 2026-07-17_accessed
+        url: https://www.digitalrealty.com/data-centers/emea/paris/par11
+    confidence: high_for_campus_building_inventory_total_capacity_and_liquid_cooling_medium_for_page_level_area_and_redundancy_low_for_GPU_inventory_and_electrical_BOM
+
   - id: dc_digital_realty_nrt_inzai_japan
     name: Digital Realty NRT campus
     record_granularity: three_building_data_center_campus
@@ -526,8 +768,7 @@ campus_profiles:
       orchestration: ServiceFabric
     linked_companies:
       operator_joint_venture: [Digital_Realty, Mitsubishi_Corporation]
-      financial_profile_refs: [company_digital_realty]
-      missing_financial_profiles: [Mitsubishi_Corporation]
+      financial_profile_refs: [company_digital_realty, company_mitsubishi_corporation]
     sources:
       - title: Digital Realty opens NRT14, third facility in NRT campus
         publisher: Digital_Realty
@@ -4409,6 +4650,10 @@ disclosure_gap_register:
   - Digital_Realty_Astra_final_site_plan_energization_customer_GPU_and_electrical_BOM
   - Digital_Realty_Astra_to_Evergy_anonymous_ESA_identity_reconciliation
   - Digital_Realty_NRT_building_level_power_GPU_inventory_and_electrical_BOM
+  - Equinix_HK6_AI_Discovery_Hub_current_availability_GPU_inventory_and_power_chain
+  - Equinix_MB3_and_CN1_site_IT_load_liquid_cooled_capacity_and_electrical_BOM
+  - Digital_Park_Paris_37096_building_area_to_40000_data_hall_area_reconciliation
+  - Digital_Park_Paris_per_building_IT_power_GPU_inventory_CDU_and_electrical_BOM
 
 next_research_queue:
   campus_enrichment:
@@ -4436,12 +4681,17 @@ next_research_queue:
     - Digital_Realty_310_building_per_site_IT_power_GPU_inventory_and_ownership_reconciliation
     - Digital_Realty_Astra_final_site_plan_utility_energization_customer_and_equipment_awards
     - Digital_Realty_NRT_building_level_IT_power_GPU_inventory_and_power_cooling_OEMs
+    - Equinix_HK6_AI_Discovery_Hub_availability_GPU_inventory_and_power_chain
+    - Equinix_MB3_CN1_site_IT_load_liquid_cooled_capacity_and_electrical_BOM
+    - Digital_Park_Paris_area_definition_per_building_IT_power_GPU_and_CDU_inventory
   company_financials:
     - ByteDance_audited_financials_if_publicly_released
     - Crusoe_Vantage_VoltaGrid_and_Related_Digital_audited_or_lender_disclosed_financials
     - AirTrunk_Firmus_and_DayOne_audited_or_lender_disclosed_revenue_operating_profit_and_debt
     - Megaport_latest_results_and_Project_Southgate_contract_economics
     - Evergy_Astra_specific_rate_base_revenue_capex_and_ESA_identity_if_disclosed
+    - HPE_HK6_AI_Discovery_Hub_contract_value_revenue_and_installed_hardware
+    - MC_Digital_Realty_revenue_operating_profit_capex_and_NRT_site_economics
 
 portfolio_relevance:
   interpretation: >-

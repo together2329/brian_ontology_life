@@ -50,6 +50,7 @@ stack_layers:
     - Corning
     - Arista_Networks
     - Cisco
+    - Hewlett_Packard_Enterprise
   power_cooling_electrical:
     - Vertiv
     - Schneider_Electric
@@ -87,6 +88,8 @@ stack_layers:
     - AirTrunk
     - Firmus_Technologies
     - DayOne_Data_Centers
+  diversified_strategic_partners:
+    - Mitsubishi_Corporation
   capital_and_asset_managers:
     - Blackstone
     - Infratil
@@ -473,6 +476,82 @@ financial_profiles:
       - https://www.gevernova.com/news/articles/going-big-support-data-center-growth-rising-renewables-crusoe-ordering-flexible-gas
     confidence: high
 
+  - id: company_hpe
+    company: Hewlett_Packard_Enterprise
+    layer: compute_memory_network
+    fiscal_baseline:
+      period: FY2025_ended_2025-10-31
+      accounting_basis: US_GAAP_with_separate_non_GAAP_metrics
+      currency: USD
+      revenue_usd_million: 34296
+      operating_loss_usd_million: 437
+      operating_margin_percent_reported: -1.3
+      impairment_charges_usd_million: 1621
+      non_GAAP_operating_income_usd_million: 3353
+      non_GAAP_operating_margin_percent_reported: 9.8
+      net_income_attributable_to_HPE_usd_million: 57
+      baseline_boundary: >-
+        Fiscal 2025 GAAP operating loss included a $1.621 billion impairment.
+        Non-GAAP operating income excludes that and other adjustments and is
+        retained separately rather than substituted for GAAP performance.
+    latest_update:
+      period: Q2_FY2026_ended_2026-04-30
+      revenue_usd_million: 10678
+      revenue_yoy_percent: 40.0
+      operating_income_usd_million: 747
+      operating_margin_percent_reported: 7.0
+      non_GAAP_operating_income_usd_million: 1423
+      non_GAAP_operating_margin_percent_reported: 13.3
+      Cloud_and_AI:
+        revenue_usd_million: 7707
+        revenue_yoy_percent: 22.9
+        operating_income_usd_million: 954
+        operating_margin_percent_reported: 12.4
+        server_revenue_usd_million: 5454
+        storage_revenue_usd_million: 1175
+        financial_services_revenue_usd_million: 904
+      Networking:
+        revenue_usd_million: 2690
+        revenue_yoy_percent: 148.2
+        operating_income_usd_million: 581
+        operating_margin_percent_reported: 21.6
+        data_center_networking_revenue_usd_million: 320
+        data_center_networking_revenue_yoy_percent: 233.3
+    data_center_exposure:
+      products: [AI_servers, AI_factory_at_scale, storage, data_center_networking, GreenLake_hybrid_cloud]
+      confirmed_campus_refs: [dc_equinix_hk6_hong_kong]
+      HK6_AI_Discovery_Hub:
+        partners: [Equinix, NVIDIA]
+        role: full_stack_AI_factory_infrastructure_software_and_services
+        target_availability: H2_2026
+        exact_HPE_revenue_contract_value_GPU_model_and_installed_count: undisclosed
+      boundary: >-
+        HPE company and segment results are not HK6 revenue. The hub is a planned
+        partner environment, and reviewed sources disclose neither site economics
+        nor an installed accelerator count.
+    management_outlook:
+      Q3_FY2026_revenue_usd_million_range: [11500, 12100]
+      Q3_FY2026_GAAP_diluted_EPS_usd_range: [0.84, 0.89]
+      FY2026_revenue_growth_percent_range: [29, 33]
+      FY2026_Networking_revenue_growth_percent_range: [72, 75]
+      FY2026_GAAP_operating_profit_growth_percent_range: [885, 930]
+      FY2026_non_GAAP_operating_profit_growth_percent_range: [80, 85]
+      outlook_boundary: >-
+        Growth rates reflect the Juniper Networks combination and a low prior-year
+        GAAP base affected by impairments; they are not organic data-center growth.
+    watch_items:
+      - Juniper_Networks_integration_and_segment_reorganization
+      - AI_server_competitive_pricing_and_limited_margins
+      - customer_and_distributor_concentration
+      - GPU_supply_and_working_capital
+      - GAAP_to_non_GAAP_reconciliation
+      - HK6_Hub_delivery_and_customer_adoption
+    sources:
+      - https://investors.hpe.com/~/media/Files/H/HP-Enterprise-IR/documents/governance/annual-report-on-form-10K-2025.pdf
+      - https://investors.hpe.com/financial/quarterly-results
+      - https://newsroom.equinix.com/2026-04-23-Equinix-Introduces-AI-Discovery-Hub-to-Accelerate-AI-Innovation-and-Deployment-in-Hong-Kong-with-HPE-and-NVIDIA
+    confidence: high_for_company_and_segment_financials_medium_for_partner_solution_scope_low_for_HK6_contract_economics_and_installed_hardware
+
   - id: company_equinix
     company: Equinix
     layer: operators_reits_utilities
@@ -496,7 +575,11 @@ financial_profiles:
     data_center_exposure:
       products: [carrier_neutral_colocation, interconnection, xScale_hyperscale]
       Q4_largest_deals_AI_workload_share_percent_approximate: 60
-      confirmed_campus_refs: [dc_equinix_global_ibx_xscale_portfolio]
+      confirmed_campus_refs:
+        - dc_equinix_global_ibx_xscale_portfolio
+        - dc_equinix_hk6_hong_kong
+        - dc_equinix_mb3_mumbai_india
+        - dc_equinix_cn1_chennai_india
       FY2025_year_end_footprint:
         total_data_centers: 280
         consolidated_IBX_data_centers: 255
@@ -571,6 +654,7 @@ financial_profiles:
       products: [colocation, hyperscale_capacity, interconnection, development_land_and_power]
       confirmed_campus_refs:
         - dc_digital_realty_global_portfolio
+        - dc_digital_realty_digital_park_paris
         - dc_digital_realty_nrt_inzai_japan
         - dc_digital_realty_astra_de_soto_kansas
       FY2025_year_end_footprint:
@@ -611,6 +695,52 @@ financial_profiles:
       - https://investor.digitalrealty.com/news-releases/news-release-details/digital-realty-reports-first-quarter-2026-results
       - https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm
     confidence: high
+
+  - id: company_mitsubishi_corporation
+    company: Mitsubishi_Corporation
+    layer: diversified_strategic_partners
+    fiscal_baseline:
+      period: FY2025_ended_2026-03-31
+      accounting_basis: IFRS
+      currency: JPY
+      revenue_jpy_million: 18915995
+      operating_income: not_presented_as_a_consolidated_subtotal_in_reviewed_flash_report
+      profit_before_tax_jpy_million: 1096094
+      profit_for_year_jpy_million: 916726
+      profit_attributable_to_owners_jpy_million: 800460
+      underlying_operating_cash_flow_jpy_million: 1048100
+      boundary: >-
+        Mitsubishi Corporation is a diversified trading and investment company.
+        Profit before tax, attributable profit, and underlying operating cash flow
+        are not substitutes for operating income and are preserved as separate measures.
+    data_center_exposure:
+      role: 50_percent_joint_venture_partner_in_MC_Digital_Realty
+      confirmed_campus_refs: [dc_digital_realty_nrt_inzai_japan]
+      NRT_campus_context:
+        joint_venture_ownership: 50_50_with_Digital_Realty
+        buildings: [NRT10, NRT12, NRT14]
+        campus_IT_power_mw: approaching_100
+      boundary: >-
+        Consolidated revenue and profit cover Mitsubishi Corporation's global
+        portfolio. MC Digital Realty revenue, operating profit, capital invested,
+        and NRT site economics are not separately disclosed in reviewed sources.
+    management_outlook:
+      period: FY2026_ending_2027-03-31
+      profit_attributable_to_owners_jpy_million: 1100000
+      underlying_operating_cash_flow_jpy_million: 1250000
+      Corporate_Strategy_2027_planned_profit_growth_jpy_billion: 400
+      boundary: Company-wide forecast, not a data-center or MC Digital Realty forecast.
+    watch_items:
+      - commodity_and_global_trading_cycle
+      - equity_method_and_portfolio_valuation
+      - private_JV_disclosure_gap
+      - NRT_capacity_utilization_and_power_availability
+      - currency_and_financing_cost
+    sources:
+      - https://www.mitsubishicorp.com/jp/en/ir/library/earnings/pdf/202605e.pdf
+      - https://www.mitsubishicorp.com/jp/en/ir/library/meetings/pdf/260501/20260501e.pdf
+      - https://investor.digitalrealty.com/news-releases/news-release-details/digital-realty-opens-nrt14-data-center-third-facility-nrt-campus
+    confidence: high_for_company_financials_joint_venture_ownership_and_NRT_disclosed_capacity_low_for_JV_financials_and_site_economics
 
   - id: company_evergy
     company: Evergy
@@ -3711,6 +3841,8 @@ cross_company_read_through:
     - Equinix ended 2025 with 280 data centers, 392,300 consolidated cabinets, and 51,900 sellable cabinets in significant IBX projects under construction against an estimated $6.55 billion of capex. Digital Realty ended 2025 with 310 data centers, about 2.9 GW of in-place IT capacity, and 769 MW of projects underway, 64% preleased. Their high leasing and backlog demand must therefore be read together with the capital and power required to deliver capacity.
     - Digital Realty's Astra site has a utility-service path from 600 MW by early 2028 toward 2 GW at full delivery, and De Soto identifies Evergy as the utility coordinating customer-funded transmission and substation work. The site remains in planning and permitting, so service MW is not energized IT load or GPU inventory.
     - Evergy's FY2025 revenue was $5.96 billion and operating income $1.53 billion. Its signed large-load portfolio reaches about 2.5 GW of steady-state peak load and supports a $21.6 billion 2026-2030 capital plan, but no reviewed official source identifies Digital Realty as the anonymous fifth ESA customer; load, rate-base, and adjusted-EPS forecasts remain prospective.
+    - HPE's Q2 FY2026 Cloud & AI segment generated $7.71 billion of revenue and $954 million of operating income, while Data Center Networking revenue reached $320 million. Its planned role in HK6 demonstrates direct product exposure, but company and segment results cannot be attributed to the site and the installed GPU inventory remains undisclosed.
+    - Mitsubishi Corporation provides a diversified 50% ownership route into MC Digital Realty and the approaching-100-MW NRT campus, but its ¥18.9 trillion consolidated revenue spans a global trading and investment portfolio; the joint venture's revenue, operating profit, capex, and site returns are not separately disclosed.
     - Entergy links AI-campus demand directly to multi-gigawatt generation and transmission expansion, subject to regulation and construction execution.
     - Constellation's 20-year agreements with Microsoft and Meta and 380 MW CyrusOne agreement show generation owners converting AI-load growth into long-duration contracts; pricing is undisclosed and plant capacity must not be treated as dedicated campus load.
     - CoreWeave passed 1 GW of active power and reported $99.4 billion of revenue backlog in Q1 2026, but its GAAP operating loss and heavy interest burden show that contracted demand does not remove financing and depreciation risk.
