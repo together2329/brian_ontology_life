@@ -74,6 +74,9 @@ stack_layers:
     - HD_Hyundai_Electric
     - Bloom_Energy
   operators_reits_utilities:
+    - China_Telecom
+    - China_Mobile
+    - China_Unicom
     - Equinix
     - Digital_Realty
     - Applied_Digital
@@ -4883,6 +4886,178 @@ financial_profiles:
       - https://investors.dominionenergy.com/news/press-release-details/2026/NextEra-Energy-and-Dominion-Energy-file-to-combine-building-a-stronger-company-to-meet-growing-power-demand-across-four-of-Americas-fastest-growing-states-while-keeping-energy-affordable-and-reliable/default.aspx
     confidence: high_for_financials_guidance_hub_strategy_and_pending_transaction_terms_low_for_named_campus_contracts_and_revenue_allocation
 
+  - id: company_china_telecom
+    company: China_Telecom
+    layer: operators_reits_utilities
+    ownership_status: public_HKEX_0728_and_NYSE_delisted_state_controlled_operator
+    fiscal_baseline:
+      period: FY2025_ended_2025-12-31
+      accounting_basis: IFRS_unless_separately_labeled
+      currency: CNY
+      operating_revenue_cny_million: 529559
+      service_revenue_cny_million: 485424
+      operating_expenses_cny_million: 489885
+      operating_profit_cny_million: 39674
+      operating_margin_percent_derived: 7.49
+      profit_attributable_to_equity_holders_cny_million: 33185
+      EBITDA_cny_million: 143872
+      free_cash_flow_cny_million: 44700
+      capital_expenditure_cny_million: 80400
+      China_accounting_standards_operating_profit_cny_million: 45855
+      accounting_boundary: >-
+        The CNY39.674 billion IFRS operating profit is used for cross-company
+        comparison. The CNY45.855 billion China Accounting Standards operating
+        profit is retained separately and is not substituted into the IFRS row.
+    data_center_exposure:
+      role: integrated_telecom_cloud_AIDC_and_compute_network_operator
+      confirmed_campus_refs:
+        - dc_china_telecom_aidc_portfolio
+        - dc_china_telecom_shanghai_lingang_intelligent_computing_center
+      FY2025_China_Telecom_Cloud_revenue_cny_million: 120700
+      FY2025_AIDC_revenue_cny_million: 34500
+      AIDC_revenue_share_of_operating_revenue_percent_derived: 6.51
+      proprietary_intelligent_compute_EFLOPS: 46
+      rack_power_scale_gw_more_than: 3.2
+      total_resource_capacity_gw: 7
+      100MW_scale_AIDC_hub_parks: 15
+      high_power_projects_count_more_than: 20
+      high_power_projects_aggregate_capacity_gw: 1.2
+      data_center_operating_profit_and_campus_economics: undisclosed
+      boundary: >-
+        Cloud and AIDC revenue are different service scopes, and the published
+        7 GW, more-than-3.2 GW, and 1.2 GW capacity metrics are not additive.
+    management_outlook:
+      FY2026_capital_expenditure_cny_million: 73000
+      capex_change_percent: -9.2
+      FY2026_computing_infrastructure_share_of_capex_percent: 35
+      computing_infrastructure_capex_growth_percent: 26
+      FY2026_network_capex_share_percent: 41
+      FY2026_integrated_information_services_and_ancillary_infrastructure_share_percent: 24
+      stance: lower_total_capex_but_material_reallocation_toward_computing_infrastructure
+    watch_items:
+      - AIDC_revenue_growth_and_margin_disclosure
+      - 7GW_resource_3_2GW_rack_power_and_1_2GW_project_scope_reconciliation
+      - computing_capex_conversion_to_energized_high_density_capacity
+      - domestic_accelerator_availability_and_utilization
+      - power_interconnection_green_energy_and_liquid_cooling_execution
+      - cloud_and_AIDC_customer_concentration
+    sources:
+      - https://www.chinatelecom-h.com/en/ir/finhigh_income_statement.php
+      - https://www.chinatelecom-h.com/en/ir/faq.php
+      - https://www.chinatelecom-h.com/en/ir/presentations/annpre260324.pdf
+      - https://www.chinatelecom-h.com/sc/media/press/p260324.pdf
+    confidence: high_for_group_financials_AIDC_cloud_revenue_capacity_and_capex_outlook_low_for_data_center_operating_profit_and_campus_returns
+
+  - id: company_china_mobile
+    company: China_Mobile
+    layer: operators_reits_utilities
+    ownership_status: public_HKEX_0941_and_SSE_600941_state_controlled_operator
+    fiscal_baseline:
+      period: FY2025_ended_2025-12-31
+      accounting_basis: IFRS
+      currency: CNY
+      operating_revenue_cny_million: 1050187
+      principal_business_revenue_cny_million: 895530
+      operating_profit_cny_million: 148932
+      operating_margin_percent_derived: 14.18
+      profit_attributable_to_equity_shareholders_cny_million: 137095
+      EBITDA_cny_million: 338931
+    data_center_exposure:
+      role: integrated_telecom_compute_network_cloud_and_external_IDC_operator
+      confirmed_campus_refs:
+        - dc_china_mobile_compute_network_portfolio
+        - dc_china_mobile_hohhot_intelligent_computing_center
+        - dc_china_mobile_harbin_intelligent_computing_center
+      external_use_standard_racks_more_than: 1500000
+      standard_rack_definition_kW_equivalent: 2.5
+      standardized_power_equivalent_gw_more_than_derived: 3.75
+      total_intelligent_compute_EFLOPS_FP16: 92.5
+      compute_capacity_scope: self_built_plus_rented
+      FY2025_compute_and_AI_services_share_of_principal_business_revenue_percent: 20.2
+      compute_and_AI_services_revenue_cny_million_approximate_derived: 180897
+      standalone_IDC_revenue_operating_profit_and_capex: undisclosed
+      boundary: >-
+        The derived CNY180.897 billion applies the published 20.2% service mix
+        to principal-business revenue and includes services beyond data centers.
+        The standardized-rack figure is not a physical rack or measured-load ledger.
+    management_outlook:
+      FY2026_capital_expenditure_cny_billion: 136.6
+      capex_change_percent: -9.5
+      computing_investment_growth_percent: 62.4
+      AI_network_investment_growth_percent: 19.8
+      computing_plus_AI_network_share_of_capex_percent_more_than: 37
+      computing_and_AI_services_revenue_goal: double_by_end_of_15th_five_year_plan
+      stance: lower_total_capex_with_sharper_reallocation_to_computing_and_AI_networks
+    watch_items:
+      - physical_racks_and_measured_IT_load_behind_standardized_equivalents
+      - self_built_versus_rented_compute_capacity_and_margin
+      - accelerator_vendor_mix_utilization_and_refresh_cycle
+      - Hohhot_and_Harbin_power_cooling_and_green_energy_execution
+      - compute_and_AI_service_revenue_conversion_to_operating_profit
+      - capex_reallocation_execution
+    sources:
+      - https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0423/2026042300752.pdf
+      - https://www.hkexnews.hk/listedco/listconews/sehk/2026/0326/2026032600468.pdf
+      - https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0423/2026042301523.pdf
+      - https://www.sasac.gov.cn/n2588025/n2588124/c35388959/content.html
+    confidence: high_for_group_financials_compute_scale_standardized_racks_and_investment_direction_low_for_standalone_IDC_economics_physical_capacity_and_hardware_mix
+
+  - id: company_china_unicom
+    company: China_Unicom
+    layer: operators_reits_utilities
+    ownership_status: public_HKEX_0762_and_state_controlled_operator
+    fiscal_baseline:
+      period: FY2025_ended_2025-12-31
+      accounting_basis: IFRS
+      currency: CNY
+      revenue_cny_million: 392223
+      service_revenue_cny_million: 347740
+      operating_profit_cny_million_derived_from_income_statement: 18591
+      operating_margin_percent_derived: 4.74
+      profit_before_income_tax_cny_million: 25453
+      profit_attributable_to_equity_shareholders_cny_million: 20816
+      capital_expenditure_cny_million: 54200
+      operating_profit_boundary: >-
+        Operating profit is reconstructed from the official income-statement
+        revenue, other income, and expense rows and agrees with the rounded
+        CNY18.59 billion presentation figure.
+    data_center_exposure:
+      role: integrated_telecom_cloud_AIDC_and_compute_network_operator
+      confirmed_campus_refs:
+        - dc_china_unicom_aidc_portfolio
+        - dc_china_unicom_qinghai_sanjiangyuan
+      FY2025_data_center_revenue_cny_million: 28100
+      data_center_revenue_growth_percent: 8.5
+      data_center_revenue_share_of_group_revenue_percent_derived: 7.16
+      Unicom_Cloud_revenue_growth_percent: 5.2
+      Unicom_Cloud_absolute_revenue: undisclosed
+      intelligent_compute_EFLOPS: 45
+      standard_cabinets_more_than: 1100000
+      standard_cabinet_definition_kW_equivalent: 2.5
+      standardized_power_equivalent_gw_more_than_derived: 2.75
+      cabinet_utilization_percent_more_than: 72
+      100MW_grade_AIDC_campuses: 7
+      data_center_operating_profit_capex_and_campus_economics: undisclosed
+      boundary: >-
+        Standard cabinets are 2.5 kW equivalents, not a verified physical-rack
+        count or measured IT load. Cloud growth is not added to data-center revenue.
+    management_outlook:
+      FY2026_capital_expenditure_cny_billion_approximate: 50
+      computing_share_of_capex_percent_more_than: 35
+      stance: stable_total_investment_with_more_than_one_third_directed_to_computing
+    watch_items:
+      - data_center_revenue_growth_margin_and_cash_conversion
+      - seven_AIDC_campus_roster_and_delivery
+      - physical_capacity_behind_standardized_cabinets
+      - intelligent_compute_hardware_mix_utilization_and_site_allocation
+      - Sanjiangyuan_phase_and_green_power_project_execution
+      - absolute_Unicom_Cloud_revenue_and_scope
+    sources:
+      - https://www.chinaunicom.com.hk/en/ir/reports/ar2025.pdf
+      - https://www.chinaunicom.com.hk/en/ir/presentations/pre260319.pdf
+      - https://www.chinaunicom.com.hk/en/ir/income_statement.php
+    confidence: high_for_group_financials_data_center_revenue_capacity_utilization_and_capex_direction_low_for_data_center_margin_physical_capacity_and_hardware_inventory
+
 cross_company_read_through:
   current_signals:
     - Hyperscale buyers are funding the demand wave directly: Meta raised its 2026 capex range, Amazon's free cash flow fell as AI property investment rose, and Oracle is financing rapid OCI expansion against a very large AI-heavy RPO.
@@ -4917,6 +5092,9 @@ cross_company_read_through:
     - Baidu disclosed a 32,000-card Kunlunxin P800 cluster in scaled use with effective training above 98%, but no campus, rack count, measured MW, or utilization ledger. Its later Tianchi rack design supports 64 cards, 33-120 kW of rack power, 10+2 PSU redundancy, and hybrid liquid-air cooling; the reviewed evidence does not establish that the 32,000-card cluster uses this exact rack.
     - Baidu's Yangquan first phase supports a published 160,000-server design scale, while the 2019 second-phase plan added more than 80,000 high-performance AI servers and the 2025 D15 plan about 5,000 racks. Those are different lifecycle measures. The site's 1.12 campus PUE, 1.08 module metric, and below-1.15 phase-two target are also kept separate, and the company-wide P800 fleet is not assigned to Yangquan.
     - Baidu FY2025 AI Cloud Infra revenue reached CNY19.8 billion, up 34%, while consolidated GAAP operating loss was CNY5.8 billion after a CNY16.2 billion long-lived-asset impairment; operating income excluding that impairment was about CNY10.4 billion. AI Cloud Infra operating profit and capex remain undisclosed, and the proposed Kunlunxin spin-off is a possible valuation catalyst rather than a completed transaction.
+    - China Telecom reported CNY34.5 billion of FY2025 AIDC revenue, 46 EFLOPS of proprietary intelligent compute, more than 3.2 GW of rack-power scale, and 15 100-MW-scale AIDC hub parks. Its separate 7 GW resource-capacity and 1.2 GW high-power-project figures use different scopes and are not added; AIDC operating profit remains undisclosed.
+    - China Mobile reported 92.5 FP16 EFLOPS across self-built and rented intelligent compute and more than 1.5 million 2.5-kW-equivalent racks for external IDC service. Hohhot and Harbin disclose about 20,000 and 18,000 AI accelerator cards respectively, but neither exact models nor campus IT MW are public. Its CNY148.9 billion operating profit covers the whole telecom group, not data centers.
+    - China Unicom generated CNY28.1 billion of FY2025 data-center revenue, operated more than 1.1 million 2.5-kW-equivalent cabinets at more than 72% utilization, and reported 45 EFLOPS plus seven 100-MW-grade AIDC campuses. The exact seven-campus roster, physical cabinet count, accelerator allocation, and data-center operating profit remain undisclosed.
     - Alphabet's latest $180-$190 billion 2026 capex range, with the overwhelming majority for technical infrastructure, makes it one of the largest current demand sources; rising Cloud operating profit shows monetization is already visible even though campus economics remain undisclosed.
     - NVIDIA's latest Data Center revenue shows that accelerator and network spending remains the largest disclosed value pool in this set.
     - AMD's multi-year Meta agreement and latest Data Center segment growth show a second merchant-GPU path, but planned gigawatts are not current shipments.

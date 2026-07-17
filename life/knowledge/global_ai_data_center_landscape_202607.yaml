@@ -7177,6 +7177,383 @@ campus_profiles:
         url: https://fgw.yq.gov.cn/fgdt/xwdt/202506/t20250603_2071124.html
     confidence: high_for_address_phase_scale_power_cooling_and_PUE_low_for_current_installed_servers_IT_MW_and_accelerator_inventory
 
+  - id: dc_china_telecom_aidc_portfolio
+    name: China Telecom AIDC and computing-infrastructure portfolio
+    record_granularity: operator_portfolio_not_one_physical_campus
+    operator: China_Telecom
+    country: CN
+    lifecycle_as_of_2026_07_18: operating_and_expanding
+    location:
+      disclosed_100MW_scale_AIDC_hub_parks:
+        - Jiangsu_Yizheng
+        - Huailai
+        - Zhangbei
+        - Beijing_Tianjin_Hebei
+        - Inner_Mongolia_Information_Park
+        - Ningxia_Zhongwei
+        - Nanjing_Jishan
+        - Shanghai_Lingang
+        - Guizhou_Information_Park
+        - Wuhu
+        - Hangzhou
+        - Shaoguan
+        - Gansu_Qingyang
+        - Jiaxing
+        - Hefei
+      disclosed_100MW_scale_AIDC_hub_parks_count: 15
+      exact_building_address_ownership_and_lifecycle_by_park: mostly_undisclosed
+    portfolio_scale:
+      total_resource_capacity_gw: 7
+      rack_power_scale_gw_more_than: 3.2
+      high_power_projects:
+        project_definition_MW_or_more: 10
+        project_count_more_than: 20
+        aggregate_capacity_gw: 1.2
+      high_power_rack_total_power_growth_percent_more_than: 35
+      metric_boundary: >-
+        The 7 GW resource-capacity headline, more-than-3.2 GW rack-power scale,
+        and 1.2 GW aggregate capacity of projects rated at least 10 MW are three
+        different published scopes. They are not summed or treated as energized
+        IT load.
+    accelerators_and_compute:
+      proprietary_intelligent_compute_EFLOPS: 46
+      growth_percent_more_than: 30
+      precision_workload_and_hardware_basis: undisclosed
+      exact_GPU_NPU_models_counts_racks_utilization_and_site_allocation: undisclosed
+    network:
+      hub_node_latency_ms_less_than: 12
+      exact_route_redundancy_and_interconnect_capacity_by_park: undisclosed
+    electrical_and_construction:
+      portfolio_design_principles:
+        - centralized_large_power_supply_and_cooling_source_equipment
+        - micro_module_elastic_units
+        - prefabricated_construction
+        - high_density
+        - high_IT_output
+        - flexible_expansion
+        - flexible_construction
+      substations_transformers_switchgear_UPS_generators_storage_and_equipment_OEMs_by_site: undisclosed
+    cooling_water_and_efficiency:
+      portfolio_architecture_context: integrated_cooling_plant_with_elastic_micro_modules
+      fleet_PUE_WUE_water_consumption_and_liquid_cooled_capacity: undisclosed
+    commercial_context:
+      FY2025_AIDC_revenue_cny_billion: 34.5
+      boundary: Revenue is operator-level AIDC revenue, not campus revenue or operating profit.
+    linked_companies:
+      owner_and_operator: [China_Telecom]
+      financial_profile_refs: [company_china_telecom]
+    sources:
+      - title: China Telecom 2025 annual results presentation
+        publisher: China_Telecom
+        date: 2026-03-24
+        url: https://www.chinatelecom-h.com/en/ir/presentations/annpre260324.pdf
+      - title: China Telecom 2025 annual results release
+        publisher: China_Telecom
+        date: 2026-03-24
+        url: https://www.chinatelecom-h.com/sc/media/press/p260324.pdf
+    confidence: high_for_published_portfolio_capacity_compute_revenue_and_named_hub_parks_low_for_scope_reconciliation_per_site_lifecycle_and_hardware_inventory
+
+  - id: dc_china_telecom_shanghai_lingang_intelligent_computing_center
+    name: China Telecom Shanghai Lingang Intelligent Computing Center
+    record_granularity: named_multi_phase_AI_data_center_campus
+    operator: China_Telecom
+    country: CN
+    region: Shanghai
+    locality: Lingang_New_Area
+    lifecycle_as_of_2026_07_18: operating_and_expanding
+    location:
+      exact_street_address_coordinates_parcel_and_building_roster: undisclosed_in_reviewed_sources
+    campus_scale:
+      ten_thousand_card_public_cluster_operating_since: 2024-03-22
+      phase_three_plan:
+        planned_racks_approximate: 40000
+        air_cooled_standard_rack_density_kW: 8
+        liquid_cooled_rack_density_kW_options: [20, 40, 60]
+        completion_energization_and_current_occupancy: undisclosed
+      exact_operating_racks_IT_MW_and_utilization: undisclosed
+    accelerators:
+      operating_cluster:
+        accelerator_cards_approximate: 10000
+        company_claim: first_domestic_single_pool_fully_domestic_liquid_cooled_public_cluster
+        exact_vendor_model_and_card_count: undisclosed
+      Huawei_Ascend_910B_task_migration_test:
+        cards_used: 104
+        inventory_boundary: A workload-migration test, not the campus accelerator inventory.
+    electrical_and_generation:
+      resilience_and_grid_topology: undisclosed
+      announced_clean_energy_design_options:
+        - onsite_photovoltaics
+        - offshore_wind_direct_supply
+        - hydrogen
+        - energy_storage
+      green_power_direction_as_of_2025_07: moving_toward_100_percent_green_power
+      boundary: >-
+        Announced clean-energy design and procurement pathways do not establish
+        that every source is operating or dedicated to the campus today.
+      substation_voltage_transformers_switchgear_UPS_generators_storage_capacity_and_OEMs: undisclosed
+    cooling_water_and_efficiency:
+      architecture:
+        - next_generation_liquid_cooled_data_center_cabins
+        - direct_to_chip_cold_plate_liquid_cooling
+        - immersion_liquid_cooling
+        - conventional_air_cooling_for_standard_racks
+      phase_three_design_PUE_less_than: 1.25
+      current_measured_campus_PUE_WUE_water_consumption_and_liquid_cooled_MW: undisclosed
+      boundary: Below-1.25 is a phase-three design target, not a verified current campus average.
+    linked_companies:
+      owner_and_operator: [China_Telecom]
+      tested_accelerator_vendor: [Huawei]
+      financial_profile_refs: [company_china_telecom, company_huawei]
+    sources:
+      - title: China Telecom Lingang domestic liquid-cooled 10000-card public cluster begins operation
+        publisher: China_Telecom
+        date: 2024-03-22
+        url: https://www.chinatelecom.com.cn/ct/news/yunjisuanjisuanli/154833.html
+      - title: China Telecom Lingang phase-three rack and cooling design
+        publisher: China_Telecom
+        date: 2024
+        url: https://www.chinatelecom.com.cn/ct/news/yunjisuanjisuanli/154900.html
+      - title: China Telecom Lingang green-power development
+        publisher: China_Telecom
+        date: 2025-07
+        url: https://www.chinatelecom.com.cn/ct/news/yunjisuanjisuanli/154917.html
+      - title: Lingang 104-card Ascend 910B workload-migration test
+        publisher: China_Telecom
+        date: 2025
+        url: https://www.chinatelecom.com.cn/ct/news/gdxw/164282.html
+    confidence: high_for_operating_cluster_scale_test_count_cooling_options_and_design_PUE_low_for_exact_address_live_racks_IT_MW_power_chain_and_full_hardware_inventory
+
+  - id: dc_china_mobile_compute_network_portfolio
+    name: China Mobile computing network and external IDC portfolio
+    record_granularity: operator_compute_and_standardized_IDC_portfolio_not_one_physical_campus
+    operator: China_Mobile
+    country: CN
+    lifecycle_as_of_2026_07_18: operating_and_expanding
+    location:
+      national_intelligent_compute_training_nodes: 2
+      regional_intelligent_compute_nodes: 12
+      exact_site_and_building_roster: undisclosed_in_reviewed_sources
+    portfolio_scale:
+      external_use_standard_racks_more_than: 1500000
+      standard_rack_definition_kW_equivalent: 2.5
+      standardized_power_equivalent_gw_more_than_derived: 3.75
+      boundary: >-
+        More than 1.5 million is a 2.5 kW standardized-rack equivalent used for
+        external IDC service, not a disclosed physical cabinet count, measured
+        IT load, or utility-service capacity. The 3.75 GW value is arithmetic on
+        that equivalence only.
+    accelerators_and_compute:
+      total_intelligent_compute_EFLOPS_FP16: 92.5
+      capacity_scope: self_built_plus_rented
+      supported_cluster_size_classes:
+        - 100_card
+        - 1000_card
+        - 10000_card
+        - greater_than_10000_card
+      exact_fleet_GPU_NPU_models_counts_racks_utilization_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      fleet_substations_transformers_switchgear_UPS_generators_storage_PUE_WUE_water_and_OEMs: undisclosed
+    commercial_context:
+      FY2025_compute_and_AI_services_share_of_principal_business_revenue_percent: 20.2
+      standalone_IDC_revenue_and_operating_profit: undisclosed
+      boundary: The revenue share includes services beyond physical data centers.
+    linked_companies:
+      owner_and_operator: [China_Mobile]
+      financial_profile_refs: [company_china_mobile]
+    sources:
+      - title: China Mobile 2025 annual results announcement
+        publisher: China_Mobile
+        date: 2026-03-26
+        url: https://www.hkexnews.hk/listedco/listconews/sehk/2026/0326/2026032600468.pdf
+      - title: China Mobile 2025 sustainability report
+        publisher: China_Mobile
+        date: 2026-04-23
+        url: https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0423/2026042301523.pdf
+      - title: China Mobile 2025 operating review
+        publisher: State_owned_Assets_Supervision_and_Administration_Commission
+        date: 2026
+        url: https://www.sasac.gov.cn/n2588025/n2588124/c35388959/content.html
+    confidence: high_for_standardized_rack_equivalent_FP16_compute_and_node_counts_low_for_physical_racks_per_site_power_and_hardware_inventory
+
+  - id: dc_china_mobile_hohhot_intelligent_computing_center
+    name: China Mobile Hohhot Intelligent Computing Center
+    record_granularity: named_AI_compute_center
+    operator: China_Mobile
+    country: CN
+    region: Inner_Mongolia
+    locality: Hohhot
+    lifecycle_as_of_2026_07_18: operating
+    location:
+      exact_street_address_coordinates_parcel_and_building_roster: undisclosed_in_reviewed_sources
+    campus_scale:
+      exact_racks_IT_MW_utility_service_and_utilization: undisclosed
+    accelerators:
+      AI_accelerator_cards_approximate: 20000
+      compute_EFLOPS_FP16: 6.7
+      company_claim: worlds_largest_single_unit_liquid_cooled_intelligent_computing_center_among_global_operators
+      exact_vendor_models_card_mix_rack_density_and_utilization: undisclosed
+    electrical_and_generation:
+      grid_power_chain_and_equipment_OEMs: undisclosed
+      green_electricity_share_2024_percent: 66
+    cooling_water_and_efficiency:
+      architecture: liquid_cooled
+      PUE_2024: 1.163
+      WUE_water_consumption_liquid_cooled_MW_and_cooling_OEMs: undisclosed
+      boundary: PUE and green-electricity share are dated 2024 site disclosures; accelerator count and compute scale are later 2025 disclosures.
+    linked_companies:
+      owner_and_operator: [China_Mobile]
+      financial_profile_refs: [company_china_mobile]
+    sources:
+      - title: China Mobile 2025 sustainability report
+        publisher: China_Mobile
+        date: 2026-04-23
+        url: https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0423/2026042301523.pdf
+      - title: China Mobile 2024 sustainability report
+        publisher: China_Mobile
+        date: 2025
+        url: https://www.chinamobileltd.com/en/esg/sd/2024/06.pdf
+    confidence: high_for_accelerator_count_FP16_compute_PUE_green_power_share_and_liquid_cooling_low_for_exact_hardware_power_chain_and_rack_inventory
+
+  - id: dc_china_mobile_harbin_intelligent_computing_center
+    name: China Mobile Harbin Intelligent Computing Center
+    record_granularity: named_AI_compute_center
+    operator: China_Mobile
+    country: CN
+    region: Heilongjiang
+    locality: Harbin
+    lifecycle_as_of_2026_07_18: operating
+    location:
+      exact_street_address_coordinates_parcel_and_building_roster: undisclosed_in_reviewed_sources
+    campus_scale:
+      exact_racks_IT_MW_utility_service_and_utilization: undisclosed
+    accelerators:
+      AI_accelerator_cards: 18000
+      compute_EFLOPS_FP16: 6.93
+      domestically_produced_and_independently_controllable_percent: 100
+      company_claim: worlds_largest_single_cluster_intelligent_computing_center_among_operators
+      exact_vendor_models_card_mix_rack_density_and_utilization: undisclosed
+    electrical_and_generation:
+      grid_power_chain_green_power_share_and_equipment_OEMs: undisclosed
+    cooling_water_and_efficiency:
+      architecture_PUE_WUE_water_consumption_and_OEMs: undisclosed
+    linked_companies:
+      owner_and_operator: [China_Mobile]
+      financial_profile_refs: [company_china_mobile]
+    sources:
+      - title: China Mobile 2025 sustainability report
+        publisher: China_Mobile
+        date: 2026-04-23
+        url: https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0423/2026042301523.pdf
+    confidence: high_for_accelerator_count_FP16_compute_and_domestic_control_claim_low_for_exact_hardware_racks_power_and_cooling
+
+  - id: dc_china_unicom_aidc_portfolio
+    name: China Unicom AIDC and data-center portfolio
+    record_granularity: operator_portfolio_not_one_physical_campus
+    operator: China_Unicom
+    country: CN
+    lifecycle_as_of_2026_07_18: operating_and_expanding
+    location:
+      100MW_grade_AIDC_campuses: 7
+      exact_seven_campus_roster_and_building_reconciliation: undisclosed
+    portfolio_scale:
+      standard_cabinets_more_than: 1100000
+      standard_cabinet_definition_kW_equivalent: 2.5
+      standardized_power_equivalent_gw_more_than_derived: 2.75
+      standard_cabinet_growth_percent: 10
+      cabinet_utilization_percent_more_than: 72
+      utilization_change_percentage_points: 3.8
+      boundary: >-
+        The cabinet figure is a 2.5 kW standardized equivalent, not a verified
+        physical cabinet count or measured IT load. The 2.75 GW value is
+        arithmetic on that equivalence only.
+    accelerators_and_compute:
+      intelligent_compute_EFLOPS: 45
+      annual_increase_EFLOPS: 28
+      precision_workload_hardware_mix_and_per_site_allocation: undisclosed
+    electrical_and_cooling:
+      large_and_mega_data_center_PUE_year_over_year_reduction_percent: 5
+      absolute_fleet_PUE_WUE_water_consumption_power_chain_and_equipment_OEMs: undisclosed
+    commercial_context:
+      FY2025_data_center_revenue_cny_billion: 28.1
+      revenue_growth_percent: 8.5
+      Unicom_Cloud_revenue_growth_percent: 5.2
+      cloud_revenue_absolute_and_data_center_operating_profit: undisclosed
+    linked_companies:
+      owner_and_operator: [China_Unicom]
+      financial_profile_refs: [company_china_unicom]
+    sources:
+      - title: China Unicom 2025 annual report
+        publisher: China_Unicom
+        date: 2026-03-19
+        url: https://www.chinaunicom.com.hk/en/ir/reports/ar2025.pdf
+      - title: China Unicom 2025 annual results presentation
+        publisher: China_Unicom
+        date: 2026-03-19
+        url: https://www.chinaunicom.com.hk/en/ir/presentations/pre260319.pdf
+    confidence: high_for_standardized_cabinets_utilization_compute_data_center_revenue_and_campus_count_low_for_exact_campus_roster_physical_racks_power_and_hardware
+
+  - id: dc_china_unicom_qinghai_sanjiangyuan
+    name: China Unicom Qinghai Sanjiangyuan Green Data Center
+    record_granularity: named_multi_phase_compute_campus
+    operator: China_Unicom
+    country: CN
+    region: Qinghai
+    locality: Xining_Nanchuan_Industrial_Park
+    lifecycle_as_of_2026_07_18: operating_and_expanding
+    location:
+      development_zone: Xining_National_Economic_and_Technological_Development_Zone
+      exact_street_address_coordinates_and_parcel_boundary: undisclosed_in_reviewed_sources
+    campus_scale:
+      disclosed_standard_racks: 6000
+      network_bandwidth_G: 3600
+      compute_scale_PFlops: 2600
+      compute_unit_boundary: Precision and workload basis are not disclosed; the value is not converted to GPU count or MW.
+      later_phase_status: phases_two_and_three_under_development_in_2024_sources
+      projected_full_build_compute_PFlops: 20000
+      current_phase_buildings_racks_energization_IT_MW_and_utilization: undisclosed
+    accelerators:
+      GPU_NPU_models_counts_rack_density_and_utilization: undisclosed
+      China_Unicom_45_EFLOPS_portfolio_allocation: not_publicly_established
+    network:
+      topology: dual_ring_to_national_tier_one_backbone
+      named_city_links: disclosed_but_not_normalized_in_this_record
+      average_bidirectional_latency_ms_less_than: 20
+    electrical_and_generation:
+      operating_or_disclosed_campus_microgrid:
+        combined_wind_solar_storage_and_charging_capacity_MW: 6
+        annual_green_electricity_generation_kwh_approximate: 10000000
+        onsite_consumption_of_generated_green_power_percent: 100
+      planned_2026_project_not_yet_operating:
+        solar_PV_MW: 135
+        substation_voltage_kV: 110
+        source_side_storage_MW: 45
+        source_side_storage_MWh: 180
+        export_line_km_approximate: 13
+        expected_annual_generation_kwh_more_than: 180000000
+        status: investment_record_filing_as_of_2026_04
+      utility_service_capacity_transformers_switchgear_UPS_generators_and_equipment_OEMs: undisclosed
+      boundary: The 135 MW solar and 45 MW/180 MWh storage project is planned and is not counted as operating campus supply.
+    cooling_water_and_efficiency:
+      annual_average_PUE: 1.17
+      WUE_water_consumption_liquid_cooling_architecture_and_OEMs: undisclosed
+    linked_companies:
+      owner_and_operator: [China_Unicom]
+      financial_profile_refs: [company_china_unicom]
+    sources:
+      - title: Sanjiangyuan green data-center scale network and efficiency
+        publisher: Xining_Economic_and_Technological_Development_Zone
+        date: 2024
+        url: https://jkq.xining.gov.cn/index.php?c=show&id=64304
+      - title: Sanjiangyuan 6 MW wind solar storage charging microgrid
+        publisher: Xining_Economic_and_Technological_Development_Zone
+        date: 2024
+        url: https://jkq.xining.gov.cn/index.php?c=show&id=64436
+      - title: Sanjiangyuan planned 135 MW photovoltaic and storage project filing
+        publisher: Xining_Economic_and_Technological_Development_Zone
+        date: 2026-04
+        url: https://jkq.xining.gov.cn/index.php?c=show&id=65070
+    confidence: high_for_locality_published_racks_compute_network_PUE_and_energy_projects_low_for_current_phase_reconciliation_IT_MW_and_accelerator_inventory
+
 disclosure_gap_register:
   - exact_global_physical_data_center_count
   - exact_per_campus_GPU_inventory_for_most_hyperscalers
@@ -7264,6 +7641,12 @@ disclosure_gap_register:
   - Baidu_Yangquan_current_server_rack_IT_MW_accelerator_and_D15_energization_status
   - Baidu_AI_Cloud_Infra_revenue_to_operating_profit_capex_and_cash_conversion
   - Kunlunxin_standalone_financials_foundry_packaging_memory_network_and_customer_mix
+  - China_Telecom_7GW_resource_to_3_2GW_rack_power_and_1_2GW_high_power_project_scope_reconciliation
+  - China_Telecom_per_AIDC_park_live_racks_IT_MW_accelerators_utilization_and_electrical_BOM
+  - China_Mobile_1_5_million_standardized_racks_to_physical_cabinets_and_measured_IT_load_reconciliation
+  - China_Mobile_self_built_rented_compute_split_and_per_site_accelerator_power_cooling_inventory
+  - China_Unicom_seven_100MW_AIDC_campus_roster_physical_racks_power_and_accelerator_allocation
+  - Sanjiangyuan_current_phase_energization_IT_MW_accelerators_liquid_cooling_and_electrical_BOM
 
 next_research_queue:
   campus_enrichment:
