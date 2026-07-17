@@ -97,6 +97,523 @@ global_market_baseline:
       url: https://www.srgresearch.com/articles/hyperscale-data-center-count-hits-1136-average-size-increases-us-accounts-for-54-of-total-capacity
 
 campus_profiles:
+  - id: dc_equinix_global_ibx_xscale_portfolio
+    name: Equinix global IBX and xScale portfolio
+    record_granularity: global_operator_portfolio_not_one_physical_campus
+    operator: Equinix
+    lifecycle_as_of_2026_07_17: operating_and_expanding
+    location:
+      FY2025_year_end:
+        total_data_centers: 280
+        consolidated_IBX_data_centers: 255
+        unconsolidated_data_centers: 25
+        unconsolidated_xScale_data_centers: 23
+        other_unconsolidated_IBX_data_centers: [MC1, SN1]
+        company_reported_markets: 77
+      current_marketing_snapshot_accessed_2026_07_17:
+        data_centers: 281
+        metros_more_than: 77
+        continents: 6
+        boundary: >-
+          This current company webpage is one facility above the audited
+          2025 year-end count. The additional facility is not identified here
+          without a dated portfolio reconciliation.
+      FY2025_consolidated_IBX_inventory:
+        Americas:
+          data_centers: 109
+          total_cabinets: 157400
+          billed_cabinets: 123700
+          utilization_percent: 79
+          monthly_recurring_revenue_per_cabinet_usd: 2694
+          property_table_metro_labels:
+            - Atlanta
+            - Bogota
+            - Boston
+            - Calgary
+            - Chicago
+            - Culpeper
+            - Dallas
+            - Washington_DC_Ashburn
+            - Denver
+            - Houston
+            - Kamloops
+            - Lima
+            - Los_Angeles
+            - Mexico_City
+            - Miami
+            - Monterrey
+            - Montreal
+            - New_York
+            - Ottawa
+            - Philadelphia
+            - Rio_de_Janeiro
+            - Saint_John
+            - Santiago
+            - Sao_Paulo
+            - Seattle
+            - Silicon_Valley
+            - Toronto
+            - Vancouver
+            - Winnipeg
+        EMEA:
+          data_centers: 88
+          total_cabinets: 141300
+          billed_cabinets: 107200
+          utilization_percent: 76
+          monthly_recurring_revenue_per_cabinet_usd: 2418
+          property_table_metro_labels:
+            - Abidjan
+            - Abu_Dhabi
+            - Accra
+            - Amsterdam
+            - Barcelona
+            - Bordeaux
+            - Dubai
+            - Dublin
+            - Dusseldorf
+            - East_Netherlands
+            - Frankfurt
+            - Geneva
+            - Genoa
+            - Hamburg
+            - Helsinki
+            - Istanbul
+            - Johannesburg
+            - Lagos
+            - Lisbon
+            - London
+            - Madrid
+            - Manchester
+            - Milan
+            - Munich
+            - Muscat
+            - Paris
+            - Salalah
+            - Sofia
+            - Stockholm
+            - Warsaw
+            - Zurich
+        Asia_Pacific:
+          data_centers: 58
+          total_cabinets: 93600
+          billed_cabinets: 68400
+          utilization_percent: 73
+          monthly_recurring_revenue_per_cabinet_usd: 2355
+          property_table_metro_labels:
+            - Adelaide
+            - Brisbane
+            - Canberra
+            - Chennai
+            - Hong_Kong
+            - Jakarta
+            - Johor
+            - Kuala_Lumpur
+            - Manila
+            - Melbourne
+            - Mumbai
+            - Osaka
+            - Perth
+            - Seoul
+            - Shanghai
+            - Singapore
+            - Sydney
+            - Tokyo
+        total:
+          data_centers: 255
+          total_cabinets: 392300
+          billed_cabinets: 299300
+          utilization_percent_approximate: 77
+      market_count_reconciliation_gap: >-
+        The 2025 property-table metro labels total 78 while the company reports
+        77 markets. The labels are preserved as disclosed because East Netherlands
+        or another property grouping may not map one-to-one to a marketing market.
+    portfolio_scale:
+      2025_openings: 16
+      2025_retail_cabinets_delivered_more_than: 23250
+      2025_xScale_capacity_delivered_mw_more_than: 90
+      major_development_projects_at_2025_year_end: 52
+      development_metros: 35
+      planned_delivery_through_2028:
+        retail_cabinets_more_than: 55000
+        xScale_capacity_mw_more_than: 100
+      significant_IBX_projects_under_construction:
+        sellable_cabinets_total: 51900
+        estimated_capex_usd_billion: 6.549
+        regional_breakdown:
+          Americas: {sellable_cabinets: 19950, estimated_capex_usd_billion: 2.648}
+          EMEA: {sellable_cabinets: 16175, estimated_capex_usd_billion: 2.338}
+          Asia_Pacific: {sellable_cabinets: 15775, estimated_capex_usd_billion: 1.563}
+      land_acquisition_markets: [Amsterdam, Chicago, London, Milan, Mumbai, Toronto]
+      land_supported_retail_and_xScale_capacity_gw_approximate: 1
+      announced_US_xScale_joint_venture:
+        partners: [GIC, Canada_Pension_Plan_Investment_Board]
+        enterprise_value_usd_billion_more_than: 15
+        planned_campuses: multiple_greater_than_100_MW_campuses
+        eventual_capacity_gw_more_than: 1.5
+        status: announced_future_program_not_current_operating_capacity
+    current_announced_expansion_targets:
+      Q2_2026: [MD5_Madrid, LG3_Lagos, PA12x_Paris]
+      Q3_2026: [IL3_Istanbul]
+      Q4_2026: [SP7_Sao_Paulo, SV18_Silicon_Valley]
+      Q1_2027: [OS5x_Osaka, SG6_Singapore, LD14_London]
+      Q2_2027: [PA14_Paris]
+      timing_boundary: Company target quarters are not treated as completed openings.
+    accelerators:
+      exact_global_or_per_site_GPU_count: undisclosed
+      disclosed_AI_platform_context: >-
+        Equinix hosts customer and partner AI infrastructure, but reviewed
+        portfolio sources do not disclose an owned or installed global GPU fleet.
+      prohibited_inference: Cabinet inventory and xScale MW must not be converted into GPU counts.
+    electrical_and_generation:
+      new_IBX_design_power_and_cooling_density_relative_to_earlier_IBX_approximate: 2x
+      operational_constraint: >-
+        Rising customer power per cabinet can exhaust power capacity before
+        physical cabinet capacity. Portfolio MW, utility interconnections,
+        substations, UPS, generators, and OEM awards are not comprehensively disclosed.
+    cooling_and_water:
+      direct_to_chip_support_announced_2023:
+        IBX_data_centers_more_than: 100
+        metros_more_than: 45
+      liquid_to_air_heat_exchanger_availability: near_every_IBX
+      new_data_center_default_as_of_2026: liquid_cooling_enabled
+      global_2024_PUE: 1.39
+      global_2024_WUE: 0.95
+      boundary: >-
+        Cooling availability and portfolio averages are not proof of installed
+        liquid cooling, rack density, PUE, or WUE at every facility.
+    sustainability:
+      renewable_energy_coverage_2024_percent: 96
+      contracted_PPA_capacity_2024_gw: 1.2
+      current_marketing_renewable_coverage_percent: 96
+      boundary: Renewable coverage is an annual portfolio claim, not proof of onsite or hourly matched supply.
+    linked_companies:
+      operator: [Equinix]
+      US_xScale_joint_venture_partners: [GIC, Canada_Pension_Plan_Investment_Board]
+      financial_profile_refs: [company_equinix]
+    sources:
+      - title: Equinix 2025 Form 10-K
+        publisher: Equinix
+        date: 2026-02-19
+        url: https://investor.equinix.com/sec-filings/all-sec-filings/content/0001101239-26-000032/eqix-20251231.htm
+      - title: Equinix colocation footprint
+        publisher: Equinix
+        date: 2026-07-17_accessed
+        url: https://www.equinix.com/product-solutions/colocation
+      - title: Equinix data-center expansions
+        publisher: Equinix
+        date: 2026-07-17_accessed
+        url: https://www.equinix.com/data-centers/expansions
+      - title: Equinix to expand liquid cooling deployments
+        publisher: Equinix
+        date: 2023-12-14
+        url: https://newsroom.equinix.com/2023-12-14-Equinix-to-Accelerate-and-Simplify-Liquid-Cooling-Deployments-to-Power-Enterprise-AI-Workloads
+      - title: Equinix 2024 Sustainability Report
+        publisher: Equinix
+        date: 2025-04
+        url: https://sustainability.equinix.com/wp-content/uploads/2025/04/Equinix-Inc_2024-Sustainability-Report.pdf
+      - title: Equinix agrees to form greater-than-$15-billion US xScale joint venture
+        publisher: Equinix
+        date: 2024-10-01
+        url: https://newsroom.equinix.com/2024-10-01-Equinix-Agrees-to-Form-Greater-Than-15B-JV-to-Expand-Hyperscale-Data-Centers-in-the-U-S-and-Support-Growing-AI-and-Cloud-Innovation
+    confidence: high_for_audited_portfolio_inventory_and_development_metrics_medium_for_current_marketing_snapshot_low_for_per_site_power_cooling_and_GPU_inventory
+
+  - id: dc_digital_realty_global_portfolio
+    name: Digital Realty global data-center portfolio
+    record_granularity: global_operator_portfolio_not_one_physical_campus
+    operator: Digital_Realty
+    lifecycle_as_of_2026_07_17: operating_and_expanding
+    location:
+      FY2025_year_end:
+        total_data_centers: 310
+        consolidated_or_controlled_data_centers_derived: 221
+        unconsolidated_data_centers: 89
+        metros: 56
+        countries: 31
+        continents: 6
+        regional_building_counts:
+          US: 118
+          Europe: 113
+          Latin_America: 36
+          Africa: 16
+          Asia: 18
+          Australia: 6
+          Canada: 3
+      property_table_inventory:
+        controlled_or_consolidated:
+          North_America:
+            Northern_Virginia: 16
+            Chicago: 7
+            New_York: 10
+            Dallas: 16
+            Portland: 3
+            Silicon_Valley: 11
+            Phoenix: 2
+            Toronto: 2
+            San_Francisco: 5
+            Seattle: 1
+            Atlanta: 3
+            Los_Angeles: 2
+            Houston: 6
+            Boston: 2
+            Austin: 1
+            Miami: 1
+            Charlotte: 3
+          EMEA:
+            Frankfurt: 24
+            London: 13
+            Amsterdam: 13
+            Paris: 12
+            Johannesburg: 5
+            Zurich: 3
+            Marseille: 4
+            Dublin: 9
+            Madrid: 4
+            Vienna: 3
+            Cape_Town: 2
+            Brussels: 3
+            Copenhagen: 3
+            Stockholm: 6
+            Dusseldorf: 3
+            Athens: 4
+            Durban: 1
+            Mombasa: 2
+            Nairobi: 1
+            Zagreb: 1
+            Maputo: 1
+            Crete: 1
+            Rome: 1
+            future_only_no_current_building:
+              Lisbon_held_for_development_sqft_thousand: 44
+              Barcelona_active_development_sqft_thousand: 144
+          Asia_Pacific:
+            Singapore: 3
+            Sydney: 4
+            Hong_Kong: 1
+            Melbourne: 2
+            Seoul: 1
+        managed_unconsolidated:
+          Northern_Virginia: 15
+          Chicago: 3
+          Frankfurt: 5
+          Dallas: 3
+          Silicon_Valley: 4
+          Paris: 1
+          New_York: 1
+          Toronto: 1
+          Los_Angeles: 2
+          Hong_Kong: 1
+          Lagos: 3
+          Accra: 1
+        nonmanaged_unconsolidated:
+          Sao_Paulo: 25
+          Tokyo: 5
+          Osaka: 4
+          Santiago: 3
+          Queretaro: 3
+          Rio_de_Janeiro: 2
+          Seattle: 1
+          Jakarta: 2
+          Fortaleza: 1
+          Chennai: 1
+          Mumbai:
+            current_buildings: 0
+            active_development_sqft_thousand: 501
+          Bogota: 2
+      inventory_boundary: >-
+        Building counts are the 2025 Form 10-K property-table inventory.
+        Managed and nonmanaged unconsolidated properties are separated from
+        controlled properties and must not be counted as fully owned capacity.
+    portfolio_scale:
+      rentable_sqft_million: 57.6
+      active_development_sqft_million: 9.7
+      held_for_development_sqft_million: 4.7
+      leased_percent: 84.7
+      in_place_IT_capacity_gw_approximate: 2.9
+      projects_underway_mw: 769
+      under_construction_mw_rounded: 770
+      under_construction_preleased_percent: 64
+      future_development_capacity_gw_more_than: 5
+      land_or_space_held_or_active_additional_capacity_gw_more_than: 3.5
+      Northern_Virginia_additional_capacity_gw_more_than: 1
+      capacity_boundary: >-
+        The greater-than-5-GW future-development statement and greater-than-3.5-GW
+        held-or-active land/space statement have different scopes and are not additive.
+    accelerators:
+      exact_global_or_per_site_GPU_count: undisclosed
+      high_density_product_capability:
+        range: 30_kW_per_cabinet_to_multi_MW_deployments
+        rack_density_kw_up_to: 150
+      boundary: >-
+        High-density colocation is a product capability and not proof that every
+        site has 150 kW racks or a disclosed installed GPU fleet.
+    electrical_and_generation:
+      global_in_place_IT_capacity_gw_approximate: 2.9
+      per_site_utility_substation_transformer_switchgear_UPS_generator_and_OEM_inventory: undisclosed_for_most_sites
+    cooling_and_water:
+      high_density_methods: [air_assisted_liquid_cooling, direct_liquid_cooling]
+      2025_global_PUE: 1.38
+      2025_EMEA_PUE: 1.31
+      2025_global_WUE: 0.59
+      sites_without_evaporative_cooling_percent: 75
+      nonpotable_share_of_water_percent: 45
+      delivered_2025_facilities:
+        facilities: 6
+        IT_capacity_mw: 196
+        average_design_PUE: 1.20
+      boundary: Product support and global averages are not facility-level installed specifications.
+    sustainability:
+      renewable_energy_coverage_2025_percent: 93
+      renewable_energy_contracted_gw: 1.7
+      sites_100_percent_matched: 205
+      sites_using_HVO_diesel_percent: 18
+      certified_building_area_sqft_million: 17.8
+      certified_IT_capacity_gw: 1.5
+      boundary: Annual renewable matching is not proof of onsite or hourly carbon-free electricity.
+    linked_companies:
+      operator: [Digital_Realty]
+      financial_profile_refs: [company_digital_realty]
+    sources:
+      - title: Digital Realty 2025 Form 10-K
+        publisher: Digital_Realty
+        date: 2026-02-13
+        url: https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm
+      - title: High-density colocation
+        publisher: Digital_Realty
+        date: 2026-07-17_accessed
+        url: https://www.digitalrealty.com/platform-digital/colocation/high-density-colocation
+      - title: Digital Realty publishes 2025 Impact Report
+        publisher: Digital_Realty
+        date: 2026
+        url: https://investor.digitalrealty.com/news-releases/news-release-details/digital-realty-publishes-2025-impact-report-highlighting
+    confidence: high_for_audited_property_inventory_capacity_and_development_metrics_medium_for_product_and_portfolio_sustainability_claims_low_for_per_site_GPU_and_electrical_BOM
+
+  - id: dc_digital_realty_nrt_inzai_japan
+    name: Digital Realty NRT campus
+    record_granularity: three_building_data_center_campus
+    operator: MC_Digital_Realty
+    country: Japan
+    region: Chiba
+    locality: Inzai_City
+    lifecycle_as_of_2026_07_17: operating_with_NRT14_opened_2026_04_08
+    location:
+      exact_street_address: undisclosed_in_reviewed_primary_source
+      osm_record_status: not_reconciled
+    campus_scale:
+      buildings: [NRT10, NRT12, NRT14]
+      opening_years:
+        NRT10: 2021
+        NRT12: 2024
+        NRT14: 2026
+      total_campus_IT_power_mw: approaching_100
+      building_level_IT_power_and_rack_count: undisclosed
+    accelerators:
+      DGX_Ready_status: true
+      supported_workload_density_kw_more_than: 100
+      rack_density_kw_up_to: 150
+      exact_GPU_vendor_model_count_and_installed_rack_count: undisclosed
+      prohibited_inference: DGX-Ready certification and rack-density capability are not installed GPU inventory.
+    electrical_and_generation:
+      utility_interconnection_substation_transformer_switchgear_UPS_backup_generator_and_OEMs: undisclosed
+    cooling_and_water:
+      NRT14_architecture: hybrid_liquid_and_air_cooling
+      water_source_PUE_WUE_and_cooling_OEMs: undisclosed
+    sustainability:
+      NRT14_colocation_hall_renewable_matching_percent: 100
+      mechanism: renewable_energy_certificates
+      boundary: Certificate matching is not proof of onsite or hourly renewable generation.
+    network:
+      campus_interconnection: Campus_Connect
+      orchestration: ServiceFabric
+    linked_companies:
+      operator_joint_venture: [Digital_Realty, Mitsubishi_Corporation]
+      financial_profile_refs: [company_digital_realty]
+      missing_financial_profiles: [Mitsubishi_Corporation]
+    sources:
+      - title: Digital Realty opens NRT14, third facility in NRT campus
+        publisher: Digital_Realty
+        date: 2026-04-08
+        url: https://investor.digitalrealty.com/news-releases/news-release-details/digital-realty-opens-nrt14-data-center-third-facility-nrt-campus
+    confidence: high_for_opening_building_sequence_campus_power_and_density_capability_low_for_GPU_inventory_and_electrical_BOM
+
+  - id: dc_digital_realty_astra_de_soto_kansas
+    name: Digital Realty Astra Enterprise Park
+    record_granularity: phased_hyperscale_data_center_campus
+    operator_and_developer: Digital_Realty
+    country: US
+    region: Kansas
+    locality: De_Soto
+    lifecycle_as_of_2026_07_17: planning_and_permitting_not_under_construction
+    location:
+      former_land_use: Sunflower_Army_Ammunition_Plant
+      road_context: near_West_103rd_Street_and_Lexington_Avenue
+      Astra_North_acres: 280
+      Astra_North_and_South_acres_approximate: 1400
+      acquired_land_acres_approximate: 1440
+      exact_building_coordinates: pending_final_site_plan
+      osm_record_status: not_reconciled
+    campus_scale:
+      land_acquisition_consideration_usd_million_approximate: 475
+      first_phase_data_center_buildings_up_to: 9
+      first_phase_floor_area_sqft_approximate: 3000000
+      first_phase_floor_area_includes: administration_building
+      peak_construction_workers_more_than: 1000
+      operational_jobs_approximate: 250
+      utility_electric_service_agreement:
+        capacity_mw_by_early_2028: 600
+        capacity_gw_at_full_delivery: 2
+      status_boundary: >-
+        Land consideration is acquisition value, not project revenue or completed
+        construction spending. Utility service targets are not current energized IT load.
+    accelerators:
+      intended_workloads: hyperscale_and_AI
+      exact_customer_GPU_vendor_model_chip_count_rack_count_and_density: undisclosed
+      prohibited_inference: Utility-service MW must not be converted into GPU counts.
+    electrical_and_generation:
+      utility: Evergy
+      customer_funded_grid_infrastructure_usd_million_more_than: 300
+      customer_funded_scope: [transmission, substation, other_electric_infrastructure]
+      backup_generation:
+        role: emergency_and_testing_only
+        models_fuel_unit_count_and_nameplate_capacity: undisclosed
+      additional_undisclosed_items: [transformer_models, switchgear, UPS, rack_distribution, equipment_OEMs]
+      tariff_and_cost_boundary: >-
+        Kansas large-load protections are intended to prevent cost shifting to
+        existing customers. Final rates, construction cost, energization, and
+        equipment awards remain subject to utility and regulatory processes.
+      identity_boundary: >-
+        Evergy's investor presentation names an anonymous premier developer among
+        signed large-load agreements. No reviewed official source directly identifies
+        that customer as Digital Realty, so the records are not merged.
+    cooling_and_water:
+      outdoor_air_cooling_share_of_year_percent_range: [85, 90]
+      hottest_period_method: evaporative_cooling
+      municipal_water_allocation_mgd: 1
+      water_storage_strategy: planned
+      industrial_wastewater_treatment_and_reuse: under_exploration
+      final_water_demand_design_PUE_WUE_and_cooling_OEMs: pending_or_undisclosed
+    linked_companies:
+      operator_and_developer: [Digital_Realty]
+      utility: [Evergy]
+      financial_profile_refs: [company_digital_realty, company_evergy]
+    sources:
+      - title: Digital Realty announces Astra Enterprise Park acquisition and power agreement
+        publisher: Digital_Realty
+        date: 2026-06-22
+        url: https://investor.digitalrealty.com/news-releases/news-release-details/digital-realty-announces-transactions-drive-continued-platform
+      - title: Digital Realty De Soto project
+        publisher: Digital_Realty
+        date: 2026-07-17_accessed
+        url: https://www.digitalrealty.com/about/projects/de-soto
+      - title: Digital Realty Data Center
+        publisher: City_of_De_Soto_Kansas
+        date: 2026-07-17_accessed
+        url: https://www.desotoks.us/498/Digital-Realty-Data-Center
+      - title: De Soto transmission projects
+        publisher: Evergy
+        date: 2026-07-17_accessed
+        url: https://bcg.evergy.com/partner-with-us/transmission-projects/de-soto
+    confidence: high_for_land_service_agreement_building_concept_utility_and_city_disclosures_low_for_final_site_plan_IT_load_GPU_inventory_and_equipment_BOM
+
   - id: dc_meta_hyperion_richland_parish
     name: Meta Hyperion / Richland Parish Data Center
     operator: Meta
@@ -3885,6 +4402,13 @@ disclosure_gap_register:
   - Firmus_DayOne_Batam_exact_parcel_Nongsa_overlap_power_chain_and_live_accelerator_status
   - AirTrunk_current_post_2024_committed_energized_and_utilized_capacity_by_campus
   - HUMAIN_AirTrunk_Saudi_exact_location_capacity_hardware_power_and_delivery_schedule
+  - Equinix_280_year_end_to_281_current_facility_reconciliation
+  - Equinix_78_property_labels_to_77_reported_markets_reconciliation
+  - Equinix_per_site_power_liquid_cooling_GPU_inventory_and_electrical_BOM
+  - Digital_Realty_controlled_and_unconsolidated_per_site_IT_power_and_GPU_inventory
+  - Digital_Realty_Astra_final_site_plan_energization_customer_GPU_and_electrical_BOM
+  - Digital_Realty_Astra_to_Evergy_anonymous_ESA_identity_reconciliation
+  - Digital_Realty_NRT_building_level_power_GPU_inventory_and_electrical_BOM
 
 next_research_queue:
   campus_enrichment:
@@ -3907,11 +4431,17 @@ next_research_queue:
     - Project_Southgate_1_6GW_to_2_7GW_program_scope_reconciliation
     - Firmus_DayOne_Batam_exact_parcel_Nongsa_overlap_power_chain_and_live_accelerator_status
     - HUMAIN_AirTrunk_Saudi_exact_location_capacity_hardware_power_and_schedule
+    - Equinix_280_to_281_facility_and_78_label_to_77_market_reconciliation
+    - Equinix_per_IBX_and_xScale_power_liquid_cooling_GPU_inventory_and_electrical_BOM
+    - Digital_Realty_310_building_per_site_IT_power_GPU_inventory_and_ownership_reconciliation
+    - Digital_Realty_Astra_final_site_plan_utility_energization_customer_and_equipment_awards
+    - Digital_Realty_NRT_building_level_IT_power_GPU_inventory_and_power_cooling_OEMs
   company_financials:
     - ByteDance_audited_financials_if_publicly_released
     - Crusoe_Vantage_VoltaGrid_and_Related_Digital_audited_or_lender_disclosed_financials
     - AirTrunk_Firmus_and_DayOne_audited_or_lender_disclosed_revenue_operating_profit_and_debt
     - Megaport_latest_results_and_Project_Southgate_contract_economics
+    - Evergy_Astra_specific_rate_base_revenue_capex_and_ESA_identity_if_disclosed
 
 portfolio_relevance:
   interpretation: >-

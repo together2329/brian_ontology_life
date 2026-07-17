@@ -73,6 +73,7 @@ stack_layers:
     - Applied_Digital
     - Core_Scientific
     - Entergy
+    - Evergy
     - Constellation_Energy
     - DTE_Energy
     - WEC_Energy_Group
@@ -495,6 +496,33 @@ financial_profiles:
     data_center_exposure:
       products: [carrier_neutral_colocation, interconnection, xScale_hyperscale]
       Q4_largest_deals_AI_workload_share_percent_approximate: 60
+      confirmed_campus_refs: [dc_equinix_global_ibx_xscale_portfolio]
+      FY2025_year_end_footprint:
+        total_data_centers: 280
+        consolidated_IBX_data_centers: 255
+        unconsolidated_data_centers: 25
+        company_reported_markets: 77
+        consolidated_total_cabinets: 392300
+        consolidated_billed_cabinets: 299300
+        consolidated_utilization_percent_approximate: 77
+      development_signals:
+        major_projects: 52
+        metros: 35
+        significant_IBX_sellable_cabinets_under_construction: 51900
+        estimated_capex_usd_billion: 6.549
+        retail_cabinets_planned_through_2028_more_than: 55000
+        xScale_mw_planned_through_2028_more_than: 100
+        US_xScale_JV_eventual_capacity_gw_more_than: 1.5
+        US_xScale_JV_enterprise_value_usd_billion_more_than: 15
+      operating_signal:
+        annualized_gross_bookings_2025_usd_billion: 1.6
+        annualized_gross_bookings_yoy_percent: 27
+        2025_retail_cabinets_delivered_more_than: 23250
+        2025_xScale_capacity_delivered_mw_more_than: 90
+      physical_and_financial_boundary: >-
+        Cabinet counts exclude 25 unconsolidated facilities, while the xScale JV
+        capacity and enterprise value are future program metrics rather than
+        current consolidated operating capacity or Equinix revenue.
       boundary: Operating income includes material real-estate depreciation; AFFO and adjusted EBITDA are complementary REIT measures.
     management_outlook:
       period: FY2026_raised
@@ -512,6 +540,8 @@ financial_profiles:
     sources:
       - https://investor.equinix.com/news-events/press-releases/detail/1096/equinix-provides-robust-2026-outlook-driven-by-strong
       - https://investor.equinix.com/news-events/press-releases/detail/1107/equinix-reports-first-quarter-results-and-raises-full-year
+      - https://investor.equinix.com/sec-filings/all-sec-filings/content/0001101239-26-000032/eqix-20251231.htm
+      - https://newsroom.equinix.com/2024-10-01-Equinix-Agrees-to-Form-Greater-Than-15B-JV-to-Expand-Hyperscale-Data-Centers-in-the-U-S-and-Support-Growing-AI-and-Cloud-Innovation
     confidence: high
 
   - id: company_digital_realty
@@ -539,6 +569,31 @@ financial_profiles:
       leasing_signal: largest_hyperscale_lease_in_company_history
     data_center_exposure:
       products: [colocation, hyperscale_capacity, interconnection, development_land_and_power]
+      confirmed_campus_refs:
+        - dc_digital_realty_global_portfolio
+        - dc_digital_realty_nrt_inzai_japan
+        - dc_digital_realty_astra_de_soto_kansas
+      FY2025_year_end_footprint:
+        total_data_centers: 310
+        unconsolidated_data_centers: 89
+        metros: 56
+        countries: 31
+        rentable_sqft_million: 57.6
+        leased_percent: 84.7
+        in_place_IT_capacity_gw_approximate: 2.9
+      development_signals:
+        active_development_sqft_million: 9.7
+        projects_underway_mw: 769
+        under_construction_preleased_percent: 64
+        future_development_capacity_gw_more_than: 5
+        Astra_power_capacity_mw_by_early_2028: 600
+        Astra_full_delivery_power_capacity_gw: 2
+        Astra_land_acquisition_consideration_usd_million_approximate: 475
+      physical_and_financial_boundary: >-
+        Building inventory includes controlled, managed-unconsolidated, and
+        nonmanaged-unconsolidated assets. In-place IT, future capacity, utility
+        service agreements, acquisition consideration, and financial backlog are
+        different measures and are not summed.
       boundary: Operating income is reduced by depreciation; NOI and Core FFO remain non-GAAP complementary measures.
     management_outlook:
       period: FY2026_raised
@@ -556,6 +611,95 @@ financial_profiles:
       - https://investor.digitalrealty.com/news-releases/news-release-details/digital-realty-reports-first-quarter-2026-results
       - https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm
     confidence: high
+
+  - id: company_evergy
+    company: Evergy
+    layer: operators_reits_utilities
+    fiscal_baseline:
+      period: FY2025_ended_2025-12-31
+      accounting_basis: US_GAAP
+      currency: USD
+      operating_revenue_usd_million: 5961.6
+      operating_expenses_usd_million: 4428.7
+      operating_income_usd_million: 1532.9
+      operating_margin_percent_derived: 25.71
+      net_income_usd_million: 867.9
+    latest_update:
+      period: Q1_2026_ended_2026-03-31
+      GAAP_earnings_usd_million: 151.5
+      GAAP_EPS_usd: 0.64
+      adjusted_earnings_usd_million: 161.8
+      adjusted_EPS_usd: 0.69
+      weather_normalized_retail_sales_growth_percent: 4.7
+      commercial_including_data_centers_growth_percent: 3.3
+    data_center_exposure:
+      role: regulated_electric_utility_serving_Kansas_and_Missouri
+      confirmed_campus_refs: [dc_digital_realty_astra_de_soto_kansas]
+      Astra_De_Soto:
+        utility_role_confirmed_by_city: true
+        transmission_substation_and_other_grid_infrastructure_customer_funded_usd_million_more_than: 300
+        Digital_Realty_disclosed_service_capacity_mw_by_early_2028: 600
+        Digital_Realty_disclosed_full_delivery_capacity_gw: 2
+      signed_LLPS_ESA_portfolio_as_of_2026_05_07:
+        agreements: 5
+        aggregate_steady_state_peak_load_gw_approximate: 2.5
+        total_including_large_non_LLPS_customers_gw_approximate: 3
+        additional_announced_projects_with_LLPS_ESAs_gw_approximate: 1.7
+        binding_minimum_bill_term_years_range: [16, 17]
+        expected_load_served_mw:
+          Y2026: 350_to_400
+          Y2027: 700_to_800
+          Y2028: 1250_to_1350
+          Y2029: 1750_to_1850
+          Y2030: 2050_to_2250
+          peak: approximately_3000
+      customer_identity_boundary: >-
+        Evergy describes its fifth ESA customer as an anonymous premier developer.
+        Digital Realty and De Soto confirm Evergy's utility role at Astra, but no
+        reviewed official source directly proves that Astra is the anonymous ESA.
+      earnings_boundary: >-
+        Company-wide utility revenue and operating income are not data-center
+        revenue or project profit. Future minimum bills, load ramp, and rate-base
+        investment are prospective and subject to tariff, execution, and customer-credit risk.
+    capital_and_generation_plan:
+      2026_2030_capex_usd_billion: 21.6
+      rate_base_CAGR_percent: 11.5
+      updated_IRP_signal: modest_upside_to_current_capex_plan
+      generation_project_pipeline_mw: 4244
+      project_COD_range: [2027, 2033]
+      planned_resource_types: [solar, natural_gas_CCGT, natural_gas_CT, battery_storage]
+      resource_boundary: >-
+        The generation pipeline serves the broader regulated system, includes
+        projects outside 2030, and cannot be allocated wholly to data centers or Astra.
+      financing_plan:
+        common_equity_issuance_2026_2029_usd_million_per_year_range: [700, 900]
+        planned_2030_equity_issuance: none
+        hybrid_securities_equity_content_usd_billion: 1
+    management_outlook:
+      FY2026_adjusted_EPS_usd_range: [4.14, 4.34]
+      FY2026_adjusted_EPS_midpoint_usd: 4.24
+      adjusted_EPS_growth_target_2026_midpoint_to_2030_percent_range: [6, 8_plus]
+      annual_adjusted_EPS_growth_2028_2030_percent_more_than: 8
+      weather_normalized_retail_demand_CAGR_2025_2030_percent_range: [7, 8]
+      expected_additional_ESA_signings_in_2026_at_least: 1
+      forward_looking_boundary: >-
+        Adjusted EPS, load, ESA, capital, and rate-base values are management
+        forecasts, not realized revenue or guaranteed returns.
+    watch_items:
+      - data_center_load_ramp_and_minimum_bill_enforcement
+      - transmission_generation_and_substation_delivery
+      - tariff_and_regulatory_cost_recovery
+      - customer_concentration_and_credit
+      - equity_and_debt_funding_dilution
+      - severe_weather_reliability
+      - anonymous_ESA_customer_identity
+    sources:
+      - https://www.sec.gov/Archives/edgar/data/54507/000171126926000017/evrg-20251231.htm
+      - https://investors.evergy.com/news-releases/news-release-details/evergy-announces-first-quarter-2026-results-announces-new-large
+      - https://investors.evergy.com/static-files/96421673-737d-4a5d-9206-f53b1a3e3b22
+      - https://www.desotoks.us/498/Digital-Realty-Data-Center
+      - https://investor.digitalrealty.com/news-releases/news-release-details/digital-realty-announces-transactions-drive-continued-platform
+    confidence: high_for_company_financials_Evergy_portfolio_outlook_and_Astra_utility_role_low_for_Astra_ESA_identity_and_project_economics
 
   - id: company_entergy
     company: Entergy
@@ -3564,7 +3708,9 @@ cross_company_read_through:
     - Infratil provides unusually detailed look-through economics for CDC: FY2026 net revenue was A$533.9 million and EBITDAF A$392.5 million against A$2.1 billion of annual capex and A$4.9 billion of net debt. The new 555 MW contract could lift EBITDAF above A$1 billion in FY2028, but only after a large construction and financing step-up.
     - ABB's Q2 Electrification data-center orders grew at a triple-digit rate, while Siemens Energy booked about EUR2 billion of Grid Technologies data-center orders in the first half; electrical equipment demand is visible before many announced campuses become energized.
     - GE Vernova's Q1 2026 data-center equipment orders exceeded its full-year 2025 amount, showing the demand wave is reaching grid-scale equipment.
-    - Equinix and Digital Realty show high leasing and backlog demand, while also revealing the capital intensity required to bring powered capacity online.
+    - Equinix ended 2025 with 280 data centers, 392,300 consolidated cabinets, and 51,900 sellable cabinets in significant IBX projects under construction against an estimated $6.55 billion of capex. Digital Realty ended 2025 with 310 data centers, about 2.9 GW of in-place IT capacity, and 769 MW of projects underway, 64% preleased. Their high leasing and backlog demand must therefore be read together with the capital and power required to deliver capacity.
+    - Digital Realty's Astra site has a utility-service path from 600 MW by early 2028 toward 2 GW at full delivery, and De Soto identifies Evergy as the utility coordinating customer-funded transmission and substation work. The site remains in planning and permitting, so service MW is not energized IT load or GPU inventory.
+    - Evergy's FY2025 revenue was $5.96 billion and operating income $1.53 billion. Its signed large-load portfolio reaches about 2.5 GW of steady-state peak load and supports a $21.6 billion 2026-2030 capital plan, but no reviewed official source identifies Digital Realty as the anonymous fifth ESA customer; load, rate-base, and adjusted-EPS forecasts remain prospective.
     - Entergy links AI-campus demand directly to multi-gigawatt generation and transmission expansion, subject to regulation and construction execution.
     - Constellation's 20-year agreements with Microsoft and Meta and 380 MW CyrusOne agreement show generation owners converting AI-load growth into long-duration contracts; pricing is undisclosed and plant capacity must not be treated as dedicated campus load.
     - CoreWeave passed 1 GW of active power and reported $99.4 billion of revenue backlog in Q1 2026, but its GAAP operating loss and heavy interest burden show that contracted demand does not remove financing and depreciation risk.
