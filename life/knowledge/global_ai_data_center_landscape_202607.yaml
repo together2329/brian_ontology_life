@@ -6172,13 +6172,322 @@ campus_profiles:
         url: https://www.blackstone.com/news/press/humain-and-blackstone-backed-airtrunk-announce-partnership-to-build-state-of-the-art-data-centers-in-the-kingdom-of-saudi-arabia/
     confidence: high_for_partner_portfolio_announcements_low_for_site_level_location_and_overlap
 
+  - id: dc_africa_data_centres_current_core_portfolio
+    name: Africa Data Centres Current Core Facility Portfolio
+    record_granularity: operator_current_directory_multi_country_multi_facility_portfolio
+    operator_and_developer: Africa_Data_Centres
+    parent_business_unit: Cassava_Technologies
+    countries: [ZA, KE, NG]
+    lifecycle_as_of_2026_07_18: five_current_marketed_facility_cards_with_mixed_operating_available_expansion_and_full_build_scopes
+    directory_coverage:
+      current_cards: [JHB1_Midrand, JHB2_Samrand, CPT1_Cape_Town, NBO1_Nairobi, LOS1_Lagos]
+      current_card_count: 5
+      legacy_and_pipeline_warning: >-
+        Current navigation exposes five cards. Older company material, the DFC
+        seven-project/five-country financing scope, and announcements for Accra and
+        other markets do not prove additional current operating core facilities.
+    portfolio_capacity:
+      current_card_fields_mw:
+        JHB1_upon_completion: 20
+        JHB2_upon_completion: 35
+        CPT1_upon_completion: 9
+        NBO1_available_site_capacity: 7.5
+        LOS1_critical_IT_load: 20.65
+      arithmetic_sum_mw_derived: 92.15
+      comparison_boundary: >-
+        The 92.15 MW sum combines upon-completion IT load, available capacity and
+        critical IT load. It is only a card-coverage checksum and is not current
+        operating, installed, energized, leased, utilized or billed IT capacity.
+      older_data_sheet_full_build_sum_mw_derived: 82.75
+      older_data_sheet_inputs_mw: {JHB1: 14.5, JHB2: 35, CPT1: 9, NBO1: 3.6, LOS1: 20.65}
+      older_sum_boundary: Dated data-sheet scopes are not substituted for current capacity or added to current cards.
+      exact_current_operating_energized_leased_utilized_and_billed_mw: undisclosed
+    facility_ledger:
+      - facility_id: JHB1_Midrand
+        country: ZA
+        locality: Johannesburg_Midrand
+        address: 401_Old_Pretoria_Rd_Midrand_1685_Johannesburg_South_Africa
+        location:
+          osm_ref: osm_way_1230574034
+          latitude: -26.0095543
+          longitude: 28.120168
+          mapped_footprint_area_m2: 8634.865
+          footprint_warning: OSM building geometry, not certified site, white-space or gross floor area.
+        current_card:
+          data_halls: 8
+          white_space_m2: 9000
+          incoming_utility_description: multiple_incoming_feeders
+          containment: hot_and_cold_aisle
+          expansion_increment_mw: 10
+          expansion_halls: 4
+          expansion_white_space_m2: 6000
+          client_IT_load_mw_upon_completion: 20
+          built_to_standard_claim: Tier_4_standard_operator_wording_not_verified_as_current_constructed_facility_certification
+        older_2021_data_sheet:
+          client_IT_load_mw_once_fully_built: 14.5
+          rack_density_kw_up_to: 20
+          rack_electrical_topology: 2N
+          UPS_battery_autonomy_minutes_at_full_load: 10
+          generator_fuel_runtime_hours_minimum: 48
+          cooling_topology: concurrently_maintainable
+          CRAC_redundancy: N_plus_20_percent
+        scope_conflict: >-
+          The 2021 sheet's 14.5 MW full-build figure and current page's 20 MW
+          upon-completion expansion scope are preserved separately; completion and
+          currently energized load are not established.
+      - facility_id: JHB2_Samrand
+        country: ZA
+        locality: Centurion_Samrand
+        address: 17_Waterloo_Road_Samrand_Business_Park_Centurion_0187_South_Africa
+        location:
+          osm_building_ref: osm_way_1230574036
+          osm_campus_ref: osm_way_803856364
+          latitude: -25.9297684
+          longitude: 28.1395755
+          mapped_building_footprint_area_m2: 20826.427
+          mapped_campus_area_m2: 65057.668
+          footprint_warning: OSM campus and building geometries overlap and are not summed or treated as certified floor area.
+        current_card:
+          data_halls: 4
+          white_space_m2: 6000
+          planned_2023_expansion_white_space_m2: 14400
+          client_IT_load_mw_upon_completion: 35
+          containment: cold_aisle
+          facility_description: purpose_built_Tier_IV
+        official_2022_data_sheet:
+          certification: Uptime_Institute_Tier_IV_Constructed_Facility
+          client_IT_load_mw_once_fully_built: 35
+          utility_feeders_in_parallel: 5
+          power_topology: 2N_with_DRUPS
+          rack_electrical_topology: 2N
+          generator_fuel_runtime_days_minimum: 7
+          cooling_topology: 2N
+          cooling_description: energy_efficient_chillers_with_minimum_consumable_water
+          CRAC_redundancy: N_plus_2
+        2022_expansion_announcement:
+          baseline_IT_load_mw: 10
+          target_IT_load_mw: 40
+          phase_one_IT_load_mw: 20
+          phase_one_halls: 8
+          phase_one_target: 2023
+          additional_IT_load_mw_target: 10
+          additional_target: 2025_end
+          platform_capacity_mw_more_than_on_completion: 100
+          Africa_expansion_plan_usd_million: 500
+        scope_conflict: >-
+          The current card and data sheet say 35 MW while the 2022 release says a
+          40 MW expansion target. No reviewed current source confirms that the full
+          35 or 40 MW is energized, leased, utilized or billed.
+      - facility_id: CPT1_Cape_Town
+        country: ZA
+        locality: Cape_Town_Elfindale
+        address: 108_De_Waal_Rd_Elfindale_Cape_Town_7945_South_Africa
+        current_card:
+          data_halls: 3
+          ready_IT_space_m2: 2700
+          planned_2021_expansion_m2: 2300
+          client_IT_load_mw_upon_completion: 9
+          separate_page_current_power_text_mw: 5.5
+          separate_page_2021_planned_power_mw: 25
+          separate_page_current_secured_rack_space_m2: 1800
+          separate_page_2021_planned_total_space_m2: 6000
+          containment: hot_and_cold_aisle
+        older_2021_data_sheet:
+          client_IT_load_mw_once_fully_built: 9
+          utility_feeders: dual
+          rack_density_kw_up_to: 20
+          rack_electrical_topology: 2N
+          UPS: multiple_independent_strings
+          generator_fuel_runtime_hours_minimum: 48
+          cooling_topology: concurrently_maintainable
+          CRAC_redundancy: N_plus_2
+        2024_live_expansion:
+          additional_IT_load_mw_now_live: 6
+          new_data_halls: 3
+          available_racks: 1000
+          operator_language: effectively_doubles_current_capacity
+          DFC_loan_support_usd_million_up_to: 300
+          cooling: hybrid_air_and_liquid_cooling
+          WUE_claim: zero_for_IT_infrastructure
+          renewable_energy_claim: powered_by_renewable_energy
+          wheeled_solar_PPA:
+            counterparty: Distributed_Power_Africa
+            term_years: 20
+            signed: 2023-03
+            contracted_MW_generation_site_and_hourly_matching: undisclosed
+        scope_conflict: >-
+          The page retains stale 2021 planning text with 9 MW, 5.5 MW and 25 MW
+          scopes, while the 2024 release confirms only that an additional 6 MW is
+          live. Doubling language may imply about 12 MW after expansion but this is
+          not promoted as an operator-explicit total.
+      - facility_id: NBO1_Nairobi
+        country: KE
+        locality: Nairobi
+        address: Sameer_Business_Park_Block_A_Mombasa_Road_Nairobi_Kenya
+        current_card:
+          data_halls: 4
+          certification: Uptime_Institute_Tier_III
+          available_site_capacity_mw: 7.5
+          secured_space_m2: 2000
+          floors: 4
+          containment: hot_and_cold_aisle
+          water_policy: prioritises_water_free_operations_and_uses_non_potable_water_for_cooling
+          onsite_energy: solar_installed_to_reduce_grid_reliance_exact_capacity_undisclosed
+        older_2021_data_sheet:
+          data_halls: 3
+          then_current_IT_load_mw: 2.7
+          planned_increment_mw: 0.9
+          client_IT_load_mw_once_fully_built: 3.6
+          secured_utility_campus_capacity_mw: 37.5
+          utility_topology: 2N_incoming_supply
+          rack_density_kw_up_to: 20
+          rack_electrical_topology: 2N
+          UPS_battery_autonomy_minutes_at_full_load: 15
+          generator_fuel_runtime_hours_minimum: 96
+          cooling_topology: concurrently_maintainable
+          CRAC_redundancy: N_plus_2
+        announced_existing_facility_expansion:
+          incremental_IT_load_mw: 1
+          added_area_m2: 717
+          racks_approximate: 230
+        scope_conflict: >-
+          Current 7.5 MW available capacity, the dated 3.6 MW full-build value and
+          37.5 MW utility-campus capacity are different definitions. Current
+          installed, energized, leased and utilized load is not disclosed.
+      - facility_id: LOS1_Lagos
+        country: NG
+        locality: Lagos_Eko_Atlantic
+        address_granularity: Eko_Atlantic_Lagos_Nigeria_exact_street_or_parcel_undisclosed
+        current_card:
+          data_halls: 10
+          white_space_m2: 9800
+          critical_IT_load_mw: 20.65
+          facility_standard_claim: Rated_3
+          containment: cold_aisle
+        official_data_sheet:
+          launch_year: 2021
+          expansion_status_at_publication: in_progress
+          critical_IT_load_mw: 20.65
+          rack_density_kw_up_to: 20
+          rack_electrical_topology: 2N
+          UPS: multiple_independent_strings
+          generator_fuel_runtime_hours_minimum_at_full_load: 48
+          cooling_topology: concurrently_maintainable
+          CRAC_redundancy: N_plus_2
+        current_installed_energized_leased_utilized_load: undisclosed
+    development_pipeline:
+      Accra_Ghana:
+        announced_location: Ghana_Trade_Fair_redevelopment_at_La_Accra
+        initial_capacity_mw: 10
+        expandable_capacity_mw: 30
+        announcement_date: 2023-05-18
+        original_first_phase_target: within_12_months
+        current_directory_card_as_of_2026_07_18: absent
+        current_construction_completion_and_operating_status: unverified
+      broader_2023_target_markets: [South_Africa, Zambia, Kenya, Rwanda, Egypt, Morocco, Senegal, Ivory_Coast, Angola]
+      DFC_project_scope:
+        facilities: 7
+        countries: 5
+        project_types: existing_expansion_acquisition_and_greenfield
+        all_source_funding_usd_million: 428.6
+        DFC_loan_usd_million_up_to: 300
+        current_named_facility_and_delivery_reconciliation: undisclosed
+      FY2024_management_intended_additional_capacity:
+        countries: [South_Africa, Kenya]
+        capacity_mw: 221.7
+        reported_delivery_window: 2024_to_2025
+        current_named_site_completion_energization_and_utilization: undisclosed
+    accelerators_and_AI:
+      related_program_ref: dc_cassava_africa_ai_factory_portfolio
+      disclosed_platform: NVIDIA_accelerated_computing_and_NVIDIA_Cloud_Partner_reference_architecture
+      exact_facility_assignment: undisclosed
+      GPU_models_physical_counts_servers_racks_power_draw_ownership_utilization_and_revenue: undisclosed
+      prohibited_inference: Do not assign the South Africa AI factory to JHB1, JHB2 or CPT1 without primary site-level evidence.
+    electrical_and_cooling_supply_chain_boundary:
+      disclosed: site_level_topology_redundancy_fuel_autonomy_and_CRAC_redundancy_in_dated_data_sheets
+      undisclosed: transformer_switchgear_UPS_DRUPS_generator_battery_chiller_CRAC_CDU_solar_OEMs_unit_counts_ratings_commissioning_and_single_line_diagrams
+      liquid_cooling_capacity_mw_PUE_WUE_water_withdrawal_and_consumption: undisclosed
+    linked_companies:
+      owner_operator: [Africa_Data_Centres, Cassava_Technologies]
+      accelerator_program_partner_not_site_specific: [NVIDIA]
+      financing: [US_International_Development_Finance_Corporation]
+      financial_profile_refs:
+        - company_africa_data_centres
+        - company_nvidia
+    sources:
+      - title: Current JHB1 Midrand facility card
+        publisher: Africa_Data_Centres
+        date: 2026-07-18_accessed
+        url: https://www.africadatacentres.com/midrand/
+      - title: JHB1 Midrand 2021 data sheet
+        publisher: Africa_Data_Centres
+        date: 2021
+        url: https://www.africadatacentres.com/wp-content/uploads/2021/05/9b-ADC-Data-Sheet-JHB1.pdf
+      - title: Current JHB2 Samrand facility card
+        publisher: Africa_Data_Centres
+        date: 2026-07-18_accessed
+        url: https://www.africadatacentres.com/samrand-2/
+      - title: JHB2 Samrand data sheet
+        publisher: Africa_Data_Centres
+        date: 2022
+        url: https://www.africadatacentres.com/wp-content/uploads/2022/04/JHB2-ADC-Data-Sheets-3-March-202213.pdf
+      - title: Samrand facility expansion announcement
+        publisher: Africa_Data_Centres
+        date: 2022-08-30
+        url: https://www.africadatacentres.com/africa-data-centres-breaks-ground-for-samrand-facility-expansion/
+      - title: Current CPT1 Cape Town facility card
+        publisher: Africa_Data_Centres
+        date: 2026-07-18_accessed
+        url: https://www.africadatacentres.com/capetown/
+      - title: CPT1 Cape Town 2021 data sheet
+        publisher: Africa_Data_Centres
+        date: 2021
+        url: https://www.africadatacentres.com/wp-content/uploads/2021/05/9-ADC-Data-Sheet-CPT1.pdf
+      - title: Additional 6 MW capacity now live in Cape Town
+        publisher: Africa_Data_Centres
+        date: 2024-07-25
+        url: https://www.africadatacentres.com/africa-data-centres-announces-additional-6mw-capacity-now-live-in-cape-town/
+      - title: Current NBO1 Nairobi facility card
+        publisher: Africa_Data_Centres
+        date: 2026-07-18_accessed
+        url: https://www.africadatacentres.com/nairobi/
+      - title: NBO1 Nairobi 2021 data sheet
+        publisher: Africa_Data_Centres
+        date: 2021
+        url: https://www.africadatacentres.com/wp-content/uploads/2021/05/9-ADC-Data-Sheet-NB01.pdf
+      - title: NBO1 one MW expansion and edge certification announcement
+        publisher: Africa_Data_Centres
+        date: 2022
+        url: https://www.africadatacentres.com/africa-data-centres-to-become-the-first-east-african-edge-certified-facility/
+      - title: Current LOS1 Lagos facility card
+        publisher: Africa_Data_Centres
+        date: 2026-07-18_accessed
+        url: https://www.africadatacentres.com/lagos/
+      - title: LOS1 Lagos data sheet
+        publisher: Africa_Data_Centres
+        date: 2022
+        url: https://www.africadatacentres.com/wp-content/uploads/2022/04/LOS1-DC-Data-Sheets-3-March-202245-1.pdf
+      - title: Accra facility construction announcement
+        publisher: Africa_Data_Centres
+        date: 2023-05-18
+        url: https://www.africadatacentres.com/africa-data-centres-announces-that-it-will-start-construction-on-a-new-facility-in-accra-ghana/
+      - title: DFC Africa Data Centres public information summary
+        publisher: US_International_Development_Finance_Corporation
+        date: 2021-12-13
+        url: https://www.dfc.gov/sites/default/files/media/documents/9000093563.pdf
+      - title: DFC first USD83 million disbursement and 31.3 MW expectation
+        publisher: US_International_Development_Finance_Corporation
+        date: 2022-08-15
+        url: https://www.dfc.gov/media/press-releases/dfc-disburses-83-million-africa-data-centres-expand-ict-infrastructure-south
+    confidence: high_for_current_five_card_roster_addresses_and_published_design_topologies_medium_for_expansion_lifecycle_low_for_live_load_GPU_inventory_and_equipment_BOM
+
   - id: dc_cassava_africa_ai_factory_portfolio
     name: Cassava Technologies Africa AI-Factory Portfolio
     record_granularity: multi_country_multi_site_portfolio_not_one_campus
     operator_and_developer: Cassava_Technologies
     primary_deployment_country: ZA
     planned_expansion_countries: [NG, KE, EG, MA]
-    lifecycle_as_of_2026_07_17: South_Africa_deployment_announced_or_underway_with_regional_expansion_planned
+    lifecycle_as_of_2026_07_18: South_Africa_deployment_confirmed_by_company_update_with_regional_expansion_planned_but_site_and_hardware_inventory_undisclosed
     location:
       exact_South_Africa_site_and_future_site_coordinates: undisclosed
       affiliated_data_center_portfolio: Africa_Data_Centres
@@ -6213,7 +6522,11 @@ campus_profiles:
       accelerator_and_AI_platform: [NVIDIA]
       financial_profile_refs:
         - company_nvidia
-      private_company_financial_gap: Cassava and the relevant site-level operating entities do not provide comparable public campus revenue and operating profit in the reviewed announcements.
+        - company_africa_data_centres
+      financial_boundary: >-
+        Africa Data Centres has an audited FY2024 group financial baseline, but it
+        does not attribute revenue, operating profit, capex, debt or cash flow to
+        the Cassava AI-factory program or any specific hosting site.
     sources:
       - title: Cassava to upgrade its data centres with NVIDIA supercomputers to drive Africa's AI future
         publisher: Cassava Technologies
@@ -12503,6 +12816,13 @@ campus_profiles:
 disclosure_gap_register:
   - exact_global_physical_data_center_count
   - exact_per_campus_GPU_inventory_for_most_hyperscalers
+  - Africa_Data_Centres_five_current_cards_to_legacy_sites_DFC_seven_projects_and_exact_operating_facility_roster
+  - Africa_Data_Centres_92_15MW_mixed_card_sum_to_installed_energized_leased_utilized_and_billed_IT_load
+  - Africa_Data_Centres_JHB1_14_5_20MW_JHB2_35_40MW_and_CPT1_5_5_6_9_25MW_scope_reconciliation
+  - Africa_Data_Centres_per_site_substation_transformer_switchgear_UPS_DRUPS_battery_generator_chiller_CRAC_CDU_solar_OEMs_and_live_inventory
+  - Africa_Data_Centres_221_7MW_additional_South_Africa_Kenya_plan_named_site_schedule_funding_and_delivery
+  - Africa_Data_Centres_Accra_10_to_30MW_current_construction_completion_and_operating_status
+  - Cassava_Africa_AI_factory_exact_host_sites_GPU_models_counts_racks_power_cooling_utilization_and_revenue
   - ODATA_12_detailed_cards_BG02_current_directory_and_BG03_announcement_scope_and_lifecycle_reconciliation
   - ODATA_602_62MW_card_626_62MW_current_directory_and_746_62MW_announced_ledger_to_operating_energized_leased_utilized_IT_load
   - ODATA_exact_GPU_models_counts_ownership_delivery_utilization_power_draw_customers_and_site_allocation
@@ -12666,6 +12986,13 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
+    - Africa_Data_Centres_five_current_cards_legacy_edge_sites_and_DFC_seven_project_five_country_scope_reconciliation
+    - Africa_Data_Centres_current_per_site_installed_energized_leased_utilized_billed_IT_load_and_customer_ramp
+    - Africa_Data_Centres_JHB1_JHB2_CPT1_conflicting_capacity_scope_and_expansion_completion_reconciliation
+    - Africa_Data_Centres_NBO1_7_5MW_available_3_6MW_full_build_37_5MW_utility_and_second_20MW_site_reconciliation
+    - Africa_Data_Centres_Accra_and_other_announced_market_current_parcel_construction_grid_and_operating_status
+    - Africa_Data_Centres_per_site_power_chain_cooling_water_PUE_WUE_solar_and_equipment_OEM_inventory
+    - Cassava_Africa_AI_factory_exact_host_sites_GPU_models_counts_power_cooling_utilization_and_service_revenue
     - Aligned_27_current_North_America_identifiers_exact_coordinates_parcels_ownership_operating_construction_and_future_lifecycle
     - Aligned_39_visible_current_identifiers_plus_BG02_BG03_to_87_unit_headline_physical_building_and_management_scope_reconciliation
     - Aligned_DFW04_commercial_opening_Lambda_lease_live_IT_load_Blackwell_delivery_power_chain_CDU_and_total_project_cost
@@ -12815,6 +13142,11 @@ next_research_queue:
     - NTT_India_exact_GPU_inventory_customer_vs_operator_ownership_live_liquid_cooled_MW_CDU_heat_rejection_and_equipment_OEMs
     - NTT_India_transformer_switchgear_UPS_battery_generator_chiller_counts_and_operating_PUE_WUE_water_per_site
   company_financials:
+    - Africa_Data_Centres_overdue_FY2025_accounts_current_revenue_operating_profit_cash_flow_debt_and_going_concern_update
+    - Africa_Data_Centres_customer_concentration_contract_terms_utilization_site_economics_and_return_on_capital
+    - Africa_Data_Centres_DFC_and_ZAR_facility_draws_rates_covenants_refinancing_and_project_allocation
+    - Africa_Data_Centres_221_7MW_plan_capex_funding_delivery_and_revenue_conversion
+    - Cassava_reorganisation_current_ownership_and_USD90m_parent_equity_allocation_to_Africa_Data_Centres
     - Aligned_and_ODATA_standalone_audited_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_and_site_economics
     - Aligned_USD40_billion_transaction_completion_financing_post_close_beneficial_ownership_governance_and_reporting
     - Aligned_82_87_data_centers_50_51_campuses_5_6_4GW_and_39_visible_current_identifiers_scope_reconciliation
