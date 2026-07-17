@@ -35,6 +35,8 @@ stack_layers:
     - Alibaba_Group
     - Tencent
     - ByteDance
+    - Huawei
+    - Baidu
   AI_cloud_infrastructure_operators:
     - CoreWeave
   integrated_AI_infrastructure_developers:
@@ -52,6 +54,8 @@ stack_layers:
     - Arista_Networks
     - Cisco
     - Hewlett_Packard_Enterprise
+    - Huawei_Ascend
+    - Kunlunxin
   power_cooling_electrical:
     - Vertiv
     - Schneider_Electric
@@ -3927,6 +3931,204 @@ financial_profiles:
       - https://gongyi.bytedance.com/detail/7161987661010602014
     confidence: high_for_public_disclosure_gap_medium_for_cloud_service_regions_low_for_private_financial_and_physical_infrastructure_scale
 
+  - id: company_huawei
+    company: Huawei
+    layer: hyperscale_buyers_cloud_compute_and_digital_power
+    ownership_status: private_not_publicly_listed
+    fiscal_baseline:
+      period: FY2025_ended_2025-12-31
+      accounting_basis: IFRS
+      currency: CNY
+      revenue_cny_million: 880941
+      revenue_growth_percent: 2.2
+      operating_profit_cny_million: 96937
+      operating_margin_percent_reported: 11.0
+      net_profit_cny_million: 68036
+      cash_flow_from_operating_activities_cny_million: 127384
+      research_and_development_cny_million: 192300
+      research_and_development_share_of_revenue_percent: 21.8
+      total_borrowings_cny_million: 239284
+    business_exposure:
+      Cloud_Computing_segment:
+        reported_segment_revenue_cny_million: 32161
+        year_over_year_growth_percent: -3.5
+        cloud_business_revenue_including_revenue_from_other_Huawei_segments_cny_million: 72075
+        operating_profit: not_separately_disclosed
+        boundary: >-
+          The CNY32.161 billion segment row and CNY72.075 billion cloud-business
+          figure have different scopes. They are preserved separately and must not
+          be added together or compared as if they were two independent revenue pools.
+      Digital_Power_segment:
+        revenue_cny_million: 77312
+        year_over_year_growth_percent: 12.7
+        operating_profit: not_separately_disclosed
+      ICT_Infrastructure_segment:
+        revenue_cny_million: 375014
+        year_over_year_growth_percent: 2.6
+        operating_profit: not_separately_disclosed
+    data_center_exposure:
+      roles:
+        - Huawei_Cloud_operator
+        - Ascend_and_Kunpeng_compute_designer
+        - Atlas_AI_system_vendor
+        - data_center_power_and_cooling_equipment_vendor
+      confirmed_campus_refs:
+        - dc_huawei_cloud_global_region_portfolio
+        - dc_huawei_guian_az3_machang_phase1
+      Huawei_Cloud_2025_regions: 34
+      Huawei_Cloud_2025_availability_zones: 101
+      Huawei_Cloud_AICS_customers_more_than: 1800
+      exact_cloud_revenue_operating_profit_capex_physical_IT_MW_and_live_NPU_inventory: undisclosed
+      boundary: >-
+        Consolidated and segment revenue spans far more than data centers. Huawei
+        does not separately report Huawei Cloud operating profit, data-center capex,
+        campus revenue, utilization, or return on invested capital.
+    management_outlook:
+      quantitative_FY2026_revenue_operating_profit_or_cloud_guidance: not_disclosed_in_reviewed_annual_report
+      stated_priorities:
+        - continue_investing_in_connectivity_computing_cloud_devices_intelligent_driving_and_AI
+        - scale_CloudMatrix_and_AI_Cluster_Service
+        - build_reliable_agile_and_sustainable_AI_data_centers_with_partners
+      announced_compute_roadmap:
+        Atlas_950_SuperPoD_target_availability: Q4_2026
+        full_configuration_Ascend_950DT_cards: 8192
+        full_configuration_racks: 160
+        lifecycle_boundary: future_product_target_not_current_revenue_or_installed_fleet
+    watch_items:
+      - cloud_segment_reported_revenue_decline_and_scope_reconciliation
+      - no_separate_cloud_or_digital_power_operating_profit
+      - semiconductor_manufacturing_supply_and_export_controls
+      - CloudMatrix_customer_adoption_and_utilization
+      - 34_regions_101_AZs_to_physical_building_and_energized_MW_reconciliation
+      - high_R_and_D_intensity_and_return_on_AI_infrastructure
+      - private_company_valuation_and_liquidity_limits
+    sources:
+      - https://www.huawei.com/en/annual-report/2025
+      - https://www.huawei.com/en/news/2025/9/hc-xu-keynote-speech
+      - https://e.huawei.com/cn/products/computing/ascend/atlas-900-a3-superpod
+      - https://www.huaweicloud.com/intl/en-us/news/20260302221415118.html
+      - https://www.huawei.com/en/sustainability/the-latest/stories/green-data-centers-optimal-pue
+    confidence: high_for_consolidated_and_segment_revenue_cloud_region_count_and_product_architecture_low_for_cloud_profit_capex_and_live_site_inventory
+
+  - id: company_baidu
+    company: Baidu
+    layer: hyperscale_buyers_and_cloud
+    fiscal_baseline:
+      period: FY2025_ended_2025-12-31
+      accounting_basis: US_GAAP_with_separate_non_GAAP_metrics
+      currency: CNY
+      revenue_cny_million: 129079
+      revenue_growth_percent: -3
+      operating_loss_cny_million: -5823
+      operating_margin_percent_reported: -5
+      long_lived_asset_impairment_cny_million: 16190
+      operating_income_excluding_long_lived_asset_impairment_cny_million_derived: 10367
+      non_GAAP_operating_income_cny_million: 15000
+      non_GAAP_operating_margin_percent: 12
+      net_income_attributable_to_Baidu_cny_million: 5600
+      adjusted_EBITDA_cny_million: 22900
+      operating_cash_flow_cny_million: -3000
+      research_and_development_cny_million: 20433
+    latest_update:
+      period: Q4_2025
+      revenue_cny_million: 32740
+      operating_income_cny_million: 1483
+      operating_margin_percent: 5
+      non_GAAP_operating_income_cny_million: 3000
+      AI_Cloud_Infra_revenue_cny_billion: 5.8
+      AI_accelerator_infrastructure_subscription_revenue_growth_percent: 143
+      cash_and_investments_cny_billion: 294.1
+    data_center_exposure:
+      roles:
+        - Baidu_AI_Cloud_operator
+        - owned_and_leased_data_center_operator
+        - AI_accelerator_infrastructure_service_provider
+        - Kunlunxin_parent_and_customer
+      confirmed_campus_refs:
+        - dc_baidu_ai_cloud_region_portfolio
+        - dc_baidu_yangquan_cloud_computing_center
+      FY2025_AI_Cloud_Infra:
+        revenue_cny_billion: 19.8
+        revenue_growth_percent: 34
+        revenue_source_boundary: unaudited_internal_management_accounts
+        operating_profit: not_separately_disclosed
+      Kunlunxin_P800_cluster:
+        accelerators_powered_on_and_in_scaled_use: 32000
+        effective_training_rate_percent_more_than: 98
+        exact_site_rack_count_power_draw_and_utilization: undisclosed
+      cloud_cost_signal: >-
+        Baidu's 20-F attributes part of the 2025 increase in cost of revenue to
+        bandwidth, depreciation, and server-custody fees mainly related to cloud services.
+      boundary: >-
+        AI Cloud Infra revenue does not equal data-center revenue or gross profit,
+        and Baidu does not disclose cloud operating income, physical IT MW, campus
+        utilization, or the location of the 32,000-card P800 cluster.
+    management_outlook:
+      quantitative_FY2026_revenue_operating_income_or_capex_guidance: not_disclosed_in_reviewed_FY2025_release
+      current_signals:
+        - AI_Cloud_Infra_revenue_grew_34_percent_in_2025
+        - Q4_accelerator_infrastructure_subscription_revenue_grew_143_percent
+        - Kunlunxin_proposed_spin_off_and_Hong_Kong_listing_in_progress
+      outlook_boundary: >-
+        These are operating signals and a proposed transaction, not management
+        guidance. The Kunlunxin listing remains subject to approvals and final decisions.
+    watch_items:
+      - legacy_advertising_decline_versus_AI_cloud_growth
+      - FY2025_impairment_and_GAAP_operating_loss
+      - cloud_depreciation_bandwidth_and_server_custody_costs
+      - AI_Cloud_Infra_segment_profitability_and_cash_conversion
+      - accelerator_supply_reliability_and_export_controls
+      - P800_cluster_site_power_cooling_and_utilization_disclosure
+      - Kunlunxin_spin_off_timing_valuation_and_Baidu_ownership
+    sources:
+      - https://www.sec.gov/Archives/edgar/data/1329099/000119312526109289/d38065d20f.htm
+      - https://ir.baidu.com/static-files/7004dcea-6dcf-4a4d-be0d-f6fa1eb2695f
+      - https://cloud.baidu.com/news/news_312c7a72-b32c-4b45-a3fb-da21e99562fc
+      - https://cloud.baidu.com/news/news_9d90bec5-d18b-46aa-a5c5-f18cf5470340
+      - https://ir.baidu.com/static-files/73bc4ebd-6d6a-4adb-a404-7b9cbe20ae8a
+    confidence: high_for_consolidated_financials_AI_cloud_revenue_and_disclosed_P800_cluster_low_for_cloud_profit_capex_site_allocation_and_power
+
+  - id: company_kunlunxin
+    company: Kunlunxin
+    layer: compute_memory_network
+    ownership_status: non_wholly_owned_Baidu_subsidiary_with_proposed_Hong_Kong_listing
+    fiscal_baseline:
+      period: latest_reviewed_public_disclosure_through_2026-07-18
+      currency: CNY
+      revenue: not_separately_disclosed
+      operating_profit: not_separately_disclosed
+      net_income: not_separately_disclosed
+      capital_expenditure: not_separately_disclosed
+      boundary: >-
+        The proposed listing application was submitted confidentially, and the
+        reviewed Baidu materials do not provide standalone Kunlunxin financial statements.
+    data_center_exposure:
+      role: general_purpose_AI_compute_chip_and_integrated_hardware_software_provider
+      current_disclosed_platform: Kunlunxin_P800
+      Baidu_AI_Cloud_cluster_cards: 32000
+      site_allocation: undisclosed
+      related_campus_refs:
+        - dc_baidu_ai_cloud_region_portfolio
+      campus_ref_boundary: >-
+        No reviewed source assigns the 32,000-card P800 cluster to Yangquan or
+        another named campus.
+    transaction_outlook:
+      confidential_HKEX_listing_application_submitted: 2026-01-01
+      expected_to_remain_Baidu_subsidiary_after_spin_off: true
+      completion_guaranteed: false
+      expected_timing: undisclosed
+    watch_items:
+      - standalone_financial_statements_and_listing_prospectus
+      - foundry_packaging_memory_and_network_supply_chain
+      - P800_performance_yield_power_and_customer_mix
+      - Baidu_internal_demand_versus_external_sales
+      - listing_approval_timing_and_dilution
+    sources:
+      - https://ir.baidu.com/static-files/73bc4ebd-6d6a-4adb-a404-7b9cbe20ae8a
+      - https://cloud.baidu.com/news/news_312c7a72-b32c-4b45-a3fb-da21e99562fc
+      - https://cloud.baidu.com/news/news_cdd5d1d3-4510-47a2-a806-55a795a50167
+    confidence: high_for_ownership_transaction_status_and_Baidu_cluster_count_low_for_standalone_financials_and_supply_chain
+
   - id: company_crusoe
     company: Crusoe
     layer: private_data_center_and_power_developers
@@ -4709,6 +4911,12 @@ cross_company_read_through:
     - Bloom Energy's Q1 2026 revenue grew 130.4% and its Oracle master agreement covers up to 2.8 GW, but deployment concentration, natural-gas dependence, and backlog conversion remain central risks.
     - Alibaba Cloud grew FY2026 revenue 34% and adjusted EBITA 35% while Alibaba spent RMB126.1 billion of capex and committed at least RMB380 billion to AI and cloud infrastructure; the capex and investment figures include more than data-center buildings.
     - Tencent generated much stronger consolidated operating margins than Alibaba and described Q1 capex payments as primarily AI-related, but it does not disclose standalone cloud revenue or operating profit. ByteDance is even less comparable because no reviewed public audited consolidated baseline exists.
+    - Huawei Cloud reported 34 regions and 101 availability zones at 2025 year-end, but an AZ may contain one or more physical data centers and the company provides no building-level fleet ledger. Its Atlas 900 A3 architecture supports 384 Ascend 910C NPUs across 12 compute and four bus cabinets; the more-than-300-system deployment disclosure spans external customers and cannot be multiplied into a Huawei Cloud inventory.
+    - Huawei's FY2025 revenue was CNY880.9 billion and operating profit CNY96.9 billion. The Cloud Computing segment reported CNY32.2 billion of revenue, down 3.5%, while a separate broader cloud-business measure including revenue from other Huawei segments was CNY72.1 billion; neither Cloud nor Digital Power operating profit is separately disclosed, so the two cloud measures cannot be added or used to infer data-center returns.
+    - Huawei's Gui'an AZ3 permit exposes a rare physical power-chain denominator: a 220 kV substation with eight planned 100 MVA transformers and three in phase one. The derived 800 MVA and 300 MVA sums are apparent-power nameplate, not IT load; redundancy, power factor, energization, accelerators, and equipment vendors remain unknown.
+    - Baidu disclosed a 32,000-card Kunlunxin P800 cluster in scaled use with effective training above 98%, but no campus, rack count, measured MW, or utilization ledger. Its later Tianchi rack design supports 64 cards, 33-120 kW of rack power, 10+2 PSU redundancy, and hybrid liquid-air cooling; the reviewed evidence does not establish that the 32,000-card cluster uses this exact rack.
+    - Baidu's Yangquan first phase supports a published 160,000-server design scale, while the 2019 second-phase plan added more than 80,000 high-performance AI servers and the 2025 D15 plan about 5,000 racks. Those are different lifecycle measures. The site's 1.12 campus PUE, 1.08 module metric, and below-1.15 phase-two target are also kept separate, and the company-wide P800 fleet is not assigned to Yangquan.
+    - Baidu FY2025 AI Cloud Infra revenue reached CNY19.8 billion, up 34%, while consolidated GAAP operating loss was CNY5.8 billion after a CNY16.2 billion long-lived-asset impairment; operating income excluding that impairment was about CNY10.4 billion. AI Cloud Infra operating profit and capex remain undisclosed, and the proposed Kunlunxin spin-off is a possible valuation catalyst rather than a completed transaction.
     - Alphabet's latest $180-$190 billion 2026 capex range, with the overwhelming majority for technical infrastructure, makes it one of the largest current demand sources; rising Cloud operating profit shows monetization is already visible even though campus economics remain undisclosed.
     - NVIDIA's latest Data Center revenue shows that accelerator and network spending remains the largest disclosed value pool in this set.
     - AMD's multi-year Meta agreement and latest Data Center segment growth show a second merchant-GPU path, but planned gigawatts are not current shipments.

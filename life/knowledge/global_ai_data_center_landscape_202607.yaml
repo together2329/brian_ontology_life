@@ -6771,6 +6771,412 @@ campus_profiles:
         url: https://gongyi.bytedance.com/detail/7161987661010602014
     confidence: medium_for_service_regions_and_sustainability_metrics_low_for_company_wide_physical_site_count_MW_and_GPU_inventory
 
+  - id: dc_huawei_cloud_global_region_portfolio
+    name: Huawei Cloud global region, AI-compute-center, and CloudMatrix portfolio
+    record_granularity: provider_region_and_AZ_portfolio_not_one_physical_campus
+    operator: Huawei_Cloud
+    lifecycle_as_of_2026_07_18: operating_and_expanding
+    location:
+      company_reported_as_of_2025_year_end:
+        regions: 34
+        availability_zones: 101
+        customer_countries_and_regions_more_than: 170
+      provider_definition:
+        region: geographic_and_network_latency_domain
+        availability_zone: one_or_more_physical_data_centers_with_independent_cooling_fire_moisture_and_electricity_facilities
+      public_international_website_service_region_labels_as_of_2026_04_16:
+        Chinese_mainland: [Beijing, Shanghai, Qingdao, Guangzhou, Guiyang]
+        Greater_China: [Hong_Kong]
+        Asia_Pacific: [Bangkok, Singapore, Jakarta, Kuala_Lumpur, Manila]
+        Middle_East_Africa_and_Turkiye: [Riyadh, Cairo, Johannesburg, Istanbul]
+        Latin_America: [Mexico_City, Sao_Paulo, Santiago, Buenos_Aires, Lima]
+        labels_derived: 20
+      named_AI_compute_centers_disclosed_in_2023: [Guian, Ulanqab, Wuhu]
+      roster_reconciliation_boundary: >-
+        The 20 international-website labels are a service-scope roster with some
+        umbrella city names, not the full 34-region portfolio. A region or AZ is
+        not an exact building count, and the company does not publish a current
+        building-by-building address, ownership, lifecycle, or energized-MW ledger.
+    portfolio_scale:
+      physical_data_center_building_count: undisclosed
+      owned_versus_leased_capacity: undisclosed
+      operating_energized_and_utilized_IT_MW: undisclosed
+      AICS_customers_worldwide_more_than_as_of_2025_year_end: 1800
+    accelerators_and_AI_systems:
+      cloud_service_architecture:
+        CloudMatrix384:
+          relationship: Huawei_Cloud_service_instance_built_on_Atlas_900_A3_SuperPoD
+          NPU: 384_Ascend_910C
+          CPU: 192_Kunpeng_920
+          service_launch_status: generally_available_for_AI_token_inference_in_2025
+          exact_Huawei_Cloud_instance_count_regions_sites_and_utilization: undisclosed
+      Atlas_900_A3_product_architecture:
+        maximum_NPU_cards: 384
+        NPU_model_from_company_keynote: Ascend_910C
+        maximum_CPU_chips: 192
+        CPU_model: Kunpeng_920
+        compute_cabinets_47U: 12
+        bus_equipment_cabinets_47U: 4
+        total_cabinets_derived: 16
+        on_chip_memory_TB: 48
+        FP16_compute_PFLOPS_variants: [307.2, 288.7]
+        bidirectional_D2D_bandwidth_GB_per_second: 784
+        deployment_disclosure_as_of_2025_09:
+          systems_more_than: 300
+          customers_more_than: 20
+          customer_sectors: [internet_service_provider, telecommunications, manufacturing]
+        inventory_boundary: >-
+          The deployment count includes customer systems and maximum configurations
+          are not necessarily installed. It cannot be multiplied by 384 to infer a
+          Huawei Cloud fleet, a live chip count, or a per-campus inventory.
+      Atlas_950_future_product:
+        target_availability: Q4_2026
+        Ascend_950DT_cards_at_full_configuration: 8192
+        compute_cabinets: 128
+        interconnect_cabinets: 32
+        total_cabinets: 160
+        footprint_m2_approximate: 1000
+        lifecycle_boundary: announced_future_product_not_current_installed_capacity
+      third_party_GPU_inventory_models_counts_and_site_allocation: undisclosed
+    electrical_power_and_resilience:
+      Atlas_900_A3_product_input:
+        feeds: dual_three_phase_AC
+        voltage_VAC: 380
+        power_draw_kW_or_MW: undisclosed
+        PSU_UPS_and_facility_distribution_boundary: Product input is not a campus electrical single-line diagram.
+      CloudDC_customer_deployment_product_context:
+        liquid_cooled_rack_density_kW: 30
+        advertised_PUE: 1.1
+        network_Gbps: 200
+        boundary: Customer CloudDC design specification, not Huawei Cloud fleetwide measured capacity or PUE.
+      per_region_grid_service_voltage_substations_transformers_switchgear_UPS_generators_fuel_and_OEMs: mostly_undisclosed
+    cooling_water_and_efficiency:
+      Atlas_900_A3_product_cooling:
+        compute_cabinets: liquid_cooled
+        bus_equipment_cabinets: air_cooled
+      Guian_green_data_center_public_metric:
+        PUE: 1.12
+        architecture:
+          - direct_outdoor_air_ventilation
+          - hot_aisle_heat_exchange_and_rooftop_exhaust
+          - medium_temperature_chilled_water
+          - waterfall_and_lake_assisted_natural_cooling
+          - heat_recovery_for_pool_and_office_heating
+          - liquid_cooling
+          - AI_workload_scheduling_and_peak_shaving
+          - power_semiconductors_replacing_some_copper_components
+        expected_annual_electricity_savings_at_full_capacity_kwh: 1010000000
+        site_boundary: >-
+          Huawei identifies the facility only as its green data center in Gui'an.
+          The reviewed source does not establish that these metrics belong to the
+          separately permitted AZ3 Machang phase-one project.
+      fleetwide_PUE_WUE_water_withdrawal_and_liquid_cooled_MW: undisclosed
+    linked_companies:
+      owner_operator_compute_and_power_vendor: [Huawei]
+      financial_profile_refs: [company_huawei]
+    sources:
+      - title: Huawei 2025 Annual Report
+        publisher: Huawei
+        date: 2026-03-31
+        url: https://www.huawei.com/en/annual-report/2025
+      - title: Huawei Cloud international website service regions
+        publisher: Huawei_Cloud
+        date: 2026-04-16
+        url: https://support.huaweicloud.com/intl/en-us/intl_faq/en-us_topic_0115884695.html
+      - title: Huawei Cloud region and availability-zone definitions
+        publisher: Huawei_Cloud
+        date: 2026-01-23
+        url: https://support.huaweicloud.com/intl/en-us/productdesc-live/live_03_0008.html
+      - title: Huawei Cloud three AI compute centers
+        publisher: Huawei_Cloud
+        date: 2023-09-22
+        url: https://www.huaweicloud.com/intl/en-us/news/20230922173025927.html
+      - title: Atlas 900 A3 SuperPoD product specifications
+        publisher: Huawei
+        date: 2026-07-18_accessed
+        url: https://e.huawei.com/cn/products/computing/ascend/atlas-900-a3-superpod
+      - title: Groundbreaking SuperPoD interconnect and roadmap
+        publisher: Huawei
+        date: 2025-09
+        url: https://www.huawei.com/en/news/2025/9/hc-xu-keynote-speech
+      - title: CloudMatrix384 AI Token inference service availability
+        publisher: Huawei_Cloud
+        date: 2025-09-19
+        url: https://www.huawei.com/cn/news/2025/9/hc-huawei-cloud-ai-pioneer
+      - title: Huawei Cloud Gui'an green data center
+        publisher: Huawei
+        date: 2026-07-18_accessed
+        url: https://www.huawei.com/en/sustainability/the-latest/stories/green-data-centers-optimal-pue
+      - title: Huawei Cloud CloudDC
+        publisher: Huawei_Cloud
+        date: 2026-07-18_accessed
+        url: https://www.huaweicloud.com/product/clouddc.html
+    confidence: high_for_region_AZ_headline_named_AI_centers_product_architecture_and_Guian_efficiency_low_for_physical_building_mapping_live_MW_and_installed_accelerator_inventory
+
+  - id: dc_huawei_guian_az3_machang_phase1
+    name: Huawei Cloud Gui'an AZ3 Machang area phase one
+    record_granularity: named_data_center_campus_phase_and_dedicated_substation
+    operator: Huawei_Cloud
+    country: CN
+    region: Guizhou
+    locality: Guian_New_Area_Machang
+    lifecycle_as_of_2026_07_18: under_construction_in_2025_current_energization_and_completion_undisclosed
+    location:
+      description: northeast_of_Xingan_Avenue_and_Jinpu_Road_intersection_MA_04_01_parcel
+      latitude: 26.3817367
+      longitude: 106.4745853
+      land_mu: 382.33
+      land_area_m2_derived_approximate: 254887
+      planned_gross_floor_area_m2_approximate: 240000
+      source_coordinate_format: 106_degrees_28_minutes_28_507_seconds_E_26_degrees_22_minutes_54_252_seconds_N
+    campus_scale:
+      data_center_buildings: [D1, D2, D3, D4]
+      diesel_generator_platforms: 4
+      additional_structures:
+        - carrier_equipment_room_building
+        - supporting_building
+        - waste_material_warehouse
+        - switching_station
+        - 220kV_substation
+      racks_servers_IT_MW_and_operating_load: undisclosed
+    accelerators:
+      exact_GPU_NPU_models_counts_racks_and_workloads: undisclosed
+      CloudMatrix_or_Atlas_allocation: not_publicly_established
+    electrical_and_generation:
+      primary_substation_voltage_kV: 220
+      master_plan_transformers:
+        units: 8
+        unit_rating_MVA: 100
+        total_nameplate_MVA_derived: 800
+      phase_one_transformers:
+        units: 3
+        unit_rating_MVA: 100
+        total_nameplate_MVA_derived: 300
+      expansion_ready_transformer_bays: 5
+      purpose: main_power_source_for_Huawei_Cloud_Guian_AZ3
+      interpretation_boundary: >-
+        MVA is transformer apparent-power nameplate, not IT MW, utilized load, or
+        incremental generation. Power factor, redundancy, auxiliary load, phasing,
+        energization, and load allocation are not disclosed in the reviewed permit.
+      diesel_platform_count: 4
+      exact_generator_units_MW_fuel_runtime_switchgear_UPS_and_OEMs: undisclosed
+    cooling_water_and_efficiency:
+      architecture_PUE_WUE_water_consumption_and_OEMs: undisclosed_for_this_AZ3_phase
+      boundary: The separate Huawei Gui'an PUE 1.12 case study is not assigned to AZ3 without a matching parcel or facility identifier.
+    linked_companies:
+      developer_and_operator: [Huawei_Cloud]
+      financial_profile_refs: [company_huawei]
+    sources:
+      - title: Gui'an Huawei Cloud AZ3 Machang phase-one 220 kV substation environmental-impact report
+        publisher: Guizhou_Provincial_Department_of_Ecology_and_Environment
+        date: 2025-03
+        url: https://sthj.guizhou.gov.cn/zwgk/zdlyxx/fsjg/fslxmspqgs/202503/P020250321602011794355.pdf
+    confidence: high_for_parcel_buildings_substation_voltage_and_transformer_nameplate_low_for_completion_IT_load_GPU_and_cooling_inventory
+
+  - id: dc_baidu_ai_cloud_region_portfolio
+    name: Baidu AI Cloud region, availability-zone, and AI accelerator portfolio
+    record_granularity: provider_service_region_and_AI_cluster_portfolio_not_one_physical_campus
+    operator: Baidu_AI_Cloud
+    lifecycle_as_of_2026_07_18: operating_and_expanding
+    location:
+      BOS_service_regions_as_of_2025_11_03:
+        - North_China_Beijing
+        - North_China_Baoding
+        - East_China_Suzhou
+        - South_China_Guangzhou
+        - Southwest_Chengdu
+        - Yangquan
+        - Hong_Kong
+        - Financial_Central_China_Wuhan
+        - Financial_East_China_Shanghai
+      service_region_rows_derived: 9
+      provider_definition:
+        region: distinct_geographic_area_where_service_data_centers_are_located
+        availability_zone: one_or_more_data_centers_with_independent_power_and_network_fault_domains
+        user_mapping_warning: the_same_AZ_label_for_different_users_may_map_to_different_physical_data_centers
+      roster_boundary: >-
+        The nine rows are a current BOS product roster, not a company-wide compute,
+        storage, leased-site, edge-node, campus, or building inventory. Product
+        coverage varies by region and the provider does not publish an exact
+        physical-site reconciliation.
+    portfolio_scale:
+      exact_regions_across_all_products: undisclosed
+      availability_zones_physical_buildings_owned_leased_sites_and_IT_MW: undisclosed
+    accelerators_and_AI_systems:
+      Kunlunxin_P800_cluster:
+        initial_power_on_cards_as_of_2025_02: 10000
+        scaled_cards_disclosed_later_in_2025: 32000
+        effective_training_rate_percent_more_than: 98
+        exact_site_or_region: undisclosed
+        racks_and_measured_power_MW: undisclosed
+        platform: Baige_AI_heterogeneous_computing_platform
+        server_generation_context: X_MAN_5_0_supported_the_reported_30000_card_deployment
+      ten_thousand_card_design_context:
+        conventional_scheme_power_MW: ten_or_more
+        boundary: Company engineering context, not measured power for the disclosed P800 cluster.
+      Tianchi_high_density_rack_product:
+        supported_scale_up_cards: [32, 64]
+        cards_per_1U_compute_tray: 4
+        typical_64_card_configuration:
+          occupied_U: 28
+          compute_trays_1U: 16
+          switch_trays_1U: 8
+          power_shelves_2U: 2
+        network:
+          PCIe_NIC_slots_per_compute_tray: 4
+          NIC_per_XPU_binding: one_to_one
+          maximum_400G_NICs_per_compute_tray: 4
+          scale_out: hundreds_to_more_than_10000_XPUs
+        deployment_boundary: >-
+          The Tianchi rack is a disclosed product architecture. The reviewed
+          sources do not establish that the earlier 32,000-card P800 cluster uses
+          this exact rack or identify its campus.
+      third_party_NVIDIA_AMD_or_Ascend_inventory_and_site_allocation: undisclosed
+    electrical_power_and_resilience:
+      Tianchi_power_shelf:
+        height_U: 2
+        PSU_modules: 12
+        redundancy: 10_plus_2
+        dual_input_ATS: true
+        supported_PSU_ratings_W: [3300, 5500]
+        rack_power_range_kW: [33, 120]
+        supported_accelerator_power_W: [500, 1000]
+        redundant_input_modes: [AC_plus_AC, AC_plus_DC, DC_plus_DC]
+      fleetwide_grid_service_voltage_substations_transformers_switchgear_UPS_generators_and_OEMs: undisclosed
+    cooling_water_and_efficiency:
+      Tianchi_rack:
+        architecture: hybrid_direct_to_chip_liquid_and_air_cooling
+        liquid_cooled_components: [CPU, XPU]
+        air_cooled_components: [network_interface_card, memory, SSD]
+        cold_plate: microchannel
+        water_loop: parallel
+        XPU_temperature_reduction_C_more_than: 20
+        CDU: Baidu_Tianji_1_0_one_per_rack
+        deployment_context: enables_liquid_cooled_rack_in_legacy_air_cooled_data_center
+      fleetwide_PUE_WUE_water_and_liquid_cooled_MW: undisclosed
+    linked_companies:
+      owner_operator: [Baidu]
+      accelerator_subsidiary: [Kunlunxin]
+      financial_profile_refs: [company_baidu, company_kunlunxin]
+    sources:
+      - title: Baidu AI Cloud BOS regions and endpoints
+        publisher: Baidu_AI_Cloud
+        date: 2025-11-03
+        url: https://intl.cloud.baidu.com/en/doc/BOS/s/akrqd2wcx-intl-en
+      - title: Baidu AI Cloud availability-zone definition
+        publisher: Baidu_AI_Cloud
+        date: 2020-07-20
+        url: https://cloud.baidu.com/doc/Reference/s/1jwvz249k-en
+      - title: Baidu lights Kunlunxin 10000-card cluster
+        publisher: Baidu_AI_Cloud
+        date: 2025-02-08
+        url: https://cloud.baidu.com/news/news_9d90bec5-d18b-46aa-a5c5-f18cf5470340
+      - title: Baidu AI Cloud 32000-card P800 scaled deployment
+        publisher: Baidu_AI_Cloud
+        date: 2025
+        url: https://cloud.baidu.com/news/news_312c7a72-b32c-4b45-a3fb-da21e99562fc
+      - title: Kunlunxin Tianchi high-density liquid-cooled rack architecture
+        publisher: Baidu_AI_Cloud
+        date: 2025-12-29
+        url: https://cloud.baidu.com/news/news_cdd5d1d3-4510-47a2-a806-55a795a50167
+    confidence: high_for_service_region_roster_P800_cluster_scale_and_Tianchi_architecture_low_for_physical_site_count_fleet_MW_and_cluster_location
+
+  - id: dc_baidu_yangquan_cloud_computing_center
+    name: Baidu Cloud Computing Yangquan Center
+    record_granularity: named_multi_phase_data_center_campus
+    operator: Baidu
+    country: CN
+    region: Shanxi
+    locality: Yangquan_Suburban_District_Economic_and_Technological_Development_Zone
+    lifecycle_as_of_2026_07_18: operating_and_expanding
+    location:
+      address: Yibai_Road_Baidu_Cloud_Computing_Yangquan_Center
+      phase_one_land_mu_more_than: 300
+      exact_coordinates_and_parcel_boundary: undisclosed_in_reviewed_sources
+    campus_scale:
+      phase_one:
+        operating_since: 2014
+        planned_or_supported_server_capacity: 160000
+        current_installed_and_utilized_server_count: undisclosed
+      phase_two_2019_announcement:
+        announced_investment_cny_billion_approximate: 1.4
+        gross_floor_area_m2: 86000
+        data_center_modules: 4
+        expansion_buildings: 1
+        additional_high_performance_AI_servers_more_than: 80000
+        boundary: Announced full-build capacity, not verified current installed server inventory.
+      local_government_status_2025_06:
+        server_expansion_completed: true
+        compute_scale_P_approximate: 4000
+        compute_unit_boundary: Source reports the label P without a precision or workload basis; it is not converted to GPU count or IT MW.
+        D15_expansion:
+          construction_start: 2025-05
+          investment_cny_million: 270
+          design_racks_approximate: 5000
+          current_completion_and_energization: undisclosed
+      exact_current_buildings_racks_servers_and_IT_MW: undisclosed
+    accelerators:
+      campus_GPU_NPU_models_counts_and_rack_density: undisclosed
+      P800_32000_card_cluster_allocation: not_publicly_established
+      boundary: The company-wide P800 cluster is not assigned to Yangquan without site-specific evidence.
+    electrical_and_generation:
+      disclosed_phase_one_architectures:
+        - utility_direct_supply_plus_UPS_ECO
+        - utility_direct_supply_plus_offline_high_voltage_DC
+      disclosed_power_supply_efficiency_percent_up_to: 99.5
+      distributed_rack_battery_BBU_deployment: first_large_scale_company_claim
+      rooftop_solar_direct_grid_connection_operating_since: 2015
+      grid_service_voltage_substations_transformers_switchgear_generator_count_capacity_fuel_and_OEMs: undisclosed
+    cooling_water_and_efficiency:
+      phase_one_campus_annual_PUE: 1.12
+      module_1_annual_PUE_as_of_2021: 1.08
+      campus_natural_cooling_share_of_year_percent_more_than: 94
+      module_1_free_cooling_share_of_year_percent_more_than: 98
+      architecture:
+        - no_raised_floor
+        - air_wall_precision_cooling
+        - optimized_airflow
+        - high_temperature_chilled_water
+        - Baidu_Glacier_oil_free_phase_change_cooling
+        - gas_pump
+        - liquid_pump
+        - evaporative_condenser
+        - parallel_cooling_terminals
+        - AI_control
+      Glacier_partial_region_Cooling_Load_Factor_low: 0.035
+      Glacier_energy_reduction_versus_traditional_percent: 40
+      phase_two_design_annual_PUE_less_than: 1.15
+      phase_two_expected_annual_electricity_savings_kwh_more_than: 100000000
+      water_consumption_WUE_and_liquid_cooled_capacity: undisclosed
+      metric_boundary: >-
+        PUE 1.12 is a campus-era metric, 1.08 belongs to module 1, and below 1.15
+        is a phase-two design target. They are not interchangeable fleet averages.
+    linked_companies:
+      owner_and_operator: [Baidu]
+      financial_profile_refs: [company_baidu]
+    sources:
+      - title: Baidu Yangquan phase two groundbreaking and phase-one scale
+        publisher: Baidu
+        date: 2019-11-22
+        url: https://home.baidu.com/home/index/news_detail/id/17935
+      - title: Baidu Yangquan low-carbon data-center architecture
+        publisher: Baidu_AI_Cloud
+        date: 2021-05-24
+        url: https://cloud.baidu.com/article/293133
+      - title: Baidu Yangquan national green and intelligent data-center recognition
+        publisher: Baidu_AI_Cloud
+        date: 2022-02-23
+        url: https://cloud.baidu.com/news/news_96d0c767-7900-45a0-9142-829e7ee3a9d5
+      - title: Baidu Yangquan dedicated-line access point address
+        publisher: Baidu_AI_Cloud
+        date: 2026-07-18_accessed
+        url: https://cloud.baidu.com/doc/ET/s/Olphqmzdb
+      - title: Yangquan AI-compute development and Baidu D15 expansion
+        publisher: Yangquan_Development_and_Reform_Commission
+        date: 2025-06-03
+        url: https://fgw.yq.gov.cn/fgdt/xwdt/202506/t20250603_2071124.html
+    confidence: high_for_address_phase_scale_power_cooling_and_PUE_low_for_current_installed_servers_IT_MW_and_accelerator_inventory
+
 disclosure_gap_register:
   - exact_global_physical_data_center_count
   - exact_per_campus_GPU_inventory_for_most_hyperscalers
@@ -6849,6 +7255,15 @@ disclosure_gap_register:
   - Apple_colocation_and_third_party_computing_facility_vendor_location_capacity_and_energy_reconciliation
   - Apple_Private_Cloud_Compute_exact_Apple_silicon_model_node_chassis_rack_power_and_site_inventory
   - Apple_per_site_grid_service_substations_transformers_switchgear_UPS_cooling_PUE_WUE_and_equipment_OEMs
+  - Huawei_34_regions_101_AZs_to_physical_buildings_addresses_ownership_lifecycle_and_energized_MW_reconciliation
+  - Huawei_Cloud_exact_CloudMatrix_Ascend_inventory_site_allocation_utilization_and_power_draw
+  - Huawei_Guian_AZ3_800MVA_nameplate_to_redundancy_IT_MW_energization_GPU_inventory_and_equipment_BOM
+  - Huawei_Cloud_revenue_operating_profit_capex_and_data_center_return_on_invested_capital
+  - Baidu_service_regions_and_AZs_to_owned_leased_physical_buildings_and_energized_MW_reconciliation
+  - Baidu_32000_P800_cluster_site_racks_power_cooling_utilization_and_current_inventory
+  - Baidu_Yangquan_current_server_rack_IT_MW_accelerator_and_D15_energization_status
+  - Baidu_AI_Cloud_Infra_revenue_to_operating_profit_capex_and_cash_conversion
+  - Kunlunxin_standalone_financials_foundry_packaging_memory_network_and_customer_mix
 
 next_research_queue:
   campus_enrichment:
@@ -6912,6 +7327,13 @@ next_research_queue:
     - Apple_colocation_and_third_party_computing_vendor_location_capacity_and_energy_reconciliation
     - Apple_PCC_server_model_node_chassis_rack_power_and_site_inventory
     - Apple_per_site_power_chain_cooling_water_and_equipment_OEMs
+    - Huawei_34_regions_101_AZs_physical_campus_building_address_ownership_and_lifecycle_reconciliation
+    - Huawei_Cloud_CloudMatrix_live_NPU_inventory_site_allocation_utilization_and_power
+    - Huawei_Guian_AZ3_transformer_redundancy_energization_IT_load_accelerators_cooling_and_equipment
+    - Huawei_Ulanqab_and_Wuhu_AI_compute_center_campus_scale_power_cooling_and_accelerator_inventory
+    - Baidu_AI_Cloud_region_AZ_physical_site_ownership_capacity_and_lifecycle_reconciliation
+    - Baidu_32000_P800_cluster_site_rack_power_cooling_and_utilization
+    - Baidu_Yangquan_phase_two_and_D15_completion_live_IT_MW_server_accelerator_and_power_chain
   company_financials:
     - ByteDance_audited_financials_if_publicly_released
     - Crusoe_QTS_Vantage_VoltaGrid_and_Related_Digital_audited_or_lender_disclosed_financials
@@ -6928,6 +7350,9 @@ next_research_queue:
     - Dominion_TNB_and_NextEra_data_center_specific_rate_base_revenue_capex_and_customer_concentration
     - NextEra_Dominion_transaction_regulatory_approval_and_closing_status
     - Duke_Energy_and_Berkshire_Hathaway_Energy_Apple_data_center_exposure_and_project_economics
+    - Huawei_Cloud_and_Digital_Power_operating_profit_capex_and_data_center_economics
+    - Baidu_AI_Cloud_Infra_operating_profit_capex_depreciation_and_cash_conversion
+    - Kunlunxin_listing_prospectus_standalone_revenue_operating_profit_and_supply_chain
 
 portfolio_relevance:
   interpretation: >-
