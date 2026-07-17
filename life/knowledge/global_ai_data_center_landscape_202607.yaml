@@ -7923,6 +7923,355 @@ campus_profiles:
         url: https://www.chindatagroup.com/media/news/533.html
     confidence: high_for_commercial_date_topology_voltage_efficiency_and_collaborators_low_for_campus_scale_SST_MW_storage_GPU_and_cooling_details
 
+  - id: dc_nxtra_india_portfolio
+    name: Nxtra by Airtel India data-center portfolio
+    record_granularity: operator_portfolio_with_marketed_site_rows_and_non_reconciled_capacity_snapshots
+    operator: Nxtra_by_Airtel
+    country: IN
+    lifecycle_as_of_2026_07_18: operating_and_expanding
+    ownership:
+      controlling_parent: Bharti_Airtel
+      announced_2026_equity_investors: [Alpha_Wave_Global, Carlyle, Anchorage_Capital]
+      announced_round_status: subject_to_regulatory_approvals_at_2026_03_30_announcement
+    location:
+      portfolio_headline:
+        major_markets: 8
+        unique_cities: 66
+        edge_facilities_more_than: 120
+      marketed_hyperscale_facility_labels_by_market:
+        Mumbai: [Chandivali_MUM1, Airoli_MUM2, Mahape_MUM3, MUM4]
+        Pune: [Kharadi_PUN1, Hinjewadi_PUN2, PUN3, PUN4]
+        Kolkata_and_Bhubaneswar: [KOL1, BBR1]
+        Bangalore: [Whitefield_BLR1, Hoskote_BLR2, BLR3, Bangalore_DC2]
+        Chennai: [Santhome_CHE1, Siruseri_CHE2, CHE3, Siruseri_DC3_CHE4]
+        Noida: [NCR1, NCR2, NCR4]
+        Manesar: [NCR3]
+        Hyderabad: [HYD1]
+      marketed_hyperscale_facility_label_count_derived: 22
+      boundary: >-
+        The current homepage, individual market pages, and the March 2026 funding
+        release do not use one consistent facility count. Market-page labels are
+        retained as public location candidates and are not all asserted to be live,
+        hyperscale, owned, or separate buildings without lifecycle reconciliation.
+    capacity_snapshots_kept_separate:
+      current_homepage:
+        hyperscale_data_centers: 15
+        total_power_mw_more_than: 230
+      FY2025_sustainability_report:
+        hyperscale_or_core_data_centers_more_than: 14
+        capacity_mw: 220
+        target_capacity_mw_within_three_years: 450
+      funding_announcement_2026_03_30:
+        large_core_data_centers: 14
+        current_capacity_mw_approximate: 300
+        target_capacity_gw: 1
+        target_timing: next_few_years
+      current_market_page_rows:
+        Mumbai: {marketed_capacity_mw_derived: 71, disclosed_racks: 6900}
+        Pune: {marketed_capacity_mw_derived: 49.5, disclosed_racks: 8750}
+        Chennai: {page_headline_capacity_mw: 46, site_row_capacity_mw_derived: 49, disclosed_racks_incomplete: 5400}
+        Bangalore: {marketed_capacity_mw_derived: 45.4, disclosed_racks: 9800}
+        Noida: {marketed_capacity_mw_derived: 26, disclosed_racks: 5750}
+        Hyderabad: {marketed_capacity_mw: 10, disclosed_racks: 2500}
+        Manesar: {marketed_capacity_mw: 12.5, disclosed_racks: 2300}
+        Kolkata_and_Bhubaneswar: {marketed_capacity_mw_derived: 11.8, disclosed_racks: 2900}
+        all_rows_capacity_mw_derived: 275.2
+        disclosed_racks_incomplete_derived: 44300
+      reconciliation_boundary: >-
+        The 230-plus, 220, approximately 300, and 275.2 MW figures have different
+        dates and publication scopes. The 275.2 MW sum is arithmetic over marketed
+        site rows, not verified energized or utilized IT load. Chennai's headline
+        says 46 MW while its four rows sum to 49 MW, and three Chennai rows omit racks.
+    accelerators:
+      exact_GPU_NPU_models_counts_servers_racks_density_site_allocation_customers_and_utilization: undisclosed
+      AI_ready_claim: supports_air_and_liquid_cooled_AI_farms
+      boundary: AI-ready and liquid-cooling capability do not prove that accelerators are installed or in production.
+    electrical_generation_and_network:
+      resilience_claims_on_market_pages: [N_plus_N_or_equivalent_power_paths_at_selected_sites, 2N_network_at_selected_sites]
+      current_homepage_renewable_energy_capacity_mw_more_than: 390
+      FY2025_contracted_renewable_electricity_mwh: 482800
+      FY2025_facilities_in_renewable_contract_scope_more_than: 65
+      FY2025_core_data_center_electricity_from_renewables_percent: 49
+      efficiency_actions: [high_efficiency_UPS_and_chiller_upgrades, onsite_GIS_substations, modular_electrical_and_floor_pods]
+      exact_grid_feeders_substation_voltage_transformer_MVA_switchgear_UPS_battery_generator_counts_runtime_and_OEMs_by_site: undisclosed
+      renewable_boundary: Renewable-energy capacity and contracted electricity are portfolio measures, not dedicated onsite generation or 24_by_7 matching at every campus.
+    cooling_and_efficiency:
+      site_page_PUE_claims: generally_below_1_55_with_selected_sites_below_1_5
+      FY2025_average_PUE_reduction_percent_versus_FY2021_baseline: 10
+      FY2025_exact_average_PUE: undisclosed
+      water_recycled_FY2025_kl: 15329
+      technologies: [air_cooling, cold_aisle_containment, free_cooling, integrated_chiller_distribution, AI_ML_thermal_optimization, direct_to_chip_testing, single_and_dual_phase_immersion_testing]
+      exact_live_liquid_cooled_MW_CDU_heat_rejection_WUE_water_consumption_and_OEMs_by_site: undisclosed
+    linked_companies:
+      owner_and_operator: [Bharti_Airtel, Nxtra_by_Airtel]
+      financial_profile_refs: [company_bharti_airtel]
+      named_expansion_partner_refs: [dc_google_visakhapatnam_ai_hub]
+    sources:
+      - title: Nxtra current portfolio homepage
+        publisher: Nxtra_by_Airtel
+        date: 2026
+        url: https://www.nxtra.in/
+      - title: Nxtra one-billion-dollar investment announcement
+        publisher: Bharti_Airtel
+        date: 2026-03-30
+        url: https://www.airtel.in/press-release/03-2026/airtel-announces-us1-billion-investment-in-nxtra-led-by-alpha-wave-global-and-existing-investor-carlyle-bharti-airtel-will-also-participate/
+      - title: Nxtra Sustainability Report 2025
+        publisher: Nxtra_by_Airtel
+        date: 2025
+        url: https://assets.airtel.in/nxtra/pdf/Nxtra-Sustainability-Report-2025.pdf
+      - title: Nxtra market pages for Mumbai Pune Chennai Bangalore Noida Hyderabad Manesar Kolkata and Bhubaneswar
+        publisher: Nxtra_by_Airtel
+        date: 2026
+        urls:
+          - https://www.nxtra.in/data-center-mumbai
+          - https://www.nxtra.in/data-center-pune
+          - https://www.nxtra.in/data-center-chennai
+          - https://www.nxtra.in/data-center-bangalore
+          - https://www.nxtra.in/data-center-noida
+          - https://www.nxtra.in/data-center-hyderabad
+          - https://www.nxtra.in/data-center-manesar
+          - https://www.nxtra.in/data-center-kolkata-bhubaneshwar
+    confidence: high_for_published_snapshots_site_rows_racks_sustainability_and_funding_low_for_lifecycle_reconciliation_live_IT_load_GPU_and_per_site_equipment
+
+  - id: dc_adaniconnex_india_portfolio
+    name: AdaniConneX India data-center portfolio
+    record_granularity: joint_venture_portfolio_with_operating_order_and_design_capacity_scopes
+    operator: AdaniConneX
+    country: IN
+    lifecycle_as_of_2026_03_31: operating_building_and_expanding
+    ownership:
+      joint_venture_partners: [Adani_Enterprises, EdgeConneX]
+      ownership_split: 50_50
+    location:
+      current_site_cards:
+        Chennai: {potential_capacity_mw: 33, phase_1_RFS_published: 2022-10}
+        Hyderabad: {potential_capacity_mw: 600, phase_1_RFS_published: 2024-10}
+        Navi_Mumbai: {potential_capacity_mw: 1000, RFS_published: 2026-12_onward}
+        Noida: {potential_capacity_mw: 150, phase_1_live_published: 2025-01}
+        Pune: {potential_capacity_mw: 250, phase_1_RFS_published: H2_2025}
+      current_site_card_potential_capacity_mw_derived: 2033
+      lifecycle_boundary: >-
+        Site-card potential and RFS labels are marketing or development fields,
+        not a verified current operating ledger. The FY2026 result confirms four
+        operating data centers but does not identify all four, so no fourth campus
+        is inferred from older cards.
+    capacity_snapshots_kept_separate:
+      FY2025_operating_capacity_mw: 36.6
+      FY2025_operating_site_breakdown_mw:
+        Chennai: 17
+        Noida: 10
+        Hyderabad: 9.6
+      FY2025_cumulative_order_book_mw_more_than: 210
+      FY2025_under_development_or_deployment_mw: 210
+      FY2026_year_end:
+        operational_capacity_mw_more_than: 55
+        operational_data_centers: 4
+        Hyderabad_phase_2_delivered_mw: 4.8
+        new_Hyderabad_hyperscale_order_mw: 358
+        cumulative_tied_up_capacity_mw_more_than: 560
+      strategic_platform_scopes:
+        FY2025_target_gw_by_2030: 1
+        current_company_about_vision_gw_by_2031: 3
+        Adani_2026_existing_national_platform_gw: 2
+        Adani_2026_target_gw_by_2035: 5
+        Google_Visakhapatnam_AI_hub: gigawatt_scale
+      boundary: >-
+        Operating, under-development, ordered, tied-up, site-potential, platform,
+        and target capacity are separate lifecycle measures. None is converted to
+        utilized IT load, and the 2 GW platform statement is not recorded as live.
+    accelerators:
+      exact_GPU_NPU_models_counts_servers_racks_site_allocation_customers_and_utilization: undisclosed
+      published_density_design:
+        Chennai_supported_rack_density_kw_from: 6
+        Chennai_supported_rack_density_kw_plus: 50
+        build_to_density_future_support_kw_per_rack_more_than: 300
+      density_boundary: These are hardware-agnostic design capabilities, not measured installed rack density or GPU inventory.
+    electrical_generation_and_network:
+      renewable_energy_design_claim_percent_up_to: 100
+      availability_design_percent: 99.999
+      announced_future_platform_architecture: [high_density_power, liquid_cooling, grid_integration, battery_energy_storage]
+      exact_per_site_grid_feeders_substations_transformers_switchgear_UPS_batteries_generators_runtime_and_OEMs: mostly_undisclosed
+      detailed_site_ref: dc_adaniconnex_chennai_1
+    cooling_and_efficiency:
+      Chennai_PUE_FY2025_improved_from: 1.609
+      Chennai_PUE_FY2025_improved_to: 1.59
+      Chennai_PUE_FY2026_target_not_achievement: 1.57
+      efficiency_actions: [air_leak_correction, occupancy_sensors, idle_UPS_shutdown, dehumidifier_optimization, air_cooled_chiller_tuning]
+      portfolio_PUE_WUE_water_consumption_live_liquid_cooled_MW_CDU_heat_rejection_and_OEMs: undisclosed
+    linked_companies:
+      joint_venture_partners: [Adani_Enterprises, EdgeConneX]
+      financial_profile_refs: [company_adani_enterprises, company_edgeconnex]
+      linked_campus_refs: [dc_adaniconnex_chennai_1, dc_google_visakhapatnam_ai_hub]
+    sources:
+      - title: Adani Enterprises FY2026 results and AdaniConneX operating update
+        publisher: Adani_Enterprises
+        date: 2026-04
+        url: https://connect.adani.com/media/2026/apr26/ael/
+      - title: AdaniConneX current data-center site cards
+        publisher: AdaniConneX
+        date: 2026
+        url: https://www.adaniconnex.com/data-centers
+      - title: AdaniConneX FY2025 annual-report profile
+        publisher: Adani_Enterprises
+        date: 2025
+        url: https://connect.adani.com/annual_report/2025/ael/data-center.html
+      - title: Adani Enterprises FY2025 energy management
+        publisher: Adani_Enterprises
+        date: 2025
+        url: https://connect.adani.com/annual_report/2025/ael/energy-management.html
+      - title: AdaniConneX company overview
+        publisher: AdaniConneX
+        date: 2026
+        url: https://www.adaniconnex.com/about-us
+      - title: Adani sovereign AI infrastructure announcement
+        publisher: Adani_Group
+        date: 2026
+        url: https://www.adani.com/newsroom/media-releases/adani-commits-usd-100-bn-to-sovereign-ai-infrastructure
+    confidence: high_for_JV_operating_capacity_orders_site_potential_and_strategy_scopes_low_for_fourth_operating_site_utilization_GPU_and_per_site_equipment
+
+  - id: dc_adaniconnex_chennai_1
+    name: AdaniConneX Chennai 1
+    record_granularity: named_operating_hyperscale_data_center_with_detailed_power_sheet
+    operator: AdaniConneX
+    country: IN
+    region: Tamil_Nadu
+    locality: Siruseri_Chennai
+    lifecycle_as_of_2025: building_1_operating_with_future_expansion
+    location:
+      address: AdaniConneX_Data_Center_SIPCOT_IT_Park_Siruseri_Chennai_Tamil_Nadu_603103
+      site_area_acres: 5
+      structure: elevated_G_plus_6
+      building_area_sqft: 196790
+      clear_height_m: 7
+      raised_floor_m: 1
+      floor_loading_kg_per_m2: 1500
+    campus_scale:
+      total_IT_capacity_mw: 33
+      building_1_live_IT_capacity_mw: 17
+      racks_servers_utilized_load_customer_allocation_and_remaining_phase_schedule: undisclosed
+    accelerators:
+      exact_GPU_NPU_models_counts_servers_racks_density_customers_and_utilization: undisclosed
+      published_rack_density_support_kw: 6_to_50_plus
+      future_build_to_density_capability_kw_per_rack_more_than: 300
+      boundary: Rack-density capability is a design envelope and cannot be multiplied into GPU count or live IT load.
+    electrical_and_generation:
+      utility_service_voltage_kV: 110
+      onsite_substation_type: GIS
+      independent_upstream_substations: 2
+      transformer_nameplate_mva: 50
+      transformer_redundancy: N_plus_N
+      electrical_power_monitoring_system: EPMS
+      UPS_and_PDU_redundancy: N_plus_N
+      diesel_generator_backup_percent: 100
+      diesel_generator_redundancy: N_plus_1
+      onsite_diesel_liters: 560000
+      backup_runtime_hours: 48
+      exact_transformer_count_interpretation_switchgear_UPS_battery_generator_count_ratings_and_OEMs: undisclosed
+      boundary: The 50 MVA transformer disclosure is preserved as published and not converted to IT MW without power factor, count, redundancy, and loss detail.
+    cooling_and_efficiency:
+      cooling_type: centralized_cooling_with_dual_paths_and_fire_compartments
+      control_redundancy: redundant
+      CRAC_redundancy: N_plus_1_capable_of_N_plus_N
+      continuous_cooling_during_transfer: independent_UPS_plus_thermal_storage_tanks
+      reported_Chennai_PUE_FY2025: 1.59
+      cooling_tonnage_chiller_count_liquid_cooled_live_MW_CDU_heat_rejection_WUE_water_consumption_and_OEMs: undisclosed
+    linked_companies:
+      owner_and_operator: [AdaniConneX]
+      joint_venture_partners: [Adani_Enterprises, EdgeConneX]
+      financial_profile_refs: [company_adani_enterprises, company_edgeconnex]
+    sources:
+      - title: Chennai 1 Data Sheet 2025
+        publisher: AdaniConneX
+        date: 2025
+        url: https://resources.adaniconnex.com/hubfs/2024/Chennai%201%20Data%20Sheet%202025.pdf
+      - title: AdaniConneX FY2025 annual-report profile
+        publisher: Adani_Enterprises
+        date: 2025
+        url: https://connect.adani.com/annual_report/2025/ael/data-center.html
+      - title: Adani Enterprises FY2025 energy management
+        publisher: Adani_Enterprises
+        date: 2025
+        url: https://connect.adani.com/annual_report/2025/ael/energy-management.html
+    confidence: high_for_address_building_IT_capacity_110kV_power_chain_redundancy_diesel_and_PUE_low_for_GPU_utilization_and_equipment_counts_OEMs
+
+  - id: dc_edgeconnex_global_portfolio
+    name: EdgeConneX global and joint-venture data-center portfolio
+    record_granularity: private_operator_global_market_roster_with_affiliate_and_development_scope
+    operator: EdgeConneX
+    lifecycle_as_of_2026_07_18: operating_and_developing
+    ownership:
+      controlling_owner: EQT_Infrastructure
+      announced_minority_investor_2024: Sixth_Street
+      minority_transaction_closing_status_in_reviewed_release: expected_Q4_2024_not_verified_closed
+    location:
+      current_headline:
+        data_centers_built_or_in_development_more_than: 90
+        markets_more_than: 60
+        continents: 4
+        countries_more_than: 20
+      homepage_and_map_scope_conflict:
+        homepage_data_centers_more_than: 90
+        global_map_data_centers_more_than: 80
+      marketed_or_operating_markets_from_regional_pages:
+        Americas: [Atlanta, Bogota, Boston, Buenos_Aires, Chicago, Denver, Detroit, Houston, Jacksonville, Las_Vegas, Madison, Memphis, Miami, Minneapolis, Nashville, New_Orleans, Norfolk, Phoenix, Pittsburgh, Portland, Richmond, Sacramento, Salt_Lake_City, San_Diego, Santa_Clara, Santiago, Seattle, Tallahassee, Toronto]
+        EMEA: [Amsterdam, Barcelona, Brussels, Dublin, Munich, Tel_Aviv, Warsaw]
+        APAC: [Beijing_Tianjin, Chennai, Greater_Shanghai, Jakarta, Japan, Kuala_Lumpur]
+      coming_markets_from_regional_pages:
+        Americas: [Austin, Mexico_City, New_Albany]
+        EMEA: [Frankfurt, Fyresdal, Milan, Skelleftea]
+        APAC: [Bangalore, Bukit_Jalil, Cyberjaya, Hyderabad, Johor, Kolkata, Manila, Melbourne, Mumbai, Navi_Mumbai, Noida, Pune, Sydney, Vizag]
+      roster_boundary: >-
+        Regional pages mix direct EdgeConneX facilities, affiliates, and joint
+        ventures including AdaniConneX and Chayora. Market names are not proof of
+        wholly owned assets, one building per market, operating status, or capacity.
+    portfolio_scale:
+      solution_range_kw_to_mw_plus: 40kW_to_500MW_plus
+      data_center_design_density_kw_per_rack: 100_to_300_plus
+      published_share_of_deployed_MW_that_is_build_to_suit_percent_more_than: 80
+      current_operating_energized_leased_utilized_MW_and_per_site_capacity: undisclosed
+      capacity_boundary: Design ranges and build-to-suit share are not current fleet MW; an older 500 MW development statement is not promoted as a current total.
+    accelerators:
+      exact_GPU_NPU_models_counts_servers_racks_density_site_allocation_customers_and_utilization: undisclosed
+      high_density_design_does_not_establish_accelerator_inventory: true
+    electrical_generation_and_cooling:
+      marketed_capabilities: [high_density_power, custom_build_to_suit, liquid_cooling_support, renewable_energy_procurement]
+      current_carbon_status_claim_2026: carbon_neutral_for_scope_1_and_scope_2
+      certified_zero_waste_to_landfill_locations: [Jakarta, Santiago, Brussels]
+      per_site_grid_substations_transformers_switchgear_UPS_batteries_generators_CDU_heat_rejection_PUE_WUE_water_and_OEMs: undisclosed
+      boundary: Carbon-neutrality claims and certifications do not disclose hourly clean-power matching, embodied carbon, or per-site engineering bills of materials.
+    linked_companies:
+      owner: [EQT_Infrastructure]
+      operator: [EdgeConneX]
+      joint_ventures_and_affiliates_include: [AdaniConneX, Chayora]
+      financial_profile_refs: [company_edgeconnex]
+      linked_campus_refs: [dc_adaniconnex_india_portfolio, dc_adaniconnex_chennai_1]
+    sources:
+      - title: EdgeConneX company profile
+        publisher: EdgeConneX
+        date: 2026
+        url: https://www.edgeconnex.com/company/about-edgeconnex/
+      - title: EdgeConneX homepage and global map
+        publisher: EdgeConneX
+        date: 2026
+        urls: ["https://www.edgeconnex.com/", "https://www.edgeconnex.com/global-map/"]
+      - title: EdgeConneX regional market pages
+        publisher: EdgeConneX
+        date: 2026
+        urls: ["https://www.edgeconnex.com/americas/", "https://www.edgeconnex.com/emea/", "https://www.edgeconnex.com/asia-pacific/"]
+      - title: EdgeConneX data-center and build-to-order design pages
+        publisher: EdgeConneX
+        date: 2026
+        urls: ["https://www.edgeconnex.com/data-centers/", "https://www.edgeconnex.com/data-centers/build-to-order/"]
+      - title: EQT welcomes Sixth Street as strategic investor in EdgeConneX
+        publisher: EdgeConneX
+        date: 2024-09-24
+        url: https://www.edgeconnex.com/news/press-releases/eqt-welcomes-sixth-street-as-strategic-investor-in-edgeconnex/
+      - title: Planet in Progress sustainability update
+        publisher: EdgeConneX
+        date: 2026-04-01
+        url: https://www.edgeconnex.com/news/edge-blog/planet-in-progress-driving-edgeconnex-sustainability/
+    confidence: high_for_current_headlines_market_rosters_ownership_announcement_density_and_sustainability_claims_low_for_asset_ownership_lifecycle_current_MW_GPU_and_per_site_equipment
+
 disclosure_gap_register:
   - exact_global_physical_data_center_count
   - exact_per_campus_GPU_inventory_for_most_hyperscalers
@@ -8024,6 +8373,17 @@ disclosure_gap_register:
   - Chindata_1355MVA_operating_substations_to_IT_MW_redundancy_measured_load_and_site_mapping
   - Chindata_per_site_GPU_inventory_power_chain_liquid_cooling_WUE_and_equipment_OEMs
   - Sangyuan_SST_unit_count_MW_storage_MWh_served_load_conventional_backup_and_cooling_integration
+  - Nxtra_15_hyperscale_230MW_homepage_14_core_300MW_funding_220MW_FY2025_and_275_2MW_market_rows_reconciliation
+  - Nxtra_22_market_page_labels_to_current_operating_owned_buildings_and_14_or_15_core_count_reconciliation
+  - Nxtra_per_site_energized_utilized_IT_load_GPU_inventory_liquid_cooled_MW_and_electrical_BOM
+  - AdaniConneX_four_operating_data_centers_exact_roster_and_55MW_site_allocation
+  - AdaniConneX_55MW_operational_560MW_tied_up_2033MW_site_potential_and_2_to_5GW_platform_scope_reconciliation
+  - AdaniConneX_per_site_GPU_inventory_utilized_load_power_chain_liquid_cooling_and_equipment_OEMs
+  - Chennai1_transformer_generator_UPS_chiller_unit_counts_OEMs_GPU_inventory_utilization_WUE_and_water
+  - EdgeConneX_80_plus_global_map_to_90_plus_built_or_development_building_and_market_reconciliation
+  - EdgeConneX_direct_owned_affiliate_joint_venture_operating_development_and_coming_site_scope
+  - EdgeConneX_current_operating_energized_leased_utilized_MW_GPU_inventory_and_per_site_electrical_cooling_BOM
+  - EdgeConneX_current_audited_revenue_operating_profit_capex_debt_and_site_economics
 
 next_research_queue:
   campus_enrichment:
@@ -8094,6 +8454,14 @@ next_research_queue:
     - Baidu_AI_Cloud_region_AZ_physical_site_ownership_capacity_and_lifecycle_reconciliation
     - Baidu_32000_P800_cluster_site_rack_power_cooling_and_utilization
     - Baidu_Yangquan_phase_two_and_D15_completion_live_IT_MW_server_accelerator_and_power_chain
+    - Nxtra_22_site_labels_exact_addresses_coordinates_ownership_building_count_and_lifecycle_reconciliation
+    - Nxtra_current_230_220_275_2_and_300MW_scope_energization_utilization_and_customer_reconciliation
+    - Nxtra_per_site_GPU_inventory_power_chain_liquid_cooling_CDU_PUE_WUE_water_and_equipment_OEMs
+    - AdaniConneX_four_operating_data_centers_exact_roster_55MW_allocation_and_current_site_phases
+    - AdaniConneX_560MW_tied_up_customer_site_schedule_and_2033MW_potential_delivery_reconciliation
+    - Chennai1_transformer_generator_UPS_chiller_counts_OEMs_live_liquid_cooling_GPU_and_utilization
+    - EdgeConneX_80_plus_to_90_plus_direct_affiliate_JV_building_market_and_lifecycle_reconciliation
+    - EdgeConneX_per_site_capacity_energization_utilization_GPU_inventory_power_chain_and_cooling_equipment
   company_financials:
     - ByteDance_audited_financials_if_publicly_released
     - Crusoe_QTS_Vantage_VoltaGrid_and_Related_Digital_audited_or_lender_disclosed_financials
@@ -8113,6 +8481,9 @@ next_research_queue:
     - Huawei_Cloud_and_Digital_Power_operating_profit_capex_and_data_center_economics
     - Baidu_AI_Cloud_Infra_operating_profit_capex_depreciation_and_cash_conversion
     - Kunlunxin_listing_prospectus_standalone_revenue_operating_profit_and_supply_chain
+    - EdgeConneX_current_standalone_audited_revenue_operating_profit_capex_debt_and_site_economics_if_disclosed
+    - AdaniConneX_JV_standalone_revenue_EBITDA_operating_profit_debt_capex_and_campus_returns
+    - Nxtra_site_level_revenue_operating_profit_utilization_customer_concentration_and_return_on_capital
 
 portfolio_relevance:
   interpretation: >-

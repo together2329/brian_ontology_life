@@ -95,6 +95,7 @@ stack_layers:
     - Bharti_Airtel
   private_data_center_and_power_developers:
     - Chindata_China
+    - EdgeConneX
     - Crusoe
     - QTS
     - Vantage_Data_Centers
@@ -3295,6 +3296,20 @@ financial_profiles:
         - integrated_land_energy_transmission_storage_and_connectivity_developer
         - built_to_suit_AI_data_center_infrastructure
       disclosed_projects_and_targets:
+        current_site_cards:
+          Chennai_potential_mw: 33
+          Hyderabad_potential_mw: 600
+          Navi_Mumbai_potential_mw: 1000
+          Noida_potential_mw: 150
+          Pune_potential_mw: 250
+          potential_capacity_mw_derived: 2033
+          boundary: site_potential_not_operating_or_energized_capacity
+        FY2025_operating_snapshot:
+          operating_capacity_mw: 36.6
+          Chennai_mw: 17
+          Noida_mw: 10
+          Hyderabad_mw: 9.6
+          cumulative_order_book_mw_more_than: 210
         Google_Visakhapatnam:
           partner: Google
           total_Google_AI_hub_investment_usd_billion_approximate: 15
@@ -3307,6 +3322,8 @@ financial_profiles:
           Adani_direct_investment_to_2035_usd_billion: 100
           boundary: strategic_announcement_not_current_energized_capacity_or_recognized_revenue
       confirmed_campus_refs:
+        - dc_adaniconnex_india_portfolio
+        - dc_adaniconnex_chennai_1
         - dc_google_visakhapatnam_ai_hub
       boundary: >-
         AdaniConneX is a joint venture and its revenue, EBITDA, operating profit,
@@ -3316,6 +3333,11 @@ financial_profiles:
       period: through_2035_strategic_announcement
       direct_AI_infrastructure_investment_usd_billion: 100
       target_national_data_center_platform_gw: 5
+      target_evolution_kept_separate:
+        FY2025_target_gw_by_2030: 1
+        current_AdaniConneX_vision_gw_by_2031: 3
+        Adani_2026_existing_platform_gw_not_live: 2
+        Adani_2026_target_gw_by_2035: 5
       quantitative_FY2027_group_guidance: not_disclosed_in_reviewed_release
     watch_items:
       - AdaniConneX_JV_financials_not_disclosed
@@ -3328,6 +3350,11 @@ financial_profiles:
     sources:
       - https://connect.adani.com/media/2026/apr26/ael/
       - https://connect.adani.com/media/2025/oct25/connex/
+      - https://www.adaniconnex.com/data-centers
+      - https://www.adaniconnex.com/about-us
+      - https://connect.adani.com/annual_report/2025/ael/data-center.html
+      - https://connect.adani.com/annual_report/2025/ael/energy-management.html
+      - https://resources.adaniconnex.com/hubfs/2024/Chennai%201%20Data%20Sheet%202025.pdf
       - https://www.adani.com/newsroom/media-releases/adani-commits-usd-100-bn-to-sovereign-ai-infrastructure
       - https://www.adani.com/businesses/infrastructure/data-center
     confidence: high_for_AEL_group_metrics_ownership_operational_capacity_orders_and_announced_projects_low_for_AdaniConneX_financials_contract_economics_and_energization_schedule
@@ -3380,6 +3407,11 @@ financial_profiles:
         capacity_mw_approximate: 300
         large_core_data_centers: 14
         edge_facilities_more_than: 120
+      non_reconciled_public_capacity_scopes:
+        current_homepage: {hyperscale_data_centers: 15, total_power_mw_more_than: 230}
+        FY2025_sustainability_report: {core_data_centers_more_than: 14, capacity_mw: 220, three_year_target_mw: 450}
+        current_market_page_rows: {facility_labels_derived: 22, capacity_mw_derived: 275.2, disclosed_racks_incomplete_derived: 44300}
+        boundary: These figures have different dates and scopes and are not treated as one current energized-capacity total.
       expansion:
         target_capacity_gw: 1
         target_timing: next_few_years
@@ -3395,6 +3427,7 @@ financial_profiles:
         campus_ref: dc_google_visakhapatnam_ai_hub
         context: Airtel_connectivity_and_Nxtra_infrastructure_ecosystem_role
       confirmed_campus_refs:
+        - dc_nxtra_india_portfolio
         - dc_google_visakhapatnam_ai_hub
       boundary: >-
         Nxtra financials are much smaller than consolidated Bharti Airtel and use
@@ -3418,6 +3451,7 @@ financial_profiles:
       - https://assets.airtel.in/nxtra/pdf/Financial-Documents/STXIntimation_Nxtra_results_March31_2026.pdf
       - https://www.airtel.in/press-release/03-2026/airtel-announces-us1-billion-investment-in-nxtra-led-by-alpha-wave-global-and-existing-investor-carlyle-bharti-airtel-will-also-participate/
       - https://assets.airtel.in/nxtra/pdf/Nxtra-Sustainability-Report-2025.pdf
+      - https://www.nxtra.in/
     confidence: high_for_group_and_Nxtra_financials_funding_and_current_network_scale_medium_for_Google_project_role_low_for_per_campus_power_GPU_and_contract_economics
 
   - id: company_qts
@@ -5299,6 +5333,83 @@ financial_profiles:
       - https://www.chindatagroup.com/media/news/533.html
     confidence: high_for_historical_audited_financials_transactions_and_dated_capacity_low_for_current_financials_post_transaction_scope_and_site_economics
 
+  - id: company_edgeconnex
+    company: EdgeConneX
+    layer: private_data_center_and_power_developers
+    ownership_status: private_EQT_Infrastructure_controlled_with_announced_Sixth_Street_minority_investment
+    current_public_financial_disclosure:
+      period: current_as_of_2026-07-18
+      accounting_basis: no_reviewed_current_public_standalone_audited_financial_statements
+      currency: undisclosed
+      revenue: undisclosed
+      operating_profit: undisclosed
+      net_income: undisclosed
+      EBITDA: undisclosed
+      capital_expenditure: undisclosed
+      debt: undisclosed
+      boundary: >-
+        EdgeConneX is private. EQT fund ownership, Sixth Street's announced
+        minority investment, project financing, and joint-venture development
+        commitments are not EdgeConneX revenue, operating profit, capex, or debt.
+    ownership_context:
+      founded: 2009
+      EQT_acquisition_year: 2020
+      Sixth_Street_minority_investment_announced: 2024-09-24
+      EQT_status_after_announced_transaction: largest_shareholder
+      transaction_closing_status_in_reviewed_release: expected_Q4_2024_not_verified_closed
+    data_center_exposure:
+      role: global_build_to_suit_hyperscale_edge_and_high_density_data_center_developer_operator
+      confirmed_campus_refs:
+        - dc_edgeconnex_global_portfolio
+        - dc_adaniconnex_india_portfolio
+        - dc_adaniconnex_chennai_1
+      current_portfolio_headlines:
+        data_centers_built_or_in_development_more_than: 90
+        markets_more_than: 60
+        continents: 4
+        countries_more_than: 20
+        alternate_global_map_data_centers_more_than: 80
+      capacity_and_density:
+        marketed_solution_range: 40kW_to_500MW_plus
+        design_density_kw_per_rack: 100_to_300_plus
+        deployed_MW_share_from_build_to_suit_percent_more_than: 80
+      joint_venture_context:
+        AdaniConneX: 50_50_with_Adani_Enterprises
+        Chayora: China_affiliate_or_joint_venture_presented_on_regional_roster
+      economics_boundary: >-
+        The portfolio count includes operating and development facilities, and
+        regional pages mix direct assets, affiliates, and joint ventures. Design
+        density and solution ranges are not current installed GPU load. No current
+        operating, energized, leased, utilized, or per-site financial ledger is public.
+    sustainability_context:
+      current_2026_claim: carbon_neutral_for_scope_1_and_scope_2
+      certified_zero_waste_to_landfill_locations: [Jakarta, Santiago, Brussels]
+      boundary: Carbon-neutrality and waste certifications do not disclose per-site hourly clean-power matching or infrastructure economics.
+    management_outlook:
+      current_quantitative_revenue_operating_profit_capex_debt_or_capacity_guidance: undisclosed
+      stance: continued_global_build_to_suit_and_high_density_expansion_with_EQT_backing
+    watch_items:
+      - private_company_financial_opacity
+      - 80_plus_map_to_90_plus_portfolio_count_reconciliation
+      - direct_owned_affiliate_and_joint_venture_asset_scope
+      - operating_development_energized_leased_and_utilized_capacity_reconciliation
+      - AdaniConneX_55MW_operating_to_560MW_tied_up_and_multi_GW_targets
+      - customer_concentration_contract_terms_and_build_to_suit_returns
+      - exact_GPU_inventory_and_per_site_electrical_cooling_BOM
+      - Sixth_Street_transaction_closing_and_current_ownership_percentage
+    sources:
+      - https://www.edgeconnex.com/company/about-edgeconnex/
+      - https://www.edgeconnex.com/
+      - https://www.edgeconnex.com/global-map/
+      - https://www.edgeconnex.com/americas/
+      - https://www.edgeconnex.com/emea/
+      - https://www.edgeconnex.com/asia-pacific/
+      - https://www.edgeconnex.com/data-centers/
+      - https://www.edgeconnex.com/data-centers/build-to-order/
+      - https://www.edgeconnex.com/news/press-releases/eqt-welcomes-sixth-street-as-strategic-investor-in-edgeconnex/
+      - https://www.edgeconnex.com/news/edge-blog/planet-in-progress-driving-edgeconnex-sustainability/
+    confidence: high_for_private_ownership_announcement_current_headlines_market_scope_density_and_sustainability_claims_low_for_current_financials_asset_ownership_current_MW_GPU_and_site_economics
+
 cross_company_read_through:
   current_signals:
     - GDS and VNET provide unusually useful but non-comparable operating ledgers. At Q1 2026 GDS reported 1,538 MW in service and 77.3% utilized area, while VNET reported 907 wholesale MW in service and 75.7% utilized MW plus a separate 50,170-cabinet retail fleet. GDS area utilization and VNET wholesale power utilization must not be ranked as the same denominator.
@@ -5357,8 +5468,10 @@ cross_company_read_through:
     - Prysmian's North American Industrial & Construction growth was driven by data centers while Digital Solutions grew on fiber demand, adding cable and optical infrastructure as a distinct earnings layer beyond chips and cooling.
     - Nexans adds a second European cable exposure: FY2025 PWR-Connect deliveries included large data-center projects, but neither data-center revenue nor customer concentration is disclosed.
     - LS Electric's Q1 operating profit rose 45% as it named data centers the primary Electric-business earnings driver; HD Hyundai Electric's Q1 backlog reached $7.9 billion on record orders including North American data-center and grid demand. These are visible earnings and backlog signals, not confirmed supplier awards at named campuses.
-    - AdaniConneX had only 55+ MW operational at FY2026 year-end against 560+ MW tied-up and a multi-gigawatt platform ambition, illustrating the large gap between operating capacity, contracted capacity, and strategic announcements.
-    - Nxtra's standalone FY2026 revenue was INR24.3 billion and its approximate current capacity was 300 MW; the new $1 billion equity round and 1 GW target provide funding visibility but do not guarantee utilization or returns.
+    - AdaniConneX had 55+ MW operational across four data centers at FY2026 year-end against 560+ MW tied-up, 2,033 MW of potential across five current site cards, and multi-gigawatt platform ambitions. Operating, tied-up, site-potential, platform, and target capacity are different scopes; none establishes utilized load or revenue.
+    - Chennai 1 provides unusually detailed Indian power-chain evidence: 33 MW total IT design with 17 MW live in Building 1, 110 kV onsite GIS fed from two independent substations, 50 MVA N+N transformers, N+N UPS and PDU, N+1 generators, 560,000 liters of diesel, and 48 hours of backup. AdaniConneX still does not disclose site revenue, operating profit, GPU inventory, equipment counts, or OEMs.
+    - Nxtra's standalone FY2026 revenue was INR24.3 billion and derived operating result was INR3.84 billion. Its public physical scales do not reconcile: the current homepage says 15 hyperscale sites and 230+ MW, the March 2026 funding release says 14 core sites and about 300 MW, FY2025 sustainability reporting says 220 MW, and current market-page rows sum to 275.2 MW. These are retained as separate date and scope measures rather than one live-capacity answer.
+    - EdgeConneX is the private global partner behind the 50:50 AdaniConneX venture. It markets 90+ data centers built or in development in 60+ markets, while its global map says 80+; regional rosters mix direct sites, affiliates, joint ventures, and coming markets. Current standalone revenue, operating profit, capex, debt, live MW, utilization, and GPU inventory are undisclosed.
     - Blackstone's data-center exposure is a capital-and-platform layer rather than equipment revenue: it described a $165 billion current global platform plus an approximately $160 billion future pipeline and expects roughly $100 billion of investment or commitments by end-2026, but private AirTrunk and QTS standalone operating profit remains undisclosed.
     - Infratil provides unusually detailed look-through economics for CDC: FY2026 net revenue was A$533.9 million and EBITDAF A$392.5 million against A$2.1 billion of annual capex and A$4.9 billion of net debt. The new 555 MW contract could lift EBITDAF above A$1 billion in FY2028, but only after a large construction and financing step-up.
     - ABB's Q2 Electrification data-center orders grew at a triple-digit rate, while Siemens Energy booked about EUR2 billion of Grid Technologies data-center orders in the first half; electrical equipment demand is visible before many announced campuses become energized.
