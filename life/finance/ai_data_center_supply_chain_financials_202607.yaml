@@ -1,7 +1,7 @@
 schema_version: 1
 status: active_research
-updated_at: 2026-07-17
-as_of: 2026-07-17
+updated_at: 2026-07-18
+as_of: 2026-07-18
 area: FINANCE
 secondary_areas:
   - CAREER
@@ -95,6 +95,265 @@ stack_layers:
     - Infratil
 
 financial_profiles:
+  - id: company_ntt_data_group
+    company: NTT_DATA_Group
+    layer: operators_reits_utilities
+    ownership_status: wholly_owned_within_NTT_group_after_2025_delisting
+    fiscal_baseline:
+      period: FY2025_ended_2026_03_31
+      accounting_basis: IFRS_with_separate_management_data_center_metrics
+      currency: JPY
+      net_sales_jpy_billion: 5004.6
+      operating_profit_jpy_billion: 488.2
+      operating_margin_percent_reported: 9.8
+      profit_jpy_billion: 265.1
+      EBITDA_jpy_billion: 803.7
+      capital_investment_jpy_billion: 635.8
+    data_center_exposure:
+      role: global_colocation_hyperscale_and_data_center_operator
+      confirmed_campus_refs: [dc_ntt_global_data_centers_portfolio, dc_ntt_va11_gainesville_virginia]
+      FY2025_data_center_business_management_metrics:
+        new_orders_jpy_billion: 1088.2
+        order_backlog_jpy_billion: 3199.7
+        net_sales_jpy_billion: 520.3
+        EBITDA_jpy_billion: 282.1
+        EBITDA_margin_including_DC_transfer_gain_percent: 55
+        EBITDA_margin_excluding_DC_transfer_gain_percent: 39
+        operating_profit_before_common_head_office_costs_jpy_billion: 209.0
+        operating_margin_including_DC_transfer_gain_percent: 41
+        operating_margin_excluding_DC_transfer_gain_percent: 20
+        investment_jpy_billion: 377.9
+        assets_jpy_billion: 3092.2
+        liabilities_jpy_billion: 2451.2
+        interest_bearing_liabilities_jpy_billion: 1832.1
+        current_capacity_mw_approximate: 1630
+        planned_capacity_mw_approximate: 770
+      boundary: >-
+        Data-center operating profit excludes some common head-office costs and
+        includes a transfer gain; it is not directly comparable with consolidated
+        IFRS operating profit. Capacity is a physical management measure, not revenue.
+    management_outlook:
+      FY2026_company_forecast:
+        net_sales_jpy_billion: 5190
+        operating_profit_jpy_billion: 470
+        operating_margin_percent: 9.1
+        profit_jpy_billion: 225
+        EBITDA_jpy_billion: 800
+        capital_investment_jpy_billion: 804
+      FY2026_data_center_forecast:
+        net_sales_jpy_billion: 544
+        EBITDA_jpy_billion: 226
+        investment_jpy_billion: 505
+      FY2030_data_center_capacity_target_gw_more_than: 3
+      FY2030_group_EBITDA_target_jpy_trillion: 1.2
+      strategy: cloud_and_AI_inference_demand_with_third_party_capital_and_asset_recycling
+    watch_items:
+      - data_center_transfer_gain_and_common_cost_comparability
+      - heavy_capex_and_interest_bearing_debt
+      - 1630_MW_operating_to_3_GW_target_execution
+      - power_land_and_interconnection_availability
+      - third_party_capital_terms_and_asset_recycling
+      - current_2000_MW_marketing_scope_reconciliation
+    sources:
+      - https://www.nttdata.com/global/en/-/media/nttdataglobal/1_files/investors/ir_events/2025/fy2025_pre_4q.pdf?rev=ccef6f86896a406fb2c83992da8fc0b7
+      - https://www.nttdata.com/global/en/investors
+      - https://services.global.ntt/en-au/services-and-products/global-data-centers
+    confidence: high_for_consolidated_and_management_financials_capacity_and_forecast
+
+  - id: company_cyrusone
+    company: CyrusOne
+    layer: operators_reits_utilities
+    ownership_status: private_company_owned_by_funds_managed_by_KKR_and_GIP
+    fiscal_baseline:
+      period: latest_reviewed_public_disclosure_through_2026_07_18
+      currency: USD
+      revenue: not_publicly_reported_as_a_privately_held_company
+      operating_profit: not_publicly_reported_as_a_privately_held_company
+      net_income: undisclosed
+      audited_current_standalone_financial_statements: not_found_in_reviewed_public_sources
+    data_center_exposure:
+      role: hyperscale_colocation_build_to_suit_and_interconnection_operator
+      confirmed_campus_refs: [dc_cyrusone_global_portfolio, dc_cyrusone_kep_osk1_japan, dc_cyrusone_freestone_texas]
+      current_operating_claim: more_than_60_data_centers_across_US_Europe_and_Japan
+      current_public_location_identifiers_derived: 66
+      worldwide_critical_load_capacity_gw_more_than: 1
+      FY2025_energy_and_efficiency:
+        total_energy_mwh_equivalent: 6259588
+        renewable_electricity_mwh: 4496066
+        carbon_free_electricity_share_percent: 77.8
+        average_operating_PUE: 1.46
+        average_operating_WUE_site_l_per_kwh: 0.25
+        average_operating_CUE: 0.10
+      financing_scale_not_revenue:
+        additional_debt_capital_usd_billion_announced_2024: 9.7
+        total_debt_financing_in_2024_usd_billion_reported_in_2026_sustainability_report: 14.1
+        sustainability_linked_debt_in_2024_usd_billion: 11.2
+      boundary: >-
+        Debt raised, portfolio critical-load capacity, acquisition value, and
+        owner financials are not CyrusOne revenue or operating profit. The 66-site
+        web roster includes future OSK1 and is not an operating-facility count.
+    management_outlook:
+      demand_signal: continuing_hyperscale_and_AI_capacity_growth
+      Japan_joint_venture_target:
+        investment_jpy_trillion_at_least: 1
+        business_scale_mw: 900
+        horizon_years: 10
+      Texas_power_contracts_mw_more_than: 1100
+      outlook_boundary: targets_and_power_contracts_are_not_energized_capacity_or_guaranteed_earnings
+    ownership_chain:
+      direct_owner_funds: [KKR_managed_funds, Global_Infrastructure_Partners_managed_funds]
+      acquisition_completed: 2022-03-25
+      acquisition_value_including_debt_usd_billion_approximate: 15
+      GIP_parent_since_2024_10_01: BlackRock
+      boundary: GIP_becoming_part_of_BlackRock_does_not_mean_BlackRock_consolidates_CyrusOne_revenue
+    watch_items:
+      - private_company_financial_disclosure_gap
+      - debt_service_and_refinancing
+      - customer_concentration_and_utilization
+      - power_interconnection_and_delivery_timing
+      - operating_versus_announced_location_reconciliation
+      - GPU_inventory_and_per_site_electrical_BOM_non_disclosure
+    sources:
+      - https://www.cyrusone.com/hubfs/CyrusOne/2026%20Sustainability%20Report.pdf?hsLang=en
+      - https://www.cyrusone.com/data-centers
+      - https://www.cyrusone.com/media-coverage-press-releases/cyrusone-secures-9-7-billion-in-new-debt-capital-to-fund-datacenter-growth
+      - https://www.global-infra.com/news/kkr-and-gip-complete-acquisition-of-cyrusone/
+      - https://www.cyrusone.com/hubfs/Website%20Documents%202025/2023_CyrusOne_Sustainability_Report.pdf
+    confidence: high_for_private_status_ownership_capacity_efficiency_and_financing_low_for_undisclosed_earnings
+
+  - id: company_kansai_electric_power
+    company: Kansai_Electric_Power
+    layer: operators_reits_utilities
+    fiscal_baseline:
+      period: FY2025_ended_2026_03_31
+      accounting_basis: Japan_GAAP
+      currency: JPY
+      net_sales_jpy_billion: 4056.6
+      operating_profit_jpy_billion: 437.5
+      operating_margin_percent_derived: 10.78
+      ordinary_profit_jpy_billion: 518.5
+      profit_attributable_to_owners_jpy_billion: 380.0
+      interest_bearing_debt_jpy_billion: 4266.6
+      equity_ratio_percent: 35.1
+    data_center_exposure:
+      role: equal_investor_and_Japanese_power_infrastructure_partner_in_CyrusOne_KEP
+      confirmed_campus_refs: [dc_cyrusone_kep_osk1_japan]
+      joint_venture_program:
+        target_investment_jpy_trillion_at_least: 1
+        target_business_scale_mw: 900
+        horizon_years: 10
+      FY2025_ICT_growth_investment_jpy_billion_approximate: 20
+      boundary: Consolidated utility revenue and profit are not CyrusOne KEP or OSK1 revenue and operating profit.
+    management_outlook:
+      FY2026_forecast:
+        net_sales_jpy_billion: 4500
+        operating_profit_jpy_billion: 250
+        ordinary_profit_jpy_billion: 290
+        profit_attributable_to_owners_jpy_billion: 310
+      FY2026_assumptions:
+        nuclear_capacity_factor_percent_approximate: 70
+        oil_usd_per_barrel_approximate: 80
+        exchange_rate_jpy_per_usd_approximate: 160
+      growth_investment_outlook_jpy_billion_approximate: 300
+    watch_items:
+      - nuclear_capacity_factor_and_outage_schedule
+      - fuel_price_and_currency
+      - high_interest_bearing_debt
+      - OSK1_grid_and_substation_delivery
+      - 900_MW_JV_target_funding_and_customer_demand
+      - JV_financial_disclosure_gap
+    sources:
+      - https://www.kepco.co.jp/english/corporate/ir/brief/earnings/2026/pdf/pdf2026_04_05.pdf
+      - https://www.kepco.co.jp/english/corporate/ir/brief/earnings/2026/pdf/pdf2026_04_02.pdf
+      - https://www.cyrusone.com/resources/press-releases/cyrusone-and-kansai-electric-power-company-inc-kepco-announce-joint-venture
+    confidence: high_for_company_financials_forecast_and_JV_terms_low_for_JV_earnings
+
+  - id: company_kkr
+    company: KKR
+    layer: financing_and_private_infrastructure_ownership
+    latest_update:
+      period: Q1_2026_ended_2026_03_31
+      accounting_basis: US_GAAP_with_separate_non_GAAP_segment_measures
+      currency: USD
+      total_revenue_usd_million: 4317.983
+      GAAP_net_income_attributable_to_common_stockholders_usd_million: 364.799
+      fee_related_earnings_usd_million: 1016.375
+      total_operating_earnings_usd_million: 1325.001
+      adjusted_net_income_usd_million: 1249.539
+      AUM_usd_billion: 757.877
+      fee_paying_AUM_usd_billion: 614.845
+      new_capital_raised_usd_billion_approximate: 28
+      measure_boundary: >-
+        Total Operating Earnings and Fee Related Earnings are KKR non-GAAP
+        measures, not GAAP operating income and not CyrusOne earnings.
+    data_center_exposure:
+      role: fund_manager_whose_managed_funds_co_own_CyrusOne
+      confirmed_campus_refs: [dc_cyrusone_global_portfolio, dc_cyrusone_kep_osk1_japan, dc_cyrusone_freestone_texas]
+      CyrusOne_acquisition:
+        completed: 2022-03-25
+        co_investor: Global_Infrastructure_Partners
+        transaction_value_including_debt_usd_billion_approximate: 15
+      boundary: KKR_managed_fund_ownership_does_not_make_KKR_company_revenue_a_proxy_for_CyrusOne
+    management_outlook:
+      Q1_year_over_year_growth_percent:
+        fee_related_earnings: 24
+        total_operating_earnings: 19
+        adjusted_net_income: 21
+      AUM_year_over_year_growth_percent: 14
+      outlook_boundary: platform_growth_metrics_are_not_a_CyrusOne_specific_forecast
+    watch_items:
+      - asset_valuations_and_realizations
+      - insurance_and_asset_management_measure_complexity
+      - fundraising_and_deployment
+      - private_portfolio_company_leverage
+      - CyrusOne_standalone_financial_non_disclosure
+    sources:
+      - https://ir.kkr.com/media/document/97877ef9-66da-4d11-8742-d76f2fc04354/assets/KKR_Q126_Earnings_Release.pdf?disposition=inline
+      - https://www.global-infra.com/news/kkr-and-gip-complete-acquisition-of-cyrusone/
+    confidence: high_for_KKR_financials_and_acquisition_structure_low_for_CyrusOne_look_through_earnings
+
+  - id: company_blackrock
+    company: BlackRock
+    layer: financing_and_private_infrastructure_ownership
+    latest_update:
+      period: Q1_2026_ended_2026_03_31
+      accounting_basis: US_GAAP_with_separate_adjusted_metrics
+      currency: USD
+      revenue_usd_million: 6698
+      operating_income_usd_million: 2814
+      operating_margin_percent_reported: 42.0
+      net_income_attributable_to_BlackRock_usd_million: 2212
+      adjusted_operating_income_usd_million: 2669
+      adjusted_operating_margin_percent: 44.5
+      AUM_usd_billion: 13894.6
+      private_markets_infrastructure_AUM_usd_billion: 111.867
+      total_net_inflows_usd_billion_approximate: 130
+    data_center_exposure:
+      role: parent_of_Global_Infrastructure_Partners_since_2024_10_01
+      confirmed_campus_refs: [dc_cyrusone_global_portfolio, dc_cyrusone_kep_osk1_japan, dc_cyrusone_freestone_texas]
+      ownership_chain: BlackRock_to_GIP_to_GIP_managed_funds_co_owning_CyrusOne
+      boundary: >-
+        This is an indirect manager and fund-ownership relationship. BlackRock's
+        consolidated revenue, operating income, AUM, and infrastructure AUM are
+        not CyrusOne revenue, profit, asset value, or dedicated capital.
+    management_outlook:
+      Q1_revenue_year_over_year_growth_percent: 27
+      Q1_GAAP_operating_income_year_over_year_growth_percent: 66
+      LTM_net_inflows_usd_billion: 744
+      strategic_signal: fundraising_and_deployment_momentum_in_private_credit_and_infrastructure
+      outlook_boundary: companywide_asset_management_signal_not_CyrusOne_specific_guidance
+    watch_items:
+      - market_levels_and_AUM_sensitivity
+      - integration_of_GIP_HPS_and_Preqin
+      - private_market_fundraising_and_realizations
+      - ownership_chain_and_consolidation_boundary
+      - CyrusOne_standalone_financial_non_disclosure
+    sources:
+      - https://s24.q4cdn.com/856567660/files/doc_financials/2026/Q1/BLK-1Q26-Earnings-Release.pdf
+      - https://ir.blackrock.com/news-and-events/press-releases/press-releases-details/2024/BlackRock-Completes-Acquisition-of-Global-Infrastructure-Partners/default.aspx
+      - https://www.global-infra.com/news/kkr-and-gip-complete-acquisition-of-cyrusone/
+    confidence: high_for_BlackRock_financials_GIP_ownership_and_boundary_low_for_CyrusOne_look_through_earnings
+
   - id: company_nvidia
     company: NVIDIA
     layer: compute_memory_network
@@ -3840,6 +4099,10 @@ cross_company_read_through:
     - GE Vernova's Q1 2026 data-center equipment orders exceeded its full-year 2025 amount, showing the demand wave is reaching grid-scale equipment.
     - Equinix ended 2025 with 280 data centers, 392,300 consolidated cabinets, and 51,900 sellable cabinets in significant IBX projects under construction against an estimated $6.55 billion of capex. Digital Realty ended 2025 with 310 data centers, about 2.9 GW of in-place IT capacity, and 769 MW of projects underway, 64% preleased. Their high leasing and backlog demand must therefore be read together with the capital and power required to deliver capacity.
     - Digital Realty's Astra site has a utility-service path from 600 MW by early 2028 toward 2 GW at full delivery, and De Soto identifies Evergy as the utility coordinating customer-funded transmission and substation work. The site remains in planning and permitting, so service MW is not energized IT load or GPU inventory.
+    - NTT DATA's data-center business generated ¥520.3 billion of FY2025 sales and ¥209.0 billion of operating profit before common head-office costs, but the latter includes a data-center transfer gain and is not directly comparable with consolidated IFRS operating profit. Dated current capacity was approximately 1,630 MW with 770 MW planned, while the current website markets more than 2,000 MW; that scope and timing gap remains unresolved.
+    - CyrusOne publishes 66 current site identifiers and reports more than 1 GW of worldwide critical-load capacity, but the roster mixes operating and future facilities such as OSK1. Its current standalone revenue and operating profit remain undisclosed because it is private, so its $9.7 billion debt raise, roughly $15 billion acquisition value, capacity, and owner-platform earnings are not substitutes for CyrusOne earnings.
+    - OSK1 separates three commonly conflated power measures: 48 MW of planned IT capacity, a 70 MVA utility supply at 77 kV, and a 900 MW ten-year CyrusOne KEP business target. Freestone likewise has a 380 MW first-phase power agreement plus an exclusive 380 MW second phase, but no disclosed IT load, customer, GPU fleet, or equipment bill of materials.
+    - KKR-managed and GIP-managed funds co-own CyrusOne, and GIP has been part of BlackRock since October 2024. KKR's Q1 2026 $1.325 billion of non-GAAP Total Operating Earnings and BlackRock's $2.814 billion of GAAP operating income describe the asset-manager platforms, not look-through CyrusOne profit.
     - Evergy's FY2025 revenue was $5.96 billion and operating income $1.53 billion. Its signed large-load portfolio reaches about 2.5 GW of steady-state peak load and supports a $21.6 billion 2026-2030 capital plan, but no reviewed official source identifies Digital Realty as the anonymous fifth ESA customer; load, rate-base, and adjusted-EPS forecasts remain prospective.
     - HPE's Q2 FY2026 Cloud & AI segment generated $7.71 billion of revenue and $954 million of operating income, while Data Center Networking revenue reached $320 million. Its planned role in HK6 demonstrates direct product exposure, but company and segment results cannot be attributed to the site and the installed GPU inventory remains undisclosed.
     - Mitsubishi Corporation provides a diversified 50% ownership route into MC Digital Realty and the approaching-100-MW NRT campus, but its ¥18.9 trillion consolidated revenue spans a global trading and investment portfolio; the joint venture's revenue, operating profit, capex, and site returns are not separately disclosed.

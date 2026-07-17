@@ -1,6 +1,6 @@
 schema_version: 1
 status: active_research
-updated_at: 2026-07-17
+updated_at: 2026-07-18
 area: FINANCE
 secondary_areas:
   - CAREER
@@ -97,6 +97,311 @@ global_market_baseline:
       url: https://www.srgresearch.com/articles/hyperscale-data-center-count-hits-1136-average-size-increases-us-accounts-for-54-of-total-capacity
 
 campus_profiles:
+  - id: dc_ntt_global_data_centers_portfolio
+    name: NTT Global Data Centers portfolio
+    record_granularity: global_operator_portfolio_not_one_physical_campus
+    operator: NTT_DATA
+    lifecycle_as_of_2026_07_18: operating_and_expanding
+    location:
+      current_company_marketing_scope:
+        data_centers_more_than: 160
+        countries_and_regions_more_than: 20
+        provider_rank_claim: third_largest
+      current_published_inquiry_market_roster:
+        Americas: [Ashburn, Chicago, Dallas, Hillsboro, Sacramento, Santa_Clara, Phoenix]
+        Asia_Pacific: [Financial_DC_Hong_Kong, Osaka, Tai_Po, Tokyo, Jakarta, Cyberjaya, Serangoon, Bangkok, Ho_Chi_Minh_City]
+        EMEA: [Berlin, Frankfurt, Munich, Amsterdam, Madrid, Zurich, London, Johannesburg, Vienna]
+        India: [Bengaluru, Chennai, Mumbai, Noida]
+        market_labels_derived: 29
+        boundary: >-
+          This is the current public inquiry-market roster, not a complete
+          building-by-building reconciliation of the more-than-160 facilities.
+    portfolio_scale:
+      management_capacity_as_of_2026_03_31_mw_approximate:
+        North_America: 675
+        EMEA: 430
+        India: 425
+        APAC: 100
+        total: 1630
+      management_planned_capacity_as_of_2026_03_31_mw_approximate:
+        North_America: 370
+        EMEA: 260
+        India: 80
+        APAC: 60
+        total: 770
+      current_marketing_critical_IT_load_mw_more_than: 2000
+      FY2030_capacity_target_gw_more_than: 3
+      scope_boundary: >-
+        The 1,630 MW figure is a dated management measure for current capacity.
+        The current website's 2,000 MW-plus critical-IT-load claim has a different
+        timing or scope and is not substituted for the dated operating baseline.
+        Planned capacity and the FY2030 target are not energized capacity.
+    accelerators:
+      portfolio_AI_readiness_claim: true
+      exact_GPU_accelerator_vendors_models_counts_racks_and_site_allocation: undisclosed
+      boundary: AI-ready marketing does not establish customer-owned or operator-owned accelerator inventory.
+    electrical_and_cooling:
+      FY2024_average_annual_PUE: 1.38
+      FY2024_average_annual_WUE_l_per_kwh:
+        portfolio: 0.72
+        evaporative_sites: 1.42
+      FY2024_renewable_energy_share_percent: 60
+      external_heat_recovery_contracted_mw: 11
+      renewable_additionality_equity_investment_usd_million: 15.3
+      metric_scope: sites_with_24_months_continuous_consumption_and_IT_utilization_at_least_20_percent
+      site_specific_grid_voltage_substations_transformers_switchgear_UPS_backup_and_OEMs: mostly_undisclosed
+    connectivity:
+      transport_capacity_tbps_more_than: 16
+      undersea_cable_km: 125000
+    linked_companies:
+      owner_and_operator: [NTT_DATA]
+      parent_group: [NTT]
+      financial_profile_refs: [company_ntt_data_group]
+    sources:
+      - title: Global Data Centers
+        publisher: NTT_DATA
+        date: 2026-07-18_accessed
+        url: https://services.global.ntt/en-au/services-and-products/global-data-centers
+      - title: Americas data-center campuses and global location inquiry roster
+        publisher: NTT_DATA
+        date: 2026-07-18_accessed
+        url: https://services.global.ntt/en-us/services-and-products/global-data-centers/global-locations/americas
+      - title: FY2025 financial results presentation
+        publisher: NTT_DATA_Group
+        date: 2026-05
+        url: https://www.nttdata.com/global/en/-/media/nttdataglobal/1_files/investors/ir_events/2025/fy2025_pre_4q.pdf?rev=ccef6f86896a406fb2c83992da8fc0b7
+      - title: Global Data Centers 2025 Sustainability Report summary
+        publisher: NTT_DATA
+        date: 2025
+        url: https://services.global.ntt/en-au/campaigns/global-data-centers-2025-sustainability-report
+    confidence: high_for_dated_management_capacity_and_portfolio_efficiency_medium_for_current_marketing_scope_low_for_per_site_GPU_and_electrical_inventory
+
+  - id: dc_ntt_va11_gainesville_virginia
+    name: NTT DATA VA11 Gainesville
+    record_granularity: named_data_center_facility
+    operator: NTT_DATA
+    country: US
+    region: Virginia
+    locality: Gainesville
+    lifecycle_as_of_2026_07_18: prelease_scheduled_to_open_early_2027
+    location:
+      address: 7251_Grove_Hill_Blvd_Gainesville_VA_20155
+      market: Northern_Virginia
+      IT_space_sqft_more_than: 300000
+    campus_scale:
+      critical_IT_load_mw: 96
+      vault_size_mw: 8
+      vaults_derived_if_full_capacity_divided_evenly: 12
+      vault_count_boundary: derived_capacity_ratio_not_a_published_physical_vault_count
+    accelerators:
+      intended_workloads: [hyperscale_infrastructure, high_density_deployments]
+      exact_GPU_accelerator_vendors_models_counts_racks_and_rack_density: undisclosed
+    electrical_and_generation:
+      redundancy: N_plus_1_distributed_per_8_MW_vault
+      distribution: diverse_power_distribution_to_data_hall
+      utility_service_voltage_substations_transformers_switchgear_UPS_backup_generation_fuel_and_OEMs: undisclosed
+    cooling_and_water:
+      architecture: [fan_coil_wall, hot_aisle_containment, dedicated_chiller_plant, closed_loop_water_cooling]
+      PUE_WUE_water_consumption_liquid_to_chip_capacity_and_OEMs: undisclosed
+    network:
+      carrier_neutral: true
+      diverse_fiber_entry_points: 3
+      carrier_meet_me_rooms: 2
+    linked_companies:
+      owner_and_operator: [NTT_DATA]
+      financial_profile_refs: [company_ntt_data_group]
+    sources:
+      - title: VA11 Data Center
+        publisher: NTT_DATA
+        date: 2026-07-18_accessed
+        url: https://services.global.ntt/en-za/services-and-products/global-data-centers/global-locations/americas/ashburn-va11-data-center
+    confidence: high_for_address_IT_space_capacity_redundancy_cooling_and_schedule_low_for_GPU_and_equipment_BOM
+
+  - id: dc_cyrusone_global_portfolio
+    name: CyrusOne global data-center portfolio
+    record_granularity: global_operator_portfolio_not_one_physical_campus
+    operator: CyrusOne
+    lifecycle_as_of_2026_07_18: mixed_operating_under_development_and_announced
+    location:
+      current_company_operating_claim: more_than_60_data_centers_across_US_Europe_and_Japan
+      current_public_location_identifiers:
+        North_America:
+          Arizona: [PHX1, PHX2, PHX3, PHX4, PHX5, PHX6, PHX7, PHX8]
+          Illinois: [CHI1, CHI2, CHI3, CHI5]
+          Iowa: [OCB1]
+          New_York_metro: [NYM1, NYM2, NYM5, NYM7]
+          North_Carolina: [DUR1]
+          Ohio_Kentucky: [CIN2, CIN5, CIN6]
+          Texas: [AUS2, AUS3, DFW1, DFW2, DFW3, DFW4, DFW5, HOU3, HOU4, SAT1, SAT2, SAT3, SAT4, SAT5, SAT6]
+          Virginia: [NVA1, NVA2, NVA3, NVA4, NVA5, NVA6, NVA7, NVA8, NVA9]
+          Washington: [PNW1]
+          identifiers_derived: 46
+        EMEA:
+          France: [PAR1]
+          Germany: [FRA1, FRA2, FRA3, FRA4, FRA5, FRA6, FRA7]
+          Ireland: [DUB1]
+          Italy: [MIL1, MIL2]
+          Netherlands: [AMS1]
+          Spain: [MAD1]
+          United_Kingdom: [LON1, LON2, LON3, LON4, LON5, LON6]
+          identifiers_derived: 19
+        APAC:
+          Japan: [OSK1]
+          identifiers_derived: 1
+        global_identifiers_derived: 66
+        boundary: >-
+          The 66 published identifiers are a mixed-lifecycle web roster. OSK1,
+          for example, is scheduled for 2028, so this is not a count of operating
+          facilities and must not replace the company's more-than-60 operating claim.
+    portfolio_scale:
+      worldwide_critical_load_capacity_gw_more_than: 1
+      capacity_metric_boundary: companywide_CLC_claim_not_utilized_or_AI_only_load
+    accelerators:
+      AI_design_product: Intelliscale
+      design_envelope_not_installed_inventory:
+        rack_power_kw_range: [12, 300]
+        high_density_rack_power_kw_range: [50, 300]
+        power_density_w_per_sqft_range: [400, more_than_2000]
+        facility_capacity_mw_range: [21, more_than_100]
+        supported_compute_types: [GPU, TPU]
+      exact_GPU_accelerator_vendors_models_counts_racks_customers_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      Intelliscale_design_electrical_architecture: block_redundant
+      Intelliscale_cooling_options: [air, direct_to_chip_liquid, rear_door_heat_exchanger, immersion, mixed_strategy]
+      FY2025_directly_managed_built_out_CLC_mix_percent:
+        standard_dry: 76
+        nonstandard_dry: 3
+        nonstandard_wet: 21
+      FY2025_average_operating_metrics_directly_managed_built_out:
+        PUE: 1.46
+        WUE_site_l_per_kwh: 0.25
+        CUE: 0.10
+      standard_dry_design_PUE_range: [1.18, 1.28]
+      FY2025_total_energy_mwh_equivalent: 6259588
+      FY2025_renewable_electricity_mwh: 4496066
+      FY2025_carbon_free_electricity_share_percent: 77.8
+      site_specific_substations_transformers_switchgear_UPS_generators_and_OEMs: mostly_undisclosed
+    linked_companies:
+      private_owner_funds: [KKR, Global_Infrastructure_Partners]
+      GIP_parent_since_2024_10_01: BlackRock
+      financial_profile_refs: [company_cyrusone, company_kkr, company_blackrock]
+    sources:
+      - title: CyrusOne data-center locations
+        publisher: CyrusOne
+        date: 2026-07-18_accessed
+        url: https://www.cyrusone.com/data-centers
+      - title: 2026 Sustainability Report
+        publisher: CyrusOne
+        date: 2026
+        url: https://www.cyrusone.com/hubfs/CyrusOne/2026%20Sustainability%20Report.pdf?hsLang=en
+      - title: AI Data Centers and Intelliscale
+        publisher: CyrusOne
+        date: 2026-07-18_accessed
+        url: https://www.cyrusone.com/solutions/ai-data-centers
+      - title: Intelliscale data-center design for AI and high-density computing
+        publisher: CyrusOne
+        date: 2023
+        url: https://www.cyrusone.com/resources/blogs/cyrusones-intelliscale-ushering-in-a-new-era-of-data-center-design-to-support-ai-and-high-density-computing-needs
+    confidence: high_for_published_roster_portfolio_CLC_and_efficiency_metrics_low_for_lifecycle_reconciliation_GPU_inventory_and_per_site_equipment
+
+  - id: dc_cyrusone_kep_osk1_japan
+    name: CyrusOne KEP OSK1
+    record_granularity: named_data_center_facility
+    operator: CyrusOne_KEP
+    country: JP
+    region: Kyoto_Prefecture
+    locality: Seika_Town_Keihanna
+    lifecycle_as_of_2026_07_18: under_development_first_phase_scheduled_Q1_2028
+    location:
+      address: 2_2_7_Hikaridai_Seika_Town_Sorakugun_Kyoto_619_0288
+      plot_area_m2: 19693
+      technical_space_m2: 11562
+      buildings: 1
+      floors: 4
+    campus_scale:
+      total_IT_capacity_mw: 48
+      data_halls: 6
+      IT_capacity_per_hall_mw: 8
+      development_phases: 3
+      joint_venture_program_target_not_site_capacity:
+        business_scale_mw: 900
+        investment_jpy_trillion_at_least: 1
+        horizon_years: 10
+    accelerators:
+      intended_workloads: [hyperscale, cloud, AI_high_density_possible]
+      exact_GPU_accelerator_vendors_models_counts_racks_customers_and_density: undisclosed
+    electrical_and_generation:
+      utility_supply_MVA: 70
+      utility_voltage_kV: 77
+      new_grid_connection: true
+      dedicated_substation: true
+      backup_generators_present: true
+      transformer_switchgear_UPS_generator_count_capacity_fuel_and_OEMs: undisclosed
+      boundary: Utility MVA, IT MW, and the joint venture's 900 MW business target are separate measures.
+    cooling_and_water:
+      architecture: closed_loop_water_cooling
+      PUE_WUE_targets: described_as_low_but_numeric_values_undisclosed
+      chillers_AHUs_CDU_liquid_to_chip_capacity_and_OEMs: undisclosed
+    linked_companies:
+      joint_venture_owners_equal_investment: [CyrusOne, Kansai_Electric_Power]
+      financial_profile_refs: [company_cyrusone, company_kansai_electric_power, company_kkr, company_blackrock]
+    sources:
+      - title: Osaka Japan OSK1
+        publisher: CyrusOne
+        date: 2026-07-18_accessed
+        url: https://www.cyrusone.com/data-centers/apac/osaka-japan
+      - title: OSK1 data sheet
+        publisher: CyrusOne
+        date: 2026-07-18_accessed
+        url: https://www.cyrusone.com/hubfs/C1_OSK1_DataSheet_English_SD%20%285%29.pdf?hsLang=en
+      - title: CyrusOne and Kansai Electric Power announce joint venture
+        publisher: CyrusOne
+        date: 2023-05-22
+        url: https://www.cyrusone.com/resources/press-releases/cyrusone-and-kansai-electric-power-company-inc-kepco-announce-joint-venture
+    confidence: high_for_address_land_space_IT_and_utility_capacity_and_schedule_low_for_GPU_cooling_BOM_and_site_economics
+
+  - id: dc_cyrusone_freestone_texas
+    name: CyrusOne Freestone Energy Center data-center project
+    record_granularity: announced_adjacent_data_center_project
+    operator: CyrusOne
+    country: US
+    region: Texas
+    locality: Freestone_County
+    lifecycle_as_of_2026_07_18: contracted_and_announced_not_confirmed_operating
+    location:
+      adjacency: Constellation_Freestone_Energy_Center
+      distance_from_Dallas_miles_approximate: 80
+      exact_address_coordinates_parcel_and_building_count: undisclosed
+    campus_scale:
+      IT_load_mw: undisclosed
+      land_area_building_area_and_delivery_schedule: undisclosed
+    accelerators:
+      customer_and_workload: undisclosed
+      exact_GPU_accelerator_vendors_models_counts_racks_and_density: undisclosed
+    electrical_and_generation:
+      initial_power_agreement_mw: 380
+      exclusive_second_phase_additional_mw: 380
+      CyrusOne_Texas_power_under_contract_mw_more_than: 1100
+      source_asset: Constellation_Calpine_Freestone_Energy_Center
+      grid_context: regional_grid_continues_to_be_served
+      voltage_interconnection_substation_transformers_switchgear_UPS_backup_generation_and_OEMs: undisclosed
+      boundary: >-
+        Contracted power is not disclosed IT load, energized demand, dedicated
+        generation output, or evidence of an installed accelerator fleet. The
+        greater-than-1,100 MW Texas figure spans more than this project.
+    cooling_and_water:
+      architecture_PUE_WUE_water_source_and_OEMs: undisclosed
+    linked_companies:
+      developer_and_operator: [CyrusOne]
+      power_counterparty: [Constellation_Energy, Calpine]
+      financial_profile_refs: [company_cyrusone, company_constellation_energy, company_kkr, company_blackrock]
+    sources:
+      - title: Constellation and CyrusOne agreement for Freestone Energy Center data center
+        publisher: CyrusOne
+        date: 2026-02-09
+        url: https://www.cyrusone.com/resources/press-releases/constellation-and-cyrusone-announce-agreement-to-support-new-data-center-facility-at-freestone-energy-center-in-texas
+    confidence: high_for_contract_capacity_and_location_context_low_for_IT_load_GPU_schedule_and_equipment_BOM
+
   - id: dc_equinix_global_ibx_xscale_portfolio
     name: Equinix global IBX and xScale portfolio
     record_granularity: global_operator_portfolio_not_one_physical_campus
@@ -4654,6 +4959,14 @@ disclosure_gap_register:
   - Equinix_MB3_and_CN1_site_IT_load_liquid_cooled_capacity_and_electrical_BOM
   - Digital_Park_Paris_37096_building_area_to_40000_data_hall_area_reconciliation
   - Digital_Park_Paris_per_building_IT_power_GPU_inventory_CDU_and_electrical_BOM
+  - NTT_more_than_160_facilities_to_29_published_inquiry_market_labels_reconciliation
+  - NTT_1630_MW_management_current_capacity_to_current_2000_MW_plus_marketing_scope_reconciliation
+  - NTT_per_site_IT_power_GPU_inventory_liquid_cooling_and_electrical_BOM
+  - NTT_VA11_utility_service_substations_UPS_backup_generation_OEMs_PUE_WUE_and_GPU_inventory
+  - CyrusOne_66_current_web_identifiers_to_more_than_60_operating_facilities_reconciliation
+  - CyrusOne_per_site_IT_power_utilization_GPU_inventory_and_electrical_cooling_BOM
+  - CyrusOne_OSK1_substation_transformer_UPS_generator_cooling_OEMs_PUE_WUE_customer_and_GPU_inventory
+  - CyrusOne_Freestone_IT_load_customer_schedule_grid_topology_equipment_and_GPU_inventory
 
 next_research_queue:
   campus_enrichment:
@@ -4684,6 +4997,12 @@ next_research_queue:
     - Equinix_HK6_AI_Discovery_Hub_availability_GPU_inventory_and_power_chain
     - Equinix_MB3_CN1_site_IT_load_liquid_cooled_capacity_and_electrical_BOM
     - Digital_Park_Paris_area_definition_per_building_IT_power_GPU_and_CDU_inventory
+    - NTT_160_plus_facilities_complete_building_addresses_coordinates_and_lifecycle
+    - NTT_1630_MW_to_2000_MW_plus_scope_and_timing_reconciliation
+    - NTT_VA11_power_chain_cooling_performance_and_installed_accelerator_inventory
+    - CyrusOne_66_identifiers_operating_development_and_announced_lifecycle_reconciliation
+    - CyrusOne_per_site_capacity_GPU_inventory_and_Intelliscale_deployment_verification
+    - CyrusOne_OSK1_and_Freestone_power_chain_customer_hardware_and_delivery_status
   company_financials:
     - ByteDance_audited_financials_if_publicly_released
     - Crusoe_Vantage_VoltaGrid_and_Related_Digital_audited_or_lender_disclosed_financials
@@ -4692,6 +5011,9 @@ next_research_queue:
     - Evergy_Astra_specific_rate_base_revenue_capex_and_ESA_identity_if_disclosed
     - HPE_HK6_AI_Discovery_Hub_contract_value_revenue_and_installed_hardware
     - MC_Digital_Realty_revenue_operating_profit_capex_and_NRT_site_economics
+    - CyrusOne_current_standalone_revenue_operating_profit_debt_and_site_economics_if_disclosed
+    - CyrusOne_KEP_joint_venture_revenue_operating_profit_capex_and_customer_contracts
+    - NTT_DATA_center_transfer_gain_common_cost_and_third_party_capital_reconciliation
 
 portfolio_relevance:
   interpretation: >-
