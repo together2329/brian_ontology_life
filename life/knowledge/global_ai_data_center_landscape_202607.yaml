@@ -7554,6 +7554,375 @@ campus_profiles:
         url: https://jkq.xining.gov.cn/index.php?c=show&id=65070
     confidence: high_for_locality_published_racks_compute_network_PUE_and_energy_projects_low_for_current_phase_reconciliation_IT_MW_and_accelerator_inventory
 
+  - id: dc_gds_china_portfolio
+    name: GDS Holdings mainland China data-center portfolio
+    record_granularity: operator_portfolio_with_market_level_capacity
+    operator: GDS_Holdings
+    country: CN
+    lifecycle_as_of_2026_03_31: operating_and_expanding
+    location:
+      primary_markets: [Beijing_and_surrounding_area, Shanghai_and_surrounding_area, Shenzhen, Guangzhou, Chengdu, Chongqing]
+      market_level_inventory:
+        North:
+          data_centers: 53
+          in_service_sqm: 370790
+          under_construction_sqm: 65296
+          utilized_sqm: 293961
+          utilization_percent: 79.3
+        East:
+          data_centers: 30
+          in_service_sqm: 198774
+          under_construction_sqm: 35113
+          utilized_sqm: 153618
+          utilization_percent: 77.3
+        South:
+          data_centers: 14
+          in_service_sqm: 84317
+          under_construction_sqm: 13813
+          utilized_sqm: 63742
+          utilization_percent: 75.6
+        West_and_Other:
+          data_centers: 4
+          in_service_sqm: 20388
+          under_construction_sqm: 4190
+          utilized_sqm: 9608
+          utilization_percent: 47.1
+      market_under_construction_rows_minus_reported_total_sqm: 1
+      market_table_boundary: The 101-center table includes a small third-party data-center area and is not an independently verified building roster; its displayed market rows sum to one square meter more than the reported portfolio total.
+      exact_101_center_names_addresses_coordinates_and_building_lifecycle: not_fully_reconciled_in_reviewed_sources
+    portfolio_scale_as_of_2026_Q1:
+      in_service:
+        area_sqm: 674269
+        company_reported_capacity_mw: 1538
+      under_construction:
+        area_sqm: 118411
+        company_reported_capacity_mw: 377
+      total_in_service_and_under_construction:
+        area_sqm: 792680
+        company_reported_capacity_mw: 1915
+      utilized_area_sqm: 520929
+      in_service_utilization_percent: 77.3
+      committed_and_precommitted_area_sqm: 725485
+      new_bookings_mw_approximate: 200
+      powered_land_and_reservations_mw: 3700
+      total_developable_capacity_mw_approximate: 5600
+      boundary: >-
+        Company-reported MW is retained in GDS's presentation scope and is not
+        relabeled as utility service, measured IT load, or live GPU load. Powered
+        land and reservations are future resources, not built or energized capacity.
+    real_estate_tenure_for_in_service_and_construction_area_sqm:
+      leased: 329470
+      owned: 403938
+      build_operate_transfer: 55722
+      third_party_data_centers: 3550
+    accelerators:
+      exact_GPU_NPU_models_counts_racks_customers_site_allocation_and_utilization: undisclosed
+      high_density_or_AI_ready_marketing_does_not_establish_installed_GPU_inventory: true
+    electrical_generation_and_efficiency:
+      operations_related_electricity_from_renewables_2025_percent_approximate: 60
+      average_PUE_for_self_developed_post_2020_centers_with_IT_utilization_at_least_30_percent_2025_approximate: 1.23
+      sustainability_certified_self_developed_data_centers_2025: 43
+      availability_target_percent: 99.99
+      Tier_design_marketing: Tier_III_plus
+      modular_UPS: deployed
+      grid_service_substations_transformers_switchgear_backup_generation_equipment_counts_and_OEMs_by_site: undisclosed
+      PUE_boundary: The 1.23 value applies only to the stated post-2020 and utilization-qualified subset, not every GDS facility.
+    cooling:
+      Pujiang_Changshu_and_Langfang_context:
+        design: hybrid_air_liquid_dual_coil_cooling
+        deployed_or_planned_scale_mw_more_than: 150
+        PUE_improvement_percent_versus_traditional_chiller: 8_to_10
+        electricity_reduction_mwh_approximate: 25000
+      exact_liquid_cooled_live_MW_CDU_heat_rejection_water_consumption_WUE_and_OEMs_by_site: undisclosed
+      cooling_boundary: The more-than-150 MW statement spans named deployment contexts and is not a fleet-wide current utilized-liquid-cooling figure.
+    concentration:
+      largest_customer_share_of_committed_area_percent: 39.2
+      largest_customer_share_of_normalized_revenue_percent: 32.9
+      customer_identity_and_site_allocation: undisclosed
+    linked_companies:
+      owner_and_operator: [GDS_Holdings]
+      financial_profile_refs: [company_gds_holdings]
+    sources:
+      - title: GDS Q1 2026 earnings presentation
+        publisher: GDS_Holdings
+        date: 2026-05-20
+        url: https://investors.gds-services.com/system/files-encrypted/nasdaq_kms/assets/2026/05/20/6-54-39/GDS%201Q26%20Earnings%20Presentation%200520%201700.pdf
+      - title: GDS Q1 2026 results
+        publisher: GDS_Holdings
+        date: 2026-05-20
+        url: https://investors.gds-services.com/system/files-encrypted/nasdaq_kms/assets/2026/05/20/7-17-26/GDS%201Q26%20Earnings%20Release_0520.pdf
+      - title: GDS 2025 annual report
+        publisher: GDS_Holdings
+        date: 2026
+        url: https://investors.gds-services.com/static-files/bc95b3ba-8717-4a48-8f63-af293aa224b6
+      - title: GDS 2024 ESG report
+        publisher: GDS_Holdings
+        date: 2025
+        url: https://c.gds-services.com/esg2024/docs/2024_ESG_Report_EN.pdf
+      - title: GDS data-center design overview
+        publisher: GDS_Holdings
+        date: 2026
+        url: https://www.gds-services.com/en/about_4.html
+    confidence: high_for_reported_area_capacity_market_tenure_utilization_and_efficiency_medium_for_named_cooling_deployment_scope_low_for_physical_roster_GPU_and_per_site_power_BOM
+
+  - id: dc_vnet_china_portfolio
+    name: VNET Group China data-center portfolio
+    record_granularity: operator_portfolio_with_wholesale_MW_and_retail_cabinet_units
+    operator: VNET_Group
+    country: CN
+    lifecycle_as_of_2026_03_31: operating_and_expanding
+    location:
+      marketed_footprint:
+        data_centers_more_than: 50
+        cities_more_than: 30
+      wholesale_in_service_capacity_regional_mix_percent:
+        Greater_Bay_Area: 65.7
+        Yangtze_River_Delta: 34.3
+      wholesale_under_construction_capacity_regional_mix_percent:
+        Greater_Bay_Area: 96.5
+        Yangtze_River_Delta: 3.5
+      retail_cabinet_regional_mix_percent:
+        Greater_Beijing: 53.8
+        Yangtze_River_Delta: 20.0
+        Greater_Bay_Area: 15.4
+        Other: 10.8
+      exact_physical_roster_partner_site_ownership_and_building_lifecycle: not_fully_reconciled
+      boundary: VNET operates self-built and partnered facilities, so the more-than-50 headline cannot be treated as a wholly owned campus count.
+    wholesale_scale_as_of_2026_Q1:
+      in_service_mw: 907
+      under_construction_mw: 516
+      utilized_mw: 687
+      utilization_percent: 75.7
+      committed_mw: 869
+      commitment_rate_percent: 95.7
+      mature_capacity_utilization_percent: 93.8
+      ramp_up_capacity_utilization_percent: 45.0
+      held_for_future_development_mw: 1056
+      total_resource_including_service_construction_and_future_mw_derived: 2479
+      resource_boundary: Future-development resources are not built or energized; the 2.479 GW derived total is not current operating capacity.
+    wholesale_under_construction_pipeline_as_of_2026_Q1:
+      E_JS_Campus03B: {capacity_mw: 44, precommitted_mw: 44, expected_RFS: H2_2026}
+      N_HB_Campus02: {capacity_mw: 59, precommitted_mw: 0, expected_RFS: H2_2026}
+      N_HB_Campus03: {capacity_mw: 4, precommitted_mw: 4, expected_RFS: H1_2026}
+      N_HB_Campus04: {capacity_mw: 21, precommitted_mw: 7, expected_RFS: H2_2026_to_H1_2027}
+      N_OR_Campus01: {capacity_mw: 9, precommitted_mw: 9, expected_RFS: H1_2026}
+      N_OR_Campus02A: {capacity_mw: 101, precommitted_mw: 101, expected_RFS: H2_2026}
+      N_OR_Campus02B: {capacity_mw: 65, precommitted_mw: 65, expected_RFS: H2_2026}
+      N_OR_Campus03: {capacity_mw: 213, precommitted_mw: 213, expected_RFS: H2_2026_to_H1_2027}
+      total_capacity_mw: 516
+      total_precommitted_mw: 443
+      precommitment_percent: 85.8
+      schedule_boundary: Expected RFS dates and precommitments are forward-looking and do not establish energization or customer utilization.
+    retail_scale_as_of_2026_Q1:
+      cabinets_in_service: 50170
+      cabinets_utilized: 32165
+      utilization_percent: 64.1
+      monthly_recurring_revenue_per_cabinet_cny: 9448
+      boundary: Cabinets are not converted to MW because VNET does not disclose one standardized power rating for this retail total.
+    accelerators:
+      GPU_NPU_models_counts_racks_density_site_allocation_customers_and_utilization: undisclosed
+      capacity_commitment_does_not_establish_accelerator_delivery: true
+    electrical_generation_and_network:
+      generic_resilience_architecture: [UPS, high_performance_batteries, diesel_generators, controlled_temperature_and_humidity]
+      marketed_power_availability_SLA_percent: 99.9
+      marketed_network_bandwidth_T_more_than: 4
+      network_bandwidth_unit_boundary: VNET publishes the headline as 4T plus; it is retained without converting the marketing unit to a measured per-site throughput.
+      renewable_energy_resources_utilized_2025_mwh: 1253719
+      renewable_energy_share_2025_percent: 36
+      Ulanqab_renewable_energy_share_percent_more_than: 80
+      Ulanqab_context: source_grid_load_storage_demonstration_and_smart_dispatch
+      per_site_grid_service_substations_transformers_switchgear_UPS_batteries_generators_counts_and_OEMs: mostly_undisclosed
+      boundary: The generic resilience architecture is not a per-site bill of materials; renewable share is portfolio-level except for the Ulanqab statement.
+    cooling_and_efficiency:
+      average_annual_PUE_for_stabilized_data_centers_2025: 1.24
+      exact_stabilized_site_scope_liquid_cooled_MW_CDU_heat_rejection_WUE_water_and_OEMs: undisclosed
+    linked_companies:
+      owner_and_operator: [VNET_Group]
+      partner_site_landlords_include: [China_Telecom, China_Unicom, China_Mobile, other_third_parties]
+      financial_profile_refs: [company_vnet_group]
+    sources:
+      - title: VNET Q1 2026 financial results
+        publisher: VNET_Group
+        date: 2026-05-21
+        url: https://ir.vnet.com/news-releases/news-release-details/vnet-reports-unaudited-first-quarter-2026-financial-results
+      - title: VNET Q1 2026 earnings presentation
+        publisher: VNET_Group
+        date: 2026-05-21
+        url: https://ir.vnet.com/static-files/2b16e7ee-2d06-4379-9035-266b7a27d52d
+      - title: VNET 2025 annual report
+        publisher: VNET_Group
+        date: 2026
+        url: https://ir.vnet.com/static-files/8b1feb05-698c-4de3-8693-4cc85803b868
+      - title: VNET 2025 ESG report
+        publisher: VNET_Group
+        date: 2026
+        url: https://www.vnet.com/upload/portal/PDF/2025esgreport.pdf
+      - title: VNET current network profile
+        publisher: VNET_Group
+        date: 2026
+        url: https://www.vnet.com/en/portal/list/index/id/9
+    confidence: high_for_wholesale_retail_financially_reported_metrics_pipeline_and_PUE_medium_for_network_headlines_low_for_exact_physical_roster_GPU_and_per_site_electrical_cooling_BOM
+
+  - id: dc_chindata_china_portfolio
+    name: Chindata China data-center portfolio
+    record_granularity: private_operator_portfolio_with_dated_capacity_snapshots
+    operator: Chindata_China
+    country: CN
+    lifecycle_as_of_2026_07_18: operating_expanding_and_post_transaction_reorganization
+    ownership:
+      current_owner: HEC_led_consortium
+      China_business_acquisition_completed: 2026-01-16
+      transaction_value_cny_billion: 28
+      transaction_value_usd_billion_approximate: 4
+      boundary: The transaction covers Chindata's China business; historical Chindata Group international assets are not assumed to remain in this record.
+    location:
+      disclosed_regions_and_hubs: [Greater_Capital_region, Yangtze_River_Delta, Greater_Bay_Area, Qingyang_Gansu, Zhongwei_Ningxia, Ulanqab_Inner_Mongolia, Yichang_Hubei]
+      major_named_clusters: [Huailai_Hebei, Lingqiu_Shanxi, Nantong_Jiangsu]
+      exact_current_campus_building_address_coordinate_ownership_and_lifecycle_roster: not_publicly_reconciled_after_2026_transaction
+    portfolio_scale:
+      Q2_2024_operating_plus_under_construction_IT_capacity_mw: 1640
+      Q2_2024_hyperscale_share_percent: 99
+      Q2_2024_Lingqiu_plus_Huailai_operating_capacity_mw_more_than: 600
+      latest_current_operating_under_construction_energized_utilized_and_committed_IT_mw: undisclosed
+      boundary: The 1.64 GW snapshot predates privatization completion and the 2026 China-business acquisition; it is retained as dated evidence, not current live capacity.
+    high_voltage_power_portfolio_as_of_2024_07:
+      operating_substations: 10
+      operating_substation_capacity_mva: 1355
+      planned_substation_capacity_mva: 1585
+      named_cluster_scope: [Huailai, Lingqiu, Nantong]
+      typical_delivery_months: 6_to_8
+      redundancy_design: different_upstream_sources_with_N_minus_1_lines_and_transformers
+      boundary: MVA is transformer or substation apparent-power nameplate and is not converted to IT MW, energized load, or GPU power.
+    announced_expansion:
+      Zhongwei_three_zero_carbon_compute_parks_announced_2025_08:
+        planned_total_capacity_gw: 1.2
+        lifecycle: announced_or_planned_not_counted_as_operating
+    accelerators:
+      exact_GPU_NPU_models_counts_servers_racks_density_site_allocation_customers_and_utilization: undisclosed
+      hyperscale_share_does_not_establish_AI_accelerator_inventory: true
+    electrical_and_cooling:
+      power_architecture_context: self_built_high_voltage_substations_with_site_specific_designs
+      fleet_average_PUE_2023_China: 1.21
+      current_fleet_PUE_WUE_renewable_share_liquid_cooled_MW_water_and_equipment_OEMs: undisclosed
+      site_specific_examples: [dc_chindata_lingqiu_campus, dc_chindata_sangyuan_cloud_computing_campus]
+    linked_companies:
+      owner: [HEC_led_consortium]
+      operator: [Chindata_China]
+      financial_profile_refs: [company_chindata_china]
+    sources:
+      - title: HEC-led consortium completes Chindata China acquisition
+        publisher: Chindata_Group
+        date: 2026-01-16
+        url: https://www.chindatagroup.com/media/news/524.html
+      - title: Chindata Q2 2024 IT-capacity and hyperscale portfolio snapshot
+        publisher: Chindata_Group
+        date: 2024
+        url: https://www.chindatagroup.com/media/news/459.html
+      - title: Chindata self-built substation portfolio
+        publisher: Chindata_Group
+        date: 2024-07-10
+        url: https://www.chindatagroup.com/media/news/454.html
+      - title: Chindata announces three Zhongwei zero-carbon computing parks
+        publisher: Chindata_Group
+        date: 2025-08-20
+        url: https://www.chindatagroup.com/media/news/484.html
+      - title: Chindata sustainability metrics
+        publisher: Chindata_Group
+        date: 2024
+        url: https://www.chindatagroup.com/sustainability/4/oid/4.html
+    confidence: high_for_transaction_dated_capacity_substation_and_expansion_figures_low_for_current_post_transaction_portfolio_roster_live_IT_load_GPU_and_current_financial_scope
+
+  - id: dc_chindata_lingqiu_campus
+    name: Chindata Lingqiu data-center cluster
+    record_granularity: named_multi_building_data_center_cluster
+    operator: Chindata_China
+    country: CN
+    region: Shanxi
+    locality: Lingqiu_County_Datong
+    lifecycle_as_of_2025_12: operating_and_expanding
+    location:
+      exact_street_addresses_coordinates_parcels_and_building_count: undisclosed_in_reviewed_sources
+    campus_scale:
+      operating_capacity_mw_more_than: 350
+      capacity_definition: company_reported_operating_scale_not_independently_reconciled_to_measured_IT_load
+      accelerator_servers_racks_committed_utilized_and_customer_load_mw: undisclosed
+    accelerators:
+      exact_GPU_NPU_models_counts_racks_density_site_allocation_and_utilization: undisclosed
+    electrical_and_generation:
+      substation_voltage_kV: 220
+      proprietary_transformer_design: high_impedance_split_winding_transformer
+      direct_conversion_path: 220kV_to_10kV
+      conventional_intermediate_110kV_stage: eliminated
+      transformer_architecture_land_reduction_percent: 60
+      published_construction_cost_saving_cny_million: 150
+      delivery_time_months_for_220kV_substation: 6
+      utility_sources_transformer_MVA_and_unit_count_switchgear_UPS_batteries_backup_generation_and_OEMs: undisclosed
+      boundary: The land and cost reductions describe the proprietary substation design and do not establish campus IT load or operating cost savings.
+    cooling_and_efficiency:
+      annual_average_PUE_2025: 1.18
+      best_single_building_PUE_2025: 1.108
+      liquid_cooling_architecture_live_MW_CDU_heat_rejection_WUE_water_and_OEMs: undisclosed
+    linked_companies:
+      owner_and_operator: [Chindata_China]
+      financial_profile_refs: [company_chindata_china]
+    sources:
+      - title: Lingqiu operating scale and PUE update
+        publisher: Chindata_Group
+        date: 2025-12
+        url: https://www.chindatagroup.com/media/news/511.html
+      - title: Chindata self-built substation portfolio and Lingqiu transformer design
+        publisher: Chindata_Group
+        date: 2024-07-10
+        url: https://www.chindatagroup.com/media/news/454.html
+    confidence: high_for_published_operating_scale_PUE_and_transformer_architecture_low_for_load_utilization_GPU_cooling_and_full_electrical_BOM
+
+  - id: dc_chindata_sangyuan_cloud_computing_campus
+    name: Chindata Sangyuan Cloud Computing Campus
+    record_granularity: named_data_center_campus_with_commercial_solid_state_transformer
+    operator: Chindata_China
+    country: CN
+    region: Hebei
+    locality: Huailai_Sangyuan_area
+    lifecycle_as_of_2026_07_02: operating_with_SST_system_in_commercial_operation
+    location:
+      market_context: near_Beijing_in_Greater_Capital_region
+      exact_street_address_coordinates_parcel_and_building_count: undisclosed_in_reviewed_sources
+    campus_scale:
+      operating_IT_capacity_mw_racks_servers_utilized_load_and_customer_allocation: undisclosed
+      SST_system_capacity_mw_unit_count_and_served_racks: undisclosed
+    accelerators:
+      exact_GPU_NPU_models_counts_racks_density_and_utilization: undisclosed
+    electrical_and_generation:
+      solid_state_transformer:
+        commercial_operation_date: 2026-07-02
+        developers: [Chindata, Meituan, HEC_Group, Delta_Electronics]
+        topology: triangular_SST
+        input: 10kV_utility_AC
+        output: 800V_DC
+        conversion_stages: direct_single_step
+        functions: [voltage_transformation, electrical_isolation, power_quality_management]
+        conversion_efficiency_percent_up_to: 98.5
+        electrical_footprint_reduction_percent_more_than: 50
+        effective_space_utilization_effect: approximately_doubled
+        validation_tests_completed: 34
+      integrated_energy_storage:
+        functions: [uninterrupted_backup, peak_valley_optimization]
+        power_mw_energy_mwh_chemistry_duration_and_OEM: undisclosed
+      conventional_UPS_bypass_backup_generator_relationship_grid_redundancy_switchgear_and_protection_BOM: undisclosed
+      boundary: The 98.5% metric is conversion efficiency of the SST architecture, not campus PUE; the space claim is not added to IT capacity.
+    cooling_and_efficiency:
+      campus_PUE_WUE_water_consumption_liquid_cooling_CDU_heat_rejection_and_OEMs: undisclosed
+    linked_companies:
+      owner_and_operator: [Chindata_China]
+      power_system_collaborators: [Meituan, HEC_Group, Delta_Electronics]
+      financial_profile_refs: [company_chindata_china]
+    sources:
+      - title: Sangyuan solid-state-transformer system enters commercial operation
+        publisher: Chindata_Group
+        date: 2026-07-02
+        url: https://www.chindatagroup.com/media/news/533.html
+    confidence: high_for_commercial_date_topology_voltage_efficiency_and_collaborators_low_for_campus_scale_SST_MW_storage_GPU_and_cooling_details
+
 disclosure_gap_register:
   - exact_global_physical_data_center_count
   - exact_per_campus_GPU_inventory_for_most_hyperscalers
@@ -7647,6 +8016,14 @@ disclosure_gap_register:
   - China_Mobile_self_built_rented_compute_split_and_per_site_accelerator_power_cooling_inventory
   - China_Unicom_seven_100MW_AIDC_campus_roster_physical_racks_power_and_accelerator_allocation
   - Sanjiangyuan_current_phase_energization_IT_MW_accelerators_liquid_cooling_and_electrical_BOM
+  - GDS_101_center_market_table_to_exact_physical_roster_ownership_and_lifecycle_reconciliation
+  - GDS_per_site_live_IT_load_GPU_inventory_grid_power_liquid_cooling_and_electrical_BOM
+  - VNET_more_than_50_data_centers_to_self_built_partnered_physical_roster_and_lifecycle_reconciliation
+  - VNET_per_site_wholesale_and_retail_load_GPU_inventory_grid_power_cooling_and_electrical_BOM
+  - Chindata_1_64GW_Q2_2024_scope_to_current_post_HEC_transaction_operating_construction_and_utilization_reconciliation
+  - Chindata_1355MVA_operating_substations_to_IT_MW_redundancy_measured_load_and_site_mapping
+  - Chindata_per_site_GPU_inventory_power_chain_liquid_cooling_WUE_and_equipment_OEMs
+  - Sangyuan_SST_unit_count_MW_storage_MWh_served_load_conventional_backup_and_cooling_integration
 
 next_research_queue:
   campus_enrichment:

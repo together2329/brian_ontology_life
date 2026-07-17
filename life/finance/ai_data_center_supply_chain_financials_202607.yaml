@@ -77,6 +77,8 @@ stack_layers:
     - China_Telecom
     - China_Mobile
     - China_Unicom
+    - GDS_Holdings
+    - VNET_Group
     - Equinix
     - Digital_Realty
     - Applied_Digital
@@ -92,6 +94,7 @@ stack_layers:
     - Galaxy_Digital
     - Bharti_Airtel
   private_data_center_and_power_developers:
+    - Chindata_China
     - Crusoe
     - QTS
     - Vantage_Data_Centers
@@ -5058,8 +5061,251 @@ financial_profiles:
       - https://www.chinaunicom.com.hk/en/ir/income_statement.php
     confidence: high_for_group_financials_data_center_revenue_capacity_utilization_and_capex_direction_low_for_data_center_margin_physical_capacity_and_hardware_inventory
 
+  - id: company_gds_holdings
+    company: GDS_Holdings
+    layer: operators_reits_utilities
+    ownership_status: public_Nasdaq_GDS_and_HKEX_9698
+    fiscal_baseline:
+      period: FY2025_ended_2025-12-31
+      accounting_basis: US_GAAP_with_company_adjusted_metrics
+      currency: CNY
+      revenue_cny_million: 11432.274
+      gross_profit_cny_million: 2585.415
+      operating_result_before_other_income_expenses_cny_million: -55.750
+      operating_margin_percent_derived: -0.49
+      net_income_cny_million: 959.362
+      long_lived_asset_impairment_cny_million: 1561.235
+      adjusted_EBITDA_cny_million: 5403.462
+      adjusted_EBITDA_margin_percent: 47.3
+      boundary: >-
+        GDS labels the GAAP operating subtotal as income or loss from continuing
+        operations before the subsequent other-income and expense rows.
+        The FY2025 loss includes a CNY1.561 billion long-lived-asset impairment,
+        while positive net income includes equity-method and DayOne transaction
+        effects. Adjusted EBITDA excludes defined items and is not operating income.
+    latest_update:
+      period: Q1_2026_ended_2026-03-31
+      reported_revenue_cny_million: 3367.1
+      revenue_excluding_one_time_items_cny_million: 2938.0
+      revenue_excluding_one_time_items_growth_percent: 7.9
+      reported_net_income_cny_million: 2652.1
+      reported_adjusted_EBITDA_cny_million: 1948.7
+      adjusted_EBITDA_excluding_one_time_items_cny_million: 1430.3
+      adjusted_EBITDA_excluding_one_time_items_growth_percent: 8.0
+      short_term_debt_cny_million: 9368.9
+      long_term_debt_cny_million: 36527.7
+      DayOne_partial_sale_cash_proceeds_usd_million: 385
+      DayOne_remaining_ownership_percent_approximate_as_of_2026_04_29: 19.9
+      DayOne_remaining_stake_market_value_usd_billion_more_than_as_of_announcement: 2.2
+      boundary: >-
+        Reported Q1 revenue, net income, and adjusted EBITDA contain material
+        DayOne dilution and partial-sale effects. Excluding-one-time operating
+        metrics are shown separately and still do not equal GAAP operating profit.
+    data_center_exposure:
+      role: carrier_neutral_hyperscale_and_enterprise_data_center_developer_and_operator
+      confirmed_campus_refs:
+        - dc_gds_china_portfolio
+      current_scale_as_of_2026_Q1:
+        in_service_area_sqm: 674269
+        in_service_company_reported_capacity_mw: 1538
+        under_construction_area_sqm: 118411
+        under_construction_company_reported_capacity_mw: 377
+        utilized_area_sqm: 520929
+        utilization_percent: 77.3
+        committed_and_precommitted_area_sqm: 725485
+        powered_land_and_reservations_mw: 3700
+        total_developable_capacity_mw_approximate: 5600
+      largest_customer_share_of_committed_area_percent: 39.2
+      largest_customer_share_of_normalized_revenue_percent: 32.9
+      economics_boundary: >-
+        Company-reported capacity, powered land, and developable capacity have
+        different lifecycle scopes. Revenue and adjusted EBITDA are consolidated;
+        GDS does not publish campus-level revenue, operating profit, return on
+        capital, or accelerator economics.
+    management_outlook:
+      FY2026_revenue_guidance_cny_million: {low: 12400, high: 12900}
+      FY2026_adjusted_EBITDA_guidance_cny_million: {low: 5750, high: 6000}
+      FY2026_capex_guidance_cny_million: 9000
+      Q1_2026_new_bookings_mw_approximate: 200
+      stance: high_capex_expansion_supported_by_record_bookings_and_existing_customer_commitments
+    watch_items:
+      - capex_and_debt_funding_against_delivery_and_ramp_up
+      - largest_customer_concentration
+      - impairment_and_DayOne_transaction_noise_in_GAAP_results
+      - powered_land_conversion_to_energized_and_utilized_capacity
+      - mature_versus_ramp_up_site_returns
+      - renewable_power_liquid_cooling_and_high_density_execution
+      - exact_GPU_inventory_and_per_site_electrical_BOM
+    sources:
+      - https://investors.gds-services.com/news-releases/news-release-details/gds-holdings-limited-reports-fourth-quarter-and-full-year-2025
+      - https://investors.gds-services.com/static-files/bc95b3ba-8717-4a48-8f63-af293aa224b6
+      - https://investors.gds-services.com/zh-hant/node/12481
+      - https://investors.gds-services.com/system/files-encrypted/nasdaq_kms/assets/2026/05/20/6-54-39/GDS%201Q26%20Earnings%20Presentation%200520%201700.pdf
+    confidence: high_for_audited_financials_current_capacity_utilization_guidance_and_debt_low_for_campus_profitability_GPU_and_power_equipment
+
+  - id: company_vnet_group
+    company: VNET_Group
+    layer: operators_reits_utilities
+    ownership_status: public_Nasdaq_VNET_with_pending_CATL_affiliate_investment
+    fiscal_baseline:
+      period: FY2025_ended_2025-12-31
+      accounting_basis: US_GAAP_with_company_adjusted_metrics
+      currency: CNY
+      revenue_cny_million: 9949.261
+      IDC_revenue_cny_billion_rounded: 7.43
+      wholesale_IDC_revenue_cny_billion_rounded: 3.46
+      retail_IDC_revenue_cny_billion_rounded: 3.96
+      non_IDC_revenue_cny_billion_rounded: 2.52
+      gross_profit_cny_million: 2192.489
+      operating_profit_cny_million: 780.300
+      operating_margin_percent_derived: 7.84
+      net_loss_cny_million: 133.421
+      net_loss_attributable_to_VNET_cny_million: 251.842
+      adjusted_EBITDA_cny_billion_rounded: 2.98
+      boundary: >-
+        Rounded wholesale, retail, non-IDC, and adjusted-EBITDA figures are kept
+        distinct from the audited exact consolidated revenue and operating-profit
+        lines. Adjusted EBITDA is not GAAP operating income.
+    latest_update:
+      period: Q1_2026_ended_2026-03-31
+      total_revenue_cny_million: 2691.0
+      IDC_revenue_cny_million: 2080.0
+      wholesale_IDC_revenue_cny_million: 1060.0
+      retail_IDC_revenue_cny_million: 1020.0
+      non_IDC_revenue_cny_million: 606.6
+      gross_profit_cny_million: 615.9
+      gross_margin_percent: 22.9
+      adjusted_EBITDA_cny_million: 891.5
+      adjusted_EBITDA_margin_percent: 33.1
+      net_loss_attributable_to_VNET_cny_million: 531.8
+      capital_transaction_related_income_tax_cny_million: 486.2
+      short_term_debt_cny_billion: 5.18
+      long_term_debt_cny_billion: 17.77
+      boundary: The Q1 net loss includes a CNY486.2 million capital-transaction-related income-tax charge; adjusted EBITDA excludes defined items.
+    data_center_exposure:
+      role: carrier_neutral_wholesale_and_retail_IDC_cloud_and_network_operator
+      confirmed_campus_refs:
+        - dc_vnet_china_portfolio
+      wholesale_as_of_2026_Q1:
+        in_service_mw: 907
+        under_construction_mw: 516
+        utilized_mw: 687
+        committed_mw: 869
+        held_for_future_development_mw: 1056
+      retail_as_of_2026_Q1:
+        in_service_cabinets: 50170
+        utilized_cabinets: 32165
+        monthly_recurring_revenue_per_cabinet_cny: 9448
+      economics_boundary: >-
+        Wholesale MW, retail cabinets, and future-development resources are not
+        converted into one load total. VNET discloses wholesale and retail revenue
+        but not per-campus operating profit, returns, GPU economics, or customer allocation.
+    ownership_event:
+      proposed_CATL_affiliates_maximum_shareholding_percent: 38.1
+      expected_closing: Q4_2026
+      status_as_of_2026_Q1_results: pending_conditions_and_not_closed
+      boundary: The proposed investment is not recorded as completed ownership or operating cash flow.
+    management_outlook:
+      FY2026_revenue_guidance_cny_billion: {low: 11.5, high: 11.8}
+      FY2026_adjusted_EBITDA_guidance_cny_billion: {low: 3.55, high: 3.75}
+      FY2026_capex_guidance_cny_billion: {low: 10, high: 12}
+      FY2026_capacity_delivery_target_mw: {low: 450, high: 500}
+      stance: very_high_buildout_capex_against_precommitted_wholesale_pipeline
+    watch_items:
+      - delivery_and_energization_of_516MW_construction_pipeline
+      - capex_debt_and_financing_execution
+      - pending_CATL_affiliate_transaction_closing_and_governance
+      - customer_concentration_and_precommitment_conversion_to_utilization
+      - retail_utilization_and_wholesale_ramp_up
+      - renewable_power_and_Ulanqab_source_grid_load_storage_execution
+      - exact_GPU_inventory_and_per_site_power_cooling_BOM
+    sources:
+      - https://ir.vnet.com/news-releases/news-release-details/vnet-reports-unaudited-fourth-quarter-and-full-year-2025
+      - https://ir.vnet.com/static-files/8b1feb05-698c-4de3-8693-4cc85803b868
+      - https://ir.vnet.com/news-releases/news-release-details/vnet-reports-unaudited-first-quarter-2026-financial-results
+      - https://ir.vnet.com/static-files/2b16e7ee-2d06-4379-9035-266b7a27d52d
+    confidence: high_for_audited_financials_current_wholesale_retail_metrics_guidance_and_pipeline_low_for_per_site_economics_GPU_and_equipment
+
+  - id: company_chindata_china
+    company: Chindata_China
+    layer: private_data_center_and_power_developers
+    ownership_status: private_HEC_led_consortium_acquired_China_business_2026_01
+    current_public_financial_disclosure:
+      period: current_as_of_2026-07-18
+      accounting_basis: no_reviewed_current_public_standalone_audited_financial_statements
+      currency: undisclosed
+      revenue: undisclosed
+      operating_profit: undisclosed
+      net_income: undisclosed
+      adjusted_EBITDA: undisclosed
+      capex: undisclosed
+      debt: undisclosed
+      boundary: >-
+        Chindata went private in December 2023, and an HEC-led consortium acquired
+        its China business in January 2026. The RMB28 billion transaction value is
+        not current revenue, operating profit, enterprise-wide capex, or debt.
+    latest_public_historical_audited_baseline:
+      period: FY2022_ended_2022-12-31
+      accounting_basis: US_GAAP_with_company_adjusted_metrics_before_privatization_and_China_business_sale
+      currency: CNY
+      revenue_cny_million: 4551.662
+      operating_income_cny_million: 1188.460
+      operating_margin_percent_derived: 26.11
+      net_income_cny_million: 651.630
+      adjusted_EBITDA_cny_million: 2374.231
+      adjusted_EBITDA_margin_percent: 52.2
+      boundary: These figures are stale historical Chindata Group results and must not be treated as FY2025 or current Chindata China earnings.
+    transaction_context:
+      privatization_completed: 2023-12-19
+      China_business_acquisition_completed: 2026-01-16
+      China_business_transaction_value_cny_billion: 28
+      China_business_transaction_value_usd_billion_approximate: 4
+      current_owner: HEC_led_consortium
+    data_center_exposure:
+      role: hyperscale_data_center_and_high_voltage_power_infrastructure_developer_operator
+      confirmed_campus_refs:
+        - dc_chindata_china_portfolio
+        - dc_chindata_lingqiu_campus
+        - dc_chindata_sangyuan_cloud_computing_campus
+      dated_portfolio_metrics:
+        Q2_2024_operating_plus_under_construction_IT_capacity_mw: 1640
+        Q2_2024_hyperscale_share_percent: 99
+        operating_substation_capacity_mva_as_of_2024_07: 1355
+        planned_substation_capacity_mva_as_of_2024_07: 1585
+      current_operating_construction_utilized_committed_capacity_and_site_profitability: undisclosed
+      economics_boundary: >-
+        Dated IT MW and substation MVA use different units and scopes and are not
+        combined. Current audited earnings, site-level returns, customer
+        concentration, accelerator economics, and post-transaction asset scope are unavailable.
+    management_outlook:
+      Zhongwei_announced_zero_carbon_compute_parks_total_planned_gw: 1.2
+      Sangyuan_SST_portfolio_rollout_signal: commercial_system_entered_operation_2026_07_02
+      current_quantitative_revenue_operating_profit_capex_or_capacity_guidance: undisclosed
+      stance: expansion_and_power_architecture_innovation_visible_but_financial_outlook_opaque
+    watch_items:
+      - post_transaction_asset_and_liability_scope
+      - current_audited_revenue_operating_profit_debt_and_capex
+      - dated_1_64GW_capacity_conversion_to_current_live_utilized_load
+      - substation_MVA_to_IT_MW_redundancy_and_site_mapping
+      - Zhongwei_1_2GW_land_power_permitting_financing_and_delivery
+      - customer_concentration_and_contract_returns
+      - exact_GPU_inventory_liquid_cooling_and_per_site_electrical_BOM
+    sources:
+      - https://www.sec.gov/Archives/edgar/data/1807192/000095017023015950/cd-20221231.htm
+      - https://www.sec.gov/Archives/edgar/data/1807192/000119312523297605/d16003dex991.htm
+      - https://www.chindatagroup.com/media/news/524.html
+      - https://www.baincapital.com/news/bain-capital-successfully-completes-4-billion-strategic-sale-wintrixs-china-business
+      - https://www.chindatagroup.com/media/news/484.html
+      - https://www.chindatagroup.com/media/news/533.html
+    confidence: high_for_historical_audited_financials_transactions_and_dated_capacity_low_for_current_financials_post_transaction_scope_and_site_economics
+
 cross_company_read_through:
   current_signals:
+    - GDS and VNET provide unusually useful but non-comparable operating ledgers. At Q1 2026 GDS reported 1,538 MW in service and 77.3% utilized area, while VNET reported 907 wholesale MW in service and 75.7% utilized MW plus a separate 50,170-cabinet retail fleet. GDS area utilization and VNET wholesale power utilization must not be ranked as the same denominator.
+    - GDS FY2025 revenue was CNY11.43 billion and its GAAP continuing-operations result was a CNY55.8 million loss after a CNY1.56 billion impairment, despite CNY5.40 billion adjusted EBITDA. VNET reported CNY9.95 billion revenue and CNY780.3 million operating profit. The adjusted metrics, transaction effects, impairments, and different retail-wholesale mixes prevent a simple EBITDA comparison.
+    - VNET's 1.056 GW future-development resource and GDS's 3.7 GW powered land and reservations show substantial option value, but neither is current energized or utilized load. Their FY2026 capex guidance of CNY10-CNY12 billion and CNY9 billion respectively makes delivery, funding, customer ramp, and power availability the key conversion variables.
+    - Chindata's latest portfolio snapshots use 1.64 GW of operating-plus-construction IT capacity in Q2 2024 and 1,355 MVA of operating substation capacity across named clusters in July 2024. IT MW and MVA are not interchangeable, both are dated, and the 2026 HEC-led acquisition changed the China-business ownership scope.
+    - Chindata provides deep power-architecture evidence despite current financial opacity: Lingqiu uses a proprietary 220 kV-to-10 kV transformer path, while Sangyuan's commercial solid-state transformer converts 10 kV AC directly to 800 V DC at up to 98.5% conversion efficiency. Neither disclosure reveals live GPU inventory, served IT MW, storage MWh, or full backup-chain equipment.
     - Hyperscale buyers are funding the demand wave directly: Meta raised its 2026 capex range, Amazon's free cash flow fell as AI property investment rose, and Oracle is financing rapid OCI expansion against a very large AI-heavy RPO.
     - Apple owns eight disclosed data centers and used about 2.041 TWh at those sites plus 0.544 TWh of metered colocation electricity in 2025. Its Private Cloud Compute fleet uses custom Apple-silicon inference servers, but Apple discloses no chip model, server, node, chassis, rack, GPU, IT-MW, or site-allocation count. The colocation figure excludes cooling and building-operation energy, so it is not directly comparable with owned-facility consumption.
     - Apple's FY2025 revenue was $416.2 billion and operating income $133.1 billion, while Services revenue was $109.2 billion. Services is the monetization layer supported by the infrastructure but is not data-center revenue; the $600 billion four-year US commitment is likewise broad manufacturing and supplier spend rather than a data-center capex forecast.
