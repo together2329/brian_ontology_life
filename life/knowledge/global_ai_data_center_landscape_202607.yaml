@@ -97,6 +97,369 @@ global_market_baseline:
       url: https://www.srgresearch.com/articles/hyperscale-data-center-count-hits-1136-average-size-increases-us-accounts-for-54-of-total-capacity
 
 campus_profiles:
+  - id: dc_scala_latam_portfolio
+    name: Scala Data Centers Latin America portfolio
+    record_granularity: regional_operator_portfolio_not_one_physical_campus
+    operator: Scala_Data_Centers
+    lifecycle_as_of_2026_07_18: operating_expanding_and_holding_large_future_power_and_land_pipeline
+    location:
+      countries_with_current_or_planned_operator_rows: [Brazil, Chile, Mexico, Colombia]
+      current_operating_site_cards:
+        Brazil:
+          - {site_id: SGRUTB01, campus: Tambore, city_state: Barueri_Sao_Paulo, built_area_sqft: 183966, IT_capacity_mw: 21}
+          - {site_id: SGRUSP02, city_state: Sao_Paulo_Sao_Paulo, built_area_sqft: 68533, IT_capacity_mw: 4}
+          - {site_id: SGRUTB03, campus: Tambore, city_state: Barueri_Sao_Paulo, built_area_sqft: 81763, IT_capacity_mw: 9}
+          - {site_id: SGRUTB04, campus: Tambore, city_state: Barueri_Sao_Paulo, built_area_sqft: 137222, IT_capacity_mw: 12}
+          - {site_id: SGRUTB05, campus: Tambore, city_state: Barueri_Sao_Paulo, built_area_sqft: 72669, IT_capacity_mw: 6}
+          - {site_id: SVCPCP01, campus: Campinas, city_state: Campinas_Sao_Paulo, built_area_sqft: 129328, IT_capacity_mw: 7}
+          - {site_id: SGIGSM01, campus: Sao_Joao_de_Meriti, city_state: Rio_de_Janeiro_Rio_de_Janeiro, built_area_sqft: 120879, IT_capacity_mw: 13.2}
+          - {site_id: SPOAPA01, city_state: Porto_Alegre_Rio_Grande_do_Sul, built_area_sqft: 43809, IT_capacity_mw: 4.8}
+          - {site_id: SGRUTB06, campus: Tambore, city_state: Barueri_Sao_Paulo, built_area_sqft: 77016, IT_capacity_mw: 6}
+          - {site_id: SGRUTB08, campus: Tambore, city_state: Barueri_Sao_Paulo, built_area_sqft: 189251, IT_capacity_mw: 24}
+          - {site_id: SGRUTB12, campus: Tambore, city_state: Barueri_Sao_Paulo, built_area_sqft: 77016, IT_capacity_mw: 6}
+        Chile:
+          - {site_id: SSCLCR01, campus: Curauma, city_region: Comuna_Valparaiso_Valparaiso, built_area_sqft: 47576, IT_capacity_mw: 5}
+        Mexico:
+          - {site_id: SMEXTP01, city_state: Tepotzotlan_Mexico, built_area_sqft: 115076, IT_capacity_mw: 5.1}
+      current_under_construction_cards:
+        Brazil:
+          - {site_id: SGRUTB07, campus: Tambore, city_state: Barueri_Sao_Paulo, built_area_sqft: 501479, IT_capacity_mw: 36, page_startup_date: 2024}
+          - {site_id: SGRUTB09, campus: Tambore, city_state: Barueri_Sao_Paulo, built_area_sqft: 266699, IT_capacity_mw: 36, page_startup_date: 2025}
+          - {site_id: SGRUTB10, campus: Tambore, city_state: Barueri_Sao_Paulo, built_area_sqft: 266708, IT_capacity_mw: 36, page_startup_date: 2024}
+          - {site_id: SGRUTB11, campus: Tambore, city_state: Barueri_Sao_Paulo, built_area_sqft: 75218, IT_capacity_mw: 12, page_startup_date: 2025}
+          - {site_id: SFORPF01, campus: Praia_do_Futuro, city_state: Fortaleza_Ceara, built_area_sqft: 206613, IT_capacity_mw: 7.2, page_startup_date: 2025}
+        Chile:
+          - {site_id: SSCLLP01, campus: Lampa, city_region: Chacabuco_Santiago, built_area_sqft: 70395, IT_capacity_mw: 48, page_startup_date: 2024}
+          - {site_id: SSCLHB01, campus: Huechuraba, city_region: Santiago_Santiago, built_area_sqft: 57093.66, IT_capacity_mw: 4.8}
+        Colombia:
+          - {site_id: SBOGZB01, campus: Zona_Franca_Bogota, city_region: Bogota, IT_capacity_mw: undisclosed, page_startup_window: 2024_2027}
+        Mexico:
+          - {site_id: SMEXTP02, city_state: Tepotzotlan_Mexico, IT_capacity_mw: 2, page_startup_date: 2025}
+      operator_page_additional_lifecycle_rows:
+        in_development: [SGIGSM02_SGIGSM03, SVCPCP02, SVCPJD01, SVCPJD03, SFORPF02, SSCLCR02, Santiago_unspecified, SBOGZB02_SBOGZB03, SBOGZM01, Bogota_unspecified, SMEXSJ01_SMEXSJ03_SMEXSJ04, SQROQT01_SQROQT02]
+        planned: [SGRUTB13_SGRUTB14, SGRUTB15_SGRUTB19, SVCPJD02, SSCLLP02, SSCLLP03_SSCLLP04, Santiago_unspecified, Bogota_unspecified, SMEXSJ02, SQROQT03_SQROQT04]
+        capacity_boundary: Most development and planned rows disclose a location or target year but no IT MW and therefore are not included in a capacity sum.
+      mapped_public_location_candidates:
+        - {source_ref: osm_way_770978294, candidate_site: SGIGSM01, latitude: -22.7968709, longitude: -43.3559847, OSM_footprint_area_m2: 36740.222, confidence: medium_high}
+        - {source_ref: osm_way_1294875244, candidate_site: SSCLCR01_Curauma, latitude: -33.137963, longitude: -71.5596613, OSM_footprint_area_m2: 78356.391, confidence: medium_high}
+        - {source_ref: osm_node_13509301320, candidate_site: Tambore_area_unspecified, latitude: -23.496722, longitude: -46.814934, confidence: low, warning: OSM_name_says_Scala_Datacenter_but_operator_tag_says_Equinix}
+      map_boundary: >-
+        OSM coordinates and footprint geometry are public map candidates, not
+        operator-certified parcels or building areas. The Tambore point has an
+        internal name/operator conflict and is not promoted to a verified site.
+    portfolio_scale:
+      current_operator_headline:
+        operational_IT_capacity_mw_more_than: 100
+        under_construction_and_future_projects_mw_more_than: 900
+        portfolio_PUE_less_than: 1.4
+        new_air_cooled_site_WUE: 0
+        landbank_sqft_more_than: 92000000
+        properties: 51
+      current_site_card_ledger_derived:
+        operating_cards: 13
+        operating_IT_capacity_mw: 123.1
+        under_construction_cards: 9
+        under_construction_cards_with_exact_MW: 8
+        under_construction_exact_IT_capacity_mw: 182
+        known_operating_plus_construction_IT_capacity_mw: 305.1
+        boundary: >-
+          The sums use only exact current card values. They do not explain the
+          more-than-900-MW construction-and-future headline because most
+          development and planned rows have no disclosed MW and different
+          lifecycle scopes must not be filled with estimates.
+      FY2025_management_scope_reconciliation:
+        Brazil_issuer_operating_data_centers: 11
+        foreign_operating_sites_through_other_related_group_entities: [SMEXTP01_Tepotzotlan, SSCLCR01_Curauma]
+        group_data_centers_under_construction: 7
+        named_construction_geographies: [Tambore, Fortaleza, Lampa, Huechuraba]
+        Brazil_issuer_construction_count_in_investment_section: 4
+        current_page_operating_cards: 13
+        current_page_construction_cards: 9
+        boundary: >-
+          The audited report distinguishes the Brazilian issuer from foreign
+          related group entities and itself uses both a seven-project group
+          construction count and a four-project company count. The current web
+          page has later or differently scoped card counts and still shows 2024
+          and 2025 startup dates. No card is assumed live solely because its
+          displayed target date has passed.
+      current_card_to_dated_launch_capacity_conflicts:
+        SGIGSM01: {current_card_IT_capacity_mw: 13.2, January_2024_history_entry_capacity_mw: 7.2}
+        SMEXTP01: {current_card_IT_capacity_mw: 5.1, December_2023_launch_entry_capacity_mw: 7.9}
+        boundary: The differences may reflect phases or changed scope, but the reviewed sources do not reconcile them and no value is silently substituted.
+    accelerators:
+      exact_operator_owned_or_customer_GPU_models_counts_servers_racks_utilization_power_draw_and_site_allocation: undisclosed
+      high_density_readiness_evidence:
+        Tambore_futureproof_rack_density_kw_range: [24, 100]
+        Scala_AI_City_planned_rack_density_kw_more_than: 150
+      boundary: >-
+        Rack-density and AI-ready design claims establish accommodation, not
+        GPU procurement, delivery, installation, ownership or live utilization.
+        No MW-to-GPU conversion is made.
+    electrical_cooling_and_sustainability:
+      FY2025_management_disclosure:
+        substations_energized_in_2025: [Tambore_third_substation, Santa_Tereza_Chile, Jundiai_Sao_Paulo]
+        energized_power_Brazil_and_Chile_mw_more_than: 280
+        additional_energy_capacity_secured_or_renegotiated_mw_more_than: 500
+        secured_energy_connections_gw_more_than: 6
+        current_consumption_renewable_and_certified_percent: 100
+        new_site_design_PUE_less_than: 1.4
+        new_site_WUE: 0
+        cooling_architecture: closed_loop_without_water_evaporation
+      later_2025_company_release_scope:
+        installed_and_developing_capacity_mw_approximately: 300
+        reserved_power_capacity_gw: 7.1
+        boundary: These November 2025 company-release figures are preserved separately from the audited report's more-than-200-MW and more-than-6-GW descriptions.
+      thermal_management_contract:
+        supplier: Vertiv
+        agreement_date: 2023-05-17
+        term_years: 3
+        first_phase_sites: 6
+        first_phase_CRAH_fan_coil_units: 364
+        first_phase_chillers: 58
+        estimated_cooling_capacity_mw: 130
+        approximate_country_allocation_mw: {Brazil: 93, Chile: 38}
+        final_phase_sites: 11
+        countries: [Brazil, Chile, Colombia]
+        chiller_features: [free_cooling, adiabatic_solution]
+        cooling_redundancy: one_backup_unit_per_primary_unit
+        allocation_boundary: >-
+          Rounded country values sum to 131 MW while the supplier describes
+          about 130 MW total. Exact site allocation, installed count, current
+          commissioning status and equipment model numbers are undisclosed.
+      renewable_supply_partnership:
+        counterparty: Serena
+        supply_start: 2025-01
+        wind_farms: [Assurua_4, Ventos_da_Bahia_3]
+        wind_farm_total_installed_capacity_mw: 393
+        Scala_stake_in_assets_announced: true
+        boundary: The wind-farm nameplate is not dedicated campus IT capacity or proof of delivered energy at each site.
+      exact_per_site_grid_feeds_substations_transformers_switchgear_UPS_batteries_generators_fuel_CDUs_and_live_cooling_unit_inventory: undisclosed
+    ownership_and_financial_boundary:
+      Brazilian_issuer: Scala_Data_Centers_SA
+      voting_control: DYN_DC_Fundo_de_Investimento_em_Participacoes_Multiestrategia
+      voting_control_percent: 100
+      controller_description: investment_vehicle_of_funds_managed_by_DigitalBridge_affiliates
+      foreign_site_boundary: >-
+        FY2025 management explicitly says the Mexico and Chile operating sites
+        are run through other related group entities. Scala Data Centers S.A.'s
+        BRL 916.4 million audited revenue is therefore not assumed to consolidate
+        all Latin American site operations.
+      financial_profile_refs: [company_scala_data_centers, company_digitalbridge]
+    linked_companies:
+      operator_and_capital: [Scala_Data_Centers, DigitalBridge, DYN_DC_FIP, IFC, Olayan_Group, IMCO, Coatue]
+      renewable_energy: [Serena, Assurua_4, Ventos_da_Bahia_3]
+      thermal_management: [Vertiv]
+      financing: [BNDES, MUFG, SMBC, BNP_Paribas, Natixis, Alianza]
+      financial_profile_refs: [company_scala_data_centers, company_digitalbridge, company_vertiv]
+    sources:
+      - title: Current Scala data-center location and lifecycle ledger
+        publisher: Scala_Data_Centers
+        date: 2026-07-18_accessed
+        url: https://scaladatacenters.com/en/data-centers-en/
+      - title: FY2025 audited financial statements
+        publisher: Scala_Data_Centers_and_EY
+        date: 2026-03-26
+        url: https://scaladatacenters.com/wp-content/uploads/2026/04/2025-Demonstracoes-Financeiras.pdf
+      - title: FY2025 Sustainability Report
+        publisher: Scala_Data_Centers
+        date: 2026-03
+        url: https://scaladatacenters.com/wp-content/uploads/2026/04/Sustainability-Report_2025_v2-1.pdf
+      - title: Scala and Vertiv thermal-management contract
+        publisher: Vertiv
+        date: 2023-05-17
+        url: https://www.vertiv.com/en-latam/about/news-and-events/news-releases/scala-data-centers-and-vertiv-sign-strategic-contract-to-supply-thermal-management-solutions-in-latin-america/
+      - title: Scala and Serena renewable-energy partnership
+        publisher: Scala_Data_Centers
+        date: 2024-08-28
+        url: https://scaladatacenters.com/en/scala-data-centers-and-serena-announce-the-largest-renewable-energy-partnership-in-latin-americas-data-center-industry/
+      - title: BNDES second financing phase
+        publisher: Scala_Data_Centers
+        date: 2025-11-28
+        url: https://scaladatacenters.com/scala_na_midia/scala-data-centers-and-bndes-complete-the-second-phase-of-the-banks-largest-financing-in-the-sector-totaling-brl-380-million-to-date/
+    confidence: high_for_current_cards_audited_financial_scope_and_published_equipment_contract_medium_for_card_lifecycle_and_OSM_candidates_low_for_exact_GPU_inventory_and_per_site_electrical_BOM
+
+  - id: dc_scala_tambore_campus
+    name: Scala Tambore Campus
+    record_granularity: named_multi_building_campus
+    operator: Scala_Data_Centers
+    lifecycle_as_of_2026_07_18: operating_and_expanding_with_power_status_disclosure_conflict
+    location:
+      city: Barueri
+      state: Sao_Paulo
+      country: Brazil
+      financed_site_address: Avenida_Ceci_1700_Tambore_Barueri_Sao_Paulo_Brazil
+      coordinate_candidate_ref: osm_node_13509301320
+      coordinate_boundary: The OSM point is low-confidence because its name says Scala while its operator tag says Equinix.
+    building_ledger:
+      current_operating_cards:
+        - {site_id: SGRUTB01, built_area_sqft: 183966, IT_capacity_mw: 21}
+        - {site_id: SGRUTB03, built_area_sqft: 81763, IT_capacity_mw: 9}
+        - {site_id: SGRUTB04, built_area_sqft: 137222, IT_capacity_mw: 12}
+        - {site_id: SGRUTB05, built_area_sqft: 72669, IT_capacity_mw: 6}
+        - {site_id: SGRUTB06, built_area_sqft: 77016, IT_capacity_mw: 6}
+        - {site_id: SGRUTB08, built_area_sqft: 189251, IT_capacity_mw: 24}
+        - {site_id: SGRUTB12, built_area_sqft: 77016, IT_capacity_mw: 6}
+      current_operating_card_count: 7
+      current_operating_IT_capacity_mw_derived: 84
+      current_under_construction_cards:
+        - {site_id: SGRUTB07, built_area_sqft: 501479, IT_capacity_mw: 36, page_startup_date: 2024}
+        - {site_id: SGRUTB09, built_area_sqft: 266699, IT_capacity_mw: 36, page_startup_date: 2025}
+        - {site_id: SGRUTB10, built_area_sqft: 266708, IT_capacity_mw: 36, page_startup_date: 2024}
+        - {site_id: SGRUTB11, built_area_sqft: 75218, IT_capacity_mw: 12, page_startup_date: 2025}
+      current_construction_card_count: 4
+      current_construction_IT_capacity_mw_derived: 120
+      current_known_operating_plus_construction_IT_capacity_mw_derived: 204
+      planned_cards: [SGRUTB13_SGRUTB14, SGRUTB15_SGRUTB19]
+      dated_full_development_plan:
+        IT_capacity_mw: 450
+        buildings: 17
+      card_conflicts:
+        - {site_id: SGRUTB04, current_page_IT_capacity_mw: 12, older_2022_launch_release_IT_capacity_mw: 18}
+        - {site_id: SGRUTB11, current_page_IT_capacity_mw: 12, 2024_projected_three_phase_capacity_mw: 36}
+        - {site_id: SGRUTB06_SGRUTB07, current_page_sum_mw: 42, 2024_projected_combined_capacity_mw: 44}
+      boundary: >-
+        Current cards and dated buildout plans are separate snapshots. The page
+        still displays startup dates in the past, so construction labels are not
+        automatically upgraded to operating. Conflicting capacities are not
+        averaged or summed twice.
+    accelerators_and_density:
+      exact_GPU_models_counts_servers_racks_ownership_utilization_and_live_site_allocation: undisclosed
+      FutureProof_rack_density_kw_range: [24, 100]
+      liquid_cooling_supported: true
+      boundary: High-density accommodation is not evidence of an installed accelerator fleet.
+    electrical_infrastructure:
+      current_operator_page:
+        operating_substations:
+          - {substation_ids: SSUBTB01_SSUBTB02, capacity_each_mw: 60, count: 2}
+        under_construction_substation:
+          substation_id: SSUBTB03
+          capacity_mw: 560
+        published_nameplate_sum_mw_derived: 680
+      SSUBTB03_2024_groundbreaking_disclosure:
+        investment_usd_million_more_than: 80
+        direct_connection: Brazilian_national_transmission_system
+        stages: 2
+        first_stage_original_schedule: 2024-12
+      FY2025_management_disclosure:
+        third_Tambore_substation_energized_in_2025: true
+      status_conflict_boundary: >-
+        The current location page still labels the 560 MW SSUBTB03 as under
+        construction, while FY2025 management says the third Tambore substation
+        was energized. The 680 MW arithmetic sum is electrical nameplate, not
+        campus IT load, utilized demand or incremental capacity.
+      exact_transformer_switchgear_UPS_battery_generator_fuel_and_single_line_topology: undisclosed
+    cooling_and_operating_indicators:
+      Vertiv_portfolio_contract_applies_to_Tambore: true
+      exact_Tambore_unit_allocation_and_models: undisclosed
+      FY2025_debenture_site_indicators:
+        TB03: {average_occupancy_percent: 70.8, average_PUE: 1.39}
+        TB04: {average_occupancy_percent: 40.7, average_PUE: 1.48}
+        TB05: {average_occupancy_percent: 68.0, average_PUE: 1.41}
+        TB06: {average_occupancy_percent: 5.2, reported_PUE: 0.0, interpretation: invalid_or_unavailable_not_physical_efficiency}
+        TB08: {average_occupancy_percent: 39.7, average_PUE: 2.14}
+        TB12: {average_occupancy_percent: 26.0, average_PUE: undisclosed}
+        TB09: {average_occupancy_percent: undisclosed, average_PUE: undisclosed}
+      performance_boundary: >-
+        The sustainability report says newer low-occupancy sites should improve
+        as they ramp. Site PUE values are dated annual indicators and cannot be
+        used as current instantaneous performance or a campus-wide weighted PUE.
+    financing_and_investment:
+      dated_campus_investment_2024:
+        committed_usd_billion: 1.6
+        additional_at_full_development_usd_billion: 3
+      debenture_monitored_total_expenditure_brl:
+        TB03_TB04_TB05_TB06_combined: 2369410177.43
+        TB08_TB12_combined: 1468569931.72
+        TB09: 1098798137.38
+      boundary: >-
+        Campus commitments and cumulative debenture-monitored investment plus
+        OPEX are not annual company capex, recognized revenue or site profit.
+    linked_companies:
+      operator_and_owner: [Scala_Data_Centers, DigitalBridge]
+      thermal_management: [Vertiv]
+      financial_profile_refs: [company_scala_data_centers, company_digitalbridge, company_vertiv]
+    sources:
+      - title: Current Scala data-center and substation ledger
+        publisher: Scala_Data_Centers
+        date: 2026-07-18_accessed
+        url: https://scaladatacenters.com/en/data-centers-en/
+      - title: Tambore 560 MW substation groundbreaking and campus plan
+        publisher: Scala_Data_Centers
+        date: 2024-05-06
+        url: https://scaladatacenters.com/en/scala-data-centers-announces-the-groundbreaking-of-a-560-mw-power-substation-in-sao-paulo-a-game-changer-for-brazils-digital-infrastructure-landscape/
+      - title: FY2025 audited financial statements
+        publisher: Scala_Data_Centers_and_EY
+        date: 2026-03-26
+        url: https://scaladatacenters.com/wp-content/uploads/2026/04/2025-Demonstracoes-Financeiras.pdf
+      - title: FY2025 Sustainability Report
+        publisher: Scala_Data_Centers
+        date: 2026-03
+        url: https://scaladatacenters.com/wp-content/uploads/2026/04/Sustainability-Report_2025_v2-1.pdf
+      - title: Scala and Vertiv thermal-management contract
+        publisher: Vertiv
+        date: 2023-05-17
+        url: https://www.vertiv.com/en-latam/about/news-and-events/news-releases/scala-data-centers-and-vertiv-sign-strategic-contract-to-supply-thermal-management-solutions-in-latin-america/
+    confidence: high_for_published_cards_substation_nameplate_and_2025_indicators_medium_for_current_lifecycle_low_for_GPU_inventory_and_complete_electrical_BOM
+
+  - id: dc_scala_ai_city_eldorado_do_sul
+    name: Scala AI City Eldorado do Sul
+    record_granularity: announced_multi_building_AI_campus_program
+    operator: Scala_Data_Centers
+    lifecycle_as_of_2026_07_18: land_acquired_master_plan_and_conceptual_architecture_in_development
+    location:
+      municipality: Eldorado_do_Sul
+      metro_area: Porto_Alegre
+      state: Rio_Grande_do_Sul
+      country: Brazil
+      site_area_acres_more_than: 1730
+      exact_parcel_address_coordinates_and_building_boundaries: undisclosed
+      planned_interconnection_to: SPOAPA01_Porto_Alegre
+    capacity_and_schedule:
+      first_phase_planned_IT_capacity_mw: 54
+      theoretical_full_development_IT_capacity_mw_up_to: 4750
+      exact_building_count_phase_schedule_customer_awards_utility_energization_and_live_capacity: undisclosed
+      lifecycle_evidence:
+        "2024_09_11": state_and_operator_letter_of_intent
+        FY2025: land_acquired_master_plan_in_preparation_and_conceptual_architecture_in_development
+      boundary: >-
+        The 4.75 GW figure is a theoretical expansion envelope, not operating,
+        under-construction, contracted, financed or energized IT load. The first
+        54 MW is also planned rather than live.
+    accelerators_and_racks:
+      planned_AI_training_rack_density_kw_more_than: 150
+      exact_GPU_vendor_models_counts_servers_racks_customers_procurement_and_delivery: undisclosed
+      boundary: The high-density design claim is not an installed GPU inventory.
+    power_cooling_and_sustainability:
+      planned_energy_source: 100_percent_renewable_and_certified
+      planned_liquid_cooling: refrigerant_based
+      planned_PUE_not_exceeding: 1.2
+      planned_WUE: 0
+      exact_grid_connection_voltage_substation_transformers_switchgear_UPS_batteries_generators_CDUs_and_heat_rejection_equipment: undisclosed
+    financing_and_economics:
+      first_phase_announced_investment_usd_million: 500
+      first_phase_announced_investment_brl_billion_approximate: 3
+      full_realization_potential_usd_billion_governor_statement: 90
+      land_acquisition_included_in_FY2025_company_investment: true
+      recognized_site_revenue_operating_profit_capex_to_date_debt_and_customer_contract_value: undisclosed
+      boundary: >-
+        Announced phase and theoretical full-realization values are prospective
+        project envelopes, not incurred capex, current asset value, revenue or
+        operating profit.
+    linked_companies:
+      operator_and_owner: [Scala_Data_Centers, DigitalBridge]
+      government_partner: Rio_Grande_do_Sul_Government
+      financial_profile_refs: [company_scala_data_centers, company_digitalbridge]
+    sources:
+      - title: Scala AI City initial agreement and design
+        publisher: Scala_Data_Centers
+        date: 2024-09-11
+        url: https://scaladatacenters.com/en/with-an-initial-investment-of-usd-500-million-scala-data-centers-and-rio-grande-do-sul-government-sign-agreement-for-largest-digital-infrastructure-project-in-the-state-of-southern-brazil/
+      - title: FY2025 audited financial statements
+        publisher: Scala_Data_Centers_and_EY
+        date: 2026-03-26
+        url: https://scaladatacenters.com/wp-content/uploads/2026/04/2025-Demonstracoes-Financeiras.pdf
+    confidence: high_for_announced_phase_design_and_FY2025_land_status_low_for_schedule_GPU_inventory_power_chain_and_final_buildout
+
   - id: dc_data4_european_portfolio
     name: DATA4 European data-center portfolio
     record_granularity: regional_operator_portfolio_not_one_physical_campus
@@ -11150,6 +11513,13 @@ campus_profiles:
 disclosure_gap_register:
   - exact_global_physical_data_center_count
   - exact_per_campus_GPU_inventory_for_most_hyperscalers
+  - Scala_13_current_operating_cards_to_11_Brazilian_issuer_sites_plus_two_foreign_related_group_entities_and_exact_ownership
+  - Scala_nine_current_construction_cards_to_seven_group_and_four_Brazilian_issuer_FY2025_counts
+  - Scala_123_1MW_operating_card_sum_182MW_known_construction_sum_and_more_than_900MW_future_headline_reconciliation
+  - Scala_per_site_energized_leased_utilized_IT_load_GPU_inventory_customer_ownership_and_AI_revenue
+  - Scala_Tambore_third_substation_energized_statement_to_current_under_construction_label_and_680MW_nameplate_topology
+  - Scala_foreign_related_group_revenue_operating_profit_capex_debt_and_site_economics
+  - Scala_AI_City_land_permits_power_connection_financing_customer_awards_construction_and_accelerator_procurement
   - single_line_electrical_diagrams
   - transformer_UPS_switchgear_and_backup_generator_vendor_awards
   - contracted_versus_energized_power_for_many_announced_projects
@@ -11286,6 +11656,15 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
+    - Scala_13_operating_site_cards_exact_addresses_coordinates_parcels_ownership_and_building_lifecycle
+    - Scala_11_Brazilian_plus_two_foreign_operating_scope_to_13_current_cards_and_related_group_ownership_reconciliation
+    - Scala_nine_current_construction_cards_to_seven_group_and_four_Brazilian_issuer_FY2025_counts
+    - Scala_123_1MW_operating_182MW_known_construction_and_more_than_900MW_future_pipeline_scope_reconciliation
+    - Scala_per_site_energized_leased_utilized_IT_load_GPU_inventory_rack_density_PUE_WUE_water_and_equipment_BOM
+    - Scala_Tambore_84MW_operating_120MW_construction_450MW_full_build_and_680MW_substation_nameplate_reconciliation
+    - Scala_Tambore_third_substation_current_status_transformer_switchgear_UPS_battery_generator_and_single_line_topology
+    - Scala_Vertiv_364_CRAH_58_chillers_130MW_exact_site_allocation_models_delivery_commissioning_and_current_inventory
+    - Scala_AI_City_exact_parcel_phase_schedule_grid_connection_substation_customer_GPU_liquid_cooling_and_financing
     - DATA4_38_data_centers_to_exact_building_ID_address_coordinate_ownership_and_lifecycle_reconciliation
     - DATA4_1_5GW_portfolio_headline_to_1252MW_city_pages_1205MW_named_components_and_current_energized_leased_utilized_IT_load
     - DATA4_ten_campus_labels_to_operating_construction_and_announced_status_including_PAR03_and_Hanau
@@ -11405,6 +11784,11 @@ next_research_queue:
     - NTT_India_exact_GPU_inventory_customer_vs_operator_ownership_live_liquid_cooled_MW_CDU_heat_rejection_and_equipment_OEMs
     - NTT_India_transformer_switchgear_UPS_battery_generator_chiller_counts_and_operating_PUE_WUE_water_per_site
   company_financials:
+    - Scala_Brazilian_issuer_to_Mexico_Chile_Colombia_related_group_consolidation_and_beneficial_ownership_reconciliation
+    - Scala_foreign_group_and_site_level_revenue_operating_profit_EBITDA_capex_debt_cash_flow_utilization_and_returns
+    - Scala_BR47_billion_sustainability_annual_CAPEX_to_BR1823_billion_audited_additions_scope_reconciliation
+    - Scala_customer_concentration_contract_liability_billing_churn_lease_terms_and_adjusted_EBITDA_conversion
+    - Scala_pipeline_funding_drawdown_leverage_refinancing_and_AI_City_return_on_capital
     - American_Tower_CoreSite_GAAP_operating_income_full_depreciation_customer_concentration_and_site_level_returns
     - American_Tower_CoreSite_2026_695_million_development_spend_project_allocation_power_delivery_and_revenue_conversion
     - American_Tower_Stonepeak_preferred_conversion_final_ownership_distributions_and_DE3_standalone_economics
