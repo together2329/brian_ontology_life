@@ -1160,6 +1160,492 @@ campus_profiles:
         url: https://bcg.evergy.com/partner-with-us/transmission-projects/de-soto
     confidence: high_for_land_service_agreement_building_concept_utility_and_city_disclosures_low_for_final_site_plan_IT_load_GPU_inventory_and_equipment_BOM
 
+  - id: dc_aws_global_infrastructure_portfolio
+    name: AWS global Region, Availability Zone, and data-center portfolio
+    record_granularity: provider_region_and_AZ_portfolio_not_one_physical_campus
+    operator: Amazon_Web_Services
+    lifecycle_as_of_2026_07_18: operating_and_expanding
+    location:
+      current_company_headline:
+        geographic_regions: 39
+        availability_zones: 123
+      current_region_inventory:
+        North_America:
+          count: 9
+          regions: [AWS_GovCloud_US_East, AWS_GovCloud_US_West, Canada_Central, Canada_West_Calgary, Mexico_Central, US_East_Northern_Virginia, US_East_Ohio, US_West_Northern_California, US_West_Oregon]
+        South_America:
+          count: 1
+          regions: [Sao_Paulo]
+        Europe:
+          count: 9
+          regions: [Frankfurt, Ireland, London, Milan, Paris, Spain, Stockholm, Zurich, European_Sovereign_Cloud_Brandenburg]
+        Middle_East:
+          count: 3
+          regions: [Bahrain, Israel, United_Arab_Emirates]
+        Africa:
+          count: 1
+          regions: [Cape_Town]
+        Asia_Pacific:
+          count: 13
+          regions: [Beijing, Ningxia, Hong_Kong, Hyderabad, Jakarta, Malaysia, Mumbai, Osaka, Seoul, Singapore, Taipei, Thailand, Tokyo]
+        Australia_and_New_Zealand:
+          count: 3
+          regions: [Melbourne, New_Zealand, Sydney]
+        total_regions_derived: 39
+      current_AZ_counts_by_region:
+        North_America:
+          AWS_GovCloud_US_East: 3
+          AWS_GovCloud_US_West: 3
+          Canada_Central: 3
+          Canada_West_Calgary: 3
+          Mexico_Central: 3
+          US_East_Northern_Virginia: 6
+          US_East_Ohio: 3
+          US_West_Northern_California: 3
+          US_West_Oregon: 4
+          regional_total_derived: 31
+        South_America: {Sao_Paulo: 3, regional_total_derived: 3}
+        Europe:
+          Frankfurt: 3
+          Ireland: 3
+          London: 3
+          Milan: 3
+          Paris: 3
+          Spain: 3
+          Stockholm: 3
+          Zurich: 3
+          European_Sovereign_Cloud_Brandenburg: 3
+          regional_total_derived: 27
+        Middle_East: {Bahrain: 3, Israel: 3, United_Arab_Emirates: 3, regional_total_derived: 9}
+        Africa: {Cape_Town: 3, regional_total_derived: 3}
+        Asia_Pacific:
+          Beijing: 3
+          Ningxia: 3
+          Hong_Kong: 3
+          Hyderabad: 3
+          Jakarta: 3
+          Malaysia: 3
+          Mumbai: 3
+          Osaka: 3
+          Seoul: 4
+          Singapore: 3
+          Taipei: 3
+          Thailand: 3
+          Tokyo: 4
+          regional_total_derived: 41
+        Australia_and_New_Zealand: {Melbourne: 3, New_Zealand: 3, Sydney: 3, regional_total_derived: 9}
+        global_total_derived: 123
+        Northern_California_access_boundary: Some newer accounts may initially access two of the region's three AZs; the physical region has three.
+      announced_expansion:
+        additional_AZs: 7
+        new_regions: [Saudi_Arabia, Chile]
+      physical_scope_definition:
+        AZ_definition: one_or_more_discrete_data_centers_with_redundant_power_networking_and_connectivity
+        commercial_region_minimum_AZs: 3
+        AZ_separation: physically_separate_within_100_km_or_60_miles_for_low_latency
+        physical_data_center_building_lower_bound_derived: 123
+        lower_bound_boundary: >-
+          Because AWS defines every AZ as one or more discrete data centers, the
+          123 operating AZs imply at least 123 physical data-center facilities.
+          This is a logical lower bound, not an AWS-reported building count; exact
+          campuses, buildings, addresses, ownership, and lifecycle are undisclosed.
+    portfolio_scale:
+      Q4_2025_global_data_center_capacity_added_gw_more_than: 1.2
+      capacity_metric_boundary: >-
+        Amazon describes company-reported capacity added in the quarter but does
+        not define it here as critical IT load, utility service, or fully utilized load.
+    accelerators:
+      current_companywide_delivery_signal:
+        accelerated_chips_landed_last_12_months_more_than: 2100000
+        included_categories: [custom_accelerators, third_party_accelerators]
+        boundary: This is a delivery-flow disclosure, not current installed global GPU inventory.
+      named_deployment_ref: dc_aws_project_rainier
+      future_commitments_not_current_inventory:
+        NVIDIA_GPUs_starting_2026_more_than: 1000000
+        OpenAI_Trainium_capacity_gw_approximate: 2
+        Anthropic_Trainium_capacity_gw_up_to: 5
+      exact_global_GPU_Trainium_Inferentia_inventory_racks_and_site_allocation: undisclosed
+    electrical_cooling_and_environmental_performance:
+      2025_PUE_and_WUE_l_per_kwh:
+        Global: {PUE: 1.14, WUE: 0.12}
+        Europe: {PUE: 1.11, WUE: 0.05}
+        Middle_East: {PUE: 1.29, WUE: undisclosed}
+        Africa: {PUE: 1.19, WUE: undisclosed}
+        North_America: {PUE: 1.14, WUE: 0.08}
+        Central_and_South_America: {PUE: 1.14, WUE: 0.09}
+        Asia_Pacific_excluding_China: {PUE: 1.25, WUE: 1.1}
+        China: {PUE: 1.25, WUE: undisclosed}
+      new_data_center_design:
+        expected_PUE: 1.08
+        electrical_design_availability_percent: 99.9999
+        electrical_failure_points_reduction_percent: 20
+        racks_impacted_by_electrical_issue_reduction_percent: 89
+        compute_capacity_per_site_increase_percent: 12
+        rack_density_support_increase_next_two_years_multiple: 6
+        further_future_rack_density_increase_multiple: 3
+        cooling: hybrid_air_and_liquid_to_chip
+        named_liquid_cooled_platforms: [Trainium2, NVIDIA_GB200_NVL72]
+        peak_mechanical_energy_reduction_percent: 46
+        water_per_MW_increase: none_claimed
+        backup_generation: renewable_diesel_capable
+        deployment_boundary: Design targets and rollout capabilities do not prove deployment at every AWS facility.
+      2025_energy_portfolio_context_not_dedicated_DC_supply:
+        carbon_free_energy_projects_more_than: 712
+        countries: 30
+        portfolio_capacity_gw: 42
+        annual_global_renewable_energy_match: 100_percent_third_consecutive_year
+        nuclear_Talen_contract_gw: 1.9
+        X_energy_SMR_target_by_2039_gw: 5
+      site_specific_grid_voltage_substations_transformers_switchgear_UPS_generators_CDUs_and_OEMs: mostly_undisclosed
+    connectivity:
+      global_fiber_km_million: 9
+      AZ_metro_connectivity: redundant_dedicated_fiber
+    linked_companies:
+      owner_operator_and_cloud_provider: [Amazon, Amazon_Web_Services]
+      financial_profile_refs: [company_amazon]
+    sources:
+      - title: AWS Global Infrastructure Regions and Availability Zones
+        publisher: Amazon_Web_Services
+        date: 2026-07-18_accessed
+        url: https://aws.amazon.com/about-aws/global-infrastructure/regions_az/
+      - title: AWS Regions reference
+        publisher: Amazon_Web_Services
+        date: 2026-07-18_accessed
+        url: https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions.html
+      - title: AWS Availability Zones reference
+        publisher: Amazon_Web_Services
+        date: 2026-07-18_accessed
+        url: https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-availability-zones.html
+      - title: Opening the AWS European Sovereign Cloud
+        publisher: Amazon_Web_Services
+        date: 2026-01-14
+        url: https://aws.amazon.com/blogs/aws/opening-the-aws-european-sovereign-cloud/
+      - title: AWS Cloud sustainability metrics
+        publisher: Amazon
+        date: 2026-07-18_accessed
+        url: https://sustainability.aboutamazon.com/products-services/aws-cloud?energyType=true
+      - title: 2025 Amazon Sustainability Report
+        publisher: Amazon
+        date: 2026
+        url: https://sustainability.aboutamazon.com/2025-amazon-sustainability-report.pdf
+      - title: AWS announces new data-center components for AI
+        publisher: Amazon
+        date: 2024-12-02
+        url: https://press.aboutamazon.com/2024/12/aws-announces-new-data-center-components-to-support-ai-innovation-and-further-improve-energy-efficiency
+      - title: AWS re Invent 2024 data-center PUE update
+        publisher: Amazon
+        date: 2024-12-03
+        url: https://www.aboutamazon.com/news/aws/aws-reinvent-2024-keynote-live-news-updates?p=aws-announces-new-data-center-components-to-support-ai-and-improve-energy-efficiency
+      - title: Building resilience inside AWS nine million kilometers of fiber
+        publisher: Amazon_Web_Services
+        date: 2026-07-18_accessed
+        url: https://aws.amazon.com/blogs/aws-insights/building-resilience-inside-awss-nine-million-kilometers-of-fiber-optic-cabling/
+    confidence: high_for_regions_AZs_portfolio_efficiency_and_design_disclosures_low_for_exact_building_inventory_live_MW_GPU_inventory_and_site_equipment
+
+  - id: dc_microsoft_global_datacenter_portfolio
+    name: Microsoft global datacenter and Azure region portfolio
+    record_granularity: provider_datacenter_and_region_portfolio_not_one_physical_campus
+    operator: Microsoft
+    lifecycle_as_of_2026_07_18: operating_and_expanding
+    location:
+      current_company_headline:
+        datacenters_more_than: 500
+        countries_with_datacenters: 34
+        announced_regions_more_than: 80
+        network_fiber_km_more_than: 800000
+      Azure_documentation_current_scope:
+        regions_more_than: 70
+        public_cloud_region_rows_derived: 57
+        last_updated: 2026-05-29
+        public_region_inventory:
+          Americas:
+            count: 15
+            regions: [Brazil_South_Sao_Paulo, Brazil_Southeast_Rio_de_Janeiro_restricted, Canada_Central_Toronto, Canada_East_Quebec, Central_US_Iowa, Chile_Central_Santiago, East_US_Virginia, East_US_2_Virginia, Mexico_Central_Queretaro, North_Central_US_Illinois, South_Central_US_Texas, West_Central_US_Wyoming, West_US_California, West_US_2_Washington, West_US_3_Phoenix]
+          Europe:
+            count: 19
+            regions: [Austria_East_Vienna, Belgium_Central_Brussels, Denmark_East_Copenhagen, France_Central_Paris, France_South_Marseille_restricted, Germany_North_Berlin_restricted, Germany_West_Central_Frankfurt, Italy_North_Milan, North_Europe_Ireland, Norway_East, Norway_West_restricted, Poland_Central_Warsaw, Spain_Central_Madrid, Sweden_Central_Gavle, Switzerland_North_Zurich, Switzerland_West_Geneva_restricted, UK_South_London, UK_West_Cardiff, West_Europe_Netherlands]
+          Middle_East:
+            count: 4
+            regions: [Israel_Central, Qatar_Central_Doha, UAE_Central_Abu_Dhabi_restricted, UAE_North_Dubai]
+          Africa:
+            count: 2
+            regions: [South_Africa_North_Johannesburg, South_Africa_West_Cape_Town_restricted]
+          Asia_Pacific:
+            count: 17
+            regions: [Australia_Central_Canberra, Australia_Central_2_Canberra_restricted, Australia_East_New_South_Wales, Australia_Southeast_Victoria, Central_India_Pune, East_Asia_Hong_Kong, India_South_Central_Hyderabad_coming_soon, Indonesia_Central_Jakarta, Japan_East_Tokyo_Saitama, Japan_West_Osaka, Korea_Central_Seoul, Korea_South_Busan, Malaysia_West_Kuala_Lumpur, New_Zealand_North_Auckland, South_India_Chennai, Southeast_Asia_Singapore, West_India_Mumbai]
+          total_rows_derived: 57
+        excluded_from_public_list: [US_Government_cloud, China_cloud]
+      physical_scope_definition:
+        Azure_region: set_of_one_or_more_datacenters_connected_by_network
+        Azure_AZ: independent_set_of_one_or_more_physically_separate_datacenters_with_isolated_power_cooling_and_network
+        exact_building_address_ownership_and_lifecycle_reconciliation: undisclosed
+        reconciliation_boundary: >-
+          The current 500-plus datacenter headline, 80-plus announced-region
+          headline, more-than-70 Azure-region documentation, and 57 public-cloud
+          list rows use different scopes. They must not be treated as equivalent
+          counts or as proof of 500 operating owned buildings.
+    accelerators:
+      global_Grace_Blackwell_deployment_within_less_than_one_year: hundreds_of_thousands_of_liquid_cooled_GPUs
+      next_platform:
+        NVIDIA_Vera_Rubin_NVL72: powered_on_in_Microsoft_labs
+        production_rollout_as_of_2026_03: planned_over_following_months
+      exact_GPU_integer_current_live_rack_count_utilization_and_site_allocation: undisclosed
+      disclosure_boundary: Hundreds of thousands is a fleet deployment statement, not a site-by-site inventory.
+    electrical_cooling_and_environmental_performance:
+      FY2025_owned_and_controlled_sites_operational_12_months:
+        Global: {PUE: 1.17, WUE_l_per_kwh: 0.27}
+        Americas: {PUE: 1.16, WUE_l_per_kwh: 0.34}
+        Asia_Pacific: {PUE: 1.28, WUE_l_per_kwh: 0.25}
+        EMEA: {PUE: 1.16, WUE_l_per_kwh: 0.03}
+      owned_fleet_low_or_zero_water_cooling_share_2025_approximate_percent: 90
+      new_AI_design_announced_2024:
+        cooling: closed_loop_direct_to_chip
+        steady_state_operational_water_for_cooling: zero
+      renewable_supply_portfolio_not_site_dedicated:
+        contracted_gw: 40
+        countries: 26
+        utilities_and_developers_more_than: 95
+        contracts_more_than: 400
+      site_specific_grid_voltage_substations_transformers_switchgear_UPS_generators_CDUs_and_OEMs: mostly_undisclosed
+    linked_companies:
+      owner_operator_and_cloud_provider: [Microsoft, Azure]
+      financial_profile_refs: [company_microsoft]
+    sources:
+      - title: Microsoft datacenter footprint
+        publisher: Microsoft
+        date: 2026-07-18_accessed
+        url: https://datacenters.microsoft.com/
+      - title: Azure regions overview
+        publisher: Microsoft
+        date: 2026-07-18_accessed
+        url: https://learn.microsoft.com/en-us/azure/reliability/regions-overview
+      - title: Azure region list
+        publisher: Microsoft
+        date: 2026-05-29
+        url: https://learn.microsoft.com/en-us/azure/reliability/regions-list
+      - title: Azure availability zones overview
+        publisher: Microsoft
+        date: 2026-07-18_accessed
+        url: https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview
+      - title: Microsoft datacenter efficiency
+        publisher: Microsoft
+        date: 2026-07-18_accessed
+        url: https://datacenters.microsoft.com/sustainability/efficiency/
+      - title: Microsoft at NVIDIA GTC 2026
+        publisher: Microsoft
+        date: 2026-03-16
+        url: https://blogs.microsoft.com/blog/2026/03/16/microsoft-at-nvidia-gtc-new-solutions-for-microsoft-foundry-azure-ai-infrastructure-and-physical-ai/
+      - title: Inside Microsoft two-decade push to cut water intensity
+        publisher: Microsoft
+        date: 2026-06-24
+        url: https://blogs.microsoft.com/blog/2026/06/24/inside-microsofts-two-decade-push-to-cut-water-intensity-while-scaling-for-growth/
+    confidence: high_for_company_headlines_public_region_roster_GPU_direction_and_fleet_efficiency_low_for_building_lifecycle_live_MW_and_site_equipment
+
+  - id: dc_microsoft_pecos_texas
+    name: Microsoft Pecos AI datacenter campus
+    record_granularity: named_multi_phase_AI_data_center_campus
+    operator: Microsoft
+    country: US
+    region: Texas
+    locality: Pecos_Reeves_County
+    lifecycle_as_of_2026_07_18: announced_with_development_over_five_to_seven_years
+    location:
+      locality: Pecos
+      county: Reeves_County
+      exact_address_coordinates_parcel_area_and_building_count: undisclosed
+    campus_scale:
+      contribution_to_global_capacity_gw_approximate: 2
+      development_horizon_years_range: [5, 7]
+      investment_usd_billion: multi_billion_undisclosed
+      construction_jobs_at_peak_more_than: 6000
+      permanent_jobs: hundreds
+      capacity_boundary: >-
+        Microsoft describes the campus as adding approximately 2 GW to global
+        capacity. It does not define this as current energized critical IT load,
+        utility interconnection capacity, or fully utilized accelerator load.
+    accelerators:
+      intended_workload: AI
+      exact_GPU_accelerator_vendor_model_count_racks_density_and_delivery_schedule: undisclosed
+      prohibited_inference: Do not convert the approximately 2 GW capacity statement into a GPU count.
+    electrical_and_generation:
+      initial_launch:
+        architecture: co_located_behind_the_meter_natural_gas_power_plant
+        relation_to_public_grid: independent_at_launch
+        NOx_control: selective_catalytic_reduction
+      later_state:
+        campus_and_power_plant_connection_to_broader_grid: expected
+      customer_funded_energy_infrastructure: true
+      Texas_renewable_electricity_portfolio_contracted_gw: 4.7
+      renewable_boundary: The 4.7 GW is Microsoft's Texas portfolio, not confirmed dedicated Pecos supply.
+      gas_plant_capacity_units_turbine_OEM_fuel_supply_substation_transformer_switchgear_UPS_and_backup_generation: undisclosed
+    cooling_and_water:
+      architecture: closed_loop
+      initial_fill_required: true
+      additional_steady_state_water_consumption: none_claimed
+      PUE_WUE_CDU_chiller_heat_rejection_and_equipment_OEMs: undisclosed
+    linked_companies:
+      owner_operator_and_customer: [Microsoft]
+      financial_profile_refs: [company_microsoft]
+      power_developer_and_equipment_vendors: undisclosed
+    sources:
+      - title: Powering the next wave of AI with a new Pecos datacenter
+        publisher: Microsoft
+        date: 2026-06-22
+        url: https://blogs.microsoft.com/blog/2026/06/22/powering-the-next-wave-of-ai-expanding-capacity-with-our-new-datacenter-in-pecos/
+    confidence: high_for_location_capacity_horizon_initial_power_and_cooling_claim_low_for_schedule_GPU_inventory_and_equipment_BOM
+
+  - id: dc_google_global_data_center_portfolio
+    name: Google global data-center location portfolio
+    record_granularity: owner_operator_global_location_portfolio_not_one_physical_campus
+    operator: Google
+    lifecycle_as_of_2026_07_18: operating_and_expanding
+    location:
+      current_company_headline:
+        active_locations_worldwide: 30
+        active_countries: 11
+      current_visible_location_rows:
+        active_label_rows_derived: 32
+        active_labels:
+          Asia: [Changhua_County_Taiwan, Inzai_Japan, Singapore]
+          Europe: [Dublin_Ireland, Eemshaven_Netherlands, Fredericia_Denmark, Hamina_Finland, Hanau_Germany, Middenmeer_Netherlands, St_Ghislain_Belgium, Waltham_Cross_United_Kingdom, Winschoten_Netherlands]
+          North_America: [Central_Ohio, Council_Bluffs_Iowa, Douglas_County_Georgia, Ellis_County_Texas, Henderson_Nevada, Indiana, Jackson_County_Alabama, Lenoir_North_Carolina, Mayes_County_Oklahoma, Midlothian_Texas, Montgomery_County_Tennessee, Northern_Virginia, Omaha_Nebraska, Papillion_Nebraska, Red_Oak_Texas, Storey_County_Nevada, The_Dalles_Oregon, The_Lowcountry_South_Carolina]
+          South_America: [Canelones_Uruguay, Quilicura_Chile]
+        in_development_rows_derived: 27
+        in_development_labels:
+          Asia: [Andhra_Pradesh_India, Chonburi_Thailand, Selangor_Malaysia]
+          Europe: [Dietzenbach_Germany, Farciennes_Belgium, Groningen_Netherlands, Horndal_Sweden, Kronstorf_Austria, Skien_Norway]
+          North_America: [Armstrong_County_Texas, Cedar_Rapids_Iowa, Chesterfield_County_Virginia, Dorchester_County_South_Carolina, Haskell_County_Texas, Hermantown_Minnesota, Kansas_City_Missouri, LaGrange_Georgia, Lincoln_Nebraska, Mesa_Arizona, Michigan_City_Indiana, Muskogee_County_Oklahoma, New_Florence_Missouri, Pampa_Texas, Pine_Island_Minnesota, Stillwater_Oklahoma, West_Memphis_Arkansas, Wilbarger_County_Texas]
+          South_America: []
+        total_visible_rows_derived: 59
+      roster_reconciliation_boundary: >-
+        The current page headline says 30 active locations and 11 active countries,
+        while 32 visible rows lack an in-development label. Some rows are umbrella
+        or sublocation labels: Ellis County shares a page with Midlothian and Red
+        Oak, and Omaha and Papillion share the Nebraska page. Canelones lacks the
+        in-development marker even though its description uses future tense. Google
+        also warns that one listed region may contain more than one site. Therefore
+        neither the 59 rows nor the 30-location headline is treated as an exact
+        physical building count without a site-by-site reconciliation.
+      exact_buildings_addresses_coordinates_parcels_ownership_and_lifecycle: partially_disclosed_by_location_page_not_globally_reconciled
+    portfolio_scale:
+      exact_operating_energized_leased_and_utilized_IT_MW: undisclosed
+      site_count_boundary: Active location labels may include multiple data-center sites or grouped regional labels.
+    accelerators:
+      current_platforms_announced_2026: [TPU_8t, TPU_8i, NVIDIA_Vera_Rubin_NVL72_A5X]
+      Virgo_single_fabric_TPU_8t_chips_supported: 134000
+      Virgo_single_fabric_nonblocking_bisection_bandwidth_petabits_per_second: 47
+      logical_training_cluster_TPU_chips_supported_more_than: 1000000
+      NVIDIA_Vera_Rubin_GPUs_supported_up_to: 960000
+      liquid_cooled_deployment:
+        TPU_pods_more_than: 2000
+        scale: gigawatt_scale
+        deployment_horizon_years: 7
+      inventory_boundary: >-
+        Virgo and Pathways/JAX numbers are architecture and logical-cluster
+        capabilities that can span multiple data centers; they are not proof that
+        one physical campus contains one million TPUs or 960,000 GPUs. Exact live
+        global GPU/TPU inventory, racks, utilization, and site allocation are undisclosed.
+    electrical_power_resilience_and_distribution:
+      facility_resilience:
+        critical_component_power_sources: primary_and_equal_capacity_alternate
+        backup_generators: sufficient_to_run_each_data_center_at_full_capacity_company_claim
+        exact_generator_count_capacity_fuel_and_OEMs: undisclosed
+      current_rack_architecture:
+        voltage_VDC: 48
+        integrated_battery_backup_units: true
+        UPS_topology: distributed_per_rack
+        global_Li_ion_cells_deployed_more_than: 100000000
+        Li_ion_BBU_safety_test: UL9540A
+        benefit_boundary: Rack batteries bridge short disturbances, source transfers, or controlled shutdown; they are not facility long-duration generation.
+      next_generation_power_delivery:
+        proposed_voltage_VDC: plus_or_minus_400
+        rack_power_supported_mw_up_to: 1
+        machine_learning_rack_power_expected_before_2030_kw_more_than: 500
+        first_embodiment: AC_to_DC_sidecar_power_rack
+        end_to_end_efficiency_improvement_percent_approximate: 3
+        collaboration: [Google, Meta, Microsoft, Open_Compute_Project]
+        deployment_boundary: Open specification and design direction, not confirmed fleetwide installed architecture.
+      site_specific_grid_voltage_substations_transformers_switchgear_and_equipment_OEMs: mostly_undisclosed
+    cooling_and_water:
+      liquid_cooling_fleet:
+        deployed_scale: gigawatt_scale
+        TPU_pods_more_than: 2000
+        first_TPU_generation: TPU_v3_in_2018
+        fleet_CDU_availability_percent_approximate_since_2020: 99.999
+        architecture: [in_row_CDU, redundant_pump_and_heat_exchanger, isolated_rack_and_facility_loops, manifolds, flexible_hoses, direct_chip_cold_plates]
+        CDU_design_name: Project_Deschutes
+        current_generation_in_deployment_as_of_2025: fourth
+        fifth_generation_status_as_of_2025: development_for_OCP_contribution
+      Brazos_legacy_air_cooled_retrofit:
+        availability_as_of_2026_06: generally_available
+        architecture: rack_mounted_closed_loop_liquid_to_air_sidecar
+        modules_per_IT_rack: 3
+        module_height_Open_Units: 11
+        nominal_thermal_capacity_kw_per_rack: 60
+        coolant_options: [deionized_water, propylene_glycol_25_percent]
+        input_voltage_VDC_range: [40, 60]
+        monitoring: [local_HMI, Modbus_over_TCP]
+        safety: [leak_detection, pressure_relief_valves, UL_CSA_IEC_62368_1]
+        serviceability: hot_swappable_pumps_and_fans
+      2025_water_and_efficiency:
+        fleet_average_PUE: 1.09
+        compute_per_unit_electricity_growth_versus_five_years_prior_more_than: 6x
+        freshwater_withdrawal_from_low_or_medium_depletion_or_scarcity_risk_percent: 87
+        exact_global_WUE: undisclosed_on_reviewed_current_page
+      clean_energy_context_not_site_dedicated:
+        agreements_since_2010_more_than: 170
+        contracted_clean_energy_gw_more_than: 22
+        clean_energy_investment_usd_billion_more_than: 3.7
+        annual_global_renewable_energy_match_since_2017_percent: 100
+        net_new_clean_energy_agreements_2025_gw_more_than: 12
+      per_site_PUE_WUE_water_cooling_equipment_and_OEMs: mostly_undisclosed
+    network:
+      architecture: [Virgo_east_west_scale_out_fabric, Jupiter_north_south_fabric, global_WAN]
+      Virgo_topology: flat_two_layer_nonblocking_multi_planar
+      can_expand_across_multiple_data_centers: true
+      terrestrial_and_subsea_fiber_km_million: 10
+    linked_companies:
+      owner_operator_and_cloud_provider: [Alphabet, Google, Google_Cloud]
+      financial_profile_refs: [company_alphabet]
+    sources:
+      - title: Google data-center locations
+        publisher: Google
+        date: 2026-07-18_accessed
+        url: https://www.datacenters.google/locations/
+      - title: Google data-center sustainability
+        publisher: Google
+        date: 2026-07-18_accessed
+        url: https://www.datacenters.google/operating-sustainably/
+      - title: AI infrastructure power distribution and liquid cooling
+        publisher: Google_Cloud
+        date: 2025-04-30
+        url: https://cloud.google.com/blog/topics/systems/enabling-1-mw-it-racks-and-liquid-cooling-at-ocp-emea-summit
+      - title: One hundred million Li-ion cells in Google data centers
+        publisher: Google_Cloud
+        date: 2025-02-26
+        url: https://cloud.google.com/blog/topics/systems/100-million-li-ion-cells-in-google-data-centers
+      - title: Brazos liquid cooling system for air-cooled data centers
+        publisher: Google_Cloud
+        date: 2026-06-17
+        url: https://cloud.google.com/blog/topics/systems/brazos-liquid-cooling-system-for-air-cooled-data-centers/
+      - title: Virgo megascale data-center fabric
+        publisher: Google_Cloud
+        date: 2026-04-22
+        url: https://cloud.google.com/blog/products/networking/introducing-virgo-megascale-data-center-fabric
+      - title: Google Cloud networking at Next 2026
+        publisher: Google_Cloud
+        date: 2026-04-23
+        url: https://cloud.google.com/blog/products/networking/whats-new-in-cloud-networking-at-next26
+      - title: How Google evolved global and data-center networks for AI
+        publisher: Google_Cloud
+        date: 2026-05-27
+        url: https://cloud.google.com/blog/products/networking/data-center-and-global-networks-built-for-ai-era
+      - title: Google Cloud security overview
+        publisher: Google_Cloud
+        date: 2025
+        url: https://cloud.google.com/docs/security/overview/resources/google_security_wp.pdf
+    confidence: high_for_headlines_visible_roster_power_cooling_and_network_architecture_low_for_exact_buildings_live_MW_GPU_inventory_and_site_equipment
+
   - id: dc_meta_hyperion_richland_parish
     name: Meta Hyperion / Richland Parish Data Center
     operator: Meta
@@ -5646,6 +6132,14 @@ disclosure_gap_register:
   - Johor_220MW_announcement_to_216MW_market_card_reconciliation_and_live_delivery_status
   - Johor_transformer_switchgear_UPS_generator_CDU_cooling_OEMs_and_GPU_inventory
   - Louisiana_multi_campus_exact_sites_MW_schedule_power_chain_cooling_and_GPU_inventory
+  - AWS_39_regions_and_123_AZs_to_exact_campus_building_address_ownership_and_lifecycle_reconciliation
+  - AWS_per_region_operating_energized_utilized_IT_MW_GPU_Trainium_inventory_and_electrical_BOM
+  - Microsoft_500_plus_datacenters_80_plus_announced_regions_and_57_public_rows_scope_lifecycle_and_ownership_reconciliation
+  - Microsoft_per_site_live_MW_GPU_inventory_substations_UPS_generators_CDUs_and_equipment_OEMs
+  - Microsoft_Pecos_2GW_capacity_definition_gas_plant_capacity_GPU_inventory_and_electrical_BOM
+  - Google_30_active_headline_32_visible_active_labels_and_27_development_rows_building_lifecycle_reconciliation
+  - Google_one_million_TPU_logical_cluster_physical_site_mapping_and_global_GPU_TPU_inventory
+  - Google_per_site_live_MW_grid_substations_transformers_switchgear_generators_cooling_and_equipment_OEMs
 
 next_research_queue:
   campus_enrichment:
@@ -5693,6 +6187,14 @@ next_research_queue:
     - Stafford_grid_energization_substation_topology_customer_GPU_and_equipment_awards
     - Johor_220MW_to_216MW_reconciliation_initial_delivery_and_equipment_awards
     - Louisiana_exact_campuses_MW_power_chain_schedule_and_accelerator_inventory
+    - AWS_39_regions_123_AZs_complete_physical_campus_building_address_and_lifecycle_reconciliation
+    - AWS_per_region_operating_energized_utilized_IT_MW_GPU_Trainium_and_power_cooling_equipment
+    - Microsoft_500_plus_datacenters_80_plus_regions_and_57_public_rows_complete_scope_and_lifecycle_reconciliation
+    - Microsoft_per_site_live_MW_GPU_inventory_and_electrical_cooling_equipment
+    - Microsoft_Pecos_2GW_definition_gas_plant_capacity_schedule_GPU_and_equipment_awards
+    - Google_30_active_headline_to_32_visible_active_labels_and_27_development_rows_reconciliation
+    - Google_Virgo_one_million_TPU_logical_cluster_physical_site_mapping_and_installed_inventory
+    - Google_per_site_live_MW_GPU_TPU_power_chain_cooling_and_equipment_OEMs
   company_financials:
     - ByteDance_audited_financials_if_publicly_released
     - Crusoe_QTS_Vantage_VoltaGrid_and_Related_Digital_audited_or_lender_disclosed_financials

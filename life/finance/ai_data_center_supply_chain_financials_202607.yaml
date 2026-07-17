@@ -1163,13 +1163,40 @@ financial_profiles:
     data_center_exposure:
       roles: [hyperscale_operator, Azure_cloud, AI_factory_owner, leased_capacity_customer]
       confirmed_campus_refs:
+        - dc_microsoft_global_datacenter_portfolio
+        - dc_microsoft_pecos_texas
         - dc_microsoft_fairwater_wisconsin
         - dc_stargate_norway_narvik
         - dc_nscale_monarch_west_virginia
         - dc_nscale_loughton_uk
         - dc_start_campus_sines_portugal
         - dc_nscale_ward_county_texas
-      disclosed_fleet: more_than_400_data_centers_in_70_regions
+      fleet_snapshots:
+        current_as_of_2026_07_18:
+          datacenters_more_than: 500
+          countries_with_datacenters: 34
+          announced_regions_more_than: 80
+          network_fiber_km_more_than: 800000
+        dated_2025_09:
+          datacenters_more_than: 400
+          regions: 70
+        Azure_public_region_rows_derived_as_of_2026_05_29: 57
+        reconciliation_boundary: >-
+          The current company headline, dated Fairwater statement, Azure
+          documentation, and public-region list have different scopes and are not
+          interchangeable counts of operating, owned physical buildings.
+      accelerator_fleet:
+        liquid_cooled_NVIDIA_Grace_Blackwell_GPUs_deployed_within_less_than_one_year: hundreds_of_thousands
+        NVIDIA_Vera_Rubin_NVL72_as_of_2026_03: powered_on_in_labs_with_production_rollout_planned
+        exact_global_GPU_count_racks_utilization_and_site_allocation: undisclosed
+      fleet_efficiency_FY2025_owned_and_controlled_sites_operational_12_months:
+        PUE: 1.17
+        WUE_l_per_kwh: 0.27
+      Pecos_program:
+        global_capacity_addition_gw_approximate: 2
+        horizon_years_range: [5, 7]
+        initial_power: co_located_behind_the_meter_natural_gas_plant_independent_of_public_grid
+        capacity_boundary: Announced long-term capacity, not current energized or utilized IT load.
       boundary: Intelligent Cloud includes server products and enterprise services beyond physical data-center capacity.
     management_outlook:
       signal: commercial_remaining_performance_obligation_reached_usd_627_billion
@@ -1183,6 +1210,11 @@ financial_profiles:
       - https://www.microsoft.com/en-us/investor/earnings/fy-2025-q4/income-statements
       - https://www.microsoft.com/en-us/investor/earnings/fy-2026-q3/press-release-webcast
       - https://blogs.microsoft.com/blog/2025/09/18/inside-the-worlds-most-powerful-ai-datacenter/
+      - https://datacenters.microsoft.com/
+      - https://learn.microsoft.com/en-us/azure/reliability/regions-list
+      - https://datacenters.microsoft.com/sustainability/efficiency/
+      - https://blogs.microsoft.com/blog/2026/03/16/microsoft-at-nvidia-gtc-new-solutions-for-microsoft-foundry-azure-ai-infrastructure-and-physical-ai/
+      - https://blogs.microsoft.com/blog/2026/06/22/powering-the-next-wave-of-ai-expanding-capacity-with-our-new-datacenter-in-pecos/
     confidence: high
 
   - id: company_meta
@@ -1254,10 +1286,25 @@ financial_profiles:
     data_center_exposure:
       roles: [hyperscale_owner_operator, AWS_cloud, custom_chip_designer, AI_capacity_provider]
       confirmed_campus_refs:
+        - dc_aws_global_infrastructure_portfolio
         - dc_aws_project_rainier
         - dc_sk_aws_ulsan_ai_data_center
         - dc_humain_saudi_ai_factory_portfolio
       products: [Trainium, Graviton, Nitro, NVIDIA_GPU_instances, Elastic_Fabric_Adapter]
+      global_infrastructure_as_of_2026_07_18:
+        geographic_regions: 39
+        availability_zones: 123
+        announced_additional_AZs: 7
+        announced_new_regions: [Saudi_Arabia, Chile]
+        minimum_physical_data_centers_derived: 123
+        building_count_boundary: >-
+          AWS defines an AZ as one or more discrete data centers, so 123 is a
+          logical minimum rather than an exact disclosed facility count.
+      fleet_efficiency_2025:
+        PUE: 1.14
+        WUE_l_per_kwh: 0.12
+      global_capacity_added_Q4_2025_gw_more_than: 1.2
+      capacity_boundary: Company-reported added capacity is not defined as energized critical IT load or utilization.
       disclosed_future_commitments:
         OpenAI_Trainium_capacity_gw_approximate: 2
         Anthropic_Trainium_capacity_gw_up_to: 5
@@ -1274,6 +1321,10 @@ financial_profiles:
       - https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Fourth-Quarter-Results/
       - https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-First-Quarter-Results/
       - https://www.aboutamazon.com/news/aws/aws-project-rainier-ai-trainium-chips-compute-cluster
+      - https://aws.amazon.com/about-aws/global-infrastructure/regions_az/
+      - https://sustainability.aboutamazon.com/products-services/aws-cloud?energyType=true
+      - https://sustainability.aboutamazon.com/2025-amazon-sustainability-report.pdf
+      - https://press.aboutamazon.com/2024/12/aws-announces-new-data-center-components-to-support-ai-innovation-and-further-improve-energy-efficiency
     confidence: high
 
   - id: company_oracle
@@ -1565,11 +1616,27 @@ financial_profiles:
         - NVIDIA_GPU_cloud_provider
         - terrestrial_and_subsea_network_owner
       infrastructure_context:
-        data_centers_connected_by_global_network_more_than: 30
+        official_active_location_headline: 30
+        official_active_country_headline: 11
+        visible_active_label_rows_derived: 32
+        visible_in_development_rows_derived: 27
+        location_reconciliation_boundary: >-
+          The official headline and visible roster do not reconcile one-to-one;
+          umbrella and sublocation labels exist, and Google warns that a listed
+          region may contain more than one physical site.
         Cloud_regions_more_than: 40
         terrestrial_and_subsea_fiber_km_million: 10
-        current_TPU_generation_disclosed_2026_06: [TPU_8i, TPU_8t]
+        current_accelerator_platforms_disclosed_2026: [TPU_8i, TPU_8t, NVIDIA_Vera_Rubin_NVL72_A5X]
+        Virgo_single_fabric_TPU_8t_chips_supported: 134000
+        logical_training_cluster_TPU_chips_supported_more_than: 1000000
+        NVIDIA_Vera_Rubin_GPUs_supported_up_to: 960000
+        accelerator_boundary: Architecture and logical-cluster capabilities are not installed physical-campus inventory.
+        liquid_cooled_TPU_pods_more_than: 2000
+        liquid_cooling_deployed_scale: gigawatt_scale
+        global_Li_ion_rack_battery_cells_more_than: 100000000
+        2025_fleet_average_PUE: 1.09
       confirmed_campus_refs:
+        - dc_google_global_data_center_portfolio
         - dc_google_visakhapatnam_ai_hub
         - dc_reliance_intelligence_jamnagar
       boundary: >-
@@ -1601,6 +1668,11 @@ financial_profiles:
       - https://blog.google/alphabet/investor-presentation-june-2026/
       - https://blog.google/intl/en-in/google-ai-hub-scaling-indias-ai-infrastructure-and-community-impact/
       - https://www.ril.com/sites/default/files/2025-08/MR_Google.pdf
+      - https://www.datacenters.google/locations/
+      - https://www.datacenters.google/operating-sustainably/
+      - https://cloud.google.com/blog/topics/systems/enabling-1-mw-it-racks-and-liquid-cooling-at-ocp-emea-summit
+      - https://cloud.google.com/blog/topics/systems/100-million-li-ion-cells-in-google-data-centers
+      - https://cloud.google.com/blog/products/networking/whats-new-in-cloud-networking-at-next26
     confidence: high_for_financials_capex_and_disclosed_network_low_for_per_campus_economics_and_hardware_inventory
 
   - id: company_coreweave
@@ -4528,6 +4600,10 @@ financial_profiles:
 cross_company_read_through:
   current_signals:
     - Hyperscale buyers are funding the demand wave directly: Meta raised its 2026 capex range, Amazon's free cash flow fell as AI property investment rose, and Oracle is financing rapid OCI expansion against a very large AI-heavy RPO.
+    - AWS currently reports 39 Regions and 123 Availability Zones, Microsoft more than 500 datacenters in 34 countries, and Google 30 active location headlines. Those disclosures use different physical and logical scopes, so fleet size cannot be ranked safely without building, ownership, and lifecycle reconciliation.
+    - Amazon, Microsoft, and Alphabet all show strong current cloud earnings while accelerating infrastructure: AWS produced $14.16 billion of Q1 2026 operating income, Microsoft Intelligent Cloud $13.75 billion, and Google Cloud $6.60 billion. These segment results include services beyond physical data centers and do not reveal campus-level return on capital.
+    - Public accelerator figures remain asymmetric. Amazon disclosed more than 2.1 million accelerated chips landed over 12 months, Microsoft hundreds of thousands of liquid-cooled Grace Blackwell GPUs deployed in under a year, and Google network capability beyond one million TPUs or up to 960,000 Vera Rubin GPUs. The Amazon and Microsoft figures are deployment-flow statements; Google's are architecture or logical-cluster ceilings, and none is an exact live global site inventory.
+    - Google provides unusually deep power and cooling architecture evidence: more than 100 million rack-battery cells, distributed 48 VDC BBUs, more than 2,000 liquid-cooled TPU Pods at gigawatt scale, and a next-generation plus-or-minus-400 VDC path to 1 MW racks. These fleet and design disclosures still do not identify per-site grid capacity, UPS/generator counts, or equipment suppliers.
     - Oracle's five disclosed US OpenAI campuses now have different power paths: ERCOT plus GE Vernova backup turbines in Abilene, a VoltaGrid reciprocating-engine microgrid block at Frontier, Bloom fuel cells at Project Jupiter, WEC grid expansion at Lighthouse, and DTE grid plus matching storage at The Barn. Their IT, generation, grid-demand, and storage figures are intentionally kept separate.
     - Frontier's 1.4 GW critical-IT design is larger than the currently documented 709 MW VoltaGrid permit block, while Lighthouse's 902 MW critical-IT design sits inside WEC's 1.3 GW through-2030 demand forecast and up-to-3.5 GW long-term potential. These gaps are evidence of phased infrastructure, losses, and possible expansion, not grounds for GPU-count inference.
     - DTE's FY2025 revenue was $15.8 billion and operating income $2.37 billion; its 1,383 MW Saline contract and matching storage obligation create a large regulated growth project, but delivery, cost recovery, and the remaining 751 MW of storage procurement are material execution risks.
