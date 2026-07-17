@@ -1358,6 +1358,67 @@ campus_profiles:
       disclosed_regions: [United_States, Canada, Europe]
       country_count_as_of_2025_12_31: 6
       exact_country_and_site_list: not_fully_disclosed_in_the_10_K
+      service_availability_zone_footprint_as_of_2026_04_17:
+        total_AZ_identifiers: 56
+        regions:
+          CA_EAST: [CA-EAST-01A_Ontario]
+          EU_NORTH: [EU-NORTH-01A_Falun, EU-NORTH-02A_Kristiansand, EU-NORTH-04A_Stockholm, EU-NORTH-05A_Skovlunde]
+          EU_SOUTH: [EU-SOUTH-01A_Barcelona, EU-SOUTH-03B_Barcelona, EU-SOUTH-04A_Alava]
+          EU_WEST: [EU-WEST-01A_Crawley, EU-WEST-02A_London]
+          US_CENTRAL:
+            - AUS1A_Texas
+            - DFW1A_Texas
+            - SBN1A_Indiana
+            - US-CENTRAL-01A_Illinois
+            - US-CENTRAL-02A_Texas
+            - US-CENTRAL-03A_Texas
+            - US-CENTRAL-04A_Texas
+            - US-CENTRAL-05A_Texas
+            - US-CENTRAL-06A_Texas
+            - US-CENTRAL-07A_Illinois
+            - US-CENTRAL-08A_North_Dakota
+            - US-CENTRAL-08B_North_Dakota
+          US_EAST:
+            - ATL2A_Georgia
+            - ATL4A_Georgia
+            - RDU1A_Virginia
+            - US-EAST-01A_New_York
+            - US-EAST-02A_New_Jersey
+            - US-EAST-02B_New_Jersey
+            - US-EAST-03A_Pennsylvania
+            - US-EAST-04A_Virginia
+            - US-EAST-04B_Virginia
+            - US-EAST-05A_Georgia
+            - US-EAST-06A_Ohio
+            - US-EAST-07A_Ohio
+            - US-EAST-08A_Ohio
+            - US-EAST-09A_Georgia
+            - US-EAST-10A_Massachusetts
+            - US-EAST-11A_North_Carolina
+            - US-EAST-12A_Georgia
+            - US-EAST-13A_Michigan
+            - US-EAST-14A_New_Jersey
+            - US-EAST-15A_Virginia
+            - US-EAST-17A_New_Jersey
+          US_WEST:
+            - PDX2A_Oregon
+            - RNO2A_Nevada
+            - US-WEST-01A_Nevada
+            - US-WEST-02A_Arizona
+            - US-WEST-02B_Arizona
+            - US-WEST-03A_Oregon
+            - US-WEST-04A_Arizona
+            - US-WEST-05A_Washington
+            - US-WEST-06A_Oregon
+            - US-WEST-07A_Colorado
+            - US-WEST-08A_California
+            - US-WEST-09B_Washington
+            - US-WEST-10A_Nevada
+        scope_warning: >-
+          An availability-zone identifier is a service-failure-domain label, not
+          a disclosed physical building or campus count. Multiple AZs can be in
+          one locality and an AZ may contain undisclosed physical facilities, so
+          the 56 identifiers must not be reconciled one-for-one to 43 data centers.
     lifecycle_as_of_2026_07_17: operating_and_rapidly_expanding
     fleet_scale:
       data_centers_as_of_2025_12_31: 43
@@ -1372,7 +1433,21 @@ campus_profiles:
         measures. They cannot be allocated to individual facilities without
         separate site evidence, and contracted power is not energized power.
     accelerators:
-      physical_GPU_count: undisclosed
+      historical_disclosed_inventory:
+        "2022_12_31":
+          data_centers: 3
+          physical_GPU_count_more_than: 17000
+          active_power_mw_approximate: 10
+        "2023_12_31":
+          data_centers: 10
+          physical_GPU_count_more_than: 53000
+          active_power_mw_more_than: 70
+        "2024_12_31":
+          data_centers: 32
+          physical_GPU_count_more_than: 250000
+          active_power_mw_more_than: 360
+          majority_architecture: NVIDIA_Hopper
+      current_exact_physical_GPU_count_as_of_2025_12_31: undisclosed
       fleet_vendor_as_of_2025_12_31: NVIDIA
       disclosed_platforms:
         - NVIDIA_GB200_NVL72
@@ -1380,9 +1455,10 @@ campus_profiles:
         - NVIDIA_RTX_PRO_6000
       planned_platform: NVIDIA_Rubin
       scope_warning: >-
-        The filing discloses fleet-wide platforms and says all GPUs then used in
-        CoreWeave infrastructure were NVIDIA GPUs, but it does not disclose a
-        physical fleet count or per-campus model allocation.
+        CoreWeave disclosed historical fleet counts through 2024, but the 2025
+        annual report does not provide a current exact physical fleet count or
+        per-campus model allocation. The historical >250,000 figure must not be
+        treated as the current inventory.
     network:
       disclosed_fabric:
         - NVIDIA_Quantum_X800_XDR_800Gbps
@@ -1415,6 +1491,10 @@ campus_profiles:
         - company_amd
       missing_financial_profiles: [Intel, Anthropic, Cohere, Jane_Street, Mistral]
     sources:
+      - title: CoreWeave Form S-1 Amendment
+        publisher: US_Securities_and_Exchange_Commission
+        date: 2025-03-21
+        url: https://www.sec.gov/Archives/edgar/data/1769628/000119312525058309/d899798ds1a.htm
       - title: CoreWeave 2025 Form 10-K
         publisher: US_Securities_and_Exchange_Commission
         date: 2026-02-26
@@ -1423,7 +1503,395 @@ campus_profiles:
         publisher: CoreWeave
         date: 2026-05-07
         url: https://investors.coreweave.com/news/news-details/2026/CoreWeave-Reports-Strong-First-Quarter-2026-Results/
+      - title: All Availability Zones
+        publisher: CoreWeave_Docs
+        date: 2026-04-17
+        url: https://docs.coreweave.com/platform/regions/all-availability-zones
     confidence: high_for_portfolio_count_power_financially_disclosed_platforms_and_network_low_for_per_site_inventory_and_electrical_BOM
+
+  - id: dc_coreweave_europe_service_footprint
+    name: CoreWeave European AI cloud service footprint
+    record_granularity: service_AZ_portfolio_with_two_confirmed_physical_UK_sites
+    operator: CoreWeave
+    countries: [United_Kingdom, Spain, Sweden, Norway, Denmark]
+    lifecycle_as_of_2026_07_17: nine_service_AZ_identifiers_listed_and_two_UK_physical_sites_confirmed_operational
+    service_footprint:
+      availability_zone_identifiers: 9
+      localities:
+        - Falun_Sweden
+        - Kristiansand_Norway
+        - Stockholm_Sweden
+        - Skovlunde_Denmark
+        - Barcelona_Spain_two_AZ_identifiers
+        - Alava_Spain
+        - Crawley_United_Kingdom
+        - London_United_Kingdom
+      scope_warning: >-
+        The service documentation names AZ identifiers and localities, not
+        physical building counts, exact addresses, owners, or utility capacity.
+        Only the Crawley and London Docklands facilities are separately confirmed
+        as physical sites in the reviewed company releases.
+    confirmed_physical_sites:
+      - site_name: Crawley
+        country: GB
+        partner: Digital_Realty
+        operational_since: 2024-10
+        accelerator_model: NVIDIA_H200
+        accelerator_count: undisclosed
+        network: NVIDIA_Quantum_2_InfiniBand
+        renewable_energy_claim_percent: 100
+        exact_address_IT_load_grid_power_cooling_PUE_WUE_and_electrical_BOM: undisclosed
+      - site_name: London_Docklands
+        country: GB
+        partner: Global_Switch
+        operational_since: 2024-12
+        accelerator_model: NVIDIA_H200
+        accelerator_count: undisclosed
+        network: NVIDIA_Quantum_2_InfiniBand
+        renewable_energy_claim_percent: 100
+        exact_address_IT_load_grid_power_cooling_PUE_WUE_and_electrical_BOM: undisclosed
+    investment_program:
+      initial_UK_investment_gbp_billion: 1
+      additional_UK_investment_announced_2024_10_gbp_million: 750
+      continental_Europe_incremental_investment_announced_2024_06_usd_billion: 2.2
+      2024_program_platforms: [NVIDIA_Blackwell, NVIDIA_Quantum_2_InfiniBand]
+      program_boundary: >-
+        Investment amounts cover regional programs and cannot be allocated to
+        individual sites. The 2024 Blackwell announcement does not establish the
+        current model or count at every listed European AZ.
+    linked_companies:
+      operator: [CoreWeave]
+      accelerator_and_network: [NVIDIA]
+      disclosed_UK_colocation_partners: [Digital_Realty, Global_Switch]
+      financial_profile_refs: [company_coreweave, company_nvidia, company_digital_realty]
+      missing_financial_profiles: [Global_Switch]
+    sources:
+      - title: All Availability Zones
+        publisher: CoreWeave_Docs
+        date: 2026-04-17
+        url: https://docs.coreweave.com/platform/regions/all-availability-zones
+      - title: CoreWeave Announces Two Initial Data Centers in the UK Are Now Operational
+        publisher: CoreWeave
+        date: 2025-01-13
+        url: https://www.coreweave.com/news/coreweave-announces-two-initial-data-centers-in-the-uk-are-now-operational
+      - title: CoreWeave Announces Significant European Expansion
+        publisher: CoreWeave
+        date: 2024-06-05
+        url: https://investors.coreweave.com/news/news-details/2024/CoreWeave-Announces-Significant-European-Expansion-Commits-an-Incremental-2-2-Billion-to-Meet-Surging-Demand-for-AI-Infrastructure-in-the-Region/default.aspx
+    confidence: high_for_AZ_localities_UK_sites_hardware_partners_and_investment_low_for_non_UK_physical_buildings_power_and_GPU_inventory
+
+  - id: dc_coreweave_kenilworth_nest
+    name: CoreWeave Kenilworth NEST AI data-center campus
+    record_granularity: phased_campus_with_approved_K11_adaptive_reuse_and_broader_greenfield_program
+    operator_and_project_entities: [CoreWeave, CW_NEST_Tenant_LLC]
+    country: US
+    region: New_Jersey
+    locality: Kenilworth
+    lifecycle_as_of_2026_07_17: K11_site_plan_approved_and_redevelopment_underway_broader_250MW_program_not_confirmed_energized
+    location:
+      address: 2000_Galloping_Hill_Road_11_NEST_Building_Kenilworth_NJ_07033
+      former_use: Merck_research_and_laboratory_site
+      adjacent_land_acres_acquired_approximate: 27
+      broader_former_Merck_property_acres_approximate: 40
+      exact_coordinate_and_parcel_boundary: not_stored_until_primary_or_reliable_public_map_evidence
+    K11_project:
+      project_entity: CW_NEST_Tenant_LLC
+      lease_term_years: 15
+      total_building_sqft: 392600
+      leasable_sqft: 284500
+      total_project_cost_usd_million: 1757.842
+      hard_construction_cost_usd_million: 1727.14352
+      soft_cost_usd_million: 30.69848
+      NJEDA_award_usd_million: 250
+      proposed_new_full_time_jobs: 143
+      proposed_construction_period: 2025-09-15_to_2026-12-31
+      proposed_business_operations_start: 2027-01-04
+      planning_status: K11_preliminary_and_final_major_site_plan_approved_2025_05
+    broader_campus_program:
+      capacity_mw_up_to: 250
+      CoreWeave_description: first_greenfield_purpose_built_CoreWeave_AI_data_center_project
+      initial_phase_delivery_target_from_2025_disclosure: 2026
+      scope_warning: >-
+        The 250 MW figure applies to the broader joint-venture campus and must not
+        be assigned to K11 alone. K11 reuses a former laboratory building while
+        the broader program includes adjacent greenfield development.
+    accelerators:
+      physical_GPU_count_models_racks_and_delivery_schedule: undisclosed
+    network:
+      fabric_switch_NIC_optics_fiber_routes_and_vendors: undisclosed
+    electrical_and_generation:
+      dedicated_substation_application: confirmed_in_local_planning_agenda
+      utility_interconnection_voltage_transformers_switchgear_UPS_backup_generation_and_OEMs: undisclosed
+      energized_power_mw: undisclosed
+    cooling_and_water:
+      architecture_PUE_WUE_water_source_and_absolute_consumption: undisclosed
+    linked_companies:
+      operator: [CoreWeave]
+      financial_profile_refs: [company_coreweave]
+      joint_venture_counterparties_and_project_level_economics_beyond_NJEDA_application: undisclosed
+    sources:
+      - title: CoreWeave Reports Strong Second Quarter 2025 Results
+        publisher: CoreWeave
+        date: 2025-08-12
+        url: https://investors.coreweave.com/news/news-details/2025/CoreWeave-Reports-Strong-Second-Quarter-2025-Results/
+      - title: November 12 2025 EDA Board Book
+        publisher: New_Jersey_Economic_Development_Authority
+        date: 2025-11-12
+        url: https://www.njeda.gov/wp-content/uploads/2025/12/November-12-2025-EDA-Board-book.pdf
+      - title: Planning Board Minutes May 27 2025
+        publisher: Borough_of_Kenilworth
+        date: 2025-05-27
+        url: https://kenilworthborough.com/AgendaCenter/ViewFile/Minutes/_05272025-252
+      - title: Planning Board Agenda May 15 2025
+        publisher: Borough_of_Kenilworth
+        date: 2025-05-15
+        url: https://www.kenilworthborough.com/AgendaCenter/ViewFile/Agenda/_05152025-248
+    confidence: high_for_address_K11_scale_cost_incentive_timing_and_campus_target_low_for_energized_power_GPU_and_facility_engineering
+
+  - id: dc_applied_digital_polaris_forge_1_coreweave
+    name: Applied Digital Polaris Forge 1 CoreWeave capacity
+    record_granularity: campus_plus_three_named_tenant_buildings
+    developer_and_operator: Applied_Digital
+    anchor_tenant: CoreWeave
+    country: US
+    region: North_Dakota
+    locality: Ellendale
+    lifecycle_as_of_2026_07_17: phased_delivery_with_at_least_50MW_CoreWeave_specific_RFS_reported_and_175MW_total_campus_live
+    location:
+      ELN02_and_ELN03_public_lease_address: 9663_87th_Avenue_SE_Ellendale_ND
+      exact_full_campus_parcel_boundary: undisclosed
+      climate_context: cool_climate_used_for_efficiency_design
+    campus_scale:
+      engineered_capacity_mw_up_to: 1000
+      CoreWeave_leases:
+        ELN02_critical_IT_mw: 100
+        ELN03_critical_IT_mw: 150
+        additional_option_exercised_building_critical_IT_mw: 150
+        total_critical_IT_mw: 400
+        lease_term_years_each: 15
+        anticipated_total_contract_revenue_usd_billion_approximate: 11
+      CoreWeave_specific_RFS_as_of_2025_11_mw: 50
+      total_campus_live_as_of_2026_07_01_mw: 175
+      live_capacity_boundary: >-
+        Applied Digital reported 175 MW live across the campus after a 75 MW
+        phase of the second building, but its public releases do not reconcile
+        all 175 MW to the CoreWeave lease building labels. Only the separately
+        disclosed 50 MW RFS is treated as confirmed CoreWeave-specific delivery.
+    accelerators:
+      tenant_physical_GPU_count_models_racks_and_delivery_schedule: undisclosed
+    network:
+      fabric_switch_NIC_optics_fiber_routes_and_vendors: undisclosed
+    electrical_and_generation:
+      utility: Montana_Dakota_Utilities
+      on_site_main_substation_transformer_energized: 2024
+      renewable_power_claim: campus_access_to_substantial_renewable_energy
+      exact_grid_service_mw_interconnection_voltage_transformer_count_switchgear_UPS_backup_generation_and_OEMs: undisclosed
+    cooling_and_water:
+      architecture: [closed_loop, waterless, direct_to_chip_liquid_cooling]
+      projected_PUE: 1.18
+      projected_WUE: near_zero
+      PUE_boundary: design_projection_not_verified_annual_operating_measurement
+    linked_companies:
+      developer_and_lessor: [Applied_Digital]
+      tenant: [CoreWeave]
+      utility: [Montana_Dakota_Utilities]
+      financial_profile_refs: [company_applied_digital, company_coreweave]
+      missing_financial_profiles: [Montana_Dakota_Utilities]
+    sources:
+      - title: Applied Digital Announces 250MW AI Data Center Lease with CoreWeave
+        publisher: Applied_Digital
+        date: 2025-06-02
+        url: https://ir.applieddigital.com/news-events/press-releases/detail/123/applied-digital-announces-250mw-ai-data-center-lease-with
+      - title: Applied Digital Finalizes Additional 150MW Lease with CoreWeave
+        publisher: Applied_Digital
+        date: 2025-08-14
+        url: https://ir.applieddigital.com/news-events/press-releases/detail/128/applied-digital-finalizes-additional-150mw-lease-with
+      - title: Applied Digital Achieves Ready for Service for Phase 1 at Polaris Forge 1
+        publisher: Applied_Digital
+        date: 2025-11-24
+        url: https://ir.applieddigital.com/news-events/press-releases/detail/133/applied-digital-achieves-ready-for-service-for-phase-1-at
+      - title: Applied Digital Delivers Second Building at Polaris Forge 1
+        publisher: Applied_Digital
+        date: 2026-07-01
+        url: https://ir.applieddigital.com/news-events/press-releases/detail/157/applied-digital-delivers-second-building-at-polaris-forge-1
+      - title: New Applied Digital Closed-Loop Cooling Design Projects 2.7 Billion in Savings
+        publisher: Applied_Digital
+        date: 2025-06-10
+        url: https://ir.applieddigital.com/news-events/press-releases/detail/124/2-7-billion-in-data-center-savings-new-applied-digital
+      - title: Applied Digital Announces Ellendale HPC Data Center Substation Energization
+        publisher: Applied_Digital
+        date: 2024-10-07
+        url: https://ir.applieddigital.com/news-events/press-releases/detail/114/applied-digital-announces-ellendale-hpc-data-center
+    confidence: high_for_contract_capacity_economics_cooling_and_utility_medium_for_current_tenant_specific_active_MW_low_for_GPU_and_electrical_BOM
+
+  - id: dc_core_scientific_coreweave_us_portfolio
+    name: Core Scientific US CoreWeave high-density colocation portfolio
+    record_granularity: six_facilities_across_five_named_sites
+    developer_and_operator: Core_Scientific
+    exclusive_customer: CoreWeave
+    country: US
+    lifecycle_as_of_2026_07_17: Austin_complete_other_facilities_in_phased_conversion_and_construction_per_2026_04_disclosure
+    portfolio_scale:
+      facilities: 6
+      named_sites: 5
+      aggregate_net_critical_IT_mw_approximate: 590
+      secured_grid_capacity_mw_approximate: 900
+      energized_power_as_of_2026_03_13_mw_approximate: 350
+      active_and_billed_as_of_2026_03_13_mw_more_than: 185
+      full_delivery_target: H1_2027
+      estimated_contract_revenue_net_of_rent_repayment_usd_billion_approximate: 10
+      anticipated_construction_capex_usd_billion_approximate: 5.5
+      CoreWeave_contributions_as_of_2026_04_21_usd_billion: 4.4
+      scope_warning: >-
+        Net critical IT load, gross grid capacity, energized power, and billed IT
+        load are different measures. The portfolio totals and contract economics
+        cannot be assigned evenly across the facilities.
+    site_inventory:
+      - site_name: Austin
+        address: 3301_Hibbetts_Road_Austin_TX
+        land_acres: 38
+        buildings: 1
+        data_halls: 2
+        whitespace_sqft: 118000
+        net_critical_IT_mw: 16.5
+        grid_capacity_mw: 20
+        status_reported_2026_04_21: complete_and_operational_since_Q2_2024
+        utility: Austin_Energy
+      - site_name: Denton
+        address: 8171_Jim_Christal_Road_Denton_TX
+        land_acres: 64
+        buildings: 8
+        building_labels: [A, B, C, D, E, F, G, H]
+        whitespace_sqft: 370284
+        net_critical_IT_mw: 262
+        grid_capacity_mw: 394
+        active_and_billed_as_of_2026_03_13_mw: 132
+        remaining_delivery_target_from_2026_04_disclosure: H2_2026
+        utility: Denton_Municipal_Electric
+        construction_manager: T5_Construction
+      - site_name: Dalton_1
+        address: 2205_Industrial_South_Road_Dalton_GA
+        land_acres: 5
+        buildings: 1
+        whitespace_sqft: 19730
+        net_critical_IT_mw: 30
+        grid_capacity_mw: 50
+        status_reported_2026_04_21: crypto_conversion_with_H1_2026_start_and_completion_target
+        construction_manager: T5_Construction
+      - site_name: Dalton_4
+        address: 3024_Old_Tilton_Road_Dalton_GA
+        land_acres: 167
+        buildings: 1
+        data_halls: 3
+        whitespace_sqft: 108543
+        net_critical_IT_mw: 145
+        grid_capacity_mw: 220
+        status_reported_2026_04_21: greenfield_with_H2_2026_start_and_H1_2027_completion_target
+        utility: Dalton_Utilities
+        construction_manager: Critical_Construction_Management
+      - site_name: Marble
+        address: 155_Palmer_Lane_Marble_NC
+        land_acres: 73
+        buildings: 1
+        compute_halls: 2
+        network_halls: 2
+        whitespace_sqft: 61440
+        net_critical_IT_mw: 65
+        grid_capacity_mw: 117
+        active_and_billed_as_of_2026_03_13_mw: 37
+        remaining_delivery_target_from_2026_04_disclosure: H1_2026
+        utilities: [Murphy_Electric_Power_Board, Duke_Energy_Carolinas]
+        construction_manager: T5_Construction
+      - site_name: Muskogee
+        address: 1525_W_Smith_Ferry_Road_Muskogee_OK
+        land_acres: 64
+        buildings: 1
+        compute_halls: 2
+        network_halls: 1
+        whitespace_sqft: 49517
+        net_critical_IT_mw: 70
+        grid_capacity_mw: 100
+        status_reported_2026_04_21: construction_started_Q1_2025_with_H1_2026_completion_target
+        utility: Oklahoma_Gas_and_Electric
+        construction_manager: Evans_General_Contractors
+    accelerators:
+      physical_GPU_count_models_racks_and_site_allocation: undisclosed
+      boundary: CoreWeave fleet disclosures cannot be assigned to these six facilities without site-specific evidence.
+    network:
+      fabric_switch_NIC_optics_fiber_routes_and_vendors: undisclosed
+    electrical_and_generation:
+      portfolio_backup_generation: installed_to_customer_requirements
+      portfolio_UPS_redundancy: installed_to_customer_requirements
+      per_site_generator_transformer_switchgear_UPS_count_topology_and_OEMs: undisclosed
+    cooling_and_water:
+      average_design_PUE_approximate: 1.5
+      cooling_architecture_WUE_water_source_and_absolute_consumption: undisclosed
+      PUE_boundary: portfolio_design_estimate_not_measured_facility_level_annual_PUE
+    contract_economics:
+      standard_initial_term_years: 12
+      standard_extension_options: two_5_year_terms
+      Austin_initial_term_years: 7
+      standard_fee_usd_per_kW_month: 100
+      Austin_fee_usd_per_kW_month: 115
+      standard_annual_escalator_percent: 3.5
+      Austin_annual_escalator_percent: 3
+      utilities_paid_by: CoreWeave
+      development_cost_reimbursement_cap_usd_per_MW_except_Austin_million: 1.5
+    linked_companies:
+      developer_and_operator: [Core_Scientific]
+      customer: [CoreWeave]
+      utilities: [Austin_Energy, Denton_Municipal_Electric, Dalton_Utilities, Murphy_Electric_Power_Board, Duke_Energy_Carolinas, Oklahoma_Gas_and_Electric]
+      construction_managers: [T5_Construction, Critical_Construction_Management, Evans_General_Contractors]
+      financial_profile_refs: [company_core_scientific, company_coreweave]
+      missing_financial_profiles: [Duke_Energy, Oklahoma_Gas_and_Electric]
+    sources:
+      - title: Core Scientific Data Center Financing Presentation
+        publisher: Core_Scientific
+        date: 2026-04-21
+        url: https://investors.corescientific.com/sec-filings/all-sec-filings/content/0001193125-26-165121/d149019dex992.htm
+      - title: Core Scientific Announces Fourth Quarter Fiscal Year 2025 Results
+        publisher: Core_Scientific
+        date: 2026-03-02
+        url: https://investors.corescientific.com/news-events/press-releases/detail/127/core-scientific-announces-fourth-quarter-fiscal-year-2025-results
+    confidence: high_for_addresses_facility_scale_utilities_contract_and_design_PUE_low_for_GPU_cooling_and_electrical_OEM_details
+
+  - id: dc_coreweave_dallas_graph500_cluster
+    name: CoreWeave Dallas 8192-H100 Graph500 cluster
+    record_granularity: disclosed_compute_cluster_inside_an_undisclosed_Dallas_facility
+    operator: CoreWeave
+    country: US
+    region: Texas
+    locality: Dallas
+    lifecycle_as_of_2026_07_17: operational_benchmark_cluster
+    location:
+      city: Dallas
+      exact_facility_address_campus_and_AZ_mapping: undisclosed
+      boundary: Do not assign this cluster to Plano, Denton, or another DFW facility without direct evidence.
+    campus_scale:
+      facility_IT_load_grid_power_land_building_and_rack_count: undisclosed
+    accelerators:
+      benchmark_cluster_physical_GPU_count: 8192
+      model: NVIDIA_H100
+      compute_nodes: just_over_1000
+      scope_warning: The benchmark cluster is a confirmed subset and may not represent the facility's total installed GPU inventory.
+    network:
+      fabric: NVIDIA_Spectrum_X
+      software_communication_stack: [InfiniBand_GPUDirect_Async, NVSHMEM]
+      switch_NIC_optics_fiber_and_topology_details: undisclosed
+    electrical_and_generation:
+      grid_capacity_substation_voltage_transformers_switchgear_UPS_backup_generation_and_OEMs: undisclosed
+    cooling_and_water:
+      architecture_PUE_WUE_water_source_and_absolute_consumption: undisclosed
+    linked_companies:
+      operator: [CoreWeave]
+      accelerator_network_and_benchmark_collaborator: [NVIDIA]
+      financial_profile_refs: [company_coreweave, company_nvidia]
+    sources:
+      - title: How NVIDIA H100 GPUs on CoreWeave's AI Cloud Platform Delivered a Record-Breaking Graph500 Run
+        publisher: NVIDIA
+        date: 2025-12-10
+        url: https://blogs.nvidia.com/blog/h100-coreweave-graph500/
+    confidence: high_for_city_GPU_count_model_nodes_and_network_low_for_physical_facility_mapping_power_and_cooling
 
   - id: dc_google_visakhapatnam_ai_hub
     name: Google Visakhapatnam AI Hub
@@ -2955,10 +3423,19 @@ disclosure_gap_register:
   - Lighthouse_named_generation_projects_final_PSCW_tariff_and_energization_schedule
   - Saline_remaining_751_MW_storage_procurement_and_final_substation_generator_equipment
   - audited_revenue_operating_profit_and_project_economics_for_Crusoe_Vantage_VoltaGrid_and_Related_Digital
+  - CoreWeave_56_service_AZ_to_43_physical_data_center_reconciliation
+  - CoreWeave_current_exact_GPU_count_and_per_site_accelerator_allocation
+  - Kenilworth_final_phase_capacity_interconnection_equipment_and_energization
+  - Polaris_Forge_1_tenant_specific_live_MW_GPU_inventory_and_electrical_BOM
+  - Core_Scientific_six_facility_GPU_cooling_water_and_electrical_OEM_details
 
 next_research_queue:
   campus_enrichment:
-    - CoreWeave_per_site_location_and_GPU_inventory_beyond_portfolio_totals
+    - CoreWeave_remaining_physical_sites_behind_56_AZ_identifiers_and_43_data_centers
+    - CoreWeave_current_exact_GPU_count_and_per_site_accelerator_inventory
+    - Kenilworth_final_phase_capacity_interconnection_equipment_and_energization
+    - Polaris_Forge_1_building_label_to_tenant_live_MW_reconciliation
+    - Core_Scientific_six_facility_GPU_cooling_water_and_electrical_BOM
     - Google_TPU_cloud_exact_US_sites_and_TPU_inventory_for_Blackstone_JV
     - Oracle_US_five_campus_per_site_accelerator_inventory_and_energized_IT_load
     - Frontier_remaining_power_blocks_final_permit_status_and_substation_UPS_vendor_awards

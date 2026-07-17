@@ -70,6 +70,8 @@ stack_layers:
   operators_reits_utilities:
     - Equinix
     - Digital_Realty
+    - Applied_Digital
+    - Core_Scientific
     - Entergy
     - Constellation_Energy
     - DTE_Energy
@@ -1092,9 +1094,17 @@ financial_profiles:
       confirmed_campus_refs:
         - dc_coreweave_global_fleet
         - dc_galaxy_helios_dickens_county
+        - dc_coreweave_lancaster_pennsylvania
+        - dc_coreweave_europe_service_footprint
+        - dc_coreweave_kenilworth_nest
+        - dc_applied_digital_polaris_forge_1_coreweave
+        - dc_core_scientific_coreweave_us_portfolio
+        - dc_coreweave_dallas_graph500_cluster
       boundary: >-
         Company revenue is AI-cloud revenue, not colocation rent or per-campus
-        revenue. The physical GPU count and site-level profitability are undisclosed.
+        revenue. CoreWeave disclosed more than 250,000 physical GPUs at 2024
+        year-end, but its current exact physical GPU count and site-level
+        profitability are undisclosed.
     management_outlook:
       active_power_target_2030_gw_more_than: 8
       NVIDIA_AI_factory_expansion_target_2030_gw_more_than: 5
@@ -1113,6 +1123,159 @@ financial_profiles:
       - https://investors.coreweave.com/news/news-details/2026/CoreWeave-Reports-Strong-First-Quarter-2026-Results/
       - https://www.galaxy.com/newsroom/galaxy-completes-phase-i-of-its-helios-data-center-campus
     confidence: high_for_company_financials_power_and_contract_metrics_low_for_per_site_GPU_and_profitability
+
+  - id: company_applied_digital
+    company: Applied_Digital
+    layer: data_center_developer_operator_and_lessor
+    fiscal_baseline:
+      period: FY2025_ended_2025_05_31
+      accounting_basis: US_GAAP_with_discontinued_cloud_operations_and_separate_non_GAAP_metrics
+      currency: USD
+      continuing_operations_revenue_usd_million_approximate: 144.2
+      continuing_operations_operating_loss_usd_million: 16.845
+      continuing_operations_operating_margin_percent_derived: -11.68
+      continuing_operations_net_loss_usd_million: 158.335
+      consolidated_net_loss_including_discontinued_operations_usd_million: 231.065
+      net_loss_attributable_to_common_stockholders_usd_million: 233.680
+      adjusted_EBITDA_usd_million: 19.6
+      segments:
+        data_center_hosting_operating_profit_usd_million: 63.927
+        HPC_hosting_operating_loss_usd_million: 12.086
+      comparison_boundary: >-
+        The Cloud Services Business was reported as discontinued operations in
+        FY2025. Revenue and operating loss above are continuing-operations
+        measures, while consolidated net loss includes the discontinued business;
+        they should not be used together to derive a net margin.
+    latest_update:
+      period: Q3_FY2026_ended_2026_02_28
+      revenue_usd_million: 126.637
+      operating_loss_usd_million: 85.667
+      operating_margin_percent_derived: -67.65
+      net_loss_usd_million: 70.556
+      net_loss_attributable_to_common_stockholders_usd_million: 100.861
+      adjusted_EBITDA_usd_million: 44.1
+      HPC_hosting_revenue_usd_million_approximate: 71.0
+      HPC_revenue_components_usd_million:
+        base_rent: 44.1
+        tenant_fit_out_services: 18.9
+        power_pass_through_and_ancillary: 8.1
+      cloud_business_held_for_sale_reclassification_loss_usd_million: 59.7
+      cash_cash_equivalents_and_restricted_cash_usd_billion: 2.1
+      debt_usd_billion: 2.7
+      boundary: >-
+        The GAAP operating loss includes a $59.7 million held-for-sale
+        reclassification loss, while adjusted EBITDA excludes defined items and
+        is not comparable with GAAP operating income.
+    data_center_exposure:
+      roles:
+        - AI_and_HPC_data_center_developer
+        - powered_shell_and_cooling_infrastructure_owner
+        - long_term_colocation_lessor
+      confirmed_campus_refs:
+        - dc_applied_digital_polaris_forge_1_coreweave
+      Polaris_Forge_1_contract:
+        CoreWeave_critical_IT_load_mw: 400
+        lease_term_years_each: 15
+        anticipated_contract_revenue_usd_billion_approximate: 11
+        campus_engineered_capacity_mw_up_to: 1000
+      current_revenue_signal: >-
+        CoreWeave-linked HPC rent, fit-out, and power pass-through revenue began
+        materially changing the revenue mix, but site-level operating profit and
+        tenant-level margins remain undisclosed.
+    management_outlook:
+      strategy: transition_toward_pure_play_data_center_platform
+      growth_driver: phased_delivery_of_Polaris_Forge_1_and_other_HPC_campuses
+      signal: first_HPC_data_center_fully_operating_in_Q3_FY2026
+    risk_and_watch_items:
+      - construction_and_power_delivery_execution
+      - CoreWeave_tenant_concentration
+      - large_debt_and_project_finance_requirements
+      - contract_revenue_is_not_current_revenue_or_guaranteed_profit
+      - discontinued_cloud_business_and_accounting_reclassification_noise
+      - projected_PUE_and_WUE_versus_measured_operating_results
+    sources:
+      - https://ir.applieddigital.com/sec-filings/all-sec-filings/content/0001144879-25-000021/apld-20250531.htm
+      - https://ir.applieddigital.com/news-events/press-releases/detail/148/applied-digital-reports-fiscal-third-quarter-2026-results
+      - https://ir.applieddigital.com/news-events/press-releases/detail/128/applied-digital-finalizes-additional-150mw-lease-with
+      - https://ir.applieddigital.com/news-events/press-releases/detail/157/applied-digital-delivers-second-building-at-polaris-forge-1
+    confidence: high_for_company_financials_contract_and_delivery_low_for_site_level_profitability_and_tenant_hardware
+
+  - id: company_core_scientific
+    company: Core_Scientific
+    layer: high_density_colocation_developer_operator_and_legacy_digital_asset_miner
+    fiscal_baseline:
+      period: FY2025_ended_2025_12_31
+      accounting_basis: US_GAAP_with_separate_non_GAAP_metrics_and_restated_prior_periods
+      currency: USD
+      revenue_usd_million: 319.019
+      colocation_revenue_usd_million: 65.424
+      operating_loss_usd_million: 245.589
+      operating_margin_percent_derived: -76.98
+      net_loss_usd_million: 288.616
+      gross_profit_usd_million: 37.898
+      adjusted_EBITDA_loss_usd_million: 29.659
+      comparison_boundary: >-
+        FY2025 still included material bitcoin self-mining revenue while Core
+        Scientific converted sites to high-density colocation. Restatements
+        affected prior property and impairment accounting but not revenue,
+        adjusted EBITDA, or cash flows according to the company.
+    latest_update:
+      period: Q1_2026_ended_2026_03_31
+      revenue_usd_million: 115.244
+      colocation_revenue_usd_million: 77.539
+      operating_loss_usd_million: 310.422
+      operating_margin_percent_derived: -269.35
+      net_loss_usd_million: 347.188
+      adjusted_EBITDA_usd_million: 4.352
+      property_plant_and_equipment_impairment_usd_million: 266.488
+      capital_expenditures_usd_million: 389.226
+      CoreWeave_funded_capex_usd_million: 129.9
+      liquidity_usd_billion: 1.04
+      billed_capacity_mw: 243
+      average_annualized_colocation_GAAP_revenue_usd_million_approximate: 350
+      secured_notes_usd_billion: 3.3
+      secured_notes_coupon_percent: 7.75
+      secured_notes_due: 2031
+      boundary: >-
+        The quarter's operating loss includes a $266.5 million non-cash
+        impairment. Billing capacity and annualized revenue are run-rate measures,
+        not quarterly recognized revenue or operating profit.
+    data_center_exposure:
+      roles:
+        - high_density_colocation_developer_and_operator
+        - powered_site_converter_from_digital_asset_mining
+        - power_interconnection_and_facility_owner
+      confirmed_campus_refs:
+        - dc_core_scientific_coreweave_us_portfolio
+      contracted_CoreWeave_portfolio:
+        facilities: 6
+        net_critical_IT_mw_approximate: 590
+        secured_grid_capacity_mw_approximate: 900
+        estimated_contract_revenue_net_of_rent_repayment_usd_billion_approximate: 10
+        anticipated_construction_capex_usd_billion_approximate: 5.5
+        CoreWeave_contributions_as_of_2026_04_21_usd_billion: 4.4
+        full_delivery_target: H1_2027
+      economics_boundary: >-
+        Contract revenue is a multi-year estimate net of rent repayment, not
+        backlog recognized under one standardized accounting definition. Facility
+        operating income and CoreWeave tenant margins are not disclosed.
+    management_outlook:
+      gross_power_pipeline_as_of_2026_Q1_gw: 4.5
+      strategic_shift: majority_revenue_now_from_high_density_colocation
+      growth_driver: deliver_approximately_590MW_to_CoreWeave_and_expand_leasable_power_pipeline
+      execution_signal: 243MW_billing_in_Q1_2026
+    risk_and_watch_items:
+      - CoreWeave_customer_concentration
+      - construction_timing_cost_and_power_interconnection
+      - debt_service_and_capital_intensity
+      - legacy_mining_asset_conversion_and_impairment
+      - projected_contract_revenue_versus_realized_margin
+      - grid_capacity_versus_net_critical_IT_capacity_conversion
+    sources:
+      - https://investors.corescientific.com/news-events/press-releases/detail/127/core-scientific-announces-fourth-quarter-fiscal-year-2025-results
+      - https://investors.corescientific.com/news-events/press-releases/detail/136/core-scientific-announces-first-quarter-fiscal-year-2026-results
+      - https://investors.corescientific.com/sec-filings/all-sec-filings/content/0001193125-26-165121/d149019dex992.htm
+    confidence: high_for_company_financials_capacity_contract_and_capex_low_for_site_level_profitability_GPU_and_cooling_inventory
 
   - id: company_galaxy_digital
     company: Galaxy_Digital
