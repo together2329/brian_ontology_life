@@ -105,8 +105,10 @@ stack_layers:
     - Firmus_Technologies
     - DayOne_Data_Centers
     - STACK_Infrastructure
+    - STT_GDC_India
   diversified_strategic_partners:
     - Mitsubishi_Corporation
+    - Tata_Communications
   capital_and_asset_managers:
     - Blackstone
     - DigitalBridge
@@ -305,13 +307,32 @@ financial_profiles:
         Total Operating Earnings and Fee Related Earnings are KKR non-GAAP
         measures, not GAAP operating income and not CyrusOne earnings.
     data_center_exposure:
-      role: fund_manager_whose_managed_funds_co_own_CyrusOne
+      role: fund_manager_with_current_CyrusOne_ownership_and_pending_STT_GDC_acquisition
       confirmed_campus_refs: [dc_cyrusone_global_portfolio, dc_cyrusone_kep_osk1_japan, dc_cyrusone_freestone_texas]
       CyrusOne_acquisition:
         completed: 2022-03-25
         co_investor: Global_Infrastructure_Partners
         transaction_value_including_debt_usd_billion_approximate: 15
-      boundary: KKR_managed_fund_ownership_does_not_make_KKR_company_revenue_a_proxy_for_CyrusOne
+      STT_GDC_acquisition:
+        definitive_agreement_announced: 2026-02-04
+        remaining_ST_Telemedia_stake_to_be_acquired_percent: 82
+        consideration_sgd_billion: 6.6
+        consideration_usd_billion_approximate: 5.1
+        implied_enterprise_value_sgd_billion: 13.8
+        implied_enterprise_value_usd_billion_approximate: 10.9
+        expected_post_close_KKR_percent: 75
+        expected_post_close_Singtel_percent: 25
+        status_as_of_2026_07_18: pending_completion
+        latest_reviewed_official_status: Singtel_FY2026_release_said_due_for_completion_in_second_half_2026
+        potential_future_indirect_campus_refs: [dc_stt_gdc_india_portfolio, dc_stt_gdc_chennai_7, dc_stt_gdc_pune_campus, dc_stt_gdc_jaipur_1]
+        boundary: >-
+          The enterprise value includes leverage and capital expenditure for
+          committed projects. Neither consideration nor enterprise value is STT
+          GDC revenue, profit, current capex, debt, or asset value attributable to
+          KKR. Future ownership is not recorded as current ownership until close.
+      boundary: >-
+        KKR-managed-fund ownership does not make KKR company revenue or
+        non-GAAP operating earnings a proxy for CyrusOne or STT GDC earnings.
     management_outlook:
       Q1_year_over_year_growth_percent:
         fee_related_earnings: 24
@@ -325,10 +346,14 @@ financial_profiles:
       - fundraising_and_deployment
       - private_portfolio_company_leverage
       - CyrusOne_standalone_financial_non_disclosure
+      - STT_GDC_transaction_closing_regulatory_approvals_and_financing
+      - STT_GDC_standalone_global_financial_non_disclosure
     sources:
       - https://ir.kkr.com/media/document/97877ef9-66da-4d11-8742-d76f2fc04354/assets/KKR_Q126_Earnings_Release.pdf?disposition=inline
       - https://www.global-infra.com/news/kkr-and-gip-complete-acquisition-of-cyrusone/
-    confidence: high_for_KKR_financials_and_acquisition_structure_low_for_CyrusOne_look_through_earnings
+      - https://www.sttelemedia.com/about-us/news/read/kkr-led-consortium-singtel-group-fully-acquire-st-telemedia-global-data-centres-s138-billion-enterprise-value
+      - https://www.singtel.com/about-us/media-centre/news-releases/singtel-posts-fy26-net-profit
+    confidence: high_for_KKR_financials_CyrusOne_ownership_and_signed_STT_transaction_terms_medium_for_current_transaction_status_low_for_private_operator_look_through_earnings
 
   - id: company_blackrock
     company: BlackRock
@@ -5410,6 +5435,183 @@ financial_profiles:
       - https://www.edgeconnex.com/news/edge-blog/planet-in-progress-driving-edgeconnex-sustainability/
     confidence: high_for_private_ownership_announcement_current_headlines_market_scope_density_and_sustainability_claims_low_for_current_financials_asset_ownership_current_MW_GPU_and_site_economics
 
+  - id: company_stt_gdc_india
+    company: STT_GDC_India
+    layer: private_data_center_and_power_developers
+    ownership_status: private_74_percent_STT_GDC_26_percent_Tata_Communications_associate
+    latest_disclosed_financial_baseline:
+      period: FY2026_ended_2026-03-31
+      accounting_basis: summarized_financial_information_based_on_management_accounts_in_Tata_Communications_equity_method_note
+      currency: INR
+      unit: crore
+      income_from_operations_inr_crore: 2747.46
+      profit_for_year_inr_crore: 126.03
+      other_comprehensive_loss_inr_crore: -0.16
+      total_comprehensive_income_inr_crore: 125.87
+      noncurrent_assets_inr_crore: 12492.54
+      current_assets_inr_crore: 908.29
+      noncurrent_liabilities_inr_crore: 6313.19
+      current_liabilities_inr_crore: 1327.18
+      total_liabilities_inr_crore_derived: 7640.37
+      net_assets_inr_crore: 5760.46
+      income_from_operations_growth_percent_derived: 17.83
+      profit_margin_percent_derived: 4.59
+      profit_year_over_year_change_percent_derived: -22.94
+      reported_operating_profit: undisclosed
+      EBITDA: undisclosed
+      capital_expenditure: undisclosed
+      debt: undisclosed
+      boundary: >-
+        Income from operations is used as the closest disclosed revenue-like
+        measure. Profit for the year is not operating profit. Liabilities are not
+        relabeled as debt, and this summarized associate note is not substituted
+        for a public standalone audited income statement or cash-flow statement.
+    prior_year_comparative:
+      period: FY2025_ended_2025-03-31
+      currency: INR
+      unit: crore
+      income_from_operations_inr_crore: 2331.80
+      profit_for_year_inr_crore: 163.54
+      noncurrent_assets_inr_crore: 8824.14
+      current_assets_inr_crore: 1595.38
+      noncurrent_liabilities_inr_crore: 4941.30
+      current_liabilities_inr_crore: 1072.07
+      net_assets_inr_crore: 4406.15
+    ownership_and_accounting_context:
+      STT_GDC_percent: 74
+      Tata_Communications_percent: 26
+      Tata_board_appointment_rights: 2_directors
+      Tata_share_of_FY2026_profit_inr_crore: 32.77
+      Tata_share_of_FY2025_profit_inr_crore: 42.52
+      Tata_additional_investment_FY2026_inr_crore: 319.39
+      Tata_carrying_amount_including_goodwill_FY2026_inr_crore: 1982.73
+      boundary: >-
+        Tata Communications does not consolidate STT GDC India. Tata's share of
+        profit, investment, and carrying amount are accounting and ownership
+        measures, not STT GDC India revenue, operating profit, capex, or debt.
+    data_center_exposure:
+      role: Indian_colocation_and_AI_ready_data_center_owner_operator
+      confirmed_campus_refs:
+        - dc_stt_gdc_india_portfolio
+        - dc_stt_gdc_chennai_7
+        - dc_stt_gdc_pune_campus
+        - dc_stt_gdc_jaipur_1
+      current_marketing_scope:
+        cities: 10
+        site_rows: 34
+        rounded_IT_load_mw: 613
+        marketed_row_IT_load_sum_mw_derived: 613.5
+      February_2026_company_scope:
+        facilities_including_under_development: 30
+        critical_IT_load_mw_more_than: 400
+      scope_boundary: >-
+        The current marketing roster includes under-development rows and is not
+        an operating or utilized capacity ledger. The 30-facility and 34-row
+        totals are preserved rather than forced into one current physical count.
+    management_outlook:
+      September_2024_additional_capacity_plan_mw: 550
+      September_2024_investment_plan_usd_billion: 3.2
+      implementation_period_years: 5_to_6
+      February_2026_Chennai_MOU_investment_inr_crore: 4200
+      potential_India_IPO_target: first_half_2027
+      outlook_boundary: >-
+        Capacity plans, proposed investment, an MoU, and a potential IPO are
+        forward-looking. They are not committed customer load, recognized
+        revenue, operating profit, current capex, or completed financing.
+    parent_transaction_context:
+      definitive_agreement_date: 2026-02-04
+      parent_platform: STT_GDC
+      announced_post_close_owners: {KKR_percent: 75, Singtel_percent: 25}
+      status_as_of_2026_07_18: pending_completion
+      global_parent_design_capacity_gw_at_announcement: 2.3
+      parent_transaction_enterprise_value_sgd_billion: 13.8
+      boundary: The parent-platform enterprise value is not an India subsidiary valuation or earnings measure.
+    watch_items:
+      - current_operating_energized_leased_and_utilized_MW
+      - 30_facilities_to_34_marketed_rows_reconciliation
+      - current_standalone_audited_operating_profit_EBITDA_capex_debt_and_cash_flow
+      - exact_GPU_inventory_customer_concentration_and_contract_returns
+      - per_site_electrical_cooling_BOM_PUE_WUE_and_water
+      - execution_and_financing_of_550MW_expansion
+      - parent_transaction_completion_and_post_close_governance
+      - potential_IPO_timing_and_disclosure_quality
+    sources:
+      - https://www.tatacommunications.com/hubfs/library/documents/integrated-annual-report-fy2025-26.pdf
+      - https://www.sttelemediagdc.com/in-en/locations
+      - https://assets.sttelemediagdc.com/sttgdc/global_en/public/2026-03/STT-GDC-India-ESG-Report-FY2025.pdf
+      - https://www.sttelemediagdc.com/newsroom/stt-gdc-reinforces-commitment-to-digital-india-invests-3.2billion-usd-adding-550mw-data-centre-capacity
+      - https://www.sttelemediagdc.com/in-en/newsroom/stt-gdc-india-strengthens-its-market-presence-chennai-multi-campus-expansion-and-inr-4200
+      - https://www.sttelemedia.com/about-us/news/read/kkr-led-consortium-singtel-group-fully-acquire-st-telemedia-global-data-centres-s138-billion-enterprise-value
+      - https://www.singtel.com/about-us/media-centre/news-releases/singtel-posts-fy26-net-profit
+    confidence: high_for_Tata_associate_financial_summary_ownership_dated_capacity_and_expansion_terms_medium_for_pending_transaction_status_low_for_operating_profit_EBITDA_debt_capex_utilization_GPU_and_site_economics
+
+  - id: company_tata_communications
+    company: Tata_Communications
+    layer: diversified_strategic_partners
+    ownership_status: publicly_listed_Tata_group_company_and_26_percent_STT_GDC_India_associate_owner
+    fiscal_baseline:
+      period: FY2026_ended_2026-03-31
+      accounting_basis: Ind_AS_consolidated_with_company_reported_non_GAAP_EBITDA
+      currency: INR
+      unit: crore
+      revenue_from_operations_inr_crore: 24802.72
+      other_income_inr_crore: 301.73
+      total_income_inr_crore: 25104.45
+      finance_costs_inr_crore: 761.60
+      depreciation_and_amortization_inr_crore: 2826.74
+      profit_before_exceptional_tax_and_share_of_associates_inr_crore: 1535.85
+      EBIT_before_exceptional_and_share_of_associates_inr_crore_derived: 2297.45
+      EBIT_margin_percent_derived: 9.26
+      exceptional_loss_inr_crore: 97.96
+      share_of_associate_profit_inr_crore: 32.77
+      continuing_operations_profit_inr_crore: 1039.04
+      total_group_profit_inr_crore: 996.85
+      reported_EBITDA_inr_crore_rounded: 4822
+      reported_EBITDA_margin_percent: 19.4
+      operating_profit_label_in_reviewed_release: not_separately_reported
+      measure_boundary: >-
+        The derived EBIT adds finance cost back to profit before exceptional
+        items, tax, and associate share. It includes other income and is not a
+        company-labeled operating-profit measure. EBITDA is rounded management
+        reporting and is not comparable to STT GDC India's profit for the year.
+    operating_mix:
+      FY2026_data_revenue_inr_crore_rounded: 21352
+      FY2026_digital_portfolio_revenue_inr_crore_rounded: 10621
+      net_debt_to_EBITDA: below_2_times
+      boundary: Data and digital portfolio revenue include businesses beyond physical data centers and cannot be attributed to STT GDC India.
+    data_center_exposure:
+      role: 26_percent_equity_method_owner_and_strategic_customer_partner_of_STT_GDC_India
+      confirmed_campus_refs:
+        - dc_stt_gdc_india_portfolio
+        - dc_stt_gdc_chennai_7
+        - dc_stt_gdc_pune_campus
+        - dc_stt_gdc_jaipur_1
+      ownership_percent: 26
+      right_to_appoint_directors: 2
+      FY2026_share_of_STT_GDC_India_profit_inr_crore: 32.77
+      FY2026_additional_investment_inr_crore: 319.39
+      FY2026_carrying_amount_including_goodwill_inr_crore: 1982.73
+      economics_boundary: >-
+        Equity-method ownership means Tata Communications' consolidated revenue,
+        EBIT, EBITDA, and total profit are not STT GDC India revenue or profit.
+        Only Tata's share of the associate result enters the consolidated line.
+    management_outlook:
+      stance: focus_on_digital_portfolio_growth_and_balance_sheet_discipline
+      quantitative_STT_GDC_India_revenue_operating_profit_or_dividend_guidance: undisclosed
+      potential_STT_GDC_India_IPO_target: first_half_2027_company_statement
+      outlook_boundary: The potential IPO is an STT GDC India strategic option, not Tata Communications guidance or a completed transaction.
+    watch_items:
+      - data_and_digital_portfolio_growth_and_margins
+      - debt_and_capital_allocation
+      - STT_GDC_India_expansion_funding_and_profit_conversion
+      - equity_method_and_nonconsolidation_boundary
+      - STT_GDC_parent_transaction_completion
+      - potential_STT_GDC_India_IPO_and_ownership_dilution
+    sources:
+      - https://www.tatacommunications.com/hubfs/library/documents/integrated-annual-report-fy2025-26.pdf
+      - https://www.tatacommunications.com/press-release/q4-fy2026-financial-results
+    confidence: high_for_consolidated_financials_ownership_and_associate_accounting_medium_for_management_outlook_low_for_STT_site_economics
+
 cross_company_read_through:
   current_signals:
     - GDS and VNET provide unusually useful but non-comparable operating ledgers. At Q1 2026 GDS reported 1,538 MW in service and 77.3% utilized area, while VNET reported 907 wholesale MW in service and 75.7% utilized MW plus a separate 50,170-cabinet retail fleet. GDS area utilization and VNET wholesale power utilization must not be ranked as the same denominator.
@@ -5472,6 +5674,11 @@ cross_company_read_through:
     - Chennai 1 provides unusually detailed Indian power-chain evidence: 33 MW total IT design with 17 MW live in Building 1, 110 kV onsite GIS fed from two independent substations, 50 MVA N+N transformers, N+N UPS and PDU, N+1 generators, 560,000 liters of diesel, and 48 hours of backup. AdaniConneX still does not disclose site revenue, operating profit, GPU inventory, equipment counts, or OEMs.
     - Nxtra's standalone FY2026 revenue was INR24.3 billion and derived operating result was INR3.84 billion. Its public physical scales do not reconcile: the current homepage says 15 hyperscale sites and 230+ MW, the March 2026 funding release says 14 core sites and about 300 MW, FY2025 sustainability reporting says 220 MW, and current market-page rows sum to 275.2 MW. These are retained as separate date and scope measures rather than one live-capacity answer.
     - EdgeConneX is the private global partner behind the 50:50 AdaniConneX venture. It markets 90+ data centers built or in development in 60+ markets, while its global map says 80+; regional rosters mix direct sites, affiliates, joint ventures, and coming markets. Current standalone revenue, operating profit, capex, debt, live MW, utilization, and GPU inventory are undisclosed.
+    - STT GDC India's current 34 marketed site rows sum to a derived 613.5 MW, reconciling to the rounded 613 MW page counter, but explicit development rows are included and the same page still says 30 facilities. The February 2026 release separately described 30 facilities including development and more than 400 MW, so neither figure is promoted as current energized or utilized load.
+    - STT GDC India generated INR2,747.46 crore of FY2026 income from operations and INR126.03 crore of profit for the year in Tata Communications' equity-method note, derived growth of 17.8% and a 4.6% profit margin. Operating profit, EBITDA, capex, debt, cash flow, utilization, and site-level returns remain undisclosed; the INR7,640.37 crore sum of liabilities is not relabeled as debt.
+    - Chennai 7 provides a useful Indian engineering denominator: 7.2 MW phase-one IT load against about 12.3 MW total facility power, dual 110 kV utility sources, seven 2 MW diesel generators, 240 KL of derived fuel storage for up to 48 hours, and five 430 TR air-cooled chillers. Generator and cooling nameplate sums include redundancy and are not IT capacity or evidence of installed GPUs.
+    - Tata Communications' FY2026 revenue from operations was INR24,802.72 crore, reported EBITDA about INR4,822 crore, and derived EBIT before exceptional items and associate share INR2,297.45 crore. Its 26% equity-method interest means these consolidated figures cannot be used as STT GDC India revenue or operating profit; only INR32.77 crore of associate profit entered the relevant consolidated line.
+    - KKR and Singtel signed to acquire the remaining 82% of STT GDC at an implied S$13.8 billion enterprise value, with announced post-close ownership of 75% and 25%. Singtel's May 2026 results still described completion as due in the second half, so the transaction remains pending in this dataset; enterprise value includes leverage and committed-project capex and is not current revenue or profit.
     - Blackstone's data-center exposure is a capital-and-platform layer rather than equipment revenue: it described a $165 billion current global platform plus an approximately $160 billion future pipeline and expects roughly $100 billion of investment or commitments by end-2026, but private AirTrunk and QTS standalone operating profit remains undisclosed.
     - Infratil provides unusually detailed look-through economics for CDC: FY2026 net revenue was A$533.9 million and EBITDAF A$392.5 million against A$2.1 billion of annual capex and A$4.9 billion of net debt. The new 555 MW contract could lift EBITDAF above A$1 billion in FY2028, but only after a large construction and financing step-up.
     - ABB's Q2 Electrification data-center orders grew at a triple-digit rate, while Siemens Energy booked about EUR2 billion of Grid Technologies data-center orders in the first half; electrical equipment demand is visible before many announced campuses become energized.
