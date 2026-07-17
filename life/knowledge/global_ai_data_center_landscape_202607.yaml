@@ -4225,6 +4225,367 @@ campus_profiles:
         url: https://www.nmlegis.gov/Sessions/26%20Regular/firs/SB0097.PDF
     confidence: high_for_building_count_revised_generation_and_water_plan_medium_for_investment_bounds_low_for_IT_load_and_accelerator_inventory
 
+  - id: dc_qts_global_data_centers_portfolio
+    name: QTS global data-center portfolio
+    record_granularity: global_operator_portfolio_not_one_physical_campus
+    operator: QTS
+    lifecycle_as_of_2026_07_18: mixed_operating_under_development_and_in_consideration
+    location:
+      sustainability_report_company_scope:
+        data_centers_operating_or_under_development_more_than: 75
+        regions: [United_States, Europe]
+        count_boundary: >-
+          The more-than-75 figure counts individual data centers or buildings and
+          cannot be reconciled one-for-one with the public campus/location catalog.
+      public_catalog_reconciliation:
+        WordPress_published_records: 54
+        alternate_language_records_removed: 5
+        physical_campus_or_location_candidates_derived: 49
+        current_visible_catalog_cards: 51
+        duplicate_language_cards_in_current_visible_catalog: 2
+        status_tagged_in_development_physical_candidates: 19
+        status_tagged_in_consideration_physical_candidates: 7
+        status_not_taxonomy_tagged_physical_candidates: 23
+        in_development_locations:
+          - Augusta
+          - Bessemer
+          - Cambois
+          - Cedar_Rapids
+          - Eagle_Mountain
+          - Fayetteville
+          - Hall_County
+          - Hillsboro_3
+          - New_Albany_1
+          - New_Albany_2
+          - Phoenix_2
+          - Phoenix_3
+          - Phoenix_4
+          - Richmond_2
+          - Richmond_3
+          - Richmond_5
+          - South_Dallas
+          - Van_Wert
+          - York_County
+        in_consideration_locations:
+          - Blakely
+          - Calatorao
+          - Clinton
+          - Forssa
+          - Howard_County
+          - Salem_Township
+          - Vimercate
+        status_boundary: >-
+          Untagged records are mostly existing marketed campuses, but absence of a
+          development taxonomy tag is not independently sufficient proof that every
+          building at each campus is operating or fully energized.
+      public_physical_location_candidates:
+        United_States:
+          Alabama: [Bessemer]
+          Arizona: [Phoenix_2, Phoenix_3, Phoenix_4]
+          California: [Sacramento, Santa_Clara]
+          Colorado: [Colorado_Springs, Denver]
+          Florida: [Miami]
+          Georgia: [Atlanta_1, Augusta, Blakely, Fayetteville, Suwanee_1]
+          Illinois: [Chicago]
+          Iowa: [Cedar_Rapids, Clinton]
+          New_Jersey: [East_Windsor, Piscataway]
+          Ohio: [New_Albany_1, New_Albany_2, Van_Wert]
+          Oregon: [Hillsboro_1, Hillsboro_2, Hillsboro_3]
+          Pennsylvania: [Salem_Township]
+          South_Carolina: [York_County]
+          Texas: [Fort_Worth, Hall_County, Howard_County, Irving, San_Antonio, South_Dallas]
+          Utah: [Eagle_Mountain]
+          Virginia: [Ashburn_1, Ashburn_2, Ashburn_3, Ashburn_Moran, Manassas, Richmond_1, Richmond_2, Richmond_3, Richmond_5]
+          candidates_derived: 43
+        Europe:
+          Finland: [Forssa]
+          Italy: [Vimercate]
+          Netherlands: [Eemshaven, Groningen]
+          Spain: [Calatorao]
+          United_Kingdom: [Cambois]
+          candidates_derived: 6
+    portfolio_scale:
+      critical_power_under_customer_contract_2024_gw_more_than: 3
+      status_untagged_marketed_location_capacity_mw:
+        Ashburn_1_more_than: 55
+        Ashburn_2_more_than: 75
+        Ashburn_3_more_than: 80
+        Ashburn_Moran_more_than: 4
+        Atlanta_1_more_than: 278
+        Chicago_more_than: 95
+        Colorado_Springs_more_than: 14
+        Denver_more_than: 160
+        East_Windsor_more_than: 70
+        Fort_Worth_more_than: 70
+        Hillsboro_1_more_than: 20
+        Hillsboro_2_more_than: 180
+        Irving_more_than: 165
+        Manassas_more_than: 190
+        Miami: 2
+        Netherlands_Eemshaven: 20
+        Netherlands_Groningen: 4
+        Piscataway_more_than: 65
+        Richmond_1_more_than: 240
+        Sacramento: 4
+        San_Antonio_more_than: 90
+        Santa_Clara: 7.5
+        Suwanee_1_more_than: 50
+        disclosed_card_capacity_sum_mw_derived: 1938.5
+        boundary: >-
+          Values retain whether the current card says MW-plus. They describe
+          marketed campus critical capacity and do not prove operating,
+          energized, leased, or utilized load at every facility.
+      disclosed_development_examples_mw:
+        Phoenix_2_critical_campus_capacity_more_than: 210
+        Richmond_2_planned: 180
+        Richmond_3_planned: 240
+      disclosed_consideration_example:
+        Blakely_potential_gross_capacity_mw: 1400
+        lifecycle: concept_stage_in_consideration
+      facilities_commissioned_in_US_during_2024: 12
+      portfolio_growth_since_2021_multiple: 9
+      scale_boundary: >-
+        Contracted critical power, the partial sum of current public capacity cards,
+        development plans, and concept-stage gross capacity have different scopes.
+        None is a measured portfolio operating, energized, leased, or utilized load.
+    accelerators:
+      target_customers_and_workloads: [hyperscale, enterprise, federal, AI_high_density_possible]
+      exact_GPU_accelerator_vendors_models_counts_racks_customers_and_site_allocation: undisclosed
+      boundary: Contracted critical MW and AI-ready building design cannot be converted into GPU inventory.
+    electrical_and_cooling:
+      new_build_standard: QTS_Freedom_Design
+      Freedom_design_envelope:
+        modular_power_and_cooling_block_mw: 1.5
+        standard_critical_capacity_mw_range: [36, 72]
+        standard_gross_area_sqft_range: [285000, 570000]
+        power_density_w_per_sqft_up_to: 350
+        prototype_critical_capacity_mw: 48
+        prototype_gross_area_sqft: 334000
+        prototype_data_halls: 4
+        prototype_data_hall_area_sqft: 186500
+        prototype_power_density_w_per_sqft_approximate: 250
+        block_redundancy_per_data_hall_up_to: 8_plus_1
+        optional_topology: distributed_redundant
+      cooling_architecture:
+        water_free_system: low_pressure_pumped_refrigerant
+        water_consumption_for_IT_cooling_once_operational: zero_for_qualifying_Freedom_design
+        economization: outdoor_air_condition_below_return_air_temperature
+        operational_QTS_owned_greenfield_data_centers_with_water_free_design_2024: 27
+        estimated_water_avoided_gallons_per_critical_mw_annually_more_than: 1000000
+        qualifying_Freedom_design_WUE_for_data_center_operations: 0
+      measured_2024_operational_portfolio:
+        average_PUE: 1.40
+        WUE_l_per_kwh: 0.82
+        WUE_year_over_year_reduction_percent: 27
+      energy_2024:
+        total_energy_consumption_mwh: 4075525
+        electricity_consumption_mwh: 4052295
+        purchased_carbon_free_energy_mwh: 489390
+        carbon_free_electricity_utilization_percent:
+          facilities: 83.5
+          QTS_controlled_operations: 100
+          customers: 82.2
+      site_specific_utility_feeds_substations_transformers_switchgear_UPS_backup_generation_CDU_and_OEMs: mostly_undisclosed
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: QTS data-center public catalog WordPress API
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: https://q.com/wp-json/wp/v2/data-centers?per_page=100&orderby=title&order=asc
+      - title: QTS data-center status taxonomy API
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: https://q.com/wp-json/wp/v2/data-center-status?per_page=100
+      - title: 2024 QTS Sustainability Report
+        publisher: QTS
+        date: 2025
+        url: https://qtsdatacenters.com/wp-content/uploads/2025/10/2024-QTS-Sustainability-Report.pdf
+      - title: QTS Freedom Design white paper
+        publisher: QTS
+        date: 2024
+        url: https://qtsdatacenters.com/wp-content/uploads/2024/07/25-0286_IMA_FreedomDesign-Whitepaper_TU_v1.pdf
+      - title: 2026 Mid-Year Investment Perspectives
+        publisher: Blackstone
+        date: 2026-06-30
+        url: https://www.blackstone.com/insights/article/2026-mid-year-investment-perspectives/
+    confidence: high_for_public_roster_reconciliation_contracted_power_design_and_2024_efficiency_metrics_low_for_per_site_operating_load_GPU_inventory_and_electrical_BOM
+
+  - id: dc_qts_irving_texas
+    name: QTS Irving 1 campus
+    record_granularity: six_facility_master_planned_data_center_campus
+    operator: QTS
+    country: US
+    region: Texas
+    locality: Irving_Dallas_metro
+    lifecycle_as_of_2026_07_18: operating_and_expanding
+    location:
+      land_acres: 56
+      facility_addresses:
+        DC1_and_DC2: 6431_Longhorn_Dr_Irving_TX_75063
+        DC3: 6351_Longhorn_Drive_Irving_TX_75063
+        DC4: 6311_Longhorn_Dr_Irving_TX_75063
+        DC5: 6300_Longhorn_Dr_Irving_TX_75063
+        DC6: 6440_Longhorn_Dr_Irving_TX_75063
+      osm_record_status: not_reconciled_to_current_baseline
+    campus_scale:
+      current_critical_campus_capacity_mw_more_than: 165
+      master_planned_facilities: 6
+      DC3_dated_2022_design:
+        facility_area_sqft: 415900
+        data_center_footprint_sqft: 231700
+        planned_critical_capacity_mw: 43
+      scope_boundary: >-
+        The current campus page supports 165 MW-plus and six master-planned
+        facilities. DC3 area and building capacity come from a dated 2022 data
+        sheet and do not establish current energized or utilized load.
+    accelerators:
+      exact_GPU_accelerator_vendors_models_counts_racks_customers_and_density: undisclosed
+    network:
+      carrier_neutral_partners_more_than: 20
+      exchanges: 3
+      fiber_vaults: opposite_side_entries_to_diverse_meet_me_rooms
+      design_redundancy: N_plus_1
+      dual_diverse_fiber_entry: true
+      round_trip_latency_to_Dallas_carrier_hotel_ms_less_than: 2
+      internal_switch_optics_and_fabric_vendors: undisclosed
+    electrical_and_controls:
+      dedicated_onsite_substation: true
+      renewable_power_available: true
+      DC3_green_power_capability: wind_energy
+      environmental_monitoring: temperature_and_humidity_sensors_with_remote_and_onsite_alarms
+      building_management_system: fully_automated_with_remote_indication_and_operation
+      fire_detection: VESDA_above_and_below_raised_floor
+      leak_monitoring: present
+      utility_voltage_transformers_switchgear_UPS_backup_generation_fuel_and_OEMs: undisclosed
+    cooling_and_water:
+      DC3_zero_water_building_technology: true
+      heat_rejection: high_efficiency_pumped_refrigeration_free_cooling
+      economization: air_side
+      measured_PUE_WUE_and_liquid_to_chip_capacity: undisclosed
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: Irving 1 data-center campus
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: https://q.com/data-centers/irving/
+      - title: QTS DFW1 DC3 data sheet
+        publisher: QTS
+        date: 2022
+        url: https://qtsdatacenters.com/wp-content/uploads/2024/07/QTS_DataSheet_DFW1-DC3.pdf
+    confidence: high_for_current_campus_land_capacity_addresses_and_dated_DC3_design_low_for_operating_load_GPU_inventory_and_electrical_BOM
+
+  - id: dc_vantage_global_data_centers_portfolio
+    name: Vantage Data Centers global portfolio
+    record_granularity: global_operator_portfolio_not_one_physical_campus
+    operator: Vantage_Data_Centers
+    lifecycle_as_of_2026_07_18: mixed_operating_under_development_and_announced
+    location:
+      continents_claimed: 5
+      current_published_campuses: 41
+      published_campus_roster:
+        North_America:
+          count: 17
+          campuses: [Ashburn_I, Ashburn_II, Ashburn_III, Fredericksburg, Montreal_I, Montreal_II, Montreal_III, New_Albany, Phoenix, Port_Washington, Quebec_City, Quincy, Reno, Santa_Clara_I, Santa_Clara_II, Santa_Clara_III, Shackelford_County]
+        EMEA:
+          count: 15
+          campuses: [Berlin_I, Berlin_II, Cardiff, Frankfurt_I, Frankfurt_II, Dublin, Johannesburg_I, Johannesburg_II, London_I, London_II, Milan_I, Milan_II, Warsaw, Zurich_I, Zurich_II]
+        APAC:
+          count: 9
+          campuses: [Cyberjaya_I, Cyberjaya_II, Fo_Tan, Johor, Kwai_Chung, Melbourne, On_Lok, Osaka, Taipei]
+    portfolio_scale:
+      published_market_design_or_full_buildout_capacity_mw:
+        North_America:
+          Ashburn: 590
+          Fredericksburg: 192
+          New_Albany: 192
+          Phoenix: 176
+          Port_Washington: 902
+          Quincy: 89
+          Reno: 224
+          Santa_Clara: 216
+          Shackelford_County: 1400
+          Montreal: 91
+          Quebec_City: 86
+          regional_sum_derived: 4158
+        EMEA:
+          Berlin: 88
+          Frankfurt: 112
+          Dublin: 52
+          Milan: 96
+          Warsaw: 48
+          Johannesburg: 100
+          Zurich: 64
+          Cardiff: 148
+          London: 75
+          regional_sum_derived: 783
+        APAC:
+          Melbourne: 64
+          Fo_Tan: 13
+          Kwai_Chung: 14
+          On_Lok: 5
+          Osaka: 68
+          Cyberjaya: 467
+          Johor: 300
+          Taipei: 16
+          regional_sum_derived: 947
+        global_sum_derived: 5888
+      capacity_boundary: >-
+        The regional pages market total capacity by city or project, including
+        operating campuses and projects under development. The derived 5.888 GW
+        is design or full-buildout capacity, not current operating, energized,
+        leased, or utilized load.
+    accelerators:
+      intended_workloads: [hyperscale, cloud, AI, large_scale_liquid_cooled_compute]
+      exact_GPU_accelerator_vendors_models_counts_racks_customers_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      preferred_cooling_model: closed_loop_air_cooled_chillers
+      chiller_redundancy: N_plus_2
+      chilled_water_loop_recharge: near_zero
+      economization: integrated_free_cooling_when_ambient_conditions_allow
+      airflow: CRAH_galleries_on_opposite_sides_outside_data_modules
+      liquid_cooling_readiness:
+        pre_tapped_headers_to_floor: true
+        liquid_to_rack_large_scale: customer_specific
+        direction: liquid_to_chip
+      company_design_WUE_claim: virtually_zero
+      site_specific_PUE_WUE_grid_voltage_substations_transformers_switchgear_UPS_backup_generation_CDU_and_OEMs: mostly_undisclosed
+      North_America_power_partnerships:
+        VoltaGrid_prime_power_gw_more_than: 1
+        Liberty_power_solutions_gw_up_to: 1
+        boundary: Portfolio agreements are not wholly allocated to one campus and do not equal critical IT load.
+    linked_companies:
+      owner_and_operator: [Vantage_Data_Centers]
+      major_investors: [DigitalBridge, Silver_Lake]
+      financial_profile_refs: [company_vantage_data_centers, company_digitalbridge]
+    sources:
+      - title: Global data-center locations
+        publisher: Vantage_Data_Centers
+        date: 2026-07-18_accessed
+        url: https://vantage-dc.com/data-center-locations/
+      - title: North America data-center locations and capacity
+        publisher: Vantage_Data_Centers
+        date: 2026-07-18_accessed
+        url: https://vantage-dc.com/data-center-locations/north-america/
+      - title: EMEA data-center locations and capacity
+        publisher: Vantage_Data_Centers
+        date: 2026-07-18_accessed
+        url: https://vantage-dc.com/data-center-locations/emea/
+      - title: APAC data-center locations and capacity
+        publisher: Vantage_Data_Centers
+        date: 2026-07-18_accessed
+        url: https://vantage-dc.com/data-center-locations/apac/
+      - title: Cooling design
+        publisher: Vantage_Data_Centers
+        date: 2026-07-18_accessed
+        url: https://vantage-dc.com/features/cooling/
+    confidence: high_for_current_roster_capacity_page_sums_and_cooling_architecture_low_for_operating_utilized_capacity_GPU_inventory_and_per_site_equipment
+
   - id: dc_oracle_vantage_frontier_shackelford_texas
     name: Vantage Frontier Stargate campus
     record_granularity: ten_building_AI_data_center_campus
@@ -4967,6 +5328,11 @@ disclosure_gap_register:
   - CyrusOne_per_site_IT_power_utilization_GPU_inventory_and_electrical_cooling_BOM
   - CyrusOne_OSK1_substation_transformer_UPS_generator_cooling_OEMs_PUE_WUE_customer_and_GPU_inventory
   - CyrusOne_Freestone_IT_load_customer_schedule_grid_topology_equipment_and_GPU_inventory
+  - QTS_49_public_location_candidates_to_more_than_75_buildings_complete_reconciliation
+  - QTS_per_campus_operating_energized_leased_utilized_MW_GPU_inventory_and_electrical_BOM
+  - QTS_Irving_165MW_facility_level_energization_UPS_generator_cooling_and_GPU_inventory
+  - Vantage_41_campuses_5888MW_design_to_operating_energized_leased_utilized_capacity_reconciliation
+  - Vantage_per_campus_GPU_inventory_substation_UPS_generator_liquid_cooling_and_equipment_OEMs
 
 next_research_queue:
   campus_enrichment:
@@ -5003,9 +5369,15 @@ next_research_queue:
     - CyrusOne_66_identifiers_operating_development_and_announced_lifecycle_reconciliation
     - CyrusOne_per_site_capacity_GPU_inventory_and_Intelliscale_deployment_verification
     - CyrusOne_OSK1_and_Freestone_power_chain_customer_hardware_and_delivery_status
+    - QTS_49_public_locations_to_more_than_75_buildings_address_coordinate_and_lifecycle_reconciliation
+    - QTS_current_per_campus_operating_energized_leased_utilized_MW_and_GPU_inventory
+    - QTS_Irving_facility_level_power_chain_cooling_performance_customer_and_hardware_inventory
+    - Vantage_41_campuses_5888MW_design_to_operating_energized_leased_utilized_capacity_reconciliation
+    - Vantage_remaining_per_campus_addresses_GPU_inventory_power_chain_and_liquid_cooling_delivery
   company_financials:
     - ByteDance_audited_financials_if_publicly_released
-    - Crusoe_Vantage_VoltaGrid_and_Related_Digital_audited_or_lender_disclosed_financials
+    - Crusoe_QTS_Vantage_VoltaGrid_and_Related_Digital_audited_or_lender_disclosed_financials
+    - DigitalBridge_SoftBank_transaction_closing_and_post_close_reporting
     - AirTrunk_Firmus_and_DayOne_audited_or_lender_disclosed_revenue_operating_profit_and_debt
     - Megaport_latest_results_and_Project_Southgate_contract_economics
     - Evergy_Astra_specific_rate_base_revenue_capex_and_ESA_identity_if_disclosed

@@ -82,6 +82,7 @@ stack_layers:
     - Bharti_Airtel
   private_data_center_and_power_developers:
     - Crusoe
+    - QTS
     - Vantage_Data_Centers
     - VoltaGrid
     - Related_Digital
@@ -92,6 +93,7 @@ stack_layers:
     - Mitsubishi_Corporation
   capital_and_asset_managers:
     - Blackstone
+    - DigitalBridge
     - Infratil
 
 financial_profiles:
@@ -3248,6 +3250,63 @@ financial_profiles:
       - https://assets.airtel.in/nxtra/pdf/Nxtra-Sustainability-Report-2025.pdf
     confidence: high_for_group_and_Nxtra_financials_funding_and_current_network_scale_medium_for_Google_project_role_low_for_per_campus_power_GPU_and_contract_economics
 
+  - id: company_qts
+    company: QTS
+    layer: private_data_center_and_power_developers
+    ownership_status: private_Blackstone_portfolio_company_since_2021_08_31
+    fiscal_baseline:
+      period: latest_publicly_available_as_of_2026_07_18
+      accounting_basis: no_reviewed_current_public_standalone_audited_financial_statements
+      currency: undisclosed
+      revenue: undisclosed
+      operating_income: undisclosed
+      net_income: undisclosed
+      capital_expenditure: undisclosed
+      boundary: >-
+        QTS became private in 2021. Blackstone's acquisition value, platform
+        value, investment commitments, and QTS leasing growth are not QTS
+        standalone revenue, operating profit, or cash capital expenditure.
+    capital_context:
+      Blackstone_acquisition_completed: 2021-08-31
+      acquisition_value_usd_billion_approximate_including_debt: 10
+      owned_megascale_space_sqft_more_than_at_acquisition: 7000000
+    data_center_exposure:
+      roles: [hyperscale_data_center_developer, owner_operator, enterprise_and_federal_colocation]
+      confirmed_campus_refs: [dc_qts_global_data_centers_portfolio, dc_qts_irving_texas]
+      data_centers_operating_or_under_development_more_than_2024: 75
+      critical_power_under_customer_contract_2024_gw_more_than: 3
+      public_physical_location_candidates_derived_2026_07_18: 49
+      portfolio_growth_since_2021_multiple: 9
+      US_facilities_commissioned_in_2024: 12
+      leased_capacity_growth_since_Blackstone_acquisition_multiple_approximate: 15
+      2025_leasing_volume_growth_percent_more_than: 50
+      boundary: >-
+        The public 49-location reconciliation is campus-level and includes
+        operating, development, and consideration records. The more-than-75
+        company count is building-level, while contracted critical power is not
+        energized, leased, or utilized IT load.
+    management_outlook:
+      Blackstone_2026_expectation: another_strong_year_of_leasing_growth
+      quantitative_QTS_revenue_operating_profit_or_capex_guidance: undisclosed
+      owner_global_data_center_platform_value_usd_billion_including_construction: 165
+      owner_future_development_pipeline_usd_billion_approximate: 160
+      outlook_boundary: Owner platform values include more than QTS and are not QTS enterprise value or financial guidance.
+    watch_items:
+      - private_company_financial_opacity
+      - contracted_capacity_conversion_to_energized_leased_and_utilized_load
+      - transmission_substation_transformer_and_generator_delivery
+      - hyperscaler_customer_concentration
+      - construction_and_permitting_execution_across_large_pipeline
+      - energy_water_and_community_constraints
+      - public_campus_roster_to_building_count_reconciliation
+    sources:
+      - https://qtsdatacenters.com/wp-content/uploads/2025/10/2024-QTS-Sustainability-Report.pdf
+      - https://q.com/wp-json/wp/v2/data-centers?per_page=100&orderby=title&order=asc
+      - https://www.blackstone.com/news/press/blackstone-funds-complete-acquisition-of-qts-realty-trust/
+      - https://www.blackstone.com/insights/article/2026-mid-year-investment-perspectives/
+      - https://www.blackstone.com/pattern-recognition/
+    confidence: high_for_public_portfolio_metrics_transaction_and_owner_growth_signals_low_for_standalone_financials_operating_load_and_site_economics
+
   - id: company_blackstone
     company: Blackstone
     layer: capital_and_asset_managers
@@ -3290,6 +3349,13 @@ financial_profiles:
         - dc_humain_airtrunk_saudi_campus
         - dc_firmus_project_southgate_australia
         - dc_blackstone_google_tpu_cloud_us_portfolio
+        - dc_qts_global_data_centers_portfolio
+        - dc_qts_irving_texas
+      QTS_transaction:
+        acquisition_completed: 2021-08-31
+        transaction_value_usd_billion_approximate_including_debt: 10
+        owned_megascale_space_sqft_more_than_at_acquisition: 7000000
+        standalone_current_revenue_and_operating_profit: undisclosed
       AirTrunk_transaction:
         enterprise_value_aud_billion_more_than: 24
         acquisition_status: completed_by_2025_01_official_portfolio_update
@@ -3305,6 +3371,7 @@ financial_profiles:
         future_development_pipeline_usd_billion_approximate: 160
         expected_invest_or_commit_by_end_2026_usd_billion_approximate: 100
         QTS_leased_capacity_growth_since_acquisition_multiple_approximate: 15
+        QTS_2025_leasing_volume_growth_percent_more_than: 50
       Google_TPU_cloud_JV:
         Blackstone_initial_equity_commitment_usd_billion: 5
         initial_capacity_mw: 500
@@ -3329,11 +3396,99 @@ financial_profiles:
       - https://www.sec.gov/Archives/edgar/data/1393818/000119312526082531/d48618d10k.htm
       - https://www.sec.gov/Archives/edgar/data/1393818/000119312526171788/d60443dex991.htm
       - https://www.blackstone.com/insights/article/2026-mid-year-investment-perspectives/
+      - https://www.blackstone.com/pattern-recognition/
+      - https://www.blackstone.com/news/press/blackstone-funds-complete-acquisition-of-qts-realty-trust/
       - https://www.blackstone.com/insights/article/behind-the-deal-airtrunk/
       - https://www.blackstone.com/news/press/blackstone-announces-joint-venture-with-google-to-create-new-tpu-cloud/
       - https://www.blackstone.com/news/press/humain-and-blackstone-backed-airtrunk-announce-partnership-to-build-state-of-the-art-data-centers-in-the-kingdom-of-saudi-arabia/
       - https://firmus.co/newsroom/firmus-secures-us10-billion-financing-led-by-blackstone-and-coatue-to-scale-energy-efficient-ai-infrastructure
     confidence: high_for_company_financials_AUM_transaction_and_announced_platform_metrics_low_for_private_platform_revenue_and_operating_profit
+
+  - id: company_digitalbridge
+    company: DigitalBridge_Group
+    layer: capital_and_asset_managers
+    ownership_status: >-
+      publicly_listed_as_of_2026_07_18_with_SoftBank_all_cash_acquisition_agreement_stockholder_approved_but_not_confirmed_closed
+    fiscal_baseline:
+      period: FY2025_ended_2025-12-31
+      accounting_basis: US_GAAP_with_separate_non_GAAP_asset_manager_metrics
+      currency: USD
+      fee_revenue_usd_million: 374.447
+      carried_interest_allocation_reversal_usd_million: -376.174
+      total_revenues_usd_million: 93.959
+      total_expenses_usd_million: 185.451
+      operating_income: not_presented_as_a_separate_GAAP_subtotal
+      income_from_continuing_operations_before_tax_usd_million: -17.034
+      income_from_continuing_operations_usd_million: -22.742
+      consolidated_net_income_loss_usd_million: -27.069
+      net_income_attributable_to_DigitalBridge_usd_million: 141.874
+      net_income_attributable_to_common_stockholders_usd_million: 83.233
+      fee_earning_equity_under_management_usd_billion: 41.0
+      comparison_boundary: >-
+        Carried-interest reversals and noncontrolling-interest allocations can
+        make total revenue, consolidated net income, and parent-attributable net
+        income move in different directions. These asset-manager results do not
+        represent Vantage revenue or data-center operating economics.
+    latest_update:
+      period: Q1_2026_ended_2026-03-31
+      accounting_basis: unaudited_US_GAAP_with_separate_non_GAAP_metrics
+      GAAP_fee_revenue_usd_million: 87.309
+      total_revenues_usd_million: 72.236
+      total_expenses_usd_million: 68.778
+      operating_income: not_presented_as_a_separate_GAAP_subtotal
+      income_from_continuing_operations_before_tax_usd_million: 7.511
+      consolidated_net_income_usd_million: 2.016
+      net_income_attributable_to_DigitalBridge_usd_million: 19.965
+      net_income_attributable_to_common_stockholders_usd_million: 5.305
+      fee_revenue_usd_million_non_GAAP_presentation: 87.5
+      fee_related_earnings_usd_million_non_GAAP: 24.0
+      distributable_earnings_usd_million_non_GAAP: 13.4
+      fee_earning_equity_under_management_usd_billion: 40.8
+      corporate_cash_usd_million: 250
+    data_center_exposure:
+      roles: [digital_infrastructure_asset_manager, Vantage_major_investor, data_center_platform_capital_provider]
+      confirmed_campus_refs:
+        - dc_vantage_global_data_centers_portfolio
+        - dc_oracle_vantage_frontier_shackelford_texas
+        - dc_oracle_vantage_lighthouse_port_washington_wisconsin
+      Vantage_equity_round_completed_2024:
+        led_by: [DigitalBridge, Silver_Lake]
+        completed_equity_investment_usd_billion: 9.2
+        upsize_usd_billion: 2.8
+        aggregate_new_investment_over_nine_months_usd_billion_approximate: 11
+        primary_equity_usd_billion_more_than: 7
+        expected_additional_development_enabled_usd_billion: 30
+        Vantage_North_America_and_EMEA_expected_capacity_at_announcement_gw_more_than: 3
+        announcement_scope_boundary: >-
+          The 2024 funding scope predates Vantage's current 41-campus global
+          roster and is not recognized DigitalBridge revenue or capital deployed
+          entirely at Frontier and Lighthouse.
+    pending_transaction:
+      acquirer: SoftBank_Group
+      agreement_date: 2025-12-29
+      consideration_per_common_share_usd: 16
+      stockholder_approval_date: 2026-04-23
+      expected_closing_window_in_filing: H2_2026
+      status_as_of_2026_07_18: pending_no_close_announcement_in_current_official_press_release_archive
+      detailed_Q1_2026_guidance: not_provided_during_transaction_pendency
+    management_outlook:
+      quantitative_full_year_financial_guidance: not_provided_with_Q1_2026_results
+      strategic_direction: digital_infrastructure_at_convergence_of_power_AI_and_connectivity
+    watch_items:
+      - SoftBank_transaction_closing_and_post_close_reporting_changes
+      - carried_interest_and_principal_investment_earnings_volatility
+      - fee_earning_equity_under_management_growth_and_fundraising
+      - Vantage_private_company_financial_and_operating_opacity
+      - data_center_project_financing_power_and_construction_execution
+      - customer_concentration_and_capacity_utilization
+      - asset_manager_metrics_not_comparable_to_operator_revenue_or_profit
+    sources:
+      - https://ir.digitalbridge.com/static-files/fafbdcc2-f05e-48f3-9eab-2fde48c90a9d
+      - https://ir.digitalbridge.com/static-files/0d352f02-4ede-44d6-9951-0594810abe71
+      - https://www.digitalbridge.com/news/2024-06-13-vantage-data-centers-completes-92-billion-equity-investment-led-by-digitalbridge-and-silver-lake
+      - https://ir.digitalbridge.com/news-releases/news-release-details/digitalbridge-stockholders-approve-acquisition-softbank-group
+      - https://ir.digitalbridge.com/news-releases
+    confidence: high_for_company_financials_FEEUM_transaction_status_and_Vantage_funding_low_for_Vantage_site_economics_and_DigitalBridge_fund_level_exposure
 
   - id: company_infratil
     company: Infratil
@@ -3671,6 +3826,10 @@ financial_profiles:
       capital_expenditure: undisclosed
     capital_context:
       largest_North_America_platform_investors: [DigitalBridge, Silver_Lake]
+      completed_equity_investment_2024_usd_billion: 9.2
+      aggregate_new_investment_over_nine_months_2024_usd_billion_approximate: 11
+      primary_equity_2024_usd_billion_more_than: 7
+      expected_additional_development_enabled_2024_usd_billion: 30
       Frontier_investment_usd_billion: 25
       Lighthouse_investment_usd_billion_more_than: 15
       combined_Frontier_and_Lighthouse_investment_usd_billion_more_than: 40
@@ -3678,17 +3837,21 @@ financial_profiles:
     data_center_exposure:
       roles: [hyperscale_data_center_developer, owner_operator, colocation_landlord]
       confirmed_campus_refs:
+        - dc_vantage_global_data_centers_portfolio
         - dc_oracle_vantage_frontier_shackelford_texas
         - dc_oracle_vantage_lighthouse_port_washington_wisconsin
+      current_published_campuses: 41
+      current_published_design_or_full_buildout_capacity_mw_sum_derived: 5888
       two_campus_critical_IT_design_mw_derived: 2302
       two_campus_buildings: 14
       power_partnerships:
         VoltaGrid_prime_power_gw_more_than: 1
         Liberty_power_agreements_gw_up_to: 1
       boundary: >-
-        Design capacity is not energized or leased capacity. The two power
-        agreements cover broader North American activity and are not wholly
-        attributable to Frontier or Lighthouse.
+        The 5.888 GW published-page sum mixes operating campuses and development
+        projects and is not energized or leased capacity. The two power agreements
+        cover broader North American activity and are not wholly attributable to
+        Frontier or Lighthouse.
     management_outlook:
       stance: rapid_AI_hyperscale_expansion_across_power_constrained_markets
       quantitative_revenue_or_profit_guidance: undisclosed
@@ -3702,9 +3865,15 @@ financial_profiles:
     sources:
       - https://vantage-dc.com/data-center-locations/north-america/shackelford-county-tx/
       - https://vantage-dc.com/data-center-locations/north-america/port-washington-wisconsin/
+      - https://vantage-dc.com/data-center-locations/
+      - https://vantage-dc.com/data-center-locations/north-america/
+      - https://vantage-dc.com/data-center-locations/emea/
+      - https://vantage-dc.com/data-center-locations/apac/
+      - https://vantage-dc.com/features/cooling/
       - https://vantage-dc.com/news/openai-oracle-and-vantage-data-centers-announce-stargate-data-center-site-in-wisconsin/
       - https://vantage-dc.com/news/vantage-data-centers-and-voltagrid-establish-partnership-to-deploy-more-than-one-gigawatt-of-power-generation/
       - https://vantage-dc.com/news/vantage-data-centers-and-liberty-energy-announce-strategic-partnership-to-develop-and-operate-one-gigawatt-of-power-solutions-for-next-generation-data-centers/
+      - https://www.digitalbridge.com/news/2024-06-13-vantage-data-centers-completes-92-billion-equity-investment-led-by-digitalbridge-and-silver-lake
     confidence: high_for_public_disclosure_gap_investment_design_capacity_and_partnerships_low_for_revenue_operating_profit_leasing_and_utilization
 
   - id: company_voltagrid
