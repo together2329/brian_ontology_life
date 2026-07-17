@@ -97,6 +97,303 @@ global_market_baseline:
       url: https://www.srgresearch.com/articles/hyperscale-data-center-count-hits-1136-average-size-increases-us-accounts-for-54-of-total-capacity
 
 campus_profiles:
+  - id: dc_odata_aligned_latam_portfolio
+    name: ODATA Aligned Latin America portfolio
+    record_granularity: regional_operator_portfolio_not_one_physical_campus
+    operator: ODATA
+    parent_operator: Aligned_Data_Centers
+    lifecycle_as_of_2026_07_18: operating_and_expanding_with_current_directory_and_announcement_scope_conflicts
+    location:
+      countries: [Brazil, Chile, Colombia, Mexico]
+      current_and_announced_site_ledger_by_country:
+        Brazil:
+          - site_id: SP01
+            city_or_area: Santana_de_Parnaiba
+            lifecycle: operating_current_facility_card
+            IT_power_mw: 19.4
+            total_area_sqm: 22000
+            floor_area_sqm: 13500
+            raised_floor_sqm: 5600
+            average_density_kw_per_rack: 10
+            notes: Tier_III_Design_and_Facility_LEED_Gold_carrier_neutral_and_PIX_IX_br
+          - site_id: SP02
+            city_or_area: Hortolandia
+            lifecycle: operating_and_expandable_current_facility_card
+            IT_power_mw_full_marketed: 40
+            IT_power_mw_contracted: 24
+            IT_power_mw_available: 16
+            total_area_sqm_card: 63000
+            total_area_sqm_narrative: 60000
+            floor_area_sqm: 9600
+            raised_floor_sqm: 5600
+            average_density_kw_per_rack: 8
+            internal_page_conflict: The same current page states 63,000 square meters in its card and 60,000 in its narrative.
+          - site_id: SP03
+            city_or_area: Barueri
+            lifecycle: operating_dedicated_build_to_suit_current_facility_card
+            IT_power_mw: 3.2
+            total_area_sqm: 8030
+            floor_area_sqm: 6220
+            raised_floor_sqm: 1800
+            average_density_kw_per_rack: 6
+            customer: unnamed_large_IT_services_provider
+          - site_id: SP04
+            city_or_area: Osasco_Anhanguera_industrial_area
+            lifecycle: current_page_describes_built_and_operated_after_2025_04_service_target
+            IT_power_mw_full_build: 48
+            total_area_sqm: 36599
+            floor_area_sqm: 27422
+            supported_density_kw_per_rack_up_to: 50
+            cooling: Delta_Cube_air_cooling_with_liquid_cooling_integration
+            renewable_energy_claim_percent_Brazil: 100
+            announced_investment_usd_million_more_than: 450
+          - site_id: RJ01
+            city_or_area: Sao_Joao_de_Meriti
+            lifecycle: operating_current_facility_card
+            IT_power_mw: 23.4
+            total_area_sqm: 20000
+            floor_area_sqm: 19000
+            notes: carrier_neutral_PCI_SOC1_ISO27001
+        Chile:
+          - site_id: ST01
+            city_or_area: Lampa_Santiago
+            lifecycle: operating_current_facility_card
+            IT_power_mw: 28
+            total_area_sqm: 60000
+            floor_area_sqm: 40400
+            address: Avenida_Presidente_Eduardo_Frei_Montalva_km_17
+          - site_id: ST02
+            city_or_area: San_Bernardo_Santiago
+            lifecycle: operating_current_facility_card
+            IT_power_mw: 40.02
+            total_area_sqm: 70000
+            floor_area_sqm: 27000
+            address: Avenida_Lo_Espejo_03474
+        Colombia:
+          - site_id: BG01
+            city_or_area: Bogota_Metropolitan_Free_Trade_Zone
+            lifecycle: operating_current_facility_card
+            IT_power_mw: 14.6
+            total_area_sqm: 6400
+            floor_area_sqm: 5500
+            raised_floor_sqm: 2280
+            supported_density_kw_per_rack_up_to: 10
+            notes: Tier_III_Design_and_Facility_carrier_neutral
+          - site_id: BG02
+            city_or_area: Mosquera_Zona_Franca_de_Occidente
+            lifecycle: under_development_in_current_master_directory
+            IT_power_mw_full_build: 24
+            initial_phase_target: end_2026
+            cooling_planned: Delta_Cube_air_with_liquid_cooling_integration
+          - site_id: BG03
+            city_or_area: Tenjo_Zona_Franca_Metropolitana
+            lifecycle: announced_2024_but_absent_from_current_master_directory
+            IT_power_mw_full_build: 120
+            initial_phase_target: end_2026_in_2024_announcement
+            grid_connection: planned_direct_connection_to_local_transmission_system
+            cooling_planned: Delta_Cube_air_with_liquid_cooling_integration
+            status_boundary: Current construction and delivery status was not located in reviewed primary sources.
+        Mexico:
+          - site_id: QR01
+            city_or_area: Queretaro_VYNMSA_industrial_park
+            lifecycle: operating
+            IT_power_mw_full_build: 32
+            total_area_sqm: 52350
+            floor_area_sqm: 20154.30
+          - site_id: QR02
+            city_or_area: Amexhe_industrial_park_Queretaro_Celaya_corridor
+            lifecycle: operating
+            IT_power_mw_full_build: 30
+            total_area_sqm: 22373.36
+            floor_area_sqft_raw: 132622
+          - site_id: QR03
+            city_or_area: El_Marques_PyME_industrial_park_Queretaro
+            lifecycle: first_72MW_building_launched_2025_04_with_remaining_campus_expanding
+            IT_power_mw_full_build: 300
+            first_building_IT_power_mw_available: 72
+            buildings_full_build: 5
+            total_area_sqm: 275000
+            floor_area_sqm: 116188
+            supported_density_kw_per_rack_up_to: 50
+            anchor_hyperscale_customers_committed: 3
+          - site_id: QR04
+            city_or_area: San_Miguel_de_Allende_Guanajuato
+            lifecycle: first_12MW_phase_operational_since_2025_08_with_24MW_full_build
+            IT_power_mw_full_build: 24
+            IT_power_mw_operational_first_phase: 12
+            current_page_total_area_sqm: 15535
+            current_page_floor_area_sqm: 9693.39
+            supported_density_kw_per_rack_up_to: 50
+            cooling: Delta_Cube_with_closed_loop_water_system_and_liquid_cooling_integration
+            customers: unnamed_hyperscale_customers_already_served
+      current_directory_reconciliation:
+        detailed_facility_cards: 12
+        detailed_card_IT_power_mw_derived: 602.62
+        current_master_directory_additional_site: BG02_under_development
+        current_master_directory_plus_BG02_IT_power_mw_derived: 626.62
+        separate_2024_announcement_additional_site: BG03
+        all_detailed_current_and_announced_full_build_IT_power_mw_derived: 746.62
+        boundary: >-
+          These sums mix operating buildings, available and contracted capacity,
+          operational first phases, under-development facilities and full-build
+          nameplates. They are a public project ledger, not current operating,
+          energized, leased or utilized IT load. BG03 is retained as an announced
+          project even though it is absent from the current master directory.
+      mapped_public_location_candidates:
+        - {source_ref: osm_way_695690131, candidate_site: SP01, latitude: -23.4550221, longitude: -46.9150497, OSM_footprint_area_m2: 21206.671, confidence: high}
+        - {source_ref: osm_way_1385101584, candidate_site: SP02, latitude: -22.9017352, longitude: -47.1939053, OSM_footprint_area_m2: 60248.187, confidence: high}
+        - {source_ref: osm_way_1366376874, candidate_site: RJ01, latitude: -22.7968264, longitude: -43.3573775, OSM_footprint_area_m2: 18894.637, confidence: high}
+        - {source_ref: osm_way_1095945301, candidate_site: ST01_probable, latitude: -33.3074551, longitude: -70.7286969, OSM_footprint_area_m2: 26267.432, confidence: medium}
+        - {source_ref: osm_way_1295098901, candidate_site: ST02_probable, latitude: -33.531463, longitude: -70.7099462, OSM_footprint_area_m2: 73137.173, confidence: medium}
+        - {source_ref: osm_way_1433637473, candidate_site: QR01, latitude: 20.5876966, longitude: -100.1992485, OSM_footprint_area_m2: 35440.605, confidence: high}
+        - {source_ref: osm_way_1448123638, candidate_site: QR02, latitude: 20.5420632, longitude: -100.5771761, OSM_footprint_area_m2: 39261.959, confidence: high}
+        - {source_ref: osm_way_1433631456, candidate_site: QR03, latitude: 20.5346228, longitude: -100.2363227, OSM_footprint_area_m2: 139102.946, confidence: high}
+        - {source_ref: osm_way_1443807295, candidate_site: QR04, latitude: 20.9068441, longitude: -100.6210945, OSM_footprint_area_m2: 83572.956, confidence: high}
+      map_boundary: OSM coordinates and footprint geometry are public map candidates, not operator-certified parcels or gross building areas.
+    accelerators_and_AI:
+      exact_operator_owned_or_customer_GPU_vendor_models_counts_servers_racks_utilization_power_draw_and_site_allocation: undisclosed
+      QR03:
+        intended_workloads: [hyperscale_cloud, artificial_intelligence]
+        anchor_hyperscale_customers_committed: 3
+        exact_customer_names_hardware_and_live_AI_share_of_72MW: undisclosed
+      QR04:
+        intended_workloads: [cloud, AI, ML, HPC]
+        serving_hyperscale_customers: true
+        exact_customer_names_hardware_and_live_AI_share_of_12MW: undisclosed
+      density_evidence:
+        ODATA_Delta_Cube_supported_kw_per_rack_up_to: 50
+        Aligned_parent_AMI_reference_design:
+          air_heat_rejection_kw_per_rack_more_than: 50
+          hybrid_liquid_plus_air_heat_rejection_kw_per_rack_more_than: 350
+          DeltaFlow_liquid_heat_rejection_kw_per_rack_more_than: 600
+          boundary: Parent-platform design ceilings do not prove that these densities are contracted, installed or utilized at every ODATA site.
+      supplier_boundary: >-
+        NVIDIA is an AIP founding partner and Munters manufactures Delta Cube
+        equipment in Brazil, but neither fact proves a particular GPU vendor,
+        model or cooling-unit count at an ODATA customer deployment. No MW-to-GPU
+        conversion is made.
+    electrical_cooling_and_sustainability:
+      QR03_grid_and_power_enablement:
+        energy_partner: Ammper
+        first_phase_energized_mw_February_2025: 200
+        expansion_path_mw: 400
+        expanded_switching_substation_voltage_kv: 400
+        transmission_line_miles: 6.2
+        new_substations: 2
+        campus_full_build_IT_power_mw: 300
+        first_building_IT_power_mw: 72
+        boundary: >-
+          The 200 MW and 400 MW figures describe energization infrastructure;
+          they are not current utilized IT load. The 300 MW campus nameplate and
+          72 MW first building are separate IT-capacity scopes.
+      Delta_Cube:
+        type: source_capture_air_cooling
+        supported_density_kw_per_rack_up_to: 50
+        mixed_density_same_row: true
+        liquid_cooling_integration: true
+        local_manufacturer: Munters
+        manufacturing_location: Araucaria_Parana_Brazil
+        ODATA_deployment_evidence: [SP04, QR03, QR04, BG02_planned, BG03_planned]
+      Aligned_parent_AMI_reference_equipment_not_site_confirmed:
+        UPS_module: {critical_IT_supported_mw: 2, footprint_sqft: 635, factory_assembled_UL_listed: true}
+        generator_module: {rating_mw: 3, enclosed_and_sound_attenuated: true, onsite_fuel_storage_hours: 24}
+        air_cooled_chiller_heat_rejection_module: {rating_mw: 2, waterless_heat_rejection: true}
+        cooling_modes: [Delta_Cube_air, DeltaFlow_liquid, hybrid]
+        boundary: These are current Aligned AMI catalogue ratings, not a confirmed per-site ODATA bill of materials.
+      renewable_energy:
+        Brazil_claim_2024_2025_percent: 100
+        Assurua_IV_wind_farm_nameplate_mw: 212
+        partner_current_name: Serena_Energia
+        ODATA_interest: minority_stake_exact_percentage_undisclosed
+        contracted_volume_increase_2024_percent: 135
+        exact_contracted_mw_generation_allocation_and_hourly_matching: undisclosed
+        boundary: Wind-farm generation nameplate is not ODATA IT capacity and a renewable-use claim does not establish hourly physical matching at every facility.
+      exact_per_site_transformers_switchgear_UPS_batteries_generators_fuel_CDUs_chillers_unit_counts_OEMs_PUE_WUE_water_and_live_liquid_cooled_MW: undisclosed_except_as_noted
+    ownership_and_financial_boundary:
+      direct_parent: Aligned_Data_Centers
+      ODATA_acquisition_completed: 2023-05-22
+      Aligned_seller_group_pending_transaction: Macquarie_Asset_Management_private_infrastructure_funds_and_co_investors
+      proposed_buyer_consortium: [AI_Infrastructure_Partnership, MGX, BlackRock_Global_Infrastructure_Partners]
+      proposed_transaction_equity_acquired_percent: 100
+      proposed_transaction_enterprise_value_usd_billion_approximate: 40
+      current_status_as_of_2026_07_18: pending_no_primary_close_announcement_located
+      standalone_ODATA_and_Aligned_revenue_operating_profit_EBITDA_capex_debt_and_cash_flow: undisclosed
+      financial_profile_refs: [company_aligned_data_centers]
+    linked_companies:
+      operator_and_parent: [ODATA, Aligned_Data_Centers]
+      current_or_pending_capital_partners: [Macquarie_Asset_Management, Mubadala, SDC_Capital_Partners, AI_Infrastructure_Partnership, MGX, BlackRock_Global_Infrastructure_Partners]
+      power_and_renewable_energy: [Ammper, Serena_Energia]
+      cooling_manufacturing: [Munters]
+      exact_customer_and_GPU_suppliers: undisclosed
+      financial_profile_refs: [company_aligned_data_centers]
+    sources:
+      - {title: Current ODATA home and twelve detailed facility cards, publisher: ODATA, date: 2026-07-18_accessed, url: "https://odatacolocation.com/en/"}
+      - {title: Current ODATA data-center master directory including BG02 under development, publisher: ODATA, date: 2026-07-18_accessed, url: "https://odatacolocation.com/en/data-center/"}
+      - {title: QR03 first facility launch and 300 MW campus, publisher: ODATA, date: 2025-04-30, url: "https://odatacolocation.com/en/blog/imprensa/odata-announces-the-launch-of-its-largest-data-center-in-mexico-with-300mw-of-it-capacity/"}
+      - {title: QR03 substation and transmission energization, publisher: ODATA_and_Aligned, date: 2025-02-27, url: "https://aligneddc.com/press-release/odata-announces-energization-of-mexicos-largest-data-center-campus-solving-energy-scarcity-for-the-development-of-data-centers-in-queretaro/"}
+      - {title: QR04 launch and first 12 MW operational phase, publisher: ODATA_and_Aligned, date: 2025-08-14, url: "https://aligneddc.com/press-release/odata-expands-digital-infrastructure-with-fourth-hyperscale-data-center-in-mexico/"}
+      - {title: SP04 48 MW announcement, publisher: ODATA_and_Aligned, date: 2025-03-17, url: "https://aligneddc.com/press-release/odata-announces-new-data-center-in-sao-paulo-brazil/"}
+      - {title: Colombia BG02 and BG03 144 MW expansion, publisher: ODATA_and_Aligned, date: 2024-10-23, url: "https://aligneddc.com/press-release/odata-announces-1-3b-expansion-in-colombia-boosting-digital-development-in-the-country/"}
+      - {title: Delta Cube deployment and local manufacture, publisher: ODATA_and_Aligned, date: 2024-10-03, url: "https://aligneddc.com/press-release/odata-revolutionizes-data-center-cooling-in-latam-with-the-introduction-of-aligneds-delta-cube-proudly-manufactured-in-brazil/"}
+      - {title: Current Aligned Adaptive Modular Infrastructure catalogue, publisher: Aligned_Data_Centers, date: 2026-07-18_accessed, url: "https://aligneddc.com/adaptive-modular-infrastructure/"}
+      - {title: Assurua IV wind-power partnership expansion, publisher: ODATA_and_Aligned, date: 2024-09-25, url: "https://aligneddc.com/blog/odata-expands-bahia-wind-farm-partnership-with-serena-energia-by-135/"}
+      - {title: Proposed Aligned equity acquisition, publisher: Aligned_and_buyer_consortium, date: 2025-10-15, url: "https://aligneddc.com/press-release/ai-infrastructure-partnership-aip-mgx-and-blackrocks-global-infrastructure-partners-gip-to-acquire-all-equity-in-aligned-data-centers/"}
+    confidence: high_for_current_site_cards_QR03_QR04_power_and_cooling_disclosures_medium_for_current_lifecycle_outside_Mexico_and_BG03_status_low_for_GPU_inventory_and_standalone_financials
+
+  - id: dc_odata_qr03_queretaro
+    name: ODATA DC QR03 Querétaro campus
+    record_granularity: multi_building_campus
+    operator: ODATA
+    parent_operator: Aligned_Data_Centers
+    lifecycle_as_of_2026_07_18: first_72MW_facility_operational_or_readily_available_with_four_more_buildings_and_power_expansion_developing
+    location:
+      industrial_park: PyME_Industrial_Park
+      municipality: El_Marques
+      state: Queretaro
+      country: Mexico
+      mapped_public_location_candidate: {source_ref: osm_way_1433631456, latitude: 20.5346228, longitude: -100.2363227, OSM_footprint_area_m2: 139102.946, confidence: high}
+    scale:
+      buildings_full_build: 5
+      total_area_sqm: 275000
+      floor_area_sqm: 116188
+      IT_power_mw_full_build: 300
+      first_building_IT_power_mw: 72
+      first_building_launch_date: 2025-04-30
+      full_build_investment_usd_billion_more_than: 3
+      anchor_hyperscale_customers_committed: 3
+      exact_current_energized_leased_utilized_and_AI_specific_IT_MW: undisclosed
+    accelerators:
+      intended_workloads: [hyperscale_cloud, AI]
+      exact_GPU_vendor_models_counts_servers_racks_ownership_delivery_utilization_and_power_draw: undisclosed
+      boundary: Three committed hyperscale customers and AI-ready density prove demand and design intent, not installed accelerator inventory.
+    electrical:
+      partner: Ammper
+      energized_infrastructure_mw_February_2025: 200
+      expansion_path_mw: 400
+      switching_substation_voltage_kv: 400
+      transmission_line_miles: 6.2
+      new_substations: 2
+      exact_transformer_switchgear_UPS_battery_generator_unit_counts_ratings_OEMs_and_redundancy: undisclosed
+      scope_boundary: Grid-infrastructure MW, campus full-build IT MW and first-building IT MW are separate measures and are not added.
+    cooling:
+      primary_named_system: Delta_Cube
+      mode: source_capture_air_cooling
+      supported_density_kw_per_rack_up_to: 50
+      liquid_cooling_integration: seamless
+      hybrid_air_liquid_supported: true
+      exact_Delta_Cube_CDU_chiller_pump_heat_exchanger_unit_counts_live_liquid_cooled_MW_PUE_WUE_and_water: undisclosed
+    financial_and_delivery:
+      announced_investment_usd_billion_more_than: 3
+      announced_energization_and_construction_investment_usd_billion_snapshot: 3.3
+      exact_incurred_capex_debt_customer_contract_value_rent_revenue_operating_profit_and_return_on_invested_capital: undisclosed
+    linked_companies: [ODATA, Aligned_Data_Centers, Ammper, Munters]
+    financial_profile_refs: [company_aligned_data_centers]
+    sources:
+      - {title: Current QR03 facility card, publisher: ODATA, date: 2026-07-18_accessed, url: "https://odatacolocation.com/en/blog/data-center/dc-qr03/"}
+      - {title: QR03 first facility launch, publisher: ODATA, date: 2025-04-30, url: "https://odatacolocation.com/en/blog/imprensa/odata-announces-the-launch-of-its-largest-data-center-in-mexico-with-300mw-of-it-capacity/"}
+      - {title: QR03 energization and grid infrastructure, publisher: ODATA_and_Aligned, date: 2025-02-27, url: "https://aligneddc.com/press-release/odata-announces-energization-of-mexicos-largest-data-center-campus-solving-energy-scarcity-for-the-development-of-data-centers-in-queretaro/"}
+    confidence: high_for_published_scale_first_building_grid_and_cooling_medium_for_current_ramp_low_for_GPU_inventory_and_project_economics
+
   - id: dc_ascenty_latam_portfolio
     name: Ascenty Latin America portfolio
     record_granularity: regional_operator_portfolio_not_one_physical_campus
@@ -11855,6 +12152,14 @@ campus_profiles:
 disclosure_gap_register:
   - exact_global_physical_data_center_count
   - exact_per_campus_GPU_inventory_for_most_hyperscalers
+  - ODATA_12_detailed_cards_BG02_current_directory_and_BG03_announcement_scope_and_lifecycle_reconciliation
+  - ODATA_602_62MW_card_626_62MW_current_directory_and_746_62MW_announced_ledger_to_operating_energized_leased_utilized_IT_load
+  - ODATA_exact_GPU_models_counts_ownership_delivery_utilization_power_draw_customers_and_site_allocation
+  - ODATA_per_site_substation_transformer_switchgear_UPS_battery_generator_CDU_chiller_unit_counts_OEMs_PUE_WUE_water_and_live_liquid_cooled_MW
+  - ODATA_QR03_200MW_energized_400MW_path_300MW_full_build_and_72MW_first_building_scope_reconciliation
+  - Aligned_87_facilities_6_4GW_current_marketing_to_50_units_5GW_2025_transaction_scope_reconciliation
+  - Aligned_and_ODATA_audited_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_and_site_economics
+  - Aligned_USD40_billion_transaction_completion_financing_post_close_ownership_and_governance
   - Ascenty_40_sites_to_exact_building_addresses_coordinates_parcels_ownership_and_27_operating_13_development_lifecycle
   - Ascenty_703MW_current_marketing_rows_350MW_FY2025_ESG_total_power_and_site_level_IT_load_reconciliation
   - Ascenty_Sao_Paulo_interior_19_parent_rows_to_conflicting_Vinhedo_Sumare_child_counts
@@ -12005,6 +12310,13 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
+    - ODATA_12_current_detailed_facility_cards_exact_addresses_coordinates_parcels_ownership_and_building_lifecycle
+    - ODATA_BG02_current_development_and_BG03_announcement_only_construction_permit_grid_and_end_2026_delivery_status
+    - ODATA_602_62MW_cards_626_62MW_current_directory_and_746_62MW_announced_ledger_to_operating_energized_leased_utilized_IT_load
+    - ODATA_QR03_remaining_four_buildings_400MW_power_path_customer_ramp_and_current_72MW_utilization
+    - ODATA_exact_customer_and_operator_GPU_models_counts_racks_ownership_delivery_utilization_power_draw_and_site_allocation
+    - ODATA_per_site_substation_transformer_switchgear_UPS_battery_generator_CDU_chiller_counts_OEMs_PUE_WUE_water_and_liquid_cooled_MW
+    - ODATA_Assurua_IV_exact_equity_stake_contracted_MW_generation_allocation_hourly_matching_and_Brazil_facility_mapping
     - Ascenty_40_site_exact_ID_address_coordinate_parcel_ownership_and_27_operating_13_development_lifecycle_ledger
     - Ascenty_703MW_marketed_total_power_350MW_FY2025_ESG_and_per_site_energized_leased_utilized_IT_load_reconciliation
     - Ascenty_Sao_Paulo_interior_parent_child_Vinhedo_Sumare_building_count_and_capacity_reconciliation
@@ -12142,6 +12454,10 @@ next_research_queue:
     - NTT_India_exact_GPU_inventory_customer_vs_operator_ownership_live_liquid_cooled_MW_CDU_heat_rejection_and_equipment_OEMs
     - NTT_India_transformer_switchgear_UPS_battery_generator_chiller_counts_and_operating_PUE_WUE_water_per_site
   company_financials:
+    - Aligned_and_ODATA_standalone_audited_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_and_site_economics
+    - Aligned_USD40_billion_transaction_completion_financing_post_close_beneficial_ownership_governance_and_reporting
+    - Aligned_87_facilities_6_4GW_current_scope_to_50_units_5GW_2025_transaction_scope_reconciliation
+    - ODATA_project_investment_envelopes_to_incurred_capex_billed_revenue_operating_profit_lease_terms_and_return_on_capital
     - Ascenty_Mexico_Colombia_entities_revenue_operating_profit_EBITDA_capex_debt_cash_flow_and_site_economics
     - Ascenty_Stellar_JV_current_Brookfield_economic_stake_preferred_terms_distributions_and_governance
     - Ascenty_150MW_prelease_customer_concentration_contract_terms_revenue_commencement_and_cash_conversion
