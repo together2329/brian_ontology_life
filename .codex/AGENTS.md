@@ -39,6 +39,10 @@ Use historical memory indexes when they exist:
 - `life/imports/codex_threads_20260717/deep_analysis.yaml`: comprehensive local analysis of Codex user inputs, including origin/intent statistics, workspace activity, thought evolution, operating loops, principle candidates, and source evidence refs.
 - `life/imports/claude_sessions_20260717/analysis.yaml`: comprehensive local analysis of Claude user inputs and session activity, with direct-input evidence separated from assistant, tool, subagent, and automated transcript rows.
 - `life/imports/agent_sessions_20260717/combined_analysis.yaml`: cross-tool synthesis of Brian's Codex and Claude thought evolution, operating patterns, tool roles, and unresolved loops.
+- `life/imports/agent_sessions_20260717/ontology_manifest.yaml`: canonical entry point for the local Codex/Claude conversation corpus, privacy boundary, significance policy, and generated ontology indexes.
+- `life/imports/agent_sessions_20260717/user_input_semantic_index.jsonl`: every locally imported direct Codex/Claude input as a `UserInputRecord` pointer with session, workspace, topic, intent, Area, and promotion links.
+- `life/imports/agent_sessions_20260717/conversation_session_index.jsonl`: all tool-specific sessions as `ConversationSession` objects with significance, project candidates, and promoted knowledge links.
+- `life/knowledge/evidence_backed_brian_os.yaml`: promoted cross-tool model of Brian's evolving thought threads, understandings, architecture directions, patterns, operating rules, and the decision to make conversation history part of the ontology.
 - `life/imports/codex_threads_20260717/thread_index.jsonl`: merged list of Codex UI/imported threads and history-backed sessions.
 - `life/imports/codex_threads_20260717/user_message_index.jsonl`: raw local user-prompt index with candidate Area and record-type labels.
 - `life/body/body_active_log.yaml`: current BODY status, PT trend, body metrics, protein targets, and recent workout records.
@@ -81,6 +85,8 @@ Always connect new information to the relevant Area:
 - Keep current task state separate from append-only status updates.
 - Keep investment decisions separate from transactions.
 - Keep identity statements separate from raw history and pattern candidates.
+- For conversation-history questions, use the semantic input and session indexes first, then follow promotion evidence links to the exact raw input.
+- Do not infer that an old requested action succeeded unless outcome evidence was separately audited.
 
 ## Personal Assistant Logic
 

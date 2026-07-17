@@ -1,0 +1,328 @@
+schema_version: 1
+id: knowledge_evidence_backed_brian_os
+object_type: KnowledgeBundle
+status: active_with_reviewable_patterns
+updated_at: '2026-07-17'
+title: Evidence-backed Brian OS
+profile_ref: person_brian
+area: MIND
+secondary_areas: [CAREER, FINANCE, BODY, RELATION, MAINTENANCE, FUN]
+project_refs: [project_ai_agent]
+corpus_ref: conversation_corpus_codex_claude_20250731_20260717
+corpus_manifest_ref: life/imports/agent_sessions_20260717/ontology_manifest.yaml
+promotion_map_ref: life/imports/agent_sessions_20260717/promotion_map.yaml
+source_analysis_refs:
+  - life/imports/codex_threads_20260717/deep_analysis.yaml
+  - life/imports/claude_sessions_20260717/analysis.yaml
+  - life/imports/agent_sessions_20260717/combined_analysis.yaml
+
+definition:
+  id: concept_evidence_backed_brian_os
+  object_type: Concept
+  display_name: Evidence-backed Brian OS
+  aliases: [Brian OS, 증거 기반 Brian 운영체계, 개인 온톨로지 운영체계]
+  area: MIND
+  definition: >-
+    Brian의 입력, 경험, 생각, 결정, 행동, 현재 상태와 검증 증거를 서로 연결해
+    기억을 보존하고 판단을 돕고 실행과 피드백까지 이어 주는 로컬 개인 운영체계다.
+    AI는 Brian의 사고와 실행 범위를 넓히지만, 원칙과 최종 판단의 소유자는 Brian이다.
+  primary_links:
+    - thought_thread_agent_memory_to_brian_os_202510_202607
+    - architecture_direction_one_ontology_work_and_life_surfaces
+    - understanding_ai_should_extend_brian_judgment_not_replace_it
+    - rule_conversation_memory_preserve_raw_then_promote
+  evidence_refs:
+    - claude_user_message_eddcc35b-e675-4e1e-ae7b-31d68ecba709_000152
+    - claude_user_message_d32a382a-77a3-466b-b3f8-42e6f09b7703_010561
+    - codex_user_message_019efb57-5dad-7010-aaf9-02f3b97b45dd_005493
+    - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006469
+  assistant_usage:
+    - 질문에 답할 때 현재 상태만 보지 말고 관련 생각, 결정 이유, 행동, 증거와 과거 기록을 따라간다.
+    - 새 대화 기록은 먼저 원문으로 보존하고, 의미 후보와 확정 객체를 분리한다.
+    - Brian의 요청이나 과거 계획을 완료 사실로 바꾸지 않는다.
+
+operating_model:
+  flow: UserInputRecord -> ConversationSession -> ThoughtThread -> Understanding_or_Decision -> OperatingRule_or_Action -> Evidence -> Feedback
+  two_surfaces:
+    work:
+      purpose: 신뢰할 수 있는 반도체 IP·AI agent 개발
+      truth_chain: Intent -> Requirement -> Obligation -> Contract -> Evidence -> Validation -> Decision -> Action
+    life:
+      purpose: 몸, 마음, 관계, 재무, 즐거움과 생활 운영을 연결해 더 나은 판단을 지원
+      truth_chain: Experience_or_Fact -> CurrentState -> PatternCandidate -> Decision -> Action -> Outcome
+  shared_kernel:
+    - stable IDs and explicit links
+    - raw evidence separated from interpretation
+    - current state separated from history
+    - human-owned decisions and reviewable AI inference
+    - fresh evidence before closure
+    - lightweight local files before new infrastructure
+
+thought_threads:
+  - id: thought_thread_agent_memory_to_brian_os_202510_202607
+    object_type: ThoughtThread
+    date: '2026-07-17'
+    area: MIND
+    secondary_areas: [CAREER, FINANCE, BODY, RELATION, MAINTENANCE, FUN]
+    topic: Agent memory에서 증거 기반 Brian OS로의 진화
+    summary: >-
+      2025년 말의 문맥 기억·압축 질문이 2026년의 지속 세션, 보이는 상태,
+      실제 환경 테스트, requirement-evidence 추적, 의사결정 가능한 ontology를 거쳐
+      개인의 삶 전체를 다루는 로컬 운영체계로 확장되었다.
+    conversation_flow:
+      - period: 2025-10_to_2025-12
+        movement: 기계적 망각과 토큰 압축을 넘어 의미와 중요한 문맥을 보존하고 싶음.
+      - period: 2026-03_to_2026-04
+        movement: 모듈, 테스트, 세션, todo, 비동기 입력과 진행 상태가 보이는 agent 환경을 구축.
+      - period: 2026-05_to_2026-06
+        movement: 실제 사용자 환경과 evidence를 중심으로 신뢰 가능한 완료 조건을 설계.
+      - period: 2026-06
+        movement: Requirement를 obligation, contract, evidence와 validator 단위로 원자화.
+      - period: 2026-06_to_2026-07
+        movement: Ontology를 저장소가 아니라 판단과 실행 계층으로 보고 개인 생활까지 확장.
+      - period: 2026-07
+        movement: Codex와 Claude의 모든 직접 입력과 의미 있는 세션을 온톨로지 기억으로 승격.
+    related_concept_refs: [concept_evidence_backed_brian_os]
+    related_project_refs: [project_ai_agent]
+    source_refs:
+      - claude_user_message_eddcc35b-e675-4e1e-ae7b-31d68ecba709_000152
+      - claude_user_message_30130dfb-fae6-4af5-b5ff-1a7f178a05da_000301
+      - claude_user_message_d32a382a-77a3-466b-b3f8-42e6f09b7703_010561
+      - codex_user_message_019efb57-5dad-7010-aaf9-02f3b97b45dd_005493
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006469
+    confidence: high
+    needs_user_review: false
+
+  - id: thought_thread_visible_persistent_agent_environment_202603_202604
+    object_type: ThoughtThread
+    date: '2026-04-18'
+    area: CAREER
+    secondary_areas: [MIND]
+    topic: 지속 가능하고 상태가 보이는 agent 운영 환경
+    summary: 세션, todo, project tree, approval, async input과 역할 분리를 통해 작업 상태가 보이고 재시작 뒤에도 이어지는 환경을 원했다.
+    related_concept_refs: [concept_evidence_backed_brian_os]
+    related_project_refs: [project_ai_agent]
+    source_refs:
+      - claude_user_message_cd95e2d8-13db-42dd-a980-512e16132479_002598
+      - claude_user_message_93e135ca-2d64-48ec-854b-ae5a24ac222e_003478
+      - claude_user_message_53706208-a697-4dcf-a7e2-6889f54d8f3e_004438
+    confidence: high
+    needs_user_review: false
+
+understandings:
+  - id: understanding_completion_requires_fresh_traceable_evidence
+    object_type: Understanding
+    date: '2026-07-17'
+    area: CAREER
+    statement: 완료는 파일 존재나 AI의 주장으로 결정하지 않고, 현재 결과에 연결된 재현 가능하고 추적 가능한 증거로 확인한다.
+    brian_wording_ko: 기본으로 evidence로 가는 게 맞다. 실제 사용 환경에 대한 테스트를 계속해야 한다.
+    status: active_understanding
+    related_thread_ref: thought_thread_agent_memory_to_brian_os_202510_202607
+    related_concept_refs: [concept_evidence_backed_brian_os]
+    source_refs:
+      - codex_user_message_019e18d8-5339-7343-85e2-d84d6a5d1b81_001084
+      - codex_user_message_019e18d8-5339-7343-85e2-d84d6a5d1b81_001227
+      - claude_user_message_12fc1094-de6a-473a-9b9f-18bfe74ef706_009703
+    confidence: high
+    needs_user_review: false
+
+  - id: understanding_vague_intent_should_become_atomic_traceable_truth
+    object_type: Understanding
+    date: '2026-07-17'
+    area: CAREER
+    statement: 넓은 의도는 requirement, obligation, contract, evidence, validation과 decision의 검토 가능한 작은 진실 단위로 나뉘어야 한다.
+    brian_wording_ko: REQ에서 obligation, contract, evidence가 연결되고 각 구현됨을 확인할 수 있어야 한다.
+    status: active_understanding
+    related_thread_ref: thought_thread_agent_memory_to_brian_os_202510_202607
+    related_concept_refs: [concept_evidence_backed_brian_os]
+    source_refs:
+      - claude_user_message_12fc1094-de6a-473a-9b9f-18bfe74ef706_009703
+      - codex_user_message_019e8b3d-eb18-7c21-83d3-c959d41844ae_003362
+      - codex_user_message_019f4408-5eb4-7c20-b8f9-d2a64c2a306a_006120
+    confidence: high
+    needs_user_review: false
+
+  - id: understanding_ai_should_extend_brian_judgment_not_replace_it
+    object_type: Understanding
+    date: '2026-07-17'
+    area: MIND
+    statement: AI의 역할은 Brian의 사고, 조사, 기억과 실행 능력을 확장하는 것이며 원칙과 최종 판단을 대신 소유하는 것이 아니다.
+    brian_wording_ko: AI를 활용해 내 Full Power를 쓰고 싶고, 나를 위한 personal ontology agent가 필요하다.
+    status: interpretation_candidate
+    related_thread_ref: thought_thread_agent_memory_to_brian_os_202510_202607
+    related_concept_refs: [concept_evidence_backed_brian_os]
+    source_refs:
+      - codex_user_message_019f0bbf-68b5-7f90-a587-772743e75a62_005673
+      - claude_user_message_d32a382a-77a3-466b-b3f8-42e6f09b7703_010561
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006464
+    confidence: medium_high
+    needs_user_review: true
+
+architecture_directions:
+  - id: architecture_direction_one_ontology_work_and_life_surfaces
+    object_type: ArchitectureDirection
+    date: '2026-07-17'
+    area: MIND
+    secondary_areas: [CAREER, FINANCE, BODY, RELATION, MAINTENANCE, FUN]
+    project_ref: project_ai_agent
+    title: 하나의 증거 기반 커널과 업무·생활 두 적용면
+    statement: 업무와 생활에 별도 기억 시스템을 만들기보다 공통 객체·링크·증거 원칙을 공유하고 도메인별 화면과 규칙을 둔다.
+    rationale: 반도체 IP에서 발전한 추적성과 결정-행동 모델이 개인 기록에도 반복적으로 적용되고 있다.
+    implementation_direction:
+      - UserInputRecord와 ConversationSession을 공통 기억 입구로 사용한다.
+      - Work는 requirement-contract-evidence를, Life는 state-pattern-decision-outcome을 중심으로 조회한다.
+      - 각 도메인의 확정 현재 상태 파일을 분석 코퍼스보다 우선한다.
+    tradeoffs:
+      - 공통 커널은 중복을 줄이지만 모든 도메인을 같은 세부 스키마로 강제하면 복잡해질 수 있다.
+      - 자동 승격은 편하지만 정체성과 투자 원칙을 과도하게 확정할 위험이 있다.
+    source_refs:
+      - claude_user_message_d32a382a-77a3-466b-b3f8-42e6f09b7703_010561
+      - codex_user_message_019efb57-5dad-7010-aaf9-02f3b97b45dd_005493
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006469
+    status: active_direction
+    confidence: high
+    needs_user_review: false
+
+  - id: architecture_direction_llm_judgment_with_deterministic_boundaries
+    object_type: ArchitectureDirection
+    date: '2026-07-17'
+    area: CAREER
+    secondary_areas: [MIND]
+    project_ref: project_ai_agent
+    title: LLM 판단과 결정적 검증 경계의 결합
+    statement: 해석과 해결책 탐색은 LLM에 넓게 맡기되 truth, permission, ownership, validation과 completion은 명시적 규칙과 증거로 닫는다.
+    rationale: 스크립트가 모든 판단을 통제하면 경직되고, LLM의 자신감만 믿으면 거짓 완료가 생긴다.
+    implementation_direction:
+      - LLM에는 원칙, 목표, 현재 상태와 도구를 제공한다.
+      - validator는 freshness, provenance, contract pass, permission과 required closure를 확인한다.
+      - 실패와 불확실성은 숨기지 않고 FeedbackRecord나 open loop로 남긴다.
+    tradeoffs:
+      - 경계가 너무 많으면 유지 비용이 커지고, 너무 적으면 신뢰성이 떨어진다.
+    source_refs:
+      - claude_user_message_fb9fcc45-d9af-4c68-844a-cb142ff66f54_010211
+      - codex_user_message_019e18d8-5339-7343-85e2-d84d6a5d1b81_001084
+    status: active_direction
+    confidence: high
+    needs_user_review: false
+
+pattern_candidates:
+  - id: pattern_mechanism_before_trust
+    object_type: PatternCandidate
+    statement: Brian은 완성도 높은 설명만 받기보다 기억, 상태, 구조와 root cause를 직접 확인한 뒤 신뢰하는 경향이 반복된다.
+    evidence_refs:
+      - codex_user_message_019ad4de-6903-7d40-93b1-51e513d96ffa_000010
+      - claude_user_message_30130dfb-fae6-4af5-b5ff-1a7f178a05da_000301
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006459
+    confidence: high
+    needs_user_review: false
+
+  - id: pattern_real_environment_testing
+    object_type: PatternCandidate
+    statement: 실제 UI, runtime과 사용 환경에서의 동작이 격리된 테스트의 성공보다 더 강한 판단 근거로 사용된다.
+    evidence_refs:
+      - claude_user_message_12fc1094-de6a-473a-9b9f-18bfe74ef706_009549
+      - codex_user_message_019e18d8-5339-7343-85e2-d84d6a5d1b81_001227
+    confidence: high
+    needs_user_review: false
+
+  - id: pattern_connected_records_create_control
+    object_type: PatternCandidate
+    statement: 흩어진 기록이 연결되어 다시 찾을 수 있을 때 명료함과 통제감이 좋아지는 경험이 관찰된다.
+    causality_claimed: false
+    evidence_refs:
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006460
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006461
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006469
+    confidence: medium_high
+    needs_user_review: true
+
+operating_rules:
+  - id: rule_conversation_memory_preserve_raw_then_promote
+    object_type: OperatingRule
+    statement: 모든 직접 입력과 세션 문맥은 로컬 원문 인덱스로 보존하고, 반복되거나 명확한 의미만 증거 링크와 함께 온톨로지 객체로 승격한다.
+    applies_when: [new_agent_input_import, session_history_refresh, memory_promotion]
+    recommended_actions:
+      - 원문, 분석 후보, 승격 객체를 서로 다른 파일 또는 필드로 분리한다.
+      - assistant, tool, subagent 출력을 Brian의 직접 발화로 합치지 않는다.
+      - 한 번의 요청을 실제 완료 결과로 해석하지 않는다.
+      - 정체성 수준의 해석은 needs_user_review를 유지한다.
+    derived_from:
+      - decision_promote_agent_session_history_20260717
+      - life/imports/agent_sessions_20260717/promotion_map.yaml
+    confidence: high
+
+  - id: rule_evidence_before_completion
+    object_type: OperatingRule
+    statement: 완료를 보고하거나 상태를 닫기 전에 결과와 직접 연결된 최신 증거를 확인한다.
+    applies_when: [implementation_completion, test_completion, research_claim, ontology_writeback]
+    recommended_actions:
+      - expected outcome과 검증 방법을 먼저 적는다.
+      - 실제 환경에서 재현 가능한 검증을 실행한다.
+      - evidence의 대상 버전과 생성 시점을 확인한다.
+      - 검증하지 못한 항목은 완료 대신 pending 또는 blocked로 남긴다.
+    derived_from:
+      - understanding_completion_requires_fresh_traceable_evidence
+    confidence: high
+
+  - id: rule_parallelize_only_with_clear_boundaries
+    object_type: OperatingRule
+    statement: 병렬 작업은 의존성, 소유 범위, 결과 회수 방법과 각각의 완료 증거가 명확할 때만 사용한다.
+    applies_when: [multi_agent_task, parallel_research, parallel_implementation]
+    recommended_actions:
+      - 공통 선행 조건과 쓰기 충돌을 확인한다.
+      - 각 worker에 bounded deliverable과 evidence를 지정한다.
+      - main agent가 결과를 회수하고 통합 검증한다.
+    derived_from:
+      - thought_thread_visible_persistent_agent_environment_202603_202604
+      - understanding_vague_intent_should_become_atomic_traceable_truth
+    confidence: high
+
+decisions:
+  - id: decision_promote_agent_session_history_20260717
+    object_type: Decision
+    date: '2026-07-17'
+    project_ref: project_ai_agent
+    component_ref: null
+    title: Codex와 Claude 입력·세션 기록을 개인 온톨로지로 승격
+    decision: 모든 직접 user input은 의미 인덱스로 연결하고, 유의미한 session data와 반복된 생각·원칙·결정은 검토 가능한 온톨로지 객체로 승격한다.
+    rationale: 도구별 기록을 단순 archive로 남기지 않고 Brian의 생각 흐름, 판단 이유와 다음 행동에 재사용하기 위해서다.
+    alternatives:
+      - 분석 보고서만 보관하고 온톨로지에는 연결하지 않기
+      - 모든 원문을 하나의 거대한 YAML로 복제하기
+    consequences:
+      - 17854개 직접 입력이 UserInputRecord 의미 인덱스로 조회 가능해진다.
+      - 445개 도구별 세션이 ConversationSession으로 연결된다.
+      - 의미 승격은 promotion policy와 evidence link를 통해 추적된다.
+      - 과거 assistant/tool outcome은 별도 audit 전까지 완료 사실로 사용하지 않는다.
+    source_refs:
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006469
+
+knowledge_interests:
+  - id: knowledge_interest_household_investment_policy
+    object_type: KnowledgeInterest
+    date: '2026-07-15'
+    area: FINANCE
+    secondary_areas: [MIND]
+    topic: AI·메모리 확신을 감당하는 가계 투자 원칙
+    current_interest: AI와 메모리 산업의 장기 기회를 믿으면서도 가격, 집중도, 이익실현, 신규 자금 분산과 thesis invalidation 조건을 명문화하고 싶다.
+    development_direction: 현재 보유·소득의 메모리 산업 상관을 반영한 household investment policy로 별도 확정한다.
+    related_project_refs: []
+    related_concept_refs: [concept_evidence_backed_brian_os]
+    status: open
+    source_refs:
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006234
+    confidence: high
+    needs_user_review: false
+
+retrieval_guidance:
+  - 정확한 발화는 user_input_semantic_index.jsonl의 source_ref를 따라 도구별 raw input index에서 읽는다.
+  - 세션 흐름은 conversation_session_index.jsonl에서 tool, project, date, topic, significance로 찾는다.
+  - 생각이나 원칙의 이유는 promotion_evidence_links.jsonl에서 target_ref를 역조회한다.
+  - BODY, FINANCE, RELATION과 CAREER의 확정 현재 상태는 해당 active log가 이 대화 코퍼스보다 우선한다.
+  - 과거 작업의 실제 성공 여부가 필요하면 assistant/tool transcript outcome audit를 별도로 수행한다.
+
+known_limits:
+  - 이 파일은 Brian의 직접 입력과 세션 문맥을 승격한 것이며 assistant 답변의 정확도나 작업 완료를 검증하지 않는다.
+  - 짧은 입력은 앞뒤 대화 없이 뜻이 불분명할 수 있어 contextual session record로만 남을 수 있다.
+  - 두 도구 사이에 복사된 문맥과 반복 명령이 있어 record count는 unique thought count가 아니다.
+  - current identity로의 자동 승격은 하지 않았다.

@@ -902,6 +902,87 @@ fun_object_types:
       - review_method
 
 import_object_types:
+  ConversationCorpus:
+    purpose: A locally preserved, tool-spanning collection of Brian's direct agent inputs and session metadata.
+    fields:
+      - id
+      - profile_ref
+      - tools
+      - period
+      - direct_input_count
+      - session_count
+      - raw_index_refs
+      - semantic_index_ref
+      - session_index_ref
+      - evidence_link_ref
+      - analysis_refs
+      - privacy
+      - promotion_policy
+      - generated_at
+  ConversationSession:
+    purpose: A session-level ontology object aggregating Brian's inputs without treating assistant or tool output as Brian-authored truth.
+    fields:
+      - id
+      - tool
+      - source_session_id
+      - title_candidate
+      - first_timestamp
+      - last_timestamp
+      - direct_input_count
+      - first_source_ref
+      - last_source_ref
+      - source_input_index_ref
+      - project_path
+      - project_ref_candidate
+      - project_ref_confidence
+      - workspace_group_candidate
+      - area_candidates
+      - topic_candidates
+      - topic_counts
+      - intent_candidates
+      - intent_counts
+      - significance
+      - significance_reasons
+      - promoted_object_refs
+      - raw_session_available
+      - outcome_audit_status
+      - confidence
+      - needs_user_review
+  UserInputRecord:
+    purpose: A semantic pointer to one locally preserved direct-input record; raw text remains in the source index.
+    fields:
+      - id
+      - source_ref
+      - tool
+      - session_ref
+      - timestamp
+      - raw_index_ref
+      - raw_source_line
+      - project_path
+      - project_ref_candidate
+      - project_ref_confidence
+      - workspace_group_candidate
+      - area_candidates
+      - topic_candidates
+      - intent_candidates
+      - input_origin_candidate
+      - preview
+      - promotion_refs
+      - promotion_status
+      - confidence
+      - needs_user_review
+  MemoryPromotion:
+    purpose: A reviewable promotion from one or more user inputs or sessions into a thought, understanding, decision, pattern, rule, or identity candidate.
+    fields:
+      - id
+      - source_refs
+      - target_ref
+      - target_type
+      - relation
+      - rationale
+      - promotion_status
+      - confidence
+      - needs_user_review
   ImportedRecord:
     fields:
       - id
@@ -999,6 +1080,28 @@ import_object_types:
       - parse_status
 
 link_types:
+  input_in_session:
+    from: UserInputRecord
+    to: ConversationSession
+    via: UserInputRecord.session_ref
+  session_in_project:
+    from: ConversationSession
+    to: Project
+    via: ConversationSession.project_ref_candidate
+  input_promoted_to:
+    from: UserInputRecord
+    to: ThoughtThread | Understanding | ArchitectureDirection | KnowledgeInterest | Decision | PatternCandidate | OperatingRule | IdentityCandidate
+    via: MemoryPromotion
+  session_advances_thought:
+    from: ConversationSession
+    to: ThoughtThread | Understanding | ArchitectureDirection
+    via: ConversationSession.promoted_object_refs
+  thought_informs_decision:
+    from: ThoughtThread | Understanding
+    to: Decision | ArchitectureDirection | OperatingRule
+  corpus_contains_session:
+    from: ConversationCorpus
+    to: ConversationSession
   contains:
     from: TimeBlock
     to: Task | Habit | WorkSession | WorkoutSession | Meal | SocialInteraction | EnjoymentActivity | Event
@@ -1146,6 +1249,14 @@ action_types:
     creates: [InvestmentReview]
   import_records:
     creates: [ImportedRecord, ParsedObservation]
+  import_conversation_corpus:
+    creates: [ConversationCorpus, ConversationSession, UserInputRecord]
+    may_create: [MemoryPromotion, EvidenceLink]
+    preserves_raw_by: source_path_and_source_line
+  promote_conversation_memory:
+    uses: [ConversationCorpus, ConversationSession, UserInputRecord, EvidenceLink]
+    creates_or_updates: [MemoryPromotion, ThoughtThread, Understanding, ArchitectureDirection, KnowledgeInterest, Decision, PatternCandidate, OperatingRule, IdentityCandidate]
+    constraint: Preserve raw input separately and require review for identity-level interpretation.
   import_happiness_bundle:
     creates: [HappinessBundle, HappinessTrigger, VisualEvidence, SourcePageIndex]
     preserves_raw_by: source_path_and_sha256
@@ -1181,6 +1292,15 @@ action_types:
     creates_or_updates: [Concept, Task, Issue, Decision, OperationalAction, OperationalState, FeedbackRecord]
 
 query_types:
+  conversation_history:
+    input: tool | session_ref | project_ref | area | topic | date_range
+    uses: [ConversationCorpus, ConversationSession, UserInputRecord, MemoryPromotion]
+  thought_evolution:
+    input: topic | thought_thread_ref | date_range
+    uses: [UserInputRecord, ConversationSession, MemoryPromotion, ThoughtThread, Understanding, ArchitectureDirection, Decision, EvidenceLink]
+  why_operating_rule:
+    input: operating_rule_ref
+    uses: [OperatingRule, Pattern, PatternCandidate, MemoryPromotion, UserInputRecord, ConversationSession, EvidenceLink]
   today_plan:
     uses: [Day, TimeBlock, Task, MoodEntry, OperatingRule]
   task_time_invested:

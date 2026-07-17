@@ -1,0 +1,105 @@
+schema_version: 1
+id: conversation_corpus_codex_claude_20250731_20260717
+object_type: ConversationCorpus
+status: imported_and_promoted_to_ontology
+generated_at: '2026-07-17T18:14:07+09:00'
+profile_ref: person_brian
+title: Brian's local Codex and Claude conversation ontology corpus
+period: 2025-07-31_to_2026-07-17
+tools: [codex, claude]
+direct_input_count: 17854
+session_count: 445
+raw_index_refs:
+  - life/imports/codex_threads_20260717/user_message_index.jsonl
+  - life/imports/claude_sessions_20260717/claude_user_message_index.jsonl
+semantic_index_ref: life/imports/agent_sessions_20260717/user_input_semantic_index.jsonl
+session_index_ref: life/imports/agent_sessions_20260717/conversation_session_index.jsonl
+evidence_link_ref: life/imports/agent_sessions_20260717/promotion_evidence_links.jsonl
+analysis_refs:
+  - life/imports/codex_threads_20260717/deep_analysis.yaml
+  - life/imports/claude_sessions_20260717/analysis.yaml
+  - life/imports/agent_sessions_20260717/combined_analysis.yaml
+promotion_policy: Preserve raw input first; promote explicit or repeated meaning with exact evidence; require review for identity-level interpretation.
+
+scope:
+  direct_input_count: 17854
+  session_count: 445
+  meaningful_session_count: 245
+  contextual_session_count: 200
+  by_tool:
+    codex:
+      direct_inputs: 6469
+      sessions: 177
+    claude:
+      direct_inputs: 11385
+      sessions: 268
+  promoted_object_count: 15
+  promotion_evidence_link_count: 41
+  count_note: Source-record counts include repeated commands and copied context; they are not unique-thought counts.
+
+source_refs:
+  codex_manifest_ref: life/imports/codex_threads_20260717/manifest.yaml
+  codex_raw_input_index_ref: life/imports/codex_threads_20260717/user_message_index.jsonl
+  codex_analysis_ref: life/imports/codex_threads_20260717/deep_analysis.yaml
+  claude_manifest_ref: life/imports/claude_sessions_20260717/manifest.yaml
+  claude_raw_input_index_ref: life/imports/claude_sessions_20260717/claude_user_message_index.jsonl
+  claude_analysis_ref: life/imports/claude_sessions_20260717/analysis.yaml
+  combined_analysis_ref: life/imports/agent_sessions_20260717/combined_analysis.yaml
+
+execution_transcript_inventory:
+  codex:
+    canonical_direct_input_sessions: 177
+    sessions_with_rollout_metadata: 173
+    content_policy: Direct user inputs are indexed; assistant and tool rows are not copied into the ontology corpus.
+  claude:
+    canonical_direct_input_sessions: 268
+    canonical_session_index_ref: life/imports/claude_sessions_20260717/claude_session_index.jsonl
+    canonical_sessions_with_retained_top_level_transcript: 85
+    project_transcript_jsonl_files: 2098
+    project_transcript_rows: 567576
+    auxiliary_transcript_files: 261
+    auxiliary_transcript_rows: 43584
+    auxiliary_transcript_index_ref: life/imports/claude_sessions_20260717/claude_auxiliary_transcript_index.jsonl
+    content_policy: Execution transcripts are retained as metadata inventories because user-role rows can be tool results, delegated prompts, compaction summaries, or automation rather than Brian's direct words.
+
+ontology_outputs:
+  user_input_semantic_index_ref: life/imports/agent_sessions_20260717/user_input_semantic_index.jsonl
+  conversation_session_index_ref: life/imports/agent_sessions_20260717/conversation_session_index.jsonl
+  promotion_map_ref: life/imports/agent_sessions_20260717/promotion_map.yaml
+  promotion_evidence_links_ref: life/imports/agent_sessions_20260717/promotion_evidence_links.jsonl
+  ontology_report_ref: life/imports/agent_sessions_20260717/ontology_report.json
+  promoted_knowledge_ref: life/knowledge/evidence_backed_brian_os.yaml
+  generator_ref: scripts/build_agent_session_ontology.py
+
+object_model:
+  - ConversationCorpus contains the complete local direct-input and session indexes.
+  - UserInputRecord points to raw text without duplicating it into YAML.
+  - ConversationSession aggregates time, workspace, topic, intent, significance, and promoted objects.
+  - MemoryPromotion records why source inputs support a thought, understanding, direction, decision, pattern, rule, or knowledge interest.
+  - EvidenceLink makes each promotion reversible and traceable to the exact direct input.
+
+session_significance_policy:
+  meaningful_when_any:
+    - The session contains at least one input promoted as ontology evidence.
+    - The session contains ten or more direct inputs.
+    - The session contains three or more topic-classified inputs.
+  contextual_otherwise: Short or unclear sessions remain indexed for chronology and neighboring context rather than being discarded.
+  interpretation_boundary: Meaningful is a retrieval heuristic, not a judgment of personal importance or successful outcome.
+
+privacy:
+  processing: local_only
+  external_services_used: false
+  private_records_sent_externally: false
+  raw_text_policy: Raw direct text stays in the tool-specific local JSONL indexes.
+  authorship_policy: Assistant, tool, subagent, and automated transcript rows are not treated as Brian's direct authorship.
+
+outcome_boundary:
+  audit_status: not_audited
+  rule: A request, approval, plan, or test instruction is evidence of intent and activity, not proof that the requested result succeeded.
+
+refresh_command: >-
+  python3 scripts/build_agent_session_ontology.py
+  --codex-dir life/imports/codex_threads_20260717
+  --claude-dir life/imports/claude_sessions_20260717
+  --promotion-map life/imports/agent_sessions_20260717/promotion_map.yaml
+  --output-dir life/imports/agent_sessions_20260717

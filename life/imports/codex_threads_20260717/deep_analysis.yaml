@@ -11,7 +11,7 @@ machine_report_ref: life/imports/codex_threads_20260717/deep_analysis_report.jso
 scope:
   source: /Users/brian/.codex/history.jsonl
   period: 2025-07-31_to_2026-07-17
-  user_input_count: 6462
+  user_input_count: 6469
   session_count: 177
   sessions_with_rollout_metadata: 173
   processing: local_only
@@ -47,7 +47,7 @@ executive_read:
 quantitative_overview:
   activity_concentration:
     may_and_june_2026_messages: 5779
-    may_and_june_share_percent: 89.4
+    may_and_june_share_percent: 89.3
     interpretation: The archive is heavily weighted toward an intensive two-month agent and semiconductor-IP development sprint.
   monthly_messages:
     2025-07: 1
@@ -56,9 +56,9 @@ quantitative_overview:
     2025-12: 56
     2026-05: 2335
     2026-06: 3444
-    2026-07_through_17: 619
+    2026-07_through_17: 626
   text_shape:
-    total_characters: 6072235
+    total_characters: 6072403
     median_characters: 26
     p90_characters: 96
     p99_characters: 15385
@@ -67,7 +67,7 @@ quantitative_overview:
     messages_at_least_5000_characters: 135
     interpretation: Most inputs are compact steering turns, with a small long-tail of pasted transcripts, specifications, and logs.
   origin_candidates:
-    direct_user_input: 5980
+    direct_user_input: 5987
     direct_or_composed_long_input: 146
     pasted_transcript_or_tool_log: 127
     pasted_document_or_long_context: 79
@@ -76,19 +76,19 @@ quantitative_overview:
     delegated_or_automated_task_prompt: 3
     caution: Origin labels are deterministic candidates, not authorship proof.
   intent_candidates_overlap:
-    question_or_exploration: 3162
-    action_request: 968
-    feedback_or_correction: 705
-    decision_or_approval: 455
-    status_or_result_check: 266
+    question_or_exploration: 3166
+    action_request: 969
+    feedback_or_correction: 706
+    decision_or_approval: 456
+    status_or_result_check: 267
     personal_fact_or_experience: 89
-    unclassified: 2360
+    unclassified: 2361
     interpretation: Exploration dominates, but it is repeatedly converted into implementation, correction, decision, and verification turns.
   topic_candidates_overlap:
     semiconductor_ip: 878
     agent_architecture: 856
     verification_evidence: 664
-    ontology_memory: 546
+    ontology_memory: 547
     orchestration_parallelism: 263
     maintenance_admin: 202
     career_learning: 195
@@ -97,13 +97,13 @@ quantitative_overview:
     mind_happiness: 30
     relations_pets: 8
     travel_fun: 3
-    unclassified: 4174
+    unclassified: 4180
     caution: Short commands such as "go ahead" or "push" are context-dependent and therefore often unclassified.
 
 workspace_activity_map:
   - group: common_ai_agent_and_atlas_family
     messages: 3952
-    share_percent: 61.2
+    share_percent: 61.1
     included_workspaces:
       common_ai_agent: 2767
       CLAUDE_ATLAS_TEST: 675
@@ -114,8 +114,8 @@ workspace_activity_map:
     share_percent: 24.1
     activity_read: OAG, RTL/TB generation, MCTP and other IP pilots, contracts, evidence, gates, and wavefront work formed the second major workstream.
   - group: life_ontology_repository
-    messages: 570
-    share_percent: 8.8
+    messages: 573
+    share_percent: 8.9
     activity_read: Historical imports and current BODY, MIND, FINANCE, RELATION, FUN, and identity records were brought into a connected local ontology.
   - group: codex_source_and_agent_framework_experiments
     representative_workspaces: [codex/codex, codex, codex/hermes-agent, brian_coder, gajae-code]
@@ -224,6 +224,7 @@ thought_evolution:
       - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006232
       - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006234
       - codex_user_message_019f65c3-4909-7dc0-b06f-9e834c7baf4c_006293
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006469
     confidence: high
 
 interaction_operating_model:
@@ -339,8 +340,8 @@ personal_domain_read:
 
 open_loops:
   - id: open_canonical_principles
-    description: Decide which recurring principle candidates should be promoted from analysis into Brian's confirmed operating principles.
-    next_review: Ask Brian to confirm, edit, or reject the short principle set.
+    description: Evidence-first completion, bounded parallelism, and raw-then-promote memory rules are now active; remaining interpretation candidates still need Brian review.
+    next_review: Confirm, edit, or reject the AI-extends-Brian and connected-records interpretation candidates.
   - id: open_full_power_system
     description: The Full Power question remains broad; the desired research, book, visual-thinking, and reflection workflow is not yet a single confirmed system.
   - id: open_investment_policy
@@ -348,7 +349,9 @@ open_loops:
   - id: open_mctp_verification
     description: Multiple July inputs indicate that MCTP implementation and verification depth remain a continuing technical priority.
   - id: open_memory_promotion_policy
-    description: Raw history is indexed, but the policy for automatically promoting repeated inputs into confirmed identity, principles, and decisions still needs explicit thresholds and review gates.
+    description: Resolved on 2026-07-17 by the local promotion map, evidence links, and identity-review gate.
+    status: resolved
+    resolution_ref: life/imports/agent_sessions_20260717/promotion_map.yaml
   - id: open_assistant_outcome_audit
     description: This analysis covers user inputs. A separate audit would be required to establish which requested implementations, tests, commits, or research outputs actually succeeded.
 
@@ -361,7 +364,7 @@ retrieval_guidance:
 
 limitations:
   - The topic and intent rules are keyword-based and overlap by design.
-  - The 4174 unclassified topic candidates are mostly short context-dependent steering turns, not evidence that the content lacks meaning.
+  - The 4180 unclassified topic candidates are mostly short context-dependent steering turns, not evidence that the content lacks meaning.
   - Pasted assistant text can resemble Brian-authored statements; origin candidates reduce but do not eliminate this ambiguity.
   - Workspace counts show where conversations occurred, not how much code or successful output each workspace produced.
   - The archive begins sparsely and is not a complete record of Brian's life or all agent activity.

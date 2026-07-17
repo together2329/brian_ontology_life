@@ -3,7 +3,7 @@ status: draft
 profile:
   id: brian
   display_name: Brian
-  updated_at: 2026-07-15
+  updated_at: 2026-07-17
   birth_year: 1989
   birth_date: null
   sex: male
@@ -50,6 +50,20 @@ historical_memory:
     daily_summary_ref: life/imports/obsidian_daily/daily_summary.jsonl
     semantic_entity_catalog_ref: life/entities/semantic_entity_catalog.yaml
     raw_policy: Raw Obsidian files are preserved under raw_data/obsidian/01_Daily and are referenced by path and sha256.
+  agent_conversations:
+    status: imported_and_promoted_to_ontology
+    date_range: 2025-07-31_to_2026-07-17
+    tools: [codex, claude]
+    direct_input_count: 17854
+    session_count: 445
+    meaningful_session_count: 245
+    corpus_manifest_ref: life/imports/agent_sessions_20260717/ontology_manifest.yaml
+    user_input_semantic_index_ref: life/imports/agent_sessions_20260717/user_input_semantic_index.jsonl
+    conversation_session_index_ref: life/imports/agent_sessions_20260717/conversation_session_index.jsonl
+    promotion_map_ref: life/imports/agent_sessions_20260717/promotion_map.yaml
+    promotion_evidence_links_ref: life/imports/agent_sessions_20260717/promotion_evidence_links.jsonl
+    promoted_knowledge_ref: life/knowledge/evidence_backed_brian_os.yaml
+    raw_policy: Tool-specific raw input indexes remain local; assistant, tool, subagent, and automated rows are not treated as Brian-authored truth.
 
 known_context:
   areas:
@@ -62,6 +76,8 @@ known_context:
     - FUN
   knowledge:
     active_thought_threads_ref: life/knowledge/agent_architecture_thoughts.yaml
+    evidence_backed_brian_os_ref: life/knowledge/evidence_backed_brian_os.yaml
+    conversation_corpus_manifest_ref: life/imports/agent_sessions_20260717/ontology_manifest.yaml
     current_interest_refs:
       - knowledge_interest_20260615_agent_memory_architecture
       - knowledge_interest_20260616_agentic_rag_graphrag_personal_memory
@@ -73,7 +89,15 @@ known_context:
     architecture_direction_refs:
       - architecture_direction_20260615_ontology_first_okf_export
       - architecture_direction_20260616_agentic_retrieval_substrate
-    notes: Brian wants the ontology to capture not only facts, but also his evolving knowledge interests, conversation flow, intended development path, and how local ontology-first retrieval maps to Agentic RAG / GraphRAG concepts.
+      - architecture_direction_one_ontology_work_and_life_surfaces
+      - architecture_direction_llm_judgment_with_deterministic_boundaries
+    operating_rule_refs:
+      - rule_conversation_memory_preserve_raw_then_promote
+      - rule_evidence_before_completion
+      - rule_parallelize_only_with_clear_boundaries
+    current_decision_refs:
+      - decision_promote_agent_session_history_20260717
+    notes: Brian wants the ontology to preserve evolving thought and conversation flow, then connect current facts, decisions, actions, evidence, feedback, and identity without treating AI interpretation as unquestionable truth.
   mind:
     active_log_ref: life/mind/mind_active_log.yaml
     current_mood_ref: mood_20260617_low_margin_impatience_ai_reputation_pressure

@@ -1,0 +1,195 @@
+schema_version: 1
+id: memory_promotion_map_agent_sessions_20260717
+object_type: MemoryPromotionSet
+status: active_with_reviewable_interpretations
+updated_at: '2026-07-17'
+profile_ref: person_brian
+source_corpus_ref: conversation_corpus_codex_claude_20250731_20260717
+
+promotion_policy:
+  preserve_raw_first: true
+  assistant_output_is_brian_authored: false
+  request_proves_completion: false
+  thresholds:
+    explicit_decision: May be promoted from one unambiguous direct input.
+    understanding_or_direction: Requires explicit wording or repeated cross-session evidence.
+    operating_pattern: Requires recurrence across sessions, tools, or life/work domains.
+    identity_statement: Remains a candidate until Brian confirms it directly.
+  review_boundary: Confidence describes the source-to-interpretation link, not an irreversible truth about Brian.
+
+promotions:
+  - id: promotion_agent_memory_to_operating_system
+    target_ref: thought_thread_agent_memory_to_brian_os_202510_202607
+    target_type: ThoughtThread
+    relation: traces_evolution
+    rationale: The inputs trace a continuous move from context memory and compression to a personal evidence-backed operating system.
+    source_refs:
+      - claude_user_message_eddcc35b-e675-4e1e-ae7b-31d68ecba709_000152
+      - claude_user_message_30130dfb-fae6-4af5-b5ff-1a7f178a05da_000301
+      - claude_user_message_d32a382a-77a3-466b-b3f8-42e6f09b7703_010561
+      - codex_user_message_019efb57-5dad-7010-aaf9-02f3b97b45dd_005493
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006469
+    confidence: high
+    needs_user_review: false
+
+  - id: promotion_visible_operating_environment
+    target_ref: thought_thread_visible_persistent_agent_environment_202603_202604
+    target_type: ThoughtThread
+    relation: supports
+    rationale: Named sessions, persistent todo state, visible progress, orchestration, and asynchronous input recur as one design thread.
+    source_refs:
+      - claude_user_message_cd95e2d8-13db-42dd-a980-512e16132479_002598
+      - claude_user_message_93e135ca-2d64-48ec-854b-ae5a24ac222e_003478
+      - claude_user_message_53706208-a697-4dcf-a7e2-6889f54d8f3e_004438
+    confidence: high
+    needs_user_review: false
+
+  - id: promotion_completion_requires_evidence
+    target_ref: understanding_completion_requires_fresh_traceable_evidence
+    target_type: Understanding
+    relation: supports
+    rationale: Brian explicitly made evidence the default and repeatedly rejected completion without current, reproducible proof.
+    source_refs:
+      - codex_user_message_019e18d8-5339-7343-85e2-d84d6a5d1b81_001084
+      - codex_user_message_019e8b3d-eb18-7c21-83d3-c959d41844ae_003005
+      - claude_user_message_12fc1094-de6a-473a-9b9f-18bfe74ef706_009703
+    confidence: high
+    needs_user_review: false
+
+  - id: promotion_atomic_truth_traceability
+    target_ref: understanding_vague_intent_should_become_atomic_traceable_truth
+    target_type: Understanding
+    relation: supports
+    rationale: Requirements are repeatedly decomposed into obligations, contracts, evidence, validators, and explicit closure.
+    source_refs:
+      - claude_user_message_12fc1094-de6a-473a-9b9f-18bfe74ef706_009703
+      - codex_user_message_019e8b3d-eb18-7c21-83d3-c959d41844ae_003362
+      - codex_user_message_019f4408-5eb4-7c20-b8f9-d2a64c2a306a_006120
+    confidence: high
+    needs_user_review: false
+
+  - id: promotion_ai_extends_brian
+    target_ref: understanding_ai_should_extend_brian_judgment_not_replace_it
+    target_type: Understanding
+    relation: supports
+    rationale: The recurring Full Power and personal-agent questions frame AI as an extension of Brian's thinking and judgment.
+    source_refs:
+      - codex_user_message_019f0bbf-68b5-7f90-a587-772743e75a62_005673
+      - claude_user_message_d32a382a-77a3-466b-b3f8-42e6f09b7703_010561
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006464
+    confidence: medium_high
+    needs_user_review: true
+
+  - id: promotion_one_ontology_two_surfaces
+    target_ref: architecture_direction_one_ontology_work_and_life_surfaces
+    target_type: ArchitectureDirection
+    relation: supports
+    rationale: The same fact-decision-action-evidence model is deliberately transferred from semiconductor engineering into personal life records.
+    source_refs:
+      - claude_user_message_d32a382a-77a3-466b-b3f8-42e6f09b7703_010561
+      - codex_user_message_019efb57-5dad-7010-aaf9-02f3b97b45dd_005493
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006469
+    confidence: high
+    needs_user_review: false
+
+  - id: promotion_llm_judgment_bounded_by_evidence
+    target_ref: architecture_direction_llm_judgment_with_deterministic_boundaries
+    target_type: ArchitectureDirection
+    relation: supports
+    rationale: Brian asks to delegate more reasoning to the LLM while making evidence validation the hard boundary.
+    source_refs:
+      - claude_user_message_fb9fcc45-d9af-4c68-844a-cb142ff66f54_010211
+      - codex_user_message_019e18d8-5339-7343-85e2-d84d6a5d1b81_001084
+    confidence: high
+    needs_user_review: false
+
+  - id: promotion_real_environment_testing
+    target_ref: pattern_real_environment_testing
+    target_type: PatternCandidate
+    relation: supports
+    rationale: Real UI and runtime tests in the actual operating environment are explicitly preferred over isolated success.
+    source_refs:
+      - claude_user_message_12fc1094-de6a-473a-9b9f-18bfe74ef706_009549
+      - codex_user_message_019e18d8-5339-7343-85e2-d84d6a5d1b81_001227
+    confidence: high
+    needs_user_review: false
+
+  - id: promotion_mechanism_before_trust
+    target_ref: pattern_mechanism_before_trust
+    target_type: PatternCandidate
+    relation: supports
+    rationale: Across tools Brian repeatedly inspects memory, state, architecture, and root causes before accepting a polished result.
+    source_refs:
+      - codex_user_message_019ad4de-6903-7d40-93b1-51e513d96ffa_000010
+      - claude_user_message_30130dfb-fae6-4af5-b5ff-1a7f178a05da_000301
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006459
+    confidence: high
+    needs_user_review: false
+
+  - id: promotion_connected_records_control
+    target_ref: pattern_connected_records_create_control
+    target_type: PatternCandidate
+    relation: associated_with
+    rationale: Brian's inputs associate connected, retrievable records with clarity and a positive sense of control; causality is not claimed.
+    source_refs:
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006460
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006461
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006469
+    confidence: medium_high
+    needs_user_review: true
+
+  - id: promotion_investment_principle_seeking
+    target_ref: knowledge_interest_household_investment_policy
+    target_type: KnowledgeInterest
+    relation: supports
+    rationale: Strong AI and memory conviction is followed by an explicit request for durable investment principles and later diversification.
+    source_refs:
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006234
+    confidence: high
+    needs_user_review: false
+
+  - id: promotion_preserve_raw_then_promote
+    target_ref: rule_conversation_memory_preserve_raw_then_promote
+    target_type: OperatingRule
+    relation: authorizes
+    rationale: Brian explicitly requested that all inputs and meaningful session data become part of the ontology after asking for complete tracking and analysis.
+    source_refs:
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006460
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006461
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006462
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006469
+    confidence: high
+    needs_user_review: false
+
+  - id: promotion_evidence_before_completion_rule
+    target_ref: rule_evidence_before_completion
+    target_type: OperatingRule
+    relation: supports
+    rationale: The evidence-first requirement appears explicitly across tools and multiple engineering phases.
+    source_refs:
+      - codex_user_message_019e18d8-5339-7343-85e2-d84d6a5d1b81_001084
+      - codex_user_message_019e8b3d-eb18-7c21-83d3-c959d41844ae_003005
+      - claude_user_message_12fc1094-de6a-473a-9b9f-18bfe74ef706_009703
+    confidence: high
+    needs_user_review: false
+
+  - id: promotion_bounded_parallelism_rule
+    target_ref: rule_parallelize_only_with_clear_boundaries
+    target_type: OperatingRule
+    relation: supports
+    rationale: Multi-agent execution is consistently framed through dependency, ownership, collection, and verifiable completion.
+    source_refs:
+      - claude_user_message_53706208-a697-4dcf-a7e2-6889f54d8f3e_004438
+      - codex_user_message_019f4408-5eb4-7c20-b8f9-d2a64c2a306a_006120
+    confidence: high
+    needs_user_review: false
+
+  - id: promotion_session_history_decision
+    target_ref: decision_promote_agent_session_history_20260717
+    target_type: Decision
+    relation: directly_authorizes
+    rationale: This input is the explicit decision to promote all inputs and meaningful session metadata into Brian's ontology.
+    source_refs:
+      - codex_user_message_019f6583-9650-7ef0-99da-ed24b839f571_006469
+    confidence: high
+    needs_user_review: false

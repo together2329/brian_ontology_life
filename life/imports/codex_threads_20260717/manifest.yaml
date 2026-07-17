@@ -9,14 +9,14 @@ source_scope:
   session_index:
     path: /Users/brian/.codex/session_index.jsonl
     role: Codex UI and imported-thread metadata
-    rows: 377
-    unique_threads: 367
+    rows: 378
+    unique_threads: 368
   user_history:
     path: /Users/brian/.codex/history.jsonl
     role: Locally stored user prompts
-    messages: 6462
+    messages: 6469
     unique_sessions: 177
-  combined_unique_thread_ids: 540
+  combined_unique_thread_ids: 541
   overlap_between_source_ids: 4
 privacy:
   processing: local_only
@@ -33,6 +33,7 @@ outputs:
   deep_analysis_report_ref: life/imports/codex_threads_20260717/deep_analysis_report.json
   deep_analysis_ref: life/imports/codex_threads_20260717/deep_analysis.yaml
   combined_agent_analysis_ref: life/imports/agent_sessions_20260717/combined_analysis.yaml
+  conversation_ontology_manifest_ref: life/imports/agent_sessions_20260717/ontology_manifest.yaml
   generator_ref: scripts/import_codex_threads.py
   analysis_generator_ref: scripts/analyze_codex_inputs.py
 interpretation_policy:
