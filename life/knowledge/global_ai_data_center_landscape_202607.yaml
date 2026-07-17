@@ -97,6 +97,372 @@ global_market_baseline:
       url: https://www.srgresearch.com/articles/hyperscale-data-center-count-hits-1136-average-size-increases-us-accounts-for-54-of-total-capacity
 
 campus_profiles:
+  - id: dc_iron_mountain_global_data_centers_portfolio
+    name: Iron Mountain Data Centers global portfolio
+    record_granularity: global_operator_portfolio_not_one_physical_campus
+    operator: Iron_Mountain_Data_Centers
+    parent_company: Iron_Mountain
+    lifecycle_as_of_2026_07_18: operating_and_expanding
+    location:
+      year_end_2025_SEC_scope:
+        data_centers: 31
+        global_markets: 21
+        ownership_boundary: directly_owned_or_through_unconsolidated_joint_ventures
+      current_company_marketing_scope:
+        locations_more_than: 30
+        continents: 3
+        gross_square_feet_more_than: 5000000
+        total_developable_capacity_gw_approximate: 1.4
+      current_public_location_roster:
+        North_America:
+          Boston: [BOS_1]
+          Chicago: [CHI_1]
+          Denver: [DEN_1]
+          Kansas_City: [KCM_1]
+          Miami: [MIA_1]
+          New_Jersey: [NJE_1]
+          Ohio: [OHS_1]
+          Western_Pennsylvania: [WPA_1]
+          Phoenix: [AZP_1, AZP_2, AZP_3]
+          Scottsdale: [AZS_1]
+          Northern_Virginia_Manassas: [VA_1, VA_2, VA_3, VA_4, VA_5, VA_6, VA_7, VA_8, VA_9]
+          Richmond_Henrico: [RCH_1, RCH_2, RCH_3, RCH_4]
+        EMEA:
+          Amsterdam: [AMS_1]
+          Frankfurt: [FRA_1, FRA_2]
+          London: [LON_1, LON_2, LON_3]
+          Madrid: [MAD_1]
+        APAC:
+          Bengaluru: [BLR_1]
+          Chennai: [CHN_1, CHN_2]
+          Delhi_NCR: [NCR_1]
+          Hyderabad: [HYD_1]
+          Mumbai: [MUM_1, MUM_2]
+          Pune: [PUN_1]
+          Singapore: [SIN_1]
+      Syntys_minority_JV_public_city_roster:
+        Qatar: [Doha]
+        Kuwait: [Kuwait_City, Shuaiba]
+        Tunisia: [Mghira, Charguia, Manouba, Sidi_Rezig, Sousse]
+        boundary: >-
+          The Ooredoo partnership gives Iron Mountain a minority equity interest
+          in Syntys, formerly MENA Digital Hub. These city labels are not counted
+          as directly operated Iron Mountain facilities, and site MW is undisclosed.
+      roster_boundary: >-
+        The current website mixes operating buildings, expansions, development
+        phases and minority-JV access. Its North America page says 11 strategic
+        markets while displaying 12 location labels; Phoenix and Scottsdale may
+        be grouped differently. Neither website roster is substituted for the
+        dated SEC count of 31 data centers in 21 markets.
+    portfolio_scale:
+      as_of_2025_12_31:
+        operating_portfolio_mw: 488
+        leased_percent_approximate: 97
+        total_potential_capacity_mw: 1340
+        under_construction_or_held_for_development_mw: 852
+        weighted_average_lease_expiration_years: 10.3
+      as_of_2026_Q1:
+        operating_portfolio_mw: 507
+        total_developable_capacity_gw_approximate: 1.4
+        capacity_energizing_or_available_next_24_months_mw: 400
+        capacity_leased_through_2026_04_mw: 32
+      FY2025_new_leases_mw: 63
+      scope_boundary: >-
+        The 1,340 MW SEC total-potential-capacity measure and the current website's
+        approximately 1.4 GW developable-capacity claim have different dates and
+        possibly different scopes. The 400 MW pipeline is not operating capacity.
+    selected_market_and_facility_cards:
+      Bengaluru_BLR_1:
+        lifecycle: operating
+        IT_capacity_mw: 4.1
+        gross_area_sqft: 80000
+        land_acres: 1.9
+        rack_count: 1190
+        power_and_cooling: Tier_III_N_plus_N_UPS_and_distribution_N_plus_1_diesel_two_independent_substations_N_plus_1_chillers_N_plus_2_floor_cooling
+      Chennai_CHN_1_CHN_2:
+        lifecycle: development
+        full_build_capacity_mw: 42.2
+        planned_area_sqft_approximate: 800000
+        land_acres: 4.3
+        buildings: 2
+        data_halls_per_building: 8
+        phases:
+          CHN_1: {capacity_mw: 23.2, expected: 2026}
+          CHN_2: {capacity_mw: 19, expected: 2028}
+      Delhi_NCR_NCR_1:
+        lifecycle: operating_and_scalable
+        gross_area_sqft: 69735
+        potential_capacity_mw: 12
+        power_and_cooling: N_plus_2C_concurrently_maintainable_multiple_N_plus_1_or_N_plus_2_diesel_N_plus_N_UPS_and_distribution_liquid_cooling_option
+      Hyderabad_HYD_1:
+        lifecycle: operating
+        first_buildout_IT_capacity_mw: 5.7
+        gross_area_sqft: 120000
+        data_halls: 7
+        rack_count: 1286
+        power_and_cooling: N_plus_1_design_N_plus_2_refrigerant_underfloor_cooling_N_plus_N_distribution_N_plus_1_diesel_two_independent_substations
+      Mumbai_MUM_1_MUM_2:
+        lifecycle: operating
+        combined_capacity_mw: 8.3
+        combined_area_sqft: 170000
+        phases:
+          MUM_1: {capacity_mw: 2.3, area_sqft: 50000}
+          MUM_2: {capacity_mw: 6, area_sqft: 120000}
+      Pune_PUN_1:
+        lifecycle: operating_and_scalable
+        current_capacity_mw: 1.6
+        potential_capacity_mw: 10
+        gross_area_sqft: 38000
+        rack_count: 532
+        data_halls: 3
+        power_and_cooling: N_plus_N_UPS_and_distribution_dual_rack_feeds_N_plus_1_diesel_N_plus_2_refrigerant_underfloor_cooling
+      Singapore_SIN_1:
+        lifecycle: operating
+        capacity_mw: 7.3
+        gross_area_sqft: 154000
+        gross_area_sqm_approximate: 14200
+        power_redundancy: diverse_feeds_with_2N_and_N_plus_1_designs
+      Amsterdam_AMS_1:
+        lifecycle: operating_and_expanding
+        current_capacity_mw: 13.1
+        current_area_sqm: 17000
+        expansion_capacity_mw: 10
+        expansion_expected: 2027
+        full_build_capacity_mw: 43.1
+        full_build_area_sqm: 30000
+        power_and_cooling: 2N_and_N_plus_1_power_hot_and_cold_aisles_N_plus_1_block_redundant_cooling
+      Frankfurt_FRA_1_FRA_2:
+        lifecycle: operating
+        combined_capacity_mw: 37.6
+        combined_area_sqm: 64500
+        phases:
+          FRA_1_capacity_mw: 27
+          FRA_2_capacity_mw: 10.6
+        ownership_boundary: FRA_1_or_FRA_2_scope_of_AGC_Equity_Partners_JV_requires_reconciliation
+      London_LON_1_LON_2_LON_3:
+        lifecycle: mixed_operating_and_2026_delivery
+        combined_capacity_mw: 61
+        combined_area_sqm: 40000
+        LON_3_expected: 2026
+        exact_current_energized_mw_by_building: undisclosed
+      Madrid_MAD_1:
+        lifecycle: operating_and_planned_expansion
+        current_capacity_mw: 3
+        current_area_sqm: 4000
+        campus_full_build_capacity_mw: 79
+        campus_full_build_area_sqm: 60000
+      Boston_BOS_1:
+        lifecycle: operating_and_scalable
+        current_capacity_mw: 1.2
+        potential_capacity_mw: 3.6
+        gross_area_sqft: 22000
+        power_and_cooling: 2N_generators_UPS_PDUs_and_busway_with_waterless_cooling
+      Denver_DEN_1:
+        lifecycle: operating
+        capacity_mw: 14.4
+        gross_area_sqft: 180000
+        redundancy: N_plus_1
+      Kansas_City_KCM_1:
+        lifecycle: operating
+        capacity_mw: 3.9
+        gross_area_sqft: 50000
+        data_hall_area_sqft: 13000
+        power_and_cooling: 2N_electrical_N_plus_1_cooling_underground_facility
+      Miami_MIA_1:
+        lifecycle: development_expected_2026
+        customer_IT_load_mw: 16
+        redundant_operational_power_mva: 26
+        gross_area_sqft: 150000
+      New_Jersey_NJE_1:
+        lifecycle: operating
+        capacity_mw: 30
+        gross_area_sqft: 830000
+      Ohio_OHS_1:
+        lifecycle: operating
+        capacity_mw: 1.4
+        gross_area_sqft: 44000
+        rack_module_density_kw_up_to: 20
+        power_and_cooling: 2N_generators_and_UPS_with_N_plus_1_chillers_and_CRAHs
+      Western_Pennsylvania_WPA_1:
+        lifecycle: operating
+        capacity_mw: 15.5
+        gross_area_sqft: 330000
+        land_acres: 315
+        underground_depth_ft: 220
+        power_and_cooling: A_and_B_feeds_N_plus_1_with_geothermal_cooling_from_100_acre_underground_reservoir
+      Phoenix_AZP_1_AZP_2_AZP_3:
+        lifecycle: mixed_operating_and_development
+        AZP_1_and_AZP_2_combined_capacity_mw: 89
+        combined_area_sqft_more_than: 1000000
+        land_acres: 39
+        phases:
+          AZP_1: {capacity_mw: 41, area_sqft: 588669, lifecycle: operating}
+          AZP_2: {capacity_mw: 48, area_sqft: 309066, lifecycle: operating}
+          AZP_3: {lifecycle: development, capacity_mw: undisclosed}
+        dated_power_and_cooling_snapshot: AZP_1_and_AZP_2_use_block_redundant_power_and_chillers_with_site_specific_N_plus_1_to_2N_plus_1_topologies
+      Scottsdale_AZS_1:
+        lifecycle: operating
+        capacity_mw: 5.8
+        gross_area_sqft: 121000
+      Richmond_RCH_1_to_RCH_4:
+        lifecycle: development_2027_to_2030
+        land_acres: 66
+        full_build_capacity_mw_more_than: 200
+        full_build_area_sqft_more_than: 1000000
+        first_phase:
+          facility: RCH_1
+          full_build_capacity_mw: 48
+          gross_area_sqft: 364860
+          first_delivery_mw: 18
+          expected: 2027
+      Northern_Virginia_VA_1_to_VA_9:
+        lifecycle: mixed_operating_construction_and_planned
+        land_acres: 142
+        existing_and_planned_area_sqft_more_than: 2000000
+        current_page_existing_and_planned_capacity_mw_more_than: 400
+        FAQ_campus_capacity_mw: 280
+        current_page_facility_status_claim: seven_operational_with_more_coming
+        FAQ_status_claim: five_data_centers_plus_two_under_construction
+        dated_named_phase_snapshot:
+          VA_1: {capacity_mw: 12.4, area_sqft: 167958}
+          VA_2: {capacity_mw: 24, area_sqft: 221578}
+        November_2025_acquisition_planned_capacity_mw: 150
+        reconciliation_boundary: >-
+          The same current page publishes incompatible status and capacity scopes.
+          More than 400 MW appears to include existing and planned capacity, while
+          280 MW may describe a narrower campus phase. Building-level energized
+          capacity must be reconciled before aggregation.
+    accelerators:
+      portfolio_AI_ready_claim: true
+      typical_AI_ready_facility_density_kw_per_rack_range: [12, 50]
+      Virginia_rack_density_pilot_kw: 200
+      reference_design_cooling_ranges_kw_per_rack:
+        active_rear_door_heat_exchanger: [50, 70]
+        direct_to_chip: [50, 200]
+        immersion: [250, 1000]
+      exact_accelerator_vendors_models_counts_racks_customer_ownership_site_allocation_and_utilization: undisclosed
+      boundary: >-
+        The density ranges are portfolio design guidance, not a deployed GPU
+        inventory. The Virginia 200 kW statement is a rack-density pilot and does
+        not identify GPUs. No GPU count is inferred from MW or rack density.
+    electrical_and_cooling:
+      FY2024_portfolio_operating_metrics:
+        facilities_in_reporting_scope: 29
+        leasable_capacity_mw: 416
+        operational_capacity_leased_percent: 96
+        average_PUE: 1.41
+        WUE_l_per_kwh: 0.996
+        customer_IT_load_kwh: 902886680
+        non_IT_load_kwh: 372635170
+        water_consumed_liters: 900334393
+        renewable_electricity_match_percent: 100
+      new_full_capacity_design_targets:
+        PUE_cool_climates_max: 1.3
+        PUE_warm_climates_max: 1.4
+        potable_WUE_water_stressed_cool_climates_l_per_kwh_max: 0.4
+      portfolio_clean_energy_matching_annually_since: 2017
+      sites_tracked_for_24_7_carbon_free_energy_in_2024: 16
+      grid_and_storage_projects:
+        Virginia_BESS_grid_support_potential_mw: 100
+        New_Jersey_battery_scheduled_2027_mw: 12
+        New_Jersey_solar_array_mw: 7
+        London_LON_1_contracted_solar_mw: 5
+        London_LON_2_backup_fuel: hydrotreated_vegetable_oil
+      liquid_cooling_architecture: mixed_air_and_liquid_with_CDU_primary_loop_and_outside_cooler_support
+      metric_boundary: >-
+        The PUE, WUE, water and energy values are the 2024 sustainability-report
+        portfolio scope, not current 2026 site operating values. BESS capacity is
+        potential or scheduled and not an inventory of operating batteries.
+    linked_companies:
+      owner_operator_and_REIT: [Iron_Mountain, Iron_Mountain_Data_Centers]
+      India_legacy_platform: [Web_Werks]
+      joint_venture_partners: [Ooredoo_Syntys, AGC_Equity_Partners]
+      financial_profile_refs: [company_iron_mountain]
+    sources:
+      - title: Data center locations
+        publisher: Iron_Mountain
+        date: 2026-07-18_accessed
+        url: https://www.ironmountain.com/data-centers/locations
+      - title: Data Centers
+        publisher: Iron_Mountain
+        date: 2026-07-18_accessed
+        url: https://www.ironmountain.com/data-centers
+      - title: Form 10-K for year ended 2025-12-31
+        publisher: U.S._SEC
+        date: 2026-02-19
+        url: https://www.sec.gov/Archives/edgar/data/1020569/000102056926000013/irm-20251231.htm
+      - title: Form 10-Q for quarter ended 2026-03-31
+        publisher: U.S._SEC
+        date: 2026-05-07
+        url: https://www.sec.gov/Archives/edgar/data/1020569/000102056926000039/irm-20260331.htm
+      - title: 2024 Data Centers Sustainability Report
+        publisher: Iron_Mountain
+        date: 2025
+        url: https://content.ironmountain.com/-/media/project/iron-mountain/iron-mountain/files/resources/solution-guides/d/data-centers-2024-data-centers-sustainability-report.pdf?sc_lang=en
+      - title: Building at scale - how we deliver accelerated infrastructure
+        publisher: Iron_Mountain
+        date: 2026-07-18_accessed
+        url: https://resources.ironmountain.com/whitepapers/d/data-centers-building-at-scale-how-we-deliver-accelerated-infrastructure
+      - title: AI inferencing infrastructure - four things to look for
+        publisher: Iron_Mountain
+        date: 2026-07-18_accessed
+        url: https://resources.ironmountain.com/whitepapers/d/data-centers-ai-inferencing-infrastructure-4-things-to-look-for
+      - title: Data center location overview
+        publisher: Iron_Mountain
+        date: 2025_snapshot_accessed_2026_07_18
+        url: https://resources.ironmountain.com/solution-guides/d/data-centers-iron-mountain-data-centers-location-overview
+    confidence: high_for_SEC_portfolio_scale_and_current_published_site_headlines_medium_for_roster_lifecycle_and_dated_equipment_details_low_for_site_GPU_inventory_and_exact_live_MW
+
+  - id: dc_iron_mountain_chicago_chi1
+    name: Iron Mountain CHI-1 Chicago data center
+    record_granularity: individual_facility
+    operator: Iron_Mountain_Data_Centers
+    parent_company: Iron_Mountain
+    lifecycle_as_of_2026_07_18: operating_and_expanding
+    location:
+      address: 1680_Touhy_Avenue_Des_Plaines_Illinois_60018_USA
+      market: Chicago
+      country: United_States
+      coordinates: undisclosed_in_reviewed_primary_sources
+    capacity_and_space:
+      total_facility_power_capacity_mw: 56
+      IT_design_capacity_mw: 36
+      immediately_available_IT_capacity_mw: 12
+      gross_area_sqft: 315000
+      land_acres: 13
+      planned_data_halls: 4
+      planned_area_per_data_hall_sqft: 28000
+      boundary: >-
+        Facility power, IT design capacity and immediately available capacity are
+        distinct scopes. The 12 MW figure is not treated as current customer load.
+    racks_and_accelerators:
+      standard_average_density_kw_per_rack: 20
+      maximum_without_liquid_cooling_kw_per_rack: 30
+      liquid_cooling: available_on_request
+      maximum_rack_height_U: 52
+      slab_capacity_lb: 5000
+      exact_rack_count_occupied_racks_liquid_cooled_MW_GPU_vendor_model_count_customer_ownership_and_utilization: undisclosed
+      boundary: No GPU count is inferred from the 36 MW design or rack-density values.
+    electrical_and_cooling:
+      UPS_topology: block_redundant_with_N_plus_1
+      distribution_voltages_V: [415, 208]
+      exact_utility_feeds_substation_voltage_transformer_count_switchgear_generator_count_fuel_runtime_battery_chemistry_and_OEMs: undisclosed
+      exact_numeric_design_or_operating_PUE_WUE_water_consumption_heat_rejection_and_CDU_inventory: undisclosed
+    linked_companies:
+      owner_operator_and_REIT: [Iron_Mountain, Iron_Mountain_Data_Centers]
+      financial_profile_refs: [company_iron_mountain]
+      confirmed_GPU_power_cooling_or_electrical_suppliers: undisclosed
+    sources:
+      - title: Chicago data center
+        publisher: Iron_Mountain
+        date: 2026-07-18_accessed
+        url: https://www.ironmountain.com/data-centers/locations/chicago-data-center
+      - title: Data center location overview
+        publisher: Iron_Mountain
+        date: 2025_snapshot_accessed_2026_07_18
+        url: https://resources.ironmountain.com/solution-guides/d/data-centers-iron-mountain-data-centers-location-overview
+    confidence: high_for_current_capacity_area_rack_density_and_published_power_topology_low_for_GPU_inventory_site_utilization_and_complete_equipment_BOM
+
   - id: dc_ntt_global_data_centers_portfolio
     name: NTT Global Data Centers portfolio
     record_granularity: global_operator_portfolio_not_one_physical_campus
@@ -10080,6 +10446,12 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
+    - Iron_Mountain_31_data_centers_21_markets_to_current_site_IDs_addresses_coordinates_ownership_and_lifecycle_reconciliation
+    - Iron_Mountain_488_MW_year_end_2025_to_507_MW_Q1_2026_operating_capacity_and_1340_MW_to_1_4_GW_scope_reconciliation
+    - Iron_Mountain_per_site_energized_leased_utilized_IT_load_GPU_inventory_liquid_cooled_MW_PUE_WUE_water_and_equipment_OEMs
+    - Iron_Mountain_Manassas_seven_operational_vs_five_plus_two_status_and_more_than_400MW_vs_280MW_scope_reconciliation
+    - Iron_Mountain_CHI1_utility_substation_transformers_switchgear_generators_batteries_PUE_WUE_CDU_live_load_and_GPU_inventory
+    - Iron_Mountain_Syntys_Qatar_Kuwait_Tunisia_exact_facility_roster_MW_ownership_and_lifecycle
     - CoreWeave_remaining_physical_sites_behind_56_AZ_identifiers_and_43_data_centers
     - CoreWeave_current_exact_GPU_count_and_per_site_accelerator_inventory
     - Kenilworth_final_phase_capacity_interconnection_equipment_and_energization
@@ -10176,6 +10548,8 @@ next_research_queue:
     - NTT_India_exact_GPU_inventory_customer_vs_operator_ownership_live_liquid_cooled_MW_CDU_heat_rejection_and_equipment_OEMs
     - NTT_India_transformer_switchgear_UPS_battery_generator_chiller_counts_and_operating_PUE_WUE_water_per_site
   company_financials:
+    - Iron_Mountain_data_center_GAAP_operating_income_depreciation_customer_concentration_and_site_level_returns
+    - Iron_Mountain_project_debt_power_commitments_400MW_delivery_and_Frankfurt_Syntys_Web_Werks_standalone_economics
     - ByteDance_audited_financials_if_publicly_released
     - Crusoe_QTS_Vantage_VoltaGrid_and_Related_Digital_audited_or_lender_disclosed_financials
     - DigitalBridge_SoftBank_transaction_closing_and_post_close_reporting

@@ -74,6 +74,7 @@ stack_layers:
     - HD_Hyundai_Electric
     - Bloom_Energy
   operators_reits_utilities:
+    - Iron_Mountain
     - NTT_DATA_Group
     - China_Telecom
     - China_Mobile
@@ -119,6 +120,147 @@ stack_layers:
     - Tokyo_Century
 
 financial_profiles:
+  - id: company_iron_mountain
+    company: Iron_Mountain
+    layer: operators_reits_utilities
+    ticker: NYSE_IRM
+    ownership_status: public_US_REIT_and_S_and_P_500_constituent
+    fiscal_baseline:
+      period: FY2025_ended_2025_12_31
+      accounting_basis: US_GAAP_with_non_GAAP_adjusted_EBITDA_and_AFFO
+      currency: USD
+      revenue_usd_million: 6901.737
+      operating_income_usd_million: 1163.822
+      operating_margin_percent_derived: 16.86
+      net_income_usd_million: 152.254
+      adjusted_EBITDA_usd_million: 2573.950
+      adjusted_EBITDA_margin_percent_reported: 37.3
+      operating_cash_flow_usd_million: 1339.999
+      capital_expenditures_cash_usd_million: 2271.6
+      capital_spend_accrual_basis_usd_million: 2215.329
+    data_center_exposure:
+      role: global_colocation_hyperscale_and_AI_ready_data_center_operator
+      confirmed_campus_refs: [dc_iron_mountain_global_data_centers_portfolio, dc_iron_mountain_chicago_chi1]
+      year_end_2025_physical_and_contract_metrics:
+        data_centers: 31
+        global_markets: 21
+        operating_portfolio_mw: 488
+        leased_percent_approximate: 97
+        total_potential_capacity_mw: 1340
+        under_construction_or_held_for_development_mw: 852
+        weighted_average_lease_expiration_years: 10.3
+        new_leases_signed_during_2025_mw: 63
+      FY2025_segment_financials:
+        revenue_usd_million: 803.429
+        prior_year_revenue_usd_million: 620.028
+        revenue_growth_percent_derived: 29.58
+        storage_rental_revenue_usd_million: 797.017
+        service_revenue_usd_million: 6.412
+        adjusted_EBITDA_usd_million: 416.326
+        adjusted_EBITDA_margin_percent_reported: 51.8
+        prior_year_adjusted_EBITDA_margin_percent_reported: 45.6
+        growth_capital_expenditure_usd_million: 1746.981
+        recurring_capital_expenditure_usd_million: 20.564
+        GAAP_segment_operating_income: not_disclosed
+      Q1_2026_segment_financials:
+        revenue_usd_million: 254.725
+        prior_year_revenue_usd_million: 173.197
+        revenue_growth_percent_derived: 47.07
+        adjusted_EBITDA_usd_million: 132.763
+        prior_year_adjusted_EBITDA_usd_million: 90.816
+        adjusted_EBITDA_margin_percent_reported: 52.1
+        prior_year_adjusted_EBITDA_margin_percent_reported: 52.4
+        growth_capital_expenditure_usd_million: 408.084
+        recurring_capital_expenditure_usd_million: 3.377
+        GAAP_segment_operating_income: not_disclosed
+      Q1_2026_operating_update:
+        operating_portfolio_mw: 507
+        total_developable_capacity_gw_approximate: 1.4
+        capacity_energizing_or_available_next_24_months_mw: 400
+        capacity_leased_through_2026_04_mw: 32
+        2026_current_backlog_expected_growth_percent_more_than: 25
+        contracted_backlog_incremental_revenue_after_2026_usd_million_more_than: 325
+      customer_boundary: >-
+        Iron Mountain says its customers include the five largest hyperscalers,
+        but it does not identify those customers, their sites, contract values or
+        accelerator ownership. No named hyperscaler-to-campus link is inferred.
+      accounting_boundary: >-
+        The data-center segment discloses adjusted EBITDA but not GAAP operating
+        income. Adjusted EBITDA is not substituted for operating profit, and
+        portfolio MW or lease percentage is not converted into site revenue.
+    capital_structure_and_joint_ventures:
+      data_center_growth_capex_share_of_FY2025_total_accrual_capex_percent_derived: 78.86
+      data_center_project_debt_outstanding_2025_12_31_usd_million:
+        Virginia_3_pre_2026_refinancing: 271.079
+        VA7: 275.314
+        VA6: 210
+        VA4_and_VA5: 208.224
+      Virginia_3_2026_refinancing:
+        original_principal_usd_million: 433
+        maturity_year: 2031
+      Frankfurt_joint_venture:
+        partner: AGC_Equity_Partners
+        Iron_Mountain_equity_interest_percent: 20
+        accounting_method: equity_method
+        carrying_value_2025_12_31_usd_million: 85.156
+        standalone_revenue_operating_profit_debt_and_site_returns: undisclosed
+      Syntys_joint_venture:
+        partner: Ooredoo
+        ownership: minority_equity_interest
+        former_name: MENA_Digital_Hub
+        standalone_revenue_operating_profit_debt_and_site_returns: undisclosed
+      India_integration:
+        platform: Web_Werks
+        operational_integration_effective: 2025-04-01
+        standalone_current_revenue_operating_profit_and_site_returns: undisclosed
+      boundary: >-
+        Project debt balances are financing exposures, not project enterprise
+        values or revenue. The four listed 2025 balances are not claimed to be a
+        complete inventory of data-center debt.
+    latest_company_results:
+      period: Q1_2026_ended_2026_03_31
+      revenue_usd_million: 1936.149
+      operating_income_usd_million: 395.230
+      operating_margin_percent_derived: 20.41
+      net_income_usd_million: 148.999
+      adjusted_EBITDA_usd_million: 707.939
+      adjusted_EBITDA_margin_percent_reported: 36.6
+    management_outlook:
+      FY2026_raised_guidance:
+        revenue_usd_million_range: [7825, 7925]
+        revenue_growth_at_midpoint_percent_approximate: 14
+        adjusted_EBITDA_usd_million_range: [2925, 2965]
+        adjusted_EBITDA_growth_at_midpoint_percent_approximate: 14
+        AFFO_usd_million_range: [1735, 1755]
+        AFFO_per_share_usd_range: [5.79, 5.86]
+      FY2026_capital_expenditure_guidance:
+        total_usd_million: 2200
+        growth_usd_million: 2050
+        recurring_usd_million: 150
+      data_center_capacity_growth: >-
+        Management expects 400 MW to energize or become available over the next
+        24 months against a 507 MW Q1 2026 operating portfolio. Delivery timing,
+        power availability and tenant commissioning therefore drive conversion.
+    watch_items:
+      - data_center_GAAP_operating_income_and_depreciation_not_disclosed
+      - 488_MW_year_end_2025_to_507_MW_Q1_2026_operating_scope_reconciliation
+      - 1340_MW_SEC_potential_to_current_1_4_GW_developable_scope_reconciliation
+      - 400_MW_24_month_delivery_power_interconnection_and_customer_commissioning_execution
+      - high_growth_capex_and_project_debt_refinancing_exposure
+      - data_center_customer_concentration_and_hyperscaler_identity_not_disclosed
+      - per_site_energized_leased_utilized_capacity_revenue_margin_and_return_on_capital_not_disclosed
+      - Web_Werks_Syntys_and_Frankfurt_JV_standalone_economics_not_disclosed
+      - exact_GPU_inventory_ownership_utilization_and_site_allocation_not_disclosed
+      - annual_clean_energy_matching_does_not_establish_hourly_carbon_free_operation
+    sources:
+      - https://www.sec.gov/Archives/edgar/data/1020569/000102056926000013/irm-20251231.htm
+      - https://www.sec.gov/Archives/edgar/data/1020569/000102056926000039/irm-20260331.htm
+      - https://investors.ironmountain.com/news/news-details/2026/Iron-Mountain-Reports-First-Quarter-2026-Results/default.aspx
+      - https://www.sec.gov/Archives/edgar/data/1020569/000102056926000036/ironmountainq12026earnin.htm
+      - https://www.ironmountain.com/data-centers/locations
+      - https://content.ironmountain.com/-/media/project/iron-mountain/iron-mountain/files/resources/solution-guides/d/data-centers-2024-data-centers-sustainability-report.pdf?sc_lang=en
+    confidence: high_for_SEC_financials_capacity_capex_and_guidance_medium_for_current_website_developable_scope_low_for_site_economics_GPU_inventory_and_complete_project_debt
+
   - id: company_ntt_data_group
     company: NTT_DATA_Group
     layer: operators_reits_utilities
