@@ -35,6 +35,9 @@ Use historical memory indexes when they exist:
 - `life/imports/obsidian_daily/summary.yaml`: high-level summary of Brian's 2025-2026 Obsidian Daily notes.
 - `life/imports/obsidian_daily/entity_linked_records.jsonl`: Daily note time blocks and sections with semantic object links.
 - `life/imports/obsidian_daily/daily_summary.jsonl`: daily aggregate index for Daily notes, time blocks, energy, emotions, areas, and entity refs.
+- `life/imports/codex_threads_20260717/summary.yaml`: local Codex thread activity timeline and candidate thought patterns derived from the thread and user-message indexes.
+- `life/imports/codex_threads_20260717/thread_index.jsonl`: merged list of Codex UI/imported threads and history-backed sessions.
+- `life/imports/codex_threads_20260717/user_message_index.jsonl`: raw local user-prompt index with candidate Area and record-type labels.
 - `life/body/body_active_log.yaml`: current BODY status, PT trend, body metrics, protein targets, and recent workout records.
 - `life/mind/mind_active_log.yaml`: current MIND status, mood records, pressure patterns, operating rules, and interventions.
 - `life/finance/finance_active_log.yaml`: current FINANCE status, AI-tool testing spend, future holdings/decisions, and spending records.

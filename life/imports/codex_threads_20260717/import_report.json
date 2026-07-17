@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-07-17T15:19:17+09:00",
+  "source_counts": {
+    "session_index_rows": 377,
+    "session_index_unique_threads": 367,
+    "session_index_duplicate_rows": 10,
+    "history_user_messages": 6457,
+    "history_unique_sessions": 177,
+    "union_thread_count": 540,
+    "threads_in_both_sources": 4
+  },
+  "classification_counts": {
+    "areas": {
+      "UNCLASSIFIED": 4771,
+      "CAREER": 1444,
+      "MIND": 213,
+      "MAINTENANCE": 188,
+      "BODY": 46,
+      "FINANCE": 34,
+      "RELATION": 12,
+      "FUN": 6
+    },
+    "record_types": {
+      "uncategorized_user_input": 4130,
+      "activity_or_request": 1317,
+      "thought": 1012,
+      "decision_candidate": 600
+    }
+  },
+  "limitations": [
+    "Area and record-type classifications are keyword-based candidates, not confirmed interpretation.",
+    "Session index and history IDs are only partially overlapping because Codex stores imported, legacy, UI, and execution sessions differently.",
+    "Assistant responses and tool transcripts are not copied into the user-message index."
+  ]
+}

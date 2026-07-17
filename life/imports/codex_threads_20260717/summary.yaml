@@ -1,0 +1,153 @@
+schema_version: 1
+status: pattern_candidates_need_user_review
+updated_at: 2026-07-17
+profile_ref: person_brian
+source_manifest_ref: life/imports/codex_threads_20260717/manifest.yaml
+title: Brian's thoughts and activities across local Codex threads
+
+coverage:
+  user_message_period: 2025-07_to_2026-07-17
+  monthly_message_counts:
+    2025-07: 1
+    2025-08: 2
+    2025-11: 5
+    2025-12: 56
+    2026-05: 2335
+    2026-06: 3444
+    2026-07_through_17: 614
+  concentration_note: Most recorded activity occurred during the intensive May-June 2026 agent and IP-development period.
+
+activity_timeline:
+  - period: 2025-07_to_2025-12
+    activities:
+      - Reviewed Claude agent configurations and performed meta-analysis of coding-agent behavior.
+      - Reviewed and tested an early common AI agent, including memory compression, restart persistence, iteration limits, and ReAct behavior.
+    interpretation: Early attention centered on why agents feel mechanical and how memory and adaptive behavior could improve.
+    confidence: medium
+
+  - period: 2026-05
+    activities:
+      - Intensively developed and debugged common_ai_agent, Atlas UI, session storage, task flow, web control, and multi-user orchestration.
+      - Tested model backends, MCP integrations, Cursor or external agent calls, authentication, and keep-alive behavior.
+      - Repeatedly inspected agent execution state rather than accepting surface-level completion claims.
+    interpretation: Brian was turning a basic coding agent into a persistent operational environment.
+    confidence: high
+
+  - period: 2026-06
+    activities:
+      - Developed the OAG and ontology-based semiconductor IP workflow.
+      - Built or tested APB GPIO, watchdog, timer, PL330 DMA, and MCTP RX assembler flows.
+      - Explored RTL and TB generation, UVM and cocotb, simulation debugging, coverage, evidence receipts, protected artifacts, and Git baselines.
+      - Designed requirement, obligation, contract, lock, evidence, and validation layers.
+      - Experimented with native subagents, ownership boundaries, dependency barriers, and wavefront scheduling.
+      - Produced Codex and IP-development seminar materials and began a broader personal life ontology.
+    interpretation: The main shift was from code generation toward evidence-bound, contract-driven engineering automation.
+    confidence: high
+
+  - period: 2026-07_through_17
+    activities:
+      - Continued MCTP RX assembler architecture, implementation, verification, and multi-model pilot testing.
+      - Compared Codex, Claude CLI, GLM, model effort levels, subagents, token usage, and result-recovery mechanisms.
+      - Recorded workouts, InBody results, diet questions, Thailand travel, happiness, pets, household assets, income, bonus scenarios, and investment holdings.
+      - Researched AI-memory investing, famous investors, global macro conditions, and diversification candidates.
+    interpretation: Technical agent experimentation expanded into an ontology-backed operating system for work and personal life.
+    confidence: high
+
+recurring_thought_candidates:
+  - id: thought_candidate_agent_memory_should_preserve_meaning
+    area: MIND
+    statement: Agent memory should preserve important meaning and learned behavior rather than mechanically compressing or resetting conversation history.
+    evidence_period: 2025-12_to_2026-07
+    confidence: high
+    needs_user_review: true
+
+  - id: thought_candidate_ontology_should_enable_action
+    area: [MIND, CAREER]
+    statement: Ontology is valuable when it supports decisions, next actions, and state change rather than acting only as structured storage.
+    evidence_period: 2026-06_to_2026-07
+    confidence: high
+    needs_user_review: true
+
+  - id: thought_candidate_ip_truth_before_generation
+    area: CAREER
+    statement: Natural-language intent should be decomposed into requirements, obligations, contracts, and verification evidence before RTL or TB generation becomes authoritative.
+    evidence_period: 2026-06_to_2026-07
+    confidence: high
+    needs_user_review: true
+
+  - id: thought_candidate_completion_requires_evidence
+    area: CAREER
+    statement: A generated IP is not complete merely because files exist or a summary says so; completion requires reproducible tests, coverage, receipts, and traceable evidence.
+    evidence_period: 2026-06_to_2026-07
+    confidence: high
+    needs_user_review: true
+
+  - id: thought_candidate_parallelism_is_bounded_wavefront
+    area: CAREER
+    statement: Useful multi-agent parallelism depends on dependency, ownership, and evidence boundaries rather than maximizing the number of simultaneous agents.
+    evidence_period: 2026-06_to_2026-07
+    confidence: high
+    needs_user_review: true
+
+  - id: thought_candidate_principles_plus_validators
+    area: CAREER
+    statement: LLMs should receive principles and judgment room, while deterministic validators enforce hard safety and completion boundaries.
+    evidence_period: 2026-06
+    confidence: high
+    needs_user_review: true
+
+  - id: thought_candidate_lightweight_tooling_preference
+    area: CAREER
+    statement: Prefer a local skill or script over MCP when the simpler mechanism can provide the required behavior with fewer failure modes.
+    evidence_period: 2026-06
+    confidence: high
+    needs_user_review: true
+
+  - id: thought_candidate_ai_optimism_with_investment_rules
+    area: [FINANCE, MIND]
+    statement: Brian is strongly optimistic about AI and memory as a wealth opportunity while also wanting explicit investment principles, valuation discipline, and household diversification.
+    evidence_period: 2026-07
+    confidence: high
+    needs_user_review: false
+
+  - id: thought_candidate_recording_creates_control
+    area: MIND
+    statement: Recording life information in one connected system is associated with a stronger feeling of organization, control, and positive energy.
+    evidence_period: 2026-07
+    confidence: high
+    needs_user_review: false
+
+  - id: thought_candidate_sustainable_body_recomposition
+    area: BODY
+    statement: Reduce body fat gradually without harming exercise performance or muscle gain, while continuing progressive training and adequate protein.
+    evidence_period: 2026-07
+    confidence: high
+    needs_user_review: false
+
+cross_area_pattern_candidates:
+  - pattern: Brian repeatedly converts vague goals into explicit operating models, schemas, gates, and review loops.
+    areas: [CAREER, MIND, FINANCE, BODY]
+    confidence: high
+    causality_claimed: false
+  - pattern: Brian prefers understanding why a system behaves as it does, then testing it directly rather than relying only on an explanation.
+    areas: [CAREER, MIND]
+    confidence: high
+    causality_claimed: false
+  - pattern: The same ontology-first approach used for semiconductor IP development is being applied to personal records, finance, health, and happiness.
+    areas: [CAREER, MIND, BODY, FINANCE, RELATION, FUN]
+    confidence: high
+    causality_claimed: false
+
+canonical_links:
+  career_architecture_ref: life/knowledge/agent_architecture_thoughts.yaml
+  soc_design_ref: life/knowledge/soc_knowledge_db_design.yaml
+  body_ref: life/body/body_active_log.yaml
+  finance_ref: life/finance/finance_active_log.yaml
+  mind_ref: life/mind/mind_active_log.yaml
+  relation_ref: life/relation/relation_active_log.yaml
+  happiness_ref: life/concepts/happiness_bundle.yaml
+
+review_notes:
+  - The summary emphasizes repeated user questions and explicit statements, not every one-off command.
+  - Some raw user messages contain pasted assistant transcripts; those passages remain evidence but are not automatically treated as Brian-authored conclusions.
+  - Keyword classification is useful for retrieval but should not replace the canonical normalized logs.

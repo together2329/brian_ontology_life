@@ -1,0 +1,42 @@
+schema_version: 1
+status: imported_with_candidate_classification
+area: MIND
+secondary_areas: [CAREER, BODY, FINANCE, RELATION, FUN, MAINTENANCE]
+profile_ref: person_brian
+title: Codex local thread and user-message import
+imported_at: 2026-07-17
+source_scope:
+  session_index:
+    path: /Users/brian/.codex/session_index.jsonl
+    role: Codex UI and imported-thread metadata
+    rows: 377
+    unique_threads: 367
+  user_history:
+    path: /Users/brian/.codex/history.jsonl
+    role: Locally stored user prompts
+    messages: 6457
+    unique_sessions: 177
+  combined_unique_thread_ids: 540
+  overlap_between_source_ids: 4
+privacy:
+  processing: local_only
+  external_services_used: false
+  credentials_copied: false
+  assistant_and_tool_transcripts_copied: false
+outputs:
+  thread_index_ref: life/imports/codex_threads_20260717/thread_index.jsonl
+  user_message_index_ref: life/imports/codex_threads_20260717/user_message_index.jsonl
+  import_report_ref: life/imports/codex_threads_20260717/import_report.json
+  summary_ref: life/imports/codex_threads_20260717/summary.yaml
+  generator_ref: scripts/import_codex_threads.py
+interpretation_policy:
+  - Raw user text is preserved in user_message_index.jsonl.
+  - Area, thought, activity, and decision labels are keyword-based candidates.
+  - Pasted assistant output may appear inside a user prompt and must not automatically be treated as Brian's own belief.
+  - Identity claims require repeated evidence and Brian confirmation.
+  - Existing normalized ontology records remain canonical for confirmed BODY, FINANCE, RELATION, and CAREER facts.
+known_storage_mismatch: >
+  Codex session_index and history use only partially overlapping IDs. This is
+  expected when UI, imported, legacy, archived, and execution sessions coexist;
+  the import preserves source membership instead of forcing uncertain joins.
+
