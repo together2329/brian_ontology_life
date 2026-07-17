@@ -6149,6 +6149,445 @@ campus_profiles:
         url: https://khaznadatacenters.com/press-release/khazna-data-centers-dxb8-becomes-worlds-first-data-center-to-achieve-zero-waste-certification/
     confidence: high_for_facility_identity_city_operating_evidence_and_waste_scope_low_for_capacity_GPU_inventory_and_equipment_BOM
 
+  - id: dc_gulf_data_hub_gcc_portfolio
+    name: Gulf Data Hub current GCC portfolio and public expansion-marker ledger
+    record_granularity: operator_portfolio_with_current_operating_facilities_construction_projects_and_illustrative_pipeline_markers
+    operator: Gulf_Data_Hub
+    country_scope: operating_in_UAE_and_Saudi_Arabia_with_public_markers_across_the_Gulf_and_selected_MENA_markets
+    lifecycle_as_of_2026_07_18: six_individually_visible_operating_markers_plus_four_under_construction_and_55_pipeline_markers_with_a_seven_owned_facility_joint_release_scope_gap
+    ownership_and_roster_reconciliation:
+      KKR_GDH_joint_release_2025_01_17:
+        owned_data_centers: 7
+        owned_country_scope: [United_Arab_Emirates, Saudi_Arabia]
+        additional_facilities_planned_in: [Kuwait, Qatar, Bahrain, Oman]
+        exact_seven_facility_IDs_addresses_capacities_and_lifecycles: undisclosed
+      current_operator_text_pages:
+        visibly_operating_facilities: 6
+        facilities:
+          - {site_id: DSO1, country: AE, city: Dubai, IT_capacity_mw: 4.2}
+          - {site_id: DSO2, country: AE, city: Dubai, IT_capacity_mw: 6}
+          - {site_id: DSO3, country: AE, city: Dubai, IT_capacity_mw: 12}
+          - {site_id: ICAD1, country: AE, city: Abu_Dhabi, IT_capacity_mw: 16}
+          - {site_id: KAUST1, country: SA, city: Jeddah, IT_capacity_mw: 8}
+          - {site_id: Industrial_Area1, country: SA, city: Dammam, IT_capacity_mw: 16}
+        visible_operating_nameplate_sum_mw_derived: 62.2
+        related_campus_refs:
+          - dc_gdh_dubai_silicon_oasis_portfolio
+          - dc_gdh_icad_abu_dhabi_cluster
+          - dc_gdh_kaust1_jeddah
+          - dc_gdh_dammam_industrial_area_portfolio
+      unresolved_owned_facility_gap: one_of_the_seven_owned_facilities_is_not_reconciled_to_the_six_visible_operating_markers
+      boundary: >-
+        The seven-facility transaction description is an ownership scope, while
+        the six-marker roster is an operating visibility scope. Neither proves
+        that the missing unit is operating, nor identifies which construction or
+        pipeline marker belongs to the owned portfolio.
+    current_website_artifact_reconciliation:
+      server_rendered_locations_page:
+        operational_data_centers_displayed: 0
+        operational_IT_capacity_mw_displayed: 0
+        current_Strapi_location_rows_displayed: 0
+      client_bundle_headline_constants:
+        operational_data_centers: 5
+        operational_IT_capacity_mw: 46
+      client_bundle_marker_roster:
+        total_markers: 65
+        operational: {facility_markers: 6, nameplate_mw_derived: 62.2}
+        under_construction: {facility_markers: 4, nameplate_mw_derived: 64}
+        pipeline: {facility_markers: 55, nameplate_mw_derived: 880}
+        all_marker_nameplate_mw_derived: 1006.2
+      artifact_boundary: >-
+        The same current page therefore exposes 0/0 in server-rendered counters,
+        5/46 in client-code headline constants and 6/62.2 in its hard-coded
+        operating marker roster. The empty Strapi message appears to be a web
+        publishing or migration state and is not evidence that GDH has no live
+        facilities. No one scope is silently substituted for another.
+    public_marker_ledger:
+      operational:
+        Dubai: [DSO1_4.2MW, DSO2_6MW, DSO3_12MW]
+        Abu_Dhabi: [ICAD1_16MW]
+        Jeddah: [KAUST1_8MW]
+        Dammam: [Industrial_Area1_16MW]
+      under_construction:
+        Dubai: [DSO4_16MW, DSO5_16MW]
+        Abu_Dhabi: [ICAD2_16MW, KIZAD1_16MW]
+      pipeline:
+        Dubai: {identifiers: DSO6_through_DSO13, facility_markers: 8, nameplate_mw_derived: 128}
+        Abu_Dhabi: {identifiers: [ICAD3, ICAD4, KIZAD2, KIZAD3, KIZAD4], facility_markers: 5, nameplate_mw_derived: 80}
+        Jeddah_Thahban: {identifiers: Thahban1_through_Thahban4, facility_markers: 4, nameplate_mw_derived: 64}
+        Riyadh_city: {identifiers: Riyadh1_through_Riyadh4, facility_markers: 4, nameplate_mw_derived: 64}
+        Riyadh_King_Abdulaziz_City: {identifiers: Building1_through_Building4, facility_markers: 4, nameplate_mw_derived: 64}
+        Riyadh_Princess_Noura_University: {identifiers: Building1_through_Building4, facility_markers: 4, nameplate_mw_derived: 64}
+        Dammam_Industrial_Area: {identifiers: Building1_through_Building4, facility_markers: 4, nameplate_mw_derived: 64}
+        Qatar: {identifiers: Qatar1_through_Qatar2, facility_markers: 2, nameplate_mw_derived: 32}
+        Bahrain: {identifiers: Bahrain1_through_Bahrain2, facility_markers: 2, nameplate_mw_derived: 32}
+        Kuwait: {identifiers: Kuwait1_through_Kuwait3, facility_markers: 3, nameplate_mw_derived: 48}
+        Oman: {identifiers: Oman1_through_Oman2, facility_markers: 2, nameplate_mw_derived: 32}
+        Egypt: {identifiers: Egypt1_through_Egypt6, facility_markers: 6, nameplate_mw_derived: 96}
+        Aqaba_Jordan: {identifiers: Jordan1_through_Jordan4, facility_markers: 4, nameplate_mw_derived: 64}
+        Morocco: {identifiers: Morocco1_through_Morocco3, facility_markers: 3, nameplate_mw_derived: 48}
+      lifecycle_and_location_boundary: >-
+        Client-bundle markers are operator-published planning artifacts, not
+        permits, land control, construction starts, grid connections or exact
+        parcels. Their map pins are not retained as exact coordinates because the
+        ICAD pins conflict materially with the named OSM building locations and
+        many pipeline pins appear only at country or city granularity.
+    current_text_page_conflicts:
+      Dubai:
+        page_scope: DSO1_DSO2_DSO3_operational_and_DSO4_DSO5_DSO6_under_construction
+        marker_conflict: DSO6_is_pipeline_and_DSO7_through_DSO13_are_additional_pipeline_markers
+      Abu_Dhabi:
+        page_scope: four_16MW_data_centers_across_ICAD_and_KIZAD_with_ICAD1_operational_and_one_KIZAD_unit_under_construction
+        marker_conflict: eight_total_Abu_Dhabi_markers_with_ICAD2_and_KIZAD1_under_construction_and_five_more_pipeline_units
+      Jeddah:
+        page_scope: KAUST1_8MW_operational_plus_four_Thahban_16MW_centers_planned
+        marker_alignment: matches_current_marker_roster_at_identifier_and_nameplate_level
+      Dammam:
+        page_scope: one_16MW_operational_plus_three_16MW_centers_planned
+        marker_conflict: one_operational_plus_four_pipeline_markers
+    dated_vendor_scope_conflict:
+      Vertiv_2024_claim:
+        Dubai_Silicon_Oasis_facilities: 6
+        Abu_Dhabi_facilities: 5
+        Saudi_Arabia_facilities: 6
+        Egypt_facilities: 2
+        facilities_described_as_fully_operational: 5
+        facilities_planned: 15
+        planned_cumulative_capacity_mw: 240
+      boundary: >-
+        Vertiv's facility geography, five-operational/46-MW case-study wording and
+        broader footprint do not reconcile the current GDH pages or the KKR
+        seven-owned-facility scope. Vendor project participation is not treated as
+        proof that every named unit is GDH-owned, currently operating or separately
+        metered.
+    accelerators_and_AI:
+      workload_context: hyperscale_cloud_and_AI_demand_cited_by_GDH_and_KKR
+      operator_web_role: Chief_Data_and_AI_Officer_visible_in_current_external_interview_context
+      exact_operator_or_customer_GPU_model_count_server_rack_ownership_delivery_installation_utilization_power_draw_and_site_allocation: undisclosed
+      boundary: Hyperscale and AI demand language does not establish installed accelerator inventory.
+    electrical_cooling_and_network:
+      operator_portfolio_claims:
+        carrier_neutral: true
+        SLA_percent: 99.98
+        high_density_power_load_kw_plus: 30
+        redundant_power_and_cooling: true
+        single_and_three_phase_power_available: true
+        infrastructure_systems_segregated_into_separate_rooms: true
+        white_space_expansion_m2_up_to: 6000
+        fault_tolerant_fiber_and_cross_connects: true
+      Vertiv_relationship:
+        duration_description_2024: almost_ten_years
+        confirmed_products: [Vertiv_Liebert_EXL_S1_UPS, Vertiv_Liebert_CWA_chilled_water_air_handling]
+        energy_storage_technology: provided_but_exact_product_chemistry_ratings_and_unit_count_undisclosed
+        deployment_scope: at_least_one_16MW_Dubai_Silicon_Oasis_facility_with_broader_multi_project_relationship
+      exact_per_site_grid_feed_substation_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CDU_counts_ratings_OEM_allocation_single_line_diagram_PUE_WUE_water_and_live_liquid_cooled_MW: undisclosed
+      boundary: Portfolio capabilities and one supplier case study are not extrapolated to every GDH facility.
+    linked_companies:
+      owner_operator: [Gulf_Data_Hub]
+      strategic_investor: [KKR_managed_funds]
+      critical_infrastructure_supplier: [Vertiv]
+      implementation_partner: [MidEast_Data_Systems_UAE]
+      financing_partners: [Commercial_Bank_of_Dubai, RAKBANK, Emirates_Development_Bank, Gulf_International_Bank]
+      financial_profile_refs: [company_gulf_data_hub, company_kkr, company_vertiv]
+    sources:
+      - title: Current locations overview and text facility summaries
+        publisher: Gulf_Data_Hub
+        date: 2026-07-18_accessed
+        url: https://gulfdatahub.ae/locations
+      - title: Current client-side 65-marker facility and pipeline ledger
+        publisher: Gulf_Data_Hub
+        date: 2026-07-18_accessed
+        url: https://gulfdatahub.ae/_next/static/chunks/pages/locations-468cb2bb77891d2a.js
+      - title: KKR and Gulf Data Hub strategic partnership joint release
+        publisher: Gulf_Data_Hub_and_KKR_via_KKR_Media
+        date: 2025-01-17
+        url: https://media.kkr.com/news-details?news_id=7a64b850-b2ae-4747-bc71-5d58b8e82f50
+      - title: Current portfolio power cooling connectivity and density claims
+        publisher: Gulf_Data_Hub
+        date: 2026-07-18_accessed
+        url: https://www.gulfdatahub.ae/sustainability
+      - title: GDH and Vertiv 16 MW Dubai Silicon Oasis deployment
+        publisher: Vertiv
+        date: 2024-07-30
+        url: https://www.vertiv.com/pt-emea/about/news-and-events/corporate-news/vertiv-collaborates-with-gulf-data-hub-in-deploying-state-of-the-art-16mw-data-center-in-dubai-silicon-oasis/
+      - title: Vertiv Gulf Data Hub equipment case study
+        publisher: Vertiv
+        date: 2024-07-11
+        url: https://www.vertiv.com/en-ca/about/news-and-events/articles/case-studies/gulf-data-hub-features-energy-efficient-solutions-to-enable-effective-data-center-builds/
+    confidence: high_for_current_public_artifacts_marker_arithmetic_KKR_owned_count_and_named_Vertiv_products_medium_for_text_lifecycle_low_for_exact_owned_roster_live_load_GPU_inventory_and_site_equipment_BOM
+
+  - id: dc_gdh_dubai_silicon_oasis_portfolio
+    name: Gulf Data Hub Dubai Silicon Oasis facility portfolio
+    record_granularity: named_city_cluster_with_multiple_facility_identifiers_and_conflicting_public_lifecycles
+    operator: Gulf_Data_Hub
+    country: AE
+    region: Dubai
+    locality: Dubai_Silicon_Oasis
+    portfolio_ref: dc_gulf_data_hub_gcc_portfolio
+    lifecycle_as_of_2026_07_18: three_text_page_operating_facilities_three_text_page_construction_facilities_and_seven_additional_client_bundle_pipeline_markers
+    location:
+      operator_description: six_different_Dubai_locations_labeled_DSO1_through_DSO6
+      exact_addresses_parcels_coordinates_building_footprints_and_identifier_to_building_mapping: undisclosed
+      client_bundle_pin_boundary: map_pin_coordinates_are_not_treated_as_exact_facility_locations
+      osm_record_status: no_GDH_DSO_identifier_mapping_in_current_public_baseline
+    facility_and_capacity_ledger:
+      DSO1: {IT_capacity_mw: 4.2, text_page_lifecycle: operational, client_marker_lifecycle: operational}
+      DSO2: {IT_capacity_mw: 6, text_page_lifecycle: operational, client_marker_lifecycle: operational}
+      DSO3: {IT_capacity_mw: 12, text_page_lifecycle: operational, client_marker_lifecycle: operational}
+      DSO4: {IT_capacity_mw: 16, text_page_lifecycle: under_construction, client_marker_lifecycle: under_construction}
+      DSO5: {IT_capacity_mw: 16, text_page_lifecycle: under_construction, client_marker_lifecycle: under_construction}
+      DSO6: {IT_capacity_mw: 16, text_page_lifecycle: under_construction, client_marker_lifecycle: pipeline}
+      DSO1_DSO3_operating_nameplate_sum_mw_derived: 22.2
+      DSO4_DSO6_text_construction_nameplate_sum_mw_derived: 48
+      DSO1_DSO6_mixed_lifecycle_nameplate_sum_mw_derived: 70.2
+      additional_pipeline_identifiers: [DSO7, DSO8, DSO9, DSO10, DSO11, DSO12, DSO13]
+      additional_pipeline_nameplate_mw_each: 16
+      DSO1_DSO13_all_marker_nameplate_sum_mw_derived: 182.2
+      capacity_boundary: >-
+        The sums are arithmetic over marketing and planning marker nameplates, not
+        current energized, leased, utilized or billed load. The DSO6 lifecycle
+        conflict remains unresolved.
+    vendor_evidence:
+      initial_DSO_facility_capacity_mw_vendor_wording: 4
+      initial_DSO_facility_to_DSO1_mapping: unverified_despite_similar_4_vs_4.2MW_figures
+      2024_new_DSO_facility_capacity_mw: 16
+      exact_DSO_identifier_for_16MW_Vertiv_deployment: undisclosed
+      Vertiv_case_project_sequence:
+        GDH_Building3: implementation_and_deployment_in_2023
+        GDH_Building4_and_Building5: initiated_in_2023
+        building_to_DSO_identifier_mapping: undisclosed
+      vendor_claim_three_DSO_facilities_at_16MW_each: conflicts_with_current_marker_values_for_DSO1_DSO3_and_is_not_used_to_overwrite_them
+    accelerators:
+      exact_GPU_model_count_servers_racks_ownership_delivery_utilization_and_power_draw: undisclosed
+      high_density_portfolio_capability_kw_plus: 30
+      facility_specific_AI_or_GPU_customer: undisclosed
+    electrical_and_energy_storage:
+      confirmed_supplier: Vertiv
+      confirmed_products: [Liebert_EXL_S1_UPS]
+      UPS_product_efficiency:
+        double_conversion_percent_up_to: 97
+        dynamic_online_mode_percent_up_to: 99
+        metric_boundary: product_specification_not_measured_site_efficiency_or_PUE
+      energy_storage: Vertiv_technology_confirmed_but_exact_product_chemistry_capacity_count_and_runtime_undisclosed
+      exact_utility_grid_feed_substation_transformer_switchgear_UPS_unit_count_rating_battery_generator_fuel_runtime_and_single_line_topology: undisclosed
+    cooling_and_water:
+      confirmed_product: Vertiv_Liebert_CWA_Thermal_Wall
+      architecture: chilled_water_air_handling_for_slab_floor_gallery_side_non_raised_floor_applications
+      control: coordinated_algorithms_for_airflow_and_temperature
+      project_context: water_reuse_and_waste_management_were_design_requirements
+      exact_unit_count_total_cooling_capacity_chiller_heat_rejection_water_source_PUE_WUE_and_consumption: undisclosed
+    linked_companies:
+      owner_operator: [Gulf_Data_Hub]
+      infrastructure_supplier: [Vertiv]
+      implementation_partner: [MidEast_Data_Systems_UAE]
+      financial_profile_refs: [company_gulf_data_hub, company_vertiv, company_kkr]
+    sources:
+      - title: Current Dubai facility status page
+        publisher: Gulf_Data_Hub
+        date: 2026-07-18_accessed
+        url: https://www.gulfdatahub.ae/dubai
+      - title: Current client-side DSO facility and pipeline marker ledger
+        publisher: Gulf_Data_Hub
+        date: 2026-07-18_accessed
+        url: https://gulfdatahub.ae/_next/static/chunks/pages/locations-468cb2bb77891d2a.js
+      - title: Vertiv 16 MW Dubai Silicon Oasis deployment release
+        publisher: Vertiv
+        date: 2024-07-30
+        url: https://www.vertiv.com/pt-emea/about/news-and-events/corporate-news/vertiv-collaborates-with-gulf-data-hub-in-deploying-state-of-the-art-16mw-data-center-in-dubai-silicon-oasis/
+      - title: Vertiv equipment case study
+        publisher: Vertiv
+        date: 2024-07-11
+        url: https://www.vertiv.com/en-ca/about/news-and-events/articles/case-studies/gulf-data-hub-features-energy-efficient-solutions-to-enable-effective-data-center-builds/
+    confidence: high_for_published_identifiers_nameplates_text_lifecycle_and_equipment_models_medium_for_vendor_scope_low_for_exact_addresses_live_load_GPU_inventory_and_equipment_counts
+
+  - id: dc_gdh_icad_abu_dhabi_cluster
+    name: Gulf Data Hub ICAD Abu Dhabi cluster
+    record_granularity: named_industrial_zone_cluster_with_two_public_OSM_buildings_and_conflicting_operator_project_scope
+    operator: Gulf_Data_Hub
+    country: AE
+    region: Abu_Dhabi
+    locality: Industrial_City_of_Abu_Dhabi_ICAD
+    portfolio_ref: dc_gulf_data_hub_gcc_portfolio
+    lifecycle_as_of_2026_07_18: ICAD1_operator_confirmed_operating_since_2022_with_ICAD2_OSM_mapped_but_operator_lifecycle_conflicted_and_ICAD3_ICAD4_pipeline_markers
+    location_and_buildings:
+      ICAD1:
+        osm_ref: osm_way_1492452118
+        latitude: 24.2646374
+        longitude: 54.4588737
+        mapped_footprint_area_m2: 6405.956
+        operator_lifecycle: operational_since_2022
+      ICAD2:
+        osm_ref: osm_way_1492452119
+        latitude: 24.2640174
+        longitude: 54.4597089
+        mapped_footprint_area_m2: 6499.885
+        client_marker_lifecycle: under_construction
+        current_Abu_Dhabi_text_page_lifecycle: not_named_and_page_instead_says_one_KIZAD_center_under_construction
+      map_boundary: OSM geometry is mapped building footprint, not gross floor area, white space, IT capacity or proof of lifecycle.
+      operator_pin_conflict: client_bundle_ICAD_pins_are_materially_different_from_the_named_OSM_building_coordinates_and_are_not_used_as_exact_locations
+    capacity_and_program_reconciliation:
+      current_Abu_Dhabi_text_page:
+        stated_program_data_centers: 4
+        IT_capacity_mw_each: 16
+        ICAD1: operational
+        KIZAD_unnumbered: under_construction
+      client_marker_scope:
+        ICAD1: {IT_capacity_mw: 16, lifecycle: operational}
+        ICAD2: {IT_capacity_mw: 16, lifecycle: under_construction}
+        ICAD3: {IT_capacity_mw: 16, lifecycle: pipeline}
+        ICAD4: {IT_capacity_mw: 16, lifecycle: pipeline}
+        KIZAD1: {IT_capacity_mw: 16, lifecycle: under_construction}
+        KIZAD2_through_KIZAD4: {IT_capacity_mw_each: 16, lifecycle: pipeline}
+      2022_financed_ICAD_project:
+        project_capacity_mw: 12
+        financing_amount_aed_million: 530
+        exact_mapping_to_ICAD1_or_ICAD2: undisclosed
+      capacity_boundary: >-
+        The 12 MW financed project and current 16 MW ICAD1 marker may describe a
+        changed design, a phase, or different facilities. They are not treated as
+        the same nameplate without a primary identifier-level reconciliation.
+    accelerators:
+      exact_GPU_model_count_servers_racks_ownership_delivery_utilization_power_draw_and_customer: undisclosed
+      AI_or_hyperscale_workload_allocation: undisclosed
+    electrical_and_cooling:
+      dated_Vertiv_claim: Vertiv_solutions_power_each_of_five_Abu_Dhabi_facilities_in_its_2024_scope
+      exact_ICAD_product_allocation: undisclosed
+      portfolio_capabilities: [redundant_power_and_cooling, single_and_three_phase_power, high_density_30kW_plus]
+      grid_feed_substation_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CDU_counts_ratings_OEMs_PUE_WUE_water_and_single_line_topology: undisclosed
+    financing:
+      2022_07_19_syndicated_facility:
+        amount_aed_million: 530
+        purpose: develop_new_12MW_ICAD_data_center
+        initial_mandated_lead_arranger_and_bookrunner: Commercial_Bank_of_Dubai
+        syndicate: [RAKBANK, Emirates_Development_Bank, Gulf_International_Bank]
+        rate_tenor_maturity_security_drawn_amount_repayment_covenants_and_current_debt_outstanding: undisclosed
+        boundary: Financing is not revenue, operating profit, incurred project capex or proof of current debt outstanding.
+    linked_companies:
+      owner_operator: [Gulf_Data_Hub]
+      infrastructure_supplier_scope_unallocated: [Vertiv]
+      lenders: [Commercial_Bank_of_Dubai, RAKBANK, Emirates_Development_Bank, Gulf_International_Bank]
+      financial_profile_refs: [company_gulf_data_hub, company_kkr, company_vertiv]
+    sources:
+      - title: Current Abu Dhabi ICAD and KIZAD page
+        publisher: Gulf_Data_Hub
+        date: 2026-07-18_accessed
+        url: https://gulfdatahub.ae/abuDhabi
+      - title: Current client-side ICAD and KIZAD marker ledger
+        publisher: Gulf_Data_Hub
+        date: 2026-07-18_accessed
+        url: https://gulfdatahub.ae/_next/static/chunks/pages/locations-468cb2bb77891d2a.js
+      - title: Commercial Bank of Dubai syndicated-financing announcement
+        publisher: Commercial_Bank_of_Dubai
+        date: 2022-07-19
+        url: https://ae.linkedin.com/posts/commercial-bank-of-dubai_we-are-pleased-to-announce-that-cbd-has-successfully-activity-6955154206102073344-G4il
+      - title: OSM public ICAD1 and ICAD2 location baseline
+        publisher: OpenStreetMap_contributors_via_local_QLever_snapshot
+        date: 2026-07-17_snapshot
+        url: https://www.openstreetmap.org/way/1492452118
+    confidence: high_for_ICAD1_current_operator_status_and_OSM_buildings_medium_for_marker_lifecycles_low_for_financed_project_mapping_live_load_GPU_inventory_and_equipment_BOM
+
+  - id: dc_gdh_kaust1_jeddah
+    name: Gulf Data Hub KAUST1 Jeddah
+    record_granularity: individual_operating_data_center_with_adjacent_four_facility_planning_program
+    operator: Gulf_Data_Hub
+    country: SA
+    region: Makkah
+    locality: King_Abdullah_University_of_Science_and_Technology_near_Jeddah
+    portfolio_ref: dc_gulf_data_hub_gcc_portfolio
+    lifecycle_as_of_2026_07_18: operator_confirmed_operational
+    location:
+      operator_location_label: KAUST
+      exact_street_parcel_coordinate_building_footprint_and_tenure: undisclosed
+      client_bundle_pin_boundary: not_treated_as_exact_facility_location
+      osm_record_status: no_GDH_KAUST_identifier_mapping_in_current_public_baseline
+    capacity:
+      operating_IT_capacity_mw: 8
+      exact_energized_leased_utilized_and_billed_IT_load: undisclosed
+    adjacent_Jeddah_pipeline:
+      location: Thahban
+      planned_facilities: [Thahban1, Thahban2, Thahban3, Thahban4]
+      IT_capacity_mw_each: 16
+      total_planned_IT_capacity_mw_derived: 64
+      lifecycle_boundary: Operator planning markers are not construction starts, grid connections or operating capacity.
+    accelerators:
+      exact_GPU_model_count_servers_racks_ownership_delivery_utilization_power_draw_and_customer: undisclosed
+    electrical_cooling_and_network:
+      dated_Vertiv_claim: Vertiv_solutions_power_GDHs_six_facility_Saudi_scope_in_its_2024_release
+      exact_KAUST1_product_models_and_unit_allocation: undisclosed
+      grid_feed_substation_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CDU_counts_ratings_OEMs_PUE_WUE_water_and_liquid_cooling: undisclosed
+    linked_companies:
+      owner_operator: [Gulf_Data_Hub]
+      host_location: [KAUST]
+      infrastructure_supplier_scope_unallocated: [Vertiv]
+      financial_profile_refs: [company_gulf_data_hub, company_kkr, company_vertiv]
+    sources:
+      - title: Current Jeddah KAUST and Thahban page
+        publisher: Gulf_Data_Hub
+        date: 2026-07-18_accessed
+        url: https://www.gulfdatahub.ae/jeddah
+      - title: Current client-side KAUST and Thahban marker ledger
+        publisher: Gulf_Data_Hub
+        date: 2026-07-18_accessed
+        url: https://gulfdatahub.ae/_next/static/chunks/pages/locations-468cb2bb77891d2a.js
+      - title: Vertiv regional GDH deployment scope
+        publisher: Vertiv
+        date: 2024-07-30
+        url: https://www.vertiv.com/pt-emea/about/news-and-events/corporate-news/vertiv-collaborates-with-gulf-data-hub-in-deploying-state-of-the-art-16mw-data-center-in-dubai-silicon-oasis/
+    confidence: high_for_operator_confirmed_location_lifecycle_and_IT_nameplate_low_for_exact_location_live_load_GPU_inventory_and_equipment_BOM
+
+  - id: dc_gdh_dammam_industrial_area_portfolio
+    name: Gulf Data Hub Dammam Industrial Area operating facility and expansion program
+    record_granularity: named_city_cluster_with_one_operating_marker_and_conflicting_three_or_four_facility_pipeline
+    operator: Gulf_Data_Hub
+    country: SA
+    region: Eastern_Province
+    locality: Dammam_Industrial_Area
+    portfolio_ref: dc_gulf_data_hub_gcc_portfolio
+    lifecycle_as_of_2026_07_18: one_operator_confirmed_operating_facility_with_three_text_page_or_four_client_marker_planned_facilities
+    location:
+      operating_identifier: Industrial_Area1
+      exact_street_parcel_coordinate_building_footprint_and_tenure: undisclosed
+      client_bundle_pin_boundary: not_treated_as_exact_facility_location
+      osm_record_status: no_GDH_Dammam_identifier_mapping_in_current_public_baseline
+    capacity_and_lifecycle:
+      operating_IT_capacity_mw: 16
+      exact_energized_leased_utilized_and_billed_IT_load: undisclosed
+      text_page_program:
+        total_data_centers: 4
+        operating: 1
+        planned: 3
+        IT_capacity_mw_each: 16
+      client_marker_program:
+        operating: [Industrial_Area1]
+        pipeline: [Building1, Building2, Building3, Building4]
+        pipeline_facility_markers: 4
+        pipeline_nameplate_mw_derived: 64
+      reconciliation_boundary: The text-page three-unit plan and four pipeline markers conflict and are not silently combined.
+    accelerators:
+      exact_GPU_model_count_servers_racks_ownership_delivery_utilization_power_draw_and_customer: undisclosed
+    electrical_cooling_and_network:
+      dated_Vertiv_claim: Vertiv_solutions_power_GDHs_six_facility_Saudi_scope_in_its_2024_release
+      exact_Dammam_product_models_and_unit_allocation: undisclosed
+      grid_feed_substation_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CDU_counts_ratings_OEMs_PUE_WUE_water_and_liquid_cooling: undisclosed
+    linked_companies:
+      owner_operator: [Gulf_Data_Hub]
+      infrastructure_supplier_scope_unallocated: [Vertiv]
+      financial_profile_refs: [company_gulf_data_hub, company_kkr, company_vertiv]
+    sources:
+      - title: Current Dammam operating and expansion page
+        publisher: Gulf_Data_Hub
+        date: 2026-07-18_accessed
+        url: https://www.gulfdatahub.ae/dammam
+      - title: Current client-side Dammam marker ledger
+        publisher: Gulf_Data_Hub
+        date: 2026-07-18_accessed
+        url: https://gulfdatahub.ae/_next/static/chunks/pages/locations-468cb2bb77891d2a.js
+      - title: Vertiv regional GDH deployment scope
+        publisher: Vertiv
+        date: 2024-07-30
+        url: https://www.vertiv.com/pt-emea/about/news-and-events/corporate-news/vertiv-collaborates-with-gulf-data-hub-in-deploying-state-of-the-art-16mw-data-center-in-dubai-silicon-oasis/
+    confidence: high_for_operator_confirmed_operating_nameplate_medium_for_pipeline_conflict_low_for_exact_location_live_load_GPU_inventory_and_equipment_BOM
+
   - id: dc_stargate_uae_abudhabi
     name: Stargate UAE / UAE-US AI Campus
     operator_and_partners: [G42, OpenAI, Oracle, NVIDIA, Cisco, SoftBank]
@@ -13207,6 +13646,13 @@ disclosure_gap_register:
   - Khazna_per_site_grid_substation_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CDU_OEM_PUE_WUE_water_and_live_liquid_cooled_MW
   - Khazna_QAJ01_original_2025_Q3_target_to_2026_design_certification_current_construction_energization_customer_and_GPU_status
   - Khazna_Dammam_Italy_Ankara_Egypt_France_Kenya_pipeline_land_permit_grid_financing_construction_and_operating_delivery
+  - Gulf_Data_Hub_seven_owned_facilities_to_six_visible_operating_markers_and_exact_ID_address_ownership_lifecycle_reconciliation
+  - Gulf_Data_Hub_0_0_server_rendered_5_46_client_headline_and_6_62_2MW_operating_marker_scope_reconciliation
+  - Gulf_Data_Hub_65_markers_1006_2MW_mixed_lifecycle_to_permitted_energized_leased_utilized_and_billed_IT_load
+  - Gulf_Data_Hub_DSO_ICAD_KIZAD_Dammam_text_page_to_client_marker_and_Vertiv_facility_count_reconciliation
+  - Gulf_Data_Hub_per_site_GPU_inventory_customer_ownership_power_draw_liquid_cooling_PUE_WUE_water_and_equipment_BOM
+  - Gulf_Data_Hub_Vertiv_Liebert_EXL_S1_CWA_energy_storage_exact_site_allocation_unit_counts_ratings_and_commissioning
+  - Gulf_Data_Hub_DSO_and_Saudi_exact_addresses_coordinates_parcels_buildings_and_ICAD_operator_pin_to_OSM_reconciliation
   - Africa_Data_Centres_five_current_cards_to_legacy_sites_DFC_seven_projects_and_exact_operating_facility_roster
   - Africa_Data_Centres_92_15MW_mixed_card_sum_to_installed_energized_leased_utilized_and_billed_IT_load
   - Africa_Data_Centres_JHB1_14_5_20MW_JHB2_35_40MW_and_CPT1_5_5_6_9_25MW_scope_reconciliation
@@ -13463,6 +13909,14 @@ next_research_queue:
     - Khazna_DXB8_cluster_capacity_GPU_power_cooling_PUE_WUE_water_and_equipment_BOM
     - Khazna_Mafraq_Kalba_Dammam_Ferrera_Erbognone_Ankara_Maadi_project_current_permit_grid_financing_construction_and_delivery
     - Khazna_France_and_Kenya_country_level_plans_to_exact_site_capacity_partner_and_lifecycle
+    - Gulf_Data_Hub_seven_owned_facilities_to_six_visible_operating_markers_and_exact_building_ownership_lifecycle_reconciliation
+    - Gulf_Data_Hub_0_0_server_rendered_5_46_client_headline_6_62_2MW_markers_and_Vertiv_five_46MW_scope_reconciliation
+    - Gulf_Data_Hub_65_markers_1006_2MW_to_current_operating_energized_leased_utilized_and_billed_IT_load
+    - Gulf_Data_Hub_DSO1_DSO13_exact_addresses_buildings_lifecycle_live_load_GPU_inventory_and_Vertiv_equipment_allocation
+    - Gulf_Data_Hub_ICAD1_ICAD4_KIZAD1_KIZAD4_12_16MW_scope_financing_lifecycle_power_chain_and_OSM_reconciliation
+    - Gulf_Data_Hub_KAUST_Thahban_Dammam_Riyadh_exact_sites_permits_grid_construction_lifecycle_GPU_and_equipment_BOM
+    - Gulf_Data_Hub_Qatar_Bahrain_Kuwait_Oman_Egypt_Jordan_Morocco_marker_land_permit_grid_financing_and_delivery_verification
+    - Gulf_Data_Hub_per_site_PUE_WUE_water_liquid_cooled_MW_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CDU_counts_ratings_and_OEMs
     - Equinix_280_to_281_facility_and_78_label_to_77_market_reconciliation
     - Equinix_per_IBX_and_xScale_power_liquid_cooling_GPU_inventory_and_electrical_BOM
     - Digital_Realty_310_building_per_site_IT_power_GPU_inventory_and_ownership_reconciliation
@@ -13549,6 +14003,11 @@ next_research_queue:
     - Khazna_G42_MGX_Silver_Lake_exact_beneficial_ownership_valuation_consideration_preferences_and_governance
     - Khazna_USD2_62_billion_facility_drawn_amount_rate_maturity_collateral_covenants_site_allocation_and_refinancing
     - Khazna_more_than_1GW_pipeline_project_capex_customer_contract_revenue_commencement_and_return_on_capital
+    - Gulf_Data_Hub_standalone_audited_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_and_site_economics
+    - Gulf_Data_Hub_KKR_exact_close_date_stake_purchase_price_valuation_seller_preferences_and_post_close_governance
+    - Gulf_Data_Hub_AED530_million_facility_rate_tenor_maturity_collateral_drawn_balance_covenants_refinancing_and_current_debt
+    - Gulf_Data_Hub_more_than_USD5_billion_commitment_equity_debt_project_allocation_incurred_capex_customer_contracts_and_revenue_conversion
+    - Gulf_Data_Hub_65_marker_pipeline_power_land_permit_schedule_funding_and_return_on_capital
     - Aligned_and_ODATA_standalone_audited_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_and_site_economics
     - Aligned_USD40_billion_transaction_completion_financing_post_close_beneficial_ownership_governance_and_reporting
     - Aligned_82_87_data_centers_50_51_campuses_5_6_4GW_and_39_visible_current_identifiers_scope_reconciliation
