@@ -74,6 +74,7 @@ stack_layers:
     - HD_Hyundai_Electric
     - Bloom_Energy
   operators_reits_utilities:
+    - NTT_DATA_Group
     - China_Telecom
     - China_Mobile
     - China_Unicom
@@ -115,6 +116,7 @@ stack_layers:
     - Blackstone
     - DigitalBridge
     - Infratil
+    - Tokyo_Century
 
 financial_profiles:
   - id: company_ntt_data_group
@@ -133,7 +135,7 @@ financial_profiles:
       capital_investment_jpy_billion: 635.8
     data_center_exposure:
       role: global_colocation_hyperscale_and_data_center_operator
-      confirmed_campus_refs: [dc_ntt_global_data_centers_portfolio, dc_ntt_va11_gainesville_virginia]
+      confirmed_campus_refs: [dc_ntt_global_data_centers_portfolio, dc_ntt_india_portfolio, dc_ntt_va11_gainesville_virginia]
       FY2025_data_center_business_management_metrics:
         new_orders_jpy_billion: 1088.2
         order_backlog_jpy_billion: 3199.7
@@ -150,6 +152,19 @@ financial_profiles:
         interest_bearing_liabilities_jpy_billion: 1832.1
         current_capacity_mw_approximate: 1630
         planned_capacity_mw_approximate: 770
+      India_regional_exposure:
+        current_capacity_as_of_2026_03_31_mw_approximate: 425
+        planned_capacity_as_of_2026_03_31_mw_approximate: 80
+        share_of_group_current_capacity_percent_derived: 26.07
+        share_of_group_planned_capacity_percent_derived: 10.39
+        March_2025_digital_infrastructure_investment_over_prior_decade_usd_billion: 3
+        March_2025_revenue_market_rank: top_10
+        March_2025_target_within_three_years: top_5_market
+        standalone_revenue_operating_profit_EBITDA_capex_debt_utilization_and_site_returns: undisclosed
+        boundary: >-
+          The USD 3 billion figure covers India's broader digital infrastructure,
+          not data centers alone. Capacity shares are physical ratios and do not
+          estimate India's revenue or profit contribution.
       boundary: >-
         Data-center operating profit excludes some common head-office costs and
         includes a transfer gain; it is not directly comparable with consolidated
@@ -176,11 +191,69 @@ financial_profiles:
       - power_land_and_interconnection_availability
       - third_party_capital_terms_and_asset_recycling
       - current_2000_MW_marketing_scope_reconciliation
+      - India_425_MW_management_scope_to_public_site_rows_and_500_MW_facility_power_reconciliation
+      - India_standalone_financials_and_site_level_returns_not_disclosed
     sources:
       - https://www.nttdata.com/global/en/-/media/nttdataglobal/1_files/investors/ir_events/2025/fy2025_pre_4q.pdf?rev=ccef6f86896a406fb2c83992da8fc0b7
       - https://www.nttdata.com/global/en/investors
       - https://services.global.ntt/en-au/services-and-products/global-data-centers
+      - https://services.global.ntt/en-us/newsroom/ntt-data-accelerates-india-digital-future-with-multi-billion-ai-and-infrastructure-investments
     confidence: high_for_consolidated_and_management_financials_capacity_and_forecast
+
+  - id: company_tokyo_century
+    company: Tokyo_Century
+    layer: capital_and_asset_managers
+    ownership_status: public_Tokyo_Stock_Exchange_8439
+    fiscal_baseline:
+      period: FY2025_ended_2026_03_31
+      accounting_basis: Japanese_consolidated_reporting
+      currency: JPY
+      revenue_jpy_billion: 1457.7
+      gross_profit_jpy_billion: 328.3
+      selling_general_and_administrative_expenses_jpy_billion: 179.9
+      operating_income_jpy_billion_derived: 148.4
+      operating_income_derivation: gross_profit_328_3_minus_SG_and_A_179_9
+      operating_margin_percent_derived: 10.18
+      ordinary_income_jpy_billion: 163.4
+      net_income_attributable_to_owners_jpy_billion: 111.3
+      ROA_percent: 1.6
+      ROE_percent: 10.4
+      total_assets_jpy_billion: 7214.8
+      total_liabilities_jpy_billion: 5962.2
+      interest_bearing_debt_jpy_billion: 5142.5
+      shareholders_equity_jpy_billion: 1120.5
+    data_center_exposure:
+      role: asset_financing_joint_venture_owner_and_capital_partner
+      confirmed_campus_refs: [dc_ntt_india_portfolio]
+      India_BOM8_joint_venture:
+        ownership_percent: 75
+        NTT_GDC_Holding_Asia_ownership_percent: 25
+        critical_IT_load_mw: 24
+        building_area_sqm_approximate: 29000
+        building_floors: 9
+        expected_completion_in_2021_release: 2022-02
+        current_operating_status_revenue_operating_profit_debt_and_cash_flow: undisclosed
+      segment_reporting_boundary: >-
+        FY2025 International Business included data centers and benefited from
+        gains on sales of US data centers, but Tokyo Century did not disclose
+        BOM8 or India data-center revenue, operating profit or asset returns.
+    management_outlook:
+      FY2026_net_income_attributable_to_owners_plan_jpy_billion: 123.0
+      FY2026_new_Social_Infrastructure_segment_net_income_plan_jpy_billion: 18.9
+      segment_scope: includes_real_estate_data_centers_and_environmental_infrastructure
+      strategy: expand_partner_joint_ventures_asset_recycling_and_social_infrastructure_earnings
+      boundary: The Social Infrastructure plan is not a data-center-only forecast.
+    watch_items:
+      - BOM8_current_lifecycle_customer_and_cash_flow_disclosure
+      - India_data_center_contribution_not_separately_reported
+      - high_interest_bearing_debt_in_asset_finance_business_model
+      - segment_reclassification_from_FY2026
+      - one_time_US_data_center_sale_gains_in_FY2025_comparability
+    sources:
+      - https://www.tokyocentury.co.jp/en/ir/highlights/summary.html
+      - https://www.tokyocentury.co.jp/en/ir/library/pdf/2025_4q_en_earnings-call.pdf
+      - https://services.global.ntt/en-in/newsroom/ntt-and-tokyo-century-collaborate-on-data-center-operations-in-india
+    confidence: high_for_group_financials_BOM8_ownership_and_design_medium_for_segment_outlook_low_for_India_project_economics
 
   - id: company_cyrusone
     company: CyrusOne

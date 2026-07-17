@@ -116,6 +116,12 @@ campus_profiles:
         boundary: >-
           This is the current public inquiry-market roster, not a complete
           building-by-building reconciliation of the more-than-160 facilities.
+          The inquiry form omits Kolkata even though the current India location
+          page markets Kolkata 1; this is preserved as a website-scope mismatch.
+      current_public_India_location_page:
+        market_roster: [Mumbai, Bengaluru, Chennai, Delhi_NCR_Noida, Kolkata]
+        marketed_site_rows: 15
+        detailed_profile_ref: dc_ntt_india_portfolio
     portfolio_scale:
       management_capacity_as_of_2026_03_31_mw_approximate:
         North_America: 675
@@ -175,6 +181,370 @@ campus_profiles:
         date: 2025
         url: https://services.global.ntt/en-au/campaigns/global-data-centers-2025-sustainability-report
     confidence: high_for_dated_management_capacity_and_portfolio_efficiency_medium_for_current_marketing_scope_low_for_per_site_GPU_and_electrical_inventory
+
+  - id: dc_ntt_india_portfolio
+    name: NTT DATA India data-center portfolio
+    record_granularity: regional_operator_portfolio_with_site_rows_buildings_and_dated_capacity_scopes
+    operator: NTT_Global_Data_Centers_India
+    parent_operator: NTT_DATA
+    country: India
+    lifecycle_as_of_2026_07_18: mixed_operating_marketed_under_development_and_planned
+    location:
+      current_public_market_roster: [Mumbai, Bengaluru, Chennai, Delhi_NCR_Noida, Kolkata]
+      current_public_marketing_rows:
+        Mumbai: [Mumbai_5, Mumbai_6, Mumbai_7, Mumbai_Vikhroli, Mumbai_Vikhroli_IV, Mumbai_BSE, Navi_Mumbai_NAV1]
+        Bengaluru: [Bengaluru_2, Bengaluru_3, Bengaluru_4]
+        Chennai: [Chennai_1, Chennai_2]
+        Delhi_NCR_Noida: [Noida_1_DEL1, Noida_2]
+        Kolkata: [Kolkata_1]
+      marketed_site_row_count_derived: 15
+      market_count_derived: 5
+      boundary: >-
+        A marketing row is not necessarily one building or one live facility.
+        Bengaluru 4, Chennai 2, Noida 2 and Kolkata 1 contain multiple planned
+        buildings, while the public page omits named facilities such as Mumbai 8
+        and Mumbai 9 that appear in dated official releases. The inquiry form
+        also still omits Kolkata.
+    regional_capacity_reconciliation:
+      management_current_capacity_as_of_2026_03_31_mw_approximate: 425
+      management_planned_capacity_as_of_2026_03_31_mw_approximate: 80
+      share_of_global_current_1630_mw_percent_derived: 26.07
+      share_of_global_planned_770_mw_percent_derived: 10.39
+      current_public_row_primary_headline_full_build_scope_mw_more_than_derived: 292.8
+      current_public_row_primary_headline_components_mw:
+        Mumbai: 93.0
+        Bengaluru: 83.7
+        Chennai: 36.8
+        Delhi_NCR_Noida: 54.3
+        Kolkata: more_than_25
+      dated_operating_snapshots:
+        - {date: 2023-06-29, facilities: 16, IT_power_mw_more_than: 205, IT_space_sqft_more_than: 3100000}
+        - {date: 2024-01-11, facilities: 18, IT_power_mw_more_than: 265, IT_space_sqft_more_than: 3100000}
+        - {period: corporate_profile_2025, launched_IT_load_mw_more_than: 340}
+      dated_growth_scopes:
+        March_2025_India_additional_capacity_aim_mw: 400
+        March_2025_largest_India_campus_full_operational_facility_power_mw_more_than: 500
+        March_2025_campus_name_in_release: undisclosed
+      reconciliation_boundary: >-
+        The greater-than-292.8 MW sum adds the primary headline on each of the 15
+        current public rows and therefore mixes live legacy buildings with full
+        build designs. It excludes uncarded Mumbai 8, Mumbai 9 and other private
+        hyperscale phases, and it is not an operating-capacity measure. The 425
+        MW management figure is the current regional baseline. The March 2025
+        400 MW ambition, the corporate-profile roadmap and the March 2026 80 MW
+        planned measure have different dates or horizons and are not combined.
+    facility_cards:
+      Mumbai_5:
+        marketing_row_status: current
+        locality: Chandivali_Mumbai
+        lifecycle: operating_currently_marketed
+        server_space_sqm: 6700
+        critical_IT_load_mw: 12.5
+        rack_power_kw_up_to: 6
+        UPS_redundancy: N_plus_N
+        cooling: N_plus_2_precision_air_conditioning_bottom_up_supply
+        network: carrier_neutral_with_redundant_carrier_meet_me_rooms
+      Mumbai_6:
+        marketing_row_status: current
+        locality: Chandivali_Mumbai
+        lifecycle: operating_currently_marketed
+        server_space_sqm: 8400
+        critical_IT_load_mw: 19.2
+        rack_power_kva_range: [3, 15]
+        UPS_redundancy: N_plus_N
+        cooling: air_side_and_water_side_economization_with_bottom_up_supply
+        network: carrier_neutral_with_redundant_carrier_meet_me_rooms
+      Mumbai_7:
+        marketing_row_status: current
+        locality: Chandivali_Mumbai
+        lifecycle: operating_since_2020
+        server_space_sqm: 10300
+        critical_IT_load_mw: 25.6
+        emergency_generation: {diesel_generator_count: 24, unit_kva: 2500, nameplate_total_mva_derived: 60}
+        UPS_redundancy: N_plus_N
+        cooling: {type: precision_air_conditioning, redundancy: N_plus_2, temperature_c: 22, tolerance_c: 2}
+        network: {distinct_fiber_paths: 4, carrier_neutral: true, redundant_meet_me_rooms: true}
+      Mumbai_Vikhroli:
+        marketing_row_status: current
+        locality: Vikhroli_Mumbai
+        lifecycle: operating_currently_marketed
+        server_space_sqm: 3000
+        critical_IT_load_mw: 2.4
+        total_facility_load_mva: 6
+        power: {feeds: dual, rack_kva_range: [3, 6]}
+        cooling: direct_expansion_bottom_up_air_supply
+      Mumbai_Vikhroli_IV:
+        marketing_row_status: current
+        locality: Vikhroli_Mumbai
+        lifecycle: operating_currently_marketed
+        critical_IT_load_mw: 3
+        total_facility_load_mva: 4
+        power: {feeds: dual, rack_kva_range: [3, 6]}
+        cooling: direct_expansion_bottom_up_air_supply
+      Mumbai_BSE:
+        marketing_row_status: current
+        locality: Bombay_Stock_Exchange_Mumbai
+        lifecycle: operating_currently_marketed
+        critical_IT_load_mw: 0.3
+        total_facility_load_mw: 1
+        power: {feeds: dual, rack_kva_range: [3, 6]}
+        cooling: direct_expansion_bottom_up_air_supply
+      Navi_Mumbai_NAV1:
+        marketing_row_status: current_row_headlined_by_NAV1A
+        locality: Mahape_Navi_Mumbai
+        lifecycle: NAV1A_operating_or_customer_ready_later_phase_status_unresolved
+        campus_phases:
+          NAV1A:
+            IT_space_sqm: 37000
+            brochure_space_sqft: 400000
+            racks: 5000
+            IT_power_mw: 30
+            facility_power_mw: 45
+            structure: ground_plus_8_floors_plus_1_basement
+            rack_standard: 42U_600_by_1000_by_2100_mm
+            structural_load_kg_per_sqm: 1500
+          NAV1B: {IT_load_mw: 30.4, page_schedule: launching_FY2022, current_status: unresolved_stale_schedule}
+          NAV1C: {IT_load_mw: undisclosed, page_schedule: planned_Q2_FY2023, current_status: unresolved_stale_schedule}
+          NAV1D: {IT_load_mw: undisclosed, page_schedule: planned_Q2_FY2023, current_status: unresolved_stale_schedule}
+          NAV1C_and_NAV1D_capacity_wording:
+            published_IT_load_mw: 40
+            allocation_boundary: The page does not make clear whether 40 MW applies to each building or the two-building scope; it is not added to a campus total.
+        electrical:
+          high_tension_feed_as_published: 220_KVA
+          unit_boundary: Official brochure prints 220_KVA; this is a probable unit anomaly and is not silently corrected to kV.
+          diesel_generators: {count: 34, unit_kva: 2500, nameplate_total_mva_derived: 85}
+          UPS: {configuration: N_colon_N, module_kva: 1000, battery_bridge_minutes_at_full_load_minimum: 10}
+          standard_rack_feed_amps_options: [16, 32]
+        cooling:
+          deployed_options: [liquid_immersion_cooling, direct_contact_liquid_cooling, precision_air_conditioning]
+          precision_air_redundancy: N_plus_2
+          temperature_c: 23
+          tolerance_c: 2
+          live_liquid_cooled_IT_mw_and_CDU_inventory: undisclosed
+        network: {distinct_fiber_paths: 4, meet_me_rooms_on_each_server_floor: true, DCI_to_other_NTT_facilities: true}
+      Bengaluru_2:
+        marketing_row_status: current
+        locality: Electronic_City_Bengaluru
+        lifecycle: operating_currently_marketed
+        server_space_sqm: 4000
+        critical_IT_load_mw: 4.5
+        total_facility_load_mw: 7.5
+        rack_kva_range: [3, 6]
+        cooling: N_plus_1_air_cooling_bottom_up_supply
+      Bengaluru_3:
+        marketing_row_status: current
+        locality: Whitefield_Bengaluru
+        lifecycle: operating_currently_marketed
+        server_space_sqm: 5800
+        critical_IT_load_mw: 12
+        total_power_capacity_mva: 20
+        rack_kva_range: [3, 6]
+        cooling: N_plus_2_air_cooling_bottom_up_supply
+      Bengaluru_4:
+        marketing_row_status: current_campus_row
+        lifecycle: building_A_customer_tour_and_fact_sheet_available_buildings_B_and_C_planned
+        location_evidence:
+          page_marketing_locality: Electronic_City_area
+          building_A_fact_sheet_address: Building_A_Sy_No_13_Navarathna_Agrahara_Village_Prestige_Tech_Cloud_Jala_Hobli_Sadahalli_Gate_Bengaluru_Rural_Karnataka_562110
+          boundary: The current page locality and the exact fact-sheet address do not cleanly reconcile; exact campus geocoding remains open.
+        campus_space_sqm_more_than: 17000
+        buildings:
+          Bengaluru_4A: {IT_load_mw: 22.4, status: current_fact_sheet_and_tour_available_commissioning_date_not_found}
+          Bengaluru_4B: {IT_load_mw: 22.4, status: planned}
+          Bengaluru_4C: {IT_load_mw: 22.4, status: planned}
+        full_build_IT_load_mw: 67.2
+        standard_average_rack_density_kw: 5
+        electrical:
+          substation: 220_kV_LILO_GIS
+          UPS: dual_A_and_B_supply_2N
+          diesel_generators: N_plus_2
+        cooling: {chillers: air_cooled_N_plus_2, PAHUs: N_plus_2, containment: cold_aisle}
+        network: carrier_and_cloud_neutral_redundant_cabling_and_inter_data_center_connectivity
+      Chennai_1:
+        marketing_row_status: current
+        locality: Poonamallee_Chennai
+        lifecycle: operating_currently_marketed
+        server_space_sqm: 1500
+        critical_IT_load_mw: 2
+        rack_kva_range: [3, 6]
+        UPS_redundancy: N_plus_N
+        cooling: N_plus_1_air_cooling_bottom_up_supply
+      Chennai_2:
+        marketing_row_status: current_campus_row_with_stale_coming_soon_text
+        locality: Ambattur_Chennai
+        campus_area_acres: 6
+        building_count: 2
+        floors_per_building: 9
+        full_build_IT_load_mw: 34.8
+        total_racks: 5000
+        buildings:
+          Chennai_2A: {IT_load_mw: 17.4, racks: 2500, lifecycle: live_since_2023_06_29}
+          Chennai_2B: {IT_load_mw: 17.4, racks: 2500, lifecycle: full_build_phase_current_commissioning_status_unresolved}
+        power: UPS_with_redundancy_level_unspecified
+        cooling: redundant_water_cooled_system_CRAC_and_cold_aisle_containment
+        network: carrier_neutral_DCI_cloud_connects_and_MIST_cable_landing_connectivity
+      Noida_1_DEL1:
+        marketing_row_status: current
+        locality: Noida_Delhi_NCR
+        lifecycle: operating_currently_marketed
+        server_space_sqm: 1800
+        critical_IT_load_mw: 1.5
+        rack_kva_range: [3, 9]
+        UPS_redundancy: N_plus_N
+        cooling: N_plus_1_air_cooling_bottom_up_supply
+        legacy_brochure_generation: gas_turbine_generator_N_plus_1
+      Noida_2:
+        marketing_row_status: current_campus_row_despite_stale_coming_soon_text
+        locality: Noida_data_center_corridor_Delhi_NCR
+        campus_area_acres: 6
+        full_build_IT_load_mw: 52.8
+        buildings:
+          Noida_2A: {IT_load_mw: 22.4, area_sqft_approximate: 300000, area_sqm_approximate: 28000, lifecycle: live_since_2024_01_11}
+          Noida_2B: {IT_load_mw: 30.4, lifecycle: planned_or_not_publicly_commissioned}
+        power: UPS_with_redundancy_level_unspecified
+        cooling: air_cooled_chillers_with_continuous_cooling_and_thermal_storage_tanks
+        structural_resilience: seismic_dampers
+        network: carrier_neutral_with_redundant_meet_me_rooms_and_NTT_DCI
+      Kolkata_1:
+        marketing_row_status: current_campus_row
+        locality: New_Town_Kolkata_West_Bengal
+        campus_area_acres_approximate: 7.5
+        built_up_space_sqft_more_than: 500000
+        planned_building_count: 2
+        full_build_IT_load_mw_more_than: 25
+        buildings:
+          KOL1_A: {planned_client_IT_load_mw: 6.4, lifecycle: page_says_ready_to_welcome_but_also_developing_and_planned_energization_unresolved}
+          KOL1_B: {IT_load_mw: undisclosed, lifecycle: planned}
+        cooling: continuous_mechanical_cooling_N_plus_1
+        network: carrier_neutral_with_redundant_meet_me_rooms
+    named_but_not_currently_carded_facilities_and_projects:
+      Mumbai_8:
+        dated_evidence: going_live_soon_as_of_2021_09
+        effect_on_Chandivali_campus_if_live_IT_load_mw: 85
+        current_capacity_and_public_card: undisclosed
+      BOM8_joint_venture:
+        possible_alias_relationship: likely_related_to_Mumbai_8_but_not_explicitly_reconciled_by_sources
+        location: Mumbai_30_minutes_from_Chhatrapati_Shivaji_International_Airport
+        floors: 9
+        building_area_sqft_more_than: 310000
+        building_area_sqm_approximate: 29000
+        critical_IT_load_mw: 24
+        expected_completion_in_2021_release: 2022-02
+        current_operating_status: not_reverified
+        ownership: {Tokyo_Century_percent: 75, NTT_GDC_Holding_Asia_percent: 25}
+      Mumbai_9:
+        location: Central_Mumbai_Chandivali_campus
+        lifecycle: officially_reported_recently_live_as_of_2024_01_11
+        critical_IT_load_space_power_chain_cooling_and_GPU_inventory: undisclosed
+      largest_India_campus_opened_by_2025_03:
+        full_operational_facility_power_mw_more_than: 500
+        name_and_current_energized_IT_load_in_release: undisclosed
+        related_older_design_evidence: NAV1A_brochure_says_Navi_Mumbai_2_Airoli_ultimate_facility_load_500_MW
+        identity_boundary: The matching 500 MW figures are suggestive but do not prove the unnamed 2025 campus is the older Airoli plan.
+    accelerators_and_AI:
+      India_exact_operator_or_customer_GPU_accelerator_vendors_models_counts_racks_and_site_allocation: undisclosed
+      customer_hardware_boundary: NTT primarily supplies colocation capacity; AI-ready or AI-experienced language does not establish ownership of customer GPUs.
+      worldwide_AI_load_disclosure_mw_more_than: 200
+      worldwide_scope: live_or_in_development_in_2025_corporate_profile_and_described_as_deployed_in_March_2025_release
+      India_allocation_of_worldwide_AI_load_mw: undisclosed
+      India_cooling_evidence:
+        NAV1A: liquid_immersion_and_direct_contact_liquid_cooling_deployed
+        broader_India: direct_liquid_to_chip_across_many_facilities_and_liquid_immersion_pilot
+        exact_live_liquid_cooled_IT_mw_CDU_heat_rejection_OEM_and_fluid_inventory: undisclosed
+      high_density_boundary: Bengaluru 4's published standard average is 5 kW per rack; AI marketing is not evidence of GPU racks at every building.
+    connectivity_and_sustainability:
+      MIST_subsea_cable:
+        length_km: 8100
+        fiber_pairs: 12
+        capacity_tbps_more_than: 200
+        connected_markets: [India, Malaysia, Singapore, Thailand]
+        India_landings: {Mumbai_connected: 2023-02, Chennai_connected: 2023-05, commissioning_target_in_2025_release: 2025-06}
+      Mumbai_IOWN_APN:
+        use: inter_data_center_photonic_connectivity
+        status_as_of_2025_03: early_implementation
+      renewable_energy:
+        India_data_centers_running_on_renewable_energy_share_as_of_2025_03: almost_two_thirds
+        operations_100_percent_renewable_target_year: 2030
+        boundary: The share is a facility-count statement, not hourly carbon-free matching or a MW-weighted energy share.
+    investment_and_market_outlook:
+      India_digital_infrastructure_investment_over_prior_decade_usd_billion: 3
+      India_investment_scope_boundary: Includes broader digital infrastructure and is not data-center-only capex.
+      NTT_global_growth_investment_FY2023_to_FY2027_jpy_trillion: 8
+      NTT_DATA_global_data_center_investment_through_FY2027_usd_billion_more_than: 10
+      India_revenue_market_rank_as_of_2025_03: top_10
+      target_within_three_years_from_2025_03: top_5_NTT_DATA_market
+      India_standalone_revenue_operating_profit_EBITDA_capex_debt_utilization_and_site_returns: undisclosed
+    linked_companies:
+      operator: [NTT_Global_Data_Centers_India, NTT_DATA]
+      strategic_asset_partner: [Tokyo_Century]
+      submarine_cable_partners: [Orient_Link, JICT, WEN_Capital]
+      financial_profile_refs: [company_ntt_data_group, company_tokyo_century]
+    sources:
+      - title: Current India locations and 15 marketing rows
+        publisher: NTT_DATA
+        date: 2026-07-18_accessed
+        url: https://services.global.ntt/en-us/services-and-products/global-data-centers/global-locations/india
+      - title: Current Mumbai facility cards
+        publisher: NTT_DATA
+        date: 2026-07-18_accessed
+        urls:
+          - https://services.global.ntt/en-in/services-and-products/global-data-centers/global-locations/india/mumbai-5-data-center
+          - https://services.global.ntt/en-in/services-and-products/global-data-centers/global-locations/india/mumbai-6-data-center
+          - https://services.global.ntt/en-in/services-and-products/global-data-centers/global-locations/india/mumbai-7-data-center
+          - https://services.global.ntt/en-in/services-and-products/global-data-centers/global-locations/india/mumbai-vikhroli-data-center
+          - https://services.global.ntt/en-in/services-and-products/global-data-centers/global-locations/india/mumbai-vikhroli-iv-data-center
+          - https://services.global.ntt/en-in/services-and-products/global-data-centers/global-locations/india/mumbai-bse-data-center
+          - https://services.global.ntt/en-in/services-and-products/global-data-centers/global-locations/india/navi-mumbai-data-center
+      - title: Current Bengaluru facility cards and Bengaluru 4 fact sheet
+        publisher: NTT_DATA
+        date: 2026-07-18_accessed
+        urls:
+          - https://services.global.ntt/en-in/services-and-products/global-data-centers/global-locations/india/bengaluru-2-data-center
+          - https://services.global.ntt/en-in/services-and-products/global-data-centers/global-locations/india/bengaluru-3-data-center
+          - https://services.global.ntt/en-in/services-and-products/global-data-centers/global-locations/india/bengaluru-4-campus
+          - https://services.global.ntt/en-us/services-and-products/global-data-centers/global-locations/india/-/media/df63a01ce948442ab89d4b136c51d90b.ashx
+      - title: Current Chennai Noida and Kolkata facility cards
+        publisher: NTT_DATA
+        date: 2026-07-18_accessed
+        urls:
+          - https://services.global.ntt/en-in/services-and-products/global-data-centers/global-locations/india/chennai-1-data-center
+          - https://services.global.ntt/en-in/services-and-products/global-data-centers/global-locations/india/chennai-2-data-center
+          - https://services.global.ntt/en-us/services-and-products/global-data-centers/global-locations/india/noida-1-data-center
+          - https://services.global.ntt/en-us/services-and-products/global-data-centers/global-locations/india/noida-2-data-center
+          - https://services.global.ntt/en-us/services-and-products/global-data-centers/global-locations/india/kolkata-1-data-center
+      - title: Navi Mumbai 1A technical brochure
+        publisher: NTT_DATA
+        date: 2022_or_later
+        url: https://services.global.ntt/-/media/ntt/global/services-and-products/data-centers/global-locations/india/navi-mumbai-data-center/nav1-data-center-final.pdf?rev=5386cc6b37f44325af120f5371ea1da1
+      - title: Chennai 2A and MIST launch
+        publisher: NTT
+        date: 2023-06-29
+        url: https://services.global.ntt/en-us/newsroom/ntt-launches-hyperscale-data-center-campus-with-new-subsea-cable-system-in-chennai
+      - title: Noida 2A opening and Mumbai 9 live disclosure
+        publisher: NTT
+        date: 2024-01-11
+        url: https://services.global.ntt/en-in/newsroom/ntt-expands-india-footprint-with-new-data-center-campus-in-noida
+      - title: India AI connectivity capacity investment and renewable update
+        publisher: NTT_DATA
+        date: 2025-03-17
+        url: https://services.global.ntt/en-us/newsroom/ntt-data-accelerates-india-digital-future-with-multi-billion-ai-and-infrastructure-investments
+      - title: Corporate Profile 2025 data-center capacity and cooling update
+        publisher: NTT_DATA
+        date: 2026
+        url: https://www.nttdata.com/global/en/-/media/nttdataglobal/1_files/about-us/company-profile/cp25_e_all_p.pdf?rev=2ea74c1b42f34e7a86cd6f2e917a048a
+      - title: Mumbai BOM8 joint venture with Tokyo Century
+        publisher: NTT
+        date: 2021-06-16
+        url: https://services.global.ntt/en-in/newsroom/ntt-and-tokyo-century-collaborate-on-data-center-operations-in-india
+      - title: Mumbai 8 and India expansion roadmap
+        publisher: NTT
+        date: 2021-09-01
+        url: https://services.global.ntt/en-in/newsroom/ntt-expands-its-data-center-footprint
+      - title: FY2025 financial results presentation
+        publisher: NTT_DATA_Group
+        date: 2026-05
+        url: https://www.nttdata.com/global/en/-/media/nttdataglobal/1_files/investors/ir_events/2025/fy2025_pre_4q.pdf?rev=ccef6f86896a406fb2c83992da8fc0b7
+    confidence: high_for_current_public_rows_dated_openings_facility_card_specs_and_management_capacity_medium_for_phase_lifecycle_and_location_reconciliation_low_for_GPU_inventory_site_utilization_and_India_standalone_financials
 
   - id: dc_ntt_va11_gainesville_virginia
     name: NTT DATA VA11 Gainesville
@@ -9801,7 +10171,10 @@ next_research_queue:
     - Sify_identify_15th_marketed_live_DC_and_reconcile_188MW_200MW
     - Sify_site_level_energized_installed_sold_utilized_capacity_and_GPU_inventory
     - Sify_equipment_OEM_transformer_UPS_generator_chiller_CDU_counts_and_operating_performance
-    - NTT_India_complete_site_roster_capacity_lifecycle_power_cooling_and_GPU_inventory
+    - NTT_India_425MW_current_80MW_planned_to_15_public_rows_18_facilities_and_uncarded_hyperscale_buildings_reconciliation
+    - NTT_India_NAV1B_NAV1C_NAV1D_Bengaluru4_B_C_Chennai2B_Noida2B_Kolkata1_building_energization_and_utilization
+    - NTT_India_exact_GPU_inventory_customer_vs_operator_ownership_live_liquid_cooled_MW_CDU_heat_rejection_and_equipment_OEMs
+    - NTT_India_transformer_switchgear_UPS_battery_generator_chiller_counts_and_operating_PUE_WUE_water_per_site
   company_financials:
     - ByteDance_audited_financials_if_publicly_released
     - Crusoe_QTS_Vantage_VoltaGrid_and_Related_Digital_audited_or_lender_disclosed_financials
@@ -9833,7 +10206,8 @@ next_research_queue:
     - Yotta_NVIDIA_Gorilla_contract_overlap_hardware_ownership_revenue_recognition_and_customer_offtake
     - Sify_SISL_FY2026_standalone_financials_customer_concentration_and_site_level_economics
     - Sify_81MW_delivery_capex_debt_equity_IPO_funding_and_revenue_conversion
-    - NTT_India_revenue_operating_profit_capex_debt_and_site_economics
+    - NTT_India_standalone_revenue_operating_profit_EBITDA_capex_debt_customer_mix_utilization_and_site_economics
+    - Tokyo_Century_BOM8_current_operation_revenue_operating_profit_debt_cash_flow_and_asset_return
 
 portfolio_relevance:
   interpretation: >-
