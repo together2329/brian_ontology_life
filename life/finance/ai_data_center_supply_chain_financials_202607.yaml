@@ -27,6 +27,7 @@ methodology:
 stack_layers:
   hyperscale_buyers_and_cloud:
     - Alphabet
+    - Apple
     - Microsoft
     - Meta
     - Amazon
@@ -1138,6 +1139,67 @@ financial_profiles:
       - https://www.sec.gov/Archives/edgar/data/65984/000006598426000174/etr-20251231.htm
       - https://www.entergy.com/news/entergy-louisiana-announces-a-new-agreement-with-meta-that-will-deliver-an-additional-2b-in-customer-savings
     confidence: high_for_financials_and_announced_plan_medium_for_future_load_realization
+
+  - id: company_apple
+    company: Apple
+    layer: hyperscale_owner_operator_custom_AI_silicon_and_services
+    fiscal_baseline:
+      period: FY2025
+      accounting_basis: US_GAAP
+      currency: USD
+      revenue_usd_million: 416161
+      operating_income_usd_million: 133050
+      operating_margin_percent_derived_approximate: 31.97
+      services_revenue_usd_million: 109158
+      payments_for_property_plant_and_equipment_usd_million: 12715
+    latest_update:
+      period: Q2_FY2026_ended_2026_03_28
+      revenue_usd_million: 111184
+      operating_income_usd_million: 35885
+      operating_margin_percent_derived_approximate: 32.28
+      services_revenue_usd_million: 30976
+      six_month_revenue_usd_million: 254940
+      six_month_operating_income_usd_million: 86737
+      six_month_payments_for_property_plant_and_equipment_usd_million: 4344
+    data_center_exposure:
+      roles: [owned_data_center_operator, colocation_customer, third_party_compute_customer, custom_AI_server_and_silicon_designer, digital_services_provider]
+      global_portfolio_ref: dc_apple_global_data_center_portfolio
+      owned_data_centers: 8
+      2025_owned_and_colocation_electricity_million_kwh: 2585
+      Private_Cloud_Compute:
+        workload: foundation_model_inference
+        hardware: custom_Apple_silicon_servers
+        exact_silicon_model_server_node_chassis_rack_count_power_and_site_allocation: undisclosed
+      revenue_boundary: >-
+        Services revenue includes the App Store, cloud, advertising, payment, and
+        entertainment services and is not data-center or PCC revenue. Apple does
+        not report data-center operating profit, capex, depreciation, utilization,
+        or return on invested capital separately.
+    management_outlook:
+      US_investment_commitment_usd_billion: 600
+      horizon_years: 4
+      boundary: Broad US spend and supplier commitment, not a data-center capex budget.
+      data_center_construction_underway_as_of_2025_08: [North_Carolina, Iowa, Nevada, Oregon]
+      broader_capacity_expansion_plan_as_of_2025_02: [North_Carolina, Iowa, Oregon, Arizona, Nevada]
+      Houston_AI_server_production_started: 2025
+      Houston_AI_server_production_status_as_of_2026_02: ahead_of_schedule
+      formal_full_year_revenue_operating_income_or_data_center_capex_guidance_in_reviewed_Q2_release: not_disclosed
+    watch_items:
+      - Apple_Intelligence_and_PCC_adoption_and_utilization
+      - custom_Apple_silicon_server_yield_supply_and_refresh_cadence
+      - owned_versus_colocation_and_third_party_compute_economics
+      - Services_growth_regulation_and_margin_mix
+      - China_data_sovereignty_and_operating_arrangements
+      - power_interconnection_water_and_construction_delivery
+    sources:
+      - https://www.apple.com/newsroom/pdfs/fy2025-q4/FY25_Q4_Consolidated_Financial_Statements.pdf
+      - https://www.apple.com/newsroom/pdfs/fy2026q2/FY26_Q2_Consolidated_Financial_Statements.pdf
+      - https://www.apple.com/environment/pdf/Apple_Environmental_Progress_Report_2026.pdf
+      - https://security.apple.com/blog/private-cloud-compute/
+      - https://security.apple.com/documentation/private-cloud-compute/hardwareintegrity
+      - https://www.apple.com/newsroom/2025/08/apple-increases-us-commitment-to-600-billion-usd-announces-ambitious-program/
+      - https://www.apple.com/newsroom/2026/02/apple-accelerates-us-manufacturing-with-mac-mini-production/
+    confidence: high_for_consolidated_financials_owned_site_count_energy_and_PCC_design_low_for_data_center_economics_and_hardware_inventory
 
   - id: company_microsoft
     company: Microsoft
@@ -4622,6 +4684,8 @@ financial_profiles:
 cross_company_read_through:
   current_signals:
     - Hyperscale buyers are funding the demand wave directly: Meta raised its 2026 capex range, Amazon's free cash flow fell as AI property investment rose, and Oracle is financing rapid OCI expansion against a very large AI-heavy RPO.
+    - Apple owns eight disclosed data centers and used about 2.041 TWh at those sites plus 0.544 TWh of metered colocation electricity in 2025. Its Private Cloud Compute fleet uses custom Apple-silicon inference servers, but Apple discloses no chip model, server, node, chassis, rack, GPU, IT-MW, or site-allocation count. The colocation figure excludes cooling and building-operation energy, so it is not directly comparable with owned-facility consumption.
+    - Apple's FY2025 revenue was $416.2 billion and operating income $133.1 billion, while Services revenue was $109.2 billion. Services is the monetization layer supported by the infrastructure but is not data-center revenue; the $600 billion four-year US commitment is likewise broad manufacturing and supplier spend rather than a data-center capex forecast.
     - AWS currently reports 39 Regions and 123 Availability Zones, Microsoft more than 500 datacenters in 34 countries, and Google 30 active location headlines. Those disclosures use different physical and logical scopes, so fleet size cannot be ranked safely without building, ownership, and lifecycle reconciliation.
     - Amazon, Microsoft, and Alphabet all show strong current cloud earnings while accelerating infrastructure: AWS produced $14.16 billion of Q1 2026 operating income, Microsoft Intelligent Cloud $13.75 billion, and Google Cloud $6.60 billion. These segment results include services beyond physical data centers and do not reveal campus-level return on capital.
     - Meta's current public roster reaches 33 data-center locations, but its 2024 Environmental Data Index individually reported only 18 owned online sites plus aggregated leased facilities. The 33-location page mixes operating and future projects, so it is not a current operating-building count. Meta's FY2026 capex outlook of $125-$145 billion is a derived 73%-101% increase over FY2025 and makes delivery, utilization, and depreciation central return-on-capital variables.

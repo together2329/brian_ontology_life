@@ -1646,6 +1646,247 @@ campus_profiles:
         url: https://cloud.google.com/docs/security/overview/resources/google_security_wp.pdf
     confidence: high_for_headlines_visible_roster_power_cooling_and_network_architecture_low_for_exact_buildings_live_MW_GPU_inventory_and_site_equipment
 
+  - id: dc_apple_global_data_center_portfolio
+    name: Apple global owned, colocation, and Private Cloud Compute data-center portfolio
+    record_granularity: global_operator_portfolio_not_one_physical_campus
+    operator: Apple
+    lifecycle_as_of_2026_07_18: operating_and_expanding
+    location:
+      owned_data_centers_company_disclosed: 8
+      regions: [North_America, Europe, Asia]
+      owned_site_roster:
+        - site: Maiden
+          country: US
+          region: North_Carolina
+          opening: 2010-06
+          osm_ref: osm_relation_14593270
+          representative_latitude: 35.5887645
+          representative_longitude: -81.2623099
+          mapped_campus_area_m2: 504534.926
+          cumulative_investment_in_Catawba_County_usd_billion_more_than: 5
+          expansion_status_as_of_2025_08: construction_underway
+          electricity_use_2025_million_kwh: 470
+        - site: Prineville
+          country: US
+          region: Oregon
+          opening: 2012-05
+          osm_ref: osm_relation_19993392
+          representative_latitude: 44.2834776
+          representative_longitude: -120.8656163
+          mapped_campus_area_m2: 1449778.695
+          expansion_status_as_of_2025_08: construction_underway
+          electricity_use_2025_million_kwh: 267
+        - site: Reno
+          country: US
+          region: Nevada
+          opening: 2012-12
+          exact_address_coordinates_parcel_and_building_count: undisclosed_in_reviewed_primary_sources
+          expansion_status_as_of_2025_08: construction_underway
+          electricity_use_2025_million_kwh: 422
+        - site: Mesa
+          country: US
+          region: Arizona
+          building_operational_control_from: 2015-10
+          customer_service_from: 2017-03
+          role: global_command_data_center
+          osm_ref: osm_way_567575428
+          representative_latitude: 33.3467248
+          representative_longitude: -111.6043756
+          mapped_campus_area_m2: 370276.569
+          broader_expansion_plan_as_of_2025_02: true
+          electricity_use_2025_million_kwh: 563
+        - site: Waukee
+          country: US
+          region: Iowa
+          opening: 2024-10
+          announced_building_area_sqft: 400000
+          announced_investment_usd_billion: 1.3
+          announced_construction_and_operations_jobs_more_than: 550
+          osm_ref: osm_way_1318322780
+          representative_latitude: 41.6168519
+          representative_longitude: -93.9243968
+          mapped_building_footprint_m2: 29111.67
+          expansion_status_as_of_2025_08: construction_underway
+          electricity_use_2025_million_kwh: 30
+        - site: Viborg
+          country: Denmark
+          region: Central_Jutland
+          opening_year: 2020
+          osm_ref: osm_way_481615983
+          representative_latitude: 56.4832558
+          representative_longitude: 9.5739091
+          mapped_building_footprint_m2: 28390.757
+          electricity_use_2025_million_kwh: 71
+        - site: Ulanqab
+          country: China
+          region: Inner_Mongolia
+          opening_year: 2021
+          exact_address_coordinates_parcel_and_building_count: undisclosed_in_reviewed_primary_sources
+        - site: Guian
+          country: China
+          region: Guizhou
+          opening_year: 2021
+          osm_ref: osm_way_958847155
+          representative_latitude: 26.362838
+          representative_longitude: 106.4671747
+          mapped_building_footprint_m2: 145343.171
+      OSM_area_boundary: Mapped geometry may be a campus, parcel, or building footprint and is not certified floor area or IT capacity.
+      colocation:
+        use: additional_capacity
+        current_facility_count_locations_operators_and_contract_capacity: undisclosed
+        US_electricity_use_2025_million_kwh: 423
+        international_electricity_use_2025_million_kwh: 121
+      third_party_computing:
+        use: some_on_demand_cloud_computing_and_storage_services
+        vendors_locations_capacity_and_electricity_use: undisclosed
+        Apple_load_electricity_matched_with_clean_energy_since_2023_percent: 100
+      ownership_and_service_boundary: >-
+        Apple says the majority of online services run in its own data centers, but
+        also uses colocation and third-party computing. The eight-site count covers
+        Apple-owned data centers, not every physical facility supporting Apple
+        services or Private Cloud Compute. China operating and data-governance
+        arrangements are not reconstructed from the environmental report.
+    portfolio_scale:
+      2025_electricity:
+        China_two_owned_sites_combined_million_kwh: 218
+        owned_site_or_country_rows_sum_million_kwh_derived: 2041
+        owned_site_rows_derived_average_facility_draw_mw: 233.0
+        colocation_exact_kwh: 543594587
+        colocation_derived_average_Apple_metered_draw_mw: 62.1
+        data_centers_and_colocation_reported_total_million_kwh: 2585
+        combined_derived_average_draw_mw: 295.1
+        derivation: annual_kWh_divided_by_8760_hours_in_2025
+        renewable_electricity_match_percent: 100
+        scope_boundary: >-
+          Owned-site electricity is facility consumption. Apple says colocation
+          reporting excludes cooling and building-operation energy under its GHG
+          Protocol boundary, so the combined total and average mix unequal scopes.
+          Energy use and derived average draw are not utility capacity, contracted
+          IT MW, peak demand, or current 2026 load.
+      exact_owned_and_colocation_building_count_racks_servers_IT_MW_and_utilization: undisclosed
+      expansion:
+        construction_underway_as_of_2025_08: [Maiden_North_Carolina, Iowa, Nevada, Oregon]
+        broader_US_capacity_expansion_plan_as_of_2025_02: [North_Carolina, Iowa, Oregon, Arizona, Nevada]
+        exact_added_MW_buildings_budget_and_completion_schedule: undisclosed
+    accelerators_and_servers:
+      Private_Cloud_Compute:
+        workload: Apple_foundation_model_inference
+        hardware: custom_built_Apple_silicon_servers
+        exact_Apple_silicon_model_CPU_GPU_Neural_Engine_topology_node_count_racks_power_and_site_allocation: undisclosed
+        NVIDIA_or_AMD_GPU_inventory: undisclosed_and_no_reviewed_primary_source_establishes_a_merchant_GPU_fleet
+        cloud_demand_mitigation: Apple runs many Apple Intelligence features on device and sends only requests needing larger models to PCC.
+      disclosed_PCC_node_and_chassis_design:
+        root_of_trust: Apple_silicon_SoC
+        node_security: [Secure_Enclave, Secure_Boot, hardware_attestation, stateless_request_processing]
+        chassis:
+          PCC_nodes: multiple_count_undisclosed
+          baseboard_management_controller: Apple_silicon_BMC
+          BMC_connectivity_to_nodes: USB
+          physical_tamper_switch: resets_entire_chassis_power_if_lid_is_opened
+          component_manifest: attested_and_sealed
+        provisioning: rack_layout_recorded_in_Apple_data_center_asset_database
+        operational_boundary: Architecture disclosure does not reveal deployed server, node, chassis, or rack quantities.
+      proprietary_server_efficiency:
+        additional_annual_energy_savings_2025_kwh: 10000000
+        exact_server_count_baseline_and_measurement_scope: undisclosed
+      Houston_AI_server_manufacturing:
+        record_boundary: manufacturing_site_not_a_data_center
+        advanced_AI_server_production_started: 2025
+        status_as_of_2026_02: production_and_shipments_ahead_of_schedule
+        destination: Apple_data_centers_in_the_US
+        originally_announced_server_factory_area_sqft: 250000
+        exact_production_volume_bill_of_materials_contract_manufacturers_and_server_value: undisclosed
+    electrical_power_and_energy:
+      site_specific:
+        Maiden:
+          utility: Duke_Energy
+          Apple_created_projects_2011_2015_mw: 68
+          components: [two_20MW_solar_projects, one_18MW_solar_project, 10MW_biogas_fuel_cells]
+          Duke_Green_Source_Rider_solar_projects_mw: 22
+          later_long_term_solar_commitments_mw: 85
+          boundary: Renewable-project capacities are procurement and generation context, not data-center load or dedicated always-on supply.
+        Prineville:
+          utility_procurement: Oregon_Direct_Access
+          wind_PPA_mw: 200
+          Solar_Star_Oregon_II_PPA_mw: 56
+          solar_environmental_attribute_portfolio_mw: 69
+          microhydro_projects: 2
+        Reno:
+          utility: NV_Energy
+          Fort_Churchill_solar_mw_approximate: 20
+          Boulder_Solar_II_mw: 50
+          Techren_II_solar_mw: 200
+          Turquoise_Project_mw: 50
+        Mesa:
+          utility: Salt_River_Project
+          Bonnybrooke_solar_mw: 50
+          onsite_solar_mw: 4.67
+        Waukee:
+          utility: MidAmerican_Energy
+          2025_load_from_Wind_Prime_program_percent: 75
+          2025_load_from_Illinois_wind_PPA_percent: 25
+        Viborg:
+          Northern_Jutland_solar_mw: 42
+          wind_project_mw: 17
+          resilient_substation_eliminates_backup_diesel_generators: true
+        China_two_site_portfolio:
+          sources: [long_term_solar_agreements, long_term_wind_agreements, local_utility_green_program]
+          site_specific_allocation_and_MW: undisclosed
+      site_grid_service_MW_voltage_transformers_switchgear_UPS_and_equipment_OEMs: mostly_undisclosed
+      renewable_boundary: >-
+        Apple's 100-percent statement is a renewable-energy sourcing and matching
+        claim. Project nameplate MW must not be equated with site peak load, IT
+        capacity, hourly carbon-free operation, or backup power.
+    cooling_water_and_efficiency:
+      Maiden_newest_two_buildings:
+        architecture: indirect_evaporative_cooling_with_outside_air_and_heat_exchangers
+        water_use: eliminated_at_lower_outside_air_temperatures
+        expected_control_improvement_water_savings_gallons_per_year_approximate: 14000000
+      Prineville: direct_evaporative_cooling_with_outside_air_for_majority_of_year
+      Reno: direct_evaporative_cooling_with_outside_air_for_majority_of_year
+      Viborg: direct_evaporative_cooling_with_outside_air_for_majority_of_year
+      three_newest_data_centers_company_statement:
+        architecture: high_efficiency_air_cooled_chillers
+        cooling_water_use: zero
+        exact_three_sites: not_named_in_reviewed_report_section
+      water_stewardship:
+        Alliance_for_Water_Stewardship_certified_owned_sites: 8
+        completion_year: 2025
+      exact_portfolio_and_site_PUE_WUE_water_withdrawal_water_consumption_CDU_and_cooling_OEMs: undisclosed
+    linked_companies:
+      owner_operator_and_custom_silicon: [Apple]
+      utilities_and_energy: [Duke_Energy, NV_Energy, MidAmerican_Energy, Salt_River_Project]
+      financial_profile_refs: [company_apple]
+      public_company_financial_profile_gaps: [Duke_Energy, Berkshire_Hathaway_Energy_parent_context_for_NV_Energy_and_MidAmerican]
+      public_power_or_private_project_economic_gaps: [Salt_River_Project, renewable_project_counterparties]
+    sources:
+      - title: Apple 2026 Environmental Progress Report
+        publisher: Apple
+        date: 2026-04
+        data_period: FY2025_or_calendar_2025_as_labeled
+        url: https://www.apple.com/environment/pdf/Apple_Environmental_Progress_Report_2026.pdf
+      - title: Private Cloud Compute - A new frontier for AI privacy in the cloud
+        publisher: Apple_Security_Research
+        date: 2024-06-10
+        url: https://security.apple.com/blog/private-cloud-compute/
+      - title: Private Cloud Compute Security Guide - Hardware Integrity
+        publisher: Apple_Security_Research
+        date: 2026-07-18_accessed
+        url: https://security.apple.com/documentation/private-cloud-compute/hardwareintegrity
+      - title: Apple increases US commitment and expands data-center capacity
+        publisher: Apple
+        date: 2025-08-06
+        url: https://www.apple.com/newsroom/2025/08/apple-increases-us-commitment-to-600-billion-usd-announces-ambitious-program/
+      - title: Apple accelerates US manufacturing and AI-server production
+        publisher: Apple
+        date: 2026-02-24
+        url: https://www.apple.com/newsroom/2026/02/apple-accelerates-us-manufacturing-with-mac-mini-production/
+      - title: Apple's next US data center will be built in Iowa
+        publisher: Apple
+        date: 2017-08-24
+        url: https://www.apple.com/newsroom/2017/08/apples-next-us-data-center-will-be-built-in-iowa/
+    confidence: high_for_owned_site_count_roster_2025_energy_PCC_architecture_and_named_energy_projects_low_for_live_IT_MW_server_inventory_colocation_locations_and_equipment_BOM
+
   - id: dc_meta_global_data_center_portfolio
     name: Meta global data-center portfolio
     record_granularity: global_operator_portfolio_not_one_physical_campus
@@ -6604,6 +6845,10 @@ disclosure_gap_register:
   - Meta_current_exact_global_GPU_MTIA_inventory_models_racks_utilization_and_site_allocation
   - Meta_per_site_live_MW_grid_substations_transformers_switchgear_UPS_generators_cooling_and_equipment_OEMs
   - Meta_Sturgeon_1GW_capacity_definition_generation_grid_topology_GPU_inventory_and_equipment_BOM
+  - Apple_eight_owned_sites_to_exact_building_rack_server_IT_MW_and_utilization_reconciliation
+  - Apple_colocation_and_third_party_computing_facility_vendor_location_capacity_and_energy_reconciliation
+  - Apple_Private_Cloud_Compute_exact_Apple_silicon_model_node_chassis_rack_power_and_site_inventory
+  - Apple_per_site_grid_service_substations_transformers_switchgear_UPS_cooling_PUE_WUE_and_equipment_OEMs
 
 next_research_queue:
   campus_enrichment:
@@ -6663,6 +6908,10 @@ next_research_queue:
     - Meta_current_global_GPU_MTIA_inventory_and_per_site_allocation
     - Meta_per_site_live_MW_power_chain_liquid_cooling_and_equipment_OEMs
     - Meta_Sturgeon_1GW_generation_grid_topology_hardware_and_delivery_status
+    - Apple_eight_owned_sites_building_rack_server_IT_MW_and_current_expansion_reconciliation
+    - Apple_colocation_and_third_party_computing_vendor_location_capacity_and_energy_reconciliation
+    - Apple_PCC_server_model_node_chassis_rack_power_and_site_inventory
+    - Apple_per_site_power_chain_cooling_water_and_equipment_OEMs
   company_financials:
     - ByteDance_audited_financials_if_publicly_released
     - Crusoe_QTS_Vantage_VoltaGrid_and_Related_Digital_audited_or_lender_disclosed_financials
@@ -6678,6 +6927,7 @@ next_research_queue:
     - STACK_standalone_audited_revenue_operating_profit_debt_and_campus_economics
     - Dominion_TNB_and_NextEra_data_center_specific_rate_base_revenue_capex_and_customer_concentration
     - NextEra_Dominion_transaction_regulatory_approval_and_closing_status
+    - Duke_Energy_and_Berkshire_Hathaway_Energy_Apple_data_center_exposure_and_project_economics
 
 portfolio_relevance:
   interpretation: >-
