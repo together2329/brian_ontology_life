@@ -1,0 +1,2028 @@
+schema_version: 1
+status: active_research
+updated_at: 2026-07-17
+area: FINANCE
+secondary_areas:
+  - CAREER
+  - MIND
+title: Global AI data-center landscape
+research_question: >-
+  Where are the world's data centers, how large are the major AI campuses, how
+  many accelerators do they contain, how are they powered and cooled, and which
+  companies participate in their supply chains?
+
+scope_and_method:
+  location_baseline_ref: life/imports/global_data_centers_20260717/osm_data_center_locations.jsonl
+  location_summary_ref: life/imports/global_data_centers_20260717/summary.json
+  reproducible_builder_ref: scripts/build_global_data_center_registry.py
+  company_financials_ref: life/finance/ai_data_center_supply_chain_financials_202607.yaml
+  public_location_records: 4663
+  cross_check:
+    source: PeeringDB public site
+    reported_facilities_on_2026_07_17: 5858
+    use_boundary: >-
+      Used only as a coverage cross-check. PeeringDB bulk data is not copied into
+      this repository because its acceptable-use policy restricts bulk
+      redistribution.
+  evidence_priority:
+    - company_or_operator_primary_source
+    - utility_or_regulator_primary_source
+    - securities_filing_or_investor_release
+    - government_permit_or_public_record
+    - reputable_secondary_source_clearly_marked_as_secondary
+  disclosure_rules:
+    - Never convert campus MW into a GPU count without a disclosed hardware and power model.
+    - Never assign a portfolio-level chip count to one campus.
+    - Separate operating capacity from announced, contracted, under-development, and aspirational capacity.
+    - Preserve whether a power figure means compute capacity, IT load, utility service, or generation capacity.
+    - Record exact unknowns as undisclosed rather than filling them with estimates.
+    - OSM footprint area is map geometry, not certified gross floor area or IT capacity.
+  record_granularity_note: >-
+    campus_profiles primarily contains individual campuses, but also preserves
+    announced multi-facility programs and regional portfolios when no exact site
+    boundary is public. Non-campus records declare record_granularity and must not
+    be counted as one physical data center.
+
+global_market_baseline:
+  - id: global_supply_jll_2026
+    metric_type: installed_and_forecast_supply
+    source_scope: global_all_data_center_segments
+    values:
+      supply_2025_gw: 103
+      supply_2030_gw: 200
+      new_supply_2026_2030_gw_approximate: 100
+      five_year_cagr_percent: 14
+      tenant_gpu_and_network_fitout_usd_trillion_range: [1, 2]
+      real_estate_asset_value_creation_usd_trillion: 1.2
+      new_debt_financing_usd_billion_approximate: 870
+      total_expenditure_through_2030_usd_trillion_up_to: 3
+    interpretation: >-
+      The fit-out spend is separate from building shell and real-estate value, so
+      the economic exposure extends from chips and networking through electrical,
+      cooling, construction, financing, and utilities.
+    source:
+      publisher: JLL
+      title: 2026 Global Data Center Outlook
+      date: 2026-01
+      url: https://www.jll.com/content/dam/jllcom/en/global/documents/reports/research-reports/26-research-global-data-center-outlook-new.pdf
+
+  - id: global_electricity_iea_2025
+    metric_type: electricity_consumption_forecast
+    values:
+      global_data_center_electricity_2030_twh: 945
+      share_of_global_electricity_2030_percent: just_under_3
+      cagr_2024_2030_percent_approximate: 15
+      accelerated_server_electricity_cagr_percent_approximate: 30
+      accelerated_server_share_of_net_load_growth: almost_half
+    interpretation: >-
+      The bottleneck is not only generation. Transmission, substations,
+      transformers, switchgear, UPS, backup generation, cooling, and grid
+      interconnection lead times determine how quickly announced compute can run.
+    source:
+      publisher: International Energy Agency
+      title: Energy demand from AI
+      date: 2025
+      url: https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai
+
+  - id: global_hyperscale_count_synergy_2024
+    metric_type: operating_site_count
+    values:
+      hyperscale_data_centers_end_2024: 1136
+      us_share_of_total_hyperscale_capacity_percent: 54
+      capacity_doubling_horizon: less_than_four_years
+    source:
+      publisher: Synergy Research Group
+      title: Hyperscale Data Center Count Hits 1,136
+      date: 2025-03-19
+      url: https://www.srgresearch.com/articles/hyperscale-data-center-count-hits-1136-average-size-increases-us-accounts-for-54-of-total-capacity
+
+campus_profiles:
+  - id: dc_meta_hyperion_richland_parish
+    name: Meta Hyperion / Richland Parish Data Center
+    operator: Meta
+    country: US
+    region: Louisiana
+    locality: Richland Parish
+    lifecycle_as_of_2026_07_17: under_construction_and_expansion_announced
+    location:
+      osm_ref: osm_relation_19710316
+      latitude: 32.5023804
+      longitude: -91.6360325
+      mapped_footprint_area_m2: 11168896.53
+      footprint_warning: OSM campus geometry, not certified building floor area.
+    campus_scale:
+      compute_capacity_target_gw: 5
+      investment_usd_billion_more_than: 50
+      local_infrastructure_investment_usd_billion_more_than: 1
+      initial_public_building_area_sqft_more_than: 4000000
+      initial_site_area_acres_more_than: 1400
+      operational_roles_more_than: 1000
+      disclosure_status: target_not_current_operating_load
+    accelerators:
+      exact_gpu_count: undisclosed
+      accelerator_models: undisclosed
+      prohibited_inference: Do not derive GPU count from the 5 GW compute-capacity target.
+    electrical_and_generation:
+      utility: Entergy Louisiana
+      planned_generation:
+        combined_cycle_gas_plants: 7
+        combined_cycle_total_mw_more_than: 5200
+        future_capabilities:
+          - carbon_capture
+          - hydrogen_co_firing
+      transmission:
+        voltage_kv: 500
+        new_line_miles_approximate: 240
+      substations:
+        - name: Smalling Substation
+          site_acres_approximate: 55
+          funding: fully_funded_by_Meta
+      storage:
+        grid_battery_locations: 3
+        battery_mw: undisclosed
+      additional_resources:
+        nuclear_uprates: planned
+        solar_mw_up_to: 2500
+        future_nuclear_mou: true
+      cost_allocation: Meta is expected to pay the full service and dedicated infrastructure cost.
+    cooling_and_water:
+      architecture: undisclosed_in_reviewed_primary_sources
+      water_capacity: undisclosed_in_reviewed_primary_sources
+    linked_companies:
+      operator_and_customer: [Meta]
+      utility_and_generation: [Entergy Louisiana, Entergy]
+      publicly_confirmed_equipment_vendors: []
+      financial_profile_refs:
+        - company_meta
+        - company_entergy
+      note: Generator, transformer, switchgear, UPS, and cooling OEM awards remain undisclosed.
+    sources:
+      - title: Teachers and Local Businesses Win as Meta Expands Louisiana Data Center
+        date: 2026-07-13
+        url: https://about.fb.com/news/2026/07/teachers-local-businesses-win-as-meta-expands-louisiana-data-center/
+      - title: Entergy Louisiana announces a new agreement with Meta
+        date: 2026-03-27
+        url: https://www.entergy.com/news/entergy-louisiana-announces-a-new-agreement-with-meta-that-will-deliver-an-additional-2b-in-customer-savings
+      - title: Entergy Louisiana breaks ground on key substation
+        url: https://www.entergy.com/news/entergy-louisiana-breaks-ground-on-key-substation-to-power-data-center-in-richland-parish
+      - title: Entergy Louisiana to power Meta's data center
+        date: 2024-12
+        url: https://www.entergy.com/news/entergy-louisiana-power-meta-s-data-center-in-richland-parish
+    confidence: high_for_disclosed_targets_low_for_undisclosed_equipment
+
+  - id: dc_microsoft_fairwater_wisconsin
+    name: Microsoft Fairwater Wisconsin
+    operator: Microsoft
+    country: US
+    region: Wisconsin
+    locality: Mount Pleasant
+    lifecycle_as_of_2026_07_17: operating_or_commissioning_phase_one_with_phase_two_mapped
+    location:
+      osm_refs:
+        - osm_way_1307423829
+        - osm_way_1528490094
+        - osm_way_1528490093
+      representative_latitude: 42.6762984
+      representative_longitude: -87.9001017
+    campus_scale:
+      site_area_acres: 315
+      buildings: 3
+      gross_roof_area_sqft: 1200000
+      medium_voltage_underground_cable_miles: 120
+      mechanical_piping_miles: 72.6
+      structural_steel_lb_million: 26.5
+      deep_foundation_piles_miles: 46.6
+    accelerators:
+      count_disclosure: hundreds_of_thousands
+      exact_gpu_count: undisclosed
+      model: NVIDIA_GB200
+      cluster_scope: single_massive_interconnected_cluster
+      rack_architecture:
+        gpus_per_rack: 72
+        nvlink_domain_per_rack: true
+        gpu_to_gpu_bandwidth_tb_per_s: 1.8
+        pooled_memory_tb_per_rack: 14
+        reported_tokens_per_second_per_rack: 865000
+    network:
+      scale_up: NVLink_and_NVSwitch
+      scale_out: InfiniBand_and_Ethernet
+      link_speed_gbps: 800
+      topology: full_fat_tree_non_blocking
+      physical_layout: two_story_rack_topology
+    electrical_and_generation:
+      it_capacity_mw: undisclosed
+      utility_capacity_mw: undisclosed
+      medium_voltage_distribution_evidence: 120_miles_underground_cable
+      ups_switchgear_transformer_backup_generator_oems: undisclosed
+    cooling_and_water:
+      primary_architecture: closed_loop_direct_liquid_cooling
+      closed_loop_share_of_capacity_percent_more_than: 90
+      chiller_plant: described_as_second_largest_water_cooled_chiller_plant
+      heat_rejection_fans:
+        count: 172
+        fan_diameter_feet: 20
+      operational_water_for_primary_loop: one_time_fill_then_recirculated_without_evaporation_loss
+      remaining_capacity: outside_air_with_water_only_on_hottest_days
+      heat_exchanger_units_for_existing_sites: zero_operational_water_use
+    linked_companies:
+      operator: [Microsoft]
+      accelerator_and_scale_up_network: [NVIDIA]
+      financial_profile_refs:
+        - company_microsoft
+        - company_nvidia
+      other_equipment_vendors: undisclosed
+    sources:
+      - title: Inside the world's most powerful AI datacenter
+        publisher: Microsoft
+        date: 2025-09-18
+        url: https://blogs.microsoft.com/blog/2025/09/18/inside-the-worlds-most-powerful-ai-datacenter/
+    confidence: high
+
+  - id: dc_openai_stargate_abilene
+    name: Stargate I Abilene
+    operator_and_partners: [OpenAI, Oracle, Crusoe]
+    country: US
+    region: Texas
+    locality: Abilene
+    lifecycle_as_of_2026_07_17: partially_operational_and_expanding
+    location:
+      exact_coordinate: not_stored_until_primary_or_reliable_public_map_evidence
+      osm_record_status: unavailable_in_current_baseline
+    campus_scale:
+      exact_site_capacity_mw: undisclosed_in_reviewed_primary_sources
+      potential_nearby_expansion_mw: 600
+      warning: >-
+        The more-than-5-GW and more-than-2-million-chip figures apply to Abilene
+        plus the additional Oracle partnership portfolio, not to Abilene alone.
+    accelerators:
+      model: NVIDIA_GB200
+      first_racks_delivered: 2025-06
+      exact_abilene_gpu_count: undisclosed
+      portfolio_scope_chip_count_more_than: 2000000
+      portfolio_scope_capacity_gw_more_than: 5
+      portfolio_scope_partners: [OpenAI, Oracle]
+      workload_evidence:
+        - early_training_and_inference
+        - GPT_5_5_training
+    network:
+      cloud_platform: Oracle_Cloud_Infrastructure
+      fabric_details: undisclosed
+    electrical_and_generation:
+      utility_capacity_mw: undisclosed
+      power_equipment_oems: undisclosed
+    cooling_and_water:
+      architecture: closed_loop_non_evaporative_cooling
+      initial_fill_per_building: approximately_two_olympic_sized_pools
+      annual_full_buildout_water_use: approximately_medium_office_building_or_four_households
+    linked_companies:
+      ai_lab: [OpenAI]
+      cloud_and_operations: [Oracle]
+      accelerator: [NVIDIA]
+      developer: [Crusoe]
+      financial_profile_refs:
+        - company_oracle
+        - company_nvidia
+      private_company_financial_gaps: [OpenAI, Crusoe]
+      financing_and_construction: needs_further_primary_source_enrichment
+    sources:
+      - title: Stargate advances with 4.5 GW partnership with Oracle
+        publisher: OpenAI
+        date: 2025-07-22
+        url: https://openai.com/index/stargate-advances-with-partnership-with-oracle/
+      - title: OpenAI, Oracle, and SoftBank expand Stargate with five new AI data center sites
+        publisher: OpenAI
+        date: 2025-09-23
+        url: https://openai.com/index/five-new-stargate-sites/
+      - title: Building the compute infrastructure for the Intelligence Age
+        publisher: OpenAI
+        date: 2026-04-29
+        url: https://openai.com/index/building-the-compute-infrastructure-for-the-intelligence-age/
+    confidence: high_for_hardware_and_cooling_low_for_site_specific_capacity
+
+  - id: dc_xai_colossus_1_memphis
+    name: xAI Colossus 1
+    operator: SpaceXAI
+    country: US
+    region: Tennessee
+    locality: Memphis
+    lifecycle_as_of_2026_07_17: operating_and_expanding
+    location:
+      osm_refs:
+        - osm_relation_16356926
+        - osm_way_1381264361
+      latitude: 35.0602368
+      longitude: -90.155648
+      mapped_relation_footprint_area_m2: 325962.828
+    campus_scale:
+      original_build_days: 122
+      doubling_days: 92
+    accelerators:
+      current_count_as_of_2026_05_more_than: 220000
+      models: [NVIDIA_H100, NVIDIA_H200, NVIDIA_GB200]
+      historical_single_cluster_h100_count: 180000
+      historical_total_cluster_count: 200000
+      roadmap_target: 1000000
+      roadmap_target_status: aspiration_not_verified_as_achieved
+      aggregate_memory_bandwidth_pb_per_s: 170
+      per_server_network_tb_per_s: 2.8
+      total_storage_eb_more_than: 0.5
+    network:
+      platform: NVIDIA_Spectrum_X_Ethernet
+      protocol: RDMA_over_Ethernet
+      switch: NVIDIA_SN5600
+      switch_asic: Spectrum_4
+      nic: BlueField_3_SuperNIC
+      port_speed_gbps_up_to: 800
+      observed_data_throughput_percent: 95
+    electrical_and_generation:
+      grid_utility: Memphis_Light_Gas_and_Water_and_TVA
+      current_grid_service_mw_in_2025_update: 150
+      substations:
+        existing_substation_mw: 8
+        first_new_substation_mw: 142
+        second_new_substation_mw: 150
+        second_status_in_source: under_construction_pending_TVA_approval
+      requested_total_grid_service_mw: 300
+      transmission_upgrade:
+        voltage_kv: 161
+        initial_upgrade_cost_usd_million: 1.7
+      demand_response_curtailment_agreement: true
+      utility_scale_battery_coordination_mw_more_than: 50
+      onsite_generation:
+        status: not_yet_structured_from_current_primary_evidence
+        warning: Grid-service capacity alone does not describe total site power available.
+    cooling_and_water:
+      current_connection: existing_20_inch_water_main
+      initial_max_water_mgd: 1
+      proposed_recycled_water_plant_mgd: 13
+      proposed_recycled_water_users: [xAI, TVA, Nucor Steel, others]
+      cooling_architecture: undisclosed_in_reviewed_primary_sources
+    linked_companies:
+      operator: [SpaceXAI]
+      accelerator_network_and_nic: [NVIDIA]
+      utility: [MLGW, TVA]
+      adjacent_industrial_recycled_water_user: [Nucor]
+      financial_profile_refs:
+        - company_nvidia
+      private_company_financial_gap: SpaceXAI does not provide comparable public-company operating-profit disclosure in the reviewed sources.
+      other_power_and_cooling_equipment_vendors: undisclosed
+    sources:
+      - title: Colossus
+        publisher: SpaceXAI
+        url: https://x.ai/colossus
+      - title: New Compute Partnership with Anthropic
+        publisher: SpaceXAI
+        date: 2026-05-06
+        url: https://x.ai/news/anthropic-compute-partnership
+      - title: NVIDIA Ethernet Networking Accelerates World's Largest AI Supercomputer
+        publisher: NVIDIA
+        date: 2024-10-28
+        url: https://nvidianews.nvidia.com/news/spectrum-x-ethernet-networking-xai-colossus
+      - title: 2025 xAI Update
+        publisher: Memphis Light Gas and Water
+        url: https://www.mlgw.com/images/content/files/pdf/new/xAI%202025%20Update.pdf
+      - title: xAI Project Quick Facts
+        publisher: Memphis Light Gas and Water
+        date: 2024
+        url: https://www.mlgw.com/images/content/files/pdf/PDF2024/2024xAI%20and%20MLGW%20Quick%20Facts%201a.pdf
+    confidence: high_for_disclosed_gpu_network_and_grid_facts
+
+  - id: dc_aws_project_rainier
+    name: AWS Project Rainier
+    operator: Amazon_Web_Services
+    country: US
+    region: multiple_US_data_centers
+    lifecycle_as_of_2026_07_17: operating
+    location:
+      exact_site_list: partially_disclosed
+      confirmed_site:
+        - St_Joseph_County_Indiana
+      warning: Rainier is a distributed cluster across multiple data centers, not one building.
+    accelerators:
+      accelerator_type: AWS_Trainium2
+      count_as_of_2026_Q4_release_more_than: 500000
+      gpu_count: not_applicable_custom_accelerators_not_GPUs
+      ultraserver:
+        physical_servers: 4
+        chips_per_physical_server: 16
+        chips_per_ultraserver: 64
+        scale_up_link: NeuronLink
+      broader_AWS_trainium2_landed: 1400000
+      broader_anthropic_trainium2_use: more_than_1000000
+      warning: Broader AWS and Anthropic counts must not be assigned entirely to Rainier.
+    network:
+      scale_up: NeuronLink
+      scale_out: Elastic_Fabric_Adapter
+      scope: within_and_across_data_center_buildings
+    electrical_and_generation:
+      project_specific_capacity_mw: undisclosed
+      separate_northern_indiana_expansion:
+        amazon_data_center_load_gw: 2.4
+        total_new_generation_capacity_gw_up_to: 3
+        investment_usd_billion: 15
+        utility: NIPSCO
+        relationship_to_rainier: Rainier_style_infrastructure_not_claimed_as_the_same_cluster
+    cooling_and_water:
+      st_joseph_county:
+        primary_method: outside_air
+        october_through_march_cooling_water: none
+        april_through_september: cooling_water_only_a_few_hours_on_average_days
+      aws_global_wue_2024_l_per_kwh: 0.15
+      compared_industry_wue_l_per_kwh_in_rainier_source: 0.375
+      modern_ai_transition: mixed_air_and_custom_liquid_cooling
+    linked_companies:
+      operator_and_chip_designer: [Amazon, AWS, Annapurna_Labs]
+      anchor_customer: [Anthropic]
+      utility_confirmed_for_separate_indiana_expansion: [NIPSCO]
+      financial_profile_refs:
+        - company_amazon
+      private_company_financial_gap: Anthropic does not provide comparable public-company operating-profit disclosure.
+      foundry_packaging_memory_and_power_oems: undisclosed_in_reviewed_sources
+    sources:
+      - title: AWS activates Project Rainier
+        publisher: Amazon
+        url: https://www.aboutamazon.com/news/aws/aws-project-rainier-ai-trainium-chips-compute-cluster
+      - title: Amazon.com Announces Fourth Quarter Results
+        publisher: Amazon Investor Relations
+        date: 2026-02
+        url: https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Fourth-Quarter-Results/
+      - title: Amazon plans to invest $15 billion in Northern Indiana
+        publisher: Amazon
+        url: https://www.aboutamazon.com/news/company-news/amazon-15-billion-indiana-data-centers
+    confidence: high_for_chip_architecture_and_count_low_for_site_power
+
+  - id: dc_sk_aws_ulsan_ai_data_center
+    name: SK-AWS Ulsan AI Data Center
+    operator_and_partners: [SK_Telecom, SK_Broadband, AWS]
+    country: KR
+    region: Ulsan
+    lifecycle_as_of_2026_07_17: under_construction
+    location:
+      exact_coordinate: undisclosed_in_reviewed_primary_sources
+      osm_record_status: unavailable_in_current_baseline
+      site_context: acquired_SK_Chemicals_land_in_industrial_complex
+    campus_scale:
+      first_operation_target: 2027
+      exact_initial_it_capacity_mw: undisclosed_in_reviewed_primary_sources
+      long_term_ulsan_scale_gw_more_than: 1
+      broader_southeastern_cluster_gw_more_than: 2
+      broader_domestic_activation_from_2029_gw: 5
+      broader_long_term_total_target_gw: 15
+      status_warning: 1 GW, 2 GW, 5 GW, and 15 GW are expansion plans, not current operating capacity.
+    accelerators:
+      exact_gpu_count: undisclosed
+      gpu_models: undisclosed
+      infrastructure: dedicated_AWS_AI_servers_and_UltraCluster_network
+      warning: The separate SK AI factory 50000-GPU plan must not be assigned entirely to Ulsan.
+    electrical_and_generation:
+      energy_supplier: SK_Multi_Utility
+      power_plant:
+        type: LNG_combined_heat_and_power
+        capacity_mw: 300
+      fuel_and_terminal: SK_Gas_LNG_terminal_and_LPG_storage
+      grid_and_private_receiving_structure: direct_or_group_receiving_advantage_described_by_SKT
+      future_options:
+        - fuel_cell_power
+        - waste_heat_reuse_chiller
+      transformers_switchgear_ups_backup_generation_oems: undisclosed
+    cooling_and_water:
+      architecture: hybrid_air_and_liquid_cooling
+      rack_power_context_kw: 20_to_40_or_more
+      cooling_capacity_context_kw_per_rack: 40_to_100
+      dcim: planned
+      exact_design_PUE_WUE_and_water_source: undisclosed
+    network:
+      domestic: SKT_and_SKB_multi_path_high_speed_DCI_to_capital_region
+      international: SK_Broadband_Busan_submarine_cable_to_North_America_and_APAC
+    construction_and_operations:
+      construction: SK_ecoplant
+      MEP: SK_AX
+      operations_expertise: SK_Broadband
+      semiconductor_supply_chain: SK_hynix
+      strategic_contract_years: 15
+    linked_companies:
+      confirmed:
+        - SK_Telecom
+        - SK_Broadband
+        - AWS
+        - SK_hynix
+        - SK_Gas
+        - SK_Chemicals
+        - SK_Multi_Utility
+        - SK_AX
+        - SK_ecoplant
+      financial_profile_refs:
+        - company_amazon
+        - company_sk_hynix
+      financial_gap: Other SK-group participants need entity-level public financial profiles and data-center segment disclosure.
+    operator_financial_target:
+      scope: SKT_total_data_center_business_including_Ulsan_and_Guro
+      capacity_2030_mw_more_than: 300
+      annual_revenue_krw_trillion_target: 1
+      warning: This is not a Ulsan-only revenue forecast.
+    sources:
+      - title: SK Group and AWS Team Up to Build Cloud Computing Infrastructure
+        publisher: SK Group
+        date: 2025-06-21
+        url: https://eng.sk.com/news/sk-group-and-aws-team-up-to-build-cloud-computing-infrastructure-to-support-ai-innovation
+      - title: SKT Ulsan AI data center plan
+        publisher: SK Telecom Newsroom
+        date: 2025-07-03
+        url: https://news.sktelecom.com/213527
+      - title: SK AI Data Center Ulsan groundbreaking
+        publisher: SK Telecom Newsroom
+        date: 2025-08-29
+        url: https://news.sktelecom.com/214708
+      - title: SK Telecom pursues 15 GW AI data center buildout
+        publisher: SK Telecom
+        date: 2026-07-05
+        url: https://www.sktelecom.com/en/press/press_detail.do?idx=1671
+    confidence: high_for_group_roles_and_announced_architecture_low_for_exact_initial_capacity
+
+  - id: dc_stargate_uae_abudhabi
+    name: Stargate UAE / UAE-US AI Campus
+    operator_and_partners: [G42, OpenAI, Oracle, NVIDIA, Cisco, SoftBank]
+    country: AE
+    region: Abu_Dhabi
+    lifecycle_as_of_2026_07_17: under_construction_with_first_phase_targeted_2026
+    location:
+      osm_ref: osm_way_1495979992
+      latitude: 24.1476377
+      longitude: 54.4621985
+      mapped_footprint_area_m2: 7044474.007
+      full_campus_area_square_miles_reported: 10
+      footprint_warning: OSM geometry and the reported full-campus area describe different public scopes and must not be equated.
+    campus_scale:
+      full_UAE_US_AI_campus_capacity_gw: 5
+      Stargate_UAE_cluster_capacity_gw: 1
+      first_phase_capacity_mw: 200
+      first_phase_target: 2026
+      status_warning: The 5 GW figure is the enclosing multi-tenant campus; Stargate UAE is a 1 GW cluster within it.
+    accelerators:
+      model: NVIDIA_Grace_Blackwell_GB300
+      exact_count: undisclosed
+      export_status: G42_reported_US_approval_for_advanced_AI_chip_exports
+      prohibited_inference: Do not derive GPU count from the 1 GW cluster capacity.
+    network_and_security:
+      vendor: Cisco
+      disclosed_scope: zero_trust_security_and_AI_ready_connectivity
+      detailed_topology_and_port_count: undisclosed
+    electrical_and_generation:
+      sources: [nuclear, solar, natural_gas]
+      source_mix_and_contracts: undisclosed
+      grid_utility: undisclosed_in_reviewed_primary_sources
+      transformer_switchgear_UPS_backup_generation_vendors: undisclosed
+    cooling_and_water:
+      architecture: undisclosed_in_reviewed_primary_sources
+      water_source_and_WUE: undisclosed
+    linked_companies:
+      builder: [G42]
+      operators: [OpenAI, Oracle]
+      accelerator: [NVIDIA]
+      network_and_security: [Cisco]
+      strategic_partner: [SoftBank]
+      financial_profile_refs:
+        - company_nvidia
+        - company_cisco
+        - company_oracle
+    sources:
+      - title: Introducing Stargate UAE
+        publisher: OpenAI
+        date: 2025-05-22
+        url: https://openai.com/index/introducing-stargate-uae/
+      - title: Global Tech Alliance Launches Stargate UAE
+        publisher: G42
+        date: 2025
+        url: https://www.g42.ai/resources/news/global-tech-alliance-launches-stargate-uae
+      - title: G42 Receives U.S. Approval for Advanced AI Chip Exports
+        publisher: G42
+        date: 2026
+        url: https://www.g42.ai/resources/news/g42-receives-us-approval-advanced-ai-chip-exports-enabling-full-scale-deployment-trusted-ai-infrastructure
+    confidence: high_for_announced_capacity_hardware_and_partners_low_for_electrical_detail
+
+  - id: dc_stargate_norway_narvik
+    name: Stargate Norway / Nscale Narvik
+    operator_and_partners: [Nscale, OpenAI, Microsoft, NVIDIA]
+    country: "NO"
+    region: Nordland
+    locality: Kvandal_near_Narvik
+    lifecycle_as_of_2026_07_17: under_development_with_2026_and_2027_deployment_targets
+    location:
+      exact_coordinate: not_stored_until_primary_or_reliable_public_map_evidence
+      osm_record_status: unavailable_in_current_baseline
+    campus_scale:
+      initial_capacity_mw: 230
+      potential_additional_capacity_mw: 290
+      potential_total_capacity_mw_derived: 520
+      energy_context: abundant_hydropower_low_local_demand_and_limited_transmission
+    accelerators:
+      initial_target:
+        NVIDIA_GPU_count: 100000
+        target_timing: end_of_2026
+        exact_model_mix: undisclosed_in_initial_announcement
+      Microsoft_expansion:
+        NVIDIA_Rubin_GPU_count_more_than: 30000
+        target_timing: 2027
+      scope_warning: Do not add the 100,000 and 30,000 figures until Nscale clarifies whether the later Microsoft deployment is incremental or partly supersedes the initial scope.
+    network:
+      scale_up_and_scale_out_architecture: undisclosed
+    electrical_and_generation:
+      primary_source: renewable_hydropower
+      renewable_share_percent_target: 100
+      transmission_and_substation_details: undisclosed
+      transformer_switchgear_UPS_backup_generation_vendors: undisclosed
+    cooling_and_water:
+      architecture: closed_loop_direct_to_chip_liquid_cooling
+      climate_advantage: cool_northern_Norway
+      waste_heat: planned_availability_to_local_low_carbon_enterprises
+      exact_PUE_WUE_and_water_source: undisclosed
+    linked_companies:
+      current_site_manager: [Nscale]
+      AI_customers_and_partners: [OpenAI, Microsoft]
+      accelerator: [NVIDIA]
+      historical_development_partner: [Aker]
+      financial_profile_refs:
+        - company_microsoft
+        - company_nvidia
+      private_company_financial_gap: Nscale does not provide comparable public-company operating-profit disclosure in the reviewed sources.
+    sources:
+      - title: Stargate Norway 100,000 NVIDIA GPU AI Gigafactory
+        publisher: Nscale
+        date: 2025-07-31
+        url: https://www.nscale.com/press-releases/stargate-norway-nscale-aker-openai
+      - title: Nscale announces expanded deal with Microsoft in Norway
+        publisher: Nscale
+        date: 2026-04-14
+        url: https://www.nscale.com/press-releases/nscale-microsoft-norway
+    confidence: high_for_announced_capacity_GPU_targets_power_and_cooling_medium_for_scope_reconciliation
+
+  - id: dc_nscale_monarch_west_virginia
+    name: Nscale Monarch Compute Campus
+    operator: Nscale
+    country: US
+    region: West_Virginia
+    locality: Mason_County
+    lifecycle_as_of_2026_07_17: acquired_and_planned_under_letter_of_intent
+    location:
+      site_area_acres_up_to: 2250
+      exact_coordinate: not_stored_until_primary_or_reliable_public_map_evidence
+      osm_record_status: unavailable_in_current_baseline
+    campus_scale:
+      phase_one_AI_compute_capacity_gw: 1.35
+      onsite_microgrid_power_runway_gw_more_than: 8
+      phase_one_delivery_start: late_2027
+      phase_one_delivery_target: early_2028
+      contract_status: Microsoft_capacity_is_subject_to_letter_of_intent_and_future_execution
+    accelerators:
+      platform: NVIDIA_Vera_Rubin_NVL72
+      reference_design: NVIDIA_Vera_Rubin_DSX_AI_Factory
+      exact_GPU_count: undisclosed
+      prohibited_inference: Do not derive GPU count from 1.35 GW without a disclosed rack and facility power model.
+    network:
+      high_speed_fiber_to_major_AI_hubs: planned
+      detailed_fabric: undisclosed
+    electrical_and_generation:
+      architecture: onsite_state_certified_AI_microgrid
+      grid_relationship: designed_for_independent_operation_with_future_export_tie_in_option
+      Caterpillar_deployment:
+        equipment: G3500_series_natural_gas_generator_sets
+        generation_capacity_gw: 2
+        target_timing: first_half_2028
+      full_8GW_generation_technology_mix: undisclosed
+      carbon_sequestration: being_pursued
+      transformer_switchgear_UPS_vendors: undisclosed
+    cooling_and_water:
+      architecture: high_efficiency_low_water_design
+      municipal_water_impact_claim: none
+      exact_liquid_cooling_topology_PUE_and_WUE: undisclosed
+    linked_companies:
+      operator_and_developer: [Nscale]
+      planned_customer: [Microsoft]
+      accelerator_and_reference_design: [NVIDIA]
+      onsite_generation: [Caterpillar]
+      acquired_platform: [American_Intelligence_and_Power_Corporation]
+      financial_profile_refs:
+        - company_microsoft
+        - company_nvidia
+        - company_caterpillar
+    sources:
+      - title: Nscale and Microsoft Announce Collaboration with NVIDIA and Caterpillar
+        publisher: Nscale
+        date: 2026-03-16
+        url: https://www.nscale.com/press-releases/nscale-west-virginia-ai-factory
+    confidence: high_for_announced_design_medium_for_LOI_execution_and_schedule
+
+  - id: dc_nscale_verne_iceland
+    name: Nscale at Verne Iceland Campus
+    operator_and_partners: [Nscale, Verne]
+    country: IS
+    region: Reykjanes
+    locality: Keflavik_area
+    lifecycle_as_of_2026_07_17: deployment_targeted_2026
+    location:
+      osm_refs:
+        - osm_relation_17995325
+        - osm_way_35973807
+        - osm_way_35973808
+      latitude: 63.9768481
+      longitude: -22.5767841
+      mapped_campus_footprint_area_m2: 113174.606
+      footprint_warning: OSM campus geometry, not certified building floor area.
+    campus_scale:
+      deployment_capacity_mw: 15
+    accelerators:
+      model: NVIDIA_Blackwell_Ultra
+      count_approximate: 4600
+      target_timing: 2026
+    network:
+      fabric_details: undisclosed
+    electrical_and_generation:
+      source: renewable_energy
+      exact_generation_mix_and_contract: undisclosed_in_reviewed_announcement
+      transformer_switchgear_UPS_backup_generation_vendors: undisclosed
+    cooling_and_water:
+      liquid_cooled_share_percent: 85
+      air_cooled_share_percent: 15
+      detailed_liquid_cooling_topology_PUE_and_WUE: undisclosed
+    linked_companies:
+      AI_infrastructure_provider: [Nscale]
+      facility_operator: [Verne]
+      accelerator: [NVIDIA]
+      financial_profile_refs:
+        - company_nvidia
+    sources:
+      - title: Nscale and Verne Announce 15MW AI Infrastructure Deployment
+        publisher: Nscale
+        date: 2025-11-20
+        url: https://www.nscale.com/press-releases/nscale-and-verne
+    confidence: high
+
+  - id: dc_reliance_intelligence_jamnagar
+    name: Reliance Intelligence Jamnagar AI Data-Center Program
+    record_granularity: campus_program_with_multiple_facilities
+    operator_and_developer: [Reliance_Industries, Reliance_Intelligence]
+    country: IN
+    region: Gujarat
+    locality: Jamnagar
+    lifecycle_as_of_2026_07_17: initial_GB300_fleet_being_operationalized_and_multiple_facilities_under_development
+    location:
+      locality_precision: city_or_industrial_complex_level_only
+      exact_coordinate: undisclosed
+      osm_record_status: unavailable_in_current_baseline
+      warning: >-
+        Reliance identifies Jamnagar, but the reviewed primary sources do not
+        disclose a parcel boundary for the AI facilities. The nearby refinery and
+        green-energy complex must not be used as a substitute data-center coordinate.
+    campus_scale:
+      sovereign_AI_backbone_first_capacity_mw: 120
+      first_capacity_target: end_2026
+      long_term_scale_description: GW_scale
+      exact_long_term_capacity_mw: undisclosed
+      Meta_built_to_suit_capacity_mw: 168
+      Meta_delivery_window_from_2026_06_10: within_two_years
+      Meta_scale_option: disclosed_without_increment
+      scope_reconciliation_warning: >-
+        The sovereign-AI backbone, Google Cloud region, and Meta built-to-suit
+        project may occupy separate facilities or phases in Jamnagar. Do not sum
+        120 MW and 168 MW into a certified campus total until Reliance discloses
+        their physical and contractual relationship.
+    accelerators:
+      sovereign_AI_initial_model: NVIDIA_GB300
+      sovereign_AI_exact_physical_GPU_count: undisclosed
+      initial_capacity_H100_inference_equivalent_more_than: 75000
+      first_120MW_H100_inference_equivalent_more_than: 200000
+      equivalence_warning: >-
+        H100-equivalent inference capacity is a performance comparison, not a
+        physical H100 or GB300 inventory and must not be added to physical GPU totals.
+      Google_Cloud_region:
+        platform: Google_AI_Hypercomputer
+        underlying_accelerator_models_and_counts: undisclosed
+      Meta_built_to_suit_hardware: undisclosed
+    network:
+      provider: Jio
+      disclosed_connectivity:
+        - high_capacity_intra_and_inter_metro_fiber
+        - links_to_Mumbai_and_Delhi
+        - proximity_to_western_India_submarine_cable_landings
+      GPU_fabric_and_switch_models: undisclosed
+    electrical_and_generation:
+      sovereign_AI_first_120MW_source: Reliance_solar_generation_from_Kutch_renewable_platform
+      sovereign_AI_clean_energy_share_target_percent: 100
+      Meta_facility_source: renewable_energy
+      Google_facility_source: Reliance_green_energy_initiatives
+      generation_capacity_contract_grid_interconnection_and_storage_topology: undisclosed
+      transformer_switchgear_UPS_backup_generation_vendors: undisclosed
+    cooling_and_water:
+      Meta_facility_cooling_source: desalinated_seawater
+      sovereign_AI_and_Google_facility_cooling_architecture: undisclosed
+      exact_PUE_WUE_water_withdrawal_and_consumption: undisclosed
+    linked_companies:
+      developer_operator_energy_and_fiber: [Reliance_Industries, Reliance_Intelligence, Jio]
+      cloud_and_AI_partners: [Google_Cloud, Meta]
+      confirmed_accelerator_supplier: [NVIDIA]
+      financial_profile_refs:
+        - company_reliance_industries
+        - company_meta
+        - company_nvidia
+        - company_alphabet
+      financial_scope_note: Alphabet results are company and Google Cloud level; Jamnagar economics remain undisclosed.
+    sources:
+      - title: Chairman's Statement at the 49th Reliance Industries AGM
+        publisher: Reliance Industries
+        date: 2026-06-19
+        url: https://www.ril.com/sites/default/files/reports/Chairmans-Statement-at-49th-RILAGM.pdf
+      - title: Reliance and Meta to Develop AI-Enabled Data Centre in Jamnagar
+        publisher: Reliance Industries
+        date: 2026-06-10
+        url: https://www.ril.com/sites/default/files/2026-06/SE_10062026.pdf
+      - title: Reliance and Google Cloud Expand Partnership to Accelerate India's Growth with AI
+        publisher: Reliance Industries
+        date: 2025-08-29
+        url: https://www.ril.com/sites/default/files/2025-08/MR_Google.pdf
+      - title: Chairman's Statement at the 47th Reliance Industries AGM
+        publisher: Reliance Industries
+        date: 2024-08-29
+        url: https://www.ril.com/sites/default/files/2024-08/Chairmans-statement-delievered-at-47th-AGM.pdf
+    confidence: high_for_disclosed_capacity_equivalents_power_and_partner_roles_low_for_exact_site_boundary_and_facility_overlap
+
+  - id: dc_humain_saudi_ai_factory_portfolio
+    name: HUMAIN Saudi AI-Factory Portfolio
+    record_granularity: multi_site_partner_portfolio_not_one_campus
+    operator_and_developer: HUMAIN
+    country: SA
+    region: multiple_undisclosed_Saudi_locations
+    lifecycle_as_of_2026_07_17: announced_with_initial_deployments_underway_or_planned
+    location:
+      exact_sites_coordinates_and_parcel_boundaries: undisclosed
+      osm_record_status: not_applicable_until_individual_sites_are_identified
+      warning: Never assign portfolio GPU or MW commitments to Riyadh or any other single city without site-level evidence.
+    portfolio_scale:
+      NVIDIA_collaboration:
+        capacity_mw_up_to: 500
+        horizon_years: 5
+        accelerator_count_description: several_hundred_thousand_advanced_NVIDIA_GPUs
+        first_phase_physical_GPU_count: 18000
+        first_phase_model: NVIDIA_GB300_Grace_Blackwell
+      AMD_2025_collaboration:
+        investment_usd_billion_up_to: 10
+        capacity_mw_up_to: 500
+        horizon_years: 5
+        geography: network_from_Saudi_Arabia_to_the_United_States
+      AMD_Cisco_HUMAIN_JV_2025:
+        Saudi_phase_one_capacity_mw: 100
+        phase_one_operations_target: 2026
+        capacity_mw_up_to_by_2030: 1000
+      AWS_AI_Zone:
+        joint_investment_usd_billion_more_than: 5
+        capacity_mw: undisclosed
+      AWS_Saudi_region_separate_investment:
+        investment_usd_billion: 5.3
+        availability_target: 2026
+      overlap_warning: >-
+        The AMD 500 MW collaboration, later AMD-Cisco-HUMAIN joint venture, NVIDIA
+        500 MW plan, and AWS AI Zone are partner portfolios with potentially
+        overlapping HUMAIN facilities. Their MW and investments must not be summed
+        as unique energized capacity.
+    accelerators:
+      NVIDIA_first_phase: 18000_NVIDIA_GB300_Grace_Blackwell_GPUs
+      NVIDIA_later_phases: several_hundred_thousand_advanced_GPUs_model_mix_undisclosed
+      AMD_phase_one_planned: AMD_Instinct_MI450_series
+      AMD_broader_portfolio: [AMD_Instinct, AMD_EPYC, AMD_Pensando, AMD_ROCm]
+      AWS_AI_Zone_semiconductor_models_and_counts: undisclosed
+    network:
+      NVIDIA_first_phase: NVIDIA_InfiniBand
+      AMD_Cisco_JV: Cisco_critical_infrastructure_solutions
+      global_interconnect: HUMAIN_global_fiber_interconnects
+      detailed_switch_counts_topology_and_optics: undisclosed
+    electrical_and_generation:
+      disclosed_design_language: HUMAIN_sustainable_power_systems
+      source_mix_contracts_grid_interconnections_substations_and_storage: undisclosed
+      transformer_switchgear_UPS_backup_generation_vendors: undisclosed
+    cooling_and_water:
+      architecture_PUE_WUE_water_source_and_consumption: undisclosed
+    linked_companies:
+      operator_and_developer: [HUMAIN]
+      accelerator_and_compute: [NVIDIA, AMD, AWS]
+      network_and_critical_infrastructure: [NVIDIA, Cisco]
+      owner: [Saudi_Public_Investment_Fund]
+      financial_profile_refs:
+        - company_nvidia
+        - company_amd
+        - company_cisco
+        - company_amazon
+      private_company_financial_gap: HUMAIN does not publish comparable standalone revenue and operating profit in the reviewed sources.
+    sources:
+      - title: HUMAIN and NVIDIA Announce Strategic Partnership to Build AI Factories of the Future in Saudi Arabia
+        publisher: NVIDIA
+        date: 2025-05-13
+        url: https://nvidianews.nvidia.com/_gallery/download_pdf/6823543d3d63329034796266/
+      - title: AMD and HUMAIN Form Strategic, $10B Collaboration to Advance Global AI
+        publisher: AMD
+        date: 2025-05-13
+        url: https://www.amd.com/en/newsroom/press-releases/2025-5-13-amd-and-humain-form-strategic--10b-collaboration-.html
+      - title: AMD, Cisco and HUMAIN to Form Joint Venture to Deliver World-Leading AI Infrastructure
+        publisher: AMD
+        date: 2025-11-19
+        url: https://www.amd.com/en/newsroom/press-releases/2025-11-19-amd-cisco-and-humain-to-form-joint-venture.html
+      - title: AWS and HUMAIN Announce Groundbreaking AI Zone
+        publisher: Amazon
+        date: 2025-05-13
+        url: https://press.aboutamazon.com/2025/5/aws-and-humain-announce-groundbreaking-ai-zone-to-accelerate-ai-adoption-in-saudi-arabia-and-globally
+    confidence: high_for_partner_portfolio_announcements_low_for_site_level_location_and_overlap
+
+  - id: dc_cassava_africa_ai_factory_portfolio
+    name: Cassava Technologies Africa AI-Factory Portfolio
+    record_granularity: multi_country_multi_site_portfolio_not_one_campus
+    operator_and_developer: Cassava_Technologies
+    primary_deployment_country: ZA
+    planned_expansion_countries: [NG, KE, EG, MA]
+    lifecycle_as_of_2026_07_17: South_Africa_deployment_announced_or_underway_with_regional_expansion_planned
+    location:
+      exact_South_Africa_site_and_future_site_coordinates: undisclosed
+      affiliated_data_center_portfolio: Africa_Data_Centres
+      osm_record_status: not_assigned_without_site_level_confirmation
+      warning: >-
+        Cassava says the systems use its data centers, but the announcements do not
+        identify which Africa Data Centres facility hosts each deployment. Do not
+        attach the portfolio to a specific Johannesburg or Cape Town site by inference.
+    portfolio_scale:
+      physical_GPU_count: undisclosed
+      IT_or_AI_compute_capacity_mw: undisclosed
+      investment_amount: undisclosed
+      deployment_sequence:
+        first: South_Africa
+        planned_next: [Nigeria, Kenya, Egypt, Morocco]
+    accelerators:
+      platform: NVIDIA_accelerated_computing_and_AI_software
+      architecture: NVIDIA_Cloud_Partner_reference_architectures
+      GPU_models_and_physical_counts: undisclosed
+      service_layers: [GPUaaS, AIaaS, APIs, NVIDIA_Blueprints, NVIDIA_NIM]
+    network:
+      backbone: Cassava_pan_African_high_speed_low_latency_fiber_network
+      GPU_fabric_switch_and_optics_details: undisclosed
+    electrical_and_generation:
+      public_claims: [sustainable_data_centers, energy_efficient_design]
+      facility_power_capacity_generation_mix_contracts_and_grid_details: undisclosed
+      transformer_switchgear_UPS_backup_generation_vendors: undisclosed
+    cooling_and_water:
+      architecture_PUE_WUE_water_source_and_consumption: undisclosed
+    linked_companies:
+      operator_and_developer: [Cassava_Technologies, Africa_Data_Centres]
+      accelerator_and_AI_platform: [NVIDIA]
+      financial_profile_refs:
+        - company_nvidia
+      private_company_financial_gap: Cassava and the relevant site-level operating entities do not provide comparable public campus revenue and operating profit in the reviewed announcements.
+    sources:
+      - title: Cassava to upgrade its data centres with NVIDIA supercomputers to drive Africa's AI future
+        publisher: Cassava Technologies
+        date: 2025
+        url: https://www.cassavatechnologies.com/cassava-to-upgrade-its-data-centres-with-nvidia-supercomputers-to-drive-africas-ai-future/
+      - title: Cassava scales African AI Infrastructure with NVIDIA-Powered AI Factories
+        publisher: Cassava Technologies
+        date: 2026
+        url: https://www.cassavatechnologies.com/cassava-scales-african-ai-infrastructure-with-nvidia-powered-ai-factories-to-accelerate-sovereign-data-capabilities/
+    confidence: high_for_country_sequence_and_NVIDIA_platform_low_for_site_power_GPU_count_and_facility_engineering
+
+  - id: dc_meta_prometheus_new_albany
+    name: Meta Prometheus Supercluster / New Albany Data Center
+    record_granularity: individual_campus
+    operator: Meta
+    country: US
+    region: Ohio
+    locality: New_Albany
+    lifecycle_as_of_2026_07_17: operating_campus_with_gigawatt_expansion_under_construction
+    location:
+      osm_ref: osm_way_708899010
+      latitude: 40.0642909
+      longitude: -82.7497692
+      mapped_footprint_area_m2: 923780.734
+      footprint_warning: OSM campus geometry, not certified building floor area.
+    campus_scale:
+      compute_capacity_when_construction_complete_gw_more_than_or_equal: 1
+      exact_current_energized_compute_capacity_mw: undisclosed
+      investment_amount_and_completion_date: undisclosed_in_reviewed_primary_sources
+    accelerators:
+      exact_physical_GPU_count: undisclosed
+      accelerator_model_mix: undisclosed
+      prohibited_inference: Do not infer GPU inventory from the 1 GW completed-campus target.
+    network:
+      fabric_switch_optics_and_fiber_counts: undisclosed
+      Meta_US_fiber_portfolio_context:
+        supplier: Corning
+        multi_year_agreement_usd_billion_up_to: 6
+        site_allocation: undisclosed_and_not_assigned_to_New_Albany
+    electrical_and_generation:
+      grid_supporting_operations_includes_Prometheus: true
+      Meta_US_nuclear_portfolio_capacity_gw_up_to_by_2035: 6.6
+      nuclear_counterparties: [Vistra, TerraPower, Oklo, Constellation]
+      site_allocation_warning: >-
+        Meta states these projects deliver power to grids supporting its operations,
+        including Prometheus. The 6.6 GW portfolio is not dedicated New Albany load
+        and must not be recorded as this campus's generation capacity.
+      utility_grid_interconnection_substation_transformer_switchgear_UPS_and_backup_generation: undisclosed
+    cooling_and_water:
+      New_Albany_relative_water_claim: less_than_half_the_water_to_irrigate_an_average_Southwest_golf_course
+      exact_period_denominator_withdrawal_consumption_PUE_and_WUE: undisclosed
+      site_specific_liquid_cooling_topology: undisclosed
+    linked_companies:
+      owner_operator: [Meta]
+      grid_energy_portfolio_counterparties: [Vistra, TerraPower, Oklo, Constellation]
+      US_fiber_portfolio_supplier_not_site_specific: [Corning]
+      financial_profile_refs:
+        - company_meta
+        - company_constellation_energy
+        - company_corning
+      public_company_financial_gaps: [Vistra]
+      private_company_financial_gaps: [TerraPower, Oklo_project_level_economics]
+    sources:
+      - title: Infrastructure Explained - Data Centers
+        publisher: Meta
+        date: 2026-04
+        url: https://about.fb.com/news/2026/04/infrastructure-explained-meta-data-centers/
+      - title: Meta Announces Nuclear Energy Projects, Unlocking Up to 6.6 GW
+        publisher: Meta
+        date: 2026-01
+        url: https://about.fb.com/news/2026/01/meta-nuclear-energy-projects-power-american-ai-leadership/
+      - title: How Meta's Data Centers Support American Energy, Jobs, the Environment, and Local Communities
+        publisher: Meta
+        date: 2026-03-04
+        url: https://about.fb.com/news/2026/03/meta-data-centers-support-energy-jobs-environment-local-communities/
+      - title: Meta Announces Up to $6 Billion Agreement With Corning
+        publisher: Meta
+        date: 2026-01-27
+        url: https://about.fb.com/news/2026/01/meta-6-billion-agreement-corning-support-us-manufacturing/
+    confidence: high_for_location_completed_capacity_target_and_portfolio_energy_context_low_for_site_hardware_and_electrical_equipment
+
+  - id: dc_xai_colossus_2_southaven
+    name: SpaceXAI Colossus 2
+    record_granularity: individual_campus_with_program_scope_warnings
+    operator: SpaceXAI
+    country: US
+    region: Mississippi
+    locality: Southaven_Memphis_metro
+    lifecycle_as_of_2026_07_17: online_claimed_with_full_energized_capacity_not_independently_reconciled
+    location:
+      osm_refs:
+        - osm_way_1513177952
+        - osm_way_1386926534
+      latitude: 34.9981656
+      longitude: -90.0372416
+      mapped_campus_footprint_area_m2: 503619.41
+      footprint_warning: OSM campus geometry, not certified building floor area.
+      naming_warning: Some operator and reliability-sector materials refer to the broader Memphis buildout even where mapped facilities cross into Mississippi.
+    campus_scale:
+      SERC_presentation_size_mw: 1000
+      SERC_status: online
+      exact_current_energized_IT_load_mw: undisclosed
+      evidence_warning: >-
+        The SERC board presentation is an official reliability-sector document but
+        presents project headline size, not a utility meter, interconnection approval,
+        or audited operating-load measurement.
+    accelerators:
+      site_specific_physical_GPU_count_and_models: undisclosed_in_reviewed_primary_sources
+      Colossus_I_and_II_aggregate_H100_GPU_equivalents_end_2025_more_than: 1000000
+      Memphis_program_physical_GPU_target_by_2026: 1000000
+      scope_warning: >-
+        The H100-equivalent figure aggregates Colossus I and II and is a compute
+        equivalence. The Memphis-program target is not a verified Colossus 2
+        physical inventory; neither value belongs in this site's exact GPU count.
+    network:
+      topology_switch_NIC_optics_and_bandwidth: undisclosed
+    electrical_and_generation:
+      SERC_program_scope_mobile_gas_turbine_generator_count: 46
+      turbine_site_allocation_models_OEMs_capacity_and_permitting_status: undisclosed_in_the_presentation
+      2025_MLGW_Tulane_Road_context:
+        nearby_generation: TVA_Southaven_combined_cycle_plant
+        nearby_grid_asset: large_TVA_MLGW_substation
+        final_electric_service_request_at_source_date: not_submitted
+      current_grid_service_generation_mix_substations_UPS_and_backup_topology: undisclosed
+    cooling_and_water:
+      architecture_chiller_capacity_PUE_WUE_and_water_consumption: undisclosed_in_reviewed_primary_sources
+    linked_companies:
+      owner_operator: [SpaceXAI]
+      accelerator_evidence_scope: [NVIDIA_strategic_investor_and_Colossus_I_supplier]
+      reliability_and_local_utility_context: [SERC, TVA, MLGW]
+      financial_profile_refs:
+        - company_nvidia
+      private_company_financial_gap: SpaceXAI does not publish comparable standalone revenue and operating profit.
+    sources:
+      - title: SpaceXAI Raises $20B Series E
+        publisher: SpaceXAI
+        date: 2026-01-06
+        url: https://x.ai/news/series-e
+      - title: SpaceXAI Memphis
+        publisher: SpaceXAI
+        url: https://x.ai/memphis
+      - title: June 24 2026 Board of Directors Meeting Agenda and Presentation
+        publisher: SERC_Reliability_Corporation
+        date: 2026-06-24
+        url: https://www.serc.org/wp-content/uploads/default-source.FilePath/about-serc/boardofdirectors/boardmeetingmaterials/2026/Public-June-24-2026-Board-of-Directors-Meeting-Agenda.pdf
+      - title: 2025 xAI Update
+        publisher: Memphis_Light_Gas_and_Water
+        date: 2025
+        url: https://www.mlgw.com/images/content/files/pdf/new/xAI%202025%20Update.pdf
+    confidence: high_for_mapped_location_and_aggregate_operator_claims_medium_for_headline_power_size_low_for_site_GPU_inventory_and_energized_load
+
+  - id: dc_nscale_loughton_uk
+    name: Nscale Loughton AI Campus for Microsoft
+    record_granularity: individual_campus
+    operator: Nscale
+    country: GB
+    region: England
+    locality: Loughton
+    lifecycle_as_of_2026_07_17: committed_with_initial_delivery_targeted_Q1_2027
+    location:
+      exact_coordinate_and_parcel_boundary: undisclosed_in_reviewed_primary_sources
+      osm_record_status: unavailable_in_current_baseline
+    campus_scale:
+      initial_AI_capacity_mw: 50
+      scalable_AI_capacity_mw: 90
+      customer: Microsoft
+      service: Microsoft_Azure
+    accelerators:
+      initial_physical_GPU_count: 23040
+      model: NVIDIA_GB300
+      delivery_target: Q1_2027
+    network:
+      fabric_switch_NIC_optics_and_fiber_providers: undisclosed
+    electrical_and_generation:
+      generation_mix_grid_interconnection_substations_transformers_switchgear_UPS_and_backup_generation: undisclosed
+    cooling_and_water:
+      architecture_PUE_WUE_water_source_and_consumption: undisclosed
+    linked_companies:
+      owner_operator: [Nscale]
+      customer: [Microsoft]
+      accelerator: [NVIDIA]
+      financial_profile_refs:
+        - company_microsoft
+        - company_nvidia
+      private_company_financial_gap: Nscale does not publish comparable standalone revenue and operating profit.
+    sources:
+      - title: Nscale announces UK AI infrastructure commitment in partnership with Microsoft, NVIDIA and OpenAI
+        publisher: Nscale
+        date: 2025-09-16
+        url: https://www.nscale.com/press-releases/nscale-uk-ai-infrastructure-announcement
+      - title: Nscale Contracts Approximately 200,000 NVIDIA GB300 GPUs with Microsoft
+        publisher: Nscale
+        date: 2025-10-15
+        url: https://www.nscale.com/press-releases/nscale-microsoft-2025
+    confidence: high_for_capacity_GPU_customer_and_schedule_low_for_exact_location_and_facility_engineering
+
+  - id: dc_start_campus_sines_portugal
+    name: Start Campus SINES Data Campus / Nscale Microsoft Deployments
+    record_granularity: individual_multi_building_campus
+    operator_and_partners: [Start_Campus, Nscale]
+    country: PT
+    region: Setubal_District
+    locality: Sines
+    lifecycle_as_of_2026_07_17: first_building_deployment_underway_and_second_building_announced
+    location:
+      osm_ref: osm_way_1165311334
+      latitude: 37.9350243
+      longitude: -8.8133922
+      mapped_footprint_area_m2: 92767.821
+      footprint_warning: OSM geometry, not certified gross floor area or full future campus boundary.
+    campus_scale:
+      fully_permitted_total_capacity_gw: 1.2
+      second_building_capacity_mw: 200
+      Nscale_shared_infrastructure_investment_eur_million: 230
+      Nscale_second_building_investment_eur_million: 465
+      current_energized_IT_load_mw: undisclosed
+    accelerators:
+      first_building:
+        physical_GPU_count_approximate: 12600
+        model: NVIDIA_GB300_Blackwell_Ultra
+        Microsoft_service_start_target: Q1_2026
+      second_building:
+        physical_GPU_count_more_than: 66000
+        model: NVIDIA_Vera_Rubin
+        system: NVIDIA_Vera_Rubin_NVL72
+        deployment_start_target: late_2027
+      count_scope: Separate disclosed deployments; do not treat either as the entire 1.2 GW campus inventory.
+    network:
+      disclosed_role: European_and_transatlantic_low_latency_high_bandwidth_gateway
+      specific_fabric_switch_NIC_optics_and_subsea_capacity: undisclosed
+    electrical_and_generation:
+      renewable_energy_share_percent_target: 100
+      grid_interconnection_generation_contract_substations_transformers_switchgear_UPS_and_backup_generation: undisclosed
+    cooling_and_water:
+      cooling_source: Atlantic_ocean_seawater
+      liquid_cooling_in_design: true
+      PUE_target: 1.1
+      WUE_target: 0
+      boundary: PUE and WUE are campus design targets, not independently audited operating results for the GPU deployments.
+    linked_companies:
+      campus_operator: [Start_Campus]
+      AI_infrastructure_provider: [Nscale]
+      customer: [Microsoft]
+      accelerator: [NVIDIA]
+      shareholder_or_financing_context: [Davidson_Kempner]
+      financial_profile_refs:
+        - company_microsoft
+        - company_nvidia
+      private_company_financial_gaps: [Start_Campus, Nscale]
+    sources:
+      - title: Nscale to Deliver 66,000+ NVIDIA Rubin GPUs to Microsoft at Start Campus' Site in Portugal
+        publisher: Nscale
+        date: 2026-05-05
+        url: https://www.nscale.com/press-releases/nscale-start-campus
+      - title: Nscale Contracts Approximately 200,000 NVIDIA GB300 GPUs with Microsoft
+        publisher: Nscale
+        date: 2025-10-15
+        url: https://www.nscale.com/press-releases/nscale-microsoft-2025
+    confidence: high_for_location_permitted_capacity_GPU_deployments_investment_and_sustainability_targets
+
+  - id: dc_nscale_ward_county_texas
+    name: Nscale Ward County / Ionic Digital Cedarvale AI Campus
+    record_granularity: individual_campus
+    operator_and_partners: [Nscale, Ionic_Digital]
+    country: US
+    region: Texas
+    locality: Barstow_Ward_County
+    lifecycle_as_of_2026_07_17: conversion_from_Bitcoin_mining_to_AI_with_Q3_2026_service_target
+    location:
+      site_name: Cedarvale
+      leased_land_acres_approximate: 50
+      exact_coordinate_and_parcel_boundary: not_stored_until_primary_or_reliable_public_map_evidence
+      osm_record_status: unavailable_in_current_baseline
+    campus_scale:
+      critical_IT_load_mw: 234
+      Nscale_description_mw_approximate: 240
+      long_term_footprint_target_gw: 1.2
+      Microsoft_second_phase_option_mw: 700
+      second_phase_option_start_target: late_2027
+      lease_initial_term_months: 126
+      service_delivery_start_target: Q3_2026
+      scope_warning: The 1.2 GW and 700 MW option are future expansion rights or plans, not current energized capacity.
+    accelerators:
+      initial_physical_GPU_count_approximate: 104000
+      model: NVIDIA_GB300
+      customer: Microsoft
+      phased_delivery_start: Q3_2026
+    network:
+      fabric_switch_NIC_optics_and_fiber_details: undisclosed
+    electrical_and_generation:
+      contracted_critical_IT_load_mw: 234
+      exact_generation_mix_power_contract_grid_interconnection_substations_transformers_switchgear_UPS_and_backup_generation: undisclosed
+    cooling_and_water:
+      architecture:
+        - closed_loop_direct_liquid_cooling
+        - rear_door_heat_exchangers
+      PUE_WUE_water_source_and_consumption: undisclosed
+    linked_companies:
+      AI_operator: [Nscale]
+      powered_site_lessor: [Ionic_Digital]
+      customer: [Microsoft]
+      accelerator: [NVIDIA]
+      systems_collaboration: [Dell_Technologies]
+      financial_profile_refs:
+        - company_microsoft
+        - company_nvidia
+      missing_financial_profiles: [Ionic_Digital, Dell_Technologies]
+      private_company_financial_gap: Nscale does not publish comparable standalone revenue and operating profit.
+    sources:
+      - title: Nscale Contracts Approximately 200,000 NVIDIA GB300 GPUs with Microsoft
+        publisher: Nscale
+        date: 2025-10-15
+        url: https://www.nscale.com/press-releases/nscale-microsoft-2025
+      - title: AI Infrastructure - Ward County
+        publisher: Nscale
+        url: https://www.nscale.com/ai-infrastructure
+      - title: Ionic Digital Secures Transformational Lease Agreement of Cedarvale Facility with Nscale
+        publisher: Ionic_Digital
+        date: 2025-10-14
+        url: https://ionicdigital.com/press-releases/ionic-digital-secures-transformational-lease-agreement-of-cedarvale-facility-with-nscale/
+      - title: Ionic Digital Form S-1
+        publisher: US_Securities_and_Exchange_Commission
+        date: 2026-06
+        url: https://www.sec.gov/Archives/edgar/data/2007691/000118518526002704/ionicdigis1061026.htm
+    confidence: high_for_location_capacity_lease_GPU_customer_and_cooling_architecture_low_for_electrical_OEMs_and_generation_mix
+
+  - id: dc_coreweave_global_fleet
+    name: CoreWeave global AI cloud data-center fleet
+    record_granularity: multi_country_operating_portfolio
+    operator: CoreWeave
+    geography:
+      disclosed_regions: [United_States, Canada, Europe]
+      country_count_as_of_2025_12_31: 6
+      exact_country_and_site_list: not_fully_disclosed_in_the_10_K
+    lifecycle_as_of_2026_07_17: operating_and_rapidly_expanding
+    fleet_scale:
+      data_centers_as_of_2025_12_31: 43
+      active_power_mw_as_of_2025_12_31: more_than_850
+      contracted_power_gw_as_of_2025_12_31: 3.1
+      active_power_as_of_2026_Q1: more_than_1_GW
+      contracted_power_as_of_2026_Q1: more_than_3_5_GW
+      active_power_target_2030: more_than_8_GW
+      NVIDIA_expansion_target_2030: more_than_5_GW_of_AI_factories
+      scope_warning: >-
+        Active power, contracted power, and 2030 targets are portfolio-level
+        measures. They cannot be allocated to individual facilities without
+        separate site evidence, and contracted power is not energized power.
+    accelerators:
+      physical_GPU_count: undisclosed
+      fleet_vendor_as_of_2025_12_31: NVIDIA
+      disclosed_platforms:
+        - NVIDIA_GB200_NVL72
+        - NVIDIA_GB300_NVL72
+        - NVIDIA_RTX_PRO_6000
+      planned_platform: NVIDIA_Rubin
+      scope_warning: >-
+        The filing discloses fleet-wide platforms and says all GPUs then used in
+        CoreWeave infrastructure were NVIDIA GPUs, but it does not disclose a
+        physical fleet count or per-campus model allocation.
+    network:
+      disclosed_fabric:
+        - NVIDIA_Quantum_X800_XDR_800Gbps
+        - NVIDIA_Quantum_2_InfiniBand
+        - NVIDIA_Spectrum_X_RoCE_or_RDMA_over_Converged_Ethernet
+      customer_connectivity_options_gbps: [10, 100, 400]
+      proprietary_global_backbone: true
+      per_site_topology_optics_and_fiber_vendors: undisclosed
+    electrical_and_generation:
+      disclosed_long_lead_categories:
+        - power_distribution_units
+        - switchboards
+        - breakers
+        - cables
+      generation_mix: many_sites_draw_on_renewable_energy_but_site_mix_is_undisclosed
+      substations_transformers_UPS_backup_generation_and_OEMs: undisclosed_at_fleet_level
+    cooling_and_water:
+      architecture: advanced_closed_loop_liquid_cooling_at_many_sites
+      purpose: higher_rack_density_and_reduced_water_consumption
+      chillers_and_HVAC_supply_chain_dependency: disclosed_without_vendor_or_quantity
+      fleet_PUE_WUE_and_absolute_water_consumption: undisclosed
+    linked_companies:
+      operator: [CoreWeave]
+      accelerator_and_fabric: [NVIDIA]
+      CPU_suppliers: [AMD, Intel]
+      customers_disclosed_in_2026_Q1_release: [Meta, Anthropic, Cohere, Jane_Street, Mistral]
+      financial_profile_refs:
+        - company_coreweave
+        - company_nvidia
+        - company_amd
+      missing_financial_profiles: [Intel, Anthropic, Cohere, Jane_Street, Mistral]
+    sources:
+      - title: CoreWeave 2025 Form 10-K
+        publisher: US_Securities_and_Exchange_Commission
+        date: 2026-02-26
+        url: https://www.sec.gov/Archives/edgar/data/1769628/000176962826000104/crwv-20251231.htm
+      - title: CoreWeave Reports Strong First Quarter 2026 Results
+        publisher: CoreWeave
+        date: 2026-05-07
+        url: https://investors.coreweave.com/news/news-details/2026/CoreWeave-Reports-Strong-First-Quarter-2026-Results/
+    confidence: high_for_portfolio_count_power_financially_disclosed_platforms_and_network_low_for_per_site_inventory_and_electrical_BOM
+
+  - id: dc_google_visakhapatnam_ai_hub
+    name: Google Visakhapatnam AI Hub
+    record_granularity: individual_campus_plus_energy_and_connectivity_program
+    operator_and_partners: [Google, AdaniConneX, Nxtra_by_Airtel]
+    country: IN
+    region: Andhra_Pradesh
+    locality: Tarluvada_Visakhapatnam
+    lifecycle_as_of_2026_07_17: under_construction_after_2026_04_28_groundbreaking
+    location:
+      publicly_named_groundbreaking_locality: Tarluvada
+      exact_coordinate_and_parcel_boundary: undisclosed
+      osm_record_status: unavailable_in_current_baseline
+    campus_scale:
+      compute_capacity: gigawatt_scale
+      exact_compute_IT_or_utility_service_mw: undisclosed
+      total_program_investment_usd_billion: 15
+      investment_window: 2026_to_2030
+      scope_warning: >-
+        The $15 billion covers the broader AI hub, including data-center
+        operations, energy, fiber, and subsea connectivity. It is not a certified
+        building-only capex figure, and "gigawatt-scale" is not an exact MW value.
+    accelerators:
+      site_specific_TPU_count_and_generation: undisclosed
+      site_specific_NVIDIA_GPU_count_and_model: undisclosed
+      fleet_context_only:
+        - Google operates its own TPUs and also offers NVIDIA GPUs.
+        - Alphabet disclosed eighth-generation TPU 8i and 8t in June 2026.
+      scope_warning: Do not assign Alphabet fleet hardware or counts to this campus without a site-specific disclosure.
+    network:
+      major_new_international_subsea_gateway: planned
+      multiple_international_subsea_cable_landings: planned
+      expanded_fiber_optic_network: planned
+      strategic_role: eastern_India_route_diversity_relative_to_Mumbai_and_Chennai
+      cable_names_capacity_and_equipment_vendors: undisclosed
+    electrical_and_generation:
+      planned_components:
+        - new_transmission_lines
+        - clean_energy_generation
+        - energy_storage_systems
+      exact_generation_mw_storage_mwh_interconnection_voltage_substations_transformers_switchgear_UPS_backup_generation_and_OEMs: undisclosed
+    cooling_and_water:
+      architecture_water_source_PUE_WUE_and_absolute_consumption: undisclosed
+    linked_companies:
+      cloud_and_compute_operator: [Google]
+      data_center_partner: [AdaniConneX]
+      data_center_and_network_partner: [Nxtra_by_Airtel]
+      financial_profile_refs:
+        - company_alphabet
+        - company_adani_enterprises
+        - company_bharti_airtel
+      joint_venture_financial_gap: AdaniConneX and Nxtra campus-level revenue and operating profit are not disclosed.
+    sources:
+      - title: Our First AI Hub in India, Powered by a $15 Billion Investment
+        publisher: Google
+        date: 2025-10-14
+        url: https://blog.google/intl/en-in/company-news/our-first-ai-hub-in-india-powered-by-a-15-billion-investment/
+      - title: Google AI Hub - Scaling India's AI Infrastructure and Community Impact
+        publisher: Google
+        date: 2026-04-28
+        url: https://blog.google/intl/en-in/google-ai-hub-scaling-indias-ai-infrastructure-and-community-impact/
+      - title: Google Breaks Ground on India AI Hub
+        publisher: Google_Cloud_Press_Corner
+        date: 2026-04-28
+        url: https://www.googlecloudpresscorner.com/2026-04-28-Google-Breaks-Ground-on-India-AI-Hub%2C-Launching-a-National-Industrial-Ecosystem-Alongside-Indias-Digital-Infrastructure-Milestone
+    confidence: high_for_city_locality_partners_investment_program_and_gigawatt_scale_low_for_exact_MW_hardware_and_facility_engineering
+
+  - id: dc_galaxy_helios_dickens_county
+    name: Galaxy Helios AI and HPC Data Center Campus
+    record_granularity: individual_campus
+    developer_and_operator: Galaxy_Digital
+    anchor_tenant: CoreWeave
+    country: US
+    region: Texas
+    locality: Dickens_County_near_Spur
+    lifecycle_as_of_2026_07_17: phase_I_operating_phase_II_and_III_under_development
+    location:
+      campus_acres_more_than: 1500
+      distance_from_Lubbock_miles_approximate: 60
+      exact_coordinate_and_parcel_boundary: not_stored_until_primary_or_reliable_public_map_evidence
+      osm_record_status: unavailable_in_current_baseline
+    campus_scale:
+      phase_I:
+        gross_power_mw_delivered_2026_07_06_approximate: 200
+        critical_IT_load_mw_delivered: 133
+        rent_commencement: Q2_2026
+      phase_II:
+        gross_power_mw_contracted: 400
+        critical_IT_load_mw_contracted: 260
+        delivery_target: 2027
+      phase_III:
+        gross_power_mw_contracted: 200
+        critical_IT_load_mw_contracted: 133
+        delivery_target: 2028
+      CoreWeave_total:
+        gross_power_mw_contracted: 800
+        critical_IT_load_mw_contracted: 526
+        initial_lease_years: 15
+        extension_options: two_5_year_terms
+      campus_approved_gross_power_as_of_2026_07: more_than_1_6_GW
+      campus_potential_power_as_of_2026_Q1: more_than_3_4_GW
+      phase_I_building_area_sqft_more_than: 125000
+      scope_warning: >-
+        The 526 MW IT load and 800 MW gross power are contracted for CoreWeave.
+        More than 1.6 GW is approved campus power and more than 3.4 GW is a
+        longer-term potential footprint; neither is current IT load.
+    accelerators:
+      physical_GPU_count: undisclosed
+      operator_fleet_vendor_context: NVIDIA
+      exact_models_and_rack_count: undisclosed
+      scope_warning: >-
+        CoreWeave disclosed that all GPUs in its infrastructure as of 2025 year-end
+        were NVIDIA, but neither Galaxy nor CoreWeave disclosed Helios-specific GPU
+        count or model. Fleet product announcements must not be assigned to Helios.
+    network:
+      fabric_switch_NIC_optics_fiber_routes_and_vendors: undisclosed
+    electrical_and_generation:
+      Galaxy_private_grid_connected_substation_voltage_kv: 345
+      transformer_capacity_mw_across_phases_as_of_2025_09: up_to_900
+      grid_counterparty_substation: WETT_Cottonwood_345_kV
+      grid_context: ERCOT_Load_Zone_West_and_CREZ_wind_transmission
+      electrical_yards:
+        - prefabricated_electrical_infrastructure
+        - emergency_backup_generation_equipment
+      exact_transformer_count_switchgear_UPS_generator_OEM_models_and_fuel: undisclosed
+      renewable_energy_warning: CREZ transmission access does not prove a site-specific renewable percentage.
+    cooling_and_water:
+      chiller_yard: temperature_controlled_water_for_direct_liquid_cooling_and_air_cooled_building_portions
+      water_systems:
+        - onsite_groundwater_facilities
+        - water_treatment
+        - treatment_process_wastewater_treatment
+      exact_chiller_OEM_flow_capacity_PUE_WUE_and_absolute_water_consumption: undisclosed
+    project_economics:
+      first_800MW_capital_investment_usd_billion_more_than: 7.5
+      anticipated_average_annual_revenue_at_full_526MW_usd_billion_more_than: 1
+      anticipated_site_level_EBITDA_margin_percent: 90
+      economics_warning: >-
+        Revenue and EBITDA margin are Galaxy projections based on committed terms,
+        internal capex estimates, and full utilization after all three phases; they
+        are not current run-rate or audited campus results.
+    linked_companies:
+      developer_operator_and_lessor: [Galaxy_Digital]
+      anchor_tenant_AI_cloud: [CoreWeave]
+      tenant_fleet_accelerator_supplier_context: [NVIDIA]
+      grid_and_transmission: [ERCOT, WETT]
+      project_finance_lead: [Deutsche_Bank]
+      financial_profile_refs:
+        - company_galaxy_digital
+        - company_coreweave
+      missing_financial_profiles: [WETT, Deutsche_Bank]
+    sources:
+      - title: Galaxy Completes Phase I of Its Helios Data Center Campus
+        publisher: Galaxy_Digital
+        date: 2026-07-06
+        url: https://www.galaxy.com/newsroom/galaxy-completes-phase-i-of-its-helios-data-center-campus
+      - title: Galaxy Q3 2025 Corporate Overview
+        publisher: US_Securities_and_Exchange_Commission
+        date: 2025-10
+        url: https://www.sec.gov/Archives/edgar/data/1859392/000185939225000073/glxyq32025overview202510.htm
+      - title: Galaxy 2025 Form 10-K
+        publisher: US_Securities_and_Exchange_Commission
+        date: 2026-02-26
+        url: https://www.sec.gov/Archives/edgar/data/1859392/000185939226000016/glxy-20251231.htm
+      - title: Galaxy Data Center Infrastructure - Helios
+        publisher: Galaxy_Digital
+        url: https://www.galaxy.com/data-centers
+    confidence: high_for_campus_location_phase_power_electrical_architecture_cooling_and_contract_economics_low_for_GPU_inventory_and_electrical_OEMs
+
+  - id: dc_coreweave_lancaster_pennsylvania
+    name: CoreWeave Lancaster Pennsylvania AI Data Center
+    record_granularity: individual_campus
+    operator: CoreWeave
+    country: US
+    region: Pennsylvania
+    locality: Lancaster_area_outside_Philadelphia
+    lifecycle_as_of_2026_07_17: under_development_after_2025_groundbreaking
+    location:
+      exact_address_coordinate_and_parcel_boundary: undisclosed
+      osm_record_status: unavailable_in_current_baseline
+      physical_security_context: CoreWeave says its data centers use limited-access buildings with no visible signage.
+    campus_scale:
+      initial_capacity_mw: 100
+      expansion_capacity_mw_up_to: 300
+      equipment_and_facility_commitment_usd_billion_up_to: 6
+      capacity_status: announced_design_capacity_not_confirmed_energized_load
+      investment_scope_warning: >-
+        CoreWeave described the commitment as funding to equip the facility. It
+        is not current revenue, operating power, or a disclosed building-only
+        construction cost.
+    accelerators:
+      physical_GPU_count: undisclosed
+      site_specific_model_and_rack_count: undisclosed
+      operator_fleet_vendor_context_only: NVIDIA
+      prohibited_inference: Do not derive a GPU count from the 100 MW initial or 300 MW expansion capacity.
+    network:
+      site_specific_fabric_switch_NIC_optics_and_fiber_routes: undisclosed
+      portfolio_design_context_only:
+        - NVIDIA_Quantum_2_InfiniBand
+        - SHARP_enabled_networking
+      scope_warning: CoreWeave's portfolio design is not proof of the Lancaster bill of materials.
+    electrical_and_generation:
+      utility_interconnection_voltage_substations_transformers_switchgear_UPS_backup_generation_and_OEMs: undisclosed
+      portfolio_design_context_only: CoreWeave says capacity planning includes backup power and grid-impact planning.
+    cooling_and_water:
+      site_specific_architecture_PUE_WUE_and_absolute_water: undisclosed
+      portfolio_design_context_only:
+        liquid_cooling_capable_rack_density_kw_approximate: 130
+        disclosure_boundary: >-
+          CoreWeave says most sites opening in 2025 were expected to have liquid
+          cooling capability; that statement does not confirm Lancaster's final design.
+    linked_companies:
+      operator: [CoreWeave]
+      fleet_accelerator_and_network_context: [NVIDIA]
+      financial_profile_refs:
+        - company_coreweave
+        - company_nvidia
+    sources:
+      - title: CoreWeave Announces Multi-Billion Dollar Commitment to AI Infrastructure in Pennsylvania
+        publisher: CoreWeave
+        date: 2025-07-15
+        url: https://investors.coreweave.com/news/news-details/2025/CoreWeave-Announces-Multi-Billion-Dollar-Commitment-to-AI-Infrastructure-in-Pennsylvania/default.aspx
+      - title: Building Pennsylvania into the Mid-Atlantic AI Hub
+        publisher: CoreWeave
+        date: 2025-07-15
+        url: https://www.coreweave.com/blog/building-pennsylvania-into-the-mid-atlantic-ai-hub
+      - title: Our Capacity Plans for CoreWeave Data Centers
+        publisher: CoreWeave
+        date: 2024-12-18
+        url: https://www.coreweave.com/blog/our-capacity-plans-for-coreweave-data-centers
+      - title: We Said We Would. Then We Did.
+        publisher: CoreWeave
+        date: 2025-12
+        url: https://www.coreweave.com/blog/we-said-we-would-then-we-did-ceo-end-of-year-message-2025
+    confidence: high_for_announced_capacity_and_investment_low_for_site_hardware_power_chain_and_cooling
+
+  - id: dc_cdc_australia_new_zealand_portfolio
+    name: CDC Data Centres Australia and New Zealand portfolio
+    record_granularity: two_country_multi_campus_portfolio
+    operator: CDC_Data_Centres
+    countries: [AU, NZ]
+    lifecycle_as_of_2026_07_17: mixed_operating_under_construction_and_future_build
+    locations_as_of_2026_03_31:
+      Australia:
+        Canberra: [Hume, Fyshwick, Beard]
+        Sydney: [Marsden_Park, Eastern_Creek]
+        Melbourne: [Brooklyn, Laverton]
+        Perth: [Maddington]
+      New_Zealand:
+        Auckland: [Silverdale, Hobsonville]
+      exact_per_facility_coordinates_and_boundaries: not_disclosed_in_the_portfolio_report
+    portfolio_scale_as_of_2026_03_31:
+      operational_data_centers: 19
+      under_construction_data_centers: 6
+      under_construction_regions: 4
+      operating_capacity_mw: 671
+      under_construction_capacity_mw: 572
+      future_build_capacity_mw: 1663
+      total_capacity_pipeline_mw: 2906
+      scope_warning: >-
+        The pipeline is a portfolio total. Future-build capacity is neither
+        contracted nor energized, and the report does not allocate every MW to a
+        named campus.
+    contracted_capacity_update_as_of_2026_05:
+      total_contracted_capacity_mw_more_than: 1000
+      new_30_year_contract_mw: 555
+      customer: undisclosed_US_high_end_investment_grade_customer
+      delivery_window: FY2028_to_FY2029
+      renewal_options_years_up_to: 20
+      scope_warning: Contracted capacity is not current operating load or recognized revenue.
+    accelerators:
+      physical_GPU_count: undisclosed
+      models_and_per_campus_allocation: undisclosed
+      customer_ownership_boundary: >-
+        CDC states that customers deploy and operate their own ICT equipment,
+        while CDC provides the site, power, cooling, security, and operations.
+        An operator-level GPU inventory therefore cannot be reconstructed from
+        the reviewed disclosures.
+    electrical_and_generation:
+      standby_generation_fuel: diesel
+      standby_generator_use: emergency_response_testing_and_maintenance
+      sustainable_fuel_ready_generator_infrastructure: true
+      substation_transformer_switchgear_UPS_generator_count_models_and_OEMs: undisclosed
+      FY2026_electricity_matching:
+        annual_renewable_matching_percent: 100
+        real_time_renewable_supply_claim: false
+        warning: Annual certificate or contractual matching does not prove real-time renewable generation.
+    cooling_and_water:
+      architecture: closed_loop_liquid_cooling_across_all_CDC_built_facilities
+      primary_cooling_water_use: initial_fill_then_continuous_recirculation
+      portfolio_PUE_FY2026: 1.38
+      portfolio_WUE_liters_per_kwh_FY2026_less_than: 0.02
+      metric_scope: operational_sites_at_or_above_50_percent_utilization
+      chiller_CDU_heat_rejection_OEMs_and_site_level_metrics: undisclosed
+    linked_companies:
+      private_operator: [CDC_Data_Centres]
+      public_shareholder_exposure: [Infratil]
+      customer_hardware_owners: undisclosed
+      financial_profile_refs:
+        - company_infratil
+      private_company_financial_gap: >-
+        Infratil publishes CDC net revenue, EBITDAF, leverage, capex, and audited
+        associate summary data, but CDC does not present a directly comparable
+        standalone IFRS operating-income subtotal.
+    sources:
+      - title: CDC Sustainability Report 2026
+        publisher: CDC_Data_Centres
+        date: 2026-05-22
+        url: https://www.cdc.com.au/media/dugnsyfr/cdc-2026-sustainability-report_aasb-s2.pdf
+      - title: CDC signs 555MW data centre contract with US customer
+        publisher: CDC_Data_Centres
+        date: 2026-05
+        url: https://www.cdc.com.au/resources/news/cdc-signs-555mw-data-centre-contract-with-us-customer/
+    confidence: high_for_portfolio_site_regions_capacity_pipeline_contract_cooling_and_efficiency_low_for_per_campus_power_and_GPU_inventory
+
+  - id: dc_airtrunk_apac_portfolio
+    name: AirTrunk Asia-Pacific hyperscale data-center portfolio
+    record_granularity: six_market_22_campus_portfolio
+    operator: AirTrunk
+    countries: [AU, JP, MY, SG, HK, IN]
+    lifecycle_as_of_2026_07_17: mixed_operating_under_construction_and_announced
+    portfolio_scale:
+      disclosed_campuses: 22
+      campus_design_capacity_mw_more_than_derived: 3153
+      derivation: sum_of_the_22_current_official_location_page_lower_bound_capacity_figures
+      operating_capacity_mw: not_consistently_disclosed
+      contracted_capacity_mw: not_consistently_disclosed
+      scope_warning: >-
+        Site pages publish total campus design capacity, not a consistent measure
+        of currently energized, leased, or utilized IT load. The derived 3.153 GW
+        lower bound must not be treated as operating power.
+    site_inventory_as_of_2026_07_16:
+      - site: SYD1_Sydney_West
+        country: AU
+        capacity_mw_more_than: 130
+        site_area_ha: 7.4
+        technical_data_hall_area_m2: 35000
+        data_halls: 42
+        high_voltage_feed_kv: 132
+        feed_topology: diverse
+        design_PUE: 1.15
+        source_url: https://airtrunk.com/location/syd1-sydney-west/
+      - site: SYD2_Sydney_North
+        country: AU
+        capacity_mw_more_than: 120
+        site_area_ha: 4.2
+        technical_data_hall_area_m2: 29000
+        data_halls: 24
+        high_voltage_feed_kv: 132
+        feed_topology: diverse
+        design_PUE: 1.15
+        source_url: https://airtrunk.com/location/syd2-sydney-north/
+      - site: SYD3_Sydney_West
+        country: AU
+        capacity_mw_more_than: 400
+        site_area_ha: 8.3
+        technical_data_hall_area_m2: 70000
+        data_halls: 42
+        high_voltage_feed_kv: 132
+        feed_topology: diverse
+        design_PUE: 1.15
+        source_url: https://airtrunk.com/location/syd3-sydney-west/
+      - site: MEL1_Melbourne_West
+        country: AU
+        capacity_mw_more_than: 185
+        site_area_ha: 8.8
+        technical_data_hall_area_m2: 32000
+        data_halls: 34
+        high_voltage_feed_kv: 66
+        feed_topology: diverse
+        design_PUE: 1.15
+        source_url: https://airtrunk.com/location/mel1-melbourne/
+      - site: MEL2_Melbourne_North_West
+        country: AU
+        capacity_mw_more_than: 354
+        site_area_ha: 8.07
+        gross_floor_area_m2: 45578
+        technical_data_hall_area_m2: 42240
+        data_halls_up_to: 32
+        high_voltage_feed_kv: 66
+        feed_topology: diverse
+        design_PUE: 1.15
+        source_url: https://airtrunk.com/location/mel2-melbourne/
+      - site: TOK1_Tokyo_East_Inzai
+        country: JP
+        capacity_mw_more_than: 300
+        site_area_ha: 13
+        technical_data_hall_area_m2: 80000
+        data_halls: 102
+        high_voltage_feed_kv: 66
+        design_PUE: 1.15
+        source_url: https://airtrunk.com/location/tok1-east-tokyo/
+      - site: TOK2_Tokyo_West
+        country: JP
+        capacity_mw_more_than: 110
+        site_area_ha: 4.6
+        high_voltage_feed_kv: 66
+        design_PUE: 1.15
+        source_url: https://airtrunk.com/location/tok2-west-tokyo/
+      - site: OSK1_Osaka_West
+        country: JP
+        capacity_mw_more_than: 20
+        gross_floor_area_m2_approximate: 16500
+        technical_data_hall_area_m2_more_than: 5400
+        high_voltage_feed_kv: 77
+        design_PUE: industry_low_not_quantified
+        source_url: https://airtrunk.com/location/osk1-osaka-west/
+      - site: OSK2_Osaka_Downtown_East
+        country: JP
+        capacity_mw_more_than: 50
+        gross_floor_area_m2_approximate: 32000
+        technical_data_hall_area_m2_more_than: 7000
+        high_voltage_feed_kv: 77
+        design_PUE: industry_low_not_quantified
+        source_url: https://airtrunk.com/location/osk2-osaka-downtown-east/
+      - site: JHB1_Johor_Bahru
+        country: MY
+        capacity_mw_more_than: 150
+        site_area_ha: 10.3
+        technical_data_hall_area_m2: 21900
+        data_halls: 20
+        high_voltage_feed_kv: 132
+        feed_topology: diverse
+        design_PUE: 1.15
+        source_url: https://airtrunk.com/location/jhb1-johor/
+      - site: JHB2_Johor_Bahru
+        country: MY
+        capacity_mw_more_than: 270
+        site_area_ha_more_than: 11
+        high_voltage_feed_kv: 275
+        feed_topology: diverse
+        design_PUE: 1.37
+        cooling_context: state_of_the_art_liquid_cooling_technology
+        source_url: https://airtrunk.com/location/jhb2-johor/
+      - site: JHB3_Johor_Bahru
+        country: MY
+        capacity_mw_more_than: 138
+        site_area_ha: 5.4034
+        technical_data_hall_area_m2: 11150
+        data_halls: 8
+        high_voltage_feed_kv: 275
+        feed_topology: permanent_dual_feed_from_JHB2
+        design_PUE: 1.3
+        source_url: https://airtrunk.com/location/jhb3-johor-bahru/
+      - site: JHB4_Johor_Bahru
+        country: MY
+        capacity_mw_more_than: 142
+        site_area_ha: 5.589
+        technical_data_hall_area_m2: 11150
+        data_halls: 8
+        high_voltage_feed_kv: 275
+        feed_topology: permanent_dual_feed_from_JHB2
+        design_PUE: 1.3
+        source_url: https://airtrunk.com/location/jhb4-johor-bahru/
+      - site: SGP1_Singapore_Loyang
+        country: SG
+        capacity_mw_more_than: 78
+        site_area_ha: 1.5
+        technical_data_hall_area_m2: 20000
+        data_halls: 18
+        high_voltage_feed_kv: 66
+        feed_topology: diverse
+        design_PUE: 1.25
+        source_url: https://airtrunk.com/location/sgp1-singapore/
+      - site: SGP2_Singapore_Loyang
+        country: SG
+        capacity_mw_more_than: 70
+        gross_floor_area_m2_approximate: 57600
+        technical_data_hall_area_m2_more_than: 18000
+        high_voltage_feed_kv: 66
+        feed_topology: diverse
+        design_PUE: industry_low_not_quantified
+        source_url: https://airtrunk.com/location/sgp2-singapore/
+      - site: HKG1_Hong_Kong_Tsuen_Wan
+        country: HK
+        capacity_mw_more_than: 20
+        gross_floor_area_m2_more_than: 17400
+        technical_data_hall_area_m2_more_than: 8000
+        high_voltage_feed_kv: 11
+        feed_topology: diverse
+        design_PUE: 1.35
+        source_url: https://airtrunk.com/location/hkg1-hong-kong/
+      - site: HKG2_Hong_Kong_East_New_Territories
+        country: HK
+        capacity_mw_more_than: 15
+        gross_floor_area_m2_more_than: 11600
+        technical_data_hall_area_m2_more_than: 4400
+        high_voltage_feed_kv: 11
+        feed_topology: diverse
+        design_PUE: 1.25
+        source_url: https://airtrunk.com/location/hkg2-hong-kong/
+      - site: BOM1_Navi_Mumbai
+        country: IN
+        capacity_mw_more_than: 62
+        site_area_ha: 2.4
+        built_up_area_m2: 34500
+        substation_voltage_kv: 220
+        design_PUE: undisclosed
+        source_url: https://airtrunk.com/location/bom1-mumbai/
+      - site: BOM2_Mahape_Navi_Mumbai
+        country: IN
+        capacity_mw_more_than: 120
+        site_area_ha: 5.4
+        built_up_area_m2_per_building: 22700
+        substation_voltage_kv: 220
+        design_PUE: undisclosed
+        source_url: https://airtrunk.com/location/bom2-mumbai/
+      - site: BOM3_Chandivali_Mumbai
+        country: IN
+        capacity_mw_more_than: 48
+        site_area_ha: 1.5
+        high_voltage_feed_kv: 33
+        design_PUE: undisclosed
+        published_size_field_status: malformed_on_official_page_not_normalized
+        source_url: https://airtrunk.com/location/bom3-mumbai/
+      - site: MAA1_Ambattur_Chennai
+        country: IN
+        capacity_mw_more_than: 128
+        site_area_ha: 6.6
+        substation_voltage_kv: 230
+        design_PUE: undisclosed
+        source_url: https://airtrunk.com/location/maa1-chennai/
+      - site: HYD1_Chandanvelly_Hyderabad
+        country: IN
+        capacity_mw_more_than: 243
+        site_area_ha: 13.3
+        substation_voltage_kv: 440_or_220
+        design_PUE: undisclosed
+        published_size_field_status: malformed_on_official_page_not_normalized
+        source_url: https://airtrunk.com/location/hyd1-hyderabad/
+    accelerators:
+      physical_GPU_count: undisclosed_across_all_22_campuses
+      site_specific_models_and_rack_counts: undisclosed
+      NVIDIA_relationship: DGX_Ready_colocation_partner
+      scope_warning: DGX-ready status demonstrates facility capability, not installed GPU ownership or quantity.
+    electrical_and_generation:
+      site_feed_voltages: captured_in_site_inventory
+      substations_transformers_switchgear_UPS_backup_generator_counts_models_and_OEMs: undisclosed
+      JHB1_renewable_contract_context:
+        VPPA_solar_mw: 30
+        claim_boundary: contractual_energy_matching_not_dedicated_realtime_site_supply
+      portfolio_renewable_matching_FY2024_percent: 74
+      portfolio_target_2030_percent: 100
+    cooling_and_water:
+      JHB1_direct_to_chip_liquid_cooling_deployed_mw_more_than_as_of_2024_08: 20
+      JHB1_heat_rejection: hybrid_direct_to_chip_plus_traditional_indirect_evaporative_cooling
+      JHB1_design_elements: [coolant_distribution_unit, liquid_quality_monitoring, hybrid_heat_rejection]
+      portfolio_operating_PUE_FY2024: 1.32
+      portfolio_operating_PUE_long_term_target_range: [1.23, 1.28]
+      portfolio_WUE_liters_per_kwh_FY2024: 0.97
+      per_campus_operating_PUE_WUE_and_absolute_water: mostly_undisclosed
+      cooling_and_CDU_OEMs: undisclosed
+    linked_companies:
+      private_operator: [AirTrunk]
+      accelerator_ecosystem: [NVIDIA]
+      publicly_named_energy_or_customer_partners_in_portfolio_material: [Microsoft, Google, CLP_Power]
+      transaction_investors: [Blackstone, CPP_Investments]
+      financial_profile_refs:
+        - company_nvidia
+        - company_alphabet
+        - company_microsoft
+        - company_blackstone
+      private_company_financial_gap: AirTrunk does not publish comparable standalone revenue and operating profit.
+    sources:
+      - title: AirTrunk FY24 Sustainability Report
+        publisher: AirTrunk
+        date: 2024
+        url: https://airtrunk.com/wp-content/uploads/2024/10/FY24-Sustainability-Report-by-AirTrunk.pdf
+      - title: AirTrunk appointed DGX-Ready colocation partner of NVIDIA
+        publisher: AirTrunk
+        date: 2024-08-09
+        url: https://airtrunk.com/airtrunk-appointed-dgx-ready-colocation-partner-of-nvidia/
+      - title: Blackstone Announces Agreement to Acquire AirTrunk in an A$24B Transaction
+        publisher: Blackstone
+        date: 2024-09-04
+        url: https://www.blackstone.com/news/press/blackstone-announces-agreement-to-acquire-airtrunk-in-a-a24b-transaction/
+    confidence: high_for_official_site_design_capacity_land_area_data_halls_voltage_and_design_PUE_low_for_operating_load_GPU_inventory_and_equipment_OEMs
+
+  - id: dc_blackstone_google_tpu_cloud_us_portfolio
+    name: Blackstone and Google US TPU cloud joint venture
+    record_granularity: announced_US_multi_site_or_site_undisclosed_compute_platform
+    operator: new_Blackstone_Google_joint_venture_company_name_undisclosed
+    country: US
+    lifecycle_as_of_2026_07_17: announced_with_2027_initial_online_target
+    location:
+      campuses_states_coordinates_and_parcel_boundaries: undisclosed
+      osm_record_status: unavailable_until_sites_are_publicly_identified
+    platform_scale:
+      initial_capacity_mw: 500
+      initial_online_target: 2027
+      longer_term_scale: plans_to_scale_significantly
+      Blackstone_initial_equity_commitment_usd_billion: 5
+      scope_warning: >-
+        The announcement does not identify how many campuses comprise the 500 MW,
+        whether the figure is IT or utility capacity, or how much is contracted,
+        constructed, or energized as of the announcement.
+    accelerators:
+      accelerator_family: Google_Cloud_TPU
+      service_model: compute_as_a_service
+      exact_TPU_generation_chip_count_rack_count_and_per_site_allocation: undisclosed
+      scope_warning: The 500 MW capacity announcement cannot be converted into a TPU count.
+    network:
+      operator_scope: joint_venture_will_provide_networking
+      topology_switches_optics_fiber_routes_and_vendors: undisclosed
+    electrical_and_generation:
+      utility_generation_interconnection_substations_transformers_switchgear_UPS_backup_generation_and_OEMs: undisclosed
+    cooling_and_water:
+      architecture_rack_density_PUE_WUE_water_source_and_OEMs: undisclosed
+    linked_companies:
+      infrastructure_investor_and_joint_venture_partner: [Blackstone]
+      accelerator_cloud_and_joint_venture_partner: [Google, Alphabet]
+      financial_profile_refs:
+        - company_blackstone
+        - company_alphabet
+    sources:
+      - title: Blackstone Announces Joint Venture with Google to Create New TPU Cloud
+        publisher: Blackstone
+        date: 2026-05-18
+        url: https://www.blackstone.com/news/press/blackstone-announces-joint-venture-with-google-to-create-new-tpu-cloud/
+    confidence: high_for_partner_capacity_equity_commitment_service_model_and_timing_low_for_site_hardware_power_and_cooling
+
+disclosure_gap_register:
+  - exact_global_physical_data_center_count
+  - exact_per_campus_GPU_inventory_for_most_hyperscalers
+  - single_line_electrical_diagrams
+  - transformer_UPS_switchgear_and_backup_generator_vendor_awards
+  - contracted_versus_energized_power_for_many_announced_projects
+  - facility_level_PUE_WUE_and_water_consumption
+  - accelerator_utilization_and_training_versus_inference_mix
+  - per_site_revenue_and_operating_profit
+
+next_research_queue:
+  campus_enrichment:
+    - CoreWeave_per_site_location_and_GPU_inventory_beyond_portfolio_totals
+    - Google_TPU_cloud_exact_US_sites_and_TPU_inventory_for_Blackstone_JV
+    - Oracle_OCI_AI_regions
+    - Alibaba_Tencent_ByteDance_China
+    - AirTrunk_per_campus_energized_contracted_and_utilized_capacity_beyond_design_totals
+    - CDC_per_campus_capacity_and_customer_hardware_inventory
+  company_financials: []
+
+portfolio_relevance:
+  interpretation: >-
+    Brian's ETFs already diversify across semiconductors, memory, networking,
+    electrical infrastructure, grid equipment, and nuclear power. The next useful
+    test is look-through exposure: determine whether the funds actually own
+    different bottlenecks or repeatedly own the same large semiconductor names.
+  boundaries:
+    - This research supports thesis and risk review; it is not a direct buy or sell instruction.
+    - Use the linked current financial profiles and preserve private-company or missing-public-company gaps before ranking investments.
+  related_finance_refs:
+    - life/finance/finance_active_log.yaml
+    - life/finance/investment_philosophy_research.yaml
+    - life/finance/global_macro_research_20260715.yaml

@@ -27,6 +27,9 @@ Use historical memory indexes when they exist:
 - `life/concepts/fulfilled_mind.yaml`: promoted concept for Brian's recurring "충만한 마음" / fulfilled mind pattern.
 - `life/knowledge/agent_architecture_thoughts.yaml`: Brian's AI-agent architecture thought threads, understandings, knowledge interests, and OKF/LLM Wiki/ontology-first conversation memory.
 - `life/knowledge/agent_tool_capabilities.yaml`: locally installed agent/tool capabilities, retrieval aliases, tested workflows, operating boundaries, and reusable usage playbooks.
+- `life/knowledge/global_ai_data_center_landscape_202607.yaml`: active evidence-backed research on global data-center capacity, major AI campuses, accelerator disclosures, power, cooling, networks, supply-chain links, and disclosure gaps.
+- `life/finance/ai_data_center_supply_chain_financials_202607.yaml`: official-filing-based revenue, operating-profit, data-center exposure, outlook, and risk registry for companies across compute, networking, electrical, cooling, operators, REITs, and utilities.
+- `life/imports/global_data_centers_20260717/osm_data_center_locations.jsonl`: reproducible ODbL public-location baseline for 4,663 current OpenStreetMap data-center objects; use its summary and builder for coverage and attribution boundaries.
 - `life/knowledge/soc_knowledge_db_design.yaml`: shared SoC Knowledge format/DB design, Firenze-first pilot plan, Milano expansion plan, and DRM-aware ingestion policy.
 - `life/imports/bke_gratitude_diary_2019/summary.yaml`: high-level summary of Brian's 2019 BKE gratitude diary.
 - `life/imports/bke_gratitude_diary_2019/entity_linked_entries.jsonl`: gratitude entries with semantic object links.

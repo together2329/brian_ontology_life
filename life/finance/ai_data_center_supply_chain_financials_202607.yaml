@@ -1,0 +1,2706 @@
+schema_version: 1
+status: active_research
+updated_at: 2026-07-17
+as_of: 2026-07-17
+area: FINANCE
+secondary_areas:
+  - CAREER
+title: AI data-center supply-chain company financials
+research_ref: life/knowledge/global_ai_data_center_landscape_202607.yaml
+purpose: >-
+  Compare the revenue scale, operating economics, data-center exposure, current
+  demand signals, and disclosed outlook of companies across the AI data-center
+  stack without mixing incompatible accounting measures.
+
+methodology:
+  source_priority: company_filings_and_official_investor_releases
+  comparison_rules:
+    - Preserve each company's reporting currency, fiscal calendar, and accounting basis.
+    - Treat GAAP, IFRS, K-IFRS, adjusted operating profit, EBITDA, NOI, and FFO as different measures.
+    - Separate company-wide results from data-center or segment-level disclosures.
+    - Label calculated margins and reconstructed operating results as derived rather than reported.
+    - Do not compare raw USD, EUR, and KRW amounts without an explicit same-date FX conversion.
+    - Do not infer a campus supplier relationship from general product exposure.
+  monetary_unit_convention: Values use the unit named in each field, normally millions of the reporting currency.
+  investment_boundary: Research input for thesis and risk review, not a direct buy or sell instruction.
+
+stack_layers:
+  hyperscale_buyers_and_cloud:
+    - Alphabet
+    - Microsoft
+    - Meta
+    - Amazon
+    - Oracle
+  AI_cloud_infrastructure_operators:
+    - CoreWeave
+  integrated_AI_infrastructure_developers:
+    - Reliance_Industries
+    - Adani_Enterprises
+  compute_memory_network:
+    - NVIDIA
+    - AMD
+    - Broadcom
+    - TSMC
+    - SK_hynix
+    - Micron
+    - Coherent
+    - Corning
+    - Arista_Networks
+    - Cisco
+  power_cooling_electrical:
+    - Vertiv
+    - Schneider_Electric
+    - Eaton
+    - ABB
+    - Siemens_Energy
+    - GE_Vernova
+    - Caterpillar
+    - Cummins
+    - Modine
+    - Trane_Technologies
+    - Johnson_Controls
+    - Prysmian
+    - Nexans
+    - LS_Electric
+    - HD_Hyundai_Electric
+  operators_reits_utilities:
+    - Equinix
+    - Digital_Realty
+    - Entergy
+    - Constellation_Energy
+    - Galaxy_Digital
+    - Bharti_Airtel
+  capital_and_asset_managers:
+    - Blackstone
+    - Infratil
+
+financial_profiles:
+  - id: company_nvidia
+    company: NVIDIA
+    layer: compute_memory_network
+    fiscal_baseline:
+      period: FY2026_ended_2026-01-25
+      accounting_basis: US_GAAP
+      currency: USD
+      revenue_usd_million: 215938
+      operating_income_usd_million: 130387
+      operating_margin_percent_derived: 60.38
+      year_over_year:
+        revenue_percent: 65
+        operating_income_percent: 60
+    latest_update:
+      period: Q1_FY2027_ended_2026-04-26
+      revenue_usd_million: 81615
+      operating_income_usd_million: 53536
+      data_center_revenue_usd_million: 75200
+      data_center_revenue_yoy_percent: 92
+      data_center_compute_revenue_usd_million: 60400
+      data_center_networking_revenue_usd_million: 14800
+    data_center_exposure:
+      products: [GPU_accelerators, NVLink, NVSwitch, Spectrum-X, BlueField]
+      confirmed_campus_refs:
+        - dc_microsoft_fairwater_wisconsin
+        - dc_xai_colossus_1_memphis
+        - dc_openai_stargate_abilene
+        - dc_stargate_uae_abudhabi
+        - dc_stargate_norway_narvik
+        - dc_nscale_monarch_west_virginia
+        - dc_nscale_verne_iceland
+        - dc_reliance_intelligence_jamnagar
+        - dc_humain_saudi_ai_factory_portfolio
+        - dc_cassava_africa_ai_factory_portfolio
+        - dc_xai_colossus_2_southaven
+        - dc_nscale_loughton_uk
+        - dc_start_campus_sines_portugal
+        - dc_nscale_ward_county_texas
+        - dc_coreweave_global_fleet
+      boundary: Data Center revenue includes compute and networking but does not disclose campus-level economics.
+    management_outlook:
+      period: Q2_FY2027
+      revenue_usd_million: 91000
+      range_percent: 2
+      china_data_center_compute_revenue_assumed: 0
+    watch_items:
+      - hyperscaler_and_model_lab_capex_durability
+      - export_controls_and_China_revenue
+      - custom_accelerator_competition
+      - power_and_interconnection_constraints
+    sources:
+      - https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/
+      - https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-First-Quarter-Fiscal-2027/default.aspx
+    confidence: high
+
+  - id: company_broadcom
+    company: Broadcom
+    layer: compute_memory_network
+    fiscal_baseline:
+      period: FY2025_ended_2025-11-02
+      accounting_basis: US_GAAP_with_separate_non_GAAP_metrics
+      currency: USD
+      revenue_usd_million: 63887
+      operating_income_usd_million: 25484
+      operating_margin_percent_derived: 39.89
+      non_GAAP_operating_income_usd_million: 41997
+      non_GAAP_operating_margin_percent_derived: 65.74
+      adjusted_EBITDA_usd_million: 43004
+      semiconductor_revenue_usd_million: 36858
+    latest_update:
+      period: Q2_FY2026_ended_2026-05-03
+      revenue_usd_million: 22187
+      operating_income_usd_million: 10788
+      semiconductor_solutions_revenue_usd_million: 15009
+      AI_semiconductor_revenue_usd_million: 10800
+      AI_semiconductor_revenue_yoy_percent: 143
+    data_center_exposure:
+      products: [custom_AI_accelerators, Ethernet_AI_switching, optical_and_connectivity_components]
+      boundary: Company revenue includes VMware and other infrastructure software; it is not a pure AI hardware result.
+    management_outlook:
+      period: Q3_FY2026
+      revenue_usd_million: 29400
+      non_GAAP_operating_margin_percent_approximate: 67
+      AI_semiconductor_revenue_usd_million: 16000
+      AI_semiconductor_revenue_yoy_percent_more_than: 200
+    watch_items:
+      - customer_concentration
+      - custom_accelerator_program_timing
+      - VMware_integration_and_non_GAAP_adjustments
+      - Ethernet_versus_proprietary_scale_up_networks
+    sources:
+      - https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-fourth-quarter-and-fiscal-year-2025
+      - https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial
+    confidence: high
+
+  - id: company_sk_hynix
+    company: SK_hynix
+    layer: compute_memory_network
+    fiscal_baseline:
+      period: FY2025
+      accounting_basis: K-IFRS
+      currency: KRW
+      revenue_krw_billion: 97146.7
+      operating_profit_krw_billion: 47206.3
+      operating_margin_percent_reported: 49
+      operating_margin_percent_derived: 48.59
+      net_income_krw_billion: 42947.9
+      HBM_revenue_change: more_than_doubled
+    latest_update:
+      period: Q1_2026_preliminary
+      accounting_basis: K-IFRS
+      revenue_krw_billion: 52576.3
+      operating_profit_krw_billion: 37610.3
+      operating_margin_percent_reported: 72
+      net_income_krw_billion: 40345.9
+    data_center_exposure:
+      products: [HBM, high_capacity_server_DRAM, enterprise_SSD]
+      confirmed_campus_refs:
+        - dc_sk_aws_ulsan_ai_data_center
+      boundary: Results combine AI memory demand, broader memory pricing, product mix, and inventory-cycle effects.
+    management_outlook:
+      capital_spending_direction: significant_increase
+      uses: [M15X, Yongin_cluster, EUV_equipment]
+    watch_items:
+      - memory_price_cycle_and_customer_inventory
+      - HBM_qualification_and_competition
+      - very_high_capital_intensity
+      - preliminary_quarter_subject_to_final_reporting
+    sources:
+      - https://news.skhynix.com/sk-hynix-announces-fy25-financial-results/
+      - https://news.skhynix.com/q1-2026-business-results/
+    confidence: high_for_reported_results_medium_for_cycle_persistence
+
+  - id: company_arista_networks
+    company: Arista_Networks
+    layer: compute_memory_network
+    fiscal_baseline:
+      period: FY2025
+      accounting_basis: US_GAAP_with_separate_non_GAAP_metrics
+      currency: USD
+      revenue_usd_million: 9005.7
+      operating_income_usd_million: 3856.1
+      operating_margin_percent_reported: 42.8
+      non_GAAP_operating_income_usd_million: 4337.0
+      non_GAAP_operating_margin_percent_reported: 48.2
+    latest_update:
+      period: Q1_2026
+      revenue_usd_million: 2709.0
+      operating_income_usd_million: 1157.8
+      operating_margin_percent_reported: 42.7
+      non_GAAP_operating_margin_percent_reported: 47.8
+    data_center_exposure:
+      products: [Ethernet_switching, AI_spine_7800, XPO_optical_architecture, CloudVision]
+      product_claims:
+        XPO_networking_rack_reduction_percent_up_to: 75
+        XPO_floor_space_reduction_percent_up_to: 44
+      boundary: Product-level data-center benefits are not separately reported as revenue or profit.
+    management_outlook:
+      period: Q2_2026
+      revenue_usd_million_approximate: 2800
+      non_GAAP_operating_margin_percent_range: [46, 47]
+    watch_items:
+      - large_customer_concentration
+      - merchant_silicon_and_component_supply
+      - hyperscaler_capex_and_in_house_networking
+      - optical_transition_execution
+    sources:
+      - https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2026/Arista-Networks-Inc--Reports-Fourth-Quarter-and-Year-End-2025-Financial-Results/default.aspx
+      - https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2026/Arista-Networks-Inc--Reports-First-Quarter-2026-Financial-Results/default.aspx
+    confidence: high
+
+  - id: company_vertiv
+    company: Vertiv
+    layer: power_cooling_electrical
+    fiscal_baseline:
+      period: FY2025
+      accounting_basis: US_GAAP_with_separate_adjusted_metrics
+      currency: USD
+      net_sales_usd_million: 10229.9
+      operating_profit_usd_million: 1829.7
+      operating_margin_percent_reported: 17.9
+      adjusted_operating_profit_usd_million: 2089.7
+      adjusted_operating_margin_percent_reported: 20.4
+      backlog_usd_million: 15000
+      Q4_orders_yoy_percent: 252
+      Q4_book_to_bill: 2.9
+    latest_update:
+      period: Q1_2026
+      net_sales_usd_million: 2649.5
+      operating_profit_usd_million: 440.1
+      operating_margin_percent_reported: 16.6
+      adjusted_operating_profit_usd_million: 550.9
+      adjusted_operating_margin_percent_reported: 20.8
+    data_center_exposure:
+      products: [UPS, switchgear, power_distribution, liquid_cooling, thermal_management, racks]
+      boundary: Core infrastructure exposure is high, but reviewed releases do not name equipment awards for the tracked campuses.
+    management_outlook:
+      period: FY2026_raised
+      net_sales_usd_million_range: [13500, 14000]
+      organic_growth_percent_range: [29, 31]
+      adjusted_operating_profit_usd_million_range: [3140, 3260]
+      adjusted_operating_margin_percent_range: [22.8, 23.8]
+      adjusted_free_cash_flow_usd_million_range: [2100, 2300]
+    watch_items:
+      - backlog_conversion_and_customer_schedule_changes
+      - supply_chain_and_tariffs
+      - capacity_expansion_execution
+      - adjusted_metric_reconciliation
+    sources:
+      - https://investors.vertiv.com/news/news-details/2026/Vertiv-Reports-Strong-Fourth-Quarter-with-Organic-Orders-Growth-of-252-and-Diluted-EPS-Growth-of-200-Adjusted-Diluted-EPS-37/
+      - https://investors.vertiv.com/news/news-details/2026/Vertiv-Reports-Strong-First-Quarter-with-Diluted-EPS-Growth-of-136-Adjusted-Diluted-EPS-Growth-of-83-Raises-Full-Year-Guidance/default.aspx
+    confidence: high
+
+  - id: company_schneider_electric
+    company: Schneider_Electric
+    layer: power_cooling_electrical
+    fiscal_baseline:
+      period: FY2025
+      accounting_basis: IFRS_with_separate_adjusted_EBITA
+      currency: EUR
+      revenue_eur_million: 40152
+      reported_EBIT_eur_million: 6699
+      EBIT_margin_percent_derived: 16.68
+      EBITA_eur_million: 7156
+      adjusted_EBITA_eur_million: 7520
+      adjusted_EBITA_margin_percent_reported: 18.7
+      net_income_group_share_eur_million: 4163
+      energy_management_revenue_eur_million: 33130
+      backlog_eur_million: 25362
+      energy_management_backlog_eur_million: 21340
+    latest_update:
+      period: Q1_2026
+      revenue_eur_million: 9767
+      organic_growth_percent: 11.2
+      energy_management_organic_growth_percent: 12.8
+      disclosed_driver: data_center_demand
+    data_center_exposure:
+      products: [electrical_panels, UPS, racks, prefabricated_power_modules, liquid_cooling, EcoStruxure, Motivair]
+      boundary: Data-center revenue and operating profit are not separately disclosed.
+    management_outlook:
+      period: FY2026_reaffirmed
+      adjusted_EBITA_organic_growth_percent_range: [10, 15]
+      revenue_organic_growth_percent_range: [7, 10]
+      adjusted_EBITA_margin_percent_range_approximate: [19.1, 19.4]
+      expected_lead_vertical: Data_Center_and_Networks
+    watch_items:
+      - adjusted_EBITA_is_not_reported_EBIT
+      - backlog_conversion_and_project_timing
+      - data_center_mix_not_separately_disclosed
+      - acquisition_and_capacity_execution
+    sources:
+      - https://www.se.com/ww/en/assets/564/document/528237/release-fy-results-2025.pdf?p_File_Name=2025+FY+Results&p_enDocType=Financial+release
+      - https://www.se.com/ww/en/about-us/investor-relations/financial-results/
+      - https://www.se.com/ww/en/assets/pdf/post-Q1-2026-release-consensus
+    confidence: high_for_group_financials_medium_for_data_center_mix
+
+  - id: company_eaton
+    company: Eaton
+    layer: power_cooling_electrical
+    fiscal_baseline:
+      period: FY2025
+      accounting_basis: US_GAAP_with_segment_operating_profit
+      currency: USD
+      net_sales_usd_million: 27448
+      derived_pre_interest_pre_other_operating_result_usd_million: 5209
+      derived_operating_margin_percent: 18.98
+      derivation: revenue_minus_cost_of_products_sold_minus_selling_and_administrative_minus_research_and_development
+      reported_total_segment_operating_profit_usd_million: 6713
+      reported_total_segment_margin_percent: 24.5
+      electrical_americas:
+        sales_usd_million: 13276
+        operating_profit_usd_million: 3972
+      electrical_global:
+        sales_usd_million: 6815
+        operating_profit_usd_million: 1323
+    latest_update:
+      period: Q1_2026
+      sales_usd_million_rounded: 7500
+      electrical_americas_sales_usd_million_rounded: 3600
+      electrical_americas_operating_profit_usd_million: 922
+      electrical_americas_rolling_twelve_month_orders_growth_percent: 42
+      electrical_global_sales_usd_million_rounded: 1900
+      electrical_global_operating_profit_usd_million: 373
+      disclosed_order_driver: data_centers
+    data_center_exposure:
+      products: [UPS, busway, switchgear, breakers, power_distribution, thermal_systems]
+      acquisition: Boyd_Thermal_closed
+      boundary: Company totals include aerospace, mobility, and other non-data-center markets.
+    management_outlook:
+      period: FY2026
+      organic_growth_percent_range: [9, 11]
+      segment_margin_percent_range: [24.1, 24.5]
+      adjusted_EPS_usd_range: [13.05, 13.50]
+    watch_items:
+      - consolidated_operating_result_is_derived_not_a_company_labeled_subtotal
+      - electrical_segment_data_center_mix_is_not_separately_quantified
+      - acquisition_integration
+      - project_timing_and_component_capacity
+    sources:
+      - https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-fourth-quarter-2025-results.html
+      - https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-first-quarter-2026-results.html
+      - https://www.sec.gov/Archives/edgar/data/1551182/000155118226000007/etn-20251231.htm
+    confidence: high_for_reported_metrics_medium_for_derived_operating_result
+
+  - id: company_ge_vernova
+    company: GE_Vernova
+    layer: power_cooling_electrical
+    fiscal_baseline:
+      period: FY2025
+      accounting_basis: US_GAAP_with_separate_adjusted_EBITDA
+      currency: USD
+      revenue_usd_million: 38068
+      operating_income_usd_million: 1388
+      operating_margin_percent_derived: 3.65
+      adjusted_EBITDA_usd_million: 3200
+      adjusted_EBITDA_margin_percent_reported: 8.4
+      net_income_usd_million: 4879
+      net_income_tax_benefit_usd_million: 2900
+      power_revenue_usd_million_rounded: 19800
+      electrification_revenue_usd_million_rounded: 9600
+      total_backlog_usd_million: 150000
+      electrification_equipment_backlog_usd_million: 30500
+    latest_update:
+      period: Q1_2026
+      revenue_usd_million: 9339
+      adjusted_EBITDA_usd_million: 896
+      adjusted_EBITDA_margin_percent_reported: 9.6
+      orders_usd_million: 18300
+      total_backlog_usd_million: 163000
+      electrification:
+        orders_usd_million: 7112
+        revenue_usd_million: 2959
+        segment_EBITDA_usd_million: 528
+        equipment_backlog_usd_million: 38600
+      data_center_equipment_orders_usd_million: 2400
+      data_center_order_comparison: exceeded_all_of_FY2025
+    data_center_exposure:
+      products: [gas_turbines, transformers, switchgear, substations, HVDC, grid_integration]
+      boundary: The disclosed data-center equipment orders are a strong demand signal but company-wide revenue is not data-center revenue.
+    management_outlook:
+      period: FY2026_raised
+      revenue_usd_million_range: [44500, 45500]
+      adjusted_EBITDA_margin_percent_range: [12, 14]
+      free_cash_flow_usd_million_range: [6500, 7500]
+      electrification_revenue_usd_million_range: [14000, 14500]
+      electrification_segment_EBITDA_margin_percent_range: [18, 20]
+      FY2028_revenue_usd_million: 56000
+      FY2028_adjusted_EBITDA_margin_percent: 20
+    watch_items:
+      - Wind_segment_losses
+      - tariff_and_supply_chain_exposure
+      - long_cycle_project_execution
+      - adjusted_EBITDA_versus_GAAP_operating_income
+    sources:
+      - https://www.sec.gov/Archives/edgar/data/1996810/000199681026000015/gev-20251231.htm
+      - https://www.gevernova.com/sites/default/files/gev_webcast_pressrelease_01282026.pdf
+      - https://www.gevernova.com/sites/default/files/gev_webcast_pressrelease_04222026.pdf
+    confidence: high
+
+  - id: company_equinix
+    company: Equinix
+    layer: operators_reits_utilities
+    fiscal_baseline:
+      period: FY2025
+      accounting_basis: US_GAAP_with_REIT_non_GAAP_metrics
+      currency: USD
+      revenue_usd_million: 9217
+      operating_income_usd_million: 1848
+      operating_margin_percent_derived: 20.05
+      adjusted_EBITDA_usd_million: 4530
+      adjusted_EBITDA_margin_percent_reported: 49
+      AFFO_usd_million: 3761
+      interconnections_more_than: 500000
+    latest_update:
+      period: Q1_2026
+      revenue_usd_million: 2444
+      operating_income_usd_million: 577
+      adjusted_EBITDA_usd_million: 1245
+      adjusted_EBITDA_margin_percent_reported: 51
+    data_center_exposure:
+      products: [carrier_neutral_colocation, interconnection, xScale_hyperscale]
+      Q4_largest_deals_AI_workload_share_percent_approximate: 60
+      boundary: Operating income includes material real-estate depreciation; AFFO and adjusted EBITDA are complementary REIT measures.
+    management_outlook:
+      period: FY2026_raised
+      revenue_usd_million_range: [10144, 10244]
+      adjusted_EBITDA_usd_million_range: [5165, 5245]
+      adjusted_EBITDA_margin_percent_approximate: 51
+      AFFO_usd_million_range: [4198, 4278]
+      total_capex_usd_million_approximate: 4100
+      non_recurring_capex_ex_xScale_usd_million_approximate: 3800
+    watch_items:
+      - capital_intensity_and_funding_cost
+      - power_availability_and_development_timing
+      - tenant_and_partner_credit
+      - AFFO_and_adjusted_EBITDA_reconciliation
+    sources:
+      - https://investor.equinix.com/news-events/press-releases/detail/1096/equinix-provides-robust-2026-outlook-driven-by-strong
+      - https://investor.equinix.com/news-events/press-releases/detail/1107/equinix-reports-first-quarter-results-and-raises-full-year
+    confidence: high
+
+  - id: company_digital_realty
+    company: Digital_Realty
+    layer: operators_reits_utilities
+    fiscal_baseline:
+      period: FY2025
+      accounting_basis: US_GAAP_with_REIT_non_GAAP_metrics
+      currency: USD
+      operating_revenue_usd_million: 6112.692
+      operating_income_usd_million: 658.492
+      operating_margin_percent_derived: 10.77
+      NOI_usd_million: 3242.181
+      NOI_margin_percent_derived: 53.04
+      cash_NOI_usd_million: 3136.741
+      constant_currency_core_FFO_per_share_usd: 7.29
+    latest_update:
+      period: Q1_2026
+      revenue_usd_million_rounded: 1600
+      net_income_usd_million: 175
+      operating_income_before_dispositions_usd_million: 266.933
+      adjusted_EBITDA_usd_million: 920
+      annualized_rent_backlog_at_share_usd_million: 1000
+      annualized_rent_backlog_100_percent_usd_million: 1800
+      leasing_signal: largest_hyperscale_lease_in_company_history
+    data_center_exposure:
+      products: [colocation, hyperscale_capacity, interconnection, development_land_and_power]
+      boundary: Operating income is reduced by depreciation; NOI and Core FFO remain non-GAAP complementary measures.
+    management_outlook:
+      period: FY2026_raised
+      revenue_usd_million_range: [6650, 6750]
+      adjusted_EBITDA_usd_million_range: [3650, 3750]
+      core_FFO_per_share_usd_range: [8.00, 8.10]
+      net_development_capex_usd_million_range: [3250, 3750]
+    watch_items:
+      - development_capex_and_financing_cost
+      - backlog_commencement_timing
+      - tenant_concentration_and_credit
+      - REIT_non_GAAP_measure_comparability
+    sources:
+      - https://investor.digitalrealty.com/news-releases/news-release-details/digital-realty-reports-fourth-quarter-2025-results
+      - https://investor.digitalrealty.com/news-releases/news-release-details/digital-realty-reports-first-quarter-2026-results
+      - https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm
+    confidence: high
+
+  - id: company_entergy
+    company: Entergy
+    layer: operators_reits_utilities
+    fiscal_baseline:
+      period: FY2025
+      accounting_basis: US_GAAP
+      currency: USD
+      operating_revenue_usd_million: 12946.686
+      operating_income_usd_million: 3202.278
+      operating_margin_percent_derived: 24.73
+      reported_earnings_usd_million: 1758
+    latest_update:
+      period: Q1_2026
+      GAAP_earnings_usd_million: 385
+      adjusted_earnings_usd_million: 399
+      service_agreements_signed_during_2025_gw_more_than: 3.5
+    data_center_exposure:
+      products: [regulated_generation, transmission, substations, retail_electric_service]
+      confirmed_campus_refs:
+        - dc_meta_hyperion_richland_parish
+      meta_hyperion_plan:
+        combined_cycle_gas_plants: 7
+        combined_cycle_generation_mw_more_than: 5200
+        new_500kV_transmission_miles_approximate: 240
+        additional_resources: [batteries, nuclear_uprates, solar_up_to_2500MW]
+        cost_allocation: dedicated_infrastructure_and_service_expected_to_be_funded_by_Meta
+      boundary: Utility revenue includes non-data-center customers and pass-through items; announced load is not the same as energized load.
+    management_outlook:
+      period: FY2026_affirmed
+      adjusted_EPS_usd_range: [4.25, 4.45]
+      longer_term_outlook: raised_with_updated_four_year_capital_plan
+    watch_items:
+      - regulatory_approval_and_cost_recovery
+      - customer_and_ratepayer_cost_allocation
+      - construction_and_interconnection_execution
+      - storm_nuclear_and_load_realization_risk
+    sources:
+      - https://www.entergy.com/news/entergy-reports-2025-financial-results-initiates-2026-guidance
+      - https://www.entergy.com/news/entergy-reports-first-quarter-2026-financial-results
+      - https://www.sec.gov/Archives/edgar/data/65984/000006598426000174/etr-20251231.htm
+      - https://www.entergy.com/news/entergy-louisiana-announces-a-new-agreement-with-meta-that-will-deliver-an-additional-2b-in-customer-savings
+    confidence: high_for_financials_and_announced_plan_medium_for_future_load_realization
+
+  - id: company_microsoft
+    company: Microsoft
+    layer: hyperscale_buyers_and_cloud
+    fiscal_baseline:
+      period: FY2025_ended_2025-06-30
+      accounting_basis: US_GAAP
+      currency: USD
+      revenue_usd_million: 281724
+      operating_income_usd_million: 128528
+      operating_margin_percent_derived: 45.62
+      intelligent_cloud:
+        revenue_usd_million: 106265
+        operating_income_usd_million: 44589
+    latest_update:
+      period: Q3_FY2026_ended_2026-03-31
+      revenue_usd_million: 82886
+      operating_income_usd_million: 38398
+      intelligent_cloud_revenue_usd_million: 34681
+      intelligent_cloud_operating_income_usd_million: 13753
+      Azure_and_other_cloud_revenue_growth_percent: 40
+      AI_business_annual_revenue_run_rate_usd_million_more_than: 37000
+    data_center_exposure:
+      roles: [hyperscale_operator, Azure_cloud, AI_factory_owner, leased_capacity_customer]
+      confirmed_campus_refs:
+        - dc_microsoft_fairwater_wisconsin
+        - dc_stargate_norway_narvik
+        - dc_nscale_monarch_west_virginia
+        - dc_nscale_loughton_uk
+        - dc_start_campus_sines_portugal
+        - dc_nscale_ward_county_texas
+      disclosed_fleet: more_than_400_data_centers_in_70_regions
+      boundary: Intelligent Cloud includes server products and enterprise services beyond physical data-center capacity.
+    management_outlook:
+      signal: commercial_remaining_performance_obligation_reached_usd_627_billion
+      constraint: AI_capacity_and_delivery_timing_remain_key_growth_and_margin_variables
+    watch_items:
+      - AI_capex_and_depreciation_growth
+      - owned_versus_leased_capacity_commitments
+      - cloud_gross_margin_pressure
+      - OpenAI_and_other_model_partner_economics
+    sources:
+      - https://www.microsoft.com/en-us/investor/earnings/fy-2025-q4/income-statements
+      - https://www.microsoft.com/en-us/investor/earnings/fy-2026-q3/press-release-webcast
+      - https://blogs.microsoft.com/blog/2025/09/18/inside-the-worlds-most-powerful-ai-datacenter/
+    confidence: high
+
+  - id: company_meta
+    company: Meta
+    layer: hyperscale_buyers_and_cloud
+    fiscal_baseline:
+      period: FY2025
+      accounting_basis: US_GAAP
+      currency: USD
+      revenue_usd_million: 200966
+      operating_income_usd_million: 83276
+      operating_margin_percent_reported: 41
+      capital_expenditures_including_finance_lease_principal_usd_million: 72220
+    latest_update:
+      period: Q1_2026
+      revenue_usd_million: 56311
+      operating_income_usd_million: 22872
+      operating_margin_percent_reported: 41
+      capital_expenditures_including_finance_lease_principal_usd_million: 19840
+    data_center_exposure:
+      roles: [hyperscale_owner_operator, AI_accelerator_buyer, custom_silicon_designer]
+      confirmed_campus_refs:
+        - dc_meta_hyperion_richland_parish
+        - dc_reliance_intelligence_jamnagar
+        - dc_meta_prometheus_new_albany
+      accelerator_portfolio: [NVIDIA_GPUs, AMD_Instinct_future_deployments, Meta_MTIA]
+      AMD_agreement_capacity_gw_up_to: 6
+      boundary: Revenue is predominantly advertising; data centers are a cost and capability base rather than a separately reported revenue segment.
+    management_outlook:
+      period: FY2026_raised
+      total_expenses_usd_million_range: [162000, 169000]
+      capital_expenditures_including_finance_lease_principal_usd_million_range: [125000, 145000]
+      operating_income_expected_above_FY2025: true
+    watch_items:
+      - return_on_AI_infrastructure_spend
+      - component_pricing_and_construction_timing
+      - advertising_cycle_and_regulation
+      - long_dated_accelerator_and_power_commitments
+    sources:
+      - https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Fourth-Quarter-and-Full-Year-2025-Results/
+      - https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-First-Quarter-2026-Results/
+      - https://about.fb.com/news/2026/02/meta-amd-partner-longterm-ai-infrastructure-agreement/
+    confidence: high
+
+  - id: company_amazon
+    company: Amazon
+    layer: hyperscale_buyers_and_cloud
+    fiscal_baseline:
+      period: FY2025
+      accounting_basis: US_GAAP
+      currency: USD
+      net_sales_usd_million_rounded: 716900
+      operating_income_usd_million_rounded: 80000
+      operating_margin_percent_derived_approximate: 11.16
+      AWS:
+        net_sales_usd_million_rounded: 128700
+        operating_income_usd_million_rounded: 45600
+        operating_margin_percent_derived_approximate: 35.43
+      free_cash_flow_usd_million: 11200
+    latest_update:
+      period: Q1_2026
+      net_sales_usd_million: 181519
+      operating_income_usd_million: 23852
+      AWS_net_sales_usd_million: 37587
+      AWS_operating_income_usd_million: 14161
+      AWS_growth_percent: 28
+      chip_business_annual_revenue_run_rate_usd_million_more_than: 20000
+      accelerated_chips_landed_last_12_months_more_than: 2100000
+    data_center_exposure:
+      roles: [hyperscale_owner_operator, AWS_cloud, custom_chip_designer, AI_capacity_provider]
+      confirmed_campus_refs:
+        - dc_aws_project_rainier
+        - dc_sk_aws_ulsan_ai_data_center
+        - dc_humain_saudi_ai_factory_portfolio
+      products: [Trainium, Graviton, Nitro, NVIDIA_GPU_instances, Elastic_Fabric_Adapter]
+      disclosed_future_commitments:
+        OpenAI_Trainium_capacity_gw_approximate: 2
+        Anthropic_Trainium_capacity_gw_up_to: 5
+        NVIDIA_GPUs_starting_2026_more_than: 1000000
+      boundary: Amazon totals are dominated by retail and advertising; AWS segment results are the closer cloud comparison.
+    management_outlook:
+      signal: free_cash_flow_decline_was_driven_primarily_by_AI_property_and_equipment_investment
+    watch_items:
+      - AI_capex_and_free_cash_flow_conversion
+      - custom_chip_utilization_and_customer_adoption
+      - power_and_data_center_delivery_timing
+      - AWS_margin_versus_infrastructure_ramp
+    sources:
+      - https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Fourth-Quarter-Results/
+      - https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-First-Quarter-Results/
+      - https://www.aboutamazon.com/news/aws/aws-project-rainier-ai-trainium-chips-compute-cluster
+    confidence: high
+
+  - id: company_oracle
+    company: Oracle
+    layer: hyperscale_buyers_and_cloud
+    fiscal_baseline:
+      period: FY2026_ended_2026-05-31
+      accounting_basis: US_GAAP_with_separate_non_GAAP_metrics
+      currency: USD
+      revenue_usd_million_rounded: 67400
+      operating_income_usd_million_rounded: 20600
+      operating_margin_percent_derived_approximate: 30.56
+      non_GAAP_operating_income_usd_million_rounded: 28900
+      cloud_revenue_usd_million_rounded: 34000
+      cloud_infrastructure_IaaS_revenue_usd_million_rounded: 18100
+      operating_cash_flow_usd_million_rounded: 32000
+      free_cash_flow_usd_million_rounded: -23700
+    latest_update:
+      period: Q4_FY2026
+      revenue_usd_million_rounded: 19200
+      GAAP_operating_income_usd_million_rounded: 6100
+      cloud_infrastructure_IaaS_revenue_usd_million_rounded: 5800
+      cloud_infrastructure_IaaS_growth_percent: 93
+      remaining_performance_obligations_usd_million: 638000
+      prepaid_or_customer_supplied_AI_hardware_usd_million: 75000
+    data_center_exposure:
+      roles: [OCI_cloud_operator, Stargate_operator, AI_capacity_financier_and_builder]
+      confirmed_campus_refs:
+        - dc_openai_stargate_abilene
+        - dc_stargate_uae_abudhabi
+      boundary: RPO includes large-scale AI contracts, but revenue recognition depends on capacity delivery over time.
+    management_outlook:
+      Q1_FY2027_total_revenue_growth_percent_range: [27, 29]
+      Q1_FY2027_cloud_revenue_growth_percent_range_USD: [58, 64]
+      FY2027_revenue_usd_million: 90000
+      FY2027_external_funding_plan_usd_million_approximate: 40000
+    watch_items:
+      - negative_free_cash_flow_and_external_funding
+      - RPO_conversion_and_data_center_delivery
+      - GPU_supply_and_customer_supplied_equipment
+      - leverage_and_financing_cost
+    sources:
+      - https://www.oracle.com/news/announcement/q4fy26-earnings-release-2026-06-10/
+      - https://openai.com/index/five-new-stargate-sites/
+    confidence: high
+
+  - id: company_amd
+    company: AMD
+    layer: compute_memory_network
+    fiscal_baseline:
+      period: FY2025
+      accounting_basis: US_GAAP_with_separate_non_GAAP_metrics
+      currency: USD
+      revenue_usd_million_rounded: 34600
+      operating_income_usd_million_rounded: 3700
+      operating_margin_percent_derived_approximate: 10.69
+      non_GAAP_operating_income_usd_million_rounded: 7800
+      data_center_revenue_usd_million_rounded: 16600
+      data_center_revenue_growth_percent: 32
+    latest_update:
+      period: Q1_2026_ended_2026-03-28
+      revenue_usd_million: 10253
+      operating_income_usd_million: 1476
+      operating_margin_percent_reported: 14
+      non_GAAP_operating_income_usd_million: 2540
+      data_center_revenue_usd_million: 5775
+      data_center_operating_income_usd_million: 1599
+      data_center_revenue_growth_percent: 57
+    data_center_exposure:
+      products: [Instinct_GPU, EPYC_CPU, Pensando_DPU, AI_NIC, FPGA, Helios_rack_system]
+      confirmed_future_customer: Meta
+      confirmed_portfolio_refs:
+        - dc_humain_saudi_ai_factory_portfolio
+        - dc_coreweave_global_fleet
+      Meta_agreement_capacity_gw_up_to: 6
+      first_Meta_deployment_timing: second_half_2026
+      boundary: The 6 GW figure is a multi-year ceiling, not deployed or recognized revenue.
+    management_outlook:
+      period: Q2_2026
+      revenue_usd_million: 11200
+      range_usd_million: 300
+      non_GAAP_gross_margin_percent_approximate: 56
+    watch_items:
+      - accelerator_ramp_and_software_ecosystem
+      - customer_concentration_and_program_timing
+      - export_controls
+      - GAAP_versus_non_GAAP_profit_gap
+    sources:
+      - https://ir.amd.com/news-events/press-releases/detail/1276/amd-reports-fourth-quarter-and-full-year-2025-financial-results
+      - https://ir.amd.com/news-events/press-releases/detail/1284/amd-reports-first-quarter-2026-financial-results
+      - https://about.fb.com/news/2026/02/meta-amd-partner-longterm-ai-infrastructure-agreement/
+      - https://www.amd.com/en/newsroom/press-releases/2025-11-19-amd-cisco-and-humain-to-form-joint-venture.html
+    confidence: high
+
+  - id: company_cisco
+    company: Cisco
+    layer: compute_memory_network
+    fiscal_baseline:
+      period: FY2025_ended_2025-07-26
+      accounting_basis: US_GAAP_with_separate_non_GAAP_metrics
+      currency: USD
+      revenue_usd_million: 56654
+      operating_income_usd_million: 12115
+      operating_margin_percent_derived: 21.38
+      AI_infrastructure_orders_from_webscale_customers_usd_million_more_than: 2000
+    latest_update:
+      period: Q3_FY2026_ended_2026-04-25
+      revenue_usd_million_rounded: 15800
+      operating_income_usd_million: 3960
+      operating_margin_percent_reported: 25.0
+      non_GAAP_operating_margin_percent_reported: 34.2
+      networking_revenue_growth_percent: 25
+      AI_infrastructure_orders_from_hyperscalers_usd_million: 2100
+    data_center_exposure:
+      products: [Ethernet_switching, optics, AI_networking, security, observability]
+      confirmed_campus_refs:
+        - dc_stargate_uae_abudhabi
+        - dc_humain_saudi_ai_factory_portfolio
+      confirmed_role_at_Stargate_UAE: zero_trust_security_and_AI_ready_connectivity
+      boundary: AI infrastructure orders are not equal to recognized revenue and exclude the broader enterprise networking base.
+    management_outlook:
+      period: FY2026_updated
+      GAAP_EPS_usd_range: [3.16, 3.21]
+      restructuring_pre_tax_charges_usd_million_up_to: 1000
+      investment_priorities: [silicon, optics, security, AI]
+    watch_items:
+      - hyperscaler_order_timing
+      - competition_with_Arista_and_white_box_networking
+      - restructuring_and_non_GAAP_adjustments
+      - tariffs_and_component_supply
+    sources:
+      - https://investor.cisco.com/news/news-details/2025/CISCO-REPORTS-FOURTH-QUARTER-AND-FISCAL-YEAR-2025-EARNINGS/default.aspx
+      - https://investor.cisco.com/news/news-details/2026/CISCO-REPORTS-THIRD-QUARTER-EARNINGS/default.aspx
+      - https://www.g42.ai/resources/news/global-tech-alliance-launches-stargate-uae
+    confidence: high
+
+  - id: company_caterpillar
+    company: Caterpillar
+    layer: power_cooling_electrical
+    fiscal_baseline:
+      period: FY2025
+      accounting_basis: US_GAAP_with_separate_adjusted_metrics
+      currency: USD
+      sales_and_revenues_usd_million: 67589
+      operating_profit_usd_million: 11151
+      operating_profit_margin_percent_reported: 16.5
+      adjusted_operating_profit_usd_million: 11595
+      adjusted_operating_profit_margin_percent_reported: 17.2
+    latest_update:
+      period: Q1_2026
+      sales_and_revenues_usd_million: 17415
+      operating_profit_usd_million: 3085
+      operating_profit_margin_percent_reported: 17.7
+      power_and_energy_sales_usd_million: 7031
+      power_and_energy_segment_profit_usd_million: 1450
+      power_generation_driver: large_reciprocating_engines_and_turbines_primarily_for_data_centers
+    data_center_exposure:
+      products: [natural_gas_generator_sets, reciprocating_engines, gas_turbines, backup_and_prime_power_systems]
+      confirmed_campus_refs:
+        - dc_nscale_monarch_west_virginia
+      confirmed_project:
+        equipment: Cat_G3500_natural_gas_generator_sets
+        onsite_generation_target_gw: 2
+        target_timing: first_half_2028
+      boundary: Power and Energy also serves oil, gas, industrial, and transportation applications; data-center sales are not separately quantified.
+    management_outlook:
+      signal: record_backlog_and_data_center_driven_power_generation_growth
+    watch_items:
+      - tariffs_and_manufacturing_cost
+      - engine_and_turbine_capacity
+      - gas_supply_and_emissions_permitting
+      - campus_letter_of_intent_execution
+    sources:
+      - https://investors.caterpillar.com/news/news-details/2026/Caterpillar-Reports-Fourth-Quarter-and-Full-Year-2025-Results/default.aspx
+      - https://investors.caterpillar.com/financials/quarterly-results/default.aspx
+      - https://www.nscale.com/press-releases/nscale-west-virginia-ai-factory
+    confidence: high_for_financials_and_announced_equipment_plan_medium_for_project_execution
+
+  - id: company_reliance_industries
+    company: Reliance_Industries
+    layer: integrated_AI_infrastructure_developer
+    fiscal_baseline:
+      period: FY2026_ended_2026-03-31
+      accounting_basis: Indian_Accounting_Standards_with_company_reported_EBITDA
+      currency: INR
+      unit: crore
+      value_of_sales_and_services_revenue_inr_crore: 1175919
+      revenue_from_operations_net_of_GST_inr_crore: 1075675
+      EBITDA_inr_crore: 207911
+      EBITDA_margin_on_value_of_sales_percent_derived: 17.68
+      segment_result_before_interest_and_taxes_inr_crore: 139828
+      segment_result_margin_on_value_of_sales_percent_derived: 11.89
+      depreciation_amortisation_and_depletion_inr_crore: 57688
+      profit_for_year_inr_crore: 95754
+      capital_expenditure_inr_crore: 144271
+      comparison_boundary: >-
+        Reliance does not label one consolidated line as GAAP operating income.
+        Segment result before interest and taxes is the closest disclosed EBIT-like
+        measure, includes segment interest or other income under its policy, and
+        must not be treated as directly identical to US-GAAP operating income.
+    relevant_segment_update:
+      period: FY2026
+      segment: Digital_Services
+      value_of_sales_and_services_inr_crore: 176164
+      revenue_from_operations_net_of_GST_inr_crore: 149965
+      segment_result_before_interest_and_taxes_inr_crore: 48211
+      capital_expenditure_inr_crore: 33101
+      depreciation_amortisation_and_depletion_inr_crore: 28349
+      boundary: Digital Services includes Jio's broader telecom and digital platform operations; AI data-center economics are not separately disclosed.
+    data_center_exposure:
+      roles:
+        - AI_data_center_developer_and_operator
+        - renewable_power_provider
+        - fiber_and_managed_services_provider
+        - sovereign_AI_platform_owner
+      confirmed_campus_refs:
+        - dc_reliance_intelligence_jamnagar
+      disclosed_programs:
+        - sovereign_AI_backbone_first_120MW
+        - Google_Cloud_AI_focused_region
+        - Meta_168MW_built_to_suit_capacity
+      boundary: No campus-level revenue, operating profit, capex, or return metric is disclosed.
+    management_outlook:
+      AI_infrastructure: Jamnagar_first_120MW_targeted_by_end_2026_and_broader_infrastructure_expected_to_operationalize_over_the_next_couple_of_years
+      consolidated_EBITDA_ambition: more_than_double_over_next_five_years
+      outlook_boundary: Chairman ambition, not formal segment guidance; data-center contribution is not quantified.
+    watch_items:
+      - Jamnagar_capacity_delivery_and_facility_scope_reconciliation
+      - GB300_supply_utilization_and_AI_service_monetization
+      - renewable_generation_storage_and_grid_execution
+      - capital_intensity_and_returns_across_the_diversified_group
+      - Google_Meta_and_NVIDIA_partner_concentration
+    sources:
+      - https://www.ril.com/ar2025-26/pdf/07_RIL_IAR_2025-26_Consolidated_22-05-26.pdf
+      - https://www.ril.com/ar2025-26/financial-performance-and-review.html
+      - https://www.ril.com/sites/default/files/reports/Chairmans-Statement-at-49th-RILAGM.pdf
+      - https://www.ril.com/sites/default/files/2026-06/SE_10062026.pdf
+    confidence: high_for_group_financials_and_announced_program_low_for_data_center_specific_economics
+
+  - id: company_alphabet
+    company: Alphabet
+    layer: hyperscale_buyer_and_cloud
+    fiscal_baseline:
+      period: FY2025_ended_2025_12_31
+      accounting_basis: US_GAAP
+      currency: USD
+      revenue_usd_million: 402836
+      operating_income_usd_million: 129039
+      operating_margin_percent_derived: 32.03
+      net_income_usd_million: 132170
+      capital_expenditures_usd_million: 91400
+      Google_Cloud:
+        revenue_usd_million: 58705
+        operating_income_usd_million: 13910
+        operating_margin_percent_derived: 23.69
+      boundary: Alphabet and Google Cloud financials do not disclose campus-level economics or TPU-versus-GPU revenue.
+    latest_update:
+      period: Q1_2026_ended_2026_03_31
+      revenue_usd_million: 109896
+      operating_income_usd_million: 39696
+      operating_margin_percent_derived: 36.12
+      capital_expenditures_usd_million: 35700
+      revenue_backlog_usd_million: 467600
+      Google_Cloud:
+        revenue_usd_million: 20028
+        operating_income_usd_million: 6598
+        operating_margin_percent_derived: 32.94
+        revenue_backlog_usd_million: 462300
+      backlog_comparison_warning: >-
+        Q1 2026 backlog includes contracts with original expected terms of one
+        year or less after a reporting-method change, so it is not directly
+        comparable with the 2025 year-end backlog without adjustment.
+    data_center_exposure:
+      roles:
+        - hyperscale_data_center_owner_and_operator
+        - Google_Cloud_provider
+        - TPU_designer_and_operator
+        - NVIDIA_GPU_cloud_provider
+        - terrestrial_and_subsea_network_owner
+      infrastructure_context:
+        data_centers_connected_by_global_network_more_than: 30
+        Cloud_regions_more_than: 40
+        terrestrial_and_subsea_fiber_km_million: 10
+        current_TPU_generation_disclosed_2026_06: [TPU_8i, TPU_8t]
+      confirmed_campus_refs:
+        - dc_google_visakhapatnam_ai_hub
+        - dc_reliance_intelligence_jamnagar
+      boundary: >-
+        The Jamnagar link is a Google Cloud partnership and the Visakhapatnam
+        link is an owned/partnered AI hub. Alphabet does not disclose the revenue,
+        operating profit, accelerator count, or exact power attributable to either campus.
+    management_outlook:
+      2026_capex_usd_billion_range_latest_2026_06: [180, 190]
+      2026_capex_multiple_of_2022_approximate: 6
+      2027_capex_direction: expected_to_increase_significantly_from_2026
+      technical_infrastructure_share: overwhelming_majority
+      approximate_capex_mix:
+        servers_percent: 60
+        data_centers_and_networking_percent: 40
+      ML_compute_allocation_2026: just_over_half_expected_for_Google_Cloud
+      outlook_boundary: >-
+        The June 2026 investor presentation supersedes the earlier $175-$185
+        billion range cited on the February earnings call. Capex is company-wide
+        and does not equal data-center construction alone.
+    watch_items:
+      - monetization_relative_to_capex_and_depreciation_growth
+      - TPU_performance_supply_and_external_customer_adoption
+      - power_interconnection_and_long_lead_equipment
+      - Cloud_backlog_delivery_and_supply_constraints
+      - campus_water_energy_and_community_permitting
+    sources:
+      - https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm
+      - https://www.sec.gov/Archives/edgar/data/1652044/000165204426000048/goog-20260331.htm
+      - https://blog.google/alphabet/investor-presentation-june-2026/
+      - https://blog.google/intl/en-in/google-ai-hub-scaling-indias-ai-infrastructure-and-community-impact/
+      - https://www.ril.com/sites/default/files/2025-08/MR_Google.pdf
+    confidence: high_for_financials_capex_and_disclosed_network_low_for_per_campus_economics_and_hardware_inventory
+
+  - id: company_coreweave
+    company: CoreWeave
+    layer: AI_cloud_infrastructure_operator
+    fiscal_baseline:
+      period: FY2025_ended_2025_12_31
+      accounting_basis: US_GAAP_with_separate_non_GAAP_metrics
+      currency: USD
+      revenue_usd_million: 5131
+      operating_loss_usd_million: 46
+      operating_margin_percent_derived: -0.90
+      net_loss_usd_million: 1167
+      cash_paid_for_property_and_equipment_usd_million: 10300
+      active_power_mw_more_than: 850
+      data_center_count: 43
+      contracted_power_gw: 3.1
+      remaining_performance_obligations_usd_million: 60700
+    latest_update:
+      period: Q1_2026_ended_2026_03_31
+      revenue_usd_million: 2078
+      operating_loss_usd_million: 144
+      operating_margin_percent_derived: -6.93
+      net_loss_usd_million: 740
+      adjusted_operating_income_usd_million: 21
+      adjusted_EBITDA_usd_million: 1157
+      revenue_backlog_usd_million: 99400
+      active_power_gw_more_than: 1
+      contracted_power_gw_more_than: 3.5
+      backlog_boundary: >-
+        Revenue backlog includes RPO plus other estimated future revenue under
+        committed contracts and is broader than the annual-report RPO measure.
+    data_center_exposure:
+      roles:
+        - GPU_cloud_operator
+        - AI_infrastructure_software_platform
+        - long_term_capacity_tenant
+      products_and_infrastructure:
+        - NVIDIA_GPU_cloud
+        - bare_metal_Kubernetes_and_Slurm
+        - global_network_backbone
+        - closed_loop_liquid_cooled_high_density_clusters
+      confirmed_campus_refs:
+        - dc_coreweave_global_fleet
+        - dc_galaxy_helios_dickens_county
+      boundary: >-
+        Company revenue is AI-cloud revenue, not colocation rent or per-campus
+        revenue. The physical GPU count and site-level profitability are undisclosed.
+    management_outlook:
+      active_power_target_2030_gw_more_than: 8
+      NVIDIA_AI_factory_expansion_target_2030_gw_more_than: 5
+      capital_investment_direction_2026: increase_relative_to_2025
+      signal: record_bookings_and_Q1_revenue_backlog_near_100_billion
+    risk_and_watch_items:
+      - very_high_capital_intensity_and_interest_expense
+      - customer_and_NVIDIA_supplier_concentration
+      - lease_and_power_commitments_ahead_of_revenue
+      - active_power_conversion_and_construction_execution
+      - GPU_useful_life_and_residual_value
+      - adjusted_EBITDA_versus_GAAP_operating_loss_gap
+    sources:
+      - https://www.sec.gov/Archives/edgar/data/1769628/000176962826000104/crwv-20251231.htm
+      - https://www.sec.gov/Archives/edgar/data/1769628/000176962826000222/crwv-20260331.htm
+      - https://investors.coreweave.com/news/news-details/2026/CoreWeave-Reports-Strong-First-Quarter-2026-Results/
+      - https://www.galaxy.com/newsroom/galaxy-completes-phase-i-of-its-helios-data-center-campus
+    confidence: high_for_company_financials_power_and_contract_metrics_low_for_per_site_GPU_and_profitability
+
+  - id: company_galaxy_digital
+    company: Galaxy_Digital
+    layer: data_center_developer_operator_and_digital_assets_platform
+    fiscal_baseline:
+      period: FY2025_ended_2025_12_31
+      accounting_basis: US_GAAP_with_company_adjusted_metrics
+      currency: USD
+      revenue_usd_million: 60406.728
+      revenues_and_gains_from_operations_usd_million: 61355.667
+      total_operating_expenses_usd_million: 61593.507
+      operating_loss_usd_million_derived: 237.840
+      operating_margin_on_revenues_and_gains_percent_derived: -0.39
+      net_loss_usd_million: 241.3
+      adjusted_gross_profit_usd_million: 426.134
+      adjusted_EBITDA_usd_million: 34
+      comparison_boundary: >-
+        Galaxy reports digital-asset sales and related transaction expense gross,
+        producing very large revenue and expense lines. Revenue and derived
+        operating margin are not economically comparable with cloud, industrial,
+        or REIT companies without a net trading presentation. The company does not
+        label a standalone operating-income subtotal; the operating loss above is
+        derived as revenues and gains minus total operating expenses.
+    latest_update:
+      period: Q1_2026_ended_2026_03_31
+      revenue_usd_million: 10041.4
+      revenues_and_gains_from_operations_usd_million: 10213.2
+      total_operating_expenses_usd_million: 10448.5
+      operating_loss_usd_million_derived: 235.3
+      net_loss_usd_million: 216.3
+      data_center_update: first_Helios_data_hall_delivered_in_April_2026_with_revenue_recognition_starting_Q2
+    data_center_exposure:
+      roles:
+        - powered_land_and_interconnection_developer
+        - data_center_lessor_and_operator
+        - electrical_and_cooling_infrastructure_owner
+      confirmed_campus_refs:
+        - dc_galaxy_helios_dickens_county
+      current_economics:
+        FY2025_data_center_revenues_and_gains_usd_million: 7.247
+        FY2025_data_center_materiality: immaterial_before_CoreWeave_rent_commencement
+      contracted_future_economics:
+        CoreWeave_critical_IT_load_mw: 526
+        CoreWeave_gross_power_mw: 800
+        anticipated_average_annual_revenue_usd_billion_more_than: 1
+        anticipated_site_level_EBITDA_margin_percent: 90
+        first_800MW_capital_investment_usd_billion_more_than: 7.5
+      boundary: >-
+        Future revenue and margin are management estimates based on committed
+        contracts, internal capex assumptions, and full capacity utilization; they
+        are not current run-rate or audited segment results.
+    management_outlook:
+      Helios_phase_I_status_as_of_2026_07_06: 133MW_critical_IT_load_delivered
+      phase_II_target: 260MW_critical_IT_load_during_2027
+      phase_III_target: 133MW_critical_IT_load_starting_2028
+      approved_campus_power_gw_more_than: 1.6
+      potential_campus_power_gw_more_than: 3.4
+      signal: data_center_adjusted_gross_profit_and_EBITDA_expected_to_ramp_from_Q2_2026
+    watch_items:
+      - CoreWeave_counterparty_and_utilization
+      - phase_II_and_III_construction_financing_and_delivery
+      - additional_830MW_tenanting_and_build_to_suit_execution
+      - ERCOT_grid_and_power_price_exposure
+      - digital_asset_volatility_masking_data_center_economics
+    sources:
+      - https://www.sec.gov/Archives/edgar/data/1859392/000185939226000016/glxy-20251231.htm
+      - https://investor.galaxy.com/news-releases/news-release-details/galaxy-announces-first-quarter-2026-financial-results
+      - https://www.galaxy.com/newsroom/galaxy-completes-phase-i-of-its-helios-data-center-campus
+      - https://www.galaxy.com/data-centers
+    confidence: high_for_group_financials_Helios_contract_and_phase_I_delivery_low_for_steady_state_site_economics
+
+  - id: company_tsmc
+    company: Taiwan_Semiconductor_Manufacturing_Company
+    layer: compute_memory_network
+    fiscal_baseline:
+      period: FY2025_ended_2025_12_31
+      accounting_basis: Taiwan_IFRS_consolidated
+      currency: TWD
+      revenue_twd_million: 3809054.272
+      operating_income_twd_million: 1936091.677
+      operating_margin_percent_reported: 50.8
+      net_income_attributable_to_parent_twd_million: 1717882.627
+      supplemental_USD_disclosure:
+        revenue_usd_million: 122420
+        net_income_usd_million: 55210
+        boundary: The annual report does not provide a directly reported full-year USD operating-income amount.
+      year_over_year:
+        revenue_twd_percent: 31.6
+        operating_income_percent: 46
+    latest_update:
+      period: Q2_2026_ended_2026_06_30
+      revenue_twd_million: 1270381
+      revenue_usd_million_translated: 40201
+      operating_income_twd_million: 766603
+      operating_income_usd_million_translated: 24259
+      operating_margin_percent: 60.3
+      net_income_twd_million: 706781
+      net_income_usd_million_translated: 22366
+      capital_expenditure_usd_billion: 15.70
+      H1_2026_capital_expenditure_usd_billion: 26.80
+      revenue_mix:
+        HPC_percent: 66
+        smartphone_percent: 22
+        IoT_percent: 5
+        automotive_percent: 4
+        DCE_percent: 1
+        other_percent: 2
+      wafer_revenue_mix:
+        advanced_7nm_and_below_percent: 77
+        2nm_percent: 3
+        3nm_percent: 30
+        5nm_percent: 33
+        7nm_percent: 11
+    data_center_exposure:
+      roles:
+        - pure_play_foundry_for_leading_edge_compute_silicon
+        - advanced_packaging_and_3D_chip_stacking_provider
+        - capacity_provider_for_CPU_AI_accelerator_and_networking_customers
+      technologies:
+        - leading_edge_logic_processes
+        - CoWoS
+        - InFO
+        - TSMC_SoIC
+        - TSMC_COUPE_photonics_packaging
+      disclosure_signal: HPC represented 66% of Q2 2026 net revenue, but HPC includes more than data-center AI.
+      confirmed_campus_refs: []
+      boundary: >-
+        TSMC does not disclose customer-, accelerator-, or campus-level revenue in
+        these sources. Its role in manufacturing many leading compute chips does
+        not prove that a particular tracked campus uses TSMC-made silicon.
+    management_outlook:
+      Q3_2026_revenue_usd_billion_range: [44.6, 45.8]
+      Q3_2026_operating_margin_percent_range: [56.0, 58.0]
+      FY2026_revenue_growth_usd_percent: slightly_above_40
+      FY2026_capital_budget_usd_billion_range: [60, 64]
+      FY2026_capital_budget_allocation:
+        advanced_process_percent_range: [70, 80]
+        specialty_technologies_percent_approximate: 10
+        advanced_packaging_testing_mask_and_other_percent_range: [10, 20]
+      AI_accelerator_revenue_signal: >-
+        Management said the previously discussed five-year mid- to high-50s CAGR
+        signal had strengthened, but declined to provide a revised number.
+    watch_items:
+      - Taiwan_geopolitical_and_seismic_concentration
+      - leading_edge_customer_concentration
+      - CoWoS_and_advanced_packaging_capacity_execution
+      - overseas_fab_margin_dilution
+      - semiconductor_cycle_and_customer_inventory
+      - capital_intensity_and_tool_supply
+    sources:
+      - https://investor.tsmc.com/static/annualReports/2025/english/index.html
+      - https://investor.tsmc.com/english/quarterly-results/2026/q2
+      - https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-07/114aaca0fea2050e96b91fffbab9ed04ba09cd92/FS.pdf
+      - https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-07/6f49632674bd2d0fd48cb65aaf89ec6ab510b559/2Q26%20ManagementReport.pdf
+      - https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-07/547d1696765e05ce3adb81c108ce1c8c1682b80c/TSMC%202Q26%20Transcript.pdf
+    confidence: high_for_group_financials_HPC_mix_capex_and_guidance_low_for_customer_or_campus_attribution
+
+  - id: company_micron
+    company: Micron_Technology
+    layer: compute_memory_network
+    fiscal_baseline:
+      period: FY2025_ended_2025_08_28
+      accounting_basis: US_GAAP_with_separate_non_GAAP_metrics
+      currency: USD
+      revenue_usd_million: 37378
+      operating_income_usd_million: 9770
+      operating_margin_percent: 26.1
+      net_income_usd_million: 8539
+      capital_expenditures_net_non_GAAP_usd_million: 13800
+      non_GAAP_operating_income_usd_million: 10846
+      non_GAAP_operating_margin_percent: 29.0
+    latest_update:
+      period: Q3_FY2026_ended_2026_05_28
+      revenue_usd_million: 41456
+      operating_income_usd_million: 33318
+      operating_margin_percent: 80.4
+      net_income_usd_million: 28243
+      capital_expenditures_net_non_GAAP_usd_million: 7100
+      operating_cash_flow_usd_million: 25390
+      business_units:
+        cloud_memory:
+          revenue_usd_million: 13769
+          gross_margin_percent: 83
+          operating_margin_percent: 78
+        core_data_center:
+          revenue_usd_million: 11524
+          gross_margin_percent: 87
+          operating_margin_percent: 83
+        cloud_memory_plus_core_data_center:
+          revenue_usd_million_derived: 25293
+          share_of_group_revenue_percent_derived: 61.0
+          formula: (13769_plus_11524)_divided_by_41456
+    data_center_exposure:
+      products:
+        - HBM4
+        - HBM4E_in_development
+        - DDR5_RDIMM
+        - LP5X_SOCAMM2
+        - PCIe_Gen6_data_center_SSD
+        - 245TB_QLC_SSD
+      product_status:
+        HBM4: high_volume_shipments_for_lead_customer_platform_and_samples_to_multiple_end_customers
+        HBM4E: volume_production_expected_calendar_2027
+      confirmed_campus_refs: []
+      boundary: >-
+        Cloud Memory and Core Data Center business units include multiple memory
+        and storage products. Their revenue is not an HBM-only measure, and Micron
+        does not disclose physical chip counts or campus-level shipments.
+    management_outlook:
+      period: Q4_FY2026
+      revenue_usd_billion_midpoint: 50.0
+      revenue_usd_billion_range: [49.0, 51.0]
+      GAAP_gross_margin_percent_approximate: 86
+      GAAP_operating_expenses_usd_billion_approximate: 1.86
+      implied_GAAP_operating_income_midpoint_usd_billion_derived: 41.14
+      implied_GAAP_operating_margin_percent_derived: 82.28
+      derivation_boundary: >-
+        The implied operating result is arithmetic using the midpoint revenue,
+        approximate gross margin, and approximate operating-expense guidance; it
+        is not a company-provided operating-income forecast.
+    watch_items:
+      - extreme_memory_pricing_and_margin_cycle
+      - HBM4_and_HBM4E_yield_and_customer_qualification
+      - Samsung_and_SK_hynix_competition
+      - manufacturing_capex_and_supply_response
+      - strategic_customer_agreement_concentration
+      - export_controls_and_China_exposure
+    sources:
+      - https://investors.micron.com/news-releases/news-release-details/micron-technology-inc-reports-results-fourth-quarter-and-full-8
+      - https://investors.micron.com/node/50671
+    confidence: high_for_group_and_business_unit_financials_product_status_and_guidance_low_for_campus_attribution
+
+  - id: company_abb
+    company: ABB
+    layer: power_cooling_electrical
+    fiscal_baseline:
+      period: FY2025_ended_2025_12_31
+      accounting_basis: US_GAAP_with_operational_EBITA_alternative_performance_measure
+      currency: USD
+      revenue_usd_million: 33220
+      income_from_operations_usd_million: 6047
+      operating_margin_percent: 18.2
+      operational_EBITA_usd_million: 6314
+      operational_EBITA_margin_percent: 19.0
+      net_income_attributable_to_ABB_usd_million: 4734
+      orders_usd_million: 36765
+      order_backlog_usd_million: 25282
+    latest_update:
+      period: Q2_2026_ended_2026_06_30
+      revenue_usd_million: 9475
+      income_from_operations_usd_million: 1585
+      operating_margin_percent: 16.7
+      operational_EBITA_usd_million: 1925
+      operational_EBITA_margin_percent: 20.2
+      orders_usd_million: 12042
+      order_backlog_usd_million: 30007
+      electrification:
+        revenue_usd_million: 5200
+        income_from_operations_usd_million: 1172
+        operational_EBITA_usd_million: 1301
+        operational_EBITA_margin_percent: 24.9
+        orders_usd_million: 7231
+        orders_yoy_percent: 60
+        orders_yoy_comparable_percent: 58
+        data_center_order_growth: exceptional_triple_digit_growth_undisclosed_amount
+      motion_data_center_signal: positive_demand_for_HVAC_and_data_center_cooling
+    data_center_exposure:
+      products_and_roles:
+        - medium_voltage_substations_switchgear_and_control
+        - medium_voltage_primary_and_secondary_distribution
+        - low_voltage_switchgear_and_busway
+        - UPS_PDU_and_power_protection
+        - breakers_transfer_switches_and_installation_products
+        - motors_and_drives_for_cooling
+        - data_center_automation_and_energy_management
+        - generators_and_BESS_components_without_full_genset_or_cooling_scope
+      architecture_direction:
+        - medium_voltage_modular_power_blocks
+        - support_for_800VDC_next_generation_data_center_architecture
+      confirmed_campus_refs: []
+      boundary: >-
+        ABB discloses strong data-center demand and a broad portfolio, but not the
+        dollar amount of Q2 data-center orders or a complete campus-level customer
+        list. General product capability is not treated as a confirmed supplier
+        relationship at any tracked campus.
+    management_outlook:
+      Q3_2026_comparable_revenue_growth: low_to_mid_teens
+      Q3_2026_operational_EBITA_margin: sequential_improvement_from_Q2
+      FY2026_comparable_revenue_growth: low_double_digit_to_low_teens
+      FY2026_operational_EBITA_margin: improve_year_over_year_excluding_Q1_real_estate_gain
+      medium_voltage_capacity_investment_europe_usd_million_approximate: 200
+      medium_voltage_investment_window_years: 3
+    watch_items:
+      - data_center_order_dollar_amount_not_disclosed
+      - project_timing_and_backlog_conversion
+      - copper_silver_tariffs_and_component_costs
+      - High_Power_division_and_Gamesa_Electric_execution
+      - Robotics_divestment_and_Rotork_transaction
+      - customer_concentration_in_large_projects
+    sources:
+      - https://search.abb.com/library/Download.aspx?Action=Launch&DocumentID=9AKK108472A2370&DocumentPartId=&LanguageCode=en
+      - https://global.abb/group/en/investors/quarterly-results
+      - https://search.abb.com/library/Download.aspx?Action=Launch&DocumentID=9AKK108472A9735&DocumentPartId=&LanguageCode=en
+      - https://new.abb.com/docs/librariesprovider19/default-document-library/q1-cy2026-analyst-ppt.pdf
+    confidence: high_for_group_and_segment_financials_and_product_scope_medium_for_architecture_direction_low_for_campus_attribution
+
+  - id: company_siemens_energy
+    company: Siemens_Energy
+    layer: power_cooling_electrical
+    fiscal_baseline:
+      period: FY2025_ended_2025_09_30
+      accounting_basis: IFRS_with_company_alternative_performance_measures
+      currency: EUR
+      revenue_eur_million: 39100
+      profit_before_special_items_eur_million: 2355
+      special_items_eur_million: 6
+      profit_eur_million: 2361
+      profit_margin_percent_derived: 6.04
+      net_income_eur_million: 1685
+      orders_eur_million: 58900
+      order_backlog_eur_million: 138000
+      comparison_boundary: >-
+        Siemens Energy's reported Profit and Profit before Special items are
+        company-defined alternative performance measures, not a separately labeled
+        IFRS operating-income subtotal. They are preserved rather than renamed as
+        operating income.
+    latest_update:
+      period: Q2_FY2026_ended_2026_03_31
+      revenue_eur_million_rounded: 10300
+      profit_before_special_items_eur_million: 1164
+      special_items_eur_million: -55
+      profit_eur_million: 1109
+      profit_margin_percent_derived_from_rounded_revenue: 10.77
+      net_income_eur_million: 835
+      orders_eur_million_rounded: 17700
+      order_backlog_eur_million: 154000
+      grid_technologies:
+        revenue_eur_million: 3067
+        profit_before_special_items_eur_million: 524
+        profit_margin_before_special_items_percent: 17.1
+        orders_eur_million: 6996
+        H1_revenue_eur_million: 6121
+        H1_profit_before_special_items_eur_million: 1062
+        H1_profit_margin_before_special_items_percent: 17.4
+    data_center_exposure:
+      roles:
+        - high_voltage_grid_connection_and_stabilization
+        - dispatchable_power_generation_and_long_term_service
+        - industrial_electrification_and_power_systems
+      products:
+        - large_power_transformers
+        - circuit_breakers
+        - STATCOM_grid_stabilization
+        - grid_connection_solutions
+        - gas_and_steam_turbines
+        - generators
+        - battery_energy_storage_and_digital_grid_solutions
+      disclosed_orders:
+        H1_FY2026_Grid_Technologies_data_center_orders_eur_billion_approximate: 2
+        comparison: almost_equal_to_full_FY2025_data_center_orders
+      capacity_and_backlog_signals:
+        Gas_Services_large_order_backlog_gw_approximate: 60
+        Gas_Services_backlog_boundary: overall_large_order_backlog_not_data_center_specific
+        transformer_and_switchgear_capacity_increase_2026_2030_percent: 50
+        transformer_and_switchgear_share_of_Grid_Technologies_FY2025_revenue_percent: 45
+      confirmed_campus_refs: []
+      boundary: >-
+        The approximately EUR2 billion order disclosure is specific to data-center
+        projects in Grid Technologies, but customer and campus identities are not
+        disclosed. Gas-turbine pipeline and backlog figures include multiple end
+        markets and cannot be assigned wholly to data centers.
+    management_outlook:
+      FY2026_group_comparable_revenue_growth_percent_range: [14, 16]
+      FY2026_group_profit_margin_before_special_items_percent_range: [10, 12]
+      FY2026_net_income_eur_billion_approximate: 4
+      FY2026_free_cash_flow_pre_tax_eur_billion_approximate: 8
+      FY2026_capex_eur_billion_approximate: 2.2
+      Grid_Technologies_FY2026_comparable_revenue_growth_percent_range: [25, 27]
+      Grid_Technologies_FY2026_profit_margin_before_special_items_percent_range: [18, 20]
+      demand_constraint: execution_and_manufacturing_capacity_more_than_end_demand
+    watch_items:
+      - transformer_switchgear_and_turbine_delivery_capacity
+      - large_project_execution_and_customer_advance_payments
+      - gas_turbine_carbon_and_regulatory_risk
+      - Siemens_Gamesa_quality_and_cash_flow
+      - customer_campus_identity_not_disclosed
+      - US_EPC_capacity_and_permitting_delays
+    sources:
+      - https://www.siemens-energy.com/global/en/home/press-releases/earnings-release-q4-fy-2025.html
+      - https://www.siemens-energy.com/global/en/home/press-releases/earnings-release-q2-fy-2026.html
+      - https://assets.siemens-energy.com/dam/630d3b4f-2d26-4803-804e-b479007691c5/2026-06-29_Q3FY26_Pre-Close-Call_Transcript-pdf_Original%20file.pdf
+      - https://assets.siemens-energy.com/dam/32b27e9a-af91-4915-8b51-b3af012d0d98/A-Siemens_Energy_Annual_Report_2025-pdf_Original%20file.pdf
+    confidence: high_for_group_segment_orders_products_capacity_and_outlook_low_for_campus_attribution
+
+  - id: company_coherent
+    company: Coherent
+    layer: compute_memory_network
+    fiscal_baseline:
+      period: FY2025_ended_2025_06_30
+      accounting_basis: US_GAAP_with_separate_non_GAAP_metrics
+      currency: USD
+      revenue_usd_million: 5810
+      operating_income_usd_million: 289.9
+      operating_margin_percent: 5.0
+      net_earnings_attributable_to_Coherent_usd_million: 49
+      non_GAAP_operating_income_usd_million: 1036.9
+      non_GAAP_operating_margin_percent: 17.8
+      debt_repaid_usd_million_approximate: 437
+    latest_update:
+      period: Q3_FY2026_ended_2026_03_31
+      revenue_usd_million: 1805.6
+      operating_income_usd_million: 200.8
+      operating_margin_percent: 11.1
+      net_earnings_attributable_to_Coherent_usd_million: 191
+      non_GAAP_operating_income_usd_million: 366.1
+      non_GAAP_operating_margin_percent: 20.3
+      datacenter_and_communications:
+        revenue_usd_million: 1361.6
+        share_of_group_revenue_percent_derived: 75.4
+        year_over_year_growth_percent_derived: 40.6
+        nine_month_revenue_usd_million: 3659.6
+      industrial_revenue_usd_million: 444.0
+    data_center_exposure:
+      products_and_technologies:
+        - indium_phosphide_CW_lasers_EMLs_and_photodiodes
+        - silicon_photonics
+        - VCSELs
+        - optical_transceivers_and_components
+        - co_packaged_optics_enabling_components
+        - 400G_per_lane_links
+        - multi_rail_optical_transport
+        - thermal_and_cooling_material_solutions
+      capacity_signals:
+        internal_InP_output_target_by_calendar_2026: double
+        internal_InP_output_target_by_2027: more_than_double_again
+        manufacturing_platform: 6_inch_InP_in_Texas
+      confirmed_campus_refs: []
+      boundary: >-
+        The Datacenter & Communications market includes communications demand
+        outside physical data centers. Coherent discloses neither AI-only revenue
+        nor customer- and campus-level shipments in the reviewed results.
+    management_outlook:
+      period: Q4_FY2026
+      revenue_usd_billion_range: [1.91, 2.05]
+      non_GAAP_gross_margin_percent_range: [39.0, 41.0]
+      non_GAAP_operating_expenses_usd_million_range: [360, 380]
+      non_GAAP_diluted_EPS_range: [1.52, 1.72]
+      signal: capacity_investment_is_ramping_against_strong_datacenter_and_communications_visibility
+    watch_items:
+      - hyperscaler_and_networking_customer_concentration
+      - InP_capacity_ramp_yield_and_equipment_execution
+      - rapid_transition_from_pluggable_to_co_packaged_optics
+      - price_and_technology_competition
+      - remaining_debt_and_interest_burden
+      - non_GAAP_adjustment_gap
+    sources:
+      - https://www.coherent.com/news/press-releases/fourth-quarter-and-fiscal-year-2025-results
+      - https://www.coherent.com/content/dam/coherent/site/en/documents/investors/financial-releases/2025/august-13/earnings-release-fy25-q4.pdf
+      - https://www.coherent.com/news/press-releases/third-quarter-fiscal-year-2026-results
+      - https://www.coherent.com/content/dam/coherent/site/en/documents/investors/financial-releases/2026/may-6/earnings-release-fy26-q3.pdf
+      - https://www.coherent.com/content/dam/coherent/site/en/documents/investors/investor-presentations/2026/may-6/investor-presentation-20260506.pdf
+    confidence: high_for_group_and_market_revenue_products_capacity_direction_and_guidance_low_for_AI_only_and_campus_attribution
+
+  - id: company_cummins
+    company: Cummins
+    layer: power_cooling_electrical
+    fiscal_baseline:
+      period: FY2025_ended_2025_12_31
+      accounting_basis: US_GAAP_with_separate_EBITDA_metrics
+      currency: USD
+      revenue_usd_million: 33670
+      operating_income_usd_million: 4025
+      operating_margin_percent_derived: 11.95
+      net_income_attributable_to_Cummins_usd_million: 2843
+      EBITDA_usd_million: 5385
+      EBITDA_margin_percent: 16.0
+      EBITDA_excluding_special_items_usd_million: 5843
+      EBITDA_excluding_special_items_margin_percent: 17.4
+      segment_scale:
+        Power_Systems_revenue_usd_million: 7463
+        Power_Systems_power_generation_revenue_usd_million: 4731
+        Distribution_revenue_usd_million: 12405
+        Distribution_power_generation_revenue_usd_million: 4932
+    latest_update:
+      period: Q1_2026_ended_2026_03_31
+      revenue_usd_million: 8398
+      operating_income_usd_million: 949
+      operating_margin_percent_derived: 11.30
+      net_income_attributable_to_Cummins_usd_million: 654
+      EBITDA_usd_million: 1290
+      EBITDA_margin_percent: 15.4
+      Power_Systems:
+        revenue_usd_billion_rounded: 2.0
+        revenue_year_over_year_percent: 19
+        segment_EBITDA_usd_million: 577
+        segment_EBITDA_margin_percent: 29.5
+      Distribution:
+        revenue_usd_billion_rounded: 3.1
+        revenue_year_over_year_percent: 7
+        segment_EBITDA_usd_million: 444
+        segment_EBITDA_margin_percent: 14.2
+      special_item: 199_million_charge_for_low_pressure_fuel_cell_business_sale_and_customer_obligations
+    data_center_exposure:
+      products_and_roles:
+        - diesel_and_natural_gas_generator_sets
+        - high_horsepower_engines
+        - alternators_and_generator_technologies
+        - automatic_transfer_switches
+        - paralleling_switchgear_and_system_controls
+        - battery_energy_storage
+        - commissioning_parts_service_and_remote_monitoring
+      demand_signal: >-
+        Management attributed record Power Systems performance and Distribution
+        growth to strong power-generation demand, particularly data-center backup
+        power in North America, China, and Asia Pacific.
+      confirmed_campus_refs: []
+      boundary: >-
+        Cummins does not disclose data-center revenue separately. Power Systems
+        and Distribution also serve industrial, commercial, transport, mining,
+        oil-and-gas, and other power-generation markets.
+    management_outlook:
+      FY2026_revenue_growth_percent_range: [8, 11]
+      FY2026_EBITDA_margin_percent_range: [17.75, 18.50]
+      guidance_boundary: excludes_the_Q1_low_pressure_fuel_cell_sale_charge
+      demand_signal: continued_strength_expected_in_data_center_power_generation
+    watch_items:
+      - generator_and_engine_capacity_execution
+      - data_center_revenue_not_separately_disclosed
+      - emissions_rules_and_backup_generator_permitting
+      - North_America_truck_cycle
+      - component_and_tariff_costs
+      - Accelera_losses_and_portfolio_changes
+    sources:
+      - https://investor.cummins.com/news/detail/689/cummins-reports-strong-fourth-quarter-and-full-year-2025
+      - https://investor.cummins.com/sec-filings/annual-reports/content/0000026172-26-000009/cmi-20251231.htm
+      - https://investor.cummins.com/news/detail/694/cummins-delivered-strong-operating-results-and-returned
+      - https://investor.cummins.com/sec-filings/annual-reports/content/0000026172-26-000016/cmi-20260331.htm
+    confidence: high_for_group_segment_and_guidance_metrics_and_data_center_demand_direction_low_for_data_center_revenue_and_campus_attribution
+
+  - id: company_corning
+    company: Corning
+    layer: compute_memory_network
+    fiscal_baseline:
+      period: FY2025_ended_2025_12_31
+      accounting_basis: US_GAAP_with_separate_core_metrics
+      currency: USD
+      revenue_usd_million: 15629
+      operating_margin_percent_reported: 14.6
+      operating_income_usd_million_derived: 2282
+      operating_income_derivation: 15629_times_14.6_percent_rounded
+      net_income_attributable_to_Corning_usd_million: 1596
+      operating_cash_flow_usd_million: 2700
+      core_sales_usd_million: 16408
+      core_operating_margin_percent: 19.3
+      core_net_income_usd_million: 2199
+      Optical_Communications:
+        net_sales_usd_million: 6274
+        segment_net_income_usd_million: 1048
+        year_over_year_sales_growth_percent: 35
+    latest_update:
+      period: Q1_2026_ended_2026_03_31
+      revenue_usd_million: 4144
+      operating_margin_percent_reported: 15.4
+      operating_income_usd_million_derived: 638
+      operating_income_derivation: 4144_times_15.4_percent_rounded
+      net_income_attributable_to_Corning_usd_million: 371
+      operating_cash_flow_usd_million: 362
+      core_sales_usd_million: 4345
+      core_operating_margin_percent: 20.2
+      Optical_Communications:
+        net_sales_usd_million: 1846
+        segment_net_income_usd_million: 387
+        year_over_year_sales_growth_percent: 36
+    data_center_exposure:
+      products_and_roles:
+        - optical_fiber
+        - high_density_fiber_cable
+        - connectors_and_connectivity_systems
+        - data_center_interconnect_products
+        - PRIZM_TMT_expanded_beam_ferrule_technology
+        - scale_out_and_emerging_scale_up_optical_connectivity
+      disclosed_contracts:
+        Meta:
+          term: multiyear
+          commitment_usd_billion_up_to: 6
+          scope: newest_optical_fiber_cable_and_connectivity_solutions_for_US_data_centers
+          manufacturing: new_and_expanded_Hickory_and_other_North_Carolina_capacity
+        additional_hyperscalers:
+          count: 2
+          customer_names: undisclosed
+          description: similar_in_size_and_duration_to_Meta_agreement
+          contract_value_boundary: no_exact_dollar_value_disclosed_for_either_agreement
+      confirmed_campus_refs: []
+      boundary: >-
+        The Meta agreement covers a U.S. data-center portfolio and cannot be
+        allocated to a particular Meta campus. Optical Communications also serves
+        carrier, broadband, and non-AI enterprise markets.
+    management_outlook:
+      Q2_2026_core_sales_usd_billion_approximate: 4.6
+      Q2_2026_core_sales_year_over_year_growth_percent_approximate: 14
+      Q2_2026_core_EPS_range: [0.73, 0.77]
+      Springboard_incremental_annualized_sales_by_end_2026_usd_billion:
+        internal_plan: 6.5
+        high_confidence_plan: 5.75
+      Springboard_internal_incremental_annualized_sales_by_end_2028_usd_billion: 11
+    watch_items:
+      - hyperscaler_contract_concentration_and_volume_timing
+      - capacity_expansion_execution_and_customer_co_investment_terms
+      - fiber_price_and_connector_competition
+      - carrier_market_cyclicality
+      - GAAP_versus_core_measure_gap
+      - contract_values_are_maximum_or_descriptive_not_recognized_revenue
+    sources:
+      - https://investor.corning.com/news-and-events/news/news-details/2026/Corning-Announces-Outstanding-2025-Financial-Results-1--Upgrades-Springboard-Plan-for-Faster-Sales-Growth-on-Significantly-Enhanced-Financial-Profile/default.aspx
+      - https://www.sec.gov/Archives/edgar/data/24741/000002474126000124/glw-20251231.htm
+      - https://investor.corning.com/news-and-events/news/news-details/2026/Corning-Announces-Strong-First-Quarter-2026-Financial-Results-1/default.aspx
+      - https://investor.corning.com/news-and-events/news/news-details/2026/Corning-and-Meta-Announce-Multiyear-up-to-6-Billion-Agreement-to-Accelerate-US-Data-Center-Buildout/default.aspx
+      - https://investor.corning.com/news-and-events/news/news-details/2026/Corning-Expands-AI-Data-Center-Connectivity-Portfolio-with-PRIZM-TMT-Technology/default.aspx
+    confidence: high_for_group_and_segment_financials_contract_scope_products_and_outlook_low_for_campus_allocation
+
+  - id: company_constellation_energy
+    company: Constellation_Energy
+    layer: operators_reits_utilities
+    fiscal_baseline:
+      period: FY2025_ended_2025_12_31
+      accounting_basis: US_GAAP_with_separate_adjusted_operating_earnings
+      currency: USD
+      operating_revenue_usd_million: 25533
+      operating_income_usd_million: 3086
+      operating_margin_percent_derived: 12.09
+      net_income_attributable_to_common_shareholders_usd_million: 2319
+      adjusted_operating_earnings_usd_million: 2944
+      fleet_boundary: excludes_Calpine_which_closed_after_year_end_on_2026_01_07
+    latest_update:
+      period: Q1_2026_ended_2026_03_31
+      accounting_boundary: includes_Calpine_after_2026_01_07_close_and_is_not_like_for_like_with_FY2025
+      operating_revenue_usd_million: 11122
+      operating_income_usd_million: 2332
+      operating_margin_percent_derived: 20.97
+      net_income_attributable_to_common_shareholders_usd_million: 1590
+      adjusted_operating_EPS_usd: 2.74
+      combined_generation_capacity_gw: 55
+    data_center_exposure:
+      roles:
+        - nuclear_natural_gas_geothermal_and_renewable_generation_owner
+        - long_term_clean_energy_PPA_counterparty
+        - colocated_and_grid_delivered_data_center_power_supplier
+        - competitive_retail_and_commercial_energy_supplier
+      disclosed_agreements:
+        Microsoft_Crane_Clean_Energy_Center:
+          PPA_years: 20
+          carbon_free_capacity_mw_approximate: 835
+          expected_online_year: 2028
+          scope: grid_delivered_energy_to_help_match_Microsoft_PJM_data_center_use
+        Meta_Clinton_Clean_Energy_Center:
+          PPA_years: 20
+          plant_output_mw: 1121
+          agreement_start: 2027_06
+          incremental_nuclear_uprate_mw: 30
+          scope: clean_energy_attributes_and_long_term_plant_operation_not_dedicated_site_load
+        CyrusOne_Freestone:
+          agreement_capacity_mw: 380
+          structure: adjacent_data_center_connection_and_service_agreement
+          regulatory_status_as_of_Q1_2026: Texas_PUCT_net_metering_application_approved_subject_to_conditions
+      confirmed_campus_refs: []
+      boundary: >-
+        Contracted generation capacity and clean-energy attributes are not equal
+        to a data center's instantaneous physical load or a dedicated behind-the-
+        meter supply. Contract prices and expected revenue are undisclosed.
+    management_outlook:
+      FY2026_adjusted_operating_EPS_range_usd: [11.00, 12.00]
+      strategic_signal: integrate_Calpine_and_use_55GW_portfolio_for_data_economy_and_other_load_growth
+    watch_items:
+      - Calpine_integration_and_purchase_accounting
+      - nuclear_restart_relicensing_cost_and_schedule
+      - commodity_power_and_hedging_volatility
+      - regulatory_treatment_of_colocation_and_net_metering
+      - contract_price_and_revenue_non_disclosure
+      - gas_generation_fuel_and_carbon_exposure
+      - outage_and_capacity_factor_execution
+    sources:
+      - https://investors.constellationenergy.com/news-releases/news-release-details/constellation-reports-fourth-quarter-and-full-year-2025-results
+      - https://investors.constellationenergy.com/news-releases/news-release-details/constellation-reports-first-quarter-2026-results
+      - https://investors.constellationenergy.com/news-releases/news-release-details/constellation-completes-calpine-transaction-powering-americas
+      - https://investors.constellationenergy.com/news-releases/news-release-details/constellation-launch-crane-clean-energy-center-restoring-jobs
+      - https://investors.constellationenergy.com/news-releases/news-release-details/constellation-meta-sign-20-year-deal-clean-reliable-nuclear
+    confidence: high_for_group_financials_fleet_scale_and_contract_capacity_low_for_contract_economics_and_campus_load_attribution
+
+  - id: company_modine
+    company: Modine
+    layer: power_cooling_electrical
+    fiscal_baseline:
+      period: FY2026_ended_2026_03_31
+      accounting_basis: US_GAAP_with_separate_adjusted_EBITDA
+      currency: USD
+      net_sales_usd_million: 3181.1
+      operating_income_usd_million: 342.4
+      operating_margin_percent_derived: 10.76
+      net_earnings_usd_million: 123.3
+      pension_termination_charge_usd_million: 116.1
+      adjusted_EBITDA_usd_million: 471.0
+      adjusted_EBITDA_margin_percent_derived: 14.81
+      operating_cash_flow_usd_million: 248.7
+      free_cash_flow_usd_million: 105.4
+      segment_scale:
+        Climate_Solutions_sales_usd_million: 2062.3
+        Climate_Solutions_operating_income_usd_million: 321.1
+        Performance_Technologies_sales_usd_million: 1131.8
+        Performance_Technologies_operating_income_usd_million: 109.7
+        corporate_and_eliminations_operating_loss_usd_million: 88.4
+    latest_update:
+      period: Q4_FY2026_ended_2026_03_31
+      net_sales_usd_million: 954.4
+      operating_income_usd_million: 103.9
+      net_earnings_usd_million: 73.6
+      Climate_Solutions:
+        sales_usd_million: 665.9
+        sales_year_over_year_percent: 87
+        operating_income_usd_million: 108.8
+        adjusted_EBITDA_usd_million: 124.3
+        data_centers_sales_year_over_year_percent: 158
+        HVAC_technologies_sales_year_over_year_percent: 51
+      Performance_Technologies:
+        sales_usd_million: 294.0
+        operating_income_usd_million: 27.7
+        adjusted_EBITDA_usd_million: 37.4
+    data_center_exposure:
+      brand: Airedale_by_Modine
+      products_and_roles:
+        - air_cooled_chillers_with_free_cooling
+        - precision_air_conditioning_CRAC_and_CRAH
+        - air_handling_units_and_fan_walls
+        - dry_coolers_and_heat_rejection
+        - coolant_distribution_units_up_to_1MW
+        - hybrid_air_and_direct_liquid_cooling
+        - cooling_system_optimization_controls
+        - immersion_cooling_development
+      disclosed_contracts:
+        unnamed_strategic_data_center_customer:
+          agreement_type: long_term_capacity_agreement
+          calendar_period: 2027_to_2029
+          guaranteed_supply_capacity_usd_billion_more_than: 4
+          upfront_cash_payment_usd_million: 165
+          customer_name: undisclosed
+          accounting_boundary: supply_capacity_and_customer_advance_not_recognized_revenue
+      confirmed_campus_refs: []
+      boundary: >-
+        The 158% growth rate is a quarterly sales-growth signal, not the absolute
+        amount of data-center revenue. The $4 billion agreement reserves supply
+        capacity for an unnamed customer and is neither backlog recognized as
+        revenue nor evidence of installation at a particular campus.
+    management_outlook:
+      period: FY2027
+      net_sales_growth_percent_range: [20, 35]
+      adjusted_EBITDA_usd_million_range: [650, 680]
+      adjusted_EBITDA_growth_percent_range: [38, 44]
+      signal: capacity_expansion_is_running_ahead_of_large_customer_commitments
+    watch_items:
+      - customer_concentration_in_unnamed_capacity_agreement
+      - factory_ramp_component_shortage_and_execution
+      - customer_advance_accounting_and_actual_purchase_timing
+      - margin_pressure_during_capacity_expansion
+      - cooling_technology_shift_toward_direct_liquid_and_immersion
+      - data_center_revenue_absolute_amount_not_disclosed
+    sources:
+      - https://investors.modine.com/news/news-details/2026/Modine-Reports-Fourth-Quarter-Fiscal-2026-Results/default.aspx
+      - https://investors.modine.com/news/news-details/2026/Modine-Announces-Landmark-4-Billion-Long-Term-Capacity-Agreement-through-2029-with-Strategic-Data-Center-Customer-for-Airedale-by-Modine-Cooling-Solutions/default.aspx
+      - https://investors.modine.com/news/news-details/2026/Airedale-by-Modine-Advanced-PUE-Solutions-Strategically-Positioned-to-Accommodate-High-Temperature-Thermal-Architectures/default.aspx
+      - https://www.modine.com/news/airedale-by-modine-launches-1mw-coolant-distribution-unit-cdu/
+    confidence: high_for_group_segment_financials_growth_contract_capacity_products_and_outlook_low_for_absolute_data_center_revenue_customer_identity_and_campus_attribution
+
+  - id: company_trane_technologies
+    company: Trane_Technologies
+    layer: power_cooling_electrical
+    fiscal_baseline:
+      period: FY2025_ended_2025_12_31
+      accounting_basis: US_GAAP_with_separate_adjusted_metrics
+      currency: USD
+      net_revenue_usd_million: 21321.9
+      operating_income_usd_million: 3967.4
+      operating_margin_percent: 18.6
+      net_earnings_attributable_to_Trane_usd_million: 2918.6
+      adjusted_operating_income_usd_million: 3944.6
+      adjusted_operating_margin_percent: 18.5
+      adjusted_EBITDA_usd_million: 4276.0
+      adjusted_EBITDA_margin_percent: 20.1
+      bookings_usd_million: 22648
+      ending_backlog_usd_billion: 7.8
+      free_cash_flow_usd_million: 2887
+      segment_scale:
+        Americas_revenue_usd_million: 17168.8
+        Americas_operating_income_usd_million: 3479.4
+        Americas_adjusted_EBITDA_usd_million: 3713.4
+        EMEA_revenue_usd_million: 2802.1
+        EMEA_operating_income_usd_million: 475.1
+        APAC_revenue_usd_million: 1351.0
+        APAC_operating_income_usd_million: 307.1
+    latest_update:
+      period: Q1_2026_ended_2026_03_31
+      bookings_usd_million: 6691
+      bookings_year_over_year_percent: 27
+      organic_bookings_year_over_year_percent: 24
+      ending_backlog_usd_billion: 10.7
+      backlog_growth_from_FY2025_year_end_percent_more_than: 30
+      net_revenue_usd_million: 4969.4
+      operating_income_usd_million: 776.1
+      operating_margin_percent: 15.6
+      earnings_from_continuing_operations_attributable_usd_million: 594.4
+      adjusted_operating_income_usd_million: 794.7
+      adjusted_operating_margin_percent: 16.0
+      adjusted_EBITDA_usd_million: 881.0
+      adjusted_EBITDA_margin_percent: 17.7
+      Americas:
+        bookings_usd_million: 5508.1
+        organic_bookings_year_over_year_percent: 29
+        revenue_usd_million: 3998.4
+        operating_income_usd_million: 711.8
+        adjusted_EBITDA_usd_million: 791.0
+        Commercial_HVAC_bookings_growth_percent_approximate: 40
+        applied_equipment_bookings_growth_percent_more_than: 160
+    data_center_exposure:
+      products_and_roles:
+        - centrifugal_and_magnetic_bearing_chillers
+        - air_cooled_and_water_cooled_heat_rejection
+        - air_handlers_and_fan_systems
+        - direct_to_chip_liquid_cooling
+        - immersion_cooling
+        - coolant_distribution_and_liquid_distribution
+        - modular_data_center_infrastructure
+        - building_controls_energy_management_and_lifecycle_service
+      portfolio_expansion:
+        LiquidStack_acquisition_announced: 2026
+        transaction_value: undisclosed
+        scope: direct_to_chip_immersion_and_liquid_distribution_cooling
+      equipment_scale_example:
+        TCA_air_cooled_magnetic_bearing_chiller_cooling_capacity_mw_range: [1, 3]
+      confirmed_campus_refs: []
+      boundary: >-
+        Trane does not disclose data-center revenue separately. Commercial HVAC
+        and applied-equipment bookings cover multiple building end markets, so
+        their growth rates cannot be treated as pure data-center demand.
+    management_outlook:
+      period: FY2026_updated_after_Q1
+      reported_revenue_growth_percent_approximate: 9.5
+      organic_revenue_growth_percent_approximate: 7
+      GAAP_and_adjusted_continuing_EPS_range_usd: [14.75, 14.95]
+      signal: record_backlog_supports_visibility_but_end_market_mix_is_not_disclosed
+    watch_items:
+      - data_center_revenue_and_customer_mix_not_separately_disclosed
+      - large_applied_equipment_order_conversion_timing
+      - manufacturing_and_field_service_capacity
+      - integration_of_LiquidStack_and_other_acquisitions
+      - refrigerant_and_efficiency_regulation
+      - margin_pressure_from_mix_and_growth_investment
+    sources:
+      - https://ir.tranetechnologies.com/news-and-events/news-releases/news-release-details/2026/Trane-Technologies-Reports-Strong-Fourth-Quarter-and-Full-Year-2025-Results-Robust-Bookings-and-Backlog-Provide-Strong-Visibility-Entering-2026/default.aspx
+      - https://ir.tranetechnologies.com/news-and-events/news-releases/news-release-details/2026/Trane-Technologies-Reports-Strong-First-Quarter-Results-Raises-Full-Year-Revenue-and-EPS-Guidance/default.aspx
+      - https://www.tranetechnologies.com/en/index/company/data-centers.html
+      - https://ir.tranetechnologies.com/news-and-events/news-releases/news-release-details/2026/Trane-Technologies-to-Acquire-LiquidStack-to-Accelerate-EndtoEnd-Data-Center-Thermal-Management-Solutions/default.aspx
+      - https://elibrary.tranetechnologies.com/public/commercial-hvac/Literature/Sales/TCA-SLB001-EN_03162026.pdf
+    confidence: high_for_group_segment_financials_bookings_backlog_products_and_guidance_low_for_data_center_revenue_and_campus_attribution
+
+  - id: company_johnson_controls
+    company: Johnson_Controls
+    layer: power_cooling_electrical
+    fiscal_baseline:
+      period: FY2025_ended_2025_09_30
+      accounting_basis: US_GAAP_continuing_operations_with_separate_non_GAAP_metrics
+      currency: USD
+      net_sales_usd_million: 23596
+      products_and_systems_sales_usd_million: 16124
+      services_sales_usd_million: 7472
+      income_from_continuing_operations_attributable_usd_million: 1721
+      EBIT_non_GAAP_usd_million: 2288
+      EBIT_non_GAAP_margin_percent_derived: 9.70
+      adjusted_EBITDA_non_GAAP_usd_million: 3987
+      ending_backlog_usd_billion: 14.9
+      backlog_organic_growth_percent: 13
+      reporting_boundary: residential_and_light_commercial_HVAC_divestiture_is_discontinued_operations
+    latest_update:
+      period: Q2_FY2026_ended_2026_03_31
+      net_sales_usd_million: 6142
+      sales_year_over_year_percent: 8
+      organic_sales_year_over_year_percent: 6
+      income_from_continuing_operations_attributable_usd_million: 609
+      adjusted_net_income_usd_million: 730
+      GAAP_EPS_usd: 0.99
+      adjusted_EPS_usd: 1.19
+      orders_organic_growth_percent: 30
+      ending_backlog_usd_billion: 20.0
+      backlog_organic_growth_percent: 26
+      Americas:
+        sales_usd_million: 4121
+        segment_EBIT_usd_million: 705
+        segment_EBIT_margin_percent: 17.1
+        adjusted_segment_EBITA_usd_million: 802
+        adjusted_segment_EBITA_margin_percent: 19.5
+        orders_organic_growth_percent: 40
+        ending_backlog_usd_billion: 14.9
+        backlog_organic_growth_percent: 32
+        demand_signal: large_scale_data_center_projects_supported_order_growth
+      half_year_net_sales_usd_million: 11939
+    data_center_exposure:
+      products_and_roles:
+        - YORK_air_and_water_cooled_centrifugal_chillers
+        - Silent_Aire_air_handlers_CRAH_and_fan_coil_walls
+        - Silent_Aire_coolant_distribution_units
+        - direct_to_chip_liquid_cooling_components
+        - Metasys_building_automation_and_energy_controls
+        - fire_detection_security_and_lifecycle_service
+      product_scale_examples:
+        YORK_YDAM_cooling_capacity_mw: 3.5
+        Silent_Aire_CDU_capacity_range_mw: [0.5, 10]
+        AI_factory_reference_design_max_scale_gw: 1
+        reference_cluster_compute_capacity_mw: 220
+      portfolio_expansion:
+        Alloy_Enterprises_acquisition_announced: 2026_02_18
+        transaction_value: undisclosed
+        claimed_direct_liquid_cooling_efficiency_improvement_percent_up_to: 35
+        claimed_pressure_drop_reduction_percent_up_to: 75
+      confirmed_campus_refs: []
+      boundary: >-
+        Johnson Controls identifies data centers as an important driver, especially
+        in Americas orders, but does not disclose data-center revenue or profit.
+        Orders and backlog include other mission-critical and commercial projects,
+        and reference-design capacities are engineering scenarios rather than sales.
+    management_outlook:
+      period: FY2026_updated_after_Q2
+      organic_sales_growth_percent_approximate: 6
+      operating_leverage_percent_approximate: 50
+      adjusted_EPS_usd_approximate: 4.85
+      adjusted_free_cash_flow_conversion_percent_approximate: 100
+    watch_items:
+      - data_center_revenue_and_profit_not_separately_disclosed
+      - Americas_customer_and_project_concentration
+      - long_cycle_order_conversion_and_factory_capacity
+      - Alloy_and_Silent_Aire_integration_execution
+      - adjusted_metric_and_portfolio_divestiture_comparability
+      - water_power_and_refrigerant_constraints
+    sources:
+      - https://investors.johnsoncontrols.com/news/news-details/2025/Johnson-Controls-Reports-Q4-and-FY25-Results-Initiates-FY26-Guidance-11-05-2025/default.aspx
+      - https://investors.johnsoncontrols.com/news/news-details/2026/Johnson-Controls-Reports-Strong-Q2-Results-Raises-FY26-Guidance/default.aspx
+      - https://investors.johnsoncontrols.com/news/news-details/2026/Johnson-Controls-signs-agreement-to-acquire-Alloy-Enterprises-strengthening-data-center-thermal-management-leadership/default.aspx
+      - https://investors.johnsoncontrols.com/news/news-details/2026/Johnson-Controls-launches-YORK-YDAM-the-ultimate-high-density-chiller-for-multistory-data-centers-and-AI-factories/default.aspx
+      - https://investors.johnsoncontrols.com/news/news-details/2026/Johnson-Controls-releases-second-data-center-reference-design-guide-to-advance-industrialscale-AI-factory-cooling/default.aspx
+      - https://investors.johnsoncontrols.com/news/news-details/2026/Johnson-Controls-2026-sustainability-report-highlights-energy-efficiency-returns-in-mission-critical-industries/default.aspx
+    confidence: high_for_group_regional_financials_backlog_products_and_guidance_low_for_data_center_revenue_customer_identity_and_campus_attribution
+
+  - id: company_prysmian
+    company: Prysmian
+    layer: power_cooling_electrical
+    fiscal_baseline:
+      period: FY2025_ended_2025_12_31
+      accounting_basis: IFRS_with_separate_adjusted_EBITDA
+      currency: EUR
+      revenue_eur_million: 19650
+      organic_revenue_growth_percent: 5.4
+      operating_income_eur_million: 1928
+      operating_margin_percent_derived: 9.81
+      net_result_eur_million: 1294
+      group_net_profit_eur_million: 1270
+      adjusted_EBITDA_eur_million: 2398
+      adjusted_EBITDA_margin_at_standard_metal_prices_percent: 14.2
+      EBITDA_eur_million: 2688
+      free_cash_flow_eur_million: 1171
+      acquisition_boundary: includes_Encore_Wire_from_2024_07_01_and_Channell_from_2025_06_01
+    latest_update:
+      period: Q1_2026_ended_2026_03_31
+      revenue_eur_million: 5218
+      organic_revenue_growth_percent: 5.0
+      operating_income_eur_million: 406
+      operating_margin_percent_derived: 7.78
+      net_profit_eur_million: 253
+      group_share_net_profit_eur_million: 246
+      adjusted_EBITDA_eur_million: 601
+      adjusted_EBITDA_margin_at_standard_metal_prices_percent: 14.2
+      Industrial_and_Construction:
+        revenue_eur_million: 2160
+        organic_revenue_growth_percent: 5.8
+        adjusted_EBITDA_eur_million: 196
+        adjusted_EBITDA_margin_percent: 13.0
+        North_America_organic_growth_percent: 10
+        demand_signal: North_America_growth_driven_by_data_centers
+      Digital_Solutions:
+        revenue_eur_million: 451
+        organic_revenue_growth_percent: 9.0
+        adjusted_EBITDA_eur_million: 88
+        adjusted_EBITDA_margin_percent: 20.6
+        demand_signal: fiber_demand_from_data_centers_5G_and_FTTH
+    data_center_exposure:
+      products_and_roles:
+        - medium_and_low_voltage_power_cables
+        - industrial_and_construction_building_wire
+        - optical_fiber_and_high_density_optical_cables
+        - optical_connectivity_components_and_accessories
+        - data_center_interconnect_cabling
+        - energy_and_digital_cable_systems_from_grid_to_inside_campus
+      capacity_and_commercial_signals:
+        US_fiber_manufacturing: one_of_few_domestic_producers
+        inside_data_center_long_term_agreements: under_negotiation_not_signed_or_recognized_revenue
+        Sirocco_Ultra_microduct_cable_size_reduction_percent_up_to: 35
+      confirmed_campus_refs: []
+      boundary: >-
+        Data-center demand contributes to Industrial & Construction and Digital
+        Solutions, but those segments also serve buildings, broadband, 5G, FTTH,
+        utilities, and industrial markets. No data-center revenue amount, customer,
+        or campus allocation is disclosed in the reviewed results.
+    management_outlook:
+      period: FY2026
+      adjusted_EBITDA_eur_million_range: [2625, 2775]
+      free_cash_flow_eur_million_range: [1300, 1400]
+      sustainability_linked_revenue_share_percent_range: [47, 49]
+      signal: energy_grid_and_digital_infrastructure_demand_supports_growth_despite_FX_headwinds
+    watch_items:
+      - copper_aluminum_and_standard_metal_price_comparability
+      - data_center_revenue_not_separately_disclosed
+      - long_term_inside_data_center_agreements_not_yet_signed
+      - fiber_price_and_demand_cyclicality
+      - Encore_Wire_and_Channell_integration
+      - project_execution_working_capital_and_foreign_exchange
+    sources:
+      - https://www.prysmian.com/en/media/press-releases/prysmian-continues-growth-and-margin-expansion-in-q4-25-2025-is-prysmian-s-best-year-yet
+      - https://www.prysmian.com/sites/www.prysmian.com/files/media/documents/investors/PR_Prysmian_FY25_26022026.pdf
+      - https://www.prysmian.com/en/media/press-releases/prysmian-starts-the-year-with-organic-growth-margin-expansion-and-strong-free-cash-flow
+      - https://www.prysmian.com/sites/www.prysmian.com/files/media/documents/PR_Q126_Results_3004226.pdf
+      - https://www.prysmian.com/sites/www.prysmian.com/files/media/documents/investors/ENG-Financial-Report-31-march-2026-v3004_0.pdf
+      - https://www.prysmian.com/en/investors/prysmian-as-investment/market-outlook
+      - https://www.prysmian.com/en/media/press-releases/prysmian-boosts-efficiency-for-high-density-broadband-data-centers-and-5g-roll-out-with-sirocco-ultra-cables
+    confidence: high_for_group_segment_financials_products_and_guidance_low_for_data_center_revenue_contract_status_and_campus_attribution
+
+  - id: company_nexans
+    company: Nexans
+    layer: power_cooling_electrical
+    fiscal_baseline:
+      period: FY2025_ended_2025_12_31
+      accounting_basis: IFRS_with_standard_metal_sales_and_separate_adjusted_metrics
+      currency: EUR
+      sales_at_current_metal_prices_eur_million: 7810
+      sales_at_standard_metal_prices_eur_million: 6098.2
+      organic_growth_percent: 8.3
+      operating_margin_company_metric_eur_million: 439
+      operating_income_eur_million: 378
+      operating_income_margin_on_current_sales_percent_derived: 4.84
+      adjusted_EBITDA_eur_million: 727.6
+      adjusted_EBITDA_margin_on_standard_sales_percent: 11.9
+      net_income_from_continuing_operations_eur_million: 219
+      total_net_income_eur_million: 358
+      free_cash_flow_eur_million: 344
+      net_debt_eur_million: 266
+      segment_scale:
+        PWR_Transmission_standard_sales_eur_million: 1657.0
+        PWR_Transmission_adjusted_EBITDA_eur_million: 203.0
+        PWR_Grid_standard_sales_eur_million: 1319.0
+        PWR_Grid_adjusted_EBITDA_eur_million: 216.6
+        PWR_Connect_standard_sales_eur_million: 2340.6
+        PWR_Connect_adjusted_EBITDA_eur_million: 288.6
+    latest_update:
+      period: Q1_2026
+      sales_at_standard_metal_prices_eur_million: 1496.8
+      organic_growth_percent: 0.1
+      acquisition_signal: Republic_Wire_agreement_expands_US_building_wire_and_data_center_channels
+      profitability_boundary: Q1_release_does_not_report_group_operating_income_or_adjusted_EBITDA
+    data_center_exposure:
+      products_and_roles:
+        - low_and_medium_voltage_building_and_distribution_cables
+        - power_grid_and_transmission_cable_systems
+        - cable_accessories_and_connection_systems
+        - fire_safe_and_low_smoke_cables_for_critical_facilities
+        - electrification_from_grid_connection_to_building_distribution
+      disclosed_demand_signals:
+        FY2025_Q4_PWR_Connect: >-
+          Strong organic growth partly reflected customer-advanced deliveries for
+          large infrastructure and data-center projects.
+        Republic_Wire_transaction: >-
+          Management identified data centers as a high-growth vertical for the
+          combined U.S. product and distributor network.
+      confirmed_campus_refs: []
+      boundary: >-
+        Nexans does not disclose data-center revenue, customer names, or campus
+        allocations. PWR-Connect and building-wire sales serve many residential,
+        commercial, utility, and industrial markets.
+    management_outlook:
+      period: FY2026_confirmed_after_Q1
+      adjusted_EBITDA_eur_million_range: [730, 810]
+      free_cash_flow_eur_million_range: [210, 310]
+      Great_Sea_Interconnector_execution_assumed: false
+      uncompleted_acquisitions_included: false
+      phasing: first_half_expected_softer_than_second_half
+    watch_items:
+      - copper_and_aluminum_standard_price_comparability
+      - data_center_revenue_not_separately_disclosed
+      - Republic_Wire_closing_and_synergy_execution
+      - PWR_Transmission_project_timing_and_customer_advances
+      - acquisition_and_portfolio_rotation_execution
+      - Great_Sea_Interconnector_uncertainty
+    sources:
+      - https://www.nexans.com/app/uploads/2026/02/2026-02-19-pr-nexans-full-year-2025-earnings.pdf
+      - https://www.nexans.com/regulated-informations/first-quarter-2026-financial-information/
+      - https://www.nexans.com/app/uploads/2026/04/2026-04-28-pr-nexans-q1-2026.pdf
+    confidence: high_for_group_segment_financials_and_guidance_medium_for_data_center_demand_direction_low_for_data_center_revenue_and_campus_attribution
+
+  - id: company_ls_electric
+    company: LS_Electric
+    layer: power_cooling_electrical
+    fiscal_baseline:
+      period: FY2025_ended_2025_12_31
+      accounting_basis: K_IFRS_consolidated
+      currency: KRW
+      sales_krw_billion: 4965.799
+      operating_income_krw_billion: 426.407
+      operating_margin_percent_derived: 8.59
+      net_income_krw_billion: 284.257
+      orders_krw_billion_rounded: 3716
+      ending_backlog_krw_billion: 5015
+      segment_scale:
+        Electric_sales_krw_billion_rounded: 3129
+        Electric_operating_profit_krw_billion_rounded: 353
+        Automation_sales_krw_billion_rounded: 334
+        Automation_operating_profit_krw_billion_rounded: 10
+        subsidiaries_and_adjustments_sales_krw_billion_rounded: 1500
+        subsidiaries_and_adjustments_operating_profit_krw_billion_rounded: 65
+    latest_update:
+      period: Q1_2026
+      sales_krw_billion: 1377
+      sales_year_over_year_percent: 33.4
+      operating_profit_krw_billion: 127
+      operating_profit_year_over_year_percent: 45.0
+      operating_margin_percent: 9.2
+      EBITDA_krw_billion: 139
+      net_income_krw_billion: 120
+      new_orders_krw_billion: 1086
+      ending_backlog_krw_billion: 5643
+      Electric:
+        sales_krw_billion: 958
+        sales_year_over_year_percent: 44.9
+        operating_profit_krw_billion: 106
+        operating_profit_year_over_year_percent: 48.8
+        high_voltage_transformer_sales_krw_billion: 164
+        switchgear_sales_krw_billion: 356
+        high_voltage_transformer_backlog_krw_billion: 3102
+        switchgear_backlog_krw_billion: 1170
+    data_center_exposure:
+      products_and_roles:
+        - high_medium_and_low_voltage_transformers
+        - switchgear_and_panelboards
+        - high_voltage_GIS
+        - medium_and_low_voltage_circuit_breakers
+        - direct_current_distribution_products
+        - ESS_and_power_management_systems
+        - power_testing_and_engineering_service
+      disclosed_demand_signals:
+        Q1_2026: data_centers_described_as_primary_Electric_business_earnings_growth_driver
+        US_reference: direct_current_product_order_reference_for_US_on_site_generation
+        broader_driver: AIDC_semiconductor_and_renewable_energy_projects
+      confirmed_campus_refs: []
+      boundary: >-
+        Data centers are a stated growth driver, but LS Electric does not disclose
+        their revenue or profit separately. Electric segment results and product
+        backlog also include semiconductor fabs, renewables, utilities, and other
+        industrial projects.
+    management_outlook:
+      period: 2026_directional
+      priorities:
+        - expand_US_big_tech_and_related_AI_data_center_customers
+        - accelerate_US_power_distribution_capacity_expansion
+        - build_direct_current_solid_state_transformer_and_superconducting_products
+      quantitative_group_guidance: not_disclosed_in_reviewed_Q1_material
+    watch_items:
+      - customer_and_campus_identity_not_disclosed
+      - transformer_and_switchgear_capacity_ramp
+      - copper_steel_tariff_and_foreign_exchange_costs
+      - backlog_conversion_and_project_mix
+      - US_local_service_and_certification_execution
+      - direct_current_architecture_adoption_timing
+    sources:
+      - https://www.ls-electric.com/about-us/investor-relations/financials
+      - https://www.ls-electric.com/ko/company/data/25_4Q_Results.pdf
+      - https://www.ls-electric.com/ko/company/data/26_1Q_Results.pdf
+    confidence: high_for_group_segment_product_backlog_and_demand_direction_low_for_data_center_revenue_customer_and_campus_attribution
+
+  - id: company_hd_hyundai_electric
+    company: HD_Hyundai_Electric
+    layer: power_cooling_electrical
+    fiscal_baseline:
+      period: FY2025_ended_2025_12_31
+      accounting_basis: K_IFRS_consolidated
+      currency: KRW
+      sales_krw_billion: 4079.5
+      sales_year_over_year_percent: 22.8
+      operating_profit_krw_billion: 995.3
+      operating_profit_year_over_year_percent: 48.8
+      operating_margin_percent: 24.4
+      controlling_shareholder_net_income_krw_billion_approximate: 731.8
+      order_intake_usd_million: 4274
+      ending_backlog_usd_million: 6731
+      segment_sales:
+        power_equipment_krw_billion: 2060.5
+        distribution_equipment_krw_billion: 731.9
+        rotating_machinery_krw_billion: 588.7
+        subsidiaries_and_adjustments_krw_billion: 698.4
+    latest_update:
+      period: Q1_2026
+      sales_krw_billion: 1036.5
+      sales_year_over_year_percent: 2.1
+      operating_profit_krw_billion: 258.3
+      operating_profit_year_over_year_percent: 18.4
+      operating_margin_percent: 24.9
+      net_profit_krw_billion: 207.7
+      controlling_shareholder_net_income_krw_billion: 208.1
+      order_intake_usd_million: 1797
+      order_intake_year_over_year_percent: 34.6
+      ending_backlog_usd_million: 7888
+      backlog_year_over_year_percent: 28.2
+      North_America:
+        cumulative_sales_krw_billion: 492.3
+        cumulative_orders_usd_million: 1315
+        quarterly_order_growth_year_over_year_percent: 76.5
+        demand_signal: record_power_transformer_orders_and_broader_extra_high_voltage_data_center_and_generation_products
+    data_center_exposure:
+      products_and_roles:
+        - extra_high_and_high_voltage_power_transformers
+        - distribution_transformers
+        - gas_insulated_switchgear
+        - medium_and_low_voltage_switchboards_and_circuit_breakers
+        - motors_generators_and_rotating_machinery_for_generation_sites
+        - grid_substation_and_power_distribution_equipment
+      disclosed_demand_signals:
+        North_America: >-
+          Management linked broader market expansion and product coverage to
+          extra-high-voltage transmission, data centers, and rotating machinery
+          for generation sites.
+        AI_infrastructure: >-
+          The Q1 outlook cited Big Tech power and AI-inference infrastructure as
+          a driver of rising long-range capital-spending estimates.
+      confirmed_campus_refs: []
+      boundary: >-
+        Neither data-center revenue nor specific hyperscaler and campus awards are
+        disclosed. North American orders also serve utilities, oil and gas, power
+        plants, industrial facilities, and general grid reinforcement.
+    management_outlook:
+      period: FY2026_plan
+      order_target_usd_million: 4222
+      sales_target_krw_billion: 4350
+      operating_profit_target: undisclosed
+      signal: backlog_and_transformer_pricing_support_growth_but_delivery_phasing_moves_quarterly_results
+    watch_items:
+      - customer_and_campus_identity_not_disclosed
+      - North_America_transformer_customer_concentration
+      - Alabama_and_other_capacity_expansion_execution
+      - steel_copper_tariffs_and_logistics_costs
+      - long_delivery_schedule_and_revenue_phasing
+      - high_margin_normalization_risk
+    sources:
+      - https://www.hd-hyundaielectric.com/elect/en/IR/IRdata1.jsp
+      - title: HD_Hyundai_Electric_4Q25_Earning_Release
+        official_IR_record: 46
+        published: 2026-02-06
+        download_page: https://www.hd-hyundaielectric.com/elect/en/IR/IRdata1.jsp
+      - title: HD_Hyundai_Electric_1Q26_Earning_Release
+        official_IR_record: 47
+        published: 2026-04-29
+        download_page: https://www.hd-hyundaielectric.com/elect/en/IR/IRdata1.jsp
+    confidence: high_for_group_product_region_order_backlog_and_plan_metrics_low_for_data_center_revenue_customer_and_campus_attribution
+
+  - id: company_adani_enterprises
+    company: Adani_Enterprises
+    layer: integrated_AI_infrastructure_developers
+    fiscal_baseline:
+      period: FY2026_ended_2026_03_31
+      accounting_basis: Ind_AS_with_separate_EBITDA_and_exceptional_items
+      currency: INR
+      total_income_inr_crore: 102943
+      total_income_year_over_year_percent: 3
+      EBITDA_inr_crore: 16464
+      EBITDA_year_over_year_percent: -2
+      reported_profit_before_tax_inr_crore: 13525
+      profit_before_tax_excluding_exceptional_gain_inr_crore: 4309
+      exceptional_gain_inr_crore: 9215
+      profit_after_tax_attributable_to_owners_inr_crore: 9339
+      boundary: group_includes_airports_roads_mining_green_industries_copper_and_other_incubation_businesses
+    latest_update:
+      period: Q4_FY2026_and_FY2026_operational_update
+      Q4_total_income_inr_crore: 33187
+      Q4_EBITDA_inr_crore: 4479
+      Q4_reported_profit_before_tax_inr_crore: 729
+      Q4_profit_after_tax_attributable_to_owners_inr_crore: -221
+      AdaniConneX:
+        total_operational_capacity_mw_more_than: 55
+        operational_facility_count: 4
+        Hyderabad_phase_2_added_operational_capacity_mw: 4.8
+        new_Hyderabad_hyperscale_order_mw: 358
+        cumulative_tied_up_capacity_mw_more_than: 560
+        standalone_revenue_EBITDA_and_operating_profit: undisclosed
+    data_center_exposure:
+      vehicle: AdaniConneX
+      ownership: 50_50_joint_venture_between_Adani_Enterprises_and_EdgeConneX
+      roles:
+        - hyperscale_and_colocation_data_center_developer_operator
+        - integrated_land_energy_transmission_storage_and_connectivity_developer
+        - built_to_suit_AI_data_center_infrastructure
+      disclosed_projects_and_targets:
+        Google_Visakhapatnam:
+          partner: Google
+          total_Google_AI_hub_investment_usd_billion_approximate: 15
+          investment_period: 2026_to_2030
+          campus_scale: gigawatt_scale
+          campus_ref: dc_google_visakhapatnam_ai_hub
+        platform_announcement_2026:
+          existing_national_platform_gw: 2
+          target_gw: 5
+          Adani_direct_investment_to_2035_usd_billion: 100
+          boundary: strategic_announcement_not_current_energized_capacity_or_recognized_revenue
+      confirmed_campus_refs:
+        - dc_google_visakhapatnam_ai_hub
+      boundary: >-
+        AdaniConneX is a joint venture and its revenue, EBITDA, operating profit,
+        debt, and campus economics are not separated in AEL's reviewed public
+        result. Announced gigawatts and investment are plans, not energized load.
+    management_outlook:
+      period: through_2035_strategic_announcement
+      direct_AI_infrastructure_investment_usd_billion: 100
+      target_national_data_center_platform_gw: 5
+      quantitative_FY2027_group_guidance: not_disclosed_in_reviewed_release
+    watch_items:
+      - AdaniConneX_JV_financials_not_disclosed
+      - capital_intensity_financing_and_related_party_complexity
+      - grid_clean_energy_and_transmission_execution
+      - tied_up_versus_operational_capacity_gap
+      - customer_concentration_and_contract_terms
+      - regulatory_land_and_construction_schedule
+      - exceptional_gain_and_group_portfolio_comparability
+    sources:
+      - https://connect.adani.com/media/2026/apr26/ael/
+      - https://connect.adani.com/media/2025/oct25/connex/
+      - https://www.adani.com/newsroom/media-releases/adani-commits-usd-100-bn-to-sovereign-ai-infrastructure
+      - https://www.adani.com/businesses/infrastructure/data-center
+    confidence: high_for_AEL_group_metrics_ownership_operational_capacity_orders_and_announced_projects_low_for_AdaniConneX_financials_contract_economics_and_energization_schedule
+
+  - id: company_bharti_airtel
+    company: Bharti_Airtel
+    layer: operators_reits_utilities
+    fiscal_baseline:
+      period: FY2026_ended_2026_03_31
+      accounting_basis: Ind_AS_with_separate_non_GAAP_operating_metrics
+      currency: INR
+      revenue_inr_million: 2109728
+      revenue_inr_crore_rounded: 210973
+      EBITDA_inr_million: 1212676
+      EBITDA_margin_percent: 57.5
+      EBIT_inr_million: 680996
+      EBIT_margin_percent: 32.3
+      net_income_before_exceptional_items_inr_million: 269042
+      net_income_after_exceptional_items_inr_million: 266952
+      capex_inr_million: 475218
+      operating_free_cash_flow_EBITDA_less_capex_inr_million: 737458
+      net_debt_inr_million: 1647888
+      boundary: group_is_primarily_mobile_broadband_towers_enterprise_and_Africa_operations_not_a_pure_data_center_operator
+    latest_update:
+      period: Q4_FY2026_ended_2026_03_31
+      revenue_inr_million: 553832
+      EBITDA_inr_million: 320382
+      EBITDA_margin_percent: 57.8
+      EBIT_inr_million: 181560
+      EBIT_margin_percent: 32.8
+      net_income_before_exceptional_items_inr_million: 72449
+      capex_inr_million: 160656
+      Nxtra_consolidated_FY2026:
+        revenue_from_operations_inr_million: 24341
+        profit_before_depreciation_amortization_finance_costs_and_tax_inr_million: 10021
+        operating_result_inr_million_derived: 3839
+        operating_result_derivation: 10021_minus_5922_depreciation_and_amortization_minus_260_other_income
+        operating_margin_percent_reported: 15.8
+        profit_before_tax_inr_million: 3193
+        profit_after_tax_inr_million: 2356
+    data_center_exposure:
+      vehicle: Nxtra_Data
+      roles:
+        - hyperscale_enterprise_and_government_colocation
+        - cloud_managed_hosting_backup_and_disaster_recovery
+        - edge_data_center_network
+        - AI_ready_campus_development
+        - national_fiber_and_subsea_connectivity_integration
+      current_scale_as_of_2026_03_30:
+        capacity_mw_approximate: 300
+        large_core_data_centers: 14
+        edge_facilities_more_than: 120
+      expansion:
+        target_capacity_gw: 1
+        target_timing: next_few_years
+        equity_investment_usd_billion: 1
+        post_money_valuation_usd_billion_approximate: 3.1
+        external_investors_usd_million:
+          Alpha_Wave_Global: 435
+          Carlyle: 240
+          Anchorage_Capital: 35
+        Bharti_Airtel_participation_usd_million_derived: 290
+        regulatory_status_at_announcement: pending_Indian_approvals
+      Google_Visakhapatnam_collaboration:
+        campus_ref: dc_google_visakhapatnam_ai_hub
+        context: Airtel_connectivity_and_Nxtra_infrastructure_ecosystem_role
+      confirmed_campus_refs:
+        - dc_google_visakhapatnam_ai_hub
+      boundary: >-
+        Nxtra financials are much smaller than consolidated Bharti Airtel and use
+        a data-center-specific statutory reporting basis. The $1 billion funding
+        is equity capital, not revenue, and the 1 GW figure is a capacity ambition.
+    management_outlook:
+      Nxtra_capacity_target_gw: 1
+      Nxtra_target_market_share_percent_approximate: 25
+      Nxtra_current_to_target_capacity_multiple_derived: 3.33
+      group_quantitative_FY2027_guidance: not_disclosed_in_reviewed_Q4_material
+    watch_items:
+      - Nxtra_capacity_build_and_utilization_execution
+      - regulatory_closing_and_dilution_from_equity_round
+      - power_availability_cost_and_renewable_matching
+      - high_depreciation_and_finance_cost_burden
+      - data_center_customer_concentration
+      - group_telecom_results_can_mask_Nxtra_economics
+    sources:
+      - https://assets.airtel.in/static-assets/cms/investor/docs/quarterly_results/2025-26/Q4/Quarterly-IR-Pack-Bharti-Airtel-Consolidated.pdf
+      - https://assets.airtel.in/static-assets/cms/investor/docs/quarterly_results/2025-26/Q4/Press-Release.pdf
+      - https://assets.airtel.in/nxtra/pdf/Financial-Documents/STXIntimation_Nxtra_results_March31_2026.pdf
+      - https://www.airtel.in/press-release/03-2026/airtel-announces-us1-billion-investment-in-nxtra-led-by-alpha-wave-global-and-existing-investor-carlyle-bharti-airtel-will-also-participate/
+      - https://assets.airtel.in/nxtra/pdf/Nxtra-Sustainability-Report-2025.pdf
+    confidence: high_for_group_and_Nxtra_financials_funding_and_current_network_scale_medium_for_Google_project_role_low_for_per_campus_power_GPU_and_contract_economics
+
+  - id: company_blackstone
+    company: Blackstone
+    layer: capital_and_asset_managers
+    fiscal_baseline:
+      period: FY2025_ended_2025-12-31
+      accounting_basis: US_GAAP
+      currency: USD
+      revenue_usd_million: 14450.265
+      operating_income: not_presented_as_a_separate_GAAP_subtotal
+      income_before_tax_usd_million: 7171.646
+      net_income_including_noncontrolling_interests_usd_million: 6001.123
+      net_income_attributable_to_Blackstone_usd_million: 3019.214
+      comparison_boundary: >-
+        Blackstone is an alternative asset manager. Performance allocations,
+        principal-investment results, and non-controlling interests make its GAAP
+        revenue and income structurally different from data-center operators and
+        equipment manufacturers.
+    latest_update:
+      period: Q1_2026_ended_2026-03-31
+      accounting_basis: US_GAAP_with_separate_non_GAAP_metrics
+      revenue_usd_million: 3617.595
+      operating_income: not_presented_as_a_separate_GAAP_subtotal
+      income_before_tax_usd_million: 1455.057
+      net_income_including_noncontrolling_interests_usd_million: 1257.907
+      net_income_attributable_to_Blackstone_usd_million: 649.729
+      fee_related_earnings_usd_million_non_GAAP: 1548
+      total_AUM_usd_billion: 1304.0
+      fee_earning_AUM_usd_billion: 937.6
+    data_center_exposure:
+      platforms_and_investments:
+        - AirTrunk
+        - QTS
+        - Lumina_CloudInfra
+        - Digital_Realty_joint_ventures
+        - CoreWeave_financing
+        - Blackstone_Digital_Infrastructure_Trust
+        - Google_TPU_cloud_joint_venture
+      confirmed_campus_refs:
+        - dc_airtrunk_apac_portfolio
+        - dc_blackstone_google_tpu_cloud_us_portfolio
+      AirTrunk_transaction:
+        enterprise_value_aud_billion_more_than: 24
+        acquisition_status: completed_by_2025_01_official_portfolio_update
+      global_data_center_platform_mid_2026:
+        current_platform_value_usd_billion_including_construction: 165
+        future_development_pipeline_usd_billion_approximate: 160
+        expected_invest_or_commit_by_end_2026_usd_billion_approximate: 100
+        QTS_leased_capacity_growth_since_acquisition_multiple_approximate: 15
+      Google_TPU_cloud_JV:
+        Blackstone_initial_equity_commitment_usd_billion: 5
+        initial_capacity_mw: 500
+        online_target: 2027
+      boundary: >-
+        Platform value, future-development pipeline, investment commitments, and
+        asset-manager revenue are different measures. None is AirTrunk or QTS
+        standalone revenue, and announced capital is not recognized revenue.
+    management_outlook:
+      stance: constructive_multi_year_AI_data_center_power_and_equipment_capex_cycle
+      quantitative_company_wide_guidance: not_disclosed
+      expected_own_data_center_investment_or_commitment_by_end_2026_usd_billion_approximate: 100
+      expected_global_platform_future_development_pipeline_usd_billion_approximate: 160
+    watch_items:
+      - private_asset_valuation_and_fee_realization
+      - power_land_permitting_and_construction_execution
+      - long_duration_hyperscaler_customer_concentration
+      - financing_costs_and_capital_market_liquidity
+      - announced_pipeline_conversion_to_leased_energized_capacity
+      - limited_standalone_financial_disclosure_for_private_operating_platforms
+    sources:
+      - https://www.sec.gov/Archives/edgar/data/1393818/000119312526082531/d48618d10k.htm
+      - https://www.sec.gov/Archives/edgar/data/1393818/000119312526171788/d60443dex991.htm
+      - https://www.blackstone.com/insights/article/2026-mid-year-investment-perspectives/
+      - https://www.blackstone.com/insights/article/behind-the-deal-airtrunk/
+      - https://www.blackstone.com/news/press/blackstone-announces-joint-venture-with-google-to-create-new-tpu-cloud/
+    confidence: high_for_company_financials_AUM_transaction_and_announced_platform_metrics_low_for_private_platform_revenue_and_operating_profit
+
+  - id: company_infratil
+    company: Infratil
+    layer: capital_and_asset_managers
+    fiscal_baseline:
+      period: FY2026_ended_2026-03-31
+      accounting_basis: NZ_IFRS_with_separate_non_GAAP_portfolio_metrics
+      currency: NZD
+      total_revenue_nzd_million: 3044.9
+      total_income_including_share_of_associate_earnings_nzd_million: 3487.1
+      operating_surplus_before_financing_derivatives_realisations_and_impairments_nzd_million: 690.9
+      net_surplus_after_tax_nzd_million: 574.3
+      net_parent_surplus_nzd_million: 549.8
+      proportionate_EBITDAF_nzd_million_non_GAAP: 974.0
+      comparison_boundary: >-
+        Associates such as CDC are equity-accounted, so their revenue and expenses
+        are not consolidated line by line. Proportionate EBITDAF is a management
+        measure and is not a substitute for NZ IFRS operating profit.
+    data_center_exposure:
+      investments:
+        CDC:
+          ownership_percent_as_of_2026_03_31: 49.7
+          Infratil_investment_valuation_nzd_million: 8933.2
+          Infratil_share_of_proportionate_EBITDAF_nzd_million: 220.4
+          first_invested: 2016
+        Kao_Data:
+          ownership_percent_as_of_2026_03_31: 54.7
+          Infratil_investment_valuation_nzd_million: 865.4
+          operating_capacity_mw: 37
+          under_construction_capacity_mw: 18
+          development_pipeline_mw: 106
+      confirmed_campus_refs:
+        - dc_cdc_australia_new_zealand_portfolio
+      CDC_standalone_operating_metrics_FY2026:
+        currency: AUD
+        gross_revenue_from_associate_note_aud_million: 765.8
+        net_revenue_aud_million: 533.9
+        EBITDAF_aud_million_non_GAAP: 392.5
+        EBITDAF_margin_percent: 74
+        net_profit_after_tax_aud_million: 1261.0
+        capital_expenditure_aud_million: 2113.3
+        net_external_debt_aud_million: 4880.9
+        net_debt_to_run_rate_EBITDAF_multiple: 9.4
+        operating_capacity_mw: 671
+        under_construction_capacity_mw: 572
+        development_pipeline_mw: 1663
+        invoiced_ICT_capacity_mw: 220
+        rack_utilization_percent: 62
+        weighted_average_lease_term_with_options_years: 26.9
+        boundary: >-
+          Gross revenue in the audited associate note and management's net revenue
+          differ because the operating presentation excludes or nets selected
+          pass-through items. EBITDAF is non-GAAP, and NPAT includes accounting
+          effects that should not be treated as recurring operating profit.
+    management_outlook:
+      CDC_FY2027_EBITDAF_growth: expected_to_accelerate
+      CDC_EBITDAF_FY2028_aud_billion_more_than: 1
+      CDC_annualized_EBITDAF_at_full_555MW_deployment_aud_billion_approximate: 2
+      CDC_555MW_delivery_window: FY2028_to_FY2029
+      CDC_total_contracted_capacity_after_2026_05_mw_more_than: 1000
+      quantitative_Infratil_group_guidance: not_captured_in_this_profile
+      outlook_boundary: >-
+        The A$1 billion and A$2 billion EBITDAF figures are forward-looking and
+        depend on construction, energization, customer deployment, and financing.
+    watch_items:
+      - CDC_high_capital_intensity_and_9_4x_run_rate_leverage
+      - contracted_capacity_conversion_to_invoiced_utilized_capacity
+      - construction_and_grid_connection_execution
+      - hyperscaler_and_government_customer_concentration
+      - valuation_sensitivity_to_discount_rates_and_terminal_values
+      - equity_accounting_and_non_GAAP_metric_comparability
+      - Kao_Data_small_current_earnings_relative_to_pipeline_and_leverage
+    sources:
+      - https://infratil.com/news/infratil-full-year-results-for-the-year-ended-31-march-2026/infratil-fy2026-annual-report-including-full-year-financial-statements/
+      - https://infratil.com/news/infratil-full-year-results-for-the-year-ended-31-march-2026/detailed-financial-information-operating-metrics-march-2026/
+      - https://infratil.com/for-investors/results/annual-results-for-the-year-ended-31-march-2026/presentation-of-results-march-2026/
+    confidence: high_for_Infratil_and_CDC_financials_capacity_ownership_and_outlook_medium_for_metric_comparability
+
+cross_company_read_through:
+  current_signals:
+    - Hyperscale buyers are funding the demand wave directly: Meta raised its 2026 capex range, Amazon's free cash flow fell as AI property investment rose, and Oracle is financing rapid OCI expansion against a very large AI-heavy RPO.
+    - Alphabet's latest $180-$190 billion 2026 capex range, with the overwhelming majority for technical infrastructure, makes it one of the largest current demand sources; rising Cloud operating profit shows monetization is already visible even though campus economics remain undisclosed.
+    - NVIDIA's latest Data Center revenue shows that accelerator and network spending remains the largest disclosed value pool in this set.
+    - AMD's multi-year Meta agreement and latest Data Center segment growth show a second merchant-GPU path, but planned gigawatts are not current shipments.
+    - Broadcom's custom AI silicon growth indicates that hyperscaler-specific accelerators are expanding alongside merchant GPUs.
+    - TSMC's Q2 2026 HPC mix reached 66% and its full-year capital budget rose to $60-$64 billion, showing foundry and advanced-packaging capacity scaling with AI demand; customer and campus attribution remains undisclosed.
+    - SK hynix's HBM-led results show memory is a core accelerator-system bottleneck, but its earnings remain highly cycle-sensitive.
+    - Micron's Cloud Memory and Core Data Center units produced a derived 61% of Q3 FY2026 revenue, while its extraordinary margin expansion and Q4 guidance show both strong AI-memory value capture and unusually high cycle-reversal risk.
+    - Coherent generated about 75% of Q3 FY2026 revenue from Datacenter & Communications and is scaling 6-inch indium-phosphide output, showing that optical components are becoming a major AI-cluster value pool even though the segment is broader than AI.
+    - Corning's Optical Communications sales rose 36% in Q1 2026 and its up-to-$6 billion Meta agreement plus two unnamed comparable hyperscaler agreements show multi-year fiber demand moving into contracted manufacturing expansion; maximum contract descriptions are not recognized revenue.
+    - Vertiv, Eaton, Schneider Electric, GE Vernova, Caterpillar, and Cummins all report strong data-center-driven demand or order signals across cooling, electrical infrastructure, grid equipment, and onsite generation.
+    - Cummins' Q1 Power Systems sales rose 19% and segment EBITDA margin reached 29.5% on power-generation demand led by data centers, but data-center revenue remains embedded with other end markets.
+    - Modine's Q4 data-center sales rose 158%, and an unnamed customer reserved more than $4 billion of Airedale capacity for 2027-2029 with a $165 million advance; this is unusually concrete cooling demand but remains a concentrated capacity commitment rather than recognized revenue.
+    - Trane's Q1 Americas applied-equipment bookings rose more than 160% and total backlog reached $10.7 billion, while Johnson Controls' backlog reached $20.0 billion with Americas orders up 40%; both signals include non-data-center markets and should not be counted as pure AI revenue.
+    - Prysmian's North American Industrial & Construction growth was driven by data centers while Digital Solutions grew on fiber demand, adding cable and optical infrastructure as a distinct earnings layer beyond chips and cooling.
+    - Nexans adds a second European cable exposure: FY2025 PWR-Connect deliveries included large data-center projects, but neither data-center revenue nor customer concentration is disclosed.
+    - LS Electric's Q1 operating profit rose 45% as it named data centers the primary Electric-business earnings driver; HD Hyundai Electric's Q1 backlog reached $7.9 billion on record orders including North American data-center and grid demand. These are visible earnings and backlog signals, not confirmed supplier awards at named campuses.
+    - AdaniConneX had only 55+ MW operational at FY2026 year-end against 560+ MW tied-up and a multi-gigawatt platform ambition, illustrating the large gap between operating capacity, contracted capacity, and strategic announcements.
+    - Nxtra's standalone FY2026 revenue was INR24.3 billion and its approximate current capacity was 300 MW; the new $1 billion equity round and 1 GW target provide funding visibility but do not guarantee utilization or returns.
+    - Blackstone's data-center exposure is a capital-and-platform layer rather than equipment revenue: it described a $165 billion current global platform plus an approximately $160 billion future pipeline and expects roughly $100 billion of investment or commitments by end-2026, but private AirTrunk and QTS standalone operating profit remains undisclosed.
+    - Infratil provides unusually detailed look-through economics for CDC: FY2026 net revenue was A$533.9 million and EBITDAF A$392.5 million against A$2.1 billion of annual capex and A$4.9 billion of net debt. The new 555 MW contract could lift EBITDAF above A$1 billion in FY2028, but only after a large construction and financing step-up.
+    - ABB's Q2 Electrification data-center orders grew at a triple-digit rate, while Siemens Energy booked about EUR2 billion of Grid Technologies data-center orders in the first half; electrical equipment demand is visible before many announced campuses become energized.
+    - GE Vernova's Q1 2026 data-center equipment orders exceeded its full-year 2025 amount, showing the demand wave is reaching grid-scale equipment.
+    - Equinix and Digital Realty show high leasing and backlog demand, while also revealing the capital intensity required to bring powered capacity online.
+    - Entergy links AI-campus demand directly to multi-gigawatt generation and transmission expansion, subject to regulation and construction execution.
+    - Constellation's 20-year agreements with Microsoft and Meta and 380 MW CyrusOne agreement show generation owners converting AI-load growth into long-duration contracts; pricing is undisclosed and plant capacity must not be treated as dedicated campus load.
+    - CoreWeave passed 1 GW of active power and reported $99.4 billion of revenue backlog in Q1 2026, but its GAAP operating loss and heavy interest burden show that contracted demand does not remove financing and depreciation risk.
+    - Galaxy's July 2026 delivery of 133 MW of critical IT load at Helios is a rare conversion of an announced multi-hundred-megawatt project into operating capacity; the projected $1 billion-plus annual revenue still depends on completing and utilizing all three phases.
+  portfolio_use:
+    - Map each ETF's underlying holdings to these stack layers rather than counting ETF tickers as independent diversification.
+    - Measure repeated exposure to the same semiconductor names across multiple ETFs.
+    - Separate earnings exposure already visible today from backlog and capacity exposure that depends on future execution.
+    - Review employer income and direct SK hynix holdings together because both are exposed to the memory cycle.
+  unresolved_questions:
+    - Which of Brian's ETFs own these companies, at what weights, and with what overlap?
+    - How much of each industrial company's order book is specifically data-center related?
+    - Which electrical and cooling vendors are confirmed at each tracked campus?
+    - How much announced utility load has received permits, financing, interconnection, and energization?
+
+research_limits:
+  - The registry is a selected financial cross-section, not yet the complete global supply chain.
+  - Campus-specific revenue and profit are generally undisclosed.
+  - Management outlooks are forward-looking and may change after the as-of date.
+  - Market valuation, share price, and portfolio weights require a separate same-date market-data update.
