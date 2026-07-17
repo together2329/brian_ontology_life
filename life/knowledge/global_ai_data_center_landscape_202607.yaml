@@ -97,6 +97,387 @@ global_market_baseline:
       url: https://www.srgresearch.com/articles/hyperscale-data-center-count-hits-1136-average-size-increases-us-accounts-for-54-of-total-capacity
 
 campus_profiles:
+  - id: dc_coresite_american_tower_us_portfolio
+    name: CoreSite and American Tower United States data-center portfolio
+    record_granularity: national_operator_portfolio_not_one_physical_campus
+    operator: CoreSite
+    parent_company: American_Tower
+    lifecycle_as_of_2026_07_18: operating_and_expanding
+    location:
+      SEC_Q1_2026_scope:
+        operating_data_centers: 30
+        US_markets: 11
+        net_rentable_square_feet: 3773000
+        excluded_office_and_light_industrial_NRSF_approximate: 400000
+      market_ledger:
+        San_Francisco_Bay:
+          SEC_Q1_2026: {operating_data_centers: 9, NRSF: 1051000}
+          current_company_market_headline: {data_centers: 9, gross_area_sqft_more_than: 1400000}
+          current_visible_facility_cards:
+            SV1: {address: 55_South_Market_Street_San_Jose_CA_95113, gross_area_sqft_more_than: 320000}
+            SV2: {address: 1656_McCarthy_Boulevard_Milpitas_CA_95035, gross_area_sqft_more_than: 76000}
+            SV4: {address: 2972_Stender_Way_Santa_Clara_CA_95054, gross_area_sqft_more_than: 101000}
+            SV7: {address: 3020_Coronado_Drive_Santa_Clara_CA_95054, gross_area_sqft_more_than: 227000}
+            SV8: {address: 3035_Stender_Way_Santa_Clara_CA_95054, gross_area_sqft_more_than: 161000}
+            SV9: {address: 2915_Stender_Way_Santa_Clara_CA_95054, gross_area_sqft_more_than: 228000}
+          reconciliation_boundary: >-
+            The current market page says nine data centers but displays only six
+            facility cards totaling 1.113 million-plus square feet. The SEC count
+            confirms nine operating facilities but does not publish their IDs.
+            Three uncarded facility identities and the 1.4 million headline scope
+            remain unreconciled.
+        Los_Angeles:
+          SEC_Q1_2026: {operating_data_centers: 3, NRSF: 724000}
+          current_company_market_headline: {data_centers: 3, gross_area_sqft_more_than: 763000}
+          current_visible_facility_cards:
+            LA1: {address: 624_South_Grand_Avenue_Los_Angeles_CA_90017, gross_area_sqft_more_than: 171000}
+            LA2: {address: 900_North_Alameda_Street_Los_Angeles_CA_90012, gross_area_sqft_more_than: 432000}
+            LA3: {address: 200_Bauchet_Street_Los_Angeles_CA_90012, gross_area_sqft_more_than: 160000}
+        Northern_Virginia:
+          SEC_Q1_2026: {operating_data_centers: 3, NRSF: 627000}
+          current_company_market_headline: {data_centers: 3, gross_area_sqft_more_than: 986000}
+          current_visible_facility_cards:
+            VA1: {address: 12100_Sunrise_Valley_Drive_Reston_VA_20191, gross_area_sqft_more_than: 261000}
+            VA2: {address: 12098_Sunrise_Valley_Drive_Reston_VA_20191, gross_area_sqft_more_than: 192000}
+            VA3: {address: 12369_Sunrise_Valley_Drive_Reston_VA_20191, gross_area_sqft_more_than: 244000}
+          reconciliation_boundary: >-
+            The three visible cards total 697,000-plus square feet, versus the
+            market headline of 986,000-plus and the SEC's 627,000 NRSF. These are
+            retained as three different area scopes rather than combined.
+        New_York:
+          SEC_Q1_2026: {operating_data_centers: 3, NRSF: 373000}
+          current_company_market_headline: {data_centers: 3, gross_area_sqft_more_than: 442000}
+          current_visible_facility_cards:
+            NY1: {address: 32_Avenue_of_the_Americas_New_York_NY_10013, gross_area_sqft_more_than: 48000}
+            NY2: {address: 2_Emerson_Lane_Secaucus_NJ_07094, gross_area_sqft_more_than: 256000}
+            NY3: {address: 2_Emerson_Lane_Secaucus_NJ_07094, gross_area_sqft_more_than: 138000}
+        Chicago:
+          SEC_Q1_2026: {operating_data_centers: 2, NRSF: 328000}
+          current_company_market_headline: {data_centers: 2, gross_area_sqft_more_than: 348000}
+          current_visible_facility_cards:
+            CH1: {address: 427_South_LaSalle_Street_Chicago_IL_60605, gross_area_sqft_more_than: 180000}
+            CH2: {address: 1432_South_Clinton_Street_Chicago_IL_60607, gross_area_sqft_more_than: 168000}
+        Denver:
+          SEC_Q1_2026: {operating_data_centers: 2, NRSF: 151000}
+          current_company_operating_headline: {data_centers: 2, gross_area_sqft_more_than: 157000}
+          current_visible_facility_cards:
+            DE1: {address: 910_15th_Street_Denver_CO_80202, gross_area_sqft_more_than: 152000, lifecycle: operating}
+            DE2: {address: 639_East_18th_Avenue_Denver_CO_80203, gross_area_sqft_more_than: 5100, lifecycle: operating}
+            DE3: {address: 4900_Race_Street_Denver_CO_80216, gross_area_sqft_more_than: 170000, lifecycle: coming_soon_not_in_SEC_operating_count}
+        Boston:
+          SEC_Q1_2026: {operating_data_centers: 1, NRSF: 143000}
+          current_company_market_headline: {data_centers: 1, gross_area_sqft_more_than: 273000}
+          current_visible_facility_cards:
+            BO1: {address: 70_Inner_Belt_Road_Somerville_MA_02143, gross_area_sqft_more_than: 273000}
+        Miami:
+          SEC_Q1_2026: {operating_data_centers: 2, NRSF: 130000}
+          current_company_market_headline: {data_centers: 2, gross_area_sqft_more_than: 148000}
+          current_visible_facility_cards:
+            MI1: {address: 2115_NW_22nd_Street_Miami_FL_33142, gross_area_sqft_more_than: 45000}
+            MI2: {address: 2100_NW_84th_Avenue_Doral_FL_33122, gross_area_sqft_more_than: 103000}
+        Orlando:
+          SEC_Q1_2026: {operating_data_centers: 1, NRSF: 104000}
+          current_company_market_headline: {data_centers: 1, gross_area_sqft_more_than: 129000}
+          current_visible_facility_cards:
+            OR1: {address: 9701_South_John_Young_Parkway_Orlando_FL_32819, gross_area_sqft_more_than: 129000}
+        Atlanta:
+          SEC_Q1_2026: {operating_data_centers: 2, NRSF: 95000}
+          current_company_market_headline: {data_centers: 2, gross_area_sqft_more_than: 129000}
+          current_visible_facility_cards:
+            AT1: {address: 55_Marietta_Street_NW_Atlanta_GA_30303, gross_area_sqft_more_than: 62000}
+            AT2: {address: 1130_Powers_Ferry_Place_Marietta_GA_30067, gross_area_sqft_more_than: 67000}
+        Washington_DC:
+          SEC_Q1_2026: {operating_data_centers: 2, NRSF: 47000}
+          current_company_market_headline: {data_centers: 2, gross_area_sqft_more_than: 46000}
+          current_visible_facility_cards:
+            DC1: {address: 1275_K_Street_NW_Washington_DC_20005, gross_area_sqft_more_than: 22000}
+            DC2: {address: 1099_14th_Street_NW_Washington_DC_20005, gross_area_sqft_more_than: 24000}
+      adjacent_American_Tower_edge_site:
+        RA1:
+          address: 6011_Chapel_Hill_Road_Raleigh_NC_27607
+          building_size_sqft_up_to: 16000
+          current_page_description: delivers_colocation_at_the_edge
+          current_specification_wording: planned_and_will_offer
+          power: three_phase_AC_with_concurrently_maintainable_A_and_B_design
+          scope_boundary: >-
+            RA1 appears in CoreSite navigation but Raleigh is not in the main
+            11-market portfolio hub or the SEC 30-facility table. Its page mixes
+            current-service and planned-specification language, so it is not
+            added to the operating CoreSite count without lifecycle reconciliation.
+    portfolio_scale:
+      current_company_marketing:
+        data_centers: 30
+        strategic_US_markets: 11
+        gross_square_feet_more_than: 4800000
+        customer_interconnections_more_than: 44000
+      SEC_as_of_2026_03_31:
+        operating_data_centers: 30
+        net_rentable_square_feet: 3773000
+      SEC_as_of_2025_12_31:
+        operating_data_centers: 30
+        net_rentable_square_feet: 3661000
+      Q1_2026_NRSF_increase_from_year_end_sqft_derived: 112000
+      Q1_2026_NRSF_increase_percent_derived: 3.06
+      current_market_headline_area_sum_sqft_derived: 4821000
+      current_visible_operating_card_area_sum_sqft_derived: 4245100
+      current_visible_card_area_including_DE3_sqft_derived: 4415100
+      area_boundary: >-
+        The 4.821 million derived sum uses the rounded 11 market headlines and
+        explains the company's 4.8 million-plus marketing claim. It is not NRSF.
+        The visible-card sum omits three Silicon Valley facilities that the market
+        headline and SEC count imply, while the larger sum includes planned DE3.
+        Gross market area, card area and SEC NRSF are never added together.
+    accelerators:
+      exact_public_customer_deployment:
+        site: CH2_Chicago
+        platform: STN_GPU_One
+        workload_customer: Skild_AI
+        accelerator: NVIDIA_B200
+        accelerator_count: 1536
+        server_vendor_and_type: Supermicro_high_density_HGC_servers
+        racks: 24
+        published_infrastructure_mw: 2.4
+        network: 400_Gbps_InfiniBand_and_Ethernet_fabric
+        cloud_connections: dual_100_Gbps_Open_Cloud_Exchange_connections
+        cooling: custom_direct_to_chip_liquid_cooling
+        ownership_boundary: >-
+          This is STN's customer-owned or customer-operated GPU One deployment
+          hosted at CH2, not an operator-owned CoreSite GPU inventory. The count
+          is not extrapolated to any other facility or to the portfolio.
+      current_DGX_ready_or_NVIDIA_partner_certified_facilities:
+        - CH2
+        - LA3
+        - VA3
+        - SV9
+      exact_operator_owned_GPU_count_and_other_customer_accelerator_models_counts_racks_site_allocation_utilization_and_retirement: undisclosed
+      certification_boundary: NVIDIA certification establishes facility readiness, not installed or operator-owned GPUs.
+    electrical_and_cooling:
+      portfolio_design_options:
+        power_redundancy_examples: [N_plus_1, 2N]
+        controls: building_automation_systems
+        airflow: hot_and_cold_aisle_configuration_and_containment
+        economization: [air_side, water_side]
+        free_cooling_in_colder_climates_percent_up_to: 60
+        cooling_options: [CRAC, CRAH, liquid_cooling, raised_floor_plenum, hot_and_cold_aisle_containment]
+        boundary: >-
+          These are portfolio design approaches and customer configuration
+          options. They are not asserted to exist in every building.
+      confirmed_current_site_highlights:
+        CH1: three_underground_ComEd_utility_feeds_and_125_mph_wind_design
+        CH2: four_to_make_three_distributed_redundant_UPS_2N_PDU_and_RPP_and_customer_direct_to_chip_liquid_cooling
+        SV9: onsite_2N_Silicon_Valley_Power_substation_208_or_415V_AC_four_to_make_three_UPS_and_2N_PDU_RPP
+        BO1: liquid_cooling_available_and_recent_cooling_upgrades_save_8_million_kWh_annually
+        Northern_Virginia: liquid_cooling_available_at_VA1_VA2_and_VA3
+        Los_Angeles: high_density_power_with_liquid_cooling_available
+        Miami: liquid_cooling_available_at_MI1_and_MI2
+        New_York: liquid_cooling_available_at_NY1_NY2_and_NY3
+        Silicon_Valley: liquid_cooling_available_at_market_facilities_without_building_level_allocation
+      exact_portfolio_operating_IT_MW_utility_MW_rack_count_density_PUE_WUE_water_generation_UPS_battery_and_cooling_equipment_inventory: undisclosed
+    ownership_and_development:
+      acquisition: American_Tower_acquired_CoreSite_in_2021_11
+      as_of_2026_03_31:
+        American_Tower_common_equity_interest_percent_approximate: 71
+        Stonepeak_common_equity_interest_percent_approximate: 29
+        Stonepeak_mandatorily_convertible_preferred_equity_percent: 100
+        fully_converted_expected_common_equity_percent:
+          American_Tower: 64
+          Stonepeak: 36
+        expected_conversion_timing: four_years_from_2022_08
+        preferred_dividend_accrual_percent: 5
+      Denver_DE3_Stonepeak_Development_Partnership:
+        American_Tower_formation_asset_contribution_usd_million: 14.6
+        American_Tower_ownership: minority
+        controlling_partner: Stonepeak
+        accounting: equity_method
+        carrying_value_2025_12_31_usd_million: 33.7
+        boundary: >-
+          The DE3 development partnership is separately controlled by Stonepeak.
+          It is not included in the SEC's two operating Denver facilities.
+    linked_companies:
+      owner_operator_and_REIT: [American_Tower, CoreSite]
+      investors_and_development_partners: [Stonepeak]
+      confirmed_site_utilities: [ComEd, Silicon_Valley_Power]
+      confirmed_CH2_AI_and_infrastructure_participants: [STN, Skild_AI, NVIDIA, Supermicro, Atomatic_Mechanical_Services, Schneider_Electric]
+      financial_profile_refs: [company_american_tower]
+    sources:
+      - title: Form 10-Q for quarter ended 2026-03-31
+        publisher: U.S._SEC
+        date: 2026-04-28
+        url: https://www.sec.gov/Archives/edgar/data/1053507/000105350726000099/amt-20260331.htm
+      - title: Form 10-K for year ended 2025-12-31
+        publisher: U.S._SEC
+        date: 2026-02-24
+        url: https://www.sec.gov/Archives/edgar/data/1053507/000105350726000035/amt-20251231.htm
+      - title: CoreSite data-center locations
+        publisher: CoreSite
+        date: 2026-07-18_accessed
+        url: https://www.coresite.com/data-centers/locations
+      - title: CoreSite company overview
+        publisher: CoreSite
+        date: 2026-07-18_accessed
+        url: https://www.coresite.com/about
+      - title: Power and cooling
+        publisher: CoreSite
+        date: 2026-07-18_accessed
+        url: https://www.coresite.com/data-center-design/power-and-cooling
+      - title: Chicago data centers
+        publisher: CoreSite
+        date: 2026-07-18_accessed
+        url: https://www.coresite.com/data-center-locations/chicago
+      - title: Atlanta data centers
+        publisher: CoreSite
+        date: 2026-07-18_accessed
+        url: https://www.coresite.com/data-center-locations/atlanta
+      - title: Boston data centers
+        publisher: CoreSite
+        date: 2026-07-18_accessed
+        url: https://www.coresite.com/data-center-locations/boston
+      - title: Denver data centers
+        publisher: CoreSite
+        date: 2026-07-18_accessed
+        url: https://www.coresite.com/data-center-locations/denver
+      - title: Los Angeles data centers
+        publisher: CoreSite
+        date: 2026-07-18_accessed
+        url: https://www.coresite.com/data-center-locations/los-angeles
+      - title: Miami data centers
+        publisher: CoreSite
+        date: 2026-07-18_accessed
+        url: https://www.coresite.com/data-center-locations/miami
+      - title: New York data centers
+        publisher: CoreSite
+        date: 2026-07-18_accessed
+        url: https://www.coresite.com/data-center-locations/new-york
+      - title: Northern Virginia data centers
+        publisher: CoreSite
+        date: 2026-07-18_accessed
+        url: https://www.coresite.com/data-center-locations/northern-virginia
+      - title: Orlando data centers
+        publisher: CoreSite
+        date: 2026-07-18_accessed
+        url: https://www.coresite.com/data-center-locations/orlando
+      - title: Silicon Valley data centers
+        publisher: CoreSite
+        date: 2026-07-18_accessed
+        url: https://www.coresite.com/data-center-locations/silicon-valley
+      - title: Washington DC data centers
+        publisher: CoreSite
+        date: 2026-07-18_accessed
+        url: https://www.coresite.com/data-center-locations/washington-dc
+      - title: CoreSite SV9 Santa Clara data center
+        publisher: CoreSite
+        date: 2026-07-18_accessed
+        url: https://www.coresite.com/data-center/sv9-santa-clara-ca
+      - title: American Tower RA1 Raleigh data center
+        publisher: CoreSite
+        date: 2026-07-18_accessed
+        url: https://www.coresite.com/data-center/ra1-raleigh-nc
+      - title: Watts Water and Workloads - STN GPU One at CH2
+        publisher: CoreSite
+        date: 2025-10-09
+        url: https://www.coresite.com/blog/watts-water-and-workloads-how-stn-and-coresite-built-the-infrastructure-behind-skild-ai-at-ch2
+    confidence: high_for_SEC_facility_count_NRSF_market_table_CH2_GPU_deployment_and_current_visible_cards_medium_for_marketing_area_scope_and_RA1_lifecycle_low_for_portfolio_IT_MW_GPU_inventory_and_complete_equipment_BOM
+
+  - id: dc_coresite_ch2_chicago
+    name: CoreSite CH2 Chicago data center and STN GPU One deployment
+    record_granularity: individual_facility_with_named_customer_deployment
+    operator: CoreSite
+    parent_company: American_Tower
+    lifecycle_as_of_2026_07_18: operating
+    location:
+      address: 1432_South_Clinton_Street_Chicago_IL_60607_USA
+      market: Chicago
+      country: United_States
+      coordinates: undisclosed_in_reviewed_primary_sources
+    capacity_and_space:
+      gross_area_sqft_more_than: 168000
+      published_facility_power_capability_mw: 18
+      current_SEC_building_NRSF: not_separately_disclosed
+      boundary: >-
+        The 18 MW company headline is a facility capability, not measured live IT
+        load, customer consumption or the 2.4 MW GPU One deployment.
+    racks_and_accelerators:
+      STN_GPU_One_as_published_2025_10_09:
+        accelerator: NVIDIA_B200
+        accelerator_count: 1536
+        racks: 24
+        server_vendor_and_type: Supermicro_high_density_HGC_servers
+        nodes_per_cabinet_range: [8, 10]
+        infrastructure_mw: 2.4
+        workload_customer: Skild_AI
+        platform_operator: STN
+        network: 400_Gbps_InfiniBand_and_Ethernet
+        cloud_connections: dual_100_Gbps_Open_Cloud_Exchange
+        cabinet_weight_lb_up_to: 5000
+        total_deployment_weight_lb_approximate: 120000
+      current_site_AI_readiness:
+        NVIDIA_DGX_ready_or_partner_certified: true
+        STN_liquid_cooled_cabinet_density_kw_more_than: 100
+        STN_room_customers_liquid_cooled_percent_more_than_since_2025_04: 90
+      ownership_boundary: >-
+        The 1,536 GPUs belong to the named STN GPU One customer deployment hosted
+        at CH2. They are not counted as CoreSite-owned hardware. Other customer
+        GPUs, occupied racks, utilization and total site accelerator inventory
+        remain undisclosed.
+    electrical_and_cooling:
+      current_public_specification:
+        utility: ComEd
+        utility_feeds: diverse_underground_feeds_from_high_reliability_downtown_grid
+        power_availability: [AC, DC]
+        UPS_topology: four_to_make_three_distributed_redundant
+        PDU_and_RPP_topology: 2N
+        uptime_SLA_percent: 100
+      purpose_built_2020_Schneider_case_study:
+        medium_voltage_path: medium_voltage_unit_substations_to_UPS_and_ancillary_unit_substations
+        maintenance_UPS: supports_full_redundancy_during_lineup_shutdown
+        raised_floor_distribution: 2N_step_down_transformer_PDU_to_RPP_busway_or_customer_specific_solution
+        UPS_vendor: Schneider_Electric
+        UPS_product_label: Galaxy_VX_or_GVX_as_rendered_in_source
+        battery_chemistry: lithium_ion
+        expected_lithium_ion_service_life_years: 15
+        compared_VRLA_replacement_interval_years_approximate: 5
+        chiller_plant_redundancy: N_plus_1
+        economization: plate_frame_heat_exchanger_with_partial_free_cooling_for_majority_of_year
+        heat_distribution: looped_chilled_water_piping_to_CRAHs_with_isolation_and_segmentation
+      STN_direct_to_chip_system:
+        cooling_type: custom_direct_to_chip_closed_loop_liquid_cooling
+        integrator: Atomatic_Mechanical_Services_with_CoreSite
+        pumps: 2
+        pump_topology: fully_redundant
+        generator_transition_support: concurrent_backup_pumps_and_on_skid_water_reservoir
+        infrastructure_redundancy: 2N
+        claimed_node_availability_percent: 99.999
+        claimed_infrastructure_availability_percent_more_than: 99.9999
+      exact_substation_voltage_transformer_UPS_chiller_generator_CRAH_CDU_and_battery_counts_ratings_fuel_runtime_PUE_WUE_and_water_consumption: undisclosed
+    linked_companies:
+      owner_operator_and_REIT: [American_Tower, CoreSite]
+      customer_and_workload: [STN, Skild_AI]
+      compute_and_server: [NVIDIA, Supermicro]
+      electrical_and_cooling: [ComEd, Schneider_Electric, Atomatic_Mechanical_Services]
+      financial_profile_refs: [company_american_tower]
+    sources:
+      - title: CoreSite CH2 Chicago data center
+        publisher: CoreSite
+        date: 2026-07-18_accessed
+        url: https://www.coresite.com/data-center/ch2-chicago-il
+      - title: Watts Water and Workloads - STN GPU One at CH2
+        publisher: CoreSite
+        date: 2025-10-09
+        url: https://www.coresite.com/blog/watts-water-and-workloads-how-stn-and-coresite-built-the-infrastructure-behind-skild-ai-at-ch2
+      - title: CoreSite Chicago AI-optimized infrastructure powers STN GPU One
+        publisher: CoreSite
+        date: 2025
+        url: https://www.coresite.com/news/coresites-chicago-ai-optimized-infrastructure-powers-stns-gpu-one-platform-and-helps-deliver-significant-savings
+      - title: Schneider Electric CH2 case study
+        publisher: CoreSite_and_Schneider_Electric
+        date: 2020-06
+        url: https://www.coresite.com/hubfs/5ede90c37797f3a0c28fe41d_Coresite%20Case%20Study%20Graphic%20Final%206-4-2020.pdf
+      - title: Lithium ion in the data center
+        publisher: CoreSite
+        date: 2020
+        url: https://www.coresite.com/blog/lithium-ion-in-the-data-center
+    confidence: high_for_current_area_power_topology_named_GPU_deployment_and_liquid_cooling_medium_for_2020_equipment_snapshot_low_for_total_site_utilization_and_complete_current_equipment_BOM
+
   - id: dc_iron_mountain_global_data_centers_portfolio
     name: Iron Mountain Data Centers global portfolio
     record_granularity: global_operator_portfolio_not_one_physical_campus
@@ -10446,6 +10827,14 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
+    - CoreSite_30_operating_facilities_to_27_visible_operating_cards_and_three_uncarded_Silicon_Valley_IDs_reconciliation
+    - CoreSite_3_773_million_SEC_NRSF_to_4_8_million_marketing_gross_area_and_market_card_scope_reconciliation
+    - CoreSite_per_site_energized_leased_utilized_IT_load_rack_count_PUE_WUE_water_and_power_cooling_equipment_BOM
+    - CoreSite_RA1_current_vs_planned_lifecycle_and_exclusion_from_30_facility_11_market_SEC_scope
+    - CoreSite_DE3_power_IT_capacity_customer_construction_schedule_equipment_and_Stonepeak_JV_economics
+    - CoreSite_CH2_total_live_GPU_inventory_beyond_STN_1536_B200_utilization_power_and_customer_ownership
+    - CoreSite_CH2_substation_transformer_UPS_battery_generator_chiller_CRAH_CDU_counts_ratings_PUE_WUE_and_water
+    - CoreSite_SV9_onsite_substation_voltage_capacity_live_IT_load_liquid_cooling_GPU_inventory_and_equipment_OEMs
     - Iron_Mountain_31_data_centers_21_markets_to_current_site_IDs_addresses_coordinates_ownership_and_lifecycle_reconciliation
     - Iron_Mountain_488_MW_year_end_2025_to_507_MW_Q1_2026_operating_capacity_and_1340_MW_to_1_4_GW_scope_reconciliation
     - Iron_Mountain_per_site_energized_leased_utilized_IT_load_GPU_inventory_liquid_cooled_MW_PUE_WUE_water_and_equipment_OEMs
@@ -10548,6 +10937,9 @@ next_research_queue:
     - NTT_India_exact_GPU_inventory_customer_vs_operator_ownership_live_liquid_cooled_MW_CDU_heat_rejection_and_equipment_OEMs
     - NTT_India_transformer_switchgear_UPS_battery_generator_chiller_counts_and_operating_PUE_WUE_water_per_site
   company_financials:
+    - American_Tower_CoreSite_GAAP_operating_income_full_depreciation_customer_concentration_and_site_level_returns
+    - American_Tower_CoreSite_2026_695_million_development_spend_project_allocation_power_delivery_and_revenue_conversion
+    - American_Tower_Stonepeak_preferred_conversion_final_ownership_distributions_and_DE3_standalone_economics
     - Iron_Mountain_data_center_GAAP_operating_income_depreciation_customer_concentration_and_site_level_returns
     - Iron_Mountain_project_debt_power_commitments_400MW_delivery_and_Frankfurt_Syntys_Web_Werks_standalone_economics
     - ByteDance_audited_financials_if_publicly_released

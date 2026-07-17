@@ -74,6 +74,7 @@ stack_layers:
     - HD_Hyundai_Electric
     - Bloom_Energy
   operators_reits_utilities:
+    - American_Tower
     - Iron_Mountain
     - NTT_DATA_Group
     - China_Telecom
@@ -120,6 +121,202 @@ stack_layers:
     - Tokyo_Century
 
 financial_profiles:
+  - id: company_american_tower
+    company: American_Tower
+    layer: operators_reits_utilities
+    ticker: NYSE_AMT
+    ownership_status: public_US_REIT_and_controlling_common_equity_owner_of_CoreSite
+    fiscal_baseline:
+      period: FY2025_ended_2025_12_31
+      accounting_basis: US_GAAP_with_REIT_non_GAAP_measures
+      currency: USD
+      revenue_usd_million: 10644.6
+      property_revenue_usd_million: 10305.0
+      services_revenue_usd_million: 339.6
+      operating_expenses_usd_million: 5798.8
+      operating_income_usd_million: 4845.8
+      operating_margin_percent_derived: 45.52
+      net_income_usd_million: 2628.5
+      operating_cash_flow_usd_million: 5464.0
+      capital_expenditures_usd_million: 1720.7
+      long_term_obligations_carrying_value_usd_million: 37220.3
+    data_center_exposure:
+      role: controlling_owner_of_CoreSite_US_colocation_and_interconnection_portfolio
+      confirmed_campus_refs:
+        - dc_coresite_american_tower_us_portfolio
+        - dc_coresite_ch2_chicago
+      portfolio_as_of_2026_03_31:
+        operating_data_centers: 30
+        US_markets: 11
+        NRSF: 3773000
+        office_and_light_industrial_NRSF_excluded_approximate: 400000
+        current_company_gross_area_marketing_sqft_more_than: 4800000
+        customer_interconnections_more_than: 44000
+      portfolio_as_of_2025_12_31:
+        operating_data_centers: 30
+        US_markets: 11
+        NRSF: 3661000
+      Q1_2026_NRSF_increase_sqft_derived: 112000
+      Q1_2026_NRSF_increase_percent_derived: 3.06
+      FY2025_segment_financials:
+        segment_revenue_usd_million: 1053.1
+        prior_year_segment_revenue_usd_million: 924.8
+        revenue_growth_percent_derived: 13.87
+        segment_operating_expenses_usd_million: 402.4
+        segment_gross_margin_usd_million: 650.7
+        segment_gross_margin_percent_derived: 61.79
+        attributable_segment_SG_and_A_and_development_usd_million: 88.5
+        segment_operating_profit_usd_million: 562.2
+        prior_year_segment_operating_profit_usd_million: 455.2
+        segment_operating_profit_growth_percent_derived: 23.51
+        segment_operating_profit_margin_percent_derived: 53.39
+        real_estate_depreciation_amortization_and_accretion_usd_million: 604.3
+        gross_margin_after_real_estate_D_and_A_usd_million: 46.4
+        capital_expenditures_usd_million: 665.2
+        share_of_consolidated_capex_percent_derived: 38.66
+        share_of_consolidated_revenue_percent_reported: 10
+        revenue_growth_components_usd_million:
+          rental_related_and_other: 74.5
+          power: 36.8
+          interconnection: 16.2
+          straight_line: 0.8
+        comparability_items:
+          property_tax_benefit_usd_million: 26.0
+          property_tax_benefit_reason: final_resolution_of_revised_real_property_valuations_related_to_CoreSite_acquisition
+          other_benefits_without_amounts: [legal_settlement, utility_back_billing_resolution]
+      Q1_2026_segment_financials:
+        segment_revenue_usd_million: 288.9
+        prior_year_segment_revenue_usd_million: 244.1
+        revenue_growth_percent_derived: 18.35
+        segment_operating_expenses_usd_million: 112.1
+        segment_gross_margin_usd_million: 176.8
+        segment_gross_margin_percent_derived: 61.20
+        attributable_segment_SG_and_A_and_development_usd_million: 24.5
+        segment_operating_profit_usd_million: 152.3
+        prior_year_segment_operating_profit_usd_million: 121.9
+        segment_operating_profit_growth_percent_derived: 24.94
+        segment_operating_profit_margin_percent_derived: 52.72
+        real_estate_depreciation_amortization_and_accretion_usd_million: 149.6
+        gross_margin_after_real_estate_D_and_A_usd_million: 27.2
+        capital_expenditures_usd_million: 226.0
+        prior_year_capital_expenditures_usd_million: 129.3
+        capex_growth_percent_derived: 74.79
+        share_of_consolidated_capex_percent_derived: 49.14
+        revenue_growth_components_usd_million:
+          rental_related_and_other: 25.7
+          power: 10.3
+          interconnection: 4.4
+          straight_line: 4.4
+      accounting_boundary: >-
+        American Tower defines segment operating profit as segment gross margin
+        less attributable segment SG&A and development expense, while excluding
+        stock compensation, corporate expense, depreciation, amortization,
+        accretion, other operating expense, interest and tax. The filing says the
+        measure aligns with Adjusted EBITDA, so it is not GAAP operating income.
+        The separate gross-margin reconciliation shows how real-estate D&A reduced
+        FY2025 Data Centers segment gross margin from $650.7 million to $46.4
+        million and Q1 2026 from $176.8 million to $27.2 million. GAAP segment
+        operating income remains undisclosed and is not reconstructed.
+      physical_asset_book_values_as_of_2025_12_31:
+        gross_data_center_real_estate_usd_million: 7683.4
+        accumulated_depreciation_usd_million: 1581.9
+        construction_in_progress_excluded_from_gross_real_estate: true
+      GPU_and_customer_boundary:
+        exact_public_CH2_customer_deployment:
+          platform: STN_GPU_One
+          accelerator: NVIDIA_B200
+          count: 1536
+          racks: 24
+          infrastructure_mw: 2.4
+        operator_owned_portfolio_GPU_inventory: undisclosed
+        other_customer_GPU_inventory_revenue_and_margin: undisclosed
+        boundary: >-
+          The CH2 count is customer infrastructure hosted by CoreSite. It is not
+          American Tower or CoreSite-owned inventory and cannot be used to infer
+          portfolio accelerator quantity, occupancy or utilization.
+    capital_structure_and_ownership:
+      as_of_2026_03_31:
+        American_Tower_common_equity_interest_percent_approximate: 71
+        Stonepeak_common_equity_interest_percent_approximate: 29
+        Stonepeak_mandatorily_convertible_preferred_equity_percent: 100
+        fully_converted_expected_common_equity_percent:
+          American_Tower: 64
+          Stonepeak: 36
+        expected_conversion_timing: four_years_from_2022_08
+        preferred_dividend_accrual_percent: 5
+      FY2025_Stonepeak_distributions_usd_million:
+        preferred: 46.1
+        common: 69.6
+      Stonepeak_Development_Partnership_DE3:
+        purpose: construct_new_Denver_data_center
+        American_Tower_formation_asset_contribution_usd_million: 14.6
+        American_Tower_ownership: minority
+        controlling_partner: Stonepeak
+        accounting: equity_method
+        carrying_value_2025_12_31_usd_million: 33.7
+      boundary: >-
+        The 71% figure is American Tower's common-equity interest, not a claim
+        that it owns 71% of every economic or preferred interest. Fully converted
+        ownership remained prospective in the latest filing. DE3 is a separate
+        Stonepeak-controlled equity-method development partnership.
+    latest_company_results:
+      period: Q1_2026_ended_2026_03_31
+      revenue_usd_million: 2737.5
+      prior_year_revenue_usd_million: 2562.8
+      revenue_growth_percent_derived: 6.82
+      operating_income_usd_million: 1239.2
+      operating_margin_percent_derived: 45.27
+      net_income_usd_million: 878.5
+      adjusted_EBITDA_usd_million: 1835
+      operating_cash_flow_usd_million: 1400.6
+      capital_expenditures_usd_million: 459.9
+      total_debt_usd_million: 37322
+      total_liquidity_usd_million_approximate: 10400
+    management_outlook:
+      FY2026_company_guidance:
+        property_revenue_usd_million_range: [10585, 10735]
+        net_income_usd_million_range: [3015, 3095]
+        adjusted_EBITDA_usd_million_range: [7195, 7265]
+        total_capital_expenditures_usd_million_range: [1800, 1910]
+      FY2026_data_center_guidance:
+        property_revenue_usd_million_range: [1175, 1195]
+        midpoint_growth_percent: 12.5
+        development_spend_usd_million: 695
+      demand_thesis:
+        - accelerating_cloud_adoption
+        - rapid_expansion_of_AI_driven_workloads
+        - hybrid_and_multicloud_interconnection
+        - enterprise_inference_and_GPUaaS_demand
+      interpretation: >-
+        Q1 Data Centers revenue and segment operating profit grew faster than
+        consolidated revenue, while Q1 segment capex rose 74.8% and represented
+        nearly half of company capex. The FY2026 guide implies continued double-
+        digit data-center property-revenue growth, but delivery and returns remain
+        sensitive to power, construction, lease commencement, customer expansion,
+        depreciation and noncontrolling-interest distributions.
+    watch_items:
+      - Data_Centers_GAAP_operating_income_after_full_depreciation_and_corporate_allocations_not_disclosed
+      - FY2025_26_million_property_tax_benefit_and_unquantified_legal_and_utility_benefits_normalization
+      - Q1_2026_112000_NRSF_increase_market_level_buildout_and_revenue_start_reconciliation
+      - 4_8_million_gross_marketing_area_to_3_773_million_SEC_NRSF_reconciliation
+      - per_site_energized_leased_utilized_IT_MW_revenue_margin_capex_and_return_on_invested_capital
+      - exact_portfolio_GPU_inventory_customer_ownership_utilization_and_GPUaaS_economics
+      - CoreSite_customer_concentration_lease_duration_churn_and_power_pass_through_exposure
+      - DE3_construction_schedule_power_capacity_equipment_customer_and_Stonepeak_partnership_economics
+      - Stonepeak_preferred_conversion_final_ownership_distributions_and_American_Tower_cash_retention
+      - rising_data_center_capex_debt_funding_and_depreciation_conversion
+      - portfolio_PUE_WUE_water_liquid_cooled_MW_and_complete_power_cooling_equipment_BOM
+    sources:
+      - https://www.sec.gov/Archives/edgar/data/1053507/000105350726000035/amt-20251231.htm
+      - https://www.sec.gov/Archives/edgar/data/1053507/000105350726000099/amt-20260331.htm
+      - https://www.sec.gov/Archives/edgar/data/1053507/000105350726000094/pressreleaseq12026.htm
+      - https://www.coresite.com/data-centers/locations
+      - https://www.coresite.com/about
+      - https://www.coresite.com/data-center/ch2-chicago-il
+      - https://www.coresite.com/blog/watts-water-and-workloads-how-stn-and-coresite-built-the-infrastructure-behind-skild-ai-at-ch2
+      - https://www.coresite.com/hubfs/5ede90c37797f3a0c28fe41d_Coresite%20Case%20Study%20Graphic%20Final%206-4-2020.pdf
+    confidence: high_for_SEC_financials_ownership_market_NRSF_and_CH2_named_GPU_deployment_medium_for_current_marketing_area_and_DE3_scope_low_for_GAAP_data_center_operating_income_site_economics_and_portfolio_GPU_inventory
+
   - id: company_iron_mountain
     company: Iron_Mountain
     layer: operators_reits_utilities
@@ -6394,6 +6591,11 @@ financial_profiles:
 
 cross_company_read_through:
   current_signals:
+    - American Tower's CoreSite Data Centers segment generated $1.053 billion of FY2025 revenue and $562.2 million of company-defined segment operating profit, then $288.9 million and $152.3 million respectively in Q1 2026. The segment operating-profit metric aligns with Adjusted EBITDA and excludes depreciation, corporate expense and other GAAP items, so it is not comparable with consolidated operating income.
+    - CoreSite's real-estate depreciation, amortization and accretion was $604.3 million in FY2025, reducing the filing's Data Centers segment gross margin from $650.7 million before that charge to $46.4 million after it. Q1 2026 shows the same boundary at $176.8 million versus $27.2 million. This exposes the large depreciation burden even though GAAP segment operating income remains undisclosed.
+    - Q1 2026 CoreSite revenue grew 18.4% and segment operating profit grew 24.9%, while segment capex rose 74.8% to $226.0 million and represented 49.1% of American Tower's consolidated capex. FY2026 guidance calls for $1.175-$1.195 billion of Data Centers property revenue and $695 million of development spend, making lease commencement, power delivery, depreciation and capital returns the conversion tests.
+    - CoreSite is a rare colocation operator with an exact named customer accelerator disclosure: STN's GPU One deployment at CH2 contains 1,536 NVIDIA B200 GPUs across 24 racks and 2.4 MW of infrastructure with direct-to-chip liquid cooling. It is customer infrastructure, not CoreSite-owned GPU inventory, and no other site or portfolio total is inferred.
+    - CoreSite's latest SEC ledger reports 30 operating facilities in 11 U.S. markets and 3.773 million NRSF, while current marketing says 4.8 million-plus square feet. The 11 rounded market headlines sum to about 4.821 million square feet, but visible facility cards excluding planned DE3 sum to only about 4.245 million because three of nine Silicon Valley facilities are uncarded. Gross area, NRSF and visible-card area remain separate.
     - GDS and VNET provide unusually useful but non-comparable operating ledgers. At Q1 2026 GDS reported 1,538 MW in service and 77.3% utilized area, while VNET reported 907 wholesale MW in service and 75.7% utilized MW plus a separate 50,170-cabinet retail fleet. GDS area utilization and VNET wholesale power utilization must not be ranked as the same denominator.
     - GDS FY2025 revenue was CNY11.43 billion and its GAAP continuing-operations result was a CNY55.8 million loss after a CNY1.56 billion impairment, despite CNY5.40 billion adjusted EBITDA. VNET reported CNY9.95 billion revenue and CNY780.3 million operating profit. The adjusted metrics, transaction effects, impairments, and different retail-wholesale mixes prevent a simple EBITDA comparison.
     - VNET's 1.056 GW future-development resource and GDS's 3.7 GW powered land and reservations show substantial option value, but neither is current energized or utilized load. Their FY2026 capex guidance of CNY10-CNY12 billion and CNY9 billion respectively makes delivery, funding, customer ramp, and power availability the key conversion variables.
