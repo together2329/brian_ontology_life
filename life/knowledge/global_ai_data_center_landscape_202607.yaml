@@ -1993,6 +1993,501 @@ campus_profiles:
         url: https://www.blackstone.com/news/press/blackstone-announces-joint-venture-with-google-to-create-new-tpu-cloud/
     confidence: high_for_partner_capacity_equity_commitment_service_model_and_timing_low_for_site_hardware_power_and_cooling
 
+  - id: dc_oracle_oci_global_region_portfolio
+    name: Oracle Cloud Infrastructure global region portfolio
+    record_granularity: provider_region_portfolio_not_one_physical_campus
+    operator: Oracle
+    lifecycle_as_of_2026_07_17: operating_and_expanding
+    location:
+      company_reported_physical_data_centers_active: 147
+      company_reported_physical_data_centers_on_the_way: 64
+      physical_count_as_of: 2026-01-23
+      current_public_region_page:
+        official_marketing_claim: more_than_50_public_regions_in_28_countries
+        live_commercial_region_rows_derived_from_current_table: 45
+        planned_commercial_region_rows: 2
+        live_sovereign_region_rows: 2
+        live_government_region_rows: 8
+        commercial_region_inventory:
+          North_America: [Ashburn, Chicago, Phoenix, San_Jose, Montreal, Toronto, Queretaro, Monterrey]
+          South_America: [Sao_Paulo, Vinhedo, Santiago, Valparaiso, Bogota]
+          Europe: [Paris, Marseille, Frankfurt, Milan, Turin, Amsterdam, Jovanovac, Madrid, Madrid_2, Stockholm, Zurich, London, Newport]
+          Middle_East_and_Africa_live: [Jerusalem, Casablanca, Jeddah, Riyadh, Johannesburg, Dubai, Abu_Dhabi]
+          Middle_East_and_Africa_planned: [Kenya, Morocco_2]
+          Asia_Pacific: [Sydney, Melbourne, Mumbai, Hyderabad, Batam, Tokyo, Osaka, Kulai, Singapore, Singapore_West, Seoul, Chuncheon]
+        sovereign_region_inventory: [EU_Sovereign_Frankfurt, EU_Sovereign_Madrid]
+        government_region_inventory: [US_Gov_Ashburn, US_Gov_Phoenix, US_DoD_Ashburn, US_DoD_Chicago, US_DoD_Phoenix, UK_Gov_London, UK_Gov_Newport, Australia_Gov_Canberra]
+        stale_page_summary_conflict: same_page_also_contains_legacy_41_commercial_regions_in_26_countries_statement
+      boundary: >-
+        A cloud region is a provider geography and an availability domain can
+        contain one or more data centers. Region rows, availability domains, and
+        Oracle's company-wide physical data-center count are not interchangeable.
+    AI_service_footprint:
+      OCI_Generative_AI_hosted_commercial_regions: [Sao_Paulo, Frankfurt, Hyderabad, Osaka, Riyadh, Abu_Dhabi, Dubai, London, Ashburn, Chicago, Phoenix]
+      OCI_Generative_AI_additional_government_or_sovereign_regions: [UK_Gov_London, EU_Sovereign_Frankfurt]
+      exact_AI_hardware_per_region: undisclosed
+    accelerators:
+      offered_vendors: [NVIDIA, AMD]
+      published_OCI_Supercluster_architecture_maxima_not_installed_fleet:
+        NVIDIA_B200_GPUs: 131072
+        NVIDIA_B200_GPUs_in_GB200_superchips: 131072
+        NVIDIA_H200_GPUs: 65536
+        NVIDIA_H100_GPUs: 16384
+        NVIDIA_A100_GPUs: 32768
+        AMD_MI300X_GPUs: 16384
+      RDMA_cluster_bandwidth_gbps_up_to: 3200
+      scope_warning: These are supported maximum cluster configurations, not installed inventory or a count attributable to any named site.
+    facility_design:
+      stated_alignment: ANSI_TIA_942_A_Tier_3_or_Tier_4
+      critical_equipment_redundancy: N_plus_2
+      stated_power_resilience: redundant_power_and_generator_backup
+      per_site_electrical_and_cooling_design: mostly_undisclosed
+    linked_companies:
+      cloud_operator: [Oracle]
+      accelerator_vendors: [NVIDIA, AMD]
+      financial_profile_refs: [company_oracle, company_nvidia, company_amd]
+    sources:
+      - title: Oracle Cloud Infrastructure Public Cloud Regions and Data Centers
+        publisher: Oracle
+        date: 2026-07-17_accessed
+        url: https://www.oracle.com/es/cloud/public-cloud-regions/
+      - title: OCI Generative AI regions
+        publisher: Oracle
+        date: 2026-05-06
+        url: https://docs.oracle.com/en-us/iaas/Content/generative-ai/regions.htm
+      - title: Oracle Advances American AI Innovation in New Mexico
+        publisher: Oracle
+        date: 2026-01-23
+        url: https://www.oracle.com/news/announcement/blog/oracle-advances-american-ai-innovation-in-new-mexico-2026-01-23/
+      - title: GPU instances and OCI Superclusters
+        publisher: Oracle
+        date: 2026-07-17_accessed
+        url: https://www.oracle.com/cloud/compute/gpu/
+    confidence: high_for_provider_published_counts_region_rows_and_architecture_maxima_low_for_physical_site_mapping_operating_load_and_installed_GPU_inventory
+
+  - id: dc_oracle_project_jupiter_new_mexico
+    name: Project Jupiter
+    record_granularity: four_building_AI_data_center_campus
+    operator: Oracle_as_tenant_with_BorderPlex_development_entities
+    customer: OpenAI
+    country: US
+    region: New_Mexico
+    locality: Santa_Teresa_Dona_Ana_County
+    lifecycle_as_of_2026_07_17: under_construction
+    location:
+      osm_ref: osm_way_1476734418
+      latitude: 31.8182982
+      longitude: -106.6653022
+      mapped_footprint_area_m2: 2481323.703
+      footprint_warning: OSM construction-site geometry, not certified floor area or IT load.
+    campus_scale:
+      data_center_buildings: 4
+      construction_jobs_expected: 4000
+      ongoing_onsite_and_county_jobs_up_to: 1500
+      initial_investment_intent_first_five_years_usd_billion_at_least: 50
+      industrial_revenue_bond_project_ceiling_over_full_term_usd_billion_up_to: 165
+      investment_boundary: >-
+        The $165 billion figure is an upper project and IRB ceiling over the full
+        term, not committed spending, recognized revenue, or current campus value.
+      exact_IT_load_mw: undisclosed
+      energized_capacity_mw: undisclosed
+    accelerators:
+      workload: latest_AI_infrastructure_for_OpenAI
+      exact_GPU_or_accelerator_vendor_generation_chip_count_rack_count_and_building_allocation: undisclosed
+      OCI_architecture_maxima_attribution_status: prohibited_not_site_inventory
+      scope_warning: Neither campus investment nor generation capacity can be converted into a GPU count.
+    electrical_and_generation:
+      revised_primary_design:
+        technology: Bloom_Energy_solid_oxide_fuel_cells
+        installed_nameplate_capacity_gw_up_to: 2.45
+        topology: single_behind_the_meter_microgrid_campus
+        initial_fuel: natural_gas
+        future_compatible_fuels_or_controls: [hydrogen_if_viable, biogas_if_viable, carbon_capture]
+        replaces_previously_planned: [gas_turbines, diesel_generators]
+        NOx_reduction_percent_approximate_versus_previous_gas_turbine_plan: 92
+        cost_responsibility: Oracle_bears_all_energy_costs
+      grid_connection:
+        scale: small_residential_scale_substation
+        uses: [office_power, startup, commissioning, limited_backup]
+        normal_operation: campus_mostly_disconnected_from_grid
+        potential_future_export: subject_to_technical_regulatory_and_commercial_approval
+      redundancy_boundary: >-
+        Oracle states that the more-than-2 GW resource includes substantial
+        redundancy and excess capacity. Fuel-cell nameplate generation is not IT load.
+      Oracle_Bloom_master_agreement_context:
+        deployment_capacity_gw_up_to: 2.8
+        initial_contracted_capacity_gw: 1.2
+        scope: multiple_Oracle_US_projects
+        Jupiter_specific_allocation: undisclosed_beyond_Oracle_project_plan_up_to_2_45_GW
+      substations_transformers_switchgear_UPS_rack_distribution_and_OEMs_other_than_Bloom: undisclosed
+    cooling_and_water:
+      cooling_architecture: direct_to_chip_closed_loop_non_evaporative
+      heat_rejection: heat_exchangers_and_outside_air_fans
+      building_cooling_initial_fill_gallons_each_approximate: 2500000
+      building_cooling_initial_fill_gallons_total_derived_approximate: 10000000
+      building_cooling_fill_period_years: [2, 3]
+      building_cooling_maintenance_topoff_gallons_annually_source_wording_range: [0, 1000]
+      fuel_cell_initial_fill_gallons_approximate: 960000
+      fuel_cell_maintenance_water_gallons_annually_approximate: 167000
+      total_initial_fill_gallons_approximate: 11000000
+      total_maintenance_water_gallons_annually_approximate: 168000
+      water_source: nonpotable_well_water_from_existing_water_rights_holder
+      continuous_daily_cooling_makeup: none_stated
+      local_water_infrastructure_commitment_usd_million: 50
+      boundary: Initial fill is different from recurring annual consumption; source wording is preserved where scope is not fully explicit.
+    linked_companies:
+      tenant_and_operator: [Oracle]
+      customer: [OpenAI]
+      onsite_generation_supplier: [Bloom_Energy]
+      developer_ecosystem: [BorderPlex]
+      financial_profile_refs: [company_oracle, company_bloom_energy]
+    sources:
+      - title: Oracle BorderPlex and Bloom Energy to power Project Jupiter with fuel cell technology
+        publisher: Oracle
+        date: 2026-04-27
+        url: https://www.oracle.com/news/announcement/oracle-borderplex-and-bloom-energy-to-power-project-jupiter-with-fuel-cell-technology-2026-04-27/
+      - title: We have overhauled Project Jupiter's power plan
+        publisher: Oracle
+        date: 2026-07-01
+        url: https://www.oracle.com/news/announcement/blog/weve-overhauled-project-jupiters-power-plan-2026-07-01/
+      - title: The facts about Project Jupiter water usage
+        publisher: Oracle
+        date: 2026-06-16
+        url: https://www.oracle.com/news/announcement/blog/the-facts-about-project-jupiter-water-usage-2026-06-16/
+      - title: Project Jupiter community and investment facts
+        publisher: Project_Jupiter
+        date: 2026-07-17_accessed
+        url: https://projectjupitertogether.com/
+      - title: New Mexico Senate Bill 97 fiscal impact report
+        publisher: New_Mexico_Legislature
+        date: 2026
+        url: https://www.nmlegis.gov/Sessions/26%20Regular/firs/SB0097.PDF
+    confidence: high_for_building_count_revised_generation_and_water_plan_medium_for_investment_bounds_low_for_IT_load_and_accelerator_inventory
+
+  - id: dc_alibaba_cloud_global_region_portfolio
+    name: Alibaba Cloud global region and availability-zone portfolio
+    record_granularity: provider_region_and_AZ_portfolio_not_one_physical_campus
+    operator: Alibaba_Cloud
+    lifecycle_as_of_2026_07_17: operating_and_expanding
+    location:
+      provider_marketing_claim_as_of_2026_06_22:
+        regions: 32
+        availability_zones: 105
+      current_ECS_documentation_rows_as_of_2026_07_01:
+        region_rows_total: 32
+        availability_zone_rows_raw_derived: 105
+        region_rows_marked_closing_down: 2
+        availability_zone_rows_excluding_closing_regions_derived: 103
+      China_region_inventory_with_zone_counts:
+        Qingdao: 2
+        Beijing: 12
+        Zhangjiakou: 3
+        Hohhot: 2
+        Ulanqab: 4
+        Hangzhou: 8
+        Shanghai: 12
+        Nanjing_Local_closing: 1
+        Fuzhou_Local_closing: 1
+        Wuhan_Local: 1
+        Shenzhen: 6
+        Heyuan: 3
+        Guangzhou: 2
+        Chengdu: 3
+        Zhongwei: 2
+        Hong_Kong: 3
+      international_region_inventory_with_zone_counts:
+        Singapore: 4
+        Kuala_Lumpur: 3
+        Jakarta: 3
+        Manila: 2
+        Bangkok: 2
+        Johor: 2
+        Tokyo: 5
+        Seoul: 2
+        Silicon_Valley: 2
+        Virginia: 2
+        Frankfurt: 3
+        London: 2
+        Paris: 2
+        Dubai: 2
+        Riyadh_partner_region: 2
+        Mexico: 2
+      2026_expansion_notes:
+        new_or_expanded_geographies: [France, Japan, Malaysia, Mexico]
+        Japan_data_centers_claimed_after_fifth_Tokyo_opening: 5
+        Paris_AZs: 2
+        Johor_new_data_centers: 2
+        Malaysia_total_facilities_claimed: 5
+      boundary: >-
+        Alibaba defines a region as a geography containing data centers and an AZ
+        as a physical area with independent power and networking. An AZ is not
+        necessarily one independently addressable building or campus. The raw
+        table sums to 105 including two zones in closing local regions, while the
+        same provider announcement markets 105 AZs without that status boundary.
+    edge_network_context:
+      CDN_edge_nodes_more_than: 3200
+      public_cloud_edge_nodes_more_than: 900
+      countries_and_regions_more_than: 70
+      exact_edge_site_locations: explicitly_not_public
+      scope_warning: Edge nodes are not added to core-region or physical-data-center counts.
+    accelerators:
+      proprietary_T_Head_AI_chips_status: production_at_scale_and_used_for_cloud_and_MaaS_inference
+      exact_chip_models_counts_racks_regions_and_sites: undisclosed
+      third_party_GPU_inventory_by_region: undisclosed
+    electrical_and_cooling:
+      exact_per_region_or_AZ_power_mw_and_grid_connections: undisclosed
+      exact_substations_transformers_UPS_backup_generation_and_OEMs: undisclosed
+      clean_energy_target_2030_percent: 100
+      per_site_PUE_WUE_and_water: mostly_undisclosed
+    linked_companies:
+      operator_and_cloud_provider: [Alibaba_Group, Alibaba_Cloud]
+      financial_profile_refs: [company_alibaba]
+    sources:
+      - title: Alibaba Cloud ECS regions and zones
+        publisher: Alibaba_Cloud
+        date: 2026-07-01
+        url: https://www.alibabacloud.com/help/en/ecs/user-guide/regions-and-zones
+      - title: Alibaba Cloud expands global infrastructure at 2026 Partner Summit
+        publisher: Alibaba_Cloud
+        date: 2026-06-22
+        url: https://www.alibabacloud.com/blog/603278
+      - title: Alibaba Cloud opens fifth data center in Japan
+        publisher: Alibaba_Cloud
+        date: 2026-06-18
+        url: https://www.alibabacloud.com/blog/603269
+      - title: Alibaba Cloud ENS node distribution
+        publisher: Alibaba_Cloud
+        date: 2026-07-07
+        url: https://www.alibabacloud.com/help/en/ens/product-overview/node-distribution
+    confidence: high_for_provider_region_and_zone_inventory_low_for_building_mapping_MW_and_installed_accelerators
+
+  - id: dc_alibaba_five_china_super_data_center_portfolio
+    name: Alibaba Cloud five China super data centers
+    record_granularity: named_multi_campus_portfolio
+    operator: Alibaba_Cloud
+    country: CN
+    lifecycle_as_of_2026_07_17: operating_portfolio_with_continued_expansion
+    location:
+      named_campuses: [Zhangbei, Ulanqab, Heyuan, Nantong, Hangzhou]
+      exact_addresses_coordinates_parcel_boundaries_and_building_counts: undisclosed_in_reviewed_primary_sources
+    campus_scale:
+      server_count_by_campus: undisclosed
+      power_capacity_mw_by_campus: undisclosed
+      Alibaba_AI_and_cloud_infrastructure_investment_2025_to_2028_RMB_billion_at_least: 380
+      investment_USD_billion_company_translation_approximate: 53
+      later_2025_statement: planned_investment_to_exceed_previously_disclosed_RMB_380_billion
+      boundary: This is a company-wide AI and cloud infrastructure plan, not a five-campus construction budget.
+    accelerators:
+      exact_GPU_or_AI_accelerator_models_counts_and_site_allocation: undisclosed
+      Hangzhou_liquid_cooled_servers_source_description: tens_of_thousands
+      Yitian_710_context: proprietary_CPU_deployed_in_Panjiu_servers_not_an_AI_GPU_count
+    electrical_and_generation:
+      clean_energy_target_across_global_data_centers_2030_percent: 100
+      Ulanqab_free_air_cooling_months_per_year: 10
+      Zhangbei_features: [heat_pump_systems, liquid_cooling_context]
+      site_specific_grid_generation_substations_transformers_UPS_backup_and_OEMs: undisclosed
+    cooling_and_water:
+      Hangzhou_immersion_cooling_energy_saving_percent_more_than: 70
+      Hangzhou_published_PUE: 1.09
+      Hangzhou_annual_electricity_saving_kwh_approximate: 70000000
+      exact_water_consumption_and_WUE: undisclosed
+      boundary: Hangzhou metrics are not assigned to the other four named campuses.
+    linked_companies:
+      operator: [Alibaba_Group, Alibaba_Cloud]
+      financial_profile_refs: [company_alibaba]
+    sources:
+      - title: Alibaba Cloud enables five super data centers
+        publisher: Alibaba_Cloud
+        date: 2020
+        url: https://www.alibabacloud.com/blog/alibaba-cloud-enables-five-super-data-centers-to-support-double-11_596951
+      - title: Alibaba Cloud sustainability and data-center technology
+        publisher: Alibaba_Cloud
+        date: 2022
+        url: https://www.alibabacloud.com/blog/598748
+      - title: Alibaba to invest at least RMB380 billion in AI and cloud infrastructure
+        publisher: Alibaba_Group
+        date: 2025-02-24
+        url: https://home.alibabagroup.com/en-US/document-1830678592242057216
+      - title: Alibaba FY2026 shareholder letter
+        publisher: Alibaba_Group
+        date: 2026
+        url: https://www.alibabagroup.com/en-US/document-1993785120221298688
+    confidence: high_for_named_portfolio_and_Hangzhou_metrics_low_for_current_site_scale_power_and_accelerator_inventory
+
+  - id: dc_tencent_cloud_global_region_portfolio
+    name: Tencent Cloud global region and availability-zone portfolio
+    record_granularity: provider_region_and_AZ_portfolio_not_one_physical_campus
+    operator: Tencent_Cloud
+    lifecycle_as_of_2026_07_17: operating_and_expanding
+    location:
+      current_CVM_documentation_as_of_2026_02_12:
+        region_rows_derived: 22
+        availability_zone_rows_derived: 62
+      China_region_inventory_with_zone_counts:
+        Beijing: 6
+        Shanghai: 6
+        Nanjing: 3
+        Guangzhou: 5
+        Chengdu: 2
+        Chongqing: 1
+        Zhongwei: 1
+        Hong_Kong: 3
+        Beijing_Finance: 2
+        Shanghai_Finance: 4
+        Shenzhen_Finance: 3
+        Shanghai_Self_Driving_Cloud: 4
+      international_region_inventory_with_zone_counts:
+        Singapore: 4
+        Jakarta: 3
+        Seoul: 2
+        Tokyo: 2
+        Bangkok: 2
+        Riyadh: 2
+        Sao_Paulo: 1
+        Silicon_Valley: 2
+        Virginia: 2
+        Frankfurt: 2
+      older_IDC_assessment_scope:
+        regions: 21
+        availability_zones: 58
+        independent_data_centers_more_than: 70
+        average_PUE: 1.28
+        best_single_site_PUE: 1.20
+        average_server_capacity_utilization_percent: 85
+      boundary: >-
+        Tencent defines an AZ as a physical data-center area with independent
+        power and networking, but an AZ is not necessarily one campus or
+        building. The older assessment and current service table have different
+        dates and scopes and are not forced into one physical-site count.
+    accelerators:
+      exact_GPU_accelerator_models_counts_racks_and_region_allocation: undisclosed
+      AI_service_presence_does_not_establish_installed_hardware: true
+    electrical_and_cooling:
+      self_owned_data_center_PUE_2025: 1.246
+      self_owned_data_center_PUE_2024: 1.257
+      onsite_renewable_capacity_2025_mw: 63.8
+      self_owned_data_center_green_electricity_share_2025_percent: 82.9
+      leased_data_center_green_electricity_share_2025_percent: 21.4
+      2025_electricity_savings_mwh: 18260
+      T_AIDC_power_efficiency_percent_more_than: 98
+      T_AIDC_metric_boundary: reported_power_architecture_efficiency_not_PUE
+      deployed_technologies: [liquid_cooling, indirect_evaporative_cooling, high_power_density_supply, HVDC]
+      site_specific_MW_grid_and_equipment_OEMs: mostly_undisclosed
+    linked_companies:
+      operator_and_cloud_provider: [Tencent]
+      financial_profile_refs: [company_tencent]
+    sources:
+      - title: Tencent Cloud regions and availability zones
+        publisher: Tencent_Cloud
+        date: 2026-02-12
+        url: https://intl.cloud.tencent.com/document/product/213/6091
+      - title: Tencent Cloud sustainability and IDC assessment summary
+        publisher: Tencent_Cloud
+        date: 2025
+        url: https://cloud.tencent.com/document/product/1293/129575
+      - title: Tencent 2025 ESG Report
+        publisher: Tencent
+        date: 2026-04-09
+        url: https://static.www.tencent.com/uploads/2026/04/09/34cdfa7393ee49cd5677b28f38c68d74.pdf
+    confidence: high_for_provider_service_table_and_ESG_portfolio_metrics_low_for_physical_campus_mapping_and_GPU_inventory
+
+  - id: dc_tencent_qingyuan_qingxin
+    name: Tencent Qingyuan Qingxin Cloud Computing Data Center
+    record_granularity: named_large_data_center_campus
+    operator: Tencent
+    country: CN
+    region: Guangdong
+    locality: Qingyuan_Qingxin_District
+    lifecycle_as_of_2026_07_17: operating_with_current_deployed_scale_undisclosed
+    location:
+      campus_land_mu: 410
+      campus_land_area_m2_derived_approximate: 273333
+      exact_address_coordinates_and_parcel_boundary: undisclosed_in_reviewed_primary_source
+    campus_scale:
+      opening: 2020-07
+      planned_server_capacity: 1000000
+      first_phase_delivery_duration_years: 1
+      current_installed_server_count: undisclosed
+      power_capacity_mw: undisclosed
+      boundary: The one-million-server figure is planned campus capacity, not confirmed installed or utilized inventory.
+    accelerators:
+      named_server_platform: Tencent_Xingxinghai
+      workloads: [cloud_computing, big_data, AI, blockchain, IoT]
+      exact_GPU_or_AI_accelerator_models_counts_and_rack_density: undisclosed
+    electrical_and_generation:
+      architecture: [HVDC, direct_utility_supply]
+      rooftop_solar_context: present_in_company_environmental_material
+      grid_service_voltage_substations_transformers_switchgear_UPS_backup_and_OEMs: undisclosed
+      portfolio_design_archetype_not_site_attribution: Tencent_material_describes_up_to_160_MW_large_campuses_but_does_not_assign_that_figure_to_Qingyuan
+    cooling_and_water:
+      architecture: [fourth_generation_T_Block, indirect_evaporative_cooling, hot_and_cold_aisle_separation, airflow_optimization]
+      published_PUE_less_than: 1.25
+      water_consumption_WUE_and_cooling_OEMs: undisclosed
+    linked_companies:
+      owner_and_operator: [Tencent]
+      financial_profile_refs: [company_tencent]
+    sources:
+      - title: Tencent Qingyuan million-server data center opens
+        publisher: Tencent_Cloud_Developer_Community
+        date: 2020-07
+        url: https://developer.cloud.tencent.com/article/1657149
+      - title: Tencent Cloud sustainable data-center architecture
+        publisher: Tencent_Cloud
+        date: 2026-07-17_accessed
+        url: https://cloud.tencent.com/act/event/sustainability
+      - title: Tencent environmental progress
+        publisher: Tencent
+        date: 2026-07-17_accessed
+        url: https://www.tencent.com/en-us/esg/environment.html
+    confidence: high_for_planned_server_scale_land_design_and_PUE_low_for_current_server_GPU_and_power_inventory
+
+  - id: dc_bytedance_volcano_engine_infrastructure_portfolio
+    name: ByteDance and Volcano Engine data-center infrastructure portfolio
+    record_granularity: private_company_cloud_region_and_data_center_portfolio
+    operator: ByteDance_and_Volcano_Engine
+    lifecycle_as_of_2026_07_17: operating_and_expanding_with_limited_public_disclosure
+    location:
+      ECS_service_endpoint_regions_as_of_2025_06_30: [Beijing, Shanghai, Guangzhou, Hong_Kong, Johor, Jakarta]
+      provider_documentation_context:
+        region_definition: geographic_area_where_physical_data_centers_are_located
+        AZ_definition: physical_area_with_independent_power_and_network_within_a_region
+        product_specific_tables: inconsistent_in_region_and_AZ_availability
+        exact_current_company_wide_region_AZ_building_and_campus_count: undisclosed
+      endpoint_boundary: >-
+        Volcano Engine states that an API endpoint does not necessarily represent
+        the location where a product is directly provided. Product tables differ,
+        so no company-wide AZ total is reconstructed.
+    campus_scale:
+      exact_addresses_coordinates_land_area_MW_and_building_counts: undisclosed_in_reviewed_primary_sources
+    accelerators:
+      exact_GPU_or_accelerator_vendors_models_counts_racks_and_site_allocation: undisclosed
+      GPU_cloud_product_availability_does_not_establish_physical_inventory: true
+    electrical_and_cooling:
+      site_selection_policy: prioritizes_areas_rich_in_wind_and_solar_resources
+      renewable_utilization_at_some_data_centers_percent_up_to: 100
+      disclosed_2020_data_center_PUE: 1.14
+      disclosed_2020_cooling: indirect_evaporative_natural_cooling
+      exact_site_for_2020_metrics: undisclosed_on_reviewed_company_page
+      site_specific_power_grid_substations_UPS_backup_water_and_OEMs: undisclosed
+    linked_companies:
+      private_owner: [ByteDance]
+      cloud_platform: [Volcano_Engine]
+      financial_profile_refs: [company_bytedance]
+    sources:
+      - title: Volcano Engine ECS service addresses
+        publisher: Volcano_Engine
+        date: 2025-06-30
+        url: https://www.volcengine.com/docs/6396/1581668?lang=zh
+      - title: Volcano Engine regions and availability zones
+        publisher: Volcano_Engine
+        date: 2025-03-13
+        url: https://www.volcengine.com/docs/6534/1131814
+      - title: ByteDance environmental sustainability
+        publisher: ByteDance
+        date: 2022-04-07
+        url: https://gongyi.bytedance.com/detail/7161987661010602014
+    confidence: medium_for_service_regions_and_sustainability_metrics_low_for_company_wide_physical_site_count_MW_and_GPU_inventory
+
 disclosure_gap_register:
   - exact_global_physical_data_center_count
   - exact_per_campus_GPU_inventory_for_most_hyperscalers
@@ -2002,16 +2497,23 @@ disclosure_gap_register:
   - facility_level_PUE_WUE_and_water_consumption
   - accelerator_utilization_and_training_versus_inference_mix
   - per_site_revenue_and_operating_profit
+  - hyperscaler_region_AZ_to_physical_building_and_campus_reconciliation
+  - Alibaba_Tencent_and_ByteDance_per_site_addresses_MW_and_current_accelerator_inventory
+  - ByteDance_audited_consolidated_revenue_operating_profit_and_capex
+  - Project_Jupiter_IT_load_and_exact_accelerator_inventory
 
 next_research_queue:
   campus_enrichment:
     - CoreWeave_per_site_location_and_GPU_inventory_beyond_portfolio_totals
     - Google_TPU_cloud_exact_US_sites_and_TPU_inventory_for_Blackstone_JV
-    - Oracle_OCI_AI_regions
-    - Alibaba_Tencent_ByteDance_China
+    - Oracle_Michigan_Texas_Wisconsin_exact_sites_power_GPU_and_build_schedule
+    - Alibaba_per_AZ_physical_addresses_MW_GPU_inventory_and_energized_status
+    - Tencent_per_AZ_ownership_MW_GPU_inventory_and_current_Qingyuan_server_count
+    - ByteDance_Volcano_Engine_exact_AZs_campuses_MW_and_accelerator_inventory
     - AirTrunk_per_campus_energized_contracted_and_utilized_capacity_beyond_design_totals
     - CDC_per_campus_capacity_and_customer_hardware_inventory
-  company_financials: []
+  company_financials:
+    - ByteDance_audited_financials_if_publicly_released
 
 portfolio_relevance:
   interpretation: >-

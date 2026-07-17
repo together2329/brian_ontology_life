@@ -31,6 +31,9 @@ stack_layers:
     - Meta
     - Amazon
     - Oracle
+    - Alibaba_Group
+    - Tencent
+    - ByteDance
   AI_cloud_infrastructure_operators:
     - CoreWeave
   integrated_AI_infrastructure_developers:
@@ -63,6 +66,7 @@ stack_layers:
     - Nexans
     - LS_Electric
     - HD_Hyundai_Electric
+    - Bloom_Energy
   operators_reits_utilities:
     - Equinix
     - Digital_Realty
@@ -727,6 +731,8 @@ financial_profiles:
       confirmed_campus_refs:
         - dc_openai_stargate_abilene
         - dc_stargate_uae_abudhabi
+        - dc_oracle_oci_global_region_portfolio
+        - dc_oracle_project_jupiter_new_mexico
       boundary: RPO includes large-scale AI contracts, but revenue recognition depends on capacity delivery over time.
     management_outlook:
       Q1_FY2027_total_revenue_growth_percent_range: [27, 29]
@@ -2658,9 +2664,206 @@ financial_profiles:
       - https://infratil.com/for-investors/results/annual-results-for-the-year-ended-31-march-2026/presentation-of-results-march-2026/
     confidence: high_for_Infratil_and_CDC_financials_capacity_ownership_and_outlook_medium_for_metric_comparability
 
+  - id: company_bloom_energy
+    company: Bloom_Energy
+    layer: power_cooling_electrical
+    fiscal_baseline:
+      period: FY2025_ended_2025-12-31
+      accounting_basis: US_GAAP_with_separate_non_GAAP_metrics
+      currency: USD
+      revenue_usd_million: 2023.994
+      operating_income_usd_million: 72.802
+      operating_margin_percent: 3.6
+      non_GAAP_operating_income_usd_million: 221.024
+      non_GAAP_operating_margin_percent: 10.9
+      operating_cash_flow_usd_million: 113.9
+      total_backlog_usd_billion_approximate: 20
+      product_backlog_usd_billion_approximate: 6
+      product_backlog_year_over_year_multiple_approximate: 2.5
+    latest_update:
+      period: Q1_2026
+      revenue_usd_million: 751.054
+      revenue_growth_percent: 130.4
+      GAAP_operating_income_usd_million: 72.190
+      GAAP_operating_margin_percent: 9.6
+      non_GAAP_operating_income_usd_million: 129.710
+      non_GAAP_operating_margin_percent: 17.3
+      operating_cash_flow_usd_million: 73.6
+    data_center_exposure:
+      role: onsite_solid_oxide_fuel_cell_generation_and_microgrids
+      confirmed_campus_refs: [dc_oracle_project_jupiter_new_mexico]
+      Oracle_master_agreement:
+        capacity_gw_up_to: 2.8
+        initial_contracted_capacity_gw: 1.2
+        geography_and_timing: Oracle_US_projects_with_deployment_underway_through_2027
+        Project_Jupiter_specific_allocation: undisclosed_beyond_Oracle_project_plan_up_to_2_45_GW
+      demand_commentary: record_revenue_driven_significantly_by_AI_data_centers_and_commercial_and_industrial_customers
+      boundary: Backlog and contracted GW are not recognized revenue, and generation nameplate capacity is not data-center IT load.
+    management_outlook:
+      FY2026_revenue_usd_billion_range: [3.4, 3.8]
+      FY2026_non_GAAP_gross_margin_percent_approximate: 34
+    watch_items:
+      - manufacturing_and_deployment_execution_at_multi_gigawatt_scale
+      - natural_gas_availability_price_and_emissions_regulation
+      - customer_concentration_in_large_AI_projects
+      - backlog_conversion_and_project_financing
+      - GAAP_versus_non_GAAP_margin_gap
+      - fuel_cell_nameplate_versus_customer_IT_load
+    sources:
+      - https://investor.bloomenergy.com/press-releases/press-release-details/2026/Bloom-Energy-Reports-Fourth-Quarter-and-Full-Year-2025-Financial-Results-with-Record-Full-Year-Revenues/
+      - https://investor.bloomenergy.com/press-releases/press-release-details/2026/Bloom-Energy-Reports-Record-First-Quarter-2026-Results-and-Raises-Full-Year-2026-Guidance/default.aspx
+      - https://investor.bloomenergy.com/press-releases/press-release-details/2026/Bloom-Energy-and-Oracle-Expand-Strategic-Partnership-to-Deploy-up-to-2-8-GW-to-Accelerate-AI-Infrastructure-Build-Out/default.aspx
+    confidence: high_for_company_financials_guidance_and_master_agreement_medium_for_project_level_allocation
+
+  - id: company_alibaba
+    company: Alibaba_Group
+    layer: hyperscale_buyers_and_cloud
+    fiscal_baseline:
+      period: FY2026_ended_2026-03-31
+      accounting_basis: US_GAAP_with_separate_non_GAAP_segment_metrics
+      currency: RMB
+      revenue_RMB_million: 1023670
+      income_from_operations_RMB_million: 50150
+      operating_margin_percent: 5
+      adjusted_EBITA_RMB_million_non_GAAP: 76416
+      adjusted_EBITA_margin_percent: 7
+      net_income_RMB_million: 102127
+      capital_expenditure_RMB_million: 126063
+      capex_boundary: primarily_computer_equipment_and_data_centers_plus_logistics_and_office_facilities_not_all_cloud
+      Cloud_Intelligence_revenue_RMB_million: 158132
+      Cloud_Intelligence_revenue_growth_percent: 34
+      Cloud_Intelligence_adjusted_EBITA_RMB_million_non_GAAP: 14265
+      Cloud_Intelligence_adjusted_EBITA_growth_percent: 35
+    latest_update:
+      period: Q4_FY2026_ended_2026-03-31
+      group_revenue_RMB_million: 243380
+      group_income_from_operations_RMB_million: -848
+      Cloud_Intelligence_revenue_RMB_million: 41626
+      Cloud_Intelligence_revenue_growth_percent: 38
+      Cloud_external_revenue_growth_percent: 40
+      Cloud_Intelligence_adjusted_EBITA_RMB_million_non_GAAP: 3796
+      Cloud_Intelligence_adjusted_EBITA_growth_percent: 57
+      AI_related_products_share_of_Cloud_external_revenue_percent: 30
+    data_center_exposure:
+      roles: [Alibaba_Cloud_operator, proprietary_AI_chip_designer, global_AI_and_cloud_infrastructure_buyer]
+      confirmed_campus_refs: [dc_alibaba_cloud_global_region_portfolio, dc_alibaba_five_china_super_data_center_portfolio]
+      disclosed_AI_and_cloud_infrastructure_investment_2025_to_2028_RMB_billion_at_least: 380
+      company_translation_USD_billion_approximate: 53
+      later_2025_direction: planned_to_increase_investment_beyond_RMB_380_billion_without_quantified_ceiling
+      boundary: >-
+        Cloud adjusted EBITA is non-GAAP and no Cloud segment US-GAAP operating
+        income was disclosed. The investment plan includes compute, chips, cloud
+        infrastructure, and related capacity rather than only building shells.
+    management_outlook:
+      stance: increasing_AI_and_cloud_infrastructure_investment_beyond_previously_announced_floor
+      quantified_new_ceiling: undisclosed
+    watch_items:
+      - large_capex_burden_and_group_operating_margin
+      - Cloud_revenue_and_adjusted_EBITA_conversion
+      - proprietary_AI_chip_performance_and_supply
+      - China_and_international_regulatory_constraints
+      - logical_AZ_growth_versus_energized_physical_capacity
+      - non_GAAP_segment_metric_comparability
+    sources:
+      - https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0513/2026051300653.pdf
+      - https://www.alibabagroup.com/en-US/document-1991364841188622336
+      - https://home.alibabagroup.com/en-US/document-1830678592242057216
+      - https://home.alibabagroup.com/en-US/document-1911884625546838016
+    confidence: high_for_group_and_cloud_segment_financials_and_investment_floor_low_for_per_site_economics
+
+  - id: company_tencent
+    company: Tencent
+    layer: hyperscale_buyers_and_cloud
+    fiscal_baseline:
+      period: FY2025_ended_2025-12-31
+      accounting_basis: IFRS_with_separate_non_IFRS_metrics
+      currency: RMB
+      revenue_RMB_million: 751766
+      operating_profit_RMB_million: 241562
+      operating_margin_percent: 32
+      non_IFRS_operating_profit_RMB_million: 280656
+      non_IFRS_operating_margin_percent: 37
+      profit_for_year_RMB_million: 229801
+      profit_attributable_to_equity_holders_RMB_million: 224842
+      capital_expenditure_RMB_billion: 79.2
+      operating_capex_RMB_billion: 73.1
+      capex_boundary: includes_AI_and_other_infrastructure_and_is_not_all_data_center_spending
+    latest_update:
+      period: Q1_2026
+      revenue_RMB_billion: 196.5
+      revenue_growth_percent: 9
+      IFRS_operating_profit_RMB_billion: 67.4
+      IFRS_operating_margin_percent: 34.3
+      IFRS_operating_profit_growth_percent: 17
+      non_IFRS_operating_profit_RMB_billion: 75.6
+      non_IFRS_operating_margin_percent: 38.5
+      capital_expenditure_RMB_billion: 31.9
+      payments_for_capex_RMB_billion: 37.0
+      capex_payment_description: primarily_AI_related
+      free_cash_flow_RMB_billion: 56.7
+    data_center_exposure:
+      roles: [Tencent_Cloud_operator, self_owned_and_leased_data_center_buyer, AI_infrastructure_buyer]
+      confirmed_campus_refs: [dc_tencent_cloud_global_region_portfolio, dc_tencent_qingyuan_qingxin]
+      cloud_financial_disclosure: embedded_in_FinTech_and_Business_Services_with_no_separate_cloud_revenue_or_operating_profit
+      boundary: Consolidated earnings are dominated by a broader portfolio and cannot be treated as cloud or data-center economics.
+    management_outlook:
+      stance: continue_investing_in_AI_capacity_while_targeting_productivity_and_monetization
+      quantitative_full_year_revenue_or_operating_profit_guidance: not_disclosed
+      carbon_neutral_operations_and_supply_chain_target_year: 2030
+      renewable_electricity_target_year: 2030
+    watch_items:
+      - AI_capex_conversion_to_cloud_advertising_and_content_revenue
+      - lack_of_standalone_cloud_profit_disclosure
+      - accelerator_supply_and_export_controls
+      - owned_versus_leased_data_center_power_and_carbon_mix
+      - logical_AZ_growth_versus_physical_capacity
+    sources:
+      - https://static.www.tencent.com/uploads/2026/04/09/62d786fcf3d3c8cb7e54791ee95439ac.pdf
+      - https://static.www.tencent.com/uploads/2026/05/13/47382ae415a209fd161bc19a1f9b3704.pdf
+      - https://static.www.tencent.com/uploads/2026/04/09/34cdfa7393ee49cd5677b28f38c68d74.pdf
+    confidence: high_for_group_financials_and_portfolio_ESG_metrics_low_for_cloud_and_per_campus_economics
+
+  - id: company_bytedance
+    company: ByteDance
+    layer: hyperscale_buyers_and_cloud
+    ownership: private
+    fiscal_baseline:
+      period: latest_publicly_available_as_of_2026_07_17
+      accounting_basis: not_publicly_disclosed_in_audited_consolidated_financial_statements
+      currency: undisclosed
+      revenue: undisclosed_in_public_audited_consolidated_filing
+      operating_profit: undisclosed_in_public_audited_consolidated_filing
+      net_income: undisclosed_in_public_audited_consolidated_filing
+      capital_expenditure: undisclosed_in_public_audited_consolidated_filing
+      boundary: >-
+        ByteDance is private. Media estimates are excluded from the comparable
+        baseline because no reviewed public audited consolidated filing supports
+        revenue, operating profit, or data-center capex.
+    data_center_exposure:
+      roles: [consumer_AI_and_content_platform_operator, Volcano_Engine_cloud_operator, data_center_and_accelerator_buyer]
+      confirmed_campus_refs: [dc_bytedance_volcano_engine_infrastructure_portfolio]
+      exact_owned_and_leased_site_count_MW_GPU_inventory_and_spending: undisclosed
+    management_outlook:
+      quantitative_public_financial_guidance: undisclosed
+    watch_items:
+      - private_company_financial_opacity
+      - accelerator_export_controls_and_supply
+      - China_and_global_data_governance
+      - cloud_region_growth_and_physical_capacity_delivery
+      - owned_versus_leased_infrastructure_mix
+    sources:
+      - https://www.volcengine.com/docs/6396/1581668?lang=zh
+      - https://www.volcengine.com/docs/6534/1131814
+      - https://gongyi.bytedance.com/detail/7161987661010602014
+    confidence: high_for_public_disclosure_gap_medium_for_cloud_service_regions_low_for_private_financial_and_physical_infrastructure_scale
+
 cross_company_read_through:
   current_signals:
     - Hyperscale buyers are funding the demand wave directly: Meta raised its 2026 capex range, Amazon's free cash flow fell as AI property investment rose, and Oracle is financing rapid OCI expansion against a very large AI-heavy RPO.
+    - Oracle's Project Jupiter revised its onsite power plan to as much as 2.45 GW of Bloom solid-oxide fuel cells, making onsite generation a direct AI-campus value pool; nameplate generation includes redundancy and is not disclosed IT load.
+    - Bloom Energy's Q1 2026 revenue grew 130.4% and its Oracle master agreement covers up to 2.8 GW, but deployment concentration, natural-gas dependence, and backlog conversion remain central risks.
+    - Alibaba Cloud grew FY2026 revenue 34% and adjusted EBITA 35% while Alibaba spent RMB126.1 billion of capex and committed at least RMB380 billion to AI and cloud infrastructure; the capex and investment figures include more than data-center buildings.
+    - Tencent generated much stronger consolidated operating margins than Alibaba and described Q1 capex payments as primarily AI-related, but it does not disclose standalone cloud revenue or operating profit. ByteDance is even less comparable because no reviewed public audited consolidated baseline exists.
     - Alphabet's latest $180-$190 billion 2026 capex range, with the overwhelming majority for technical infrastructure, makes it one of the largest current demand sources; rising Cloud operating profit shows monetization is already visible even though campus economics remain undisclosed.
     - NVIDIA's latest Data Center revenue shows that accelerator and network spending remains the largest disclosed value pool in this set.
     - AMD's multi-year Meta agreement and latest Data Center segment growth show a second merchant-GPU path, but planned gigawatts are not current shipments.
