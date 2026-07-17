@@ -5770,6 +5770,385 @@ campus_profiles:
         url: https://www.sktelecom.com/en/press/press_detail.do?idx=1671
     confidence: high_for_group_roles_and_announced_architecture_low_for_exact_initial_capacity
 
+  - id: dc_khazna_global_portfolio
+    name: Khazna Data Centers current UAE portfolio and global expansion pipeline
+    record_granularity: operator_portfolio_with_current_UAE_location_clusters_and_mixed_lifecycle_international_projects
+    operator: Khazna_Data_Centers
+    country_scope: current_live_portfolio_in_UAE_plus_announced_projects_in_Europe_Middle_East_and_Africa
+    lifecycle_as_of_2026_07_18: 30_live_UAE_data_centers_plus_six_ongoing_UAE_projects_and_mixed_announcement_development_international_pipeline
+    current_UAE_location_ledger:
+      Dubai:
+        DXB1: {displayed_locations: 1}
+        DXB2: {displayed_locations: 1}
+        Ibn_Battuta: {displayed_locations: 3}
+        Dubai_Silicon_Oasis: {displayed_locations: 1}
+        displayed_locations_total_derived: 6
+      Abu_Dhabi_emirate:
+        Masdar_City: {displayed_locations: 2}
+        AUH2: {displayed_locations: 6}
+        AUH3: {displayed_locations: 2}
+        AUH5: {displayed_locations: 7}
+        AUH7: {displayed_locations: 5}
+        Abu_Dhabi_Industrial_City_ICAD: {displayed_locations: 1}
+        Al_Ain: {displayed_locations: 1}
+        displayed_locations_total_derived: 24
+      displayed_location_units_total_derived: 30
+      operator_headline_live_data_centers: 30
+      count_reconciliation: The 6 Dubai and 24 Abu Dhabi-emirate units exactly reconcile to the current 30-live-data-center headline.
+      granularity_boundary: >-
+        The location interface exposes cluster labels and counts, not a complete
+        building ID, exact address, coordinate, ownership, lifecycle or per-site
+        capacity ledger. A displayed location unit is therefore not assumed to be
+        one parcel, one building or one independently metered facility.
+      OSM_operator_named_records:
+        - {osm_ref: osm_way_1496340718, latitude: 25.0263827, longitude: 55.1204661, mapped_footprint_area_m2: 11321.112}
+        - {osm_ref: osm_way_1496340735, latitude: 25.0267070, longitude: 55.1241233, mapped_footprint_area_m2: 16142.678}
+      OSM_boundary: >-
+        The public baseline contains two Dubai buildings named Khazna Data Centers,
+        but the operator does not map them to a current cluster or facility ID in
+        the reviewed source. Their geometry is not floor area or IT capacity.
+    portfolio_scale:
+      current_homepage:
+        live_data_centers: 30
+        ongoing_data_center_projects: 6
+        portfolio_capacity_mw: 673
+        capacity_definition: not_separated_into_operating_energized_leased_utilized_IT_load_or_development_nameplate
+      latest_Uptime_portfolio_evidence:
+        UAE_data_centers: 30
+        Tier_III_Certification_of_Constructed_Facility_awards: 22
+      dated_2025_12_Saudi_release:
+        live_data_centers: 30
+        portfolio_capacity_mw_description: almost_650
+      reconciliation_boundary: >-
+        The current 673 MW headline supersedes neither the differently worded
+        almost-650-MW dated snapshot nor provides a per-facility allocation. The
+        six ongoing projects and 673 MW may use overlapping portfolio scopes and
+        are not added to the 30 live units or treated as current utilized load.
+    named_UAE_facility_and_project_evidence:
+      AUH6:
+        campus_ref: dc_khazna_auh6_masdar_city
+        location: Masdar_City_Abu_Dhabi
+        lifecycle: launched_and_operating
+        IT_power_mw: 31.8
+      QAJ01:
+        campus_ref: dc_khazna_qaj01_ajman
+        location: Ajman
+        lifecycle: construction_or_development_with_Tier_III_design_certification_and_current_operating_status_unverified
+        IT_load_mw: 100
+      DXB8:
+        campus_ref: dc_khazna_dxb8_dubai
+        location: Dubai_exact_cluster_undisclosed
+        lifecycle: operating_by_2026_04_22_certification_evidence
+      DXB2_and_DXB3:
+        original_2022_locations: [Dubai_Design_District, Ibn_Battuta]
+        joint_IT_load_mw: 43
+        original_operations_targets: [2023_Q3, 2024_Q1]
+        design: [energy_efficient_power_systems, adiabatic_free_cooling_chilled_water, LEED_Gold]
+        current_boundary: >-
+          The current interface shows DXB2 and three Ibn Battuta units, but does
+          not expose a current DXB3 card, exact split of 43 MW or individual
+          energized, leased and utilized load. Original targets are not current
+          operating proof by themselves.
+      Mafraq:
+        location: Mafraq_Abu_Dhabi_government_owned_land_under_Musataha_agreement
+        initial_capacity_mw: 30
+        original_operating_target: mid_2026
+        current_completion_energization_and_commercial_status: unverified
+      Kalba_Sharjah:
+        agreement_type: memorandum_of_understanding_with_SCTA_and_BEEAH_Khazna_joint_venture
+        project_description: proposed_largest_Tier_3_data_center_in_Sharjah
+        exact_capacity_site_schedule_and_current_status: undisclosed_or_unverified
+    international_pipeline:
+      Dammam_Saudi_Arabia:
+        land_area_m2: 225000
+        AI_ready_capacity_mw_up_to: 200
+        lifecycle: land_acquired_and_development_announced
+        GPU_boundary: configurable_for_GPU_clusters_but_no_model_count_delivery_or_customer_disclosed
+      Ferrera_Erbognone_Lombardy_Italy:
+        proposed_IT_capacity_mw: 500
+        agreement_stage: Head_of_Terms_for_dedicated_Eni_Khazna_joint_venture
+        Italy_program_capacity_mw_up_to: 1000
+        generation_design: new_high_efficiency_CCGT_Blue_Power_with_CO2_capture
+        lifecycle_boundary: Head_of_Terms_and_phased_master_plan_are_not_construction_energization_or_operation
+      Baskent_OIZ_Ankara_Turkiye:
+        site_secured: true
+        potential_capacity_mw_up_to: 100
+        first_phase_workload: cloud_with_future_AI_adaptability
+        design_features: [low_GWP_HFC_free_refrigerants, solar_PV, high_efficiency_adiabatic_chillers, free_cooling, wastewater_reuse, HVO_capable_generators]
+        current_delivery_status: unverified_after_original_Q2_2025_contractor_target
+      Maadi_Technology_Park_Egypt:
+        planned_IT_load_mw: 25
+        announced_combined_investment_usd_million_more_than: 250
+        partner: Benya_Group
+        agreement_stage: shareholders_agreement_after_MoU_and_land_arrangement
+        original_completion_target: within_three_years_from_2023_05_08
+        current_construction_energization_and_operation: unverified
+      country_level_only_plans: [France, Kenya]
+      country_level_boundary: No exact site, capacity allocation, parcel, grid connection or delivery status is assigned to France or Kenya.
+      Stargate_UAE:
+        campus_ref: dc_stargate_uae_abudhabi
+        Khazna_role: delivering_the_infrastructure_layer_for_the_cluster_within_the_5GW_UAE_US_AI_Campus
+        scope_boundary: This does not establish that Khazna owns, operates or finances the entire 5 GW campus or the full 1 GW Stargate cluster.
+    accelerators_and_AI:
+      NVIDIA_collaboration:
+        certified_design: Khazna_next_generation_facility_design_for_NVIDIA_Blackwell_architecture
+        ongoing_and_future_blueprint: NVIDIA_ready
+        majority_future_data_hall_capacity_mw_up_to_each: 50
+        individual_AI_cluster_capacity_mw_up_to_each: 250
+        current_partnership_page_future_proofing: NVIDIA_Rubin
+      exact_operator_or_customer_GPU_models_counts_servers_racks_ownership_delivery_installation_utilization_power_draw_and_site_allocation: undisclosed
+      boundary: >-
+        Design certification, compatible blueprints, hall power ceilings and AI
+        marketing are not physical GPU inventory. No GPU count is derived from
+        673 MW, the 50 MW hall design, 250 MW cluster design or the pipeline.
+    network:
+      portfolio_AI_design: [dark_fiber_routes, carrier_neutral_connectivity, direct_onramps_to_major_hyperscalers]
+      per_site_carriers_fiber_routes_GPU_fabric_switches_optics_ports_and_topology: undisclosed
+    electrical_cooling_and_sustainability:
+      portfolio_operations:
+        annualized_PUE: 1.5_or_below_company_claim
+        adiabatic_free_cooling_energy_savings_percent_up_to: 70
+        water_minimization: air_to_air_and_air_to_liquid_technologies
+        treated_sewage_water: used_to_reduce_potable_water
+        direct_liquid_cooling_and_liquid_to_rack: deployed_portfolio_capability
+        configurable_high_density_redundancy: [N_plus_1, N_plus_N]
+      site_specific_examples:
+        DXB1_and_DXB2: treated_sewage_water_systems_with_company_stated_recycling_up_to_20_percent_of_total_Khazna_water_consumption_for_cooling
+        AUH6: {onsite_solar_capacity_mwp: 7, PUE: 1.4, campus_ref: dc_khazna_auh6_masdar_city}
+        QAJ01: {advanced_liquid_cooling_design: true, campus_ref: dc_khazna_qaj01_ajman}
+      exact_per_site_grid_interconnection_substation_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CDU_unit_counts_ratings_OEMs_single_line_diagrams_PUE_WUE_and_live_liquid_cooled_MW: undisclosed
+      performance_boundary: >-
+        Portfolio claims, design capabilities and individual examples are not
+        applied to every site. PUE scope, measurement period and denominator are
+        not published as a complete facility-level operating dataset.
+    linked_companies:
+      owner_operator: [Khazna_Data_Centers]
+      current_majority_shareholder: [G42]
+      current_minority_shareholders: [MGX, Silver_Lake]
+      design_and_accelerator_partner: [NVIDIA]
+      utilities_and_energy_partners: [EtihadWE, Emerge, Eni]
+      development_partners: [Benya_Group, BEEAH]
+      financial_profile_refs:
+        - company_khazna_data_centers
+        - company_nvidia
+    sources:
+      - title: Current portfolio homepage
+        publisher: Khazna_Data_Centers
+        date: 2026-07-18_accessed
+        url: https://khaznadatacenters.com/
+      - title: Current UAE contact and location-cluster interface
+        publisher: Khazna_Data_Centers
+        date: 2026-07-18_accessed
+        url: https://khaznadatacenters.com/ar/contact-us/
+      - title: Current AI infrastructure design and AUH6 retrofit page
+        publisher: Khazna_Data_Centers
+        date: 2026-07-18_accessed
+        url: https://khaznadatacenters.com/empowering-ai-innovation/
+      - title: Current sustainability operations and PUE page
+        publisher: Khazna_Data_Centers
+        date: 2026-07-18_accessed
+        url: https://khaznadatacenters.com/sustainability-detail/
+      - title: Current sustainability examples by facility
+        publisher: Khazna_Data_Centers
+        date: 2026-07-18_accessed
+        url: https://khaznadatacenters.com/sustainability-in-action/
+      - title: NVIDIA next-generation facility-design collaboration
+        publisher: Khazna_Data_Centers
+        date: 2025-06-11
+        url: https://khaznadatacenters.com/news/khazna-data-centers-and-nvidia-collaborate-to-accelerate-ai-infrastructure-development-across-the-mea-region/
+      - title: More than 1 GW expansion plan and Stargate infrastructure-layer role
+        publisher: Khazna_Data_Centers
+        date: 2025-10-14
+        url: https://khaznadatacenters.com/press-release/khazna-data-centers-to-add-over-1gw-hyperscale-capacity-across-multiple-countries-by-2030/
+      - title: Dammam 200 MW AI-ready development
+        publisher: Khazna_Data_Centers
+        date: 2025-12-09
+        url: https://khaznadatacenters.com/press-release/khazna-data-centers-names-new-country-head-and-advances-expansion-plans-in-saudi-arabia-in-support-of-vision-2030/
+      - title: Ferrera Erbognone 500 MW Head of Terms
+        publisher: Khazna_Data_Centers
+        date: 2025-07-11
+        url: https://khaznadatacenters.com/press-release/khazna-data-centers-and-eni-partner-to-develop-500-mw-ai-data-center-campus-near-milan/
+      - title: Ankara site and potential 100 MW design
+        publisher: Khazna_Data_Centers
+        date: 2025-04-30
+        url: https://khaznadatacenters.com/news/g42s-khazna-data-centers-expands-into-turkiye-to-support-countrys-ai-ambitions/
+      - title: Maadi Technology Park shareholders agreement and 25 MW plan
+        publisher: Khazna_Data_Centers
+        date: 2023-11-19
+        url: https://khaznadatacenters.com/press-release/khazna-data-centers-and-benya-group-ink-historic-deal-to-establish-egypts-first-premier-hyper-scale-data-center-during-cairo-ict-2023/
+      - title: Mafraq initial 30 MW project
+        publisher: Khazna_Data_Centers_and_ADIO
+        date: 2024-05-30
+        url: https://khaznadatacenters.com/press-release/adio-enables-khazna-to-boost-abu-dhabis-data-economy/
+      - title: Kalba Sharjah memorandum of understanding
+        publisher: Khazna_Data_Centers_and_SCTA
+        date: 2024-11-13
+        url: https://khaznadatacenters.com/press-release/sharjah-lays-down-milestones-to-pioneer-digital-infrastructure-as-scta-marks-collaboration-with-beeah-khazna-joint-venture-for-largest-tier-3-data-center-in-the-emirate/
+    confidence: high_for_current_UAE_count_cluster_reconciliation_named_capacity_design_and_financing_context_medium_for_portfolio_scope_and_project_lifecycle_low_for_per_site_load_GPU_inventory_equipment_BOM_and_current_international_delivery
+
+  - id: dc_khazna_auh6_masdar_city
+    name: Khazna AUH6 Masdar City
+    record_granularity: individual_operating_data_center
+    operator: Khazna_Data_Centers
+    country: AE
+    region: Abu_Dhabi
+    locality: Masdar_City
+    lifecycle_as_of_2026_07_18: launched_2024_02_06_and_currently_presented_as_an_AI_retrofit_operating_facility
+    portfolio_ref: dc_khazna_global_portfolio
+    location:
+      operator_location_cluster: Masdar_City_two_displayed_units
+      exact_street_parcel_coordinate_and_building_footprint: undisclosed
+      osm_record_status: not_mapped_to_a_specific_record_in_current_baseline
+      warning: AUH6 is not assumed to represent both Masdar City units.
+    campus_scale:
+      IT_power_capacity_mw: 31.8
+      structure: modular_and_repeatable
+      exact_energized_leased_utilized_and_billed_IT_load: undisclosed
+    accelerators:
+      workload_scope: AI_related_data_development_and_customer_hosting
+      current_operator_description: retrofitted_from_cloud_to_AI
+      exact_GPU_model_count_servers_racks_ownership_delivery_utilization_and_power_draw: undisclosed
+      boundary: AI-ready and retrofitted-to-AI language does not prove an installed accelerator quantity.
+    network:
+      portfolio_capabilities: [dark_fiber_routes, carrier_neutral_connectivity, hyperscaler_onramps]
+      site_specific_carriers_fabric_switches_optics_ports_and_topology: undisclosed
+    electrical_and_generation:
+      ground_mounted_solar_PV_capacity_mwp: 7
+      solar_partner: Emerge
+      solar_allocation_metering_grid_interconnection_and_remaining_energy_mix: undisclosed
+      substation_transformer_switchgear_UPS_battery_backup_generator_unit_counts_ratings_and_OEMs: undisclosed
+    cooling_and_water:
+      current_PUE: 1.4_company_claim
+      AI_retrofit: confirmed
+      portfolio_liquid_cooling_capability: direct_liquid_cooling_and_liquid_to_rack
+      exact_AUH6_liquid_cooled_MW_CDU_heat_rejection_chiller_topology_WUE_and_water_consumption: undisclosed
+      boundary: The current AI page confirms AUH6's retrofit and PUE but does not publish a site bill of materials or installed GPU fleet.
+    certifications_and_build:
+      LEED_Gold: company_reported
+      solar_heat_reduction_design: external_architecture_reduces_direct_sunlight_heat_infiltration
+    linked_companies:
+      owner_operator: [Khazna_Data_Centers]
+      solar_partner: [Emerge]
+      financial_profile_refs: [company_khazna_data_centers]
+    sources:
+      - title: AUH6 launch with 31.8 MW IT power and 7 MWp solar
+        publisher: Khazna_Data_Centers
+        date: 2024-02-06
+        url: https://khaznadatacenters.com/press-release/khazna-data-centers-fuels-uaes-digital-future-with-the-launch-of-hyperscale-ai-ready-data-center-in-masdar-city/
+      - title: Current AUH6 AI retrofit and PUE description
+        publisher: Khazna_Data_Centers
+        date: 2026-07-18_accessed
+        url: https://khaznadatacenters.com/empowering-ai-innovation/
+      - title: Current construction and solar examples
+        publisher: Khazna_Data_Centers
+        date: 2026-07-18_accessed
+        url: https://khaznadatacenters.com/solutions-services/build/
+    confidence: high_for_location_launch_IT_power_solar_and_current_PUE_low_for_utilized_load_GPU_inventory_and_equipment_BOM
+
+  - id: dc_khazna_qaj01_ajman
+    name: Khazna QAJ01 Ajman AI-optimized Data Center
+    record_granularity: individual_facility_under_construction_or_development
+    operator: Khazna_Data_Centers
+    country: AE
+    region: Ajman
+    locality: Ajman_exact_site_undisclosed
+    lifecycle_as_of_2026_07_18: design_certified_with_construction_or_development_status_and_current_operating_energization_unverified
+    portfolio_ref: dc_khazna_global_portfolio
+    facility_identity:
+      official_headline_ID: QAJ01
+      official_quote_variant: QAJ1
+      reconciliation_boundary: Preserve both official forms until Khazna publishes a definitive current facility card.
+    location:
+      gross_facility_area_m2: 100000
+      exact_street_parcel_coordinate_and_building_footprint: undisclosed
+      current_operator_UAE_location_interface: Ajman_not_listed_among_the_30_live_units
+      osm_record_status: unavailable_in_current_baseline
+    campus_scale:
+      total_IT_load_mw: 100
+      data_halls: 20
+      IT_capacity_mw_per_hall: 5
+      arithmetic_reconciliation_mw: 100
+      architecture: modular_scalable_phased_deployment
+      original_2024_operating_target: 2025_Q3
+      latest_status_boundary: >-
+        The February 2026 TCDD release describes outcomes once constructed and the
+        current live-location interface omits Ajman. The missed or stale 2025
+        target is not used as proof of operation, energization or customer service.
+    accelerators:
+      workload_design: large_scale_AI_training_and_inference
+      exact_GPU_model_count_servers_racks_ownership_delivery_installation_utilization_and_power_draw: undisclosed
+      NVIDIA_Blackwell_design_context: portfolio_level_not_site_specific_in_reviewed_source
+    electrical_and_generation:
+      primary_electricity_provider: Etihad_Water_and_Electricity_EtihadWE
+      exact_service_capacity_grid_connection_substation_transformer_switchgear_UPS_battery_backup_generator_unit_counts_ratings_and_OEMs: undisclosed
+    cooling_and_water:
+      architecture: advanced_liquid_cooling_design_for_high_rack_density_and_thermal_load
+      exact_CDU_cold_plate_immersion_heat_rejection_chiller_topology_liquid_cooled_MW_PUE_WUE_and_water_consumption: undisclosed
+    certification:
+      Uptime_Tier_III_Certification_of_Design_Documents: achieved_2026_02_24
+      certification_stage: first_step_design_validation_not_constructed_facility_or_operational_certification
+      future_claim: set_to_become_first_Uptime_Tier_certified_AI_data_center_with_liquid_cooling_in_MENA
+    investment:
+      company_description: multi_billion_AED
+      exact_amount_incurred_capex_financing_project_debt_customer_contracts_revenue_and_return: undisclosed
+      boundary: Investment language is not Khazna revenue, operating profit or completed capex.
+    linked_companies:
+      owner_operator: [Khazna_Data_Centers]
+      utility: [EtihadWE]
+      financial_profile_refs: [company_khazna_data_centers]
+    sources:
+      - title: Original Ajman 100 MW construction announcement
+        publisher: Khazna_Data_Centers
+        date: 2024-10-15
+        url: https://khaznadatacenters.com/press-release/khazna-announces-the-uaes-first-ai-optimized-data-center-and-the-largest-in-its-portfolio-powering-the-nations-drive-toward-ai-leadership/
+      - title: QAJ01 Tier III design-document certification and liquid-cooling design
+        publisher: Khazna_Data_Centers_and_Uptime_Institute
+        date: 2026-02-24
+        url: https://khaznadatacenters.com/press-release/khazna-awarded-tier-iii-certification-of-design-documents-for-ajman-uae-facility/
+      - title: Current UAE live-location interface
+        publisher: Khazna_Data_Centers
+        date: 2026-07-18_accessed
+        url: https://khaznadatacenters.com/ar/contact-us/
+    confidence: high_for_design_nameplate_halls_utility_and_certification_stage_low_for_current_construction_energization_customer_GPU_and_equipment_status
+
+  - id: dc_khazna_dxb8_dubai
+    name: Khazna DXB8 Dubai
+    record_granularity: individual_operating_data_center_with_limited_public_technical_scope
+    operator: Khazna_Data_Centers
+    country: AE
+    region: Dubai
+    lifecycle_as_of_2026_07_18: operating_by_2026_04_22_third_party_waste_audit_and_certification_evidence
+    portfolio_ref: dc_khazna_global_portfolio
+    location:
+      locality: Dubai
+      exact_cluster_street_parcel_coordinate_and_building_footprint: undisclosed
+      current_location_interface_mapping: not_explicitly_mapped_from_DXB8_to_a_displayed_cluster
+      osm_record_status: not_assigned_without_facility_level_operator_mapping
+    campus_scale:
+      IT_load_total_power_data_halls_racks_floor_area_and_energized_leased_utilized_load: undisclosed
+    accelerators:
+      exact_GPU_models_counts_servers_racks_ownership_delivery_utilization_and_power_draw: undisclosed
+      AI_ready_marketing_boundary: No facility-specific accelerator claim is converted into inventory.
+    electrical_and_cooling:
+      grid_substation_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CDU_topology_counts_ratings_OEMs_PUE_WUE_water_and_liquid_cooled_MW: undisclosed
+    sustainability_evidence:
+      certification: SCS_Global_Services_Zero_Waste_Certification_SCS_110
+      audited_period_months: 12
+      waste_diversion_from_landfill_percent: 99.55
+      exclusions: tenant_IT_waste_in_data_halls_white_space
+      recovery_paths: [recycling, vendor_bottle_reuse, resale, composting, approved_residual_recovery]
+      boundary: Zero-waste certification is operating evidence but not an energy, water, capacity, utilization or financial-performance measure.
+    linked_companies:
+      owner_operator: [Khazna_Data_Centers]
+      certification_body: [SCS_Global_Services]
+      financial_profile_refs: [company_khazna_data_centers]
+    sources:
+      - title: DXB8 Zero Waste certification and 12-month operating audit
+        publisher: Khazna_Data_Centers
+        date: 2026-04-22
+        url: https://khaznadatacenters.com/press-release/khazna-data-centers-dxb8-becomes-worlds-first-data-center-to-achieve-zero-waste-certification/
+    confidence: high_for_facility_identity_city_operating_evidence_and_waste_scope_low_for_capacity_GPU_inventory_and_equipment_BOM
+
   - id: dc_stargate_uae_abudhabi
     name: Stargate UAE / UAE-US AI Campus
     operator_and_partners: [G42, OpenAI, Oracle, NVIDIA, Cisco, SoftBank]
@@ -5808,6 +6187,7 @@ campus_profiles:
       water_source_and_WUE: undisclosed
     linked_companies:
       builder: [G42]
+      infrastructure_layer_developer: [Khazna_Data_Centers]
       operators: [OpenAI, Oracle]
       accelerator: [NVIDIA]
       network_and_security: [Cisco]
@@ -5816,6 +6196,7 @@ campus_profiles:
         - company_nvidia
         - company_cisco
         - company_oracle
+        - company_khazna_data_centers
     sources:
       - title: Introducing Stargate UAE
         publisher: OpenAI
@@ -5829,6 +6210,10 @@ campus_profiles:
         publisher: G42
         date: 2026
         url: https://www.g42.ai/resources/news/g42-receives-us-approval-advanced-ai-chip-exports-enabling-full-scale-deployment-trusted-ai-infrastructure
+      - title: Khazna infrastructure-layer role for Stargate UAE
+        publisher: Khazna_Data_Centers
+        date: 2025-10-14
+        url: https://khaznadatacenters.com/press-release/khazna-data-centers-to-add-over-1gw-hyperscale-capacity-across-multiple-countries-by-2030/
     confidence: high_for_announced_capacity_hardware_and_partners_low_for_electrical_detail
 
   - id: dc_stargate_norway_narvik
@@ -12816,6 +13201,12 @@ campus_profiles:
 disclosure_gap_register:
   - exact_global_physical_data_center_count
   - exact_per_campus_GPU_inventory_for_most_hyperscalers
+  - Khazna_30_live_UAE_location_units_to_exact_facility_ID_address_coordinate_building_ownership_and_Tier_award_ledger
+  - Khazna_673MW_portfolio_to_operating_energized_leased_utilized_billed_IT_load_and_six_ongoing_project_scope_reconciliation
+  - Khazna_per_site_GPU_server_rack_customer_power_draw_and_operator_versus_tenant_hardware_ownership
+  - Khazna_per_site_grid_substation_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CDU_OEM_PUE_WUE_water_and_live_liquid_cooled_MW
+  - Khazna_QAJ01_original_2025_Q3_target_to_2026_design_certification_current_construction_energization_customer_and_GPU_status
+  - Khazna_Dammam_Italy_Ankara_Egypt_France_Kenya_pipeline_land_permit_grid_financing_construction_and_operating_delivery
   - Africa_Data_Centres_five_current_cards_to_legacy_sites_DFC_seven_projects_and_exact_operating_facility_roster
   - Africa_Data_Centres_92_15MW_mixed_card_sum_to_installed_energized_leased_utilized_and_billed_IT_load
   - Africa_Data_Centres_JHB1_14_5_20MW_JHB2_35_40MW_and_CPT1_5_5_6_9_25MW_scope_reconciliation
@@ -13065,6 +13456,13 @@ next_research_queue:
     - Project_Southgate_1_6GW_to_2_7GW_program_scope_reconciliation
     - Firmus_DayOne_Batam_exact_parcel_Nongsa_overlap_power_chain_and_live_accelerator_status
     - HUMAIN_AirTrunk_Saudi_exact_location_capacity_hardware_power_and_schedule
+    - Khazna_30_live_units_exact_ID_address_coordinate_building_ownership_lifecycle_and_Tier_award_ledger
+    - Khazna_673MW_and_six_ongoing_projects_to_per_site_operating_energized_leased_utilized_billed_IT_load_reconciliation
+    - Khazna_AUH6_live_GPU_inventory_liquid_cooled_MW_power_chain_PUE_measurement_and_7MWp_solar_allocation
+    - Khazna_QAJ01_current_construction_energization_liquid_cooling_commissioning_customer_GPU_and_commercial_status
+    - Khazna_DXB8_cluster_capacity_GPU_power_cooling_PUE_WUE_water_and_equipment_BOM
+    - Khazna_Mafraq_Kalba_Dammam_Ferrera_Erbognone_Ankara_Maadi_project_current_permit_grid_financing_construction_and_delivery
+    - Khazna_France_and_Kenya_country_level_plans_to_exact_site_capacity_partner_and_lifecycle
     - Equinix_280_to_281_facility_and_78_label_to_77_market_reconciliation
     - Equinix_per_IBX_and_xScale_power_liquid_cooling_GPU_inventory_and_electrical_BOM
     - Digital_Realty_310_building_per_site_IT_power_GPU_inventory_and_ownership_reconciliation
@@ -13147,6 +13545,10 @@ next_research_queue:
     - Africa_Data_Centres_DFC_and_ZAR_facility_draws_rates_covenants_refinancing_and_project_allocation
     - Africa_Data_Centres_221_7MW_plan_capex_funding_delivery_and_revenue_conversion
     - Cassava_reorganisation_current_ownership_and_USD90m_parent_equity_allocation_to_Africa_Data_Centres
+    - Khazna_standalone_audited_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_and_site_economics
+    - Khazna_G42_MGX_Silver_Lake_exact_beneficial_ownership_valuation_consideration_preferences_and_governance
+    - Khazna_USD2_62_billion_facility_drawn_amount_rate_maturity_collateral_covenants_site_allocation_and_refinancing
+    - Khazna_more_than_1GW_pipeline_project_capex_customer_contract_revenue_commencement_and_return_on_capital
     - Aligned_and_ODATA_standalone_audited_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_and_site_economics
     - Aligned_USD40_billion_transaction_completion_financing_post_close_beneficial_ownership_governance_and_reporting
     - Aligned_82_87_data_centers_50_51_campuses_5_6_4GW_and_39_visible_current_identifiers_scope_reconciliation
