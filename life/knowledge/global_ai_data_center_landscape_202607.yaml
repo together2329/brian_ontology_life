@@ -930,11 +930,15 @@ campus_profiles:
       AWS_Saudi_region_separate_investment:
         investment_usd_billion: 5.3
         availability_target: 2026
+      AirTrunk_partnership:
+        initial_campus_investment_usd_billion_approximate: 3
+        campus_ref: dc_humain_airtrunk_saudi_campus
+        campus_capacity_and_location: undisclosed
       overlap_warning: >-
         The AMD 500 MW collaboration, later AMD-Cisco-HUMAIN joint venture, NVIDIA
-        500 MW plan, and AWS AI Zone are partner portfolios with potentially
-        overlapping HUMAIN facilities. Their MW and investments must not be summed
-        as unique energized capacity.
+        500 MW plan, AWS AI Zone, and AirTrunk campus are partner portfolios with
+        potentially overlapping HUMAIN facilities. Their MW and investments must
+        not be summed as unique energized capacity.
     accelerators:
       NVIDIA_first_phase: 18000_NVIDIA_GB300_Grace_Blackwell_GPUs
       NVIDIA_later_phases: several_hundred_thousand_advanced_GPUs_model_mix_undisclosed
@@ -956,12 +960,15 @@ campus_profiles:
       operator_and_developer: [HUMAIN]
       accelerator_and_compute: [NVIDIA, AMD, AWS]
       network_and_critical_infrastructure: [NVIDIA, Cisco]
+      data_center_development_partner: [AirTrunk, Blackstone]
       owner: [Saudi_Public_Investment_Fund]
       financial_profile_refs:
         - company_nvidia
         - company_amd
         - company_cisco
         - company_amazon
+        - company_airtrunk
+        - company_blackstone
       private_company_financial_gap: HUMAIN does not publish comparable standalone revenue and operating profit in the reviewed sources.
     sources:
       - title: HUMAIN and NVIDIA Announce Strategic Partnership to Build AI Factories of the Future in Saudi Arabia
@@ -980,6 +987,10 @@ campus_profiles:
         publisher: Amazon
         date: 2025-05-13
         url: https://press.aboutamazon.com/2025/5/aws-and-humain-announce-groundbreaking-ai-zone-to-accelerate-ai-adoption-in-saudi-arabia-and-globally
+      - title: HUMAIN and Blackstone-backed AirTrunk announce Saudi Arabia partnership
+        publisher: Blackstone
+        date: 2025-10-28
+        url: https://www.blackstone.com/news/press/humain-and-blackstone-backed-airtrunk-announce-partnership-to-build-state-of-the-art-data-centers-in-the-kingdom-of-saudi-arabia/
     confidence: high_for_partner_portfolio_announcements_low_for_site_level_location_and_overlap
 
   - id: dc_cassava_africa_ai_factory_portfolio
@@ -2143,6 +2154,88 @@ campus_profiles:
       New_Zealand:
         Auckland: [Silverdale, Hobsonville]
       exact_per_facility_coordinates_and_boundaries: not_disclosed_in_the_portfolio_report
+    dated_building_inventory_as_of_2026_03_26:
+      official_summary:
+        operational_data_centers: 18
+        data_centers_under_construction: 5
+        total_capacity_pipeline_gw_more_than: 2.7
+      campus_and_building_codes:
+        Canberra:
+          Hume: [HU1, HU2, HU3, HU4, HU5, HU6]
+          Fyshwick: [FY1, FY2]
+          Beard: [BE1]
+        Sydney:
+          Eastern_Creek: [EC1, EC2, EC3, EC4, EC5, EC6]
+          Marsden_Park: [MP1, MP2, MP3, MP4, MP5, MP6]
+        Melbourne:
+          Brooklyn: [BK1, BK2]
+          Laverton: [LV1, LV2]
+        Auckland:
+          Silverdale: [SD1, SD2]
+          Hobsonville: [HV1, HV2]
+        Perth:
+          Maddington: [MA1]
+      status_reconstruction_from_official_map_legend_counts_and_completion_notes:
+        operational: [HU1, HU2, HU3, HU4, HU5, FY1, FY2, BE1, EC1, EC2, EC3, EC4, MP1, BK1, BK2, SD1, HV1, HV2]
+        under_construction: [HU6, EC5, EC6, LV1, MA1]
+        future_land_secured: [MP2, MP3, MP4, MP5, MP6, LV2, SD2]
+        confidence: medium_high
+        derivation_boundary: >-
+          The building codes and the 18-plus-5 counts are published directly.
+          The status list is reconstructed from the presentation map legend,
+          those counts, the December 2025 valuation, and CDC's completion notes;
+          it is not a separately published building-status table.
+    regional_capacity_snapshot_as_of_2025_12_31_mw:
+      Canberra: {operating: 156, under_construction: 20, future_build: 73, total: 249}
+      Sydney: {operating: 133, under_construction: 204, future_build: 956, total: 1293}
+      Melbourne: {operating: 181, under_construction: 105, future_build: 550, total: 836}
+      Perth: {operating: 0, under_construction: 34, future_build: 101, total: 135}
+      Auckland: {operating: 98, under_construction: 0, future_build: 126, total: 224}
+      Australia_expansion_not_region_allocated: {future_build: 14, total: 14}
+      total: {operating: 568, under_construction: 363, future_build: 1820, pipeline: 2750}
+      metric_boundary: Built-capacity pipeline; operating MW is not customer-utilized IT load.
+    campus_capacity_detail:
+      current_operating_capacity_mw:
+        Canberra_Hume_One_HU1_HU3: 21
+        Canberra_Hume_Two_HU4_HU5: 51
+        Canberra_Fyshwick_FY1_FY2: 45
+        Canberra_Beard_BE1: 39
+        Auckland_Silverdale_SD1: 22
+        Auckland_Hobsonville_HV1: 22
+        Auckland_Hobsonville_HV2: 54
+      explicitly_reconciled_regional_totals_mw:
+        Canberra: 156
+        Auckland: 98
+      per_campus_operating_split_remaining_undisclosed:
+        Sydney_region_total_mw: 133
+        Melbourne_region_total_mw: 181
+      design_capacity_snapshot_2025_09_mw_more_than:
+        Sydney_Marsden_Park: 720
+        Sydney_Eastern_Creek: 280
+        Melbourne_Brooklyn: 350
+        Melbourne_Laverton: 300
+        Canberra_Beard: 110
+        Canberra_Hume: 90
+        Canberra_Fyshwick: 40
+        Perth_Maddington: 200
+        Auckland_Hobsonville: 75
+        Auckland_Silverdale: 60
+      current_location_page_design_updates_accessed_2026_07_17:
+        Sydney_region_mw_more_than: 1000
+        Eastern_Creek_mw_more_than: 200
+        Marsden_Park_planned_mw_more_than: 504
+        Marsden_Park_scalability_mw_toward: 1000
+        Melbourne_region_mw_more_than: 780
+        Brooklyn_mw_more_than: 350
+        Laverton_mw_more_than: 400
+        Auckland_region_mw_more_than: 220
+        Perth_Maddington_mw_more_than: 200
+      source_conflict_boundary: >-
+        Some undated CDC location-page status text lags dated investor releases;
+        for example, the Canberra page still calls BE1 under construction and the
+        Melbourne page only calls BK1 operational, while the December 2025
+        valuation says BE1 and BK2 entered operation. Dated investor evidence is
+        used for status and location pages are used for capacity design context.
     portfolio_scale_as_of_2026_03_31:
       operational_data_centers: 19
       under_construction_data_centers: 6
@@ -2165,15 +2258,26 @@ campus_profiles:
     accelerators:
       physical_GPU_count: undisclosed
       models_and_per_campus_allocation: undisclosed
+      confirmed_external_AI_factory_project_ref: dc_firmus_project_southgate_australia
       customer_ownership_boundary: >-
         CDC states that customers deploy and operate their own ICT equipment,
         while CDC provides the site, power, cooling, security, and operations.
         An operator-level GPU inventory therefore cannot be reconstructed from
         the reviewed disclosures.
+      project_boundary: >-
+        Project Southgate discloses approximately 18,400-18,500 planned GB300s
+        for a Melbourne facility, but neither Firmus nor CDC identifies the exact
+        CDC campus and no reviewed source confirms the cluster is live.
     electrical_and_generation:
       standby_generation_fuel: diesel
       standby_generator_use: emergency_response_testing_and_maintenance
       sustainable_fuel_ready_generator_infrastructure: true
+      confirmed_infrastructure_supplier: Schneider_Electric
+      confirmed_supplier_scope:
+        - equipment_powering_CDC_closed_loop_system
+        - in_row_cooling_integrated_with_CDC_closed_loop_chilled_water
+        - energy_management_and_automation_portfolio
+      supplier_boundary: Exact equipment models, quantities, and per-campus allocation are undisclosed.
       substation_transformer_switchgear_UPS_generator_count_models_and_OEMs: undisclosed
       FY2026_electricity_matching:
         annual_renewable_matching_percent: 100
@@ -2184,14 +2288,23 @@ campus_profiles:
       primary_cooling_water_use: initial_fill_then_continuous_recirculation
       portfolio_PUE_FY2026: 1.38
       portfolio_WUE_liters_per_kwh_FY2026_less_than: 0.02
+      WUE_presentation_snapshot_2026_03_26: 0.01
+      historical_13_facility_water_saving_liters_per_year: 5000000000
+      Auckland_two_site_initial_closed_loop_fill_liters: 190000
+      Auckland_annual_water_saving_versus_traditional_liters: 706000000
       metric_scope: operational_sites_at_or_above_50_percent_utilization
-      chiller_CDU_heat_rejection_OEMs_and_site_level_metrics: undisclosed
+      chiller_CDU_heat_rejection_models_and_site_level_metrics: undisclosed
     linked_companies:
       private_operator: [CDC_Data_Centres]
       public_shareholder_exposure: [Infratil]
+      confirmed_infrastructure_supplier: [Schneider_Electric]
+      linked_AI_factory_partners: [Firmus, NVIDIA]
       customer_hardware_owners: undisclosed
       financial_profile_refs:
         - company_infratil
+        - company_schneider_electric
+        - company_firmus
+        - company_nvidia
       private_company_financial_gap: >-
         Infratil publishes CDC net revenue, EBITDAF, leverage, capex, and audited
         associate summary data, but CDC does not present a directly comparable
@@ -2205,7 +2318,214 @@ campus_profiles:
         publisher: CDC_Data_Centres
         date: 2026-05
         url: https://www.cdc.com.au/resources/news/cdc-signs-555mw-data-centre-contract-with-us-customer/
+      - title: CDC Investor Day Presentation
+        publisher: CDC_Data_Centres_and_Infratil
+        date: 2026-03-26
+        url: https://infratil.com/news/cdc-investor-presentation-and-guidance-update/cdc-infratil-investor-day-presentation/
+      - title: CDC Independent Valuation 31 December 2025
+        publisher: Infratil
+        date: 2025-12-31
+        url: https://infratil.com/news/cdc-independent-valuation-31-december-2025/cdc-independent-valuation-31-december-2025/
+      - title: Infratil Investor Day CDC Update
+        publisher: CDC_Data_Centres_and_Infratil
+        date: 2025-09
+        url: https://infratil.com/news/infratil-investor-day-2025/infratil-investor-day-2025-cdc-update/
+      - title: CDC location pages
+        publisher: CDC_Data_Centres
+        accessed: 2026-07-17
+        urls:
+          - https://www.cdc.com.au/locations/canberra/
+          - https://www.cdc.com.au/locations/sydney/
+          - https://www.cdc.com.au/locations/melbourne/
+          - https://www.cdc.com.au/locations/auckland/
+          - https://www.cdc.com.au/locations/perth/
+      - title: Saving water on an epic scale
+        publisher: CDC_Data_Centres
+        url: https://www.cdc.com.au/resources/insights-and-reports/saving-water-on-an-epic-scale/
     confidence: high_for_portfolio_site_regions_capacity_pipeline_contract_cooling_and_efficiency_low_for_per_campus_power_and_GPU_inventory
+
+  - id: dc_firmus_project_southgate_australia
+    name: Firmus Project Southgate Australia AI Factory program
+    record_granularity: national_multi_site_AI_factory_program_not_one_campus
+    operator_and_platform: Firmus_Technologies
+    data_center_infrastructure_partner: CDC_Data_Centres_for_disclosed_mainland_program
+    country: AU
+    lifecycle_as_of_2026_07_17: >-
+      mixed_construction_contracting_and_announced_expansion; reviewed official
+      sources do not confirm the Melbourne GB300 cluster is live after its
+      earlier Q1_or_April_2026 target
+    locations:
+      Melbourne:
+        state: Victoria
+        exact_CDC_campus_building_and_coordinates: undisclosed
+      Tasmania:
+        locality: Launceston
+        regional_description: Northern_Tasmania
+        exact_parcel_and_coordinates: undisclosed
+      South_Australia:
+        announced_campuses: [Tailem_Bend, Stirling_North]
+        exact_parcels_and_coordinates: undisclosed
+      other_announced_mainland_regions_without_site_identity: [Canberra, Sydney, Perth]
+    program_scale:
+      announced_2026_02_target_capacity_gw_up_to_through_2028: 1.6
+      first_Melbourne_and_Tasmania_stages_mw_up_to: 150
+      first_stages_planned_GB300_total_approximate: 54000
+      South_Australia_two_campus_planned_capacity_gw_as_of_2026_06: 2.7
+      scope_reconciliation: >-
+        The later 2.7 GW South Australia announcement is already larger than the
+        earlier 1.6 GW national target. The releases do not explain whether the
+        horizon or program scope changed, so these figures are not summed.
+    site_and_deployment_detail:
+      Melbourne:
+        first_stage_investment_aud_billion: 4.5
+        NVIDIA_anchor_announcement_2025_10_GB300_count: 18500
+        hyperscale_customer_contract_2026_03_GB300_count_approximate: 18400
+        normalized_non_additive_GPU_range: [18400, 18500]
+        model: NVIDIA_GB300
+        planned_DGX_Cloud_region: true
+        earlier_online_targets: [Q1_2026, 2026_04]
+        live_or_installed_status_as_of_2026_07_17: not_confirmed_in_reviewed_official_sources
+        overlap_boundary: >-
+          The 18,400 customer contract and earlier 18,500 anchor deployment are
+          treated as the same or overlapping first cluster, not 36,900 GPUs.
+      Tasmania:
+        current_official_page_critical_IT_load_mw: 84
+        earlier_stage_one_AI_infrastructure_mw: 90
+        earlier_stage_one_a_mw: 44
+        earlier_total_compute_capacity_mw_up_to: 400
+        planned_NVIDIA_GB300_count_range: [36000, 36800]
+        planned_completion: H2_or_late_2026
+        live_or_installed_status_as_of_2026_07_17: construction_underway_not_confirmed_live
+        metric_boundary: >-
+          The current 84 MW figure is critical IT load; the earlier 90 MW figure
+          is described as AI infrastructure. They are retained as different
+          metrics rather than normalized or added.
+      South_Australia:
+        campuses: [Tailem_Bend, Stirling_North]
+        combined_planned_capacity_gw: 2.7
+        first_phase_firm_electricity_supply_mw: 600
+        accelerators_models_and_counts: undisclosed
+        construction_and_energization_status: planned_first_phase_backed_by_energy_agreement
+    accelerators_and_compute:
+      confirmed_model_for_first_Australian_stages: NVIDIA_GB300
+      Melbourne_non_additive_count_range: [18400, 18500]
+      Tasmania_non_additive_count_range: [36000, 36800]
+      approximate_first_stage_program_count: 54000
+      deployment_status: contracted_ordered_or_planned_not_verified_as_physically_live
+      platform_context: NVIDIA_DSX_and_DGX_Cloud
+      exact_rack_server_NVLink_switch_storage_and_utilization: undisclosed
+    electrical_generation_and_grid:
+      national_renewable_program_context_mw_up_to_through_2028: 5100
+      national_program_technologies: [wind, solar, storage, hydro]
+      South_Australia_supply_agreement:
+        counterparty: Gunvor_Group
+        term_years: 12
+        firm_electricity_mw: 600
+        new_renewable_generation_supported_mw_by_2032: 1200
+        new_battery_storage_mwh_by_2032: 1500
+        demand_response_hours_per_year_up_to: 220
+        demand_response_trigger: agreed_high_wholesale_price_thresholds
+      Koolunga_BESS:
+        developer: GreenPoint_Energy
+        locality: near_Brinkworth_South_Australia
+        power_mw: 200
+        energy_mwh: 800
+        technology: grid_forming_battery
+        role: more_than_half_of_initial_firming_capacity_commitment
+      grid_software:
+        architecture: Firmus_Model_to_Grid_on_NVIDIA_DSX_Blueprint
+        coordination_parties: [AEMO, Australian_National_Electricity_Market]
+        function: coordinate_compute_cooling_and_power_with_grid_conditions_in_real_time
+      transformer_switchgear_UPS_backup_generation_models_counts_and_substations: undisclosed
+      scope_warning: >-
+        Renewable-generation support, firm supply, battery power, storage energy,
+        critical IT load, and campus design capacity are different measures.
+    cooling_and_water:
+      platform_architecture: modular_high_density_liquid_cooled_AI_factories
+      Tasmania:
+        primary_cooling: direct_to_chip
+        PUE_less_than: 1.10
+        water_reduction_versus_traditional_percent: 99
+      Australian_new_build_policy:
+        default_mode: dry_mode_cooling
+        recycled_or_non_potable_water_where_appropriate: true
+        Launceston_expected_annual_cooling_water_equivalent: approximately_20_average_households
+      exact_CDU_chiller_heat_rejection_models_and_flow_rates: undisclosed
+    network:
+      Megaport:
+        role: network_as_a_service_connectivity_for_Southgate_availability_zones
+        global_reach_context: more_than_1000_data_centers_across_more_than_180_cities
+      Bernacchi_1:
+        builder_and_operator: SUBCO
+        role: Northern_Tasmania_branch_into_SMAP
+        initial_capacity_tbps_more_than: 60
+        routes: [Tasmania_to_Melbourne, Tasmania_to_Sydney]
+        target_operational: Q2_2027
+        permit_status: marine_and_landing_permits_not_final_at_announcement
+    Australian_supply_chain:
+      committed_spend_aud_million_more_than: 300
+      manufacturing_delivery_capacity_gw_per_year_up_to: 1.5
+      mechanical_systems_and_cooling_modules: Benmax
+      electrical_and_electrification_systems_and_power_modules: JLE_Maas_Group
+      strategic_equity_investor: Maas_Group_Holdings
+      exact_site_equipment_models_quantities_and_awards: undisclosed
+    project_financing_and_commercial_context:
+      Melbourne_first_stage_investment_aud_billion: 4.5
+      earlier_claimed_program_scale_investment_aud_billion_up_to: 73.3
+      debt_facility_usd_billion: 10
+      debt_leads: [Blackstone, Coatue]
+      hyperscale_customer_contract_value: multi_billion_amount_not_disclosed
+      boundary: Financing, project investment, and customer commitments are not recognized revenue or operating profit.
+    linked_companies:
+      operator_and_compute_cloud: [Firmus_Technologies]
+      data_center_infrastructure: [CDC_Data_Centres]
+      accelerator_and_AI_factory_platform: [NVIDIA]
+      financing: [Blackstone, Coatue]
+      network: [Megaport, SUBCO]
+      energy_and_storage: [Gunvor_Group, GreenPoint_Energy]
+      manufacturing_and_construction: [Benmax, JLE, Maas_Group_Holdings]
+      financial_profile_refs:
+        - company_firmus
+        - company_nvidia
+        - company_infratil
+        - company_blackstone
+    sources:
+      - title: Driving Australia's AI Future with CDC, Firmus, and NVIDIA
+        publisher: CDC_Data_Centres
+        date: 2025-10-16
+        url: https://www.cdc.com.au/resources/news/driving-australia-s-ai-future-with-cdc-firmus-and-nvidia/
+      - title: Firmus Expands Project Southgate Across Australia
+        publisher: Firmus_Technologies
+        date: 2025-10
+        url: https://firmus.co/newsroom/southgate-expansion
+      - title: Firmus Signs Multi-Year Agreement with Global Hyperscale Customer at Project Southgate
+        publisher: Firmus_Technologies
+        date: 2026-03-02
+        url: https://firmus.co/newsroom/firmus-signs-multi-year-agreement-with-global-hyperscale-customer-at-project-southgate
+      - title: Firmus Project Southgate goes on-net with Megaport
+        publisher: Firmus_Technologies
+        url: https://firmus.co/newsroom/firmus-project-southgate-goes-on-net-with-megaport
+      - title: Project Southgate current infrastructure page
+        publisher: Firmus_Technologies
+        accessed: 2026-07-17
+        url: https://firmus.co/infrastructure/southgate
+      - title: Firmus secures 600 MW energy supply agreement in South Australia
+        publisher: Firmus_Technologies
+        date: 2026-06-29
+        url: https://firmus.co/newsroom/firmus-secures-600-mw-energy-supply-agreement-in-south-australia-linked-to-1-2-gw-of-new-renewable-generation-and-battery-storage
+      - title: Firmus launches energy and water policies
+        publisher: Firmus_Technologies
+        date: 2026-06-29
+        url: https://firmus.co/newsroom/firmus-launches-energy-and-water-policies-to-support-australia-s-renewable-transition-and-responsible-ai-growth
+      - title: Firmus Extends Investment in Australian AI Factory Supply Chain
+        publisher: Firmus_Technologies
+        date: 2026-02-05
+        url: https://firmus.co/newsroom/firmus-extends-investment-in-australian-ai-factory-supply-chain
+      - title: Firmus and SUBCO to Build Bernacchi-1
+        publisher: Firmus_Technologies
+        date: 2026-06-02
+        url: https://firmus.co/newsroom/firmus-and-subco-to-build-bernacchi-1
+    confidence: high_for_announced_sites_GPU_contracts_capacity_energy_cooling_network_and_financing_low_for_live_GPU_status_exact_CDC_building_and_equipment_BOM
 
   - id: dc_airtrunk_apac_portfolio
     name: AirTrunk Asia-Pacific hyperscale data-center portfolio
@@ -2223,6 +2543,15 @@ campus_profiles:
         Site pages publish total campus design capacity, not a consistent measure
         of currently energized, leased, or utilized IT load. The derived 3.153 GW
         lower bound must not be treated as operating power.
+    dated_commercial_capacity_snapshot_as_of_2024_09_04:
+      capacity_committed_to_customers_mw_more_than: 800
+      land_supporting_future_growth_mw_more_than: 1000
+      current_exact_committed_energized_and_utilized_capacity: undisclosed
+      scope_warning: >-
+        The 800 MW figure is a dated customer-commitment measure published during
+        the acquisition announcement. It is neither current operating load nor a
+        campus-level allocation and cannot be compared directly with the derived
+        3.153 GW design-capacity lower bound.
     site_inventory_as_of_2026_07_16:
       - site: SYD1_Sydney_West
         country: AU
@@ -2449,7 +2778,9 @@ campus_profiles:
       accelerator_ecosystem: [NVIDIA]
       publicly_named_energy_or_customer_partners_in_portfolio_material: [Microsoft, Google, CLP_Power]
       transaction_investors: [Blackstone, CPP_Investments]
+      Middle_East_expansion_ref: dc_humain_airtrunk_saudi_campus
       financial_profile_refs:
+        - company_airtrunk
         - company_nvidia
         - company_alphabet
         - company_microsoft
@@ -2468,7 +2799,127 @@ campus_profiles:
         publisher: Blackstone
         date: 2024-09-04
         url: https://www.blackstone.com/news/press/blackstone-announces-agreement-to-acquire-airtrunk-in-a-a24b-transaction/
+      - title: HUMAIN and Blackstone-backed AirTrunk announce Saudi Arabia partnership
+        publisher: Blackstone
+        date: 2025-10-28
+        url: https://www.blackstone.com/news/press/humain-and-blackstone-backed-airtrunk-announce-partnership-to-build-state-of-the-art-data-centers-in-the-kingdom-of-saudi-arabia/
     confidence: high_for_official_site_design_capacity_land_area_data_halls_voltage_and_design_PUE_low_for_operating_load_GPU_inventory_and_equipment_OEMs
+
+  - id: dc_firmus_dayone_batam_dsx
+    name: Firmus and DayOne Batam NVIDIA DSX AI Factory campus
+    operator_and_compute_cloud: Firmus_Technologies
+    developer_and_data_center_partner: DayOne_Data_Centers
+    country: ID
+    region: Riau_Islands
+    locality: Batam
+    lifecycle_as_of_2026_07_17: announced_for_deployment_through_2027_and_2028
+    location:
+      exact_site_parcel_coordinates_and_substation: undisclosed
+      DayOne_existing_Nongsa_Digital_Park_context:
+        special_economic_zone: Nongsa_Digital_Park
+        gross_floor_area_m2: 68812
+        total_capacity_mw: 72
+        delivered_capacity_mw_as_of_2025: 34
+        relationship_to_new_360MW_Firmus_campus: undisclosed
+      overlap_warning: >-
+        DayOne operates an existing 72 MW Nongsa campus in Batam, but neither
+        partner states that the new 360 MW Firmus campus is the same parcel or an
+        expansion of that site. The two capacity figures are not summed.
+    campus_scale:
+      dedicated_AI_factory_capacity_mw: 360
+      partnership_horizon_through: 2034
+      accelerator_delivery_window: [2027, 2028]
+    accelerators_and_compute:
+      NVIDIA_accelerators_up_to: 170000
+      platform_families: [Grace_Blackwell, Vera_Rubin, Vera]
+      architecture: NVIDIA_DSX_integrated_with_Firmus_HyperCube
+      procurement_model: NVIDIA_revenue_share_and_credit_support
+      installed_or_live_count_as_of_2026_07_17: none_confirmed_in_reviewed_sources
+      rack_server_network_storage_models_and_counts: undisclosed
+    electrical_and_generation:
+      campus_IT_or_facility_metric_boundary: >-
+        The release describes 360 MW of dedicated AI Factory campus capacity but
+        does not identify whether this is critical IT load, utility service, or
+        total facility power.
+      utility_grid_generation_storage_PPA_substation_voltage_and_backup_power: undisclosed
+      transformer_switchgear_UPS_generator_models_counts_and_OEMs: undisclosed
+    cooling_and_water:
+      architecture: Firmus_HyperCube_liquid_cooled_AI_factory
+      integration: co_designed_to_NVIDIA_DSX_blueprints
+      PUE_WUE_water_source_heat_rejection_and_CDU_models: undisclosed
+    network:
+      regional_context:
+        direct_fiber_routes_to: Singapore
+        DayOne_existing_Batam_access_to_operational_and_planned_submarine_cables_more_than: 15
+      new_campus_fiber_pairs_bandwidth_switches_and_optics: undisclosed
+    commercial_and_financing:
+      committed_offtake_expected_receipts_first_six_years_usd_billion_range: [25, 30]
+      revenue_recognition_and_margin: undisclosed
+      boundary: >-
+        Expected receipts from committed offtake agreements are not recognized
+        revenue, operating income, backlog under an audited accounting policy, or
+        guaranteed collections.
+    linked_companies:
+      operator_and_cloud: [Firmus_Technologies]
+      developer: [DayOne_Data_Centers]
+      accelerators_and_AI_factory_platform: [NVIDIA]
+      financial_profile_refs:
+        - company_firmus
+        - company_dayone
+        - company_nvidia
+    sources:
+      - title: Firmus to Build 170,000 GPU AI Factory Campus with NVIDIA for Global AI-Natives
+        publisher: Firmus_Technologies
+        date: 2026-06-28
+        url: https://firmus.co/newsroom/firmus-to-build-170-000-gpu-ai-factor-y-campus-with-nvidia-for-global-ai-natives
+      - title: DayOne Batam Data Center
+        publisher: DayOne_Data_Centers
+        accessed: 2026-07-17
+        url: https://dayonedc.com/market/batam
+      - title: DayOne company journey and capacity building
+        publisher: DayOne_Data_Centers
+        accessed: 2026-07-17
+        url: https://dayonedc.com/about-us
+    confidence: high_for_partnership_capacity_accelerator_ceiling_cooling_architecture_and_offtake_range_low_for_exact_site_live_inventory_power_chain_and_project_economics
+
+  - id: dc_humain_airtrunk_saudi_campus
+    name: HUMAIN and AirTrunk Saudi Arabia data-center campus
+    operator_and_development_partners: [HUMAIN, AirTrunk]
+    country: SA
+    lifecycle_as_of_2026_07_17: strategic_partnership_and_initial_campus_announced
+    location:
+      country_level_only: Saudi_Arabia
+      exact_city_parcel_coordinates_and_campus_name: undisclosed
+      dateline_warning: The announcement was issued in Riyadh; that does not establish the campus location.
+      related_portfolio_ref: dc_humain_saudi_ai_factory_portfolio
+    project_scale:
+      initial_project_investment_usd_billion_approximate: 3
+      capacity_mw: undisclosed
+      buildings_floor_area_land_area_and_delivery_schedule: undisclosed
+    accelerators:
+      model_count_ownership_and_installation_schedule: undisclosed
+      overlap_warning: >-
+        No reviewed source allocates HUMAIN's NVIDIA, AMD, Cisco, or AWS portfolio
+        commitments to this AirTrunk campus, so none of those MW or GPU counts are
+        assigned here.
+    electrical_generation_and_cooling:
+      grid_interconnection_generation_storage_substation_transformer_switchgear_UPS_and_backup_power: undisclosed
+      cooling_architecture_PUE_WUE_water_source_and_equipment_OEMs: undisclosed
+    partnership_scope:
+      HUMAIN_role: national_AI_champion_and_lead_for_large_scale_AI_ready_infrastructure
+      AirTrunk_and_Blackstone_role: development_operational_expertise_and_investment_capacity
+      workstreams: [design, construction, operations, equity_and_debt_financing, go_to_market]
+    linked_companies:
+      partners: [HUMAIN, AirTrunk, Blackstone]
+      HUMAIN_owner: Saudi_Public_Investment_Fund
+      AirTrunk_co_investor: CPP_Investments
+      financial_profile_refs: [company_airtrunk, company_blackstone]
+    sources:
+      - title: HUMAIN and Blackstone-backed AirTrunk announce partnership to build data centers in Saudi Arabia
+        publisher: Blackstone
+        date: 2025-10-28
+        url: https://www.blackstone.com/news/press/humain-and-blackstone-backed-airtrunk-announce-partnership-to-build-state-of-the-art-data-centers-in-the-kingdom-of-saudi-arabia/
+    confidence: high_for_partner_roles_and_initial_investment_low_for_location_capacity_hardware_power_cooling_and_schedule
 
   - id: dc_blackstone_google_tpu_cloud_us_portfolio
     name: Blackstone and Google US TPU cloud joint venture
@@ -3428,6 +3879,12 @@ disclosure_gap_register:
   - Kenilworth_final_phase_capacity_interconnection_equipment_and_energization
   - Polaris_Forge_1_tenant_specific_live_MW_GPU_inventory_and_electrical_BOM
   - Core_Scientific_six_facility_GPU_cooling_water_and_electrical_OEM_details
+  - CDC_March_to_May_2026_building_status_and_555MW_contract_site_allocation
+  - Project_Southgate_exact_CDC_Melbourne_building_and_live_GB300_status
+  - Project_Southgate_1_6GW_to_2_7GW_scope_reconciliation
+  - Firmus_DayOne_Batam_exact_parcel_Nongsa_overlap_power_chain_and_live_accelerator_status
+  - AirTrunk_current_post_2024_committed_energized_and_utilized_capacity_by_campus
+  - HUMAIN_AirTrunk_Saudi_exact_location_capacity_hardware_power_and_delivery_schedule
 
 next_research_queue:
   campus_enrichment:
@@ -3444,11 +3901,17 @@ next_research_queue:
     - Alibaba_per_AZ_physical_addresses_MW_GPU_inventory_and_energized_status
     - Tencent_per_AZ_ownership_MW_GPU_inventory_and_current_Qingyuan_server_count
     - ByteDance_Volcano_Engine_exact_AZs_campuses_MW_and_accelerator_inventory
-    - AirTrunk_per_campus_energized_contracted_and_utilized_capacity_beyond_design_totals
-    - CDC_per_campus_capacity_and_customer_hardware_inventory
+    - AirTrunk_current_post_2024_committed_energized_and_utilized_capacity_by_campus
+    - CDC_Sydney_and_Melbourne_per_campus_operating_capacity_and_555MW_contract_allocation
+    - Project_Southgate_exact_CDC_Melbourne_building_and_measured_live_GB300_status
+    - Project_Southgate_1_6GW_to_2_7GW_program_scope_reconciliation
+    - Firmus_DayOne_Batam_exact_parcel_Nongsa_overlap_power_chain_and_live_accelerator_status
+    - HUMAIN_AirTrunk_Saudi_exact_location_capacity_hardware_power_and_schedule
   company_financials:
     - ByteDance_audited_financials_if_publicly_released
     - Crusoe_Vantage_VoltaGrid_and_Related_Digital_audited_or_lender_disclosed_financials
+    - AirTrunk_Firmus_and_DayOne_audited_or_lender_disclosed_revenue_operating_profit_and_debt
+    - Megaport_latest_results_and_Project_Southgate_contract_economics
 
 portfolio_relevance:
   interpretation: >-

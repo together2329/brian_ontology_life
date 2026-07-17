@@ -83,6 +83,9 @@ stack_layers:
     - Vantage_Data_Centers
     - VoltaGrid
     - Related_Digital
+    - AirTrunk
+    - Firmus_Technologies
+    - DayOne_Data_Centers
   capital_and_asset_managers:
     - Blackstone
     - Infratil
@@ -127,6 +130,8 @@ financial_profiles:
         - dc_start_campus_sines_portugal
         - dc_nscale_ward_county_texas
         - dc_coreweave_global_fleet
+        - dc_firmus_project_southgate_australia
+        - dc_firmus_dayone_batam_dsx
       boundary: Data Center revenue includes compute and networking but does not disclose campus-level economics.
     management_outlook:
       period: Q2_FY2027
@@ -326,6 +331,13 @@ financial_profiles:
       disclosed_driver: data_center_demand
     data_center_exposure:
       products: [electrical_panels, UPS, racks, prefabricated_power_modules, liquid_cooling, EcoStruxure, Motivair]
+      confirmed_campus_refs:
+        - dc_cdc_australia_new_zealand_portfolio
+      confirmed_CDC_scope: >-
+        CDC says Schneider Electric equipment powers its closed-loop cooling
+        system and identifies Schneider in-row cooling integrated with CDC's
+        closed-loop chilled-water design. Exact products, quantities, and campus
+        allocation remain undisclosed.
       boundary: Data-center revenue and operating profit are not separately disclosed.
     management_outlook:
       period: FY2026_reaffirmed
@@ -342,6 +354,7 @@ financial_profiles:
       - https://www.se.com/ww/en/assets/564/document/528237/release-fy-results-2025.pdf?p_File_Name=2025+FY+Results&p_enDocType=Financial+release
       - https://www.se.com/ww/en/about-us/investor-relations/financial-results/
       - https://www.se.com/ww/en/assets/pdf/post-Q1-2026-release-consensus
+      - https://www.cdc.com.au/resources/insights-and-reports/saving-water-on-an-epic-scale/
     confidence: high_for_group_financials_medium_for_data_center_mix
 
   - id: company_eaton
@@ -2741,10 +2754,19 @@ financial_profiles:
         - Google_TPU_cloud_joint_venture
       confirmed_campus_refs:
         - dc_airtrunk_apac_portfolio
+        - dc_humain_airtrunk_saudi_campus
+        - dc_firmus_project_southgate_australia
         - dc_blackstone_google_tpu_cloud_us_portfolio
       AirTrunk_transaction:
         enterprise_value_aud_billion_more_than: 24
         acquisition_status: completed_by_2025_01_official_portfolio_update
+        capacity_committed_to_customers_mw_more_than_as_of_2024_09: 800
+        future_land_capacity_mw_more_than_as_of_2024_09: 1000
+        Saudi_initial_campus_investment_usd_billion_approximate: 3
+      Firmus_Project_Southgate_financing:
+        debt_facility_usd_billion: 10
+        role: financing_led_by_Blackstone_funds_with_Coatue_support
+        boundary: Facility size is committed financing, not Blackstone revenue or capital drawn.
       global_data_center_platform_mid_2026:
         current_platform_value_usd_billion_including_construction: 165
         future_development_pipeline_usd_billion_approximate: 160
@@ -2776,6 +2798,8 @@ financial_profiles:
       - https://www.blackstone.com/insights/article/2026-mid-year-investment-perspectives/
       - https://www.blackstone.com/insights/article/behind-the-deal-airtrunk/
       - https://www.blackstone.com/news/press/blackstone-announces-joint-venture-with-google-to-create-new-tpu-cloud/
+      - https://www.blackstone.com/news/press/humain-and-blackstone-backed-airtrunk-announce-partnership-to-build-state-of-the-art-data-centers-in-the-kingdom-of-saudi-arabia/
+      - https://firmus.co/newsroom/firmus-secures-us10-billion-financing-led-by-blackstone-and-coatue-to-scale-energy-efficient-ai-infrastructure
     confidence: high_for_company_financials_AUM_transaction_and_announced_platform_metrics_low_for_private_platform_revenue_and_operating_profit
 
   - id: company_infratil
@@ -2810,6 +2834,7 @@ financial_profiles:
           development_pipeline_mw: 106
       confirmed_campus_refs:
         - dc_cdc_australia_new_zealand_portfolio
+        - dc_firmus_project_southgate_australia
       CDC_standalone_operating_metrics_FY2026:
         currency: AUD
         gross_revenue_from_associate_note_aud_million: 765.8
@@ -2833,6 +2858,10 @@ financial_profiles:
           effects that should not be treated as recurring operating profit.
     management_outlook:
       CDC_FY2027_EBITDAF_growth: expected_to_accelerate
+      CDC_FY2027_EBITDAF_guidance_aud_million_range: [680, 720]
+      CDC_FY2027_capex_excluding_land_aud_billion_range: [3.8, 4.2]
+      CDC_shareholder_equity_contributed_2026_02_aud_million: 500
+      CDC_Australian_business_credit_rating: Moody_Baa2_Stable_as_of_2026_04_21
       CDC_EBITDAF_FY2028_aud_billion_more_than: 1
       CDC_annualized_EBITDAF_at_full_555MW_deployment_aud_billion_approximate: 2
       CDC_555MW_delivery_window: FY2028_to_FY2029
@@ -2853,6 +2882,8 @@ financial_profiles:
       - https://infratil.com/news/infratil-full-year-results-for-the-year-ended-31-march-2026/infratil-fy2026-annual-report-including-full-year-financial-statements/
       - https://infratil.com/news/infratil-full-year-results-for-the-year-ended-31-march-2026/detailed-financial-information-operating-metrics-march-2026/
       - https://infratil.com/for-investors/results/annual-results-for-the-year-ended-31-march-2026/presentation-of-results-march-2026/
+      - https://infratil.com/news/cdc-investor-presentation-and-guidance-update/cdc-infratil-investor-day-presentation/
+      - https://www.cdc.com.au/resources/news/cdc-signs-555mw-data-centre-contract-with-us-customer/
     confidence: high_for_Infratil_and_CDC_financials_capacity_ownership_and_outlook_medium_for_metric_comparability
 
   - id: company_bloom_energy
@@ -3227,6 +3258,169 @@ financial_profiles:
       - https://www.oracle.com/news/announcement/related-digital-oracle-openai-walbridge-and-governor-whitmer-celebrate-construction-of-stargate-campus-in-saline-township-2026-06-01/
     confidence: high_for_public_disclosure_gap_capital_pipeline_and_project_financing_low_for_revenue_operating_profit_and_site_economics
 
+  - id: company_airtrunk
+    company: AirTrunk
+    layer: private_data_center_and_power_developers
+    ownership_status: private_Blackstone_and_CPP_Investments_backed
+    fiscal_baseline:
+      period: latest_publicly_available_as_of_2026_07_17
+      accounting_basis: no_reviewed_public_audited_standalone_financial_statements
+      currency: undisclosed
+      revenue: undisclosed
+      operating_income: undisclosed
+      net_income: undisclosed
+      capital_expenditure: undisclosed
+    capital_and_transaction_context:
+      acquisition_enterprise_value_aud_billion_more_than: 24
+      acquisition_agreed: 2024-09-04
+      acquisition_completed_by: 2025-01
+      Saudi_initial_campus_investment_usd_billion_approximate: 3
+      boundary: Enterprise value and announced project investment are not AirTrunk revenue or operating profit.
+    data_center_exposure:
+      roles: [hyperscale_data_center_developer_owner_and_operator]
+      confirmed_campus_refs:
+        - dc_airtrunk_apac_portfolio
+        - dc_humain_airtrunk_saudi_campus
+      APAC_campuses_as_of_2026_07: 22
+      APAC_design_capacity_lower_bound_mw_derived: 3153
+      customer_committed_capacity_mw_more_than_as_of_2024_09: 800
+      future_land_capacity_mw_more_than_as_of_2024_09: 1000
+      boundary: >-
+        Design, committed, operating, energized, and utilized capacity are
+        different metrics. AirTrunk does not publish a current campus-level
+        reconciliation or standalone earnings.
+    management_outlook:
+      stance: expand_hyperscale_cloud_and_AI_capacity_across_APAC_and_Middle_East
+      quantitative_revenue_or_profit_guidance: undisclosed
+      Saudi_project_capacity_and_delivery_schedule: undisclosed
+    watch_items:
+      - private_company_financial_opacity
+      - design_and_committed_capacity_conversion_to_energized_utilized_load
+      - hyperscaler_customer_concentration
+      - power_grid_land_and_permitting_execution
+      - acquisition_leverage_and_private_asset_valuation
+      - Saudi_project_scope_location_and_financing
+    sources:
+      - https://www.blackstone.com/news/press/blackstone-announces-agreement-to-acquire-airtrunk-in-a-a24b-transaction/
+      - https://www.blackstone.com/insights/article/behind-the-deal-airtrunk/
+      - https://www.blackstone.com/news/press/humain-and-blackstone-backed-airtrunk-announce-partnership-to-build-state-of-the-art-data-centers-in-the-kingdom-of-saudi-arabia/
+    confidence: high_for_transaction_committed_capacity_design_lower_bound_and_Saudi_investment_low_for_revenue_operating_profit_current_energized_capacity_and_project_economics
+
+  - id: company_firmus
+    company: Firmus_Technologies
+    layer: private_data_center_and_power_developers
+    ownership_status: private
+    fiscal_baseline:
+      period: latest_publicly_available_as_of_2026_07_17
+      accounting_basis: no_reviewed_public_audited_consolidated_financial_statements
+      currency: undisclosed
+      revenue: undisclosed
+      operating_income: undisclosed
+      net_income: undisclosed
+      capital_expenditure: undisclosed
+    capital_context:
+      equity_placement_2025_09_aud_million: 330
+      additional_equity_commitments_2025_11_aud_million: 500
+      post_money_valuation_2025_11_aud_billion_approximate: 6
+      strategic_equity_2026_04_usd_million_expected_subject_to_closing: 505
+      total_equity_raised_over_prior_six_months_if_2026_04_closes_usd_billion: 1.35
+      post_money_valuation_2026_04_usd_billion: 5.5
+      debt_facility_2026_02_usd_billion: 10
+      debt_leads: [Blackstone, Coatue]
+      Australian_supply_chain_commitment_aud_million_more_than: 300
+      boundary: >-
+        Equity, debt facilities, valuation, and supply-chain commitments are
+        financing or spending measures, not revenue, operating profit, or cash
+        necessarily drawn and spent.
+    data_center_exposure:
+      roles: [AI_factory_operator, AI_cloud_provider, modular_infrastructure_designer, grid_software_developer]
+      confirmed_campus_refs:
+        - dc_firmus_project_southgate_australia
+        - dc_firmus_dayone_batam_dsx
+      Southgate:
+        earlier_national_capacity_target_gw_up_to: 1.6
+        South_Australia_later_two_campus_plan_gw: 2.7
+        first_Australian_stage_GB300_count_approximate: 54000
+        live_GPU_count_confirmed_as_of_2026_07_17: none_confirmed_in_reviewed_sources
+      Batam:
+        campus_capacity_mw: 360
+        accelerators_up_to: 170000
+        expected_committed_offtake_receipts_first_six_years_usd_billion_range: [25, 30]
+      boundary: >-
+        The later 2.7 GW plan and earlier 1.6 GW target have unresolved scope
+        overlap. Expected Batam offtake receipts are not audited backlog,
+        recognized revenue, operating income, or guaranteed collections.
+    management_outlook:
+      Batam_NVIDIA_partnership_horizon: 2034
+      Batam_accelerator_delivery_window: 2027_to_2028
+      Australian_manufacturing_delivery_capacity_gw_per_year_up_to: 1.5
+      quantitative_revenue_or_operating_profit_guidance: undisclosed
+    watch_items:
+      - private_company_financial_opacity
+      - very_large_financing_and_execution_requirements
+      - planned_GPU_delivery_and_customer_offtake_conversion
+      - 1_6_GW_and_2_7_GW_scope_reconciliation
+      - grid_interconnection_generation_storage_and_demand_response_execution
+      - customer_NVIDIA_and_financing_partner_concentration
+      - live_status_of_Melbourne_and_Tasmania_clusters
+    sources:
+      - https://firmus.co/newsroom/firmus-raises-usdusd505-million-in-strategic-equity-investment-led-by-coatue
+      - https://firmus.co/newsroom/firmus-secures-us10-billion-financing-led-by-blackstone-and-coatue-to-scale-energy-efficient-ai-infrastructure
+      - https://firmus.co/newsroom/capital-raise-to-expand-project-southgate-nationally
+      - https://firmus.co/newsroom/firmus-extends-investment-in-australian-ai-factory-supply-chain
+      - https://firmus.co/newsroom/firmus-to-build-170-000-gpu-ai-factor-y-campus-with-nvidia-for-global-ai-natives
+      - https://firmus.co/newsroom/firmus-secures-600-mw-energy-supply-agreement-in-south-australia-linked-to-1-2-gw-of-new-renewable-generation-and-battery-storage
+    confidence: high_for_public_disclosure_gap_financing_project_targets_GPU_commitments_and_offtake_range_low_for_revenue_operating_profit_live_inventory_and_project_returns
+
+  - id: company_dayone
+    company: DayOne_Data_Centers
+    layer: private_data_center_and_power_developers
+    ownership_status: private_with_Coatue_and_Hillhouse_as_largest_shareholders
+    fiscal_baseline:
+      period: latest_publicly_available_as_of_2026_07_17
+      accounting_basis: no_reviewed_public_audited_consolidated_financial_statements
+      currency: undisclosed
+      revenue: undisclosed
+      operating_income: undisclosed
+      net_income: undisclosed
+      capital_expenditure: undisclosed
+    capital_context:
+      Series_C_final_gross_proceeds_2026_06_usd_billion: 4.5
+      earlier_Series_A_and_B_aggregate_2024_usd_billion: 1.9
+      Finland_mezzanine_facility_eur_million_initial: 500
+      Finland_mezzanine_facility_eur_million_up_to: 1000
+      Malaysia_multicurrency_green_financing_myr_billion: 15
+      boundary: Capital raised and financing facilities are not revenue, operating income, or cash spent.
+    data_center_exposure:
+      roles: [hyperscale_data_center_developer_and_operator, AI_ready_capacity_partner]
+      confirmed_campus_refs:
+        - dc_firmus_dayone_batam_dsx
+      total_bookings_gw_more_than_as_of_2026_06: 1.5
+      existing_Batam_Nongsa_Digital_Park:
+        design_capacity_mw: 72
+        delivered_capacity_mw_as_of_2025: 34
+      Firmus_Batam_partnership_capacity_mw: 360
+      site_overlap_boundary: >-
+        DayOne does not state whether the 360 MW Firmus campus is the existing
+        72 MW Nongsa campus, an expansion, or a separate Batam site.
+    management_outlook:
+      expansion_markets: [Singapore, Malaysia, Indonesia, Thailand, Japan, Hong_Kong, Finland, Spain]
+      stance: use_Series_C_to_accelerate_more_than_1_5_GW_of_booked_capacity
+      quantitative_revenue_or_operating_profit_guidance: undisclosed
+    watch_items:
+      - private_company_financial_opacity
+      - bookings_conversion_to_built_energized_and_utilized_capacity
+      - rapid_multi_country_construction_execution
+      - customer_concentration_and_contract_terms
+      - financing_and_interest_cost
+      - Batam_site_overlap_and_power_supply
+    sources:
+      - https://dayonedc.com/headliners/dayone-data-centers-announces-final-closing-of-its-series-c-equity-financing-at-us4-5-billion
+      - https://dayonedc.com/about-us
+      - https://dayonedc.com/market/batam
+      - https://dayonedc.com/news/dayone-secures-up-to-e1-billion-mezzanine-financing-facility-to-accelerate-finland-platform-and-global-expansion/dayone-secures-up-to-e1-billion-mezzanine-financing-facility-to-accelerate-finland-platform-and-global-expansion-3
+    confidence: high_for_public_disclosure_gap_financing_bookings_and_existing_Batam_capacity_low_for_revenue_operating_profit_new_campus_overlap_and_project_economics
+
   - id: company_dte_energy
     company: DTE_Energy
     layer: operators_reits_utilities
@@ -3341,6 +3535,9 @@ cross_company_read_through:
     - DTE's FY2025 revenue was $15.8 billion and operating income $2.37 billion; its 1,383 MW Saline contract and matching storage obligation create a large regulated growth project, but delivery, cost recovery, and the remaining 751 MW of storage procurement are material execution risks.
     - WEC's FY2025 revenue was $9.80 billion and operating income $2.24 billion; Lighthouse supports its large-load thesis, but WEC's broader generation and storage capital plan cannot be attributed wholly to one campus.
     - Crusoe, Vantage Data Centers, VoltaGrid, and Related Digital disclose large project and financing figures but no reviewed public audited consolidated revenue or operating profit. Their project investment, funding, and pipeline values are kept out of earnings comparisons.
+    - AirTrunk, Firmus, and DayOne are also private and do not publish reviewed audited standalone revenue or operating profit. AirTrunk's A$24 billion transaction value, Firmus's US$10 billion debt facility and US$25-$30 billion expected Batam offtake receipts, and DayOne's US$4.5 billion Series C are respectively valuation, financing, commercial expectation, and equity funding measures rather than current earnings.
+    - Firmus provides unusually specific planned hardware counts: about 54,000 GB300s across initial Australian stages and up to 170,000 NVIDIA accelerators at a 360 MW Batam campus. No reviewed official source confirms those fleets are physically live, and the exact CDC Melbourne building and Batam power chain remain undisclosed.
+    - CDC's 568 MW operating-capacity snapshot at December 2025 increased to 671 MW by March 2026, while invoiced ICT capacity was only 220 MW at FY2026 year-end. That gap illustrates why built, contracted, invoiced, and utilized capacity must remain separate.
     - Oracle's Project Jupiter revised its onsite power plan to as much as 2.45 GW of Bloom solid-oxide fuel cells, making onsite generation a direct AI-campus value pool; nameplate generation includes redundancy and is not disclosed IT load.
     - Bloom Energy's Q1 2026 revenue grew 130.4% and its Oracle master agreement covers up to 2.8 GW, but deployment concentration, natural-gas dependence, and backlog conversion remain central risks.
     - Alibaba Cloud grew FY2026 revenue 34% and adjusted EBITA 35% while Alibaba spent RMB126.1 billion of capex and committed at least RMB380 billion to AI and cloud infrastructure; the capex and investment figures include more than data-center buildings.
