@@ -11424,6 +11424,203 @@ campus_profiles:
       - {title: TerraPower and Sabey Natrium MOU, publisher: Sabey_Data_Centers, date: 2025, url: "https://sabeydatacenters.com/news/terrapower-and-sabey-data-centers-developing-strategic-collaboration-agreement-for-wide-scale-deployment-of-natrium-plants"}
     confidence: high_for_current_location_pages_March_2026_operating_scale_selected_site_equipment_TACC_customer_GPU_count_sustainability_and_ownership_low_for_complete_building_roster_live_load_Sabey_owned_GPU_inventory_private_financials_and_site_economics
 
+  - id: dc_cologix_north_america_portfolio
+    name: Cologix North American interconnection and hyperscale-edge portfolio
+    record_granularity: current_provider_facility_codes_not_necessarily_distinct_physical_buildings
+    operator: Cologix
+    countries: [US, CA]
+    lifecycle_as_of_2026_07_19: current_marketed_directory_with_separate_long_term_development_pipeline
+    official_facility_registry_ref: life/imports/global_data_centers_20260717/cologix_official_facility_registry.jsonl
+    official_facility_summary_ref: life/imports/global_data_centers_20260717/cologix_official_facility_summary.json
+    registry_builder_ref: scripts/build_cologix_official_facility_registry.py
+    current_scale:
+      exact_current_directory_code_pages: 49
+      company_headline_data_centers_more_than: 45
+      strategic_edge_markets: 13
+      hyperscale_capacity_facilities: 7
+      customers: 2000
+      networks_more_than: 725
+      cloud_providers_more_than: 350
+      cloud_onramps_more_than: 35
+      market_code_counts:
+        Ashburn: 2
+        Calgary: 1
+        Columbus: 7
+        Dallas: 3
+        Des_Moines: 2
+        Jacksonville: 2
+        Lakeland: 1
+        Minneapolis: 5
+        Montreal: 12
+        New_Jersey: 3
+        Silicon_Valley: 1
+        Toronto: 5
+        Vancouver: 5
+      granularity_boundary: >-
+        The 49 code pages are not a 49-building census. DAL1-DAL3, MIN1-MIN5,
+        TOR2-TOR3 and other codes share addresses; suite, hall, building and
+        campus relationships remain incompletely disclosed.
+      source_conflicts:
+        Montreal: directory_has_12_codes_while_market_narrative_says_11_data_centers
+        Vancouver: directory_has_5_codes_while_market_narrative_says_4_downtown_facilities
+        Canada: >-
+          A 2025 acquisition release said 22 data centers, 1.057M sq ft and
+          94 MW. The current directory has 23 Canadian code pages after Calgary
+          entered, so those dated scopes are not silently reconciled.
+    public_map_crosswalk:
+      related_OSM_objects: 11
+      mapped_to_exact_current_codes: 10
+      exact_codes_with_evidence: [ASH1, JAX1, MTL9, SV1, TOR4, VAN1, VAN2, VAN3, VAN4, VAN5]
+      unresolved_market_object:
+        osm_object_id: osm_way_1420458489
+        place: Montreal_H4S_2A1
+        reason: no_explicit_provider_facility_code_crosswalk
+      raw_operator_tag_objects: 9
+      scope_warning: >-
+        TOR4 and JAX1 are name-matched without an operator tag. OSM points and
+        footprints do not establish ownership, operating status, physical
+        building count, capacity, occupancy or financial performance.
+    selected_power_and_cooling:
+      ASH1:
+        area_sqft: 455000
+        architecture: scalable_distributed_redundant
+        cooling: closed_loop_with_mechanical_galleries
+      ASH2:
+        current_page_area_sqft: 99000
+        site_capacity_mw: 51
+        UPS: N_plus_1_1_5MW_blocks
+        cooling: liquid_with_dry_coolers_and_air_option
+        area_conflict: other_marketing_described_226K_sqft
+      COL1:
+        utility_available_onsite_mw: 30
+        feeds: three_diverse_self_healing
+        rack_density_kW_up_to: 64
+        special_racks_kW_up_to: 90
+        cooling_tons_installed: 320
+        cooling_tons_expandable: 1350
+      COL3:
+        area_sqft_more_than: 200000
+        halls: 4
+        halls_capacity_mw_up_to: 20
+        electrical: 2N
+        mechanical: N_plus_1
+        substations: 2
+        generator: 2MW_Caterpillar_on_each_side_with_72_hour_fuel
+        cooling_tons_per_hall: 770
+      COL4:
+        current_page: {area_sqft: 256000, halls: 3, capacity_mw_up_to: 33}
+        older_release: {halls: 8, capacity_mw: 36}
+        cooling: chilled_water_and_free_cooling
+        financing: collateral_for_2025_USD525M_ABS
+      COL7:
+        area_sqft: 120000
+        capacity_mw: 36
+        halls: three_Scalelogix_plus_one_Digital_Edge
+        cooling: liquid_to_chip_ready_air_cooled_chillers_closed_loop
+      COL8:
+        area_sqft: 25000_plus_configurable_shell
+        capacity_mw: 21
+        configurable_liquid_cooled_mix_percent: 70_to_90
+        liquid_to_chip_supply_water: 90F_or_32C_plus
+        capability_boundary: design_range_not_commissioned_liquid_cooled_load
+      MTL8:
+        area_sqft: 206000
+        capacity_mw: 21
+        power: Hydro_Quebec_with_N_N_plus_1_or_2N_distributed_design
+        cooling: DX_free_cooling_and_N_plus_1_chiller
+        certification: LEED_Gold_2025
+      MTL9: {area_sqft_more_than: 120000, capacity_mw: 25, power: Hydro_Quebec_static_UPS_2N_distribution, cooling: DX_free_cooling_N_plus_1}
+      MTL10: {area_sqft_more_than: 180000, capacity_mw: 35, power: renewable_hydro_static_UPS_2N_distribution, cooling: DX_free_cooling_N_plus_1}
+      SV1:
+        area_sqft: 84000
+        power_mw: 9
+        utility_feeds: 3
+        generator_backup_mw: 15
+        cooling: N_plus_1_with_free_cooling
+      TOR1:
+        area_sqft: 25000
+        rack_density_kW_up_to: 15
+        cooling: Enwave_Deep_Lake_Water_Cooling_N_plus_1_in_row
+        cooling_tons: 3000
+      TOR4:
+        current_page: {area_sqft: 50000, power_mw: 11, cabinets_approximately: 1000}
+        dated_release_conflicts: [2023_completion_release_15MW, 2025_TOR4_plus_TOR5_combined_14MW]
+      TOR5:
+        area_sqft_more_than: 40000
+        expansion_area_sqft: 80000
+        power_mw: 3
+        UPS_installed_mw: 2.2
+        generator: four_1_5MW_N_plus_1_with_five_day_fuel
+      VAN3:
+        area_sqft: 42000
+        power_mw: 5
+        electrical_and_mechanical: N_plus_1
+        named_AI_customer: CoEvo_GPUaaS
+      metric_boundary: >-
+        Utility, site, hall, installed, design and expansion measures use
+        different denominators and are not summed as current energized,
+        leased, utilized, customer-accepted or billed IT load.
+    accelerator_and_AI_evidence:
+      Cologix_owned_GPU_inventory_by_model_site_and_utilization: undisclosed
+      CoEvo_at_VAN3:
+        service: GPU_as_a_Service
+        release_date: 2024-12-11
+        reported_change: server_capacity_doubled
+        customer_GPU_models_counts_owner_and_utilization: undisclosed
+      AI_ready_facility_examples: [ASH1, ASH2, COL4, COL7, COL8, MTL8]
+      boundary: >-
+        Customer GPUaaS, high-density design and liquid-cooling capability do
+        not establish Cologix-owned accelerators, installed GPU counts, live
+        liquid-cooled MW, utilization or AI-specific revenue.
+    sustainability_2024:
+      average_PUE: 1.486
+      average_WUE: 0.203
+      total_energy_consumed_kWh: 472018921
+      grid_electricity_percent: 100
+      carbon_free_energy_percent: 65
+      square_feet_under_management: 2671469
+      Scope_1_tCO2e: 69.44
+      Scope_2_location_based_tCO2e: 89403
+      Scope_2_market_based_tCO2e: 89244
+      five_reported_Scope_3_categories_tCO2e: 82821.16
+      environmental_capex_USD_million_more_than: 16.5
+      environment_related_investment_since_2016_USD_million: 48
+      water_boundary: >-
+        Most locations use closed loops and Cologix says it does not actively
+        track total water withdrawal and consumption. WUE partly uses bills and
+        employee averages where detailed usage data is unavailable.
+      carbon_free_boundary: >-
+        The 65% includes grid billing totals associated with hydro, solar, wind
+        and nuclear and is not renewable-only or hourly additional matching.
+    ownership_finance_and_outlook:
+      current_owner_context: Stonepeak_managed_continuation_vehicles_and_investors
+      Stonepeak_initial_majority_investment: 2017_03
+      historic_2022_equity_recapitalization_USD_billion: 3.0
+      recap_boundary: historic_transaction_value_not_current_valuation_revenue_or_profit
+      financing_events:
+        - USD1_13B_US_ABS_2021_12
+        - CAD883M_ABS_2022_02
+        - CAD195M_notes_2023_04
+        - USD525M_five_year_COL4_backed_ABS_2025_07
+        - CAD240M_La_Caisse_senior_financing_for_MTL8_2026_03
+      financing_boundary: different_currency_date_collateral_and_refinancing_scopes_not_current_debt_or_earnings
+      Johnstown_full_build_plan: {acres_approximately: 154, data_centers: 8, potential_mw: 800, area_sqft: 2000000, planned_investment_USD_billion_more_than: 7}
+      Northern_Virginia_plan: {new_land_acres: 38, long_term_growth_plan_USD_billion: 5}
+      development_boundary: land_and_full_build_plans_are_not_commissioned_power_incurred_capex_or_revenue
+      current_revenue_operating_income_EBITDA_capex_debt_cash_flow_occupancy_customer_concentration_and_site_economics: undisclosed
+      financial_profile_ref: company_cologix
+    sources:
+      - {title: Cologix current data-center directory, publisher: Cologix, accessed: 2026-07-19, url: "https://cologix.com/data-centers/"}
+      - {title: Cologix about, publisher: Cologix, accessed: 2026-07-19, url: "https://cologix.com/about-us/"}
+      - {title: Cologix 2024 ESG Report, publisher: Cologix, date: 2025, url: "https://cologix.com/wp-content/uploads/2025/07/Cologix_24ESG_Report_FA_070725-compressed.pdf"}
+      - {title: CoEvo selects VAN3 for GPUaaS, publisher: Cologix, date: 2024-12-11, url: "https://cologix.com/news/coevolution-inc-selects-cologix-as-canadian-hub-to-expand-gpu-as-a-service-deployments/"}
+      - {title: Stonepeak completes USD3B Cologix recapitalization, publisher: Stonepeak_and_Cologix, date: 2022, url: "https://cologix.com/news/stonepeak-successfully-completes-3-0-billion-equity-recapitalization-portfolio-company-cologix/"}
+      - {title: Cologix USD525M COL4-backed ABS, publisher: Cologix, date: 2025-07-21, url: "https://cologix.com/news/cologix-closes-525-million-usd-asset-backed-securitization-to-support-ai-infrastructure-interconnection-and-growth/"}
+      - {title: La Caisse CAD240M MTL8 senior financing, publisher: La_Caisse, date: 2026-03-05, url: "https://www.lacaisse.com/en/news/pressreleases/caisse-invests-cad-240-million-advance-cologixs-ai-ready-mtl8-data-centre"}
+      - {title: Cologix Johnstown 800MW full-build plan, publisher: Cologix, date: 2024, url: "https://cologix.com/news/cologix-expands-central-ohio-footprint-with-land-acquisition-for-new-ai-ready-800mw-data-center-campus/"}
+      - {title: Cologix Northern Virginia growth plan, publisher: Cologix, date: 2026, url: "https://cologix.com/news/cologix-expands-ashburn-presence-with-strategic-land-acquisition-supporting-5b-long-term-northern-virginia-growth-plan/"}
+    confidence: high_for_current_49_code_pages_selected_page_specs_OSM_crosswalk_2024_ESG_metrics_ownership_and_financing_events_low_for_physical_building_count_live_load_GPU_inventory_private_financials_current_debt_and_site_economics
+
   - id: dc_firmus_project_southgate_australia
     name: Firmus Project Southgate Australia AI Factory program
     record_granularity: national_multi_site_AI_factory_program_not_one_campus
@@ -30109,6 +30306,16 @@ disclosure_gap_register:
   - Sabey_current_fleet_PUE_WUE_absolute_water_energy_emissions_hourly_renewable_matching_heat_reuse_and_live_liquid_cooled_MW
   - Sabey_Ares_minority_investment_to_exact_stake_investment_amount_valuation_final_cap_table_and_transaction_economics
   - Sabey_current_revenue_operating_income_EBITDA_capex_debt_cash_flow_customer_concentration_utilization_site_economics_and_ROIC
+  - Cologix_49_current_code_pages_45_plus_headline_shared_addresses_and_market_narratives_to_exact_physical_building_suite_ownership_and_lifecycle_reconciliation
+  - Cologix_11_related_OSM_objects_10_exact_code_mappings_and_unresolved_Montreal_H4S_2A1_object_to_complete_current_map_coverage
+  - Cologix_per_site_utility_energized_leased_utilized_billed_and_customer_accepted_IT_load_racks_and_occupancy
+  - Cologix_per_site_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_and_as_built_topology
+  - Cologix_CoEvo_VAN3_exact_GPU_models_counts_servers_racks_fabric_ownership_power_utilization_revenue_margin_and_all_other_tenant_or_operator_accelerator_inventory
+  - Cologix_current_fleet_total_water_withdrawal_consumption_site_PUE_WUE_hourly_renewable_matching_heat_reuse_and_live_liquid_cooled_MW
+  - Cologix_2021_2022_2023_2025_ABS_and_2026_project_financing_to_current_outstanding_debt_draws_rates_maturities_collateral_refinancing_and_non_overlap_reconciliation
+  - Cologix_current_cap_table_Stonepeak_vehicle_stakes_Madison_participation_enterprise_value_and_post_recap_governance
+  - Cologix_current_revenue_operating_income_EBITDA_capex_debt_cash_flow_customer_concentration_site_economics_and_ROIC
+  - Cologix_Johnstown_800MW_and_Northern_Virginia_USD5B_plans_to_exact_building_permits_grid_phasing_customers_incurred_capex_energization_and_revenue
   - AirTrunk_current_post_2024_committed_energized_and_utilized_capacity_by_campus
   - HUMAIN_AirTrunk_Saudi_exact_location_capacity_hardware_power_and_delivery_schedule
   - Equinix_280_year_end_to_281_current_facility_reconciliation
@@ -30227,7 +30434,8 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
-    - global_coverage_remaining_P1_Cologix_CloudHQ_KDDI_GlobalSwitch_OVHcloud_official_profiles
+    - global_coverage_remaining_P1_CloudHQ_KDDI_GlobalSwitch_OVHcloud_official_profiles
+    - Cologix_49_codes_to_physical_buildings_current_load_GPU_inventory_power_cooling_BOM_and_private_financials
     - Sabey_eight_labels_to_physical_buildings_current_load_GPU_inventory_power_cooling_BOM_and_private_financials
     - Telehouse_31_labels_to_physical_buildings_current_load_GPU_inventory_power_cooling_BOM_and_KDDI_site_economics
     - NorthC_27_labels_to_physical_buildings_current_load_GPU_inventory_power_cooling_BOM_Almere_recovery_and_private_financials
