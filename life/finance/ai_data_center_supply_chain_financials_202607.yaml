@@ -16147,8 +16147,177 @@ financial_profiles:
         url: https://www.sec.gov/Archives/edgar/data/2068385/000149315226014068/form10-k.htm
     confidence: high_for_HY26_statutory_and_underlying_results_balance_sheet_portfolio_MW_sale_contracts_distribution_guidance_and_governance_boundary_medium_for_CHI1_20MW_derived_delivery_and_post_sale_pro_forma_low_for_sale_completion_post_sale_earnings_site_profit_GPU_allocation_and_ROIC
 
+  - id: company_teraco
+    company: Teraco Data Environments Pty Ltd
+    ticker_or_status: private_South_African_subsidiary_majority_controlled_by_Digital_Realty
+    role:
+      - carrier_neutral_colocation_data_center_operator
+      - African_interconnection_and_cloud_on_ramp_platform
+      - NAPAfrica_internet_exchange_host
+      - high_density_and_liquid_cooling_infrastructure_provider
+    reporting_boundary:
+      latest_company_metric_date: '2026-03-31'
+      standalone_audited_financial_statements_publicly_reviewed: false
+      currency_for_transaction_metrics: USD
+      current_operating_directory_codes: 8
+      under_construction_facility: JB7
+      boundary: >-
+        Teraco is private. Digital Realty's strategic-transaction deck provides
+        a revenue metric and operating scale as of 31 March 2026 but does not
+        identify the revenue period or accounting basis and is not a standalone
+        statutory income statement.
+    latest_transaction_deck_metrics:
+      revenue_USD_million: 352
+      metric_date: '2026-03-31'
+      revenue_period: not_explicit_in_reviewed_deck
+      accounting_basis: not_explicit_in_reviewed_deck
+      accounting_operating_profit: undisclosed
+      EBITDA_or_adjusted_EBITDA: undisclosed
+      net_income: undisclosed
+      operating_cash_flow: undisclosed
+      capex: undisclosed
+      debt_and_cash: undisclosed
+      in_place_IT_capacity_mw: 126
+      under_construction_IT_capacity_mw: 41
+      cross_connects_thousand: 29
+      customer_count_current_homepage_more_than: 650
+      boundary: >-
+        The USD352 million metric is retained exactly as labelled and is not
+        annualized or relabelled statutory revenue. Digital Realty group FFO or
+        Teraco noncontrolling-interest FFO is not Teraco revenue, accounting
+        operating profit, EBITDA or free cash flow.
+    ownership:
+      Digital_Realty_completed_controlling_interest_percent: 61.1
+      completed_acquisition_date: '2022-08-01'
+      additional_interest_agreed_date: '2026-06-22'
+      additional_interest_percent: 16
+      consideration_USD_million_approximate: 650
+      consideration_form: principally_3_4_million_Digital_Realty_common_shares
+      target_post_close_ownership_percent: 77
+      expected_close: H2_2026
+      subject_to_customary_closing_conditions: true
+      completion_confirmed_as_of_2026_07_19: false
+      pre_close_minority_investor_context: [Berkshire_Partners, Permira, Columbia_Capital_and_other_investors]
+      boundary: The target 77% interest is not treated as completed ownership before closing evidence.
+    financing_and_capital_program:
+      2024_syndicated_loan_ZAR_billion: 8
+      arranger_named: Absa
+      other_lenders: undisclosed_in_provider_release
+      uses:
+        - JB7_construction
+        - other_data_center_construction_projects
+        - augment_existing_renewable_generation_financing
+      loan_rate_tenor_maturity_drawn_balance_security_covenants_and_site_allocation: undisclosed
+      utility_scale_solar_PV_under_construction_mw: 120
+      solar_design: feed_into_Eskom_and_wheel_across_multiple_municipal_grids
+      solar_operation_due_in_source: 2026
+      solar_completion_confirmed_as_of_review: false
+      boundary: The R8 billion loan is financing capacity, not revenue, incurred capex, debt outstanding at review date or project return.
+    operating_scale_reconciliation:
+      current_homepage_marketing_IT_load_mw: 228
+      2025_completed_platform_release_critical_power_load_mw: 189
+      current_directory_value_arithmetic_mw: 188
+      transaction_deck_in_place_plus_construction_mw: 167
+      current_homepage_cross_connects_more_than: 27000
+      transaction_deck_cross_connects: 29000
+      current_homepage_customers_more_than: 650
+      facility_registry_ref: life/imports/global_data_centers_20260717/teraco_official_facility_registry.jsonl
+      boundary: >-
+        The values have different dates, facility perimeters and lifecycle
+        definitions. In-place, construction, completed-release and marketing
+        capacity are not current utilized, accepted or billed load.
+    accelerator_and_customer_boundary:
+      NVIDIA_DGX_Ready_certification: true
+      published_AI_infrastructure_density_context_kw_per_rack_up_to: 150
+      exact_Teraco_facility_supported_or_live_rack_density_kw: undisclosed
+      liquid_cooling_and_direct_to_chip_capability: true
+      exact_Teraco_owned_GPU_model_count_site_delivery_power_and_utilization: undisclosed
+      customer_owned_GPU_inventory_assignable_to_Teraco: false
+      accelerator_ledger_action: no_numeric_row_created
+      boundary: Infrastructure certification and customer workload support do not establish Teraco-owned GPU inventory or accelerator-service economics.
+    outlook:
+      positive_signals:
+        - 650_plus_customer_and_29000_cross_connect_network_density
+        - 126MW_in_place_transaction_scope_and_JB4_CT2_recent_completion
+        - 41MW_under_construction_transaction_scope_and_JB7_40MW_development
+        - liquid_to_liquid_direct_to_chip_and_high_density_AI_design_capability
+        - 120MW_owned_solar_and_wheeling_program_can_reduce_power_supply_and_matching_risk_if_delivered
+        - Digital_Realty_additional_equity_commitment_signals_long_term_platform_value
+      risks:
+        - USD352_million_revenue_period_and_accounting_basis_are_not_explicit
+        - standalone_operating_profit_cash_flow_capex_debt_and_ROIC_are_undisclosed
+        - 126_167_188_189_191_and_228MW_scopes_are_not_reconciled_to_utilized_or_billed_load
+        - JB7_CT1_and_solar_completion_grid_wheeling_and_customer_acceptance_are_execution_dependent
+        - South_African_grid_reliability_energy_cost_and_municipal_wheeling_complexity
+        - exact_customer_concentration_contract_terms_and_site_economics_are_undisclosed
+        - additional_16_percent_ownership_transaction_remains_subject_to_closing
+        - no_verified_GPU_inventory_or_per_site_equipment_BOM
+      analytical_view: >-
+        Teraco has an unusually dense African interconnection ecosystem, real
+        completed expansion and a credible Digital Realty-backed development
+        pipeline. The investment read-through remains indirect, however: the
+        USD352 million revenue label lacks a disclosed period and accounting
+        bridge, operating profit and cash returns are unavailable, and mixed MW
+        scopes must convert into customer-accepted billed load before returns
+        can be judged.
+    linked_data_center_profiles:
+      - dc_teraco_south_africa_portfolio
+      - dc_digital_realty_global_portfolio
+    sources:
+      - title: Strategic Transaction Update
+        publisher: Digital_Realty
+        date: 2026-06
+        url: https://investor.digitalrealty.com/static-files/c48b8fee-1eb8-4830-87b3-6c9d7bdd5396
+      - title: Digital Realty transactions to drive continued platform growth
+        publisher: Digital_Realty
+        date: 2026-06-22
+        url: https://investor.digitalrealty.com/news-releases/news-release-details/digital-realty-announces-transactions-drive-continued-platform
+      - title: Digital Realty 2025 Form 10-K
+        publisher: Digital_Realty
+        filed: 2026
+        url: https://investor.digitalrealty.com/static-files/a444db72-d0c1-45e2-b082-ed6363542a9e
+      - title: Completion of Digital Realty majority acquisition
+        publisher: Teraco
+        date: 2022-08-01
+        url: https://www.teraco.co.za/news/teraco-announces-completion-of-acquisition-by-digital-realty/
+      - title: JB7 and R8 billion syndicated loan
+        publisher: Teraco
+        date: 2024-11-13
+        url: https://www.teraco.co.za/news/teraco-announces-jb7-and-a-new-r8-billion-syndicated-loan/
+      - title: Current Teraco platform scale
+        publisher: Teraco
+        accessed: 2026-07-19
+        url: https://www.teraco.co.za/
+      - title: Current facility directory
+        publisher: Teraco
+        accessed: 2026-07-19
+        url: https://www.teraco.co.za/data-centre-locations/
+      - title: Current sustainability program
+        publisher: Teraco
+        accessed: 2026-07-19
+        url: https://www.teraco.co.za/about/sustainability/
+      - title: AI infrastructure and NVIDIA DGX-Ready capability
+        publisher: Teraco
+        accessed: 2026-07-19
+        url: https://www.teraco.co.za/platform-teraco/infrastructure-for-artificial-intelligence/
+      - title: Certifications and compliance
+        publisher: Teraco
+        accessed: 2026-07-19
+        url: https://www.teraco.co.za/about/certifications-and-compliance/
+    confidence: high_for_ownership_transaction_terms_eight_code_directory_126MW_in_place_41MW_construction_revenue_label_cross_connects_loan_JB7_and_solar_program_medium_for_transaction_metric_reporting_period_low_for_standalone_operating_profit_cash_flow_debt_site_economics_GPU_inventory_and_ROIC
+
 cross_company_read_through:
   current_signals:
+    - Teraco's current directory contains eight operating facility codes across Johannesburg, Cape Town and Durban, while JB1 spans East and West buildings and JB7 is a ninth development. The Teleport is a satellite earth station, so codes, buildings, campuses and connectivity assets are not one count.
+    - Teraco's current 228-MW marketing total includes 40 MW of under-construction JB7. The 2025 completed-platform release says 189 MW, current page arithmetic is 188 MW, CT1's post-expansion projection is 191 MW, and Digital Realty reports 126 MW in place plus 41 MW under construction. These scopes are preserved rather than normalized into current load.
+    - JB4 reached 50 MW after a 30-MW expansion in August 2025 and CT2 reached 50 MW after a 32-MW expansion in November 2025. CT1's additional 2 MW is targeted for early 2027 and JB7's 40 MW is scheduled for 2026 without reviewed completion confirmation.
+    - JB4, CT2 and JB7 expose closed-loop, free-air and liquid-cooling designs, while JB5 discloses 120 MVA utility power and JB1 has dated evidence for 210,000 litres of diesel and at least 40 hours of full-load runtime. These fragments are not a complete current per-site as-built equipment ledger.
+    - Teraco reports 1.47 blended 2024 PUE, 0.05 litres per IT-kWh and 34,006 kL of total water. A 120-MW owned solar plant is under construction for Eskom injection and municipal wheeling, but completion and hourly site matching were not confirmed at review.
+    - NVIDIA DGX-Ready certification and liquid-to-liquid or direct-to-chip capability validate AI infrastructure readiness, not Teraco-owned GPUs. The provider describes an up-to-150-kW AI-industry context but does not publish a Teraco facility's exact supported or live rack density, and no GPU model, count, owner, host site, utilization or accelerator economics is assigned.
+    - Digital Realty's transaction deck labels USD352 million of Teraco revenue as of 31 March 2026 but does not state the revenue period or accounting basis. No standalone statutory operating profit, cash flow, capex, debt or ROIC is disclosed, so the metric is not annualized and Digital Realty FFO is not substituted.
+    - Digital Realty completed a 61.1% controlling interest in 2022 and agreed to buy another 16% for approximately USD650 million, targeting 77%. The transaction is expected to close in H2 2026 subject to conditions and is not treated as completed as of 19 July 2026.
+    - Teraco's R8 billion syndicated loan supports JB7, other construction and renewable generation. Loan capacity is not revenue, incurred capex or a current drawn-debt balance, and rates, maturity, security and project allocation remain undisclosed.
+    - Twelve related OSM objects were reviewed: seven exact Teraco operator tags, one legacy operator typo, four without operator tags and one Teleport object. The remaining 11 data-center-related footprints cover only six facility codes and are not a complete building census.
     - DigiCo's thirteen-property legal ledger contains eight Australian and five U.S. properties, but only nine are source-established operating property labels. CHI1 is in phased delivery and under a signed sale, BNE3 is greenfield development, and LAX1 and LAX2 are non-operating land assets under conditional sale.
     - The replacement PDS property design checksum is 237.7 MW, close to HY26's rounded 238 MW planned figure. FY2025 planned capacity was 232 MW, HY26 billing was only 51 MW and contracted was 85 MW, so design, installed, contracted, billing and actual utilized load cannot be substituted for one another.
     - Withdrawing LAX1's application reduced the announced portfolio planned scope to 172 MW. The 66-MW bridge implies approximately 33 MW per LAX site against the older 36-MW-per-site PDS design, a dated-scope conflict preserved rather than silently normalized.

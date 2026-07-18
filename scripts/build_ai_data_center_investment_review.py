@@ -91,7 +91,7 @@ LAYER_COMPARISON = [
     },
     {
         "layer": "physical_data_center_operators",
-        "evidence_state": "Fifty-four operators now have a scope-preserving crosswalk, but site economics, utilization and return on capital remain limited, especially for private firms.",
+        "evidence_state": "Fifty-five operators now have a scope-preserving crosswalk, but site economics, utilization and return on capital remain limited, especially for private firms.",
         "brian_exposure_state": "Possible indirect exposure through value-chain funds; exact weights are unknown.",
         "incremental_cash_view": "Do not rank by facility or GW headlines; require reporting boundary, leverage, utilization and valuation first.",
     },

@@ -24,8 +24,8 @@ scope_and_method:
     builder_ref: scripts/build_global_data_center_coverage_audit.py
     raw_operator_labels: 822
     iso2_country_records: 112
-    reviewed_profile_routed_mapped_objects: 1705
-    reviewed_profile_routed_percent_of_operator_tagged_objects: 61.40
+    reviewed_profile_routed_mapped_objects: 1713
+    reviewed_profile_routed_percent_of_operator_tagged_objects: 61.69
     boundary: >-
       Routing an OSM operator label to a reviewed portfolio or company record is
       research coverage, not object-by-object official reconciliation. The audit
@@ -131,8 +131,8 @@ scope_and_method:
     disclosure_registry_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_registry.jsonl
     disclosure_summary_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_summary.json
     disclosure_registry_as_of: 2026-07-19
-    operator_records: 54
-    machine_generated_page_registry_operators: [CyrusOne, QTS, NEXTDC, Flexential, Lumen_Technologies, Csquare, CDC_Data_Centres, Switch, atNorth, NorthC, Telehouse, Sabey_Data_Centers, Cologix, CloudHQ, Global_Switch, OVHcloud, Bouygues_Telecom, UltraEdge_SFR_legacy, Verizon, Datacenter_United, Ark_Data_Centres, Orange_Group_and_Orange_Business, Pulsant, KIO_Data_Centers, Kumo_Networks, OPCORE, SoftBank_inherited_IDCF_data_centers, VIRTUS_Data_Centres, DigiCo_Infrastructure_REIT]
+    operator_records: 55
+    machine_generated_page_registry_operators: [CyrusOne, QTS, NEXTDC, Flexential, Lumen_Technologies, Csquare, CDC_Data_Centres, Switch, atNorth, NorthC, Telehouse, Sabey_Data_Centers, Cologix, CloudHQ, Global_Switch, OVHcloud, Bouygues_Telecom, UltraEdge_SFR_legacy, Verizon, Datacenter_United, Ark_Data_Centres, Orange_Group_and_Orange_Business, Pulsant, KIO_Data_Centers, Kumo_Networks, OPCORE, SoftBank_inherited_IDCF_data_centers, VIRTUS_Data_Centres, DigiCo_Infrastructure_REIT, Teraco]
     comparison_gate:
       - choose_one_physical_granularity
       - choose_one_lifecycle_date_and_state
@@ -32824,7 +32824,181 @@ campus_profiles:
       - {title: SharonAI 2025 Form 10-K, publisher: US_SEC, filed: 2026, url: "https://www.sec.gov/Archives/edgar/data/2068385/000149315226014068/form10-k.htm"}
     confidence: high_for_13_property_legal_roster_11_current_pages_9_operating_labels_PDS_and_HY26_capacity_boundaries_sale_contracts_SYD1_approval_HY26_financial_link_and_seven_OSM_objects_medium_for_CHI1_20MW_derived_delivery_bridge_low_for_exact_sale_completion_current_per_site_load_GPU_allocation_complete_as_built_BOM_site_economics_and_ROIC
 
+  - id: dc_teraco_south_africa_portfolio
+    operator: Teraco
+    geography: South_Africa
+    record_granularity: facility_code_portfolio_with_physical_building_campus_development_connectivity_asset_and_transaction_reporting_boundaries
+    evidence_snapshot: '2026-07-19'
+    official_facility_registry_ref: life/imports/global_data_centers_20260717/teraco_official_facility_registry.jsonl
+    official_facility_summary_ref: life/imports/global_data_centers_20260717/teraco_official_facility_summary.json
+    roster:
+      current_provider_directory_codes: 8
+      operating_codes: [JB1, JB2, JB3, JB4, JB5, CT1, CT2, DB1]
+      under_construction_not_current_directory: [JB7]
+      JB1_physical_buildings: [JB1_East, JB1_West]
+      non_data_center_connectivity_asset: [Teleport]
+      boundary: >-
+        Eight operating facility codes are not eight physical buildings: JB1
+        has East and West buildings, campuses contain several codes, and the
+        Teleport satellite earth station is a connectivity asset. JB7 is a
+        ninth development and is not treated as operating.
+    facility_evidence:
+      Isando:
+        codes: [JB1, JB3, JB5]
+        current_shared_white_space_sqm: 32000
+        current_shared_critical_IT_mw: 70
+        JB1:
+          buildings: [East, West]
+          individual_current_IT_mw: undisclosed
+          historical_electrical_evidence: {diesel_storage_litres: 210000, full_load_runtime_hours_minimum: 40}
+        JB3:
+          completion_date: '2021-08-19'
+          individual_completion_critical_IT_mw: 29
+          building_structure_sqm: 45000
+          data_hall_space_sqm: 12000
+        JB5:
+          individual_critical_IT_mw: 30
+          building_structure_sqm: 55000
+          utility_power_MVA: 120
+          data_halls: 12
+          completion_boundary: 2025_JB4_release_confirms_recent_completion_but_exact_date_undisclosed
+          cooling: closed_loop_chilled_water_with_100_percent_free_air_and_zero_ongoing_cooling_water_design_claim
+        boundary: The shared 70 MW is not allocated to JB1; a historical arithmetic residual is not promoted to a current provider fact.
+      Bredell_JB2:
+        lifecycle: operating_since_2017_11
+        white_space_sqm: 5400
+        critical_IT_mw: 13
+        utility_power_MVA: 24
+        topology: concurrently_maintainable_with_added_fault_tolerance
+      Bredell_JB4:
+        lifecycle: operating_with_final_30MW_expansion_completed_2025_08_12
+        critical_IT_mw: 50
+        building_structure_sqm: 80000
+        utility_power_mw: 80
+        data_halls: 14
+        data_hall_area_sqm_release: 17000
+        current_directory_white_space_sqm: 16000
+        cooling: [closed_loop_chilled_water, free_air, AI_enabled_controls, liquid_to_liquid, direct_to_chip]
+        ongoing_cooling_water: zero_as_provider_claim
+      Cape_Town_CT1:
+        lifecycle: operating_3MW_with_2MW_expansion_under_construction
+        current_white_space_sqm: 2500
+        current_critical_IT_mw: 3
+        expansion_additional_IT_mw: 2
+        expected_completion: early_2027
+        completion_confirmed: false
+      Cape_Town_CT2:
+        lifecycle: operating_expansion_completed_2025_11_10
+        critical_IT_mw: 50
+        white_space_sqm: 18000
+        building_structure_sqm: 73000
+        utility_power_mw: 90
+        data_halls: 16
+        cooling: [closed_loop_zero_water, free_air, AI_enhanced_controls, liquid_to_liquid]
+      Durban_DB1:
+        lifecycle: operating
+        current_directory_IT_mw_rounded: 2
+        completion_release_critical_IT_mw: 2.2
+        white_space_sqm: 1500
+        building_structure_sqm: 5800
+        utility_power_MVA: 4
+        racks_more_than: 700
+      Isando_JB7:
+        lifecycle: under_construction
+        planned_critical_IT_mw: 40
+        planned_building_structure_sqm: 71000
+        planned_utility_power_MVA: 68
+        planned_data_halls: 8
+        scheduled_completion: 2026
+        completion_confirmed_as_of_review: false
+        cooling_design: [closed_loop_chilled_water, direct_free_air, liquid_to_air, liquid_to_liquid]
+    capacity_reconciliation:
+      current_homepage_marketing_IT_load_mw: 228
+      current_homepage_scope: {Isando_including_JB7_construction: 110, Bredell: 63, Cape_Town: 53, Durban: 2}
+      2025_08_completed_platform_release_mw: 189
+      2025_08_release_scope: {Isando_operating: 70, Bredell: 64, Cape_Town: 53, Durban: 2}
+      current_directory_value_arithmetic_mw: 188
+      Digital_Realty_transaction_scope_as_of_2026_03_31: {in_place_IT_capacity_mw: 126, under_construction_IT_capacity_mw: 41}
+      CT1_post_expansion_projection_excluding_JB7_mw: 191
+      boundary: >-
+        The 228-MW marketing total includes JB7 construction; 189 MW is a dated
+        completed-platform release; current page arithmetic is 188 MW because
+        Bredell individual values add to 63 rather than the release's 64; and
+        Digital Realty's 126-plus-41-MW transaction scope is not allocated to
+        sites. None is actual instantaneous, utilized or billed load.
+    electrical_cooling_and_sustainability:
+      2024_blended_PUE: 1.47
+      2024_water_litres_per_IT_kwh: 0.05
+      2024_total_water_kl: 34006
+      2024_borehole_water_kl: 3522
+      2024_rainwater_kl: 483
+      2024_waste_diverted_percent: 52
+      owned_utility_scale_solar_PV_under_construction_mw: 120
+      solar_operation_due_in_source: 2026
+      solar_completion_confirmed_as_of_review: false
+      clean_energy_targets: {2027_percent: 50, 2035_percent: 100}
+      exact_current_per_site_grid_substation_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CDU_models_counts_ratings_and_single_line_topology: undisclosed
+      boundary: Portfolio averages, design claims and utility or apparent-power values are not per-site measured IT load or an as-built equipment ledger.
+    accelerator_and_AI_boundary:
+      NVIDIA_DGX_Ready_certified: true
+      published_AI_infrastructure_density_context_kw_per_rack_up_to: 150
+      exact_Teraco_facility_supported_or_live_rack_density_kw: undisclosed
+      liquid_cooling_capability: true
+      provider_owned_GPU_model_count_site_delivery_power_utilization_and_economics: undisclosed
+      customer_GPU_inventory_assignable_to_Teraco: false
+      accelerator_ledger_action: no_numeric_row_created
+      boundary: DGX-Ready, liquid cooling and AI workload support prove infrastructure capability, not GPU ownership, count or utilization.
+    ownership_and_financial_boundary:
+      Digital_Realty_completed_controlling_interest_percent: 61.1
+      2026_additional_interest_agreed_percent: 16
+      transaction_consideration_USD_million_approximate: 650
+      post_close_target_ownership_percent: 77
+      expected_close: H2_2026
+      completion_confirmed_as_of_review: false
+      transaction_deck_revenue_USD_million: 352
+      revenue_period_and_accounting_basis: not_explicit_beyond_metrics_as_of_2026_03_31
+      standalone_statutory_operating_profit_cash_flow_capex_debt_customer_concentration_and_ROIC: undisclosed
+      financial_profile_refs: [company_teraco, company_digital_realty]
+    public_map_crosswalk:
+      related_OSM_objects: 12
+      data_center_related_objects: 11
+      non_data_center_connectivity_objects: 1
+      exact_Teraco_operator_tagged_objects: 7
+      legacy_typo_operator_objects: 1
+      objects_without_operator_tag: 4
+      matched_facility_codes: [JB1, JB2, JB3, JB4, JB5, CT2]
+      boundary: Campus polygons, facility footprints, an operator typo and the Teleport are not a complete provider-certified building census.
+    linked_companies:
+      controlling_parent: [Digital_Realty]
+      minority_investors_before_pending_transaction: [Berkshire_Partners, Permira, Columbia_Capital_and_other_investors]
+      lender_named: [Absa]
+      internet_exchange: [NAPAfrica]
+      financial_profile_refs: [company_teraco, company_digital_realty]
+    sources:
+      - {title: Current Johannesburg facilities, publisher: Teraco, accessed: 2026-07-19, url: "https://www.teraco.co.za/data-centre-locations/johannesburg/"}
+      - {title: Current Cape Town facilities, publisher: Teraco, accessed: 2026-07-19, url: "https://www.teraco.co.za/data-centre-locations/cape-town/"}
+      - {title: Current Durban facility, publisher: Teraco, accessed: 2026-07-19, url: "https://www.teraco.co.za/data-centre-locations/durban/"}
+      - {title: JB4 expansion completion, publisher: Teraco, date: 2025-08-12, url: "https://www.teraco.co.za/news/teraco-completes-significant-jb4-hyperscale-data-centre-expansion-incorporating-new-sustainability-designs/"}
+      - {title: CT2 expansion completion, publisher: Teraco, date: 2025-11-10, url: "https://www.teraco.co.za/news/teraco-completes-ct2-data-centre-expansion/"}
+      - {title: CT1 expansion announcement, publisher: Teraco, date: 2025-11-12, url: "https://www.teraco.co.za/news/teraco-announces-ct1-data-centre-expansion-in-rondebosch-cape-town/"}
+      - {title: JB7 and R8 billion loan announcement, publisher: Teraco, date: 2024-11-13, url: "https://www.teraco.co.za/news/teraco-announces-jb7-and-a-new-r8-billion-syndicated-loan/"}
+      - {title: Sustainability performance, publisher: Teraco, accessed: 2026-07-19, url: "https://www.teraco.co.za/about/sustainability/"}
+      - {title: AI infrastructure and NVIDIA DGX-Ready capability, publisher: Teraco, accessed: 2026-07-19, url: "https://www.teraco.co.za/platform-teraco/infrastructure-for-artificial-intelligence/"}
+      - {title: Certifications and compliance, publisher: Teraco, accessed: 2026-07-19, url: "https://www.teraco.co.za/about/certifications-and-compliance/"}
+      - {title: Strategic Transaction Update, publisher: Digital_Realty, date: 2026-06, url: "https://investor.digitalrealty.com/static-files/c48b8fee-1eb8-4830-87b3-6c9d7bdd5396"}
+      - {title: Additional Teraco ownership transaction, publisher: Digital_Realty, date: 2026-06-22, url: "https://investor.digitalrealty.com/news-releases/news-release-details/digital-realty-announces-transactions-drive-continued-platform"}
+    confidence: high_for_eight_operating_codes_JB7_construction_published_capacity_boundaries_JB4_CT2_completion_CT1_expansion_equipment_design_ownership_transaction_and_OSM_transcription_medium_for_JB5_completion_timing_and_transaction_revenue_basis_low_for_current_per_site_live_load_GPU_inventory_complete_as_built_BOM_standalone_financials_and_ROIC
+
 disclosure_gap_register:
+  - Teraco_eight_operating_codes_JB1_two_buildings_JB7_construction_Teleport_and_twelve_OSM_objects_to_exact_non_overlapping_physical_building_title_lease_and_lifecycle_census
+  - Teraco_126MW_in_place_41MW_construction_188MW_current_page_arithmetic_189MW_completed_release_191MW_CT1_projection_and_228MW_marketing_scope_bridge
+  - Teraco_per_site_operating_energized_leased_utilized_customer_accepted_billed_and_actual_IT_load
+  - Teraco_per_site_grid_substation_transformer_switchgear_UPS_battery_generator_fuel_chiller_CRAH_CDU_models_counts_ratings_and_as_built_topology
+  - Teraco_per_site_live_liquid_cooled_MW_measured_PUE_WUE_energy_water_hourly_renewable_matching_and_actual_load
+  - Teraco_GPU_model_count_owner_host_site_delivery_fabric_power_utilization_customer_revenue_and_margin
+  - Teraco_standalone_statutory_revenue_operating_profit_cash_flow_capex_debt_customer_concentration_site_economics_and_ROIC
+  - Teraco_Digital_Realty_additional_16_percent_transaction_completion_and_post_close_ownership_economics
+  - Teraco_JB7_CT1_expansion_and_120MW_solar_completion_grid_energization_customer_acceptance_generation_wheeling_and_revenue_commencement
   - DigiCo_13_legal_properties_to_exact_current_title_lease_non_overlapping_buildings_and_sale_completion
   - DigiCo_11_current_directory_labels_9_operating_properties_CHI1_phased_delivery_BNE3_development_and_two_LAX_land_assets_to_current_physical_building_census
   - DigiCo_PDS_237_7MW_FY2025_232MW_HY2026_238MW_and_post_LAX_withdrawal_172MW_to_same_date_operating_energized_contracted_billing_utilized_and_actual_load
