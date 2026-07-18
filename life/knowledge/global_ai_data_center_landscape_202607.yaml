@@ -131,8 +131,8 @@ scope_and_method:
     disclosure_registry_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_registry.jsonl
     disclosure_summary_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_summary.json
     disclosure_registry_as_of: 2026-07-19
-    operator_records: 32
-    machine_generated_page_registry_operators: [CyrusOne, QTS, NEXTDC, Flexential, Lumen_Technologies, Csquare, CDC_Data_Centres]
+    operator_records: 33
+    machine_generated_page_registry_operators: [CyrusOne, QTS, NEXTDC, Flexential, Lumen_Technologies, Csquare, CDC_Data_Centres, Switch]
     comparison_gate:
       - choose_one_physical_granularity
       - choose_one_lifecycle_date_and_state
@@ -10199,6 +10199,290 @@ campus_profiles:
         publisher: CDC_Data_Centres
         url: https://www.cdc.com.au/resources/insights-and-reports/saving-water-on-an-epic-scale/
     confidence: high_for_portfolio_site_regions_capacity_pipeline_contract_cooling_and_efficiency_low_for_per_campus_power_and_GPU_inventory
+
+  - id: dc_switch_us_portfolio
+    name: Switch United States data-center and AI Factory portfolio
+    record_granularity: five_current_exascale_campuses_plus_one_announced_future_campus
+    operator: Switch_Inc
+    country: US
+    lifecycle_as_of_2026_07_19: mixed_operating_active_expansion_and_announced_planning
+    official_campus_registry_ref: life/imports/global_data_centers_20260717/switch_official_campus_registry.jsonl
+    official_campus_summary_ref: life/imports/global_data_centers_20260717/switch_official_campus_summary.json
+    registry_builder_ref: scripts/build_switch_official_campus_registry.py
+    current_owner_published_scale:
+      operating_data_centers: 20
+      current_exascale_campuses: 5
+      source: IFM_Investors_current_Switch_case_study
+      boundary: >-
+        The 20-data-center aggregate is not allocated to a current public
+        facility-code or address roster. It therefore cannot be reconciled
+        one-for-one to provider campus pages or OSM building footprints.
+    current_campus_roster:
+      Nevada:
+        Core_Las_Vegas: operating_with_active_expansion
+        Citadel_Tahoe_Reno: operating_with_active_expansion
+      Michigan:
+        Pyramid_Grand_Rapids: operating_with_active_expansion
+      Georgia:
+        Keep_Atlanta: operating_with_active_expansion
+      Texas:
+        Rock_Austin_Houston: operating_with_active_expansion
+      Pennsylvania:
+        Beaver_County_Greater_Pittsburgh: announced_2026_04_planned
+      scope_warning: >-
+        Austin/Houston includes legacy Data Foundry facilities and The Rock
+        development. Campus, market and physical data-center counts are not the
+        same granularity.
+    campus_scale:
+      Core_Las_Vegas:
+        current_page_full_completion_power_mw_up_to: 495
+        disclosed_named_facility_examples: [Las_Vegas_7, Las_Vegas_8, Las_Vegas_9, Las_Vegas_10, Las_Vegas_12]
+        Las_Vegas_10_dated_opening:
+          area_sqft_nearly: 350000
+          power_mw_up_to: 40
+          campus_power_after_opening_mw_up_to: 315
+        boundary: Full-completion and dated opening values are not current utilized load.
+      Citadel_Tahoe_Reno:
+        current_page_completion_description: multi_gigawatt
+        current_page_rack_density_mw_up_to: 2
+        dated_Tahoe_Reno_02_sheet:
+          campus_acres_more_than: 2000
+          campus_full_completion_area_sqft_more_than: 12000000
+          campus_full_completion_power_mw_up_to: 2000
+          building_area_sqft_more_than: 522000
+          building_power_mw_up_to: 55
+          published_opening: 2024_05
+          tri_redundant_power: three_N_plus_2_color_coded_systems
+          dated_density_kW_per_cabinet_up_to: 55
+        Tahoe_Reno_01_dated_opening:
+          area_sqft_up_to: 1300000
+          power_mw_up_to: 130
+        boundary: Full-build projections are not current operating or customer load.
+      Pyramid_Grand_Rapids:
+        current_page_full_completion_power_mw_up_to: 237
+        historical_2017_full_completion_power_mw_up_to: 320
+        historical_2017_full_completion_area_sqft_up_to: 1800000
+        Grand_Rapids_01_published_area_sqft: 471248
+        conflict_boundary: >-
+          The current page is retained as current marketing context and the
+          historical value as dated design history. Neither is live load.
+      Keep_Atlanta:
+        original_campus_full_completion_power_mw_up_to: 150
+        expansion_campus_acres_more_than: 2000
+        expansion_completion_description: multi_gigawatt
+        current_page_labels: [Atlanta_01, Keep_2_0_expansion]
+        boundary: The page does not publish current commissioned, leased or utilized MW.
+      Rock_Austin_Houston:
+        dated_2021_ecosystem_full_completion_area_sqft_more_than: 2000000
+        dated_2021_ecosystem_full_completion_power_mw_up_to: 185
+        legacy_Data_Foundry_acquisition_scope:
+          operating_data_centers: 4
+          designed_area_sqft_up_to: 430000
+          power_available_to_facilities_mw_up_to: 22
+          full_build_Austin_mw_up_to: 44
+          full_build_Houston_mw_up_to: 18
+        boundary: >-
+          Available 2021 facility power and future full-build power use different
+          denominators and are not a current operating-campus total.
+      Beaver_County_Pennsylvania:
+        announced: 2026_04_30
+        land_acres: 382
+        facility_count_area_power_grid_contracts_and_construction_start: undisclosed
+        lifecycle_boundary: Announced land is not an operating or energized data center.
+    public_map_crosswalk:
+      related_US_OSM_objects: 19
+      operator_tagged: 16
+      name_only: 3
+      by_campus:
+        Core_Las_Vegas: 12
+        Citadel_Tahoe_Reno: 5
+        Keep_Atlanta: 1
+        Rock_Austin: 1
+        Pyramid_Grand_Rapids: 0
+      scope_warning: >-
+        OSM objects are buildings or points. The map omits Grand Rapids and
+        legacy Texas locations, can contain multiple footprints for one facility,
+        and is not nineteen of the official twenty operating data centers.
+    accelerators:
+      Switch_owned_physical_GPU_count: undisclosed
+      customer_GPU_count_by_model_site_owner_delivery_state_and_utilization: undisclosed
+      confirmed_hosted_milestones:
+        - platform: NVIDIA_GB200_NVL72
+          customer_and_hardware_owner: CoreWeave
+          integrator: Dell_Technologies
+          hosted_at: undisclosed_Switch_AI_Factory
+          milestone_date: 2024_11
+          exact_number_of_systems_and_GPUs: undisclosed
+        - platform: NVIDIA_GB300_NVL72
+          customer_and_hardware_owner: CoreWeave
+          integrator: Dell_Technologies
+          hosted_at: undisclosed_Switch_AI_Factory
+          milestone_date: 2025_07
+          exact_number_of_systems_and_GPUs: undisclosed
+      NVIDIA_program_context: DGX_Ready_data_center_partner
+      boundary: >-
+        NVL72 is a product architecture label and the industry-first bring-up is
+        one deployment milestone. It does not disclose the number of installed
+        racks, a Switch-owned inventory, the host campus, utilization or revenue.
+    AI_factory_power_and_cooling:
+      EVO_density_design:
+        conventional_baseline_kW_per_rack: 20
+        future_design_kW_per_rack_up_to: 2000
+        marketing_multiple: 100X
+      fluidic_system_pathways: 5
+      supported_cooling_modes: [liquid_to_air, liquid_to_chip, hybrid_air_and_liquid]
+      architecture: >-
+        Each pathway can deliver a different pressure and temperature to an EVO
+        chamber; exact pipe, pump, heat-exchanger, CDU, chiller and rack
+        configuration by campus is not disclosed.
+      power_architecture:
+        modular_and_redundant: true
+        continuous_monitoring: true
+        legacy_power_spine: patented_PDU_corridor
+        exact_current_redundancy_topology_and_equipment_BOM_by_site: undisclosed
+      digital_operations:
+        system: LDC_EVO
+        capabilities: [digital_twin, computational_fluid_dynamics, real_time_observability, automated_configuration, preventive_maintenance]
+        confirmed_technology_partners:
+          - NVIDIA
+          - Dassault_Systemes
+          - Cadence
+          - ETAP
+          - Schneider_Electric
+          - SUSE
+          - Dell_Technologies
+          - Oxide_Computer_Company
+          - Procore_Technologies
+      performance_and_sustainability:
+        current_marketed_PUE: 1.18
+        all_data_centers_powered_by_renewable_energy_since: 2016_01
+        annual_matching_boundary: >-
+          The public page does not establish real-time carbon-free energy,
+          site-level PUE, WUE, absolute water, or the contractual instrument mix.
+    confirmed_current_infrastructure_supply:
+      supplier: Schneider_Electric
+      agreement_announced: 2025_11_19
+      two_phase_supply_capacity_agreement_usd_billion: 1.9
+      equipment:
+        - prefabricated_power_modules
+        - Uniflair_oil_free_variable_speed_centrifugal_chillers
+        - integrated_free_cooling
+      service_term: three_year_full_service_chiller_contract
+      supplier_revenue_boundary: >-
+        The $1.9 billion is described as Schneider Electric sales under a supply
+        capacity agreement. It is not Switch revenue, recognized Switch capex,
+        installed equipment value or a per-campus allocation.
+    legacy_Data_Foundry_equipment_snapshots:
+      dating_and_scope: historical_spec_sheets_retained_on_Switch_hosting
+      Austin_1:
+        facility_area_sqft: 40000
+        utility: dedicated_400MW_Austin_Energy_substation
+        transfer_switch: ASCO_3000A_480V_ATS
+        UPS: [PowerWare_9315_500kVA_parallel_redundant, PowerWare_9395_550kVA_N_plus_1]
+        PDU: [PDI_150kVA, PDI_300kVA]
+        generators: Caterpillar_1500kW_diesel
+        onsite_fuel_gallons: 6000
+        stated_runtime_hours_more_than: 48
+      Texas_1:
+        facility_area_sqft: 130000
+        utility: two_dually_fed_400MW_capacity_substations
+        transformers: 2500kVA_dual_input
+        UPS: Powerware_9395_750kVA_modules
+        PDU: [300kVA_single_input, 300kVA_dual_input_with_ATS]
+        generators: Caterpillar_2500kW_N_plus_1_diesel
+        chiller_capacity_tons: 3300
+        onsite_fuel_gallons: 50000
+      Texas_2:
+        facility_area_sqft: 325000
+        utility: two_dually_fed_400MW_capacity_substations
+        transformers: 2500kVA_dual_input
+        UPS: Toshiba_750kVA_modules
+        PDU: 500kVA_A_and_B_with_600A_static_transfer_switches
+        generators: Cummins_2250kW_N_plus_1_diesel
+        chiller_capacity_tons: 2750
+        onsite_fuel_gallons: 40000
+      Houston_2:
+        facility_area_sqft: 350000
+        power_capacity_mw: 60
+        utility: dual_34_5kV_underground_feeds
+        transformers: 2500kVA
+        UPS: Powerware_9395_1500kW_lineups_per_power_train
+        generators: Cummins_2250kW_N_plus_1_diesel
+        fuel_gallons_per_generator: 8400
+        stated_runtime_hours_per_generator: 48
+        cooling: [N_plus_1_chillers, N_plus_20_percent_CRAHs, York_550ton_VFD_chillers]
+      validity_boundary: >-
+        These sheets establish historical installed or designed equipment at
+        legacy facilities, not unchanged 2026 configuration, current service
+        condition, Switch-wide standard or current asset lifecycle.
+    power_procurement_and_generation_pipeline:
+      Ormat_geothermal_PPA:
+        announced: 2026_01_05
+        term_years: 20
+        Salt_Wells_geothermal_mw_approximately: 13
+        optional_solar_PV_mw_approximately: 7
+        scheduled_delivery_start: 2030_Q1
+        applies_to: Nevada_data_centers
+        future_recontracting_opportunity_mw_more_than: 100
+        boundary: Future PPA supply is not current delivered electricity or IT load.
+      Oklo_advanced_nuclear_framework:
+        announced: 2024_12_18
+        maximum_gw: 12
+        horizon_through: 2044
+        agreement_status: non_binding_master_power_agreement
+        boundary: >-
+          Individual binding PPAs, sites, permits, licensing, construction,
+          generation and commercial operation remain future milestones.
+    ownership_and_financial_linkage:
+      owner_percent_as_of_current_IFM_case_study:
+        DigitalBridge: 55.8
+        IFM_advised_funds: 37.2
+        Switch_management: 7.0
+      take_private:
+        completed: 2022_12_06
+        enterprise_transaction_value_usd_billion_approximately: 11
+        includes_outstanding_debt_repayment: true
+      linked_companies_with_financial_profile_refs:
+        DigitalBridge: company_digitalbridge
+        CoreWeave: company_coreweave
+        NVIDIA: company_nvidia
+        Schneider_Electric: company_schneider_electric
+        Eaton_Powerware: company_eaton
+        Caterpillar: company_caterpillar
+        Cummins: company_cummins
+        Johnson_Controls_York: company_johnson_controls
+      linked_without_dedicated_profile_in_current_ledger:
+        - IFM_Investors
+        - Dell_Technologies
+        - Ormat_Technologies
+        - Oklo
+        - ASCO
+        - PDI
+        - Toshiba
+      financial_profile_ref: company_switch
+    sources:
+      - {title: Switch locations, publisher: Switch, accessed: 2026-07-19, url: "https://www.switch.com/locations/"}
+      - {title: Switch Las Vegas, publisher: Switch, accessed: 2026-07-19, url: "https://www.switch.com/las-vegas/"}
+      - {title: Switch Tahoe Reno, publisher: Switch, accessed: 2026-07-19, url: "https://www.switch.com/tahoe-reno/"}
+      - {title: Switch Grand Rapids, publisher: Switch, accessed: 2026-07-19, url: "https://www.switch.com/grand-rapids/"}
+      - {title: Switch Atlanta, publisher: Switch, accessed: 2026-07-19, url: "https://www.switch.com/atlanta/"}
+      - {title: Switch Austin and Houston, publisher: Switch, accessed: 2026-07-19, url: "https://www.switch.com/austin/"}
+      - {title: Switch AI Factories, publisher: Switch, accessed: 2026-07-19, url: "https://www.switch.com/ai-factories/"}
+      - {title: Switch renewable power and PUE, publisher: Switch, accessed: 2026-07-19, url: "https://www.switch.com/sustainable-data-centers/power/"}
+      - {title: Tahoe Reno 02 one-sheet, publisher: Switch, date: 2023, url: "https://switchdotcom.s3-sites.data.switch.com/media/one-sheets/COLO/Tahoe-Reno-2.pdf"}
+      - {title: Austin 1 legacy facility specification, publisher: Data_Foundry_on_Switch_hosting, date: historical, url: "https://switchdotcom.s3-sites.data.switch.com/df/media/austin-1.pdf"}
+      - {title: Texas 1 legacy facility specification, publisher: Data_Foundry_on_Switch_hosting, date: historical, url: "https://switchdotcom.s3-sites.data.switch.com/df/media/texas-1.pdf"}
+      - {title: Texas 2 legacy facility specification, publisher: Data_Foundry_on_Switch_hosting, date: historical, url: "https://switchdotcom.s3-sites.data.switch.com/df/media/texas-2.pdf"}
+      - {title: Houston 2 legacy facility specification, publisher: Data_Foundry_on_Switch_hosting, date: historical, url: "https://switchdotcom.s3-sites.data.switch.com/df/media/houston-2.pdf"}
+      - {title: CoreWeave GB300 NVL72 at Switch, publisher: Switch, date: 2025-07, url: "https://www.switch.com/coreweave-deploys-industry-first-nvidia-gb300-nvl72-in-switchs-ai-factory-solution/"}
+      - {title: NVIDIA Omniverse DSX Blueprint in Switch EVO AI Factories, publisher: Switch, date: 2026-03-16, url: "https://www.switch.com/switch-integrates-nvidia-omniverse-dsx-blueprint-into-switchs-evo-ai-factories/"}
+      - {title: Schneider Electric and Switch supply capacity agreement, publisher: Switch_and_Schneider_Electric, date: 2025-11-19, url: "https://www.switch.com/schneider-electric-and-switch-expand-partnership-with-1-9-billion-supply-capacity-agreement-to-power-ai-factories/"}
+      - {title: Ormat 20-year PPA with Switch, publisher: Switch_and_Ormat, date: 2026-01-05, url: "https://www.switch.com/ormat-technologies-signs-20-year-ppa-with-switch-for-13mw-of-carbon-free-geothermal-capacity-to-power-data-centers/"}
+      - {title: Oklo and Switch master power agreement, publisher: Switch_and_Oklo, date: 2024-12-18, url: "https://www.switch.com/oklo-and-switch-form-landmark-strategic-relationship/"}
+      - {title: Current Switch ownership and operating scale, publisher: IFM_Investors, accessed: 2026-07-19, url: "https://www.ifminvestors.com/en-gb/capabilities/infrastructure/hub/switch-inc-a-case-study/"}
+      - {title: Switch announces Beaver County campus, publisher: Switch, date: 2026-04-30, url: "https://www.switch.com/switch-announces-new-data-center-campus-in-beaver-county-pennsylvania/"}
+      - {title: Switch 2021 Form 10-K, publisher: Switch_SEC, date: 2022-03-04, url: "https://www.sec.gov/Archives/edgar/data/1710583/000171058322000009/swch-20211231.htm"}
+    confidence: high_for_current_campus_roster_aggregate_operating_count_selected_design_capacity_AI_architecture_ownership_and_dated_financials_low_for_complete_building_roster_live_load_current_private_financials_and_GPU_inventory
 
   - id: dc_firmus_project_southgate_australia
     name: Firmus Project Southgate Australia AI Factory program
@@ -28841,6 +29125,18 @@ disclosure_gap_register:
   - Project_Southgate_exact_CDC_Melbourne_building_and_live_GB300_status
   - Project_Southgate_1_6GW_to_2_7GW_scope_reconciliation
   - Firmus_DayOne_Batam_exact_parcel_Nongsa_overlap_power_chain_and_live_accelerator_status
+  - Switch_20_current_operating_data_centers_to_complete_facility_code_address_building_ownership_lifecycle_and_five_campus_crosswalk
+  - Switch_19_related_OSM_objects_to_current_20_operating_assets_and_missing_Grand_Rapids_legacy_Texas_building_reconciliation
+  - Switch_per_site_operating_energized_leased_utilized_billed_IT_load_racks_customers_and_revenue
+  - Switch_Core_Citadel_Pyramid_Keep_Rock_full_build_power_to_current_built_energized_contracted_accepted_and_actual_metered_load
+  - Switch_exact_installed_GB200_GB300_and_other_GPU_models_counts_servers_racks_fabric_owner_host_site_power_utilization_revenue_and_margin
+  - Switch_per_site_grid_voltage_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_and_as_built_topology
+  - Switch_per_site_PUE_WUE_water_real_time_renewable_matching_live_liquid_cooled_MW_and_measured_operating_performance
+  - Switch_current_private_revenue_accounting_operating_income_EBITDA_capex_debt_cash_flow_customer_concentration_utilization_and_ROIC
+  - Switch_20B_raised_10B_facilities_ABS_CMBS_LC_project_finance_outstanding_debt_liquidity_collateral_maturity_and_non_overlap_reconciliation
+  - Switch_Schneider_1_9B_supply_capacity_to_purchase_orders_deliveries_installed_equipment_incurred_capex_and_site_allocation
+  - Switch_Oklo_12GW_nonbinding_framework_and_Ormat_13MW_PPA_to_binding_site_specific_permitted_built_and_delivered_generation
+  - Switch_Beaver_County_382_acres_to_final_site_plan_MW_grid_permits_financing_construction_customers_RFS_and_operation
   - AirTrunk_current_post_2024_committed_energized_and_utilized_capacity_by_campus
   - HUMAIN_AirTrunk_Saudi_exact_location_capacity_hardware_power_and_delivery_schedule
   - Equinix_280_year_end_to_281_current_facility_reconciliation
@@ -28959,7 +29255,8 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
-    - global_coverage_P1_CDC_Switch_atNorth_NorthC_Telehouse_Sabey_Cologix_CloudHQ_KDDI_GlobalSwitch_OVHcloud_official_profiles
+    - global_coverage_remaining_P1_atNorth_NorthC_Telehouse_Sabey_Cologix_CloudHQ_KDDI_GlobalSwitch_OVHcloud_official_profiles
+    - Switch_20_operating_data_centers_to_complete_building_roster_current_load_GPU_inventory_power_cooling_BOM_and_private_financials
     - NEXTDC_29_labels_to_physical_building_parcel_ownership_lifecycle_and_current_load_reconciliation
     - NEXTDC_TK2_and_KL1_current_power_grid_construction_customer_acceptance_and_billing_status
     - NEXTDC_exact_GPU_inventory_and_per_site_power_cooling_as_built_BOM_PUE_WUE_water_and_live_liquid_cooled_MW
