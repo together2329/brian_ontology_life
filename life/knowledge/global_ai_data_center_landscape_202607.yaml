@@ -16310,7 +16310,335 @@ campus_profiles:
       - {title: Historical Unaizah data-center opening, publisher: Arab_News, date: 2015-09-09, url: "https://www.arabnews.com/corporate-news/news/803886"}
     confidence: high_for_current_city_marketing_medium_for_historical_opening_low_for_exact_current_building_capacity_equipment_and_GPU_inventory
 
+  - id: dc_sdaia_nic_portfolio
+    name: SDAIA National Information Center data-center portfolio
+    record_granularity: government_operator_portfolio_and_public_certification_ledger_not_one_physical_campus
+    operator: Saudi_Data_and_AI_Authority_National_Information_Center
+    location:
+      country: Saudi_Arabia
+      named_cities_in_Uptime_ledger: [Riyadh, Jeddah, Taif]
+      exact_complete_current_physical_roster_addresses_coordinates_parcels_and_building_count: undisclosed
+    lifecycle_as_of_2026_07_18: mixed_existing_certified_projects_and_new_foundation_stone_development
+    public_Uptime_ledger:
+      client: Saudi_Data_and_AI_Authority_National_Information_Center
+      named_projects:
+        - {site: NIC_Riyadh_Data_Center_Site_1_V1_Phase_1_2, city: Riyadh, tier: Tier_III, TCDD: true, TCCF: false, TCOS: false}
+        - {site: NIC_Riyadh_Data_Center_Site_2_V2, city: Riyadh, tier: Tier_III, TCDD: true, TCCF: false, TCOS: false}
+        - {site: NIC_Rakeeza_Data_Center, city: Jeddah, tier: Tier_III, TCDD: true, TCCF: true, TCOS: Tier_III_Gold}
+        - {site: NIC_HADA_Data_Center, city: Taif, tier: Tier_III, TCDD: true, TCCF: true, TCOS: false}
+        - {site: NIC_Hexagon_RD_AZ1_Phase_1, city: Riyadh, tier: Tier_IV, TCDD: true, TCCF: false, TCOS: false}
+      boundary: >-
+        The public award list is a project-and-certification ledger, not proof of
+        a complete current building roster, ownership, live capacity or load.
+        TCDD is design-document certification; only Rakeeza shows an operational
+        sustainability award in the reviewed ledger.
+    2024_Riyadh_expansion_program:
+      announcement_date: 2024-07-27
+      description: several_data_centers_and_technical_infrastructure_expansion_projects
+      cabinet_density_kw_up_to: 65
+      exact_sites_count_capacity_and_Uptime_crosswalk: undisclosed
+      boundary: The 65-kW design statement is not assigned to Hexagon or any named Uptime project without a primary crosswalk.
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_OEM_models_counts_servers_racks_fabric_site_allocation_ownership_delivery_live_status_power_utilization_and_workloads: undisclosed
+    electrical_cooling_and_sustainability:
+      public_portfolio_detail: highly_efficient_electrical_and_mechanical_systems
+      exact_per_site_grid_substation_transformer_switchgear_UPS_battery_generator_fuel_chiller_CRAH_CDU_counts_ratings_OEMs_PUE_WUE_water_and_renewable_supply: undisclosed
+    child_refs:
+      - dc_sdaia_hexagon_riyadh
+      - dc_sdaia_nic_riyadh_site1_v1
+      - dc_sdaia_nic_riyadh_site2_v2
+      - dc_sdaia_nic_rakeeza_jeddah
+      - dc_sdaia_nic_hada_taif
+    sources:
+      - {title: Uptime Institute Saudi certification ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+      - {title: SDAIA launches expansion projects and data centers, publisher: Saudi_Press_Agency, date: 2024-07-27, url: "https://www.spa.gov.sa/en/N2145102"}
+    confidence: high_for_named_Uptime_awards_and_2024_program_statement_low_for_complete_current_roster_live_capacity_equipment_GPU_and_utilization
+
+  - id: dc_sdaia_hexagon_riyadh
+    name: SDAIA NIC Hexagon RD-AZ1
+    record_granularity: announced_government_data_center_development_with_phase_one_design_award
+    operator: Saudi_Data_and_AI_Authority_National_Information_Center
+    location: {country: Saudi_Arabia, city: Riyadh, site_area_sqft_more_than: 30000000, exact_address_coordinate_and_parcel: undisclosed}
+    lifecycle_as_of_2026_07_18: foundation_stone_laid_2026_01_01_not_evidenced_as_operating
+    announced_scale:
+      total_capacity_mw: 480
+      capacity_definition: unspecified_total_capacity_not_confirmed_as_IT_load_utility_service_or_generation
+      phase_breakout_RFS_construction_schedule_energized_leased_and_utilized_load: undisclosed
+    certification_and_design:
+      Uptime_public_ledger: {project: NIC_Hexagon_RD_AZ1, phase: Phase_1, award: TCDD, tier: Tier_IV, TCCF: not_found, TCOS: not_found}
+      Saudi_Press_Agency_design_claims: [Tier_IV, TIA_942, ISO_IEC_22237, LEED_Gold_standard]
+      boundary: >-
+        The government announcement describes high-level standards, while the
+        reviewed Uptime ledger currently confirms only Phase 1 Tier IV design
+        documents. It does not establish constructed-facility or operational
+        certification for the 480-MW program.
+    electrical_cooling_and_sustainability:
+      announced: [direct_liquid_cooling, hybrid_cooling, renewable_energy, low_PUE_ambition]
+      numeric_PUE_WUE_water_renewable_share_and_measured_performance: undisclosed
+      exact_grid_interconnection_substation_transformer_switchgear_UPS_battery_generator_fuel_chiller_CRAH_CDU_OEM_counts_ratings_and_topology: undisclosed
+    accelerators_and_AI:
+      role: secure_government_data_and_AI_workloads
+      exact_GPU_or_accelerator_models_counts_servers_racks_fabric_ownership_delivery_and_utilization: undisclosed
+    economic_impact_claims:
+      cumulative_local_economic_impact_SAR_billion_more_than: 10
+      annual_savings_SAR_billion_more_than: 1.8
+      scope: future_SDAIA_data_center_program_not_proven_as_Hexagon_only
+      boundary: Forecast economic impact and public-sector savings are not project revenue, operating profit or realized cash flow.
+    portfolio_ref: dc_sdaia_nic_portfolio
+    sources:
+      - {title: Crown Prince lays foundation stone for Hexagon, publisher: Saudi_Press_Agency, date: 2026-01-01, url: "https://www.spa.gov.sa/en/N2480096"}
+      - {title: Hexagon data center supports SDAIA national network, publisher: Saudi_Press_Agency, date: 2026-01-01, url: "https://www.spa.gov.sa/N2480268"}
+      - {title: Uptime Institute Saudi certification ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+    confidence: high_for_foundation_stone_announced_480MW_area_and_TCDD_award_low_for_capacity_definition_delivery_equipment_GPU_and_operating_status
+
+  - id: dc_sdaia_nic_riyadh_site1_v1
+    name: NIC Riyadh Data Center Site 1 V1 Phase 1-2
+    record_granularity: individual_Uptime_design_award_project
+    operator: Saudi_Data_and_AI_Authority_National_Information_Center
+    location: {country: Saudi_Arabia, city: Riyadh, exact_address_coordinate_and_parcel: undisclosed}
+    lifecycle: design_document_award_only_in_reviewed_public_ledger
+    Uptime_awards: {tier: Tier_III, design_documents: true, constructed_facility: not_found, operational_sustainability: not_found}
+    capacity_and_infrastructure: {exact_IT_mw_facility_power_floor_area_racks_live_load_GPU_inventory_PUE_WUE_water_power_cooling_BOM_and_current_operation: undisclosed}
+    portfolio_ref: dc_sdaia_nic_portfolio
+    sources:
+      - {title: Uptime Institute Saudi certification ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+    confidence: high_for_name_city_and_design_award_low_for_physical_scope_construction_operation_capacity_equipment_and_GPU_inventory
+
+  - id: dc_sdaia_nic_riyadh_site2_v2
+    name: NIC Riyadh Data Center Site 2 V2
+    record_granularity: individual_Uptime_design_award_project
+    operator: Saudi_Data_and_AI_Authority_National_Information_Center
+    location: {country: Saudi_Arabia, city: Riyadh, exact_address_coordinate_and_parcel: undisclosed}
+    lifecycle: design_document_award_only_in_reviewed_public_ledger
+    Uptime_awards: {tier: Tier_III, design_documents: true, constructed_facility: not_found, operational_sustainability: not_found}
+    capacity_and_infrastructure: {exact_IT_mw_facility_power_floor_area_racks_live_load_GPU_inventory_PUE_WUE_water_power_cooling_BOM_and_current_operation: undisclosed}
+    portfolio_ref: dc_sdaia_nic_portfolio
+    sources:
+      - {title: Uptime Institute Saudi certification ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+    confidence: high_for_name_city_and_design_award_low_for_physical_scope_construction_operation_capacity_equipment_and_GPU_inventory
+
+  - id: dc_sdaia_nic_rakeeza_jeddah
+    name: NIC Rakeeza Data Center
+    record_granularity: individual_Uptime_certified_project
+    operator: Saudi_Data_and_AI_Authority_National_Information_Center
+    location: {country: Saudi_Arabia, city: Jeddah, exact_address_coordinate_and_parcel: undisclosed}
+    lifecycle: constructed_facility_award_and_operational_sustainability_Tier_III_Gold_in_reviewed_public_ledger
+    Uptime_awards: {tier: Tier_III, design_documents: true, constructed_facility: true, operational_sustainability: Tier_III_Gold}
+    capacity_and_infrastructure: {exact_IT_mw_facility_power_floor_area_racks_live_load_GPU_inventory_PUE_WUE_water_power_cooling_BOM_and_utilization: undisclosed}
+    portfolio_ref: dc_sdaia_nic_portfolio
+    sources:
+      - {title: Uptime Institute Saudi certification ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+    confidence: high_for_name_city_and_certification_awards_low_for_capacity_equipment_GPU_and_utilization
+
+  - id: dc_sdaia_nic_hada_taif
+    name: NIC HADA Data Center
+    record_granularity: individual_Uptime_certified_project
+    operator: Saudi_Data_and_AI_Authority_National_Information_Center
+    location: {country: Saudi_Arabia, city: Taif, exact_address_coordinate_and_parcel: undisclosed}
+    lifecycle: constructed_facility_award_without_operational_sustainability_award_in_reviewed_public_ledger
+    Uptime_awards: {tier: Tier_III, design_documents: true, constructed_facility: true, operational_sustainability: not_found}
+    capacity_and_infrastructure: {exact_IT_mw_facility_power_floor_area_racks_live_load_GPU_inventory_PUE_WUE_water_power_cooling_BOM_and_utilization: undisclosed}
+    portfolio_ref: dc_sdaia_nic_portfolio
+    sources:
+      - {title: Uptime Institute Saudi certification ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+    confidence: high_for_name_city_and_certification_awards_low_for_capacity_equipment_GPU_and_utilization
+
+  - id: dc_datavolt_saudi_portfolio
+    name: DataVolt Saudi Arabia data-center development portfolio
+    record_granularity: private_developer_portfolio_and_dated_project_plan_not_one_physical_campus
+    operator: DataVolt
+    ownership: wholly_owned_by_Vision_Invest
+    location: {country: Saudi_Arabia, named_markets: [Central_Riyadh, East_Riyadh, Dammam, Oxagon_NEOM]}
+    lifecycle_as_of_2026_07_18: announced_and_under_development_with_no_reviewed_primary_evidence_of_live_Saudi_capacity
+    dated_capacity_ledger:
+      2024_fact_sheet_IT_capacity_mw:
+        RUH_01_Central_Riyadh: 60
+        RUH_02_East_Riyadh: 50
+        DMM_01_Dammam: 45
+        sum_not_current_operating_capacity: 155
+      Oxagon_2025_long_term_plan_mw: 1500
+      current_project_crosswalk_and_overlap: unresolved
+      boundary: >-
+        The 2024 facility plan and 2025 Oxagon agreement are dated development
+        disclosures, not energized, leased, utilized or billed capacity. The
+        Saudi USD5-billion plan and the USD5-billion Oxagon first-phase funding
+        statement may overlap and are not added.
+    corporate_pipeline:
+      potential_projects_by_2030_gw_more_than: 2
+      classification: potential_pipeline_not_contracted_or_live_capacity
+    accelerators_and_AI:
+      Supermicro_MOU: {date: 2025-05-16, contemplated_product_market_value_usd_billion_minimum: 20, products: [ultra_dense_GPU_platforms, storage, rack_PnP, DLC_2], legal_status: nonbinding_subject_to_definitive_agreements}
+      exact_GPU_OEM_models_counts_servers_racks_fabric_site_allocation_ownership_delivery_live_status_power_utilization_and_customers: undisclosed
+      boundary: DataVolt's generic bare-metal service configurations and supplier MOU do not prove a purchased or installed Saudi GPU fleet.
+    cooling_partnership:
+      parties: [DataVolt, LG_Electronics, Shaker_Group]
+      status: MOU
+      contemplated: [large_scale_chillers, coolant_distribution_units]
+      future_opportunities_not_committed: [heat_recovery, direct_current_power, LG_Energy_Solution_batteries, LG_CNS_design_build_operations]
+      exact_products_counts_purchase_orders_delivery_commissioning_and_site_allocation: undisclosed
+    HUMAIN_partnership:
+      announced: 2025-11-06
+      scope: planned_multi_gigawatt_data_center_pipeline
+      exact_sites_MW_schedule_financing_customers_hardware_and_overlap_with_other_programs: undisclosed
+    child_refs:
+      - dc_datavolt_ruh01_central_riyadh
+      - dc_datavolt_ruh02_riyadh_east_modon
+      - dc_datavolt_dmm01_dammam
+      - dc_datavolt_oxagon_neom
+    sources:
+      - {title: DataVolt KSA Facilities fact sheet, publisher: DataVolt, date: 2024-10, url: "https://data-volt.com/wp-content/uploads/2024/10/DV-Factsheet.pdf"}
+      - {title: DataVolt company booklet, publisher: DataVolt, date: 2025-02, url: "https://data-volt.com/wp-content/uploads/2025/02/DataVolt_Booklet_v11.pdf"}
+      - {title: Supermicro strategic partnership with DataVolt, publisher: Super_Micro_Computer, date: 2025-05-16, url: "https://ir.supermicro.com/news/news-details/2025/Supermicro-Announces-Strategic-Partnership-with-DataVolt/"}
+      - {title: LG DataVolt Shaker thermal-management MOU, publisher: LG_Electronics, date: 2025-09, url: "https://www.lg.com/global/newsroom/news/eco-solution/lg-taps-middle-east-growth-with-neom-oxagon-ai-data-center-partnership/"}
+      - {title: HUMAIN and DataVolt partnership, publisher: DataVolt, date: 2025-11-06, url: "https://data-volt.com/media/breaking-news/humain-and-datavolt-join-forces-to-attract-large-scale-ai-workloads-to-saudi-arabia/"}
+    confidence: high_for_dated_company_plans_and_MOU_terms_low_for_current_delivery_overlap_live_capacity_equipment_GPU_and_utilization
+
+  - id: dc_datavolt_ruh01_central_riyadh
+    name: DataVolt RUH_01 Central Riyadh
+    record_granularity: individual_dated_planned_facility
+    operator: DataVolt
+    location: {country: Saudi_Arabia, city: Riyadh, submarket: Central_Riyadh, planned_site_area_sqm: 45000, exact_address_coordinate_and_parcel: undisclosed}
+    lifecycle_as_of_2026_07_18: 2024_plan_with_no_reviewed_primary_current_construction_or_operation_update
+    2024_plan:
+      total_IT_capacity_mw: 60
+      RFS_target: 2027_Q2
+      boundary: Target capacity and RFS are not evidence of permits, construction, energization, customer acceptance or live service.
+    planned_design_template:
+      rack_IT_density_kw: 8
+      data_hall_supply_temperature_c: 24
+      cooling: [CRAH_galleries_both_sides_of_module, five_minute_thermal_storage, dual_header_redundancy, air_cooled_chillers_N_plus_2]
+      power: [two_diverse_redundant_utility_supplies, MV_switchboard, UPS, emergency_generators, HSD_fuel_up_to_48_hours_at_full_load]
+      network: [carrier_neutral, four_fiber_paths, two_MMR_per_data_hall_floor]
+      topology_target: concurrently_maintainable_Tier_III_design_below_critical_equipment
+      target_PUE: 1.4
+      boundary: Shared concept design and targets are not an as-built equipment bill, certification or measured performance.
+    accelerators_and_AI: {exact_GPU_models_counts_servers_racks_fabric_ownership_delivery_customers_power_and_utilization: undisclosed}
+    portfolio_ref: dc_datavolt_saudi_portfolio
+    sources:
+      - {title: DataVolt KSA Facilities fact sheet, publisher: DataVolt, date: 2024-10, url: "https://data-volt.com/wp-content/uploads/2024/10/DV-Factsheet.pdf"}
+    confidence: high_for_2024_plan_low_for_current_project_status_exact_equipment_GPU_and_operation
+
+  - id: dc_datavolt_ruh02_riyadh_east_modon
+    name: DataVolt RUH_02 Riyadh East / MODON project candidate crosswalk
+    record_granularity: individual_development_with_multi_source_identity_and_capacity_reconciliation
+    operator: DataVolt
+    location: {country: Saudi_Arabia, city: Riyadh, submarket: East_Riyadh, park: MODON_First_Technology_Park, exact_address_coordinate_and_parcel: undisclosed}
+    identity_crosswalk:
+      RUH_02_2024_site_area_sqm: 50000
+      MODON_2025_leased_plot_sqm: 55000
+      same_project_confidence: medium
+      boundary: The matching East Riyadh descriptions strongly suggest a relationship, but DataVolt does not explicitly name the MODON lease RUH_02 in the reviewed release.
+    dated_capacity_and_delivery:
+      2024_plan_IT_capacity_mw: 50
+      2024_RFS_target: 2027_Q2
+      2026_secondary_CEO_interview:
+        planned_capacity_mw: 44
+        anchor_commitment_mw: 36
+        anchor_description: leading_AI_provider_unnamed
+        first_operational_phase_target: 2026_year_end
+        remaining_capacity_target: 2027_mid_year
+      boundary: The 44-MW update and 36-MW commitment are not live load or revenue and are retained separately from the older 50-MW plan.
+    project_finance_secondary_CEO_interview:
+      expected_total_cost_usd_million: 500
+      expected_bank_debt_share_percent_approximate: 75
+      financial_close_target_from_2026_06_30: within_three_months
+      status: expected_not_confirmed_closed
+    planned_design_template:
+      rack_IT_density_kw: 8
+      target_PUE: 1.4
+      cooling: [CRAH_galleries, thermal_storage, dual_header_redundancy, air_cooled_chillers_N_plus_2]
+      power: [two_diverse_redundant_utility_supplies, MV_switchboard, UPS, emergency_generators, HSD_fuel_up_to_48_hours]
+      MODON_release: [AI_ready, cutting_edge_cooling, energy_optimization, circularity]
+      exact_as_built_equipment_OEM_counts_ratings_commissioning_PUE_WUE_water_and_grid_interconnection: undisclosed
+    accelerators_and_AI: {exact_anchor_customer_GPU_models_counts_servers_racks_fabric_ownership_delivery_power_and_utilization: undisclosed}
+    portfolio_ref: dc_datavolt_saudi_portfolio
+    sources:
+      - {title: DataVolt KSA Facilities fact sheet, publisher: DataVolt, date: 2024-10, url: "https://data-volt.com/wp-content/uploads/2024/10/DV-Factsheet.pdf"}
+      - {title: DataVolt MODON East Riyadh land lease, publisher: DataVolt_and_MODON, date: 2025-02-20, url: "https://data-volt.com/wp-content/uploads/2025/03/DataVolt-x-MODON-Press-Release.pdf"}
+      - {title: DataVolt nears Riyadh financing, publisher: EnterpriseAM, date: 2026-06-30, source_type: secondary_CEO_interview, url: "https://enterpriseam.com/logistics/2026/06/30/datavolt-nears-usd-500-mn-riyadh-financing/"}
+    confidence: high_for_each_dated_disclosure_medium_for_same_project_crosswalk_low_for_financing_close_current_construction_equipment_GPU_and_operation
+
+  - id: dc_datavolt_dmm01_dammam
+    name: DataVolt DMM_01 Dammam
+    record_granularity: individual_dated_planned_facility
+    operator: DataVolt
+    location: {country: Saudi_Arabia, city: Dammam, planned_site_area_sqm: 50000, exact_address_coordinate_and_parcel: undisclosed}
+    lifecycle_as_of_2026_07_18: 2024_plan_with_no_reviewed_primary_current_construction_or_operation_update
+    2024_plan: {total_IT_capacity_mw: 45, RFS_target: 2027_Q2}
+    planned_design_template:
+      rack_IT_density_kw: 8
+      target_PUE: 1.4
+      cooling: [CRAH_galleries, five_minute_thermal_storage, dual_header_redundancy, air_cooled_chillers_N_plus_2]
+      power: [two_diverse_redundant_utility_supplies, MV_switchboard, UPS, emergency_generators, HSD_fuel_up_to_48_hours_at_full_load]
+      topology_target: concurrently_maintainable_Tier_III_design_below_critical_equipment
+      boundary: Shared design targets are not current construction, certification, commissioned equipment or measured performance.
+    accelerators_and_AI: {exact_GPU_models_counts_servers_racks_fabric_ownership_delivery_customers_power_and_utilization: undisclosed}
+    portfolio_ref: dc_datavolt_saudi_portfolio
+    sources:
+      - {title: DataVolt KSA Facilities fact sheet, publisher: DataVolt, date: 2024-10, url: "https://data-volt.com/wp-content/uploads/2024/10/DV-Factsheet.pdf"}
+    confidence: high_for_2024_plan_low_for_current_project_status_exact_equipment_GPU_and_operation
+
+  - id: dc_datavolt_oxagon_neom
+    name: DataVolt sustainable AI data-center campus at Oxagon NEOM
+    record_granularity: announced_multi_phase_hyperscale_AI_campus
+    operator: DataVolt
+    development_partner_and_landlord: Oxagon_NEOM
+    location: {country: Saudi_Arabia, region: northwest_Red_Sea_coast, city_or_zone: Oxagon_NEOM, exact_parcel_coordinate_and_address: undisclosed}
+    lifecycle_as_of_2026_07_18: agreement_and_customer_development_stage_not_evidenced_as_under_construction_or_operating
+    official_2025_agreement:
+      full_campus_capacity_mw: 1500
+      development: phased
+      first_phase_initial_funding_usd_billion: 5
+      first_phase_operational_target: 2028
+      first_phase_capacity_mw: undisclosed
+      land_structure: leased_from_Oxagon
+      boundary: Full-campus MW and first-phase funding are plan metrics, not current IT load, incurred capex, revenue or enterprise value.
+    2026_secondary_CEO_interview:
+      customer_status: advanced_talks_with_unnamed_Western_data_center_companies
+      construction_start: two_to_three_months_after_customer_signing
+      first_block_capacity_mw: 240
+      first_block_target: 2027
+      DataVolt_investment_usd_billion: 2.5
+      total_with_customer_compute_usd_billion_approximate: 10
+      boundary: >-
+        The later interview is a management outlook and appears to update the
+        official 2028 target, but no signed customer, financial close,
+        construction start, exact phase crosswalk or primary completion update
+        was found. Both dated versions are preserved.
+    electrical_cooling_and_sustainability:
+      official_ambitions: [entirely_renewable_energy, net_zero, advanced_cooling, subsea_connectivity, green_hydrogen]
+      exact_generation_assets_PPA_grid_interconnection_substation_transformers_switchgear_UPS_batteries_generators_chillers_CRAH_CDU_water_PUE_WUE_and_BOM: undisclosed
+      LG_DataVolt_Shaker_MOU: [large_scale_chillers, coolant_distribution_units]
+      boundary: MOU products are contemplated, not ordered, installed, commissioned or assigned by model and unit count.
+    accelerators_and_AI:
+      Supermicro_MOU: estimated_minimum_USD20_billion_nonbinding_product_opportunity
+      exact_GPU_models_counts_servers_racks_fabric_ownership_delivery_live_status_power_utilization_and_customers: undisclosed
+    portfolio_ref: dc_datavolt_saudi_portfolio
+    sources:
+      - {title: DataVolt agreement with NEOM for sustainable AI campus, publisher: NEOM, date: 2025-02-10, url: "https://www.neom.com/en-us/newsroom/datavolt-signs-agreement-with-neom"}
+      - {title: Supermicro strategic partnership with DataVolt, publisher: Super_Micro_Computer, date: 2025-05-16, url: "https://ir.supermicro.com/news/news-details/2025/Supermicro-Announces-Strategic-Partnership-with-DataVolt/"}
+      - {title: LG DataVolt Shaker thermal-management MOU, publisher: LG_Electronics, date: 2025-09, url: "https://www.lg.com/global/newsroom/news/eco-solution/lg-taps-middle-east-growth-with-neom-oxagon-ai-data-center-partnership/"}
+      - {title: DataVolt nears Riyadh financing, publisher: EnterpriseAM, date: 2026-06-30, source_type: secondary_CEO_interview, url: "https://enterpriseam.com/logistics/2026/06/30/datavolt-nears-usd-500-mn-riyadh-financing/"}
+    confidence: high_for_official_agreement_1_5GW_5bn_and_2028_target_medium_for_secondary_240MW_2027_update_low_for_customer_financing_construction_equipment_GPU_and_operation
+
 disclosure_gap_register:
+  - SDAIA_complete_current_physical_data_center_roster_addresses_coordinates_building_ownership_lifecycle_and_Uptime_project_crosswalk
+  - SDAIA_Hexagon_480MW_capacity_definition_phase_breakout_RFS_grid_permits_procurement_contractor_budget_construction_energization_and_live_load
+  - SDAIA_Hexagon_Phase1_TCDD_only_to_TCCF_TCOS_LEED_TIA_ISO_completion_and_operational_certification
+  - SDAIA_Hexagon_and_portfolio_exact_GPU_models_counts_servers_racks_fabric_site_ownership_delivery_power_utilization_and_workloads
+  - SDAIA_per_site_grid_substation_transformer_switchgear_UPS_battery_generator_fuel_chiller_CRAH_CDU_OEM_counts_ratings_and_topology
+  - SDAIA_per_site_liquid_and_hybrid_cooling_design_PUE_WUE_water_renewable_supply_and_measured_performance
+  - SDAIA_2024_Riyadh_65kW_cabinet_program_exact_sites_count_capacity_and_Uptime_crosswalk
+  - SDAIA_greater_than_SAR10bn_economic_impact_and_greater_than_SAR1_8bn_savings_scope_baseline_realization_and_government_cost
+  - DataVolt_2024_RUH01_RUH02_DMM01_plan_to_current_land_permits_grid_financing_construction_energization_customer_acceptance_and_operation
+  - DataVolt_RUH02_50MW_50000sqm_MODON_55000sqm_and_2026_44MW_36MW_anchor_exact_project_phase_and_capacity_reconciliation
+  - DataVolt_Oxagon_official_2028_first_phase_to_secondary_240MW_2027_target_and_full_1_5GW_delivery_bridge
+  - DataVolt_exact_GPU_models_counts_servers_racks_fabric_ownership_delivery_site_allocation_power_utilization_and_Supermicro_definitive_agreements
+  - DataVolt_LG_Shaker_MOU_to_exact_chiller_CDU_battery_DC_power_models_unit_counts_purchase_orders_delivery_commissioning_and_site_allocation
+  - DataVolt_per_site_grid_substation_transformer_switchgear_UPS_battery_generator_fuel_chiller_CRAH_CDU_OEM_counts_ratings_PUE_WUE_water_and_live_liquid_cooled_MW
+  - DataVolt_Riyadh_financial_close_75_percent_debt_terms_36MW_anchor_customer_delivery_billing_and_2026_first_profit_realization
+  - DataVolt_HUMAIN_multi_gigawatt_pipeline_exact_sites_MW_schedule_financing_customers_hardware_and_overlap_with_Oxagon_and_other_programs
+  - DataVolt_current_official_project_roster_and_non_reliance_on_template_like_locations_draft_page
   - Mobily_current_marketed_city_roster_to_Uptime_award_projects_exact_current_physical_building_ownership_and_lifecycle_crosswalk
   - Mobily_Malga2_ground_and_second_floor_same_building_scope_plus_generic_Dammam_and_Fursan_duplicate_or_separate_site_resolution
   - Mobily_13MW_2025_operating_pair_39MW_facility_plan_and_wholesale_more_than_122MW_technical_commercial_capacity_scope_reconciliation
@@ -16553,6 +16881,17 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
+    - SDAIA_current_physical_roster_Uptime_project_crosswalk_and_per_site_lifecycle_capacity
+    - SDAIA_Hexagon_480MW_phase_breakout_capacity_definition_RFS_grid_budget_contractors_and_certification_conversion
+    - SDAIA_Hexagon_direct_liquid_hybrid_cooling_power_chain_PUE_WUE_water_renewables_and_exact_GPU_inventory
+    - SDAIA_2024_Riyadh_65kW_cabinet_projects_to_named_sites_capacity_and_current_operation
+    - DataVolt_RUH01_RUH02_DMM01_current_land_grid_financing_construction_customer_and_RFS_status
+    - DataVolt_RUH02_50MW_to_44MW_MODON_plot_anchor_36MW_financing_and_delivery_reconciliation
+    - DataVolt_Oxagon_2028_official_target_to_secondary_240MW_2027_first_block_and_1_5GW_full_campus_bridge
+    - DataVolt_Supermicro_USD20bn_MOU_to_definitive_orders_GPU_models_counts_delivery_site_power_and_utilization
+    - DataVolt_LG_Shaker_MOU_to_exact_chiller_CDU_battery_DC_power_products_orders_delivery_and_commissioning
+    - DataVolt_per_site_substation_transformer_switchgear_UPS_battery_generator_cooling_PUE_WUE_water_and_equipment_BOM
+    - DataVolt_HUMAIN_multi_gigawatt_pipeline_exact_sites_capacity_customers_financing_schedule_and_overlap
     - Mobily_current_city_marketing_Uptime_awards_and_exact_physical_building_lifecycle_crosswalk
     - Mobily_13MW_operating_39MW_plan_and_wholesale_more_than_122MW_capacity_scope_reconciliation
     - Mobily_Khurais_Jeddah_IV_and_PEC_6_5MW_project_crosswalk_plus_live_load_and_customer_ramp
@@ -16740,6 +17079,13 @@ next_research_queue:
     - NTT_India_exact_GPU_inventory_customer_vs_operator_ownership_live_liquid_cooled_MW_CDU_heat_rejection_and_equipment_OEMs
     - NTT_India_transformer_switchgear_UPS_battery_generator_chiller_counts_and_operating_PUE_WUE_water_per_site
   company_financials:
+    - DataVolt_standalone_audited_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_and_ROIC
+    - DataVolt_Riyadh_USD500m_financing_close_debt_terms_anchor_contract_revenue_start_and_2026_first_profit_actual
+    - DataVolt_USD5bn_KSA_plan_Oxagon_funding_and_USD2_5bn_secondary_investment_overlap_drawn_and_incurred_capex
+    - DataVolt_Supermicro_USD20bn_MOU_definitive_orders_backlog_delivery_revenue_margin_and_working_capital
+    - LG_Eco_Solution_data_center_cooling_revenue_operating_profit_backlog_and_DataVolt_purchase_order_conversion
+    - SDAIA_Hexagon_budget_procurement_incurred_capex_operating_cost_and_public_savings_realization
+    - HUMAIN_DataVolt_multi_gigawatt_pipeline_definitive_agreements_project_financing_and_program_overlap
     - Syntys_standalone_audited_revenue_operating_profit_D_and_A_capex_debt_cash_flow_tax_customer_concentration_and_site_returns
     - Syntys_Q_Data_purchase_price_PPA_goodwill_full_quarter_earnings_and_return_on_invested_capital
     - Syntys_USD550_million_financing_drawn_amount_equity_debt_mix_rate_maturity_collateral_covenants_parent_guarantees_and_project_allocation

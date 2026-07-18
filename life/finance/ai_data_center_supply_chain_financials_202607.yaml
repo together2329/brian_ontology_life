@@ -44,6 +44,7 @@ stack_layers:
     - Adani_Enterprises
     - HUMAIN
   compute_memory_network:
+    - Super_Micro_Computer
     - NVIDIA
     - AMD
     - Broadcom
@@ -58,6 +59,7 @@ stack_layers:
     - Huawei_Ascend
     - Kunlunxin
   power_cooling_electrical:
+    - LG_Electronics
     - Vertiv
     - Schneider_Electric
     - Eaton
@@ -75,6 +77,7 @@ stack_layers:
     - HD_Hyundai_Electric
     - Bloom_Energy
   operators_reits_utilities:
+    - Saudi_Data_and_AI_Authority_National_Information_Center
     - Etihad_Etisalat_Mobily
     - stc_Group
     - center3
@@ -106,6 +109,7 @@ stack_layers:
     - Ooredoo_Kuwait_NMTC
     - Ooredoo_Tunisia
   private_data_center_and_power_developers:
+    - DataVolt
     - Aligned_Data_Centers
     - Africa_Data_Centres
     - Khazna_Data_Centers
@@ -9356,10 +9360,15 @@ financial_profiles:
         intended_initial_capacity_mw_up_to: 250
         intended_required_load_mw_up_to: 1000
         status_as_of_2026_07_18: MoU_extended_definitive_agreement_not_announced
+      DataVolt_strategic_partnership:
+        announced: 2025-11-06
+        scope: planned_multi_gigawatt_data_center_pipeline
+        exact_sites_capacity_schedule_financing_customers_and_hardware: undisclosed
       overlap_boundary: >-
         Partner commitments and investments may describe shared or nested
-        campuses. They are not summed as unique capacity, incurred capex,
-        revenue or enterprise value.
+        campuses, including the DataVolt pipeline and DataVolt's separately
+        announced Oxagon program. They are not summed as unique capacity,
+        incurred capex, revenue or enterprise value.
     outlook:
       positive_drivers:
         - PIF_sponsorship_and_Saudi_sovereign_AI_mandate
@@ -9380,6 +9389,7 @@ financial_profiles:
     watch_items:
       - audited_revenue_operating_profit_EBITDA_capex_debt_cash_flow_and_ROIC
       - exact_sites_program_overlap_and_capacity_delivery_bridge
+      - DataVolt_multi_gigawatt_pipeline_exact_sites_capacity_financing_customers_and_overlap
       - first_18000_GB300_delivery_installation_energization_utilization_and_revenue
       - AMD_Cisco_AWS_AirTrunk_and_center3_project_financing_and_customer_awards
       - center3_JV_definitive_agreement_and_initial_250MW_commitments
@@ -9392,6 +9402,7 @@ financial_profiles:
       - https://www.blackstone.com/news/press/humain-and-blackstone-backed-airtrunk-announce-partnership-to-build-state-of-the-art-data-centers-in-the-kingdom-of-saudi-arabia/
       - https://www.saudiexchange.sa/wps/portal/saudiexchange/newsandreports/issuer-news/issuer-announcements/issuer-announcements-details?anCat=1&anId=92131&locale=en
       - https://www.saudiexchange.sa/wps/portal/saudiexchange/newsandreports/issuer-news/issuer-announcements/issuer-announcements-details/?anCat=1&anId=96186&cs=7010&locale=en
+      - https://data-volt.com/media/breaking-news/humain-and-datavolt-join-forces-to-attract-large-scale-ai-workloads-to-saudi-arabia/
     confidence: high_for_partner_announcements_18000_GB300_commitment_and_center3_JV_status_low_for_standalone_financials_program_overlap_site_delivery_and_unit_economics
 
   - id: company_mobily
@@ -9509,8 +9520,329 @@ financial_profiles:
       - https://mobily.com.sa/wps/portal/web/business/digital/hosting-and-cloud/cloud-service/performance-cloud
     confidence: high_for_audited_group_financials_Q1_results_guidance_shareholding_2025_operating_capacity_and_company_investment_statements_medium_for_capacity_scope_reconciliation_low_for_data_center_only_economics_site_returns_and_GPU_inventory
 
+  - id: company_datavolt
+    company: DataVolt
+    layer: private_data_center_and_power_developers
+    ownership_status: private_wholly_owned_subsidiary_of_Vision_Invest
+    reporting_scope:
+      businesses: [data_center_development, colocation, build_to_suit, AI_infrastructure, energy_management]
+      campus_refs:
+        - dc_datavolt_saudi_portfolio
+        - dc_datavolt_ruh01_central_riyadh
+        - dc_datavolt_ruh02_riyadh_east_modon
+        - dc_datavolt_dmm01_dammam
+        - dc_datavolt_oxagon_neom
+    standalone_financials:
+      latest_reviewed_audited_revenue: undisclosed
+      latest_reviewed_audited_operating_profit: undisclosed
+      latest_reviewed_audited_EBITDA: undisclosed
+      latest_reviewed_audited_net_profit: undisclosed
+      capex_debt_cash_flow_balance_sheet_customer_concentration_and_return_on_invested_capital: undisclosed
+      2026_profit_outlook: management_expected_first_profitable_year_in_secondary_2026_06_30_interview_without_amount_or_accounting_definition
+      boundary: A profit expectation is not audited revenue, operating profit, EBITDA, net profit or cash flow.
+    parent_context:
+      parent: Vision_Invest
+      infrastructure_assets_under_operations_usd_billion_more_than: 95
+      boundary: Parent and affiliate portfolio statistics are not DataVolt assets, revenue, profit, capacity or valuation.
+    Saudi_development_program:
+      2024_planned_facilities_IT_mw: {RUH_01: 60, RUH_02: 50, DMM_01: 45}
+      total_KSA_investment_plan_usd_billion: 5
+      Oxagon_full_campus_mw: 1500
+      Oxagon_first_phase_initial_funding_usd_billion: 5
+      Oxagon_official_first_phase_target: 2028
+      investment_overlap_boundary: >-
+        MODON describes its project as part of the USD5-billion KSA plan, while
+        the NEOM agreement describes USD5 billion for Oxagon's first phase. No
+        audited allocation proves that these are additive, drawn or incurred.
+    current_project_signal_from_secondary_CEO_interview:
+      Riyadh_East:
+        planned_capacity_mw: 44
+        anchor_commitment_mw: 36
+        project_cost_usd_million: 500
+        expected_bank_debt_share_percent_approximate: 75
+        financial_close_status: expected_within_three_months_not_confirmed_closed
+        first_phase_target: 2026_year_end
+        remaining_target: 2027_mid_year
+      Oxagon:
+        first_block_capacity_mw: 240
+        first_block_target: 2027
+        DataVolt_investment_usd_billion: 2.5
+        total_with_customer_compute_usd_billion_approximate: 10
+        customer_status: advanced_talks_unnamed_not_signed_in_reviewed_source
+      boundary: Commitments, costs and financing expectations are not live capacity, billed revenue, incurred capex or recognized profit.
+    supplier_and_partner_programs:
+      Supermicro:
+        status: nonbinding_MOU_subject_to_definitive_agreements
+        contemplated_product_market_value_usd_billion_minimum: 20
+        products: [ultra_dense_GPU_platforms, storage, rack_PnP, DLC_2]
+        recognized_DataVolt_specific_revenue_and_orders: undisclosed
+      LG_Electronics_and_Shaker:
+        status: MOU
+        contemplated_products: [large_scale_chillers, coolant_distribution_units]
+        exact_orders_value_models_counts_delivery_and_recognized_revenue: undisclosed
+      HUMAIN:
+        status: strategic_partnership
+        scope: planned_multi_gigawatt_pipeline
+        exact_sites_MW_financing_schedule_customers_and_overlap: undisclosed
+    outlook:
+      positive_drivers:
+        - Saudi_sovereign_AI_cloud_localization_and_hyperscale_demand
+        - Oxagon_land_renewable_power_connectivity_and_green_industrial_positioning
+        - large_announced_Saudi_pipeline_and_Riyadh_anchor_commitment
+        - Supermicro_LG_Shaker_HUMAIN_and_NEOM_partner_access
+      risks:
+        - no_public_standalone_audited_financials_or_current_live_Saudi_capacity
+        - plan_investment_capacity_and_partner_program_overlap
+        - financial_close_customer_signing_construction_grid_and_energization_execution
+        - large_capex_debt_interest_depreciation_and_long_customer_ramp
+        - nonbinding_supplier_MOUs_and_undisclosed_GPU_inventory
+        - renewable_power_cooling_water_and_measured_efficiency_delivery
+      boundary: DataVolt is a high-potential private development platform, not yet an evidence-backed operating-earnings exposure.
+    watch_items:
+      - audited_revenue_operating_profit_EBITDA_capex_debt_cash_flow_and_ROIC
+      - Riyadh_East_financial_close_anchor_customer_delivery_acceptance_utilization_and_billing
+      - Oxagon_customer_signing_240MW_phase_construction_grid_and_2027_2028_target_reconciliation
+      - Supermicro_and_LG_definitive_orders_delivery_installation_and_recognized_revenue
+      - exact_GPU_inventory_power_chain_cooling_PUE_WUE_water_and_site_economics
+      - HUMAIN_pipeline_exact_sites_capacity_financing_and_overlap
+    sources:
+      - https://data-volt.com/shareholders/
+      - https://data-volt.com/wp-content/uploads/2024/10/DV-Factsheet.pdf
+      - https://data-volt.com/wp-content/uploads/2025/02/DataVolt_Booklet_v11.pdf
+      - https://www.neom.com/en-us/newsroom/datavolt-signs-agreement-with-neom
+      - https://data-volt.com/wp-content/uploads/2025/03/DataVolt-x-MODON-Press-Release.pdf
+      - https://ir.supermicro.com/news/news-details/2025/Supermicro-Announces-Strategic-Partnership-with-DataVolt/
+      - https://www.lg.com/global/newsroom/news/eco-solution/lg-taps-middle-east-growth-with-neom-oxagon-ai-data-center-partnership/
+      - https://data-volt.com/media/breaking-news/humain-and-datavolt-join-forces-to-attract-large-scale-ai-workloads-to-saudi-arabia/
+      - https://enterpriseam.com/logistics/2026/06/30/datavolt-nears-usd-500-mn-riyadh-financing/
+    confidence: high_for_ownership_official_plans_and_MOU_terms_medium_for_secondary_management_updates_low_for_financing_close_delivery_standalone_financials_and_site_economics
+
+  - id: company_sdaia
+    company: Saudi_Data_and_AI_Authority
+    operating_unit: National_Information_Center
+    layer: operators_reits_utilities
+    ownership_status: Saudi_government_authority_established_2019
+    reporting_scope:
+      mandate: national_data_and_AI_strategy_government_data_infrastructure_and_services
+      campus_ref: dc_sdaia_nic_portfolio
+      boundary: SDAIA is a public authority rather than a listed commercial data-center operator.
+    commercial_financial_disclosure:
+      revenue: not_applicable_or_not_publicly_disclosed_as_comparable_commercial_revenue
+      operating_profit: not_applicable_or_not_publicly_disclosed_as_comparable_commercial_operating_profit
+      EBITDA_net_profit_cash_flow_balance_sheet_debt_and_ROIC: not_publicly_disclosed_in_reviewed_sources
+      Hexagon_project_budget_incurred_capex_procurement_and_annual_operating_cost: undisclosed
+    public_economic_claims:
+      future_cumulative_local_economic_impact_SAR_billion_more_than: 10
+      future_annual_savings_SAR_billion_more_than: 1.8
+      scope: announced_data_center_program
+      boundary: >-
+        Economic impact and expected government savings are forecasts, not
+        SDAIA revenue, operating profit, budget savings already realized or
+        Hexagon-only returns.
+    data_center_exposure:
+      Hexagon_announced_capacity_mw: 480
+      Hexagon_stage: foundation_stone_laid_2026_01_01
+      Hexagon_Uptime_evidence: Phase_1_Tier_IV_TCDD_only_in_reviewed_public_ledger
+      other_named_Uptime_projects: [NIC_Riyadh_Site_1, NIC_Riyadh_Site_2, NIC_Rakeeza_Jeddah, NIC_HADA_Taif]
+      GPU_and_site_economics: undisclosed
+    outlook:
+      positive_drivers:
+        - Saudi_national_AI_and_government_cloud_mandate
+        - sovereign_data_security_and_public_service_digitization
+        - 480MW_Hexagon_scale_and_existing_certification_portfolio
+        - direct_liquid_hybrid_cooling_and_renewable_design_ambition
+      risks:
+        - 480MW_capacity_definition_phase_schedule_budget_and_grid_undisclosed
+        - design_award_must_convert_to_constructed_and_operational_evidence
+        - GPU_fleet_equipment_BOM_PUE_WUE_water_and_live_load_undisclosed
+        - public_economic_claims_lack_realized_cost_and_savings_bridge
+        - government_procurement_budget_and_security_limit_public_site_detail
+    watch_items:
+      - Hexagon_phase_budget_procurement_contractors_grid_construction_RFS_and_certification
+      - annual_SDAIA_budget_data_center_capex_operating_cost_and_savings_realization
+      - complete_physical_roster_capacity_live_load_equipment_and_GPU_inventory
+      - measured_PUE_WUE_water_renewable_share_and_operating_availability
+    sources:
+      - https://www.spa.gov.sa/en/N2480096
+      - https://www.spa.gov.sa/N2480268
+      - https://www.spa.gov.sa/en/N2145102
+      - https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel=
+    confidence: high_for_government_announcements_and_Uptime_awards_low_for_financials_budget_equipment_GPU_inventory_and_delivery
+
+  - id: company_super_micro_computer
+    company: Super_Micro_Computer
+    ticker: SMCI
+    exchange: NASDAQ
+    layer: compute_memory_network
+    ownership_status: publicly_listed_US_server_and_rack_scale_infrastructure_vendor
+    reporting_scope:
+      businesses: [servers_and_storage, GPU_platforms, rack_scale_solutions, liquid_cooling]
+      DataVolt_relationship: nonbinding_MOU_not_reportable_customer_revenue_disclosure
+    FY2025_results:
+      period: year_ended_2025-06-30
+      accounting_basis: audited_US_GAAP
+      currency: USD
+      unit: million
+      revenue: 21972.042
+      revenue_growth_percent: 46.6
+      operating_income: 1252.994
+      derived_operating_margin_percent: 5.7027
+      net_income: 1048.854
+      server_and_storage_revenue: 21311.6
+      server_and_storage_revenue_share_percent_approximate: 97
+    Q3_FY2026_results:
+      period: three_months_ended_2026-03-31
+      accounting_basis: US_GAAP
+      currency: USD
+      unit: million
+      revenue: 10243.014
+      operating_income: 625.868
+      derived_operating_margin_percent: 6.1102
+      net_income_rounded: 483
+      operating_cash_flow_usd_billion: -6.6
+      boundary: Cash outflow reflects a major working-capital build and is not DataVolt-specific.
+    nine_months_FY2026_results:
+      period: nine_months_ended_2026-03-31
+      currency: USD
+      unit: million
+      revenue: 27943.295
+      operating_income: 1282.422
+      derived_operating_margin_percent: 4.5894
+    FY2026_outlook:
+      revenue_usd_billion_range: [38.9, 40.4]
+      classification: company_forward_looking_guidance
+    DataVolt_exposure:
+      agreement_date: 2025-05-16
+      agreement_type: memorandum_of_understanding
+      contemplated_product_market_value_usd_billion_minimum: 20
+      products: [ultra_dense_GPU_platforms, storage, rack_PnP, DLC_2]
+      definitive_agreements: not_disclosed
+      exact_GPU_models_counts_sites_delivery_schedule_purchase_orders_and_recognized_revenue: undisclosed
+      boundary: >-
+        Supermicro explicitly states the MOU is nonbinding, subject to definitive
+        agreements and may not realize the contemplated product value. The USD20
+        billion is not backlog, booked orders, revenue, profit or DataVolt capex.
+    other_commitment_context:
+      noncancelable_purchase_commitments_at_2026_03_31_usd_billion: 10.1
+      boundary: Company-wide supplier commitments are not attributed to DataVolt.
+    outlook:
+      positive_drivers:
+        - rapid_AI_server_and_rack_scale_revenue_growth
+        - direct_liquid_cooling_and_full_rack_integration_demand
+        - very_large_DataVolt_product_opportunity_if_definitive_orders_convert
+        - FY2026_revenue_guidance_well_above_FY2025
+      risks:
+        - thin_and_volatile_operating_margin_despite_revenue_scale
+        - working_capital_inventory_receivables_and_negative_operating_cash_flow
+        - customer_and_supplier_concentration
+        - nonbinding_DataVolt_MOU_conversion_and_project_delivery_risk
+        - GPU_supply_product_transition_pricing_and_hardware_obsolescence
+        - internal_control_financing_and_execution_risk
+    watch_items:
+      - DataVolt_definitive_orders_backlog_delivery_acceptance_and_revenue_recognition
+      - FY2026_guidance_margin_cash_flow_inventory_and_receivable_conversion
+      - DLC_2_unit_volume_site_installation_and_service_margin
+      - customer_concentration_and_purchase_commitment_funding
+    sources:
+      - https://www.sec.gov/Archives/edgar/data/1375365/000137536525000027/smci-20250630.htm
+      - https://www.sec.gov/Archives/edgar/data/1375365/000137536526000014/smci-20260331.htm
+      - https://ir.supermicro.com/news/news-details/2025/Supermicro-Announces-Strategic-Partnership-with-DataVolt/
+    confidence: high_for_filed_company_financials_guidance_and_MOU_terms_low_for_DataVolt_orders_delivery_and_revenue
+
+  - id: company_lg_electronics
+    company: LG_Electronics
+    ticker: "066570"
+    exchange: Korea_Exchange
+    layer: power_cooling_electrical
+    ownership_status: publicly_listed_Korean_electronics_and_HVAC_group
+    reporting_scope:
+      businesses: [Home_Appliance_Solution, Media_Entertainment_Solution, Vehicle_Solution, Eco_Solution]
+      data_center_exposure: Eco_Solution_HVAC_thermal_management_and_future_liquid_cooling
+      DataVolt_relationship: MOU_with_DataVolt_and_Shaker_Group
+      boundary: Group and Eco Solution results do not separately disclose data-center cooling revenue or the DataVolt project contribution.
+    FY2025_results:
+      period: year_ended_2025-12-31
+      accounting_basis: consolidated_results
+      currency: KRW
+      unit: trillion
+      revenue: 89.2009
+      operating_profit: 2.4784
+      derived_operating_margin_percent: 2.7784
+      Eco_Solution:
+        revenue: 9.32
+        operating_profit: 0.6473
+        derived_operating_margin_percent: 6.9453
+      B2B_revenue: 24.1
+      Vehicle_plus_Eco_Solution_operating_profit_KRW_trillion_more_than: 1
+    Q1_2026_results:
+      period: three_months_ended_2026-03-31
+      currency: KRW
+      unit: trillion
+      revenue: 23.73
+      operating_profit: 1.67
+      derived_operating_margin_percent: 7.0375
+      Eco_Solution:
+        revenue: 2.82
+        operating_profit: 0.249
+        derived_operating_margin_percent: 8.8298
+      boundary: Quarterly results are seasonal and not safely annualized.
+    Q2_2026_preliminary_results:
+      period: three_months_ended_2026-06-30
+      status: preliminary_group_only
+      currency: KRW
+      unit: trillion
+      revenue: 23.83
+      operating_profit: 1.58
+      derived_operating_margin_percent: 6.6303
+      H1_revenue: 47.56
+      H1_operating_profit: 3.25
+      derived_H1_operating_margin_percent: 6.8335
+      boundary: Segment details were not final in the preliminary release and no DataVolt revenue was identified.
+    DataVolt_and_Oxagon_exposure:
+      agreement_date: 2025-09
+      parties: [LG_Electronics, DataVolt, Shaker_Group]
+      status: memorandum_of_understanding
+      contemplated_products: [large_scale_chillers, coolant_distribution_units]
+      potential_future_opportunities: [heat_recovery, direct_current_power, LG_Energy_Solution_batteries, LG_CNS_design_build_operations]
+      exact_purchase_orders_value_models_counts_delivery_commissioning_site_allocation_revenue_and_margin: undisclosed
+      boundary: An MOU and future opportunity list do not prove installed equipment, orders, backlog or recognized revenue.
+    outlook:
+      positive_drivers:
+        - AI_data_center_cooling_and_high_density_liquid_cooling_demand
+        - Eco_Solution_growth_and_higher_margin_than_FY2025_group_average
+        - large_Oxagon_campus_if_orders_convert
+        - cross_group_chiller_CDU_battery_power_and_system_integration_capabilities
+      risks:
+        - DataVolt_MOU_may_not_convert_to_orders_or_revenue
+        - data_center_cooling_revenue_margin_backlog_and_customer_concentration_undisclosed
+        - group_margin_exposed_to_consumer_demand_tariffs_input_costs_and_competition
+        - chiller_CDU_engineering_validation_delivery_commissioning_and_warranty_execution
+        - Q2_results_are_preliminary_and_segment_mix_not_final
+    watch_items:
+      - DataVolt_definitive_purchase_orders_models_counts_delivery_and_revenue_recognition
+      - Eco_Solution_data_center_cooling_revenue_backlog_margin_and_capex
+      - liquid_cooling_CDU_product_qualification_and_site_installation
+      - final_Q2_2026_segment_results_and_H2_outlook
+    sources:
+      - https://www.lg.com/global/newsroom/news/corporate/lg-electronics-releases-fourth-quarter-and-full-year-2025-financial-results/
+      - https://www.lg.com/global/newsroom/news/corporate/lg-electronics-releases-first-quarter-2026-financial-results/
+      - https://www.lg.com/global/newsroom/news/corporate/lg-electronics-releases-preliminary-earnings-for-second-quarter-2026/
+      - https://www.lg.com/global/newsroom/news/eco-solution/lg-taps-middle-east-growth-with-neom-oxagon-ai-data-center-partnership/
+    confidence: high_for_company_and_segment_results_and_MOU_terms_low_for_DataVolt_orders_revenue_and_site_installation
+
 cross_company_read_through:
   current_signals:
+    - SDAIA's Hexagon foundation stone was laid on January 1, 2026 for an announced 480-MW Riyadh government data-center program. The capacity definition and phase schedule are undisclosed, and the Uptime public ledger currently confirms only Phase 1 Tier IV design documents, so the headline is not counted as operating or Tier IV constructed capacity.
+    - SDAIA's public Uptime ledger also identifies two Riyadh design-only Tier III projects, HADA Taif with design and constructed-facility awards, and Rakeeza Jeddah with design, constructed-facility and Tier III Gold operational-sustainability awards. Certification projects are not a complete physical roster or capacity ledger.
+    - Hexagon's direct-liquid and hybrid cooling, renewable-energy, LEED Gold and low-PUE language remains design intent without numeric PUE, WUE, water, renewable share, power-chain BOM or GPU inventory. The greater-than-SAR10-billion economic impact and greater-than-SAR1.8-billion annual savings are forecasts, not SDAIA revenue or operating profit.
+    - DataVolt's official 2024 plan lists 60 MW in Central Riyadh, 50 MW in East Riyadh and 45 MW in Dammam with Q2 2027 RFS targets. No reviewed primary update proves these 155 MW are currently constructed, energized, utilized or billing.
+    - DataVolt and NEOM announced a phased 1.5-GW Oxagon campus with an initial USD5 billion for phase one and a 2028 operating target. A June 2026 secondary CEO interview instead described a 240-MW first block targeted for 2027 after customer signing; both dated versions remain separate until contract, financing, construction and phase crosswalk evidence appears.
+    - DataVolt's Riyadh East project moved from a 50-MW 2024 plan to a 44-MW description with 36 MW committed by an unnamed anchor in a June 2026 CEO interview. Expected USD500 million financing, approximately 75% bank debt and a year-end first phase are not yet financial close, live load or revenue.
+    - DataVolt is wholly owned by Vision Invest but publishes no standalone audited revenue, operating profit, EBITDA, capex, debt, cash flow or return on capital. Vision Invest's greater-than-USD95-billion infrastructure portfolio belongs to the wider parent and affiliate group, not DataVolt.
+    - Supermicro's DataVolt MOU contemplates at least USD20 billion of GPU, storage, rack and DLC-2 products but is explicitly nonbinding and subject to definitive agreements. It is not backlog, booked orders, revenue or installed GPUs; exact models, counts, sites and delivery remain undisclosed.
+    - Supermicro generated USD21.972 billion of FY2025 revenue and USD1.253 billion of operating income, a derived 5.7% margin. Nine-month FY2026 revenue reached USD27.943 billion, but the 4.6% derived operating margin and USD6.6-billion Q3 operating cash outflow show the working-capital and profitability burden behind rapid AI-server growth.
+    - LG's DataVolt and Shaker MOU contemplates large chillers and CDUs at Oxagon, with batteries, DC power and LG CNS services described only as possible future cooperation. No purchase order, product count, installation or DataVolt-specific revenue is disclosed.
+    - LG Electronics generated KRW89.201 trillion of FY2025 group revenue and KRW2.478 trillion of operating profit. Eco Solution produced KRW9.32 trillion of revenue and KRW0.647 trillion of operating profit, but data-center cooling is not separated and group or segment results cannot be assigned to Oxagon.
     - Mobily commissioned two Riyadh and Jeddah data centers totaling 13 MW in 2025 and described 39 MW of planned facilities, with the 13 MW included in that plan. Its separate greater-than-122-MW wholesale-network technical and commercial capacity is not reconciled to owned IT load, so the three measures are preserved separately rather than added.
     - Mobily generated SAR19.642 billion of FY2025 revenue and SAR3.847 billion of audited operating profit, a derived 19.6% margin, then SAR5.040 billion and SAR988 million in Q1 2026. Data-center-only earnings are not disclosed; group results show funding and distribution capacity rather than site economics.
     - FY2026 guidance calls for mid-to-high-single-digit revenue growth, a 37%-38% EBITDA margin and capex equal to 18%-20% of revenue after FY2025 group capex reached SAR5.828 billion. Spectrum and other group investment prevent that capex from being assigned to data centers.
@@ -9687,6 +10019,19 @@ cross_company_read_through:
     - Separate earnings exposure already visible today from backlog and capacity exposure that depends on future execution.
     - Review employer income and direct SK hynix holdings together because both are exposed to the memory cycle.
   unresolved_questions:
+    - What is SDAIA's complete current physical data-center roster, and how do its projects map to Uptime design, constructed-facility and operational-sustainability awards?
+    - What does Hexagon's 480 MW measure, how is it phased, and when will each phase be budgeted, contracted, grid-connected, constructed, certified, energized and utilized?
+    - What are SDAIA's data-center budget, incurred capex, operating cost and realized savings, and how do they bridge to the greater-than-SAR10-billion impact and greater-than-SAR1.8-billion annual-savings forecasts?
+    - Which GPUs and power and cooling equipment are physically installed at each SDAIA site, with what PUE, WUE, water, renewable share, live load and utilization?
+    - What is the current land, permit, grid, financing, construction, customer, energization and billing status of DataVolt RUH_01, RUH_02 and DMM_01 against their Q2 2027 plans?
+    - Are RUH_02, the 55,000-sqm MODON lease and the 44-MW Riyadh East project the same project, and why did planned capacity change from 50 MW to 44 MW?
+    - Has DataVolt closed the expected USD500-million Riyadh financing, who is the 36-MW anchor customer, and when will accepted live load convert to revenue and profit?
+    - How does Oxagon's official 2028 first-phase target reconcile with the later 240-MW 2027 management target, and which customer, financing, grid and construction milestones support the full 1.5 GW?
+    - When will the nonbinding Supermicro and LG agreements become definitive orders, and what exact GPU, rack, chiller, CDU, battery and power products will be delivered to each DataVolt site?
+    - What are DataVolt's standalone audited revenue, operating profit, EBITDA, capex, debt, cash flow, customer concentration and return on invested capital, and did the expected 2026 first profit occur?
+    - Which exact DataVolt sites and MW are included in the HUMAIN multi-gigawatt partnership, and how do they overlap with Oxagon and other HUMAIN programs?
+    - How much Supermicro revenue and backlog is definitively linked to DataVolt, and how will margins and working capital behave if the contemplated USD20-billion opportunity converts?
+    - How much LG Eco Solution revenue, operating profit and backlog comes from data-center cooling, and has the DataVolt MOU produced purchase orders or recognized revenue?
     - How do Mobily's 13 MW of 2025 commissioned capacity, 39 MW facility plan and greater-than-122-MW wholesale-network technical and commercial capacity reconcile without double counting?
     - Which exact current physical buildings correspond to Mobily's four marketed cities, legacy booklet names and Uptime award scopes, including the Malga 2 floors, generic Dammam/Fursan labels, Khurais, Jeddah IV and Rimal I?
     - What are Mobily's data-center-only revenue, operating profit, EBITDA, capex, debt, cash flow, utilization, customer concentration and return on invested capital?
@@ -9742,6 +10087,10 @@ cross_company_read_through:
     - How much announced utility load has received permits, financing, interconnection, and energization?
 
 research_limits:
+  - DataVolt is private and publishes no reviewed standalone audited financial statements; project costs, planned investment, anchor commitments and nonbinding supplier MOUs are not substitutes for revenue, operating profit or cash flow.
+  - SDAIA is a government authority, and reviewed sources do not provide commercial financial statements or a project-level Hexagon budget and operating-cost ledger.
+  - Supermicro's USD20-billion DataVolt figure is a nonbinding contemplated product value, while LG's DataVolt relationship is an MOU; neither is booked revenue, backlog or installed equipment in this registry.
+  - Hexagon's 480 MW and Oxagon's 1.5 GW are announced development scales, not current operating IT load; both lack exact GPU inventory and complete power and cooling bills of materials.
   - Mobily data-center-only earnings, exact current physical facility roster, GPU inventory, site power and cooling equipment, live load and utilization remain undisclosed.
   - The registry is a selected financial cross-section, not yet the complete global supply chain.
   - Campus-specific revenue and profit are generally undisclosed.
