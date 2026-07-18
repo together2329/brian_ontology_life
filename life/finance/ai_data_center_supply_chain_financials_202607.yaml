@@ -3425,6 +3425,13 @@ financial_profiles:
         announced_additional_AZs: 7
         announced_new_regions: [Saudi_Arabia, Chile]
         minimum_physical_data_centers_derived: 123
+        official_registry_reconciliation:
+          standard_AWS_account: {regions: 34, current_AZ_IDs: 108}
+          additional_partitions: {GovCloud_regions: 2, China_regions: 2, European_Sovereign_regions: 1, AZs_total: 15}
+          global_total: {regions: 39, AZs: 123}
+          raw_registry_ref: life/imports/global_data_centers_20260717/aws_official_region_registry.jsonl
+          summary_ref: life/imports/global_data_centers_20260717/aws_official_region_summary.json
+          builder_ref: scripts/build_aws_official_region_registry.py
         building_count_boundary: >-
           AWS defines an AZ as one or more discrete data centers, so 123 is a
           logical minimum rather than an exact disclosed facility count.
@@ -3450,6 +3457,8 @@ financial_profiles:
       - https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-First-Quarter-Results/
       - https://www.aboutamazon.com/news/aws/aws-project-rainier-ai-trainium-chips-compute-cluster
       - https://aws.amazon.com/about-aws/global-infrastructure/regions_az/
+      - https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-availability-zones.html
+      - https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-instance-regions.html
       - https://sustainability.aboutamazon.com/products-services/aws-cloud?energyType=true
       - https://sustainability.aboutamazon.com/2025-amazon-sustainability-report.pdf
       - https://press.aboutamazon.com/2024/12/aws-announces-new-data-center-components-to-support-ai-innovation-and-further-improve-energy-efficiency

@@ -4292,6 +4292,35 @@ campus_profiles:
       announced_expansion:
         additional_AZs: 7
         new_regions: [Saudi_Arabia, Chile]
+      official_registry_reconciliation_as_of_2026_07_18:
+        global_marketing_page:
+          available_regions: 39
+          available_AZs: 123
+          announced_regions: 2
+          announced_additional_AZs: 7
+        standard_AWS_account_documentation:
+          region_rows: 34
+          current_AZ_ID_rows: 108
+          separately_listed_announced_AZ_rows: 1
+        current_partition_bridge:
+          standard_aws: {regions: 34, AZs: 108}
+          aws_us_gov: {regions: 2, AZs: 6}
+          aws_cn: {regions: 2, AZs: 6}
+          aws_eusc: {regions: 1, AZs: 3}
+          total: {regions: 39, AZs: 123}
+        marketing_map_ID_boundary:
+          mismatches_with_programmatic_region_code: 6
+          affected_labels: [AWS_European_Sovereign_Cloud_Germany, Asia_Pacific_New_Zealand, Asia_Pacific_Taipei, Asia_Pacific_Thailand, Mainland_China_Beijing, Mainland_China_Ningxia]
+          rule: preserve_marketing_map_ID_raw_and_use_separately_sourced_programmatic_code
+        planned_AZ_scope_gap:
+          Saudi_structured_map_AZs: 3
+          Chile_structured_map_AZs: 0
+          Maryland_separately_listed_coming_AZ_rows: 1
+          headline_unallocated_residual_derived: 3
+          boundary: Residual is not assigned to a physical site without a direct source.
+        official_raw_registry_ref: life/imports/global_data_centers_20260717/aws_official_region_registry.jsonl
+        official_registry_summary_ref: life/imports/global_data_centers_20260717/aws_official_region_summary.json
+        reproducible_builder_ref: scripts/build_aws_official_region_registry.py
       physical_scope_definition:
         AZ_definition: one_or_more_discrete_data_centers_with_redundant_power_networking_and_connectivity
         commercial_region_minimum_AZs: 3
@@ -4369,6 +4398,10 @@ campus_profiles:
         publisher: Amazon_Web_Services
         date: 2026-07-18_accessed
         url: https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-availability-zones.html
+      - title: AWS EC2 instance types by Region
+        publisher: Amazon_Web_Services
+        date: 2026-07-18_accessed
+        url: https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-instance-regions.html
       - title: Opening the AWS European Sovereign Cloud
         publisher: Amazon_Web_Services
         date: 2026-01-14
