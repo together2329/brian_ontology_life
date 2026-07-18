@@ -1,7 +1,7 @@
 schema_version: 1
 id: knowledge_life_quality_reflection_20260718
 object_type: KnowledgeBundle
-status: active_with_confirmed_principle_and_proposed_practices
+status: active_user_confirmed_standing_guidance
 updated_at: '2026-07-18'
 title: 더 많이가 아니라 더 좋은 상태로 사는 삶
 profile_ref: person_brian
@@ -87,6 +87,15 @@ source_records:
     raw_metadata: {authorship: person_brian, language: ko}
     parse_status: parsed
 
+  - id: source_life_quality_conversation_20260718_standing_feedback_request
+    source_name: current_codex_conversation
+    source_type: chat
+    original_date: '2026-07-18'
+    imported_at: '2026-07-18'
+    raw_text: "하이 나 하이. 내가 이거 더 좋은 상태로 살아가는 삶 이걸 다음에도 내가 얘기하지 않아도 네가 계속 피드백할 수 있게 해줘."
+    raw_metadata: {authorship: person_brian, language: ko}
+    parse_status: parsed
+
 confirmed_user_signals:
   - id: observation_20260718_ontology_based_life_quality_intent
     object_type: Observation
@@ -124,6 +133,20 @@ confirmed_user_signals:
     source_refs:
       - source_life_quality_conversation_20260718_english_study_need
       - source_life_quality_conversation_20260718_english_messages_intention
+    confidence: high
+    needs_user_review: false
+
+  - id: preference_20260718_proactive_better_state_feedback
+    object_type: Preference
+    date: '2026-07-18'
+    preference_type: standing_assistant_guidance
+    area: MIND
+    secondary_areas: [BODY, CAREER, FINANCE, RELATION, MAINTENANCE, FUN]
+    value: >
+      Brian wants the assistant to apply the better-state principle proactively in future
+      life-related conversations without requiring him to repeat the request.
+    source_refs:
+      - source_life_quality_conversation_20260718_standing_feedback_request
     confidence: high
     needs_user_review: false
 
@@ -240,6 +263,9 @@ proposed_review_template:
 
 assistant_usage:
   - Brian의 day/week review에서 principle_better_state_over_more_output_20260718을 핵심 질문으로 사용한다.
+  - Brian이 의미 있는 삶의 상태, 선택, 어려움, 완료한 행동을 공유하면 다시 요청하지 않아도 더 좋은 상태의 관점에서 짧게 피드백한다.
+  - 피드백은 현재 상태, 원하는 삶과의 거리, 줄이거나 보호할 것, 가장 작은 다음 선택, 선택 후 실제 상태를 필요에 따라 점검한다.
+  - 무관한 기술 요청이나 사소한 메시지에는 이 관점을 억지로 끼워 넣지 않고, 잔소리나 강제된 긍정으로 만들지 않는다.
   - 개선안을 한꺼번에 활성화하지 말고, 가장 작은 실험 하나와 outcome check를 연결한다.
   - 영어 사용은 자연스러운 대화 기반 연습으로 지원하되 한국어 전환을 실패로 해석하지 않는다.
   - raw user statements, confirmed principle, assistant synthesis candidate를 계속 분리한다.

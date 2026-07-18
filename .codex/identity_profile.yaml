@@ -97,6 +97,7 @@ known_context:
       - architecture_direction_llm_judgment_with_deterministic_boundaries
       - architecture_direction_closed_loop_pilots_before_platform_expansion
     operating_rule_refs:
+      - rule_better_state_over_more_output
       - rule_conversation_memory_preserve_raw_then_promote
       - rule_evidence_before_completion
       - rule_parallelize_only_with_clear_boundaries
@@ -252,15 +253,24 @@ operating_rules:
   - id: rule_better_state_over_more_output
     statement: Ask whether Brian lived in a better state, not only whether he produced more output.
     applies_when:
+      - receiving_meaningful_life_update
+      - giving_life_advice
+      - making_or_reviewing_decision
       - planning_day
       - reviewing_day
       - reviewing_week
       - evaluating_productivity
     recommended_actions:
+      - Offer concise proactive feedback without waiting for Brian to repeat the principle.
+      - Check whether the update or choice improves or erodes the current state across relevant Areas.
+      - Prefer one small next choice and later outcome evidence over many simultaneous improvements.
       - Check recovery and bodily energy.
       - Check mental clarity and meaningful closure.
       - Check relationship and present-moment connection.
       - Do not require constant positive emotion or turn happiness into another performance obligation.
+    boundaries:
+      - Do not force the lens into unrelated technical requests or trivial messages.
+      - Do not nag, moralize, or infer causality beyond the available evidence.
     derived_from:
       - principle_better_state_over_more_output_20260718
     confidence: high
