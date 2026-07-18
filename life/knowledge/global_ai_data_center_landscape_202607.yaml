@@ -1,6 +1,6 @@
 schema_version: 1
 status: active_research
-updated_at: 2026-07-18
+updated_at: 2026-07-19
 area: FINANCE
 secondary_areas:
   - CAREER
@@ -17,6 +17,20 @@ scope_and_method:
   reproducible_builder_ref: scripts/build_global_data_center_registry.py
   company_financials_ref: life/finance/ai_data_center_supply_chain_financials_202607.yaml
   public_location_records: 4663
+  coverage_audit_scope:
+    operator_label_registry_ref: life/imports/global_data_centers_20260717/global_data_center_operator_coverage_audit.jsonl
+    country_registry_ref: life/imports/global_data_centers_20260717/global_data_center_country_coverage_audit.jsonl
+    summary_ref: life/imports/global_data_centers_20260717/global_data_center_coverage_audit_summary.json
+    builder_ref: scripts/build_global_data_center_coverage_audit.py
+    raw_operator_labels: 822
+    iso2_country_records: 112
+    reviewed_profile_routed_mapped_objects: 1353
+    reviewed_profile_routed_percent_of_operator_tagged_objects: 48.72
+    boundary: >-
+      Routing an OSM operator label to a reviewed portfolio or company record is
+      research coverage, not object-by-object official reconciliation. The audit
+      ranks remaining operator work but is neither market share nor a census of
+      every physical data center.
   cross_check:
     source: PeeringDB public site
     reported_facilities_on_2026_07_17: 5858
@@ -116,9 +130,9 @@ scope_and_method:
   physical_operator_scope:
     disclosure_registry_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_registry.jsonl
     disclosure_summary_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_summary.json
-    disclosure_registry_as_of: 2026-07-18
-    operator_records: 27
-    machine_generated_page_registry_operators: [CyrusOne, QTS]
+    disclosure_registry_as_of: 2026-07-19
+    operator_records: 28
+    machine_generated_page_registry_operators: [CyrusOne, QTS, NEXTDC]
     comparison_gate:
       - choose_one_physical_granularity
       - choose_one_lifecycle_date_and_state
@@ -27911,7 +27925,175 @@ campus_profiles:
         url: https://www.cyrusone.com/data-centers/north-america/yorkville-technology-campus
     confidence: high_for_operator_published_lifecycle_investment_transmission_cooling_tax_and_jobs_plan_low_for_identifier_address_MW_building_count_final_approval_equipment_GPU_inventory_customer_and_site_returns
 
+  - id: dc_nextdc_apac_portfolio
+    name: NEXTDC current Australia and APAC facility-label portfolio
+    record_granularity: operator_portfolio_with_29_provider_facility_labels_and_machine_generated_site_ledger
+    operator: NEXTDC
+    country_scope: [AU, JP, MY, NZ]
+    registry_refs:
+      detailed_facility_records: life/imports/global_data_centers_20260717/nextdc_official_facility_registry.jsonl
+      summary: life/imports/global_data_centers_20260717/nextdc_official_facility_summary.json
+      builder: scripts/build_nextdc_official_facility_registry.py
+    current_roster_as_of_2026_07_19:
+      provider_facility_labels: 29
+      country_counts: {AU: 25, JP: 2, MY: 1, NZ: 1}
+      lifecycle_reconciliation:
+        operational_or_operational_with_fitout_in_progress: 18
+        development_or_planning: 10
+        current_card_with_lifecycle_not_disclosed: 1
+      technical_space_disclosed_labels: 24
+      portfolio_card_power_disclosed_labels: 28
+      exact_installed_GPU_inventory_labels: 0
+      boundary: >-
+        A provider facility label can be a campus, phased development or marketed
+        site and is not proven to be one physical building. Operational includes
+        facilities with additional halls still being fitted out. KL1 moved from
+        the 1H26 construction schedule to operational only after NEXTDC's
+        14 May 2026 launch; TK2 remains a published card without reviewed
+        lifecycle, area or MW evidence.
+    OSM_crosswalk:
+      NEXTDC_related_public_map_objects: 14
+      crosswalked_objects: 13
+      crosswalked_provider_labels: 12
+      unresolved_public_map_object: osm_node_11057872687
+      boundary: >-
+        OSM contains points and building footprints, including two separate KL1
+        objects. It is map evidence, not a provider-certified building count or
+        complete lifecycle roster. The official 29-label roster adds provider
+        coverage but does not imply 17 missing operating buildings.
+    capacity_layers:
+      current_29_card_roster:
+        disclosed_MW_labels: 28
+        mixed_lifecycle_lower_bound_mw_derived: 1820.55
+        operational_label_card_lower_bound_mw_derived: 623.15
+        boundary: >-
+          Both sums use current marketed card values. They include design or
+          target envelopes and, even for operational labels, are not current
+          built, energized, contracted, billing, utilized or actual load.
+      dated_1H26_portfolio_as_of_2025_12_31:
+        total_IT_power_mw_including_landbank_and_development: 1814.6
+        built_capacity_mw: 240.9
+        in_progress_mw: 272.9
+        contracted_utilisation_mw: 416.6
+        billing_utilisation_mw: 119.8
+        forward_order_book_mw: 296.8
+        available_for_sale_mw: 1398.0
+        built_capacity_definition: designed_power_capacity_of_fitted_out_data_halls
+        built_capacity_boundary: >-
+          NEXTDC says customer backup generation, cooling or rack infrastructure
+          may still require investment. Built is therefore not billing or live
+          customer load. Contracted includes deferred starts and ramps but
+          excludes options and reservations; billing is sold capacity currently
+          recognizing revenue.
+      dated_2026_04_contract_update:
+        pro_forma_contracted_utilisation_mw: 667
+        forward_order_book_mw: 544
+        S4_new_customer_commitment_mw: 250
+      dated_2026_05_S4_update:
+        total_planned_power_mw_approximate: 350
+        initial_capacity_in_progress_mw_approximate: 250
+        lifecycle: construction_in_progress_not_operating
+      reconciliation_boundary: >-
+        The current card checksum is 5.95 MW above the older 1H26 total-IT-power
+        measure because card values, dates and qualifiers differ. No value is
+        substituted or added across the two snapshots.
+    selected_site_lifecycle_and_scope_checks:
+      KL1:
+        lifecycle: operational_launched_2026_05_14
+        marketed_design_IT_capacity_mw: 65
+        dated_1H26_initial_capacity_in_progress_mw_lower_bound: 15
+        exact_current_built_billing_and_actual_load_mw: undisclosed
+      S4:
+        lifecycle: development_approval_and_construction_in_progress
+        planned_power_mw: 350
+        dated_2026_05_initial_capacity_in_progress_mw_approximate: 250
+      S6:
+        lifecycle: operational_with_fitout_in_progress
+        target_IT_capacity_mw: 13.5
+        dated_1H26_built_mw: 2.7
+        dated_1H26_in_progress_mw: 10.8
+      M3:
+        lifecycle: operational_with_fitout_in_progress
+        planned_power_mw: 225
+        dated_1H26_built_mw: 40
+        dated_1H26_in_progress_mw: 185
+    electrical_and_cooling:
+      labels_with_site_specific_public_power_or_cooling_evidence: 16
+      detailed_per_site_evidence_ref: life/imports/global_data_centers_20260717/nextdc_official_facility_registry.jsonl
+      confirmed_power_OEMs_and_architectures:
+        UPS_and_rotary_systems: [Piller, Schneider, RUPS, static_battery_UPS, diesel_rotary_UPS]
+        generator_engine_OEMs: [MTU_Rolls_Royce, Penske, FG_Wilson]
+        topologies: [isolated_parallel_bus, N_plus_1_supply, N_plus_N_rack_delivery, whole_site_UPS_including_mechanical]
+        fuel_disclosures: [12_hours, 18_hours, 24_hours, 48_hours]
+        substations: [C1_two_independent_onsite_substations]
+      confirmed_cooling_OEMs_and_architectures:
+        OEMs: [Stulz, Vertiv, UNIFLAIR]
+        systems: [water_cooled_chillers, air_cooled_chillers, cooling_towers, indirect_free_cooling_CRAC, evaporative_free_cooling, fan_walls, in_row_cooling, direct_to_chip, rear_door_heat_exchangers, immersion_cooling]
+        redundancy_examples: [N_plus_1_chillers_or_circuits, N_plus_2_CRACs_per_hall, dual_chilled_water_risers, dual_primary_pipework]
+        site_PUE_disclosures_are_targets_or_page_performance_values_not_one_portfolio_measure: true
+      published_scope_conflict_labels: [P1, PH1, A1, D1, NE1]
+      equipment_boundary: >-
+        The registry preserves current-page OEM, topology, redundancy, fuel,
+        water-storage, heat-density and PUE statements by site. It is still not a
+        complete as-built bill of materials: unit counts, utility feeds,
+        transformers, switchgear, batteries, generators, chillers, CRAC/CRAH,
+        CDUs, commissioned liquid-cooled MW, measured PUE/WUE and water remain
+        incomplete for most labels.
+    accelerators_and_AI:
+      operator_certification: NVIDIA_DGX_Ready_Data_Center
+      S6_marketing: purpose_built_AI_factory_with_up_to_600kW_per_rack_design
+      liquid_cooling_capabilities: [direct_to_chip, rear_door_heat_exchanger, immersion]
+      customer_case_supported_platforms: [NVIDIA_A100, NVIDIA_H100, NVIDIA_GB200]
+      exact_physical_GPU_model_count_owner_delivery_installation_site_utilization_power_revenue_and_margin: undisclosed
+      boundary: >-
+        DGX certification, supported architectures, AI-ready claims and rack
+        design ceilings are not installed GPU inventory. No GPU count is inferred
+        from MW, capacity under contract or customer case studies.
+    linked_companies:
+      owner_operator: [NEXTDC]
+      financial_profile_refs: [company_nextdc]
+      equipment_and_certification: [Piller, Schneider_Electric, Rolls_Royce_MTU, Penske, FG_Wilson, Stulz, Vertiv, UNIFLAIR, NVIDIA]
+      public_cloud_and_customer_ecosystem_mentions: [AWS, Microsoft_Azure, Google_Cloud, IBM, Oracle, SharonAI]
+    sources:
+      - title: Current 29-label facility roster and marketed area/power cards
+        publisher: NEXTDC
+        date: 2026-07-19_accessed
+        url: https://www.nextdc.com/solutions/mission-critical-spaces
+      - title: 1H26 results presentation and facility development schedule
+        publisher: NEXTDC
+        date: 2026-02
+        url: https://www.nextdc.com/hubfs/ASX%20Announcements/1H26%20Results%20Presentation.pdf
+      - title: Record contracted utilisation and capital plan
+        publisher: NEXTDC
+        date: 2026-04-20
+        url: https://www.nextdc.com/news/record-contracted-growth-and-a2.2bn-capital-plan-to-scale-ai-ready-infrastructure
+      - title: Liquidity and S4 construction update
+        publisher: NEXTDC
+        date: 2026-05-08
+        url: https://www.nextdc.com/news/nextdc-bolsters-liquidity-to-a8.4-billion-to-accelerate-ai-infrastructure-rollout
+      - title: KL1 operational launch
+        publisher: NEXTDC
+        date: 2026-05-14
+        url: https://www.nextdc.com/news/nextdc-goes-live-with-kl1-kuala-lumpur-launching-strategic-ai-ready-data-centre-in-southeast-asia
+      - title: NVIDIA DGX-Ready certification
+        publisher: NEXTDC
+        date: 2024-08-06
+        url: https://www.nextdc.com/news/nextdc-secures-certification-in-the-nvidia-dgx-ready-data-center-program
+      - title: S6 AI Factory engineering case
+        publisher: NEXTDC
+        date: current_publication
+        url: https://nextdc.com/hubfs/NEXTDC-AI-Playbook.pdf
+    confidence: high_for_current_provider_label_roster_marketed_area_and_power_and_named_equipment_medium_for_lifecycle_and_built_fitout_bridge_low_for_exact_building_count_current_live_load_GPU_inventory_complete_BOM_and_site_economics
+
 disclosure_gap_register:
+  - NEXTDC_29_provider_labels_to_exact_physical_buildings_parcels_ownership_and_current_lifecycle
+  - NEXTDC_1_82055GW_mixed_lifecycle_card_checksum_to_built_energized_contracted_billing_utilized_and_actual_load_by_site
+  - NEXTDC_TK2_exact_address_area_power_lifecycle_permits_grid_construction_and_RFS
+  - NEXTDC_KL1_65MW_design_to_current_built_customer_accepted_billing_utilized_and_actual_load
+  - NEXTDC_exact_installed_GPU_models_counts_servers_racks_fabric_owner_customer_site_power_utilization_revenue_and_margin
+  - NEXTDC_per_site_grid_feed_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_and_as_built_topology
+  - NEXTDC_per_site_measured_PUE_WUE_water_hourly_renewable_matching_and_live_liquid_cooled_MW
+  - NEXTDC_per_site_revenue_operating_profit_capex_debt_customer_concentration_utilization_and_ROIC
   - DataBank_76_card_1_023179GW_marketed_total_to_operating_energized_leased_utilized_billed_and_customer_accepted_load_by_site
   - DataBank_11_explicit_development_cards_634MW_construction_grid_RFS_customer_acceptance_billing_and_current_lifecycle
   - DataBank_ATL5_ATL6_DFW8_LGA4_IAD5_IAD6_and_LAX2_current_completion_energization_and_opening_status
@@ -28263,6 +28445,11 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
+    - global_coverage_P1_Flexential_then_Lumen_CenterSquare_Switch_atNorth_NorthC_Telehouse_CDC_Sabey_Cologix_CloudHQ_KDDI_GlobalSwitch_OVHcloud_official_profiles
+    - NEXTDC_29_labels_to_physical_building_parcel_ownership_lifecycle_and_current_load_reconciliation
+    - NEXTDC_TK2_and_KL1_current_power_grid_construction_customer_acceptance_and_billing_status
+    - NEXTDC_exact_GPU_inventory_and_per_site_power_cooling_as_built_BOM_PUE_WUE_water_and_live_liquid_cooled_MW
+    - NEXTDC_site_level_financial_customer_concentration_utilization_and_ROIC
     - DataBank_76_card_marketed_capacity_to_operating_energized_leased_utilized_billed_and_customer_accepted_load_by_site
     - DataBank_11_development_cards_634MW_current_construction_grid_RFS_customer_acceptance_and_revenue_status
     - DataBank_six_DGX_Ready_facility_IDs_and_exact_physical_GPU_inventory_ownership_power_utilization_and_service_economics

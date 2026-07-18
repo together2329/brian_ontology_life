@@ -1,6 +1,6 @@
 schema_version: 1
 status: active_research
-updated_at: 2026-07-18
+updated_at: 2026-07-19
 as_of: 2026-07-18
 area: FINANCE
 secondary_areas:
@@ -11629,6 +11629,161 @@ financial_profiles:
         url: https://www.databank.com/resources/press-releases/databank-to-deploy-largest-rooftop-solar-array-in-houston-metro-area/
     confidence: high_for_current_card_roster_marketed_scale_design_distribution_financing_and_transaction_terms_medium_for_lifecycle_split_low_for_current_standalone_financials_utilized_load_GPU_inventory_and_site_returns
 
+  - id: company_nextdc
+    company: NEXTDC_Limited
+    layer: publicly_listed_data_center_operator
+    ownership_status: ASX_listed_NXT
+    reporting_boundary:
+      accounting_entity: NEXTDC_Limited_consolidated_group
+      fiscal_year_end: June_30
+      portfolio_ref: dc_nextdc_apac_portfolio
+      boundary: >-
+        Consolidated revenue, EBITDA, EBIT, cash flow and capex are company-wide,
+        not per-site. Segment EBITDA excludes central costs and is not consolidated
+        operating profit. Contracted utilisation, billing utilisation and forward
+        orders use different commercial lifecycle states.
+    FY2025_audited_consolidated_baseline:
+      period: year_ended_2025_06_30
+      currency: AUD
+      unit: million
+      revenue_from_customers: 427.209
+      other_income: 34.000
+      statutory_net_loss_after_tax: -60.543
+      statutory_loss_before_tax: -58.669
+      reported_EBITDA_non_statutory: 200.018
+      reported_underlying_EBITDA_non_statutory: 216.710
+      analyst_derived_EBITDA_less_DA: -8.389
+      depreciation_and_amortisation: 208.407
+      finance_costs: 83.786
+      net_cash_inflow_from_operating_activities: 222.637
+      payments_for_property_plant_and_equipment: 1569.068
+      year_end_cash_and_cash_equivalents: 243.688
+      year_end_borrowings_and_lease_liabilities: 1206.202
+      segment_revenue: 427.209
+      total_segment_EBITDA: 281.635
+      measure_boundary: >-
+        NEXTDC does not label a statutory operating-profit subtotal in the income
+        statement. The negative A$8.389 million value is the simple analyst bridge
+        from reported EBITDA less audited D&A, not a company-labelled statutory
+        operating profit. Underlying EBITDA excludes early international costs,
+        acquisition costs, the Growth Incentive Plan and associate losses.
+    first_half_FY2026_results:
+      period: six_months_ended_2025_12_31
+      currency: AUD
+      unit: million
+      total_revenue: 231.8
+      direct_costs: 42.6
+      net_revenue: 189.2
+      facility_costs: 37.4
+      corporate_costs: 35.9
+      EBITDA: 107.3
+      underlying_EBITDA: 115.3
+      EBIT_excluding_underlying_adjustments: -16.5
+      loss_before_tax_excluding_underlying_adjustments: -44.3
+      loss_after_tax_excluding_underlying_adjustments: -39.4
+      measure_boundary: >-
+        The presentation labels EBIT and profit figures as excluding underlying
+        EBITDA adjustments. EBITDA is not accounting operating profit, and the
+        half-year values are not annualized here.
+    physical_and_commercial_capacity_bridge:
+      as_of_2025_12_31:
+        total_IT_power_mw_including_landbank_and_development: 1814.6
+        built_capacity_mw: 240.9
+        in_progress_mw: 272.9
+        contracted_utilisation_mw: 416.6
+        billing_utilisation_mw: 119.8
+        forward_order_book_mw: 296.8
+        contracted_as_percent_of_built: 173
+        land_and_building_capex_to_date_aud_million: 3831
+        fitout_capex_to_date_aud_million: 3416
+      as_of_2026_04_pro_forma:
+        contracted_utilisation_mw: 667
+        forward_order_book_mw: 544
+        S4_customer_commitment_mw: 250
+      boundary: >-
+        Built means fitted-out data-hall design power and can still require
+        customer backup generation, cooling and rack investment. Contracted can
+        have deferred starts or ramps, while billing is sold capacity recognizing
+        revenue. Total IT power includes landbank and future development and is
+        not current operating or consumed load.
+    capital_and_liquidity_updates:
+      April_2026_fully_funded_capital_plan_aud_billion: 2.2
+      April_2026_entitlement_offer_aud_billion_approximate: 1.5
+      April_2026_expected_new_shares_million_approximate: 118.7
+      May_2026_new_senior_debt_commitments_aud_billion: 1.8
+      May_2026_pro_forma_liquidity_aud_billion_approximate: 8.4
+      La_Caisse_binding_hybrid_commitments_aud_billion: 1.7
+      subordinated_wholesale_notes_aud_million: 750
+      boundary: >-
+        Commitments, facilities, equity offers, hybrid securities and notes are
+        financing sources, not revenue or profit. Pro-forma liquidity is not cash
+        on balance sheet, and gross instruments are not summed as current net debt.
+    growth_plan_and_outlook:
+      FY2026_guidance_current_after_April_update:
+        net_revenue_aud_million: 390_to_400
+        underlying_EBITDA_aud_million: 230_to_240
+        capital_expenditure_aud_billion: 2.7_to_3.0
+      dated_1H26_forward_order_conversion:
+        forward_order_book_mw: 296.8
+        planned_FY2027_billing_conversion_mw: 152
+        expected_conversion_window: FY2026_to_FY2029
+      April_2026_company_defined_contracted_EBITDA_aud_billion_more_than: 1.0
+      outlook_boundary: >-
+        Guidance and contracted EBITDA are forward-looking management measures,
+        not recognized revenue, statutory operating profit or cash flow. The
+        later 544-MW forward order book supersedes the older scale snapshot but
+        does not prove delivery, customer acceptance or billing.
+      conversion_tests:
+        - deliver_power_land_network_and_construction_for_544MW_forward_order_book
+        - convert_S4_250MW_commitment_from_construction_to_customer_accepted_billing_capacity
+        - deliver_152MW_planned_FY2027_billing_conversion_without_cost_or_schedule_overrun
+        - grow_revenue_faster_than_depreciation_finance_cost_and_new_facility_overheads
+        - reconcile_29_marketed_cards_to_built_energized_contracted_billing_and_actual_load_by_site
+        - disclose_installed_GPU_inventory_customer_concentration_and_site_level_returns
+    AI_and_data_center_exposure:
+      role: colocation_hyperscale_AI_factory_and_interconnection_operator
+      NVIDIA_DGX_Ready_certified: true
+      S6_rack_design_density_up_to_kw: 600
+      public_cooling_capabilities: [direct_to_chip, rear_door_heat_exchanger, immersion]
+      exact_installed_GPU_models_counts_owner_site_allocation_utilization_power_revenue_and_margin: undisclosed
+      boundary: Certification and support for A100, H100 and GB200 deployments do not prove NEXTDC-owned or customer-installed physical inventory.
+    risks_and_watch_items:
+      - high_capex_and_funding_execution_against_still_negative_EBIT_and_net_income
+      - power_interconnection_land_network_equipment_and_construction_bottlenecks
+      - forward_order_book_delivery_customer_acceptance_and_billing_timing
+      - customer_concentration_take_or_pay_terms_credit_and_ramp_risk
+      - equity_dilution_hybrid_and_debt_cost_refinancing_and_covenant_risk
+      - depreciation_and_finance_cost_growth_before_new_capacity_revenue
+      - cross_border_execution_in_Malaysia_Japan_and_New_Zealand
+      - GPU_ready_marketing_to_physical_hardware_utilization_and_margin_conversion
+      - cooling_water_energy_price_PUE_WUE_and_carbon_execution
+    sources:
+      - title: FY25 Annual Report
+        publisher: NEXTDC
+        date: 2025-06-30
+        url: https://nextdc.com/hubfs/ASX%20Announcements/Annual%20Report%20FY25.pdf
+      - title: 1H26 Results Presentation
+        publisher: NEXTDC
+        date: 2026-02
+        url: https://www.nextdc.com/hubfs/ASX%20Announcements/1H26%20Results%20Presentation.pdf
+      - title: Record contracted utilisation and capital plan
+        publisher: NEXTDC
+        date: 2026-04-20
+        url: https://www.nextdc.com/news/record-contracted-growth-and-a2.2bn-capital-plan-to-scale-ai-ready-infrastructure
+      - title: Liquidity and AI infrastructure rollout update
+        publisher: NEXTDC
+        date: 2026-05-08
+        url: https://www.nextdc.com/news/nextdc-bolsters-liquidity-to-a8.4-billion-to-accelerate-ai-infrastructure-rollout
+      - title: KL1 operational launch
+        publisher: NEXTDC
+        date: 2026-05-14
+        url: https://www.nextdc.com/news/nextdc-goes-live-with-kl1-kuala-lumpur-launching-strategic-ai-ready-data-centre-in-southeast-asia
+      - title: NVIDIA DGX-Ready certification
+        publisher: NEXTDC
+        date: 2024-08-06
+        url: https://www.nextdc.com/news/nextdc-secures-certification-in-the-nvidia-dgx-ready-data-center-program
+    confidence: high_for_audited_financials_current_guidance_contract_updates_and_provider_roster_medium_for_site_lifecycle_and_capacity_bridge_low_for_installed_GPU_inventory_site_economics_customer_concentration_and_complete_equipment_BOM
+
 cross_company_read_through:
   current_signals:
     - DataBank's current directory exposes 76 unique facility IDs whose cards sum exactly to 4,976,008 IT square feet and 1,023.179 MW, reconciling to the rounded 4.98M-square-foot and 1-GW headlines.
@@ -11965,6 +12120,9 @@ cross_company_read_through:
     - How much announced utility load has received permits, financing, interconnection, and energization?
 
 research_limits:
+  - NEXTDC's 29 current facility labels and 1.82055-GW mixed-lifecycle card checksum are not a physical-building census or current operating, energized, leased, utilized, billing or actual-load total.
+  - NEXTDC's DGX-Ready certification, supported NVIDIA platforms, liquid-cooling capability and 600-kW-per-rack S6 design do not disclose installed GPU models, counts, owners, site allocation, utilization or economics.
+  - NEXTDC reports audited company financials and capacity layers, but not site-level revenue, operating profit, capex, debt, customer concentration, utilization or return on capital; high funding and construction scale must convert through customer acceptance and billing.
   - DataBank is private and current standalone audited revenue, operating profit, EBITDA, cash flow, capex, debt, customer concentration and site returns were not found in reviewed primary sources.
   - DataBank's 76-card 1.023179-GW sum includes at least 634 MW across 11 explicit development or future-tense cards; it is a mixed-lifecycle marketing total, not current operating, energized, leased, utilized or billed load.
   - DataBank financing announcements include primary equity, secondary share liquidity, refinancing, construction facilities, ABS debt and a corporate revolver with overlapping uses. Gross announced amounts are not safely summed into net debt, capex, valuation or revenue.

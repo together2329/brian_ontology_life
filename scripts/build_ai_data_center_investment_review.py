@@ -91,7 +91,7 @@ LAYER_COMPARISON = [
     },
     {
         "layer": "physical_data_center_operators",
-        "evidence_state": "Twenty-seven operators now have a scope-preserving crosswalk, but site economics, utilization and return on capital remain limited, especially for private firms.",
+        "evidence_state": "Twenty-eight operators now have a scope-preserving crosswalk, but site economics, utilization and return on capital remain limited, especially for private firms.",
         "brian_exposure_state": "Possible indirect exposure through value-chain funds; exact weights are unknown.",
         "incremental_cash_view": "Do not rank by facility or GW headlines; require reporting boundary, leverage, utilization and valuation first.",
     },
@@ -172,7 +172,12 @@ def registry_counts(args: argparse.Namespace) -> dict:
     operators = load_json(args.import_dir / "physical_operator_disclosure_summary.json")
     suppliers = load_json(args.import_dir / "power_cooling_supply_chain_summary.json")
     accelerators = load_json(args.import_dir / "accelerator_disclosure_summary.json")
+    coverage = load_json(args.import_dir / "global_data_center_coverage_audit_summary.json")
     return {
+        "global_osm_mapped_objects": coverage["baseline"]["osm_mapped_objects"],
+        "global_iso2_country_records": coverage["baseline"]["iso2_country_records"],
+        "distinct_nonempty_osm_operator_labels": coverage["baseline"]["distinct_nonempty_raw_operator_labels"],
+        "mapped_objects_routed_to_reviewed_profiles": coverage["review_join"]["mapped_objects_whose_raw_operator_label_routes_to_a_reviewed_profile"],
         "reviewed_campus_profiles": len(landscape["campus_profiles"]),
         "reviewed_financial_profiles": len(financials["financial_profiles"]),
         "neocloud_and_linked_host_records": neocloud["records"],
@@ -262,6 +267,7 @@ def build_gap_audit(counts: dict, accessed_on: str) -> dict:
         "title": "Global AI data-center research final gap audit",
         "audited_inventory": counts,
         "completed_baseline": [
+            "4,663-object OSM baseline plus 112-country and 822-operator-label coverage audit with a ranked remaining-operator queue",
             "official hyperscaler and Chinese cloud Region or location registries with Region, AZ and building boundaries",
             "scope-preserving neocloud and linked-host profiles",
             "major physical data-center operator crosswalk",

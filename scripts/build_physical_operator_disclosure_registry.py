@@ -59,6 +59,7 @@ SPECS = [
     spec("QTS", "company_qts", ["dc_qts_global_data_centers_portfolio"], "North_America_and_Europe", "private_or_unlisted", "49 canonical current official location candidates and more than 3 GW critical power under customer contract in the dated 2024 scope", "Contracted power, public-card capacity, commissioned facilities and concept-stage gross capacity are not interchangeable.", ["life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl", "life/imports/global_data_centers_20260717/qts_official_location_summary.json"]),
     spec("Vantage_Data_Centers", "company_vantage_data_centers", ["dc_vantage_global_data_centers_portfolio"], "Global", "private_or_unlisted", "approximately 5.9 GW summed from current regional or campus design and full-buildout pages", "The sum mixes operating sites and development projects and is not operating, energized, leased or utilized load."),
     spec("AirTrunk", "company_airtrunk", ["dc_airtrunk_apac_portfolio"], "Asia_Pacific", "private_or_unlisted", "22 disclosed campuses with a derived design-capacity lower bound above 3.153 GW", "Campus design capacity is not current operating load; the separate dated 800 MW customer-commitment measure is not added."),
+    spec("NEXTDC", "company_nextdc", ["dc_nextdc_apac_portfolio"], "Australia_and_Asia_Pacific", "public_standalone_or_listed_operator", "29 current provider facility labels across Australia, Japan, Malaysia and New Zealand", "Twenty-eight published card values sum to a 1.82055-GW mixed-lifecycle lower bound; this is not operating, energized, leased, utilized or billed load.", ["life/imports/global_data_centers_20260717/nextdc_official_facility_registry.jsonl", "life/imports/global_data_centers_20260717/nextdc_official_facility_summary.json"]),
     spec("DayOne_Data_Centers", "company_dayone", ["dc_firmus_dayone_batam_dsx"], "Asia_Pacific", "private_or_unlisted", "Batam 360 MW Firmus partnership plus the wider DayOne expansion platform", "The Batam capacity and up-to-170,000 accelerator ceiling are announced through 2027-2028, not live infrastructure."),
     spec("STACK_Infrastructure", "company_stack_infrastructure", ["dc_stack_global_data_center_portfolio"], "Global", "private_or_unlisted", "more than 8.5 GW built or under development plus more than 8.5 GW planned and potential in current marketing", "Regional headlines and market cards conflict; built, development, planned and potential scopes are never summed into operating load."),
     spec("GDS_Holdings", "company_gds_holdings", ["dc_gds_china_portfolio"], "Mainland_China", "public_standalone_or_listed_operator", "1,538 MW in service and 77.3% utilized area at Q1 2026, with 3.7 GW powered land and reservations", "Area utilization is not power utilization; powered land and reservations are future resources."),
@@ -113,7 +114,7 @@ def load_index(path: Path, key: str) -> dict[str, dict]:
 def build_records(finance_path: Path, landscape_path: Path, accessed_on: str) -> list[dict]:
     finance = load_index(finance_path, "financial_profiles")
     landscape = load_index(landscape_path, "campus_profiles")
-    assert len(SPECS) == 27
+    assert len(SPECS) == 28
     assert len({row["company"] for row in SPECS}) == len(SPECS)
     records = []
     for position, source in enumerate(SPECS, start=1):
