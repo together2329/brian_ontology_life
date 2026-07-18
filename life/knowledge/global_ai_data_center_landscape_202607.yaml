@@ -131,8 +131,8 @@ scope_and_method:
     disclosure_registry_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_registry.jsonl
     disclosure_summary_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_summary.json
     disclosure_registry_as_of: 2026-07-19
-    operator_records: 29
-    machine_generated_page_registry_operators: [CyrusOne, QTS, NEXTDC, Flexential]
+    operator_records: 30
+    machine_generated_page_registry_operators: [CyrusOne, QTS, NEXTDC, Flexential, Lumen_Technologies]
     comparison_gate:
       - choose_one_physical_granularity
       - choose_one_lifecycle_date_and_state
@@ -28264,7 +28264,157 @@ campus_profiles:
         url: https://www.flexential.com/resources/brochure/liquid-cooling-applications
     confidence: high_for_current_card_checksum_KBRA_pool_metrics_and_named_development_evidence_medium_for_non_development_card_lifecycle_and_selected_equipment_low_for_exact_physical_building_count_live_load_GPU_inventory_complete_BOM_and_site_returns
 
+  - id: dc_lumen_north_america_colocation_network_portfolio
+    name: Lumen North American colocation and AI-network portfolio
+    record_granularity: operator_portfolio_with_120_provider_published_city_state_market_rows_and_separate_OSM_object_reconciliation
+    operator: Lumen Technologies
+    country_scope: [US, CA]
+    registry_refs:
+      detailed_market_records: life/imports/global_data_centers_20260717/lumen_colocation_market_registry.jsonl
+      summary: life/imports/global_data_centers_20260717/lumen_colocation_market_summary.json
+      builder: scripts/build_lumen_colocation_market_registry.py
+    current_public_scope_as_of_2026_07_19:
+      current_web_locations_in_North_America_more_than: 200
+      current_web_cities_offering_colocation_more_than: 120
+      current_web_colocation_customers_more_than: 2600
+      current_web_compliance_locations_more_than: 50
+      current_web_resell_partners: 7
+      current_web_resell_partner_locations_more_than: 400
+      2025_PDF_on_net_or_carrier_neutral_data_centers_more_than: 175
+      2025_PDF_North_American_markets_more_than: 60
+      2025_PDF_transcribed_city_state_rows: 120
+      transcribed_country_rows: {US: 118, CA: 2}
+      current_exact_building_address_roster: undisclosed
+      boundary: >-
+        The current web page's 200+ locations and 120+ cities, the 2025 PDF's
+        175+ data centers and 60+ markets, its 120 market rows, and 400+ partner
+        locations are different commercial or dated scopes. The market rows are
+        not facility IDs, addresses, campuses or physical buildings.
+    historical_scope_not_substituted_for_current_ownership:
+      2024_wording: owns_and_operates_approximately_200_carrier_neutral_data_centers_throughout_North_America
+      2024_on_net_data_centers_more_than: 200
+      2024_city_labels_absent_from_2025_list: [Irvine_CA, Honolulu_HI]
+      boundary: The 2024 ownership wording is a dated snapshot and does not establish current ownership or lifecycle for every current web-page location.
+    OSM_crosswalk:
+      objects_with_operator_label_Lumen_Technologies: 25
+      country_counts: {AR: 1, FR: 2, GB: 3, US: 19}
+      exact_city_row_crosswalked_objects: 15
+      exact_city_rows_with_OSM_crosswalk: 12
+      provider_market_rows_without_OSM_crosswalk: 108
+      overseas_legacy_label_objects_after_divestiture: 6
+      unresolved_or_absent_US_city_row_objects: 4
+      exact_crosswalk_markets: [Albany_NY, Austin_TX, Baltimore_MD, Dallas_TX, Las_Vegas_NV, Madison_WI, McLean_VA, Minneapolis_MN, Phoenix_AZ, San_Antonio_TX, Santa_Clara_CA, Sunnyvale_CA]
+      identity_boundaries:
+        - McLean_node_and_footprint_appear_co_located_and_are_not_two_proven_facilities
+        - Ashburn_is_not_silently_mapped_to_Herndon_or_McLean
+        - Norristown_is_not_silently_mapped_to_Philadelphia
+        - Spokane_and_St_George_area_objects_are_absent_from_the_2025_colocation_market_rows
+        - post_divestiture_Lumen_labels_do_not_prove_current_Lumen_ownership_or_operation
+      boundary: >-
+        OSM points and footprints are public map evidence, not a provider-
+        certified building ledger. Duplicate geometries, generic telecom
+        buildings, a cable landing station and stale post-divestiture labels
+        prevent equality between object, facility and building counts.
+    divestiture_boundary:
+      Latin_America_sale_to_Stonepeak_Cirion_completed: 2022-08-01
+      EMEA_sale_to_Colt_completed: 2023-11-01
+      EMEA_transaction_value_usd_billion: 1.8
+      rule: AR_FR_and_GB_OSM_objects_are_retained_as_legacy_map_evidence_not_current_Lumen_assets
+    electrical_and_cooling:
+      current_web_fleet_ranges:
+        power_types: [AC, DC]
+        cabinet_power_density_kw: {minimum: 3, maximum: 12}
+        cooling_redundancy_options_vary_by_site: [N, 2N, N+1]
+        generator_redundancy_options_vary_by_site: [N, 2N, N+1]
+      2025_PDF_cabinet_power_density_kw: {minimum: 3, maximum: 15}
+      current_service_schedule:
+        conditioned_power: Lumen_operated_UPS_or_DC_battery_backup
+        power_SLA: 100_percent_monthly_availability_subject_to_contract_conditions
+        customer_requirement: primary_and_redundant_A_B_sources_each_capable_of_100_percent_load
+        over_3kW_environment: 30_to_70_percent_RH_and_78F_26C_maximum
+        under_3kW_environment: 20_to_80_percent_RH_and_85F_29_5C_maximum
+      historical_pre_divestiture_Nanterre_example:
+        maximum_site_power_mva: 4
+        grid: 20kV_underground_ring_to_dedicated_2x2MVA_10kV_400V_transformer_substation
+        generators: 2x1MVA_diesel_2MVA_total_automatic_start_under_one_minute_monthly_tests_24_hour_fuel
+        UPS: 3x420kVA_hybrid_rotary_840kVA_total_N_plus_1_15_minute_battery
+        cooling: 750W_per_m2_average_below_26C_50_percent_RH_plus_or_minus_20_percent
+        boundary: Historical Lumen sheet before the Colt divestiture; no value is asserted as current Colt equipment or capacity.
+      fleet_equipment_boundary: >-
+        Fleet ranges and contractual environmental limits do not disclose
+        per-site utility feeds, substations, transformer, switchgear, PDU, UPS,
+        battery, generator, fuel, chiller, CRAH/CRAC or CDU OEMs, counts, ratings
+        and as-built topology.
+    network_and_AI:
+      2026_network_mapbook:
+        global_route_miles_approximate: 340000
+        on_net_buildings_approximate: 163000
+        on_net_third_party_data_centers_more_than: 2200
+        next_generation_optical_route_miles_more_than: 100000
+        PoPs_more_than: 400
+        North_American_markets: 70
+        data_centers_per_market_range: 10_to_20_network_reach_statement_not_Lumen_facility_count
+      PCF_deal_value_usd_billion_nearly_as_of_2026_02_25: 13
+      named_AI_network_customers: [Microsoft, Meta, Anthropic]
+      intercity_fiber_miles_million: {2025_year_end: 17, 2028_target: 47, 2031_target: 58}
+      network_capacity_added_by_2025_update_pbps_more_than: 5.9
+      2026_metro_connectivity: up_to_100Gbps_across_16_US_markets_and_up_to_400Gbps_at_key_cloud_data_centers
+      boundary: >-
+        PCF deal values are long-term connectivity contract values, not
+        recognized revenue, GPU purchases, colocation MW or data-center capex.
+        The 2,200+ third-party data centers are network reach, not Lumen sites.
+    accelerators_and_GPU:
+      exact_Lumen_owned_or_hosted_models_counts_sites_owner_delivery_state_utilization_power_revenue_and_margin: undisclosed
+      AI_ready_marketing: connectivity_and_colocation_capability_not_installed_inventory
+      density_caution: The 3-12 kW web and 3-15 kW PDF cabinet ranges cannot be generalized to modern high-density GPU racks at every site.
+    linked_companies:
+      owner_operator: [Lumen_Technologies]
+      named_AI_network_customers: [Microsoft, Meta, Anthropic]
+      divestiture_counterparties: [Stonepeak, Cirion, Colt_Technology_Services]
+      financial_profile_refs: [company_lumen_technologies]
+    sources:
+      - title: Current Network Colocation service page
+        publisher: Lumen Technologies
+        date: 2026-07-19_accessed
+        url: https://www.lumen.com/en-us/services/colocation.html
+      - title: 2025 Network Colocation location data sheet
+        publisher: Lumen Technologies
+        date: 2025
+        url: https://assets.lumen.com/is/content/Lumen/colocation-location-data-sheet?Creativeid=936d4e33-cf54-4625-b4f2-8a8e224af6eb
+      - title: 2026 Network Mapbook
+        publisher: Lumen Technologies
+        date: 2026-06-19
+        url: https://assets.lumen.com/is/content/Lumen/LumenNetworkMapbook25?Creativeid=91d1e412-8b8a-4608-9f5e-eccd4dc3ae0f.html
+      - title: Data center facilities colocation service schedule
+        publisher: Lumen Technologies
+        date: 2026-03-20
+        url: https://assets.lumen.com/is/content/Lumen/data-center-facilities-colo-sch?Creativeid=228ecd41-0f06-498e-bf04-283f8b3e6b30
+      - title: Historical Paris Nanterre colocation data sheet
+        publisher: Lumen Technologies
+        date: historical_pre_divestiture
+        url: https://assets.lumen.com/is/content/Lumen/len-1229-data-centre-colocation-paris-uk-web
+      - title: EMEA business sale completion
+        publisher: Lumen Technologies
+        date: 2023-11-01
+        url: https://ir.lumen.com/news/news-details/2023/Lumen-Completes-Sale-of-EMEA-Business-to-Colt-Technology-Services-for-1-8B/default.aspx
+      - title: Latin America divestiture completion disclosure
+        publisher: Lumen Technologies
+        date: 2022-11-02
+        url: https://ir.lumen.com/news/news-details/2022/Lumen-Technologies-reports-third-quarter-2022-results/default.aspx
+      - title: 2026 Investor Day network and PCF targets
+        publisher: Lumen Technologies
+        date: 2026-02-25
+        url: https://ir.lumen.com/news/news-details/2026/Lumen-Marks-New-Phase-of-Transformation-at-2026-Investor-Day/default.aspx
+    confidence: high_for_provider_market_transcription_current_fleet_ranges_divestiture_and_company_network_metrics_medium_for_market_to_OSM_crosswalk_low_for_current_exact_building_roster_site_MW_complete_BOM_installed_GPU_inventory_and_colocation_site_economics
+
 disclosure_gap_register:
+  - Lumen_current_200_plus_locations_120_plus_cities_2025_175_plus_data_centers_60_plus_markets_and_120_city_state_rows_to_exact_current_buildings_addresses_ownership_and_lifecycle
+  - Lumen_25_OSM_objects_to_15_exact_market_crosswalks_6_post_divestiture_overseas_labels_and_4_unresolved_US_objects
+  - Lumen_per_site_utility_feed_MW_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_and_as_built_topology
+  - Lumen_per_site_operating_energized_leased_utilized_billed_actual_load_PUE_WUE_water_and_live_liquid_cooled_MW
+  - Lumen_exact_installed_GPU_models_counts_servers_racks_fabric_owner_customer_delivery_host_site_power_utilization_revenue_and_margin
+  - Lumen_colocation_revenue_operating_profit_EBITDA_capex_assets_customer_concentration_utilization_and_ROIC
+  - Lumen_nearly_13B_PCF_deal_value_to_revenue_margin_cash_flow_fiber_delivery_and_return_on_incremental_capex
   - Flexential_41_current_cards_40_plus_topline_18_market_headline_19_visible_filter_and_3M_plus_vs_4_985407M_sqft_scope_reconciliation
   - Flexential_current_cards_to_exact_physical_buildings_parcels_ownership_lease_and_current_lifecycle
   - Flexential_372_17MW_mixed_lifecycle_card_checksum_and_more_than_360MW_online_or_under_development_to_built_energized_leased_utilized_billed_and_actual_load_by_site
@@ -28634,7 +28784,7 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
-    - global_coverage_P1_Flexential_then_Lumen_CenterSquare_Switch_atNorth_NorthC_Telehouse_CDC_Sabey_Cologix_CloudHQ_KDDI_GlobalSwitch_OVHcloud_official_profiles
+    - global_coverage_P1_CenterSquare_Switch_atNorth_NorthC_Telehouse_CDC_Sabey_Cologix_CloudHQ_KDDI_GlobalSwitch_OVHcloud_official_profiles
     - NEXTDC_29_labels_to_physical_building_parcel_ownership_lifecycle_and_current_load_reconciliation
     - NEXTDC_TK2_and_KL1_current_power_grid_construction_customer_acceptance_and_billing_status
     - NEXTDC_exact_GPU_inventory_and_per_site_power_cooling_as_built_BOM_PUE_WUE_water_and_live_liquid_cooled_MW
