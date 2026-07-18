@@ -17805,7 +17805,412 @@ campus_profiles:
       - {title: Warsan construction progress duplicate, publisher: Moro_Hub, date: 2026-01-23, url: "https://www.morohub.com/en/media-and-news/news/2026/01/he-saeed-mohammed-al-tayer-reviews-construction-progress-at-moro-hub-s-new-green-data-centre-in-warsan"}
     confidence: high_for_location_full_plan_area_phase_status_and_target_low_for_capacity_definition_current_progress_equipment_customers_and_GPU_inventory
 
+  - id: dc_du_uae_data_center_portfolio
+    name: du and datamena UAE data-center portfolio
+    record_granularity: operator_service_portfolio_with_explicit_asset_and_lease_boundaries
+    operator_and_brands:
+      legal_group: Emirates_Integrated_Telecommunications_Company_PJSC
+      consumer_and_enterprise_brand: du
+      enterprise_digital_brand: du_Tech
+      carrier_neutral_hub_brand: datamena
+      financial_profile_ref: company_emirates_integrated_telecommunications_du
+    location: {country: United_Arab_Emirates, emirates: [Dubai, Abu_Dhabi]}
+    current_operating_service_roster:
+      count: 5
+      sites:
+        - {name: Dubai_Silicon_Oasis, alias: DXB2, ref: dc_du_dubai_silicon_oasis_dxb2}
+        - {name: Meydan_Dubai, alias: DXB1, ref: dc_du_meydan_dxb1}
+        - {name: IMPZ_Equinix, service_brand: datamena, ref: dc_du_impz_datamena_equinix}
+        - {name: Kizad_Abu_Dhabi, alias: AUH2, ref: dc_du_kizad_abudhabi_auh2}
+        - {name: Masdar_City_Abu_Dhabi, alias: AUH1, ref: dc_du_masdar_city_auh1}
+      lifecycle_boundary: The five-site count is a current operated-service portfolio, not five wholly owned buildings.
+    asset_operation_and_lease_boundary:
+      Equinix_alliance:
+        original_date: 2012-11-06
+        last_amended_about: 2020-04-07
+        Equinix_roles: [acquire, design, upgrade, secure, operate, manage, maintain_alliance_data_centers]
+        du_role: telecommunications_services_to_alliance_customers
+        economic_mechanics: capital_cost_operating_cost_marketing_cost_and_revenue_sharing_exist_but_amounts_are_undisclosed
+      Khazna_module_leases:
+        Abu_Dhabi_agreement_original_date: 2012-08-12
+        Dubai_agreement_original_date: 2012-08-12
+        both_last_amended: 2024-02-28
+        Khazna_roles: [electricity, HVAC, fire_detection_and_suppression, security]
+        exact_modules_and_crosswalk_to_Meydan_Masdar_or_other_sites: undisclosed
+      boundary: >-
+        IMPZ is explicitly an Equinix-operated alliance facility. du also leases
+        unidentified modules from Khazna in Dubai and Abu Dhabi. Public sources
+        do not permit treating the complete five-site service roster as wholly
+        owned or operated at every facility-infrastructure layer by du.
+    portfolio_network_and_service_terms:
+      carrier_neutral: true
+      geographic_redundancy_km_more_than: 80
+      company_uptime_claim_percent: 99.999
+      Dubai_to_Abu_Dhabi_latency_ms_less_than: 5
+      connectivity: [dedicated_network_fabrics, dual_local_network_access, international_terrestrial_cables, international_subsea_cables, direct_cloud_and_hyperscaler_links]
+      published_certification_set: [ISO_27001, PCI_DSS, OHSAS_18001, ISO_22301, ISO_9001, ISO_14001]
+      physical_security: [CCTV, biometric_hand_geometry_readers, individually_locked_racks, onsite_security_24x7x365]
+    capacity_and_certification_ledger:
+      DSO_plus_Kizad_aggregate_capacity_mw_at_2021_Q3: 2.7
+      aggregate_capacity_definition: undisclosed
+      Uptime_projects:
+        - {site: DSO, project: du_Nautilus_Data_Center_DSO, design_documents: Tier_III, constructed_facility_phase_1: Tier_III}
+        - {site: KIZAD, project: du_Nautilus_Data_Center_KIZAD, design_documents: Tier_III, constructed_facility_phase_1: Tier_III}
+      company_Tier_wording: exceeds_Tier_III_requirements_and_historical_Tier_3_plus
+      boundary: Company marketing language is not substituted for individual Uptime awards; the 2.7 MW is not split between DSO and Kizad.
+    environmental_design_ledger:
+      company_reported_full_load_PUE_range: [1.4, 1.6]
+      white_space_temperature_C_in_2025: 26
+      disclosed_practices: [indirect_evaporative_cooling, treated_sewage_effluent_with_in_house_reverse_osmosis, lithium_ion_batteries, LED_motion_lighting, solar_car_park_panels, solar_streetlights, advanced_building_management_systems]
+      scope_boundary: >-
+        The annual report discusses data-centre facilities collectively and does
+        not map the PUE range or every design practice to all five sites. No
+        site-level WUE, water consumption, renewable share or hourly matching is disclosed.
+    compute_and_AI_services:
+      confirmed_physical_cluster_site: Dubai_Silicon_Oasis
+      National_Hypercloud: Oracle_Alloy_based_sovereign_cloud_hosted_in_a_du_UAE_data_center
+      Oracle_services_disclosed_in_2025_offering_circular_more_than: 100
+      service_start: 2025-01
+      June_2026_MOU: Open_Innovation_AI_GPU_orchestration_integrated_with_National_Hypercloud
+      exact_Hypercloud_host_site_GPU_models_counts_servers_racks_fabric_owner_power_draw_cooling_utilization_revenue_and_margin: undisclosed
+      boundary: Service availability and orchestration agreements do not create an additional physical GPU inventory beyond the separately evidenced DSO cluster.
+    development_refs: [dc_du_d3_microsoft_hyperscale, dc_du_ai_park_dubai]
+    child_refs:
+      - dc_du_dubai_silicon_oasis_dxb2
+      - dc_du_kizad_abudhabi_auh2
+      - dc_du_meydan_dxb1
+      - dc_du_impz_datamena_equinix
+      - dc_du_masdar_city_auh1
+    sources:
+      - {title: du 2025 Offering Memorandum, publisher: Emirates_Integrated_Telecommunications_Company, date: 2025-09-08, url: "https://www.du.ae/sites/duaediscovery/ir/download/IOM-en-v2.pdf"}
+      - {title: du Integrated Annual Report 2025, publisher: Emirates_Integrated_Telecommunications_Company, date: 2026, url: "https://investors.du.ae/static-files/a619c2a1-f3e3-4552-b9b1-3d41b65f4723"}
+      - {title: du data-centre expansion brochure, publisher: du, date: undated_accessed_2026-07-18, url: "https://www.du.ae/files/1430778024306"}
+      - {title: du Data Centres Solutions current page, publisher: du, date: 2026-07-18_accessed, url: "https://www.du.ae/business/digital-platform/digital-infrastructure/data-centres-solutions"}
+      - {title: du Data Centers Uptime award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/client/du-data-centers/1278"}
+    confidence: high_for_current_five_service_locations_alliance_and_lease_boundaries_network_terms_and_DSO_KIZAD_certifications_medium_for_portfolio_PUE_scope_low_for_complete_building_ownership_live_load_and_site_economics
+
+  - id: dc_du_dubai_silicon_oasis_dxb2
+    name: du Dubai Silicon Oasis DXB2 and NVIDIA AI supercluster
+    aliases: [du_Nautilus_Data_Center_DSO, DSO_Dubai]
+    record_granularity: operating_data_center_with_dated_overlapping_AI_cluster_scopes
+    operator: Emirates_Integrated_Telecommunications_Company_du
+    location: {country: United_Arab_Emirates, emirate: Dubai, area: Dubai_Silicon_Oasis, exact_address_coordinates_parcel_and_building_number: undisclosed}
+    lifecycle_and_certification:
+      official_opening_date: 2021-09-29
+      Uptime_design_documents: Tier_III
+      Uptime_constructed_facility_phase_1: Tier_III
+      operating_AI_facility_statement_date: 2025-10-17
+      exact_current_building_phases_customer_acceptance_occupancy_energized_leased_utilized_and_billed_load: undisclosed
+    capacity:
+      DSO_plus_Kizad_aggregate_at_2021_Q3_mw: 2.7
+      aggregate_definition_and_per_site_split: undisclosed
+      dedicated_AI_hall_2024_company_wording_mw_more_than: 5
+      annual_report_2025_AI_facility_mw: 5.1
+      October_2025_operational_facility_mw_more_than: 13
+      boundary: >-
+        The 2.7-MW launch aggregate, greater-than-5-MW dedicated hall, 5.1-MW
+        annual-report facility and greater-than-13-MW operational expansion use
+        different dates or scopes. They are not added and do not establish the
+        entire DSO building's live IT load.
+    accelerator_ledger:
+      December_2024_release:
+        status_wording: successful_deployment
+        GPU_vendor: NVIDIA
+        GPU_count_wording: several_thousand
+        exact_models: undisclosed
+        partner: AIHostingHub
+        rack_vendor: Supermicro
+        cooling: direct_to_chip_liquid_cooling
+      annual_report_2025:
+        deployment_date_stated: 2025-09
+        facility_mw: 5.1
+        supported_GPU_count: 4000
+        GPU_vendor: NVIDIA
+        exact_models: undisclosed
+        cooling: direct_to_chip_liquid_cooling
+        partner: AIHostingHub
+      October_2025_expansion:
+        status: operational_and_customer_accessible_live_cluster
+        partner: NextGenAI
+        facility_mw_more_than: 13
+        GPU_model_family: NVIDIA_B300
+        exact_GPU_count_servers_racks_fabric_and_owner: undisclosed
+        cooling: direct_to_chip_liquid_cooling
+      chronology_and_scope_boundary: >-
+        A December 2024 release already called the AIHostingHub deployment
+        successful, while the 2025 annual report dates a first supercluster
+        deployment to September 2025. The 4,000-GPU figure is tied to the
+        annual report's 5.1-MW facility statement and is not assumed to be the
+        B300 count, total October 2025 fleet, or current 13-plus-MW electrical draw.
+    power_cooling_and_sustainability:
+      company_launch_design: mission_critical_high_kW_fault_tolerant_power_and_cooling
+      AI_cooling: direct_to_chip_liquid
+      advanced_building_management_systems: true
+      LEED_principles_company_wording: true
+      portfolio_full_load_PUE_range_not_site_specific: [1.4, 1.6]
+      exact_grid_voltage_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_topology_site_PUE_WUE_water_and_renewable_matching: undisclosed
+    economic_boundary:
+      exact_GPU_ownership_purchase_cost_customer_contracts_utilization_power_cost_revenue_margin_and_cluster_ROIC: undisclosed
+      note: AIHostingHub_and_NextGenAI_partner_roles_are_not_audited_cap_tables_or_asset_ledgers
+    portfolio_ref: dc_du_uae_data_center_portfolio
+    financial_profile_ref: company_emirates_integrated_telecommunications_du
+    sources:
+      - {title: du and AIHostingHub first NVIDIA supercluster deployment, publisher: du, date: 2024-12-05, url: "https://www.du.ae/about/media-centre/newsdetail/du-and-aihostinghub-announce-the-launch-of-first-nvidia"}
+      - {title: du and NextGenAI 13-plus-MW B300 supercluster, publisher: du, date: 2025-10-17, url: "https://www.du.ae/about/media-centre/newsdetail/du-and-NextGenAI-unveil-Middle-Easts-most-advanced-AI-superclus"}
+      - {title: du Integrated Annual Report 2025, publisher: Emirates_Integrated_Telecommunications_Company, date: 2026, url: "https://investors.du.ae/static-files/a619c2a1-f3e3-4552-b9b1-3d41b65f4723"}
+      - {title: DSO and KIZAD opening, publisher: du, date: 2021-09-29, url: "https://www.du.ae/about/media-centre/newsdetail/du-announces-launch-of-two-new-data-centers-to-support-digital-t"}
+      - {title: du Q3 2021 results and 2.7-MW aggregate, publisher: Emirates_Integrated_Telecommunications_Company, date: 2021-10-18, url: "https://www.du.ae/files/1430780165862"}
+      - {title: du Data Centers Uptime award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/client/du-data-centers/1278"}
+    confidence: high_for_site_opening_Uptime_awards_4000_GPU_5_1MW_13_plus_MW_B300_and_liquid_cooling_medium_for_chronology_low_for_current_total_GPU_inventory_ownership_utilization_complete_power_BOM_and_economics
+
+  - id: dc_du_kizad_abudhabi_auh2
+    name: du Kizad Abu Dhabi AUH2
+    aliases: [du_Nautilus_Data_Center_KIZAD, Kizad_Abu_Dhabi]
+    record_granularity: operating_data_center_with_aggregate_capacity_only
+    operator: Emirates_Integrated_Telecommunications_Company_du
+    location: {country: United_Arab_Emirates, emirate: Abu_Dhabi, area: Khalifa_Industrial_Zone_KIZAD, exact_address_coordinates_parcel_and_building_number: undisclosed}
+    lifecycle_and_certification:
+      official_opening_date: 2021-09-29
+      Uptime_design_documents: Tier_III
+      Uptime_constructed_facility_phase_1: Tier_III
+      exact_current_phases_customer_acceptance_occupancy_energized_leased_utilized_and_billed_load: undisclosed
+    capacity:
+      Kizad_plus_DSO_aggregate_at_2021_Q3_mw: 2.7
+      capacity_definition_and_per_site_split: undisclosed
+    power_cooling_and_network:
+      company_design_terms: [latest_power_and_cooling_management, mission_critical_high_kW_fault_tolerant_delivery, fully_redundant_OTN]
+      latency_to_Dubai_ms_no_more_than: 5
+      portfolio_full_load_PUE_range_not_site_specific: [1.4, 1.6]
+      exact_grid_voltage_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_topology_site_PUE_WUE_water_and_renewable_matching: undisclosed
+    accelerators_and_AI:
+      exact_GPU_models_counts_servers_racks_fabric_owner_purchase_delivery_power_draw_cooling_utilization_customers_revenue_and_margin: undisclosed
+    portfolio_ref: dc_du_uae_data_center_portfolio
+    financial_profile_ref: company_emirates_integrated_telecommunications_du
+    sources:
+      - {title: DSO and KIZAD opening, publisher: du, date: 2021-09-29, url: "https://www.du.ae/about/media-centre/newsdetail/du-announces-launch-of-two-new-data-centers-to-support-digital-t"}
+      - {title: du Q3 2021 results and 2.7-MW aggregate, publisher: Emirates_Integrated_Telecommunications_Company, date: 2021-10-18, url: "https://www.du.ae/files/1430780165862"}
+      - {title: du Data Centers Uptime award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/client/du-data-centers/1278"}
+      - {title: du Integrated Annual Report 2025, publisher: Emirates_Integrated_Telecommunications_Company, date: 2026, url: "https://investors.du.ae/static-files/a619c2a1-f3e3-4552-b9b1-3d41b65f4723"}
+    confidence: high_for_opening_location_and_Uptime_awards_medium_for_current_operation_low_for_per_site_capacity_complete_equipment_GPU_inventory_utilization_and_economics
+
+  - id: dc_du_impz_datamena_equinix
+    name: du datamena at IMPZ Equinix DX1
+    aliases: [datamena, Equinix_DX1, IMPZ_Equinix]
+    record_granularity: operating_alliance_facility_with_explicit_service_and_asset_boundary
+    service_operator: Emirates_Integrated_Telecommunications_Company_du
+    facility_operator: Equinix_Middle_East_FZ_LLC
+    location: {country: United_Arab_Emirates, emirate: Dubai, area: IMPZ, current_Equinix_address: "Dubai 500389", exact_street_coordinates_parcel: undisclosed}
+    lifecycle:
+      alliance_announced: 2012
+      first_phase_expected_historical: 2013-01-01
+      current_status: operating_and_home_of_UAE_IX
+    asset_and_economic_boundary:
+      Equinix_roles: [acquire, design, upgrade, secure, operate, manage, maintain]
+      du_roles: [telecommunications_services, datamena_carrier_neutral_connectivity_platform]
+      cost_and_revenue_sharing: mechanisms_exist_but_amounts_are_undisclosed
+      boundary: This site is not treated as a wholly du-owned or solely du-operated physical asset.
+    building_and_space:
+      gross_facility_sqft_historical: 44078
+      gross_facility_sqm_historical: 4095
+      current_colocation_sqm: 1796
+      current_colocation_sqft: 19332
+      historical_rack_positions: 649
+      historical_du_cabinet_wording_approximate: 650
+      building: two_storey_reinforced_concrete
+      floor_load: {raised_kN_per_sqm: 4, slab_kN_per_sqm: 12}
+      boundary: Gross area, colocation area and rack positions are different scopes; no current fitted, occupied or utilized rack count is published.
+    power_and_cooling:
+      minimum_cabinet_density_kVA: 2
+      distribution_voltage_V: [230, 400]
+      UPS_redundancy: N_plus_1
+      generator_redundancy: N_plus_1
+      generator_autonomy_hours_at_full_load_minimum: 30
+      cooling_redundancy: N_plus_20_percent
+      fire_suppression: double_interlock_pre_action
+      fire_detection: HSSD_VESDA_aspirated
+      sustainability: [2025_UAE_wind_and_solar_I_RECs, high_efficiency_UPS, LED_lighting, efficient_humidity_control, hot_cold_aisle_containment]
+      exact_IT_mw_facility_power_grid_service_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_PUE_WUE_water_and_live_load: undisclosed
+    accelerators_and_AI:
+      exact_GPU_models_counts_servers_racks_fabric_owner_hosted_customers_power_draw_cooling_utilization_revenue_and_margin: undisclosed
+    portfolio_ref: dc_du_uae_data_center_portfolio
+    financial_profile_ref: company_emirates_integrated_telecommunications_du
+    sources:
+      - {title: Dubai DX1 technical specifications, publisher: Equinix, date: 2026-07-18_accessed, url: "https://www.equinix.com/data-centers/europe-colocation/united-arab-emirates-colocation/dubai-data-centers/dx1"}
+      - {title: DX1 and DX2 historical IBX specification sheet, publisher: Equinix, date: undated_accessed_2026-07-18, url: "https://info.equinix.com/rs/equinixinc/images/DX1%2C2%20IBX%20Spec%20Sheet%20%28A4%29.pdf"}
+      - {title: du and Equinix alliance announcement, publisher: du, date: 2012, url: "https://www.du.ae/about/media-centre/newsdetail/du-Alliance-Brings-Platform-Equinix-to-the-Middle-East-by-Cr"}
+      - {title: du 2025 Offering Memorandum, publisher: Emirates_Integrated_Telecommunications_Company, date: 2025-09-08, url: "https://www.du.ae/sites/duaediscovery/ir/download/IOM-en-v2.pdf"}
+      - {title: datamena brochure, publisher: datamena, date: undated_accessed_2026-07-18, url: "https://datamena.com/sites/default/files/files/datamena_brochure.pdf"}
+    confidence: high_for_alliance_boundary_space_racks_redundancy_and_autonomy_low_for_current_IT_MW_live_load_equipment_counts_GPU_inventory_and_du_specific_economics
+
+  - id: dc_du_meydan_dxb1
+    name: du Meydan Dubai DXB1 service location
+    record_granularity: operating_service_location_with_unresolved_Khazna_and_Equinix_physical_crosswalk
+    service_operator: Emirates_Integrated_Telecommunications_Company_du
+    location: {country: United_Arab_Emirates, emirate: Dubai, area: Meydan, exact_address_coordinates_parcel_and_building_number: undisclosed}
+    lifecycle:
+      brochure_status: available
+      Microsoft_CDC_lease_date: 2019-12-17
+      Microsoft_use: cloud_computing_and_communications_traffic
+      exact_RFS_phases_customer_acceptance_occupancy_energized_leased_utilized_and_billed_load: undisclosed
+    ownership_and_lease_boundary:
+      confirmed_du_contract: leases_certain_Meydan_data_halls_office_storage_and_parking_to_Microsoft_and_supplies_undisclosed_electrical_power
+      confirmed_Khazna_Dubai_modules: du_leases_unidentified_modules_and_Khazna_manages_electricity_HVAC_fire_and_security
+      possible_Equinix_crosswalk: DX2_is_at_a_Khazna_Meydan_facility_but_no_reviewed_primary_source_explicitly_maps_du_DXB1_to_Equinix_DX2
+      boundary: DX2 specifications are retained as possible crosswalk evidence and not asserted as DXB1 as-built values.
+    possible_Equinix_DX2_specification_ledger:
+      colocation_sqm: 544
+      colocation_sqft: 5856
+      building: two_storey_reinforced_concrete
+      floor_load: {raised_kN_per_sqm: 11, slab_kN_per_sqm: 13}
+      minimum_cabinet_density_kVA: 4
+      distribution_voltage_V: [230, 400]
+      UPS_redundancy: N_plus_1
+      generator_redundancy: N_plus_1
+      generator_autonomy_hours_at_full_load_minimum: 30
+      cooling_redundancy: N_plus_20_percent
+      sustainability: [2025_UAE_wind_and_solar_I_RECs, hot_cold_aisle_containment]
+      crosswalk_status: possible_not_proven
+    missing_physical_ledger:
+      exact_du_DXB1_IT_mw_facility_power_racks_area_grid_transformer_switchgear_PDU_UPS_battery_generator_fuel_cooling_equipment_PUE_WUE_water_and_renewable_matching: undisclosed
+    accelerators_and_AI:
+      Microsoft_cloud_tenant: confirmed
+      exact_GPU_models_counts_servers_racks_fabric_ownership_power_draw_cooling_utilization_revenue_and_margin: undisclosed
+      boundary: A cloud-computing lease does not disclose physical accelerators.
+    portfolio_ref: dc_du_uae_data_center_portfolio
+    financial_profile_ref: company_emirates_integrated_telecommunications_du
+    sources:
+      - {title: du 2025 Offering Memorandum, publisher: Emirates_Integrated_Telecommunications_Company, date: 2025-09-08, url: "https://www.du.ae/sites/duaediscovery/ir/download/IOM-en-v2.pdf"}
+      - {title: du data-centre expansion brochure, publisher: du, date: undated_accessed_2026-07-18, url: "https://www.du.ae/files/1430778024306"}
+      - {title: Dubai DX2 technical specifications, publisher: Equinix, date: 2026-07-18_accessed, url: "https://www.equinix.com/data-centers/europe-colocation/united-arab-emirates-colocation/dubai-data-centers/dx2"}
+    confidence: high_for_du_service_location_and_Microsoft_lease_medium_for_Khazna_lease_context_low_for_DXB1_DX2_crosswalk_capacity_equipment_GPU_inventory_and_economics
+
+  - id: dc_du_masdar_city_auh1
+    name: du Masdar City Abu Dhabi AUH1 service location
+    record_granularity: operating_service_location_with_unresolved_Khazna_and_Equinix_physical_crosswalk
+    service_operator: Emirates_Integrated_Telecommunications_Company_du
+    location: {country: United_Arab_Emirates, emirate: Abu_Dhabi, area: Masdar_City, exact_address_coordinates_parcel_and_building_number: undisclosed}
+    lifecycle:
+      brochure_status: available
+      exact_RFS_phases_customer_acceptance_occupancy_energized_leased_utilized_and_billed_load: undisclosed
+    ownership_and_lease_boundary:
+      confirmed_Khazna_Abu_Dhabi_modules: du_leases_unidentified_modules_and_Khazna_manages_electricity_HVAC_fire_and_security
+      possible_Equinix_crosswalk: Equinix_AD1_is_in_Masdar_City_but_no_reviewed_primary_source_explicitly_maps_du_AUH1_to_AD1
+      boundary: AD1 specifications are retained as possible crosswalk evidence and not asserted as AUH1 as-built values.
+    possible_Equinix_AD1_specification_ledger:
+      colocation_sqm: 1230
+      colocation_sqft: 13244
+      building: two_storey_steel_frame_with_concrete_structure
+      raised_floor_load_kN_per_sqm: 15
+      minimum_cabinet_density_kVA: 4
+      distribution_voltage_V: [230, 400]
+      UPS_redundancy: N_plus_1
+      generator_redundancy_current_page: contact_sales
+      generator_autonomy_current_page: not_applicable
+      cooling_redundancy: N_plus_20_percent
+      fire_suppression: fogging_mist
+      fire_detection: [HSSD_VESDA_aspirated, non_aspirated_duct_or_ceiling]
+      sustainability: 2025_UAE_wind_and_solar_I_RECs
+      crosswalk_status: possible_not_proven
+    missing_physical_ledger:
+      exact_du_AUH1_IT_mw_facility_power_racks_area_grid_transformer_switchgear_PDU_UPS_battery_generator_fuel_cooling_equipment_PUE_WUE_water_and_renewable_matching: undisclosed
+    accelerators_and_AI:
+      exact_GPU_models_counts_servers_racks_fabric_ownership_power_draw_cooling_utilization_customers_revenue_and_margin: undisclosed
+    portfolio_ref: dc_du_uae_data_center_portfolio
+    financial_profile_ref: company_emirates_integrated_telecommunications_du
+    sources:
+      - {title: du 2025 Offering Memorandum, publisher: Emirates_Integrated_Telecommunications_Company, date: 2025-09-08, url: "https://www.du.ae/sites/duaediscovery/ir/download/IOM-en-v2.pdf"}
+      - {title: du data-centre expansion brochure, publisher: du, date: undated_accessed_2026-07-18, url: "https://www.du.ae/files/1430778024306"}
+      - {title: Abu Dhabi AD1 technical specifications, publisher: Equinix, date: 2026-07-18_accessed, url: "https://www.equinix.com/data-centers/europe-colocation/united-arab-emirates-colocation/abu-dhabi-center/ad1"}
+    confidence: high_for_du_service_location_medium_for_Khazna_lease_context_low_for_AUH1_AD1_crosswalk_capacity_equipment_GPU_inventory_and_economics
+
+  - id: dc_du_d3_microsoft_hyperscale
+    name: du d3 Microsoft hyperscale data-center development
+    record_granularity: contracted_greenfield_development_not_operating_capacity
+    developer_and_future_operator: Emirates_Integrated_Telecommunications_Company_du
+    location: {country: United_Arab_Emirates, emirate: Dubai, district: Dubai_Design_District_d3, land_area_sqm: 18587, exact_address_coordinates_parcel: undisclosed}
+    lifecycle_and_contracts:
+      musataha_term_years: 25
+      musataha_start: 2024-09-01
+      musataha_end: 2049-08-31
+      construction_contract_date: 2024-09-19
+      contractors: [James_L_Williams_Middle_East_Limited, McLaren_Construction_LLC]
+      contract_basis: FIDIC_1999_Plant_and_Design_Build
+      Microsoft_CDCS_agreement_date: 2024-12-17
+      public_announcement_date: 2025-04-22
+      annual_report_2025_status: continued_progress_on_development
+      Q1_2026_signal: gradual_ramp_up_of_data_center_investments
+      exact_construction_percent_permits_commissioning_RFS_customer_acceptance_energized_leased_utilized_and_billed_load: undisclosed
+    tenant_and_economics:
+      main_tenant: Microsoft_Operations_38224_FZE
+      capacity_delivery: tranches
+      du_cost_AED_approximate: 2000000000
+      cost_definition: total_operational_and_capital_cost
+      Microsoft_rights: use_and_occupation_of_certain_data_halls_for_cloud_computing_and_communications_traffic
+      power_commitment: specified_amount_but_undisclosed
+      exact_MW_racks_area_white_space_contract_term_rent_revenue_margin_capex_incurred_financing_and_ROIC: undisclosed
+      boundary: The AED2-billion envelope is not incurred capex, revenue, contract value or facility valuation.
+    power_cooling_and_accelerators:
+      greenfield_description: true
+      exact_grid_voltage_utility_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_topology_PUE_WUE_water_renewables_and_liquid_cooled_MW: undisclosed
+      exact_GPU_models_counts_servers_racks_fabric_ownership_delivery_power_draw_utilization_and_workload_mix: undisclosed
+      boundary: Microsoft tenancy and AI-demand rationale do not disclose customer hardware.
+    portfolio_ref: dc_du_uae_data_center_portfolio
+    financial_profile_ref: company_emirates_integrated_telecommunications_du
+    sources:
+      - {title: du hyperscale data-center announcement, publisher: du, date: 2025-04-22, url: "https://www.du.ae/about/media-centre/newsdetail/du-announces-a-new-hyperscale-data-centre-in-uae"}
+      - {title: du 2025 Offering Memorandum, publisher: Emirates_Integrated_Telecommunications_Company, date: 2025-09-08, url: "https://www.du.ae/sites/duaediscovery/ir/download/IOM-en-v2.pdf"}
+      - {title: du Integrated Annual Report 2025, publisher: Emirates_Integrated_Telecommunications_Company, date: 2026, url: "https://investors.du.ae/static-files/a619c2a1-f3e3-4552-b9b1-3d41b65f4723"}
+      - {title: du Q1 2026 earnings release, publisher: Emirates_Integrated_Telecommunications_Company, date: 2026-04-22, url: "https://investors.du.ae/static-files/e3f8c1f9-6a77-4e9f-a834-8fdf856ea546"}
+    confidence: high_for_land_term_contractors_Microsoft_tenant_and_cost_definition_medium_for_active_development_low_for_capacity_schedule_equipment_GPU_inventory_incurred_capex_and_returns
+
+  - id: dc_du_ai_park_dubai
+    name: du AI Park Warsan Dubai
+    record_granularity: master_planned_multi_data_center_development_not_operating_capacity
+    developer: Emirates_Integrated_Telecommunications_Company_du
+    location: {country: United_Arab_Emirates, emirate: Dubai, district: Warsan, site_area_sqm_approximate: 500000, exact_address_coordinates_parcels: undisclosed}
+    lifecycle:
+      announcement_date: 2025-10-13
+      announcement_status: master_planning_started
+      planned_phasing_years: 5
+      annual_report_2025_2026_priority: development_and_expansion
+      exact_land_control_permits_grid_interconnection_financing_design_contractor_construction_start_phase_schedule_RFS_customers_energization_and_billing: undisclosed
+    planned_scope:
+      multiple_liquid_cooled_hyperscale_data_centers: true
+      capacity_mw_up_to: 1000
+      capacity_definition: undisclosed
+      intended_components: [AI_research_labs, startup_incubators, sovereign_hybrid_AI_production_and_compute_cluster, GPU_as_a_Service, National_Hybrid_AI]
+      boundary: Up-to-1-GW is a five-year master-plan ceiling, not current, financed, contracted, constructed, energized or operating IT load.
+    relationship_boundary:
+      d3_Microsoft_project: no_reviewed_source_proves_inclusion_or_overlap
+      existing_DSO_cluster: no_reviewed_source_proves_inclusion_or_overlap
+      Moro_Hub_Warsan_project: same_district_but_different_company_and_no_reviewed_source_proves_overlap
+      rule: Do_not_add_or_subtract_the_projects_until_parcels_grid_scopes_and_phase_ledgers_are_disclosed.
+    power_cooling_and_accelerators:
+      design_direction: high_density_liquid_cooled_sovereign_AI
+      exact_grid_service_generation_storage_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_topology_PUE_WUE_water_renewable_matching_and_live_liquid_cooled_MW: undisclosed
+      exact_GPU_models_counts_servers_racks_fabric_ownership_purchase_orders_delivery_schedule_power_draw_utilization_customers_revenue_and_margin: undisclosed
+    portfolio_ref: dc_du_uae_data_center_portfolio
+    financial_profile_ref: company_emirates_integrated_telecommunications_du
+    sources:
+      - {title: du AI Park and National Hybrid AI announcement, publisher: du, date: 2025-10-13, url: "https://www.du.ae/about/media-centre/newsdetail/du-launches-ai-park-and-national-hybrid-ai-at-gitex-2025"}
+      - {title: du Integrated Annual Report 2025, publisher: Emirates_Integrated_Telecommunications_Company, date: 2026, url: "https://investors.du.ae/static-files/a619c2a1-f3e3-4552-b9b1-3d41b65f4723"}
+    confidence: high_for_location_area_up_to_capacity_liquid_cooling_and_master_plan_wording_low_for_land_grid_financing_phase_delivery_equipment_GPU_procurement_customers_and_economics
+
 disclosure_gap_register:
+  - du_current_five_service_locations_to_exact_physical_buildings_addresses_coordinates_parcels_ownership_and_facility_operator_crosswalk
+  - du_Khazna_Dubai_and_Abu_Dhabi_leased_modules_to_Meydan_Masdar_and_other_service_locations_exact_crosswalk
+  - du_Meydan_DXB1_to_Equinix_DX2_and_Masdar_AUH1_to_Equinix_AD1_exact_identity_and_asset_boundary
+  - du_DSO_and_Kizad_2_7MW_aggregate_to_per_site_IT_load_facility_power_energized_leased_utilized_and_billed_capacity
+  - du_DSO_2024_successful_deployment_2025_September_first_cluster_5_1MW_4000_GPU_and_13_plus_MW_B300_scope_chronology_reconciliation
+  - du_DSO_current_exact_GPU_models_counts_servers_racks_fabric_ownership_purchase_delivery_power_draw_utilization_customers_revenue_margin_and_ROIC
+  - du_National_Hypercloud_Oracle_Alloy_exact_host_site_GPU_inventory_owner_power_cooling_utilization_revenue_and_margin
+  - du_per_site_grid_voltage_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_and_topology
+  - du_per_site_PUE_WUE_water_renewable_energy_hourly_matching_live_liquid_cooled_MW_and_measured_operating_performance
+  - du_d3_exact_MW_racks_white_space_design_grid_equipment_construction_percent_phase_schedule_customer_acceptance_incurred_capex_revenue_margin_and_ROIC
+  - du_AI_Park_Warsan_land_parcels_grid_financing_permits_design_contractors_phase_capacity_customers_construction_energization_and_billing
+  - du_AI_Park_to_d3_DSO_and_Moro_Hub_Warsan_non_overlap_or_inclusion_reconciliation
+  - du_data_center_only_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_utilization_and_ROIC
+  - datamena_Equinix_alliance_capex_opex_marketing_cost_revenue_sharing_and_du_recognized_economics
   - Moro_Hub_current_complete_physical_building_roster_and_fourth_green_data_center_to_Uptime_four_project_scope_reconciliation
   - Moro_Hub_Uptime_Green_Data_Center_to_Al_Yalayis_exact_physical_crosswalk
   - Moro_Hub_MBR_POD1_POD2_to_operator_phase1_phase2_exact_crosswalk_capacity_RFS_and_current_load
@@ -18121,6 +18526,16 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
+    - du_current_five_service_locations_to_exact_physical_buildings_addresses_parcels_ownership_Equinix_alliance_and_Khazna_module_crosswalk
+    - du_DSO_current_GPU_models_counts_servers_racks_fabric_ownership_power_draw_utilization_customer_revenue_and_5_1MW_13_plus_MW_scope_bridge
+    - du_DSO_and_Kizad_2_7MW_aggregate_to_per_site_IT_load_energized_leased_utilized_and_billed_capacity
+    - du_Meydan_DXB1_to_Equinix_DX2_and_Masdar_AUH1_to_Equinix_AD1_exact_crosswalk
+    - du_per_site_power_chain_cooling_PUE_WUE_water_renewables_live_liquid_cooled_MW_and_complete_equipment_BOM
+    - du_National_Hypercloud_Oracle_Alloy_exact_host_site_GPU_owner_power_utilization_and_service_economics
+    - du_d3_phase_MW_racks_grid_construction_RFS_Microsoft_acceptance_incurred_capex_revenue_margin_and_ROIC
+    - du_AI_Park_Warsan_land_grid_financing_permits_design_contractors_customers_phase_schedule_equipment_and_energization
+    - du_AI_Park_d3_DSO_and_Moro_Hub_Warsan_overlap_or_non_overlap_reconciliation
+    - du_data_center_only_revenue_operating_profit_EBITDA_capex_cash_flow_customer_concentration_utilization_and_ROIC
     - Moro_Hub_current_complete_physical_building_roster_and_operator_green_site_to_Uptime_project_crosswalk
     - Moro_Hub_MBR_POD1_POD2_to_phase1_phase2_capacity_RFS_live_load_and_customer_commitments
     - Moro_Hub_MBR_6_3MW_100MW_exceeding100MW_200_racks_and_area_scope_reconciliation

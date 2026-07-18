@@ -78,6 +78,7 @@ stack_layers:
     - Bloom_Energy
   operators_reits_utilities:
     - Dubai_Electricity_and_Water_Authority_PJSC
+    - Emirates_Integrated_Telecommunications_Company_du
     - Emirates_Telecommunications_Group_e_and
     - Beyon_BSC
     - Saudi_Data_and_AI_Authority_National_Information_Center
@@ -10720,8 +10721,189 @@ financial_profiles:
       - https://www.morohub.com/en/media-and-news/news/2025/10/moro-hub-partners-with-rafay-to-deliver-sovereign-gpu-powered-platform-as-a-service-for-ai-innovation
     confidence: high_for_audited_FY2025_group_and_Others_segment_financials_rounded_Q1_2026_KPIs_ownership_and_named_projects_low_for_Moro_standalone_economics_current_live_load_complete_equipment_and_GPU_inventory
 
+  - id: company_emirates_integrated_telecommunications_du
+    company: Emirates_Integrated_Telecommunications_Company_PJSC
+    brands: [du, du_Tech, datamena]
+    listing: {exchange: Dubai_Financial_Market, ticker: DU, status: publicly_listed}
+    layer: operators_reits_utilities
+    reporting_scope:
+      headquarters: Dubai_United_Arab_Emirates
+      consolidated_businesses: [mobile, fixed, wholesale, ICT_and_associated_telecom_services, fintech]
+      current_operated_service_data_center_count: 5
+      campus_refs:
+        - dc_du_uae_data_center_portfolio
+        - dc_du_dubai_silicon_oasis_dxb2
+        - dc_du_kizad_abudhabi_auh2
+        - dc_du_meydan_dxb1
+        - dc_du_impz_datamena_equinix
+        - dc_du_masdar_city_auh1
+        - dc_du_d3_microsoft_hyperscale
+        - dc_du_ai_park_dubai
+      data_center_reporting_boundary: >-
+        Data-centre colocation is included in ICT and associated telecom
+        services, but that segment also includes broadcasting, multi-cloud,
+        cybersecurity, IoT, equipment and handset sales. datamena also operates
+        through an Equinix alliance with undisclosed cost and revenue sharing.
+        Group or ICT figures are not data-center-only earnings.
+    FY2025_group_results:
+      period: year_ended_2025-12-31
+      accounting_basis: audited_consolidated_IFRS_with_early_IFRS_18_adoption
+      audit_report_date: 2026-02-09
+      currency: AED
+      unit: whole
+      revenue: 15905421000
+      operating_profit_before_depreciation_and_amortization_EBITDA: 7338388000
+      derived_EBITDA_margin_percent: 46.1377
+      depreciation_and_amortization: 2167933000
+      operating_profit: 5170455000
+      derived_operating_margin_percent: 32.5075
+      net_profit: 2905085000
+      derived_net_margin_percent: 18.2647
+      prior_year:
+        revenue: 14635917000
+        EBITDA: 6469839000
+        operating_profit: 4316249000
+        net_profit: 2487547000
+      boundary: These are diversified telecom-group results and cannot be assigned to data centers or GPUs.
+    FY2025_ICT_and_associated_telecom_segment:
+      currency: AED
+      unit: whole
+      revenue: 1882558000
+      over_time_revenue: 783614000
+      point_in_time_revenue: 1098944000
+      direct_costs: 1517530000
+      segment_contribution: 365028000
+      derived_segment_contribution_margin_percent: 19.3900
+      prior_year_revenue: 1712056000
+      derived_revenue_growth_percent: 9.9589
+      prior_year_segment_contribution: 355294000
+      scope: broadcasting_data_center_colocation_multi_cloud_cybersecurity_IoT_equipment_and_other_associated_services
+      measure_boundary: Segment contribution is revenue minus direct costs before unallocated operating expenses, depreciation, amortization, royalty, finance and tax; it is not operating profit or EBITDA.
+      data_center_only_revenue_operating_profit_EBITDA_and_margin: undisclosed
+    FY2025_cash_flow_capex_and_balance_context:
+      currency: AED
+      unit: whole
+      cash_generated_from_operations_before_royalty_tax_and_benefits: 7131042000
+      net_cash_generated_from_operating_activities: 5229823000
+      company_capex_metric_cost_additions_PPE_plus_intangibles: 2273633000
+      derived_capital_intensity_percent: 14.2947
+      cash_purchase_of_PPE: 2038501000
+      cash_purchase_of_intangibles: 314729000
+      year_end_cash_and_cash_equivalents: 463288000
+      year_end_term_deposits: 855000000
+      year_end_lease_liabilities: 1938819000
+      operating_free_cash_flow_EBITDA_minus_company_capex: 5064755000
+      boundary: Company capex covers network and technology investments. The cash-purchase figures and cost-addition capex metric differ, and no data-center-only incurred capex is disclosed.
+    Q1_2026_group_results:
+      period: three_months_ended_2026-03-31
+      accounting_basis: reviewed_condensed_consolidated_IAS_34
+      currency: AED
+      unit: whole
+      revenue: 4114108000
+      EBITDA: 2037806000
+      derived_EBITDA_margin_percent: 49.5321
+      depreciation_and_amortization: 559802000
+      operating_profit: 1478004000
+      derived_operating_margin_percent: 35.9253
+      net_profit: 834177000
+      derived_net_margin_percent: 20.2760
+      net_cash_generated_from_operating_activities: 1421298000
+      capex_metric_from_earnings_release: 386000000
+      cash_purchase_of_PPE: 531833000
+      cash_purchase_of_intangibles: 90490000
+      end_period_cash_and_cash_equivalents: 1523159000
+      boundary: Quarterly results are not safely annualized and remain group-wide.
+    Q1_2026_revenue_by_business:
+      currency: AED
+      unit: whole
+      mobile: 1845439000
+      fixed: 1177087000
+      wholesale: 613290000
+      ICT_and_associated_telecom_services: 478292000
+      ICT_prior_year: 421017000
+      derived_ICT_growth_percent: 13.6040
+      boundary: Q1 statements disclose revenue by business but not data-center revenue, segment contribution, operating profit or capex.
+    data_center_asset_and_contract_exposure:
+      current_service_roster: [Dubai_Silicon_Oasis_DXB2, Meydan_DXB1, IMPZ_Equinix, Kizad_AUH2, Masdar_City_AUH1]
+      ownership_boundary:
+        IMPZ: Equinix_operated_under_alliance_with_undisclosed_economic_sharing
+        Khazna: du_leases_unidentified_Dubai_and_Abu_Dhabi_modules_with_facility_systems_managed_by_Khazna
+        current_five_sites: not_all_proven_wholly_owned_du_buildings
+      DSO_AI_cluster:
+        annual_report_scope: {facility_mw: 5.1, supported_NVIDIA_GPUs: 4000, cooling: direct_to_chip_liquid, partner: AIHostingHub}
+        October_2025_scope: {operational_facility_mw_more_than: 13, GPU_family: NVIDIA_B300, cooling: direct_to_chip_liquid, partner: NextGenAI}
+        exact_current_total_GPU_count_and_ownership: undisclosed
+      d3_Microsoft:
+        lifecycle: under_development
+        total_operational_and_capital_cost_AED_approximate: 2000000000
+        main_tenant: Microsoft
+        delivery: tranches
+        exact_MW_schedule_contract_economics_incurred_capex_and_ROIC: undisclosed
+      AI_Park:
+        location: Warsan_Dubai
+        site_area_sqm_approximate: 500000
+        master_plan_capacity_mw_up_to: 1000
+        phasing_years: 5
+        status: master_planning_and_development_priority_not_operating_capacity
+      portfolio_efficiency:
+        reported_full_load_PUE_range: [1.4, 1.6]
+        boundary: Portfolio reporting does not map PUE to individual buildings or disclose WUE and water use per site.
+    sovereign_cloud_and_AI_services:
+      National_Hypercloud: Oracle_Alloy_based_and_hosted_in_a_du_UAE_data_center
+      AI_GPU_as_a_Service: available
+      June_2026_MOU: Open_Innovation_AI_GPU_orchestration_integration
+      exact_non_DSO_GPU_models_counts_owner_host_site_servers_racks_fabric_power_cooling_utilization_revenue_and_margin: undisclosed
+      boundary: Product availability and MOUs are commercial signals, not verified additional accelerator inventory.
+    outlook:
+      positive_drivers:
+        - Q1_2026_group_revenue_EBITDA_operating_profit_and_ICT_growth
+        - DSO_operational_liquid_cooled_4000_GPU_and_B300_cluster_evidence
+        - Microsoft_as_main_d3_tenant_and_tranche_delivery
+        - sovereign_cloud_GPUaaS_and_government_enterprise_data_residency_demand
+        - AI_Park_long_term_1GW_optionality
+        - strong_group_cash_generation_and_unleveraged_company_description
+      risks:
+        - data_center_only_revenue_operating_profit_capex_cash_flow_utilization_and_returns_undisclosed
+        - d3_AED2_billion_cost_before_full_cash_flow_and_construction_commissioning_ramp_risk
+        - AI_Park_land_grid_financing_permit_customer_and_delivery_risk
+        - five_site_asset_ownership_and_Equinix_Khazna_economic_boundary_complexity
+        - DSO_GPU_chronology_scope_ownership_utilization_power_cost_and_margin_gaps
+        - large_group_dividend_royalty_tax_and_telecom_capex_compete_for_capital
+        - exact_per_site_power_cooling_PUE_WUE_water_and_renewable_matching_gaps
+      boundary: >-
+        du offers one of the strongest disclosed physical Gulf AI-cluster
+        datapoints, but the investment case remains a diversified telecom with
+        no data-center-only earnings or return disclosure. Planned MW must pass
+        land, grid, construction, energization, customer acceptance, utilization and billing.
+    watch_items:
+      - DSO_4000_GPU_5_1MW_to_13_plus_MW_B300_current_inventory_ownership_power_utilization_and_revenue_bridge
+      - d3_construction_percent_phase_MW_RFS_Microsoft_acceptance_incurred_capex_revenue_margin_and_ROIC
+      - AI_Park_land_grid_financing_permits_phase_schedule_customers_equipment_and_energization
+      - five_site_physical_building_ownership_Khazna_Equinix_and_lease_crosswalk
+      - data_center_only_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_utilization_and_ROIC
+      - FY2026_ICT_and_group_results_capex_cash_flow_dividend_and_balance_sheet
+    sources:
+      - https://investors.du.ae/static-files/a036639f-edfc-4f02-8dc4-d0fb832115a7
+      - https://investors.du.ae/static-files/a619c2a1-f3e3-4552-b9b1-3d41b65f4723
+      - https://investors.du.ae/static-files/bde89f5f-a489-4320-bc80-19036373f7c5
+      - https://investors.du.ae/static-files/e3f8c1f9-6a77-4e9f-a834-8fdf856ea546
+      - https://www.du.ae/sites/duaediscovery/ir/download/IOM-en-v2.pdf
+      - https://www.du.ae/about/media-centre/newsdetail/du-and-NextGenAI-unveil-Middle-Easts-most-advanced-AI-superclus
+      - https://www.du.ae/about/media-centre/newsdetail/du-announces-a-new-hyperscale-data-centre-in-uae
+      - https://www.du.ae/about/media-centre/newsdetail/du-launches-ai-park-and-national-hybrid-ai-at-gitex-2025
+      - https://www.du.ae/about/media-centre/newsdetail/du-and-open-innovation-ai-join-forces
+    confidence: high_for_audited_FY2025_reviewed_Q1_2026_group_and_ICT_financials_current_five_service_locations_DSO_cluster_and_named_developments_low_for_data_center_only_economics_current_total_GPU_inventory_and_project_returns
+
 cross_company_read_through:
   current_signals:
+    - du operates a five-location UAE data-center service portfolio, but the physical asset boundary is mixed: Equinix acquires and operates alliance facilities, and Khazna manages facility systems for unidentified leased modules in Dubai and Abu Dhabi. Five marketed locations are not five proven wholly du-owned buildings.
+    - Dubai Silicon Oasis is a rare disclosed physical AI datapoint. du's 2025 annual report describes a 5.1-MW direct-to-chip liquid-cooled facility supporting 4,000 NVIDIA GPUs, while an October 2025 release describes an operational greater-than-13-MW expansion using NVIDIA B300 GPUs. The scopes are not added and the B300 count remains undisclosed.
+    - du's portfolio environmental disclosure reports full-load PUE of 1.4-1.6, 26-degree white-space set points, indirect evaporative cooling, treated sewage effluent purified by reverse osmosis and lithium-ion batteries. These practices are not mapped to every individual site, and per-site WUE and water consumption remain undisclosed.
+    - The d3 hyperscale project has Microsoft as main tenant, an approximate AED2-billion combined operating-and-capital cost envelope, 18,587 square metres of land under a 25-year musataha and named construction contractors. It remains development exposure; exact MW, RFS, incurred capex and contract economics are undisclosed.
+    - du AI Park is a separate Warsan master plan of about 500,000 square metres and up to 1 GW over five years. No reviewed source proves inclusion or overlap with d3, the DSO cluster or Moro Hub's separate Warsan project, so their capacities are not added.
+    - du generated AED15.905 billion of FY2025 revenue, AED7.338 billion of EBITDA and AED5.170 billion of audited operating profit, then AED4.114 billion, AED2.038 billion and AED1.478 billion in Q1 2026. These diversified telecom results are funding signals, not data-center earnings.
+    - ICT and associated telecom services produced AED1.883 billion of FY2025 revenue and AED365.0 million of segment contribution, a derived 19.4% contribution margin, but the segment also includes equipment, broadcasting, cloud, cybersecurity and IoT and does not disclose data-center operating profit.
+    - Q1 2026 ICT revenue grew 13.6% to AED478.3 million and company commentary said data-center investment was gradually ramping. Growth and capex direction support the thesis but do not prove d3 or AI Park capacity has energized or begun billing.
     - DEWA owns 100% of Moro and Digital DEWA. FY2025 group revenue was AED32.842 billion, audited operating profit AED10.952 billion and EBITDA AED17.329 billion, but these are diversified utility-group results rather than data-center earnings.
     - DEWA's broad Others segment, which includes IT and computer-system housing alongside water, investment, energy and efficiency businesses, produced AED1.993 billion of FY2025 revenue and AED349.4 million of operating profit, a derived 17.5% margin. It is the narrowest audited proxy but cannot be attributed to Moro.
     - Moro's MBR Solar Park campus has inaugurated two phases and a ten-phase 100-MW/100,000-square-metre plan. A phase-one release states 6.3 MW of green-electricity capacity, Guinness records 33,311.11 square metres and a Dell case calls it a 200-rack facility; these different scopes are not added or silently reconciled.
@@ -10952,6 +11134,13 @@ cross_company_read_through:
     - Separate earnings exposure already visible today from backlog and capacity exposure that depends on future execution.
     - Review employer income and direct SK hynix holdings together because both are exposed to the memory cycle.
   unresolved_questions:
+    - What are du's data-center-only revenue, operating profit, EBITDA, capex, debt, cash flow, customer concentration, utilization and return on invested capital, distinct from broad ICT and group results?
+    - How do DSO's December 2024 successful deployment, September 2025 5.1-MW/4,000-GPU annual-report scope and October 2025 greater-than-13-MW B300 operational scope reconcile into current GPU models, counts, owners, power draw, utilization, customers and economics?
+    - Which exact physical buildings and leased modules comprise du's five service locations, and how do DXB1 and AUH1 crosswalk to Equinix DX2, AD1 and Khazna facility modules?
+    - What are the exact per-site IT MW, energized, leased, utilized and billed load, grid connections, transformers, switchgear, UPS, batteries, generators, cooling equipment, PUE, WUE, water and renewable matching for every du location?
+    - When will d3 deliver each tranche, what MW and racks will Microsoft occupy, how much AED2-billion cost has been incurred, and what revenue, margin and return will the contract produce?
+    - Which land, grid, financing, permit, design, contractor, customer, GPU and equipment commitments support AI Park's up-to-1-GW master plan, and how does it avoid overlap with d3, DSO and Moro Hub Warsan?
+    - Where is the Oracle Alloy National Hypercloud physically hosted, which GPUs power it, who owns them, and what are the service's utilization, revenue and margin?
     - What are Moro's standalone revenue, operating profit, EBITDA, capex, debt, cash flow, customer concentration, utilization and return on invested capital, distinct from DEWA's broad Others segment?
     - How do MBR Solar Park's 6.3-MW phase-one electricity figure, 100-MW ten-phase plan, 200-rack vendor case and POD 1/POD 2 Uptime projects reconcile to energized, leased, utilized and billed IT load?
     - Did Warsan phase one launch in the second half of 2026, what does its greater-than-100-MW capacity measure, and what are its grid, solar, financing, contractor, customer and commissioning milestones?
@@ -11033,6 +11222,11 @@ cross_company_read_through:
     - How much announced utility load has received permits, financing, interconnection, and energization?
 
 research_limits:
+  - du is a diversified listed telecom and digital-services group; group and broad ICT-segment revenue and contribution are not data-center-only earnings.
+  - du's five current service locations include mixed Equinix alliance and Khazna leased-module boundaries, and public sources do not establish five wholly du-owned physical buildings.
+  - DSO's 4,000-GPU/5.1-MW annual-report scope and greater-than-13-MW B300 release are separate disclosures. They are not added, and the B300 count, current total fleet, ownership, utilization and economics remain undisclosed.
+  - d3's approximate AED2-billion amount is a combined operating-and-capital cost envelope, not incurred capex, revenue, enterprise value or guaranteed return. AI Park's up-to-1-GW figure is a master-plan ceiling, not live capacity.
+  - Portfolio PUE and environmental practices are not mapped to every du site; per-site WUE, water, renewable matching and full power and cooling bills of materials remain unavailable.
   - DEWA is a diversified listed utility group; audited group and broad Others-segment results are not Moro or data-center-only earnings.
   - MBR Solar Park's 6.3-MW phase-one electricity capacity, ten-phase 100-MW plan, 200-rack vendor case and multiple area figures use different dates and scopes and are not added into current IT capacity.
   - Warsan's greater-than-100-MW figure is planned development capacity with an undisclosed definition, not live or energized IT load; no newer official launch confirmation was found by July 18, 2026.
