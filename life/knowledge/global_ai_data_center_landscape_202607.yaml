@@ -12306,6 +12306,162 @@ campus_profiles:
       - {title: Bouygues Telecom and partners sign SFR acquisition MOU, publisher: Bouygues_Telecom, date: 2026-06-06, url: "https://www.corporate.bouyguestelecom.fr/archives-communique-presse/bouygues-telecom-franchit-une-etape-structurante-pour-son-developpement-futur-en-signant-aux-cotes-de-free-groupe-iliad-et-orange-un-protocole-daccord-avec-altice-france-en-vue-de-l/"}
     confidence: high_for_historical_named_roster_transaction_counts_sale_and_leaseback_parent_financial_energy_cooling_and_SFR_MOU_evidence_medium_for_continuing_Towerlink_tenancy_platform_ownership_bridge_low_for_exact_current_roster_site_ownership_MW_equipment_GPU_inventory_and_site_economics
 
+  - id: dc_ultraedge_french_edge_portfolio_and_sfr_legacy_boundary
+    name: UltraEdge French edge portfolio and SFR legacy operating boundary
+    record_granularity: mixed_provider_site_cards_Datapole_metro_summaries_transaction_assets_and_legacy_OSM_objects_not_a_uniform_physical_building_census
+    current_operator: UltraEdge
+    former_operator_and_continuing_customer_or_partner: SFR
+    country: FR
+    lifecycle_as_of_2026_07_19: current_operating_edge_platform_with_active_recapitalization_and_expansion_program
+    ownership_as_of_2026_07_19:
+      Morgan_Stanley_Infrastructure_Partners_percent: 70
+      Altice_France_SFR_percent: 30
+      UltraEdge_share_capital_EUR: 569147931
+      boundary: >-
+        The 2024 transaction and current legal publication establish the
+        platform-level ownership boundary. They do not allocate property title,
+        lease rights, SFR equipment, customer occupancy or economics by site.
+    official_directory_source_ref: life/imports/global_data_centers_20260717/ultraedge_current_region_directory_source.json
+    official_directory_registry_ref: life/imports/global_data_centers_20260717/ultraedge_current_region_directory_registry.jsonl
+    official_directory_summary_ref: life/imports/global_data_centers_20260717/ultraedge_current_region_directory_summary.json
+    registry_builder_ref: scripts/build_ultraedge_sfr_legacy_directory_registry.py
+    current_provider_headlines:
+      owned_and_operated_sites: 248
+      data_centers: 30_plus
+      telecom_POPs: 200_plus
+      deployed_IT_power_MW: 51
+      hosting_space_m2: 35000
+      Datapoles: 6
+      staff: 100_plus
+      technical_partners: 200
+      carriers: 100_plus
+      site_revitalization_investment_EUR_million_through_2028: 400
+      boundary: >-
+        Deployed IT power is not identified as operating, energized, leased,
+        utilized, customer-accepted or billed load. The site and space
+        headlines are not allocated to a complete current building roster.
+    current_region_directory:
+      region_pages: 12
+      provider_cards: 251
+      published_type_counts:
+        POP: 161
+        Data_center: 78
+        IX_Edge: 11
+        Datacenter: 1
+      non_POP_cards: 90
+      provider_sitemap_location_pages: 251
+      boundary: >-
+        The region cards include POP, data-center and IX Edge labels at mixed
+        physical and service granularity. The 251 cards conflict with the
+        248-site headline and cannot be called 251 physical data centers.
+    source_transaction:
+      closed: 2024-05-23
+      source_scope: 257_datacenters_plus_office_space_then_operated_by_SFR
+      majority_interest_sold_percent: 70
+      retained_interest_percent: 30
+      total_consideration_EUR_million: 500
+      reported_capital_gain_EUR_million: 313.1
+      continuing_relationship: SFR_build_to_suit_agreement_and_operating_or_service_relationship
+      accounting: Altice_retained_interest_equity_accounted
+      boundary: >-
+        The 257-asset transaction perimeter, 248 current-site headline, 251
+        directory cards and 30-plus data-center headline are separate dated and
+        unexplained scopes and are never summed.
+    current_Datapole_page:
+      metros:
+        Bordeaux: {published_power_MW: 5, hosting_space_m2: 6000, data_centers: 6}
+        Lyon: {published_power_MW: 7, hosting_space_m2: 12000, data_centers: 7}
+        Strasbourg: {published_power_MW: 3, hosting_space_m2: 5000, data_centers: 3}
+        Paris: {published_power_MW: 12, hosting_space_m2: 14000, data_centers: 9}
+        Rennes: {published_power_MW: 2.5, hosting_space_m2: 3000, data_centers: 4}
+        Lille: {published_power_MW: 1.5, hosting_space_m2: 1000, data_centers: 2}
+      arithmetic_checksum:
+        published_power_MW: 31
+        hosting_space_m2: 41000
+        data_centers: 31
+      reconciliation_boundary: >-
+        The six metro summaries total 31 MW, 41,000 square metres and 31 data
+        centers, conflicting with or using a different denominator from the
+        51-MW, 35,000-square-metre and 30-plus portfolio headlines. No provider
+        bridge identifies which number is current or whether the scopes overlap.
+    power_and_resilience:
+      marketed_density_kW_per_rack_up_to: 15
+      portfolio_deployed_IT_power_MW: 51
+      exact_site_power_allocation: undisclosed
+      undisclosed:
+        - utility_feeds_and_grid_capacity
+        - substations_transformers_switchgear_busbars_and_PDUs
+        - UPS_and_battery_counts_ratings_topology_and_OEMs
+        - generator_counts_ratings_OEMs_fuel_and_runtime
+        - operating_energized_leased_utilized_customer_accepted_and_billed_load
+      boundary: >-
+        A marketed rack-density ceiling and deployed-power headline do not
+        establish live high-density load, rack count or a site electrical bill
+        of materials.
+    cooling_and_environment:
+      ISO_50001_claim: true
+      average_PUE_claim_range: [1.5, 1.9]
+      new_extensions_or_buildings_target_PUE_range: [1.2, 1.3]
+      direct_liquid_cooling: natively_available_at_selected_sites_subject_to_configuration_and_power
+      water_cooling_design: closed_loop_chilled_water_and_reuse_where_water_is_used
+      carbon_work: Paris_Agreement_aligned_trajectory_and_GHG_Protocol_footprint_claim
+      undisclosed:
+        - selected_direct_liquid_cooling_site_ids_and_live_MW
+        - measured_site_PUE_and_WUE
+        - absolute_site_energy_water_and_renewable_share
+        - cooling_equipment_counts_ratings_and_OEMs
+      boundary: >-
+        Portfolio claims, capability and design targets are not measured
+        facility performance. The reviewed PUE glossary's displayed formula is
+        not reused because the visible presentation appears inverted.
+    accelerators_and_AI:
+      direct_UltraEdge_owned_GPU_inventory: undisclosed
+      Gcore_partnership:
+        service: access_to_AI_infrastructure_with_NVIDIA_GPU_servers
+        hardware_owner_and_platform: Gcore_or_service_platform_not_disclosed_as_UltraEdge_owned
+      AI_ready_design_context: high_density_HPC_networking_and_liquid_cooling_marketing
+      boundary: >-
+        No reviewed source gives GPU model, count, owner, purchase or delivery
+        state, host site, power draw, utilization, customer, revenue or margin.
+    SFR_legacy_public_map_crosswalk:
+      raw_operator_tagged_OSM_objects: 17
+      exact_name_and_city_crosswalks_to_current_cards: 4
+      Courbevoie_cluster_level_crosswalks: 2
+      unresolved_geographic_or_legacy_candidates: 11
+      exact_crosswalk_labels: [Bordeaux_Gabriel_Peri, Rennes, Strasbourg, Venissieux]
+      boundary: >-
+        SFR operator tags are treated as legacy or occupancy evidence after the
+        UltraEdge carve-out. They do not establish current SFR property title,
+        exact UltraEdge building identity, capacity or facility economics.
+    finance_and_outlook:
+      UltraEdge_financial_profile_ref: company_ultraedge
+      SFR_financial_profile_ref: company_altice_france_sfr
+      current_investment_program: EUR400_million_site_revitalization_through_2028
+      SFR_acquisition_MOU:
+        consortium: [Bouygues_Telecom, Orange, Free_Groupe_iliad]
+        total_enterprise_value_EUR_billion: 20.35
+        possible_earnout_EUR_million_up_to: 650
+        expected_close: 2027_H2_subject_to_conditions_and_approvals
+        UltraEdge: explicitly_excluded
+      outlook_boundary: >-
+        UltraEdge's investment plan and SFR's conditional transaction do not
+        disclose per-site revenue, operating profit, customer commitments,
+        accepted load or return on invested capital. The SFR MOU does not
+        transfer UltraEdge to the consortium.
+    sources:
+      - {title: UltraEdge about and portfolio headlines, publisher: UltraEdge, accessed: 2026-07-19, url: "https://www.ultraedge.com/about"}
+      - {title: UltraEdge current data-center and Datapole directory, publisher: UltraEdge, accessed: 2026-07-19, url: "https://www.ultraedge.com/datacenter"}
+      - {title: UltraEdge press and legal information, publisher: UltraEdge, accessed: 2026-07-19, url: "https://www.ultraedge.com/press"}
+      - {title: UltraEdge standards and environmental approach, publisher: UltraEdge, accessed: 2026-07-19, url: "https://www.ultraedge.com/normes"}
+      - {title: UltraEdge service and liquid-cooling offer, publisher: UltraEdge, accessed: 2026-07-19, url: "https://www.ultraedge.com/offre-services"}
+      - {title: UltraEdge PUE glossary and published ranges, publisher: UltraEdge, accessed: 2026-07-19, url: "https://www.ultraedge.com/en/glossary/pue"}
+      - {title: UltraEdge and Gcore AI infrastructure partnership, publisher: UltraEdge, date: 2024, url: "https://www.ultraedge.com/en/press/press-release/partenariat-gcore"}
+      - {title: Altice France Q2 2024 interim financial statements, publisher: Altice_France, date: 2024, url: "https://alticefrance.com/sites/default/files/pdf/Altice%20France%20Holding%20-%20Q2%202024%20condensed%20interim%20special%20purpose%20financial%20statements.pdf"}
+      - {title: Altice France FY2025 consolidated financial statements, publisher: Altice_France, date: 2026, url: "https://static.s-sfr.fr/AlticeFrance/investors/financial-documentation/Altice-France-SAS-FY-2025-Consolidated-Financial-Statements.pdf"}
+      - {title: Altice France Q1 2026 results, publisher: Altice_France, date: 2026-05-20, url: "https://static.s-sfr.fr/AlticeFrance/investors/results-presentation/260520-altice-france-q1-2026-press-release.pdf"}
+      - {title: Bouygues Orange and Free sign SFR acquisition MOU, publisher: Bouygues_Telecom, date: 2026-06-06, url: "https://www.corporate.bouyguestelecom.fr/archives-communique-presse/bouygues-telecom-franchit-une-etape-structurante-pour-son-developpement-futur-en-signant-aux-cotes-de-free-groupe-iliad-et-orange-un-protocole-daccord-avec-altice-france-en-vue-de-l/"}
+    confidence: high_for_current_provider_headlines_directory_card_counts_2024_transaction_platform_ownership_associate_financials_SFR_group_financials_Datapole_page_and_MOU_exclusion_medium_for_current_card_operating_status_and_SFR_continuing_relationship_low_for_exact_building_roster_site_ownership_current_load_equipment_GPU_inventory_site_financials_and_248_251_257_scope_bridge
+
   - id: dc_firmus_project_southgate_australia
     name: Firmus Project Southgate Australia AI Factory program
     record_granularity: national_multi_site_AI_factory_program_not_one_campus
@@ -31050,6 +31206,20 @@ disclosure_gap_register:
   - Bouygues_Telecom_data_center_only_revenue_operating_profit_EBITDA_capex_cash_flow_customer_concentration_and_ROIC
   - Bouygues_Telecom_FY2026_guidance_to_reported_results_and_La_Poste_Telecom_synergy_cash_conversion
   - Bouygues_Orange_Free_SFR_MOU_to_definitive_agreements_regulatory_approval_financing_close_integration_and_synergy_realization_with_UltraEdge_exclusion_preserved
+  - UltraEdge_248_current_site_headline_251_region_cards_251_sitemap_pages_257_source_transaction_assets_30_plus_data_centers_90_non_POP_cards_and_200_plus_POPs_scope_reconciliation
+  - UltraEdge_current_exact_physical_buildings_addresses_coordinates_property_owners_leases_lifecycle_SFR_occupancy_and_build_to_suit_roster
+  - UltraEdge_six_Datapole_31MW_41000m2_31_data_center_checksum_to_51MW_35000m2_and_30_plus_portfolio_headline_bridge
+  - UltraEdge_51MW_deployed_IT_power_to_per_site_operating_energized_leased_utilized_customer_accepted_billed_load_racks_and_occupancy
+  - UltraEdge_per_site_utility_feeds_substations_transformers_switchgear_busbars_PDUs_UPS_batteries_generators_fuel_runtime_counts_ratings_OEMs_and_as_built_topology
+  - UltraEdge_selected_direct_liquid_cooling_sites_live_liquid_cooled_MW_CDU_heat_rejection_cooling_equipment_OEMs_and_customer_load
+  - UltraEdge_average_PUE_1_5_to_1_9_and_new_building_target_1_2_to_1_3_to_measured_site_PUE_WUE_energy_water_renewable_matching_emissions_and_heat_reuse
+  - UltraEdge_Gcore_NVIDIA_GPU_model_count_owner_purchase_delivery_host_site_power_utilization_customer_revenue_and_margin
+  - UltraEdge_2025_provider_EUR160m_revenue_to_Altice_associate_note_EUR140_4m_revenue_reporting_period_perimeter_elimination_and_accounting_bridge
+  - UltraEdge_standalone_audited_operating_profit_EBITDA_D_and_A_capex_debt_cash_flow_customer_concentration_utilization_site_economics_and_ROIC
+  - SFR_17_legacy_operator_tagged_OSM_objects_to_current_UltraEdge_cards_exact_physical_buildings_property_title_tenancy_equipment_and_lifecycle
+  - Altice_France_SFR_FY2025_accounting_to_investor_pro_forma_restricted_group_reconciliation_and_recurring_operating_profit_normalization
+  - Altice_France_SFR_Q1_2026_revenue_EBITDA_decline_high_debt_cost_liquidity_customer_retention_and_deleveraging_progress
+  - Bouygues_Orange_Free_SFR_MOU_to_definitive_agreements_regulatory_approval_financing_close_asset_allocation_integration_synergies_and_UltraEdge_XP_Fibre_ATS_overseas_exclusion
   - AirTrunk_current_post_2024_committed_energized_and_utilized_capacity_by_campus
   - HUMAIN_AirTrunk_Saudi_exact_location_capacity_hardware_power_and_delivery_schedule
   - Equinix_280_year_end_to_281_current_facility_reconciliation
@@ -31168,7 +31338,9 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
-    - global_coverage_next_P2_Bouygues_Telecom_SFR_Verizon_official_profiles
+    - global_coverage_next_P2_Verizon_Datacenter_United_Ark_Data_Centres_official_profiles
+    - UltraEdge_248_251_257_scope_reconciliation_exact_buildings_current_load_GPU_inventory_power_cooling_BOM_and_private_financials
+    - SFR_transaction_close_operating_recovery_deleveraging_and_UltraEdge_exclusion_monitor
     - Cologix_49_codes_to_physical_buildings_current_load_GPU_inventory_power_cooling_BOM_and_private_financials
     - Sabey_eight_labels_to_physical_buildings_current_load_GPU_inventory_power_cooling_BOM_and_private_financials
     - Telehouse_31_labels_to_physical_buildings_current_load_GPU_inventory_power_cooling_BOM_and_KDDI_site_economics

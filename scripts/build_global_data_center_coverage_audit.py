@@ -77,6 +77,7 @@ PROFILED = [
     entity("Global_Switch", ["Global Switch"], "reviewed_physical_operator_profile", ["dc_global_switch_europe_apac_portfolio", "company_global_switch", "global_switch_official_facility_registry.jsonl"], "Sixteen numeric directory labels, two coming-soon markets, eight ESG campuses, legal properties, OSM objects, utility MVA and saleable MW use different scopes."),
     entity("OVHcloud", ["OVHcloud", "OVH", "OVH GmbH", "OVH Sp. z o.o."], "reviewed_physical_operator_profile", ["dc_ovhcloud_global_owned_and_shared_portfolio", "company_ovhcloud", "ovhcloud_official_location_registry.jsonl"], "Nineteen current region rows, 46 datacenters, 23 availability zones, 31 FY2025 directly held facilities, shared sites, OSM objects, servers and GPUs use different scopes."),
     entity("Bouygues_Telecom", ["Bouygues Telecom", "Bouygues Télécom"], "reviewed_physical_operator_profile", ["dc_bouygues_telecom_french_network_data_center_and_towerlink_boundary", "company_bouygues_telecom", "bouygues_telecom_data_center_evidence_registry.jsonl"], "Three 2021 provider-named data centers, 22 historical passive-asset transfers, current Towerlink property ownership, continuing Bouygues use and 31 OSM objects use different scopes."),
+    entity("UltraEdge_SFR_legacy", ["SFR"], "reviewed_physical_operator_profile", ["dc_ultraedge_french_edge_portfolio_and_sfr_legacy_boundary", "company_ultraedge", "company_altice_france_sfr", "ultraedge_current_region_directory_registry.jsonl"], "UltraEdge's 248-site headline, 251 mixed edge cards, 257 source transaction assets, 30-plus data centers, 200-plus POPs and 17 legacy SFR OSM objects use different scopes."),
     entity("DATA4", ["Data4", "data4", "Data4 Italia", "DATA4"], "reviewed_physical_operator_profile", ["dc_data4_european_portfolio", "company_data4"], "Published power terms vary between IT, reserve, total and available energy."),
     entity("AirTrunk", ["AirTrunk"], "reviewed_physical_operator_profile", ["dc_airtrunk_apac_portfolio", "company_airtrunk"], "Campus design capacity is not current live load."),
     entity("Aligned_Data_Centers", ["Aligned", "Aligned Data Centers", "Aligned Data Centres", "ODATA"], "reviewed_physical_operator_profile", ["dc_aligned_north_america_public_directory", "dc_odata_aligned_latam_portfolio", "company_aligned_data_centers"], "ODATA and Aligned labels are joined at current platform level, not treated as identical facility brands historically."),
@@ -102,7 +103,6 @@ PRIORITY_GAPS = {
     for entity_name, priority, names in [
         ("atNorth", "P1", ["atNorth"]),
         ("Switch", "P1", ["Switch"]),
-        ("SFR", "P2", ["SFR"]),
         ("Verizon", "P2", ["Verizon"]),
         ("Datacenter_United", "P2", ["Datacenter United"]),
         ("Ark_Data_Centres", "P2", ["Ark Data Centres"]),
