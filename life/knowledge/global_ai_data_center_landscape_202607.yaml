@@ -113,6 +113,22 @@ scope_and_method:
       - Separate operator-owned, financed, leased, and customer-supplied accelerators.
       - Keep adjusted EBITDA distinct from GAAP operating profit and cash generation.
       - Treat private-company funding and project investment as financing, not revenue.
+  physical_operator_scope:
+    disclosure_registry_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_registry.jsonl
+    disclosure_summary_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_summary.json
+    disclosure_registry_as_of: 2026-07-18
+    operator_records: 27
+    machine_generated_page_registry_operators: [CyrusOne, QTS]
+    comparison_gate:
+      - choose_one_physical_granularity
+      - choose_one_lifecycle_date_and_state
+      - choose_one_power_denominator
+      - choose_one_financial_reporting_boundary
+    boundary: >-
+      Facility identifiers, physical buildings, campuses, markets, service Regions,
+      design capacity, utility service, critical IT load, contracted load and
+      utilized load are not interchangeable. The crosswalk validates evidence
+      links but deliberately publishes no cross-operator capacity sum or fleet ranking.
 
 global_market_baseline:
   - id: global_supply_jll_2026
