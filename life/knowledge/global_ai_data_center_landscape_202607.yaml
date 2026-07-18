@@ -17246,7 +17246,322 @@ campus_profiles:
       - {title: Al Salam Bank Tier III migration release, publisher: Batelco_by_Beyon, date: 2025, url: "https://www.batelco.com/business/al-salam-bank-strengthens-digital-infrastructure-with-tier-iii-data-centre-migration-at-batelco-by-beyon/"}
     confidence: high_for_area_commissioning_location_partnership_and_Tier_III_design_construction_low_for_MW_racks_customers_equipment_live_load_and_GPU_inventory
 
+  - id: dc_eand_uae_data_center_portfolio
+    name: e& UAE data-center portfolio and ownership boundary
+    record_granularity: current_direct_SmartHub_portfolio_plus_historical_roster_reconciliation
+    operator_and_parent:
+      operator: e_and_UAE_and_e_and_Carrier_and_Wholesale
+      listed_parent: Emirates_Telecommunications_Group_Company_PJSC_e_and
+      financial_profile_ref: company_emirates_telecommunications_group_eand
+    location:
+      country: United_Arab_Emirates
+      current_named_SmartHub_markets: [Fujairah, Dubai_Jebel_Ali, Kalba, Abu_Dhabi]
+      exact_complete_current_building_roster: undisclosed
+    ownership_boundary:
+      Khazna_2021_combination: e_and_contributed_12_data_centers_and_held_40_percent
+      Khazna_divestment_completion_date: 2025-03-26
+      Khazna_stake_after_completion_percent: 0
+      current_treatment: Khazna_is_a_separate_former_associate_and_business_partner_not_current_e_and_owned_capacity
+      boundary: >-
+        e& derecognized its entire 40% Khazna interest in March 2025. The old
+        Etisalat Uptime ledger names 14 projects and an older client story counted
+        11 colocation facilities, but no reviewed source maps the 12 contributed
+        Khazna assets against the retained SmartHub buildings. Historical projects
+        therefore are not treated as current e&-owned facilities.
+    current_roster_reconciliation:
+      current_FAQ_named_locations: [Fujairah, Dubai, Kalba]
+      Q1_2024_expansion_location: Abu_Dhabi
+      current_service_page_marketing_scope: [Dubai, Fujairah]
+      current_complete_building_count: undisclosed
+      boundary: >-
+        Official pages use inconsistent dates and scopes. Four geographic child
+        records are stored, but Abu Dhabi is only a location-level expansion
+        disclosure and Fujairah alone is stated to contain four Tier III
+        facilities. The records must not be summed into a physical-building count.
+    historical_Uptime_project_ledger:
+      named_project_count: 14
+      named_projects:
+        - Al_Ain_Data_Center
+        - Al_Kifaf_Data_Center_Dubai
+        - HOB_B_Abu_Dhabi
+        - HRC_Abu_Dhabi
+        - TCN_Dubai
+        - Zabeel_Dubai
+        - Etisalat_Data_Center_Khalifa_City_Abu_Dhabi
+        - Hor_Al_Anz_HRC_B_Dubai
+        - Zayed_Data_Center_Al_Ain_Central
+        - Jebel_Ali_Data_Center_A
+        - Jebel_Ali_Earth_Station_IPTV
+        - Etisalat_Smart_Hub_Modular_Data_Center_Fujairah
+        - Etisalat_Modular_Data_Center_IPTV_Tawi_Al_Saman_CATV_Al_Dhaid
+        - Sakamkam_Modular_Data_Center_Fujairah
+      historical_client_story_footprint: {Dubai: 6, Abu_Dhabi: 3, Al_Ain: 1, Fujairah: 1}
+      historical_largest_facility: {name: Khalifa_City, stated_capacity_mw: 8.7, capacity_definition: undisclosed}
+      boundary: This is a certification and historical lead ledger, not a verified current ownership, lifecycle, capacity or operating roster.
+    accelerators_and_AI:
+      April_2024: NVIDIA_H100_GPU_clusters_deployed_with_Oracle_in_e_and_UAE_OCI_Dedicated_Region_at_e_and_UAE_data_centers
+      FY2025: sovereign_inference_AI_platform_with_Intel_Gaudi_3_and_Dell_AI_Factory_fully_hosted_in_UAE
+      exact_host_sites_current_post_Khazna_sale_models_counts_servers_racks_fabric_ownership_power_cooling_utilization_customers_revenue_and_margin: undisclosed
+      boundary: >-
+        H100 clusters and a Gaudi 3 platform prove accelerator-backed services,
+        but neither disclosure names SmartHub or Khazna host buildings. The H100
+        statement also predates the Khazna divestment, so no accelerator inventory
+        is assigned to a child facility or treated as current e&-owned hardware.
+    child_refs:
+      - dc_eand_smarthub_uae_portfolio
+      - dc_eand_smarthub_fujairah
+      - dc_eand_smarthub_dubai_jebel_ali
+      - dc_eand_smarthub_kalba
+      - dc_eand_smarthub_abudhabi
+    financial_profile_ref: company_emirates_telecommunications_group_eand
+    sources:
+      - {title: e& FY2025 integrated annual report, publisher: e_and, date: 2026, url: "https://www.eand.com/content/dam/eand/assets/docs/annual-report/2025/eand-integrated-annualreport-en.pdf"}
+      - {title: Q1 2024 financial and operational highlights, publisher: e_and, date: 2024-04-30, url: "https://www.eand.com/en/news/30-april-24-eand-reports-consolidated-revenues-of-AED-14-2-billion-in-Q1-2024.html"}
+      - {title: Current SmartHub FAQ, publisher: e_and_Carrier_and_Wholesale, date: 2026-07-18_accessed, url: "https://www.eand.com/content/dam/eand/assets/docs/carrier-and-wholesale/smarthub-datacenters-qa.pdf"}
+      - {title: Etisalat Uptime award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/client/etisalat/64"}
+      - {title: Historical Etisalat client story, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/clients/etisalat"}
+    confidence: high_for_Khazna_exit_current_named_markets_historical_Uptime_projects_and_named_accelerator_platforms_low_for_current_complete_physical_roster_ownership_crosswalk_site_GPU_inventory_and_utilization
+
+  - id: dc_eand_smarthub_uae_portfolio
+    name: e& Carrier and Wholesale SmartHub UAE portfolio
+    record_granularity: retained_operator_portfolio_not_one_physical_facility
+    operator: e_and_Carrier_and_Wholesale
+    location: {country: United_Arab_Emirates, named_markets: [Fujairah, Dubai_Jebel_Ali, Kalba, Abu_Dhabi]}
+    portfolio_scope:
+      current_FAQ_owned_and_operated_locations: [Fujairah, Dubai, Kalba]
+      Q1_2024_added_location: Abu_Dhabi
+      Fujairah_current_facility_count: 4
+      other_market_building_counts: undisclosed
+      exact_total_current_IT_mw_facility_power_racks_white_space_energized_leased_utilized_and_billed_load: undisclosed
+    undifferentiated_FAQ_power_design:
+      facility_scope: not_identified_in_source
+      utility_feeds_mw: [3, 4.5]
+      utility_topology: 2N
+      supply_voltage_v: 230
+      UPS_sources: A_and_B_in_separate_rooms
+      UPS_output_power_factor: 0.95
+      UPS_efficiency_percent: 95
+      UPS_minimum_backup_minutes: 30
+      battery_bank_Ah: 600
+      generator_topology: N_plus_1
+      stated_generator_capacity_mw: 7.5
+      standard_rack_density_kw: [4, 5]
+      boundary: >-
+        The FAQ does not identify which SmartHub facility these values cover.
+        They remain portfolio-level design evidence and are not copied into any
+        named child facility or summed with facility fact-sheet nameplate ratings.
+    services_and_connectivity:
+      customer_types: [carriers, hyperscalers, content_delivery_networks, OTTs, ISPs, enterprises]
+      services: [carrier_neutral_colocation, subsea_interconnection, cloud_connectivity, internet_exchange, edge_connectivity]
+      certification_claim: Tier_III_network
+    accelerators_and_AI:
+      e_and_UAE_H100_and_Gaudi3_programs_related: true
+      exact_SmartHub_host_site_GPU_model_count_ownership_live_status_power_cooling_utilization_and_revenue: undisclosed
+    child_refs: [dc_eand_smarthub_fujairah, dc_eand_smarthub_dubai_jebel_ali, dc_eand_smarthub_kalba, dc_eand_smarthub_abudhabi]
+    portfolio_ref: dc_eand_uae_data_center_portfolio
+    financial_profile_ref: company_emirates_telecommunications_group_eand
+    sources:
+      - {title: Current SmartHub FAQ, publisher: e_and_Carrier_and_Wholesale, date: 2026-07-18_accessed, url: "https://www.eand.com/content/dam/eand/assets/docs/carrier-and-wholesale/smarthub-datacenters-qa.pdf"}
+      - {title: SmartHub current data-services page, publisher: e_and_Carrier_and_Wholesale, date: 2026-07-18_accessed, url: "https://www.eand.com/en/whoweare/carrier-and-wholesale/services/data-services.html"}
+      - {title: Abu Dhabi SmartHub expansion disclosure, publisher: e_and, date: 2024-04-30, url: "https://www.eand.com/en/news/30-april-24-eand-reports-consolidated-revenues-of-AED-14-2-billion-in-Q1-2024.html"}
+    confidence: high_for_named_markets_and_FAQ_design_fields_low_for_complete_building_count_portfolio_capacity_utilization_and_site_assignment_of_FAQ_power_values
+
+  - id: dc_eand_smarthub_fujairah
+    name: SmartHub Fujairah campus
+    record_granularity: multi_facility_campus_with_dated_fact_sheet_and_2025_expansion
+    operator: e_and_Carrier_and_Wholesale
+    location: {country: United_Arab_Emirates, emirate: Fujairah, city_or_area: Fujairah, exact_address_coordinate_parcel_and_building_crosswalk: undisclosed}
+    lifecycle: operating_and_expanded
+    capacity_and_area:
+      current_2025_Tier_III_facility_count: 4
+      current_2025_total_capacity_mw: 4
+      fourth_facility_added_capacity_mw: 1.5
+      fact_sheet_IT_power_mw: 2.5
+      fact_sheet_white_space_sqft: 22000
+      derived_fact_sheet_white_space_sqm: 2043.87
+      fact_sheet_racks: 495
+      standard_rack_density_kw: 5
+      boundary: >-
+        The 2.5-MW fact-sheet IT power plus the fourth facility's 1.5 MW
+        reconciles arithmetically to the 2025 4-MW campus capacity, but e& does
+        not publish the exact building-level scope, RFS, energized, leased,
+        utilized or billed-load bridge. The derived area conversion is labeled.
+    electrical_power:
+      diversified_grid_supply_into_building_mw: 6
+      topology: N_plus_N
+      backup_generators: N_plus_N
+      underground_diesel_tank_liters: 40000
+      stated_fuel_runtime_hours: 24
+      refueling_contract: 24_by_7
+      rack_level_power_monitoring: true
+      exact_grid_voltage_substation_transformer_switchgear_PDU_UPS_battery_generator_counts_ratings_and_OEMs: undisclosed
+    cooling_and_environment:
+      CRAC_topology: N_plus_N_with_N_plus_1_operation_at_full_load
+      air_cooled_chiller_topology: N_plus_N
+      redundant_CRAC_feeds: true
+      dual_chiller_pumps: true
+      supply_air_temperature_C: {target: 24, tolerance: 2}
+      relative_humidity_percent: {target: 55, tolerance: 10}
+      raised_floor_mm: 800
+      exact_cooling_capacity_chiller_CRAC_unit_counts_models_CDU_liquid_cooled_MW_PUE_WUE_water_use: undisclosed
+    safety_and_certification:
+      fire_suppression: [FM200, pre_action_sprinklers]
+      company_certifications: [Tier_III, ISAE_3402_Type_II, ISO_22301, ISO_27001]
+      Uptime_named_project: Etisalat_Smart_Hub_Modular_Data_Center_Fujairah
+      Uptime_awards: {design_documents: true, constructed_facility: true, operational_sustainability: not_found_in_reviewed_ledger}
+    connectivity:
+      established_year: 2011
+      2026_activity: GNX_network_point_of_presence_added
+      customer_types: [carriers, hyperscalers, CDNs, OTTs, ISPs]
+    accelerators_and_AI:
+      exact_GPU_models_counts_servers_racks_fabric_ownership_host_building_power_draw_cooling_utilization_customers_and_revenue: undisclosed
+    portfolio_ref: dc_eand_smarthub_uae_portfolio
+    financial_profile_ref: company_emirates_telecommunications_group_eand
+    sources:
+      - {title: SmartHub Fujairah fact sheet, publisher: e_and_Carrier_and_Wholesale, date: 2026-07-18_accessed, url: "https://www.eand.com/content/dam/eand/assets/docs/carrier-and-wholesale/smarthub-fujairah.pdf"}
+      - {title: Fourth Fujairah facility and 4MW campus expansion, publisher: e_and, date: 2025-02-05, url: "https://www.eand.com/en/news/5-feb-eand-expands-SmartHub-Data-Centre-in-Fujairah.html"}
+      - {title: GNX point of presence at Fujairah SmartHub, publisher: e_and, date: 2026-02-16, url: "https://www.eand.com/en/news/16-feb-26-eand-c-and-w-expands-fujairah-smarthub.html"}
+      - {title: Etisalat Uptime award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/client/etisalat/64"}
+    confidence: high_for_dated_capacity_area_racks_grid_supply_backup_cooling_and_certification_low_for_building_crosswalk_current_load_equipment_counts_efficiency_water_and_GPU_inventory
+
+  - id: dc_eand_smarthub_dubai_jebel_ali
+    name: SmartHub Dubai at Jebel Ali
+    record_granularity: facility_fact_sheet_with_unresolved_Uptime_project_crosswalk
+    operator: e_and_Carrier_and_Wholesale
+    location: {country: United_Arab_Emirates, emirate: Dubai, area: Jebel_Ali, nearby_asset: largest_satellite_station, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: operating_marketed_facility
+    area_and_racks:
+      total_built_up_area_sqm: 26000
+      total_IT_area_sqm: 4000
+      SmartHub_IT_space_sqm: 500
+      clusters: 8
+      rack_positions_per_cluster: 240
+      derived_design_rack_positions: 1920
+      average_rack_density_kw: 5
+      raised_floor_mm: 1000
+      floor_loading_kg_per_sqm: 1400
+      boundary: The 1,920 rack positions are a multiplication of design fields, not confirmed fitted, live, leased or utilized racks.
+    electrical_power:
+      generators: {count: 8, rating_kVA_each: 2000, topology: 4_plus_4_three_N_plus_1, derived_nameplate_MVA: 16}
+      generator_day_tank_gallons_each: 1100
+      bulk_fuel_tanks: {count: 6, liters_each: 36500, derived_total_liters: 219000}
+      stated_runtime_hours: 24
+      DRUPS: {count: 16, rating_kVA_each: 2500, topology: continuous_N_plus_N, derived_nameplate_MVA: 40}
+      boundary: >-
+        Generator and DRUPS nameplate ratings include redundancy and are not IT
+        load or additive facility capacity. Day-tank gallons and bulk-tank liters
+        are retained separately rather than combined without conversion and scope.
+      exact_utility_service_grid_voltage_substation_transformer_switchgear_PDU_live_IT_mw_and_utilization: undisclosed
+    cooling_and_environment:
+      stated_thermal_cooling_capacity_kw: 17280
+      thermal_storage_minutes: 15
+      stated_rack_cooling_density_kw: 6.5
+      ambient_design_temperature_C: [27, 32]
+      relative_humidity_percent: [40, 65]
+      exact_chiller_CRAH_CRAC_CDU_unit_counts_models_liquid_cooled_MW_PUE_WUE_and_water_use: undisclosed
+    safety_and_certification:
+      fire_suppression: IG_55
+      company_claim: Uptime_Tier_III_design_and_operational
+      Uptime_possible_projects: [Jebel_Ali_Data_Center_A, Jebel_Ali_Earth_Station_IPTV]
+      boundary: >-
+        The company fact sheet wording is not translated into a current Uptime
+        TCCF or TCOS award. Uptime separately lists two Jebel Ali projects with
+        design and constructed-facility awards, but no primary source proves the
+        exact crosswalk to this SmartHub Dubai fact-sheet asset.
+    accelerators_and_AI:
+      exact_GPU_models_counts_servers_racks_fabric_ownership_power_draw_cooling_utilization_customers_and_revenue: undisclosed
+    portfolio_ref: dc_eand_smarthub_uae_portfolio
+    financial_profile_ref: company_emirates_telecommunications_group_eand
+    sources:
+      - {title: SmartHub Dubai fact sheet, publisher: e_and_Carrier_and_Wholesale, date: 2026-07-18_accessed, url: "https://www.eand.com/content/dam/eand/assets/docs/carrier-and-wholesale/smarthub-dubai.pdf"}
+      - {title: Etisalat Uptime award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/client/etisalat/64"}
+    confidence: high_for_fact_sheet_area_design_racks_generator_DRUPS_fuel_and_cooling_fields_low_for_current_fitted_capacity_Uptime_crosswalk_live_load_efficiency_water_and_GPU_inventory
+
+  - id: dc_eand_smarthub_kalba
+    name: SmartHub Kalba
+    record_granularity: individual_operating_modular_facility
+    operator: e_and_Carrier_and_Wholesale
+    location: {country: United_Arab_Emirates, emirate: Sharjah, city: Kalba, distance_from_sea_km: 3.8, exact_address_coordinate_parcel: undisclosed}
+    lifecycle: launched_in_2022_and_described_as_operating_and_hosting_global_customers
+    building_and_capacity:
+      built_up_area_sqm: 1150
+      IT_area_sqm: 650
+      floors: G_plus_1
+      racks: 200
+      IT_load_mw: 1
+      ground_floor_racks: 36
+      first_floor_racks: 164
+      floor_loading_kg_per_sqm: 1500
+      raised_floor_mm: 800
+      stated_rack_cooling_kw: 5
+      exact_energized_leased_utilized_and_billed_load: undisclosed
+    electrical_power:
+      transformers: {count: 2, rating_kVA_each: 1500, voltage: 11kV_to_0_4kV, derived_nameplate_MVA: 3}
+      UPS: {count: 3, topology: N_plus_1, product: Vertiv_Liebert_APM_modular, stated_efficiency_percent_up_to: 96.3, hot_swappable_modules: true}
+      smart_PDU: Vertiv_Liebert_Rx
+      generators: {count: 3, rating_kVA_each: 1500, topology: N_plus_1, OEM: Kohler_SDMO, derived_nameplate_MVA: 4.5}
+      generator_day_tank_liters_each: 5500
+      container_tank_liters: 2000
+      stated_runtime_hours: 24
+      boundary: Transformer and generator nameplate totals include redundancy and are not IT load.
+      exact_grid_utility_service_substation_switchgear_battery_and_live_power_draw: undisclosed
+    cooling_and_environment:
+      cooling_type: DX_CRAC_with_inverter_compressors
+      CRAC_fan_and_controller_UPS: true
+      stated_thermal_cooling_capacity_kw: 1045
+      exact_CRAC_unit_count_models_CDU_liquid_cooled_MW_PUE_WUE_water_use: undisclosed
+    safety_monitoring_and_connectivity:
+      fire_suppression: [NOVEC_1230, VESDA]
+      monitoring: [Trellis_Enterprise_DCIM, BMS]
+      cable_entries: three_way
+      meet_me_rooms: diverse
+      certification: {Uptime_Tier_III_design_documents: true, Uptime_Tier_III_constructed_facility: true, operational_sustainability: not_found_in_reviewed_sources}
+      subsea_role: announced_UAE_gateway_for_2Africa_with_2026_UAE_SmartHub_activation_but_exact_facility_crosswalk_not_reconfirmed
+    accelerators_and_AI:
+      exact_GPU_models_counts_servers_racks_fabric_ownership_power_draw_cooling_utilization_customers_and_revenue: undisclosed
+    portfolio_ref: dc_eand_smarthub_uae_portfolio
+    financial_profile_ref: company_emirates_telecommunications_group_eand
+    sources:
+      - {title: SmartHub Kalba fact sheet, publisher: e_and_Carrier_and_Wholesale, date: 2026-07-18_accessed, url: "https://www.eand.com/content/dam/eand/assets/docs/carrier-and-wholesale/smart-hub-kalba.pdf"}
+      - {title: Kalba SmartHub fourth facility construction announcement, publisher: e_and, date: 2021-09-21, url: "https://www.eand.com/en/news/21-sep-2021-etisalat-highlights-rapid-growth-of-smarthub-data-centres.html"}
+      - {title: 2Africa UAE landing announcement, publisher: e_and, date: 2024-02-05, url: "https://www.eand.com/en/news/5-feb-24-eand-will-land-world-s-largest-subsea-cable-in-the-uae.html"}
+      - {title: 2Africa UAE SmartHub activation, publisher: e_and, date: 2026-02-09, url: "https://www.eand.com/en/news/9-feb-2026-eand-carrier-wholesale-activates-2africa-submarine-cable.html"}
+    confidence: high_for_fact_sheet_capacity_racks_transformers_UPS_generators_cooling_and_certifications_medium_for_operating_lifecycle_low_for_exact_2Africa_crosswalk_live_load_efficiency_water_and_GPU_inventory
+
+  - id: dc_eand_smarthub_abudhabi
+    name: SmartHub Abu Dhabi location
+    record_granularity: disclosed_market_expansion_not_confirmed_individual_building
+    operator: e_and_Carrier_and_Wholesale
+    location: {country: United_Arab_Emirates, emirate: Abu_Dhabi, city_or_area: undisclosed, exact_address_coordinate_parcel_and_building_name: undisclosed}
+    lifecycle: e_and_reported_Tier_III_SmartHub_network_expanded_to_Abu_Dhabi_in_Q1_2024
+    facility_boundary:
+      exact_building_count_name_RFS_ownership_MW_racks_area_customer_acceptance_energized_leased_utilized_and_billed_load: undisclosed
+      historical_Uptime_Abu_Dhabi_projects: [HOB_B, HRC, Etisalat_Data_Center_Khalifa_City]
+      boundary: >-
+        No reviewed primary source maps the 2024 SmartHub expansion to one of the
+        historical Uptime projects or to the 12 data centers contributed to
+        Khazna. This is stored as a location-level record and not counted as a
+        confirmed new physical building.
+    power_cooling_and_accelerators:
+      exact_grid_voltage_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_topology_PUE_WUE_water_and_rack_density: undisclosed
+      exact_GPU_models_counts_servers_racks_fabric_ownership_delivery_power_draw_cooling_utilization_customers_and_revenue: undisclosed
+    portfolio_ref: dc_eand_smarthub_uae_portfolio
+    financial_profile_ref: company_emirates_telecommunications_group_eand
+    sources:
+      - {title: Q1 2024 SmartHub Abu Dhabi expansion disclosure, publisher: e_and, date: 2024-04-30, url: "https://www.eand.com/en/news/30-april-24-eand-reports-consolidated-revenues-of-AED-14-2-billion-in-Q1-2024.html"}
+      - {title: Etisalat Uptime award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/client/etisalat/64"}
+    confidence: high_for_location_level_expansion_low_for_physical_building_identity_capacity_equipment_operation_and_GPU_inventory
+
 disclosure_gap_register:
+  - e_and_current_direct_SmartHub_complete_physical_building_roster_and_Abu_Dhabi_building_identity
+  - e_and_12_Khazna_contributed_assets_to_14_historical_Uptime_projects_and_retained_SmartHub_crosswalk
+  - SmartHub_Fujairah_four_facilities_building_names_capacity_RFS_live_load_utilization_and_equipment_crosswalk
+  - SmartHub_Dubai_Jebel_Ali_fact_sheet_to_two_Uptime_projects_exact_crosswalk_and_current_IT_MW
+  - SmartHub_Kalba_current_live_load_utilization_PUE_WUE_water_and_liquid_cooling
+  - SmartHub_FAQ_3MW_4_5MW_feeds_7_5MW_generator_600Ah_batteries_and_UPS_design_to_exact_facility_assignment
+  - e_and_per_site_power_chain_cooling_equipment_BOM_current_PUE_WUE_water_renewables_and_live_liquid_cooled_MW
+  - e_and_H100_clusters_and_Gaudi3_platform_exact_models_counts_servers_racks_fabric_ownership_host_sites_power_utilization_revenue_and_margin
+  - e_and_data_center_only_revenue_operating_profit_EBITDA_capex_debt_cash_flow_utilization_customer_concentration_and_ROIC
   - Beyon_Batelco_historical_third_data_center_current_complete_roster_and_RJR_to_Data_Oasis_physical_crosswalk
   - Beyon_Batelco_per_site_exact_address_coordinate_parcel_building_ownership_RFS_energized_leased_utilized_and_billed_load
   - Hamala_2_7MW_total_capacity_definition_and_12236sqm_area_definition
@@ -17541,6 +17856,14 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
+    - e_and_current_direct_SmartHub_complete_physical_building_roster_and_Abu_Dhabi_asset_identity
+    - e_and_12_Khazna_contributed_assets_14_historical_Uptime_projects_and_retained_SmartHub_exact_crosswalk
+    - SmartHub_Fujairah_four_facilities_per_building_capacity_RFS_live_load_utilization_and_equipment_BOM
+    - SmartHub_Dubai_Jebel_Ali_fact_sheet_to_Uptime_projects_crosswalk_current_IT_MW_and_utilization
+    - SmartHub_Kalba_live_load_customer_ramp_PUE_WUE_water_liquid_cooling_and_current_equipment_inventory
+    - SmartHub_FAQ_power_values_exact_facility_assignment_and_as_built_validation
+    - e_and_H100_and_Gaudi3_exact_inventory_ownership_host_site_power_cooling_utilization_service_revenue_and_margin
+    - e_and_data_center_only_revenue_operating_profit_capex_cash_flow_customer_concentration_and_ROIC
     - Beyon_Batelco_current_complete_physical_roster_and_historical_third_data_center_identity
     - Batelco_RJR_Ras_Abu_Jarjur_to_Beyon_Data_Oasis_exact_physical_and_Uptime_certification_crosswalk
     - Hamala_2_7MW_capacity_definition_12236sqm_area_definition_live_IT_load_utilization_and_customer_ramp
