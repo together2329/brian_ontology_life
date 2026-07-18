@@ -10848,6 +10848,71 @@ campus_profiles:
           Untagged records are mostly existing marketed campuses, but absence of a
           development taxonomy tag is not independently sufficient proof that every
           building at each campus is operating or fully energized.
+      official_reproducible_registry:
+        builder_ref: scripts/build_qts_official_registry.py
+        raw_location_pages_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl
+        summary_ref: life/imports/global_data_centers_20260717/qts_official_location_summary.json
+        current_canonical_rows: 49
+        reproducibility_status: byte_identical_across_two_fresh_2026_07_18_runs
+      individual_profile_reconciliation:
+        current_canonical_public_location_rows: 49
+        pre_existing_detailed_profile: dc_qts_irving_texas
+        new_page_level_location_profiles: 48
+        arithmetic_check: 1_plus_48_equals_49
+        profile_refs:
+          - dc_qts_ashburn_1
+          - dc_qts_ashburn_2
+          - dc_qts_ashburn_3
+          - dc_qts_ashburn_moran
+          - dc_qts_atlanta_1
+          - dc_qts_augusta
+          - dc_qts_bessemer
+          - dc_qts_blakely
+          - dc_qts_calatorao_en
+          - dc_qts_cambois
+          - dc_qts_cedar_rapids
+          - dc_qts_chicago
+          - dc_qts_clinton
+          - dc_qts_colorado_springs
+          - dc_qts_denver
+          - dc_qts_eagle_mountain
+          - dc_qts_east_windsor
+          - dc_qts_fayetteville
+          - dc_qts_forssa_en
+          - dc_qts_fort_worth
+          - dc_qts_hall_county
+          - dc_qts_hillsboro_1
+          - dc_qts_hillsboro_2
+          - dc_qts_hillsboro_3
+          - dc_qts_howard_county
+          - dc_qts_irving_texas
+          - dc_qts_manassas
+          - dc_qts_miami
+          - dc_qts_netherlands_eemshaven
+          - dc_qts_netherlands_groningen
+          - dc_qts_new_albany_1
+          - dc_qts_new_albany_2
+          - dc_qts_phoenix_2
+          - dc_qts_phoenix_3
+          - dc_qts_phoenix_4
+          - dc_qts_piscataway
+          - dc_qts_richmond_1
+          - dc_qts_richmond_2
+          - dc_qts_richmond_3
+          - dc_qts_richmond_5
+          - dc_qts_sacramento
+          - dc_qts_salem_township
+          - dc_qts_san_antonio
+          - dc_qts_santa_clara
+          - dc_qts_south_dallas
+          - dc_qts_suwanee_1
+          - dc_qts_van_wert
+          - dc_qts_vimercate_en
+          - dc_qts_york
+        profile_boundary: >-
+          The 48 page-level profiles preserve current official page evidence
+          and lifecycle taxonomy but do not claim a certified physical building
+          count, operating load, GPU inventory, or equipment bill of materials.
       public_physical_location_candidates:
         United_States:
           Alabama: [Bessemer]
@@ -11049,6 +11114,2358 @@ campus_profiles:
         date: 2022
         url: https://qtsdatacenters.com/wp-content/uploads/2024/07/QTS_DataSheet_DFW1-DC3.pdf
     confidence: high_for_current_campus_land_capacity_addresses_and_dated_DC3_design_low_for_operating_load_GPU_inventory_and_electrical_BOM
+
+  - id: dc_qts_ashburn_1
+    name: "QTS Ashburn 1 public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Virginia"]
+    lifecycle_as_of_2026_07_18: operator_status_taxonomy_untagged_current_marketing_page
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1024
+      slug: ashburn-1
+      wordpress_modified: "2026-06-10T09:19:00"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["ASH1 DC1: 22271 Broderick Drive, Sterling VA 20166", "ASH1 DC2: 22280 Randolph Drive, Sterling VA 20166 (under construction)", "DC1: 22271 Broderick Drive, Sterling VA 20166", "DC2: 22280 Randolph Drive, Sterling VA 20166"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: ["55 MW", "22.5 MW"]
+      area_raw_strings_not_summed: ["28 acre"]
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 5, "cooling_and_water": 2, "lifecycle_and_phasing": 2, "power_and_resilience": 4, "scale_and_capacity": 8}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#ashburn-1
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Ashburn 1 QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/ashburn-1/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_ashburn_2
+    name: "QTS Ashburn 2 public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Virginia"]
+    lifecycle_as_of_2026_07_18: operator_status_taxonomy_untagged_current_marketing_page
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1023
+      slug: ashburn-2
+      wordpress_modified: "2026-06-10T09:17:33"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: []
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: []
+      area_raw_strings_not_summed: ["24 acre"]
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"scale_and_capacity": 1}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#ashburn-2
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Ashburn 2 QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/ashburn-2/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_ashburn_3
+    name: "QTS Ashburn 3 public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Virginia"]
+    lifecycle_as_of_2026_07_18: operator_status_taxonomy_untagged_current_marketing_page
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1007
+      slug: ashburn-3
+      wordpress_modified: "2026-06-10T09:15:58"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["22291 Shellhorn Rd", "22271 Shellhorn Rd", "ASH3 DC1: 22291 Shellhorn Rd", "ASH3 DC2: 22271 Shellhorn Rd"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: ["80 MW"]
+      area_raw_strings_not_summed: ["25 acre"]
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"cooling_and_water": 1, "power_and_resilience": 2, "scale_and_capacity": 5}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#ashburn-3
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Ashburn 3 QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/ashburn-3/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_ashburn_moran
+    name: "QTS Ashburn Moran public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Virginia"]
+    lifecycle_as_of_2026_07_18: operator_status_taxonomy_untagged_current_marketing_page
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1170
+      slug: ashburn-moran
+      wordpress_modified: "2026-06-10T09:21:51"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["44874 Moran Road, Sterling, Virginia 20166"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: ["4 MW"]
+      area_raw_strings_not_summed: ["3 acres"]
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 2, "cooling_and_water": 1, "power_and_resilience": 3, "scale_and_capacity": 2}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#ashburn-moran
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Ashburn Moran QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/ashburn-moran/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_atlanta_1
+    name: "QTS Atlanta 1 public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Georgia"]
+    lifecycle_as_of_2026_07_18: operator_status_taxonomy_untagged_current_marketing_page
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1174
+      slug: atlanta-1
+      wordpress_modified: "2026-06-10T09:05:50"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["1103 Herndon St NW", "953 Herndon St NW", "1033 Jefferson St NW", "1025 Jefferson St NW", "DC1 – 1033 Jefferson St NW, Atlanta, GA 30318", "DC2 – 1025 Jefferson St NW, Atlanta, GA 30318", "DC3 – 953 Herndon St NW, Atlanta, GA 30318", "DC4 – 1103 Herndon St NW, Atlanta, GA 30318"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: ["278 MW"]
+      area_raw_strings_not_summed: ["99 acre", "65,000 acres"]
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"lifecycle_and_phasing": 1, "power_and_resilience": 3, "scale_and_capacity": 6}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#atlanta-1
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Atlanta 1 QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/atlanta-1/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_augusta
+    name: "QTS Augusta public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Georgia"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_development
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 3677
+      slug: augusta
+      wordpress_modified: "2026-06-30T13:42:25"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["3925 Harper-Franklin Avenue"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: []
+      area_raw_strings_not_summed: []
+      investment_raw_strings_not_summed: ["$2 billion"]
+      water_volume_raw_strings_not_summed: ["50,000 gallons", "600,000 gallons", "300 million gallons"]
+      categorized_evidence_line_counts: {"address_and_location": 20, "cooling_and_water": 9, "economics_jobs_and_tax": 30, "lifecycle_and_phasing": 36, "power_and_resilience": 8, "scale_and_capacity": 13}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#augusta
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Augusta QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/augusta/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_bessemer
+    name: "QTS Bessemer public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Alabama"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_development
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 4566
+      slug: bessemer
+      wordpress_modified: "2026-07-14T16:33:00"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: []
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: []
+      area_raw_strings_not_summed: []
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 1, "cooling_and_water": 7, "economics_jobs_and_tax": 7, "lifecycle_and_phasing": 8, "power_and_resilience": 2, "scale_and_capacity": 3}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#bessemer
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Bessemer QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/bessemer/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_blakely
+    name: "QTS Blakely public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Georgia"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_consideration
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 3854
+      slug: blakely
+      wordpress_modified: "2026-05-21T13:16:42"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: []
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: ["1,400 MW"]
+      area_raw_strings_not_summed: []
+      investment_raw_strings_not_summed: ["$700 million"]
+      water_volume_raw_strings_not_summed: ["50,000 gallons", "600,000 gallons", "300 million gallons"]
+      categorized_evidence_line_counts: {"address_and_location": 15, "cooling_and_water": 33, "economics_jobs_and_tax": 30, "lifecycle_and_phasing": 48, "power_and_resilience": 11, "scale_and_capacity": 14}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#blakely
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Blakely QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/blakely/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_calatorao_en
+    name: "QTS Calatorao-EN public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: ES
+    marketing_location_terms: ["Spain"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_consideration
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 3373
+      slug: calatorao-en
+      wordpress_modified: "2026-06-22T17:28:52"
+      alternate_language_pages: [{"slug": "calatorao", "language": "es", "source_url": "https://q.com/data-centers/calatorao/"}]
+    location:
+      address_mentions_on_current_page: []
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: []
+      area_raw_strings_not_summed: []
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 1, "cooling_and_water": 4, "economics_jobs_and_tax": 7, "lifecycle_and_phasing": 4, "power_and_resilience": 2, "scale_and_capacity": 4}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#calatorao-en
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Calatorao-EN QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/calatorao-en/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_cambois
+    name: "QTS Cambois public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: GB
+    marketing_location_terms: ["United Kingdom"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_development
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 2323
+      slug: cambois
+      wordpress_modified: "2026-07-01T15:40:35"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: []
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: []
+      area_raw_strings_not_summed: []
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 4, "cooling_and_water": 4, "economics_jobs_and_tax": 10, "lifecycle_and_phasing": 9, "power_and_resilience": 4, "scale_and_capacity": 5}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#cambois
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Cambois QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/cambois/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_cedar_rapids
+    name: "QTS Cedar Rapids public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Iowa"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_development
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 2627
+      slug: cedar-rapids
+      wordpress_modified: "2026-07-15T14:28:17"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["CDR1 DC1 – 6200 76th Ave SW, Unit 100, Cedar Rapids, Iowa 52228", "CDR 1 DC2 – 6200 76th Ave SW Unit 200, Cedar Rapids, Iowa 52228", "CDR1 DC3 – 6200 76th Ave SW Unit 300, Cedar Rapids, Iowa 52228"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: []
+      area_raw_strings_not_summed: ["612 acres"]
+      investment_raw_strings_not_summed: ["$10 billion"]
+      water_volume_raw_strings_not_summed: ["48 million gallons"]
+      categorized_evidence_line_counts: {"address_and_location": 4, "cooling_and_water": 10, "economics_jobs_and_tax": 12, "lifecycle_and_phasing": 5, "scale_and_capacity": 2}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#cedar-rapids
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Cedar Rapids QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/cedar-rapids/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_chicago
+    name: "QTS Chicago public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Illinois"]
+    lifecycle_as_of_2026_07_18: operator_status_taxonomy_untagged_current_marketing_page
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1033
+      slug: chicago
+      wordpress_modified: "2026-05-21T13:35:14"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["2800 S Ashland Ave, Chicago, Illinois 60608"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: []
+      area_raw_strings_not_summed: ["30 acres"]
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 1, "cooling_and_water": 2, "economics_jobs_and_tax": 4, "lifecycle_and_phasing": 2, "power_and_resilience": 2, "scale_and_capacity": 5}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#chicago
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Chicago QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/chicago/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_clinton
+    name: "QTS Clinton public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Iowa"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_consideration
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 4332
+      slug: clinton
+      wordpress_modified: "2026-06-08T09:13:33"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: []
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: []
+      area_raw_strings_not_summed: []
+      investment_raw_strings_not_summed: ["$10 billion"]
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 6, "cooling_and_water": 10, "economics_jobs_and_tax": 22, "lifecycle_and_phasing": 18, "power_and_resilience": 8, "scale_and_capacity": 7}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#clinton
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Clinton QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/clinton/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_colorado_springs
+    name: "QTS Colorado Springs public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Colorado"]
+    lifecycle_as_of_2026_07_18: operator_status_taxonomy_untagged_current_marketing_page
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 2269
+      slug: colorado-springs
+      wordpress_modified: "2026-05-21T12:52:05"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["311 S. Rockrimmon Blvd", "311 S. Rockrimmon Blvd, Colorado Springs, Colorado 80919"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: ["14 MW"]
+      area_raw_strings_not_summed: ["21 acres", "249,958 sq. ft"]
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 1, "scale_and_capacity": 4}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#colorado-springs
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Colorado Springs QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/colorado-springs/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_denver
+    name: "QTS Denver public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Colorado"]
+    lifecycle_as_of_2026_07_18: operator_status_taxonomy_untagged_current_marketing_page
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1191
+      slug: denver
+      wordpress_modified: "2026-05-21T12:56:43"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["1160 N Gun Club Rd, Aurora, Colorado 80018"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: ["160 MW"]
+      area_raw_strings_not_summed: []
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 3, "lifecycle_and_phasing": 1, "power_and_resilience": 2, "scale_and_capacity": 6}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#denver
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Denver QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/denver/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_eagle_mountain
+    name: "QTS Eagle Mountain public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Utah"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_development
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1255
+      slug: eagle-mountain
+      wordpress_modified: "2026-07-01T15:44:31"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: []
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: []
+      area_raw_strings_not_summed: ["193 acres"]
+      investment_raw_strings_not_summed: ["$6 billion"]
+      water_volume_raw_strings_not_summed: ["50,000 gallons", "600,000 gallons", "300 million gallons"]
+      categorized_evidence_line_counts: {"address_and_location": 16, "cooling_and_water": 10, "economics_jobs_and_tax": 24, "lifecycle_and_phasing": 38, "power_and_resilience": 6, "scale_and_capacity": 9}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#eagle-mountain
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Eagle Mountain QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/eagle-mountain/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_east_windsor
+    name: "QTS East Windsor public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["New Jersey"]
+    lifecycle_as_of_2026_07_18: operator_status_taxonomy_untagged_current_marketing_page
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1196
+      slug: east-windsor
+      wordpress_modified: "2026-05-21T13:49:39"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["159 Princeton-Hightstown Road, East Windsor, New Jersey 08520"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: ["70 MW", "14 MW"]
+      area_raw_strings_not_summed: []
+      investment_raw_strings_not_summed: ["$600 million"]
+      water_volume_raw_strings_not_summed: ["50,000 gallons"]
+      categorized_evidence_line_counts: {"address_and_location": 3, "cooling_and_water": 8, "economics_jobs_and_tax": 13, "lifecycle_and_phasing": 13, "power_and_resilience": 9, "scale_and_capacity": 10}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#east-windsor
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "East Windsor QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/east-windsor/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_fayetteville
+    name: "QTS Fayetteville, Georgia public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Georgia"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_development
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1030
+      slug: fayetteville
+      wordpress_modified: "2026-07-15T11:47:03"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: []
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: []
+      area_raw_strings_not_summed: []
+      investment_raw_strings_not_summed: ["$5.3 billion"]
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 7, "cooling_and_water": 31, "economics_jobs_and_tax": 8, "lifecycle_and_phasing": 18, "scale_and_capacity": 6}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#fayetteville
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Fayetteville, Georgia QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/fayetteville/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_forssa_en
+    name: "QTS Forssa-EN public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: FI
+    marketing_location_terms: ["Finland"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_consideration
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 4198
+      slug: forssa-en
+      wordpress_modified: "2026-06-22T17:30:17"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: []
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: []
+      area_raw_strings_not_summed: []
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 1, "cooling_and_water": 4, "economics_jobs_and_tax": 6, "lifecycle_and_phasing": 8, "power_and_resilience": 2, "scale_and_capacity": 4}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#forssa-en
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Forssa-EN QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/forssa-en/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_fort_worth
+    name: "QTS Fort Worth public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Texas"]
+    lifecycle_as_of_2026_07_18: operator_status_taxonomy_untagged_current_marketing_page
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1201
+      slug: fort-worth
+      wordpress_modified: "2026-05-21T12:16:25"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["FTW1 DC1 – 14100 Park Vista Boulevard, Fort Worth, Texas 76177", "FTW1 DC2 – 14052 Park Vista Boulevard, Forth Worth, Texas 76177"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: ["70 MW", "200 MW"]
+      area_raw_strings_not_summed: ["52 acre"]
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 4, "lifecycle_and_phasing": 1, "power_and_resilience": 3, "scale_and_capacity": 6}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#fort-worth
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Fort Worth QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/fort-worth/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_hall_county
+    name: "QTS Hall County public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Texas"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_development
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 4890
+      slug: hall-county
+      wordpress_modified: "2026-07-13T12:10:37"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: []
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: []
+      area_raw_strings_not_summed: ["465 acres"]
+      investment_raw_strings_not_summed: ["$10 billion"]
+      water_volume_raw_strings_not_summed: ["50,000 gallons", "600,000 gallons", "300 million gallons", "13 million gallons", "519,000 gallons", "500,000 gallons", "24,000 gallons"]
+      categorized_evidence_line_counts: {"address_and_location": 11, "cooling_and_water": 22, "economics_jobs_and_tax": 35, "lifecycle_and_phasing": 29, "power_and_resilience": 6, "scale_and_capacity": 10}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#hall-county
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Hall County QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/hall-county/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_hillsboro_1
+    name: "QTS Hillsboro 1 public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Oregon"]
+    lifecycle_as_of_2026_07_18: operator_status_taxonomy_untagged_current_marketing_page
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1290
+      slug: hillsboro-1
+      wordpress_modified: "2025-04-03T15:09:53"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["4951 NE Huffman St"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: ["20 MW"]
+      area_raw_strings_not_summed: []
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"cooling_and_water": 1, "power_and_resilience": 5, "scale_and_capacity": 3}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#hillsboro-1
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Hillsboro 1 QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/hillsboro-1/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_hillsboro_2
+    name: "QTS Hillsboro 2 public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Oregon"]
+    lifecycle_as_of_2026_07_18: operator_status_taxonomy_untagged_current_marketing_page
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1287
+      slug: hillsboro-2
+      wordpress_modified: "2026-04-09T14:23:06"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["4113 NE Huffman St", "4327 NE Huffman St", "4425 NE Huffman St", "4755 NE Huffman St", "Hillsboro 2 DC1 4755 NE Huffman St", "Hillsboro 2 DC2 4425 NE Huffman St", "Hillsboro 2 DC3 4327 NE Huffman St", "Hillsboro 2 DC5 4113 NE Huffman St"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: ["180 MW"]
+      area_raw_strings_not_summed: ["51 acre"]
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"power_and_resilience": 1, "scale_and_capacity": 5}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#hillsboro-2
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Hillsboro 2 QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/hillsboro-2/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_hillsboro_3
+    name: "QTS Hillsboro 3 public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Oregon"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_development
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1214
+      slug: hillsboro-3
+      wordpress_modified: "2025-04-03T15:11:07"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: []
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: []
+      area_raw_strings_not_summed: ["44 acre"]
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"scale_and_capacity": 1}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#hillsboro-3
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Hillsboro 3 QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/hillsboro-3/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_howard_county
+    name: "QTS Howard County public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Texas"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_consideration
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 5029
+      slug: howard-county
+      wordpress_modified: "2026-07-08T12:57:28"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: []
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: []
+      area_raw_strings_not_summed: ["902 acres"]
+      investment_raw_strings_not_summed: ["$10 billion"]
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 6, "cooling_and_water": 8, "economics_jobs_and_tax": 12, "lifecycle_and_phasing": 8, "power_and_resilience": 5, "scale_and_capacity": 3}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#howard-county
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Howard County QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/howard-county/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_manassas
+    name: "QTS Manassas public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Virginia"]
+    lifecycle_as_of_2026_07_18: operator_status_taxonomy_untagged_current_marketing_page
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1038
+      slug: manassas
+      wordpress_modified: "2026-06-10T09:20:15"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["DC1 - 9400 Godwin Dr,", "DC2 - 9420 Godwin Dr,", "DC1 – 9400 Godwin Dr, Manassas, Virginia 20110", "DC2 – 9420 Godwin Dr, Manassas, Virginia 20110", "DC5 – 9301 Freedom Center Blvd, Manassas, Virginia 20109"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: ["190+ MW"]
+      area_raw_strings_not_summed: ["100+ acre"]
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"lifecycle_and_phasing": 1, "power_and_resilience": 2, "scale_and_capacity": 5}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#manassas
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Manassas QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/manassas/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_miami
+    name: "QTS Miami public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Florida"]
+    lifecycle_as_of_2026_07_18: operator_status_taxonomy_untagged_current_marketing_page
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1226
+      slug: miami
+      wordpress_modified: "2025-03-06T16:14:24"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["11234 NW 20th Street, Miami, Florida 33172"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: ["2MW"]
+      area_raw_strings_not_summed: ["1 acre"]
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 3, "power_and_resilience": 2, "scale_and_capacity": 4}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#miami
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Miami QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/miami/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_netherlands_eemshaven
+    name: "QTS Netherlands-Eemshaven public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: NL
+    marketing_location_terms: ["Netherlands"]
+    lifecycle_as_of_2026_07_18: operator_status_taxonomy_untagged_current_marketing_page
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1276
+      slug: netherlands-eemshaven
+      wordpress_modified: "2025-11-19T09:32:10"
+      alternate_language_pages: [{"slug": "netherlands-eemshaven-nl", "language": "nl", "source_url": "https://q.com/data-centers/netherlands-eemshaven-nl/"}]
+    location:
+      address_mentions_on_current_page: []
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: ["36MW", "20MW"]
+      area_raw_strings_not_summed: []
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 2, "power_and_resilience": 6, "scale_and_capacity": 3}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#netherlands-eemshaven
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Netherlands-Eemshaven QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/netherlands-eemshaven/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_netherlands_groningen
+    name: "QTS Netherlands-Groningen public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: NL
+    marketing_location_terms: ["Netherlands"]
+    lifecycle_as_of_2026_07_18: operator_status_taxonomy_untagged_current_marketing_page
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1282
+      slug: netherlands-groningen
+      wordpress_modified: "2026-07-01T12:38:30"
+      alternate_language_pages: [{"slug": "netherlands-groningen-nl", "language": "nl", "source_url": "https://q.com/data-centers/netherlands-groningen-nl/"}]
+    location:
+      address_mentions_on_current_page: []
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: ["10MW", "4.8 MW"]
+      area_raw_strings_not_summed: ["100,000 sq. ft"]
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 3, "cooling_and_water": 1, "economics_jobs_and_tax": 1, "power_and_resilience": 5, "scale_and_capacity": 4}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#netherlands-groningen
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Netherlands-Groningen QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/netherlands-groningen/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_new_albany_1
+    name: "QTS New Albany 1 public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Ohio"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_development
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1229
+      slug: new-albany-1
+      wordpress_modified: "2026-05-21T11:39:18"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["DC1 - 1235 Beech Rd SW,", "DC2 - 1225 Beech Rd SW,", "DC1 – 1235 Beech Rd SW,", "DC2 – 1225 Beech Rd SW,"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: []
+      area_raw_strings_not_summed: []
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 1, "cooling_and_water": 1, "economics_jobs_and_tax": 5, "lifecycle_and_phasing": 4, "scale_and_capacity": 2}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#new-albany-1
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "New Albany 1 QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/new-albany-1/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_new_albany_2
+    name: "QTS New Albany 2 public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Ohio"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_development
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1231
+      slug: new-albany-2
+      wordpress_modified: "2026-05-21T11:42:06"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["DC1 - 785 Beech Rd SW,", "DC2 - 675 Beech Rd SW,", "DC1 – 785 Beech Rd SW,", "DC2 – 675 Beech Rd SW,"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: []
+      area_raw_strings_not_summed: []
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"cooling_and_water": 1, "economics_jobs_and_tax": 3, "lifecycle_and_phasing": 2, "power_and_resilience": 3, "scale_and_capacity": 2}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#new-albany-2
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "New Albany 2 QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/new-albany-2/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_phoenix_2
+    name: "QTS Phoenix 2 public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Arizona"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_development
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1244
+      slug: phoenix-2
+      wordpress_modified: "2026-05-13T11:52:10"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["DC2 - 1200 N 40th St,", "DC1 - 1200 N 40th St,", "DC3 - 1200 N 40th St,", "DC4 - 1200 N 40th St,", "DC5 - 1200 N 40th St,", "PHX2 DC1: 1200 N 40th Street, Phoenix, AZ 85008", "PHX2 DC2: 1250 N 40th Street, Phoenix, AZ 85008", "PHX2 DC3: 1400 N 40th Street, Phoenix, AZ 85008", "PHX2 DC4: 1450 N 40th Street, Phoenix, AZ 85008", "PHX2 DC5: 1500 N 40th Street, Phoenix, AZ 85008"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: ["210 MW"]
+      area_raw_strings_not_summed: ["80 acre"]
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 5, "power_and_resilience": 1, "scale_and_capacity": 7}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#phoenix-2
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Phoenix 2 QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/phoenix-2/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_phoenix_3
+    name: "QTS Phoenix 3 public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Arizona"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_development
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1207
+      slug: phoenix-3
+      wordpress_modified: "2026-05-13T12:36:30"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["PHX 3 DC1 – 17408 W. Camelback Rd, Litchfield Park, Arizona 85340", "PHX 3 DC2 – 17428 W. Camelback Rd, Litchfield Park, Arizona 85340", "PHX 3 DC9 – 17236 W. Camelback Rd, Litchfield Park, Arizona 85340", "PHX 3 DC13 – 17316 W. Camelback Rd, Litchfield Park, Arizona 85340", "PHX 3 DC14 – 17336 W. Camelback Rd, Litchfield Park, Arizona 85340"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: []
+      area_raw_strings_not_summed: []
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 1, "cooling_and_water": 1, "economics_jobs_and_tax": 2, "lifecycle_and_phasing": 2}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#phoenix-3
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Phoenix 3 QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/phoenix-3/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_phoenix_4
+    name: "QTS Phoenix 4 public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Arizona"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_development
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 4081
+      slug: phoenix-4
+      wordpress_modified: "2026-05-13T12:37:02"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["11753 W Lower Buckeye Rd, Tolleson, AZ 85353"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: []
+      area_raw_strings_not_summed: []
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 1, "cooling_and_water": 1, "economics_jobs_and_tax": 3, "lifecycle_and_phasing": 2}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#phoenix-4
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Phoenix 4 QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/phoenix-4/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_piscataway
+    name: "QTS Piscataway public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["New Jersey"]
+    lifecycle_as_of_2026_07_18: operator_status_taxonomy_untagged_current_marketing_page
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1248
+      slug: piscataway
+      wordpress_modified: "2026-07-01T11:28:25"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["101 Possumtown Road, Piscataway, New Jersey 08854"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: ["15MW", "65 MW", "2MW"]
+      area_raw_strings_not_summed: []
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 3, "cooling_and_water": 1, "power_and_resilience": 6, "scale_and_capacity": 5}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#piscataway
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Piscataway QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/piscataway/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_richmond_1
+    name: "QTS Richmond 1 public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Virginia"]
+    lifecycle_as_of_2026_07_18: operator_status_taxonomy_untagged_current_marketing_page
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1251
+      slug: richmond-1
+      wordpress_modified: "2026-06-10T09:25:16"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["DC1 - 6000 Technology Blvd,", "DC2 - 6000 Technology Blvd,", "DC3 - 6000 Technology Blvd,", "DC4 - 3560 Portugee Rd", "DC5 - 3540 Portugee Rd.", "DC6 - 3520 Portugee Rd,", "6000 Technology Blvd,", "3560 Portugee Rd", "3540 Portguee Rd", "3520 Portugee Rd"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: ["238 MW"]
+      area_raw_strings_not_summed: ["200 acres", "207 acre"]
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"economics_jobs_and_tax": 1, "lifecycle_and_phasing": 1, "power_and_resilience": 3, "scale_and_capacity": 6}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#richmond-1
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Richmond 1 QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/richmond-1/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_richmond_2
+    name: "QTS Richmond 2 public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Virginia"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_development
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 2797
+      slug: richmond-2
+      wordpress_modified: "2026-06-10T09:29:09"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["6030 Technology Boulevard Sandston Virginia 23150", "6040 Technology Boulevard, Sandston, Virginia 23150", "6050 Technology Boulevard, Sandston, Virginia 23150", "6060 Technology Boulevard, Sandston, Virginia 23150", "6070 Technology Boulevard, Sandston, Virginia 23150"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: ["180 MW"]
+      area_raw_strings_not_summed: ["85 acres"]
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 5, "lifecycle_and_phasing": 2, "power_and_resilience": 1, "scale_and_capacity": 4}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#richmond-2
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Richmond 2 QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/richmond-2/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_richmond_3
+    name: "QTS Richmond 3 public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Virginia"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_development
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 2835
+      slug: richmond-3
+      wordpress_modified: "2026-06-10T09:30:38"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["3525 Portugee Road, Sandston Virginia 23150", "3529 Portugee Road, Sandston Virginia 23150", "3535 Portugee Road, Sandston Virginia 23150", "3539 Portugee Road, Sandston Virginia 23150", "3543 Portugee Road, Sandston Virginia 23150"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: ["240MW", "240 MW"]
+      area_raw_strings_not_summed: ["0 acres", "221 acre"]
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 5, "lifecycle_and_phasing": 2, "power_and_resilience": 1, "scale_and_capacity": 4}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#richmond-3
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Richmond 3 QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/richmond-3/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_richmond_5
+    name: "QTS Richmond 5 public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Virginia"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_development
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 4288
+      slug: richmond-5
+      wordpress_modified: "2026-06-26T12:08:29"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: []
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: ["6 MW"]
+      area_raw_strings_not_summed: ["240 acre", "240 acres"]
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 1, "economics_jobs_and_tax": 3, "lifecycle_and_phasing": 2, "scale_and_capacity": 3}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#richmond-5
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Richmond 5 QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/richmond-5/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_sacramento
+    name: "QTS Sacramento public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["California"]
+    lifecycle_as_of_2026_07_18: operator_status_taxonomy_untagged_current_marketing_page
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1043
+      slug: sacramento
+      wordpress_modified: "2026-05-21T12:36:09"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["1100 N Market Blvd, Sacramento, California 95834"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: ["4MW"]
+      area_raw_strings_not_summed: ["7 acres"]
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 1, "cooling_and_water": 2, "power_and_resilience": 5, "scale_and_capacity": 4}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#sacramento
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Sacramento QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/sacramento/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_salem_township
+    name: "QTS Salem Township public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Pennsylvania"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_consideration
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 3524
+      slug: salem-township
+      wordpress_modified: "2026-07-15T12:00:06"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: []
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: []
+      area_raw_strings_not_summed: ["1,700 acres"]
+      investment_raw_strings_not_summed: ["$10 billion"]
+      water_volume_raw_strings_not_summed: ["50,000 gallons"]
+      categorized_evidence_line_counts: {"address_and_location": 2, "cooling_and_water": 9, "economics_jobs_and_tax": 26, "lifecycle_and_phasing": 21, "power_and_resilience": 3, "scale_and_capacity": 8}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#salem-township
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Salem Township QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/salem-township/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_san_antonio
+    name: "QTS San Antonio public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Texas"]
+    lifecycle_as_of_2026_07_18: operator_status_taxonomy_untagged_current_marketing_page
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1259
+      slug: san-antonio
+      wordpress_modified: "2026-05-21T12:26:08"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["8535 Potranco Road, San Antonio, Texas 78251"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: ["90 MW"]
+      area_raw_strings_not_summed: ["32 acre"]
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 3, "power_and_resilience": 2, "scale_and_capacity": 6}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#san-antonio
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "San Antonio QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/san-antonio/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_santa_clara
+    name: "QTS Santa Clara public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["California"]
+    lifecycle_as_of_2026_07_18: operator_status_taxonomy_untagged_current_marketing_page
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1264
+      slug: santa-clara
+      wordpress_modified: "2026-05-21T12:38:30"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["2805 Mission College Boulevard, Santa Clara, California 95054"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: ["7.5MW", "7.5 MW"]
+      area_raw_strings_not_summed: ["4 acre"]
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 3, "power_and_resilience": 3, "scale_and_capacity": 8}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#santa-clara
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Santa Clara QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/santa-clara/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_south_dallas
+    name: "QTS South Dallas public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Texas"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_development
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 3160
+      slug: south-dallas
+      wordpress_modified: "2026-07-15T11:56:54"
+      alternate_language_pages: [{"slug": "south-dallas-es", "language": "es", "source_url": "https://q.com/data-centers/south-dallas-es/"}]
+    location:
+      address_mentions_on_current_page: []
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: []
+      area_raw_strings_not_summed: []
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 3, "cooling_and_water": 5, "economics_jobs_and_tax": 9, "lifecycle_and_phasing": 7, "power_and_resilience": 1, "scale_and_capacity": 7}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#south-dallas
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "South Dallas QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/south-dallas/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_suwanee_1
+    name: "QTS Suwanee 1 public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Georgia"]
+    lifecycle_as_of_2026_07_18: operator_status_taxonomy_untagged_current_marketing_page
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1268
+      slug: suwanee-1
+      wordpress_modified: "2026-06-10T09:11:11"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["DC2 - 120 Satellite Blvd NW,", "DC1 - 300 Satellite Blvd NW,", "DC1 – 300 Satellite Blvd NW,", "DC2 – 120 Satellite Blvd NW,"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: ["100+ MW", "50+ MW", "50 MW"]
+      area_raw_strings_not_summed: ["53 acre", "65,000 acres"]
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"lifecycle_and_phasing": 1, "power_and_resilience": 3, "scale_and_capacity": 9}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#suwanee-1
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Suwanee 1 QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/suwanee-1/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_van_wert
+    name: "QTS Van Wert public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["Ohio"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_development
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 4185
+      slug: van-wert
+      wordpress_modified: "2026-06-23T15:40:20"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["818 N Franklin St, Van Wert, OH 45891"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: []
+      area_raw_strings_not_summed: ["902 acres"]
+      investment_raw_strings_not_summed: ["$10 billion"]
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 11, "cooling_and_water": 11, "economics_jobs_and_tax": 29, "lifecycle_and_phasing": 26, "power_and_resilience": 6, "scale_and_capacity": 13}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#van-wert
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Van Wert QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/van-wert/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_vimercate_en
+    name: "QTS Vimercate-EN public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: IT
+    marketing_location_terms: ["Italy"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_consideration
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 3483
+      slug: vimercate-en
+      wordpress_modified: "2026-07-02T13:39:47"
+      alternate_language_pages: [{"slug": "vimercate", "language": "it", "source_url": "https://q.com/data-centers/vimercate/"}]
+    location:
+      address_mentions_on_current_page: []
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: []
+      area_raw_strings_not_summed: ["277,800 square meter"]
+      investment_raw_strings_not_summed: []
+      water_volume_raw_strings_not_summed: []
+      categorized_evidence_line_counts: {"address_and_location": 3, "cooling_and_water": 4, "economics_jobs_and_tax": 6, "lifecycle_and_phasing": 3, "power_and_resilience": 2, "scale_and_capacity": 6}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#vimercate-en
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "Vimercate-EN QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/vimercate-en/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
+
+  - id: dc_qts_york
+    name: "QTS York County public location profile"
+    record_granularity: operator_public_location_page_profile_not_certified_building_count
+    operator: QTS
+    country: US
+    marketing_location_terms: ["South Carolina"]
+    lifecycle_as_of_2026_07_18: operator_taxonomy_in_development
+    lifecycle_boundary: >-
+      The value preserves QTS's current WordPress status taxonomy. An
+      untagged page is not independent proof that every campus building is
+      operating, energized, leased, utilized, accepted, or billing.
+    official_page_identity:
+      wordpress_post_id: 1179
+      slug: york
+      wordpress_modified: "2026-07-15T11:58:38"
+      alternate_language_pages: []
+    location:
+      address_mentions_on_current_page: ["5670 Oakridge Rd, Clover, SC 29710", "2143 Hands Mill Hwy"]
+      exact_coordinate_parcel_ownership_and_building_crosswalk: not_yet_reconciled
+    page_structured_mention_index:
+      capacity_raw_strings_not_summed: []
+      area_raw_strings_not_summed: ["109 acres"]
+      investment_raw_strings_not_summed: ["$8 billion", "$1 billion", "$5 million", "$2 million", "$7 million"]
+      water_volume_raw_strings_not_summed: ["50,000 gallons", "2.5 million gallons"]
+      categorized_evidence_line_counts: {"address_and_location": 37, "cooling_and_water": 28, "economics_jobs_and_tax": 38, "lifecycle_and_phasing": 54, "power_and_resilience": 18, "scale_and_capacity": 14}
+      boundary: >-
+        These strings are an index into the official page, not normalized
+        campus facts. Full surrounding context is retained in raw_evidence_ref;
+        FAQs may cite other-site examples, generic designs, full-build plans,
+        economic impact, or one-time fill volumes, so values are never summed
+        or assigned to current live load without separate evidence.
+    operating_energized_leased_utilized_accepted_and_billed_IT_load_mw: undisclosed
+    accelerators:
+      exact_GPU_vendor_model_count_server_rack_ownership_delivery_utilization_power_draw_and_site_allocation: undisclosed
+    electrical_and_cooling:
+      page_evidence_is_categorized_in_raw_registry: true
+      normalized_site_specific_substation_transformer_switchgear_UPS_generator_battery_chiller_CDU_PUE_WUE_and_water_ledger: pending
+    raw_evidence_ref: life/imports/global_data_centers_20260717/qts_official_location_pages.jsonl#york
+    linked_companies:
+      owner_and_operator: [QTS]
+      private_owner: [Blackstone]
+      financial_profile_refs: [company_qts, company_blackstone]
+    sources:
+      - title: "York County QTS location page"
+        publisher: QTS
+        date: 2026-07-18_accessed
+        url: "https://q.com/data-centers/york/"
+    confidence: high_for_page_identity_taxonomy_and_raw_evidence_low_for_physical_building_live_load_GPU_and_equipment_reconciliation
 
   - id: dc_vantage_global_data_centers_portfolio
     name: Vantage Data Centers global portfolio
