@@ -3497,6 +3497,24 @@ financial_profiles:
         - dc_oracle_vantage_frontier_shackelford_texas
         - dc_oracle_vantage_lighthouse_port_washington_wisconsin
         - dc_oracle_related_the_barn_saline_michigan
+      official_region_registry_ref: life/imports/global_data_centers_20260717/oracle_official_region_registry.jsonl
+      official_region_summary_ref: life/imports/global_data_centers_20260717/oracle_official_region_summary.json
+      current_public_cloud_scope:
+        live_commercial_regions: 45
+        planned_commercial_regions: 2
+        live_sovereign_regions: 2
+        live_government_regions: 8
+        documented_commercial_availability_domains: 55
+        live_commercial_countries_or_territories: 27
+        live_plus_planned_commercial_countries_or_territories: 28
+      company_reported_physical_data_center_scope:
+        active: 147
+        on_the_way: 64
+        claim_date: 2026-01-23
+      physical_scope_boundary: >-
+        Oracle defines an Availability Domain as one or more data centers, so
+        55 commercial ADs are only a current physical lower bound and cannot be
+        subtracted from the company-wide 147 active count to infer other assets.
       boundary: RPO includes large-scale AI contracts, but revenue recognition depends on capacity delivery over time.
     management_outlook:
       Q1_FY2027_total_revenue_growth_percent_range: [27, 29]
@@ -3510,6 +3528,9 @@ financial_profiles:
       - leverage_and_financing_cost
     sources:
       - https://www.oracle.com/news/announcement/q4fy26-earnings-release-2026-06-10/
+      - https://www.oracle.com/cloud/public-cloud-regions/
+      - https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+      - https://www.oracle.com/news/announcement/blog/oracle-advances-american-ai-innovation-in-new-mexico-2026-01-23/
       - https://openai.com/index/five-new-stargate-sites/
     confidence: high
 

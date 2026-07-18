@@ -10727,6 +10727,49 @@ campus_profiles:
         sovereign_region_inventory: [EU_Sovereign_Frankfurt, EU_Sovereign_Madrid]
         government_region_inventory: [US_Gov_Ashburn, US_Gov_Phoenix, US_DoD_Ashburn, US_DoD_Chicago, US_DoD_Phoenix, UK_Gov_London, UK_Gov_Newport, Australia_Gov_Canberra]
         stale_page_summary_conflict: same_page_also_contains_legacy_41_commercial_regions_in_26_countries_statement
+      official_region_registry_reconciliation_as_of_2026_07_18:
+        marketing_rows:
+          total_current_and_planned: 57
+          live_across_commercial_sovereign_and_government: 55
+          commercial: {live: 45, coming_soon: 2}
+          sovereign: {live: 2}
+          government: {live: 8}
+        commercial_technical_documentation:
+          live_region_rows: 45
+          live_countries_or_territories_derived: 27
+          live_plus_planned_countries_or_territories_derived: 28
+          headline_country_scope_boundary: >-
+            The 28-country headline matches the live-plus-planned commercial
+            scope because coming-soon Kenya adds one country while Morocco 2
+            does not. The current live commercial rows alone cover 27.
+          availability_domains_total: 55
+          regions_with_one_availability_domain: 40
+          regions_with_three_availability_domains: [Frankfurt, London, Ashburn, Chicago, Phoenix]
+          realm_key_counts: {OC1: 44, OC20: 1}
+        source_code_reconciliation:
+          marketing_matches_technical_documentation: 38
+          marketing_conflicts_with_technical_documentation: 3
+          marketing_missing_code_technical_documentation_supplies_it: 4
+          conflicts:
+            India_South_Hyderabad: {marketing_raw: ap-batam-1, technical_selected: ap-hyderabad-1}
+            Indonesia_North_Batam: {marketing_raw: ap-hyderabad-1, technical_selected: ap-batam-1}
+            Spain_Central_2_Madrid: {marketing_raw: eu-madrid-1, technical_selected: eu-madrid-3, technical_name: Spain_Central_Madrid_3}
+          missing_marketing_codes_resolved_from_docs: [Italy_North_Turin, Serbia_Central_Jovanovac, Morocco_West_Casablanca, Malaysia_West_2_Kulai]
+          cross_realm_raw_code_collisions: [eu-frankfurt-1, eu-madrid-1]
+        physical_scope_reconciliation:
+          commercial_availability_domain_lower_bound_for_physical_data_centers: 55
+          company_reported_active_physical_data_centers: 147
+          company_reported_physical_data_centers_on_the_way: 64
+          residual_not_calculated: true
+          boundary: >-
+            Oracle defines an Availability Domain as one or more data centers.
+            The 55 documented commercial ADs are therefore only a physical
+            lower bound. The company-wide 147/64 claim can include multiple
+            buildings per AD and dedicated, government, partner, or distributed
+            cloud scopes, so subtracting 55 would create an unsupported residual.
+        official_raw_registry_ref: life/imports/global_data_centers_20260717/oracle_official_region_registry.jsonl
+        official_registry_summary_ref: life/imports/global_data_centers_20260717/oracle_official_region_summary.json
+        reproducible_builder_ref: scripts/build_oracle_official_region_registry.py
       boundary: >-
         A cloud region is a provider geography and an availability domain can
         contain one or more data centers. Region rows, availability domains, and
@@ -10778,7 +10821,11 @@ campus_profiles:
       - title: Oracle Cloud Infrastructure Public Cloud Regions and Data Centers
         publisher: Oracle
         date: 2026-07-17_accessed
-        url: https://www.oracle.com/es/cloud/public-cloud-regions/
+        url: https://www.oracle.com/cloud/public-cloud-regions/
+      - title: OCI Regions and Availability Domains
+        publisher: Oracle
+        date: 2026-07-18_accessed
+        url: https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
       - title: OCI Generative AI regions
         publisher: Oracle
         date: 2026-05-06
@@ -27919,6 +27966,10 @@ disclosure_gap_register:
   - accelerator_utilization_and_training_versus_inference_mix
   - per_site_revenue_and_operating_profit
   - hyperscaler_region_AZ_to_physical_building_and_campus_reconciliation
+  - Oracle_147_active_and_64_planned_physical_data_centers_to_public_sovereign_government_dedicated_partner_and_distributed_cloud_scope_crosswalk
+  - Oracle_45_live_commercial_regions_and_55_availability_domains_to_exact_campuses_buildings_addresses_ownership_lifecycle_and_live_IT_load
+  - Oracle_sovereign_and_government_region_programmatic_identifiers_availability_domain_counts_and_physical_building_roster
+  - Oracle_marketing_Hyderabad_Batam_Madrid_region_code_anomaly_correction_and_timestamped_41_region_26_country_legacy_content_removal
   - Alibaba_Tencent_and_ByteDance_per_site_addresses_MW_and_current_accelerator_inventory
   - ByteDance_audited_consolidated_revenue_operating_profit_and_capex
   - Project_Jupiter_IT_load_and_exact_accelerator_inventory
