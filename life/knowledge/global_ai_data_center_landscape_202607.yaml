@@ -6966,6 +6966,7 @@ campus_profiles:
       data_center_development_partner: [AirTrunk, Blackstone]
       owner: [Saudi_Public_Investment_Fund]
       financial_profile_refs:
+        - company_humain
         - company_nvidia
         - company_amd
         - company_cisco
@@ -9229,7 +9230,7 @@ campus_profiles:
       partners: [HUMAIN, AirTrunk, Blackstone]
       HUMAIN_owner: Saudi_Public_Investment_Fund
       AirTrunk_co_investor: CPP_Investments
-      financial_profile_refs: [company_airtrunk, company_blackstone]
+      financial_profile_refs: [company_humain, company_airtrunk, company_blackstone]
     sources:
       - title: HUMAIN and Blackstone-backed AirTrunk announce partnership to build data centers in Saudi Arabia
         publisher: Blackstone
@@ -15407,8 +15408,604 @@ campus_profiles:
       - {title: Asiacell Al-Masbah Data Centre prime-power case history, publisher: Cummins_Power_Generation, date: 2011, url: "https://mart.cummins.com/imagelibrary/data/assetfiles/0057162.pdf"}
     confidence: high_for_historical_power_equipment_and_location_low_for_current_status_capacity_and_GPU_inventory
 
+  - id: dc_center3_ksa_bahrain_portfolio
+    name: center3 Saudi Arabia and Bahrain data-center portfolio
+    record_granularity: regional_portfolio_with_dated_scope_reconciliation_and_named_award_ledger
+    operator: center3
+    parent_company: stc_Group
+    lifecycle_as_of_2026_07_18: operating_and_expanding_with_current_exact_building_roster_not_public
+    location:
+      current_center3_map_counts:
+        KSA_Central: 11
+        KSA_Eastern: 3
+        KSA_Southern: 1
+        KSA_Western: 6
+        KSA_Northern: 2
+        Bahrain: 1
+        derived_Saudi_total: 23
+        derived_map_total: 24
+      current_colocation_page_scope:
+        marketed_data_centers: 25
+        countries: [Saudi_Arabia, Bahrain, Kuwait]
+      map_to_service_page_boundary: >-
+        The live map exposes only six regional markers and their counts, not
+        individual site identities, coordinates or lifecycle. Its 23 Saudi plus
+        one Bahrain locations do not reconcile on the page to the 25-center
+        Saudi/Bahrain/Kuwait colocation claim; neither count is silently treated
+        as a complete operating-building roster.
+      historical_2022_named_map_labels:
+        - Madinah
+        - Ubhur
+        - Dammam
+        - DAM052
+        - DAM071
+        - Qassim
+        - RDC46
+        - RDC05
+        - Junadreah
+        - ITCC
+        - Remal
+        - Khurais
+        - Nuzlah1
+        - Nuzlah2
+        - Makkah
+        - Rawabi
+        - Mursalat
+        - Baha
+        - JED02
+        - Tabuk
+        - Jouf
+      historical_roster_boundary: >-
+        These labels are transcribed from stc's 2022 sustainability map and are
+        not assumed to be one-to-one current center3 buildings or a crosswalk to
+        later numeric Uptime identifiers.
+      exact_current_addresses_coordinates_parcels_building_numbers_and_lifecycle: undisclosed
+    scope_and_capacity_reconciliation:
+      stc_2022_sustainability_snapshot:
+        headline_data_centers: 21
+        headline_capacity_mw: 152
+        headline_power_metric_definition: not_explicitly_labeled
+        New_Era_program_phases:
+          phase_1: {years: 2018_2020, locations: [Riyadh, Jeddah, Madinah], total_IT_capacity_mw: 19.2}
+          phase_2: {years: 2019_2021, locations: [Qassim, Makkah], total_IT_capacity_mw: 9.6}
+          phase_3: {years: 2022_2023, locations: [Riyadh_three_sites, Dammam_two_sites, Jeddah_one_site], total_IT_capacity_mw: 76.8}
+          phase_4: {dated_schedule: Q2_2023, locations: [Bahrain, Mursalat, Ubhur_Jeddah, Al_Jouf, Al_Baha, Tabuk], total_IT_capacity_mw: 27.6}
+          derived_phase_IT_capacity_sum_mw: 133.2
+        boundary: >-
+          The four phase values sum to 133.2 MW, not the adjacent 152-MW
+          headline. Legacy facilities, power definitions and construction scope
+          are not disclosed well enough to reconcile the difference.
+      stc_2024_annual_report_snapshot:
+        center3_data_centers_operational_and_under_construction: 25
+        data_center_country_scope: not_split_in_the_headline
+      stc_2024_sustainability_snapshot:
+        total_IT_capacity_mw: 125
+        live_active_capacity_mw: 92
+        narrative_active_capacity: more_than_91_MW
+        three_additional_facilities: [Riyadh, Jeddah, Bahrain]
+        three_facility_total_IT_shell_capacity_mw: 20
+        three_facility_initial_day_one_IT_load_mw: 10.8
+        center3_capacity_added_during_2024_mw: 20
+        boundary: >-
+          The 20-MW shell program, 20-MW annual center3 increase, 125-MW total
+          IT capacity and 92-MW live capacity may overlap. They are preserved as
+          separately reported measures and are not added.
+      center3_2025_expansion_targets:
+        total_installed_capacity_target_2027_mw: 300
+        total_capacity_target_2030_mw: 1000
+        completed_investment_usd_billion_company_statement: 3
+        additional_investment_plan_to_2030_usd_billion: 10
+        geography: Saudi_Arabia_Bahrain_and_other_international_locations
+        boundary: >-
+          The targets are company ambitions, not current energized, leased,
+          utilized or billed IT load. Investment statements are not audited
+          standalone center3 capex, debt, cash flow or project-level returns.
+    facility_refs:
+      - dc_center3_dammam_data_center
+      - dc_center3_riyadh_data_center
+      - dc_center3_itcc_riyadh
+      - dc_center3_neidc_abar_ali
+      - dc_center3_makkah34
+      - dc_center3_qassim26
+      - dc_center3_dammam352
+      - dc_center3_riyadh102
+      - dc_center3_riyadh104
+      - dc_center3_riyadh103
+      - dc_center3_jeddah203
+      - dc_center3_riyadh301
+      - dc_center3_khobar371
+      - dc_center3_riyadh105
+      - dc_center3_jeddah55
+      - dc_center3_jeddah204
+      - dc_center3_dammam306
+      - dc_center3_jeddah205
+      - dc_center3_riyadh106
+      - dc_center3_riyadh107
+      - dc_center3_bahrain01
+    Uptime_Institute_public_ledger:
+      reviewed_cached_center3_roster:
+        - {site: Dammam_Data_Center, city: Dammam}
+        - {site: Riyadh_Data_Center, city: Riyadh}
+        - {site: ITCC_Data_Center, city: Riyadh}
+        - {site: NEIDC_Abar_Ali, city: Madinah}
+        - {site: Makkah34_Data_Center, city: Makkah}
+        - {site: Qassim26_Data_Center, city: Qassim}
+        - {site: Dammam352_Data_Center, city: Dammam}
+        - {site: Riyadh102_Data_Center, city: Riyadh}
+        - {site: Riyadh104_Data_Center, city: Riyadh}
+        - {site: Riyadh103_Data_Center, city: Riyadh}
+        - {site: Jeddah203_Data_Center, city: Jeddah}
+        - {site: Riyadh301_Data_Center, city: Riyadh}
+        - {site: Khobar371_Data_Center, city: Al_Khobar}
+        - {site: Riyadh105_Data_Center, city: Riyadh}
+        - {site: Jeddah55_Data_Center, city: Jeddah}
+        - {site: Jeddah204_Data_Center, city: Jeddah}
+        - {site: Bahrain01_Data_Center, city: Southern_Governorate_Bahrain}
+        - {site: Dammam306_Data_Center, city: Dammam}
+      newer_indexed_candidates: [Jeddah205_Data_Center, Riyadh106_Data_Center, Riyadh107_Data_Center]
+      identifier_conflict: Khobar371_appears_as_Khobar071_in_an_alternate_Uptime_cache
+      current_page_instability: >-
+        Different Uptime crawls expose an 18-site historical center3 client list,
+        an alternate older naming set, and a newer page showing only ITCC,
+        Riyadh106 and Riyadh107. The ledger proves named award projects and
+        locations, but not a complete current operating roster or ownership
+        crosswalk for all 25 marketed centers.
+    confirmed_site_scale_examples:
+      2023_center3_Dammam_facility:
+        gross_area_sqm: 24000
+        total_facility_power_mw: 19.5
+        data_halls: 8
+        rack_capacity: 1200
+        racks_per_hall: 150
+        possible_Uptime_crosswalk: dc_center3_dammam352
+        crosswalk_confidence: medium
+      2023_center3_Al_Khobar_facility:
+        total_facility_power_mw: 24.4
+        possible_Uptime_crosswalk: dc_center3_khobar371
+        crosswalk_confidence: medium
+      boundary: >-
+        The center3 social posts name the Dammam and Al-Khobar facilities but do
+        not print their later Uptime numeric IDs. Total power is not relabeled as
+        IT load, and the crosswalks remain candidates.
+    electrical_and_cooling:
+      current_colocation_service_features:
+        cabinet_power_distribution_units: true
+        power_redundancy_options: true
+        overhead_or_underfloor_cable_trays: true
+        advanced_cooling_marketing_claim: true
+        backup_power_marketing_claim: true
+      2024_stc_engineering_practices:
+        - improved_PUE_and_energy_conservation
+        - server_efficiency_and_intelligent_allocation
+        - optimized_chiller_plant_performance
+        - advanced_thermal_airflow_and_humidity_management
+        - enhanced_power_supply_and_lighting
+        - high_efficiency_low_water_cooling
+        - chilled_water_networks_with_variable_frequency_drives
+        - hot_and_cold_aisle_segregation
+        - smart_energy_and_AI_driven_monitoring
+      PUE_evidence:
+        design_target_for_post_2018_facilities_at_full_IT_load_maximum: 1.6
+        NEIDC_target: 1.5
+        testing_and_commissioning_range: [1.4, 1.6]
+        KSA_average_old_data_centers_2024: 1.95
+        KSA_average_new_data_centers_2024: 2.10
+        occupancy_boundary: >-
+          stc explains that low initial utilization can raise operational PUE;
+          the 1.4-1.6 testing range and 2.10 2024 new-center average therefore
+          describe different conditions and are not treated as contradictory
+          measured values for the same load state.
+      exact_per_site_grid_voltage_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CDU_unit_counts_ratings_OEMs_and_commissioned_topology: undisclosed
+      exact_per_site_PUE_WUE_water_live_IT_load_liquid_cooled_MW_and_power_utilization: undisclosed
+    secondary_unverified_project_document:
+      source_type: user_uploaded_contractor_or_consortium_capability_deck
+      candidate_projects: [DAM071, JED002]
+      candidate_project_claims:
+        each_project_area_sqm: 35000
+        each_project_IT_load_mw: 12
+        pods_each: 10
+        IT_load_per_pod_mw: 1.2
+        racks_per_pod: 150
+        derived_racks_each: 1500
+        stated_project_period: 2022_2024
+        stated_tier: Tier_III
+      proposed_not_verified_installed_OEMs:
+        generator_transformer_MV_switchboard_RMU: [Cummins, Siemens, Saudi_Transformer]
+        UPS: [Huawei]
+        busway: [Huawei]
+        LV_switchboard: [Siemens]
+        CRAC_FWU_CRAH: [Huawei]
+        water_cooled_chiller: [Carrier]
+        water_pump: [KSB]
+        water_cooled_VRF: [Daikin]
+        valves: [Bray]
+        leak_detection: [TTK]
+        security_and_access_control: [Siemens, Boon_Edam]
+        fire_alarm_and_NOVEC: [Siemens]
+        structured_cabling: [CommScope]
+        BMS: [Honeywell_Trend]
+        racks: [APC, Vertiv]
+      non_reliance_boundary: >-
+        The deck labels these as proposed brands, repeats or scrambles DAM071
+        and JED002 location headings, and is not a center3 acceptance record,
+        purchase order, as-built drawing or audited asset ledger. None of its
+        capacities or OEMs enters current portfolio totals or installed bills of
+        materials until confirmed by a primary owner, OEM or commissioning source.
+    accelerators_and_AI:
+      center3_physical_GPU_inventory:
+        exact_OEM_models_counts_servers_racks_fabric_site_allocation_ownership_delivery_live_status_power_draw_utilization_customers_revenue_and_margin: undisclosed
+      Huawei_Cloud_Zone_and_Oracle_hosting_boundary: >-
+        Cloud hosting relationships do not prove center3-owned accelerators or
+        disclose customer hardware installed in a named building.
+      HUMAIN_connectivity_framework_boundary: >-
+        The October 2025 center3-HUMAIN framework concerns connectivity and is
+        not evidence of a physical GPU deployment.
+      proposed_HUMAIN_stc_AI_data_center_JV:
+        MoU_signed: 2025-12-18
+        intended_required_load_mw_up_to: 1000
+        intended_initial_capacity_mw_up_to: 250
+        initial_capacity_subject_to_customer_commitments: true
+        intended_ownership: {HUMAIN_percent: 51, stc_percent: 49}
+        MoU_extended_from: 2026-06-18
+        extension_months: 6
+        status_as_of_2026_07_18: negotiations_and_regulatory_operational_requirements_ongoing_no_definitive_JV_agreement_announced
+        current_material_financial_impact: none_disclosed
+        boundary: >-
+          The JV load is conditional and prospective. It is not added to
+          center3's separate 1-GW 2030 target or HUMAIN's other campuses, and it
+          provides no site, GPU, power-chain, cooling, customer or schedule ledger.
+    linked_companies:
+      operator: [center3]
+      controlling_parent: [stc_Group]
+      prospective_AI_JV_partner: [HUMAIN]
+      cloud_and_hosting_relationships: [Huawei, Oracle]
+      named_colocation_partner: [Sahara_Net]
+      equipment_candidate_only_from_unverified_deck: [Cummins, Siemens, Saudi_Transformer, Huawei, Carrier, KSB, Daikin, Bray, TTK, Boon_Edam, CommScope, Honeywell_Trend, APC, Vertiv]
+      financial_profile_refs: [company_center3, company_stc_group, company_humain, company_huawei, company_oracle, company_cummins, company_vertiv]
+    sources:
+      - {title: center3 Global Network Map, publisher: center3, date: 2026-07-18_accessed, url: "https://center3.com/global-network"}
+      - {title: center3 Colocation service and 25-center scope, publisher: center3, date: 2026-07-18_accessed, url: "https://center3.com/services/colocation"}
+      - {title: center3 1-GW expansion plan, publisher: center3, date: 2025-08-04, url: "https://center3.com/media-center/news/center3-drives-menas-digital-transformation-with-ambitious-1-gigawatt-data-center-expansion"}
+      - {title: stc Sustainability Report 2022, publisher: stc_Group, date: 2023, url: "https://sustainability.stc.com.sa/cdn/SustainabilityReport-2022-en.pdf"}
+      - {title: stc Sustainability Report 2024 development chapter, publisher: stc_Group, date: 2025, url: "https://www.stc.com.sa/content/dam/groupsites/stc-sustainability-report-2024/assets/img/pdfs/Development_of_human_capital_through_digital_innovation.pdf"}
+      - {title: stc Sustainability Report 2024 environment chapter, publisher: stc_Group, date: 2025, url: "https://www.stc.com.sa/content/dam/groupsites/stc-sustainability-report-2024/assets/img/pdfs/Environmental_performance_and_climate.pdf"}
+      - {title: stc Annual Report 2024 operational highlights, publisher: stc_Group, date: 2025, url: "https://www.stc.com.sa/content/dam/stc/stc-annual-report-2024/at-a-glance.html"}
+      - {title: center3 Uptime Institute client ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/client/center3/1068"}
+      - {title: Dammam and Al-Khobar facility launch details, publisher: center3_LinkedIn, date: 2023-11-27, url: "https://www.linkedin.com/pulse/center3-digital-hub-powering-mena-region-new-data-centers-eastern-4eage"}
+      - {title: stc and HUMAIN proposed AI data-center JV MoU, publisher: Saudi_Exchange, date: 2025-12-18, url: "https://www.saudiexchange.sa/wps/portal/saudiexchange/newsandreports/issuer-news/issuer-announcements/issuer-announcements-details?anCat=1&anId=92131&locale=en"}
+      - {title: stc and HUMAIN MoU six-month extension, publisher: Saudi_Exchange, date: 2026-06-18, url: "https://www.saudiexchange.sa/wps/portal/saudiexchange/newsandreports/issuer-news/issuer-announcements/issuer-announcements-details/?anCat=1&anId=96186&cs=7010&locale=en"}
+      - {title: Secondary contractor consortium capability deck for DAM071 and JED002, publisher: Scribd_user_upload, date: 2025_upload, url: "https://www.scribd.com/document/923892660/Strategic-Partnership-for-Data-Center-Solutions-20250803-V3-FINAL"}
+    confidence: high_for_current_map_counts_dated_stc_capacity_snapshots_expansion_targets_Uptime_names_and_JV_status_medium_for_Dammam_Khobar_numeric_ID_crosswalk_low_for_complete_current_roster_per_site_capacity_installed_equipment_and_GPU_inventory
+
+  - id: dc_center3_dammam_data_center
+    name: center3 Dammam Data Center
+    record_granularity: individual_Uptime_named_award_project
+    operator: center3
+    location: {country: Saudi_Arabia, city: Dammam, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: Uptime_award_project_with_current_commercial_operating_status_not_independently_reconciled
+    Uptime_awards: {tier: Tier_III, design_documents: true, constructed_facility: true, exact_phase_scope: not_fully_resolved}
+    capacity: {exact_IT_mw_facility_power_floor_area_racks_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_equipment_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_center3_ksa_bahrain_portfolio
+    sources:
+      - {title: center3 Uptime Institute client ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/client/center3/1068"}
+    confidence: high_for_name_city_and_award_presence_low_for_exact_current_status_capacity_equipment_and_GPU_inventory
+
+  - id: dc_center3_riyadh_data_center
+    name: center3 Riyadh Data Center
+    record_granularity: individual_Uptime_named_award_project
+    operator: center3
+    location: {country: Saudi_Arabia, city: Riyadh, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: Uptime_award_project_with_current_commercial_operating_status_not_independently_reconciled
+    Uptime_awards: {tier: Tier_III, design_documents: true, constructed_facility_scope: Phase_1}
+    capacity: {exact_IT_mw_facility_power_floor_area_racks_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_equipment_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_center3_ksa_bahrain_portfolio
+    sources:
+      - {title: center3 Uptime Institute client ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/client/center3/1068"}
+    confidence: high_for_name_city_and_Tier_III_phase_one_constructed_award_low_for_capacity_equipment_GPU_and_current_full_build_status
+
+  - id: dc_center3_itcc_riyadh
+    name: center3 ITCC Data Center
+    aliases: [stc_ITCC_Data_Center]
+    record_granularity: individual_Uptime_named_data_center
+    operator: center3
+    location: {country: Saudi_Arabia, city: Riyadh, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: constructed_and_operational_sustainability_award_scope
+    Uptime_awards:
+      tier: Tier_IV
+      design_documents: true
+      constructed_facility: true
+      operational_sustainability: Gold
+    capacity: {exact_IT_mw_facility_power_floor_area_racks_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_equipment_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_center3_ksa_bahrain_portfolio
+    sources:
+      - {title: ITCC Uptime Institute award page, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/datacenter/stc--itcc-data-center/952"}
+    confidence: high_for_name_city_and_Tier_IV_design_constructed_Gold_awards_low_for_capacity_equipment_GPU_and_current_utilization
+
+  - id: dc_center3_neidc_abar_ali
+    name: center3 NEIDC Abar Ali
+    record_granularity: individual_Uptime_named_data_center
+    operator: center3
+    location: {country: Saudi_Arabia, city: Madinah, locality: Abar_Ali, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: Day_1_constructed_facility_award_scope_with_later_buildout_not_disclosed
+    Uptime_awards: {tier: Tier_III, design_documents: true, constructed_facility_scope: Day_1}
+    capacity: {exact_IT_mw_facility_power_floor_area_racks_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_equipment_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_center3_ksa_bahrain_portfolio
+    sources:
+      - {title: center3 Uptime Institute award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+    confidence: high_for_name_city_and_Tier_III_Day_1_awards_low_for_capacity_equipment_GPU_and_later_phase_status
+
+  - id: dc_center3_makkah34
+    name: center3 Makkah34 Data Center
+    record_granularity: individual_Uptime_named_data_center
+    operator: center3
+    location: {country: Saudi_Arabia, city: Makkah, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: Day_1_constructed_and_operational_sustainability_award_scope
+    Uptime_awards: {tier: Tier_III, design_documents: true, constructed_facility_scope: Day_1, operational_sustainability_scope: Day_1_Gold}
+    capacity: {exact_IT_mw_facility_power_floor_area_racks_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_equipment_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_center3_ksa_bahrain_portfolio
+    sources:
+      - {title: center3 Uptime Institute award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+    confidence: high_for_name_city_and_Tier_III_Day_1_Gold_awards_low_for_capacity_equipment_GPU_and_later_phase_status
+
+  - id: dc_center3_qassim26
+    name: center3 Qassim26 Data Center
+    record_granularity: individual_Uptime_named_data_center
+    operator: center3
+    location: {country: Saudi_Arabia, region: Qassim, exact_city_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: constructed_facility_and_Day_1_operational_sustainability_award_scope
+    Uptime_awards: {tier: Tier_III, design_documents: true, constructed_facility: true, operational_sustainability_scope: Day_1_Gold}
+    capacity: {exact_IT_mw_facility_power_floor_area_racks_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_equipment_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_center3_ksa_bahrain_portfolio
+    sources:
+      - {title: center3 Uptime Institute award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+    confidence: high_for_name_region_and_Tier_III_awards_low_for_capacity_equipment_GPU_and_current_utilization
+
+  - id: dc_center3_dammam352
+    name: center3 Dammam352 Data Center
+    record_granularity: individual_Uptime_named_data_center_with_probable_operator_scale_crosswalk
+    operator: center3
+    location: {country: Saudi_Arabia, city: Dammam, exact_address_coordinate_parcel_and_building_number: withheld_or_undisclosed}
+    lifecycle: Uptime_constructed_award_and_secondary_operational_listing
+    Uptime_awards: {tier: Tier_III, design_documents_scope: Days_1_to_3, constructed_facility_scope: Days_1_to_3}
+    possible_2023_center3_Dammam_crosswalk:
+      gross_area_sqm: 24000
+      total_facility_power_mw: 19.5
+      data_halls: 8
+      rack_capacity: 1200
+      racks_per_hall: 150
+      crosswalk_confidence: medium
+      metric_boundary: Total facility power is not labeled IT load.
+    capacity: {exact_IT_mw_live_load_utilization_and_customer_mix: undisclosed}
+    infrastructure_and_accelerators: {exact_power_chain_cooling_BOM_PUE_WUE_water_liquid_cooled_MW_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_center3_ksa_bahrain_portfolio
+    sources:
+      - {title: Dammam352 Uptime Institute award page, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/datacenter/dammam352-data-center/1676"}
+      - {title: Dammam facility launch details, publisher: center3_LinkedIn, date: 2023-11-27, url: "https://www.linkedin.com/pulse/center3-digital-hub-powering-mena-region-new-data-centers-eastern-4eage"}
+      - {title: Dammam352 secondary facility directory, publisher: Baxtel, date: 2026-07-18_accessed, url: "https://baxtel.com/data-center/center3-dammam352"}
+    confidence: high_for_name_city_Tier_III_and_Dammam_public_scale_medium_for_numeric_ID_crosswalk_low_for_IT_load_equipment_GPU_and_utilization
+
+  - id: dc_center3_riyadh102
+    name: center3 Riyadh102 Data Center
+    record_granularity: individual_Uptime_named_data_center
+    operator: center3
+    location: {country: Saudi_Arabia, city: Riyadh, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: multi_day_constructed_facility_award_scope
+    Uptime_awards: {tier: Tier_III, design_documents_scope: Days_1_to_4, constructed_facility_scope: Days_1_to_3}
+    capacity: {exact_IT_mw_facility_power_floor_area_racks_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_equipment_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_center3_ksa_bahrain_portfolio
+    sources:
+      - {title: Riyadh102 Uptime Institute award page, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/datacenter/riyadh102-data-center/1791"}
+    confidence: high_for_name_city_and_Tier_III_phase_awards_low_for_capacity_equipment_GPU_and_current_utilization
+
+  - id: dc_center3_riyadh104
+    name: center3 Riyadh104 Data Center
+    record_granularity: individual_Uptime_named_data_center
+    operator: center3
+    location: {country: Saudi_Arabia, city: Riyadh, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: multi_day_constructed_facility_award_scope
+    Uptime_awards: {tier: Tier_III, design_documents_scope: Days_1_to_4, constructed_facility_scope: Days_1_to_3}
+    capacity: {exact_IT_mw_facility_power_floor_area_racks_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_equipment_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_center3_ksa_bahrain_portfolio
+    sources:
+      - {title: center3 Uptime Institute award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+    confidence: high_for_name_city_and_Tier_III_phase_awards_low_for_capacity_equipment_GPU_and_current_utilization
+
+  - id: dc_center3_riyadh103
+    name: center3 Riyadh103 Data Center
+    record_granularity: individual_Uptime_named_data_center
+    operator: center3
+    location: {country: Saudi_Arabia, city: Riyadh, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: multi_day_constructed_facility_award_scope
+    Uptime_awards: {tier: Tier_III, design_documents_scope: Days_1_to_4, constructed_facility_scope: Days_1_to_3}
+    capacity: {exact_IT_mw_facility_power_floor_area_racks_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_equipment_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_center3_ksa_bahrain_portfolio
+    sources:
+      - {title: center3 Uptime Institute award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+    confidence: high_for_name_city_and_Tier_III_phase_awards_low_for_capacity_equipment_GPU_and_current_utilization
+
+  - id: dc_center3_jeddah203
+    name: center3 Jeddah203 Data Center
+    record_granularity: individual_Uptime_named_data_center
+    operator: center3
+    location: {country: Saudi_Arabia, city: Jeddah, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: multi_day_constructed_facility_award_scope
+    Uptime_awards: {tier: Tier_III, design_documents_scope: Days_1_to_4, constructed_facility_scope: Days_1_to_4}
+    capacity: {exact_IT_mw_facility_power_floor_area_racks_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_equipment_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_center3_ksa_bahrain_portfolio
+    sources:
+      - {title: center3 Uptime Institute award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+    confidence: high_for_name_city_and_Tier_III_phase_awards_low_for_capacity_equipment_GPU_and_current_utilization
+
+  - id: dc_center3_riyadh301
+    name: center3 Riyadh301 Data Center
+    record_granularity: individual_Uptime_named_data_center
+    operator: center3
+    location: {country: Saudi_Arabia, city: Riyadh, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: multi_day_constructed_and_operational_sustainability_award_scope
+    Uptime_awards: {tier: Tier_III, design_documents_scope: Days_1_and_3, constructed_facility_scope: Days_1_to_3, operational_sustainability_scope: Days_1_to_3_Gold}
+    capacity: {exact_IT_mw_facility_power_floor_area_racks_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_equipment_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_center3_ksa_bahrain_portfolio
+    sources:
+      - {title: center3 Uptime Institute award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+    confidence: high_for_name_city_and_Tier_III_Gold_phase_awards_low_for_capacity_equipment_GPU_and_current_utilization
+
+  - id: dc_center3_khobar371
+    name: center3 Khobar371 Data Center
+    aliases: [Khobar071_Data_Center_in_alternate_Uptime_cache]
+    record_granularity: individual_Uptime_named_data_center_with_probable_operator_scale_crosswalk
+    operator: center3
+    location: {country: Saudi_Arabia, city: Al_Khobar, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: multi_day_constructed_facility_award_and_company_operating_claim
+    Uptime_awards: {tier: Tier_III, design_documents_scope: Days_1_to_3, constructed_facility_scope: Days_1_to_2}
+    possible_2023_center3_Al_Khobar_crosswalk:
+      total_facility_power_mw: 24.4
+      crosswalk_confidence: medium
+      metric_boundary: Total facility power is not labeled IT load.
+    capacity: {exact_IT_mw_floor_area_racks_live_load_utilization_and_customer_mix: undisclosed}
+    infrastructure_and_accelerators: {exact_power_chain_cooling_BOM_PUE_WUE_water_liquid_cooled_MW_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_center3_ksa_bahrain_portfolio
+    sources:
+      - {title: center3 Uptime Institute award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+      - {title: Al-Khobar facility operating power disclosure, publisher: center3_LinkedIn, date: 2023, url: "https://www.linkedin.com/posts/center3_leading-the-digital-future-our-data-centers-activity-7137123439600898048-JJGl"}
+    confidence: high_for_Al_Khobar_facility_power_and_Tier_III_awards_medium_for_371_071_and_public_facility_crosswalk_low_for_IT_load_equipment_GPU_and_utilization
+
+  - id: dc_center3_riyadh105
+    name: center3 Riyadh105 Data Center
+    record_granularity: individual_Uptime_design_award_project
+    operator: center3
+    location: {country: Saudi_Arabia, city: Riyadh, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: design_document_award_only_in_reviewed_public_ledger
+    Uptime_awards: {tier: Tier_III, design_documents_scope: Day_1, constructed_facility: not_found_in_reviewed_ledger}
+    capacity: {exact_IT_mw_facility_power_floor_area_racks_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_equipment_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_center3_ksa_bahrain_portfolio
+    sources:
+      - {title: center3 Uptime Institute award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+    confidence: high_for_name_city_and_design_award_low_for_constructed_operating_status_capacity_equipment_and_GPU_inventory
+
+  - id: dc_center3_jeddah55
+    name: center3 Jeddah55 Data Center
+    record_granularity: individual_Uptime_named_data_center
+    operator: center3
+    location: {country: Saudi_Arabia, city: Jeddah, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: constructed_and_operational_sustainability_award_scope
+    Uptime_awards: {tier: Tier_III, design_documents: true, constructed_facility_scope: Days_1_and_2, operational_sustainability_scope: Days_1_and_2_Silver}
+    capacity: {exact_IT_mw_facility_power_floor_area_racks_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_equipment_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_center3_ksa_bahrain_portfolio
+    sources:
+      - {title: center3 Uptime Institute award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+    confidence: high_for_name_city_and_Tier_III_Silver_awards_low_for_capacity_equipment_GPU_and_current_utilization
+
+  - id: dc_center3_jeddah204
+    name: center3 Jeddah204 Data Center
+    record_granularity: individual_Uptime_design_award_project
+    operator: center3
+    location: {country: Saudi_Arabia, city: Jeddah, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: design_document_award_only_in_reviewed_public_ledger
+    Uptime_awards: {tier: Tier_III, design_documents_scope: Day_1, constructed_facility: not_found_in_reviewed_ledger}
+    capacity: {exact_IT_mw_facility_power_floor_area_racks_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_equipment_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_center3_ksa_bahrain_portfolio
+    sources:
+      - {title: center3 Uptime Institute award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+    confidence: high_for_name_city_and_design_award_low_for_constructed_operating_status_capacity_equipment_and_GPU_inventory
+
+  - id: dc_center3_dammam306
+    name: center3 Dammam306 Data Center
+    record_granularity: individual_Uptime_indexed_award_project
+    operator: center3
+    location: {country: Saudi_Arabia, city: Dammam, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: award_project_presence_with_exact_award_rows_not_resolved
+    Uptime_awards: {award_presence: true, exact_tier_type_and_phase_scope: unresolved_from_reviewed_client_page}
+    capacity: {exact_IT_mw_facility_power_floor_area_racks_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_equipment_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_center3_ksa_bahrain_portfolio
+    sources:
+      - {title: center3 Uptime Institute client ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/client/center3/1068"}
+    confidence: high_for_name_and_city_medium_for_award_presence_low_for_exact_award_scope_capacity_equipment_GPU_and_current_status
+
+  - id: dc_center3_jeddah205
+    name: center3 Jeddah205 Data Center
+    record_granularity: individual_Uptime_design_award_project
+    operator: center3
+    location: {country: Saudi_Arabia, city: Jeddah, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: Day_1_design_document_award_in_newer_indexed_ledger
+    Uptime_awards: {design_documents_scope: Day_1, exact_tier_and_constructed_status: not_visible_in_reviewed_index_snippet}
+    capacity: {exact_IT_mw_facility_power_floor_area_racks_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_equipment_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_center3_ksa_bahrain_portfolio
+    sources:
+      - {title: Uptime Institute Saudi award index, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+    confidence: high_for_name_city_and_Day_1_design_award_low_for_tier_constructed_status_capacity_equipment_and_GPU_inventory
+
+  - id: dc_center3_riyadh106
+    name: center3 Riyadh106 Data Center
+    record_granularity: individual_current_Uptime_client_page_identifier
+    operator: center3
+    location: {country: Saudi_Arabia, city: Riyadh, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: current_client_page_award_project_with_exact_award_rows_not_resolved
+    Uptime_awards: {award_presence: true, exact_tier_type_and_phase_scope: unresolved_from_current_client_page}
+    capacity: {exact_IT_mw_facility_power_floor_area_racks_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_equipment_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_center3_ksa_bahrain_portfolio
+    sources:
+      - {title: current center3 Uptime Institute client page, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/client/center3/1068"}
+    confidence: high_for_current_page_name_and_city_low_for_exact_awards_capacity_equipment_GPU_and_operating_status
+
+  - id: dc_center3_riyadh107
+    name: center3 Riyadh107 Data Center
+    record_granularity: individual_current_Uptime_client_page_identifier
+    operator: center3
+    location: {country: Saudi_Arabia, city: Riyadh, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: current_client_page_award_project_with_exact_award_rows_not_resolved
+    Uptime_awards: {award_presence: true, exact_tier_type_and_phase_scope: unresolved_from_current_client_page}
+    capacity: {exact_IT_mw_facility_power_floor_area_racks_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_equipment_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_center3_ksa_bahrain_portfolio
+    sources:
+      - {title: current center3 Uptime Institute client page, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/client/center3/1068"}
+    confidence: high_for_current_page_name_and_city_low_for_exact_awards_capacity_equipment_GPU_and_operating_status
+
+  - id: dc_center3_bahrain01
+    name: center3 Bahrain01 Data Center
+    record_granularity: individual_Uptime_design_award_project
+    operator: center3
+    location: {country: Bahrain, governorate: Southern_Governorate, exact_city_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: Day_1_design_document_award_only_in_reviewed_public_ledger
+    Uptime_awards: {tier: Tier_III, design_documents_scope: Day_1, constructed_facility: not_found_in_reviewed_ledger}
+    capacity: {exact_IT_mw_facility_power_floor_area_racks_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_equipment_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_center3_ksa_bahrain_portfolio
+    sources:
+      - {title: center3 Uptime Institute award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Bahrain&ipp=All&page=1&tierLevel="}
+    confidence: high_for_name_governorate_and_Tier_III_design_award_low_for_constructed_operating_status_capacity_equipment_and_GPU_inventory
+
 disclosure_gap_register:
   - exact_global_physical_data_center_count
+  - center3_current_23_KSA_plus_one_Bahrain_map_to_25_Saudi_Bahrain_Kuwait_marketed_scope_and_complete_building_lifecycle_roster
+  - center3_2022_21_centers_152MW_headline_133_2MW_phase_sum_2024_125MW_total_92MW_live_and_20MW_increment_scope_reconciliation
+  - center3_current_25_facilities_to_Uptime_historical_18_site_new_Riyadh106_Riyadh107_Jeddah205_and_legacy_stc_asset_crosswalk
+  - center3_historical_2022_labels_to_current_numeric_site_ID_address_coordinate_parcel_building_ownership_and_lifecycle
+  - center3_Dammam_19_5MW_and_Al_Khobar_24_4MW_facility_power_to_Dammam352_Khobar371_Khobar071_crosswalk_and_IT_load
+  - center3_per_site_operating_energized_leased_utilized_billed_IT_load_racks_customer_and_revenue_allocation
+  - center3_per_site_grid_voltage_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CDU_OEM_counts_ratings_and_commissioned_topology
+  - center3_per_site_PUE_WUE_water_liquid_cooled_MW_renewable_energy_and_measured_power_utilization
+  - center3_DAM071_JED002_secondary_deck_capacity_location_TCCF_and_proposed_OEM_validation_against_primary_as_built_procurement_and_acceptance_records
+  - center3_exact_GPU_OEM_models_counts_servers_racks_fabric_site_allocation_ownership_delivery_live_status_power_utilization_revenue_and_margin
+  - center3_300MW_2027_and_1GW_2030_target_to_site_land_grid_permit_financing_construction_customer_commitment_energization_and_billing
+  - center3_HUMAIN_proposed_JV_definitive_agreement_regulatory_close_sites_customer_commitments_250MW_initial_phase_and_overlap_with_both_parties_other_1GW_programs
   - Syntys_15_active_Q1_2026_headline_to_stale_13_center_19MW_caption_and_30MW_active_scope_reconciliation
   - Syntys_30MW_post_Q_Data_active_capacity_to_24_5MW_FY2025_plus_5MW_acquired_and_country_percent_rounding
   - Syntys_Iraq_and_Oman_carveout_completion_exact_entity_asset_and_facility_rosters
