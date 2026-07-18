@@ -15806,7 +15806,11 @@ campus_profiles:
     name: Alibaba Cloud global region and availability-zone portfolio
     record_granularity: provider_region_and_AZ_portfolio_not_one_physical_campus
     operator: Alibaba_Cloud
-    lifecycle_as_of_2026_07_17: operating_and_expanding
+    lifecycle_as_of_2026_07_18: current_public_and_specialized_cloud_roster_with_closing_and_preview_rows
+    official_registry_refs:
+      records: life/imports/global_data_centers_20260717/alibaba_official_region_registry.jsonl
+      summary: life/imports/global_data_centers_20260717/alibaba_official_region_summary.json
+      builder: scripts/build_alibaba_official_region_registry.py
     location:
       provider_marketing_claim_as_of_2026_06_22:
         regions: 32
@@ -15816,6 +15820,16 @@ campus_profiles:
         availability_zone_rows_raw_derived: 105
         region_rows_marked_closing_down: 2
         availability_zone_rows_excluding_closing_regions_derived: 103
+      current_technical_guide_all_partitions_as_of_2026_07_01:
+        region_rows_total: 37
+        zone_rows_total: 130
+        public_cloud: {region_rows: 32, zone_rows: 105}
+        finance_cloud: {region_rows: 4, zone_rows: 20}
+        government_cloud: {region_rows: 1, zone_rows: 5}
+        lifecycle_rows:
+          current_listed: {regions: 34, zones: 125}
+          closing_down: {regions: 2, zones: 2}
+          preview: {regions: 1, zones: 3}
       China_region_inventory_with_zone_counts:
         Qingdao: 2
         Beijing: 12
@@ -15858,10 +15872,13 @@ campus_profiles:
         Malaysia_total_facilities_claimed: 5
       boundary: >-
         Alibaba defines a region as a geography containing data centers and an AZ
-        as a physical area with independent power and networking. An AZ is not
-        necessarily one independently addressable building or campus. The raw
-        table sums to 105 including two zones in closing local regions, while the
-        same provider announcement markets 105 AZs without that status boundary.
+        as a physical area with independent power and networking. Its marketing
+        page is more explicit: a zone contains one or multiple scattered data
+        centers with independent supporting facilities. Therefore 130 technical
+        zone rows are not 130 buildings or a capacity total. The public subset
+        sums to 105 including two zones in closing local regions; specialized
+        Finance and Gov partitions add 25 zones, including a three-zone Preview.
+        Riyadh is explicitly a Partner Region, so ownership cannot be inferred.
     edge_network_context:
       CDN_edge_nodes_more_than: 3200
       public_cloud_edge_nodes_more_than: 900
@@ -15884,7 +15901,11 @@ campus_profiles:
       - title: Alibaba Cloud ECS regions and zones
         publisher: Alibaba_Cloud
         date: 2026-07-01
-        url: https://www.alibabacloud.com/help/en/ecs/user-guide/regions-and-zones
+        url: https://www.alibabacloud.com/help/en/cloud-migration-guide-for-beginners/latest/regions-and-zones
+      - title: Alibaba Cloud global locations and zone physical definition
+        publisher: Alibaba_Cloud
+        date: 2026-07-18_accessed
+        url: https://www.alibabacloud.com/en/about/global-locations?_p_lc=1
       - title: Alibaba Cloud expands global infrastructure at 2026 Partner Summit
         publisher: Alibaba_Cloud
         date: 2026-06-22
@@ -15897,7 +15918,7 @@ campus_profiles:
         publisher: Alibaba_Cloud
         date: 2026-07-07
         url: https://www.alibabacloud.com/help/en/ens/product-overview/node-distribution
-    confidence: high_for_provider_region_and_zone_inventory_low_for_building_mapping_MW_and_installed_accelerators
+    confidence: high_for_provider_region_zone_ID_marketing_release_year_and_lifecycle_inventory_low_for_building_mapping_ownership_MW_and_installed_accelerators
 
   - id: dc_alibaba_five_china_super_data_center_portfolio
     name: Alibaba Cloud five China super data centers
