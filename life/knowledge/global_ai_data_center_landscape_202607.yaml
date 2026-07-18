@@ -131,8 +131,8 @@ scope_and_method:
     disclosure_registry_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_registry.jsonl
     disclosure_summary_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_summary.json
     disclosure_registry_as_of: 2026-07-19
-    operator_records: 31
-    machine_generated_page_registry_operators: [CyrusOne, QTS, NEXTDC, Flexential, Lumen_Technologies, Csquare]
+    operator_records: 32
+    machine_generated_page_registry_operators: [CyrusOne, QTS, NEXTDC, Flexential, Lumen_Technologies, Csquare, CDC_Data_Centres]
     comparison_gate:
       - choose_one_physical_granularity
       - choose_one_lifecycle_date_and_state
@@ -9996,6 +9996,9 @@ campus_profiles:
     operator: CDC_Data_Centres
     countries: [AU, NZ]
     lifecycle_as_of_2026_07_17: mixed_operating_under_construction_and_future_build
+    official_facility_code_registry_ref: life/imports/global_data_centers_20260717/cdc_official_facility_registry.jsonl
+    official_facility_code_summary_ref: life/imports/global_data_centers_20260717/cdc_official_facility_summary.json
+    registry_builder_ref: scripts/build_cdc_official_facility_registry.py
     locations_as_of_2026_03_31:
       Australia:
         Canberra: [Hume, Fyshwick, Beard]
@@ -10152,14 +10155,16 @@ campus_profiles:
       linked_AI_factory_partners: [Firmus, NVIDIA]
       customer_hardware_owners: undisclosed
       financial_profile_refs:
+        - company_cdc_data_centres
         - company_infratil
         - company_schneider_electric
         - company_firmus
         - company_nvidia
       private_company_financial_gap: >-
-        Infratil publishes CDC net revenue, EBITDAF, leverage, capex, and audited
-        associate summary data, but CDC does not present a directly comparable
-        standalone IFRS operating-income subtotal.
+        The dedicated CDC financial profile preserves Infratil's net revenue,
+        EBITDAF, leverage, capex and audited associate-note data, but CDC does not
+        present a directly comparable standalone accounting operating-income
+        subtotal or full public cash-flow statement.
     sources:
       - title: CDC Sustainability Report 2026
         publisher: CDC_Data_Centres

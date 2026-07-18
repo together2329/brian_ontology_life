@@ -146,6 +146,7 @@ stack_layers:
     - STT_GDC_India
     - CtrlS_Datacenters
     - Flexential
+    - CDC_Data_Centres
   diversified_strategic_partners:
     - Mitsubishi_Corporation
     - Tata_Communications
@@ -12286,8 +12287,172 @@ financial_profiles:
         url: https://www.sec.gov/Archives/edgar/data/2105398/000110465926084616/tm264837d22_8k.htm
     confidence: high_for_final_prospectus_financials_operating_metrics_debt_acquisitions_IPO_and_ownership_medium_for_growth_target_conversion_low_for_site_level_economics_exact_physical_GPU_inventory_and_post_IPO_actual_free_cash_flow
 
+  - id: company_cdc_data_centres
+    company: CDC_Data_Centres
+    legal_entity_context: CDC_Data_Centres_Pty_Ltd_and_operating_group_reported_by_Infratil
+    layer: private_sovereign_hyperscale_AI_and_colocation_data_center_operator
+    ownership_status: private_unlisted
+    portfolio_ref: dc_cdc_australia_new_zealand_portfolio
+    reporting_boundary: >-
+      CDC is an equity-accounted associate in Infratil's reporting. Infratil
+      publishes a CDC operating table and an audited associate note, but CDC does
+      not publish a standalone public income statement with a comparable
+      accounting operating-profit subtotal, depreciation bridge, balance sheet
+      and cash-flow statement. Gross revenue, management net revenue, EBITDAF and
+      net profit after tax therefore remain separate measures.
+    ownership_and_valuation:
+      Infratil_ownership_percent_as_of_2026_03_31: 49.7
+      Infratil_investment_fair_value_nzd_million: 8933.2
+      dated_2025_02_other_disclosed_ownership_percent:
+        Australian_Future_Fund: 34.55
+        Commonwealth_Superannuation_Corporation: 12.04
+        management: 3.66
+      shareholder_equity_contributed_2026_02_aud_million: 500
+      exact_current_all_party_cap_table_preferences_voting_rights_and_group_enterprise_value: not_confirmed_in_reviewed_current_sources
+      boundary: >-
+        Infratil's investment fair value is its stake value, not CDC enterprise
+        value, revenue, cash, capex or liquidation proceeds. The February 2026
+        equity contribution is financing, not earnings.
+    FY2026_aud_million:
+      period: year_ended_2026_03_31
+      accounting_basis: Infratil_associate_note_and_non_GAAP_operating_metrics
+      gross_revenue_from_audited_associate_note: 765.8
+      net_revenue_management_measure: 533.9
+      accounting_operating_profit: undisclosed
+      EBITDAF_non_GAAP: 392.5
+      EBITDAF_margin_percent: 74
+      net_profit_after_tax: 1261.0
+      capital_expenditure: 2113.3
+      net_external_debt: 4880.9
+      net_debt_to_run_rate_EBITDAF_multiple: 9.4
+      weighted_average_debt_tenor_years: 5.1
+      drawn_debt_hedged_percent: 93
+      measure_boundary: >-
+        Gross and net revenue use different pass-through and presentation
+        boundaries. EBITDAF is non-GAAP; NPAT contains accounting effects and is
+        not a recurring operating-profit proxy. Capex and debt are not netted
+        against revenue or the shareholder valuation.
+    historical_aud_million:
+      FY2025:
+        net_revenue: 445.5
+        EBITDAF: 329.7
+        EBITDAF_margin_percent: 74
+        net_profit_after_tax: 580.5
+        capital_expenditure: 1760.4
+        net_external_debt: 3499.3
+        operating_capacity_mw: 318
+        under_construction_capacity_mw: 382
+        development_pipeline_mw: 1754
+      FY2024:
+        net_revenue: 356.5
+        EBITDAF: 270.8
+        EBITDAF_margin_percent: 76
+        net_profit_after_tax: 214.6
+        capital_expenditure: 560.8
+        net_external_debt: 2663.2
+        operating_capacity_mw: 268
+        under_construction_capacity_mw: 416
+        development_pipeline_mw: 536
+      comparability_boundary: >-
+        Capacity additions, development spending, customer commencement timing
+        and accounting fair-value effects make simple revenue, EBITDAF and NPAT
+        growth rates insufficient measures of organic cash return.
+    FY2026_operating_metrics:
+      operating_data_centers: 19
+      data_centers_under_construction: 6
+      operating_capacity_mw: 671
+      under_construction_capacity_mw: 572
+      development_pipeline_mw: 1663
+      total_capacity_pipeline_mw: 2906
+      contracted_ICT_capacity_mw: 220
+      rack_utilization_percent: 62
+      weighted_average_lease_term_with_options_years: 26.9
+      portfolio_PUE: 1.38
+      portfolio_WUE_liters_per_kwh_less_than: 0.02
+      boundary: >-
+        Operating capacity is built-capacity scope, contracted ICT capacity is a
+        commercial commitment, and rack utilization includes white space and
+        reserved capacity. None is actual instantaneous electrical load or
+        billed customer utilization by site.
+    contracted_growth_and_outlook:
+      new_2026_05_contract_mw: 555
+      customer: undisclosed_US_high_end_investment_grade_customer
+      contract_term_years: 30
+      renewal_options_years_up_to: 20
+      delivery_window: FY2028_to_FY2029
+      total_contracted_capacity_after_contract_mw_more_than: 1000
+      FY2027_EBITDAF_guidance_aud_million_range: [680, 720]
+      FY2027_capex_excluding_land_aud_billion_range: [3.8, 4.2]
+      FY2028_EBITDAF_expected_aud_billion_more_than: 1
+      annualized_EBITDAF_at_full_555MW_deployment_aud_billion_approximate: 2
+      Australian_business_credit_rating_as_of_2026_04_21: Moody_Baa2_Stable
+      boundary: >-
+        Contracted MW is not operating, energized, customer-accepted, utilized or
+        billed load. EBITDAF and capex guidance require funding, utility power,
+        construction, commissioning and customer deployment; the A$2 billion
+        figure is a full-deployment run-rate expectation, not recognized revenue
+        or current profit.
+    AI_and_data_center_exposure:
+      roles: [sovereign_critical_infrastructure, hyperscale_colocation, AI_factory_hosting, high_density_liquid_cooling]
+      NVIDIA_DGX_Ready_certified_across_Australia_and_New_Zealand: true
+      closed_loop_liquid_cooling_across_CDC_built_facilities: true
+      external_project_ref: dc_firmus_project_southgate_australia
+      exact_installed_GPU_models_counts_owner_delivery_state_site_allocation_utilization_power_revenue_and_margin: undisclosed
+      boundary: >-
+        Customers deploy ICT equipment. DGX-Ready certification, rack-density
+        illustrations, AI contracts and Firmus announcements do not establish a
+        CDC-owned GPU fleet or a verified current per-site accelerator inventory.
+    positive_signals:
+      - FY2026_net_revenue_and_EBITDAF_growth_with_74_percent_company_defined_margin
+      - operating_capacity_more_than_doubled_from_318MW_to_671MW_year_over_year
+      - greater_than_1GW_total_contracted_capacity_after_the_555MW_contract
+      - long_weighted_average_lease_term_and_investment_grade_Australian_business_rating
+      - differentiated_closed_loop_cooling_and_sovereign_government_positioning
+    risks_and_watch_items:
+      - A4_9B_net_debt_and_9_4_times_run_rate_leverage_before_the_next_large_capex_step
+      - FY2027_A3_8_to_A4_2B_capex_execution_funding_interest_and_refinancing
+      - contracted_MW_to_energized_customer_accepted_billed_and_cash_generating_conversion
+      - customer_concentration_and_undisclosed_555MW_counterparty_terms
+      - grid_interconnection_generation_storage_transformer_switchgear_UPS_and_equipment_bottlenecks
+      - construction_cost_schedule_commissioning_and_supply_chain_execution
+      - private_company_accounting_operating_profit_cash_flow_and_site_return_opacity
+      - FY2026_NPAT_not_a_recurring_operating_profit_proxy
+      - current_location_page_and_dated_investor_status_conflicts
+      - no_verified_physical_GPU_inventory_or_site_level_power_and_cooling_BOM
+    sources:
+      - title: Infratil FY2026 detailed operating metrics
+        publisher: Infratil
+        date: 2026-03-31
+        url: https://infratil.com/news/infratil-full-year-results-for-the-year-ended-31-march-2026/detailed-financial-information-operating-metrics-march-2026/
+      - title: Infratil FY2026 annual report and associate note
+        publisher: Infratil
+        date: 2026-03-31
+        url: https://infratil.com/news/infratil-full-year-results-for-the-year-ended-31-march-2026/infratil-fy2026-annual-report-including-full-year-financial-statements/
+      - title: CDC Investor Day presentation
+        publisher: CDC_Data_Centres_and_Infratil
+        date: 2026-03-26
+        url: https://infratil.com/news/cdc-investor-presentation-and-guidance-update/cdc-infratil-investor-day-presentation/
+      - title: CDC 555MW contract and outlook update
+        publisher: CDC_Data_Centres
+        date: 2026-05
+        url: https://www.cdc.com.au/resources/news/cdc-signs-555mw-data-centre-contract-with-us-customer/
+      - title: CDC 2026 Sustainability Report
+        publisher: CDC_Data_Centres
+        date: 2026-05-22
+        url: https://www.cdc.com.au/media/dugnsyfr/cdc-2026-sustainability-report_aasb-s2.pdf
+      - title: CDC shareholder update
+        publisher: CDC_Data_Centres
+        date: 2025-02
+        url: https://www.cdc.com.au/resources/news/sovereign-cdc-progress-secured-as-shareholders-double-down-on-growth/
+    confidence: high_for_Infratil_reported_financial_and_operating_metrics_contract_guidance_and_owned_portfolio_medium_for_current_full_cap_table_low_for_accounting_operating_profit_cash_flow_site_returns_customer_concentration_equipment_BOM_and_installed_GPU_inventory
+
 cross_company_read_through:
   current_signals:
+    - CDC's dated March 2026 investor map publishes 30 facility codes across five regions, reconstructed as 18 operating, five under construction and seven future-land-secured codes. The later FY2026 table reports 19 operating and six under construction without allocating the two additional states to facility codes, so the registry does not guess their identities.
+    - CDC's FY2026 operating-capacity, construction and development-pipeline measures were 671 MW, 572 MW and 1,663 MW, while contracted ICT capacity was 220 MW and rack utilization 62%. These are different physical and commercial denominators rather than one current-load total.
+    - CDC's FY2026 management net revenue was A$533.9 million and EBITDAF A$392.5 million against A$2.113 billion of capex and A$4.881 billion of net external debt. A comparable standalone accounting operating-profit subtotal and full public cash-flow statement remain undisclosed.
+    - The later 555 MW customer contract lifted total contracted capacity above 1 GW and supports A$680-A$720 million FY2027 EBITDAF guidance, but delivery is scheduled for FY2028-FY2029 and requires A$3.8-A$4.2 billion of FY2027 capex excluding land. Contracted MW and forward EBITDAF are not energized, utilized or recognized earnings today.
+    - CDC's DGX-Ready certification, closed-loop liquid-cooling platform and Firmus relationship establish AI-hosting capability, not a CDC-owned or verified customer GPU inventory. Exact site-level utility feeds, transformers, switchgear, UPS, batteries, generators, chillers and CDUs remain undisclosed.
     - Csquare's July 2026 final prospectus discloses 64 site rows in 21 markets, including three slated closures, versus 36 current reviewed spec-sheet facility groups and 22 operator-tagged OSM objects. These are different legal, marketing and map granularities rather than competing facility counts.
     - Csquare reported 389 MW of Q1 2026 Sellable Power Capacity and 392 MW of Contracted Power Capacity, or 101% sold. That ratio is a contracting measure and is not treated as metered load, physical utilization or evidence that every MW is simultaneously energized.
     - FY2025 revenue was $987.0 million, operating profit $100.4 million and net loss $119.9 million; adjusted EBITDA was $390.0 million. Interest expense of $241.2 million and $5.0 billion of year-end principal debt show the gap between property-level operating scale and equity cash economics.
@@ -12641,6 +12806,10 @@ cross_company_read_through:
     - How much announced utility load has received permits, financing, interconnection, and energization?
 
 research_limits:
+  - CDC's 30 dated facility codes, 18/5/7 map reconstruction, current location pages, later 19/6 portfolio counts and 17 OSM objects use different dates and granularities and are not merged into a false current building count.
+  - CDC's 671 MW operating capacity, 220 MW contracted ICT capacity, greater-than-1-GW later contract scope and 62% rack utilization use different denominators; none is treated as actual instantaneous site load or billed utilization.
+  - CDC's public financial metrics come through Infratil's associate and management reporting. Net revenue, EBITDAF and NPAT do not provide a standalone accounting operating-profit or full cash-flow bridge, and future capex and EBITDAF guidance remain execution-dependent.
+  - CDC's DGX-Ready and liquid-cooling capabilities do not disclose installed GPU models, counts, owners, site allocation or utilization, and exact site-level power and cooling bills of materials remain unavailable.
   - NEXTDC's 29 current facility labels and 1.82055-GW mixed-lifecycle card checksum are not a physical-building census or current operating, energized, leased, utilized, billing or actual-load total.
   - NEXTDC's DGX-Ready certification, supported NVIDIA platforms, liquid-cooling capability and 600-kW-per-rack S6 design do not disclose installed GPU models, counts, owners, site allocation, utilization or economics.
   - NEXTDC reports audited company financials and capacity layers, but not site-level revenue, operating profit, capex, debt, customer concentration, utilization or return on capital; high funding and construction scale must convert through customer acceptance and billing.
