@@ -131,8 +131,8 @@ scope_and_method:
     disclosure_registry_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_registry.jsonl
     disclosure_summary_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_summary.json
     disclosure_registry_as_of: 2026-07-19
-    operator_records: 33
-    machine_generated_page_registry_operators: [CyrusOne, QTS, NEXTDC, Flexential, Lumen_Technologies, Csquare, CDC_Data_Centres, Switch]
+    operator_records: 34
+    machine_generated_page_registry_operators: [CyrusOne, QTS, NEXTDC, Flexential, Lumen_Technologies, Csquare, CDC_Data_Centres, Switch, atNorth]
     comparison_gate:
       - choose_one_physical_granularity
       - choose_one_lifecycle_date_and_state
@@ -10483,6 +10483,312 @@ campus_profiles:
       - {title: Switch announces Beaver County campus, publisher: Switch, date: 2026-04-30, url: "https://www.switch.com/switch-announces-new-data-center-campus-in-beaver-county-pennsylvania/"}
       - {title: Switch 2021 Form 10-K, publisher: Switch_SEC, date: 2022-03-04, url: "https://www.sec.gov/Archives/edgar/data/1710583/000171058322000009/swch-20211231.htm"}
     confidence: high_for_current_campus_roster_aggregate_operating_count_selected_design_capacity_AI_architecture_ownership_and_dated_financials_low_for_complete_building_roster_live_load_current_private_financials_and_GPU_inventory
+
+  - id: dc_atnorth_nordic_portfolio
+    name: atNorth pan-Nordic high-density data-center portfolio
+    record_granularity: thirteen_provider_site_codes_across_five_countries
+    operator: atNorth
+    countries: [IS, DK, SE, FI, NO]
+    lifecycle_as_of_2026_07_19: mixed_operating_development_and_announced
+    official_site_registry_ref: life/imports/global_data_centers_20260717/atnorth_official_site_registry.jsonl
+    official_site_summary_ref: life/imports/global_data_centers_20260717/atnorth_official_site_summary.json
+    registry_builder_ref: scripts/build_atnorth_official_site_registry.py
+    current_scale:
+      operating_data_centers: 8
+      current_navigation_site_codes: 13
+      operating_site_codes_reconstructed:
+        - ICE01
+        - ICE02
+        - ICE03
+        - DEN01
+        - SWE01
+        - FIN01
+        - FIN02
+        - FIN03
+      development_or_announced_site_codes_reconstructed:
+        - DEN02
+        - SWE02
+        - SWE04
+        - FIN04
+        - NOR01
+      secured_power_gw: 1
+      scope_warning: >-
+        The February 2026 transaction announcement reports eight operating data
+        centers and 1 GW of secured power. The June Norway release separately
+        describes four mega sites under development, while SWE02 is a metro
+        development visible in navigation but omitted from the current card
+        grid. These values are not a complete operating-MW total.
+    official_site_roster_and_marketed_scale:
+      Iceland:
+        ICE01:
+          locality: Reykjavik_Hafnarfjordur
+          lifecycle: operating
+          site_power_capacity_mw: 3.2
+          facility_size_sqm: 2700
+        ICE02:
+          locality: Reykjanesbaer_Keflavik
+          lifecycle: operating
+          campus_power_capacity_mw: 83
+          campus_hectares: 9
+        ICE03:
+          locality: Akureyri
+          lifecycle: operating
+          campus_power_capacity_mw: 50
+          campus_hectares: 4.3
+      Denmark:
+        DEN01:
+          locality: Ballerup_Greater_Copenhagen
+          lifecycle: operating
+          campus_power_capacity_mw: 30
+          campus_size_sqm: 27728
+          timing_conflict:
+            current_page_first_phase_live: 2025_Q4
+            2025_report_footnote_operational: 2026_Q1
+        DEN02:
+          locality: Varde_Olgod
+          lifecycle: development_or_announced
+          initial_capacity_mw: 250
+          full_build_marketed_capacity_mw: 500
+          campus_hectares: 171
+      Sweden:
+        SWE01:
+          locality: Kista_Stockholm
+          lifecycle: operating
+          site_power_capacity_mw: 12
+          facility_size_sqm: 6400
+        SWE02:
+          locality: Akalla_Stockholm
+          lifecycle: development_or_announced
+          site_power_capacity_mw: 30
+          facility_size_sqm: 15000
+          plot_hectares: 1.5
+          scheduled_go_live: 2027_Q4
+          directory_boundary: navigation_link_exists_but_main_card_grid_omits_site
+        SWE04:
+          locality: Solleftea
+          lifecycle: development_or_announced
+          site_power_capacity_mw: 300
+          site_hectares: 50
+      Finland:
+        FIN01:
+          locality: Helsinki
+          lifecycle: operating
+          power_capacity_mw: 1.6
+          white_space_sqm: 450
+        FIN02:
+          locality: Espoo_Helsinki
+          lifecycle: operating
+          campus_power_capacity_mw: 40
+          campus_size_sqm: 20048
+        FIN03:
+          locality: Espoo_Helsinki
+          lifecycle: operating
+          power_capacity_mw: 1.6
+          white_space_sqm: 450
+        FIN04:
+          locality: Myllykoski_Kouvola
+          lifecycle: development_or_announced
+          campus_power_capacity_mw: 430
+          campus_hectares: 45
+          additional_path_to_power: several_hundred_MW
+          timing_conflict: >-
+            The site page says ready in 2026 H1, but the February transaction
+            announcement and June operating/development count still place
+            Kouvola under development. It is not classified as operating.
+      Norway:
+        NOR01:
+          locality: Haugaland_Tysvaer
+          lifecycle: development_or_announced
+          initial_phase_mw: 120
+          planned_ramp_mw: 350
+          site_hectares: 36
+          projected_power_availability: 2028
+          planned_substations: [Statnett_transmission, Fagne_regional_grid]
+      capacity_boundary: >-
+        Site-page MW values mix current site capacity, an initial phase,
+        full-build design, secured power and paths to additional power. They are
+        retained per site and are not summed into operating, energized, leased,
+        utilized, billed or customer-accepted IT load.
+    public_map_crosswalk:
+      related_OSM_objects: 16
+      countries_in_OSM_subset: [IS]
+      by_official_site_code:
+        ICE01: 1
+        ICE02: 15
+        other_eleven_codes: 0
+      ICE02_object_types:
+        campus_outline: 1
+        named_building_footprints: 14
+      named_ICE02_buildings:
+        - M01
+        - M02
+        - M03
+        - M04
+        - M05
+        - M06
+        - M11
+        - M12
+        - M13
+        - M14
+        - M15
+        - M16
+        - M21
+        - M22
+      scope_warning: >-
+        The OSM layer has a campus outline plus fourteen buildings at ICE02 and
+        one point at ICE01. It does not represent sixteen operating data centers,
+        and it has no current objects for eleven official site codes.
+    accelerator_and_AI_hosting_evidence:
+      atNorth_owned_GPU_count_by_model_site_and_utilization: undisclosed
+      ICE02_Crusoe:
+        original_capacity_mw: 33
+        2025_expansion_mw: 24
+        contracted_capacity_after_expansion_mw: 57
+        disclosed_platforms:
+          - NVIDIA_GB200_NVL72
+          - NVIDIA_Blackwell_unspecified
+          - NVIDIA_Hopper_unspecified
+        direct_liquid_to_chip_cooling: true
+        exact_GPU_and_rack_count: undisclosed
+        owner: Crusoe
+      ICE02_Opera_KEF1:
+        platform: NVIDIA_DGX_H100_SuperPOD
+        processor_model: NVIDIA_H100_80GB
+        disclosed_GPU_count: hundreds_not_exact
+        rack_density_kW: 21
+        independent_power_lines_per_rack: 3
+        current_TOP500_2026_06_rank: 176
+        Rmax_PFLOPS: 10.53
+        Rpeak_PFLOPS: 17.02
+        owner: Opera
+      SWE01_6G_AI_Sweden:
+        initial_IT_load_kW: 500
+        current_operational_GPU_count: 240
+        future_allocated_GPU_count: 2500
+        announced_platforms: [NVIDIA_H200, NVIDIA_GB200_Grace_Blackwell]
+        current_240_GPU_model_split: undisclosed
+        owner: 6G_AI_Sweden
+      Gompute_boundary:
+        2025_transaction: atNorth_sold_HPCaaS_platform_to_Advania
+        continuing_role: atNorth_continues_to_host_platform
+        implication: >-
+          Prior Gompute service hardware cannot be assumed to remain atNorth-owned
+          after the divestiture; ownership, inventory and utilization remain open.
+      portfolio_boundary: >-
+        Customer-owned or customer-allocated hardware at named host sites proves
+        AI-ready infrastructure but cannot be converted into an atNorth-owned GPU
+        inventory, total installed accelerators or service revenue and margin.
+    power_cooling_and_electrical_design:
+      current_location_page_marketing:
+        PUE_up_to: 1.2
+        common_power_features:
+          - N_plus_1_power_distribution
+          - redundant_power_feeds_at_rack_level
+          - UPS_backed_supply_on_reviewed_mega_site_pages
+          - generator_backup
+        generator_runtime_examples:
+          ICE01_hours_minimum: 48
+          ICE02_hours_minimum: 24
+        boundary: >-
+          Feature lists vary by page and do not disclose current unit counts,
+          ratings, OEMs, fuel inventory, testing condition or as-built topology.
+      high_density_cooling:
+        operating_architecture: closed_loop_water_cooling_at_all_operational_sites
+        several_buildings: air_cooling_only
+        supplementary_or_emergency_adiabatic_sites: 2
+        direct_liquid_cooling: supported_and_deployed
+        AI_rack_density_context_kW_range: [80, 200]
+        density_boundary: >-
+          The 80-200 kW range is an AI-era design discussion, not a disclosed
+          count of live atNorth racks at those densities.
+        named_technology_partner: CoolIT_Systems
+        exact_chiller_CRAH_CRAC_CDU_pump_heat_exchanger_and_rack_inventory: undisclosed
+      heat_reuse:
+        active_at_end_2025: [SWE01, FIN02]
+        operating_sites_denominator_at_end_2025: 7
+        FIN02_offtaker: Kesko
+        SWE01_offtaker: Stockholm_Exergi
+        DEN01_delivery_target: 2028
+        boundary: Offtake volume depends on IT load, permits, temperature, weather and local infrastructure.
+    measured_environmental_performance_2025:
+      weighted_average_PUE: 1.21
+      prior_2024_weighted_average_PUE: 1.28
+      renewable_energy_share_percent: 99.1
+      renewable_energy_MWh: 253773
+      fossil_energy_MWh: 2390
+      total_energy_MWh_arithmetic_from_components: 256163
+      total_energy_MWh_narrative_value: 256193
+      internal_report_conflict_boundary: >-
+        The component table and consolidated statement show 256,163 MWh while
+        narrative text shows 256,193 MWh. Both are retained rather than silently
+        correcting the issuer.
+      water_consumption_m3: 9600
+      prior_2024_water_consumption_m3: 10200
+      group_WUE: not_meaningfully_reportable_due_to_metering_challenges
+      current_real_time_renewable_matching_and_site_level_PUE_WUE: undisclosed
+      assurance_boundary: >-
+        Grant Thornton's limited assurance applies to consolidated GHG reporting;
+        it is not described as an audit of the full financial statements or every
+        data-center operating metric.
+    ownership_and_financial_linkage:
+      current_owner_pending_close: Partners_Group
+      proposed_2026_transaction:
+        announcement_date: 2026_02_27
+        enterprise_value_usd_billion: 4
+        regulatory_status_as_of_2026_06_report: pending_approval
+        proposed_owners:
+          CPP_Investments_percent_approximately: 60
+          Equinix_percent_approximately: 40
+        CPP_investment_usd_billion_approximately: 1.6
+        provisionally_agreed_financing_package_usd_billion: 4.2
+        boundary: >-
+          Enterprise value, sponsor equity and the provisional financing package
+          are transaction measures, not current atNorth revenue, profit, capex,
+          liquidity or confirmed post-close debt.
+      linked_companies_with_financial_profile_refs:
+        Equinix: company_equinix
+        Crusoe: company_crusoe
+        NVIDIA: company_nvidia
+      linked_without_dedicated_profile_in_current_ledger:
+        - Partners_Group
+        - CPP_Investments
+        - Opera
+        - 6G_AI_Sweden
+        - Advania
+        - CoolIT_Systems
+        - Statnett
+        - Fagne
+        - KSS_Energia
+        - Stockholm_Exergi
+        - Kesko
+      financial_profile_ref: company_atnorth
+    sources:
+      - {title: atNorth Nordic data centers, publisher: atNorth, accessed: 2026-07-19, url: "https://www.atnorth.com/nordic-data-centers/"}
+      - {title: atNorth 2025 Sustainability Report, publisher: atNorth, date: 2026-06, url: "https://www.atnorth.com/wp-content/uploads/2026/06/Sustainability-Report-2025.pdf"}
+      - {title: CPP Investments and Equinix to acquire atNorth, publisher: CPP_Investments_and_Equinix, date: 2026-02-27, url: "https://www.cppinvestments.com/newsroom/cpp-investments-and-equinix-to-acquire-atnorth-for-us4-billion/"}
+      - {title: atNorth acquisition and provisional financing, publisher: atNorth, date: 2026-02-27, url: "https://www.atnorth.com/news/cpp-investments-and-equinix-join-forces-to-acquire-atnorth-to-further-accelerate-growth-in-the-nordics/"}
+      - {title: Partners Group acquisition of atNorth, publisher: Partners_Group, date: 2021-12-21, url: "https://www.partnersgroup.com/en/news-and-views/press-releases/investment-news/detail?news_id=5176cfb1-1d85-47a8-887c-2c2e9179be12"}
+      - {title: atNorth 2022 annual-account headline, publisher: atNorth, date: 2023-07-05, url: "https://www.atnorth.com/news/atnorth-announces-highest-revenue-to-date/"}
+      - {title: atNorth expands Crusoe capacity at ICE02, publisher: atNorth_and_Crusoe, date: 2025-08-26, url: "https://www.atnorth.com/news/crusoe-expands-partnership-with-atnorth/"}
+      - {title: Opera KEF1 AI cluster, publisher: atNorth_and_Opera, date: 2025, url: "https://www.atnorth.com/blog/preparing-for-the-agentic-web-revolution/"}
+      - {title: Opera KEF1 TOP500 system, publisher: TOP500, accessed: 2026-07-19, url: "https://top500.org/system/180266/"}
+      - {title: 6G AI Sweden sovereign AI infrastructure, publisher: atNorth_and_6G_AI_Sweden, date: 2026-06, url: "https://www.atnorth.com/case-studies/sovereign-ai-infrastructure-for-swedens-national-ai-cloud/"}
+      - {title: atNorth sells Gompute to Advania, publisher: atNorth_and_Advania, date: 2025-08-20, url: "https://www.atnorth.com/news/atnorth-enhances-strategic-partnership-with-advania/"}
+      - {title: atNorth announces NOR01, publisher: atNorth, date: 2026-06-03, url: "https://www.atnorth.com/news/atnorth-expands-to-norway-with-new-mega-site-in-haugaland/"}
+      - {title: ICE01 site page, publisher: atNorth, accessed: 2026-07-19, url: "https://www.atnorth.com/nordic-data-centers/iceland-data-centers/reykjavik-metro-site/"}
+      - {title: ICE02 site page, publisher: atNorth, accessed: 2026-07-19, url: "https://www.atnorth.com/nordic-data-centers/iceland-data-centers/keflavik-mega-site/"}
+      - {title: ICE03 site page, publisher: atNorth, accessed: 2026-07-19, url: "https://www.atnorth.com/nordic-data-centers/iceland-data-centers/akureyri-mega-site/"}
+      - {title: DEN01 site page, publisher: atNorth, accessed: 2026-07-19, url: "https://www.atnorth.com/nordic-data-centers/denmark-data-centers/copenhagen-metro-site/"}
+      - {title: DEN02 site page, publisher: atNorth, accessed: 2026-07-19, url: "https://www.atnorth.com/nordic-data-centers/denmark-data-centers/varde-mega-site/"}
+      - {title: SWE01 site page, publisher: atNorth, accessed: 2026-07-19, url: "https://www.atnorth.com/nordic-data-centers/sweden-data-centers/stockholm-metro-site/"}
+      - {title: SWE02 site page, publisher: atNorth, accessed: 2026-07-19, url: "https://www.atnorth.com/nordic-data-centers/sweden-data-centers/stockholm-swe02/"}
+      - {title: SWE04 site page, publisher: atNorth, accessed: 2026-07-19, url: "https://www.atnorth.com/nordic-data-centers/sweden-data-centers/solleftea-swe04/"}
+      - {title: FIN01 site page, publisher: atNorth, accessed: 2026-07-19, url: "https://www.atnorth.com/nordic-data-centers/finland-data-centers/helsinki-metro-site-01/"}
+      - {title: FIN02 site page, publisher: atNorth, accessed: 2026-07-19, url: "https://www.atnorth.com/nordic-data-centers/finland-data-centers/helsinki-metro-site-02/"}
+      - {title: FIN03 site page, publisher: atNorth, accessed: 2026-07-19, url: "https://www.atnorth.com/nordic-data-centers/finland-data-centers/helsinki-metro-site-03/"}
+      - {title: FIN04 site page, publisher: atNorth, accessed: 2026-07-19, url: "https://www.atnorth.com/nordic-data-centers/finland-data-centers/myllykoski-mega-site/"}
+      - {title: NOR01 site page, publisher: atNorth, accessed: 2026-07-19, url: "https://www.atnorth.com/nordic-data-centers/norway-data-centers/haugaland-nor01/"}
+    confidence: high_for_site_codes_marketed_scale_operating_count_transaction_terms_selected_customer_GPU_deployments_and_2025_environmental_metrics_low_for_live_load_current_private_financials_complete_GPU_inventory_and_site_equipment_BOM
 
   - id: dc_firmus_project_southgate_australia
     name: Firmus Project Southgate Australia AI Factory program
@@ -29137,6 +29443,13 @@ disclosure_gap_register:
   - Switch_Schneider_1_9B_supply_capacity_to_purchase_orders_deliveries_installed_equipment_incurred_capex_and_site_allocation
   - Switch_Oklo_12GW_nonbinding_framework_and_Ormat_13MW_PPA_to_binding_site_specific_permitted_built_and_delivered_generation
   - Switch_Beaver_County_382_acres_to_final_site_plan_MW_grid_permits_financing_construction_customers_RFS_and_operation
+  - atNorth_8_operating_sites_13_current_codes_and_1GW_secured_power_to_physical_building_operating_energized_leased_utilized_billed_load_reconciliation
+  - atNorth_16_Iceland_only_OSM_objects_to_ICE01_ICE02_physical_buildings_and_remaining_11_official_codes_location_coverage
+  - atNorth_per_site_grid_feed_voltage_substation_transformer_switchgear_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_and_as_built_topology
+  - atNorth_ICE02_Crusoe_Opera_and_SWE01_6G_AI_Sweden_exact_GPU_models_counts_servers_racks_fabric_ownership_utilization_power_revenue_and_margin
+  - atNorth_site_level_PUE_WUE_water_renewable_matching_heat_reuse_live_liquid_cooled_MW_and_2025_energy_total_discrepancy_resolution
+  - atNorth_current_direct_accounting_revenue_operating_income_EBITDA_capex_debt_cash_flow_customer_concentration_utilization_and_ROIC
+  - atNorth_4B_pending_acquisition_1_6B_CPP_equity_and_4_2B_provisional_financing_to_regulatory_close_final_cap_table_debt_terms_and_post_close_reporting
   - AirTrunk_current_post_2024_committed_energized_and_utilized_capacity_by_campus
   - HUMAIN_AirTrunk_Saudi_exact_location_capacity_hardware_power_and_delivery_schedule
   - Equinix_280_year_end_to_281_current_facility_reconciliation
@@ -29255,7 +29568,8 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
-    - global_coverage_remaining_P1_atNorth_NorthC_Telehouse_Sabey_Cologix_CloudHQ_KDDI_GlobalSwitch_OVHcloud_official_profiles
+    - global_coverage_remaining_P1_NorthC_Telehouse_Sabey_Cologix_CloudHQ_KDDI_GlobalSwitch_OVHcloud_official_profiles
+    - atNorth_13_codes_to_physical_building_current_load_GPU_inventory_power_cooling_BOM_and_private_financials
     - Switch_20_operating_data_centers_to_complete_building_roster_current_load_GPU_inventory_power_cooling_BOM_and_private_financials
     - NEXTDC_29_labels_to_physical_building_parcel_ownership_lifecycle_and_current_load_reconciliation
     - NEXTDC_TK2_and_KL1_current_power_grid_construction_customer_acceptance_and_billing_status
