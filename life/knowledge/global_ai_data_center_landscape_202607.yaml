@@ -15977,11 +15977,18 @@ campus_profiles:
     name: Tencent Cloud global region and availability-zone portfolio
     record_granularity: provider_region_and_AZ_portfolio_not_one_physical_campus
     operator: Tencent_Cloud
-    lifecycle_as_of_2026_07_17: operating_and_expanding
+    lifecycle_as_of_2026_07_18: current_CVM_service_roster_with_sales_availability_boundaries
+    official_registry_refs:
+      records: life/imports/global_data_centers_20260717/tencent_official_region_registry.jsonl
+      summary: life/imports/global_data_centers_20260717/tencent_official_region_summary.json
+      builder: scripts/build_tencent_official_region_registry.py
     location:
       current_CVM_documentation_as_of_2026_02_12:
         region_rows_derived: 22
         availability_zone_rows_derived: 62
+        China_table: {region_rows: 12, availability_zone_rows: 40}
+        outside_China_table: {region_rows: 10, availability_zone_rows: 22}
+        availability_zones_with_different_sales_availability: 25
       China_region_inventory_with_zone_counts:
         Beijing: 6
         Shanghai: 6
@@ -16014,10 +16021,12 @@ campus_profiles:
         best_single_site_PUE: 1.20
         average_server_capacity_utilization_percent: 85
       boundary: >-
-        Tencent defines an AZ as a physical data-center area with independent
-        power and networking, but an AZ is not necessarily one campus or
-        building. The older assessment and current service table have different
-        dates and scopes and are not forced into one physical-site count.
+        Tencent defines an AZ as a physical data center within a Region with
+        separate power and networking. The service table still does not establish
+        one street-address building, campus boundary, owned asset, or energized
+        load per AZ. Its 25 asterisk rows have different sales availability and
+        are not marked closed. The older assessment and current service table
+        have different dates and scopes and are not forced into one physical-site count.
     accelerators:
       exact_GPU_accelerator_models_counts_racks_and_region_allocation: undisclosed
       AI_service_presence_does_not_establish_installed_hardware: true
@@ -16028,6 +16037,9 @@ campus_profiles:
       self_owned_data_center_green_electricity_share_2025_percent: 82.9
       leased_data_center_green_electricity_share_2025_percent: 21.4
       2025_electricity_savings_mwh: 18260
+      2025_emissions_reduction_tCO2e: 10413.7
+      leased_data_center_named_in_Zhongwei_City_2025: true
+      Zhongwei_boundary: The ESG report does not map the leased Zhongwei asset to the CVM Region or AZ ID and does not disclose its capacity.
       T_AIDC_power_efficiency_percent_more_than: 98
       T_AIDC_metric_boundary: reported_power_architecture_efficiency_not_PUE
       deployed_technologies: [liquid_cooling, indirect_evaporative_cooling, high_power_density_supply, HVDC]
@@ -16048,7 +16060,7 @@ campus_profiles:
         publisher: Tencent
         date: 2026-04-09
         url: https://static.www.tencent.com/uploads/2026/04/09/34cdfa7393ee49cd5677b28f38c68d74.pdf
-    confidence: high_for_provider_service_table_and_ESG_portfolio_metrics_low_for_physical_campus_mapping_and_GPU_inventory
+    confidence: high_for_provider_Region_AZ_ID_sales_marker_and_ESG_portfolio_metrics_low_for_physical_campus_mapping_ownership_MW_and_GPU_inventory
 
   - id: dc_tencent_qingyuan_qingxin
     name: Tencent Qingyuan Qingxin Cloud Computing Data Center
