@@ -11220,6 +11220,92 @@ campus_profiles:
       - {title: KDDI Integrated Sustainability and Financial Report 2025, publisher: KDDI, date: 2025, url: "https://www.kddi.com/extlib/files/english/corporate/ir/ir-library/sustainability-integrated-report/pdf/kddi_sir2025_e_p_OB5ud7.pdf"}
     confidence: high_for_2025_roster_labels_portfolio_headlines_selected_facility_equipment_parent_revenue_and_AI_test_boundaries_low_for_complete_current_physical_building_roster_live_load_GPU_inventory_site_economics_and_Telehouse_standalone_financials
 
+  - id: dc_kddi_japan_data_center_portfolio
+    name: KDDI and Telehouse Japan service-label and AI data-center portfolio
+    record_granularity: product_availability_labels_plus_separately_sourced_operating_and_construction_projects_not_physical_building_census
+    operator: KDDI_and_Telehouse
+    country: JP
+    lifecycle_as_of_2026_07_19: mixed_current_service_operating_AI_and_under_construction
+    official_registry_ref: life/imports/global_data_centers_20260717/kddi_japan_data_center_registry.jsonl
+    official_summary_ref: life/imports/global_data_centers_20260717/kddi_japan_data_center_summary.json
+    registry_builder_ref: scripts/build_kddi_japan_data_center_registry.py
+    current_domestic_service_scope:
+      WVS_traffic_free_product_availability_labels: 22
+      markets: 10
+      brand_counts: {Telehouse: 18, KDDI_non_Telehouse_label: 4}
+      market_counts: {Sapporo: 1, Sendai: 1, Oyama: 1, Tokyo: 10, Nagoya: 2, Osaka: 3, Okayama: 1, Hiroshima: 1, Fukuoka: 1, Naha: 1}
+      broader_current_map_areas: [Hokkaido, Miyagi, Tochigi, Toyama, Tokyo, Aichi, Osaka, Okayama, Hiroshima, Fukuoka, Okinawa]
+      Toyama_gap: broader_map_includes_Toyama_but_22_row_WVS_table_has_no_Toyama_label
+      scope_boundary: >-
+        The 22 labels show where one KDDI WVS product feature is available and
+        are not the complete domestic building or asset roster. The Tama label
+        aggregates multiple facilities, and four labels use KDDI rather than
+        Telehouse names.
+    Osaka_Sakai_AI_data_center:
+      lifecycle: operating_since_2026_01_22
+      building: {stories_above_ground: 4, cumulative_floor_area_sqm_approximately: 57000}
+      reused_assets: former_Sharp_Sakai_plant_land_building_power_and_cooling
+      network: {internet_speed_gbps_up_to: 100, closed_network: KDDI_WVS2, multicloud_gateway: true}
+      cooling: [direct_liquid_cooling, air_cooling, turbo_chillers, cooling_towers]
+      renewable_electricity_percent: 100
+      GPU_Cloud:
+        platform: NVIDIA_GB200_NVL72_by_HPE_and_other_systems
+        trial_start: 2026-01-22
+        application_start: 2026-04-01
+        service: bare_metal_compute_units_from_one_GPU_server_to_cluster
+        current_installed_system_rack_and_physical_GPU_count: undisclosed
+      historic_2024_discussion:
+        estimated_GB200_NVL72_units_assumed_to_be_supplied_by_NVIDIA: 1000
+        counterparties: [KDDI, Supermicro, Sharp, Datasection]
+        boundary: >-
+          This was an assumption in an early four-party discussion. Later KDDI-HPE
+          and operating releases confirm GB200 NVL72 systems but no quantity, so
+          1,000 is not a delivered, installed, customer-accepted, serviceable or
+          utilized 2026 count and is not multiplied into 72,000 physical GPUs.
+      current_facility_IT_grid_power_mw_and_exact_equipment_counts_OEMs: undisclosed
+    Telehouse_TOKYO_Tama_5_2nd:
+      lifecycle: under_construction_target_open_autumn_2027
+      location: Tama_City_Tokyo
+      building: {stories_above_ground: 8, stories_below_ground: 1, rack_area_sqm_approximately: 5800, racks_approximately: 1900}
+      IT_power_capacity_mw: 18
+      wider_Tama_area_total_receiving_capacity_mw_up_to: 100
+      cooling: water_cooling_ready_for_high_power_GPU_servers
+      planned_renewable_electricity_percent: 100
+      denominator_boundary: >-
+        The 18 MW facility IT-power measure and up-to-100 MW wider-area receiving
+        capacity are not additive and neither is current operating or utilized load.
+    public_map_review:
+      related_KDDI_name_or_operator_OSM_objects: 10
+      raw_operator_tagged_OSM_objects: 6
+      raw_name_only_OSM_objects: 4
+      market_counts: {Tokyo: 2, Osaka: 2, Nagoya: 1, Fukuoka: 3, Takamatsu: 1, Chikura: 1}
+      exact_current_provider_site_mappings: 0
+      Takamatsu_boundary: KDDI_named_object_outside_current_22_label_WVS_roster
+      Chikura_boundary: KDDI_submarine_cable_relay_named_telecom_object_outside_current_service_roster
+      interpretation: >-
+        The Tokyo, Osaka, Nagoya and Fukuoka objects are market evidence only
+        because their exact official service-site identity is not proven. OSM
+        object counts are not KDDI facility, ownership or operating totals.
+    ownership_finance_and_outlook:
+      parent: KDDI_Corporation
+      global_portfolio_ref: dc_telehouse_global_connectivity_portfolio
+      financial_profile_ref: company_kddi
+      data_center_operating_revenue_jpy_billion: {FY2024_3: 121, FY2025_3: 130, FY2031_3_target: 200}
+      AI_data_center_investment_through_FY2028_3_jpy_billion: 100
+      financial_boundary: >-
+        KDDI parent data-center revenue and the investment plan do not allocate
+        revenue, operating profit, capex, cash flow or returns to these 22 labels,
+        Osaka Sakai, Tama 5-2nd or any OSM object.
+    sources:
+      - {title: KDDI WVS traffic-free data-center list, publisher: KDDI, accessed: 2026-07-19, url: "https://biz.kddi.com/service/kddi-wvs/function/data-center-list/"}
+      - {title: KDDI data-center service and domestic map, publisher: KDDI, accessed: 2026-07-19, url: "https://biz.kddi.com/english/service/data-center/"}
+      - {title: Osaka Sakai Data Center commences operations, publisher: KDDI, date: 2026-01-22, url: "https://newsroom.kddi.com/english/news/detail/kddi_nr-916_4323.html"}
+      - {title: KDDI GPU Cloud launch, publisher: KDDI, date: 2025-10-28, url: "https://newsroom.kddi.com/news/detail/kddi_nr-796_4171.html"}
+      - {title: Initial Sakai four-party AI data-center discussion, publisher: KDDI, date: 2024-06-03, url: "https://newsroom.kddi.com/english/news/detail/kddi_nr_s-9_3387.html"}
+      - {title: Telehouse TOKYO Tama 5-2nd construction, publisher: KDDI, date: 2025-06-11, url: "https://biz.kddi.com/topics/2025/news/022/"}
+      - {title: KDDI Group data centers achieve 100 percent renewable electricity, publisher: KDDI, date: 2026-04-30, url: "https://news.kddi.com/kddi/corporate/csr-topic/2026/04/30/7739.html"}
+    confidence: high_for_22_WVS_labels_operating_Sakai_building_and_GPU_service_Tama_5_2nd_specs_and_OSM_scope_review_low_for_complete_domestic_physical_building_roster_exact_OSM_site_crosswalk_current_GPU_count_live_load_equipment_BOM_and_site_economics
+
   - id: dc_sabey_us_portfolio
     name: Sabey Data Centers United States portfolio
     record_granularity: seven_current_location_pages_plus_one_separately_sourced_development_pipeline_label
@@ -30411,6 +30497,11 @@ disclosure_gap_register:
   - Telehouse_current_fleet_PUE_WUE_water_energy_emissions_hourly_renewable_matching_heat_reuse_and_live_liquid_cooled_MW
   - KDDI_JPY130B_data_center_revenue_to_Telehouse_geographic_site_customer_and_service_allocation_plus_operating_profit_capex_cash_flow_and_ROIC
   - KDDI_JPY200B_FY2031_data_center_target_and_JPY100B_AI_data_center_investment_to_site_delivery_utilization_revenue_margin_and_returns
+  - KDDI_22_WVS_product_labels_broader_Toyama_map_and_Telehouse_global_roster_to_complete_domestic_physical_building_ownership_and_lifecycle_reconciliation
+  - KDDI_10_related_OSM_objects_to_exact_current_service_sites_and_Takamatsu_Chikura_telecom_infrastructure_resolution
+  - KDDI_Osaka_Sakai_current_grid_IT_load_equipment_BOM_system_rack_and_physical_GB200_GPU_inventory_utilization_revenue_margin_and_ROIC
+  - KDDI_2024_estimated_1000_GB200_NVL72_units_to_actual_order_delivery_acceptance_installation_serviceability_utilization_and_counterparty_scope_reconciliation
+  - KDDI_Tama_5_2nd_18MW_IT_power_100MW_wider_area_receiving_capacity_1900_racks_to_grid_delivery_construction_customer_acceptance_and_billed_load
   - Sabey_six_energized_campuses_seven_location_pages_eight_registry_labels_21_historical_buildings_and_homepage_three_developments_to_complete_current_physical_building_roster
   - Sabey_251MW_operating_including_76MW_powered_shell_to_energized_leased_utilized_billed_and_customer_accepted_IT_load_by_site
   - Sabey_11_OSM_objects_to_complete_Seattle_Columbia_Quincy_Ashburn_building_lifecycle_and_missing_Manhattan_Austin_Umatilla_North_Texas_map_coverage
@@ -30556,7 +30647,7 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
-    - global_coverage_remaining_P1_KDDI_GlobalSwitch_OVHcloud_official_profiles
+    - global_coverage_remaining_P1_GlobalSwitch_OVHcloud_official_profiles
     - Cologix_49_codes_to_physical_buildings_current_load_GPU_inventory_power_cooling_BOM_and_private_financials
     - Sabey_eight_labels_to_physical_buildings_current_load_GPU_inventory_power_cooling_BOM_and_private_financials
     - Telehouse_31_labels_to_physical_buildings_current_load_GPU_inventory_power_cooling_BOM_and_KDDI_site_economics

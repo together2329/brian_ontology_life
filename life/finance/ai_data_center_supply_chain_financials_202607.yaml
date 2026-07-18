@@ -12970,6 +12970,7 @@ financial_profiles:
     ticker_context: Tokyo_9433
     ownership_status: public_parent_of_Telehouse_business
     portfolio_ref: dc_telehouse_global_connectivity_portfolio
+    additional_domestic_portfolio_ref: dc_kddi_japan_data_center_portfolio
     reporting_boundary: >-
       KDDI reports consolidated and Business Services segment results plus a
       data-center operating-revenue KPI. Telehouse legal entities, individual
@@ -13026,6 +13027,30 @@ financial_profiles:
       label_and_site_boundary: >-
         City and campus labels aggregate multiple facilities. More-than-45 sites
         and average MVA cannot be multiplied into live, leased, utilized or billed IT load.
+    KDDI_Japan_service_and_project_scope:
+      WVS_traffic_free_product_labels: 22
+      WVS_markets: 10
+      Telehouse_labels: 18
+      KDDI_non_Telehouse_labels: 4
+      broader_map_includes_Toyama_without_WVS_table_label: true
+      Osaka_Sakai:
+        status: operating_since_2026_01_22
+        floor_area_sqm_approximately: 57000
+        cooling: direct_liquid_plus_air_with_turbo_chillers_and_cooling_towers
+        renewable_electricity_percent: 100
+        GPU_service: NVIDIA_GB200_NVL72_KDDI_GPU_Cloud
+        current_installed_system_rack_and_physical_GPU_count: undisclosed
+        2024_discussion_estimated_GB200_NVL72_units: 1000
+        estimate_boundary: early_discussion_assumption_not_confirmed_2026_delivery_installation_or_utilization
+      Telehouse_TOKYO_Tama_5_2nd:
+        status: under_construction_target_open_autumn_2027
+        racks_approximately: 1900
+        IT_power_capacity_mw: 18
+        wider_Tama_receiving_capacity_mw_up_to: 100
+      boundary: >-
+        Product labels, market map, physical buildings, Sakai operation, Tama
+        construction, IT power, receiving capacity and the 2024 accelerator
+        estimate use different scopes and are not added.
     accelerator_and_AI_infrastructure_boundary:
       Telehouse_or_KDDI_owned_production_GPU_inventory: undisclosed
       Telehouse_South_liquid_cooling_lab:
@@ -13100,6 +13125,12 @@ financial_profiles:
       - Super_Micro_Computer
       - Nidec
       - Shinohara_Electric
+      - Hewlett_Packard_Enterprise
+      - NVIDIA
+      - Google
+      - Takeda_Pharmaceutical
+      - Sharp
+      - Datasection
     sources:
       - {title: KDDI FY2026 result and FY2027 forecast, publisher: KDDI, date: 2026-05-12, url: "https://www.kddi.com/english/corporate/ir/finance/result-forecast/"}
       - {title: KDDI company overview and data-center revenue trend, publisher: KDDI, accessed: 2026-07-19, url: "https://www.kddi.com/extlib/files/english/corporate/ir/ataglance/index/kddi_overview_e.pdf"}
@@ -13108,6 +13139,11 @@ financial_profiles:
       - {title: Telehouse London South liquid cooling lab, publisher: Telehouse_Europe, date: 2025-01-13, url: "https://www.telehouse.net/news/telehouse-launches-pioneering-liquid-cooling-lab/"}
       - {title: KDDI Shibuya AI data-center verification environment, publisher: KDDI, date: 2025-02-25, url: "https://newsroom.kddi.com/english/news/detail/kddi_nr-454_3732.html"}
       - {title: KDDI Group data centers achieve 100 percent renewable electricity, publisher: KDDI, date: 2026-04-30, url: "https://news.kddi.com/kddi/corporate/csr-topic/2026/04/30/7739.html"}
+      - {title: KDDI WVS traffic-free data-center list, publisher: KDDI, accessed: 2026-07-19, url: "https://biz.kddi.com/service/kddi-wvs/function/data-center-list/"}
+      - {title: Osaka Sakai Data Center commences operations, publisher: KDDI, date: 2026-01-22, url: "https://newsroom.kddi.com/english/news/detail/kddi_nr-916_4323.html"}
+      - {title: KDDI GPU Cloud launch, publisher: KDDI, date: 2025-10-28, url: "https://newsroom.kddi.com/news/detail/kddi_nr-796_4171.html"}
+      - {title: Initial Sakai four-party AI data-center discussion, publisher: KDDI, date: 2024-06-03, url: "https://newsroom.kddi.com/english/news/detail/kddi_nr_s-9_3387.html"}
+      - {title: Telehouse TOKYO Tama 5-2nd construction, publisher: KDDI, date: 2025-06-11, url: "https://biz.kddi.com/topics/2025/news/022/"}
     confidence: high_for_parent_and_segment_financials_data_center_revenue_KPI_portfolio_headlines_selected_equipment_AI_tests_and_renewable_claim_low_for_Telehouse_standalone_profit_capex_cash_flow_site_economics_live_load_and_GPU_inventory
 
   - id: company_sabey_data_centers
@@ -13515,6 +13551,11 @@ financial_profiles:
 
 cross_company_read_through:
   current_signals:
+    - KDDI's WVS product page publishes 22 current domestic service labels across ten markets: 18 Telehouse names and four KDDI names. The broader domestic map also includes Toyama without a WVS table label, and the Tama label aggregates facilities, so 22 is a product-availability roster rather than a complete Japanese building count.
+    - Osaka Sakai began operation on 22 January 2026 in a repurposed four-story, approximately 57,000-square-metre former Sharp plant facility. KDDI confirms direct-liquid and air cooling, turbo chillers, cooling towers, 100% renewable electricity and KDDI GPU Cloud using NVIDIA GB200 NVL72 systems, but discloses no facility MW or current system, rack or physical GPU count.
+    - A 2024 four-party Sakai discussion assumed that NVIDIA would supply an estimated 1,000 GB200 NVL72 units. Later KDDI-HPE and operating releases confirm the platform but no quantity, so the old estimate is not treated as 1,000 installed systems or multiplied into 72,000 GPUs.
+    - Telehouse TOKYO Tama 5-2nd is under construction for autumn 2027 with approximately 1,900 racks, 18 MW of IT power, water-cooling support and 100% planned renewable electricity. The wider Tama area's up-to-100-MW receiving capacity is a different denominator and is not current load.
+    - Ten KDDI name- or operator-related OSM objects were reviewed: six carry an operator tag and four are name-only. Eight are retained only as Tokyo, Osaka, Nagoya or Fukuoka market evidence; Takamatsu and the Chikura submarine-cable relay named object sit outside the 22-label WVS roster.
     - CloudHQ's current directory exposes 20 campus pages while the company headline says 23 global campuses. The current cards sum to 5,136.4 MW total and 4,028.4 MW available critical load, but mix operating, contracted, construction, development and planned capacity and cannot be treated as live fleet load.
     - The 2026 LC1A/LC2 securitization presale confirms two completed operating Ashburn data centers with 1,054,211 gross square feet, 160 MW leased and ramped critical load, two investment-grade tenants and 14.2 years of weighted average lease term. This operating pool is not the 5.2-GW-plus portfolio.
     - The two-asset pool reports USD110.7 million of annualized adjusted base rent, USD2.002 billion appraisal, USD1.101 billion S&P value and USD1.4 billion proposed notes. These are asset-pool contract, collateral and financing measures rather than CloudHQ consolidated revenue, enterprise value or net debt.
