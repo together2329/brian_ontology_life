@@ -32450,7 +32450,222 @@ campus_profiles:
       - {title: FY2025 investor presentation, publisher: SoftBank_Corp, date: 2026-05-11, url: "https://www.softbank.jp/en/corp/set/data/ir/documents/presentations/fy2025/investors/pdf/sbkk_investors_presentation_20260511_en.pdf"}
     confidence: high_for_current_directory_succession_financial_boundary_selected_facility_engineering_and_companywide_GPU_milestones_medium_for_Kitakyushu_OSM_building_identity_low_for_exact_physical_roster_site_GPU_allocation_live_load_complete_BOM_and_site_economics
 
+  - id: dc_virtus_europe_portfolio
+    name: VIRTUS Data Centres UK Germany and Italy portfolio
+    record_granularity: current_provider_facility_codes_with_separate_statutory_live_portfolio_campus_OSM_and_AI_case_study_layers
+    operator: VIRTUS Data Centres
+    country_scope: [GB, DE, IT]
+    registry_refs:
+      facility_records: life/imports/global_data_centers_20260717/virtus_official_facility_registry.jsonl
+      summary: life/imports/global_data_centers_20260717/virtus_official_facility_summary.json
+      builder: scripts/build_virtus_official_facility_registry.py
+    current_provider_roster:
+      facility_codes: 32
+      by_country: {GB: 18, DE: 13, IT: 1}
+      UK_codes: [LONDON1, LONDON2, LONDON3, LONDON4, LONDON5, LONDON6, LONDON7, LONDON8, LONDON9, LONDON10, LONDON11, LONDON12, LONDON14, LONDON15, LONDON16, LONDON17, LONDON18, LONDON19]
+      Germany_codes: [BERLIN1, BERLIN2, BERLIN3, BERLIN4, BERLIN5, BERLIN6, BERLIN7, BERLIN8, BERLIN9, BERLIN10, BERLIN11, BERLIN12, BERLIN13]
+      Italy_codes: [MILAN1]
+      lifecycle_boundary: >-
+        The roster combines operating UK facilities, advanced developments,
+        construction and announced continental projects. Facility codes are
+        not a current physical-building, energized, leased or utilized census.
+    capacity_reconciliation:
+      current_marketing_and_code_checksums_mw:
+        UK_exact_code_sum_mixed_lifecycle: 338.3
+        Germany_exact_code_sum_all_development: 261.6
+        Germany_current_marketing_rounded: 260
+        Italy_current_page_development: 48
+        Europe_mixed_lifecycle_checksum: 647.9
+      FY2024_statutory_portfolio:
+        fully_live_UK_sites: 11
+        live_sites_contracted_percent: 98
+        contracted_mw: 181.8
+        billable_mw: 179.3
+        UK_total_design_capacity_mw: 302.7
+        European_projects_design_capacity_mw: 303.6
+        total_design_capacity_mw: 606.3
+        advanced_development: [LONDON12, LONDON14]
+        LONDON12_and_LONDON14_sellable_capacity_mw: 43
+        new_sites_brought_live_during_2024: 0
+      boundary: >-
+        The 647.9-MW July 2026 code checksum is not operating capacity. The
+        audited FY2024 179.3-MW billable, 181.8-MW contracted and 606.3-MW
+        design measures use a dated statutory perimeter and are not silently
+        reconciled to newer codes, capacity revisions or projects.
+    UK_facility_engineering:
+      LONDON1: {locality: Enfield, design_IT_mw: 4.3, NTM_sqm_more_than: 2900, incoming_MVA: 8, UPS: N_plus_N, generators: N_plus_1_with_48_hour_fuel, cooling: N_plus_1_chilled_water_free_cooling, design_PUE_less_than: 1.6}
+      LONDON2:
+        locality: Hayes
+        design_IT_mw: 12.2
+        NTM_sqm_more_than: 6000
+        incoming_MVA: 20
+        UPS: N_plus_N
+        generators: N_plus_1_with_48_hour_fuel
+        cooling: indirect_adiabatic_plus_air_flooded_room_and_free_cooling
+        PUE_publication_conflict: front_page_below_1_2_vs_body_below_1_3
+      LONDON3: {campus: Slough, design_IT_mw: 7.2, NTM_sqm_more_than: 3000, incoming_MVA: 10, UPS: N_plus_N, generators: N_plus_1_with_48_hour_fuel, design_PUE_less_than: 1.3}
+      LONDON4: {campus: Slough, design_IT_mw: 27, NTM_sqm_more_than: 10600, incoming_MVA: 40, UPS: N_plus_N, generators: N_plus_1_with_48_hour_fuel, design_PUE_less_than: 1.3}
+      LONDON5: {campus: Stockley_Park, design_IT_mw: 24, NTM_sqm_more_than: 10000, incoming_MVA: 36, liquid_cooling_ready: true}
+      LONDON6: {campus: Stockley_Park, design_IT_mw: 16, NTM_sqm_more_than: 7000, incoming_MVA: 24, liquid_cooling_ready: true}
+      LONDON7: {campus: Stockley_Park, design_IT_mw: 32.5, NTM_sqm_more_than: 13000, incoming_MVA: 49, liquid_cooling_ready: true}
+      LONDON8:
+        campus: Stockley_Park
+        design_IT_mw_from_campus_sheet: 18
+        incoming_MVA: 24
+        NTM_publication_conflict_sqm: [6000, 7000]
+        liquid_cooling_ready: true
+      LONDON9: {campus: Slough, design_IT_mw: 24, NTM_sqm_more_than: 10000, incoming_MVA: 40, liquid_cooling_ready: true}
+      LONDON10: {campus: Slough, design_IT_mw: 6.6, NTM_sqm_more_than: 3000, incoming_MVA: 11}
+      LONDON11: {campus: Slough, design_IT_mw: 13, NTM_sqm_more_than: 5500, incoming_MVA: 22}
+      LONDON12:
+        lifecycle: advanced_development_at_FY2024_year_end_current_RFS_not_provider_confirmed
+        design_IT_mw: 21
+        NTM_sqm_more_than: 7800
+        liquid_cooling: [direct_to_chip, immersion, rear_door_heat_exchanger]
+        rack_density_kW_more_than: 80
+      LONDON14:
+        lifecycle: advanced_development_at_FY2024_year_end_current_RFS_not_provider_confirmed
+        design_IT_mw_from_campus_sheet: 22
+        NTM_sqm: 8400
+        liquid_cooling: [direct_to_chip, immersion, rear_door_heat_exchanger]
+        environmental_permit:
+          effective: 2025-03-04
+          emergency_generators: 16
+          OEM: Finning_Caterpillar
+          annual_testing_hours_total: 20
+          full_load_testing_hours: 16
+          SCR_on_all_generators: true
+      Saunderton_LONDON15_to_LONDON18:
+        lifecycle: development_under_construction_current_RFS_not_provider_confirmed
+        current_spec_code_capacity_mw: {LONDON15: 9.5, LONDON16: 22.5, LONDON17: 16, LONDON18: 30}
+        current_spec_total_mw: 78
+        historical_release_total_mw: 75
+        historical_grid_contract_MVA: 120
+        historic_target: Q2_2026
+        rack_density_kW_more_than: 100
+        UPS: centralized_N_plus_1
+        generators: N_plus_1_LV_DCC_with_48_hour_fuel
+        cooling: N_plus_1_chilled_water_free_cooling_and_liquid_ready
+        design_PUE_less_than: 1.2
+      LONDON19:
+        lifecycle: development_with_planning_secured_and_construction_to_start_after_design_approval
+        design_IT_mw: 32.5
+        NTM_sqm_more_than: 8500
+        powered_shell_partner: SEGRO
+        UPS: centralized_N_plus_1
+        generators: N_plus_1_LV_DCC_with_48_hour_fuel
+        cooling: chilled_water_free_cooling_and_liquid_ready
+        design_PUE_less_than: 1.3
+        BREEAM_target: Excellent
+        future_heat_export: true
+    campus_publication_conflicts:
+      Slough:
+        page_capacity_mw_more_than: 138
+        page_facilities: 7
+        header_also_says_facilities: 6
+        exact_current_code_sum_mw: 131.3
+      Stockley_Park:
+        specification_facilities: 5
+        page_body_also_says_facilities: 4
+        exact_code_sum_mw: 112.5
+        NTM_sqm: 45400
+      boundary: Published conflicts are preserved rather than forced into a false operating-site or capacity total.
+    continental_development_engineering:
+      Marienpark_BERLIN1_to_BERLIN4:
+        lifecycle: development_current_target_2027
+        buildings: 4
+        design_IT_mw_each: 14.4
+        design_IT_mw_total: 57.6
+        NTM_sqm_total: 19200
+        historic_incoming_MVA_at_least: 90
+        UPS: centralized_N_plus_1
+        generators: N_plus_1_LV_DCC_with_48_hour_fuel
+        cooling: N_plus_1_chilled_water_free_cooling
+        design_PUE_less_than: 1.2
+        target_conflict: historic_BERLIN1_2026_vs_current_2027
+      Wustermark_BERLIN5_to_BERLIN13:
+        lifecycle: development_current_projected_early_2028
+        buildings: 9
+        design_IT_mw: {BERLIN5: 24, BERLIN6: 24, BERLIN7: 24, BERLIN8: 24, BERLIN9: 24, BERLIN10: 24, BERLIN11: 24, BERLIN12: 24, BERLIN13: 12}
+        design_IT_mw_total: 204
+        land_sqm_more_than: 350000
+        grid:
+          direct_connections_to_50Hertz_380kV: 2
+          super_grid_transformers: {count: 2, rating_MVA_each: 185, type: oil_filled}
+          dedicated_substation_mw: 500
+          initial_capacity_mw: 300
+          expandable: true
+        UPS: centralized_N_plus_1
+        generation: N_plus_1_LV_DCC_48_hour_HVO_compatible_with_optional_generatorless_customer_design
+        cooling: N_plus_1_closed_loop_chilled_water_air_and_liquid_to_liquid_compatible
+        design_PUE: 1.2
+        boundary: The historic EUR3-billion 300-MW project, 204-MW IT code sum, 300-MW initial grid capacity and 500-MW substation use different denominators.
+      MILAN1:
+        lifecycle: development_current_RFS_2028
+        current_page_IT_mw: 48
+        older_spec_IT_mw: 42
+        grid_MVA: 70
+        brownfield_site_sqm: 71000
+        zoned_facility_sqm: 44000
+        UPS: N_plus_N
+        generators: N_plus_1_with_48_hour_fuel
+        cooling: N_plus_1_chilled_water_free_cooling
+        design_PUE_less_than: 1.3
+        publication_conflict: older_42MW_RFS_2027_vs_current_48MW_RFS_2028
+    accelerator_and_AI_boundary:
+      provider_case_study:
+        customer: unnamed_Customer_A
+        in_operation_since: 2021
+        workload: multi_MW_AI
+        cooling: [direct_to_chip_single_phase_liquid, rear_door_heat_exchanger]
+        multiple_racks_weight_more_than_standard_air_cooled: 3x
+        load_test: industrial_boiler_and_thermal_store
+        operational_PUE_less_than: 1.1
+        host_site: undisclosed
+      provider_owned_GPU_model_count: undisclosed
+      customer_GPU_model_count_owner_and_utilization: undisclosed
+      accelerator_ledger_action: no_numeric_row_created
+      boundary: Liquid-cooling readiness, rack-density ceilings and an unnamed customer deployment do not establish a VIRTUS-owned accelerator fleet.
+    public_map_crosswalk:
+      related_named_OSM_objects: 11
+      operator_tagged_OSM_objects: 8
+      matched_codes: [LONDON1, LONDON2, LONDON3, LONDON4, LONDON5, LONDON6, LONDON7, LONDON8, LONDON9, LONDON10, LONDON11]
+      boundary: One polygon names LONDON3 and LONDON4 and another names LONDON3; the overlap is retained rather than counted as a provider-certified building census.
+    linked_companies:
+      majority_owner_percent: {STT_Global_Data_Centres: 60}
+      minority_owner_percent: {Macquarie_Asset_Management_MEIF7: 40}
+      immediate_parent: [STT_VIRTUS_Holdco_Limited_Guernsey]
+      ultimate_parent_and_controlling_party: [Temasek_Holdings_Private_Limited]
+      powered_shell_partner: [SEGRO]
+      disclosed_generator_supplier_LONDON14: [Finning, Caterpillar]
+      financial_profile_refs: [company_virtus_data_centres]
+    sources:
+      - {title: Current facility downloads directory, publisher: VIRTUS_Data_Centres, accessed: 2026-07-19, url: "https://virtusdatacentres.com/media-centre/downloads"}
+      - {title: Current UK locations, publisher: VIRTUS_Data_Centres, accessed: 2026-07-19, url: "https://virtusdatacentres.com/locations/uk"}
+      - {title: Current Germany locations, publisher: VIRTUS_Data_Centres, accessed: 2026-07-19, url: "https://virtusdatacentres.com/locations/germany"}
+      - {title: Stockley Park campus specification, publisher: VIRTUS_Data_Centres, date: 2025-06-10, url: "https://virtusdatacentres.com/media/attachments/2025/06/10/virtus_spec_sheet_stockley-park-campus-v3.4.pdf"}
+      - {title: LONDON14 environmental permit issued, publisher: UK_Environment_Agency, date: 2025-03-11, url: "https://www.gov.uk/government/publications/ub3-1qf-virtus-holdco-limited-environmental-permit-issued-eprup3624swa001"}
+      - {title: LONDON14 generator testing and maintenance declaration, publisher: VIRTUS_LONDON14_Limited_via_Hillingdon_Planning, date: 2025-07-10, url: "https://planning.hillingdon.gov.uk/OcellaWeb/viewDocument?file=dv_pl_files%5C18399_APP_2025_1908%5CFormal+Declaration.pdf&module=pl"}
+      - {title: Saunderton campus specification, publisher: VIRTUS_Data_Centres, date: 2026-04-15, url: "https://virtusdatacentres.com/media/attachments/2026/04/15/virtus_spec_sheet_saunderton-campus-v2.pdf"}
+      - {title: LONDON19 specification, publisher: VIRTUS_Data_Centres, date: 2026-07-03, url: "https://virtusdatacentres.com/media/attachments/2026/07/03/virtus_spec_sheet_london19.pdf"}
+      - {title: Wustermark super-grid transformer installation, publisher: VIRTUS_Data_Centres, date: 2026, url: "https://de.virtusdatacentres.com/presseerklarungen/virtus-installs-two-of-europes-largest-super-grid-transformers-at-wustermark-campus-in-brandenburg"}
+      - {title: MILAN1 current location page, publisher: VIRTUS_Data_Centres, accessed: 2026-07-19, url: "https://virtusdatacentres.com/locations/eu/italy-data-centres-milan-1"}
+      - {title: AI proven case study, publisher: VIRTUS_Data_Centres, date: 2025-03-13, url: "https://virtusdatacentres.com/media/attachments/2025/03/14/virtus_case_study_ai-proven_130325.pdf"}
+      - {title: VIRTUS Holdco consolidated accounts, publisher: UK_Companies_House, date: 2025-08-26, url: "https://find-and-update.company-information.service.gov.uk/company/07670473/filing-history/MzQ3ODYxNTQzOWFkaXF6a2N4/document?format=pdf&download=1"}
+    confidence: high_for_32_code_roster_provider_capacity_engineering_FY2024_statutory_portfolio_financial_boundary_ownership_and_OSM_transcription_medium_for_current_LONDON12_LONDON14_and_Saunderton_lifecycle_low_for_exact_current_physical_building_roster_live_load_GPU_inventory_complete_as_built_BOM_and_site_economics
+
 disclosure_gap_register:
+  - VIRTUS_32_provider_codes_to_exact_non_overlapping_physical_buildings_parcels_title_lease_and_current_lifecycle
+  - VIRTUS_FY2024_11_live_sites_179_3MW_billable_181_8MW_contracted_606_3MW_design_to_2026_647_9MW_mixed_code_checksum_reconciliation
+  - VIRTUS_UK_338_3MW_Germany_261_6MW_Italy_48MW_to_operating_energized_leased_utilized_billed_and_actual_metered_IT_load_by_site
+  - VIRTUS_LONDON12_LONDON14_Saunderton_current_RFS_grid_energization_customer_acceptance_billing_and_completion
+  - VIRTUS_Slough_six_seven_facility_138MW_vs_131_3MW_and_Stockley_four_five_facility_publication_conflicts
+  - VIRTUS_Wustermark_204MW_IT_300MW_project_grid_500MW_substation_and_transformer_capacity_scope_reconciliation
+  - VIRTUS_Marienpark_Wustermark_Milan_LONDON19_land_grid_permit_financing_construction_customer_and_RFS_progress
+  - VIRTUS_per_site_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CDU_models_counts_ratings_OEMs_and_as_built_topology
+  - VIRTUS_per_site_measured_PUE_WUE_water_energy_hourly_renewable_matching_heat_reuse_and_live_liquid_cooled_MW
+  - VIRTUS_AI_case_study_exact_customer_host_site_GPU_models_counts_racks_fabric_owner_power_utilization_revenue_and_margin
+  - VIRTUS_site_level_revenue_operating_profit_capex_debt_customer_concentration_utilization_and_ROIC
   - SoftBank_inherited_IDCF_nine_location_labels_to_exact_non_overlapping_physical_buildings_parcels_title_lease_and_current_lifecycle
   - SoftBank_current_Kitakyushu_and_Shirakawa_physical_building_counts_per_building_RFS_live_load_and_customer_acceptance
   - SoftBank_Ikoma_first_building_current_MW_floor_area_rooms_racks_load_and_second_building_delivery

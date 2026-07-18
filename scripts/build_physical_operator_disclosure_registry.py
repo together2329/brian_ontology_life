@@ -95,6 +95,7 @@ SPECS = [
     spec("Kumo_Networks", "company_kumo_networks", ["dc_kumo_spain_legacy_kio_portfolio"], "Spain", "private_subsidiary_with_parent_segment_look_through", "two current operating Tier IV sites in Murcia and Paterna under El Corte Ingles ownership", "Current Kumo facilities, legacy KIO Networks Espana OSM labels, published equipment ratings and the wider parent Surface Commercialization segment use different physical, ownership and financial scopes.", ["life/imports/global_data_centers_20260717/kio_official_facility_summary.json"]),
     spec("OPCORE", "company_opcore", ["dc_opcore_france_poland_and_paris_area_portfolio"], "France_and_Poland", "private_joint_venture_with_public_parent_affiliate_look_through", "seven current French provider pages, five Polish marketed addresses with at least six physical buildings, two separately scoped development records and 730 MW secured or under construction in the Paris area", "Provider pages, marketed addresses, physical buildings, legal establishments, OSM objects, utility feeds, IT load, development power, affiliate financials and installed GPUs use different scopes.", ["life/imports/global_data_centers_20260717/opcore_official_facility_registry.jsonl", "life/imports/global_data_centers_20260717/opcore_official_facility_summary.json"]),
     spec("SoftBank_inherited_IDCF_data_centers", "company_softbank_corp", ["dc_softbank_inherited_idcf_japan_data_center_portfolio"], "Japan", "public_parent_with_segment_and_transferred_business_boundary", "nine current provider location labels comprising eight operating labels and one Tomakomai development after SoftBank's 2026-04-01 succession", "Provider labels, physical buildings, expansion ceilings, OSM footprints, SoftBank group and Enterprise financials, transferred-division revenue and companywide GPUs use different scopes.", ["life/imports/global_data_centers_20260717/softbank_idcf_data_center_registry.jsonl", "life/imports/global_data_centers_20260717/softbank_idcf_data_center_summary.json"]),
+    spec("VIRTUS_Data_Centres", "company_virtus_data_centres", ["dc_virtus_europe_portfolio"], "United_Kingdom_Germany_and_Italy", "private_with_statutory_consolidated_group_financials", "32 current facility codes with a 647.9-MW mixed-lifecycle checksum versus 11 fully live UK sites and 179.3 MW billable at FY2024 year-end", "Facility codes, OSM objects, operating sites, design IT MW, grid MVA, billable and contracted MW, customer GPUs and statutory group financials use different scopes.", ["life/imports/global_data_centers_20260717/virtus_official_facility_registry.jsonl", "life/imports/global_data_centers_20260717/virtus_official_facility_summary.json"]),
 ]
 
 
@@ -138,7 +139,7 @@ def load_index(path: Path, key: str) -> dict[str, dict]:
 def build_records(finance_path: Path, landscape_path: Path, accessed_on: str) -> list[dict]:
     finance = load_index(finance_path, "financial_profiles")
     landscape = load_index(landscape_path, "campus_profiles")
-    assert len(SPECS) == 52
+    assert len(SPECS) == 53
     assert len({row["company"] for row in SPECS}) == len(SPECS)
     records = []
     for position, source in enumerate(SPECS, start=1):
