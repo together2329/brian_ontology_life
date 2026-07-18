@@ -75,6 +75,7 @@ PROFILED = [
     entity("Cologix", ["Cologix"], "reviewed_physical_operator_profile", ["dc_cologix_north_america_portfolio", "company_cologix", "cologix_official_facility_registry.jsonl"], "Forty-nine provider codes, shared-address suites, company and market counts, OSM objects, design power, customer GPUs and private financing use different scopes."),
     entity("CloudHQ", ["CloudHQ"], "reviewed_physical_operator_profile", ["dc_cloudhq_global_portfolio", "company_cloudhq", "cloudhq_official_campus_registry.jsonl"], "Twenty current campus pages, a twenty-three-campus headline, mixed-lifecycle card MW, two operating ABS assets and OSM objects use different scopes."),
     entity("Global_Switch", ["Global Switch"], "reviewed_physical_operator_profile", ["dc_global_switch_europe_apac_portfolio", "company_global_switch", "global_switch_official_facility_registry.jsonl"], "Sixteen numeric directory labels, two coming-soon markets, eight ESG campuses, legal properties, OSM objects, utility MVA and saleable MW use different scopes."),
+    entity("OVHcloud", ["OVHcloud", "OVH", "OVH GmbH", "OVH Sp. z o.o."], "reviewed_physical_operator_profile", ["dc_ovhcloud_global_owned_and_shared_portfolio", "company_ovhcloud", "ovhcloud_official_location_registry.jsonl"], "Nineteen current region rows, 46 datacenters, 23 availability zones, 31 FY2025 directly held facilities, shared sites, OSM objects, servers and GPUs use different scopes."),
     entity("DATA4", ["Data4", "data4", "Data4 Italia", "DATA4"], "reviewed_physical_operator_profile", ["dc_data4_european_portfolio", "company_data4"], "Published power terms vary between IT, reserve, total and available energy."),
     entity("AirTrunk", ["AirTrunk"], "reviewed_physical_operator_profile", ["dc_airtrunk_apac_portfolio", "company_airtrunk"], "Campus design capacity is not current live load."),
     entity("Aligned_Data_Centers", ["Aligned", "Aligned Data Centers", "Aligned Data Centres", "ODATA"], "reviewed_physical_operator_profile", ["dc_aligned_north_america_public_directory", "dc_odata_aligned_latam_portfolio", "company_aligned_data_centers"], "ODATA and Aligned labels are joined at current platform level, not treated as identical facility brands historically."),
@@ -100,7 +101,6 @@ PRIORITY_GAPS = {
     for entity_name, priority, names in [
         ("atNorth", "P1", ["atNorth"]),
         ("Switch", "P1", ["Switch"]),
-        ("OVHcloud", "P1", ["OVHcloud"]),
         ("Bouygues_Telecom", "P2", ["Bouygues Telecom", "Bouygues Télécom"]),
         ("SFR", "P2", ["SFR"]),
         ("Verizon", "P2", ["Verizon"]),
@@ -268,7 +268,7 @@ def build_summary(rows: list[dict], operator_records: list[dict], country_record
         "priority_unreviewed_operator_entities": ranked,
         "priority_method": "P1 core physical operators first, then P2 operators and telecom platforms; mapped-object count breaks ties but is not market share.",
         "next_sequence": [
-            "Complete P1 official facility roster, lifecycle and scale profiles in ranked order.",
+            "The ranked P1 official facility, lifecycle and scale profile baseline is complete; proceed through P2 operators and telecom platforms.",
             "Join site-level power, cooling and accelerator evidence without converting readiness into installed inventory.",
             "Join audited company or parent financials and preserve segment boundaries.",
             "Resolve high-count raw labels and legacy subsidiaries before expanding low-count country tails.",

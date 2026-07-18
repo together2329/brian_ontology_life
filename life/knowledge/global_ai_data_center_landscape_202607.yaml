@@ -11954,6 +11954,190 @@ campus_profiles:
       - {title: Singapore technical profiles, publisher: Global_Switch, accessed: 2026-07-19, url: "https://www.globalswitch.com/locations/singapore-data-centres/"}
     confidence: high_for_current_directory_2025_audited_financial_portfolio_ESG_legal_property_selected_engineering_liquid_cooling_and_OSM_evidence_low_for_directory_MW_definition_complete_physical_building_roster_Bangkok_detail_GPU_inventory_exact_equipment_BOM_site_load_and_site_economics
 
+  - id: dc_ovhcloud_global_owned_and_shared_portfolio
+    name: OVHcloud global owned and shared cloud infrastructure portfolio
+    record_granularity: current_provider_region_locations_with_aggregate_datacenter_and_AZ_counts_not_uniform_physical_buildings_or_properties
+    operator: OVHcloud
+    countries: [FR, IT, DE, PL, GB, CA, US, AU, SG, IN]
+    lifecycle_as_of_2026_07_19: current_operating_locations_with_recent_three_AZ_expansion_and_future_Berlin_plan
+    official_location_registry_ref: life/imports/global_data_centers_20260717/ovhcloud_official_location_registry.jsonl
+    official_location_summary_ref: life/imports/global_data_centers_20260717/ovhcloud_official_location_summary.json
+    registry_builder_ref: scripts/build_ovhcloud_official_location_registry.py
+    current_published_scale:
+      current_region_location_rows: 19
+      current_datacenter_count_checksum: 46
+      current_availability_zone_checksum: 23
+      current_location_table_country_count: 10
+      current_marketing_country_headline: 9
+      current_marketing_additional_datacenters_planned: 7
+      FY2025_URD_datacenters: 44
+      FY2025_URD_sites: 18
+      FY2025_URD_countries: 10
+      FY2025_installed_servers: 500000
+      FY2025_servers_produced: 58000
+      FY2025_directly_held_datacenters: 31
+      FY2025_shared_or_not_directly_operated_arithmetic_remainder: 13
+      scope_boundary: >-
+        The current table's 19 rows, 46 datacenters and 23 availability zones,
+        its nine-country marketing text, the FY2025 44-datacenter/18-site
+        headline, 31 directly held assets, shared facilities, 500,000 servers
+        and OSM objects are different geographic, physical, ownership and IT
+        denominators. The 44-to-46 change is not current utilized load.
+    current_location_table:
+      Europe:
+        datacenters: 29
+        locations:
+          Bordeaux: {country: FR, opened: 2023, AZ: 1, DC: 1}
+          Croix: {country: FR, opened: 2023, AZ: 1, DC: 1}
+          Gravelines: {country: FR, opened: 2013, AZ: 1, DC: 4}
+          Grenoble: {country: FR, opened: 2023, AZ: 1, DC: 1}
+          Paris: {country: FR, opened: 2024, AZ: 3, DC: 3}
+          Roubaix: {country: FR, opened: 2006, AZ: 1, DC: 9}
+          Strasbourg: {country: FR, opened: 2012, AZ: 1, DC: 2}
+          Tours: {country: FR, opened: 2023, AZ: 1, DC: 1}
+          Milan: {country: IT, opened: 2025, AZ: 3, DC: 3}
+          Frankfurt_Limburg: {country: DE, opened: 2016, AZ: 1, DC: 2}
+          Warsaw_Ozarow: {country: PL, opened: 2016, AZ: 1, DC: 1}
+          London_Erith: {country: GB, opened: 2016, AZ: 1, DC: 1}
+      North_America:
+        datacenters: 11
+        locations:
+          Montreal_Beauharnois: {country: CA, opened: 2012, AZ: 1, DC: 8}
+          Toronto_Cambridge: {country: CA, opened: 2024, AZ: 1, DC: 1}
+          Seattle_Hillsboro: {country: US, opened: 2017, AZ: 1, DC: 1}
+          Washington_DC_Vint_Hill: {country: US, opened: 2016, AZ: 1, DC: 1}
+      Asia_Pacific:
+        datacenters: 6
+        locations:
+          Sydney: {country: AU, opened: 2016, AZ: 1, DC: 3}
+          Singapore: {country: SG, opened: 2016, AZ: 1, DC: 2}
+          Mumbai: {country: IN, opened: 2023, AZ: 1, DC: 1}
+    ownership_and_property_boundary:
+      FY2025_directly_held_campuses:
+        Roubaix: 9
+        Strasbourg: 2
+        Beauharnois: 8
+        Gravelines: 4
+        Limburg: 2
+        Erith: 1
+        Ozarow: 1
+        Vint_Hill: 1
+        Hillsboro: 1
+        Croix: 1
+        Milan: 1
+      directly_held_checksum: 31
+      FY2025_shared_sites_mainly: [Mumbai, Singapore, Sydney, Toronto, Paris_three_AZ, Bordeaux, Grenoble, Tours]
+      Milan_current_boundary: >-
+        FY2025 listed one directly held Milan datacenter; the current table
+        lists three. The two incremental datacenters are not assigned to owned
+        or shared property without a current asset-level source.
+      brownfield_FY2025: {refurbished_directly_held_datacenters: 27, directly_held_total: 31, reported_rate_percent: 87}
+    power_and_resilience:
+      general: double_power_supply_autonomous_generators_high_yield_UPS_or_inverters_and_busbars
+      one_AZ_marketing: fully_redundant_power_and_network_2N_plus_1_distributed_across_several_datacenters
+      three_AZ_marketing: each_AZ_independent_redundant_power_cooling_and_network
+      HVO: named_as_emergency_generator_fuel_transition_option
+      exact_location_MW_MVA_and_live_IT_load: undisclosed
+      boundary: >-
+        General architecture is not an as-built site specification. Some
+        current one-AZ rows contain only one reported datacenter despite the
+        multi-datacenter 2N+1 description. Per-site utility feeds,
+        substations, transformers, switchgear, UPS, batteries, generators,
+        fuel runtime, ratings, counts and OEMs remain undisclosed.
+    proprietary_cooling_and_server_production:
+      watercooling_since: 2003
+      established_design:
+        hot_components: direct_to_chip_waterblocks
+        other_components: in_rack_air_to_water_heat_exchanger
+        heat_rejection: dry_coolers
+        water_loop: closed
+        server_room_air_conditioning: generally_eliminated_for_core_design
+      fifth_generation:
+        partial_PUE: 1.06
+        components: [higher_temperature_water, CPU_and_GPU_direct_to_chip_blocks, external_multi_row_CDU, more_than_30_sensors, predictive_pump_fan_and_valve_control]
+        Roubaix_pilot: {racks_nearly: 60, servers: 2000, boundary: one_room_deployment_not_fleet_count}
+        claimed_reduction_ceiling: {water_percent_up_to: 30, cooling_electricity_percent_up_to: 50, boundary: design_claim_not_measured_fleet_reduction}
+      production_sites: [Croix_France, Beauharnois_Canada]
+      Beauharnois_server_production_per_week_up_to: 1000
+      FY2025_datacenter_capex_EUR_million:
+        IT_equipment_and_server_production: 227.5
+        datacenter_infrastructure: 41.5
+        IP_addresses_and_networks: 2.1
+        total: 271.1
+      equipment_boundary: >-
+        The integrated model and cooling descriptions establish design and
+        manufacturing control, not a complete installed facility bill of
+        materials, vendor share, live liquid-cooled MW or equipment condition.
+    accelerators_and_AI_services:
+      current_marketed_GPU_models: [NVIDIA_H200, NVIDIA_H100, NVIDIA_V100S, NVIDIA_A100, NVIDIA_A10, NVIDIA_L40S, NVIDIA_L4, NVIDIA_Quadro_RTX_5000]
+      GPUs_per_cloud_instance: 1_to_4
+      documented_location_evidence:
+        legacy_V100_or_V100S: [GRA7, GRA9, GRA11, BHS5]
+        newer_A100_H100_L4_L40S: [GRA11]
+        H200_exact_location: undisclosed
+      physical_GPU_inventory_by_model_site_count_delivery_state_power_and_utilization: undisclosed
+      ownership_boundary: >-
+        OVHcloud sells GPU-backed instances via PCI passthrough and therefore
+        operates accelerator hardware, unlike a pure colocation landlord. The
+        product catalogue and service-region codes prove offered models and
+        selected locations but not physical inventory, availability at every
+        moment, utilization, rack count, power draw, revenue or margin.
+    public_map_crosswalk:
+      related_name_or_operator_OSM_objects: 19
+      raw_current_OVHcloud_operator_tags: 5
+      raw_legacy_OVH_OVH_GmbH_or_OVH_Sp_operator_tags: 3
+      raw_name_only_objects: 11
+      exact_facility_code_matches: 13
+      location_or_campus_evidence_not_exact_current_building_census: 6
+      exact_code_examples: [RBX1, RBX2, RBX3, RBX4, RBX5, RBX6, RBX7, SBG3, SBG5, MIL1, WAW1, VIN, HIL]
+      conflicts:
+        - official_current_Limburg_two_DC_vs_OSM_LIM1_3_name
+        - two_Gravelines_OSM_footprints_vs_four_current_DC
+        - one_Paris_OSM_point_vs_three_current_AZ_and_DC
+        - seven_Roubaix_OSM_codes_vs_nine_current_DC
+      boundary: OSM_objects_and_footprints_are_not_a_complete_current_building_ownership_capacity_or_operating_census
+    sustainability_FY2025:
+      directly_held_datacenter_energy_GWh: 516
+      renewable_energy_GWh: 515
+      renewable_source_energy_rate_percent: 100
+      group_average_PUE: 1.24
+      PUE_measurement_coverage_percent: 91
+      group_average_WUE_L_per_kWh: 0.34
+      total_water_withdrawal_m3: 128522
+      water_withdrawal_high_water_stress_m3: 42821
+      selected_site_measurements:
+        Roubaix: {energy_GWh: 128, PUE: 1.30, WUE: 0.29, water_stress: High}
+        Gravelines: {energy_GWh: 130, PUE: 1.21, WUE: 0.20, water_stress: Medium}
+        Strasbourg: {energy_GWh: 47, PUE: 1.19, WUE: 0.39, water_stress: Low}
+        Erith: {energy_GWh: 21, PUE: 1.19, WUE: 0.18, water_stress: High}
+        Limburg: {energy_GWh: 43, PUE: 1.19, WUE: 0.21, water_stress: Low}
+        Ozarow: {energy_GWh: 19, PUE: 1.25, WUE: 0.42, water_stress: Low}
+        Vint_Hill: {energy_GWh: 39, PUE: 1.36, WUE: 0.40, water_stress: High}
+        Hillsboro: {energy_GWh: 17, PUE: 1.28, WUE: 1.32, water_stress: Low}
+        Beauharnois: {energy_GWh: 73, PUE: 1.21, WUE: 0.86, water_stress: Low, boundary: extrapolated_from_BHS8_and_water_metrics_exclude_BHS1_to_BHS7}
+      shared_datacenter_energy_GWh_estimated: 28
+      boundary: >-
+        The site table covers nine directly operated locations and uses
+        measurement or extrapolation boundaries. It is not a 46-datacenter
+        site table and does not prove hourly additional renewable matching,
+        facility water consumption, GPU efficiency or cooling equipment share.
+    finance_and_outlook:
+      financial_profile_ref: company_ovhcloud
+      current_growth_signals: [Q3_FY2026_organic_growth_acceleration, Public_Cloud_above_20_percent_growth, 102_percent_Q3_net_revenue_retention, sovereign_cloud_demand, positive_levered_FCF_FY2026_target]
+      expansion: [Milan_three_AZ_live_in_current_table, Berlin_three_AZ_target_early_2027, seven_additional_datacenters_marketed]
+      outlook_boundary: Location_and_product_expansion_do_not_establish_site_level_load_GPU_utilization_revenue_margin_or_ROIC
+    sources:
+      - {title: OVHcloud current infrastructure locations, publisher: OVHcloud, accessed: 2026-07-19, url: "https://www.ovhcloud.com/en/about-us/global-infrastructure/regions/"}
+      - {title: OVHcloud current datacenter headline, publisher: OVHcloud, accessed: 2026-07-19, url: "https://www.ovhcloud.com/en/datacenter/"}
+      - {title: OVHcloud FY2025 Universal Registration Document, publisher: OVHcloud, date: 2025-11-07, url: "https://corporate.ovhcloud.com/sites/default/files/2025-11/ovh_urd_2025_en_mel_25_11_14.pdf"}
+      - {title: OVHcloud H1 FY2026 results, publisher: OVHcloud, date: 2026-04-09, url: "https://corporate.ovhcloud.com/en-gb/newsroom/news/financial-results-h1-fy26/"}
+      - {title: OVHcloud Q3 FY2026 revenue, publisher: OVHcloud, date: 2026-06-25, url: "https://corporate.ovhcloud.com/en/newsroom/news/financial-results-q3-fy26/"}
+      - {title: OVHcloud current GPU catalogue, publisher: OVHcloud, accessed: 2026-07-19, url: "https://www.ovhcloud.com/en/public-cloud/gpu/"}
+      - {title: OVHcloud GPU deployment-location guide, publisher: OVHcloud, accessed: 2026-07-19, url: "https://docs.ovhcloud.com/en/guides/public-cloud/compute/deploy-a-gpu-instance"}
+      - {title: OVHcloud Smart Datacenter cooling, publisher: OVHcloud, date: 2025-10-16, url: "https://corporate.ovhcloud.com/en/newsroom/news/ovhcloud-smart-datacenter/"}
+      - {title: OVHcloud environmental indicators, publisher: OVHcloud, accessed: 2026-07-19, url: "https://corporate.ovhcloud.com/asia/sustainability/environment/"}
+    confidence: high_for_current_location_AZ_DC_counts_FY2025_owned_shared_server_financial_environmental_cooling_GPU_product_and_OSM_evidence_medium_for_current_44_to_46_asset_and_Milan_ownership_bridge_low_for_facility_MW_exact_building_roster_GPU_inventory_equipment_BOM_customer_load_and_site_economics
+
   - id: dc_firmus_project_southgate_australia
     name: Firmus Project Southgate Australia AI Factory program
     record_granularity: national_multi_site_AI_factory_program_not_one_campus
@@ -30673,6 +30857,19 @@ disclosure_gap_register:
   - Global_Switch_London_South_Madrid_2_Frankfurt_3_Johor_and_Bangkok_permitting_grid_construction_customer_acceptance_and_billed_revenue_milestones
   - Global_Switch_FY2025_property_revaluation_exceptionals_capex_classification_power_pass_through_site_financials_customer_concentration_utilization_and_ROIC_bridge
   - Global_Switch_shareholder_liquidity_process_to_transaction_terms_post_close_cap_table_control_valuation_and_financing
+  - OVHcloud_current_46_datacenters_19_region_rows_23_AZ_10_table_countries_9_marketing_countries_to_FY2025_44_datacenters_18_sites_and_exact_current_building_reconciliation
+  - OVHcloud_FY2025_31_directly_held_13_shared_or_not_directly_operated_and_current_Milan_three_DC_to_exact_ownership_lease_counterparty_and_property_bridge
+  - OVHcloud_19_related_OSM_objects_13_exact_codes_6_location_or_campus_objects_and_Limburg_Gravelines_Paris_Roubaix_conflicts_to_complete_map_coverage
+  - OVHcloud_per_site_utility_MW_MVA_energized_leased_utilized_customer_accepted_billed_IT_load_racks_and_occupancy
+  - OVHcloud_per_site_substation_transformer_switchgear_busbar_PDU_UPS_battery_generator_fuel_runtime_dry_cooler_heat_exchanger_CDU_counts_ratings_OEMs_and_as_built_topology
+  - OVHcloud_H200_H100_V100S_A100_A10_L40S_L4_RTX5000_exact_physical_inventory_purchase_delivery_site_allocation_power_utilization_revenue_margin_and_retirement
+  - OVHcloud_GRA7_GRA9_GRA11_BHS5_service_codes_to_exact_current_buildings_GPU_hardware_counts_and_availability
+  - OVHcloud_500000_installed_servers_to_CPU_GPU_other_configuration_age_utilization_power_revenue_and_site_allocation
+  - OVHcloud_shared_facility_and_unmeasured_direct_site_PUE_WUE_energy_water_emissions_renewable_matching_heat_reuse_and_live_liquid_cooled_load
+  - OVHcloud_fifth_generation_smart_cooling_rollout_to_measured_site_water_and_cooling_electricity_savings_equipment_share_reliability_and_capex
+  - OVHcloud_group_Private_Public_Web_Cloud_financials_to_data_center_GPU_service_and_site_level_revenue_EBITDA_EBIT_capex_cash_flow_customer_concentration_and_ROIC
+  - OVHcloud_FY2026_positive_levered_FCF_33_to_35_percent_capex_and_5_to_7_percent_growth_guidance_to_full_year_reported_results
+  - OVHcloud_Berlin_three_AZ_and_seven_planned_datacenters_to_exact_sites_ownership_permits_grid_power_construction_energization_products_customers_and_revenue
   - AirTrunk_current_post_2024_committed_energized_and_utilized_capacity_by_campus
   - HUMAIN_AirTrunk_Saudi_exact_location_capacity_hardware_power_and_delivery_schedule
   - Equinix_280_year_end_to_281_current_facility_reconciliation
@@ -30791,7 +30988,7 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
-    - global_coverage_remaining_P1_OVHcloud_official_profile
+    - global_coverage_next_P2_Bouygues_Telecom_SFR_Verizon_official_profiles
     - Cologix_49_codes_to_physical_buildings_current_load_GPU_inventory_power_cooling_BOM_and_private_financials
     - Sabey_eight_labels_to_physical_buildings_current_load_GPU_inventory_power_cooling_BOM_and_private_financials
     - Telehouse_31_labels_to_physical_buildings_current_load_GPU_inventory_power_cooling_BOM_and_KDDI_site_economics
