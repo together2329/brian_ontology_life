@@ -150,6 +150,22 @@ scope_and_method:
       equipment nameplate, utility supply, critical IT load, utilized load and
       billed demand are not interchangeable. The crosswalk preserves these
       boundaries and publishes no cross-company financial or capacity total.
+  accelerator_disclosure_scope:
+    ledger_ref: life/imports/global_data_centers_20260717/accelerator_disclosure_ledger.jsonl
+    summary_ref: life/imports/global_data_centers_20260717/accelerator_disclosure_summary.json
+    ledger_as_of: 2026-07-18
+    atomic_claim_records: 47
+    reviewed_source_records: 28
+    comparison_gate:
+      - choose_one_accelerator_unit_and_model
+      - choose_one_physicality_and_delivery_lifecycle
+      - choose_one_ownership_and_site_scope
+      - resolve_overlap_before_any_sum
+    boundary: >-
+      Physical GPU, TPU, accelerator card, delivered chip, H100-equivalent,
+      managed hardware, design accommodation and supported architecture are
+      different units and states. The ledger keeps every claim non-additive and
+      deliberately publishes no cross-company accelerator total.
 
 global_market_baseline:
   - id: global_supply_jll_2026
