@@ -1,0 +1,87 @@
+schema_version: 1
+status: baseline_complete_with_explicit_open_gates
+updated_at: '2026-07-18'
+area: FINANCE
+secondary_areas:
+- CAREER
+- KNOWLEDGE
+title: Global AI data-center research final gap audit
+audited_inventory:
+  reviewed_campus_profiles: 505
+  reviewed_financial_profiles: 122
+  neocloud_and_linked_host_records: 17
+  physical_operator_records: 27
+  power_cooling_cable_utility_company_records: 25
+  atomic_accelerator_claims: 47
+completed_baseline:
+- official hyperscaler and Chinese cloud Region or location registries with Region, AZ and building boundaries
+- scope-preserving neocloud and linked-host profiles
+- major physical data-center operator crosswalk
+- power, electrical, generation, cooling, cable and utility company crosswalk
+- atomic accelerator disclosure ledger with overlap groups and no false fleet total
+- company financial evidence ledger and Brian portfolio wrapper comparison
+remaining_gates:
+- priority: A1
+  gap: Current ETF look-through holdings, weights, valuation date and cross-fund overlap
+  why_it_matters: Ticker count cannot establish company or factor diversification.
+  completion_evidence: Same-date official constituent files for every owned ETF, normalized by issuer and joined
+    to product evaluation value.
+  decision_impact: Blocks a precise new-money allocation or concentration ceiling.
+- priority: A1
+  gap: Spouse exact holdings and household aggregation
+  why_it_matters: Reported SK hynix, Samsung and KOSPI exposure may materially increase the same household risk.
+  completion_evidence: User-approved current security names and values or weights, kept owner-separated and rolled
+    up only analytically.
+  decision_impact: Blocks exact household semiconductor and Korea concentration.
+- priority: A1
+  gap: July cashflow actuals and liquid emergency-reserve target
+  why_it_matters: Monthly salary surplus is currently near zero even though net worth and future bonus reduce forced-sale
+    risk.
+  completion_evidence: July income, fixed and variable spending, debt payments, liquid cash, recurring savings and
+    August automatic-savings amount.
+  decision_impact: Blocks the appropriate pace of new investment from salary cash.
+- priority: A2
+  gap: Same-date valuation and expected-return comparison
+  why_it_matters: A strong industry and backlog do not establish an attractive purchase price.
+  completion_evidence: Price, enterprise value, earnings or cash-flow basis, growth assumptions, downside case and
+    FX basis for each candidate or fund.
+  decision_impact: Blocks buy ranking even after layer exposure is known.
+- priority: A2
+  gap: Data-center-specific revenue, margin, cash flow and return on capital for industrial suppliers and operators
+  why_it_matters: Group results and broad segments can overstate direct AI economics.
+  completion_evidence: Company-reported segment or project allocation with accounting basis and period.
+  decision_impact: Limits comparison of power, cooling, utility and operator value capture.
+- priority: A2
+  gap: Announced, contracted, ordered, energized, utilized and billed capacity bridge
+  why_it_matters: Multi-GW headlines can take years to become earnings and may overlap.
+  completion_evidence: Site-level permits, financing, interconnection, commissioning, customer acceptance, load
+    and revenue milestones.
+  decision_impact: Prevents pipeline from being valued as current operations.
+- priority: B
+  gap: Accelerator model, count, owner, host site, delivery, utilization, power cost and revenue bridge
+  why_it_matters: GPU announcements mix inventory, managed hardware, targets, architecture maxima and compute equivalents.
+  completion_evidence: Auditable site and ownership ledger tied to service and financial reporting.
+  decision_impact: Limits neocloud and campus unit economics.
+- priority: B
+  gap: Site-level power and cooling bill of materials and measured efficiency
+  why_it_matters: Vendor readiness claims do not prove installed product share, live liquid-cooled MW, PUE, WUE
+    or water use.
+  completion_evidence: Commissioned equipment model, rating, quantity, topology and measured operating data by site.
+  decision_impact: Limits supplier attribution and physical bottleneck validation.
+research_completion_definition:
+  baseline_research: complete for the current 2026-07-18 scope
+  all_global_facilities_or_future_projects: not_claimed_and_not_possible_from_public_sources
+  investment_execution: intentionally_gated_by_A1_and_A2_items
+  rule: An explicit unknown is a completed audit result, not permission to estimate it into a fact.
+next_update_triggers:
+- 2026-07 month-end cashflow close and fixed-cost changes
+- same-date official ETF constituent capture
+- material company earnings, guidance, financing or transaction update
+- campus permit, interconnection, energization or customer-acceptance milestone
+- bonus receipt or a material change in household assets, liabilities or income risk
+quality_checks:
+- No cross-operator MW total was created from mixed power denominators.
+- No accelerator total was created from mixed units, dates, ownership or lifecycle.
+- No group revenue was relabeled as data-center revenue.
+- No ETF product name was relabeled as a current underlying holding weight.
+- No buy or sell action was executed.
