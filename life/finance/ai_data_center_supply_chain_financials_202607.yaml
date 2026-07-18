@@ -6192,8 +6192,14 @@ financial_profiles:
     company: Vantage_Data_Centers
     layer: private_data_center_and_power_developers
     ownership_status: private_with_institutional_investors
+    ownership_and_platform_investor_context:
+      global_or_North_America_and_EMEA_named_investors: [DigitalBridge_managed_vehicles, Silver_Lake, AustralianSuper]
+      EMEA_2024_named_investors: [GIC, MEAG]
+      APAC_2025_named_existing_investors: [GIC_affiliate, ADIA_wholly_owned_subsidiary]
+      exact_current_fully_diluted_ownership_voting_preferences_board_rights_and_platform_cross_holdings: undisclosed
+      boundary: Named investment participation and platform financing do not establish exact current consolidated ownership percentages.
     fiscal_baseline:
-      period: latest_publicly_available_as_of_2026_07_17
+      period: latest_publicly_available_as_of_2026_07_18
       accounting_basis: no_reviewed_public_audited_consolidated_financial_statements
       currency: undisclosed
       revenue: undisclosed
@@ -6206,10 +6212,40 @@ financial_profiles:
       aggregate_new_investment_over_nine_months_2024_usd_billion_approximate: 11
       primary_equity_2024_usd_billion_more_than: 7
       expected_additional_development_enabled_2024_usd_billion: 30
+      company_reported_2024_incremental_debt_and_equity_funding_usd_billion_more_than: 13
+      2024_funding_components_disclosed_by_company:
+        North_America_green_loan_usd_billion: 3
+        EMEA_GIC_and_MEAG_investment_eur_billion: 1.4
+        EMEA_first_sterling_data_center_ABS_gbp_million: 600
+        Taiwan_greenfield_hyperscale_loan_usd_million: 64
+        APAC_inaugural_bond_amount: undisclosed_in_reviewed_release
+      2025_North_America_incremental_green_loans:
+        total_usd_billion: 5
+        New_Albany_construction_loan_usd_billion: 2.25
+        existing_corporate_facility_upsize_usd_billion: 2.75
+        total_corporate_facility_after_upsize_usd_billion: 5.75
+        North_America_platform_total_available_for_expansion_usd_billion: 8
+        boundary: Loan principal and facility availability are debt financing, not revenue, profit or cash spent.
+      2025_APAC_investment:
+        amount_usd_billion: 1.6
+        investors: [GIC_affiliate, ADIA_wholly_owned_subsidiary]
+        stated_uses: [Johor_campus_acquisition, further_APAC_growth]
+        announcement_status: expected_to_close_2025_Q4_subject_to_customary_conditions_completion_not_independently_reverified
+      2026_EMEA_ABS:
+        additional_securitized_notes_gbp_million: 254
+        Class_A2_tap_gbp_million: 200
+        new_Class_B_tranche_gbp_million: 54
+        prior_2024_sterling_ABS_gbp_million: 600
+        anticipated_repayment: 2029_05
+        collateral_or_refinancing_scope: [CWL11, CWL13]
+        boundary: The 2026 notes refinance certain Cardiff indebtedness and fund expansion; issuance proceeds are not operating revenue.
       Frontier_investment_usd_billion: 25
       Lighthouse_investment_usd_billion_more_than: 15
       combined_Frontier_and_Lighthouse_investment_usd_billion_more_than: 40
-      boundary: Project investment is not Vantage revenue, profit, or committed cash spent to date.
+      other_named_project_investment:
+        Fredericksburg_VA4_usd_billion: 2
+        Milan_MXP2_eur_million_more_than: 350
+      boundary: Project investment and financing are not Vantage revenue, profit, enterprise value or committed cash spent to date.
     data_center_exposure:
       roles: [hyperscale_data_center_developer, owner_operator, colocation_landlord]
       confirmed_campus_refs:
@@ -6217,23 +6253,35 @@ financial_profiles:
         - dc_oracle_vantage_frontier_shackelford_texas
         - dc_oracle_vantage_lighthouse_port_washington_wisconsin
       current_published_campuses: 41
-      current_published_design_or_full_buildout_capacity_mw_sum_derived: 5888
+      current_individual_campus_profiles: 41
+      new_individual_profiles_added_2026_07_18: 39
+      pre_existing_detailed_AI_campus_profiles: 2
+      current_regional_market_page_design_or_full_buildout_capacity_mw_sum_derived: 5888
+      current_individual_campus_page_design_or_full_buildout_capacity_mw_sum_derived: 5928
+      official_page_capacity_difference_mw: 40
+      capacity_difference_cause: current_Johannesburg_individual_pages_sum_to_140MW_while_current_EMEA_regional_page_reports_100MW
+      individual_page_known_physical_scale:
+        marketed_data_centers: 122
+        land_acres: 2941
+        gross_floor_area_sqft_lower_bound: 34025000
+        gross_floor_area_boundary: Montreal_III_undisclosed_and_Phoenix_Johor_are_lower_bound_values
       two_campus_critical_IT_design_mw_derived: 2302
       two_campus_buildings: 14
       power_partnerships:
         VoltaGrid_prime_power_gw_more_than: 1
         Liberty_power_agreements_gw_up_to: 1
       boundary: >-
-        The 5.888 GW published-page sum mixes operating campuses and development
-        projects and is not energized or leased capacity. The two power agreements
-        cover broader North American activity and are not wholly attributable to
-        Frontier or Lighthouse.
+        The 5.888 GW regional-page and 5.928 GW individual-page sums mix operating
+        campuses and development projects and are not energized or leased capacity.
+        The two power agreements cover broader North American activity and are not
+        wholly attributable to Frontier or Lighthouse.
     management_outlook:
       stance: rapid_AI_hyperscale_expansion_across_power_constrained_markets
       quantitative_revenue_or_profit_guidance: undisclosed
     watch_items:
       - private_company_financial_opacity
       - project_financing_and_interest_cost
+      - refinancing_maturity_and_asset_backed_securitization_execution
       - customer_and_tenant_concentration
       - grid_interconnection_and_onsite_generation_execution
       - permitting_and_emissions
@@ -6250,6 +6298,12 @@ financial_profiles:
       - https://vantage-dc.com/news/vantage-data-centers-and-voltagrid-establish-partnership-to-deploy-more-than-one-gigawatt-of-power-generation/
       - https://vantage-dc.com/news/vantage-data-centers-and-liberty-energy-announce-strategic-partnership-to-develop-and-operate-one-gigawatt-of-power-solutions-for-next-generation-data-centers/
       - https://www.digitalbridge.com/news/2024-06-13-vantage-data-centers-completes-92-billion-equity-investment-led-by-digitalbridge-and-silver-lake
+      - https://vantage-dc.com/news/vantage-data-centers-growth-continued-in-2024-driven-by-ai-and-cloud-adoption-secured-a-record-13-billion-in-incremental-funding/
+      - https://vantage-dc.com/news/vantage-data-centers-secures-5b-in-incremental-green-loan-financings-to-support-demand-for-north-america-platform/
+      - https://vantage-dc.com/news/vantage-data-centers-secures-1-6b-investment-in-apac-platform-from-gic-and-adia/
+      - https://vantage-dc.com/news/vantage-data-centers-completes-200m-tap-of-existing-600m-industry-first-emea-data-center-asset-backed-securitization-abs-and-adds-new-54m-class-b-tranche/
+      - https://vantage-dc.com/news/vantage-data-centers-invests-2b-in-fredericksburg-virginia-region-to-deliver-fourth-campus-in-the-commonwealth/
+      - https://vantage-dc.com/news/vantage-data-centers-expands-european-footprint-with-second-italian-campus/
     confidence: high_for_public_disclosure_gap_investment_design_capacity_and_partnerships_low_for_revenue_operating_profit_leasing_and_utilization
 
   - id: company_voltagrid

@@ -10944,7 +10944,73 @@ campus_profiles:
         APAC:
           count: 9
           campuses: [Cyberjaya_I, Cyberjaya_II, Fo_Tan, Johor, Kwai_Chung, Melbourne, On_Lok, Osaka, Taipei]
+      individual_campus_record_reconciliation:
+        current_official_campus_pages: 41
+        new_individual_profiles_in_2026_07_18_checkpoint: 39
+        pre_existing_detailed_AI_campus_profiles: 2
+        arithmetic_check: 39_plus_2_equals_41
+        campus_refs:
+          North_America:
+            - dc_vantage_va1_ashburn_i
+            - dc_vantage_va2_ashburn_ii
+            - dc_vantage_va3_ashburn_iii
+            - dc_vantage_va4_fredericksburg
+            - dc_vantage_qc1_montreal_i
+            - dc_vantage_qc4_montreal_ii
+            - dc_vantage_qc6_montreal_iii
+            - dc_vantage_oh1_new_albany
+            - dc_vantage_az1_phoenix
+            - dc_oracle_vantage_lighthouse_port_washington_wisconsin
+            - dc_vantage_qc2_quebec_city
+            - dc_vantage_wa1_quincy
+            - dc_vantage_nv1_reno
+            - dc_vantage_ca1_santa_clara_i
+            - dc_vantage_ca2_santa_clara_ii
+            - dc_vantage_ca3_santa_clara_iii
+            - dc_oracle_vantage_frontier_shackelford_texas
+          EMEA:
+            - dc_vantage_ber1_berlin_i
+            - dc_vantage_ber2_berlin_ii
+            - dc_vantage_cwl1_cardiff
+            - dc_vantage_fra1_frankfurt_i
+            - dc_vantage_fra2_frankfurt_ii
+            - dc_vantage_dub1_dublin
+            - dc_vantage_jnb1_johannesburg_i
+            - dc_vantage_jnb2_johannesburg_ii
+            - dc_vantage_lhr1_london_i
+            - dc_vantage_lhr2_london_ii
+            - dc_vantage_mxp1_milan_i
+            - dc_vantage_mxp2_milan_ii
+            - dc_vantage_waw1_warsaw
+            - dc_vantage_zrh1_zurich_i
+            - dc_vantage_zrh2_zurich_ii
+          APAC:
+            - dc_vantage_kul1_cyberjaya_i
+            - dc_vantage_kul2_cyberjaya_ii
+            - dc_vantage_hkg2_fo_tan
+            - dc_vantage_jhb1_johor
+            - dc_vantage_hkg3_kwai_chung
+            - dc_vantage_mel1_melbourne
+            - dc_vantage_hkg1_on_lok
+            - dc_vantage_kix1_osaka
+            - dc_vantage_tpe1_taipei
     portfolio_scale:
+      current_individual_campus_page_design_or_full_buildout_scale:
+        North_America: {campuses: 17, marketed_data_centers_known_sum: 67, land_acres_known_sum: 2574, gross_floor_area_sqft_known_sum: 18971000, critical_IT_load_mw_sum: 4158}
+        EMEA: {campuses: 15, marketed_data_centers_known_sum: 35, land_acres_known_sum: 215, gross_floor_area_sqft_known_sum: 7346000, critical_IT_load_mw_sum: 823}
+        APAC: {campuses: 9, marketed_data_centers_known_sum: 20, land_acres_known_sum: 152, gross_floor_area_sqft_known_sum: 7708000, critical_IT_load_mw_sum: 947}
+        global_known_sums:
+          campuses: 41
+          marketed_data_centers: 122
+          land_acres: 2941
+          gross_floor_area_sqft: 34025000
+          critical_IT_load_mw: 5928
+        lower_bound_and_missing_data_boundary: >-
+          Gross floor area is a known-page lower bound because Montreal III does
+          not publish floor area and Phoenix and Johor are stated as more than
+          1.0 million and 930,000 square feet. Hong Kong pages publish site area
+          in square feet rather than acres. Facility count, land, area and MW
+          mix current sites with future full-buildout plans.
       published_market_design_or_full_buildout_capacity_mw:
         North_America:
           Ashburn: 590
@@ -10981,11 +11047,21 @@ campus_profiles:
           Taipei: 16
           regional_sum_derived: 947
         global_sum_derived: 5888
+      same_day_capacity_reconciliation:
+        individual_campus_page_sum_mw: 5928
+        regional_market_page_sum_mw: 5888
+        difference_mw: 40
+        cause: >-
+          The current Johannesburg I and II campus pages market 120 MW and 20 MW,
+          while the current EMEA regional page still reports Johannesburg at
+          100 MW. North America and APAC campus-page sums match their regional
+          market-page totals. The conflicting official values are retained
+          rather than silently selecting one.
       capacity_boundary: >-
-        The regional pages market total capacity by city or project, including
-        operating campuses and projects under development. The derived 5.888 GW
-        is design or full-buildout capacity, not current operating, energized,
-        leased, or utilized load.
+        Regional and campus pages market capacity by city, campus or project and
+        include operating sites and projects under development. The regional
+        5.888 GW and campus-page 5.928 GW totals are design or full-buildout
+        values, not current operating, energized, leased or utilized load.
     accelerators:
       intended_workloads: [hyperscale, cloud, AI, large_scale_liquid_cooled_compute]
       exact_GPU_accelerator_vendors_models_counts_racks_customers_and_site_allocation: undisclosed
@@ -11271,6 +11347,1301 @@ campus_profiles:
         date: 2025
         url: https://www.portwashingtonwi.gov/home/showpublisheddocument/6064/638912112748970000
     confidence: high_for_design_scale_land_schedule_utility_demand_and_cooling_low_for_installed_IT_load_and_accelerator_inventory
+
+  - id: dc_vantage_va1_ashburn_i
+    name: "Vantage Ashburn I (VA1) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: North_America
+    country: US
+    administrative_region: Virginia
+    locality: Sterling
+    site_id: VA1
+    lifecycle_as_of_2026_07_18: mixed_full_buildout_language_current_operator_page_does_not_identify_exact_operating_buildings_or_energized_load
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "45200 Vantage Data Plaza Sterling, VA 20166"
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 52
+      data_centers: 6
+      gross_floor_area_sqft: 1700000
+      critical_IT_load_mw: 206
+      density_design: average_300W_per_sqft
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "Dominion Energy; multiple diverse feeds; 480V end-to-end distribution; N+1 electrical redundancy"
+      cooling_design_summary: "closed-loop chilled water from air-cooled chillers; CRAH galleries; air-side economizers; N+2 mechanical redundancy; near-zero WUE design claim"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Ashburn I current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/north-america/ashburn-i-virginia/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_va2_ashburn_ii
+    name: "Vantage Ashburn II (VA2) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: North_America
+    country: US
+    administrative_region: Virginia
+    locality: Sterling
+    site_id: VA2
+    lifecycle_as_of_2026_07_18: current_operator_page_uses_future_tense_for_three_building_full_buildout_exact_completion_energization_and_utilization_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "22435 Glenn Drive Sterling, VA 20164"
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 18
+      data_centers: 3
+      gross_floor_area_sqft: 800000
+      critical_IT_load_mw: 96
+      density_design: average_300W_per_sqft
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "Dominion Energy; multiple diverse feeds; 480V end-to-end distribution; N+1 electrical redundancy"
+      cooling_design_summary: "closed-loop chilled water from air-cooled chillers; CRAH galleries; air-side economizers; N+2 mechanical redundancy; near-zero WUE design claim"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Ashburn II current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/north-america/ashburn-ii-virginia/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_va3_ashburn_iii
+    name: "Vantage Ashburn III (VA3) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: North_America
+    country: US
+    administrative_region: Virginia
+    locality: Ashburn
+    site_id: VA3
+    lifecycle_as_of_2026_07_18: current_operator_page_uses_future_tense_for_seven_building_full_buildout_exact_completion_energization_and_utilization_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "19509 Belmont Ridge Road Ashburn, VA 20147"
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 134
+      data_centers: 7
+      gross_floor_area_sqft: 2300000
+      critical_IT_load_mw: 288
+      density_design: undisclosed
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "Dominion Energy transmission through two dedicated substations; multiple diverse feeds; 480V end-to-end distribution; N+1 electrical redundancy"
+      cooling_design_summary: "closed-loop chilled water from air-cooled chillers; CRAH galleries; air-side economizers; N+2 mechanical redundancy; near-zero WUE design claim"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Ashburn III current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/north-america/ashburn-iii-virginia/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_va4_fredericksburg
+    name: "Vantage Fredericksburg (VA4) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: North_America
+    country: US
+    administrative_region: Virginia
+    locality: Fredericksburg
+    site_id: VA4
+    lifecycle_as_of_2026_07_18: under_development_operator_page_targets_first_building_late_2027_and_additional_phases_through_2028
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "225 Centreport Parkway Fredericksburg, VA 22406"
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 82
+      data_centers: 3
+      gross_floor_area_sqft: 929000
+      critical_IT_load_mw: 192
+      density_design: average_500kW_per_row
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "Dominion Energy; private 270MW onsite substation; 480V end-to-end distribution; N+1 electrical redundancy"
+      cooling_design_summary: "closed-loop chilled water; optional liquid-to-liquid CDU system capable of 100% of IT load; N+1 mechanical redundancy; near-zero WUE design claim"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Fredericksburg current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/north-america/fredericksburg-va"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_qc1_montreal_i
+    name: "Vantage Montreal I (QC1) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: North_America
+    country: Canada
+    administrative_region: Quebec
+    locality: Montreal
+    site_id: QC1
+    lifecycle_as_of_2026_07_18: current_operator_page_and_constructed_facility_certification_support_built_facility_exact_operating_IT_load_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "Undisclosed location."
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 5
+      data_centers: 1
+      gross_floor_area_sqft: 60000
+      critical_IT_load_mw: 11
+      density_design: up_to_240W_per_sqft
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "nearly 100% hydroelectric energy; N+1 electrical and mechanical redundancy"
+      cooling_design_summary: "intelligent free cooling and hot/cold-aisle containment; outside-air economization up to 80% of year; N+1 mechanical redundancy"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Montreal I current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/north-america/montreal-i-canada/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_qc4_montreal_ii
+    name: "Vantage Montreal II (QC4) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: North_America
+    country: Canada
+    administrative_region: Quebec
+    locality: Montreal
+    site_id: QC4
+    lifecycle_as_of_2026_07_18: mixed_existing_and_future_buildout_page_says_three_facilities_once_fully_developed_exact_current_phase_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "Undisclosed location."
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 10
+      data_centers: 3
+      gross_floor_area_sqft: 320000
+      critical_IT_load_mw: 50
+      density_design: high_density_ready_numeric_limit_undisclosed
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "two 25kV feeders and dedicated 120kV substation; nearly 100% hydroelectric energy; N+1 with UPS and generator configuration described as no single point of failure"
+      cooling_design_summary: "custom redundant indirect-air cooling; hot/cold-aisle containment; near-year-round free cooling; N+1 mechanical redundancy"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Montreal II current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/north-america/montreal-ii-canada/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_qc6_montreal_iii
+    name: "Vantage Montreal III (QC6) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: North_America
+    country: Canada
+    administrative_region: Quebec
+    locality: Montreal
+    site_id: QC6
+    lifecycle_as_of_2026_07_18: current_operator_page_describes_single_story_facility_and_two_modules_exact_operating_and_utilized_load_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "Undisclosed location."
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 8
+      data_centers: 1
+      gross_floor_area_sqft: undisclosed
+      critical_IT_load_mw: 30
+      density_design: average_428W_per_sqft
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "Hydro-Quebec; nearly 100% hydroelectric energy; dedicated 45MW onsite substation with private direct connection; N+1 electrical redundancy; concurrently maintainable"
+      cooling_design_summary: "closed-loop chilled water from air-cooled chillers; CRAH galleries; outside-air economization up to 80% of year; N+2 component redundancy; near-zero WUE design claim"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Montreal III current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/north-america/montreal-iii-canada/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_oh1_new_albany
+    name: "Vantage New Albany (OH1) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: North_America
+    country: US
+    administrative_region: Ohio
+    locality: New_Albany
+    site_id: OH1
+    lifecycle_as_of_2026_07_18: mixed_development_page_targeted_first_building_2025_12_and_additional_phases_through_2028_current_completion_not_reverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "3325 Horizon Court New Albany, OH 43031"
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 70
+      data_centers: 3
+      gross_floor_area_sqft: 1500000
+      critical_IT_load_mw: 192
+      density_design: undisclosed
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "American Electric Power Ohio; multiple diverse feeds; 480V end-to-end distribution; N+1 electrical redundancy"
+      cooling_design_summary: "closed-loop chilled water from air-cooled chillers; CRAH galleries; air-side economizers; N+2 mechanical redundancy; near-zero WUE design claim"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "New Albany current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/north-america/new-albany-ohio"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_az1_phoenix
+    name: "Vantage Phoenix (AZ1) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: North_America
+    country: US
+    administrative_region: Arizona
+    locality: Goodyear
+    site_id: AZ1
+    lifecycle_as_of_2026_07_18: mixed_construction_and_certified_buildings_page_markets_five_building_full_buildout_not_current_operating_load
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "45 S. Bullard Avenue Goodyear, AZ 85338"
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 50
+      data_centers: 5
+      gross_floor_area_sqft: 1000000
+      gross_floor_area_qualifier: more_than
+      critical_IT_load_mw: 176
+      density_design: average_250W_per_sqft
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "Arizona Public Service; dedicated onsite substation; 69kV-plus receipt, 12kV campus and 480V building distribution; diverse feeds; N+1 electrical redundancy; concurrently maintainable"
+      cooling_design_summary: "closed-loop chilled water from air-cooled chillers; CRAH galleries; air-side economizers; planned N+2 mechanical redundancy; near-zero WUE design claim"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Phoenix current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/north-america/phoenix-arizona/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_qc2_quebec_city
+    name: "Vantage Quebec City (QC2) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: North_America
+    country: Canada
+    administrative_region: Quebec
+    locality: Quebec_City
+    site_id: QC2
+    lifecycle_as_of_2026_07_18: current_operator_page_describes_four_data_centers_exact_energized_and_utilized_load_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "Undisclosed location."
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 30
+      data_centers: 4
+      gross_floor_area_sqft: 925000
+      critical_IT_load_mw: 86
+      density_design: up_to_300W_per_sqft
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "direct access to Hydro-Quebec substation; nearly 100% hydroelectric energy; N+1 electrical and mechanical redundancy"
+      cooling_design_summary: "intelligent free cooling and hot/cold-aisle containment; outside-air economization up to 86% of year; N+1 mechanical redundancy"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Quebec City current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/north-america/quebec-city-canada/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_wa1_quincy
+    name: "Vantage Quincy (WA1) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: North_America
+    country: US
+    administrative_region: Washington
+    locality: Quincy
+    site_id: WA1
+    lifecycle_as_of_2026_07_18: constructed_facility_and_operational_sustainability_certifications_on_current_page_exact_utilized_load_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "2101 M Street NE Quincy, WA 98848"
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 68
+      data_centers: 3
+      gross_floor_area_sqft: 775000
+      critical_IT_load_mw: 89
+      density_design: undisclosed
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "Grant County Public Utility District; multiple diverse feeds; PDU-level efficiency design; exact electrical redundancy undisclosed on reviewed page"
+      cooling_design_summary: "closed-loop chilled water with CRAH galleries and air-side economizers; N+1 mechanical redundancy; near-zero WUE design planned for new buildings"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Quincy current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/north-america/quincy-washington/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_nv1_reno
+    name: "Vantage Reno (NV1) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: North_America
+    country: US
+    administrative_region: Nevada
+    locality: Sparks
+    site_id: NV1
+    lifecycle_as_of_2026_07_18: current_operator_page_uses_future_tense_for_four_building_full_buildout_exact_current_phase_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "1121 USA Parkway Sparks, NV 89437"
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 137
+      data_centers: 4
+      gross_floor_area_sqft: 1100000
+      critical_IT_load_mw: 224
+      density_design: average_360_to_720W_per_sqft
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "NV Energy; private 500MW onsite substation; 480V end-to-end distribution; N+1 electrical redundancy"
+      cooling_design_summary: "closed-loop chilled water; optional liquid-to-liquid CDU system capable of 100% of IT load; N+2 mechanical redundancy; near-zero WUE design claim"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Reno current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/north-america/reno-nevada/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_ca1_santa_clara_i
+    name: "Vantage Santa Clara I (CA1) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: North_America
+    country: US
+    administrative_region: California
+    locality: Santa_Clara
+    site_id: CA1
+    lifecycle_as_of_2026_07_18: current_operator_page_describes_six_data_centers_and_constructed_certifications_exact_utilized_load_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "2820 Northwestern Pkwy Santa Clara, CA 95051"
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 21
+      data_centers: 6
+      gross_floor_area_sqft: 335000
+      critical_IT_load_mw: 77
+      density_design: newer_deployments_support_35kW_plus_per_rack
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "Silicon Valley Power; three dedicated 50MW substations; grid, N, N+1 and 2N redundancy options"
+      cooling_design_summary: "chilled-water loops, outside-air economization and chilled-water rack doors; gray-water use; page claims achievable PUE below 1 without measured portfolio value"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Santa Clara I current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/north-america/santa-clara-i-california/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_ca2_santa_clara_ii
+    name: "Vantage Santa Clara II (CA2) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: North_America
+    country: US
+    administrative_region: California
+    locality: Santa_Clara
+    site_id: CA2
+    lifecycle_as_of_2026_07_18: current_operator_page_uses_future_tense_for_three_building_full_buildout_exact_current_phase_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "737 Mathew Street Santa Clara, CA 95051"
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 9
+      data_centers: 3
+      gross_floor_area_sqft: 541000
+      critical_IT_load_mw: 75
+      density_design: undisclosed
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "Silicon Valley Power; three onsite 50MW transformers; 415/240V distribution; N+1 electrical redundancy"
+      cooling_design_summary: "closed-loop chilled-water loop with water-side economizers; N+1 mechanical redundancy"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Santa Clara II current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/north-america/santa-clara-ii-california/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_ca3_santa_clara_iii
+    name: "Vantage Santa Clara III (CA3) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: North_America
+    country: US
+    administrative_region: California
+    locality: Santa_Clara
+    site_id: CA3
+    lifecycle_as_of_2026_07_18: current_operator_page_uses_future_tense_for_single_facility_completion_energization_and_utilization_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "2590 Walsh Avenue Santa Clara, CA 95051"
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 8
+      data_centers: 1
+      gross_floor_area_sqft: 486000
+      critical_IT_load_mw: 64
+      density_design: undisclosed
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "Silicon Valley Power using 100% renewable energy; onsite substation; diverse feeds; 400V configuration; N+1 electrical redundancy"
+      cooling_design_summary: "closed-loop chilled water from air-cooled chillers; CRAH galleries; air-side economizers; N+2 mechanical redundancy; near-zero WUE design claim"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Santa Clara III current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center/santa-clara-iii-california/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_ber1_berlin_i
+    name: "Vantage Berlin I (BER1) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: EMEA
+    country: Germany
+    administrative_region: Brandenburg
+    locality: Ludwigsfelde
+    site_id: BER1
+    lifecycle_as_of_2026_07_18: mixed_full_buildout_language_exact_current_operating_buildings_energization_and_utilization_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "Brandenburg Park Uferring 5 Ludwigsfelde, 14974"
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 25
+      data_centers: 4
+      gross_floor_area_sqft: 474000
+      critical_IT_load_mw: 56
+      density_design: average_300W_per_sqft
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "E.DIS Group; N+1 110kV onsite substation; diverse feeds; 480V configuration; N+1 electrical redundancy; concurrently maintainable"
+      cooling_design_summary: "closed-loop chilled water from air-cooled chillers; CRAH galleries; air-side economizers; N+1 overall and N+2 component mechanical redundancy; near-zero WUE design claim"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Berlin I current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/emea/berlin-i-germany/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_ber2_berlin_ii
+    name: "Vantage Berlin II (BER2) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: EMEA
+    country: Germany
+    administrative_region: Brandenburg
+    locality: Mittenwalde
+    site_id: BER2
+    lifecycle_as_of_2026_07_18: current_operator_page_uses_future_tense_for_two_facility_completion_energization_and_utilization
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "Dahmestrasse 1 and 2 Mittenwalde, 15749"
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 12
+      data_centers: 2
+      gross_floor_area_sqft: 260000
+      critical_IT_load_mw: 32
+      density_design: average_300W_per_sqft
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "E.DIS; N+1 45MW onsite substation; diverse feeds; 400V configuration; N+1 electrical redundancy; concurrently maintainable"
+      cooling_design_summary: "closed-loop chilled water from air-cooled chillers; CRAH galleries; air-side economizers; N+2 component mechanical redundancy; near-zero WUE design claim"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Berlin II current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/emea/berlin-ii-germany/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_cwl1_cardiff
+    name: "Vantage Cardiff (CWL1) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: EMEA
+    country: GB
+    administrative_region: Wales
+    locality: Coedkernew_Duffryn_Newport
+    site_id: CWL1
+    lifecycle_as_of_2026_07_18: mixed_two_of_three_data_centers_explicitly_operational_and_third_full_buildout_phase_not_complete
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "Celtic Way Coedkernew, Duffryn Newport NP10 8BE"
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 46
+      data_centers: 3
+      gross_floor_area_sqft: 2000000
+      critical_IT_load_mw: 148
+      density_design: 2kW_to_125kW_plus_per_rack
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "private direct 400kV UK SuperGrid connection; N+N topology; resilient generators and UPS; 100% renewable energy; concurrently maintainable"
+      cooling_design_summary: "indirect evaporative air handling, dry-cooler CRAH with pumped DX, free-air cooling and custom rack cooling including liquid-to-chip; minimum N+1 or N+20% mechanical redundancy"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Cardiff current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/emea/cardiff-united-kingdom/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_fra1_frankfurt_i
+    name: "Vantage Frankfurt I (FRA1) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: EMEA
+    country: Germany
+    administrative_region: Hesse
+    locality: Offenbach_am_Main
+    site_id: FRA1
+    lifecycle_as_of_2026_07_18: mixed_full_buildout_language_for_three_facilities_exact_current_operating_phase_and_utilized_load_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "Goethering 27 Offenbach am Main, 63067"
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 8
+      data_centers: 3
+      gross_floor_area_sqft: 452000
+      critical_IT_load_mw: 56
+      density_design: undisclosed
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "EVO via onsite substation; diverse feeds; N+1 electrical redundancy; concurrently maintainable; design PUE 1.3"
+      cooling_design_summary: "first building air-to-air in N+1 topology; later buildings closed-loop chilled water from air-cooled chillers with indirect free cooling; N+1 mechanical redundancy"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Frankfurt I current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/emea/frankfurt-i-germany/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_fra2_frankfurt_ii
+    name: "Vantage Frankfurt II (FRA2) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: EMEA
+    country: Germany
+    administrative_region: Hesse
+    locality: Raunheim
+    site_id: FRA2
+    lifecycle_as_of_2026_07_18: mixed_full_buildout_language_for_two_facilities_exact_current_operating_phase_and_utilized_load_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "Alexander-von-Humboldt-Straße 4 Raunheim, 65479"
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 7
+      data_centers: 2
+      gross_floor_area_sqft: 485000
+      critical_IT_load_mw: 56
+      density_design: average_300W_per_sqft
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "Westnetz via 100MVA onsite substation; diverse feeds; N+1 electrical redundancy; concurrently maintainable; design PUE 1.3"
+      cooling_design_summary: "closed-loop chilled water from air-cooled chillers; CRAH galleries; air-side economizers; N+1 overall and N+2 component mechanical redundancy; near-zero WUE design claim"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Frankfurt II current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/emea/frankfurt-ii-germany/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_dub1_dublin
+    name: "Vantage Dublin (DUB1) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: EMEA
+    country: Ireland
+    administrative_region: Dublin
+    locality: Profile_Park
+    site_id: DUB1
+    lifecycle_as_of_2026_07_18: multi_phase_development_current_operator_page_uses_future_tense_for_first_two_facilities_completion_and_energization_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "Undisclosed location."
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 22
+      data_centers: 2
+      gross_floor_area_sqft: 405000
+      critical_IT_load_mw: 52
+      density_design: average_300W_per_sqft
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "onsite 100MVA multi-fuel generation plant designed primarily for HVO and high-pressure gas from Gas Networks Ireland; diverse feeds; 400V configuration; N+1 electrical redundancy"
+      cooling_design_summary: "closed-loop chilled water from air-cooled chillers; CRAH galleries; air-side economizers; N+2 mechanical redundancy; near-zero WUE design claim"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Dublin current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/emea/dublin-ireland"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_jnb1_johannesburg_i
+    name: "Vantage Johannesburg I (JNB1) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: EMEA
+    country: South_Africa
+    administrative_region: Gauteng
+    locality: Midrand_Johannesburg
+    site_id: JNB1
+    lifecycle_as_of_2026_07_18: mixed_full_buildout_language_for_three_facilities_exact_current_operating_phase_and_utilized_load_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "1 Howick Lane , Waterfall Logistics PrecinctMidrandJohannesburg"
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 30
+      data_centers: 3
+      gross_floor_area_sqft: 650000
+      critical_IT_load_mw: 120
+      density_design: average_300W_per_sqft
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+      regional_page_capacity_conflict: JNB1_page_120MW_plus_JNB2_page_20MW_equals_140MW_but_current_EMEA_regional_page_reports_Johannesburg_total_100MW
+    electrical_and_cooling:
+      electrical_design_summary: "Eskom; 180MVA supply; diverse feeds; 400V configuration; N+1 electrical redundancy; concurrently maintainable"
+      cooling_design_summary: "closed-loop chilled water from air-cooled chillers; CRAH galleries; air-side economizers; N+2 component mechanical redundancy; near-zero WUE design claim"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Johannesburg I current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/emea/johannesburg-i-south-africa/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_jnb2_johannesburg_ii
+    name: "Vantage Johannesburg II (JNB2) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: EMEA
+    country: South_Africa
+    administrative_region: Gauteng
+    locality: Ekurhuleni
+    site_id: JNB2
+    lifecycle_as_of_2026_07_18: operator_page_retains_mid_2024_operational_target_current_completion_energization_and_utilization_not_reverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "Undisclosed location."
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 5
+      data_centers: 1
+      gross_floor_area_sqft: 355000
+      critical_IT_load_mw: 20
+      density_design: undisclosed
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+      regional_page_capacity_conflict: JNB1_page_120MW_plus_JNB2_page_20MW_equals_140MW_but_current_EMEA_regional_page_reports_Johannesburg_total_100MW
+    electrical_and_cooling:
+      electrical_design_summary: "Municipality of Ekurhuleni; 35MVA onsite substation; diverse feeds; 230V configuration; N+1 electrical redundancy; concurrently maintainable"
+      cooling_design_summary: "closed-loop chilled water from air-cooled chillers; CRAH galleries; air-side economizers; N+2 mechanical redundancy; near-zero WUE design claim"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Johannesburg II current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/emea/johannesburg-ii-south-africa/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_lhr1_london_i
+    name: "Vantage London I (LHR1) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: EMEA
+    country: GB
+    administrative_region: London
+    locality: PowerGate_District
+    site_id: LHR1
+    lifecycle_as_of_2026_07_18: mixed_full_buildout_language_for_two_facilities_exact_current_operating_phase_and_utilized_load_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "Undisclosed location."
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 5
+      data_centers: 2
+      gross_floor_area_sqft: 430000
+      critical_IT_load_mw: 55
+      density_design: average_300W_per_sqft
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "National Grid; 110MVA HV substation with 80MVA dedicated to LHR1; diverse feeds; 400V configuration; N+1 electrical redundancy; concurrently maintainable"
+      cooling_design_summary: "closed-loop chilled water from air-cooled chillers; CRAH galleries; air-side economizers; N+1 overall and N+2 component mechanical redundancy; near-zero WUE design claim"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "London I current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/emea/london-i-united-kingdom/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_lhr2_london_ii
+    name: "Vantage London II (LHR2) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: EMEA
+    country: GB
+    administrative_region: London
+    locality: PowerGate_District
+    site_id: LHR2
+    lifecycle_as_of_2026_07_18: under_development_current_operator_page_uses_future_tense_for_completion_energization_and_utilization
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "Undisclosed location."
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 1
+      data_centers: 1
+      gross_floor_area_sqft: 194000
+      critical_IT_load_mw: 20
+      density_design: average_300W_per_sqft
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "National Grid; diverse feeds; 400V configuration; N+1 electrical redundancy; concurrently maintainable"
+      cooling_design_summary: "closed-loop chilled water from air-cooled chillers; CRAH galleries; air-side economizers; N+1 overall and N+2 component mechanical redundancy; near-zero WUE design claim"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "London II current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/emea/london-ii-united-kingdom/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_mxp1_milan_i
+    name: "Vantage Milan I (MXP1) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: EMEA
+    country: Italy
+    administrative_region: Lombardy
+    locality: Melegnano_Milan
+    site_id: MXP1
+    lifecycle_as_of_2026_07_18: mixed_full_buildout_language_for_four_facilities_exact_current_operating_phase_and_utilized_load_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "32 Via per Carpiano Melegnano, Milan, Italy 20077"
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 30
+      data_centers: 4
+      gross_floor_area_sqft: 517000
+      critical_IT_load_mw: 64
+      density_design: average_300W_per_sqft
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "Enel and Terna; N+1 220kV onsite substation; diverse feeds; 400V configuration; N+1 electrical redundancy; concurrently maintainable"
+      cooling_design_summary: "closed-loop chilled water from air-cooled chillers; CRAH galleries; air-side economizers; N+1 overall and N+2 component mechanical redundancy; near-zero WUE design claim"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Milan I current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/emea/milan-italy/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_mxp2_milan_ii
+    name: "Vantage Milan II (MXP2) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: EMEA
+    country: Italy
+    administrative_region: Lombardy
+    locality: Castelletto_Milan
+    site_id: MXP2
+    lifecycle_as_of_2026_07_18: operator_page_targeted_first_phase_spring_2026_current_completion_energization_and_utilization_not_reverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "Via Aganippo Brocchi Castelletto, Milan, Italy"
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 2
+      data_centers: 2
+      gross_floor_area_sqft: 108000
+      critical_IT_load_mw: 32
+      density_design: average_8kW_per_rack
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "Duereti and Terna; one 50MW high-voltage and two 20MW medium-voltage substations; N+1 critical-system redundancy"
+      cooling_design_summary: "closed-loop chilled water with CRAH galleries and air-side economizers; N+2 mechanical redundancy; near-zero WUE design claim"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Milan II current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/emea/milan-ii-italy/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_waw1_warsaw
+    name: "Vantage Warsaw (WAW1) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: EMEA
+    country: Poland
+    administrative_region: Masovian
+    locality: Warsaw
+    site_id: WAW1
+    lifecycle_as_of_2026_07_18: mixed_full_buildout_language_for_two_facilities_exact_current_operating_phase_and_utilized_load_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "Zgrupowania AK Kampinos 42D , Warsaw 01-949"
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 12
+      data_centers: 2
+      gross_floor_area_sqft: 390000
+      critical_IT_load_mw: 48
+      density_design: average_300W_per_sqft
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "Innogy; dedicated onsite substation; diverse feeds; 480V configuration; N+1 electrical redundancy; concurrently maintainable"
+      cooling_design_summary: "closed-loop chilled water from air-cooled chillers; CRAH galleries; air-side economizers; N+1 overall and N+2 component mechanical redundancy; near-zero WUE design claim"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Warsaw current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/emea/warsaw-poland/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_zrh1_zurich_i
+    name: "Vantage Zurich I (ZRH1) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: EMEA
+    country: Switzerland
+    administrative_region: Zurich
+    locality: Winterthur
+    site_id: ZRH1
+    lifecycle_as_of_2026_07_18: mixed_full_buildout_language_for_three_facilities_exact_current_operating_phase_and_utilized_load_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "12 Fabrikstrasse , Winterthur, 8404"
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 7
+      data_centers: 3
+      gross_floor_area_sqft: 400000
+      critical_IT_load_mw: 40
+      density_design: average_300W_per_sqft
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "Stadtwerk; diverse feeds; 400V configuration; N+1 electrical redundancy; concurrently maintainable"
+      cooling_design_summary: "closed-loop chilled water from air-cooled chillers; CRAH galleries; air-side economizers; N+1 overall and N+2 component mechanical redundancy; near-zero WUE design claim; waste-heat reuse for building comfort heating"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Zurich I current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/emea/zurich-i-switzerland/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_zrh2_zurich_ii
+    name: "Vantage Zurich II (ZRH2) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: EMEA
+    country: Switzerland
+    administrative_region: Zurich
+    locality: Glattfelden
+    site_id: ZRH2
+    lifecycle_as_of_2026_07_18: current_operator_page_uses_future_tense_for_single_facility_completion_energization_and_utilization
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "Spinnerei Lettenstrasse Glattfelden, 8192 Switzerland"
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 3
+      data_centers: 1
+      gross_floor_area_sqft: 226000
+      critical_IT_load_mw: 24
+      density_design: average_300W_per_sqft
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "EKZ; diverse feeds; 400V configuration; N+1 electrical redundancy; concurrently maintainable"
+      cooling_design_summary: "closed-loop chilled water from air-cooled chillers; CRAH galleries; air-side economizers; N+1 overall and N+2 component mechanical redundancy; near-zero WUE design claim; air-source and water-source heat-pump waste-heat reuse planned"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Zurich II current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/emea/zurich-ii-switzerland/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_kul1_cyberjaya_i
+    name: "Vantage Cyberjaya I (KUL1) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: APAC
+    country: Malaysia
+    administrative_region: Selangor
+    locality: Cyberjaya
+    site_id: KUL1
+    lifecycle_as_of_2026_07_18: mixed_full_buildout_language_for_four_facilities_exact_current_operating_phase_and_utilized_load_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "Undisclosed location."
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 6
+      data_centers: 4
+      gross_floor_area_sqft: 463000
+      critical_IT_load_mw: 31
+      density_design: undisclosed
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "Tenaga Nasional Berhad; diverse feeds; building-specific 2N, customized N+2C and distributed-redundant N+1 topologies; concurrently maintainable"
+      cooling_design_summary: "building-specific DX or closed-loop air-cooled chiller systems with hot-aisle containment; N+1 or N+2 redundancy; KUL13 near-zero WUE claim"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Cyberjaya I current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/apac/cyberjaya-i-malaysia/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_kul2_cyberjaya_ii
+    name: "Vantage Cyberjaya II (KUL2) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: APAC
+    country: Malaysia
+    administrative_region: Selangor
+    locality: Cyberjaya
+    site_id: KUL2
+    lifecycle_as_of_2026_07_18: current_operator_page_uses_full_buildout_and_future_tense_for_six_facilities_exact_current_phase_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "Undisclosed location."
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 52
+      data_centers: 6
+      gross_floor_area_sqft: 4800000
+      critical_IT_load_mw: 436
+      density_design: undisclosed
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "Tenaga Nasional Berhad; N+1 500MVA onsite substation; diverse feeds; N+1 electrical redundancy; concurrently maintainable"
+      cooling_design_summary: "closed-loop chilled water from air-cooled chillers; CRAH galleries; N+1 overall and N+2 component mechanical redundancy; near-zero WUE design claim; liquid-cooling ready"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Cyberjaya II current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/apac/cyberjaya-ii-malaysia/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_hkg2_fo_tan
+    name: "Vantage Fo Tan (HKG2) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: APAC
+    country: Hong_Kong
+    administrative_region: Hong_Kong
+    locality: Fo_Tan
+    site_id: HKG2
+    lifecycle_as_of_2026_07_18: current_operator_page_describes_and_certifies_existing_13_story_Tier_III_facility_exact_utilized_load_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "Undisclosed location."
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: undisclosed
+      site_area_sqft: 15000
+      data_centers: 1
+      gross_floor_area_sqft: 185000
+      critical_IT_load_mw: 13
+      density_design: undisclosed
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "China Light and Power; 2N in-room busways with N+1 block-redundant electrical system; diverse feeds; 380/230V distribution; concurrently maintainable"
+      cooling_design_summary: "UPS-backed modular air-cooled chillers; closed-loop chilled water; hot-aisle containment; N+2 component redundancy; near-zero WUE claim"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Fo Tan current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/apac/fo-tan-hong-kong/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_jhb1_johor
+    name: "Vantage Johor (JHB1) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: APAC
+    country: Malaysia
+    administrative_region: Johor
+    locality: Sedenak_Tech_Park
+    site_id: JHB1
+    lifecycle_as_of_2026_07_18: mixed_first_facility_explicitly_operational_and_remaining_two_facilities_under_development
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "Undisclosed location."
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 73
+      data_centers: 3
+      gross_floor_area_sqft: 930000
+      gross_floor_area_qualifier: more_than
+      critical_IT_load_mw: 300
+      critical_IT_load_qualifier: more_than_or_equal
+      density_design: AI_ready_numeric_limit_undisclosed
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "Tenaga Nasional Berhad; dedicated dual 275kV feeds and diverse 33kV feeds to each building; N+1 electrical redundancy"
+      cooling_design_summary: "hybrid liquid-and-air-cooled GPU cluster support; air-cooled chillers; liquid-cooling ready; N+2 component mechanical redundancy"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Johor current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/apac/johor-malaysia"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_hkg3_kwai_chung
+    name: "Vantage Kwai Chung (HKG3) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: APAC
+    country: Hong_Kong
+    administrative_region: Hong_Kong
+    locality: Kwai_Chung
+    site_id: HKG3
+    lifecycle_as_of_2026_07_18: current_operator_page_and_constructed_facility_certification_support_existing_16_floor_Tier_III_plus_facility_exact_utilized_load_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "Undisclosed location."
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: undisclosed
+      site_area_sqft: 29000
+      data_centers: 1
+      gross_floor_area_sqft: 270000
+      critical_IT_load_mw: 14
+      density_design: undisclosed
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "China Light and Power; mixture of 2N and distributed-redundant N+1 UPS; diverse feeds; 380/230V distribution; concurrently maintainable"
+      cooling_design_summary: "chilled-water loop with N+2 redundancy; N+1 CRAC units; hot-aisle and cold-aisle containment"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Kwai Chung current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/apac/kwai-chung-hong-kong/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_mel1_melbourne
+    name: "Vantage Melbourne (MEL1) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: APAC
+    country: Australia
+    administrative_region: Victoria
+    locality: Tullamarine_Melbourne
+    site_id: MEL1
+    lifecycle_as_of_2026_07_18: current_operator_page_uses_future_tense_for_single_facility_completion_energization_and_utilization
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "Undisclosed location."
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 7
+      data_centers: 1
+      gross_floor_area_sqft: 270000
+      critical_IT_load_mw: 64
+      density_design: undisclosed
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "Jemena; N+1 66kV onsite substation; diverse feeds; 415V distribution; N+1 electrical redundancy; concurrently maintainable"
+      cooling_design_summary: "hybrid closed-loop chilled-water system using water-cooled chillers; CRAH galleries; air-side economizers; N+1 overall and N+2 component mechanical redundancy"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Melbourne current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/apac/melbourne-australia/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_hkg1_on_lok
+    name: "Vantage On Lok (HKG1) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: APAC
+    country: Hong_Kong
+    administrative_region: Hong_Kong
+    locality: New_Territories
+    site_id: HKG1
+    lifecycle_as_of_2026_07_18: current_operator_page_describes_and_certifies_existing_facility_exact_utilized_load_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "Undisclosed location."
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: undisclosed
+      site_area_sqft: 43000
+      data_centers: 1
+      gross_floor_area_sqft: 90000
+      critical_IT_load_mw: 5
+      density_design: undisclosed
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "China Light and Power; 2N UPS; diverse feeds; 380/230V distribution; concurrently maintainable"
+      cooling_design_summary: "water-cooled chiller supporting hot-aisle and cold-aisle containment; N+1 chiller and N+1 CRAC redundancy"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "On Lok current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/apac/on-lok-hong-kong"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_kix1_osaka
+    name: "Vantage Osaka (KIX1) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: APAC
+    country: Japan
+    administrative_region: Osaka
+    locality: Ibaraki
+    site_id: KIX1
+    lifecycle_as_of_2026_07_18: operator_page_targets_first_28MW_facility_mid_2026_current_completion_energization_and_utilization_not_reverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "Undisclosed location."
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 12
+      data_centers: 2
+      gross_floor_area_sqft: 485000
+      critical_IT_load_mw: 68
+      density_design: undisclosed
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "Kansai Electric Power; N+1 77kV onsite substation; diverse feeds; 415/240V distribution; N+1 electrical redundancy; concurrently maintainable"
+      cooling_design_summary: "closed-loop chilled water from air-cooled chillers; CRAH galleries; air-side economizers; N+1 overall and N+2 component mechanical redundancy; near-zero WUE design claim"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Osaka current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/apac/osaka-japan/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
+
+  - id: dc_vantage_tpe1_taipei
+    name: "Vantage Taipei (TPE1) data center campus"
+    record_granularity: individual_vantage_campus_or_facility
+    operator: Vantage_Data_Centers
+    region_group: APAC
+    country: Taiwan
+    administrative_region: undisclosed
+    locality: undisclosed_industrial_hub
+    site_id: TPE1
+    lifecycle_as_of_2026_07_18: current_operator_page_describes_existing_five_story_facility_exact_utilized_load_unverified
+    portfolio_ref: dc_vantage_global_data_centers_portfolio
+    location:
+      operator_published_address: "Undisclosed location."
+      coordinates: undisclosed
+    marketed_design_or_full_buildout_scale:
+      land_acres: 2
+      data_centers: 1
+      gross_floor_area_sqft: 215000
+      critical_IT_load_mw: 16
+      density_design: high_density_ready_numeric_limit_undisclosed
+      scope: operator_page_marketed_design_or_full_buildout_not_current_energized_leased_utilized_or_billed_load
+    electrical_and_cooling:
+      electrical_design_summary: "Taiwan Power Company; dual-feed 161kV onsite substation with 25MVA critical capacity; diverse feeds; N+1 electrical redundancy; concurrently maintainable"
+      cooling_design_summary: "closed-loop chilled water from air-cooled chillers; CRAH galleries; minimum N+1 mechanical and N+2 component critical-cooling redundancy; near-zero WUE design claim"
+      site_specific_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_counts_and_OEMs: undisclosed_or_incomplete
+    accelerators_and_AI:
+      exact_GPU_or_accelerator_vendor_model_count_servers_racks_owner_customer_installation_utilization_and_power_draw: undisclosed
+      boundary: capacity_density_and_liquid_cooling_readiness_are_not_physical_GPU_inventory
+    linked_companies: {owner_operator: [Vantage_Data_Centers], financial_profile_refs: [company_vantage_data_centers]}
+    sources:
+      - {title: "Taipei current campus page", publisher: Vantage_Data_Centers, date: 2026-07-18_accessed, url: "https://vantage-dc.com/data-center-locations/apac/taipei-taiwan/"}
+    confidence: high_for_current_page_identity_address_marketed_scale_and_published_design_medium_for_lifecycle_low_for_current_load_GPU_inventory_full_equipment_BOM_and_site_economics
 
   - id: dc_stack_global_data_center_portfolio
     name: STACK Infrastructure global data-center portfolio
