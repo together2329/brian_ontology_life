@@ -77,6 +77,7 @@ stack_layers:
     - HD_Hyundai_Electric
     - Bloom_Energy
   operators_reits_utilities:
+    - Beyon_BSC
     - Saudi_Data_and_AI_Authority_National_Information_Center
     - Etihad_Etisalat_Mobily
     - stc_Group
@@ -10152,8 +10153,167 @@ financial_profiles:
       - https://www.saudiexchange.sa/wps/portal/saudiexchange/newsandreports/issuer-news/issuer-announcements/issuer-announcements-details/?anCat=1&anId=96279&cs=7200&locale=en
     confidence: high_for_listed_group_and_segment_financials_contract_terms_capacity_framework_and_commencement_notice_medium_for_management_outlook_low_for_Sahayeb_only_earnings_GPU_inventory_site_economics_and_forecast_conversion
 
+  - id: company_beyon_bsc
+    company: Beyon_BSC
+    operating_brands: [Batelco_by_Beyon, Beyon_Solutions, Beyon_Connect, Beyon_Money]
+    listing: {exchange: Bahrain_Bourse, ticker: BEYON, status: publicly_listed}
+    layer: operators_reits_utilities
+    reporting_scope:
+      headquarters: Bahrain
+      consolidated_geographies: [Bahrain, Jordan, Maldives, Channel_Islands, other_operations]
+      campus_refs:
+        - dc_beyon_batelco_bahrain_portfolio
+        - dc_batelco_hamala_dc1
+        - dc_batelco_rjr_data_center
+        - dc_beyon_data_oasis_campus
+        - dc_beyon_data_oasis_qareeb_white_space
+      data_center_business_boundary: >-
+        Batelco's data centers and digital infrastructure sit inside a diversified
+        telecommunications and digital-services group. Neither the audited group
+        statement nor the Bahrain geographic note reports data-center-only revenue,
+        operating profit, EBITDA, capex, debt, cash flow, utilization or returns.
+    FY2025_group_results:
+      period: year_ended_2025-12-31
+      accounting_basis: IFRS_consolidated_audited
+      currency: BHD
+      stored_unit: whole_BHD_converted_from_statement_BD_thousand
+      revenue: 496641000
+      operating_profit: 110222000
+      derived_operating_margin_percent: 22.1935
+      company_reported_EBITDA_rounded: 188100000
+      derived_EBITDA_margin_percent_using_rounded_KPI: 37.8744
+      total_group_profit: 82844000
+      net_profit_attributable_to_equity_holders: 71327000
+      prior_year:
+        revenue: 459985000
+        operating_profit: 109497000
+        derived_operating_margin_percent: 23.8045
+        company_reported_EBITDA_rounded: 183400000
+        derived_EBITDA_margin_percent_using_rounded_KPI: 39.8709
+        net_profit_attributable_to_equity_holders: 72755000
+      company_growth_description: {revenue_percent: 8, operating_profit_percent: 1, EBITDA_percent: 3, attributable_net_profit_percent: -2}
+      drivers_and_boundary: >-
+        Revenue growth was broad across international operations and digital
+        services. Attributable profit declined with domestic minimum top-up tax,
+        acquisition-related charges and lower interest income. EBITDA is a rounded
+        company KPI and is not an audited statement subtotal; its derived margin is
+        labeled accordingly.
+    FY2025_balance_sheet_and_cash_flow:
+      currency: BHD
+      unit: whole
+      cash_and_bank_balances: 145995000
+      loans_and_borrowings: 327727000
+      lease_liabilities: 59245000
+      total_assets: 1305493000
+      net_cash_from_operating_activities: 173323000
+      cash_acquisition_of_property_equipment_and_intangibles_net_of_disposals: 131366000
+      boundary: >-
+        The cash investment measure is a group-wide cash-flow proxy that includes
+        telecom networks, digital platforms and other assets. It is not accounting
+        additions, data-center capex or Hamala/Data Oasis project cost.
+    FY2025_Bahrain_geographic_segment:
+      currency: BHD
+      unit: whole
+      external_revenue: 220607000
+      profit_for_year: 57384000
+      boundary: >-
+        The Bahrain segment covers the country's telecommunications and digital
+        operations. Profit for year is not operating profit, and neither value is
+        a data-center-only result.
+    Q1_2026_group_results:
+      period: three_months_ended_2026-03-31
+      accounting_basis: IFRS_consolidated_reviewed_interim
+      currency: BHD
+      stored_unit: whole_BHD_converted_from_statement_BD_thousand
+      revenue: 118976000
+      operating_profit: 23630000
+      derived_operating_margin_percent: 19.8611
+      company_reported_EBITDA_rounded: 43000000
+      derived_EBITDA_margin_percent_using_rounded_KPI: 36.1417
+      total_group_profit: 17880000
+      net_profit_attributable_to_equity_holders: 15286000
+      prior_year:
+        revenue: 117551000
+        operating_profit: 26003000
+        derived_operating_margin_percent: 22.1206
+        company_reported_EBITDA_rounded: 45400000
+        derived_EBITDA_margin_percent_using_rounded_KPI: 38.6215
+        total_group_profit: 20852000
+        net_profit_attributable_to_equity_holders: 18077000
+      company_growth_description: {revenue_percent: 1, operating_profit_percent: -9, EBITDA_percent: -5, attributable_net_profit_percent: -15}
+      company_explanation: >-
+        The prior period included about BHD2.5 million of one-off income, while
+        geopolitical conditions affected Bahrain, Jordan and Maldives. Management
+        highlighted digital-services and international revenue growth and continued
+        advancement of the data-center strategy.
+    Q1_2026_balance_sheet_and_cash_flow:
+      currency: BHD
+      unit: whole
+      cash_and_bank_balances: 145532000
+      loans_and_borrowings: 330295000
+      total_assets: 1316566000
+      net_cash_from_operating_activities: 21919000
+      cash_acquisition_of_property_equipment_and_intangibles_net_of_disposals: 16690000
+      prior_Q1_operating_cash_flow: 15272000
+      prior_Q1_cash_investment_proxy: 29519000
+    data_center_and_AI_exposure:
+      facilities_and_programs:
+        Hamala: {published_total_capacity_mw: 2.7, working_cabinets: 250, area_sqm: 12236}
+        Beyon_Data_Oasis: {campus_area_sqm: 140000, commissioned_white_space_sqm: 6000, exact_mw: undisclosed}
+        Qareeb_partnership: operating_partner_for_new_white_space_and_edge_facility
+        sovereign_cloud: [Oracle_OCI_Dedicated_Region_agreement, Oracle_Alloy_Sovereign_HyperCloud]
+      exact_data_center_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_and_ROIC: undisclosed
+      exact_GPU_models_counts_host_sites_ownership_power_utilization_revenue_and_margin: undisclosed
+      boundary: >-
+        AI-ready facilities and Oracle cloud agreements are demand and strategy
+        evidence, not proof of Beyon-owned physical GPUs or a quantified standalone
+        data-center earnings stream.
+    outlook:
+      positive_drivers:
+        - commissioned_6000sqm_white_space_and_Qareeb_operating_partnership
+        - Bahrain_sovereign_cloud_data_residency_and_enterprise_migration_demand
+        - group_operating_cash_flow_and_profitable_Bahrain_platform
+        - international_and_digital_service_revenue_growth
+        - solar_program_and_two_company_described_net_zero_data_centers
+      risks:
+        - Q1_2026_operating_margin_and_attributable_profit_contraction
+        - data_center_revenue_profit_capex_utilization_and_return_opacity
+        - exact_white_space_MW_customer_acceptance_occupancy_and_billing_undisclosed
+        - Qareeb_lease_economics_and_Oracle_program_host_hardware_undisclosed
+        - GPU_inventory_power_chain_PUE_WUE_water_and_equipment_BOM_undisclosed
+        - telecommunications_competition_tax_regulation_currency_and_geopolitical_exposure
+      boundary: >-
+        Management's data-center strategy and newly commissioned space support a
+        growth thesis, but no reviewed quantitative data-center revenue guidance
+        or return-on-capital target permits a standalone earnings forecast.
+    watch_items:
+      - FY2026_group_and_Bahrain_revenue_operating_profit_EBITDA_capex_and_cash_flow
+      - data_center_segment_or_contract_revenue_operating_profit_utilization_customer_and_ROIC_disclosure
+      - Data_Oasis_white_space_IT_MW_racks_customer_acceptance_occupancy_and_billing
+      - Qareeb_operating_lease_term_rent_revenue_share_asset_accounting_and_capex
+      - Oracle_Dedicated_Region_and_Sovereign_HyperCloud_host_site_hardware_capex_revenue_and_margin
+      - exact_GPU_inventory_site_power_chain_cooling_PUE_WUE_water_and_renewable_matching
+    sources:
+      - https://beyon.com/wp-content/uploads/2026/03/Beyon-AR2025-ENGLISH.pdf
+      - https://beyon.com/2026/02/26/beyon-announces-2025-financial-results/
+      - https://beyon.com/wp-content/uploads/2026/05/Beyon-Group-FS_Q1-2026-English-Unsigned.pdf
+      - https://beyon.com/2026/04/30/beyon-announces-q1-2026-financial-results/
+      - https://www.batelco.com/archive/minister-of-transportation-and-telecommunications-opens-the-latest-batelco-data-center/
+      - https://beyon.com/2025/11/02/batelco-by-beyon-announces-commissioning-of-bahrains-first-white-space-data-centre-during-gateway-gulf-2025/
+      - https://www.batelco.com/business/batelco-by-beyon-and-qareeb-data-centers-announce-strategic-partnership-to-launch-bahrains-first-edge-data-center/
+      - https://beyon.com/2025/02/04/beyon-solutions-and-oracle-collaborate-to-deliver-sovereign-cloud-services-for-bahrain/
+      - https://beyon.com/2025/11/02/beyon-solutions-and-the-information-egovernment-authority-sign-agreement-to-launch-kingdom-of-bahrains-first-sovereign-hypercloud/
+    confidence: high_for_listed_group_FY2025_Q1_2026_financials_and_named_data_center_programs_low_for_data_center_only_economics_GPU_inventory_site_power_BOM_and_return_forecast
+
 cross_company_read_through:
   current_signals:
+    - Beyon/Batelco's current Bahrain platform exposes Hamala and the Beyon Data Oasis white-space facility, while Uptime separately names Hamala DC.1 and RJR Data Center in Ras Abu Jarjur. The historical statement that Hamala was Batelco's third data center and the RJR-to-Data-Oasis relation do not reconcile into a complete current physical roster, so no unnamed or duplicate site is invented.
+    - Hamala's 2021 release discloses 12,236 square metres, 2.7 MW of total capacity and 250 cabinets, but does not define the area or distinguish IT load from facility or utility power. Data Oasis separately provides 140,000 square metres of campus land and a 6,000-square-metre commissioned white-space facility with no official MW or rack count.
+    - Beyon describes Hamala and Data Oasis as net-zero data centers and reports more than 3.5 MW of Bahrain solar PV and about 6.7 GWh of annual clean generation. Those portfolio figures do not reveal per-site electricity consumption, hourly matching, PUE, WUE, water use or the full power and cooling equipment ledger.
+    - The Qareeb partnership transitions the commissioned Data Oasis white-space facility toward edge and sovereign service operation, but lease economics, customer acceptance, occupancy, utilized load and billing are undisclosed. A non-primary 10-MW description is excluded until corroborated.
+    - Beyon generated BHD496.641 million of FY2025 revenue and BHD110.222 million of operating profit, a derived 22.2% margin, then BHD118.976 million and BHD23.630 million in Q1 2026, a derived 19.9% margin. These are diversified group results and cannot be attributed to Batelco data centers.
+    - Q1 2026 revenue rose 1% but operating profit fell 9% and attributable profit 15%, partly because the prior period had about BHD2.5 million of one-off income and current operations faced geopolitical pressure. Data-center strategy advancement is an outlook signal, not disclosed segment guidance or achieved returns.
+    - Beyon does not disclose a physical GPU model, count, owner, host site, power draw or utilization. AI-ready space, Oracle OCI Dedicated Region and Oracle Alloy Sovereign HyperCloud agreements therefore remain separate from verified accelerator inventory and data-center-only earnings.
     - Sahayeb's current Arabic profile says five data centers, MIS's current subsidiaries page says six, the original 2021 contract covered six 4-MW sites, and Uptime currently names five projects. The missing sixth-site crosswalk is not invented.
     - Sahayeb's 24-MW initial and 120-MW expandable IT-load marketing does not reconcile publicly with MIS's 32 MW already under development, up-to-112-MW additional framework or 72-MW first notice. These dated scopes are preserved separately rather than added or treated as current live capacity.
     - Uptime currently shows Tier III design and constructed-facility awards for Dammam DC1, DC2, DC3 and Riyadh DC1, while Riyadh DC2 currently has design certification only. No operational-sustainability award was found for the five named projects.
@@ -10434,6 +10594,9 @@ cross_company_read_through:
     - How much announced utility load has received permits, financing, interconnection, and energization?
 
 research_limits:
+  - Beyon is a diversified listed telecommunications and digital-services group; its group and Bahrain geographic results are not Batelco data-center-only earnings.
+  - Hamala's 2.7-MW total-capacity figure is not explicitly IT load, and Data Oasis publishes no official MW, rack, utilization or customer ledger. Neither site has a verified public GPU inventory or complete electrical and cooling bill of materials.
+  - The RJR Data Center to Beyon Data Oasis physical and certification crosswalk remains unresolved, so identities are retained without double-counting capacity or awards.
   - DAMAC Digital and QST are private and publish no reviewed standalone audited financial statements; their project values, capacity plans, financing programs and reported possible valuations are not substitutes for revenue, operating profit or cash flow.
   - DAMAC Digital's 500 MW and QST's 300 MW are dated Saudi development targets, not current operating capacity. The reviewed current evidence supports a DAMAC 15-MW operating portfolio subset and two QST 9-MW site cards without complete utilization or billing bridges.
   - Vendor cooling, BMS and EPMS case studies improve equipment visibility but do not establish full as-built bills of materials, site-wide efficiency, live IT load or operator economics.

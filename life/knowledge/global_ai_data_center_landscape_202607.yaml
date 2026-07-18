@@ -17037,7 +17037,226 @@ campus_profiles:
       - {title: Sahayeb portfolio current profile, publisher: Al_Moammar_Information_Systems, date: 2026-07-18_accessed, url: "https://www.mis.com.sa/ar/about-us-ar/subsidiaries/sahayeb/"}
     confidence: high_for_name_city_and_Tier_III_design_award_low_for_construction_exact_address_capacity_equipment_GPU_and_operation
 
+  - id: dc_beyon_batelco_bahrain_portfolio
+    name: Beyon and Batelco Bahrain data-center portfolio
+    record_granularity: operator_portfolio_and_roster_reconciliation_not_one_physical_campus
+    operator_and_parent:
+      operating_brand: Batelco_by_Beyon
+      listed_parent: Beyon_BSC
+      financial_profile_ref: company_beyon_bsc
+    location:
+      country: Bahrain
+      current_marketed_locations: [Hamala, southern_Bahrain_Beyon_Data_Oasis]
+      Uptime_named_projects: [Batelco_Hamala_Data_Center_DC1, Batelco_RJR_Data_Center]
+    roster_reconciliation:
+      historical_2021_Hamala_opening_description: Batelcos_third_data_center
+      current_public_service_page: markets_colocation_at_multiple_locations_but_does_not_publish_a_complete_site_ledger
+      current_Uptime_project_count: 2
+      stored_child_refs:
+        - dc_batelco_hamala_dc1
+        - dc_batelco_rjr_data_center
+        - dc_beyon_data_oasis_campus
+        - dc_beyon_data_oasis_qareeb_white_space
+      boundary: >-
+        The historical third-data-center statement is not converted into a
+        current three-site roster. Uptime's RJR project is in Ras Abu Jarjur,
+        while current company releases use Beyon Data Oasis in southern Bahrain;
+        no reviewed primary source explicitly proves they are the same physical
+        facility, so both identities are retained without double-counting area,
+        capacity or certification.
+    portfolio_power_and_sustainability:
+      Bahrain_solar_PV_capacity_mw_greater_than: 3.5
+      approximate_annual_clean_generation_gwh: 6.7
+      current_company_net_zero_data_center_count: 2
+      named_net_zero_centers: [Hamala, Beyon_Data_Oasis]
+      boundary: >-
+        These are Bahrain program- or portfolio-level sustainability figures.
+        They do not disclose each site's hourly matching, grid imports, load,
+        PUE, WUE, water consumption or complete electrical topology.
+    accelerators_and_cloud:
+      AI_ready_marketing: true
+      related_sovereign_cloud_programs: [Oracle_Alloy_Sovereign_HyperCloud, Oracle_OCI_Dedicated_Region_agreement]
+      exact_host_site_for_cloud_programs: undisclosed
+      exact_GPU_models_counts_servers_racks_fabric_ownership_delivery_power_draw_utilization_customers_revenue_and_margin: undisclosed
+      boundary: AI-ready space and separate Oracle agreements do not prove installed accelerators at a Batelco facility.
+    sources:
+      - {title: Batelco current data-center service page, publisher: Batelco_by_Beyon, date: 2026-07-18_accessed, url: "https://batelco.com/business/data-center/"}
+      - {title: Hamala opening and third-data-center statement, publisher: Batelco, date: 2021-02-06, url: "https://www.batelco.com/archive/minister-of-transportation-and-telecommunications-opens-the-latest-batelco-data-center/"}
+      - {title: Batelco current Uptime client ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/client/bahrain-telecommunications-company-batelco/608"}
+      - {title: Beyon 2025 ESG report, publisher: Beyon_BSC, date: 2026-03, url: "https://beyon.com/wp-content/uploads/2026/03/Beyon_ESG2025_English.pdf"}
+      - {title: Oracle Dedicated Region collaboration, publisher: Beyon_BSC, date: 2025-02-04, url: "https://beyon.com/2025/02/04/beyon-solutions-and-oracle-collaborate-to-deliver-sovereign-cloud-services-for-bahrain/"}
+      - {title: Sovereign HyperCloud agreement, publisher: Beyon_BSC, date: 2025-11-02, url: "https://beyon.com/2025/11/02/beyon-solutions-and-the-information-egovernment-authority-sign-agreement-to-launch-kingdom-of-bahrains-first-sovereign-hypercloud/"}
+    confidence: high_for_named_current_platforms_parent_and_portfolio_solar_figures_medium_for_current_complete_roster_low_for_RJR_Data_Oasis_crosswalk_and_GPU_inventory
+
+  - id: dc_batelco_hamala_dc1
+    name: Batelco Hamala Data Center DC.1
+    record_granularity: individual_operating_data_center
+    operator: Batelco_by_Beyon
+    location:
+      country: Bahrain
+      locality: Hamala
+      address: Building_1095_Road_1425_Block_1014_Hamala_Bahrain
+      exact_coordinates_parcel_and_building_footprint: undisclosed
+    lifecycle:
+      official_opening_date: 2021-02-04
+      status: operating_and_currently_marketed
+    size_and_capacity:
+      published_area_sqm: 12236
+      area_definition: official_release_says_area_without_separating_site_gross_building_or_white_space
+      published_total_capacity_mw: 2.7
+      capacity_definition: total_capacity_not_explicitly_IT_load_facility_power_or_utility_service
+      working_cabinets: 250
+      exact_energized_leased_utilized_and_billed_IT_load: undisclosed
+    certification:
+      tier: Tier_III
+      design_documents: true
+      constructed_facility: true
+      operational_sustainability: not_found_in_reviewed_sources
+      source_boundary: Hamala's official opening release supports design and build; it does not support a current TCOS award.
+    power_cooling_and_sustainability:
+      generic_disclosures: [redundant_power, cooling_systems, environmental_monitoring, UPS]
+      renewable_status_after_2025_phase_3: company_described_100_percent_renewable_and_net_zero
+      historical_2023_solar_design: {capacity_mw: 1.5, annual_generation_target_gwh: 2.5, annual_avoided_tco2_target: 1650}
+      2025_solar_phase_3_investment_BHD: 520000
+      exact_grid_voltage_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_and_topology: undisclosed
+      exact_PUE_WUE_water_use_hourly_renewable_matching_live_liquid_cooled_MW_and_rack_density: undisclosed
+      boundary: The 2023 solar values were announced design targets and are not relabeled as measured 2026 site generation.
+    accelerators:
+      exact_GPU_models_counts_servers_racks_fabric_ownership_delivery_power_draw_utilization_customers_revenue_and_margin: undisclosed
+      boundary: Enterprise colocation and AI/cloud group programs are not evidence of a physical GPU fleet in Hamala.
+    portfolio_ref: dc_beyon_batelco_bahrain_portfolio
+    financial_profile_ref: company_beyon_bsc
+    sources:
+      - {title: Hamala data-center opening, publisher: Batelco, date: 2021-02-06, url: "https://www.batelco.com/archive/minister-of-transportation-and-telecommunications-opens-the-latest-batelco-data-center/"}
+      - {title: Batelco current data-center service and Hamala address, publisher: Batelco_by_Beyon, date: 2026-07-18_accessed, url: "https://batelco.com/business/data-center/"}
+      - {title: Al Salam Bank Tier III migration release, publisher: Batelco_by_Beyon, date: 2025, url: "https://www.batelco.com/business/al-salam-bank-strengthens-digital-infrastructure-with-tier-iii-data-centre-migration-at-batelco-by-beyon/"}
+      - {title: Hamala green data-center phase 3, publisher: Beyon_BSC, date: 2025-11-03, url: "https://beyon.com/2025/11/03/beyon-announces-second-green-data-center-and-strengthens-partnership-with-almoayyed-solar/"}
+      - {title: Beyon 2023 sustainability report, publisher: Beyon_BSC, date: 2024-05, url: "https://beyon.com/wp-content/uploads/2024/05/Beyon_Sustainability_Report_2023_Eng-53.pdf"}
+    confidence: high_for_address_opening_area_total_capacity_cabinets_and_Tier_III_design_build_medium_for_current_renewable_boundary_low_for_capacity_definition_full_BOM_measured_efficiency_and_GPU_inventory
+
+  - id: dc_batelco_rjr_data_center
+    name: Batelco RJR Data Center
+    record_granularity: individual_Uptime_named_project_with_unresolved_current_brand_crosswalk
+    operator: Batelco_by_Beyon
+    location:
+      country: Bahrain
+      locality: Ras_Abu_Jarjur
+      exact_address_coordinates_parcel_and_building_number: undisclosed
+    lifecycle: named_in_current_Uptime_client_ledger_but_current_operator_marketing_identity_and_RFS_status_not_separately_reconciled
+    certification:
+      Uptime_project_name_confirmed: true
+      exact_current_award_types_visible_in_reviewed_source: undisclosed_due_to_dynamic_table_access_limit
+      possible_Data_Oasis_relation: likely_but_not_explicitly_proven
+      boundary: >-
+        A separate Batelco release supports Tier III design and construction for
+        Beyon Data Oasis, but this is not assigned to the RJR-named project until
+        one primary source provides the physical or certification crosswalk.
+    size_capacity_power_cooling_and_accelerators:
+      area_racks_IT_mw_facility_power_utility_service_live_load_and_utilization: undisclosed
+      grid_voltage_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_topology_PUE_WUE_water_and_renewables: undisclosed
+      exact_GPU_models_counts_servers_racks_fabric_ownership_customers_power_draw_and_utilization: undisclosed
+    possible_related_campus_ref: dc_beyon_data_oasis_campus
+    portfolio_ref: dc_beyon_batelco_bahrain_portfolio
+    financial_profile_ref: company_beyon_bsc
+    sources:
+      - {title: Batelco current Uptime client ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/client/bahrain-telecommunications-company-batelco/608"}
+      - {title: Al Salam Bank Tier III migration release, publisher: Batelco_by_Beyon, date: 2025, url: "https://www.batelco.com/business/al-salam-bank-strengthens-digital-infrastructure-with-tier-iii-data-centre-migration-at-batelco-by-beyon/"}
+    confidence: high_for_Uptime_name_and_Ras_Abu_Jarjur_location_low_for_current_brand_crosswalk_capacity_equipment_operation_and_GPU_inventory
+
+  - id: dc_beyon_data_oasis_campus
+    name: Beyon Data Oasis campus
+    record_granularity: multi_asset_digital_infrastructure_campus_with_one_separately_profiled_white_space_facility
+    operator_and_parent: {operator: Batelco_by_Beyon, parent: Beyon_BSC}
+    location:
+      country: Bahrain
+      area: southern_Bahrain
+      exact_address_coordinates_parcel_and_building_numbers: undisclosed
+    lifecycle:
+      announced: 2023-05-16
+      status: active_campus_with_commissioned_white_space_facility_and_other_asset_roster_undisclosed
+    size_and_capacity:
+      campus_area_sqm: 140000
+      original_power_description: multiple_megawatt_power_capacity
+      exact_campus_IT_mw_facility_power_utility_service_energized_leased_utilized_and_billed_load: undisclosed
+      white_space_child_ref: dc_beyon_data_oasis_qareeb_white_space
+      non_additivity_boundary: Campus land area and child white-space area are different measures; no capacity is added across the campus and child record.
+    connectivity:
+      original_planned_cable_integrations: [SEA_ME_WE_6, Al_Khaleej]
+      live_acceptance_and_exact_campus_route_status: undisclosed
+    power_and_sustainability:
+      Data_Oasis_solar_phase_1_and_2_annual_generation_gwh: 3.6
+      annual_avoided_tco2_greater_than: 2000
+      annual_cost_saving_BHD: 105000
+      current_company_description: fully_renewable_net_zero_data_center_platform
+      exact_grid_service_power_chain_equipment_PUE_WUE_water_and_hourly_matching: undisclosed
+      boundary: The 3.6-GWh generation figure is a campus solar-program output, not IT capacity or site electricity consumption.
+    possible_Uptime_project_ref: dc_batelco_rjr_data_center
+    portfolio_ref: dc_beyon_batelco_bahrain_portfolio
+    financial_profile_ref: company_beyon_bsc
+    sources:
+      - {title: Original Beyon Data Oasis announcement, publisher: Beyon_BSC, date: 2023-05-16, url: "https://beyon.com/2023/05/16/beyon-announces-the-biggest-ever-investment-in-digital-infrastructure-in-bahrain/"}
+      - {title: First fully clean-powered Bahrain data center, publisher: Beyon_BSC, date: 2023-05-31, url: "https://beyon.com/2023/05/31/beyon-announces-the-first-data-centre-in-bahrain-fully-powered-by-clean-energy/"}
+      - {title: White-space commissioning, publisher: Beyon_BSC, date: 2025-11-02, url: "https://beyon.com/2025/11/02/batelco-by-beyon-announces-commissioning-of-bahrains-first-white-space-data-centre-during-gateway-gulf-2025/"}
+    confidence: high_for_campus_area_solar_program_and_commissioned_child_medium_for_current_asset_roster_low_for_exact_power_capacity_RJR_crosswalk_equipment_and_utilization
+
+  - id: dc_beyon_data_oasis_qareeb_white_space
+    name: Beyon Data Oasis Qareeb white-space and edge data center
+    aliases: [Bahrains_first_white_space_data_center, Qareeb_Bahrain_edge_data_center]
+    record_granularity: individual_commissioned_white_space_facility_inside_Beyon_Data_Oasis
+    location:
+      country: Bahrain
+      area: southern_Bahrain
+      parent_campus_ref: dc_beyon_data_oasis_campus
+      exact_address_coordinates_parcel_and_building_number: undisclosed
+    ownership_and_operation:
+      campus_and_facility_source: Beyon_and_Batelco
+      operating_partner: Qareeb_Data_Centers
+      partnership_announced: 2026-01-13
+      exact_lease_ownership_equity_term_rent_revenue_share_and_asset_accounting: undisclosed
+    lifecycle:
+      commissioned_date: 2025-11-02
+      January_2026_status: Qareeb_first_operational_data_center_and_transition_from_completion_to_operational_readiness
+      exact_customer_acceptance_occupancy_utilized_load_and_billing_start: undisclosed
+    size_and_capacity:
+      white_space_area_sqm: 6000
+      campus_area_sqm_context_only: 140000
+      company_scale_claim: largest_and_most_power_dense_in_Bahrain
+      exact_IT_mw_facility_power_utility_service_racks_density_energized_leased_utilized_and_billed_load: undisclosed
+      boundary: A third-party 10-MW description was not corroborated by a reviewed primary source and is excluded.
+    certification:
+      tier: Tier_III
+      design_documents: true
+      constructed_facility: true
+      operational_sustainability: not_found_in_reviewed_sources
+      source_boundary: A Batelco customer-migration release states that Data Oasis was certified in design and construction; no current TCOS evidence was found.
+    power_cooling_and_sustainability:
+      disclosed_design: [redundant_power, redundant_cooling, direct_connection_to_Beyon_solar_park]
+      renewable_description: significant_share_of_electricity_from_renewable_sources
+      exact_grid_voltage_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_and_topology: undisclosed
+      exact_PUE_WUE_water_use_renewable_share_hourly_matching_live_liquid_cooled_MW_and_rack_density: undisclosed
+    accelerators_and_services:
+      marketed_readiness: [AI, cloud, hyperscaler, sovereign, edge, enterprise_colocation]
+      exact_GPU_models_counts_servers_racks_fabric_ownership_delivery_power_draw_utilization_customers_revenue_and_margin: undisclosed
+      boundary: Workload readiness is a design and service claim, not installed GPU evidence.
+    portfolio_ref: dc_beyon_batelco_bahrain_portfolio
+    financial_profile_ref: company_beyon_bsc
+    sources:
+      - {title: White-space commissioning, publisher: Beyon_BSC, date: 2025-11-02, url: "https://beyon.com/2025/11/02/batelco-by-beyon-announces-commissioning-of-bahrains-first-white-space-data-centre-during-gateway-gulf-2025/"}
+      - {title: Batelco and Qareeb strategic partnership, publisher: Batelco_by_Beyon, date: 2026-01-13, url: "https://www.batelco.com/business/batelco-by-beyon-and-qareeb-data-centers-announce-strategic-partnership-to-launch-bahrains-first-edge-data-center/"}
+      - {title: Al Salam Bank Tier III migration release, publisher: Batelco_by_Beyon, date: 2025, url: "https://www.batelco.com/business/al-salam-bank-strengthens-digital-infrastructure-with-tier-iii-data-centre-migration-at-batelco-by-beyon/"}
+    confidence: high_for_area_commissioning_location_partnership_and_Tier_III_design_construction_low_for_MW_racks_customers_equipment_live_load_and_GPU_inventory
+
 disclosure_gap_register:
+  - Beyon_Batelco_historical_third_data_center_current_complete_roster_and_RJR_to_Data_Oasis_physical_crosswalk
+  - Beyon_Batelco_per_site_exact_address_coordinate_parcel_building_ownership_RFS_energized_leased_utilized_and_billed_load
+  - Hamala_2_7MW_total_capacity_definition_and_12236sqm_area_definition
+  - Data_Oasis_140000sqm_campus_6000sqm_white_space_asset_roster_and_capacity_boundary
+  - Beyon_Data_Oasis_Qareeb_exact_IT_MW_facility_power_utility_service_racks_density_customers_occupancy_and_billing
+  - Beyon_Batelco_per_site_grid_voltage_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_and_topology
+  - Beyon_Batelco_per_site_PUE_WUE_water_renewable_share_hourly_matching_liquid_cooled_MW_and_measured_performance
+  - Beyon_Batelco_exact_GPU_models_counts_servers_racks_fabric_ownership_host_site_delivery_power_draw_utilization_revenue_and_margin
+  - Beyon_Batelco_Oracle_Dedicated_Region_and_Sovereign_HyperCloud_exact_host_site_hardware_capacity_and_economics
+  - Beyon_BSC_data_center_only_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_and_ROIC
   - Sahayeb_current_five_vs_six_facility_claim_and_original_six_site_contract_to_five_named_Uptime_projects_complete_roster_crosswalk
   - Sahayeb_24MW_initial_32MW_under_development_120MW_expandable_112MW_additional_and_72MW_commencement_notice_scope_reconciliation
   - Sahayeb_five_named_sites_exact_addresses_coordinates_parcels_building_ownership_RFS_energized_leased_utilized_and_billed_load
@@ -17322,6 +17541,12 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
+    - Beyon_Batelco_current_complete_physical_roster_and_historical_third_data_center_identity
+    - Batelco_RJR_Ras_Abu_Jarjur_to_Beyon_Data_Oasis_exact_physical_and_Uptime_certification_crosswalk
+    - Hamala_2_7MW_capacity_definition_12236sqm_area_definition_live_IT_load_utilization_and_customer_ramp
+    - Data_Oasis_6000sqm_white_space_exact_IT_MW_racks_lease_structure_operational_acceptance_occupancy_and_billing
+    - Beyon_Batelco_per_site_power_chain_cooling_PUE_WUE_water_renewables_liquid_cooled_MW_and_equipment_OEM_inventory
+    - Beyon_Batelco_exact_GPU_inventory_Oracle_cloud_host_site_hardware_ownership_power_utilization_and_service_revenue
     - Sahayeb_five_vs_six_site_roster_and_24_32_120_112_72MW_capacity_scope_reconciliation
     - Sahayeb_per_site_address_RFS_capacity_grid_power_chain_cooling_PUE_WUE_water_renewables_and_full_equipment_BOM
     - Sahayeb_GPU_cloud_JV_and_HUMAIN_award_to_exact_host_site_hardware_ownership_power_utilization_and_revenue
@@ -17534,6 +17759,9 @@ next_research_queue:
     - NTT_India_exact_GPU_inventory_customer_vs_operator_ownership_live_liquid_cooled_MW_CDU_heat_rejection_and_equipment_OEMs
     - NTT_India_transformer_switchgear_UPS_battery_generator_chiller_counts_and_operating_PUE_WUE_water_per_site
   company_financials:
+    - Beyon_BSC_data_center_only_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_and_ROIC
+    - Beyon_Batelco_Qareeb_lease_term_rent_revenue_share_asset_accounting_capex_and_operating_economics
+    - Beyon_Oracle_Dedicated_Region_and_Sovereign_HyperCloud_contract_value_hardware_capex_revenue_margin_and_host_site
     - DAMAC_Digital_standalone_audited_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_and_ROIC
     - DAMAC_Digital_Saudi_500MW_and_global_4GW_funding_incurred_capex_customer_contracts_revenue_conversion_and_site_returns
     - DAMAC_Digital_RYD1_DMM1_legal_entity_financial_consolidation_ownership_and_project_economics
