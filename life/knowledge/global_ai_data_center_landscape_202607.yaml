@@ -42,6 +42,63 @@ scope_and_method:
     announced multi-facility programs and regional portfolios when no exact site
     boundary is public. Non-campus records declare record_granularity and must not
     be counted as one physical data center.
+  operator_segments_in_scope:
+    - hyperscalers_and_big_tech
+    - neocloud_and_GPU_cloud_operators
+    - colocation_and_hyperscale_build_to_suit_operators
+    - data_center_REITs_and_private_developers
+    - converted_crypto_and_power_site_hosts
+    - utilities_and_power_developers
+    - compute_network_electrical_and_cooling_supply_chain
+  neocloud_scope:
+    primary_operator_roster:
+      - CoreWeave
+      - Nscale
+      - Crusoe
+      - Lambda
+      - Nebius
+      - Fluidstack
+      - Voltage_Park
+      - TensorWave
+      - Together_AI
+      - Vultr
+      - GMI_Cloud
+      - RunPod
+    linked_capacity_host_roster:
+      - Applied_Digital
+      - Core_Scientific
+      - IREN
+      - Galaxy_Digital
+      - Cipher_Mining
+    classification_boundary: >-
+      The linked capacity hosts are not automatically classified as neoclouds.
+      They are tracked separately because they may own powered campuses, lease
+      capacity to a neocloud, convert crypto infrastructure to AI, or combine a
+      hosting business with their own cloud service.
+    required_metrics:
+      infrastructure:
+        - physical_data_centers_and_service_AZs_with_scope_reconciliation
+        - active_contracted_and_pipeline_power_kept_separate
+        - owned_leased_colocated_and_customer_supplied_capacity_kept_separate
+        - GPU_or_accelerator_model_count_ownership_delivery_and_site_allocation
+        - rack_density_liquid_cooling_grid_and_backup_power
+      commercial:
+        - customer_contract_value_term_acceptance_and_revenue_commencement
+        - customer_and_accelerator_supplier_concentration
+        - utilization_and_revenue_per_active_MW_or_GPU_only_when_comparable
+        - backlog_RPO_and_pipeline_kept_separate
+      financial:
+        - revenue_GAAP_operating_income_net_income_and_adjusted_EBITDA
+        - capex_debt_interest_lease_obligations_and_free_cash_flow
+        - equity_debt_asset_backed_and_vendor_financing_structure
+        - liquidity_dilution_refinancing_and_accelerator_residual_value_risk
+    disclosure_rules:
+      - Never count a service availability zone as one physical building without evidence.
+      - Never count contracted or pipeline MW as active, energized, accepted, utilized, or billed MW.
+      - Never assign a fleet GPU count to a campus or host landlord without site-level evidence.
+      - Separate operator-owned, financed, leased, and customer-supplied accelerators.
+      - Keep adjusted EBITDA distinct from GAAP operating profit and cash generation.
+      - Treat private-company funding and project investment as financing, not revenue.
 
 global_market_baseline:
   - id: global_supply_jll_2026
@@ -25613,6 +25670,12 @@ next_research_queue:
     - Syntys_Tunisia_Charguia_Manouba_Sidi_Rezig_Sousse_exact_addresses_per_site_IT_load_certification_power_cooling_and_GPU_inventory
     - CoreWeave_remaining_physical_sites_behind_56_AZ_identifiers_and_43_data_centers
     - CoreWeave_current_exact_GPU_count_and_per_site_accelerator_inventory
+    - neocloud_global_roster_company_identity_service_AZ_physical_campus_and_capacity_host_reconciliation
+    - Nscale_Crusoe_Lambda_Nebius_Fluidstack_Voltage_Park_TensorWave_Together_AI_Vultr_GMI_Cloud_and_RunPod_current_active_contracted_and_pipeline_power
+    - neocloud_per_site_GPU_model_count_ownership_delivery_utilization_power_draw_liquid_cooling_and_customer_allocation
+    - neocloud_customer_contract_backlog_RPO_acceptance_revenue_commencement_concentration_and_capacity_utilization
+    - neocloud_revenue_GAAP_operating_profit_adjusted_EBITDA_capex_debt_interest_lease_obligations_free_cash_flow_and_refinancing
+    - Applied_Digital_Core_Scientific_IREN_Galaxy_Digital_and_Cipher_Mining_host_capacity_to_neocloud_tenant_contract_and_physical_site_crosswalk
     - Kenilworth_final_phase_capacity_interconnection_equipment_and_energization
     - Polaris_Forge_1_building_label_to_tenant_live_MW_reconciliation
     - Core_Scientific_six_facility_GPU_cooling_water_and_electrical_BOM
