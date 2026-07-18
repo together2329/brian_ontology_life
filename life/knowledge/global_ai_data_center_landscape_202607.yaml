@@ -5061,6 +5061,9 @@ campus_profiles:
           US_locations_company_disclosed: 28
           evidence_event: Sturgeon_County_announced_as_33rd_global_and_first_Canadian_location
       current_public_location_roster:
+        official_raw_registry_ref: life/imports/global_data_centers_20260717/meta_official_location_registry.jsonl
+        official_registry_summary_ref: life/imports/global_data_centers_20260717/meta_official_location_summary.json
+        reproducible_builder_ref: scripts/build_meta_official_location_registry.py
         current_rows_derived: 33
         regional_row_counts_derived:
           Asia: 1
@@ -5311,6 +5314,17 @@ campus_profiles:
         owned_online_site_labels_2024: [Altoona, Clonee, DeKalb, Eagle_Mountain, Forest_City, Fort_Worth, Gallatin, Henrico, Huntsville, Kansas_City, Los_Lunas, Lulea, Mesa, New_Albany, Odense, Prineville, Sarpy, Stanton_Springs]
         leased_data_center_facilities_also_reported_but_count_undisclosed: true
         current_public_rows_without_a_2024_owned_online_site_row_derived: 15
+        current_public_labels_without_a_2024_owned_online_site_row:
+          [Aiken, Beaver_Dam, Bowling_Green, Cheyenne, El_Paso, Jeffersonville, Kuna, Lebanon, Montgomery, Richland_Parish, Rosemount, Singapore, Sturgeon_County, Temple, Tulsa]
+        leased_facilities_2024:
+          facility_count: undisclosed
+          electricity_consumption_mwh_aggregated: 3069504
+          water_withdrawal_megaliters_aggregated: 883
+        environmental_line_item_reconciliation:
+          owned_online_site_electricity_sum_mwh_derived: 14890259
+          owned_online_site_water_withdrawal_megaliters_derived: 3257
+          total_electricity_line_item_rounding_difference_mwh: 2
+          total_water_line_item_rounding_difference_megaliters: 2
         boundary: >-
           Meta's current location page mixes operating campuses with projects whose
           labels only say when they broke ground and how many jobs they will support
@@ -28036,6 +28050,7 @@ disclosure_gap_register:
   - Google_one_million_TPU_logical_cluster_physical_site_mapping_and_global_GPU_TPU_inventory
   - Google_per_site_live_MW_grid_substations_transformers_switchgear_generators_cooling_and_equipment_OEMs
   - Meta_33_current_location_rows_to_exact_operating_owned_leased_building_and_lifecycle_reconciliation
+  - Meta_2024_aggregated_leased_data_center_facilities_to_current_facility_count_locations_buildings_live_load_and_ownership_crosswalk
   - Meta_current_exact_global_GPU_MTIA_inventory_models_racks_utilization_and_site_allocation
   - Meta_per_site_live_MW_grid_substations_transformers_switchgear_UPS_generators_cooling_and_equipment_OEMs
   - Meta_Sturgeon_1GW_capacity_definition_generation_grid_topology_GPU_inventory_and_equipment_BOM

@@ -1,0 +1,123 @@
+{
+  "calendar_2024_environmental_reconciliation": {
+    "electricity_line_item_sum_mwh": 18061779,
+    "leased_facilities_aggregated": {
+      "electricity_consumption_mwh": 3069504,
+      "water_withdrawal_megaliters": 883
+    },
+    "other_data_center_related_facilities_aggregated": {
+      "electricity_consumption_mwh": 102016,
+      "water_withdrawal_megaliters": 3
+    },
+    "owned_online_site_electricity_sum_mwh": 14890259,
+    "owned_online_site_rows": 18,
+    "owned_online_site_water_withdrawal_sum_megaliters": 3257,
+    "reported_data_centers_total": {
+      "electricity_consumption_mwh": 18061781,
+      "water_withdrawal_megaliters": 4145
+    },
+    "reported_electricity_minus_line_item_sum_mwh": 2,
+    "reported_water_minus_line_item_sum_megaliters": 2,
+    "rounding_boundary": "Meta states that line items are rounded and therefore may not sum exactly to reported totals.",
+    "water_line_item_sum_megaliters": 4143
+  },
+  "coverage": {
+    "calendar_2024_owned_online_site_rows": 18,
+    "calendar_2024_owned_online_sites": [
+      "Altoona",
+      "Clonee",
+      "DeKalb",
+      "Eagle Mountain",
+      "Forest City",
+      "Fort Worth",
+      "Gallatin",
+      "Henrico",
+      "Huntsville",
+      "Kansas City",
+      "Los Lunas",
+      "Luleå",
+      "Mesa",
+      "New Albany",
+      "Odense",
+      "Prineville",
+      "Sarpy",
+      "Stanton Springs"
+    ],
+    "current_directory_labels_not_separately_reported_as_owned_online_in_2024": [
+      "Aiken",
+      "Beaver Dam",
+      "Bowling Green",
+      "Cheyenne",
+      "El Paso",
+      "Jeffersonville",
+      "Kuna",
+      "Lebanon",
+      "Montgomery",
+      "Richland Parish",
+      "Rosemount",
+      "Singapore",
+      "Sturgeon County",
+      "Temple",
+      "Tulsa"
+    ],
+    "current_directory_location_rows": 33,
+    "current_directory_rows_not_separately_reported_as_owned_online_in_2024": 15,
+    "directory_region_group_counts": {
+      "Asia": 1,
+      "Canada": 1,
+      "Europe": 3,
+      "United States": 28
+    },
+    "directory_rows_with_detail_url": 33,
+    "directory_rows_with_investment_year_and_job_facts": 33
+  },
+  "fleet_position_reconciliation": {
+    "2026-04-21_tulsa": {
+      "US_fleet_position": 28,
+      "global_fleet_position": 32
+    },
+    "2026-07-08_sturgeon_county": {
+      "first_in_canada": true,
+      "global_fleet_position": 33
+    },
+    "current_directory_rows": 33,
+    "interpretation": "The current 33 directory rows agree with Sturgeon County's announcement as the 33rd global location; Tulsa's earlier 32nd-global/28th-US statement reconciles to the added first Canadian row."
+  },
+  "generated_on": "2026-07-18",
+  "investment_reconciliation": {
+    "US_directory_28_location_published_investment_floor_usd_billion": 102.35,
+    "boundary": "Amounts are project announcement values at mixed lifecycle stages. Currencies are not combined, and amounts are not treated as incurred capex, current asset value, revenue, or operating capacity.",
+    "published_amount_billion_by_currency_without_fx_conversion": {
+      "CAD": 13.0,
+      "DKK": 10.0,
+      "EUR": 1.4,
+      "SEK": 8.7,
+      "SGD": 1.4,
+      "USD": 102.35
+    }
+  },
+  "lifecycle_boundary": "The current directory has no operating/construction status field. The environmental report confirms 18 owned online sites in calendar 2024 and aggregates leased facilities without a count. The other 15 current labels are not classified as offline; they require current site-level opening, commissioning, or operating evidence.",
+  "remaining_gaps": [
+    "Current operating, construction, commissioning, customer-acceptance, and revenue-start status for all 33 directory labels",
+    "Complete owned, leased, colocation, campus, building, address, parcel, and meter-boundary crosswalk",
+    "Physical building count behind each directory location and leased-facility aggregate",
+    "Per-site operating, energized, leased, utilized, and billed critical IT load",
+    "Current GPU, MTIA, accelerator, server, rack, fabric, ownership, and utilization inventory by site",
+    "Per-site utility, substation, transformer, switchgear, UPS, battery, generator, cooling, and equipment OEM bill of materials",
+    "Per-site current PUE, WUE, water, liquid-cooled MW, and hourly carbon-free energy matching",
+    "Project investment incurred-capex, depreciation, operating-cost, and workload-return reconciliation"
+  ],
+  "schema_version": 1,
+  "sources": {
+    "calendar_2024_environmental_index": "https://sustainability.atmeta.com/wp-content/uploads/2025/10/Meta_2025-Environmental-Data-Index.pdf",
+    "current_location_directory": "https://datacenters.atmeta.com/all-locations/",
+    "hash_boundary": "Hashes cover extracted stable evidence rather than full HTML or PDF bytes, whose delivery metadata can vary.",
+    "retrieved_evidence_sha256": {
+      "calendar_2024_environmental_tables": "e45d0676986a050a81baebfc66b7c3ff899a31a0a0ee766941128eca394c880a",
+      "current_directory_cards": "7b3c6c5916b2910441c2dc83f30cdaf28d0daced42181ccf4f94354d8b838275",
+      "fleet_position_counts": "d17587264c97cd92f2a95c0756d4b152f188a6125347b0c7409321b1fba0cb93"
+    },
+    "sturgeon_county_fleet_position_announcement": "https://about.fb.com/news/2026/07/breaking-ground-on-metas-first-data-center-in-canada/",
+    "tulsa_fleet_position_announcement": "https://about.fb.com/news/2026/04/breaking-ground-new-ai-optimized-data-center-tulsa-oklahoma/"
+  }
+}
