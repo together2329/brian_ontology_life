@@ -14052,8 +14052,571 @@ campus_profiles:
         url: https://www.vertiv.com/pt-emea/about/news-and-events/corporate-news/2022/meeza-deploys-4.9-mw-data-centre-capacity-in-qatar-in-just-14-months-by-leveraging-vertiv-integrated-modular-solutions/
     confidence: high_for_historical_design_certification_and_2022_IT_load_medium_for_15MVA_cross_document_inference_low_for_current_equipment_GPU_inventory_and_operating_performance
 
+  - id: dc_syntys_mena_data_center_portfolio
+    name: Syntys MENA data-center portfolio
+    record_granularity: controlled_regional_platform_with_consolidated_and_pre_carveout_scope_ledger
+    operator: Syntys
+    former_name: MENA_Digital_Hub
+    controlling_parent: Ooredoo_Group
+    minority_equity_partner: Iron_Mountain
+    lifecycle_as_of_2026_07_18: operating_and_expanding
+    portfolio_scope_reconciliation:
+      H1_2025_consolidated_scope:
+        markets: [Qatar, Kuwait, Tunisia]
+        active_data_centers: 13
+        data_centers_under_construction: 1
+        IT_capacity_mw: 19
+        boundary: Company presentation snapshot as of H1 2025.
+      November_2025_expected_year_end_all_Ooredoo_scope:
+        countries_with_Ooredoo_presence: 5
+        active_data_centers: 26
+        data_centers_under_construction: 1
+        published_expected_IT_capacity_mw: 29.6
+        active_IT_capacity_mw_derived_before_commissioning: 25.1
+        under_construction_IT_capacity_mw: 4.5
+        country_ledger:
+          Qatar: {active_data_centers: 6, operating_IT_capacity_mw: 16.1, under_construction_IT_capacity_mw: 4.5}
+          Kuwait: {active_data_centers: 2, IT_capacity_mw: 2.2}
+          Tunisia: {active_data_centers: 5, IT_capacity_mw: 2.0}
+          Iraq: {active_data_centers: 7, IT_capacity_mw: 1.3, carveout_status_at_presentation: not_completed}
+          Oman: {active_data_centers: 6, IT_capacity_mw: 3.5, carveout_status_at_presentation: not_completed}
+        arithmetic: 25.1MW_active_plus_4.5MW_under_construction_equals_29.6MW_expected
+        boundary: >-
+          The headline included Oman and Iraq even though their data-center
+          carve-outs into Syntys had not completed. It also included the 4.5 MW
+          Qatar build in expected capacity, so 29.6 MW was not live Syntys load.
+      FY2025_audited_report_consolidated_scope:
+        markets: [Qatar, Kuwait, Tunisia]
+        active_data_centers: 13
+        installed_capacity_mw: 24.5
+        utilization_percent_approximate: 99
+        Q_Data_acquisition_included: false
+        boundary: >-
+          The annual-report operating description predates the January 2026
+          Q Data acquisition. Utilisation is a company-wide approximation, not
+          a measured per-building load or a GPU-utilisation metric.
+      Q1_2026_post_Q_Data_scope:
+        markets: [Qatar, Kuwait, Tunisia]
+        active_data_centers: 15
+        active_IT_capacity_mw_rounded: 30
+        IT_capacity_under_development_mw: 7.5
+        active_facility_count_by_market: {Qatar: 8, Kuwait: 2, Tunisia: 5}
+        active_capacity_mix_percent: {Qatar: 87, Kuwait: 6, Tunisia: 7}
+        target_IT_capacity_mw_2030: 120
+        boundary: >-
+          Thirty MW is a rounded post-acquisition active installed-capacity
+          headline. The 7.5 MW development pipeline is separate and is not
+          added to current live load. The same slide retains a stale 13-center,
+          19-MW caption, so the headline counters and facility chart are used
+          as the current Q1 snapshot and the stale caption is preserved as a
+          presentation-control issue.
+    public_location_ledger:
+      Qatar:
+        public_city: Doha
+        pre_Q_Data_active_facilities: 6
+        post_Q_Data_active_facilities: 8
+        detailed_refs:
+          - dc_syntys_ooredoo_qatar_legacy_portfolio
+          - dc_syntys_qdata_qatar_free_zones_portfolio
+      Kuwait:
+        active_facilities: 2
+        public_city_labels: [Kuwait_City, Shuaiba]
+        exact_addresses_coordinates_building_IDs_and_per_site_MW: undisclosed
+      Tunisia:
+        active_facilities: 5
+        public_city_labels: [Mghira, Charguia, Manouba, Sidi_Rezig, Sousse]
+        exact_addresses_coordinates_building_IDs_and_per_site_MW: undisclosed
+      Iraq:
+        Ooredoo_scope_active_facilities_at_2025_presentation: 7
+        exact_city_roster_and_post_carveout_status: undisclosed
+      Oman:
+        Ooredoo_scope_active_facilities_at_2025_presentation: 6
+        known_public_site: Salalah_data_center_and_submarine_cable_landing_station
+        exact_complete_roster_and_post_carveout_status: undisclosed
+    accelerators_and_AI:
+      Qatar_live_service_launch: 2025-07-01
+      disclosed_accelerator_generation: NVIDIA_Hopper
+      service: sovereign_AI_cloud_and_GPU_as_a_Service
+      host_boundary: local_Qatar_data_centers_operated_by_Syntys
+      exact_Hopper_model_H100_H200_or_other_count_servers_racks_fabric_site_allocation_ownership_power_draw_and_utilization: undisclosed
+      additional_Ooredoo_market_deployments_expected_in_2026: [Oman, Kuwait, Tunisia, Algeria]
+      boundary: >-
+        Hopper identifies an architecture generation, not a precise model or
+        quantity. Ooredoo does not identify which Qatar building hosts the
+        cluster, so the GPUs are not assigned to QDC5 or Q Data facilities.
+    customers_and_contracting:
+      hyperscaler_customer_logos_shown_by_company: [Microsoft_Azure, Google_Cloud]
+      contract_positioning:
+        currency: USD_denominated
+        term_years_range: [10, 15]
+        renewal_clauses: company_described
+      boundary: Customer logos and portfolio contract characteristics are not per-site contracts, revenue allocations or proof of tenant-owned GPU counts.
+    electrical_and_cooling:
+      exact_per_site_grid_voltage_substations_transformers_switchgear_UPS_batteries_generators_chillers_CRAHs_CDUs_liquid_cooled_MW_PUE_WUE_water_and_equipment_OEMs: undisclosed
+      detailed_Qatar_legacy_snapshot_ref: dc_syntys_ooredoo_qatar_legacy_portfolio
+      Tier_III_boundary: Certification establishes topology and operational criteria for named phases; it does not disclose equipment counts or measured efficiency.
+    linked_companies:
+      controlling_parent: [Ooredoo_Group]
+      minority_equity_partner: [Iron_Mountain]
+      accelerator_and_software: [NVIDIA]
+      public_hyperscaler_customers: [Microsoft, Google]
+      financial_profile_refs: [company_syntys, company_ooredoo_group, company_iron_mountain, company_nvidia, company_microsoft, company_alphabet]
+    sources:
+      - title: 2025 Capital Markets Day presentation
+        publisher: Ooredoo_Group
+        date: 2025-11-03
+        url: https://www.ooredoo.com/wp-content/uploads/2025/11/FINAL-CMD_.pdf
+      - title: 2025 annual report
+        publisher: Ooredoo_Group
+        date: 2026-03
+        url: https://www.ooredoo.com/wp-content/uploads/2026/03/2025-Ooredoo-Annual-Report_English_FINAL.pdf
+      - title: H1 2025 presentation
+        publisher: Ooredoo_Group
+        date: 2025-08
+        url: https://www.ooredoo.com/wp-content/uploads/2025/08/1.0-presentation-H1-2025-FINAL_.pdf
+      - title: Q1 2026 presentation
+        publisher: Ooredoo_Group
+        date: 2026-05-05
+        url: https://www.ooredoo.com/wp-content/uploads/2026/05/ORDS_Presentation-Q1-2026.pdf
+      - title: Ooredoo and Iron Mountain partnership
+        publisher: Iron_Mountain
+        date: 2025-02-13
+        url: https://investors.ironmountain.com/news/news-details/2025/Ooredoo-and-Iron-Mountain-Partner-to-Accelerate-Data-Centre-Growth-Across-MENA/default.aspx
+      - title: Syntys current public city roster
+        publisher: Iron_Mountain
+        date: 2026-07-18_accessed
+        url: https://www.ironmountain.com/data-centers/locations/syntys-data-center
+      - title: NVIDIA Hopper sovereign AI launch in Qatar
+        publisher: Ooredoo_Group
+        date: 2025-07-01
+        url: https://www.ooredoo.com/en/media/news_view/ooredoo-deploys-nvidia-accelerated-computing-in-qatar-ushers-in-the-countrys-next-wave-of-innovation/
+    confidence: high_for_dated_portfolio_counts_capacity_scopes_Hopper_generation_and_ownership_relationships_medium_for_city_level_roster_low_for_exact_post_carveout_Iraq_Oman_scope_GPU_inventory_and_per_site_equipment
+
+  - id: dc_syntys_ooredoo_qatar_legacy_portfolio
+    name: Syntys Ooredoo Qatar legacy data-center portfolio
+    record_granularity: pre_Q_Data_country_portfolio_with_named_facility_cluster_ledger
+    operator: Syntys
+    legacy_operator_brand: Ooredoo_Qatar
+    location:
+      country: Qatar
+      city: Doha
+      named_facility_ledger:
+        Wadi_Al_Sail: [QDC1, QDC2, QDC3]
+        Mukaynis: [QDC4]
+        Mesaimeer: [QDC5]
+      sixth_active_facility_candidate: GDC2
+      sixth_facility_boundary: >-
+        Company presentations report six active Qatar data centers before the
+        Q Data acquisition, while the current Ooredoo Qatar commercial page
+        advertises five facilities and the ISO certificate names QDC1-QDC5.
+        GDC2 is separately marketed as an operating government data center and
+        is the strongest candidate for the sixth facility, but no official
+        source explicitly performs that reconciliation.
+    scale:
+      November_2025_operating_IT_capacity_mw: 16.1
+      November_2025_under_construction_IT_capacity_mw: 4.5
+      December_2025_commissioned_increment_mw: 4.5
+      post_commissioning_pre_Q_Data_IT_capacity_mw_derived: 20.6
+      January_2026_Q_Data_live_increment_mw: 5
+      post_acquisition_Qatar_live_IT_capacity_mw_company_rounded: 26
+      five_commercial_facilities_total_space_sqft_approximate: 60000
+      boundary: >-
+        The 20.6 MW bridge is derived from the dated 16.1 MW operating base and
+        the separately announced 4.5 MW commissioning. Adding Q Data's 5 MW
+        gives 25.6 MW, consistent with the company's rounded 26 MW Qatar total.
+        No per-QDC capacity allocation is disclosed, and square feet is not IT MW.
+    facility_refs:
+      - dc_syntys_ooredoo_qdc123_wadi_al_sail
+      - dc_syntys_ooredoo_qdc4_mukaynis
+      - dc_syntys_ooredoo_qdc5_mesaimeer
+      - dc_syntys_ooredoo_gdc2_qatar
+    certifications_and_connectivity:
+      QDC4: {Uptime_Tier: III, award: TCDD, phase: Phase_1}
+      QDC5: {Uptime_Tier: III, awards: [TCDD, TCCF_for_2nd_Floor_Zone_1A]}
+      Azure_ExpressRoute_Qatar_direct_access_site: QDC5
+      exact_QDC1_QDC2_QDC3_and_GDC2_Uptime_award_scope: not_confirmed_in_reviewed_Uptime_ledger
+    dated_regulatory_facility_engineering_snapshot:
+      source_scope: singular_Ooredoo_Qatar_Data_Center_facility_overview_in_2024_nonconfidential_access_offer
+      likely_service_context: QDC5_because_the_same_offer_grants_hosting_at_QDC5
+      exact_building_allocation: not_explicit_do_not_promote_to_QDC5_without_confirmation
+      mains:
+        utility: Kahramaa
+        source: high_voltage_ring
+        transformer_count: 1
+        transformer_rating_kva: 1600
+      distribution:
+        topology_except_mains: A_plus_B_to_rack
+        average_power_density_kw_per_sqm: 2.5
+        maximum_power_density_kw_per_sqm: 5.0
+        BMS_monitored_precision_power_centers: true
+      UPS_and_batteries:
+        UPS_count: 4
+        UPS_rating_each_kva: 400
+        battery_technology: dry_sealed
+        full_load_battery_autonomy_minutes: 30
+        UPS_OEM_and_model: undisclosed
+      backup_generation:
+        diesel_generator_count: 2
+        generator_rating_each_mw: 2.1
+        takeover_seconds_after_mains_failure: 5
+        testing_frequency: monthly
+        boundary: 4.2MW_nameplate_sum_includes_redundancy_and_is_not_IT_capacity
+      cooling:
+        chilled_water_ECU_count: 8
+        cooling_unit_rating_each_tons: 35
+        redundancy: N_plus_1
+        chilled_water_piping: A_plus_B_redundant
+        MV_panels: 2_redundant_panels_separately_backing_four_ECUs_each_and_coupled_to_generators
+        air_delivery: raised_floor_with_diffusion_tiles
+        containment: cold_aisle
+        room_temperature_celsius_range: [18, 24]
+        relative_humidity_percent_target: 50_plus_or_minus_10
+      fire_and_floor:
+        systems: [main_building_fire_alarm, NOVEC_1230, VESDA]
+        raised_floor_height_cm: 50
+        raised_floor_max_load_kg_per_tile: 400
+      unknowns: [measured_PUE, WUE, water_consumption, chiller_plant_topology, ECU_OEM, live_IT_load, rack_count, liquid_cooling, current_equipment_changes]
+      boundary: >-
+        These are unusually detailed engineering facts, but the appendix does
+        not name the facility. They are retained at portfolio level with a
+        likely-QDC5 context rather than copied into every Qatar building.
+    accelerators:
+      portfolio_level_disclosure: NVIDIA_Hopper_GPUs_live_in_local_Syntys_data_centers
+      exact_host_facility_model_count_servers_racks_fabric_ownership_power_and_utilization: undisclosed
+    linked_companies:
+      operator: [Syntys, Ooredoo_Qatar]
+      utility: [Kahramaa]
+      accelerator: [NVIDIA]
+      cloud_connectivity: [Microsoft_Azure]
+      financial_profile_refs: [company_syntys, company_ooredoo_group, company_nvidia, company_microsoft]
+    sources:
+      - title: Current Qatar Data Centre service page
+        publisher: Ooredoo_Qatar
+        date: 2026-07-18_accessed
+        url: https://www.ooredoo.qa/web/en/business/ict-solutions/qatar-data-centre/
+      - title: ISO 27001 multi-site certificate with QDC addresses
+        publisher: Ooredoo_Qatar_and_Bureau_Veritas
+        date: 2025-08-26
+        url: https://www.ooredoo.qa/web/wp-content/uploads/2025/10/ISMS-ISO-27001-2022.pdf
+      - title: Non-confidential access to Ooredoo Qatar Data Centers reference offer
+        publisher: Ooredoo_Qatar_and_Qatar_Communications_Regulatory_Authority
+        date: 2024-10-01
+        url: https://www.ooredoo.qa/web/wp-content/uploads/2024/10/2024-10-01-Access-to-OQDC-for-SPs-Final-version-after-CRAs-approval-Non-confidential.pdf
+      - title: Uptime Institute award ledger
+        publisher: Uptime_Institute
+        date: 2026-07-18_accessed
+        url: https://uptimeinstitute.com/uptime-institute-awards/list
+      - title: FY2025 results and Qatar capacity commissioning
+        publisher: Ooredoo_Group
+        date: 2026-02
+        url: https://www.ooredoo.com/en/media/news_view/ooredoo-group-fy-2025/
+    confidence: high_for_QDC1_to_QDC5_addresses_Tier_awards_dated_capacity_bridge_and_regulatory_equipment_snapshot_medium_for_derived_20_6MW_and_regulatory_snapshot_QDC5_context_low_for_sixth_facility_identity_and_GPU_site_allocation
+
+  - id: dc_syntys_ooredoo_qdc123_wadi_al_sail
+    name: Ooredoo Qatar QDC1 QDC2 and QDC3 Wadi Al Sail cluster
+    record_granularity: three_named_data_centers_at_one_public_address_cluster
+    operator: Syntys
+    location:
+      country: Qatar
+      city: Doha
+      district: Wadi_Al_Sail
+      street: 825
+      zone: 20
+      facilities: [QDC1, QDC2, QDC3]
+      exact_building_number_coordinates_parcels_and_internal_boundaries: undisclosed
+    public_scope: [data_center_services, service_operations_center, IT_data_center, ISP_data_center, IT_support]
+    capacity_and_lifecycle:
+      status: operating_in_current_ISO_scope
+      exact_per_facility_IT_mw_floor_area_racks_energized_leased_and_utilized_load: undisclosed
+    accelerators_and_infrastructure:
+      exact_GPU_inventory_and_Hopper_host_status: undisclosed
+      exact_grid_transformer_UPS_battery_generator_cooling_PUE_WUE_water_and_liquid_cooling: undisclosed
+    sources:
+      - title: ISO 27001 multi-site certificate
+        publisher: Ooredoo_Qatar_and_Bureau_Veritas
+        date: 2025-08-26
+        url: https://www.ooredoo.qa/web/wp-content/uploads/2025/10/ISMS-ISO-27001-2022.pdf
+    confidence: high_for_cluster_address_and_operating_ISO_scope_low_for_per_building_capacity_GPU_and_equipment
+
+  - id: dc_syntys_ooredoo_qdc4_mukaynis
+    name: Ooredoo Qatar QDC4 Mukaynis
+    record_granularity: individual_named_data_center
+    operator: Syntys
+    location:
+      country: Qatar
+      city: Doha
+      district: Mukaynis
+      road: Salwa_Road
+      building_number: 2003
+      street: 340
+      zone: 81
+      exact_coordinates_and_parcel: undisclosed
+    lifecycle: operating_in_current_ISO_scope
+    certification:
+      body: Uptime_Institute
+      tier: III
+      award: Tier_Certification_of_Design_Documents
+      phase: Phase_1
+      constructed_facility_award: not_found_in_reviewed_ledger
+    public_scope: [QDC4, TV_head_end, earth_station, QDC5_disaster_recovery]
+    undisclosed:
+      - IT_capacity_floor_area_racks_energized_leased_and_utilized_load
+      - GPU_model_count_servers_racks_fabric_ownership_power_and_utilization
+      - grid_substation_transformer_switchgear_UPS_battery_generator_and_cooling_BOM
+      - PUE_WUE_water_and_liquid_cooled_MW
+    sources:
+      - title: ISO 27001 multi-site certificate
+        publisher: Ooredoo_Qatar_and_Bureau_Veritas
+        date: 2025-08-26
+        url: https://www.ooredoo.qa/web/wp-content/uploads/2025/10/ISMS-ISO-27001-2022.pdf
+      - title: Uptime Institute award ledger
+        publisher: Uptime_Institute
+        date: 2026-07-18_accessed
+        url: https://uptimeinstitute.com/uptime-institute-awards/list
+    confidence: high_for_address_operating_scope_and_Tier_design_award_low_for_capacity_GPU_and_equipment
+
+  - id: dc_syntys_ooredoo_qdc5_mesaimeer
+    name: Ooredoo Qatar QDC5 Mesaimeer
+    record_granularity: individual_named_data_center
+    operator: Syntys
+    location:
+      country: Qatar
+      city: Doha
+      district: Mesaimeer
+      building_number: 106
+      street: 1119
+      zone: 56
+      exact_coordinates_and_parcel: undisclosed
+    lifecycle: operating_in_current_ISO_scope
+    certification:
+      body: Uptime_Institute
+      tier: III
+      design_document_award: whole_named_QDC5
+      constructed_facility_award_scope: 2nd_Floor_Zone_1A
+      whole_building_constructed_facility_status: not_confirmed
+    public_scope: [QDC5, core_aggregation, IT_disaster_recovery, ISP_data_center, cyber_security_center]
+    connectivity:
+      Microsoft_Azure_ExpressRoute_direct_access: true
+      second_Azure_Qatar_access_site: MEEZA_MV2
+    engineering_cross_reference:
+      portfolio_snapshot_ref: dc_syntys_ooredoo_qatar_legacy_portfolio
+      likely_snapshot_context: true
+      allocation_boundary: The regulatory offer centers hosting at QDC5 but does not name the appendix facility, so its equipment ledger is not asserted as QDC5 fact.
+    undisclosed:
+      - exact_IT_capacity_floor_area_racks_energized_leased_and_utilized_load
+      - GPU_model_count_servers_racks_fabric_ownership_power_and_utilization
+      - confirmed_current_power_and_cooling_BOM_PUE_WUE_water_and_liquid_cooled_MW
+    sources:
+      - title: ISO 27001 multi-site certificate
+        publisher: Ooredoo_Qatar_and_Bureau_Veritas
+        date: 2025-08-26
+        url: https://www.ooredoo.qa/web/wp-content/uploads/2025/10/ISMS-ISO-27001-2022.pdf
+      - title: Uptime Institute award ledger
+        publisher: Uptime_Institute
+        date: 2026-07-18_accessed
+        url: https://uptimeinstitute.com/uptime-institute-awards/list
+      - title: Ooredoo Multi-Cloud Local Connect FAQ
+        publisher: Ooredoo_Qatar
+        date: 2026-07-18_accessed
+        url: https://www.ooredoo.qa/web/en/business/frequently-asked-questions/local-connectivity/
+    confidence: high_for_address_Tier_award_scope_and_Azure_connectivity_medium_for_regulatory_snapshot_context_low_for_GPU_and_current_equipment
+
+  - id: dc_syntys_ooredoo_gdc2_qatar
+    name: Ooredoo Qatar Government Data Centre 2
+    record_granularity: individual_named_government_hosting_facility
+    operator: Ooredoo_Qatar
+    syntys_relationship: candidate_legacy_portfolio_facility_not_explicitly_confirmed
+    location:
+      country: Qatar
+      exact_city_address_coordinates_and_parcel: undisclosed
+    lifecycle: operating_service_marketed_currently
+    design_and_services:
+      facility_type: purpose_built_secure_government_data_center
+      topology_claim: Tier_III
+      carrier_grade_resilience: company_claimed
+      modular_design: true
+      government_network_connectivity: true
+      hosted_entities: Qatar_government_entities
+      services: [hosting, basic_monitoring, advanced_monitoring, managed_on_demand_support]
+    capacity_and_equipment:
+      exact_IT_mw_floor_area_rack_count_utilization_and_customer_allocation: undisclosed
+      exact_grid_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CDU_PUE_WUE_water_and_liquid_cooling: undisclosed
+      exact_GPU_inventory_and_AI_workload: undisclosed
+    count_boundary: GDC2 is not counted as Syntys' sixth legacy Qatar facility until an explicit operator reconciliation is found.
+    sources:
+      - title: Government Data Centre service page
+        publisher: Ooredoo_Qatar
+        date: 2026-07-18_accessed
+        url: https://www.ooredoo.qa/web/en/business/ict-solutions/government-data-centre/
+    confidence: high_for_service_status_and_design_claim_low_for_Syntys_count_relationship_location_capacity_GPU_and_equipment
+
+  - id: dc_syntys_qdata_qatar_free_zones_portfolio
+    name: Syntys Q Data Qatar Free Zones portfolio
+    record_granularity: acquired_two_facility_portfolio_with_live_and_development_capacity
+    operator: Syntys
+    acquired_entity: Q_Data_QFZ_LLC
+    prior_facility_manager_brand: Quantum_Switch
+    transaction:
+      control_transfer_date: 2026-01-18
+      announcement_date: 2026-01-20
+      seller: Doha_Venture_Capital
+      seller_parent: Qatar_Free_Zones_Authority
+      buyer: Syntys
+      purchase_consideration_and_purchase_price_allocation: undisclosed_at_FY2025_financial_statement_authorization
+    location:
+      country: Qatar
+      jurisdiction: Qatar_Free_Zones
+      facilities: 2
+      Uptime_public_location: Doha
+      exact_free_zone_assignment_addresses_coordinates_and_parcels: undisclosed
+      public_secondary_candidates_not_promoted: [Ras_Bufontas_Free_Zone, Umm_Al_Houl_Free_Zone]
+      boundary: Qatar has two major free zones, but no reviewed primary source assigns one Q Data facility to each zone.
+    acquired_capacity:
+      live_IT_capacity_mw: 5
+      under_development_IT_capacity_mw: 7.5
+      total_live_plus_development_mw: 12.5
+      allocation_between_facilities: undisclosed
+    Quantum_Switch_current_marketing_cross_check:
+      facility_identifiers: [DOA_A, DOA_B]
+      marketed_capacity_mw_sum: 10
+      marketed_campus_area_sqm_sum: 32446
+      acquired_scope_reconciliation: >-
+        Quantum Switch markets 6 MW at DOA-A and 4 MW at DOA-B, while Ooredoo
+        acquired 5 MW live plus 7.5 MW under development. Marketing capacity,
+        live IT capacity and development capacity use different dates and scopes;
+        the values are retained separately and not forced to reconcile.
+    certification:
+      both_facilities: Uptime_Tier_III_TCDD_TCCF_and_Gold_TCOS_for_named_phases
+      detailed_refs: [dc_syntys_qdata_quantum_switch_dc1, dc_syntys_qdata_quantum_switch_dc2]
+    customers:
+      categories: [leading_cloud_customers, AI_platform_customers]
+      exact_names_contracts_capacity_pricing_and_revenue: undisclosed
+    accelerators_and_infrastructure:
+      exact_GPU_OEM_models_counts_servers_racks_fabric_ownership_site_allocation_power_draw_and_utilization: undisclosed
+      exact_grid_voltage_substation_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CDU_liquid_cooling_PUE_WUE_water_and_equipment_OEMs: undisclosed
+      boundary: Tier III and AI-customer language are not an equipment bill of materials or installed GPU inventory.
+    linked_companies:
+      owner_operator: [Syntys, Ooredoo_Group]
+      minority_platform_partner: [Iron_Mountain]
+      former_owner: [Doha_Venture_Capital, Qatar_Free_Zones_Authority]
+      facility_manager_brand: [Quantum_Switch]
+      financial_profile_refs: [company_syntys, company_ooredoo_group, company_iron_mountain]
+    sources:
+      - title: Syntys acquisition of Q Data facilities
+        publisher: Ooredoo_Group
+        date: 2026-01-20
+        url: https://www.ooredoo.com/en/media/news_view/ooredoo-group-announces-syntys-acquisition-of-q-data-facilities-in-qatar/
+      - title: Q Data QFZ award ledger
+        publisher: Uptime_Institute
+        date: 2026-07-18_accessed
+        url: https://uptimeinstitute.com/uptime-institute-awards/client/qdata-qfz-llc/1053
+      - title: Quantum Switch current data-center directory
+        publisher: Quantum_Switch
+        date: 2026-07-18_accessed
+        url: https://www.quantumswitch.com/data-centres/
+      - title: 2025 annual report subsequent event note
+        publisher: Ooredoo_Group
+        date: 2026-03
+        url: https://www.ooredoo.com/wp-content/uploads/2026/03/2025-Ooredoo-Annual-Report_English_FINAL.pdf
+    confidence: high_for_transaction_two_facility_live_and_development_capacity_and_Tier_awards_medium_for_DOA_A_DOA_B_to_Q_Data_facility_crosswalk_low_for_exact_location_GPU_inventory_and_equipment
+
+  - id: dc_syntys_qdata_quantum_switch_dc1
+    name: Q Data Quantum Switch Data Center 1 Doha
+    record_granularity: individual_certified_data_center_with_candidate_current_marketing_crosswalk
+    operator: Syntys
+    location:
+      country: Qatar
+      city: Doha
+      jurisdiction: Qatar_Free_Zones
+      exact_free_zone_address_coordinate_and_parcel: undisclosed
+    lifecycle: operating_certified_phase
+    certification:
+      body: Uptime_Institute
+      named_scope: Phase_1_Data_Hall_3_DT3
+      tier: III
+      awards: [TCDD, TCCF, Gold_TCOS]
+      Gold_TCOS_announcement_date: 2025-04-07
+      boundary: TCOS validates operating-management practices for the named phase, not facility PUE or equipment inventory.
+    candidate_Quantum_Switch_marketing_crosswalk:
+      marketed_identifier: DOA_A
+      campus_area_sqm: 18900
+      marketed_capacity_mw: 6
+      crosswalk_confidence: medium
+      boundary: Ordering and common branding support the association, but no reviewed source explicitly states DC1 equals DOA-A.
+    services: [24_7_remote_hands, cages, private_suites, flexible_office_and_storage, redundant_auto_rerouted_10Mbps_to_40Gbps_connectivity]
+    SLA_claims: {power_uptime_percent: 100, bandwidth_uptime_percent: 100}
+    undisclosed:
+      - live_versus_design_IT_mw_and_7_5MW_development_allocation
+      - exact_GPU_model_count_servers_racks_fabric_ownership_power_and_utilization
+      - grid_substation_transformer_switchgear_UPS_battery_generator_cooling_BOM
+      - PUE_WUE_water_and_liquid_cooled_MW
+    sources:
+      - title: Q Data QFZ award ledger
+        publisher: Uptime_Institute
+        date: 2026-07-18_accessed
+        url: https://uptimeinstitute.com/uptime-institute-awards/list
+      - title: Quantum Switch DC1 Gold TCOS announcement
+        publisher: Quantum_Switch
+        date: 2025-04-07
+        url: https://www.quantumswitch.com/2025/04/07/achieving-first-ever-gold-certification-for-operational-sustainability-in-qatar/
+      - title: Quantum Switch current data-center directory
+        publisher: Quantum_Switch
+        date: 2026-07-18_accessed
+        url: https://www.quantumswitch.com/data-centres/
+    confidence: high_for_operating_Tier_phase_and_Doha_location_medium_for_DOA_A_crosswalk_and_marketed_capacity_low_for_exact_live_load_GPU_and_equipment
+
+  - id: dc_syntys_qdata_quantum_switch_dc2
+    name: Q Data Quantum Switch Data Center 2 Doha
+    record_granularity: individual_certified_data_center_with_candidate_current_marketing_crosswalk
+    operator: Syntys
+    location:
+      country: Qatar
+      city: Doha
+      jurisdiction: Qatar_Free_Zones
+      exact_free_zone_address_coordinate_and_parcel: undisclosed
+    lifecycle: operating_certified_phase
+    certification:
+      body: Uptime_Institute
+      named_scope: Phase_1
+      tier: III
+      awards: [TCDD, TCCF, Gold_TCOS]
+      boundary: Certification applies to the named phase and does not disclose site efficiency or equipment counts.
+    candidate_Quantum_Switch_marketing_crosswalk:
+      marketed_identifier: DOA_B
+      campus_area_sqm: 13546
+      marketed_capacity_mw: 4
+      crosswalk_confidence: medium
+      boundary: Ordering and common branding support the association, but no reviewed source explicitly states DC2 equals DOA-B.
+    services: [24_7_remote_hands, cages, private_suites, flexible_office_and_storage, redundant_auto_rerouted_10Mbps_to_40Gbps_connectivity]
+    SLA_claims: {power_uptime_percent: 100, bandwidth_uptime_percent: 100}
+    undisclosed:
+      - live_versus_design_IT_mw_and_7_5MW_development_allocation
+      - exact_GPU_model_count_servers_racks_fabric_ownership_power_and_utilization
+      - grid_substation_transformer_switchgear_UPS_battery_generator_cooling_BOM
+      - PUE_WUE_water_and_liquid_cooled_MW
+    sources:
+      - title: Q Data QFZ award ledger
+        publisher: Uptime_Institute
+        date: 2026-07-18_accessed
+        url: https://uptimeinstitute.com/uptime-institute-awards/list
+      - title: Quantum Switch current data-center directory
+        publisher: Quantum_Switch
+        date: 2026-07-18_accessed
+        url: https://www.quantumswitch.com/data-centres/
+    confidence: high_for_operating_Tier_phase_and_Doha_location_medium_for_DOA_B_crosswalk_and_marketed_capacity_low_for_exact_live_load_GPU_and_equipment
+
 disclosure_gap_register:
   - exact_global_physical_data_center_count
+  - Syntys_15_active_Q1_2026_headline_to_stale_13_center_19MW_caption_and_30MW_active_scope_reconciliation
+  - Syntys_30MW_post_Q_Data_active_capacity_to_24_5MW_FY2025_plus_5MW_acquired_and_country_percent_rounding
+  - Syntys_Iraq_and_Oman_carveout_completion_exact_entity_asset_and_facility_rosters
+  - Syntys_Kuwait_and_Tunisia_exact_addresses_coordinates_buildings_per_site_MW_and_lifecycle
+  - Syntys_Qatar_sixth_pre_Q_Data_facility_and_GDC2_relationship_reconciliation
+  - Syntys_Qatar_Hopper_exact_H100_H200_or_other_models_counts_servers_racks_fabric_host_building_ownership_power_and_utilization
+  - Syntys_Qatar_legacy_QDC_per_site_IT_load_floor_area_racks_PUE_WUE_water_liquid_cooling_and_equipment_BOM
+  - Ooredoo_regulatory_facility_overview_exact_QDC_building_allocation_and_current_equipment_verification
+  - Q_Data_DC1_DC2_to_DOA_A_DOA_B_crosswalk_free_zone_assignment_live_5MW_and_development_7_5MW_allocation
+  - Q_Data_per_site_grid_substation_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CDU_PUE_WUE_water_liquid_cooling_and_GPU_inventory
   - exact_per_campus_GPU_inventory_for_most_hyperscalers
   - MEEZA_post_MV4_18MW_derived_operating_total_to_2026F_22MW_and_MV8_2MW_first_phase_reconciliation
   - MEEZA_MV6_44MW_masterplan_24MW_current_phase_and_6MW_first_delivery_schedule_and_scope_reconciliation
@@ -14422,6 +14985,11 @@ next_research_queue:
     - NTT_India_exact_GPU_inventory_customer_vs_operator_ownership_live_liquid_cooled_MW_CDU_heat_rejection_and_equipment_OEMs
     - NTT_India_transformer_switchgear_UPS_battery_generator_chiller_counts_and_operating_PUE_WUE_water_per_site
   company_financials:
+    - Syntys_standalone_audited_revenue_operating_profit_D_and_A_capex_debt_cash_flow_tax_customer_concentration_and_site_returns
+    - Syntys_Q_Data_purchase_price_PPA_goodwill_full_quarter_earnings_and_return_on_invested_capital
+    - Syntys_USD550_million_financing_drawn_amount_equity_debt_mix_rate_maturity_collateral_covenants_parent_guarantees_and_project_allocation
+    - Syntys_USD1_billion_plan_to_incurred_capex_energized_capacity_customer_acceptance_revenue_and_cash_flow
+    - Ooredoo_digital_infrastructure_4_to_15_percent_revenue_mix_definition_Syntys_share_and_earnings_conversion
     - MEEZA_MV4_post_handover_revenue_commencement_utilization_margin_and_customer_concentration
     - MEEZA_MV6_contract_revenue_schedule_project_capex_cash_flow_and_return_on_invested_capital
     - MEEZA_QAR800_million_Murabaha_drawdown_rate_maturity_collateral_covenants_and_project_allocation
