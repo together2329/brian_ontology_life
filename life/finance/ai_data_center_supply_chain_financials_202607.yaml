@@ -2108,10 +2108,29 @@ financial_profiles:
       revenue: not_publicly_reported_as_a_privately_held_company
       operating_profit: not_publicly_reported_as_a_privately_held_company
       net_income: undisclosed
-      audited_current_standalone_financial_statements: not_found_in_reviewed_public_sources
+      current_audited_financial_statements:
+        latest_confirmed_period: FY2025_ended_2025_12_31
+        financial_statement_values_publicly_disclosed: false
+        independent_auditor: Deloitte
+        auditor_since: 2011
+        audit_opinion: unqualified
+        evidence_boundary: >-
+          CyrusOne confirms that annual audited statements exist, but explicitly
+          says it does not publicly disclose those financial statements. The audit
+          confirmation is not evidence of current revenue, profit, cash flow or debt.
+      latest_public_pre_privatisation_baseline:
+        period: FY2021_ended_2021_12_31
+        accounting_basis: US_GAAP
+        revenue_usd_million: 1205.7
+        operating_income_usd_million: 39.3
+        operating_margin_percent_derived: 3.26
+        net_income_usd_million: 25.3
+        normalized_FFO_usd_million_non_GAAP: 494.4
+        net_operating_income_usd_million_non_GAAP: 674.6
+        boundary: historical_public_company_results_before_the_2022_take_private_not_a_current_run_rate
     data_center_exposure:
       role: hyperscale_colocation_build_to_suit_and_interconnection_operator
-      confirmed_campus_refs: [dc_cyrusone_global_portfolio, dc_cyrusone_kep_osk1_japan, dc_cyrusone_freestone_texas]
+      confirmed_campus_refs: [dc_cyrusone_global_portfolio, dc_cyrusone_kep_osk1_japan, dc_cyrusone_freestone_texas, dc_cyrusone_dur2_raleigh_durham_nc, dc_cyrusone_lee_county_nc, dc_cyrusone_yorkville_technology_campus_il]
       current_operating_claim: more_than_60_data_centers_across_US_Europe_and_Japan
       current_public_location_identifiers_derived: 66
       worldwide_critical_load_capacity_gw_more_than: 1
@@ -2123,18 +2142,43 @@ financial_profiles:
         average_operating_WUE_site_l_per_kwh: 0.25
         average_operating_CUE: 0.10
       financing_scale_not_revenue:
-        additional_debt_capital_usd_billion_announced_2024: 9.7
-        total_debt_financing_in_2024_usd_billion_reported_in_2026_sustainability_report: 14.1
-        sustainability_linked_debt_in_2024_usd_billion: 11.2
+        additional_debt_capital_announced_2024:
+          total_usd_billion: 9.7
+          warehouse_credit_facility_usd_billion: 7.9
+          revolving_credit_facility_usd_billion: 1.8
+          both_facilities_sustainability_linked: true
+        active_green_financing_commitments:
+          scope: cumulative_commitments_of_active_debt_instruments_linked_to_sustainability_performance_or_green_finance_framework
+          2024_usd_billion: 12.6
+          2025_usd_billion: 14.0
+        2025_asset_backed_securities_transaction:
+          amount_usd_billion: 0.575
+          Southern_Texas_assets_added: 2
+          ABS_master_trust_assets_after_transaction: 13
+        loan_facilities_closed_2026_03_24:
+          aggregate_commitments_usd_billion_approximate: 8.0
+          revolving_credit_facility_usd_billion_approximate: 3.8
+          revolving_credit_facility_increase_usd_billion_nearly: 1.0
+          US_term_loan_usd_billion: 4.2
+          US_term_loan_increase_usd_billion_nearly: 0.3
+          revolving_credit_facility_use: general_corporate_purposes
+          US_term_loan_use: refinancing_existing_facility_level_debt
+          sustainability_linked_pricing_grids: true
+        financing_measure_boundary: >-
+          Announced facilities, active green-finance commitments, ABS issuance and
+          2026 loan commitments overlap in scope and time. They must not be summed,
+          and commitments are not the same as amounts drawn or current net debt.
       boundary: >-
         Debt raised, portfolio critical-load capacity, acquisition value, and
         owner financials are not CyrusOne revenue or operating profit. The 66-site
         web roster includes future OSK1 and is not an operating-facility count.
     management_outlook:
       demand_signal: continuing_hyperscale_and_AI_capacity_growth
+      2025_bookings: company_described_2025_as_a_record_bookings_year
       Japan_joint_venture_target:
         investment_jpy_trillion_at_least: 1
-        business_scale_mw: 900
+        total_incoming_power_mw: 900
+        IT_capacity_mw: 600
         horizon_years: 10
       Texas_power_contracts_mw_more_than: 1100
       outlook_boundary: targets_and_power_contracts_are_not_energized_capacity_or_guaranteed_earnings
@@ -2155,9 +2199,12 @@ financial_profiles:
       - https://www.cyrusone.com/hubfs/CyrusOne/2026%20Sustainability%20Report.pdf?hsLang=en
       - https://www.cyrusone.com/data-centers
       - https://www.cyrusone.com/media-coverage-press-releases/cyrusone-secures-9-7-billion-in-new-debt-capital-to-fund-datacenter-growth
+      - https://www.cyrusone.com/resources/press-releases/cyrusone-upsizes-and-extends-8.0-billion-in-loan-facilities-to-support-strategic-growth-and-sustainability-goals-while-strengthening-liq-1774318130463
+      - https://www.sec.gov/Archives/edgar/data/1553023/000155302322000009/cone-20211231.htm
+      - https://www.kepco.co.jp/english/corporate/pr/2024/pdf/sep12_1.pdf
       - https://www.global-infra.com/news/kkr-and-gip-complete-acquisition-of-cyrusone/
       - https://www.cyrusone.com/hubfs/Website%20Documents%202025/2023_CyrusOne_Sustainability_Report.pdf
-    confidence: high_for_private_status_ownership_capacity_efficiency_and_financing_low_for_undisclosed_earnings
+    confidence: high_for_private_status_audit_existence_historical_public_financials_ownership_capacity_efficiency_and_financing_low_for_current_undisclosed_earnings_and_debt_outstanding
 
   - id: company_kansai_electric_power
     company: Kansai_Electric_Power
@@ -2178,7 +2225,8 @@ financial_profiles:
       confirmed_campus_refs: [dc_cyrusone_kep_osk1_japan]
       joint_venture_program:
         target_investment_jpy_trillion_at_least: 1
-        target_business_scale_mw: 900
+        target_total_incoming_power_mw: 900
+        target_IT_capacity_mw: 600
         horizon_years: 10
       FY2025_ICT_growth_investment_jpy_billion_approximate: 20
       boundary: Consolidated utility revenue and profit are not CyrusOne KEP or OSK1 revenue and operating profit.
@@ -2198,7 +2246,7 @@ financial_profiles:
       - fuel_price_and_currency
       - high_interest_bearing_debt
       - OSK1_grid_and_substation_delivery
-      - 900_MW_JV_target_funding_and_customer_demand
+      - 900_MW_incoming_and_600_MW_IT_JV_target_funding_and_customer_demand
       - JV_financial_disclosure_gap
     sources:
       - https://www.kepco.co.jp/english/corporate/ir/brief/earnings/2026/pdf/pdf2026_04_05.pdf
