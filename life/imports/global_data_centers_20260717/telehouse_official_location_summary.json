@@ -1,0 +1,107 @@
+{
+  "accessed_on": "2026-07-19",
+  "comparison_boundary": "Do not sum location labels, city groups, campus buildings, historical site counts, OSM objects, MVA averages, design power, current IT load, test labs or customer hardware into one operating fleet measure.",
+  "country_counts_for_labels": {
+    "CA": 3,
+    "CN": 4,
+    "DE": 1,
+    "FR": 4,
+    "GB": 5,
+    "HK": 1,
+    "JP": 6,
+    "SG": 1,
+    "TH": 1,
+    "TR": 1,
+    "US": 3,
+    "VN": 1
+  },
+  "location_labels_with_OSM_evidence": 11,
+  "mapped_OSM_objects": 15,
+  "market_counts_for_labels": {
+    "Bangkok": 1,
+    "Beijing": 2,
+    "Frankfurt": 1,
+    "Fukuoka": 1,
+    "Hanoi": 1,
+    "Hong Kong": 1,
+    "Istanbul / Kozyatağı": 1,
+    "London Docklands": 4,
+    "London Docklands / Blackwall Yard": 1,
+    "Los Angeles": 1,
+    "Nagoya": 1,
+    "New York / Manhattan": 1,
+    "New York / Staten Island": 1,
+    "Osaka": 1,
+    "Oyama": 1,
+    "Paris": 2,
+    "Paris / Magny-les-Hameaux": 2,
+    "Sendai": 1,
+    "Shanghai": 2,
+    "Singapore": 1,
+    "Tokyo": 1,
+    "Toronto": 3
+  },
+  "official_brochure_location_labels": 31,
+  "operator_reported_data_center_sites_more_than": 45,
+  "portfolio_context": {
+    "London_campus": {
+      "data_centers": 5,
+      "grid_feeds": "two 132 kV lines",
+      "private_substation_MVA": 50,
+      "substation_redundancy": "N+N"
+    },
+    "accelerators": {
+      "London_South_liquid_cooling_lab": {
+        "technologies": [
+          "Accelsius NeuCool two-phase direct-to-chip",
+          "JetCool SmartPlate",
+          "Legrand ColdLogik",
+          "EkkoSense optimization"
+        ],
+        "test_hardware": "thermal simulation and cooling demonstration; no installed production GPU count disclosed"
+      },
+      "Telehouse_or_KDDI_owned_GPU_inventory": "undisclosed",
+      "Tokyo_Shibuya_verification": {
+        "actual_GPU_count": "undisclosed",
+        "design_test_context": "NVIDIA GB200 NVL72 at 100 kW-plus per rack",
+        "maximum_cooling_kW": 300,
+        "maximum_power_source_kVA": 300
+      },
+      "boundary": "Cooling labs, heat-load tests and platform compatibility do not establish a production GPU fleet, model split, ownership, utilization or site economics."
+    },
+    "average_MVA_per_data_center": 20,
+    "connectivity_partners_more_than": 1000,
+    "countries_more_than": 10,
+    "customers_worldwide": 3000,
+    "environment": {
+      "KDDI_group_data_centers_renewable_electricity_percent": 100,
+      "achievement_announcement": "2026-04-30",
+      "current_fleet_PUE_WUE_water_energy_and_emissions": "undisclosed",
+      "instrument_boundary": "includes renewable-energy programs and environmental certificates; not necessarily hourly additional renewable matching"
+    },
+    "financial_boundary": {
+      "FY2024_3_comparable_jpy_billion": 121,
+      "FY2025_3_KDDI_data_center_operating_revenue_jpy_billion": 130,
+      "FY2031_3_target_jpy_billion": 200,
+      "Telehouse_standalone_revenue_and_operating_profit": "undisclosed",
+      "boundary": "KDDI's data-center revenue includes the parent data-center business and is not a Telehouse-legal-entity or per-site result.",
+      "parent": "KDDI Corporation"
+    },
+    "global_space_sqm_more_than": 560000,
+    "official_global_brochure_location_labels": 31,
+    "operator_reported_data_center_sites_more_than": 45,
+    "scope_boundary": "The 31 brochure labels aggregate cities, campuses and multiple facilities; the more-than-45 headline is not a disclosed physical-building roster or live power total."
+  },
+  "records_sha256": "57e824eb639ce2764f94be72ef2191be607d420447389182a2a6e3af1b5c13ab",
+  "registry": "Telehouse July-2025 official global location-label and OSM crosswalk",
+  "related_OSM_objects_excluding_TransACT_Telehouse": 16,
+  "unmatched_or_legacy_OSM_objects": [
+    {
+      "osm_name": "Telehouse THM1",
+      "osm_object_id": "osm_node_12150464472",
+      "osm_operator": "Telehouse",
+      "reason": "Marseille THM1 appears in OSM and older Telehouse material but is absent from the July 2025 global brochure and current France city directory; current operator/lifecycle not inferred.",
+      "source_url": "https://www.openstreetmap.org/node/12150464472"
+    }
+  ]
+}

@@ -131,8 +131,8 @@ scope_and_method:
     disclosure_registry_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_registry.jsonl
     disclosure_summary_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_summary.json
     disclosure_registry_as_of: 2026-07-19
-    operator_records: 35
-    machine_generated_page_registry_operators: [CyrusOne, QTS, NEXTDC, Flexential, Lumen_Technologies, Csquare, CDC_Data_Centres, Switch, atNorth, NorthC]
+    operator_records: 36
+    machine_generated_page_registry_operators: [CyrusOne, QTS, NEXTDC, Flexential, Lumen_Technologies, Csquare, CDC_Data_Centres, Switch, atNorth, NorthC, Telehouse]
     comparison_gate:
       - choose_one_physical_granularity
       - choose_one_lifecycle_date_and_state
@@ -11008,6 +11008,217 @@ campus_profiles:
       - {title: Legrand and NorthC AI HPC cooling case, publisher: NorthC_and_Legrand, date: 2026, url: "https://www.northcdatacenters.com/en/cases/legrand-and-northc-enable-ai-hpc/"}
       - {title: DWS NorthC financing case study, publisher: DWS, accessed: 2026-07-19, url: "https://www.dws.com/en-SE/AssetDownload/Index?assetguid=f64b9819-b539-4c6a-b403-ef6fad214d15"}
     confidence: high_for_current_directory_labels_addresses_marketed_specs_selected_equipment_transaction_status_customer_DGX_derivation_and_Almere_public_status_low_for_physical_building_count_live_load_utilization_current_private_financials_fleet_GPU_inventory_and_complete_equipment_BOM
+
+  - id: dc_telehouse_global_connectivity_portfolio
+    name: Telehouse KDDI global connectivity data-center portfolio
+    record_granularity: thirty_one_official_brochure_location_labels_aggregating_more_than_forty_five_sites
+    operator: Telehouse_KDDI
+    countries: [CA, US, FR, GB, DE, TR, CN, JP, HK, SG, TH, VN]
+    lifecycle_as_of_2026_07_19: current_roster_with_aggregated_city_and_campus_labels
+    official_location_registry_ref: life/imports/global_data_centers_20260717/telehouse_official_location_registry.jsonl
+    official_location_summary_ref: life/imports/global_data_centers_20260717/telehouse_official_location_summary.json
+    registry_builder_ref: scripts/build_telehouse_official_location_registry.py
+    current_scale:
+      official_2025_brochure_location_labels: 31
+      operator_reported_data_center_sites_more_than: 45
+      countries_more_than: 10
+      global_space_sqm_more_than: 560000
+      average_MVA_per_data_center: 20
+      customers_worldwide: 3000
+      connectivity_partners_more_than: 1000
+      uptime_SLA_percent: 99.999
+      scope_warning: >-
+        The July 2025 brochure enumerates 31 labels but reports more than 45
+        data-center sites. Tokyo, Frankfurt and other rows aggregate multiple
+        buildings, and the 20-MVA figure is an average rather than per-site IT or
+        live load. Neither headline yields a complete current physical-building roster.
+    official_brochure_roster:
+      Canada:
+        - Toronto_151_Front_Street_West
+        - Toronto_250_Front_Street_West
+        - Toronto_905_King_Street_West
+      United_States:
+        east_coast: [New_York_Teleport, New_York_Chelsea]
+        west_coast: [Los_Angeles]
+      France:
+        - Paris_Voltaire
+        - Paris_Jeûneurs
+        - Paris_Magny
+        - Paris_Magny_2
+      United_Kingdom:
+        - London_North
+        - London_North_Two
+        - London_East
+        - London_West
+        - London_South
+      Germany: [Frankfurt]
+      Turkey: [Istanbul]
+      China: [Beijing_BDA, Beijing_BEZ, Shanghai_Zhangjiang, Shanghai_Jinqiao]
+      Japan: [Sendai, Oyama, Tokyo, Nagoya, Osaka, Fukuoka]
+      Hong_Kong: [Hong_Kong_CCC]
+      Singapore: [Singapore]
+      Thailand: [Bangkok]
+      Vietnam: [Hanoi]
+      aggregation_examples:
+        Tokyo_carrier_neutral_facilities: 11
+        Tokyo_named_examples: [Otemachi, Tama_3, Tama_5, Shibuya]
+        Nagoya_historical_facilities: 2
+        Osaka_historical_facilities: 2
+        Frankfurt_KDDI_2024_reported_buildings: 5
+        Frankfurt_current_page_stale_or_conflicting_count: 3
+      boundary: >-
+        Roster rows can be one street facility, a campus, a city containing many
+        data centers or a partner-operated site. Counts are never summed without
+        resolving overlap, current branding, building and lifecycle.
+    public_map_crosswalk:
+      related_OSM_objects_excluding_TransACT_Telehouse: 16
+      mapped_to_current_brochure_labels: 15
+      location_labels_with_OSM_evidence: 11
+      mapped_country_counts: {DE: 5, FR: 3, GB: 5, TH: 1, US: 1}
+      unmatched_or_legacy:
+        object: Telehouse_THM1_Marseille
+        status: >-
+          Present in OSM and older material but absent from the July 2025 global
+          brochure and current France directory; current Telehouse operation is not inferred.
+      TransACT_boundary: >-
+        Two Australian objects named TransACT Telehouse refer to a generic
+        telehouse context under TransACT and are excluded from the Telehouse/KDDI crosswalk.
+      scope_warning: >-
+        Five Frankfurt outlines, five London buildings and sparse points elsewhere
+        do not represent a complete global fleet, capacity, ownership or lifecycle census.
+    selected_facility_power_and_cooling:
+      London_Docklands_campus:
+        data_centers: 5
+        private_primary_substation_MVA: 50
+        grid_feeds: two_132kV_National_Grid_lines
+        substation_redundancy: N_plus_N
+      London_South:
+        current_homepage_peak_IT_load_mw: 5.4
+        2025_factsheet_existing_IT_capacity_mw: 7.4
+        full_build_IT_capacity_mw: 18
+        gross_area_sqm: 31000
+        rack_footprints_per_floor: 688
+        incoming_feeds: dual_redundant_diverse_routes
+        UPS: 2N_distributed_redundancy
+        generators: N_plus_1_with_24_hour_fuel
+        cooling: free_cooling_air_cooled_chillers_N_plus_1_and_floor_CRAH_N_plus_20_percent
+        design_PUE_below: 1.3
+        design_WUE_below: 0.01
+        capacity_conflict_boundary: >-
+          The current homepage's 5.4-MW peak-IT statement and the factsheet's
+          7.4-MW existing/18-MW full-build values use different dates or measures
+          and are not silently reconciled into live load.
+      London_other_buildings:
+        North: {generators: "6 N+1", UPS: "N+1 or 2N", rack_power_kW: "0.5-2", cooling: "closed-control air N+1 with A/B pipe routes and N+1 pumps"}
+        North_Two: {generators: "8 N+1", UPS: "2(N+1)", rack_power_kW: "3 and upwards", cooling: indirect_adiabatic_and_evaporative, design_PUE: 1.16}
+        East: {generators: "5 N+1", UPS: "N+1 or 2N", rack_power_kW: "0.5-2"}
+        West: {generators: "8 N+1", UPS: "2(N+1)", rack_power_kW: "2-4"}
+      Paris_Voltaire:
+        colocation_sqm: 7000
+        utility: two_10MW_public_company_feeds_and_two_dedicated_cables
+        generators: six_2MVA_MTU_N_plus_1
+        fuel: three_tanks_50m3_total_72_hours_at_full_load
+        UPS: Siemens_150_to_400kVA_N_plus_1_to_N_plus_N_with_STS
+        battery_minutes_at_full_charge: 30
+        cooling: seven_Carrier_screw_units_5600kW_total_N_plus_1_and_70kW_Airce_cabinets
+      Frankfurt:
+        site_sqm: 67000
+        fitted_colocation_sqm: 25000
+        utility: two_independent_feeds_from_two_substations
+        rack_power_kW_up_to: 8
+        UPS: N_plus_1_with_battery
+        uninterruptible_emergency_power_MVA_up_to: 21
+        diesel_runtime_days: 3
+        cooling: N_plus_1
+      Tokyo_Tama_3:
+        racks_approximately: 1300
+        total_power_mw: 14
+        utility: 66kV_primary_and_backup_lines
+        backup: N_plus_1_and_more_than_48_hours_without_refueling
+        UPS_battery_minutes: 15
+        rack_power_kVA_design_max: 42
+        rack_power_kVA_effective_max: 30
+        rack_power_kVA_design_average: 21
+        cooling: air_cooling_module_chiller_and_CRAC_N_plus_2_with_UPS
+        design_PUE: 1.31
+      New_York_Teleport:
+        rack_power_kW_up_to: 20
+        power: redundant_commercial_feeds_N_plus_1_UPS_and_multiple_generators
+        cooling: redundant_air_cooling_with_hot_and_cold_aisle_containment
+      exact_fleet_BOM_as_built_capacity_current_condition_and_OEM_allocation: undisclosed
+    accelerator_and_AI_evidence:
+      Telehouse_or_KDDI_owned_GPU_inventory_by_model_site_and_utilization: undisclosed
+      London_South_liquid_cooling_lab:
+        status: demonstration_and_customer_test_lab_from_2025
+        technologies:
+          - Accelsius_NeuCool_two_phase_direct_to_chip
+          - JetCool_SmartPlate_microconvective_liquid_cooling
+          - Legrand_ColdLogik_rear_door_heat_exchange
+          - EkkoSense_AI_power_and_cooling_optimization
+        Accelsius_test: thermal_simulation_rack_and_load_simulation_sleds
+        JetCool_claimed_superchip_cooling_W_above: 3500
+        production_GPU_models_counts_and_live_load: undisclosed
+      Tokyo_Shibuya_verification_environment:
+        scheduled_start: 2025_04
+        maximum_power_source_kVA: 300
+        maximum_cooling_kW: 300
+        design_test_context: NVIDIA_GB200_NVL72_at_100kW_plus_per_rack
+        collaborators: [Super_Micro_Computer, Nidec, Shinohara_Electric]
+        actual_GPU_model_count_and_production_status: undisclosed
+      OUTSCALE_case:
+        workload: sovereign_high_performance_GPU_environment
+        exact_site_GPU_models_counts_owner_power_and_utilization: undisclosed
+      boundary: >-
+        Cooling demonstrations, heat-load simulators, AI-ready marketing and a
+        300-kW verification environment do not establish an installed production
+        GPU fleet, customer-owned colocation inventory, utilization or revenue.
+    sustainability:
+      KDDI_group_data_centers_renewable_electricity_percent: 100
+      achievement_announcement_date: 2026-04-30
+      data_center_business_renewable_electricity_since: 2019
+      procurement_boundary: includes_renewable_programs_and_environmental_certificates
+      all_sites_hourly_additional_matching: not_disclosed
+      current_fleet_measured_PUE_WUE_water_energy_emissions: undisclosed
+      selected_design_metrics:
+        London_North_Two_PUE: 1.16
+        London_South_PUE_below: 1.3
+        London_South_WUE_below: 0.01
+        Tokyo_Tama_3_PUE: 1.31
+      liquid_cooling_and_heat_reuse: commercially_deployed_at_some_KDDI_data_centers_without_complete_site_or_MW_roster
+    ownership_and_financial_linkage:
+      parent: KDDI_Corporation
+      KDDI_data_center_operating_revenue_jpy_billion:
+        FY2024_3: 121
+        FY2025_3: 130
+        FY2031_3_target: 200
+      revenue_scope: KDDI_parent_data_center_business_not_Telehouse_standalone_or_per_site
+      current_Telehouse_standalone_revenue_operating_profit_capex_debt_and_cash_flow: undisclosed
+      linked_companies_with_financial_profile_refs: {KDDI: company_kddi}
+      linked_without_dedicated_profile_in_current_ledger:
+        - Accelsius
+        - JetCool_Flex
+        - Legrand
+        - EkkoSense
+        - OUTSCALE_Dassault_Systemes
+        - Super_Micro_Computer
+        - Nidec
+        - Shinohara_Electric
+      financial_profile_ref: company_kddi
+    sources:
+      - {title: Telehouse Global Data Centre Solutions 2025, publisher: Telehouse, date: 2025-07-24, url: "https://www.telehouse.com/wp-content/uploads/2025/09/Telehouse-Global-Brochure-2025.pdf"}
+      - {title: Telehouse global data centers, publisher: Telehouse, accessed: 2026-07-19, url: "https://www.telehouse.com/global-data-centers/"}
+      - {title: Telehouse London data centers, publisher: Telehouse_Europe, accessed: 2026-07-19, url: "https://www.telehouse.net/data-centre-services/uk/london/"}
+      - {title: Telehouse South 2025 fact sheet, publisher: Telehouse_Europe, date: 2025, url: "https://www.telehouse.net/wp-content/uploads/2025/08/Telehouse-South-Fact-Sheet-2025.pdf"}
+      - {title: Telehouse Paris data centers, publisher: Telehouse_Europe, accessed: 2026-07-19, url: "https://www.telehouse.net/data-centre-services/france/paris/"}
+      - {title: Telehouse Paris Voltaire, publisher: Telehouse_Europe, accessed: 2026-07-19, url: "https://www.telehouse.net/data-centre-services/france/paris/telehouse-paris-voltaire/"}
+      - {title: Telehouse Frankfurt, publisher: Telehouse_Europe, accessed: 2026-07-19, url: "https://www.telehouse.net/data-centre-services/germany/frankfurt/telehouse-frankfurt/"}
+      - {title: Telehouse Tokyo data centers, publisher: Telehouse, accessed: 2026-07-19, url: "https://www.telehouse.com/global-data-centers/asia/tokyo-data-centers/"}
+      - {title: Tokyo Tama 3 specifications, publisher: Telehouse, accessed: 2026-07-19, url: "https://www.telehouse.com/global-data-centers/asia/tokyo-data-centers/tama-3/"}
+      - {title: Telehouse London South liquid cooling lab, publisher: Telehouse_Europe, date: 2025-01-13, url: "https://www.telehouse.net/news/telehouse-launches-pioneering-liquid-cooling-lab/"}
+      - {title: KDDI Shibuya AI data-center verification environment, publisher: KDDI, date: 2025-02-25, url: "https://newsroom.kddi.com/english/news/detail/kddi_nr-454_3732.html"}
+      - {title: KDDI Group data centers achieve 100 percent renewable electricity, publisher: KDDI, date: 2026-04-30, url: "https://news.kddi.com/kddi/corporate/csr-topic/2026/04/30/7739.html"}
+      - {title: KDDI Integrated Sustainability and Financial Report 2025, publisher: KDDI, date: 2025, url: "https://www.kddi.com/extlib/files/english/corporate/ir/ir-library/sustainability-integrated-report/pdf/kddi_sir2025_e_p_OB5ud7.pdf"}
+    confidence: high_for_2025_roster_labels_portfolio_headlines_selected_facility_equipment_parent_revenue_and_AI_test_boundaries_low_for_complete_current_physical_building_roster_live_load_GPU_inventory_site_economics_and_Telehouse_standalone_financials
 
   - id: dc_firmus_project_southgate_australia
     name: Firmus Project Southgate Australia AI Factory program
@@ -29678,6 +29889,14 @@ disclosure_gap_register:
   - NorthC_current_fleet_PUE_WUE_water_energy_emissions_hourly_renewable_matching_heat_reuse_and_live_liquid_cooled_MW
   - NorthC_Antin_APG_exact_transaction_close_final_cap_table_purchase_price_enterprise_value_and_post_close_debt_structure
   - NorthC_current_standalone_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_utilization_and_ROIC
+  - Telehouse_more_than_45_sites_31_brochure_labels_and_aggregated_Tokyo_Frankfurt_Magny_rows_to_complete_current_physical_building_ownership_and_lifecycle_roster
+  - Telehouse_16_related_OSM_objects_15_current_mappings_and_Marseille_THM1_legacy_or_current_operator_resolution
+  - Telehouse_London_South_5_4MW_homepage_7_4MW_existing_18MW_full_build_to_current_energized_leased_utilized_billed_and_accepted_IT_load
+  - Telehouse_per_site_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_and_as_built_topology
+  - Telehouse_London_South_and_Tokyo_Shibuya_AI_labs_to_exact_production_GPU_models_counts_servers_racks_fabric_owner_power_utilization_revenue_and_margin
+  - Telehouse_current_fleet_PUE_WUE_water_energy_emissions_hourly_renewable_matching_heat_reuse_and_live_liquid_cooled_MW
+  - KDDI_JPY130B_data_center_revenue_to_Telehouse_geographic_site_customer_and_service_allocation_plus_operating_profit_capex_cash_flow_and_ROIC
+  - KDDI_JPY200B_FY2031_data_center_target_and_JPY100B_AI_data_center_investment_to_site_delivery_utilization_revenue_margin_and_returns
   - AirTrunk_current_post_2024_committed_energized_and_utilized_capacity_by_campus
   - HUMAIN_AirTrunk_Saudi_exact_location_capacity_hardware_power_and_delivery_schedule
   - Equinix_280_year_end_to_281_current_facility_reconciliation
@@ -29796,7 +30015,8 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
-    - global_coverage_remaining_P1_Telehouse_Sabey_Cologix_CloudHQ_KDDI_GlobalSwitch_OVHcloud_official_profiles
+    - global_coverage_remaining_P1_Sabey_Cologix_CloudHQ_KDDI_GlobalSwitch_OVHcloud_official_profiles
+    - Telehouse_31_labels_to_physical_buildings_current_load_GPU_inventory_power_cooling_BOM_and_KDDI_site_economics
     - NorthC_27_labels_to_physical_buildings_current_load_GPU_inventory_power_cooling_BOM_Almere_recovery_and_private_financials
     - atNorth_13_codes_to_physical_building_current_load_GPU_inventory_power_cooling_BOM_and_private_financials
     - Switch_20_operating_data_centers_to_complete_building_roster_current_load_GPU_inventory_power_cooling_BOM_and_private_financials
