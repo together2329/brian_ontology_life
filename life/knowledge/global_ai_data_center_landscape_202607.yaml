@@ -4618,9 +4618,12 @@ campus_profiles:
     operator: Google
     lifecycle_as_of_2026_07_18: operating_and_expanding
     location:
-      current_company_headline:
+      official_registry_ref: life/imports/global_data_centers_20260717/google_official_location_registry.jsonl
+      official_summary_ref: life/imports/global_data_centers_20260717/google_official_location_summary.json
+      static_sidebar_headline_untimestamped:
         active_locations_worldwide: 30
         active_countries: 11
+        reconciliation_status: likely_stale_after_Waltham_Cross_opening_but_not_explicitly_timestamped_by_Google
       current_visible_location_rows:
         active_label_rows_derived: 32
         active_labels:
@@ -4635,15 +4638,40 @@ campus_profiles:
           North_America: [Armstrong_County_Texas, Cedar_Rapids_Iowa, Chesterfield_County_Virginia, Dorchester_County_South_Carolina, Haskell_County_Texas, Hermantown_Minnesota, Kansas_City_Missouri, LaGrange_Georgia, Lincoln_Nebraska, Mesa_Arizona, Michigan_City_Indiana, Muskogee_County_Oklahoma, New_Florence_Missouri, Pampa_Texas, Pine_Island_Minnesota, Stillwater_Oklahoma, West_Memphis_Arkansas, Wilbarger_County_Texas]
           South_America: []
         total_visible_rows_derived: 59
+      official_source_reconciled_rows:
+        operating_or_active_label_rows: 31
+        in_development_label_rows: 28
+        active_countries_or_territories_derived_from_labels: 12
+        lifecycle_conflict:
+          location: Canelones_Uruguay
+          locations_page_hidden_payload: not_marked_in_development
+          locations_page_visible_list: not_marked_in_development
+          FAQ_and_Canelones_detail_page: in_development
+          selected_status: in_development
+        headline_arithmetic:
+          after_Canelones_status_correction: 31_locations_in_12_countries_or_territories
+          after_also_removing_Waltham_Cross_opened_in_2025: 30_locations_in_11_countries_or_territories
+          interpretation: The exact match strongly suggests the static sidebar predates Waltham Cross opening, but this remains an inference because Google gives no counter timestamp.
+        public_map_coordinates:
+          rows_with_coordinates: 12
+          reconciled_active_rows_with_coordinates: 4
+          boundary: Provider map anchors, not parcel, building, street-address, or utility-interconnect points.
+        detail_pages:
+          rows_with_detail_page: 32
+          unique_detail_pages: 29
+          shared_pages:
+            Texas: [Ellis_County, Midlothian, Red_Oak]
+            Nebraska: [Omaha, Papillion]
       roster_reconciliation_boundary: >-
-        The current page headline says 30 active locations and 11 active countries,
-        while 32 visible rows lack an in-development label. Some rows are umbrella
-        or sublocation labels: Ellis County shares a page with Midlothian and Red
-        Oak, and Omaha and Papillion share the Nebraska page. Canelones lacks the
-        in-development marker even though its description uses future tense. Google
-        also warns that one listed region may contain more than one site. Therefore
-        neither the 59 rows nor the 30-location headline is treated as an exact
-        physical building count without a site-by-site reconciliation.
+        The locations page has 32 rows without an in-development marker and 27
+        marked development, but the FAQ and Canelones detail page explicitly put
+        Canelones in development, producing a reconciled 31 active and 28
+        development labels. Removing Waltham Cross, which Google says opened in
+        2025, exactly reproduces the static 30-location/11-country sidebar. Some
+        rows also share detail pages, and Google warns that one listed region may
+        contain more than one site. Therefore 59 labels, 31 reconciled active
+        labels, 29 unique detail pages, and the 30-location headline are all kept
+        separate from physical building count.
       exact_buildings_addresses_coordinates_parcels_ownership_and_lifecycle: partially_disclosed_by_location_page_not_globally_reconciled
     portfolio_scale:
       exact_operating_energized_leased_and_utilized_IT_MW: undisclosed
@@ -4730,6 +4758,18 @@ campus_profiles:
         publisher: Google
         date: 2026-07-18_accessed
         url: https://www.datacenters.google/locations/
+      - title: Google data-center FAQ location roster
+        publisher: Google
+        date: 2026-07-18_accessed
+        url: https://www.datacenters.google/discover-more/faq/
+      - title: Canelones Uruguay data-center detail page
+        publisher: Google
+        date: 2026-07-18_accessed
+        url: https://datacenters.google/intl/es-419_ALL/locations/canelones-uruguay/
+      - title: Waltham Cross United Kingdom data-center detail page
+        publisher: Google
+        date: 2026-07-18_accessed
+        url: https://www.datacenters.google/locations/waltham-cross/
       - title: Google data-center sustainability
         publisher: Google
         date: 2026-07-18_accessed
@@ -27940,7 +27980,8 @@ disclosure_gap_register:
   - Microsoft_500_plus_datacenters_80_plus_announced_regions_and_57_public_rows_scope_lifecycle_and_ownership_reconciliation
   - Microsoft_per_site_live_MW_GPU_inventory_substations_UPS_generators_CDUs_and_equipment_OEMs
   - Microsoft_Pecos_2GW_capacity_definition_gas_plant_capacity_GPU_inventory_and_electrical_BOM
-  - Google_30_active_headline_32_visible_active_labels_and_27_development_rows_building_lifecycle_reconciliation
+  - Google_static_30_location_11_country_sidebar_counter_timestamp_and_correction
+  - Google_59_public_labels_29_detail_pages_and_31_reconciled_active_labels_to_exact_physical_campus_building_ownership_and_lifecycle_reconciliation
   - Google_one_million_TPU_logical_cluster_physical_site_mapping_and_global_GPU_TPU_inventory
   - Google_per_site_live_MW_grid_substations_transformers_switchgear_generators_cooling_and_equipment_OEMs
   - Meta_33_current_location_rows_to_exact_operating_owned_leased_building_and_lifecycle_reconciliation
@@ -28221,7 +28262,8 @@ next_research_queue:
     - Microsoft_500_plus_datacenters_80_plus_regions_and_57_public_rows_complete_scope_and_lifecycle_reconciliation
     - Microsoft_per_site_live_MW_GPU_inventory_and_electrical_cooling_equipment
     - Microsoft_Pecos_2GW_definition_gas_plant_capacity_schedule_GPU_and_equipment_awards
-    - Google_30_active_headline_to_32_visible_active_labels_and_27_development_rows_reconciliation
+    - Google_static_30_location_11_country_sidebar_counter_timestamp_and_correction
+    - Google_59_public_labels_29_detail_pages_and_31_reconciled_active_labels_to_exact_physical_campus_and_building_roster
     - Google_Virgo_one_million_TPU_logical_cluster_physical_site_mapping_and_installed_inventory
     - Google_per_site_live_MW_GPU_TPU_power_chain_cooling_and_equipment_OEMs
     - Meta_33_current_locations_to_exact_operating_owned_leased_building_and_lifecycle_reconciliation

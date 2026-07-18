@@ -3753,14 +3753,23 @@ financial_profiles:
         - NVIDIA_GPU_cloud_provider
         - terrestrial_and_subsea_network_owner
       infrastructure_context:
-        official_active_location_headline: 30
-        official_active_country_headline: 11
+        official_registry_ref: life/imports/global_data_centers_20260717/google_official_location_registry.jsonl
+        official_summary_ref: life/imports/global_data_centers_20260717/google_official_location_summary.json
+        static_sidebar_active_location_headline_untimestamped: 30
+        static_sidebar_active_country_headline_untimestamped: 11
         visible_active_label_rows_derived: 32
         visible_in_development_rows_derived: 27
+        official_source_reconciled_active_label_rows: 31
+        official_source_reconciled_in_development_rows: 28
+        official_source_reconciled_active_countries_or_territories_derived: 12
         location_reconciliation_boundary: >-
-          The official headline and visible roster do not reconcile one-to-one;
-          umbrella and sublocation labels exist, and Google warns that a listed
-          region may contain more than one physical site.
+          Canelones is unmarked in the locations-page map payload and visible list
+          but explicitly in development in Google's FAQ and detail page. After
+          correcting that conflict, removing Waltham Cross, which opened in 2025,
+          exactly reproduces the static 30-location/11-country counters. This is
+          strong evidence that the counters are stale, but remains an inference
+          because Google gives no timestamp. Labels and shared detail pages are
+          not physical-building counts, and one region may contain multiple sites.
         Cloud_regions_more_than: 40
         terrestrial_and_subsea_fiber_km_million: 10
         current_accelerator_platforms_disclosed_2026: [TPU_8i, TPU_8t, NVIDIA_Vera_Rubin_NVL72_A5X]
@@ -3806,6 +3815,9 @@ financial_profiles:
       - https://blog.google/intl/en-in/google-ai-hub-scaling-indias-ai-infrastructure-and-community-impact/
       - https://www.ril.com/sites/default/files/2025-08/MR_Google.pdf
       - https://www.datacenters.google/locations/
+      - https://www.datacenters.google/discover-more/faq/
+      - https://datacenters.google/intl/es-419_ALL/locations/canelones-uruguay/
+      - https://www.datacenters.google/locations/waltham-cross/
       - https://www.datacenters.google/operating-sustainably/
       - https://cloud.google.com/blog/topics/systems/enabling-1-mw-it-racks-and-liquid-cooling-at-ocp-emea-summit
       - https://cloud.google.com/blog/topics/systems/100-million-li-ion-cells-in-google-data-centers
@@ -11505,7 +11517,7 @@ cross_company_read_through:
     - Hyperscale buyers are funding the demand wave directly: Meta raised its 2026 capex range, Amazon's free cash flow fell as AI property investment rose, and Oracle is financing rapid OCI expansion against a very large AI-heavy RPO.
     - Apple owns eight disclosed data centers and used about 2.041 TWh at those sites plus 0.544 TWh of metered colocation electricity in 2025. Its Private Cloud Compute fleet uses custom Apple-silicon inference servers, but Apple discloses no chip model, server, node, chassis, rack, GPU, IT-MW, or site-allocation count. The colocation figure excludes cooling and building-operation energy, so it is not directly comparable with owned-facility consumption.
     - Apple's FY2025 revenue was $416.2 billion and operating income $133.1 billion, while Services revenue was $109.2 billion. Services is the monetization layer supported by the infrastructure but is not data-center revenue; the $600 billion four-year US commitment is likewise broad manufacturing and supplier spend rather than a data-center capex forecast.
-    - AWS currently reports 39 Regions and 123 Availability Zones, Microsoft more than 500 datacenters in 34 countries, and Google 30 active location headlines. Those disclosures use different physical and logical scopes, so fleet size cannot be ranked safely without building, ownership, and lifecycle reconciliation.
+    - AWS currently reports 39 Regions and 123 Availability Zones, Microsoft more than 500 datacenters in 34 countries, and Google a static 30-active-location/11-country sidebar. Google's 59-row official roster reconciles instead to 31 active and 28 development labels after correcting Canelones from its FAQ and detail page; excluding Waltham Cross, opened in 2025, exactly restores 30/11, strongly suggesting but not proving that the sidebar predates that opening. These disclosures use different physical and logical scopes, so fleet size cannot be ranked safely without building, ownership, and lifecycle reconciliation.
     - Amazon, Microsoft, and Alphabet all show strong current cloud earnings while accelerating infrastructure: AWS produced $14.16 billion of Q1 2026 operating income, Microsoft Intelligent Cloud $13.75 billion, and Google Cloud $6.60 billion. These segment results include services beyond physical data centers and do not reveal campus-level return on capital.
     - Meta's current public roster reaches 33 data-center locations, but its 2024 Environmental Data Index individually reported only 18 owned online sites plus aggregated leased facilities. The 33-location page mixes operating and future projects, so it is not a current operating-building count. Meta's FY2026 capex outlook of $125-$145 billion is a derived 73%-101% increase over FY2025 and makes delivery, utilization, and depreciation central return-on-capital variables.
     - Meta engineering provides unusually concrete accelerator milestones: two 24,000-H100 clusters, a later 129,000-H100 cluster spanning five emptied production data centers, and a Blackwell pod example with 72 GPUs drawing about 140 kW across two GPU racks plus four air-assisted liquid-cooling racks. Its current fleet is described only as hundreds of thousands of GPUs; these milestones cannot be summed into an exact live global inventory.

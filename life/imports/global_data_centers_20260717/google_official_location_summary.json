@@ -1,0 +1,125 @@
+{
+  "coverage": {
+    "continent_counts_all": {
+      "Asia": 6,
+      "Europe": 15,
+      "North America": 36,
+      "South America": 2
+    },
+    "continent_counts_reconciled_active": {
+      "Asia": 3,
+      "Europe": 9,
+      "North America": 18,
+      "South America": 1
+    },
+    "detail_page_rows": 32,
+    "hidden_payload_status_counts": {
+      "in_development": 27,
+      "not_marked_in_development": 32
+    },
+    "location_labels_total": 59,
+    "provider_coordinates_present": 12,
+    "provider_coordinates_present_reconciled_active": 4,
+    "reconciled_active_countries_or_territories": [
+      "Belgium",
+      "Chile",
+      "Denmark",
+      "Finland",
+      "Germany",
+      "Ireland",
+      "Japan",
+      "Netherlands",
+      "Singapore",
+      "Taiwan",
+      "United Kingdom",
+      "United States"
+    ],
+    "reconciled_active_country_or_territory_count": 12,
+    "reconciled_status_counts": {
+      "in_development": 28,
+      "operating_or_active": 31
+    },
+    "rows_with_callout_blocks": 10,
+    "shared_detail_pages": {
+      "https://www.datacenters.google/locations/nebraska": [
+        "Omaha, Nebraska",
+        "Papillion, Nebraska"
+      ],
+      "https://www.datacenters.google/locations/texas/": [
+        "Ellis County, Texas",
+        "Midlothian, Texas",
+        "Red Oak, Texas"
+      ]
+    },
+    "unique_detail_pages": 29,
+    "visible_list_status_counts": {
+      "in_development": 27,
+      "not_marked_in_development": 32
+    }
+  },
+  "generated_on": "2026-07-18",
+  "headline_reconciliation": {
+    "after_also_excluding_waltham_cross_opened_in_2025": {
+      "countries_or_territories": 11,
+      "operating_or_active_location_labels": 30
+    },
+    "after_canelones_detail_and_faq_correction": {
+      "countries_or_territories": 12,
+      "operating_or_active_location_labels": 31
+    },
+    "hidden_and_visible_locations_page_raw_result": {
+      "countries_or_territories_derived": 13,
+      "not_marked_in_development_location_labels": 32
+    },
+    "inference": "The static 30-location/11-country sidebar exactly matches the reconciled roster after removing Waltham Cross, which Google says opened in 2025. This strongly suggests the counters predate that opening, but Google does not publish a counter timestamp, so the staleness explanation remains an inference rather than a stated fact.",
+    "published_sidebar_stats": {
+      "active countries": 11,
+      "active locations worldwide": 30
+    }
+  },
+  "interpretation": {
+    "canelones": "Treat as in development because the FAQ and detail page explicitly say so; preserve the contrary locations-page hidden flag and missing visible marker as upstream inconsistencies.",
+    "coordinates": "Only provider map anchors are preserved; none is promoted to parcel, building, street-address, or utility-interconnect precision.",
+    "country_count": "Country or territory is derived from the public label solely to reconcile Google's headline; it is not a new site-level disclosure.",
+    "physical_building_count": "The 59 labels, 31 reconciled active labels, 28 in-development labels, and 29 unique detail pages are not physical-building counts. Google explicitly says a listed region may contain more than one data-center site.",
+    "waltham_cross": "Treat as operating or active because its official detail page says Google opened it in 2025."
+  },
+  "official_source_conflicts": [
+    {
+      "basis": "FAQ and Canelones detail page explicitly say in development; the locations-page hidden flag and visible row omit that marker.",
+      "location": "Canelones, Uruguay",
+      "reconciled_status": "in_development",
+      "source_statuses": {
+        "faq_location_roster": "in_development",
+        "locations_hidden_map_payload": "not_marked_in_development",
+        "locations_visible_list": "not_marked_in_development"
+      }
+    }
+  ],
+  "remaining_gaps": [
+    "Exact physical campus and building roster behind each public label and shared detail page",
+    "Street addresses, parcels, building coordinates, and land-control status",
+    "Owned, leased, colocation, and partner-operated building mapping",
+    "Per-site operating, energized, leased, utilized, and billed critical IT load",
+    "Per-site live GPU, TPU, rack, network-fabric, and utilization inventory",
+    "Per-site utility feed, substation, transformer, switchgear, UPS, battery, generator, chiller, CDU, and OEM bill of materials",
+    "Construction, commissioning, customer-acceptance, and revenue-start dates",
+    "Timestamped correction or update of Google's static active-location and active-country counters"
+  ],
+  "schema_version": 1,
+  "sources": {
+    "canelones_detail_page": "https://datacenters.google/intl/es-419_ALL/locations/canelones-uruguay/",
+    "faq_page": "https://www.datacenters.google/discover-more/faq/",
+    "hash_boundary": "Hashes cover extracted stable evidence rather than full HTML, whose runtime nonce and presentation payload can vary per request.",
+    "locations_page": "https://www.datacenters.google/locations/",
+    "retrieved_evidence_sha256": {
+      "canelones_lifecycle_evidence": "280870e41586be0bcefa1feda82248a2fc8386ac4d2aec5f2b01ccdcfc52528e",
+      "faq_exact_location_rows": "d3a569e65836ceee5bbc4a9258fe9f8d6bd40e4e53e58a40e3fee5ecaa808993",
+      "locations_hidden_structured_payload": "b1473a97356d46b4e0966789195606fa8133274e8f6ab74e458ea1fb7940f533",
+      "locations_sidebar_stats": "de9ffc5b11ed72a8e76202f8f1f33934de08e196863588b24635906f50fa4d60",
+      "locations_visible_list": "82e6353e3f2b7aa27baa6b98d9ad3355f4325a6f34b8ad5789abab772d029d02",
+      "waltham_cross_lifecycle_evidence": "1a6cb1660c867b6bf7f508e82f92d41a3963458d334e6fdf6ab7d30fe60b2224"
+    },
+    "waltham_cross_detail_page": "https://www.datacenters.google/locations/waltham-cross/"
+  }
+}
