@@ -15992,7 +15992,337 @@ campus_profiles:
       - {title: center3 Uptime Institute award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Bahrain&ipp=All&page=1&tierLevel="}
     confidence: high_for_name_governorate_and_Tier_III_design_award_low_for_constructed_operating_status_capacity_equipment_and_GPU_inventory
 
+  - id: dc_mobily_saudi_portfolio
+    name: Mobily Saudi Arabia data-center portfolio
+    operator: Etihad_Etisalat_Mobily
+    location:
+      country: Saudi_Arabia
+      currently_marketed_cities: [Riyadh, Jeddah, Dammam, Unaizah]
+      exact_current_physical_building_count_addresses_coordinates_and_parcels: undisclosed
+    lifecycle: operating_portfolio_with_new_2025_capacity_and_additional_planned_facilities
+    record_granularity: >-
+      Portfolio record plus named facility and Uptime award-scope records. Malga 2
+      ground and second floor are certification scopes within one known building,
+      and the Dammam/Fursan and Jeddah IV/project crosswalks remain unresolved;
+      profile count is therefore not a physical-building count.
+    current_commercial_scope:
+      services: [carrier_neutral_colocation, caged_and_uncaged_space, cross_connect, DIA, IPVPN, cloud, GPU_accelerator_service]
+      support: [twenty_four_by_seven_monitoring, twenty_four_by_seven_technical_support]
+      2025_new_centers:
+        cities: [Riyadh, Jeddah]
+        combined_capacity_mw: 13
+        status: fully_commissioned_and_operational
+        reliability_design: Uptime_Certified_Tier_III
+        environmental_design_claim: environmentally_friendly
+      current_exact_facility_count_and_per_site_operating_status: undisclosed
+    capacity_scope_reconciliation:
+      commissioned_in_2025_combined_mw: 13
+      planned_facilities_total_mw: 39
+      13MW_included_within_39MW_statement: true
+      wholesale_network_technical_and_commercial_capacity_mw_more_than: 122
+      non_additivity_boundary: >-
+        The 13 MW pair is operating capacity included in a 39 MW facility-plan
+        statement. The greater-than-122-MW figure appears in the Wholesale
+        network context and is not reconciled to owned IT load, energized
+        colocation capacity or the 39-MW plan; none of the three is added.
+      target: double_data_center_capacity_by_2026_or_2027
+      exact_definition_baseline_and_delivery_bridge_for_doubling_target: undisclosed
+    named_and_certified_scope:
+      dated_2025_Q3_business_booklet:
+        - {site: Malga1, city: Riyadh, tier_claim: Uptime_Tier_II_design}
+        - {site: Malga2, city: Riyadh, tier_claim: Uptime_Tier_IV_design_and_constructed_plus_TCOS_Gold}
+        - {site: Sulay, city: Riyadh, tier_claim: TIA_942_Tier_II}
+        - {site: Obhur, city: Jeddah, tier_claim: Uptime_Tier_III_design}
+        - {site: Fayha, city: Jeddah, tier_claim: Uptime_Tier_III_design}
+      Uptime_public_ledger:
+        - {site: Melgha_1_Data_Centre, city: Riyadh, scope: TCDD_Tier_II}
+        - {site: Melgha_2_ground_floor, city: Riyadh, scope: TCDD_TCCF_Tier_IV_and_TCOS_Gold}
+        - {site: Melgha_2_second_floor, city: Riyadh, scope: TCDD_TCCF_Tier_III_and_TCOS_Gold}
+        - {site: Jeddah_1_Obhur_Phase_1, city: Jeddah, scope: TCDD_TCCF_Tier_III_and_TCOS_Gold}
+        - {site: Jeddah_2_Fayha_multiple_floors, city: Jeddah, scope: TCDD_TCCF_Tier_III_and_TCOS_Gold}
+        - {site: Mobily_Dammam_Data_Center, city: Dammam, scope: TCCF_Tier_III_and_TCOS_Gold}
+        - {site: Mobily_Fursan_Data_Center, city: Dammam, scope: TCDD_TCCF_Tier_III_and_TCOS_Gold}
+        - {site: Khurais_DC_PODs_1_to_6, city: Riyadh, scope: TCDD_TCCF_Tier_III}
+        - {site: Jeddah_IV_DC, city: Jeddah, scope: TCDD_TCCF_Tier_III}
+        - {site: Mobily_Rimal_I_Data_Center, city: Riyadh, scope: TCDD_Tier_III_only}
+      scope_boundaries:
+        - Malga2_ground_and_second_floor_are_one_building_with_separate_award_scopes
+        - generic_Mobily_Dammam_and_Fursan_may_be_distinct_or_overlapping_without_public_crosswalk
+        - Rimal_I_design_award_is_not_proof_of_construction_or_operation
+        - dated_business_booklet_does_not_include_all_later_2025_Uptime_names
+    power_cooling_and_connectivity:
+      AI_rack_density_supported_kw_up_to: 40
+      direct_interconnect:
+        new_Riyadh_connection: {optical_wavelengths: dual_1_2_Tbps, IP_routing: 800G, medium: metro_fiber}
+        exact_endpoint_buildings_and_live_traffic: undisclosed
+      sustainability_2024_operating_practices:
+        temperature_C:
+          MDB_rectifier_UPS_and_battery_rooms: 24
+          external_switchgear_ATS_and_technical_corridors: 25
+          occupied_white_space_range: [18, 22]
+          offices_walkways_lobbies_and_NOC: 25
+        unoccupied_white_space_cooling: shut_down
+        no_live_rack_zone_CRAH: shut_down
+        chilled_water_supply_temperature_change_C: {from: 6, to: 10}
+        stated_reason: reduce_chiller_runtime_and_electricity_use
+      PUE:
+        measured_monthly: true
+        exact_portfolio_and_per_site_values: undisclosed
+      per_site_exact_grid_voltage_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CDU_counts_ratings_OEMs_and_commissioned_topology: undisclosed
+      per_site_exact_WUE_water_liquid_cooled_MW_energized_IT_load_and_power_utilization: undisclosed
+    accelerator_and_AI_service:
+      current_service: NVIDIA_accelerator_powered_performance_cloud
+      allocation_modes: [dedicated_GPU, shared_GPU_Slices]
+      exact_GPU_OEM_model_count_server_rack_fabric_host_site_ownership_delivery_live_status_power_utilization_customer_revenue_and_margin: undisclosed
+      boundary: >-
+        A live NVIDIA-powered service and rack support up to 40 kW establish
+        commercial AI capability and design density, not a count of physically
+        installed Mobily-owned GPUs.
+    investment_scope:
+      cumulative_data_center_investment_SAR_billion_more_than: 2
+      data_centers_plus_submarine_cable_infrastructure_SAR_billion_approximate: 3.4
+      boundary: The broader SAR3.4bn amount is not a data-center-only audited capex ledger.
+    named_company_relationships:
+      major_shareholder: Emirates_Telecommunications_Group_e_and
+      accelerator_platform: NVIDIA
+      DCI_agreement: Nokia
+      cloud_on_ramp: Oracle
+      energy_management_decarbonization_MOU_not_installed_equipment_proof: Schneider_Electric
+      historical_SOC: IBM
+      financial_profile_refs: [company_mobily, company_nvidia, company_schneider_electric, company_oracle]
+    sources:
+      - {title: Mobily Annual Report 2025, publisher: Mobily, date: 2026, url: "https://apisit.mobily.com.sa/wps/wcm/connect/e30b0c6d-81ce-485a-bdbb-891eaab24db8/Mobily%2BAR25%2B%2BEnglish.pdf?CACHEID=ROOTWORKSPACE-e30b0c6d-81ce-485a-bdbb-891eaab24db8-pSH9C9c&MOD=AJPERES"}
+      - {title: Mobily current colocation service, publisher: Mobily, date: 2026-07-18_accessed, url: "https://mobily.com.sa/wps/portal/web/business/digital/hosting-and-cloud/details/co-location-service"}
+      - {title: Mobily current performance cloud, publisher: Mobily, date: 2026-07-18_accessed, url: "https://mobily.com.sa/wps/portal/web/business/digital/hosting-and-cloud/cloud-service/performance-cloud"}
+      - {title: Mobily Business Solutions booklet 2025 Q3, publisher: Mobily, date: 2025_Q3, url: "https://www.mobily.com.sa/wps/wcm/connect/bbdd0622-4c6b-41b9-a9bc-362b75821ff9/Mobily_Business_Solutions%2B2025-Q3%2B%28Eng%29.pdf?MOD=AJPERES"}
+      - {title: Mobily Uptime Institute Saudi award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+      - {title: Mobily Sustainability Report 2024, publisher: Mobily, date: 2025, url: "https://apisit.mobily.com.sa/wps/wcm/connect/1134ad00-dfcf-4075-ac7c-131bfd3b1531/Mobily%2BSustainability%2BReport%2B2024_.pdf?MOD=AJPERES&id=1753693582905"}
+      - {title: Mobily FastConnect, publisher: Mobily, date: 2026-07-18_accessed, url: "https://www.mobily.com.sa/wps/portal/web/business/fixed/connectivity/details/advanced-connectivity-solution/mobily-fastconnect"}
+    confidence: high_for_company_2025_operating_capacity_current_marketed_cities_Uptime_awards_sustainability_practices_and_group_investment_statements_medium_for_current_physical_roster_and_capacity_scope_reconciliation_low_for_per_site_equipment_live_load_GPU_inventory_and_site_economics
+
+  - id: dc_mobily_melgha1_riyadh
+    name: Mobily Melgha 1 Data Centre
+    aliases: [Mobily_Malga1]
+    record_granularity: individual_Uptime_award_project
+    operator: Etihad_Etisalat_Mobily
+    location: {country: Saudi_Arabia, city: Riyadh, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: legacy_design_award_with_current_exact_operating_status_not_independently_reconciled
+    Uptime_awards: {tier: Tier_II, design_documents: true, constructed_facility: not_found_in_reviewed_ledger}
+    capacity: {exact_IT_mw_facility_power_floor_area_racks_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {booklet_power_topology: 2N, exact_current_power_cooling_BOM_PUE_WUE_water_liquid_cooling_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_mobily_saudi_portfolio
+    sources:
+      - {title: Mobily Uptime Institute Saudi award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+      - {title: Mobily Business Solutions booklet 2025 Q3, publisher: Mobily, date: 2025_Q3, url: "https://www.mobily.com.sa/wps/wcm/connect/bbdd0622-4c6b-41b9-a9bc-362b75821ff9/Mobily_Business_Solutions%2B2025-Q3%2B%28Eng%29.pdf?MOD=AJPERES"}
+    confidence: high_for_name_city_Tier_II_design_and_dated_2N_claim_low_for_current_status_capacity_equipment_and_GPU_inventory
+
+  - id: dc_mobily_melgha2_ground_riyadh
+    name: Mobily Melgha 2 Data Center ground floor
+    aliases: [Mobily_Malga2_ground_floor]
+    record_granularity: certification_scope_within_one_Melgha2_physical_building
+    operator: Etihad_Etisalat_Mobily
+    location: {country: Saudi_Arabia, city: Riyadh, exact_address_coordinate_and_parcel: undisclosed}
+    lifecycle: constructed_facility_and_operational_sustainability_award_scope
+    Uptime_awards: {tier: Tier_IV, design_documents: true, constructed_facility: true, operational_sustainability: Gold}
+    capacity_and_infrastructure: {exact_IT_mw_floor_area_racks_live_load_PUE_WUE_power_cooling_BOM_and_GPU_inventory: undisclosed}
+    same_physical_building_award_scope_ref: dc_mobily_melgha2_second_floor_riyadh
+    portfolio_ref: dc_mobily_saudi_portfolio
+    sources:
+      - {title: Mobily Uptime Institute Saudi award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+      - {title: Historical Melgha 2 opening and systems overview, publisher: Arab_News, date: 2013-07-23, url: "https://www.arabnews.com/news/458862"}
+    confidence: high_for_award_scope_and_city_low_for_current_capacity_equipment_GPU_and_utilization
+
+  - id: dc_mobily_melgha2_second_floor_riyadh
+    name: Mobily Melgha 2 Data Center second floor
+    aliases: [Mobily_Malga2_second_floor]
+    record_granularity: certification_scope_within_one_Melgha2_physical_building
+    operator: Etihad_Etisalat_Mobily
+    location: {country: Saudi_Arabia, city: Riyadh, exact_address_coordinate_and_parcel: undisclosed}
+    lifecycle: constructed_facility_and_operational_sustainability_award_scope
+    Uptime_awards: {tier: Tier_III, design_documents: true, constructed_facility: true, operational_sustainability: Gold}
+    capacity_and_infrastructure: {exact_IT_mw_floor_area_racks_live_load_PUE_WUE_power_cooling_BOM_and_GPU_inventory: undisclosed}
+    same_physical_building_award_scope_ref: dc_mobily_melgha2_ground_riyadh
+    portfolio_ref: dc_mobily_saudi_portfolio
+    sources:
+      - {title: Mobily Uptime Institute Saudi award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+    confidence: high_for_award_scope_and_city_low_for_current_capacity_equipment_GPU_and_utilization
+
+  - id: dc_mobily_sulay_riyadh
+    name: Mobily Sulay Data Center
+    record_granularity: legacy_named_facility_with_secondary_design_inventory
+    operator: Etihad_Etisalat_Mobily
+    location: {country: Saudi_Arabia, city: Riyadh, locality: Sulay, exact_address_coordinate_and_parcel: undisclosed}
+    lifecycle: currently_unreconciled_legacy_facility
+    dated_company_booklet: {certification_claim: TIA_942_Tier_II, power_topology: 2N}
+    secondary_unverified_design_inventory:
+      load: {connected_MVA: 1.2, demand_MVA: 0.9}
+      transformers: {count: 2, rating_each_kVA: 1500, output: 380_220V_3P_4W_60Hz}
+      generators: {count: 3, rating_each_kVA: 2354, continuous_kW_each: 1883, topology: N_plus_1, fuel_runtime_hours: 48}
+      UPS: {module_kVA: 200, topology: N_plus_1, battery_full_load_minutes: 30}
+      rectifier: {topology: active_active_N_plus_N, battery_Ah: 1000, runtime: two_hours_plus_two_hours}
+      cooling: {type: refrigerant, CRAH_topology: N_plus_1, design_demand_W_per_sqm: 1000}
+      monitoring: BMS
+      boundary: >-
+        These values come from a commercial directory rather than an owner
+        as-built record and are not treated as verified current installed assets.
+    exact_current_capacity_equipment_PUE_WUE_water_GPU_inventory_and_operating_status: undisclosed
+    portfolio_ref: dc_mobily_saudi_portfolio
+    sources:
+      - {title: Mobily Business Solutions booklet 2025 Q3, publisher: Mobily, date: 2025_Q3, url: "https://www.mobily.com.sa/wps/wcm/connect/bbdd0622-4c6b-41b9-a9bc-362b75821ff9/Mobily_Business_Solutions%2B2025-Q3%2B%28Eng%29.pdf?MOD=AJPERES"}
+      - {title: Secondary Sulay facility directory, publisher: DataCenterMap, date: 2026-07-18_accessed, url: "https://www.datacentermap.com/saudi-arabia/riyadh/mobily-tier2-sulay/"}
+    confidence: high_for_dated_company_name_city_and_TIA_claim_low_for_secondary_inventory_current_status_and_GPU_inventory
+
+  - id: dc_mobily_jeddah1_obhur
+    name: Mobily Jeddah 1 Obhur Technical Building
+    record_granularity: individual_facility_and_Phase_1_award_scope
+    operator: Etihad_Etisalat_Mobily
+    location: {country: Saudi_Arabia, city: Jeddah, locality: Obhur, exact_address_coordinate_and_parcel: undisclosed}
+    lifecycle: constructed_facility_and_operational_sustainability_award_scope
+    Uptime_awards: {tier: Tier_III, design_documents: true, constructed_facility_scope: Phase_1, operational_sustainability_scope: Phase_1_Gold}
+    capacity_and_infrastructure: {exact_IT_mw_floor_area_racks_live_load_PUE_WUE_power_cooling_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_mobily_saudi_portfolio
+    sources:
+      - {title: Mobily Uptime Institute Saudi award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+    confidence: high_for_name_city_and_awards_low_for_capacity_equipment_GPU_and_utilization
+
+  - id: dc_mobily_jeddah2_fayha
+    name: Mobily Jeddah 2 Fayha Data Center
+    record_granularity: individual_facility_with_multiple_floor_award_scopes
+    operator: Etihad_Etisalat_Mobily
+    location: {country: Saudi_Arabia, city: Jeddah, locality: Fayha, exact_address_coordinate_and_parcel: undisclosed}
+    lifecycle: constructed_facility_and_operational_sustainability_award_scope_plus_current_cloud_on_ramp
+    Uptime_awards: {tier: Tier_III, design_documents: true, constructed_facility_floors: [ground, first, fourth], operational_sustainability: Gold}
+    current_service_evidence: Oracle_FastConnect_location
+    capacity_and_infrastructure: {exact_IT_mw_floor_area_racks_live_load_PUE_WUE_power_cooling_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_mobily_saudi_portfolio
+    sources:
+      - {title: Mobily Uptime Institute Saudi award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+      - {title: Mobily FastConnect, publisher: Mobily, date: 2026-07-18_accessed, url: "https://www.mobily.com.sa/wps/portal/web/business/fixed/connectivity/details/advanced-connectivity-solution/mobily-fastconnect"}
+    confidence: high_for_name_city_awards_and_current_FastConnect_service_low_for_capacity_equipment_GPU_and_utilization
+
+  - id: dc_mobily_dammam_data_center
+    name: Mobily Dammam Data Center
+    record_granularity: individual_Uptime_named_award_project_with_unresolved_Fursan_crosswalk
+    operator: Etihad_Etisalat_Mobily
+    location: {country: Saudi_Arabia, city: Dammam, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: constructed_facility_and_operational_sustainability_award_scope
+    Uptime_awards: {tier: Tier_III, constructed_facility: true, operational_sustainability: Gold}
+    possible_duplicate_or_separate_site_ref: dc_mobily_fursan_dammam
+    capacity_and_infrastructure: {exact_IT_mw_floor_area_racks_live_load_PUE_WUE_power_cooling_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_mobily_saudi_portfolio
+    sources:
+      - {title: Mobily Uptime Institute Saudi award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+    confidence: high_for_name_city_and_awards_low_for_Fursan_crosswalk_capacity_equipment_GPU_and_utilization
+
+  - id: dc_mobily_fursan_dammam
+    name: Mobily Fursan Data Center
+    record_granularity: individual_Uptime_named_award_project_with_unresolved_generic_Dammam_crosswalk
+    operator: Etihad_Etisalat_Mobily
+    location: {country: Saudi_Arabia, city: Dammam, locality: Fursan, exact_address_coordinate_and_parcel: undisclosed}
+    lifecycle: constructed_facility_and_operational_sustainability_award_scope
+    Uptime_awards: {tier: Tier_III, design_documents: true, constructed_facility: true, operational_sustainability: Gold}
+    possible_duplicate_or_separate_site_ref: dc_mobily_dammam_data_center
+    capacity_and_infrastructure: {exact_IT_mw_floor_area_racks_live_load_PUE_WUE_power_cooling_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_mobily_saudi_portfolio
+    sources:
+      - {title: Mobily Uptime Institute Saudi award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+    confidence: high_for_name_city_and_awards_low_for_Dammam_crosswalk_capacity_equipment_GPU_and_utilization
+
+  - id: dc_mobily_khurais_riyadh
+    name: Mobily Khurais Data Center PODs 1 to 6
+    record_granularity: individual_facility_six_POD_award_scope
+    operator: Etihad_Etisalat_Mobily
+    location: {country: Saudi_Arabia, city: Riyadh, locality: Khurais, exact_address_coordinate_and_parcel: undisclosed}
+    lifecycle: inaugurated_2025-01_and_company_reported_operational
+    Uptime_awards: {tier: Tier_III, design_documents_scope: PODs_1_to_6, constructed_facility_scope: PODs_1_to_6}
+    capacity:
+      design_capacity_mw: 6.5
+      company_description: largest_Mobily_facility_by_hosting_space_and_power_allocation
+      expansion_capability: true
+      exact_IT_vs_facility_power_definition_floor_area_racks_live_load_and_utilization: undisclosed
+    infrastructure_and_accelerators: {AI_rack_density_supported_kw_up_to: 40, exact_power_cooling_BOM_PUE_WUE_water_liquid_cooling_and_GPU_inventory: undisclosed}
+    possible_2025_13MW_pair_member: true
+    portfolio_ref: dc_mobily_saudi_portfolio
+    sources:
+      - {title: Mobily Annual Report 2025, publisher: Mobily, date: 2026, url: "https://apisit.mobily.com.sa/wps/wcm/connect/e30b0c6d-81ce-485a-bdbb-891eaab24db8/Mobily%2BAR25%2B%2BEnglish.pdf?CACHEID=ROOTWORKSPACE-e30b0c6d-81ce-485a-bdbb-891eaab24db8-pSH9C9c&MOD=AJPERES"}
+      - {title: Mobily Uptime Institute Saudi award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+    confidence: high_for_2025_opening_city_6_5MW_design_and_awards_medium_for_13MW_pair_crosswalk_low_for_live_load_equipment_and_GPU_inventory
+
+  - id: dc_mobily_jeddah_iv
+    name: Mobily Jeddah IV Data Center
+    record_granularity: individual_Uptime_named_facility_with_probable_2025_project_crosswalk
+    operator: Etihad_Etisalat_Mobily
+    location: {country: Saudi_Arabia, city: Jeddah, exact_address_coordinate_and_parcel: undisclosed}
+    lifecycle: constructed_facility_award_and_probable_2025_company_reported_operating_center
+    Uptime_awards: {tier: Tier_III, design_documents: true, constructed_facility: true}
+    possible_2025_Jeddah_project_crosswalk:
+      combined_Riyadh_Jeddah_pair_mw: 13
+      secondary_engineering_project:
+        built_up_area_sqm: 15000
+        land_area_sqm: 5110
+        data_center_capacity_mw: 6.5
+        current_phase_PODs: 6
+        future_PODs: 3
+        per_POD_electrical_rooms_for: [UPS, panels, batteries]
+      confidence: medium_low
+      boundary: >-
+        The engineering page names Mobily and Jeddah but not Jeddah IV. Its
+        6.5-MW value is consistent with half of the company-reported 13-MW pair,
+        but neither relationship is treated as an exact confirmed crosswalk.
+    capacity_and_infrastructure: {exact_current_IT_load_racks_utilization_PUE_WUE_power_cooling_OEM_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_mobily_saudi_portfolio
+    sources:
+      - {title: Mobily Annual Report 2025, publisher: Mobily, date: 2026, url: "https://apisit.mobily.com.sa/wps/wcm/connect/e30b0c6d-81ce-485a-bdbb-891eaab24db8/Mobily%2BAR25%2B%2BEnglish.pdf?CACHEID=ROOTWORKSPACE-e30b0c6d-81ce-485a-bdbb-891eaab24db8-pSH9C9c&MOD=AJPERES"}
+      - {title: Mobily Uptime Institute Saudi award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+      - {title: Secondary Jeddah technical-building engineering project, publisher: Progressive_Engineering_Consultants, date: 2026-07-18_accessed, url: "https://pec.sa/project/housing-units-in-jubail/"}
+    confidence: high_for_Jeddah_IV_name_city_and_Uptime_awards_medium_low_for_2025_6_5MW_project_crosswalk_low_for_equipment_GPU_and_utilization
+
+  - id: dc_mobily_rimal_i_riyadh
+    name: Mobily Rimal I Data Center
+    record_granularity: individual_Uptime_design_award_project
+    operator: Etihad_Etisalat_Mobily
+    location: {country: Saudi_Arabia, city: Riyadh, locality: Rimal, exact_address_coordinate_and_parcel: undisclosed}
+    lifecycle: design_document_award_only_in_reviewed_public_ledger
+    Uptime_awards: {tier: Tier_III, design_documents: true, constructed_facility: not_found_in_reviewed_ledger}
+    capacity_and_infrastructure: {exact_IT_mw_floor_area_racks_live_load_PUE_WUE_power_cooling_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_mobily_saudi_portfolio
+    sources:
+      - {title: Mobily Uptime Institute Saudi award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+    confidence: high_for_name_city_and_design_award_low_for_construction_operation_capacity_equipment_and_GPU_inventory
+
+  - id: dc_mobily_unaizah
+    name: Mobily Unaizah Data Center
+    record_granularity: currently_marketed_city_with_historical_facility_opening
+    operator: Etihad_Etisalat_Mobily
+    location: {country: Saudi_Arabia, city: Unaizah, exact_address_coordinate_and_parcel: undisclosed}
+    lifecycle: current_colocation_city_marketing_with_exact_current_building_status_not_independently_reconciled
+    historical_2015_opening:
+      telecom_and_IT_area_sqm: 440
+      future_expansion_area_sqm: 660
+      topology_claim: Tier_II
+      availability_claim_percent: 99.90
+      distance_from_Riyadh_km: 300
+      boundary: Historical secondary figures are not treated as current capacity or certification.
+    capacity_and_infrastructure: {exact_current_IT_mw_facility_power_racks_live_load_PUE_WUE_power_cooling_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_mobily_saudi_portfolio
+    sources:
+      - {title: Mobily current colocation service, publisher: Mobily, date: 2026-07-18_accessed, url: "https://mobily.com.sa/wps/portal/web/business/digital/hosting-and-cloud/details/co-location-service"}
+      - {title: Historical Unaizah data-center opening, publisher: Arab_News, date: 2015-09-09, url: "https://www.arabnews.com/corporate-news/news/803886"}
+    confidence: high_for_current_city_marketing_medium_for_historical_opening_low_for_exact_current_building_capacity_equipment_and_GPU_inventory
+
 disclosure_gap_register:
+  - Mobily_current_marketed_city_roster_to_Uptime_award_projects_exact_current_physical_building_ownership_and_lifecycle_crosswalk
+  - Mobily_Malga2_ground_and_second_floor_same_building_scope_plus_generic_Dammam_and_Fursan_duplicate_or_separate_site_resolution
+  - Mobily_13MW_2025_operating_pair_39MW_facility_plan_and_wholesale_more_than_122MW_technical_commercial_capacity_scope_reconciliation
+  - Mobily_per_site_operating_energized_leased_utilized_billed_IT_load_racks_customers_revenue_and_returns
+  - Mobily_exact_NVIDIA_GPU_models_counts_servers_racks_fabric_host_sites_ownership_delivery_power_utilization_customers_revenue_and_margin
+  - Mobily_per_site_grid_voltage_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CDU_counts_ratings_OEMs_and_commissioned_topology
+  - Mobily_per_site_PUE_WUE_water_liquid_cooled_MW_renewable_energy_and_measured_power_utilization
+  - Mobily_Khurais_and_Jeddah_IV_crosswalk_to_2025_13MW_pair_and_PEC_6_5MW_Jeddah_project
+  - Mobily_Sulay_secondary_power_and_cooling_inventory_validation_against_primary_as_built_procurement_and_acceptance_records
+  - Mobily_Rimal_I_construction_energization_operation_and_capacity_after_design_award
+  - Mobily_39MW_plan_land_grid_permits_financing_construction_customer_commitments_energization_and_billing
+  - Mobily_data_center_only_revenue_operating_profit_capex_debt_cash_flow_customer_concentration_and_ROIC
   - exact_global_physical_data_center_count
   - center3_current_23_KSA_plus_one_Bahrain_map_to_25_Saudi_Bahrain_Kuwait_marketed_scope_and_complete_building_lifecycle_roster
   - center3_2022_21_centers_152MW_headline_133_2MW_phase_sum_2024_125MW_total_92MW_live_and_20MW_increment_scope_reconciliation
@@ -16223,6 +16553,14 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
+    - Mobily_current_city_marketing_Uptime_awards_and_exact_physical_building_lifecycle_crosswalk
+    - Mobily_13MW_operating_39MW_plan_and_wholesale_more_than_122MW_capacity_scope_reconciliation
+    - Mobily_Khurais_Jeddah_IV_and_PEC_6_5MW_project_crosswalk_plus_live_load_and_customer_ramp
+    - Mobily_Dammam_generic_Fursan_and_Malga2_floor_scope_duplicate_resolution
+    - Mobily_exact_NVIDIA_GPU_models_counts_site_ownership_power_cooling_utilization_and_service_revenue
+    - Mobily_per_site_power_chain_cooling_PUE_WUE_water_liquid_cooled_MW_and_equipment_OEMs
+    - Mobily_Sulay_secondary_design_inventory_primary_as_built_and_current_equipment_validation
+    - Mobily_Rimal_I_construction_energization_and_operating_delivery_after_design_award
     - MEEZA_post_MV4_current_operating_energized_leased_utilized_and_billed_IT_load_plus_2026F_22MW_reconciliation
     - MEEZA_MV6_44_24_6MW_scope_parcel_grid_substation_equipment_construction_and_end_2027_delivery
     - MEEZA_MV7_MV8_MV9_design_permit_power_construction_RFS_customer_and_capacity_updates

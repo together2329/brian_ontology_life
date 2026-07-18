@@ -75,6 +75,7 @@ stack_layers:
     - HD_Hyundai_Electric
     - Bloom_Energy
   operators_reits_utilities:
+    - Etihad_Etisalat_Mobily
     - stc_Group
     - center3
     - American_Tower
@@ -9393,8 +9394,129 @@ financial_profiles:
       - https://www.saudiexchange.sa/wps/portal/saudiexchange/newsandreports/issuer-news/issuer-announcements/issuer-announcements-details/?anCat=1&anId=96186&cs=7010&locale=en
     confidence: high_for_partner_announcements_18000_GB300_commitment_and_center3_JV_status_low_for_standalone_financials_program_overlap_site_delivery_and_unit_economics
 
+  - id: company_mobily
+    company: Etihad_Etisalat_Mobily
+    common_name: Mobily
+    ticker: "7020"
+    exchange: Saudi_Exchange_Tadawul
+    layer: operators_reits_utilities
+    ownership_status: publicly_listed_Saudi_telecommunications_and_digital_services_group
+    major_shareholder:
+      name: Emirates_Telecommunications_Group_e_and
+      stake_percent_at_2025_12_31: 27.99
+    reporting_scope:
+      businesses: [consumer_telecommunications, business_ICT, wholesale, cloud, cybersecurity, IoT, data_centers, AI_and_GPU_services]
+      campus_ref: dc_mobily_saudi_portfolio
+      boundary: >-
+        Consolidated results include the full telecom and digital-services group.
+        Mobily does not disclose data-center-only revenue, operating profit,
+        EBITDA, capex, cash flow, utilization, customer concentration or site returns.
+    FY2025_consolidated_results:
+      period: year_ended_2025-12-31
+      accounting_basis: audited_consolidated_financial_statements
+      currency: SAR
+      unit: million
+      revenue: 19641.705
+      operating_profit: 3847.018
+      derived_operating_margin_percent: 19.586
+      net_profit: 3466.423
+      company_reported_EBITDA_rounded: 7627
+      company_reported_EBITDA_margin_percent: 38.8
+      capital_expenditure: 5827.780
+      company_reported_capex_to_revenue_percent: 29.7
+      business_revenue: 4660.345
+      derived_business_revenue_share_percent: 23.7268
+      boundary: >-
+        Business revenue contains products beyond data centers. Group capex
+        includes spectrum acquisition and all other capital programs, and the
+        company-defined EBITDA is retained separately from audited operating profit.
+    Q1_2026_consolidated_results:
+      period: three_months_ended_2026-03-31
+      currency: SAR
+      unit: million
+      revenue: 5040
+      revenue_growth_percent: 5.5
+      operating_profit: 988
+      operating_profit_growth_percent: 16.2
+      derived_operating_margin_percent: 19.6032
+      EBITDA: 1971
+      EBITDA_growth_percent: 11.1
+      EBITDA_margin_percent: 39.1
+      net_profit: 880
+      net_profit_growth_percent: 14.7
+      capital_expenditure: 404
+      boundary: Group quarterly results are not safely annualized or attributed to data centers.
+    data_center_exposure:
+      2025_new_operating_centers:
+        cities: [Riyadh, Jeddah]
+        combined_capacity_mw: 13
+      planned_facilities_total_mw: 39
+      13MW_included_within_39MW_statement: true
+      wholesale_network_technical_and_commercial_capacity_mw_more_than: 122
+      capacity_boundary: >-
+        The greater-than-122-MW wholesale-network measure is not reconciled to
+        owned IT load and is not added to the 13-MW operating pair or 39-MW plan.
+      target: double_data_center_capacity_by_2026_or_2027
+      cumulative_data_center_investment_SAR_billion_more_than: 2
+      data_centers_plus_submarine_cable_infrastructure_SAR_billion_approximate: 3.4
+      exact_data_center_only_incurred_capex_PP_and_E_debt_revenue_profit_cash_flow_and_ROIC: undisclosed
+    AI_and_GPU_exposure:
+      current_service: NVIDIA_powered_performance_cloud
+      allocation_modes: [dedicated_GPU, shared_GPU_Slices]
+      supported_rack_density_kw_up_to: 40
+      exact_physical_GPU_models_counts_servers_racks_fabric_sites_ownership_delivery_live_status_power_utilization_customers_revenue_and_margin: undisclosed
+      boundary: >-
+        A live GPU service and high-density rack support do not establish the
+        physical fleet size, ownership or unit economics.
+    FY2026_guidance:
+      revenue_growth: mid_to_high_single_digit
+      EBITDA_margin_percent_range: [37, 38]
+      net_debt_to_EBITDA_range: [0.9, 1.0]
+      capex_to_revenue_percent_range: [18, 20]
+      boundary: forward_looking_group_guidance_not_data_center_segment_guidance
+    strategy_2026_to_2030:
+      name: SHINE
+      relevant_priorities: [data_centers, 5G, cloud, cybersecurity, AI, IoT]
+    outlook:
+      positive_drivers:
+        - Saudi_cloud_data_localization_sovereign_AI_and_enterprise_digitization_demand
+        - current_13MW_new_operating_capacity_and_39MW_facility_plan
+        - integrated_mobile_fiber_wholesale_enterprise_and_cloud_distribution
+        - NVIDIA_powered_service_and_up_to_40kW_rack_readiness
+        - FY2025_growth_Q1_2026_operating_leverage_and_2026_guidance
+      risks:
+        - data_center_capacity_definitions_and_exact_current_roster_do_not_reconcile
+        - data_center_only_earnings_utilization_customer_concentration_and_returns_undisclosed
+        - grid_land_permits_power_equipment_cooling_and_construction_execution
+        - high_capex_depreciation_financing_and_long_customer_ramp
+        - telecom_competition_spectrum_regulation_and_group_business_mix
+        - GPU_hardware_obsolescence_ownership_utilization_and_service_margin
+        - wholesale_more_than_122MW_scope_ambiguity
+      boundary: >-
+        Group earnings and balance-sheet capacity are visible, but the public
+        record does not support a standalone valuation of Mobily's data-center business.
+    watch_items:
+      - FY2026_guidance_delivery_and_group_cash_flow_after_lower_capex_intensity
+      - data_center_segment_revenue_profit_capex_utilization_and_ROIC_disclosure
+      - 13MW_39MW_and_more_than_122MW_capacity_definition_and_delivery_bridge
+      - current_building_roster_and_per_site_energized_leased_utilized_billed_IT_load
+      - exact_GPU_fleet_site_ownership_power_utilization_revenue_and_margin
+      - per_site_power_cooling_equipment_PUE_WUE_water_and_liquid_cooling
+    sources:
+      - https://apisit.mobily.com.sa/wps/wcm/connect/e30b0c6d-81ce-485a-bdbb-891eaab24db8/Mobily%2BAR25%2B%2BEnglish.pdf?CACHEID=ROOTWORKSPACE-e30b0c6d-81ce-485a-bdbb-891eaab24db8-pSH9C9c&MOD=AJPERES
+      - https://www.saudiexchange.sa/wps/portal/saudiexchange/newsandreports/issuer-news/issuer-announcements/issuer-announcements-details/?anCat=18&anId=94611&cs=7020&locale=en
+      - https://mobily.com.sa/wps/portal/web/business/digital/hosting-and-cloud/details/co-location-service
+      - https://mobily.com.sa/wps/portal/web/business/digital/hosting-and-cloud/cloud-service/performance-cloud
+    confidence: high_for_audited_group_financials_Q1_results_guidance_shareholding_2025_operating_capacity_and_company_investment_statements_medium_for_capacity_scope_reconciliation_low_for_data_center_only_economics_site_returns_and_GPU_inventory
+
 cross_company_read_through:
   current_signals:
+    - Mobily commissioned two Riyadh and Jeddah data centers totaling 13 MW in 2025 and described 39 MW of planned facilities, with the 13 MW included in that plan. Its separate greater-than-122-MW wholesale-network technical and commercial capacity is not reconciled to owned IT load, so the three measures are preserved separately rather than added.
+    - Mobily generated SAR19.642 billion of FY2025 revenue and SAR3.847 billion of audited operating profit, a derived 19.6% margin, then SAR5.040 billion and SAR988 million in Q1 2026. Data-center-only earnings are not disclosed; group results show funding and distribution capacity rather than site economics.
+    - FY2026 guidance calls for mid-to-high-single-digit revenue growth, a 37%-38% EBITDA margin and capex equal to 18%-20% of revenue after FY2025 group capex reached SAR5.828 billion. Spectrum and other group investment prevent that capex from being assigned to data centers.
+    - Mobily offers an NVIDIA-powered service with dedicated GPUs and shared GPU slices, and its new facilities can support racks up to 40 kW. Exact models, counts, servers, racks, fabric, host sites, ownership, utilization, power and revenue remain undisclosed, so service availability and design density are not converted into a physical GPU fleet.
+    - The public roster is not yet a clean current building count. The marketed cities are Riyadh, Jeddah, Dammam and Unaizah; Uptime awards include separate Melgha 2 floor scopes, two Dammam labels without a public crosswalk, later Khurais and Jeddah IV projects, and a Rimal I design-only award.
+    - Mobily's 2024 sustainability report documents operating practices including a 6C-to-10C chilled-water supply change, occupied white-space temperatures of 18C-22C and shutdown of cooling in empty zones. PUE is measured monthly but no numeric portfolio or site values, equipment bill of materials, live liquid-cooled MW or current power utilization are published.
     - center3's live map exposes 23 Saudi and one Bahrain regional markers, while its colocation page markets 25 facilities across Saudi Arabia, Bahrain and Kuwait and stc's 2024 annual report says 25 operational and under construction. These are retained as different geography and lifecycle scopes rather than one exact current operating-building count.
     - stc's 2024 sustainability report provides the best dated capacity bridge: 125 MW total IT capacity and 92 MW live active capacity, including a three-facility Riyadh/Jeddah/Bahrain program with 20 MW of shell and 10.8 MW day-one IT load. The older 2022 21-center/152-MW headline, 133.2-MW phase sum and 2024 20-MW annual increment remain separate because their definitions overlap or do not reconcile.
     - center3 targets 300 MW installed by 2027 and 1 GW by 2030 after a company-stated $3 billion of completed investment and an additional $10 billion plan. These are scale and funding ambitions, not current energized capacity, audited capex, earnings or cash flow; delivery requires grid, permits, equipment, customer commitments and utilization.
@@ -9565,6 +9687,12 @@ cross_company_read_through:
     - Separate earnings exposure already visible today from backlog and capacity exposure that depends on future execution.
     - Review employer income and direct SK hynix holdings together because both are exposed to the memory cycle.
   unresolved_questions:
+    - How do Mobily's 13 MW of 2025 commissioned capacity, 39 MW facility plan and greater-than-122-MW wholesale-network technical and commercial capacity reconcile without double counting?
+    - Which exact current physical buildings correspond to Mobily's four marketed cities, legacy booklet names and Uptime award scopes, including the Malga 2 floors, generic Dammam/Fursan labels, Khurais, Jeddah IV and Rimal I?
+    - What are Mobily's data-center-only revenue, operating profit, EBITDA, capex, debt, cash flow, utilization, customer concentration and return on invested capital?
+    - Which NVIDIA GPU models and how many units power Mobily's dedicated and shared GPU service, who owns them, where are they installed, and what are their utilization, power cost, revenue and margin?
+    - What are Mobily's per-site grid, substation, transformer, switchgear, UPS, battery, generator, chiller, CRAH, CDU, PUE, WUE, water and liquid-cooling ledgers?
+    - When will the remaining 39-MW plan be financed, permitted, grid-connected, constructed, energized, leased and recognized as revenue, and what baseline supports the capacity-doubling target?
     - How do center3's 23 Saudi plus one Bahrain live map markers reconcile to 25 marketed Saudi/Bahrain/Kuwait facilities and stc's 25 operational-and-under-construction denominator?
     - Which exact current buildings, addresses, coordinates, owners and lifecycle states correspond to center3's historical labels, 18-site cached Uptime ledger, newer Riyadh106/Riyadh107/Jeddah205 entries and legacy stc awards?
     - How do the 2022 21-center/152-MW headline, 133.2-MW phase sum, 2024 125-MW total IT capacity, 92-MW live capacity, 20-MW annual increase and 2027 300-MW target bridge by site and phase?
@@ -9614,6 +9742,7 @@ cross_company_read_through:
     - How much announced utility load has received permits, financing, interconnection, and energization?
 
 research_limits:
+  - Mobily data-center-only earnings, exact current physical facility roster, GPU inventory, site power and cooling equipment, live load and utilization remain undisclosed.
   - The registry is a selected financial cross-section, not yet the complete global supply chain.
   - Campus-specific revenue and profit are generally undisclosed.
   - Management outlooks are forward-looking and may change after the as-of date.
