@@ -11621,6 +11621,119 @@ campus_profiles:
       - {title: Cologix Northern Virginia growth plan, publisher: Cologix, date: 2026, url: "https://cologix.com/news/cologix-expands-ashburn-presence-with-strategic-land-acquisition-supporting-5b-long-term-northern-virginia-growth-plan/"}
     confidence: high_for_current_49_code_pages_selected_page_specs_OSM_crosswalk_2024_ESG_metrics_ownership_and_financing_events_low_for_physical_building_count_live_load_GPU_inventory_private_financials_current_debt_and_site_economics
 
+  - id: dc_cloudhq_global_portfolio
+    name: CloudHQ global hyperscale campus portfolio
+    record_granularity: current_provider_campus_pages_not_physical_building_or_operating_asset_census
+    operator: CloudHQ
+    countries: [US, DE, BR, FR, GB, IT, JP, MX, NL, TH]
+    lifecycle_as_of_2026_07_19: mixed_operating_contracted_construction_development_and_planned
+    official_campus_registry_ref: life/imports/global_data_centers_20260717/cloudhq_official_campus_registry.jsonl
+    official_campus_summary_ref: life/imports/global_data_centers_20260717/cloudhq_official_campus_summary.json
+    registry_builder_ref: scripts/build_cloudhq_official_campus_registry.py
+    current_published_scale:
+      live_WordPress_campus_pages: 20
+      company_headline_global_campuses: 23
+      company_headline_global_data_center_inventory_gw_more_than: 5.2
+      data_center_space_delivered_sqft_more_than: 9200000
+      contracted_critical_IT_load_mw_more_than: 1380
+      acquired_land_acres_more_than: 1000
+      current_20_card_total_critical_IT_load_checksum_mw: 5136.4
+      current_20_card_available_critical_load_checksum_mw: 4028.4
+      scope_boundary: >-
+        The page-card sums combine operating, zero-available, available,
+        contracted, under-construction and future RFS capacity. They are not
+        current energized, leased, utilized, customer-accepted or billed load,
+        and the provider does not explain the 23-campus versus 20-page gap.
+    reviewed_operating_evidence:
+      source: 2026_CloudHQ_Data_Center_Securitization_Trust_presale
+      assets: [LC1A, LC2]
+      status: two_completed_and_operating_adjacent_Ashburn_wholesale_data_centers
+      gross_area_sqft: 1054211
+      leased_and_ramped_critical_load_mw: 160
+      tenants: 2
+      weighted_average_remaining_lease_years: 14.2
+      boundary: >-
+        The two-asset securitization pool is direct operating evidence for those
+        assets only; it is not a portfolio operating-building, live-load,
+        customer-concentration, revenue, debt or valuation total.
+    selected_campus_power_and_lifecycle:
+      FRA_Offenbach: {buildings: 2, it_load_mw_each: 56, card_total_mw: 112, card_available_mw: 0, service_year: 2023, onsite_substation_kv: 110}
+      LC_Ashburn: {card_total_mw: 1256, card_available_mw: 756, narrative_planned_mw_more_than: 1700, planned_data_centers: 14, under_construction: [LC3, LC4], operating_ABS_assets: [LC1A, LC2]}
+      MCC_Manassas: {card_total_mw: 382, card_available_mw: 96, narrative_mw_more_than: 375, data_centers: 7, lifecycle: mixed_operating_leased_and_future}
+      QRO_Queretaro: {card_total_IT_mw: 360, six_building_narrative_sum_mw: 288, government_announced_electrical_capacity_mw: 900, transmission_kv: 400, RFS_target: 2027}
+      MXP_Milan: {card_total_mw: 240, four_building_narrative_sum_mw: 192, secured_grid_mw: 240, lifecycle: development_with_stale_2024_first_phase_target}
+      CDG_Paris: {card_total_mw: 150, two_building_narrative_sum_mw: 148.8, onsite_substation_kv: 225, planned_renewable_power_percent: 100}
+      LHR_Didcot: {current_offer_mw_more_than: 100, expansion_capacity_mw: 300, adjacent_grid_substation_kv: 400}
+      SJC_Santa_Clara: {card_total_mw: 42, RFS_target: 2030, backup: exterior_generators, cooling: rooftop_air_cooled_chillers, substation: onsite_medium_voltage}
+      denominator_boundary: >-
+        Card critical IT, available critical load, narrative IT load, grid or
+        substation supply and government electrical-capacity figures are retained
+        as separate denominators and are never summed as one current fleet value.
+    public_map_crosswalk:
+      related_OSM_objects: 10
+      raw_operator_tagged_OSM_objects: 8
+      mapped_OSM_objects: 10
+      mapped_campus_pages: [CDG, FRA_OFFENBACH, LC, MCC]
+      unmatched_related_OSM_objects: 0
+      boundary: >-
+        Ten name- or operator-related OSM objects map to four campus pages. OSM
+        geometry does not establish a complete building roster, ownership,
+        lifecycle, load, tenant identity or financial performance.
+    accelerator_and_equipment_boundary:
+      CloudHQ_owned_GPU_inventory_by_model_site_and_utilization: undisclosed
+      tenant_owned_computing_equipment: [servers, racks, networking, other_computing_infrastructure]
+      landlord_owned_scope: critical_mechanical_and_electrical_infrastructure_plus_space_power_cooling_and_security
+      ABS_maintenance_examples: [UPS_capacitors, switches, generators, chillers, cooling_towers, motors, compressors]
+      exact_equipment_counts_ratings_topology_and_OEMs: undisclosed
+      interpretation: >-
+        Turnkey hyperscale space and liquid- or high-density-ready design do not
+        establish CloudHQ-owned GPUs, tenant accelerator counts, live liquid-
+        cooled MW, utilization or AI-specific revenue.
+    sustainability:
+      net_zero_target_year: 2040
+      CDG_planned_renewable_power_percent: 100
+      Ashburn_water: greywater_where_evaporative_heat_rejection_is_required
+      Milan_water: non_potable_groundwater_with_excess_to_irrigation_channels
+      Milan_brownfield_reuse_percent: 99.9
+      Milan_waste_diverted_tons_approximately: 300000
+      current_fleet_PUE_WUE_energy_water_emissions_and_renewable_share: undisclosed
+    ownership_finance_and_outlook:
+      founder: Hossein_Fateh
+      founded: 2016
+      group: Fateh_Family_Office
+      affiliates: [CloudCapital, WindHQ, Dalian_Development]
+      SP_reported_hyperscale_data_centers_leased: 16
+      SP_reported_leased_capacity_mw: 1380
+      SP_reported_assets_sold_to_related_CloudCapital: 5
+      ABS_pool:
+        proposed_notes_USD_million: 1400
+        annualized_adjusted_base_rent_USD_million: 110.7
+        appraised_value_USD_million: 2002
+        SP_value_USD_million: 1101
+        closing_DSCR: 1.65
+        maintenance_capex_USD_per_kW_per_month: 0.25
+        maintenance_capex_annual_escalator_percent: 2
+        manager_fee_percent_of_base_rent: 1.45
+      finance_boundary: >-
+        The ABS figures cover LC1A and LC2 and cannot be used as CloudHQ
+        consolidated revenue, operating profit, EBITDA, debt, capex, cash flow,
+        valuation or portfolio customer concentration.
+      current_cap_table_enterprise_value_revenue_operating_income_EBITDA_capex_debt_cash_flow_and_site_returns: undisclosed
+      financial_profile_ref: company_cloudhq
+    sources:
+      - {title: CloudHQ current campuses, publisher: CloudHQ, accessed: 2026-07-19, url: "https://cloudhq.com/campuses/"}
+      - {title: CloudHQ portfolio headline, publisher: CloudHQ, accessed: 2026-07-19, url: "https://cloudhq.com/"}
+      - {title: CloudHQ ownership and affiliations, publisher: CloudHQ, accessed: 2026-07-19, url: "https://cloudhq.com/about/"}
+      - {title: CloudHQ Data Center Securitization Trust 2026-1 presale, publisher: S&P_Global_Ratings, date: 2026, url: "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3542678"}
+      - {title: CloudHQ 2026 securitization data-center topic, publisher: Fitch_Ratings, date: 2026, url: "https://www.fitchratings.com/topics/data-center-and-digital-infrastructure"}
+      - {title: CloudHQ 2026-1 agreed-upon procedures exhibit, publisher: SEC, date: 2026-04-17, url: "https://www.sec.gov/Archives/edgar/data/2122128/000110465926040349/tm2610102d1_ex99-1.htm"}
+      - {title: CloudHQ sustainability, publisher: CloudHQ, accessed: 2026-07-19, url: "https://cloudhq.com/sustainability/"}
+      - {title: CloudHQ water approach, publisher: CloudHQ, accessed: 2026-07-19, url: "https://cloudhq.com/water-is-precious/"}
+      - {title: CloudHQ Paris renewable-power plan, publisher: CloudHQ, accessed: 2026-07-19, url: "https://cloudhq.com/first-steps-to-carbon-neutral-in-paris/"}
+      - {title: CloudHQ Milan circular-redevelopment evidence, publisher: CloudHQ, accessed: 2026-07-19, url: "https://cloudhq.com/a-new-life-in-milan/"}
+      - {title: Mexico announces CloudHQ Querétaro investment, publisher: Government_of_Mexico, date: 2025, url: "https://www.gob.mx/presidencia/prensa/plan-mexico-avanza-se-anuncia-inversion-de-4-mil-800-mdd-de-cloudhq-para-la-construccion-de-6-centros-de-datos-en-queretaro?idiom=es-MX"}
+    confidence: high_for_current_20_page_registry_card_checksums_selected_campus_specs_10_OSM_crosswalk_two_asset_ABS_operating_economics_and_ownership_context_low_for_complete_23_campus_roster_live_fleet_load_GPU_inventory_equipment_BOM_consolidated_financials_and_site_returns
+
   - id: dc_firmus_project_southgate_australia
     name: Firmus Project Southgate Australia AI Factory program
     record_granularity: national_multi_site_AI_factory_program_not_one_campus
@@ -30316,6 +30429,15 @@ disclosure_gap_register:
   - Cologix_current_cap_table_Stonepeak_vehicle_stakes_Madison_participation_enterprise_value_and_post_recap_governance
   - Cologix_current_revenue_operating_income_EBITDA_capex_debt_cash_flow_customer_concentration_site_economics_and_ROIC
   - Cologix_Johnstown_800MW_and_Northern_Virginia_USD5B_plans_to_exact_building_permits_grid_phasing_customers_incurred_capex_energization_and_revenue
+  - CloudHQ_23_global_campus_headline_to_20_current_pages_and_exact_physical_building_ownership_lifecycle_reconciliation
+  - CloudHQ_5136_4MW_total_and_4028_4MW_available_card_checksums_to_operating_energized_leased_utilized_customer_accepted_and_billed_IT_load_by_site
+  - CloudHQ_LC1A_LC2_160MW_ABS_pool_to_complete_portfolio_operating_asset_and_financial_scope_reconciliation
+  - CloudHQ_10_related_OSM_objects_across_4_pages_to_complete_23_campus_building_and_map_coverage
+  - CloudHQ_per_site_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_and_as_built_topology
+  - CloudHQ_exact_operator_and_tenant_GPU_models_counts_servers_racks_fabric_ownership_power_utilization_revenue_and_margin
+  - CloudHQ_current_fleet_PUE_WUE_energy_water_emissions_renewable_matching_heat_reuse_and_live_liquid_cooled_MW
+  - CloudHQ_Fateh_Family_Office_CloudCapital_related_party_asset_ownership_cap_table_consideration_consolidation_and_governance
+  - CloudHQ_current_consolidated_revenue_operating_income_EBITDA_capex_debt_cash_flow_customer_concentration_site_economics_and_ROIC
   - AirTrunk_current_post_2024_committed_energized_and_utilized_capacity_by_campus
   - HUMAIN_AirTrunk_Saudi_exact_location_capacity_hardware_power_and_delivery_schedule
   - Equinix_280_year_end_to_281_current_facility_reconciliation
@@ -30434,7 +30556,7 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
-    - global_coverage_remaining_P1_CloudHQ_KDDI_GlobalSwitch_OVHcloud_official_profiles
+    - global_coverage_remaining_P1_KDDI_GlobalSwitch_OVHcloud_official_profiles
     - Cologix_49_codes_to_physical_buildings_current_load_GPU_inventory_power_cooling_BOM_and_private_financials
     - Sabey_eight_labels_to_physical_buildings_current_load_GPU_inventory_power_cooling_BOM_and_private_financials
     - Telehouse_31_labels_to_physical_buildings_current_load_GPU_inventory_power_cooling_BOM_and_KDDI_site_economics
