@@ -108,6 +108,7 @@ CLAIMS = [
     claim("fluidstack_managed_100k", "neocloud", "neocloud_fluidstack", "gpu_disclosure.company_claim", ">100000_GPUs_under_management", 100000, "more_than", "GPU_under_management", "mixed_or_undisclosed", "Fluidstack_company_claim", "current_management_scope", "managed_hardware_not_owned_inventory", "customer_or_host_owned", "fluidstack_managed", "Under management is not owned inventory and may span customers and hosts."),
     claim("iren_installed_or_ordered_150k", "neocloud", "host_iren", "gpu_disclosure.as_of_2026_03_31", "approximately_150000_installed_or_on_order", 150000, "approximately", "physical_GPU", "mixed_NVIDIA_models", "IREN_company_scope", "installed_or_on_order_2026_03_31", "mixed_installed_and_future_quantity", "IREN_or_financing_boundary", "iren_gpu_program", "Installed-or-on-order cannot be read as installed, active or site-allocated inventory."),
     claim("iren_nvidia_right_600k", "neocloud", "host_iren", "gpu_disclosure.NVIDIA_investment_right_delivery_condition", "up_to_600000_GPUs", 600000, "up_to", "physical_GPU_delivery_condition", "NVIDIA_model_mix_undisclosed", "IREN_NVIDIA_investment_right", "future_vesting_ceiling", "future_option_ceiling_not_order", "IREN_or_NVIDIA_boundary", "iren_gpu_program", "The vesting ceiling is not an order, delivered fleet or current inventory."),
+    claim("ark_longcross_nebius_4k_blackwell_ultra", "landscape", "dc_ark_data_centres_uk_europe_portfolio", "accelerators.Longcross_Nebius.initial_announced_GPU_count", 4000, 4000, "exact_initial_announced_deployment", "physical_GPU", "NVIDIA_Blackwell_Ultra", "Nebius_at_Ark_Longcross", "launched_2025_11_after_initial_announcement", "physical_accelerator_count", "Nebius_customer_not_Ark", "ark_longcross_nebius", "The later launch confirms the Blackwell Ultra cluster, but the 4,000 figure remains the initial deployment scope and is not Ark-owned or a current portfolio total."),
 ]
 
 
@@ -166,7 +167,7 @@ def build_records(landscape_path: Path, neocloud_path: Path, accessed_on: str) -
         "landscape": load_landscape(landscape_path),
         "neocloud": load_jsonl(neocloud_path),
     }
-    assert len(CLAIMS) == 47
+    assert len(CLAIMS) == 48
     assert len({row["claim_id"] for row in CLAIMS}) == len(CLAIMS)
     records = []
     for position, source in enumerate(CLAIMS, start=1):
@@ -212,6 +213,7 @@ def build_summary(records: list[dict], accessed_on: str) -> dict:
             "xAI compute equivalent versus physical target",
             "Yotta exact live, portfolio headline and future plans",
             "IREN installed-or-on-order versus NVIDIA vesting ceiling",
+            "Ark-hosted Nebius initial deployment versus Ark-owned inventory",
         ],
         "record_ids": [row["id"] for row in records],
         "records_sha256": canonical_hash(records),

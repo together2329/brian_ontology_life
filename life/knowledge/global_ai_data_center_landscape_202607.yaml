@@ -24,8 +24,8 @@ scope_and_method:
     builder_ref: scripts/build_global_data_center_coverage_audit.py
     raw_operator_labels: 822
     iso2_country_records: 112
-    reviewed_profile_routed_mapped_objects: 1523
-    reviewed_profile_routed_percent_of_operator_tagged_objects: 54.84
+    reviewed_profile_routed_mapped_objects: 1641
+    reviewed_profile_routed_percent_of_operator_tagged_objects: 59.09
     boundary: >-
       Routing an OSM operator label to a reviewed portfolio or company record is
       research coverage, not object-by-object official reconciliation. The audit
@@ -167,9 +167,9 @@ scope_and_method:
   accelerator_disclosure_scope:
     ledger_ref: life/imports/global_data_centers_20260717/accelerator_disclosure_ledger.jsonl
     summary_ref: life/imports/global_data_centers_20260717/accelerator_disclosure_summary.json
-    ledger_as_of: 2026-07-18
-    atomic_claim_records: 47
-    reviewed_source_records: 28
+    ledger_as_of: 2026-07-19
+    atomic_claim_records: 48
+    reviewed_source_records: 29
     comparison_gate:
       - choose_one_accelerator_unit_and_model
       - choose_one_physicality_and_delivery_lifecycle
@@ -12843,6 +12843,220 @@ campus_profiles:
       - {title: Infrastructure development roadmap, publisher: Datacenter_United, accessed: 2026-07-19, url: "https://datacenterunited.com/en/infrastructure-development/"}
       - {title: AI-ready and sustainability claims, publisher: Datacenter_United, accessed: 2026-07-19, url: "https://datacenterunited.com/en/dcu-future-ready-infrastructuur-gebouwd-voor-ai-geoptimaliseerd-voor-duurzaamheid-2/"}
     confidence: high_for_investor_13_11_basis_15_label_reconstruction_14_label_directory_Proximus_transaction_portfolio_power_buckets_FY2025_financials_financing_ownership_and_12_OSM_objects_medium_for_facility_label_to_physical_site_crosswalk_and_current_upgrade_status_low_for_exact_building_count_site_power_live_load_equipment_GPU_inventory_site_economics_and_roster_conflict_resolution
+
+  - id: dc_ark_data_centres_uk_europe_portfolio
+    name: Ark Data Centres UK and European portfolio
+    record_granularity: provider_location_cards_statutory_operating_company_sites_and_OSM_footprints_with_explicit_lifecycle_operator_and_power_boundaries
+    operator: Ark_Data_Centres
+    countries: [GB, BE, ES]
+    lifecycle_as_of_2026_07_19: >-
+      Five location pages carry an operational-since year, two say under
+      construction, Hilfield targets 2029 and Barcelona is a separately announced
+      land acquisition and development. Union and Longcross remain phased, so a
+      page operational-since label does not mean every card MW or building is live.
+    official_location_registry_ref: life/imports/global_data_centers_20260717/ark_data_centres_official_location_registry.jsonl
+    official_location_summary_ref: life/imports/global_data_centers_20260717/ark_data_centres_official_location_summary.json
+    registry_builder_ref: scripts/build_ark_data_centres_official_location_registry.py
+    current_portfolio_reconciliation:
+      locations_page_headline:
+        data_centres: 27
+        strategic_locations: 9
+      visible_location_pages:
+        pages: 8
+        page_data_center_count_lower_bound: 29
+        page_capacity_mw_approximate_checksum: 549
+      separately_announced_ninth_development:
+        location: Barcelona_La_Maquinista
+        published_location_page: false
+        IT_capacity_mw_up_to: 45
+      page_and_development_capacity_checksum_mw_approximate: 594
+      other_official_scopes:
+        about_page_projected_capacity_mw_by_2030: 446
+        UK_contracted_power_runway_mw_more_than: 700
+      boundary: >-
+        The 27/9 headline is not reconciled to the eight visible cards whose
+        published counts already sum to at least 29. The 549-MW and 594-MW
+        checksums mix operating, phased, construction and development scope;
+        446 MW by 2030 and more than 700 MW of UK contracted-power runway use
+        other timing and power denominators. None is current utilized load.
+    location_pages:
+      operational_since_subset:
+        records:
+          - {location: Cody_Park, locality: Farnborough, postcode: GU14_0LH, page_data_centres: 6, page_capacity_mw: 51, operational_since: 2011, OSM_objects: 5}
+          - {location: Spring_Park, locality: Corsham, postcode: SN13_9GB, page_data_centres: 6, page_capacity_mw: 55, operational_since: 2010, OSM_objects: 3}
+          - {location: Meridian_Park, locality: Edmonton_London, postcode: N9_0BD, page_data_centres: 1, page_capacity_mw: 16, operational_since: 2020, OSM_objects: 1}
+          - {location: Union_Park, locality: Hayes_London, postcode: UB3_4DG, page_data_centres: 4, page_capacity_mw: 99, operational_since: 2024, OSM_objects: 0, phase_boundary: part_operating_part_construction_or_development}
+          - {location: Longcross_Park, locality: Chertsey_Surrey, postcode: KT16_0EE, page_data_centres: 2, page_capacity_mw: 54, operational_since: 2025, OSM_objects: 1, phase_boundary: LP1_completed_wider_campus_expanding}
+        checksum:
+          location_pages: 5
+          page_data_centres: 19
+          page_capacity_mw: 275
+      construction_and_development_subset:
+        - {location: Alliance_Park, locality: Park_Royal_London, postcode: W3_0RZ, page_data_centres: 2, page_capacity_mw: 50, status: under_construction}
+        - {location: Brussels, page_data_centres: 2, page_capacity_mw: 24, secured_power_MVA: 40, status: planning_permitting_or_under_construction}
+        - {location: Hilfield_Park_former_Mercure_Hotel, locality: Elstree_Borehamwood, page_data_centres_more_than_or_equal: 6, page_capacity_mw_approximate: 200, utility_delivery_MVA: 250, utility_delivery_start: 2028, operational_target: 2029}
+        - {location: Barcelona_La_Maquinista, land_sqm: 30000, IT_capacity_mw_up_to: 45, investment_EUR_million_more_than: 600, exact_schedule: undisclosed}
+      card_boundary: >-
+        Provider card counts and compute-capacity fields can represent full
+        campus or phased design scope. They are not verified current physical
+        buildings, energized IT MW, leases, utilization or billed customer load.
+    FY2025_statutory_operating_company_capacity:
+      entity: Ark_Data_Centres_Limited_company_05656968
+      reporting_period_end: 2025_06_30
+      Cody_Park: {built_mw: 48.78, buildings: 5, under_construction_mw: 0.8}
+      Spring_Park: {built_mw: 41.68, buildings: 5, under_construction_mw: 13.5}
+      A9_building: {built_mw: 1.6, site_context: Cody_Technology_Park_but_separate_accounts_bullet}
+      Meridian_Park: {built_mw: 16.36}
+      built_mw_derived: 108.42
+      under_construction_mw_derived: 14.3
+      boundary: >-
+        This is the operating-company reporting scope, not the current Ark Group
+        development portfolio. The separately disclosed A9 bullet is not silently
+        merged into Cody's five-building subtotal, and built MW is not assumed to
+        equal energized, leased, utilized, billed or customer-accepted load.
+    accelerators:
+      Longcross_Nebius:
+        initial_announced_GPU_count: 4000
+        model_family: NVIDIA_Blackwell_Ultra
+        customer_owner_and_operator: Nebius
+        host: Ark_Data_Centres
+        announced: 2025_06_26
+        launch_confirmed: 2025_11
+        fabric: NVIDIA_Quantum_X800_InfiniBand
+        infrastructure: [high_density_power, air_cooled_design, liquid_ready_data_hall, low_latency_connectivity, dedicated_onsite_generation]
+      Ark_owned_GPU_inventory: undisclosed
+      boundary: >-
+        The 4,000-GPU figure is the initial Nebius Longcross deployment and a
+        later release confirms launch of the Blackwell Ultra cluster. The
+        hardware remains Nebius customer infrastructure, not an Ark-owned or
+        portfolio-wide current GPU count. Other Nebius UK plans are not assigned
+        to Ark sites without evidence.
+    power_generation_and_electrical:
+      Union_Park:
+        campus_operator_boundary: >-
+          EC3/UP3 is Ark-operated. EC1 and EC2, with 28 generators in aggregate,
+          sit under a separate Amazon Data Services UK environmental permit and
+          are not treated as Ark-operated plant.
+        Ark_operated_EC3:
+          generators: 12
+          OEM_and_model: Rolls_Royce_MTU_DS4000
+          each_output_MWe: 3.2
+          each_thermal_input_MWth: 8.01
+          aggregate_thermal_input_MWth: 96.12
+          fuel: [gas_oil_permit, HVO_operator_intent]
+          emissions_control: SCR_each_set_NOx_target_95mg_per_Nm3_at_5_percent_O2_EPA_Tier_II
+          permit_operation_class: less_than_500_hours_per_year_emergency_and_testing
+          grid: National_Grid_North_Hyde_66kV_to_Ark_owned_66_11kV_primary_substation_two_diverse_routes_2N
+          fuel_storage_litres: 629000
+      Longcross_Park:
+        permit_stage_generators: 28
+        modeled_outage_operation: 24_continuous_for_72_hours_plus_4_redundant
+        generator_OEM: not_selected_in_reviewed_permit_stage_noise_assessment
+        medium_voltage_UPS_vendor_reported:
+          capacity_MVA: 25
+          products: [ABB_HiPerGuard_solid_state_MV_UPS, ABB_UniGear_switchgear, Zenon_ZEE600_controls]
+          efficiency_percent_at_heavy_load_claim: 98
+          evidence_boundary: partner_and_vendor_reported_project_scope
+      Meridian_Park:
+        contractor_scope: 16MW_white_space_seven_data_halls_two_floors_completed_May_2021
+        electrical: [multi_voltage_infrastructure, MV_generators, LV_transformers, LV_switchgear, UPS, busbar]
+        controls_and_safety: [BMS, gas_suppression]
+        energy: direct_wire_from_adjacent_London_Energy_energy_from_waste_plant
+      Spring_Park_P1_phase_2:
+        generators: two_Cat_C18_700kVA_standby_sets_in_N_plus_1
+        fuel: bunded_slab_tanks_with_combined_72_hours_at_full_load
+        scope_boundary: one_phase_not_campus_wide
+      Cody_Datanet_accessible_scope:
+        UPS: eight_400kVA_modules_configured_2_times_N_plus_1
+        distribution: [A_and_B_busbars, independent_switchgear, independent_11kV_to_415V_transformer]
+        scope_boundary: tenant_accessible_configuration_not_all_Cody_buildings
+      undisclosed:
+        - complete_per_site_as_built_substation_transformer_switchgear_UPS_battery_generator_and_PDU_inventory
+        - exact_current_equipment_commissioning_condition_and_loaded_redundancy
+        - per_site_grid_import_generation_runtime_fuel_consumption_and_current_IT_load
+    cooling_and_water:
+      portfolio_capabilities: [direct_air, indirect_air, liquid_ready_or_liquid_cooled_capability, modular_steel, rainwater_harvesting]
+      direct_air_claim: supports_IT_loads_up_to_50kW_per_rack
+      Longcross_LP1: 100_percent_direct_air_cooled_BladeRoom_halls_with_zero_data_hall_mechanical_cooling
+      Meridian: indirect_evaporative_cooling_units_on_external_gantries
+      Spring_P1_phase_2: fresh_air_cooling
+      Cody_Datanet_scope: BladeRoom_Air_Optimizers_N_plus_N_free_air_and_evaporative
+      portfolio_history: direct_air_free_cooling_at_scale_since_2011_with_design_PUE_moving_from_above_1_65_to_about_1_2
+      undisclosed: [live_liquid_cooled_mw, per_site_CDU_chiller_CRAH_heat_rejection_counts_and_OEMs, measured_per_site_PUE_WUE_and_absolute_water]
+    energy_and_carbon:
+      calendar_2024:
+        total_energy_mwh: 280597
+        IT_energy_mwh: 203608
+        PUE_derived: 1.378
+        scope_1_tCO2e: 2346
+        scope_2_market_based_tCO2e: 12325
+        selected_scope_3_tCO2e: 2664
+        total_tCO2e: 17335
+        CUE_tCO2e_per_MWh_IT: 0.085
+      calendar_2023: {total_energy_mwh: 239803, IT_energy_mwh: 164622, PUE_derived: 1.457, total_tCO2e: 2988, CUE_tCO2e_per_MWh_IT: 0.018}
+      electricity_claim: 100_percent_certificate_backed_carbon_free_or_renewable_grid_electricity
+      Meridian: direct_wire_PPA_from_energy_from_waste_since_2021
+      backup_fuel: HVO_replaced_gas_oil_stocks_by_April_2022_with_claimed_90_to_95_percent_fossil_GHG_reduction
+      central_HV_generation: used_since_2018_with_31_percent_less_installed_standby_capacity_than_LV_system
+      boundary: >-
+        Derived PUE uses statutory calendar-year energy totals and is not a
+        measured value for every page card. The 2024 carbon jump includes a
+        Meridian energy-from-waste factor recalculation and base-year changes.
+    public_map_crosswalk:
+      related_OSM_objects: 10
+      raw_operator_label: Ark_Data_Centres
+      Cody_Park_footprints: 5
+      Spring_Park_footprints: 3
+      Meridian_Park_footprints: 1
+      Longcross_Park_footprints: 1
+      footprint_area_m2_checksum: 47910.501
+      boundary: >-
+        OSM polygons are map geometry rather than provider gross floor or data-
+        hall area. Cody and Spring page coordinates differ from the OSM cluster,
+        and no footprint is assigned to a provider facility code without proof.
+    corporate_and_financial_context:
+      financial_profile_ref: company_ark_data_centres
+      FY2025_turnover_GBP_million: 257.641
+      FY2025_operating_profit_GBP_million: 4.102
+      FY2025_operating_margin_percent_derived: 1.59
+      FY2025_net_profit_GBP_million: 6.037
+      ownership:
+        immediate_parent: Ark_Group_Limited_Isle_of_Man
+        ultimate_parent: Ark_Capital_Partners_I_LP_Inc_Isle_of_Man
+        Companies_House_PSC: Revcap_Properties_25_Limited
+        reported_context: Elliott_control_or_majority_with_Revcap_minority_not_reconstructed_as_statutory_cap_table
+      expansion:
+        UK_roadmap_GBP_billion: 7.5
+        projected_capacity_mw_by_2030: 446
+        contracted_UK_power_runway_mw_more_than: 700
+        Barcelona_investment_EUR_million_more_than: 600
+      boundary: >-
+        Ark Data Centres Limited accounts do not consolidate every location-page
+        development. Funding, investment plans, lease payments, contracted power
+        and potential sale reporting are not revenue, capex incurred, current
+        enterprise value or completed transactions.
+    linked_companies:
+      operator_and_group: [Ark_Data_Centres, Ark_Group]
+      customer_and_compute: [Nebius, NVIDIA]
+      Union_Park_separate_environmental_operator: [Amazon_Data_Services_UK]
+      power_and_equipment: [National_Grid, Rolls_Royce_MTU, ABB, Caterpillar_Finning, BladeRoom, London_Energy]
+      public_sector_joint_venture: [Crown_Hosting_Data_Centres, UK_Minister_for_the_Cabinet_Office]
+      financial_profile_refs: [company_ark_data_centres]
+    sources:
+      - {title: Ark current locations directory, publisher: Ark_Data_Centres, accessed: 2026-07-19, url: "https://www.ark-d-c.com/locations"}
+      - {title: Ark about page, publisher: Ark_Data_Centres, accessed: 2026-07-19, url: "https://www.ark-d-c.com/about-us"}
+      - {title: Ark Data Centres Limited FY2025 accounts iXBRL, publisher: UK_Companies_House, date: 2025-12-17, url: "https://find-and-update.company-information.service.gov.uk/company/05656968/filing-history/MzQ5NTAxNDIxN2FkaXF6a2N4/document?format=xhtml&download=1"}
+      - {title: Ark and Nebius initial Longcross deployment, publisher: Ark_Data_Centres, date: 2025-06-26, url: "https://www.ark-d-c.com/insights/ark-data-centres-collaborates-with-nebius"}
+      - {title: Nebius UK Blackwell Ultra launch, publisher: Nebius, date: 2025-11-06, url: "https://assets.nebius.com/assets/2e98580f-8c50-40b5-b1f1-c45be76a15a5/20251106%20Nebius%20AI%20Cloud%20arrives%20in%20UK%20with%20one%20of%20the%20country%E2%80%99s%20first%20advanced%20NVIDIA%20AI%20infrastructure%20deployments.pdf"}
+      - {title: Ark 2026 infrastructure outlook, publisher: Ark_Data_Centres, date: 2026-02-16, url: "https://www.ark-d-c.com/insights/ai-infrastructure-and-uncertainty-a-view-into-2026"}
+      - {title: Union Park EC3 environmental permit, publisher: UK_Environment_Agency, date: 2025-10-03, url: "https://assets.publishing.service.gov.uk/media/68e64d858c1db6022d0ca226/Application_Bespoke_A001_Permit_-_03102025.pdf"}
+      - {title: Longcross generator noise assessment, publisher: UK_Environment_Agency, date: 2024-05-22, url: "https://consult.environment-agency.gov.uk/psc/kt16-0ee-ark-data-centres-limited/supporting_documents/Application%20Bespoke%20Noise%20Assessment%20A001%2022052024.pdf"}
+      - {title: Longcross LP1 completion, publisher: JCA_Engineering, date: 2025, url: "https://jca.co.uk/jca-and-ark-data-centres-unveil-longcross-park-a-groundbreaking-ai-ready-campus-in-surrey/"}
+      - {title: Meridian infrastructure fit-out, publisher: Gratte_Brothers, accessed: 2026-07-19, url: "https://www.gratte.com/portfolio/dc-infrastructure-fit"}
+      - {title: Spring Park standby generation case study, publisher: Finning_Caterpillar, accessed: 2026-07-19, url: "https://www.finning.com/en_GB/company/news-events/product-customer-stories/ark-data-centres.html"}
+      - {title: Barcelona site acquisition and investment, publisher: DLA_Piper, date: 2026-05, url: "https://www.dlapiper.com/en/news/2026/05/dla-piper-advises-ark-data-centres-on-its-more-than-eur600-million"}
+      - {title: Crown Hosting framework, publisher: UK_Government, accessed: 2026-07-19, url: "https://www.gov.uk/guidance/the-crown-hosting-data-centres-framework-on-the-digital-marketplace"}
+    confidence: high_for_eight_page_cards_Barcelona_development_FY2025_accounts_Nebius_cluster_Union_permit_selected_site_equipment_energy_and_10_OSM_objects_medium_for_page_card_lifecycle_current_completion_and_reported_ownership_context_low_for_complete_physical_roster_live_load_full_group_financials_current_cap_table_site_economics_complete_equipment_BOM_and_portfolio_GPU_inventory
 
   - id: dc_firmus_project_southgate_australia
     name: Firmus Project Southgate Australia AI Factory program
@@ -31741,10 +31955,20 @@ disclosure_gap_register:
   - Sify_188MW_marketed_live_to_132MW_installed_129MW_sold_and_site_level_energized_utilized_capacity_reconciliation
   - Sify_GPUaaS_H100_L40S_L4_exact_inventory_ownership_site_allocation_utilization_power_and_revenue
   - Sify_per_site_transformer_UPS_generator_chiller_CDU_switchgear_counts_ratings_OEMs_PUE_WUE_and_water
+  - Ark_27_data_centres_9_locations_headline_to_eight_visible_pages_29_plus_card_count_and_Barcelona_reconciliation
+  - Ark_page_card_549MW_operating_company_108_42MW_2030_446MW_and_UK_700MW_plus_power_runway_scope_reconciliation
+  - Ark_per_site_operating_energized_leased_utilized_billed_and_customer_accepted_IT_load
+  - Ark_exact_current_physical_building_roster_ownership_lease_tenant_and_environmental_operator_crosswalk
+  - Ark_Longcross_4000_Blackwell_Ultra_current_accepted_GPU_count_owner_racks_power_utilization_revenue_and_margin
+  - Ark_complete_per_site_substation_transformer_switchgear_UPS_battery_generator_CDU_chiller_and_heat_rejection_BOM
+  - Ark_group_consolidated_revenue_operating_profit_capex_debt_cash_flow_customer_concentration_and_ROIC
+  - Ark_per_site_measured_PUE_WUE_water_energy_emissions_renewable_matching_and_live_liquid_cooled_MW
 
 next_research_queue:
   campus_enrichment:
-    - global_coverage_next_P2_Ark_Data_Centres_official_profile
+    - global_coverage_next_P2_Orange_official_profile
+    - global_coverage_next_P2_Pulsant_official_profile
+    - Ark_27_9_29_plus_roster_108_42_549_700MW_GPU_equipment_current_load_group_financial_and_project_enrichment
     - Datacenter_United_13_11_14_16_roster_power_address_GPU_equipment_current_load_financial_and_project_enrichment
     - Verizon_nine_city_350_plus_tech_facility_and_13_OSM_object_exact_building_load_GPU_power_cooling_and_data_center_financial_enrichment
     - UltraEdge_248_251_257_scope_reconciliation_exact_buildings_current_load_GPU_inventory_power_cooling_BOM_and_private_financials

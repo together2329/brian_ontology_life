@@ -88,6 +88,7 @@ SPECS = [
     spec("Yotta_Data_Services", "company_nidar_yotta", ["dc_yotta_india_portfolio"], "India", "private_or_unlisted", "six reviewed operating or operated facility labels plus future campus programs", "Owned, government-operated, marketed-live and future facilities are distinct asset and lifecycle classes."),
     spec("Sify_Infinit_Spaces", "company_sify_technologies", ["dc_sify_india_portfolio"], "India", "public_standalone_or_listed_operator", "14 operating data centers and a 188.05 MW site-card sum reconciling to the rounded 188 MW headline", "Only 129 MW was cumulatively sold at FY2026 year-end; marketed live, installed, sold and revenue-generating MW differ."),
     spec("DataBank", "company_databank_holdings", ["dc_databank_north_america_uk_portfolio"], "United_States_and_United_Kingdom", "private_or_unlisted", "76 current marketing cards summing to 1.023179 GW of mixed-lifecycle critical IT load", "Eleven cards are explicitly development or future; the full checksum is not operating, energized, leased, utilized or billed load."),
+    spec("Ark_Data_Centres", "company_ark_data_centres", ["dc_ark_data_centres_uk_europe_portfolio"], "United_Kingdom_Belgium_and_Spain", "private_with_statutory_operating_company_financials", "27-data-centre and 9-location headline versus eight visible pages with at least 29 card labels, a 108.42-MW statutory built-capacity reconstruction and approximately 549 MW of mixed-lifecycle page capacity", "Location cards, physical buildings, statutory operating-company sites, group developments, OSM footprints, built MW, contracted power, customer-owned GPUs and utilized load use different scopes.", ["life/imports/global_data_centers_20260717/ark_data_centres_official_location_registry.jsonl", "life/imports/global_data_centers_20260717/ark_data_centres_official_location_summary.json"]),
 ]
 
 
@@ -131,7 +132,7 @@ def load_index(path: Path, key: str) -> dict[str, dict]:
 def build_records(finance_path: Path, landscape_path: Path, accessed_on: str) -> list[dict]:
     finance = load_index(finance_path, "financial_profiles")
     landscape = load_index(landscape_path, "campus_profiles")
-    assert len(SPECS) == 45
+    assert len(SPECS) == 46
     assert len({row["company"] for row in SPECS}) == len(SPECS)
     records = []
     for position, source in enumerate(SPECS, start=1):
