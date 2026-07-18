@@ -129,6 +129,27 @@ scope_and_method:
       design capacity, utility service, critical IT load, contracted load and
       utilized load are not interchangeable. The crosswalk validates evidence
       links but deliberately publishes no cross-operator capacity sum or fleet ranking.
+  power_cooling_supply_chain_scope:
+    disclosure_registry_ref: life/imports/global_data_centers_20260717/power_cooling_supply_chain_registry.jsonl
+    disclosure_summary_ref: life/imports/global_data_centers_20260717/power_cooling_supply_chain_summary.json
+    disclosure_registry_as_of: 2026-07-18
+    company_records: 25
+    primary_categories:
+      critical_power_and_electrical: 7
+      onsite_and_backup_generation: 4
+      cooling_and_thermal: 4
+      cable_and_connectivity: 2
+      utilities_and_generation: 8
+    comparison_gate:
+      - choose_one_accounting_and_currency_basis
+      - choose_one_product_or_utility_value_pool
+      - choose_one_commercial_and_delivery_lifecycle
+      - require_site_or_segment_allocation_for_data_center_economics
+    boundary: >-
+      Group revenue, segment revenue, orders, backlog, MOU, service agreement,
+      equipment nameplate, utility supply, critical IT load, utilized load and
+      billed demand are not interchangeable. The crosswalk preserves these
+      boundaries and publishes no cross-company financial or capacity total.
 
 global_market_baseline:
   - id: global_supply_jll_2026
