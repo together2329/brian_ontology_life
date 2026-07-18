@@ -24,8 +24,8 @@ scope_and_method:
     builder_ref: scripts/build_global_data_center_coverage_audit.py
     raw_operator_labels: 822
     iso2_country_records: 112
-    reviewed_profile_routed_mapped_objects: 1353
-    reviewed_profile_routed_percent_of_operator_tagged_objects: 48.72
+    reviewed_profile_routed_mapped_objects: 1388
+    reviewed_profile_routed_percent_of_operator_tagged_objects: 49.98
     boundary: >-
       Routing an OSM operator label to a reviewed portfolio or company record is
       research coverage, not object-by-object official reconciliation. The audit
@@ -131,8 +131,8 @@ scope_and_method:
     disclosure_registry_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_registry.jsonl
     disclosure_summary_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_summary.json
     disclosure_registry_as_of: 2026-07-19
-    operator_records: 28
-    machine_generated_page_registry_operators: [CyrusOne, QTS, NEXTDC]
+    operator_records: 29
+    machine_generated_page_registry_operators: [CyrusOne, QTS, NEXTDC, Flexential]
     comparison_gate:
       - choose_one_physical_granularity
       - choose_one_lifecycle_date_and_state
@@ -28085,7 +28085,196 @@ campus_profiles:
         url: https://nextdc.com/hubfs/NEXTDC-AI-Playbook.pdf
     confidence: high_for_current_provider_label_roster_marketed_area_and_power_and_named_equipment_medium_for_lifecycle_and_built_fitout_bridge_low_for_exact_building_count_current_live_load_GPU_inventory_complete_BOM_and_site_economics
 
+  - id: dc_flexential_us_portfolio
+    name: Flexential current United States facility-card portfolio
+    record_granularity: operator_portfolio_with_41_current_provider_cards_and_machine_generated_site_ledger
+    operator: Flexential
+    country_scope: [US]
+    registry_refs:
+      detailed_facility_records: life/imports/global_data_centers_20260717/flexential_official_facility_registry.jsonl
+      summary: life/imports/global_data_centers_20260717/flexential_official_facility_summary.json
+      builder: scripts/build_flexential_official_facility_registry.py
+    current_roster_as_of_2026_07_19:
+      rendered_provider_cards: 41
+      directory_topline_data_centers: 40_plus
+      directory_topline_markets: 18
+      visible_market_filter_labels: 19
+      visible_filter_without_rendered_current_card: Allentown_PA
+      current_cards_without_reviewed_development_language: 35
+      commissioned_and_fully_leased_card: 1
+      under_construction_or_planned_cards: 5
+      development_labels: [Atlanta_Douglasville_2, Atlanta_Norcross_2, Denver_Parker, Portland_Hillsboro_5, Portland_Hillsboro_6]
+      boundary: >-
+        The current directory is a mixed-lifecycle marketing roster. Its 41 cards
+        conflict with the 40+ headline and do not establish 41 physical buildings.
+        Dallas Downtown explicitly says five data centers in one location, while
+        other cards can cover campuses or phases.
+    OSM_crosswalk:
+      objects_with_operator_label_Flexential: 43
+      all_related_name_operator_or_website_objects: 44
+      crosswalked_objects: 41
+      crosswalked_current_provider_labels: 38
+      current_labels_without_OSM_crosswalk: [Atlanta_Norcross_2, Denver_Parker, Portland_Hillsboro_6]
+      legacy_or_unresolved_objects:
+        osm_way_296374269: Allentown
+        osm_node_12112236372: Denver_Downtown
+        osm_node_12112382397: Salt_Lake_City_Lindon
+      identity_anomalies:
+        - Hillsboro_4_OSM_name_with_Hillsboro_5_website_tag
+        - Hillsboro_4_Expansion_footprint_with_Hillsboro_5_website_tag
+        - two_Hillsboro_1_footprints_and_two_Brentwood_objects
+      boundary: >-
+        OSM points and footprints are map evidence, not a provider-certified
+        ownership, lifecycle or building ledger. Legacy labels, duplicate
+        footprints and cards covering multiple buildings prohibit count equality.
+    capacity_and_area_layers:
+      current_card_checksum:
+        area_sq_ft_lower_bound_mixed_lifecycle: 4985407
+        critical_power_mw_mixed_lifecycle: 372.17
+      current_topline:
+        footprint_sq_ft: 3M_plus
+        capacity_mw_online_or_under_development: more_than_360
+      boundary: >-
+        The 4.985407-million-square-foot and 372.17-MW sums are arithmetic
+        checksums of 41 current cards. They conflict with the 3M+ and more-than-
+        360-MW headlines because granularity, date or lifecycle scopes differ.
+        None is substituted for operating, energized, leased, utilized, billed
+        or actual load.
+    selected_lifecycle_checks:
+      Atlanta_Norcross_2:
+        area_sq_ft: 48000
+        critical_power_mw: 4.5
+        official_address: 2755_Northwoods_Parkway_Norcross_GA
+        utility: Georgia_Power
+        expected_online: first_half_2028
+      Denver_Parker:
+        area_sq_ft: 249000
+        critical_power_mw: 22.5
+        land_acres: 17
+        utility: CORE_Electric_Cooperative
+        scheduled_opening: later_2026
+      Portland_Hillsboro_4:
+        area_sq_ft: 138009
+        critical_power_mw: 18
+        lifecycle: commissioned_and_fully_leased_by_2026_05
+      Portland_Hillsboro_5:
+        area_sq_ft: 358000
+        critical_power_mw: 36
+        lifecycle: under_construction_on_target_for_completion
+      Portland_Hillsboro_6:
+        area_sq_ft: 350000
+        critical_power_mw: 27
+        lifecycle: planned_after_2025_property_acquisition
+        grid_context: PGE_Sunset_Reliability_Center_redundant_grid_and_dispatchable_standby_generation
+    electrical_and_cooling:
+      detailed_site_evidence_ref: life/imports/global_data_centers_20260717/flexential_official_facility_registry.jsonl
+      selected_site_examples:
+        Atlanta_Alpharetta: [2N_UPS, 6MW_critical_load_UPS, N_plus_1_cooling, hot_cold_aisle, liquid_ready]
+        Atlanta_Douglasville_2: [distributed_4_to_3_UPS, 36MW_critical_load_UPS, N_plus_2_cooling, up_to_80_plus_kW_per_cabinet, target_PUE_1_4]
+        Atlanta_Norcross_1: [N_plus_1_UPS, 1_8MW_critical_load_UPS, N_plus_1_cooling, 150W_per_sq_ft]
+        Portland_Hillsboro_3: [distributed_4_to_3_UPS, 36MW_critical_load_UPS, N_plus_2_cooling, 1500W_per_sq_ft, design_PUE_1_3]
+        Portland_Hillsboro_5: [liquid_cooling_ready, supports_150_plus_kW_per_cabinet]
+      liquid_cooling_architecture: [facility_chilled_water_loop, direct_to_chip, CDU, rear_door_heat_exchanger, immersion]
+      direct_to_chip_pump_power: dedicated_UPS_or_critical_IT_UPS
+      published_density_scopes: [50kW_air_in_guide, 80_plus_kW_liquid_or_immersion_in_guide, 80_plus_kW_directory, 150_plus_kW_selected_product_or_facility_pages]
+      equipment_boundary: >-
+        Page-level topology and design capability are not a complete as-built
+        fleet bill of materials. Exact grid feeds, voltages, substations,
+        transformers, switchgear, PDUs, UPSs, batteries, generators, fuel,
+        chillers, CRAH/CRACs, CDUs, OEMs, counts, ratings and commissioned
+        liquid-cooled MW remain incomplete for most sites.
+    sustainability:
+      renewable_energy_consumed_across_operating_footprint_gwh_2025: 402
+      new_facility_design_PUE: 1.4
+      new_facility_design_WUE: 0
+      capacity_supported_by_closed_loop_cooling_percent: 84
+      air_handling_retrofit_sites: 14
+      projected_annual_energy_savings_gwh: 7.1
+      Las_Vegas_North_side_stream_filtration_projected_annual_savings: {energy_gwh: 1.6, water_gallons: 2600000}
+      Salt_Lake_City_South_Valley_adiabatic_precooling: {estimated_peak_PUE_reduction_percent: 10.4, annual_energy_savings_mwh: 250}
+      boundary: Portfolio consumption, design targets and projected retrofit savings are different measures and are not assigned to every card.
+    accelerators_and_AI:
+      NVIDIA_DGX_Ready: certification_and_capacity_not_installed_inventory
+      DigitalOcean_Douglasville_1:
+        accelerators: [NVIDIA_H200, AMD_Instinct]
+        deployment: two_connected_data_halls
+        liquid_cooling_density_support_w_per_sq_ft_more_than: 1500
+        exact_model_variant_count_owner_power_utilization_and_economics: undisclosed
+      Applied_Digital:
+        accelerators: [NVIDIA_H100]
+        capacity_mw_across_three_undisclosed_markets: 7.5
+        exact_sites_GPU_counts_and_current_live_scope: undisclosed
+      CoreWeave:
+        evidence_class: operator_hosted_media_coverage_not_primary_contract_disclosure
+        Plano_deployment_mw: 13
+        liquid_cooled_rack_density_kw_more_than: 80
+        prior_rollout_regions: [Oregon, Georgia]
+        exact_models_counts_sites_for_prior_rollouts_and_utilization: undisclosed
+      exact_Flexential_owned_or_hosted_installed_GPU_fleet_count: undisclosed
+      boundary: >-
+        Customer deployments are not assigned to Flexential ownership. No GPU
+        count is inferred from critical-power MW, DGX certification, rack-density
+        support or customer names.
+    linked_companies:
+      owner_operator: [Flexential]
+      current_equity_and_fund_parties: [GI_Partners, GI_Data_Infrastructure, Morgan_Stanley_Infrastructure_Partners, Hamilton_Lane_anchored_continuation_vehicle]
+      utilities: [Georgia_Power, CORE_Electric_Cooperative, Portland_General_Electric]
+      accelerator_ecosystem: [NVIDIA, AMD, DigitalOcean, Applied_Digital, CoreWeave]
+      financial_profile_refs: [company_flexential]
+    sources:
+      - title: Current facility-card directory
+        publisher: Flexential
+        date: 2026-07-19_accessed
+        url: https://www.flexential.com/data-centers
+      - title: Fifth Atlanta-area data center and national capacity update
+        publisher: Flexential
+        date: 2026-04-14
+        url: https://www.flexential.com/resources/press-release/flexential-adding-fifth-atlanta-area-data-center
+      - title: Hillsboro 4 and 5 real-estate acquisition and lifecycle
+        publisher: Flexential
+        date: 2026-05-28
+        url: https://www.flexential.com/resources/press-release/flexential-secures-strategic-real-estate-ownership-hillsboro-oregon
+      - title: Hillsboro 6 property and power plan
+        publisher: Flexential
+        date: 2025-09-04
+        url: https://www.flexential.com/resources/press-release/flexential-acquires-prime-property-hillsboro-plans-new-data-center
+      - title: Denver Parker announcement
+        publisher: Flexential
+        date: 2024-05-14
+        url: https://www.flexential.com/resources/press-release/flexential-announces-flexanywhere-platform-expansion-new-state-art-data
+      - title: 2025 ESG report progress
+        publisher: Flexential
+        date: 2026-07-08
+        url: https://www.flexential.com/resources/press-release/flexentials-2025-esg-report-details-progress-sustainable-data-center
+      - title: DigitalOcean GPU infrastructure expansion
+        publisher: Flexential
+        date: 2025-03-18
+        url: https://www.flexential.com/resources/press-release/flexential-support-digitaloceans-gpu-infrastructure-expansion-high-density
+      - title: Applied Digital HPC deployment
+        publisher: Flexential
+        date: 2023-08-29
+        url: https://www.flexential.com/resources/press-release/flexential-empowers-applied-digitals-high-performance-computing-solutions
+      - title: CoreWeave alliance media coverage
+        publisher: Flexential_hosted_media_coverage
+        date: 2025-05-23
+        url: https://www.flexential.com/resources/media-coverage/inside-flexential-coreweave-alliance-scaling-ai-infrastructure-high
+      - title: Liquid-cooling applications guide
+        publisher: Flexential
+        date: current_publication
+        url: https://www.flexential.com/resources/brochure/liquid-cooling-applications
+    confidence: high_for_current_card_checksum_KBRA_pool_metrics_and_named_development_evidence_medium_for_non_development_card_lifecycle_and_selected_equipment_low_for_exact_physical_building_count_live_load_GPU_inventory_complete_BOM_and_site_returns
+
 disclosure_gap_register:
+  - Flexential_41_current_cards_40_plus_topline_18_market_headline_19_visible_filter_and_3M_plus_vs_4_985407M_sqft_scope_reconciliation
+  - Flexential_current_cards_to_exact_physical_buildings_parcels_ownership_lease_and_current_lifecycle
+  - Flexential_372_17MW_mixed_lifecycle_card_checksum_and_more_than_360MW_online_or_under_development_to_built_energized_leased_utilized_billed_and_actual_load_by_site
+  - Flexential_Allentown_Denver_Downtown_and_Salt_Lake_City_Lindon_legacy_or_current_status_and_2024_42_DC_19_market_to_current_roster_reconciliation
+  - Flexential_Hillsboro_4_Hillsboro_4_Expansion_and_Hillsboro_5_OSM_website_name_building_and_provider_card_identity_crosswalk
+  - Flexential_exact_installed_GPU_models_counts_servers_racks_fabric_owner_customer_delivery_host_site_power_utilization_revenue_and_margin
+  - Flexential_Applied_Digital_three_markets_and_CoreWeave_Oregon_Georgia_exact_site_model_count_and_current_live_scope
+  - Flexential_per_site_grid_feed_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_and_as_built_topology
+  - Flexential_per_site_measured_PUE_WUE_water_hourly_renewable_matching_and_live_liquid_cooled_MW
+  - Flexential_company_and_per_site_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_utilization_and_ROIC
   - NEXTDC_29_provider_labels_to_exact_physical_buildings_parcels_ownership_and_current_lifecycle
   - NEXTDC_1_82055GW_mixed_lifecycle_card_checksum_to_built_energized_contracted_billing_utilized_and_actual_load_by_site
   - NEXTDC_TK2_exact_address_area_power_lifecycle_permits_grid_construction_and_RFS

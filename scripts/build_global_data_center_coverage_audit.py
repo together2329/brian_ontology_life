@@ -62,6 +62,7 @@ PROFILED = [
     entity("Iron_Mountain_Data_Centers", ["Iron Mountain"], "reviewed_physical_operator_profile", ["dc_iron_mountain_global_data_centers_portfolio", "company_iron_mountain"], "Developable and potential capacity is not operating load."),
     entity("DataBank", ["DataBank"], "reviewed_physical_operator_profile", ["dc_databank_north_america_uk_portfolio", "company_databank_holdings"], "Current cards include explicit development and future facilities."),
     entity("NEXTDC", ["NextDC", "NEXTDC", "NEXTDC Sdn Bhd"], "reviewed_physical_operator_profile", ["dc_nextdc_apac_portfolio", "company_nextdc", "nextdc_official_facility_registry.jsonl"], "Provider labels and OSM points or footprints are not one-to-one physical buildings."),
+    entity("Flexential", ["Flexential"], "reviewed_physical_operator_profile", ["dc_flexential_us_portfolio", "company_flexential", "flexential_official_facility_registry.jsonl"], "Current cards, OSM objects, physical buildings and the 28-asset securitized pool use different scopes."),
     entity("DATA4", ["Data4", "data4", "Data4 Italia", "DATA4"], "reviewed_physical_operator_profile", ["dc_data4_european_portfolio", "company_data4"], "Published power terms vary between IT, reserve, total and available energy."),
     entity("AirTrunk", ["AirTrunk"], "reviewed_physical_operator_profile", ["dc_airtrunk_apac_portfolio", "company_airtrunk"], "Campus design capacity is not current live load."),
     entity("Aligned_Data_Centers", ["Aligned", "Aligned Data Centers", "Aligned Data Centres", "ODATA"], "reviewed_physical_operator_profile", ["dc_aligned_north_america_public_directory", "dc_odata_aligned_latam_portfolio", "company_aligned_data_centers"], "ODATA and Aligned labels are joined at current platform level, not treated as identical facility brands historically."),
@@ -85,7 +86,6 @@ PROFILED = [
 PRIORITY_GAPS = {
     canonical_label(name): (entity_name, priority)
     for entity_name, priority, names in [
-        ("Flexential", "P1", ["Flexential"]),
         ("Lumen_Technologies", "P1", ["Lumen Technologies"]),
         ("Centersquare", "P1", ["Centersquare", "CenterSquare"]),
         ("atNorth", "P1", ["atNorth"]),

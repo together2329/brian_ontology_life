@@ -91,7 +91,7 @@ LAYER_COMPARISON = [
     },
     {
         "layer": "physical_data_center_operators",
-        "evidence_state": "Twenty-eight operators now have a scope-preserving crosswalk, but site economics, utilization and return on capital remain limited, especially for private firms.",
+        "evidence_state": "Twenty-nine operators now have a scope-preserving crosswalk, but site economics, utilization and return on capital remain limited, especially for private firms.",
         "brian_exposure_state": "Possible indirect exposure through value-chain funds; exact weights are unknown.",
         "incremental_cash_view": "Do not rank by facility or GW headlines; require reporting boundary, leverage, utilization and valuation first.",
     },
@@ -334,7 +334,7 @@ def build_gap_audit(counts: dict, accessed_on: str) -> dict:
             },
         ],
         "research_completion_definition": {
-            "baseline_research": "complete for the current 2026-07-18 scope",
+            "baseline_research": f"complete for the current {accessed_on} scope",
             "all_global_facilities_or_future_projects": "not_claimed_and_not_possible_from_public_sources",
             "investment_execution": "intentionally_gated_by_A1_and_A2_items",
             "rule": "An explicit unknown is a completed audit result, not permission to estimate it into a fact.",

@@ -1,7 +1,7 @@
 schema_version: 1
 status: active_research
 updated_at: 2026-07-19
-as_of: 2026-07-18
+as_of: 2026-07-19
 area: FINANCE
 secondary_areas:
   - CAREER
@@ -145,6 +145,7 @@ stack_layers:
     - STACK_Infrastructure
     - STT_GDC_India
     - CtrlS_Datacenters
+    - Flexential
   diversified_strategic_partners:
     - Mitsubishi_Corporation
     - Tata_Communications
@@ -11784,8 +11785,138 @@ financial_profiles:
         url: https://www.nextdc.com/news/nextdc-secures-certification-in-the-nvidia-dgx-ready-data-center-program
     confidence: high_for_audited_financials_current_guidance_contract_updates_and_provider_roster_medium_for_site_lifecycle_and_capacity_bridge_low_for_installed_GPU_inventory_site_economics_customer_concentration_and_complete_equipment_BOM
 
+  - id: company_flexential
+    company: Flexential
+    layer: private_data_center_operator_and_hybrid_IT_platform
+    ownership_status: private_unlisted
+    portfolio_ref: dc_flexential_us_portfolio
+    ownership_and_capital:
+      current_disclosed_parties:
+        - GI_Partners
+        - GI_Data_Infrastructure
+        - Morgan_Stanley_Infrastructure_Partners
+        - Hamilton_Lane_anchored_single_asset_continuation_vehicle
+      Morgan_Stanley_Infrastructure_Partners: common_equity_co_control_investor_alongside_GI_Partners
+      primary_equity_raised_by_2025_08_usd_billion_approximate: 1.0
+      equity_period_context: includes_MSIP_investment_closed_2024_11_and_2025_GI_transactions
+      exact_current_ownership_percentages_preferences_voting_board_rights_and_valuation: undisclosed
+      boundary: Equity raised, assets under management of investors and company valuation are not Flexential revenue, profit, cash or incurred capex.
+    companywide_financial_disclosure:
+      audited_revenue: undisclosed
+      GAAP_operating_profit: undisclosed
+      EBITDA: undisclosed
+      capex: undisclosed
+      debt_and_lease_liabilities: undisclosed
+      operating_cash_flow: undisclosed
+      valuation: undisclosed
+      boundary: Flexential is private; reviewed public sources do not provide a current audited company-wide income statement, balance sheet or cash-flow statement.
+    KBRA_2026_securitized_asset_pool:
+      rating_action_date: 2026-03-31
+      statistical_disclosure_date: 2025-10-31
+      secured_data_centers: 28
+      approximate_data_center_space_sq_ft_million: 1.8
+      critical_load_power_mw: 199
+      annualized_revenue_usd_million: 663.3
+      customer_contract_annualized_revenue_usd_million: 631.9
+      annualized_adjusted_net_operating_income_AANOI_usd_million: 353.2
+      analyst_derived_AANOI_to_annualized_revenue_percent: 53.25
+      unique_customers: 2152
+      weighted_average_remaining_contract_term_years: 2.4
+      largest_customer_percent_of_annualized_revenue: 8.8
+      top_20_customers_percent_of_annualized_revenue: 34.6
+      real_property_interests:
+        leasehold: 19
+        fee_simple: 9
+        leasehold_percent_of_AANOI: 58.1
+        fee_simple_percent_of_AANOI: 41.9
+      measure_boundary: >-
+        These are KBRA securitization-pool metrics for 28 secured assets, not
+        Flexential consolidated audited revenue, GAAP operating profit or EBITDA.
+        Annualized Revenue is a contract-based 12-month measure; AANOI adjusts
+        revenue for pass-throughs and permitted equity contributions and deducts
+        operating expenses and a management fee. The 53.25% ratio is analyst-
+        derived and is not a company-reported operating margin.
+      scope_reconciliation: >-
+        The 28 secured assets, 1.8-million-square-foot and 199-MW pool are a
+        different boundary from the current 41 directory cards whose marketed
+        checksums are 4.985407 million square feet and 372.17 MW.
+    ABS_and_financing:
+      November_2025_green_ABS_usd_million: 800
+      tranches:
+        - {principal_usd_million: 555, rating: A_minus, anticipated_repayment_years: 5}
+        - {principal_usd_million: 195, rating: A_minus, anticipated_repayment_years: 7}
+        - {principal_usd_million: 50, rating: BB_minus, anticipated_repayment_years: 5}
+      stated_use: repay_a_portion_of_outstanding_ABS_indebtedness_and_support_long_term_financing_strategy
+      boundary: The $800 million issuance partly refinances existing ABS and is not added to primary equity, revenue, profit, net debt or incurred development capex.
+    growth_and_outlook:
+      current_directory_cards: 41
+      current_company_headline_mw_online_or_under_development_more_than: 360
+      current_development_cards: [Atlanta_Douglasville_2, Atlanta_Norcross_2, Denver_Parker, Portland_Hillsboro_5, Portland_Hillsboro_6]
+      demand_drivers: [enterprise_digital_transformation, cloud_adoption, AI_training_and_inference, high_density_colocation, latency_sensitive_workloads]
+      positive_signals:
+        - approximately_1B_primary_equity_to_fund_pipeline
+        - diversified_2152_customer_securitized_pool_and_8_8_percent_largest_customer_share
+        - commissioned_and_fully_leased_Hillsboro_4
+        - customer_GPU_deployments_from_DigitalOcean_Applied_Digital_and_CoreWeave
+        - current_card_roster_and_capacity_headline_above_2024_built_plus_development_scope
+      conversion_tests:
+        - complete_Douglasville_2_and_Hillsboro_5_and_open_Parker_without_cost_or_schedule_overrun
+        - bring_Norcross_2_and_Hillsboro_6_through_power_permit_construction_commissioning_and_customer_acceptance
+        - reconcile_41_cards_to_exact_buildings_current_live_load_and_28_asset_securitized_pool
+        - convert_AI_ready_and_liquid_ready_capability_to_contracts_billing_cash_flow_and_returns
+        - disclose_companywide_revenue_operating_profit_cash_flow_capex_debt_and_ROIC
+      risks:
+        - private_company_financial_opacity_and_inability_to_value_equity_directly
+        - power_interconnection_land_permitting_equipment_and_construction_bottlenecks
+        - leasehold_residual_value_rent_renewal_and_property_control
+        - ABS_refinancing_interest_rate_covenant_and_structural_subordination
+        - customer_contract_ramp_churn_concentration_and_technology_cycle
+        - high_density_cooling_water_energy_price_and_sustainability_execution
+        - directory_card_capacity_and_funding_headlines_not_converting_to_live_billed_load
+    AI_and_data_center_exposure:
+      role: colocation_cloud_interconnection_data_protection_and_professional_services
+      NVIDIA_DGX_Ready: true
+      named_customer_accelerators: [NVIDIA_H100, NVIDIA_H200, AMD_Instinct]
+      exact_installed_GPU_models_counts_owner_site_allocation_utilization_power_revenue_and_margin: undisclosed
+      boundary: DGX-ready status and customer deployments do not establish Flexential ownership or a fleet total.
+    sources:
+      - title: Current facility-card directory
+        publisher: Flexential
+        date: 2026-07-19_accessed
+        url: https://www.flexential.com/data-centers
+      - title: Series 2026 ABS ratings and secured-pool metrics
+        publisher: KBRA
+        date: 2026-03-31
+        url: https://www.kbra.com/publications/HxrLsNRT
+      - title: $800 million green ABS offering
+        publisher: Flexential
+        date: 2025-11-13
+        url: https://www.flexential.com/resources/press-release/flexential-completes-800-million-asset-backed-securities-offering
+      - title: GI continuation vehicle and GI Data Infrastructure investment
+        publisher: Flexential_hosting_GI_Partners_release
+        date: 2025-08-20
+        url: https://www.flexential.com/resources/press-release/gi-partners-strategic-investment-in-flexential
+      - title: Morgan Stanley Infrastructure Partners strategic investment
+        publisher: Flexential
+        date: 2024-10-21
+        url: https://www.flexential.com/resources/press-release/flexential-accelerate-expansion-and-growth-strategic-investment-morgan
+      - title: Fifth Atlanta-area data center and current expansion scope
+        publisher: Flexential
+        date: 2026-04-14
+        url: https://www.flexential.com/resources/press-release/flexential-adding-fifth-atlanta-area-data-center
+      - title: Hillsboro real-estate ownership and facility lifecycle
+        publisher: Flexential
+        date: 2026-05-28
+        url: https://www.flexential.com/resources/press-release/flexential-secures-strategic-real-estate-ownership-hillsboro-oregon
+    confidence: high_for_KBRA_secured_pool_metrics_equity_and_ABS_terms_and_current_provider_card_checksum_medium_for_growth_conversion_low_for_companywide_financials_current_valuation_installed_GPU_inventory_and_site_returns
+
 cross_company_read_through:
   current_signals:
+    - Flexential's current directory renders 41 mixed-lifecycle cards whose arithmetic checksums are 4,985,407 square feet and 372.17 MW, while its top-line says 40+, 18 markets and 3M+ square feet and a separate 2026 update says more than 360 MW online or under development. These scopes are not silently reconciled or treated as live load.
+    - KBRA's 28-asset Flexential secured pool reported approximately $663.3 million of Annualized Revenue and $353.2 million of AANOI as of October 31, 2025, a derived 53.25% ratio. This is a contract-based securitization-pool measure, not Flexential consolidated audited revenue, GAAP operating profit or EBITDA.
+    - The same KBRA pool has 199 MW of critical load, about 1.8 million square feet and 2,152 customers; the largest customer is 8.8% and the top 20 are 34.6% of Annualized Revenue. The pool remains a different asset and accounting boundary from the 41-card directory.
+    - Flexential has raised about $1 billion of primary equity and issued $800 million of green ABS in November 2025, partly to refinance outstanding ABS. Funding supports pipeline delivery but is not revenue, profit, net debt or incurred capex without a full company statement.
+    - DigitalOcean, Applied Digital and CoreWeave provide real AI-demand evidence across Douglasville, three undisclosed markets and Plano plus prior Oregon/Georgia rollouts, but the exact physical GPU counts, owners, site allocations, utilization, power and economics remain undisclosed.
     - DataBank's current directory exposes 76 unique facility IDs whose cards sum exactly to 4,976,008 IT square feet and 1,023.179 MW, reconciling to the rounded 4.98M-square-foot and 1-GW headlines.
     - At least 11 of those current cards use explicit construction, coming-soon, planned or future-tense evidence and sum to 634 MW. The remaining 65 cards sum to 389.179 MW, but even that remainder is not treated as exact energized, leased, utilized or billed load without site-level proof.
     - DataBank has raised deep growth capital: a roughly $2.0 billion 2024 equity round led by AustralianSuper, a $250 million TJC primary investment, a $1.1 billion hyperscale ABS, a $1.6 billion construction facility, $2.65 billion of Red Oak financing and an $800 million revolver. These instruments overlap in use and refinancing scope and are not added as revenue, net debt or incurred capex.
