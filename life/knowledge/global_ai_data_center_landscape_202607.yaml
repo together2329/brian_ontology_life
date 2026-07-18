@@ -16621,7 +16621,256 @@ campus_profiles:
       - {title: DataVolt nears Riyadh financing, publisher: EnterpriseAM, date: 2026-06-30, source_type: secondary_CEO_interview, url: "https://enterpriseam.com/logistics/2026/06/30/datavolt-nears-usd-500-mn-riyadh-financing/"}
     confidence: high_for_official_agreement_1_5GW_5bn_and_2028_target_medium_for_secondary_240MW_2027_update_low_for_customer_financing_construction_equipment_GPU_and_operation
 
+  - id: dc_damac_digital_saudi_portfolio
+    name: DAMAC Digital Saudi Arabia data-center portfolio
+    aliases: [EDGNEX_Data_Centers_by_DAMAC]
+    record_granularity: private_operator_portfolio_plus_two_named_current_certification_projects_not_one_physical_campus
+    operator: DAMAC_Digital
+    parent: DAMAC_Group
+    location:
+      country: Saudi_Arabia
+      current_operating_markets: [Riyadh, Dammam]
+      legacy_advanced_development_market: Jeddah
+      exact_current_building_addresses_coordinates_parcels_and_complete_project_roster: undisclosed
+    lifecycle_as_of_2026_07_18: operating_Riyadh_and_Dammam_portfolio_with_large_announced_expansion
+    identity_and_capacity_reconciliation:
+      rebrand_date: 2025-06-19
+      former_brand: EDGNEX_Data_Centers_by_DAMAC
+      2022_announced_dual_Riyadh_and_Dammam_total_mw: 35
+      operational_mw_as_reported_2025_06_19: 15
+      operational_mw_as_reported_2025_02_10: over_15
+      Saudi_future_capacity_target_mw_by_2030: 500
+      expected_Middle_East_delivery_mw_by_end_2025: 55
+      per_site_capacity_split_and_current_bridge: undisclosed
+      boundary: >-
+        The 35 MW is a dual-site announced total, 15 MW is the operator's dated
+        operating subset, 500 MW is a Saudi future target, and 55 MW is a wider
+        Middle East delivery expectation. They are different scopes and are not
+        added or treated as current operating capacity.
+    current_certification_projects:
+      entries:
+        - {site: DAMAC_Digital_RYD_1_Phase_1, city: Riyadh, registered_client: Khazzan_Information_Technology_Company, Uptime_scope: Tier_III_TCDD_and_TCCF}
+        - {site: DAMAC_Digital_DMM_1, city: Dammam, registered_client: Jawhara_Al_Mutaheda_for_Information_Systems_Technology_Company, Uptime_scope: Tier_III_TCDD_and_TCCF}
+      legal_entity_boundary: >-
+        Uptime lists different registered clients for RYD-1 and DMM-1. Their
+        exact beneficial ownership, operator agreements and consolidation into
+        DAMAC Digital are not disclosed in the reviewed public ledger.
+    accelerators_and_AI:
+      marketed_design: AI_ready_hyperscale_and_colocation_infrastructure
+      exact_GPU_OEM_models_counts_servers_racks_fabric_customer_ownership_delivery_site_allocation_power_draw_utilization_and_revenue: undisclosed
+      boundary: AI-ready marketing and a 500-MW AI and cloud target do not prove a purchased or installed GPU fleet.
+    power_cooling_and_sustainability:
+      Riyadh_vendor_case_ref: dc_damac_digital_ryd1_riyadh
+      Dammam_exact_power_and_cooling_BOM: undisclosed
+      per_site_grid_voltage_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CDU_counts_ratings_OEMs_and_topology: undisclosed
+      per_site_measured_PUE_WUE_water_renewable_share_live_IT_load_and_utilization: undisclosed
+    child_refs: [dc_damac_digital_ryd1_riyadh, dc_damac_digital_dmm1_dammam]
+    financial_profile_ref: company_damac_digital
+    sources:
+      - {title: DAMAC Digital rebrand and global expansion, publisher: DAMAC_Group, date: 2025-06-19, url: "https://www.damacgroup.com/en-cn/d-hub/press-releases/damac-group-unveils-damac-digital-as-global-expansion-accelerates/"}
+      - {title: EDGNEX Saudi 500MW future-capacity announcement, publisher: DAMAC_Group, date: 2025-02-10, url: "https://www.damacgroup.com/en-gb/d-hub/press-releases/edgnex-participates-at-leap-saudi-arabia-2025-announces-500mw-future/"}
+      - {title: Uptime Institute Saudi certification ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/tier-certification/tier-certification-list/design-document-certifications.php?clientId=&countryName=Saudi%20Arabia&ipp=All&page=1&tierLevel="}
+    confidence: high_for_rebrand_dated_portfolio_capacity_targets_two_named_projects_and_Tier_III_awards_low_for_per_site_capacity_legal_entity_crosswalk_equipment_GPU_live_load_and_economics
+
+  - id: dc_damac_digital_ryd1_riyadh
+    name: DAMAC Digital RYD-1 Data Center Phase 1
+    aliases: [EDGNEX_Riyadh_Data_Center]
+    record_granularity: individual_Uptime_certified_project_with_vendor_cooling_evidence
+    operator: DAMAC_Digital
+    registered_Uptime_client: Khazzan_Information_Technology_Company
+    location: {country: Saudi_Arabia, city: Riyadh, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: constructed_facility_certification_with_operator_portfolio_operating_claim_but_no_public_per_site_live_load
+    Uptime_awards: {tier: Tier_III, design_documents: true, constructed_facility: true, operational_sustainability: not_found_in_reviewed_ledger}
+    capacity:
+      included_in_dual_site_announced_total_mw: 35
+      included_in_dated_operating_subset_mw: 15
+      exact_site_IT_mw_facility_power_energized_leased_utilized_and_billed_load: undisclosed
+      boundary: The 35-MW and 15-MW figures are Riyadh-plus-Dammam portfolio scopes and cannot be assigned to this building.
+    cooling_vendor_case:
+      source_type: equipment_integrator_case_study_not_operator_audit
+      commissioning_measurement_date: 2025-06-01
+      system: water_evaporation_wet_wall_precooling_around_air_cooled_chillers
+      total_cooling_capacity_kw: 5280
+      chillers_with_PreCooll: 18
+      design_ambient_temperature_c: 48
+      precooling_surface_area_sqm: 450
+      Aquamizer_units: 36
+      Aquamizers_per_chiller: 2
+      measured_conditions_c: {morning_ambient_chillers_1_to_8: 40.2, afternoon_ambient_chillers_11_to_18: 42.8, average_supply_after_wet_wall: 21.0, average_temperature_reduction: 20.5}
+      vendor_estimated_energy_reduction_percent: 35
+      vendor_peak_power_kw: {without_precooling: 1850, with_precooling: 1200, reduction: 650}
+      vendor_estimated_annual_CO2_reduction_tonnes: 1650
+      vendor_estimated_ROI_years: 1.8
+      boundary: Vendor commissioning and estimates are not an operator-audited PUE, WUE, annual energy ledger or proof of total site IT capacity.
+    thermal_storage_vendor_brochure:
+      vessel_count: 36
+      individual_vessel_volume_liters: 3980
+      exact_current_acceptance_connection_topology_fluid_and_operating_schedule: undisclosed
+      boundary: The supplier brochure identifies RYD-1 but is not a primary as-built acceptance record.
+    power_and_accelerators:
+      exact_grid_voltage_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_and_single_line_topology: undisclosed
+      exact_GPU_models_counts_servers_racks_fabric_ownership_customers_power_draw_and_utilization: undisclosed
+    portfolio_ref: dc_damac_digital_saudi_portfolio
+    sources:
+      - {title: DAMAC Digital RYD-1 Uptime award, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/datacenter/damac-digital-ryd1-data-center/2232"}
+      - {title: DAMAC EDGNEX Riyadh cooling case study, publisher: Dosan_Energy, date: 2025, source_type: vendor_case_study, url: "https://dosanenergy.com/en/case-study/16"}
+      - {title: EDGNEX RYD-1 thermal-storage project reference, publisher: Flucon, date: undated_accessed_2026_07_18, source_type: vendor_brochure, url: "https://www.flucon.co/Admin_Site/Files/PDF/105a5b32-c5b4-49eb-8b09-ef5ecdebd441.pdf"}
+      - {title: DAMAC Digital rebrand and Saudi capacity summary, publisher: DAMAC_Group, date: 2025-06-19, url: "https://www.damacgroup.com/en-cn/d-hub/press-releases/damac-group-unveils-damac-digital-as-global-expansion-accelerates/"}
+    confidence: high_for_name_city_Tier_III_awards_and_vendor_stated_cooling_configuration_medium_for_vendor_measurements_low_for_site_capacity_full_BOM_GPU_inventory_and_utilization
+
+  - id: dc_damac_digital_dmm1_dammam
+    name: DAMAC Digital DMM-1 Data Center
+    aliases: [EDGNEX_Dammam_Data_Center]
+    record_granularity: individual_Uptime_certified_project
+    operator: DAMAC_Digital
+    registered_Uptime_client: Jawhara_Al_Mutaheda_for_Information_Systems_Technology_Company
+    location: {country: Saudi_Arabia, city: Dammam, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: constructed_facility_certification_with_operator_portfolio_operating_claim_but_no_public_per_site_live_load
+    Uptime_awards: {tier: Tier_III, design_documents: true, constructed_facility: true, operational_sustainability: not_found_in_reviewed_ledger}
+    capacity:
+      included_in_dual_site_announced_total_mw: 35
+      included_in_dated_operating_subset_mw: 15
+      exact_site_IT_mw_facility_power_floor_area_racks_energized_leased_utilized_and_billed_load: undisclosed
+      boundary: The 35-MW and 15-MW figures are Riyadh-plus-Dammam portfolio scopes and cannot be assigned to this building.
+    infrastructure_and_accelerators:
+      exact_grid_voltage_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CDU_counts_ratings_OEMs_topology_PUE_WUE_water_and_renewables: undisclosed
+      exact_GPU_models_counts_servers_racks_fabric_ownership_customers_power_draw_and_utilization: undisclosed
+    portfolio_ref: dc_damac_digital_saudi_portfolio
+    sources:
+      - {title: DAMAC Digital DMM-1 Uptime award, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/datacenter/damac-digital-dmm1-data-center/2231"}
+      - {title: DAMAC Digital rebrand and Saudi capacity summary, publisher: DAMAC_Group, date: 2025-06-19, url: "https://www.damacgroup.com/en-cn/d-hub/press-releases/damac-group-unveils-damac-digital-as-global-expansion-accelerates/"}
+    confidence: high_for_name_city_and_Tier_III_design_and_constructed_awards_low_for_exact_capacity_equipment_GPU_inventory_live_load_and_economics
+
+  - id: dc_qst_saudi_portfolio
+    name: Quantum Switch Tamasuk Saudi Arabia data-center portfolio
+    aliases: [QST_Saudi]
+    record_granularity: private_joint_venture_portfolio_plus_two_current_operator_cards_not_one_physical_campus
+    operator: Quantum_Switch_Tamasuk
+    ownership:
+      joint_venture_parties: [Tamasuk, Quantum_Switch]
+      exact_equity_percentages_and_beneficial_ownership: undisclosed_in_reviewed_primary_sources
+    location:
+      country: Saudi_Arabia
+      current_public_market: Dammam
+      current_public_sites: [DMM_A, DMM_B]
+      exact_addresses_coordinates_parcels_and_building_crosswalk: undisclosed
+    lifecycle_as_of_2026_07_18: two_operating_Uptime_certified_Dammam_sites_and_unreconciled_future_program
+    current_operator_directory:
+      DMM_A: {published_capacity_mw: 9, campus_size_sqm: 22292}
+      DMM_B: {published_capacity_mw: 9, campus_size_sqm: 19890}
+      derived_two_site_published_capacity_mw: 18
+      capacity_definition: not_explicitly_defined_as_IT_load_facility_power_or_grid_service
+      shared_services: [twenty_four_by_seven_remote_hands, one_hundred_percent_uptime_SLA_on_power_and_bandwidth, redundant_automatically_rerouted_connectivity_10Mbps_to_40Gbps, flexible_office_and_storage, customizable_cages_and_private_suites]
+    dated_program_reconciliation:
+      2022_MCIT_program: {planned_sites: 6, planned_capacity_each_mw: 50, planned_total_mw: 300, target_year: 2026}
+      current_public_directory_sites: 2
+      current_public_directory_capacity_mw: 18
+      boundary: The six-site 300-MW program was a 2022 target. The reviewed current operator directory exposes only two 9-MW Dammam sites, so the remaining program is not treated as delivered, operating or financed.
+    certifications:
+      QST_DC1: {city: Dammam, tier: Tier_III, design_documents: true, constructed_facility: true, operational_sustainability: Silver}
+      QST_DC2_Phase_1: {city: Dammam, tier: Tier_III, design_documents: true, constructed_facility: true, operational_sustainability: Gold}
+      exact_crosswalk_to_DMM_A_and_DMM_B: not_explicitly_published_in_one_reviewed_primary_source
+    power_cooling_and_sustainability:
+      2022_program_design_intent: [minimize_cooling_requirements, explore_solar_PV_and_renewable_energy_with_MCIT]
+      first_Dammam_vendor_case: [Schneider_EcoStruxure_combined_BMS_and_EPMS, ABEC_BMS_EPMS_and_ICT_global_standards]
+      exact_per_site_grid_voltage_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CDU_counts_ratings_OEMs_and_topology: undisclosed
+      exact_PUE_WUE_water_renewable_supply_live_load_and_utilization: undisclosed
+      boundary: Program sustainability intent and a vendor control-platform case do not prove solar connection, full equipment inventory or measured efficiency.
+    accelerators_and_AI:
+      marketed_scope: AI_and_cloud_enabled_data_centers
+      Maerifa_MOU: {date: 2024-09-16, partner_role: server_and_GPU_infrastructure, target_sector: financial_services}
+      exact_GPU_OEM_models_counts_servers_racks_fabric_ownership_host_site_delivery_live_status_power_draw_utilization_and_customer: undisclosed
+      boundary: The Maerifa MOU and AI/cloud marketing are not evidence of installed GPUs at DMM-A or DMM-B.
+    child_refs: [dc_qst_dmm_a_dammam, dc_qst_dmm_b_dammam]
+    financial_profile_ref: company_quantum_switch_tamasuk
+    sources:
+      - {title: Quantum Switch current data-center directory, publisher: Quantum_Switch, date: 2026-07-18_accessed, url: "https://www.quantumswitch.com/data-centres/"}
+      - {title: QST 300MW Saudi program, publisher: Quantum_Switch_Tamasuk, date: 2022-02-07, url: "https://www.quantumswitch.com/2022/02/07/quantum-switch-tamasuk-to-deliver-data-centre-capacity-to-the-kingdom-of-saudi-arabia/"}
+      - {title: QST Uptime Institute client ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/client/quantum-switch-tamasuk-limited/1063"}
+      - {title: QST and Maerifa GPU infrastructure MOU, publisher: Quantum_Switch, date: 2024-09-16, url: "https://www.quantumswitch.com/2024/09/16/quantum-switch-and-maefira-solutions-sign-memorandum-of-understanding-to-leverage-data-center-and-financial-services-as-a-service/"}
+    confidence: high_for_current_two_site_cards_capacity_area_and_Uptime_awards_medium_for_site_to_certification_crosswalk_low_for_remaining_program_equipment_GPU_inventory_and_economics
+
+  - id: dc_qst_dmm_a_dammam
+    name: Quantum Switch DMM-A Data Center
+    record_granularity: individual_current_operator_site_card_with_probable_QST_DC1_crosswalk
+    operator: Quantum_Switch_Tamasuk
+    location:
+      country: Saudi_Arabia
+      city: Dammam
+      probable_campus: King_Salman_Energy_Park_SPARK
+      exact_address_coordinate_parcel_and_building_number: undisclosed
+      SPARK_crosswalk_confidence: medium
+    lifecycle: current_operator_card_and_probable_operating_QST_DC1_certification_crosswalk
+    current_operator_card: {campus_size_sqm: 22292, published_capacity_mw: 9, capacity_definition: undisclosed}
+    probable_Uptime_crosswalk:
+      project: Quantum_Switch_Tamasuk_Data_Center_1
+      tier: Tier_III
+      design_documents: true
+      constructed_facility: true
+      operational_sustainability: Silver
+      boundary: DMM-A and QST DC1 are likely the first SPARK site, but the exact A-to-DC1 mapping is not stated in one reviewed primary source.
+    vendor_capacity_conflict:
+      ABEC_case_facility_mw: 10
+      operator_current_card_mw: 9
+      boundary: The vendor and operator figures may use different capacity definitions or rounding and are not added or substituted.
+    power_and_controls:
+      vendor_case_control_platform: Schneider_EcoStruxure_combined_BMS_and_EPMS
+      vendor_integration_scope: [BMS, EPMS, ICT_network_global_standards]
+      exact_grid_voltage_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CDU_counts_ratings_and_full_OEM_BOM: undisclosed
+    cooling_and_accelerators:
+      vendor_design_context: harsh_temperature_and_humidity
+      exact_cooling_system_PUE_WUE_water_renewables_and_live_liquid_cooled_MW: undisclosed
+      exact_GPU_models_counts_servers_racks_fabric_ownership_customer_power_draw_and_utilization: undisclosed
+    portfolio_ref: dc_qst_saudi_portfolio
+    sources:
+      - {title: Quantum Switch current data-center directory, publisher: Quantum_Switch, date: 2026-07-18_accessed, url: "https://www.quantumswitch.com/data-centres/"}
+      - {title: QST DC1 Uptime award, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/datacenter/quantum-switch-tamasuk-data-center-1-qst-dc1/1782"}
+      - {title: ABEC QST Dammam hyperscale case study, publisher: ABEC, date: 2023, source_type: vendor_case_study, url: "https://abec.co.uk/our-clients/case-study/abecs-partnership-in-saudi-arabia/"}
+      - {title: QST first Dammam financing, publisher: Quantum_Switch_Tamasuk, date: 2022-09-15, url: "https://www.quantumswitch.com/2022/09/15/qst-secures-financing-new-dammam-data-center/"}
+    confidence: high_for_operator_card_area_and_capacity_and_QST_DC1_awards_medium_for_DMM_A_DC1_SPARK_crosswalk_and_vendor_control_platform_low_for_full_BOM_GPU_and_utilization
+
+  - id: dc_qst_dmm_b_dammam
+    name: Quantum Switch DMM-B Data Center
+    record_granularity: individual_current_operator_site_card_with_probable_QST_DC2_crosswalk
+    operator: Quantum_Switch_Tamasuk
+    location: {country: Saudi_Arabia, city: Dammam, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: current_operator_card_and_probable_operating_QST_DC2_Phase_1_certification_crosswalk
+    current_operator_card: {campus_size_sqm: 19890, published_capacity_mw: 9, capacity_definition: undisclosed}
+    probable_Uptime_crosswalk:
+      project: Quantum_Switch_Tamasuk_Data_Center_2_Phase_1
+      tier: Tier_III
+      design_documents: true
+      constructed_facility: true
+      operational_sustainability: Gold
+      boundary: DMM-B is likely QST DC2, but the exact B-to-DC2 mapping is not stated in one reviewed primary source.
+    power_cooling_and_accelerators:
+      exact_grid_voltage_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CDU_counts_ratings_OEMs_and_topology: undisclosed
+      exact_PUE_WUE_water_renewable_supply_live_liquid_cooled_MW_and_utilization: undisclosed
+      exact_GPU_models_counts_servers_racks_fabric_ownership_customer_power_draw_and_utilization: undisclosed
+    portfolio_ref: dc_qst_saudi_portfolio
+    sources:
+      - {title: Quantum Switch current data-center directory, publisher: Quantum_Switch, date: 2026-07-18_accessed, url: "https://www.quantumswitch.com/data-centres/"}
+      - {title: QST Uptime Institute client ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/client/quantum-switch-tamasuk-limited/1063"}
+    confidence: high_for_operator_card_area_and_capacity_and_QST_DC2_awards_medium_for_DMM_B_DC2_crosswalk_low_for_exact_address_equipment_GPU_inventory_and_utilization
+
 disclosure_gap_register:
+  - DAMAC_Digital_35MW_dual_site_15MW_operating_and_500MW_2030_target_to_per_site_operating_energized_leased_utilized_and_billed_IT_load_reconciliation
+  - DAMAC_Digital_RYD1_DMM1_exact_addresses_coordinates_parcels_building_ownership_and_registered_Uptime_client_legal_entity_crosswalk
+  - DAMAC_Digital_Jeddah_legacy_advanced_development_reference_to_current_site_project_capacity_and_lifecycle
+  - DAMAC_Digital_RYD1_18_chillers_36_Aquamizers_36_thermal_storage_vessels_vendor_evidence_to_primary_as_built_acceptance_models_and_current_inventory
+  - DAMAC_Digital_per_site_grid_voltage_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CDU_counts_ratings_OEMs_and_topology
+  - DAMAC_Digital_per_site_GPU_models_counts_servers_racks_fabric_ownership_customers_power_draw_utilization_revenue_and_margin
+  - DAMAC_Digital_per_site_PUE_WUE_water_renewable_energy_live_liquid_cooled_MW_and_measured_operating_performance
+  - DAMAC_Digital_500MW_Saudi_plan_exact_sites_land_grid_permits_financing_customers_construction_energization_and_billing
+  - QST_DMM_A_DMM_B_to_QST_DC1_DC2_exact_crosswalk_addresses_coordinates_parcels_building_ownership_and_lifecycle
+  - QST_current_two_site_18MW_published_capacity_definition_and_ABEC_first_Dammam_10MW_scope_reconciliation
+  - QST_2022_six_site_300MW_program_to_current_project_roster_land_grid_permits_financing_construction_energization_customers_and_billing
+  - QST_per_site_grid_voltage_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CDU_counts_ratings_OEMs_and_topology
+  - QST_per_site_GPU_models_counts_servers_racks_fabric_ownership_unnamed_cloud_customer_power_draw_utilization_revenue_and_margin
+  - QST_per_site_PUE_WUE_water_solar_PV_renewable_energy_live_liquid_cooled_MW_and_measured_operating_performance
+  - QST_first_Dammam_Schneider_EcoStruxure_BMS_EPMS_case_to_exact_device_inventory_commissioned_scope_and_second_site_allocation
+  - QST_2022_financing_exact_amount_rate_tenor_maturity_collateral_covenants_drawn_balance_current_debt_and_project_allocation
+  - QST_2026_strategic_review_sale_status_confirmed_valuation_transaction_terms_buyer_and_post_transaction_ownership
   - SDAIA_complete_current_physical_data_center_roster_addresses_coordinates_building_ownership_lifecycle_and_Uptime_project_crosswalk
   - SDAIA_Hexagon_480MW_capacity_definition_phase_breakout_RFS_grid_permits_procurement_contractor_budget_construction_energization_and_live_load
   - SDAIA_Hexagon_Phase1_TCDD_only_to_TCCF_TCOS_LEED_TIA_ISO_completion_and_operational_certification
@@ -16881,6 +17130,15 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
+    - DAMAC_Digital_35MW_15MW_500MW_scope_to_RYD1_DMM1_and_future_site_lifecycle_capacity_bridge
+    - DAMAC_Digital_RYD1_DMM1_exact_site_legal_entity_address_grid_live_load_customer_and_utilization_crosswalk
+    - DAMAC_Digital_RYD1_vendor_cooling_and_thermal_storage_to_primary_as_built_BOM_PUE_WUE_water_and_current_performance
+    - DAMAC_Digital_exact_GPU_inventory_customer_ownership_power_draw_site_allocation_and_service_economics
+    - DAMAC_Digital_500MW_2030_plan_land_grid_permits_financing_construction_customer_awards_and_energization
+    - QST_DMM_A_DMM_B_to_DC1_DC2_exact_crosswalk_site_addresses_capacity_definition_and_9MW_10MW_reconciliation
+    - QST_18MW_current_directory_to_300MW_six_site_program_complete_project_lifecycle_land_grid_financing_and_delivery
+    - QST_per_site_power_chain_cooling_PUE_WUE_water_solar_renewables_and_equipment_OEM_inventory
+    - QST_exact_GPU_inventory_unnamed_cloud_region_customer_ownership_power_draw_utilization_and_revenue
     - SDAIA_current_physical_roster_Uptime_project_crosswalk_and_per_site_lifecycle_capacity
     - SDAIA_Hexagon_480MW_phase_breakout_capacity_definition_RFS_grid_budget_contractors_and_certification_conversion
     - SDAIA_Hexagon_direct_liquid_hybrid_cooling_power_chain_PUE_WUE_water_renewables_and_exact_GPU_inventory
@@ -17079,6 +17337,13 @@ next_research_queue:
     - NTT_India_exact_GPU_inventory_customer_vs_operator_ownership_live_liquid_cooled_MW_CDU_heat_rejection_and_equipment_OEMs
     - NTT_India_transformer_switchgear_UPS_battery_generator_chiller_counts_and_operating_PUE_WUE_water_per_site
   company_financials:
+    - DAMAC_Digital_standalone_audited_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_and_ROIC
+    - DAMAC_Digital_Saudi_500MW_and_global_4GW_funding_incurred_capex_customer_contracts_revenue_conversion_and_site_returns
+    - DAMAC_Digital_RYD1_DMM1_legal_entity_financial_consolidation_ownership_and_project_economics
+    - Quantum_Switch_Tamasuk_standalone_audited_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_and_ROIC
+    - QST_2022_up_to_USD3bn_capital_pipeline_and_USD3_6bn_program_exact_financing_draws_terms_project_allocation_and_current_debt
+    - QST_2026_strategic_review_sale_completion_confirmed_valuation_buyer_consideration_and_post_transaction_financial_reporting
+    - QST_two_Dammam_sites_customer_contracts_utilization_revenue_commencement_operating_margin_and_return_on_capital
     - DataVolt_standalone_audited_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_and_ROIC
     - DataVolt_Riyadh_USD500m_financing_close_debt_terms_anchor_contract_revenue_start_and_2026_first_profit_actual
     - DataVolt_USD5bn_KSA_plan_Oxagon_funding_and_USD2_5bn_secondary_investment_overlap_drawn_and_incurred_capex
