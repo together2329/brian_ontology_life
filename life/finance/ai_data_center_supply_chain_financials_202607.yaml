@@ -746,6 +746,17 @@ financial_profiles:
         minority_shareholders: [MGX, Silver_Lake]
         former_shareholder: e_and_exited_investment_but_remains_business_partner
         exact_percentages_valuation_consideration_preference_rights_and_governance: undisclosed
+      former_e_and_40_percent_exit_accounting:
+        completion_date: 2025-03-26
+        cash_proceeds_AED_billion_rounded: 8.0
+        gain_before_federal_royalty_tax_and_expenses_AED_billion_rounded: 5.1
+        simple_pro_rata_implied_total_equity_value_AED_billion_derived: 20.0
+        arithmetic: 8.0_billion_AED_divided_by_0.40
+        valuation_boundary: >-
+          The AED20.0 billion figure is a simple pro-rata arithmetic inference
+          from rounded sale proceeds. It assumes identical economic rights and
+          excludes transaction adjustments; it is not disclosed enterprise value,
+          Khazna revenue, operating profit, debt value or a current valuation.
       boundary: The historical 60/40 structure must not be carried forward after the 2025 ownership transition.
     public_financial_disclosure:
       audited_standalone_or_consolidated_revenue: not_publicly_disclosed_in_reviewed_primary_sources
@@ -761,13 +772,29 @@ financial_profiles:
         portfolio_capacity_mw: 673
         capacity_scope: not_split_between_operating_energized_leased_utilized_IT_load_and_development_nameplate
       current_UAE_location_interface:
-        Dubai_displayed_units: 6
-        Abu_Dhabi_emirate_displayed_units: 24
-        total_displayed_units_derived: 30
-        exact_facility_ID_address_capacity_and_lifecycle_ledger: undisclosed
+        Dubai_facility_markers: 6
+        Abu_Dhabi_emirate_facility_markers: 24
+        total_facility_markers_derived: 30
+        exact_facility_ID_coordinate_and_design_capacity_ledger: published_and_stored_in_dc_khazna_global_portfolio
+        plot_area_published_facilities: 28
+        facility_marker_design_capacity_sum_mw_derived: 298.51
+        portfolio_headline_capacity_mw: 673
+        headline_minus_marker_design_sum_mw_derived: 374.49
+        capacity_boundary: >-
+          The 298.51 MW sum is derived from 30 per-marker design values and does
+          not equal the separate 673 MW portfolio headline. Neither scope is
+          operating, energized, leased, utilized or billed IT load; the 374.49 MW
+          difference is not assigned to ongoing projects without disclosure.
+        localization_interface_drift:
+          Arabic_markers: 30
+          English_visible_units: 28
+          Arabic_only_in_reviewed_interfaces: [DXB_DSO, AUH_ICAD]
       Uptime_release_2026_02_24:
         UAE_data_centers: 30
         Tier_III_Constructed_Facility_awards: 22
+        direct_current_site_ID_matches: 16
+        unresolved_legacy_award_labels: 6
+        separate_client_record_boundary: DXB3_and_DXB9_have_separate_Uptime_client_entity_evidence_but_are_not_added_to_the_22_without_a_legal_crosswalk
       related_campus_refs:
         - dc_khazna_global_portfolio
         - dc_khazna_auh6_masdar_city
@@ -799,6 +826,10 @@ financial_profiles:
       exact_current_GPU_model_count_server_rack_ownership_delivery_installation_utilization_power_draw_and_revenue: undisclosed
       portfolio_power_and_cooling_examples:
         annualized_PUE: 1.5_or_below_company_claim
+        advanced_UPS: intelligent_power_management_and_predictive_maintenance_company_claim
+        DRUPS: zero_transfer_time_company_claim
+        direct_liquid_cooling_and_liquid_to_rack: portfolio_capability
+        adiabatic_free_cooling_energy_savings_percent_up_to: 70
         AUH6: {IT_power_mw: 31.8, solar_PV_mwp: 7, PUE: 1.4}
         QAJ01: {IT_load_mw: 100, liquid_cooling_design: true, current_operating_status: unverified}
       exact_per_site_power_chain_cooling_OEM_and_operating_performance_ledger: undisclosed
@@ -821,8 +852,9 @@ financial_profiles:
         - large_long_tenor_financing_access
         - modular_repeatable_design_and_existing_UAE_scale
       conversion_tests:
-        - reconcile_673MW_to_operating_energized_leased_utilized_and_billed_IT_load_by_site
-        - reconcile_30_live_units_to_exact_IDs_addresses_buildings_ownership_and_Tier_awards
+        - reconcile_the_298_51MW_30_marker_design_sum_and_673MW_headline_to_operating_energized_leased_utilized_and_billed_IT_load_by_site
+        - crosswalk_six_legacy_Uptime_award_labels_to_current_site_IDs_and_separate_legal_client_entities
+        - verify_exact_addresses_buildings_ownership_meter_boundaries_and_commissioning_dates_for_the_30_markers
         - convert_six_ongoing_projects_and_more_than_1GW_plan_into_power_connected_customer_accepted_revenue_generating_capacity
         - verify_QAJ01_construction_energization_liquid_cooling_commissioning_and_customer_GPU_delivery
         - execute_international_joint_ventures_land_grid_financing_permits_and_phased_delivery
@@ -839,6 +871,8 @@ financial_profiles:
       - debt_draw_leverage_rate_covenant_and_refinancing_terms
       - customer_and_hyperscaler_concentration
       - UAE_capacity_scope_and_site_roster_reconciliation
+      - 298_51MW_marker_design_sum_to_673MW_headline_scope_gap
+      - Uptime_legacy_name_and_legal_client_entity_crosswalk
       - international_HoT_MoU_land_and_announcement_conversion
       - GPU_design_compatibility_to_actual_hardware_and_billed_AI_load
       - hot_climate_cooling_water_and_clean_energy_delivery
@@ -851,10 +885,22 @@ financial_profiles:
         publisher: Khazna_Data_Centers
         date: 2026-07-18_accessed
         url: https://khaznadatacenters.com/ar/contact-us/
+      - title: Current English UAE locations interface
+        publisher: Khazna_Data_Centers
+        date: 2026-07-18_accessed
+        url: https://khaznadatacenters.com/our-locations/
+      - title: Khazna Data Centers Limited Tier awards client ledger
+        publisher: Uptime_Institute
+        date: 2026-07-18_accessed
+        url: https://uptimeinstitute.com/uptime-institute-awards/list/client/khazna-data-centers-limited/607
       - title: Current ownership transition
         publisher: Khazna_Data_Centers
         date: 2025-03-26
         url: https://khaznadatacenters.com/press-release/khazna-welcomes-mgx-and-silver-lake-as-strategic-minority-investors/
+      - title: e& FY2025 integrated annual report with Khazna disposal proceeds and gain
+        publisher: e_and
+        date: 2026-02-24
+        url: https://www.eand.com/content/dam/eand/assets/docs/annual-report/2025/eand-integrated-annualreport-en.pdf
       - title: Historical G42 and Etisalat 60/40 agreement
         publisher: Khazna_Data_Centers
         date: 2021-10-20
@@ -10993,8 +11039,9 @@ cross_company_read_through:
     - MEEZA plans up to QAR2 billion of spending to reach 62 MW by 2029. MV6's 44 MW ultimate masterplan, 24 MW current phase and 6 MW first delivery are nested scopes; MV7 and MV8 add separate design and construction stages, so none is counted as current revenue-generating capacity before RFS and customer acceptance.
     - MAI offers sovereign GPUaaS in Qatar and MV6's first 6 MW is positioned for advanced AI, but MEEZA discloses no GPU OEM, model, count, server, rack, fabric, site allocation, ownership, utilization, power draw or AI-service revenue. The AMD cooperation agreement is exploratory and does not prove deployed AMD accelerators.
     - MV2's dated engineering evidence includes ten diesel rotary UPS units, 72 hours of fuel and racks averaging 5.7 kVA upgradeable to 12 kVA. Vertiv separately confirms EXL S1 UPS, lithium-ion batteries, PDX dual-fluid cooling and CROSS static transfer switches for the combined 0.9 MW MV2 extension and 4 MW MV4 project, but exact unit allocation and the 2026 MV4 expansion bill of materials remain undisclosed.
-    - Khazna's current interface reconciles its 30-live-data-center headline to six displayed Dubai units and 24 across the Abu Dhabi emirate, while the homepage reports 673 MW and six ongoing projects. The operator does not publish exact IDs, addresses, per-site MW or a split of operating, energized, leased, utilized and development capacity, so 673 MW is not treated as current customer load.
-    - Khazna is one of the largest private Middle Eastern operators but publishes no audited standalone revenue or operating profit. Its $2.62 billion financing facility, more-than-1-GW expansion plan, 73% company-cited UAE market share, and per-facility economic-impact estimates describe funding, ambition and modeled impact rather than earnings or cash flow.
+    - Khazna's current Arabic interface exposes 30 exact facility IDs and coordinates, 28 plot areas and per-marker design capacity. The six Dubai and 24 Abu Dhabi-emirate markers sum to 298.51 MW, leaving a 374.49 MW unexplained scope difference to the separate 673 MW portfolio headline; neither scope is treated as current customer load.
+    - Uptime reports 22 Tier III Constructed Facility awards across Khazna's 30 UAE centers. Sixteen award names directly match current site IDs, while six legacy labels remain unresolved; DXB3 and DXB9 have evidence under separate Uptime client entities and are not silently added to the 22-award Khazna Limited total.
+    - Khazna is one of the largest private Middle Eastern operators but publishes no audited standalone revenue or operating profit. Its $2.62 billion financing facility, more-than-1-GW expansion plan, 73% company-cited UAE market share, and per-facility economic-impact estimates describe funding, ambition and modeled impact rather than earnings or cash flow. e&'s rounded AED8.0 billion proceeds for its former 40% stake imply AED20.0 billion only under a simple pro-rata calculation, not disclosed enterprise value or current valuation.
     - NVIDIA certified Khazna's next-generation facility design for Blackwell, with future halls up to 50 MW and individual AI clusters up to 250 MW, but no current physical GPU count is disclosed. AUH6 has a 31.8 MW IT nameplate, 7 MWp solar and company-stated PUE of 1.4; QAJ01 has a 100 MW liquid-cooled design but remains operating-status unverified after a February 2026 design-document certification.
     - Gulf Data Hub's current website has three mutually inconsistent live scopes: server-rendered counters show zero facilities and zero MW because its Strapi location list is empty, client-code headline constants say five facilities and 46 MW, and the client marker roster contains six operating facilities totaling 62.2 MW. KKR and GDH's January 2025 release separately says seven owned facilities across the UAE and Saudi Arabia, leaving one owned unit unreconciled to the visible operating roster.
     - The same client bundle exposes 65 markers and 1,006.2 MW of arithmetic nameplate: six operating/62.2 MW, four under construction/64 MW and 55 pipeline/880 MW. Those markers span Dubai, Abu Dhabi, Jeddah, Dammam, Riyadh, Qatar, Bahrain, Kuwait, Oman, Egypt, Aqaba and Morocco, but they are planning artifacts rather than evidence of land control, permits, grid service, construction, energization, leasing, utilization or billing.
@@ -11198,7 +11245,8 @@ cross_company_read_through:
     - Which GPUs power MAI GPUaaS, who owns them, where are they installed, and what are their utilization, power cost, revenue and margin?
     - What are MEEZA's current per-site transformer, switchgear, UPS, battery, generator, chiller, CDU, PUE, WUE, water and liquid-cooling ledgers?
     - How much of the QAR800 million Murabaha is drawn, at what rate and maturity, and how will the QAR2 billion expansion plan affect leverage, cash flow and return on capital?
-    - How do Khazna's 30 live units, 673 MW portfolio headline, six ongoing projects, 22 Tier III Constructed Facility awards and exact building lifecycle reconcile?
+    - How do Khazna's 298.51 MW sum of 30 published facility-marker design values, 673 MW portfolio headline, six ongoing projects, exact operating load and building lifecycle reconcile?
+    - Which current Khazna facility IDs correspond to the six legacy Uptime award labels, and how should DXB3 and DXB9's separate Uptime client-entity records be crosswalked?
     - What are Khazna's standalone revenue, operating profit, cash flow, debt, customer concentration, utilization and site-level returns, and what portion of the $2.62 billion facility is drawn?
     - Which GPUs are physically installed at Khazna facilities, who owns them, and how do NVIDIA-certified designs convert into delivered, energized and billed AI capacity?
     - Which exact seven Gulf Data Hub facilities were owned in the KKR transaction scope, and how do they reconcile to six visible operating markers, the 5/46 client headline and the broken 0/0 server-rendered counters?
