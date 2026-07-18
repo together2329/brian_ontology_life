@@ -98,6 +98,7 @@ SPECS = [
     spec("VIRTUS_Data_Centres", "company_virtus_data_centres", ["dc_virtus_europe_portfolio"], "United_Kingdom_Germany_and_Italy", "private_with_statutory_consolidated_group_financials", "32 current facility codes with a 647.9-MW mixed-lifecycle checksum versus 11 fully live UK sites and 179.3 MW billable at FY2024 year-end", "Facility codes, OSM objects, operating sites, design IT MW, grid MVA, billable and contracted MW, customer GPUs and statutory group financials use different scopes.", ["life/imports/global_data_centers_20260717/virtus_official_facility_registry.jsonl", "life/imports/global_data_centers_20260717/virtus_official_facility_summary.json"]),
     spec("DigiCo_Infrastructure_REIT", "company_digico_infrastructure_reit", ["dc_digico_australia_north_america_portfolio"], "Australia_and_United_States", "public_listed_REIT_with_statutory_and_management_reporting", "13 legally held properties versus 11 current directory labels, nine source-established operating property labels and 238 MW of HY2026 planned IT capacity", "Legal properties, operating facilities, phased delivery, development land, signed asset sales, OSM objects, billing, contracted and planned IT MW, hosted customer GPUs and statutory or underlying financial measures use different scopes.", ["life/imports/global_data_centers_20260717/digico_official_property_registry.jsonl", "life/imports/global_data_centers_20260717/digico_official_property_summary.json"]),
     spec("Teraco", "company_teraco", ["dc_teraco_south_africa_portfolio"], "South_Africa", "private_subsidiary_with_public_parent_transaction_metrics", "eight operating facility codes, one under-construction code and 126 MW in-place plus 41 MW under-construction in Digital Realty's transaction scope", "Facility codes, physical buildings, campuses, a satellite earth station, 188/189/191/228-MW provider scopes, 12 OSM objects, GPUs and private-company financials use different boundaries.", ["life/imports/global_data_centers_20260717/teraco_official_facility_registry.jsonl", "life/imports/global_data_centers_20260717/teraco_official_facility_summary.json"]),
+    spec("Colt_DCS", "company_colt_dcs", ["dc_colt_dcs_global_portfolio"], "United_Kingdom_Europe_India_and_Japan", "private_with_UK_statutory_entity_and_parent_segment_revenue", "15 operational data-centres headline, 13 current operating page groups, 18 split development labels and a 655.5-MW development-page checksum", "Current DCS facilities, partially operating phases, legacy datasheets, former AtlasEdge or Templus assets, Colt Technology Services nodes, OSM objects, mixed MW measures and financial perimeters use different boundaries.", ["life/imports/global_data_centers_20260717/colt_official_facility_registry.jsonl", "life/imports/global_data_centers_20260717/colt_official_facility_summary.json"]),
 ]
 
 
@@ -141,7 +142,7 @@ def load_index(path: Path, key: str) -> dict[str, dict]:
 def build_records(finance_path: Path, landscape_path: Path, accessed_on: str) -> list[dict]:
     finance = load_index(finance_path, "financial_profiles")
     landscape = load_index(landscape_path, "campus_profiles")
-    assert len(SPECS) == 55
+    assert len(SPECS) == 56
     assert len({row["company"] for row in SPECS}) == len(SPECS)
     records = []
     for position, source in enumerate(SPECS, start=1):

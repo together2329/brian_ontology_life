@@ -32989,7 +32989,163 @@ campus_profiles:
       - {title: Additional Teraco ownership transaction, publisher: Digital_Realty, date: 2026-06-22, url: "https://investor.digitalrealty.com/news-releases/news-release-details/digital-realty-announces-transactions-drive-continued-platform"}
     confidence: high_for_eight_operating_codes_JB7_construction_published_capacity_boundaries_JB4_CT2_completion_CT1_expansion_equipment_design_ownership_transaction_and_OSM_transcription_medium_for_JB5_completion_timing_and_transaction_revenue_basis_low_for_current_per_site_live_load_GPU_inventory_complete_as_built_BOM_standalone_financials_and_ROIC
 
+  - id: dc_colt_dcs_global_portfolio
+    operator: Colt_DCS
+    geography: United_Kingdom_Europe_India_and_Japan
+    record_granularity: current_navigation_page_physical_facility_phase_development_legacy_asset_transaction_and_network_node_boundaries
+    evidence_snapshot: '2026-07-19'
+    official_facility_registry_ref: life/imports/global_data_centers_20260717/colt_official_facility_registry.jsonl
+    official_facility_summary_ref: life/imports/global_data_centers_20260717/colt_official_facility_summary.json
+    roster:
+      current_company_operational_headline: 15
+      current_navigation_operating_page_groups: 13
+      current_navigation_operating_physical_labels_after_splitting_Mumbai_1_and_2: 14
+      current_datasheet_only_headline_reconciliation_candidate: Osaka_City
+      partially_operating_mixed_lifecycle_site: {code: Tokyo_Inzai_4, operational_phase_mw: 4.8, full_build_mw: 20}
+      legacy_datasheet_not_counted_current: Tokyo_Otemachi
+      current_company_development_headline: 12
+      current_navigation_development_page_groups: 13
+      current_navigation_development_facility_labels_after_splitting_grouped_pages: 18
+      announced_JV_outside_navigation: Minoh_City
+      dated_2024_sustainability_release: {operating_data_centres: 13, facilities_in_development: 19}
+      boundary: >-
+        Company headlines, navigation pages, named facilities, physical
+        buildings, partially operating phases, legacy datasheets and joint
+        venture projects use different counts. Osaka City is retained as the
+        official-datasheet candidate that bridges fourteen current-menu
+        physical labels to the fifteen-site headline; Otemachi remains a
+        legacy candidate until current lifecycle evidence is found.
+    operating_facilities:
+      Europe:
+        Frankfurt_City: {IT_power_mw: 1.2, gross_technical_area_sqm: 2620, lifecycle: operating}
+        Frankfurt_West: {IT_power_mw: 25, gross_technical_area_sqm: 10000, lifecycle: operating_fully_let}
+        London_North: {IT_power_mw: 35, gross_technical_area_sqm: 21339, lifecycle: operating}
+        London_West: {IT_power_mw: 9.4, gross_technical_area_sqm: 9553, lifecycle: operating}
+        Paris_South_West: {IT_power_mw: 24, gross_technical_area_sqm: 9384, lifecycle: operating}
+        Rotterdam: {potential_maximum_IT_power_mw: 15, data_hall_space_sqm: 11400, lifecycle: operating, boundary: potential_not_live_load}
+      India:
+        Mumbai_1_and_2:
+          lifecycle: two_operating_buildings_on_one_current_page
+          combined_IT_power_mw: 22
+          individual_building_IT_power_mw: undisclosed
+          larger_campus_potential_IT_power_mw: 134
+      Japan:
+        Osaka_City: {lifecycle: current_official_datasheet_candidate_omitted_navigation, IT_power_mw: undisclosed, datasheet_PUE: 1.4}
+        Osaka_Keihanna: {fully_built_IT_power_mw: 45, gross_technical_area_sqm: 42000, lifecycle: second_phase_completed_with_page_wording_conflict}
+        Tokyo_Shiohama: {IT_power_mw: 5.6, gross_technical_floor_area_sqm: 21348, lifecycle: operating}
+        Tokyo_Inzai_1: {IT_power_mw: 8, white_space_sqm: 4000, lifecycle: operating}
+        Tokyo_Inzai_2: {IT_power_mw: 15, white_space_sqm: 5000, lifecycle: operating_fully_let}
+        Tokyo_Inzai_3: {IT_power_mw: 27, white_space_sqm: 8000, lifecycle: operating_fully_let}
+        Tokyo_Inzai_4: {operational_phase_IT_power_mw: 4.8, full_build_IT_power_mw: 20, white_space_sqm: 8747, lifecycle: partially_operating_fully_prelet_remaining_buildout}
+    development_facilities:
+      Germany:
+        Berlin_1_and_2: {combined_IT_power_mw: 54, site_acres: 9.5, secured_power_MVA: 80, first_phase_RFS_target: end_2028}
+        Frankfurt_3: {IT_power_mw: 32.4, gross_floor_area_sqm: 17500, lifecycle: under_construction_first_phase}
+        Frankfurt_4_and_5: {combined_IT_power_mw: 63, site_acres: 18, secured_power_MVA: 100, first_phase_RFS_target: end_2028}
+        four_new_site_investment_EUR_billion: 2
+      United_Kingdom:
+        London_4: {IT_power_mw: 31, floors: 5, lifecycle: under_construction_fully_let}
+        London_5: {IT_power_mw: 31.5, data_halls: 5, data_hall_sqm_each: 1000, lifecycle: planning_permission_construction_not_confirmed}
+        London_6: {page_IT_power_mw: 27, data_halls: 9, expected_first_live: early_2029}
+        London_7: {page_IT_power_mw: 48, data_halls: 15, lifecycle: approved_planned}
+        London_8: {page_IT_power_mw: 23, data_halls: 8, lifecycle: approved_planned}
+        London_6_7_8_scope_conflict: {current_page_sum_mw: 98, approval_release_mw: 97, post_expansion_Hayes_total_mw: 160}
+        Hayes_expansion_investment_GBP_billion: 2.5
+      France:
+        Paris_2: {IT_power_mw: 40, lifecycle: under_construction_fully_let, rack_density_kw_more_than: 100}
+        Paris_3: {IT_power_mw: 32, lifecycle: design_underway, rack_density_kw_more_than: 100}
+        Paris_4: {IT_power_mw: 9.6, lifecycle: planned}
+        Paris_5_and_6: {combined_IT_power_mw: 55, lifecycle: planned}
+        Villebon_three_site_contracted_power_mw: 120
+        Les_Ulis_2_two_site_contracted_power_mw: 85
+        five_site_investment_EUR_billion: 2.3
+        total_France_capacity_target_mw_by_2031: 170
+      India_and_Japan:
+        Chennai: {current_page_IT_power_mw: 96, older_official_value_mw: 72, lifecycle: planned}
+        Tokyo_Inzai_5: {IT_power_mw: 32, gross_floor_area_sqm: 30158.78, lifecycle: planned}
+        Tokyo_Yoshikawa: {site_IT_power_mw: 80, site_acres: 9.5, physical_building_scope_up_to: 2, lifecycle: phase_one_underway}
+        Minoh_City: {master_site_IT_power_mw: 130, phase_one_IT_power_mw: 65, land_sqm_approximate: 140000, RFS_target: late_2029, lifecycle: announced_ESR_JV_outside_navigation}
+    capacity_reconciliation:
+      operating_or_fully_built_page_checksum_mw: 222.0
+      checksum_excludes: [Rotterdam_15MW_potential, Osaka_City_undisclosed, duplicate_Mumbai_shared_22MW]
+      current_navigation_development_design_checksum_mw_using_London_page_98: 655.5
+      Minoh_master_site_design_mw_outside_navigation: 130
+      boundary: >-
+        Page values mix operating-phase, fully built, potential, combined,
+        design and contracted-power scopes. The checksums are transcription
+        controls and are not current energized, customer-accepted, utilized,
+        billed or instantaneous load.
+    electrical_cooling_and_sustainability:
+      2025_global_PUE: 1.41
+      2025_emissions_reduction_vs_2019_percent: 27
+      Scope_2_renewable_electricity_percent: 100
+      renewable_share_of_total_energy_percent: 90
+      net_zero_target_year: 2045
+      new_GRD_annualized_PUE_target_below: 1.2
+      new_GRD_cooling: [near_zero_wastewater_chilled_water, closed_loop_liquid_cooling, air, direct_liquid_to_chip, hybrid]
+      new_German_GRD_rack_density_kw_up_to: 130
+      Paris_2_and_3_rack_density_kw_more_than: 100
+      site_specific_evidence:
+        Frankfurt_City: [N_plus_N_power_and_UPS, N_plus_1_generators, 72_hours_full_load_fuel]
+        Osaka_City: [N_plus_1_UPS, N_plus_1_generators, 48_hours_full_load_fuel, free_and_outdoor_air_cooling, solar]
+        London_6_7_8: [National_Grid_contract, high_voltage_supply_due_2027_10, PPA_100_percent_renewable, generator_permission_max_15_hours_per_year]
+      exact_current_per_site_grid_substation_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CRAC_CDU_models_counts_ratings_and_single_line_topology: undisclosed
+    accelerator_and_AI_boundary:
+      AI_ready_new_market_list: [London, Paris, Frankfurt, Mumbai, Chennai, Tokyo, Yoshikawa]
+      liquid_to_chip_and_hybrid_cooling_capability: true
+      published_rack_density_context_kw: [100, 130]
+      provider_owned_GPU_model_count_site_delivery_fabric_power_utilization_revenue_and_margin: undisclosed
+      customer_GPU_inventory_assignable_to_Colt_DCS: false
+      accelerator_ledger_action: no_numeric_row_created
+      boundary: AI-ready infrastructure, density and liquid-cooling support do not establish GPU ownership or inventory.
+    ownership_and_financial_boundary:
+      operationally_separate_from_Colt_Group_since: 2023
+      immediate_parent: Colt_Data_Centre_Services_Holdings_Sarl
+      intermediary_parent: Colt_Group_Holdings_Limited
+      ultimate_parent_and_control: SHM_Lightning_Investors_LLC
+      UK_legal_entity_2024_GBP_million: {turnover: 71.177, EBITDA: 29.841, operating_profit: 7.529, loss_before_tax: 0.931, profit_after_tax: 1.648, net_assets: 206.831}
+      global_DCS_segment_revenue_2024_EUR_million: 158.0
+      global_DCS_segment_revenue_2023_EUR_million: 161.8
+      global_DCS_segment_operating_profit_and_EBITDA: undisclosed
+      boundary: The UK entity covers two London-area data centres plus group consulting; it is a subset of the global DCS segment and uses another currency. Colt Group profit measures are not assigned to DCS.
+      financial_profile_ref: company_colt_dcs
+    transaction_and_OSM_boundary:
+      2021_former_DCS_assets_acquired_by_AtlasEdge: 12
+      2026_05_former_assets_sold_by_AtlasEdge_to_Templus: 9
+      related_OSM_objects: 16
+      current_DCS_operating_or_development_objects: 8
+      former_DCS_assets_now_AtlasEdge_or_Templus: 3
+      Colt_Technology_Services_network_or_telecom_objects: 5
+      operator_tagged_objects_routed_to_boundary_profile: 8
+      boundary: >-
+        The Colt name on OSM can denote current DCS, an asset sold to
+        AtlasEdge and later Templus, or a Colt Technology Services network
+        node. Historical branding is not treated as current DCS ownership.
+    sources:
+      - {title: Current portfolio headline and map, publisher: Colt_DCS, accessed: 2026-07-19, url: "https://www.coltdatacentres.net/en-GB/map"}
+      - {title: Inzai 4 phase launch, publisher: Colt_DCS, date: 2025-02-26, url: "https://www.coltdatacentres.net/en-GB/press-releases/data-centres/2025/02/inzai-4-opening-ceremony"}
+      - {title: German 117MW expansion, publisher: Colt_DCS, date: 2025-04-08, url: "https://www.coltdatacentres.net/en-GB/press-releases/data-centres/2025/04/german-expansion"}
+      - {title: Five new Paris data centres, publisher: Colt_DCS, date: 2025-05-14, url: "https://www.coltdatacentres.net/en-GB/press-releases/data-centres/2025/05/paris-ground-breaking"}
+      - {title: Hayes expansion approval, publisher: Colt_DCS, date: 2025-11-04, url: "https://www.coltdatacentres.net/en-GB/press-releases/data-centres/2025/11/colt-dcs-london-hayes-expansion"}
+      - {title: Minoh City ESR joint venture, publisher: Colt_DCS, date: 2025-10-16, url: "https://www.coltdatacentres.net/en-GB/press-releases/data-centres/2025/10/colt-and-esr-announce-joint-venture"}
+      - {title: 2025 sustainability performance, publisher: Colt_DCS, date: 2026-06-25, url: "https://www.coltdatacentres.net/en-GB/press-releases/data-centres/2026/06/sustainability-report-2025"}
+      - {title: Twelve former Colt DCS sites acquired, publisher: AtlasEdge, date: 2021-11-02, url: "https://atlasedge.com/atlasedge-further-expands-coverage-across-europe-with-acquisition-of-twelve-data-centres-from-colt-data-centre-services/"}
+      - {title: Nine selected sites sold to Templus, publisher: AtlasEdge, date: 2026-05-05, url: "https://atlasedge.com/atlasedge-completes-sale-of-selected-data-centre-sites-accelerating-focus-on-scalable-high-growth-markets/"}
+      - {title: Colt DCS UK Limited 2024 accounts, publisher: UK_Companies_House, filed: 2025-07-25, url: "https://find-and-update.company-information.service.gov.uk/company/07306352/filing-history/MzQ3NTA1NDM4MmFkaXF6a2N4/document?download=0&format=pdf"}
+      - {title: Colt Group Holdings 2024 accounts, publisher: UK_Companies_House, filed: 2025-05-19, url: "https://find-and-update.company-information.service.gov.uk/company/11530966/filing-history/MzQ2NjcxODM4M2FkaXF6a2N4/document?download=0&format=pdf"}
+    confidence: high_for_current_navigation_facility_values_Inzai4_phase_German_Paris_Hayes_and_JV_projects_2025_sustainability_UK_financials_group_DCS_revenue_2021_and_2026_transactions_and_OSM_transcription_medium_for_Osaka_City_15_site_reconciliation_and_FRA74_mapping_low_for_exact_current_building_title_live_load_complete_equipment_BOM_GPU_inventory_global_DCS_profit_and_site_ROIC
+
 disclosure_gap_register:
+  - Colt_DCS_15_operational_12_development_headlines_to_exact_current_non_overlapping_building_parcel_title_lease_and_lifecycle_roster
+  - Colt_DCS_Osaka_City_and_Tokyo_Otemachi_current_service_ownership_customer_and_headline_count_status
+  - Colt_DCS_222MW_operating_page_checksum_Rotterdam_15MW_potential_and_655_5MW_development_checksum_to_energized_leased_utilized_customer_accepted_billed_and_actual_load
+  - Colt_DCS_London_6_7_8_97MW_press_release_vs_98MW_page_scope_and_current_construction_status
+  - Colt_DCS_Chennai_72MW_older_vs_96MW_current_page_scope
+  - Colt_DCS_per_site_grid_substation_transformer_switchgear_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_models_counts_ratings_OEMs_and_as_built_topology
+  - Colt_DCS_per_site_live_liquid_cooled_MW_measured_PUE_WUE_water_energy_hourly_renewable_matching_and_actual_load
+  - Colt_DCS_GPU_model_count_owner_host_site_delivery_fabric_power_utilization_revenue_and_margin
+  - Colt_DCS_global_operating_profit_EBITDA_cash_flow_capex_debt_customer_concentration_site_economics_and_ROIC
+  - Colt_DCS_2021_AtlasEdge_twelve_asset_exact_building_crosswalk_2026_Templus_nine_asset_transfer_and_remaining_legacy_Colt_labels
   - Teraco_eight_operating_codes_JB1_two_buildings_JB7_construction_Teleport_and_twelve_OSM_objects_to_exact_non_overlapping_physical_building_title_lease_and_lifecycle_census
   - Teraco_126MW_in_place_41MW_construction_188MW_current_page_arithmetic_189MW_completed_release_191MW_CT1_projection_and_228MW_marketing_scope_bridge
   - Teraco_per_site_operating_energized_leased_utilized_customer_accepted_billed_and_actual_IT_load
