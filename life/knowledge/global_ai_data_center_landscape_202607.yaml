@@ -4409,7 +4409,7 @@ campus_profiles:
       Azure_documentation_current_scope:
         regions_more_than: 70
         public_cloud_region_rows_derived: 57
-        last_updated: 2026-05-29
+        last_updated_at_source: 2026-06-26T06:03:00Z
         public_region_inventory:
           Americas:
             count: 15
@@ -4428,15 +4428,43 @@ campus_profiles:
             regions: [Australia_Central_Canberra, Australia_Central_2_Canberra_restricted, Australia_East_New_South_Wales, Australia_Southeast_Victoria, Central_India_Pune, East_Asia_Hong_Kong, India_South_Central_Hyderabad_coming_soon, Indonesia_Central_Jakarta, Japan_East_Tokyo_Saitama, Japan_West_Osaka, Korea_Central_Seoul, Korea_South_Busan, Malaysia_West_Kuala_Lumpur, New_Zealand_North_Auckland, South_India_Chennai, Southeast_Asia_Singapore, West_India_Mumbai]
           total_rows_derived: 57
         excluded_from_public_list: [US_Government_cloud, China_cloud]
+      official_region_source_reconciliation_as_of_2026_07_18:
+        Datacenters_Globe_API:
+          region_records: 60
+          open_records: 51
+          coming_or_not_open_records: 9
+          availability_zone_status_counts: {available: 39, nearest: 11, soon: 10}
+          scope: public_sovereign_open_and_coming_soon_map_records
+        Azure_Learn_public_cloud_table:
+          region_rows: 57
+          restricted_access_rows: 8
+          coming_soon_rows: 1
+          scope: public_Azure_cloud_including_restricted_regions
+        display_name_union:
+          union_region_labels: 70
+          present_in_both: 47
+          Datacenters_Globe_only: 13
+          Azure_Learn_only: 10
+        official_raw_registry_ref: life/imports/global_data_centers_20260717/microsoft_official_region_registry.jsonl
+        official_registry_summary_ref: life/imports/global_data_centers_20260717/microsoft_official_region_summary.json
+        reproducible_builder_ref: scripts/build_microsoft_official_region_registry.py
+        upstream_anomaly_observed:
+          region: Austria_East
+          field: continent
+          raw_value: oceania
+          expected_from_geography: europe
+          handling: raw_value_preserved_and_flagged_not_silently_corrected
       physical_scope_definition:
         Azure_region: set_of_one_or_more_datacenters_connected_by_network
         Azure_AZ: independent_set_of_one_or_more_physically_separate_datacenters_with_isolated_power_cooling_and_network
         exact_building_address_ownership_and_lifecycle_reconciliation: undisclosed
         reconciliation_boundary: >-
           The current 500-plus datacenter headline, 80-plus announced-region
-          headline, more-than-70 Azure-region documentation, and 57 public-cloud
-          list rows use different scopes. They must not be treated as equivalent
-          counts or as proof of 500 operating owned buildings.
+          headline, more-than-70 Azure-region documentation, 60 Globe records,
+          57 public-cloud table rows, and their 70-label union use different
+          scopes. They must not be treated as equivalent counts or as proof of
+          500 operating owned buildings. Globe coordinates are provider map
+          anchors, not disclosed building coordinates.
     accelerators:
       global_Grace_Blackwell_deployment_within_less_than_one_year: hundreds_of_thousands_of_liquid_cooled_GPUs
       next_platform:
@@ -4472,9 +4500,13 @@ campus_profiles:
         publisher: Microsoft
         date: 2026-07-18_accessed
         url: https://learn.microsoft.com/en-us/azure/reliability/regions-overview
+      - title: Microsoft Datacenters Globe regions API
+        publisher: Microsoft
+        date: 2026-07-18_accessed
+        url: https://datacenters.microsoft.com/wp-json/globe/regions
       - title: Azure region list
         publisher: Microsoft
-        date: 2026-05-29
+        date: 2026-06-26
         url: https://learn.microsoft.com/en-us/azure/reliability/regions-list
       - title: Azure availability zones overview
         publisher: Microsoft

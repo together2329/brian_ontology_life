@@ -3275,11 +3275,21 @@ financial_profiles:
         dated_2025_09:
           datacenters_more_than: 400
           regions: 70
-        Azure_public_region_rows_derived_as_of_2026_05_29: 57
+        Azure_official_region_source_reconciliation_as_of_2026_07_18:
+          Datacenters_Globe_records: 60
+          Azure_Learn_public_cloud_rows: 57
+          display_name_union: 70
+          present_in_both: 47
+          Datacenters_Globe_only: 13
+          Azure_Learn_only: 10
+          raw_registry_ref: life/imports/global_data_centers_20260717/microsoft_official_region_registry.jsonl
+          summary_ref: life/imports/global_data_centers_20260717/microsoft_official_region_summary.json
+          builder_ref: scripts/build_microsoft_official_region_registry.py
         reconciliation_boundary: >-
           The current company headline, dated Fairwater statement, Azure
-          documentation, and public-region list have different scopes and are not
-          interchangeable counts of operating, owned physical buildings.
+          documentation, Datacenters Globe, and public-region table have different
+          scopes and are not interchangeable counts of operating, owned physical
+          buildings. Their map points are not exact facility coordinates.
       accelerator_fleet:
         liquid_cooled_NVIDIA_Grace_Blackwell_GPUs_deployed_within_less_than_one_year: hundreds_of_thousands
         NVIDIA_Vera_Rubin_NVL72_as_of_2026_03: powered_on_in_labs_with_production_rollout_planned
@@ -3307,6 +3317,7 @@ financial_profiles:
       - https://blogs.microsoft.com/blog/2025/09/18/inside-the-worlds-most-powerful-ai-datacenter/
       - https://datacenters.microsoft.com/
       - https://learn.microsoft.com/en-us/azure/reliability/regions-list
+      - https://datacenters.microsoft.com/wp-json/globe/regions
       - https://datacenters.microsoft.com/sustainability/efficiency/
       - https://blogs.microsoft.com/blog/2026/03/16/microsoft-at-nvidia-gtc-new-solutions-for-microsoft-foundry-azure-ai-infrastructure-and-physical-ai/
       - https://blogs.microsoft.com/blog/2026/06/22/powering-the-next-wave-of-ai-expanding-capacity-with-our-new-datacenter-in-pecos/
