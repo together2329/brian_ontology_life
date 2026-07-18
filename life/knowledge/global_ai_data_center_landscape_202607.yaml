@@ -24,8 +24,8 @@ scope_and_method:
     builder_ref: scripts/build_global_data_center_coverage_audit.py
     raw_operator_labels: 822
     iso2_country_records: 112
-    reviewed_profile_routed_mapped_objects: 1388
-    reviewed_profile_routed_percent_of_operator_tagged_objects: 49.98
+    reviewed_profile_routed_mapped_objects: 1523
+    reviewed_profile_routed_percent_of_operator_tagged_objects: 54.84
     boundary: >-
       Routing an OSM operator label to a reviewed portfolio or company record is
       research coverage, not object-by-object official reconciliation. The audit
@@ -131,8 +131,8 @@ scope_and_method:
     disclosure_registry_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_registry.jsonl
     disclosure_summary_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_summary.json
     disclosure_registry_as_of: 2026-07-19
-    operator_records: 36
-    machine_generated_page_registry_operators: [CyrusOne, QTS, NEXTDC, Flexential, Lumen_Technologies, Csquare, CDC_Data_Centres, Switch, atNorth, NorthC, Telehouse]
+    operator_records: 37
+    machine_generated_page_registry_operators: [CyrusOne, QTS, NEXTDC, Flexential, Lumen_Technologies, Csquare, CDC_Data_Centres, Switch, atNorth, NorthC, Telehouse, Sabey_Data_Centers]
     comparison_gate:
       - choose_one_physical_granularity
       - choose_one_lifecycle_date_and_state
@@ -11219,6 +11219,210 @@ campus_profiles:
       - {title: KDDI Group data centers achieve 100 percent renewable electricity, publisher: KDDI, date: 2026-04-30, url: "https://news.kddi.com/kddi/corporate/csr-topic/2026/04/30/7739.html"}
       - {title: KDDI Integrated Sustainability and Financial Report 2025, publisher: KDDI, date: 2025, url: "https://www.kddi.com/extlib/files/english/corporate/ir/ir-library/sustainability-integrated-report/pdf/kddi_sir2025_e_p_OB5ud7.pdf"}
     confidence: high_for_2025_roster_labels_portfolio_headlines_selected_facility_equipment_parent_revenue_and_AI_test_boundaries_low_for_complete_current_physical_building_roster_live_load_GPU_inventory_site_economics_and_Telehouse_standalone_financials
+
+  - id: dc_sabey_us_portfolio
+    name: Sabey Data Centers United States portfolio
+    record_granularity: seven_current_location_pages_plus_one_separately_sourced_development_pipeline_label
+    operator: Sabey_Data_Centers
+    operating_platform: Sabey_Data_Center_Properties_LLC
+    country: US
+    lifecycle_as_of_2026_07_19: six_energized_campuses_plus_active_building_expansions_and_development_pipeline
+    official_facility_registry_ref: life/imports/global_data_centers_20260717/sabey_official_facility_registry.jsonl
+    official_facility_summary_ref: life/imports/global_data_centers_20260717/sabey_official_facility_summary.json
+    registry_builder_ref: scripts/build_sabey_official_facility_registry.py
+    current_scale:
+      energized_campuses_as_of_2026_03_31: 6
+      operating_capacity_mw_as_of_2026_03_31_approximately: 251
+      built_powered_shell_included_in_operating_capacity_mw: 76
+      existing_land_output_opportunity_by_2036: up_to_three_times
+      company_area_sqft_more_than: 4000000
+      2024_owned_or_operated_campuses: 6
+      2024_buildings: 21
+      current_location_sitemap_pages: 7
+      separately_sourced_North_Texas_pipeline_label: 1
+      homepage_wording: six_campuses_across_the_country_and_three_more_in_development
+      scope_warning: >-
+        The March 2026 251-MW operating figure includes 76 MW of built powered
+        shell. Seven location pages, eight registry labels, the historical
+        21-building total and the homepage's three-development wording use
+        different dates and scopes and do not form one current building roster.
+    current_roster:
+      operating:
+        - SDC_Seattle
+        - SDC_Columbia
+        - SDC_Quincy
+        - SDC_Manhattan
+        - SDC_Austin
+        - SDC_Ashburn
+      development:
+        - SDC_Umatilla
+        - SDC_North_Texas
+      lifecycle_boundary: >-
+        Columbia, Austin and Ashburn contain active expansion work while their
+        campuses remain operating. Umatilla was not included among six energized
+        campuses at 31 March 2026. North Texas has no reviewed current location page.
+    public_map_crosswalk:
+      related_OSM_objects: 11
+      mapped_OSM_objects: 11
+      campus_labels_with_OSM_evidence: 4
+      mapped_by_campus: {Seattle: 6, Columbia: 3, Quincy: 1, Ashburn: 1}
+      missing_provider_labels: [Manhattan, Austin, Umatilla, North_Texas]
+      Quincy_boundary: >-
+        The 400,101.951-square-metre OSM polygon is a site or campus boundary,
+        not a certified building footprint or gross floor-area measurement.
+      scope_warning: >-
+        Map footprints establish neither operating status, ownership, critical
+        IT power, tenants, revenue nor a complete building census.
+    selected_campus_power_and_cooling:
+      Seattle:
+        headline_capacity_mw: 54
+        aggregate_utility_MVA_more_than: 90
+        utility: redundant_feeds_with_third_feed_available
+        critical_power_per_suite_kW_up_to: 1500
+        electrical_backup: N_plus_1
+        generator_unit_mw: 2.5
+        peak_runtime_hours: 72
+        cooling: evaporative_and_economizer_with_approximately_90_percent_free_cooling_year
+        installed_HVAC_tons: 9500
+        PUE_source_conflict: {current_page_approximately: 1.5, older_cutsheet: 1.25}
+      Columbia:
+        buildings: three_current_and_fourth_under_construction
+        utility_or_campus_capacity_mw: 70
+        substation: onsite
+        electrical_backup: N_plus_1
+        generator_unit_mw: 2.75
+        peak_runtime_hours: 72
+        average_annualized_PUE: 1.2
+        cooling: evaporative_and_economizer
+        water_reclamation: cooling_wastewater_to_landscaping
+      Quincy:
+        area_sqft: 530000
+        buildings: 5
+        headline_capacity_mw: 123
+        aggregate_power_delivered_mw: 50_to_60
+        substation: onsite
+        electrical_backup: N_plus_1
+        generator_unit_mw: 2
+        peak_runtime_hours: 72
+        cooling: evaporative_economizer_rooftop_AHU_and_Building_B_chilled_water_CRAH
+        average_annualized_PUE: 1.2
+        capacity_boundary: 123MW_headline_and_50_to_60MW_delivered_are_not_one_measure_or_actual_customer_load
+      Manhattan:
+        utility_power_across_two_powered_shell_spaces_mw: 7
+        dated_turnkey_capacity_kW: 912
+        retail_rack_power_kW_up_to: 20
+        cooling: liquid_cooling_capable_hybrid
+        AI_marketing: GPU_inference
+        actual_GPU_inventory: undisclosed
+      Austin:
+        buildings: 2
+        area_sqft: 603300
+        campus_critical_IT_or_design_capacity_mw: 84
+        cabinet_density_kW_up_to: 200
+        aggregate_power_mw: 84
+        critical_power_per_module_mw_up_to: 6
+        substation: onsite
+        electrical: N_plus_1_distributed_redundant
+        generator_unit_mw: 2.25
+        peak_runtime_hours: 48
+        cooling: evaporative_economizer_chilled_water_CRAH_and_liquid_optimized
+        Building_B: {status: under_construction, total_design_mw: 54, halls: 6, hall_area_sqft: 30000}
+      Ashburn:
+        campus_acres: 38
+        planned_buildings: 3
+        current_buildings: 2
+        current_buildings_capacity_mw_more_than: 36
+        full_build_capacity_mw: 85
+        full_build_area_sqft: 645000
+        aggregate_power_delivered_mw_more_than: 70
+        critical_power_per_module_mw_up_to: 2.85
+        substation: onsite
+        electrical: N_plus_1
+        rack_density_kW_more_than: 100
+        final_Building_A: {total_mw: 54, initial_mw: 18, future_mw: 36, cooling: air_liquid_or_hybrid}
+        current_buildings_PUE: 1.35
+      Umatilla:
+        status: development_not_energized_at_2026_03_31
+        site_acres: 60
+        planned_buildings: 2
+        planned_area_sqft: 714540
+        headline_design_capacity_mw_more_than: 150
+        aggregate_power_coming_mw_more_than: 120
+        substation: to_be_built_onsite
+        cooling: liquid_options_and_high_density_ready
+        rack_density_design_kW_more_than: 1000
+        PUE_source_conflict: {estimated_approximately: 1.3, separately_projected: 1.25}
+        schedule_boundary: first_delivery_snapshots_vary_between_9MW_and_12MW_and_are_not_operating_capacity
+      North_Texas:
+        status: development_pipeline_without_current_location_page
+        cutsheet_roster_construction_or_planned_mw: 200
+        city_address_equipment_power_lifecycle_and_delivery_milestones: undisclosed
+    accelerator_and_AI_evidence:
+      Sabey_owned_fleet_GPU_inventory_by_model_site_and_utilization: undisclosed
+      TACC_Horizon_at_Austin:
+        status_as_of_2026_07_07: operational_GPU_racks
+        NVIDIA_Blackwell_GPUs: 4000
+        Grace_GB200_CPUs: 2000
+        nodes: 2000
+        node_configuration: one_72_core_Grace_CPU_and_two_Blackwell_GPUs
+        fabric: 800_GBps_InfiniBand
+        solid_state_storage_PB: 400
+        initial_liquid_cooled_data_center_mw: 15
+        expandable_mw: 20
+        rack_density_kW_up_to: 250
+        ownership_boundary: TACC_NSF_customer_hardware_hosted_at_Sabey_not_Sabey_owned_inventory
+      partnerships:
+        JetCool: {technology: direct_to_chip, reported_2023_server_power_savings_vs_air_percent: 13.5}
+        OptiCool: two_phase_refrigerant_future_customer_deployments
+        live_liquid_cooled_fleet_mw: undisclosed
+      readiness_boundary: >-
+        Customer hardware, rack-density ceilings, cooling partnerships and the
+        Austin share of liquid-cooled deployments do not establish Sabey-owned
+        accelerators, fleet liquid-cooled MW, utilization or AI revenue.
+    sustainability:
+      Scope_1_and_2_reduction_2024_from_2018_percent: 25.2
+      net_zero_Scope_1_and_2_target_year: 2029
+      SBT_reduction_target_2030_from_2018_percent: 50
+      buildings_with_ENERGY_STAR_score_above_90: 9
+      buildings_with_score_99: 5
+      renewable_procurement_strategy_portfolio_percent: 100
+      procurement_boundary: current_strategy_uses_RECs_while_PPAs_and_on_site_options_are_explored_not_24_7_matching
+      Scope_3_share_of_2024_net_emissions_percent_approximately: 96
+      Scope_3_primary_source: tenant_servers
+      current_fleet_PUE_WUE_absolute_water_energy_and_emissions: incompletely_disclosed
+    power_outlook:
+      TerraPower_MOU:
+        status: exploratory_not_binding_site_contract_or_operating_generation
+        regions: [Rocky_Mountain, Texas]
+        Natrium_reactor_mw: 345
+        storage_boost_mw_up_to: 500
+        first_project_expected: 2030
+    ownership_and_financial_linkage:
+      platform: Sabey_Data_Center_Properties_LLC
+      joint_owners_and_governance: [Sabey, National_Real_Estate_Advisors]
+      minority_investor_from_2026_07_08: Ares_Secondaries_funds
+      Ares_investment_amount_stake_percent_valuation_and_transaction_economics: undisclosed
+      customer_description: predominantly_investment_grade_enterprise_and_hyperscale_mix
+      revenue_operating_income_EBITDA_capex_debt_cash_flow_customer_concentration_and_site_economics: undisclosed
+      financial_profile_ref: company_sabey_data_centers
+    sources:
+      - {title: Sabey current location sitemap, publisher: Sabey_Data_Centers, accessed: 2026-07-19, url: "https://sabeydatacenters.com/sitemaps-1-section-locations-2-sitemap.xml"}
+      - {title: Ares minority investment and current operating scale, publisher: Sabey_and_National_Real_Estate_Advisors, date: 2026-07-08, url: "https://sabey.com/news/sabey-data-center-properties-welcomes-strategic-investment-from-ares-strengthening-platform-for-continued-growth"}
+      - {title: Sabey 2024 Sustainability Report, publisher: Sabey_Data_Centers, date: 2025, url: "https://39943764.fs1.hubspotusercontent-na1.net/hubfs/39943764/SDC%20Downloadables/Sustainability/2024%20Sustainability%20Report%20External%201.pdf"}
+      - {title: SDC Seattle, publisher: Sabey_Data_Centers, accessed: 2026-07-19, url: "https://sabeydatacenters.com/locations/seattle-data-center"}
+      - {title: SDC Columbia, publisher: Sabey_Data_Centers, accessed: 2026-07-19, url: "https://sabeydatacenters.com/locations/east-wenatchee-data-center"}
+      - {title: SDC Quincy, publisher: Sabey_Data_Centers, accessed: 2026-07-19, url: "https://sabeydatacenters.com/locations/quincy-data-center"}
+      - {title: SDC Manhattan, publisher: Sabey_Data_Centers, accessed: 2026-07-19, url: "https://sabeydatacenters.com/locations/new-york-data-center"}
+      - {title: SDC Austin, publisher: Sabey_Data_Centers, accessed: 2026-07-19, url: "https://sabeydatacenters.com/locations/austin-data-center"}
+      - {title: SDC Ashburn, publisher: Sabey_Data_Centers, accessed: 2026-07-19, url: "https://sabeydatacenters.com/locations/ashburn-data-center"}
+      - {title: SDC Umatilla, publisher: Sabey_Data_Centers, accessed: 2026-07-19, url: "https://sabeydatacenters.com/locations/sdc-umatilla"}
+      - {title: Horizon GPU racks operational, publisher: Texas_Advanced_Computing_Center, date: 2026-07-07, url: "https://tacc.utexas.edu/news/latest-news/2026/07/07/opening-the-future-of-science/"}
+      - {title: Horizon system, publisher: Texas_Advanced_Computing_Center, accessed: 2026-07-19, url: "https://tacc.utexas.edu/systems/horizon/"}
+      - {title: New LCCF data center nears completion, publisher: Texas_Advanced_Computing_Center, date: 2026, url: "https://lccf.tacc.utexas.edu/construction-updates/2026/new-lccf-datacenter-nears-completion/"}
+      - {title: Sabey and JetCool expanded partnership, publisher: Sabey_Data_Centers, date: 2026-01-21, url: "https://sabeydatacenters.com/news/sabey-expands-partnership-with-jetcool-technologies-to-accelerate-sustainable-high-density-compute"}
+      - {title: Sabey and OptiCool partnership, publisher: Sabey_Data_Centers, date: 2026-01-15, url: "https://sabeydatacenters.com/news/sabey-announces-strategic-partnership-with-opticool-technologies"}
+      - {title: TerraPower and Sabey Natrium MOU, publisher: Sabey_Data_Centers, date: 2025, url: "https://sabeydatacenters.com/news/terrapower-and-sabey-data-centers-developing-strategic-collaboration-agreement-for-wide-scale-deployment-of-natrium-plants"}
+    confidence: high_for_current_location_pages_March_2026_operating_scale_selected_site_equipment_TACC_customer_GPU_count_sustainability_and_ownership_low_for_complete_building_roster_live_load_Sabey_owned_GPU_inventory_private_financials_and_site_economics
 
   - id: dc_firmus_project_southgate_australia
     name: Firmus Project Southgate Australia AI Factory program
@@ -29897,6 +30101,14 @@ disclosure_gap_register:
   - Telehouse_current_fleet_PUE_WUE_water_energy_emissions_hourly_renewable_matching_heat_reuse_and_live_liquid_cooled_MW
   - KDDI_JPY130B_data_center_revenue_to_Telehouse_geographic_site_customer_and_service_allocation_plus_operating_profit_capex_cash_flow_and_ROIC
   - KDDI_JPY200B_FY2031_data_center_target_and_JPY100B_AI_data_center_investment_to_site_delivery_utilization_revenue_margin_and_returns
+  - Sabey_six_energized_campuses_seven_location_pages_eight_registry_labels_21_historical_buildings_and_homepage_three_developments_to_complete_current_physical_building_roster
+  - Sabey_251MW_operating_including_76MW_powered_shell_to_energized_leased_utilized_billed_and_customer_accepted_IT_load_by_site
+  - Sabey_11_OSM_objects_to_complete_Seattle_Columbia_Quincy_Ashburn_building_lifecycle_and_missing_Manhattan_Austin_Umatilla_North_Texas_map_coverage
+  - Sabey_per_site_grid_feed_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_and_as_built_topology
+  - Sabey_TACC_Horizon_4000_customer_Blackwell_GPUs_to_exact_models_racks_power_utilization_service_economics_and_separation_from_all_other_tenant_and_Sabey_owned_inventory
+  - Sabey_current_fleet_PUE_WUE_absolute_water_energy_emissions_hourly_renewable_matching_heat_reuse_and_live_liquid_cooled_MW
+  - Sabey_Ares_minority_investment_to_exact_stake_investment_amount_valuation_final_cap_table_and_transaction_economics
+  - Sabey_current_revenue_operating_income_EBITDA_capex_debt_cash_flow_customer_concentration_utilization_site_economics_and_ROIC
   - AirTrunk_current_post_2024_committed_energized_and_utilized_capacity_by_campus
   - HUMAIN_AirTrunk_Saudi_exact_location_capacity_hardware_power_and_delivery_schedule
   - Equinix_280_year_end_to_281_current_facility_reconciliation
@@ -30015,7 +30227,8 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
-    - global_coverage_remaining_P1_Sabey_Cologix_CloudHQ_KDDI_GlobalSwitch_OVHcloud_official_profiles
+    - global_coverage_remaining_P1_Cologix_CloudHQ_KDDI_GlobalSwitch_OVHcloud_official_profiles
+    - Sabey_eight_labels_to_physical_buildings_current_load_GPU_inventory_power_cooling_BOM_and_private_financials
     - Telehouse_31_labels_to_physical_buildings_current_load_GPU_inventory_power_cooling_BOM_and_KDDI_site_economics
     - NorthC_27_labels_to_physical_buildings_current_load_GPU_inventory_power_cooling_BOM_Almere_recovery_and_private_financials
     - atNorth_13_codes_to_physical_building_current_load_GPU_inventory_power_cooling_BOM_and_private_financials
