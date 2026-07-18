@@ -24,7 +24,7 @@ scope_and_method:
     builder_ref: scripts/build_global_data_center_coverage_audit.py
     raw_operator_labels: 822
     iso2_country_records: 112
-    reviewed_profile_routed_mapped_objects: 1641
+    reviewed_profile_routed_mapped_objects: 1682
     reviewed_profile_routed_percent_of_operator_tagged_objects: 59.09
     boundary: >-
       Routing an OSM operator label to a reviewed portfolio or company record is
@@ -13465,6 +13465,246 @@ campus_profiles:
       - {title: Current El Corte Ingles business lines and Kumo ownership, publisher: El_Corte_Ingles, accessed: 2026-07-19, url: "https://www.elcorteingles.es/informacioncorporativa/en/about-us/business-lines/"}
       - {title: El Corte Ingles FY2025 group figures, publisher: El_Corte_Ingles, date: 2026-06-15, url: "https://www.elcorteingles.es/informacioncorporativa/en/financial-information/group-figures/"}
     confidence: high_for_current_two_facility_roster_successor_ownership_Murcia_datasheet_Paterna_generator_fuel_geothermal_CO2_and_OSM_links_medium_for_published_equipment_denominators_low_for_live_load_GPU_inventory_Kumo_standalone_financials_and_ROIC
+
+  - id: dc_opcore_france_poland_and_paris_area_portfolio
+    name: OPCORE France and Poland operating estate plus Paris-area development pipeline
+    record_granularity: current_provider_pages_service_marketing_addresses_legal_establishments_development_projects_regulatory_equipment_and_OSM_objects_with_explicit_scope_boundaries
+    operator: OP_CORE_SAS_and_Op_Core_Poland_with_Play_service_layer
+    countries: [FR, PL]
+    lifecycle_as_of_2026_07_19: >-
+      OPCORE publishes seven current French facility pages. Play currently
+      markets five Polish addresses backed by passive assets held in Op Core
+      Poland; one address contains two buildings. DC6 is a separately permitted
+      warehouse-conversion project and Montereau is a multi-hundred-megawatt
+      development program. None of these counts is substituted for the ten open
+      French legal establishments or nine OPCORE-labelled OSM objects.
+    official_facility_registry_ref: life/imports/global_data_centers_20260717/opcore_official_facility_registry.jsonl
+    official_facility_summary_ref: life/imports/global_data_centers_20260717/opcore_official_facility_summary.json
+    registry_builder_ref: scripts/build_opcore_official_facility_registry.py
+    current_roster_reconciliation:
+      France_current_provider_pages: 7
+      France_codes: [PAR1, MRS1, LYO1, PAR2, PAR3, PAR4, PAR5]
+      Poland_current_Play_marketed_addresses: 5
+      Poland_physical_buildings_minimum: 6
+      France_open_legal_establishments: 10
+      France_total_legal_establishments_including_closed: 11
+      related_OSM_objects: 9
+      boundary: >-
+        Facility pages, marketed addresses, physical buildings, legal
+        establishments, OSM geometries and development projects use different
+        granularities and are never added into one estate count.
+    France_current_facilities:
+      PAR1_Bezons:
+        address: 80_Rue_du_Quai_Voltaire_95870_Bezons
+        surface_sqm: 5980
+        PUE_TTM: 1.48
+        utility_feeds: two_5_2MW
+        topology: N_plus_1_power_UPS_and_generation_dual_feed
+        generation: standby_low_voltage_diesel
+        fuel_autonomy_hours: 94
+        cooling: chilled_water_N_plus_1_cold_aisle
+        conflict: provider_publishes_4_778_MWf_verbatim_and_the_dimension_is_not_normalized
+      MRS1_Marseille:
+        address: 70_Chemin_du_Passet_13016_Marseille
+        surface_sqm: 8000
+        PUE: 1.45
+        utility_feeds: two_12MW
+        topology: three_TriCore_lineups_2N_UPS_and_2N_generation
+        fuel_autonomy_hours: 72
+        cooling_mwf: 3.6
+      LYO1_Lyon:
+        address: 60_Avenue_Rockefeller_69008_Lyon
+        surface_sqm: 3708
+        PUE: 1.37
+        utility_capacity: undisclosed
+        topology: four_lineups_2N_UPS_and_2N_generation
+        fuel_autonomy_hours: 72
+        cooling_mwf: 2.4
+      PAR2_Vitry_sur_Seine:
+        address: 29_Rue_Edith_Cavell_94400_Vitry_sur_Seine
+        surface_sqm: 5500
+        facility_page_PUE: 1.47
+        dashboard_PUE_category: 1.5
+        dashboard_dynamic_TTM_approximate: 1.43
+        dashboard_total_capacity_mw_undefined_denominator: 3.8
+        utility_feeds: two_12MW
+        topology: four_lineups_N_plus_1_or_2N_and_N_plus_1_catcher_generation
+        fuel_autonomy_hours: 50
+        cooling_mwf: 5
+      PAR3_Chevilly_Larue:
+        address: 61_Rue_Julian_Grimau_94550_Chevilly_Larue
+        surface_sqm: 10000
+        facility_page_PUE: 1.36
+        dashboard_PUE_category: 1.4
+        dashboard_dynamic_TTM_approximate: 1_43_to_1_45
+        dashboard_total_capacity_mw_undefined_denominator: 6.9
+        utility_feeds: two_12MW
+        lineups: four_Hexacore
+        UPS: N_plus_1
+        generation: continuous_low_voltage_N_plus_1_catcher
+        fuel_autonomy_hours: 72
+        cooling: two_5_957MWf_2N_central_N_plus_2_CRAH_closed_loop_dry_and_trim_chillers
+        address_conflict: current_page_61_versus_BSI_62_and_2025_legal_establishment_59_Rue_Julian_Grimau
+      PAR4_Paris:
+        address: 58_Boulevard_Lefebvre_75015_Paris
+        structure: former_nuclear_fallout_shelter_26m_below_ground
+        IT_rooms: 3
+        meet_me_rooms: 3
+        design: Tier_III
+        surface_PUE_utility_generation_fuel_and_numeric_cooling: undisclosed
+        fire: [VESDA, Novec_1230]
+      PAR5_Saint_Ouen_l_Aumone:
+        address: 25_Avenue_de_l_Eguillette_95310_Saint_Ouen_l_Aumone
+        facility_page_surface_sqm: 17000
+        dashboard_surface_sqm: 20000
+        facility_page_PUE_TTM: 1.18
+        facility_page_PUE_at_70_percent: 1.15
+        dashboard_PUE: 1.16
+        dashboard_WUE: 0.25
+        utility_feeds: two_24MW
+        UPS_published_verbatim: 26N_plus_1_Catcher_or_Hexacore_or_2N
+        generation: prime_low_voltage_diesel_N_plus_1_catcher
+        fuel_autonomy_hours: 50
+        cooling: 23_4MWf_direct_free_cooling_adiabatic_N_plus_2_fan_wall_hot_aisle
+        current_page_and_legal_address_conflict: 25_Avenue_de_l_Eguillette_versus_7_Rue_de_la_Patelle
+      arithmetic_checks:
+        six_numeric_surface_pages_sqm: 50188
+        feed_magnitude_mw_excluding_LYO1_and_PAR4: 130.4
+        numeric_cooling_mwf_excluding_PAR1_ambiguous_and_PAR4_unknown: 46.314
+        boundary: >-
+          Surface, utility-feed MW, undefined dashboard capacity, cooling MWf,
+          IT MW and current load are different denominators. These arithmetic
+          checks are publication QA and not operating-capacity totals.
+    Poland_current_marketed_locations:
+      service_and_asset_boundary: >-
+        Play B2B markets and manages the service layer. Passive data-center
+        assets were transferred through 3S Box, renamed Op Core Poland, and are
+        used under long-term operating arrangements.
+      locations:
+        - {address: Gospodarcza_12_Katowice, physical_buildings: 2, surface_sqm: 2200, maximum_racks: 560, power: independent_distributors_dual_lines_gas_redundant_UPS_and_generators, cooling_and_fire: gas_or_Inergen_VESDA, design: Tier_or_Rated_3}
+        - {address: Ligocka_103_Katowice, surface_sqm: 475, maximum_racks: 80, power: two_feeds_three_generators_redundant_UPS, cooling: chilled_water_free_cooling}
+        - {address: Annopol_3_Warsaw, surface_sqm_more_than: 1250, maximum_racks: 385, power: independent_lines_gas_redundant_UPS_and_generators, cooling: two_independent_precision_systems_one_free_cooling, PUE_less_than: 1.4}
+        - {address: Szymaly_153_Bytom, surface_sqm: 750, maximum_racks: 144, monitoring: SCADA_and_CCTV, power_detail: undisclosed}
+        - {address: Nowy_Swiat_40_Gdansk, surface_sqm: 502, maximum_racks: 180, power: two_MV_lines_from_two_GPs_redundant_UPS_and_generators, cooling: redundant}
+      published_area_sqm_minimum_checksum: 5177
+      published_maximum_rack_checksum: 1349
+      boundary: >-
+        The area checksum is a lower bound because Warsaw says greater than
+        1,250 square metres. Maximum rack counts do not prove installed,
+        occupied, powered, utilized or billed racks.
+    DC5_regulatory_extension:
+      operating_since: 2017
+      parcel_hectares: 2.33
+      building_footprint_sqm_approximate: 7500
+      floor_area_sqm: 20486
+      rooms_after_project_source_conflict: [12, 14]
+      current_UPS_ASI: 32
+      added_UPS_ASI: 16
+      generators_after_extension: 27
+      generator_thermal_mw_before_after: [49.5, 71.92]
+      high_voltage_transformers_after_extension: 27
+      day_tanks: twenty_seven_1m3
+      underground_fuel_storage_tonnes: 140.8
+      annual_water_m3_before_after: [3659, 7870]
+      projected_annual_electricity_GWh_source_conflict: [24.775, 33.8]
+      target_PUE: 1.15
+      authority_observation: actual_load_cannot_be_identified_and_several_projections_are_insufficiently_supported
+    DC6_development:
+      address: 6_Rue_de_la_Patelle_95310_Saint_Ouen_l_Aumone
+      project: rehabilitation_of_existing_warehouse
+      parcel_sqm_source_conflict: [48695, 48979]
+      floor_area_sqm: 20465
+      building_footprint_sqm_source_conflict: [17033, 17150, 17300, 21233]
+      IT_halls: 3
+      IT_power_mw: 28.8
+      grid_connection_mw: 40
+      grid_delivery: two_20kV_to_400V_delivery_stations
+      annual_electricity_GWh_maximum: 314
+      annual_electricity_GWh_target_at_70_percent: 210
+      target_PUE_maximum: 1.2
+      target_WUE_l_per_kWh: 0.003
+      full_build_modules: {ELEC: 36, COOLING: 36, GE: 36}
+      generators:
+        count: 36
+        OEM_model: Himoinsa_Mitsubishi_S16R_PTA
+        each_kWth: 3580
+        each_kWe_PRP: 1389
+        aggregate_thermal_mw: 128.9
+        fuel: HVO
+        tanks: thirty_six_9000L_7_2t
+        total_fuel_m3: 324
+        total_fuel_tonnes: 259.2
+      batteries:
+        topology: thirty_six_ELEC_modules_each_five_cabinets_seventeen_blocks_eight_batteries
+        full_build_units: 24480
+        full_build_blocks: 3060
+        charge_total_kw_source_conflict: [2313, 2763]
+      cooling:
+        primary: thirty_six_chillers_dry_coolers_pumps_exchangers_and_buffers
+        FANWALL_units: 132
+        refrigerant: HFO_R_1234ze
+        refrigerant_total_kg_source_conflict: [4752, 9504]
+        emergency_water_storage_m3: 92
+      photovoltaic_canopy_sqm: 556
+      full_build_target: 2031
+      AI_boundary: >-
+        OPCORE told the inquiry that DC6 was not specifically dimensioned for
+        AI but was technically compatible. A theoretical 30,000-rack statement
+        is power-constrained and lacks a density allocation. No accelerator
+        inventory is disclosed.
+    Paris_area_pipeline:
+      current_OPCORE_secured_or_under_construction_mw: 730
+      current_OPCORE_investment_EUR_billion: 4
+      Montereau_subscription_capacity_mw_more_than: 400
+      Montereau_grid: 400kV
+      Montereau_initial_commissioning_expected: 2027
+      boundary: >-
+        No source assigns all 730 MW to Montereau or confirms that DC6's 40 MW
+        is included. The residual is not reconstructed or called current load.
+    AI_and_accelerators:
+      power_and_cooling_modules: external_1MW_blocks_scalable_1_to_250MW
+      rack_density_offer_kw: 11_to_240
+      AI_rack_density_kw_more_than: 200
+      readiness: [GB200, GB300, Vera_Rubin, VR200, TPU, native_direct_liquid_cooling]
+      NVIDIA_relationship: works_alongside_NVIDIA
+      physical_accelerator_model_count_owner_site_and_utilization: undisclosed
+      accelerator_ledger_action: no_row
+      boundary: AI_readiness_and_vendor_collaboration_are_not_installed_GPU_inventory
+    energy_claim_conflict:
+      homepage: direct_EDF_low_carbon_nuclear_agreement_for_all_sites
+      sovereignty_page: no_PPA_or_long_commitment_client_specific_procurement_and_exclusively_renewable_since_2018
+      facility_pages: 100_percent_low_carbon
+      resolution: retain_source_and_date_without_treating_low_carbon_nuclear_and_renewable_as_synonyms
+    ownership_and_financial_boundary:
+      owners: [iliad_50_percent, InfraVia_Infrastructure_VI_funds_50_percent]
+      transaction_enterprise_value_EUR_million: 860
+      iliad_transaction_liquidity_EUR_million: 440
+      bank_financing_investment_share_up_to_percent: 75
+      FY2025_equity_accounted_affiliate_EUR_million: {revenue: 69.883, net_loss: -15.532, carrying_value: 52.942, loans: 14}
+      FY2025_accounting_operating_profit: undisclosed
+      FY2024_secondary_filed_account_extraction_EUR: {revenue: 60670974, EBITDA: 20673829, operating_profit_EBIT: 1550174, net_loss: -5011289}
+      financial_profile_ref: company_opcore
+      boundary: enterprise_value_seller_liquidity_carrying_value_financing_and_income_statement_metrics_are_not_interchangeable
+    public_map_crosswalk:
+      related_OSM_objects: 9
+      exact_current_France_facility_candidates: 4
+      DC6_labelled_unresolved_objects: 5
+      boundary: >-
+        The five DC6-labelled footprints are not treated as five current
+        provider facilities or a verified decomposition of the regulatory
+        single-warehouse project.
+    sources:
+      - {title: Current OPCORE data-center directory, publisher: OPCORE, accessed: 2026-07-19, url: "https://www.opcore.com/datacenters"}
+      - {title: Current OPCORE home and Paris-area pipeline, publisher: OPCORE, accessed: 2026-07-19, url: "https://www.opcore.com/"}
+      - {title: OPCORE modular AI design, publisher: OPCORE, accessed: 2026-07-19, url: "https://www.opcore.com/application/data-centers-designed-around-your-needs"}
+      - {title: OPCORE AI readiness, publisher: OPCORE, accessed: 2026-07-19, url: "https://www.opcore.com/application/not-all-data-centers-are-created-equal"}
+      - {title: Current Play Poland data-center directory, publisher: Play, accessed: 2026-07-19, url: "https://www.play.pl/duze-firmy/chmura-i-centra-danych/centra-danych"}
+      - {title: DC5 extension environmental review, publisher: MRAe_Ile_de_France, date: 2026-01-21, url: "https://www.mrae.developpement-durable.gouv.fr/IMG/pdf/2026-01-21_st-ouen-l_aumone_extension_datacenterdc5_delegue.pdf"}
+      - {title: DC6 public-inquiry register, publisher: Registre_Numerique, accessed: 2026-07-19, url: "https://www.registre-numerique.fr/datacenter-dc6-soa"}
+      - {title: EDF and OPCORE Montereau development, publisher: EDF, date: 2025-11-17, url: "https://www.edf.fr/en/the-edf-group/dedicated-sections/journalists/all-press-releases/edf-and-opcore-to-develop-a-high-power-data-center-on-site-of-former-thermal-power-plant-in-montereau-vallee-de-la-seine-wider-paris-metropolitan-region"}
+      - {title: iliad 2025 Universal Registration Document, publisher: iliad, date: 2026-04-30, url: "https://www.iliad.fr/media/ILIAD_URD_30042026_ENG_834039a832.pdf"}
+      - {title: InfraVia OPCORE partnership close, publisher: InfraVia, date: 2025-03-31, url: "https://infraviacapital.com/infravia-completes-the-acquisition-of-a-50-stake-in-opcore/"}
+    confidence: high_for_current_provider_rosters_addresses_page_engineering_DC5_DC6_regulatory_detail_ownership_FY2025_affiliate_financials_and_OSM_medium_for_legal_establishment_to_facility_crosswalk_energy_claim_resolution_2024_secondary_account_rendering_and_pipeline_allocation_low_for_live_load_physical_GPU_inventory_as_built_portfolio_BOM_customer_concentration_site_economics_and_ROIC
 
   - id: dc_ark_data_centres_uk_europe_portfolio
     name: Ark Data Centres UK and European portfolio

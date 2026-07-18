@@ -93,6 +93,7 @@ SPECS = [
     spec("Pulsant", "company_pulsant", ["dc_pulsant_uk_regional_edge_portfolio"], "United_Kingdom", "private_with_statutory_operating_and_group_financials", "fourteen current operating facility codes with a 22.12-MW IT-card checksum and 45.1-MVA incoming-power-sheet checksum", "Facility codes, buildings, OSM objects, IT MW, incoming MVA, available high-density MW, utilization, private-group financials and GPU-service capability use different scopes.", ["life/imports/global_data_centers_20260717/pulsant_official_facility_registry.jsonl", "life/imports/global_data_centers_20260717/pulsant_official_facility_summary.json"]),
     spec("KIO_Data_Centers", "company_kio_data_centers", ["dc_kio_latin_america_portfolio"], "Mexico_Colombia_Guatemala_Panama_and_Dominican_Republic", "private_with_sponsor_and_IFC_investment_disclosure", "fifteen current location pages across five Latin American countries with 28,490 square metres of published data-hall area", "Current location pages, historical portfolio headlines, page and PDF engineering values, expansion projects, OSM objects, live load, utilization, sponsor economics and partner GPU services use different scopes.", ["life/imports/global_data_centers_20260717/kio_official_facility_registry.jsonl", "life/imports/global_data_centers_20260717/kio_official_facility_summary.json"]),
     spec("Kumo_Networks", "company_kumo_networks", ["dc_kumo_spain_legacy_kio_portfolio"], "Spain", "private_subsidiary_with_parent_segment_look_through", "two current operating Tier IV sites in Murcia and Paterna under El Corte Ingles ownership", "Current Kumo facilities, legacy KIO Networks Espana OSM labels, published equipment ratings and the wider parent Surface Commercialization segment use different physical, ownership and financial scopes.", ["life/imports/global_data_centers_20260717/kio_official_facility_summary.json"]),
+    spec("OPCORE", "company_opcore", ["dc_opcore_france_poland_and_paris_area_portfolio"], "France_and_Poland", "private_joint_venture_with_public_parent_affiliate_look_through", "seven current French provider pages, five Polish marketed addresses with at least six physical buildings, two separately scoped development records and 730 MW secured or under construction in the Paris area", "Provider pages, marketed addresses, physical buildings, legal establishments, OSM objects, utility feeds, IT load, development power, affiliate financials and installed GPUs use different scopes.", ["life/imports/global_data_centers_20260717/opcore_official_facility_registry.jsonl", "life/imports/global_data_centers_20260717/opcore_official_facility_summary.json"]),
 ]
 
 
@@ -136,7 +137,7 @@ def load_index(path: Path, key: str) -> dict[str, dict]:
 def build_records(finance_path: Path, landscape_path: Path, accessed_on: str) -> list[dict]:
     finance = load_index(finance_path, "financial_profiles")
     landscape = load_index(landscape_path, "campus_profiles")
-    assert len(SPECS) == 50
+    assert len(SPECS) == 51
     assert len({row["company"] for row in SPECS}) == len(SPECS)
     records = []
     for position, source in enumerate(SPECS, start=1):
