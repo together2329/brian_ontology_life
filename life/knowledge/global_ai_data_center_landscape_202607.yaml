@@ -24,8 +24,8 @@ scope_and_method:
     builder_ref: scripts/build_global_data_center_coverage_audit.py
     raw_operator_labels: 822
     iso2_country_records: 112
-    reviewed_profile_routed_mapped_objects: 1682
-    reviewed_profile_routed_percent_of_operator_tagged_objects: 59.09
+    reviewed_profile_routed_mapped_objects: 1690
+    reviewed_profile_routed_percent_of_operator_tagged_objects: 60.86
     boundary: >-
       Routing an OSM operator label to a reviewed portfolio or company record is
       research coverage, not object-by-object official reconciliation. The audit
@@ -131,8 +131,8 @@ scope_and_method:
     disclosure_registry_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_registry.jsonl
     disclosure_summary_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_summary.json
     disclosure_registry_as_of: 2026-07-19
-    operator_records: 37
-    machine_generated_page_registry_operators: [CyrusOne, QTS, NEXTDC, Flexential, Lumen_Technologies, Csquare, CDC_Data_Centres, Switch, atNorth, NorthC, Telehouse, Sabey_Data_Centers]
+    operator_records: 52
+    machine_generated_page_registry_operators: [CyrusOne, QTS, NEXTDC, Flexential, Lumen_Technologies, Csquare, CDC_Data_Centres, Switch, atNorth, NorthC, Telehouse, Sabey_Data_Centers, Cologix, CloudHQ, Global_Switch, OVHcloud, Bouygues_Telecom, UltraEdge_SFR_legacy, Verizon, Datacenter_United, Ark_Data_Centres, Orange_Group_and_Orange_Business, Pulsant, KIO_Data_Centers, Kumo_Networks, OPCORE, SoftBank_inherited_IDCF_data_centers]
     comparison_gate:
       - choose_one_physical_granularity
       - choose_one_lifecycle_date_and_state
@@ -168,8 +168,8 @@ scope_and_method:
     ledger_ref: life/imports/global_data_centers_20260717/accelerator_disclosure_ledger.jsonl
     summary_ref: life/imports/global_data_centers_20260717/accelerator_disclosure_summary.json
     ledger_as_of: 2026-07-19
-    atomic_claim_records: 48
-    reviewed_source_records: 29
+    atomic_claim_records: 52
+    reviewed_source_records: 30
     comparison_gate:
       - choose_one_accelerator_unit_and_model
       - choose_one_physicality_and_delivery_lifecycle
@@ -32292,7 +32292,174 @@ campus_profiles:
         url: https://www.sec.gov/Archives/edgar/data/2105398/000110465926084616/tm264837d22_8k.htm
     confidence: high_for_final_prospectus_roster_power_financial_and_ownership_metrics_and_current_spec_sheet_transcription_medium_for_spec_group_to_SEC_row_and_OSM_identity_crosswalk_low_for_exact_physical_building_count_per_site_live_load_complete_BOM_and_GPU_inventory
 
+  - id: dc_softbank_inherited_idcf_japan_data_center_portfolio
+    name: SoftBank inherited IDC Frontier Japan data-center portfolio
+    record_granularity: current_provider_location_labels_with_separate_multi_building_OSM_and_companywide_GPU_layers
+    current_operator: SoftBank Corp.
+    legacy_directory_publisher: IDC Frontier Inc.
+    country_scope: [JP]
+    registry_refs:
+      facility_records: life/imports/global_data_centers_20260717/softbank_idcf_data_center_registry.jsonl
+      summary: life/imports/global_data_centers_20260717/softbank_idcf_data_center_summary.json
+      builder: scripts/build_softbank_idcf_data_center_registry.py
+    operating_and_ownership_boundary:
+      succession_effective: 2026-04-01
+      SoftBank_succeeded:
+        - entire_IDCF_data_center_business
+        - sales_product_planning_facility_maintenance_customer_management_and_billing
+        - ancillary_cloud_and_network_customer_contracts
+        - related_assets_liabilities_and_contractual_positions
+      IDC_Frontier_remaining_focus: cloud_services
+      boundary: >-
+        The current IDC Frontier directory remains the public location surface,
+        but SoftBank has operated the inherited data-center business since
+        2026-04-01. IDC Frontier is retained as the historical directory brand,
+        not recorded as the current facility operator.
+    current_directory_reconciliation:
+      provider_location_labels: 9
+      operating_labels: 8
+      development_labels: 1
+      operating:
+        - Tokyo_Fuchu
+        - Tokyo_Ariake
+        - Tokyo_Nihombashi
+        - Kanagawa_Yokohama
+        - Osaka_Suita
+        - Fukuoka_Kitakyushu
+        - Fukushima_Shirakawa
+        - Nara_Ikoma
+      development: [Hokkaido_Tomakomai]
+      contract_terms_older_eight_label_roster_excludes: Hokkaido_Tomakomai
+      boundary: >-
+        Nine location labels are not nine physical buildings. Kitakyushu and
+        Shirakawa are modular multi-building campuses, Ikoma has a future
+        second building, and Tomakomai is not yet an operating facility.
+    selected_scale_power_and_cooling:
+      Tokyo_Fuchu:
+        opening: 2020-12
+        maximum_receiving_capacity_mw: 50
+        server_rooms: 25
+        rack_capacity_approximate: 4000
+        standard_effective_kVA_per_rack_average: 7
+        high_density_kVA_per_rack: 15
+        DLC_service_kW_per_rack_up_to: 150
+        high_load_racks_after_2025_expansion_approximate: 100
+        power: loop_receiving_UPS_gas_turbine_generation_48_hour_fuel
+        cooling: air_cooled_chiller_plus_turbo_refrigerator_water_cooled_wall_blow_and_hot_aisle_capping
+      Tokyo_Ariake:
+        power: three_spot_network_1000kVA_UPS_per_floor_gas_turbine_generation_18_hour_fuel
+        structure: 63_piles_1_3_to_2_0m_diameter_driven_more_than_30m_to_rock
+        cooling_capacity_topology_and_OEM: undisclosed
+      Tokyo_Nihombashi:
+        power: main_and_backup_receiving_UPS_battery_and_emergency_generation
+        numeric_capacity_and_cooling: undisclosed
+      Kanagawa_Yokohama:
+        address_power_cooling_capacity_and_equipment: undisclosed_in_reviewed_current_directory
+      Osaka_Suita:
+        elevation_m_approximate: 15
+        power: multiple_receiving_circuits_UPS_gas_turbine_generation_18_hour_fuel
+        cooling_capacity_topology_and_OEM: undisclosed
+      Fukuoka_Kitakyushu:
+        current_OSM_numbered_building_candidates: 8
+        maximum_expansion_buildings: 11
+        maximum_expansion_receiving_mw: 60
+        typical_building_racks_approximate: 500
+        power: two_special_high_voltage_systems_UPS_N_plus_1_gas_turbine_generation_72_hour_fuel
+        cooling: high_sensible_air_plus_fresh_air_HVAC_N_plus_2
+        natural_air_share_of_annual_cooling_load_approximate_percent: 80
+        historical_2016_buildings_1_to_6: {racks_approximate: 3340, receiving_capacity_MVA: 30, floor_area_sqm: 27800}
+        boundary: Eleven buildings and 60 MW are expansion ceilings, while eight OSM footprints are not provider-certified current operating scope.
+      Fukushima_Shirakawa:
+        operating_since: 2012
+        site_area_sqm_approximate: 67600
+        maximum_expansion: {buildings: 8, receiving_mw: 50}
+        power: main_and_backup_receiving_UPS_gas_turbine_generation_48_hour_fuel
+        cooling: outside_air_plus_water_cooled_hybrid
+        outside_air_share_of_annual_cooling_load_more_than_percent: 90
+        fifth_building_2018: {racks_approximate: 1400, all_five_racks_approximate: 3320, servers_more_than: 165000, design_PUE_approximate: 1.2}
+        boundary: Eight buildings and 50 MW are expansion ceilings, not a current live-load statement.
+      Nara_Ikoma:
+        first_building_completed: 2025-07
+        opened: 2025-10
+        second_building_future_total: {receiving_capacity_mw: 50, floor_area_sqm_approximate: 40000}
+        rack_density: {standard_kVA: 9, air_kVA_range: [9, 30], DLC_kVA_range: [50, 120]}
+        power: main_and_backup_receiving_N_plus_1_UPS_10_minute_hold_N_plus_1_generation_72_hour_maximum_fuel
+        cooling: N_plus_1_water_cooled_wall_blow_hot_aisle_capping_plus_DLC
+        boundary: The 50-MW and 40,000-square-metre values apply after the second building and are not current first-building scale.
+      Hokkaido_Tomakomai:
+        lifecycle: development_targeting_opening_during_Japanese_FY2026
+        phase_one_receiving_capacity_mw: 50
+        ultimate_site_area_sqm: 700000
+        ultimate_receiving_capacity_mw_more_than: 300
+        renewable_energy_target_percent: 100
+        boundary: The FY2026 opening is a target and 300 MW-plus is ultimate, not current operating capacity.
+    public_map_crosswalk:
+      legacy_IDCF_operator_tagged_objects: 8
+      all_objects: Fukuoka_Kitakyushu_numbered_building_footprints
+      footprint_area_m2_checksum: 14533.804
+      current_operator_route: SoftBank_Corp_since_2026_04_01
+      boundary: OSM footprints and legacy operator tags are not provider-certified title, floor area, lifecycle, live load or GPU inventory.
+    accelerators:
+      companywide_platform:
+        evidence_date: 2025-07-23
+        physical_GPU_total_more_than: 10000
+        compute_exaflops: 13.7
+        Blackwell_B200_physical_GPU_count_more_than: 4000
+        Hopper_historical_deployment_more_than: 4000
+        Ampere_historical_deployment_more_than: 2000
+        B200_network: NVIDIA_Quantum_2_InfiniBand
+        ownership: SoftBank_built_and_deployed_platform
+        exact_host_site: undisclosed
+      2026_GPU_cloud:
+        planned_general_availability: 2026-10
+        infrastructure: NVIDIA_GB200_NVL72_and_other_advanced_GPU_systems
+        location_scope: unnamed_SoftBank_Japan_data_centers
+      inherited_facility_site_allocation: undisclosed
+      boundary: >-
+        The 10,000-plus total overlaps the historical Ampere, Hopper and current
+        Blackwell milestones and is not additive to them. No reviewed source
+        allocates any of these GPUs to Fuchu, Ikoma, Tomakomai or another named
+        facility, so the companywide inventory is not propagated to a site.
+    broader_SoftBank_AI_pipeline:
+      Sakai_AI_data_center:
+        inherited_nine_label_roster: false
+        estimated_receiving_capacity_mw: 140
+        target_compute_exaflops: 110
+      Tomakomai:
+        phase_one_receiving_capacity_mw: 50
+        duplicated_as_second_site_record: false
+      FY2026_to_FY2028_committed_AI_related_investment_JPY_trillion: 0.3
+      boundary: Sakai remains outside the inherited IDCF location registry, while Tomakomai is one development visible in both portfolio and AI-investment evidence.
+    linked_companies:
+      current_owner_operator: [SoftBank_Corp]
+      legacy_directory_and_current_cloud_company: [IDC_Frontier]
+      GPU_compute_and_network_suppliers: [NVIDIA]
+      initial_compute_user: [SB_Intuitions]
+      sovereign_cloud_partner: [Oracle]
+      financial_profile_refs: [company_softbank_corp]
+    sources:
+      - {title: Current data-center location directory, publisher: IDC_Frontier, accessed: 2026-07-19, url: "https://www.idcf.jp/datacenter/location/?bid=gnav_dc"}
+      - {title: Data-center business succession notice, publisher: SoftBank_Corp, date: 2025-12-25, url: "https://www.softbank.jp/en/corp/news/press/sbkk/2025/20251225_02/"}
+      - {title: Tokyo Fuchu facility page, publisher: IDC_Frontier, accessed: 2026-07-19, url: "https://www.idcf.jp/datacenter/location/fuchu/"}
+      - {title: Nara Ikoma facility page, publisher: IDC_Frontier, accessed: 2026-07-19, url: "https://www.idcf.jp/datacenter/location/ikoma/"}
+      - {title: Fukuoka Kitakyushu facility page, publisher: IDC_Frontier, accessed: 2026-07-19, url: "https://www.idcf.jp/datacenter/location/asianfrontier/"}
+      - {title: Fukushima Shirakawa fifth-building release, publisher: IDC_Frontier, date: 2018-04-18, url: "https://cdn.www.idcf.jp/pressrelease/2018/20180418001.html"}
+      - {title: Hokkaido Tomakomai development release, publisher: SoftBank_Corp, date: 2023-11-07, url: "https://www.softbank.jp/corp/news/press/sbkk/2023/20231107_01/"}
+      - {title: SoftBank NVIDIA Blackwell platform release, publisher: SoftBank_Corp, date: 2025-07-23, url: "https://www.softbank.jp/en/corp/news/press/sbkk/2025/20250723_01/"}
+      - {title: AI Data Center GPU Cloud launch plan, publisher: SoftBank_Corp, date: 2026-05-25, url: "https://www.softbank.jp/en/corp/news/press/sbkk/2026/20260525_01/"}
+      - {title: FY2025 investor presentation, publisher: SoftBank_Corp, date: 2026-05-11, url: "https://www.softbank.jp/en/corp/set/data/ir/documents/presentations/fy2025/investors/pdf/sbkk_investors_presentation_20260511_en.pdf"}
+    confidence: high_for_current_directory_succession_financial_boundary_selected_facility_engineering_and_companywide_GPU_milestones_medium_for_Kitakyushu_OSM_building_identity_low_for_exact_physical_roster_site_GPU_allocation_live_load_complete_BOM_and_site_economics
+
 disclosure_gap_register:
+  - SoftBank_inherited_IDCF_nine_location_labels_to_exact_non_overlapping_physical_buildings_parcels_title_lease_and_current_lifecycle
+  - SoftBank_current_Kitakyushu_and_Shirakawa_physical_building_counts_per_building_RFS_live_load_and_customer_acceptance
+  - SoftBank_Ikoma_first_building_current_MW_floor_area_rooms_racks_load_and_second_building_delivery
+  - SoftBank_Tomakomai_final_opening_grid_energization_customer_acceptance_power_cooling_BOM_and_GPU_delivery
+  - SoftBank_per_site_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CDU_models_counts_ratings_OEMs_and_topology
+  - SoftBank_per_site_PUE_WUE_water_energy_hourly_renewable_matching_and_live_liquid_cooled_MW
+  - SoftBank_companywide_10000_plus_GPU_exact_current_model_active_retired_owner_host_site_power_utilization_customer_revenue_and_margin_bridge
+  - SoftBank_inherited_data_center_division_operating_profit_EBITDA_capex_cash_flow_customer_concentration_utilization_and_ROIC
+  - SoftBank_Sakai_140MW_110_exaflops_hardware_delivery_grid_RFS_utilization_revenue_margin_and_return_on_capital
   - Csquare_64_SEC_site_rows_61_continuing_rows_36_current_spec_groups_and_22_OSM_objects_to_exact_non_overlapping_buildings_parcels_and_current_service_roster
   - Csquare_three_slated_closures_completion_customer_migration_asset_disposition_and_financial_effect
   - Csquare_389MW_sellable_392MW_contracted_and_101_percent_sold_to_site_level_energized_utilized_billed_and_actual_metered_load

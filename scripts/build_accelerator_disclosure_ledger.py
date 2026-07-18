@@ -109,6 +109,10 @@ CLAIMS = [
     claim("iren_installed_or_ordered_150k", "neocloud", "host_iren", "gpu_disclosure.as_of_2026_03_31", "approximately_150000_installed_or_on_order", 150000, "approximately", "physical_GPU", "mixed_NVIDIA_models", "IREN_company_scope", "installed_or_on_order_2026_03_31", "mixed_installed_and_future_quantity", "IREN_or_financing_boundary", "iren_gpu_program", "Installed-or-on-order cannot be read as installed, active or site-allocated inventory."),
     claim("iren_nvidia_right_600k", "neocloud", "host_iren", "gpu_disclosure.NVIDIA_investment_right_delivery_condition", "up_to_600000_GPUs", 600000, "up_to", "physical_GPU_delivery_condition", "NVIDIA_model_mix_undisclosed", "IREN_NVIDIA_investment_right", "future_vesting_ceiling", "future_option_ceiling_not_order", "IREN_or_NVIDIA_boundary", "iren_gpu_program", "The vesting ceiling is not an order, delivered fleet or current inventory."),
     claim("ark_longcross_nebius_4k_blackwell_ultra", "landscape", "dc_ark_data_centres_uk_europe_portfolio", "accelerators.Longcross_Nebius.initial_announced_GPU_count", 4000, 4000, "exact_initial_announced_deployment", "physical_GPU", "NVIDIA_Blackwell_Ultra", "Nebius_at_Ark_Longcross", "launched_2025_11_after_initial_announcement", "physical_accelerator_count", "Nebius_customer_not_Ark", "ark_longcross_nebius", "The later launch confirms the Blackwell Ultra cluster, but the 4,000 figure remains the initial deployment scope and is not Ark-owned or a current portfolio total."),
+    claim("softbank_companywide_gpu_total_10k", "landscape", "dc_softbank_inherited_idcf_japan_data_center_portfolio", "accelerators.companywide_platform.physical_GPU_total_more_than", 10000, 10000, "more_than", "physical_GPU", "mixed_Ampere_Hopper_Blackwell_and_possible_other_models", "SoftBank_companywide_AI_computing_platform", "reported_current_platform_2025_07_23", "physical_accelerator_count", "SoftBank_built_and_deployed_platform", "softbank_companywide_platform", "The companywide total overlaps the model-generation milestones and has no disclosed host-site allocation, active-retired bridge, utilization or customer split."),
+    claim("softbank_blackwell_b200_4k", "landscape", "dc_softbank_inherited_idcf_japan_data_center_portfolio", "accelerators.companywide_platform.Blackwell_B200_physical_GPU_count_more_than", 4000, 4000, "more_than", "physical_GPU", "NVIDIA_B200", "SoftBank_DGX_SuperPOD", "deployed_2025_07_22", "physical_accelerator_count", "SoftBank_built_and_deployed_platform", "softbank_companywide_platform", "The B200 deployment is a subset of the 10,000-plus companywide platform and cannot be assigned to a named data center."),
+    claim("softbank_hopper_4k_historical", "landscape", "dc_softbank_inherited_idcf_japan_data_center_portfolio", "accelerators.companywide_platform.Hopper_historical_deployment_more_than", 4000, 4000, "more_than", "physical_GPU", "NVIDIA_Hopper_model_unspecified", "SoftBank_companywide_AI_computing_platform", "historical_deployment_completed_2024_10", "physical_accelerator_count_historical", "SoftBank_built_and_deployed_platform", "softbank_companywide_platform", "The historical Hopper milestone overlaps the later total and lacks current active, retired and host-site status."),
+    claim("softbank_ampere_2k_historical", "landscape", "dc_softbank_inherited_idcf_japan_data_center_portfolio", "accelerators.companywide_platform.Ampere_historical_deployment_more_than", 2000, 2000, "more_than", "physical_GPU", "NVIDIA_Ampere_model_unspecified", "SoftBank_companywide_AI_computing_platform", "historical_deployment_2023_09", "physical_accelerator_count_historical", "SoftBank_built_and_deployed_platform", "softbank_companywide_platform", "The historical Ampere milestone overlaps the later total and lacks current active, retired and host-site status."),
 ]
 
 
@@ -167,7 +171,7 @@ def build_records(landscape_path: Path, neocloud_path: Path, accessed_on: str) -
         "landscape": load_landscape(landscape_path),
         "neocloud": load_jsonl(neocloud_path),
     }
-    assert len(CLAIMS) == 48
+    assert len(CLAIMS) == 52
     assert len({row["claim_id"] for row in CLAIMS}) == len(CLAIMS)
     records = []
     for position, source in enumerate(CLAIMS, start=1):
@@ -214,6 +218,7 @@ def build_summary(records: list[dict], accessed_on: str) -> dict:
             "Yotta exact live, portfolio headline and future plans",
             "IREN installed-or-on-order versus NVIDIA vesting ceiling",
             "Ark-hosted Nebius initial deployment versus Ark-owned inventory",
+            "SoftBank companywide total versus overlapping Ampere, Hopper and Blackwell milestones with no site allocation",
         ],
         "record_ids": [row["id"] for row in records],
         "records_sha256": canonical_hash(records),
