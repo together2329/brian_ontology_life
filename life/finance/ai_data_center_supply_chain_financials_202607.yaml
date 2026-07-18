@@ -14296,8 +14296,166 @@ financial_profiles:
       - {title: Bouygues Orange and Free sign SFR acquisition MOU, publisher: Bouygues_Telecom, date: 2026-06-06, url: "https://www.corporate.bouyguestelecom.fr/archives-communique-presse/bouygues-telecom-franchit-une-etape-structurante-pour-son-developpement-futur-en-signant-aux-cotes-de-free-groupe-iliad-et-orange-un-protocole-daccord-avec-altice-france-en-vue-de-l/"}
     confidence: high_for_audited_FY2025_Q1_2026_investor_measures_subscribers_debt_restructuring_UltraEdge_associate_and_MOU_exclusion_medium_for_recurring_operating_profit_and_post_transaction_outlook_low_for_data_center_only_financials_site_roster_load_equipment_GPU_inventory_and_site_returns
 
+  - id: company_verizon
+    company: Verizon Communications Inc.
+    ticker: VZ
+    exchange: NYSE_and_Nasdaq
+    layer: telecom_network_colocation_connectivity_and_AI_infrastructure_services
+    ownership_status: public_listed_operator
+    portfolio_ref: dc_verizon_network_colocation_and_legacy_data_center_boundary
+    reporting_boundary: >-
+      Verizon reports Consumer and Business segments, not a physical data-center
+      or AI Connect segment. Consolidated and Business results therefore cannot
+      be relabeled as data-center revenue, operating profit, capex or cash flow.
+      The 2017 selected-site carve-out is historical and no longer describes the
+      current company portfolio.
+    FY2025_USD_million:
+      consolidated_revenue: 138191
+      consolidated_operating_income: 29259
+      total_reportable_segment_operating_income: 32160
+      net_income: 17608
+      net_income_attributable_to_Verizon: 17174
+      capital_expenditures: 17011
+      cash_from_operations: 37137
+      free_cash_flow_non_GAAP: 20126
+      total_debt: 158150
+      effective_average_debt_rate_percent: 5.0
+      boundary: >-
+        Total reportable segment operating income excludes corporate and
+        reconciling items, while consolidated operating income includes them.
+        Free cash flow is non-GAAP, and total debt includes more than unsecured
+        borrowings. None is data-center-only.
+    FY2025_segment_USD_million:
+      Consumer:
+        revenue: 106807
+        operating_income: 29628
+      Business:
+        revenue: 29069
+        operating_income: 2532
+        depreciation_and_amortization: 4112
+        EBITDA_derived_as_operating_income_plus_D_and_A: 6644
+        operating_margin_percent: 8.7
+        EBITDA_margin_derived_percent: 22.9
+      boundary: >-
+        Business spans enterprise, public-sector, wholesale, wireless and
+        wireline services. Derived Business EBITDA is not Verizon's consolidated
+        adjusted EBITDA and contains no data-center or AI Connect allocation.
+    asset_and_capital_context:
+      gross_PP_and_E_investment_USD_billion_approximate: 338
+      gross_PP_and_E_mix_percent:
+        network_equipment: 78.9
+        land_buildings_and_equipment: 12.3
+        other: 8.8
+      property_statement: >-
+        Verizon says substantially all switching centers are on owned land and
+        in owned buildings and that U.S. facilities include switching centers,
+        cell sites and data centers.
+      boundary: >-
+        PP&E mix does not isolate data-center assets, market value, current
+        facility count, IT load or AI infrastructure capex.
+    AI_Connect_economic_signals:
+      January_2025_sales_funnel_USD_billion_more_than: 1
+      July_2025_sales_funnel_USD_billion_nearly: 2
+      early_network_capacity_customers: [Google_Cloud, Meta]
+      partners: [NVIDIA, Vultr, AWS]
+      US_available_power_MW: 200_plus_across_350_plus_technology_facilities
+      provider_transcript_site_power_range_MW: 2_to_10_plus_at_many_sites
+      undeveloped_land_acres: 100_to_200
+      boundary: >-
+        A sales funnel is not signed backlog, remaining performance obligations
+        or reported revenue. Available and retrofit-capable power is not current
+        load. Partner GPU infrastructure is not a Verizon-owned accelerator
+        fleet and cannot be valued as Verizon hardware without a contract and
+        ownership bridge.
+    historical_selected_site_carveout_FY2016_USD_million:
+      net_revenue: 451.962
+      total_direct_expenses: 248.232
+      net_revenue_less_direct_expenses: 203.730
+      sale_consideration_USD_billion: 3.6
+      sold_sites: 24
+      sold_buildings: 29
+      completion_date: 2017_05_01
+      boundary: >-
+        The audited abbreviated statement excluded corporate overhead,
+        interest, tax and cash-flow reporting. The assets were sold to Equinix,
+        so historical revenue and direct expenses are neither current Verizon
+        data-center economics nor a comparable current operating margin.
+    Q1_2026_USD_billion:
+      revenue: 34.4
+      net_income: 5.1
+      adjusted_EBITDA_non_GAAP: 13.4
+      cash_from_operations: 8.0
+      capital_expenditures: 4.2
+      free_cash_flow_non_GAAP: 3.8
+      total_unsecured_debt: 142.5
+      net_unsecured_debt_non_GAAP: 130.1
+      net_unsecured_debt_to_adjusted_EBITDA_times: 2.6
+      share_repurchases: 2.5
+      acquisition_boundary: >-
+        Frontier results enter Verizon from the 20 January 2026 close. Q1
+        unsecured debt is not directly comparable with FY2025 total debt, and
+        no result is allocated to data centers or AI Connect.
+    FY2026_guidance:
+      adjusted_EPS_USD: 4.95_to_4.99
+      adjusted_EPS_growth_percent: 5_to_6
+      mobility_and_broadband_service_revenue_growth_percent: 2_to_3
+      mobility_and_broadband_service_revenue_USD_billion_approximate: 93
+      cash_from_operations_USD_billion: 37.5_to_38.0
+      capital_expenditures_USD_billion: 16.0_to_16.5
+      free_cash_flow_non_GAAP_USD_billion_at_least: 21.5
+      full_year_share_repurchases_USD_billion_at_least: 3.0
+      boundary: >-
+        Guidance is consolidated and includes Frontier. It does not quantify AI
+        Connect conversion, data-center capex, utilization, operating profit or
+        return on invested capital.
+    outlook:
+      positive_signals:
+        - existing_fiber_land_power_space_and_cooling_can_open_incremental_revenue_streams
+        - AI_Connect_funnel_nearly_doubled_to_USD2_billion_by_Q2_2025
+        - Google_Cloud_Meta_AWS_NVIDIA_and_Vultr_relationships_validate_network_demand
+        - FY2026_cash_flow_and_free_cash_flow_guidance_supports_investment_and_deleveraging
+      execution_requirements:
+        - convert_pipeline_to_signed_contract_revenue_margin_and_cash
+        - identify_sites_and_capex_needed_to_turn_available_power_into_billable_capacity
+        - integrate_Frontier_and_repay_acquisition_related_debt
+        - offset_secular_legacy_wireline_and_wholesale_revenue_pressure
+        - preserve_network_reliability_while_expanding_fiber_and_edge_compute
+      risks:
+        - high_absolute_debt_and_interest_cost
+        - pipeline_conversion_and_long_sales_cycles
+        - power_grid_permitting_and_retrofit_execution
+        - competition_from_carriers_hyperscalers_neoclouds_and_colocation_operators
+        - dependence_on_partner_owned_GPU_compute
+        - incomplete_current_facility_roster_and_site_level_economics
+      analytical_boundary: >-
+        Verizon is primarily a telecom and connectivity investment, with AI
+        Connect offering optionality from underused network, land and facility
+        assets. Public evidence is insufficient to value it as a pure data-center
+        or GPU operator or to assign a separate AI Connect multiple.
+    sources:
+      - {title: Verizon 2025 Form 10-K, publisher: Verizon_SEC, date: 2026, url: "https://www.sec.gov/Archives/edgar/data/732712/000073271226000007/vz-20251231.htm"}
+      - {title: Verizon Q1 2026 results and guidance, publisher: Verizon, date: 2026, url: "https://www.verizon.com/about/news/verizons-transformation-actions-deliver-growth-profitability-1q26-company-raises-adjusted-eps"}
+      - {title: Verizon Q4 2024 earnings transcript and AI Connect launch, publisher: Verizon, date: 2025-01-24, url: "https://www.verizon.com/about/sites/default/files/2025-01/VZ_4Q2024_Business_Update_Transcript_012425F.pdf"}
+      - {title: Verizon Q2 2025 earnings transcript, publisher: Verizon, date: 2025-07-21, url: "https://www.verizon.com/about/sites/default/files/2025-07/vz2q25_earnings_transcript_072125.pdf"}
+      - {title: Verizon Partner Solutions global colocation and data-center solutions, publisher: Verizon, date: 2025, url: "https://www.verizon.com/business/r3s0u4c3s/vps/global-colo-and-dc-solutions.pdf"}
+      - {title: Verizon Saint-Denis 2025 data-centre performance disclosure, publisher: Verizon, date: 2026-06, url: "https://www.verizon.com/business/resources/terms/verizon-fr-data-center-environmental-performance-public-disclosure-june2026.pdf"}
+      - {title: Equinix completes acquisition of 29 Verizon data centers, publisher: Equinix, date: 2017-05-01, url: "https://newsroom.equinix.com/2017-05-01-Equinix-Completes-Acquisition-of-29-Data-Centers-from-Verizon"}
+      - {title: Selected Verizon sites abbreviated financial statements, publisher: Equinix_SEC_filing, date: 2017-03-07, url: "https://investor.equinix.com/sec-filings/all-sec-filings/content/0001193125-17-073265/0001193125-17-073265.pdf"}
+    confidence: high_for_FY2025_and_Q1_2026_financials_guidance_2017_sale_current_marketing_denominators_Saint_Denis_and_AI_Connect_funnel_medium_for_available_capacity_and_commercial_AI_progress_low_for_current_complete_facility_roster_data_center_only_financials_site_load_equipment_GPU_inventory_and_return_on_capital
+
 cross_company_read_through:
   current_signals:
+    - Verizon's current colocation sheet says 200-plus global service locations, more than 300-plus U.S. locations receiving power and space expansion, and 200-plus MW of available power across 350-plus U.S. technology facilities. These service, narrative and facility scopes are not a Verizon-owned building count or current IT load.
+    - Nine U.S. available-capacity city labels are published without exact addresses, physical-building counts, ownership or site-level MW. A separate on-net sheet names 12 exact Switch, QTS, DC Blox, Cologix and CyrusOne partner facilities; network connectivity does not make them Verizon assets.
+    - The 2025 French regulatory disclosure identifies one exact Saint-Denis colocation structure owned by SAS Parc de la Plaine and operated by Verizon France SAS, with 763.81 kW installed IT demand split between 505.54 kW customer and 258.27 kW Verizon equipment.
+    - Saint-Denis reported 10.944 GWh of facility energy, 6.691 GWh of IT energy, 237 cubic metres of potable water, 1.64 PUE, 1.00 renewable energy factor and N+1 high-voltage, low-voltage, rack-power and room-cooling redundancy. Its eight local reporting codes are not eight physical buildings.
+    - Verizon sold 24 North and Latin American sites containing 29 data-center buildings to Equinix for USD3.6 billion on 1 May 2017. Verizon's continuing customer, reseller and network roles do not restore ownership of those Equinix facilities.
+    - The sold portfolio's FY2016 abbreviated statement reported USD452.0 million net revenue and USD203.7 million net revenue less direct expenses, but excluded corporate overhead, interest, tax and cash flows. It is historical carve-out evidence, not current Verizon data-center operating profit.
+    - AI Connect draws on thousands of distributed telco facilities, 2-10-plus MW of usable power at many sites, 100-200 acres of undeveloped land and more than 16,000 near-net enterprise locations. These are opportunity and retrofit resources rather than energized, accepted or billed AI load.
+    - AI Connect's funnel increased from more than USD1 billion in January 2025 to nearly USD2 billion in July 2025. Google Cloud and Meta bought network capacity, while AWS, NVIDIA and Vultr are partners; pipeline and partnerships do not establish data-center revenue or Verizon-owned GPUs.
+    - Thirteen Verizon-operator OSM objects were reviewed across eight countries. None exactly matches the current Saint-Denis record or a provider-published U.S. address, so all remain current-network or historical-facility candidates rather than a portfolio census.
+    - Verizon reported USD138.191 billion FY2025 revenue and USD29.259 billion consolidated operating income; Business produced USD29.069 billion revenue and USD2.532 billion segment operating income. The figures span telecom services and cannot be allocated to data centers or AI Connect.
+    - FY2025 capex was USD17.011 billion, free cash flow was USD20.126 billion and total debt was USD158.150 billion. FY2026 guidance calls for USD16.0-16.5 billion capex and at least USD21.5 billion free cash flow, but Frontier is included from 20 January 2026 and no data-center capex or return is disclosed.
     - UltraEdge's current provider headline says 248 owned-and-operated sites, 30-plus data centers and 200-plus telecom POPs, but its 12 region pages expose 251 mixed cards: 161 POP, 78 Data center, 11 IX Edge and one Datacenter. Neither number is a physical-building census.
     - Altice formed UltraEdge from 257 data-center-plus-office assets then operated by SFR and sold 70% to Morgan Stanley Infrastructure Partners for EUR500 million on 23 May 2024, retaining 30% and recognizing a EUR313.1 million gain. Transaction assets, current cards and current sites use different scopes.
     - The current Datapole page's six metro summaries add to 31 MW, 41,000 square metres and 31 data centers, conflicting with or using a different denominator from the 51-MW, 35,000-square-metre and 30-plus portfolio headlines. The values remain separate.
