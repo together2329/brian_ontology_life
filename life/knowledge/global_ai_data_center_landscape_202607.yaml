@@ -131,8 +131,8 @@ scope_and_method:
     disclosure_registry_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_registry.jsonl
     disclosure_summary_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_summary.json
     disclosure_registry_as_of: 2026-07-19
-    operator_records: 34
-    machine_generated_page_registry_operators: [CyrusOne, QTS, NEXTDC, Flexential, Lumen_Technologies, Csquare, CDC_Data_Centres, Switch, atNorth]
+    operator_records: 35
+    machine_generated_page_registry_operators: [CyrusOne, QTS, NEXTDC, Flexential, Lumen_Technologies, Csquare, CDC_Data_Centres, Switch, atNorth, NorthC]
     comparison_gate:
       - choose_one_physical_granularity
       - choose_one_lifecycle_date_and_state
@@ -10789,6 +10789,225 @@ campus_profiles:
       - {title: FIN04 site page, publisher: atNorth, accessed: 2026-07-19, url: "https://www.atnorth.com/nordic-data-centers/finland-data-centers/myllykoski-mega-site/"}
       - {title: NOR01 site page, publisher: atNorth, accessed: 2026-07-19, url: "https://www.atnorth.com/nordic-data-centers/norway-data-centers/haugaland-nor01/"}
     confidence: high_for_site_codes_marketed_scale_operating_count_transaction_terms_selected_customer_GPU_deployments_and_2025_environmental_metrics_low_for_live_load_current_private_financials_complete_GPU_inventory_and_site_equipment_BOM
+
+  - id: dc_northc_northwest_europe_portfolio
+    name: NorthC Northwest European regional colocation portfolio
+    record_granularity: twenty_seven_provider_labels_with_shared_pages_and_mixed_lifecycle
+    operator: NorthC
+    countries: [NL, DE, CH]
+    lifecycle_as_of_2026_07_19: mixed_operating_recovery_upgrade_and_development
+    official_facility_registry_ref: life/imports/global_data_centers_20260717/northc_official_facility_registry.jsonl
+    official_facility_summary_ref: life/imports/global_data_centers_20260717/northc_official_facility_summary.json
+    registry_builder_ref: scripts/build_northc_official_facility_registry.py
+    current_scale:
+      owner_reported_network_data_centers: 25
+      current_directory_facility_labels: 27
+      current_or_recovery_labels: 25
+      explicit_future_directory_labels: [Münchenstein_Basel_3, Geneva]
+      unique_location_or_development_pages: 25
+      customers_more_than: 1600
+      secured_gross_grid_capacity_mw_more_than: 140
+      scope_warning: >-
+        The March 2026 owner announcement's 25-data-center network and the 27
+        directory labels reconcile only at a high level because Basel 3 and
+        Geneva are explicit future developments. Several labels share a page or
+        address, and the greater-than-140-MW measure spans current facilities and
+        greenfields; it is not current live, IT, leased, utilized or billed load.
+    official_directory_roster_and_marketed_scale:
+      Netherlands:
+        - {label: Aalsmeer, address: "Lakenblekerstraat 13, 1431 GE Aalsmeer", installed_electrical_mw: 14, area_sqm: 14700}
+        - {label: Almere, address: "Rondebeltweg 62, 1329 BG Almere", installed_electrical_mw: 11, area_sqm: 26000, lifecycle: operating_recovery_latest_public_status}
+        - {label: Amsterdam, address: "Kabelweg 48a, 1014 BB Amsterdam", installed_electrical_mw: 2.4, area_sqm: 5000}
+        - {label: Amsterdam_2, address: "Stekkenbergweg 4, 1105 AJ Amsterdam", current_mw: 3.44, future_upgrade_mw: 3.8}
+        - {label: Oude_Meer, address: "Fokkerweg 300, Building 59, 1438 AN Oude Meer", installed_electrical_mw: 4.8, area_sqm: 18000}
+        - {label: Delft, address: "Heertjeslaan 1, 2629 JG Delft", installed_electrical_mw: 1.5, area_sqm: 5000}
+        - {label: Rotterdam_Waalhaven, address: "Anthony Fokkerweg 40, 3088 GG Rotterdam", installed_electrical_mw: 0.5, area_sqm: 1000}
+        - {labels: [Rotterdam_Zestienhoven_1, Rotterdam_Zestienhoven_2], address: "Tempelhof 5-11, 3045 PV Rotterdam", shared_page_mw: 7.3, shared_page_area_sqm: 10800}
+        - {label: Eindhoven_1, address: "High Tech Campus 53, 5656 AG Eindhoven", installed_electrical_mw: 2.4, area_sqm: 2500, design: Tier_4_standards}
+        - {label: Eindhoven_2, address: "De Schakel 35, 5651 GH Eindhoven", installed_electrical_mw: 4.5, area_sqm: 4000}
+        - {labels: [Groningen_1, Groningen_2], address: "Liverpoolweg 10, 9744 TW Groningen", split_mw: [1.2, 1.5], shared_page_area_sqm: 5300}
+        - {label: Nieuwegein, address: "Frieslandhaven 6, 3433 PC Nieuwegein", installed_electrical_mw: 2.5, area_sqm: 8000}
+      Germany:
+        - {label: Berlin_2, address: "Gradestraße 60, 12347 Berlin", current_mw: 0.9, future_upgrade_mw: 4}
+        - {label: Düsseldorf, address: "In der Steele 37A, 40559 Düsseldorf", current_mw: 1.3, future_upgrade_mw: 6}
+        - {label: Frankfurt_3, address: "Rüsselsheimer Straße 22, 60326 Frankfurt", current_mw: 0.9, future_upgrade_mw: 1.3}
+        - {label: Hamburg, address: "Süderstraße 198, 20537 Hamburg", current_mw: 1.17, future_upgrade_mw: 4.1}
+        - {label: Munich_1, address: "Balanstrasse 73 Building 23, 81541 Munich", installed_electrical_mw: 2, area_sqm: 5000}
+        - {label: Munich_2, address: "Wamslerstraße 8, 81829 Munich", current_mw: 1.17, future_upgrade_mw: 4.5}
+        - {label: Nuremberg, address: "Am Tower 5, 90475 Nürnberg", installed_electrical_mw: 6, area_sqm: 10500}
+      Switzerland:
+        - {label: Biel_Bern, address: "Tennisweg 6, 2504 Biel/Bienne", installed_electrical_mw: 4, area_sqm: 3380}
+        - {label: Münchenstein_Basel_1, address: "Weidenstrasse 41, 4142 Münchenstein", installed_electrical_mw: 6, area_sqm: 3500}
+        - {label: Münchenstein_Basel_2, address: "Weidenstrasse 13, 4142 Münchenstein", installed_electrical_mw: 0.6, area_sqm: 1000}
+        - {label: Münchenstein_Basel_3, address: "Schorenweg 21, 4144 Arlesheim", lifecycle: development, first_phase_IT_mw: 3, full_build_mw: 7.5, expected_available: 2027}
+        - {label: Winterthur_Zurich, address: "Theaterstrasse 15c, 8400 Winterthur", installed_electrical_mw: 1.8, area_sqm: 1100}
+        - {label: Geneva, address: "Rte du Nant-d’Avril 152, 1217 Meyrin", lifecycle: development, IT_mw: 4.5, modules_mw: 1.5, area_sqm: 5400, expected_completion: 2028_Q2}
+      current_marketed_installed_electrical_checksum_mw: 82.88
+      checksum_boundary: >-
+        The registry checksum counts Zestienhoven's shared 7.3 MW once and uses
+        Groningen's exact 1.2/1.5 MW split. It excludes Basel 3 and Geneva and
+        does not add future upgrades. The result is a directory-page marketed
+        electrical measure, not an operating-IT, metered-load or utilization total.
+    additional_development_and_upgrade_programs:
+      Frankfurt:
+        new_build_data_centers: 3
+        total_new_IT_load_mw: 16
+        boundary: These projects are not all separate cards in the current directory.
+      Berlin:
+        project: former_Berliner_Zeitung_print_facility_redevelopment
+        status: permit_applications_and_design_in_progress
+        exact_capacity_and_RFS: undisclosed
+      Aalsmeer:
+        phase_1_completed_end_2025_mw: 2.4
+        phase_2_additional_mw: 2.4
+        phase_2_connection_target: 2027_Q1
+      Amsterdam_2:
+        second_room_mw: 2
+        target: 2027_H1
+      Eindhoven_2:
+        announced_expansion_mw: 1.5
+        announced_test_and_completion_target: 2026_05
+        current_completion_status: not_confirmed_in_reviewed_later_source
+      scope_warning: >-
+        Development releases, current cards and former-Colt upgrade targets
+        overlap at site level. They are retained as milestones and are not added
+        to the 82.88-MW current-card checksum or the greater-than-140-MW grid scope.
+    public_map_crosswalk:
+      related_OSM_objects: 21
+      country_counts: {NL: 12, DE: 7, CH: 2}
+      mapping_scope:
+        individually_mapped_or_named_labels: 18
+        shared_signals:
+          - Groningen_1_2_one_outline
+          - Rotterdam_Zestienhoven_1_2_one_point
+          - Basel_1_2_one_campus_outline
+      missing_or_unresolved_current_labels_include: [Basel_2_as_separate_object, Winterthur]
+      development_labels_without_OSM_evidence: [Basel_3, Geneva]
+      boundary: >-
+        OSM points and outlines are attached once to shared provider groups and
+        cannot be interpreted as 21 operating buildings, certified ownership,
+        current load, tenancy or economic performance.
+    accelerator_and_AI_hosting_evidence:
+      NorthC_owned_GPU_count_by_model_site_and_utilization: undisclosed
+      Juvoly_Rotterdam:
+        disclosed_systems: 2
+        system: NVIDIA_DGX_B200
+        NVIDIA_documented_B200_GPUs_per_system: 8
+        derived_B200_GPU_count: 16
+        NVIDIA_documented_GPU_memory_GB_per_system: 1440
+        derived_total_GPU_memory_GB: 2880
+        owner: Juvoly_customer
+        exact_Rotterdam_facility: undisclosed
+        racks_fabric_utilization_power_draw_and_service_economics: undisclosed
+      readiness_claims_not_inventory:
+        platforms: [NVIDIA_H100, NVIDIA_H200, NVIDIA_L40S, NVIDIA_DGX_B200]
+        conventional_rack_context_kW: [3, 12]
+        AI_rack_context_kW_approximately: 100
+      Basel_Legrand_project:
+        disclosed_technology: USystems_ColdLogik_rear_door_heat_exchangers
+        prepared_backbones: [power, water]
+        rollout: phased_in_six_months
+        exact_Basel_building_racks_GPU_count_and_live_high_density_MW: undisclosed
+      ownership_boundary: >-
+        Two customer-owned DGX B200 systems imply 16 B200 GPUs by NVIDIA's
+        eight-GPU specification, but they do not establish NorthC ownership,
+        portfolio inventory, utilization or the exact Rotterdam host building.
+    power_cooling_and_resilience:
+      selected_current_electrical_topologies:
+        Aalsmeer: {utility: "3 x 10 kV N+1", UPS: "dynamic rotary N+2", cooling: "redundant chilled-water free cooling with cooling towers N+1"}
+        Almere: {utility: "150 kV with 2 x 150 kV transformers", UPS: "dynamic rotary N+2", cooling: "redundant chilled-water free cooling with cooling towers N+2"}
+        Groningen_2: {utility: "2 x 20 kV N+1 shared", UPS: N+1, backup: "one hydrogen fuel cell plus one diesel generator N+1", cooling: "four-system redundant chilled-water free cooling N+1"}
+        Basel_1: {utility: "13.6 kV 2N", UPS: 2N, generator: N+1, cooling: "redundant chilled-water free cooling with cooling towers N+1", high_density_kW: 22}
+        Basel_2: {transformer: "1 x 630 kVA", generators: "2 x 360 kW", UPS: "2 x 324 kW", cooling: "redundant chilled-water free cooling with cooling towers N+1"}
+        Winterthur: {utility: "11 kV redundant", transformers: "2 x 1600 kVA expandable to 4", generators: "2 x 3100 kVA", UPS: "2 x 2 x 400 kVA expandable to 2 x 5", cooling: "chillers with liquid and air free cooling N+1"}
+      former_Colt_current_to_future_context:
+        sites: [Amsterdam_2, Berlin_2, Düsseldorf, Frankfurt_3, Hamburg, Munich_2]
+        current_topology: primarily_Tier_2_and_single_feed_context
+        future_topology: NorthC_distributed_redundant_and_Tier_3_context
+        cooling_density_w_per_m2_typical_current_to_future: [750, 2400]
+        source_anomaly: Berlin_2_factsheet_current_UPS_4MW_exceeds_installed_electrical_0_9MW
+      exact_fleet_equipment_BOM_OEMs_current_condition_and_test_results: undisclosed
+    Almere_incident_and_current_status:
+      fire_date: 2026-05-07
+      injuries_reported: 0
+      affected_scope: building_1_technical_area
+      building_2_grid_reconnected: 2026-05-29
+      latest_public_update: 2026-07-08
+      latest_confirmed_state: building_1_partially_reconnected_to_regular_grid
+      planned_full_regular_grid_reconnection: 2026-07-17
+      completion_confirmed_by_access_date: false
+      root_cause_report_publicly_available_by_access_date: false
+      boundary: >-
+        The directory still markets Almere, but the latest public incident page
+        does not confirm the planned 17 July completion. The registry therefore
+        retains an operating-recovery state rather than silently declaring full restoration.
+    sustainability_and_heat_reuse:
+      portfolio_green_electricity_claim_percent: 100
+      carbon_neutral_target_year: 2030
+      dated_2019_PUE_baseline: 1.54
+      2030_PUE_goal_below: 1.2
+      current_fleet_measured_PUE_WUE_water_energy_emissions: undisclosed
+      heat_reuse_examples:
+        - Aalsmeer_daycare_plant_exporter_and_swimming_pool
+        - Eindhoven_High_Tech_Campus_companies
+        - planned_Rotterdam_Schiebroek_network_for_approximately_10000_homes
+      Geneva_design:
+        electricity: 100_percent_green
+        cooling: water_free_and_direct_to_chip_ready
+        backup_generation: HVO100
+        heat_reuse: campus_buildings_and_potential_district_network
+      Groningen_hydrogen_source_conflict: >-
+        NorthC discloses a 500-kW fuel-cell module and the current factsheet says
+        one hydrogen fuel cell plus one diesel generator. Separate materials cite
+        39 t and more than 78 t of avoided CO2 under apparently different scopes;
+        neither is selected as one current result.
+    ownership_and_financial_linkage:
+      completed_2026_acquisition:
+        acquirer: Antin_Infrastructure_Partners
+        seller: DWS_and_minority_shareholders
+        completion_announcement: 2026-03-19
+        acquisition_price_and_enterprise_value: undisclosed
+      APG_transaction:
+        agreed_stake_percent: 37.5
+        investor_scope: APG_for_ABP_and_Swiss_pension_fund_partners
+        European_Commission_joint_control_clearance: 2026-06-15
+        exact_share_acquisition_close_confirmed: false
+        boundary: >-
+          Antin's acquisition is confirmed complete. APG's 37.5% agreement and EU
+          clearance support a planned joint-control structure, but a reviewed
+          source confirming the share closing was not found, so 62.5/37.5 is not
+          stated as the completed current cap table.
+      historical_DWS_financing:
+        2021_long_term_eur_million: 282
+        2023_incremental_eur_million: 125
+        2023_use_eur_million: {capex_facility_clean_down: 75, near_term_investment_prefunding: 50}
+        boundary: These historical amounts cannot be summed into current debt.
+      linked_companies_with_financial_profile_refs:
+        NVIDIA: company_nvidia
+      linked_without_dedicated_profile_in_current_ledger:
+        - Antin_Infrastructure_Partners
+        - DWS
+        - APG
+        - ABP
+        - Juvoly
+        - Legrand
+      financial_profile_ref: company_northc
+    sources:
+      - {title: NorthC data-center directory, publisher: NorthC, accessed: 2026-07-19, url: "https://www.northcdatacenters.com/en/northc-datacenters/"}
+      - {title: Antin completes NorthC acquisition, publisher: NorthC_and_Antin, date: 2026-03-19, url: "https://www.northcdatacenters.com/en/news/antin-completes-acquisition-of-northc-datacenters/"}
+      - {title: Antin 2025 Universal Registration Document, publisher: Antin_Infrastructure_Partners, date: 2026, url: "https://www.antin-ip.com/wp-content/uploads/2025/12/Antin-IP-SA-2025-URD.pdf"}
+      - {title: APG agrees to acquire 37.5 percent of NorthC, publisher: APG, date: 2026-03-19, url: "https://assetmanagement.apg.nl/publications/apg-invests-in-enterprise-colocation-data-center-platform-northc/"}
+      - {title: EU non-opposition in APG Antin NorthC, publisher: European_Commission, date: 2026-06-18, url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A52026M12404%2801%29"}
+      - {title: NorthC current expansion update, publisher: NorthC, date: 2026-04, url: "https://www.northcdatacenters.com/nieuws/update-uitbreidingen-datacenter-april26/"}
+      - {title: Almere fire and recovery updates, publisher: NorthC, updated: 2026-07-08, url: "https://www.northcdatacenters.com/en/news/fire-in-our-data-center-in-almere/"}
+      - {title: Geneva development, publisher: NorthC, date: 2026, url: "https://www.northcdatacenters.com/en/news/northc-group-to-build-new-high-tech-data-center-in-geneva-switzerland/"}
+      - {title: Basel 3 development, publisher: NorthC, date: 2025, url: "https://www.northcdatacenters.com/en/news/new-data-center-uptown-basel-campus/"}
+      - {title: NorthC completes six-site Colt acquisition, publisher: NorthC, date: 2025-09-01, url: "https://www.northcdatacenters.com/en/news/northc-completes-acquisition-of-six-data-centers-from-colt-technology-services/"}
+      - {title: Juvoly DGX B200 at NorthC Rotterdam, publisher: NorthC_and_Juvoly, date: 2025, url: "https://www.northcdatacenters.com/en/cases/ai-startup-juvoly-relies-on-northc-for-sovereign-hosting/"}
+      - {title: NVIDIA DGX B200 system specification, publisher: NVIDIA, accessed: 2026-07-19, url: "https://docs.nvidia.com/dgx/dgxb200-user-guide/introduction-to-dgxb200.html"}
+      - {title: Legrand and NorthC AI HPC cooling case, publisher: NorthC_and_Legrand, date: 2026, url: "https://www.northcdatacenters.com/en/cases/legrand-and-northc-enable-ai-hpc/"}
+      - {title: DWS NorthC financing case study, publisher: DWS, accessed: 2026-07-19, url: "https://www.dws.com/en-SE/AssetDownload/Index?assetguid=f64b9819-b539-4c6a-b403-ef6fad214d15"}
+    confidence: high_for_current_directory_labels_addresses_marketed_specs_selected_equipment_transaction_status_customer_DGX_derivation_and_Almere_public_status_low_for_physical_building_count_live_load_utilization_current_private_financials_fleet_GPU_inventory_and_complete_equipment_BOM
 
   - id: dc_firmus_project_southgate_australia
     name: Firmus Project Southgate Australia AI Factory program
@@ -29450,6 +29669,15 @@ disclosure_gap_register:
   - atNorth_site_level_PUE_WUE_water_renewable_matching_heat_reuse_live_liquid_cooled_MW_and_2025_energy_total_discrepancy_resolution
   - atNorth_current_direct_accounting_revenue_operating_income_EBITDA_capex_debt_cash_flow_customer_concentration_utilization_and_ROIC
   - atNorth_4B_pending_acquisition_1_6B_CPP_equity_and_4_2B_provisional_financing_to_regulatory_close_final_cap_table_debt_terms_and_post_close_reporting
+  - NorthC_25_current_network_data_centers_27_directory_labels_25_unique_pages_and_shared_label_groups_to_exact_physical_building_ownership_and_lifecycle_reconciliation
+  - NorthC_82_88MW_current_card_installed_electrical_checksum_140MW_plus_secured_gross_grid_and_Colt_upgrade_or_greenfield_program_to_operating_energized_leased_utilized_billed_IT_load
+  - NorthC_21_OSM_objects_to_27_provider_labels_shared_Groningen_Zestienhoven_Basel_groups_and_missing_Winterthur_development_coverage
+  - NorthC_per_site_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_and_as_built_topology
+  - NorthC_Juvoly_16_derived_B200_GPUs_exact_Rotterdam_host_building_servers_racks_fabric_power_utilization_customer_revenue_and_margin
+  - NorthC_Almere_fire_full_grid_reconnection_root_cause_remediation_insurance_customer_credits_churn_and_financial_effect
+  - NorthC_current_fleet_PUE_WUE_water_energy_emissions_hourly_renewable_matching_heat_reuse_and_live_liquid_cooled_MW
+  - NorthC_Antin_APG_exact_transaction_close_final_cap_table_purchase_price_enterprise_value_and_post_close_debt_structure
+  - NorthC_current_standalone_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_utilization_and_ROIC
   - AirTrunk_current_post_2024_committed_energized_and_utilized_capacity_by_campus
   - HUMAIN_AirTrunk_Saudi_exact_location_capacity_hardware_power_and_delivery_schedule
   - Equinix_280_year_end_to_281_current_facility_reconciliation
@@ -29568,7 +29796,8 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
-    - global_coverage_remaining_P1_NorthC_Telehouse_Sabey_Cologix_CloudHQ_KDDI_GlobalSwitch_OVHcloud_official_profiles
+    - global_coverage_remaining_P1_Telehouse_Sabey_Cologix_CloudHQ_KDDI_GlobalSwitch_OVHcloud_official_profiles
+    - NorthC_27_labels_to_physical_buildings_current_load_GPU_inventory_power_cooling_BOM_Almere_recovery_and_private_financials
     - atNorth_13_codes_to_physical_building_current_load_GPU_inventory_power_cooling_BOM_and_private_financials
     - Switch_20_operating_data_centers_to_complete_building_roster_current_load_GPU_inventory_power_cooling_BOM_and_private_financials
     - NEXTDC_29_labels_to_physical_building_parcel_ownership_lifecycle_and_current_load_reconciliation

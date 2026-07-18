@@ -68,6 +68,7 @@ PROFILED = [
     entity("CDC_Data_Centres", ["CDC", "Canberra Data Centres"], "reviewed_physical_operator_profile", ["dc_cdc_australia_new_zealand_portfolio", "company_cdc_data_centres", "cdc_official_facility_registry.jsonl"], "Dated facility codes, current location pages, portfolio metrics, OSM objects and customer equipment use different scopes."),
     entity("Switch", ["Switch"], "reviewed_physical_operator_profile", ["dc_switch_us_portfolio", "company_switch", "switch_official_campus_registry.jsonl"], "The 20 operating-data-center aggregate, five campuses, named facilities, OSM footprints and hosted customer GPUs use different scopes."),
     entity("atNorth", ["atNorth"], "reviewed_physical_operator_profile", ["dc_atnorth_nordic_portfolio", "company_atnorth", "atnorth_official_site_registry.jsonl"], "Eight operating sites, thirteen codes, site-page MW, secured power and sixteen Iceland-only OSM objects use different scopes."),
+    entity("NorthC", ["NorthC", "NorthC Nederland"], "reviewed_physical_operator_profile", ["dc_northc_northwest_europe_portfolio", "company_northc", "northc_official_facility_registry.jsonl"], "Twenty-five current-network data centers, twenty-seven directory labels, shared pages, current installed electrical MW, secured gross grid capacity and twenty-one OSM objects use different scopes."),
     entity("DATA4", ["Data4", "data4", "Data4 Italia", "DATA4"], "reviewed_physical_operator_profile", ["dc_data4_european_portfolio", "company_data4"], "Published power terms vary between IT, reserve, total and available energy."),
     entity("AirTrunk", ["AirTrunk"], "reviewed_physical_operator_profile", ["dc_airtrunk_apac_portfolio", "company_airtrunk"], "Campus design capacity is not current live load."),
     entity("Aligned_Data_Centers", ["Aligned", "Aligned Data Centers", "Aligned Data Centres", "ODATA"], "reviewed_physical_operator_profile", ["dc_aligned_north_america_public_directory", "dc_odata_aligned_latam_portfolio", "company_aligned_data_centers"], "ODATA and Aligned labels are joined at current platform level, not treated as identical facility brands historically."),
@@ -93,7 +94,6 @@ PRIORITY_GAPS = {
     for entity_name, priority, names in [
         ("atNorth", "P1", ["atNorth"]),
         ("Switch", "P1", ["Switch"]),
-        ("NorthC", "P1", ["NorthC"]),
         ("Telehouse", "P1", ["Telehouse"]),
         ("Cologix", "P1", ["Cologix"]),
         ("CloudHQ", "P1", ["CloudHQ"]),
