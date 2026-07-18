@@ -14121,10 +14121,12 @@ campus_profiles:
       Kuwait:
         active_facilities: 2
         public_city_labels: [Kuwait_City, Shuaiba]
+        detailed_ref: dc_syntys_ooredoo_kuwait_portfolio
         exact_addresses_coordinates_building_IDs_and_per_site_MW: undisclosed
       Tunisia:
         active_facilities: 5
         public_city_labels: [Mghira, Charguia, Manouba, Sidi_Rezig, Sousse]
+        detailed_ref: dc_syntys_ooredoo_tunisia_portfolio
         exact_addresses_coordinates_building_IDs_and_per_site_MW: undisclosed
       Iraq:
         Ooredoo_scope_active_facilities_at_2025_presentation: 7
@@ -14160,7 +14162,7 @@ campus_profiles:
       minority_equity_partner: [Iron_Mountain]
       accelerator_and_software: [NVIDIA]
       public_hyperscaler_customers: [Microsoft, Google]
-      financial_profile_refs: [company_syntys, company_ooredoo_group, company_iron_mountain, company_nvidia, company_microsoft, company_alphabet]
+      financial_profile_refs: [company_syntys, company_ooredoo_group, company_ooredoo_kuwait_nmtc, company_ooredoo_tunisia, company_iron_mountain, company_nvidia, company_microsoft, company_alphabet]
     sources:
       - title: 2025 Capital Markets Day presentation
         publisher: Ooredoo_Group
@@ -14605,12 +14607,350 @@ campus_profiles:
         url: https://www.quantumswitch.com/data-centres/
     confidence: high_for_operating_Tier_phase_and_Doha_location_medium_for_DOA_B_crosswalk_and_marketed_capacity_low_for_exact_live_load_GPU_and_equipment
 
+  - id: dc_syntys_ooredoo_kuwait_portfolio
+    name: Syntys Ooredoo Kuwait data-center portfolio
+    record_granularity: country_portfolio_with_two_named_public_location_units
+    operator: Syntys
+    legacy_operator_brands: [Ooredoo_Kuwait, FASTtelco]
+    location:
+      country: Kuwait
+      public_facility_labels: [Kuwait_City, Shuaiba]
+      exact_addresses_coordinates_parcels_and_building_boundaries: undisclosed
+    lifecycle_as_of_2026_07_18: operating
+    scale:
+      active_data_centers: 2
+      aggregate_active_IT_capacity_mw: 2.2
+      per_site_IT_capacity_energized_leased_utilized_and_billed_load: undisclosed
+      boundary: >-
+        The 2.2 MW is Syntys's current Kuwait-country aggregate for two active
+        facilities. It is not split equally or otherwise assigned to either
+        Kuwait City or Shuaiba, and it is not a grid, generator or facility-power rating.
+    facility_refs:
+      - dc_syntys_ooredoo_kuwait_hq
+      - dc_syntys_ooredoo_kuwait_shuaiba
+    services_and_design:
+      current_operator_marketing: [hosting_and_colocation, monitoring_and_management, managed_storage, backup_and_restoration, business_continuity_and_disaster_recovery, internet_and_network_connectivity, cloud, email_and_web_security, managed_security]
+      facility_positioning: highly_resilient_carrier_grade_modular_and_certified
+      Syntys_design_positioning: Tier_III_data_center_designs
+      certification_bodies_award_types_phases_and_validity: undisclosed
+      boundary: Marketing language does not establish a current Uptime award for either named building.
+    electrical_and_cooling:
+      vendor_primary_scope: both_Ooredoo_Kuwait_Headquarters_and_Shuaiba_data_centers
+      vendor: GTE
+      vendor_described_system_classes: [power_distribution_units, backup_generators, uninterruptible_power_supplies, intelligent_power_monitoring]
+      exact_OEM_models_unit_counts_kVA_MVA_voltage_topology_redundancy_batteries_runtime_fuel_and_current_commissioning: undisclosed
+      exact_cooling_chillers_CRAH_CRAC_CDU_liquid_cooling_heat_rejection_PUE_WUE_water_and_OEMs: undisclosed
+      boundary: >-
+        GTE says it provided comprehensive power-system solutions to both
+        facilities and describes the system classes it installs. It does not
+        publish a site bill of materials, ratings or current inventory, so no
+        equipment quantity or aggregate MVA is inferred.
+    accelerators_and_AI:
+      Kuwait_local_AI_data_center_status: operator_announced_deployment
+      disclosed_accelerator_model: NVIDIA_H200
+      deployment_wording: began_equipping_a_local_data_center
+      exact_host_between_Kuwait_City_and_Shuaiba: undisclosed
+      exact_GPU_count_servers_racks_NVLink_or_InfiniBand_fabric_ownership_delivery_live_service_utilization_power_and_revenue: undisclosed
+      broader_Ooredoo_NVIDIA_program: thousands_of_Tensor_Core_GPUs_planned_across_six_group_markets
+      country_allocation_boundary: >-
+        The group-wide thousands-of-GPUs statement spans Qatar, Algeria,
+        Tunisia, Oman, Kuwait and Maldives and cannot be assigned to Kuwait.
+        H200 is supported by a company press-release republication; the 2025
+        annual report separately confirms a Kuwait NVIDIA-powered AI data
+        center but does not publish the model or quantity.
+    historical_operating_evidence:
+      FASTtelco_2017_launch: state_of_the_art_data_center
+      2020_reported_zero_downtime_days_since_launch: 1000
+      exact_current_facility_crosswalk: undisclosed
+      boundary: These historical claims are not promoted to a current per-building SLA or availability measurement.
+    linked_companies:
+      operator_and_control: [Syntys, Ooredoo_Kuwait, Ooredoo_Group]
+      minority_platform_partner: [Iron_Mountain]
+      power_integrator_vendor: [GTE]
+      accelerator_supplier: [NVIDIA]
+      financial_profile_refs: [company_syntys, company_ooredoo_kuwait_nmtc, company_ooredoo_group, company_iron_mountain, company_nvidia]
+    sources:
+      - title: Syntys current public city roster and aggregate country capacity
+        publisher: Iron_Mountain
+        date: 2026-07-18_accessed
+        url: https://www.ironmountain.com/data-centers/locations/syntys-data-center
+      - title: Kuwait Data Center current service page
+        publisher: Ooredoo_Kuwait
+        date: 2026-07-18_accessed
+        url: https://www.ooredoo.com.kw/portal/en/datacenter
+      - title: Ooredoo Kuwait data-center power-system reference
+        publisher: GTE
+        date: 2026-07-18_accessed
+        url: https://gteint.com/activities
+      - title: Ooredoo Kuwait leads digital-economy shift with NVIDIA-powered AI infrastructure
+        publisher: Ooredoo_Kuwait_press_release_republished_by_Zawya
+        date: 2025-11-04
+        url: https://www.sahmcapital.com/news/content/ooredoo-%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA-%D8%AA%D9%82%D9%88%D8%AF-%D8%A7%D9%84%D8%AA%D8%AD%D9%88%D9%84-%D9%86%D8%AD%D9%88%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A-%D9%88-%D8%AA%D9%85%D9%83%D9%86-%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A-%D9%85%D8%AD%D9%84%D9%8A%D8%A7%D9%8B-2025-11-04
+      - title: 2025 annual report
+        publisher: Ooredoo_Kuwait_NMTC
+        date: 2026-07-09_document_upload
+        url: https://www.ooredoo.com.kw/documents/20120/0/REPORT+2025+-En+2607+09+Huda+Ammendedaaaa.pdf/ad18cfb4-bd29-5544-3ed9-4b81e5e721af?version=1.0&t=1783590096711&download=true
+      - title: Ooredoo Group NVIDIA collaboration
+        publisher: Ooredoo_Group
+        date: 2024-06-23
+        url: https://www.ooredoo.com/en/media/news_view/ooredoo-group-pioneers-ai-revolution-in-mena-region-with-nvidia-collaboration/
+      - title: Ooredoo Kuwait 2017 annual report
+        publisher: Ooredoo_Kuwait_NMTC
+        date: 2018
+        url: https://www.ooredoo.com.kw/assets/portal/Frontend/Reports/Annual%20Report-2017-En.pdf
+      - title: Ooredoo Kuwait 2020 annual report
+        publisher: Ooredoo_Kuwait_NMTC
+        date: 2021
+        url: https://www.ooredoo.com.kw/assets/portal/Frontend/Reports/Annual_Report_2020-_English.pdf
+    confidence: high_for_two_current_locations_aggregate_2_2MW_and_vendor_named_power_system_classes_medium_for_H200_model_current_operating_state_and_legacy_facility_crosswalk_low_for_per_site_capacity_GPU_count_and_equipment_inventory
+
+  - id: dc_syntys_ooredoo_kuwait_hq
+    name: Ooredoo Kuwait Head Quarters Data Center
+    record_granularity: individual_vendor_named_data_center
+    operator: Syntys
+    location:
+      country: Kuwait
+      city: Kuwait_City
+      exact_address_coordinate_parcel_and_building_number: undisclosed
+      registered_office_boundary: Ooredoo_Tower_Soor_Street_is_the_company_registered_office_but_is_not_proof_of_the_data_center_address
+    lifecycle: operating_in_current_Syntys_roster
+    capacity:
+      included_in_Kuwait_aggregate_active_IT_mw: 2.2
+      exact_site_IT_mw_floor_area_racks_live_load_and_utilization: undisclosed
+    infrastructure:
+      vendor_reference: GTE_comprehensive_power_system_solution
+      system_classes: [PDU, backup_generators, UPS, intelligent_power_monitoring]
+      exact_site_allocation_models_counts_ratings_topology_runtime_and_current_inventory: undisclosed
+      exact_cooling_PUE_WUE_water_and_liquid_cooled_MW: undisclosed
+    accelerators:
+      H200_host_status: undisclosed
+      exact_GPU_inventory_and_power: undisclosed
+    sources:
+      - {title: Syntys current public roster, publisher: Iron_Mountain, date: 2026-07-18_accessed, url: "https://www.ironmountain.com/data-centers/locations/syntys-data-center"}
+      - {title: Ooredoo Kuwait data-center power-system reference, publisher: GTE, date: 2026-07-18_accessed, url: "https://gteint.com/activities"}
+    confidence: high_for_current_city_label_and_vendor_named_facility_low_for_exact_address_capacity_GPU_and_equipment
+
+  - id: dc_syntys_ooredoo_kuwait_shuaiba
+    name: Ooredoo Shuaiba Data Center
+    record_granularity: individual_vendor_named_data_center
+    operator: Syntys
+    location:
+      country: Kuwait
+      city_or_industrial_area: Shuaiba
+      exact_address_coordinate_parcel_and_building_number: undisclosed
+    lifecycle: operating_in_current_Syntys_roster
+    capacity:
+      included_in_Kuwait_aggregate_active_IT_mw: 2.2
+      exact_site_IT_mw_floor_area_racks_live_load_and_utilization: undisclosed
+    infrastructure:
+      vendor_reference: GTE_comprehensive_power_system_solution
+      system_classes: [PDU, backup_generators, UPS, intelligent_power_monitoring]
+      exact_site_allocation_models_counts_ratings_topology_runtime_and_current_inventory: undisclosed
+      exact_cooling_PUE_WUE_water_and_liquid_cooled_MW: undisclosed
+    accelerators:
+      H200_host_status: undisclosed
+      exact_GPU_inventory_and_power: undisclosed
+    sources:
+      - {title: Syntys current public roster, publisher: Iron_Mountain, date: 2026-07-18_accessed, url: "https://www.ironmountain.com/data-centers/locations/syntys-data-center"}
+      - {title: Ooredoo Kuwait data-center power-system reference, publisher: GTE, date: 2026-07-18_accessed, url: "https://gteint.com/activities"}
+    confidence: high_for_current_location_label_and_vendor_named_facility_low_for_exact_address_capacity_GPU_and_equipment
+
+  - id: dc_syntys_ooredoo_tunisia_portfolio
+    name: Syntys Ooredoo Tunisia data-center portfolio
+    record_granularity: country_portfolio_with_five_named_public_location_units
+    operator: Syntys
+    legacy_operator_brand: Ooredoo_Tunisia
+    location:
+      country: Tunisia
+      public_facility_labels: [Mghira, Charguia, Manouba, Sidi_Rezig, Sousse]
+      exact_addresses_coordinates_parcels_and_building_boundaries: undisclosed
+    lifecycle_as_of_2026_07_18: operating
+    scale:
+      active_data_centers: 5
+      aggregate_active_IT_capacity_mw: 2.0
+      per_site_IT_capacity_energized_leased_utilized_and_billed_load: undisclosed
+      boundary: >-
+        The 2.0 MW is Syntys's current Tunisia-country aggregate across five
+        active facilities. It is not divided across the buildings and is not
+        reconciled to the separately marketed 188-square-metre Mghira white space.
+    facility_refs:
+      - dc_syntys_ooredoo_tunisia_mghira
+      - dc_syntys_ooredoo_tunisia_charguia
+      - dc_syntys_ooredoo_tunisia_manouba
+      - dc_syntys_ooredoo_tunisia_sidi_rezig
+      - dc_syntys_ooredoo_tunisia_sousse
+    current_marketed_engineering_snapshot:
+      likely_facility: Mghira
+      allocation_confidence: medium
+      white_space_sqm: 188
+      rack_height_U: 42
+      design_claim: TIA_942_compliant
+      power:
+        utility: STEG
+        independent_utility_feeds: 2
+        UPS_count: 2
+        UPS_redundancy: N_plus_1
+        generator_count: 2
+        generator_autonomy_hours_marketed: 50
+        rack_power_density: high_density_without_numeric_rating
+      cooling:
+        redundancy: redundant
+        environmental_control: normal_temperature_and_humidity_conditions
+        aisle_layout: hot_and_cold_aisles
+      network:
+        backbone_fiber_inputs: 2
+        each_input_speed_gbps: 10
+        IP_transit_paths: separate
+        media: redundant_fiber_and_copper
+      availability_SLA_percent: 99.95
+      security_and_operations: [secure_doors, badge_and_fingerprint_access, fire_system, video_surveillance, monitoring_24_7_365]
+      exact_STEG_voltage_substation_transformer_switchgear_UPS_generator_OEM_models_ratings_battery_runtime_fuel_load_and_cooling_BOM: undisclosed
+      exact_PUE_WUE_water_liquid_cooling_and_live_IT_load: undisclosed
+      boundary: >-
+        The current Housing page describes one singular Ooredoo Data Center;
+        Ooredoo's historical service FAQ names that offering as El Mghira.
+        The snapshot is therefore linked to Mghira with medium confidence and
+        is not copied to Charguia, Manouba, Sidi Rezig or Sousse. The 50-hour
+        autonomy is a marketed figure without disclosed test load or fuel assumptions.
+    certification:
+      current_corporate_claim: ISO_IEC_27001_for_data_center_cloud_services
+      corporate_scope: [Housing, Hosting, Business_Mail, IaaS]
+      current_parent_report_claim: Ooredoo_Tunisia_holds_ISO_27001_2022
+      historical_Mghira_certificate_renewal: {renewed: 2022-11, term_years: 3, implied_end: 2025-11}
+      current_Mghira_certificate_number_body_validity_and_scope: not_verified
+      per_other_four_buildings_award_scope: undisclosed
+      boundary: >-
+        The current corporate statement and 2025 parent report support an
+        operating-company ISMS claim. The older Mghira-specific term ended in
+        November 2025 absent a reviewed renewal, so it is not called a current
+        building certificate.
+    accelerators_and_AI:
+      Ooredoo_NVIDIA_program_scope: Tunisia_among_six_planned_GPU_markets
+      disclosed_group_quantity: thousands_of_NVIDIA_Tensor_Core_GPUs_across_six_markets
+      exact_Tunisia_model_count_delivery_live_service_host_site_servers_racks_fabric_ownership_power_utilization_and_revenue: undisclosed
+      boundary: A group portfolio plan is not an installed Tunisia or per-building GPU inventory.
+    linked_companies:
+      operator_and_control: [Syntys, Ooredoo_Tunisia, Ooredoo_Kuwait_NMTC, Ooredoo_Group]
+      minority_platform_partner: [Iron_Mountain]
+      utility: [STEG]
+      marketed_cloud_stack_and_partners: [HPE_Helion, VMware, Intel, Microsoft]
+      accelerator_supplier_program: [NVIDIA]
+      financial_profile_refs: [company_syntys, company_ooredoo_tunisia, company_ooredoo_kuwait_nmtc, company_ooredoo_group, company_iron_mountain, company_nvidia, company_microsoft]
+    sources:
+      - title: Syntys current public Tunisia roster and aggregate country capacity
+        publisher: Iron_Mountain
+        date: 2026-07-18_accessed
+        url: https://www.ironmountain.com/data-centers/locations/syntys-data-center
+      - title: Ooredoo Tunisia current Housing page
+        publisher: Ooredoo_Tunisia
+        date: 2026-07-18_accessed
+        url: https://www.ooredoo.tn/Business/en/content/777-housing
+      - title: El Mghira Housing historical FAQ
+        publisher: Ooredoo_Tunisia
+        date: 2015
+        url: https://assistance.ooredoo.tn/questions/911047-offre-housing
+      - title: Current ISO IEC 27001 corporate statement
+        publisher: Ooredoo_Tunisia
+        date: 2026-07-18_accessed
+        url: https://www.ooredoo.tn/pdf/En_iso_certification.pdf
+      - title: ESG Report 2022
+        publisher: Ooredoo_Tunisia
+        date: 2023
+        url: https://www.ooredoo.tn/pdf/ESG%20Report%202022.pdf
+      - title: 2025 annual report
+        publisher: Ooredoo_Kuwait_NMTC
+        date: 2026-07-09_document_upload
+        url: https://www.ooredoo.com.kw/documents/20120/0/REPORT+2025+-En+2607+09+Huda+Ammendedaaaa.pdf/ad18cfb4-bd29-5544-3ed9-4b81e5e721af?version=1.0&t=1783590096711&download=true
+      - title: Ooredoo Group NVIDIA collaboration
+        publisher: Ooredoo_Group
+        date: 2024-06-23
+        url: https://www.ooredoo.com/en/media/news_view/ooredoo-group-pioneers-ai-revolution-in-mena-region-with-nvidia-collaboration/
+    confidence: high_for_five_current_labels_aggregate_2MW_and_market_page_engineering_text_medium_for_engineering_snapshot_Mghira_allocation_and_current_opco_ISO_scope_low_for_per_site_capacity_GPU_count_and_other_four_facility_equipment
+
+  - id: dc_syntys_ooredoo_tunisia_mghira
+    name: Ooredoo Tunisia Mghira Data Center
+    record_granularity: individual_named_data_center_with_current_marketing_crosswalk
+    operator: Syntys
+    location: {country: Tunisia, locality: El_Mghira, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: operating_in_current_Syntys_roster
+    capacity:
+      included_in_Tunisia_aggregate_active_IT_mw: 2.0
+      marketed_white_space_sqm: 188
+      rack_height_U: 42
+      exact_site_IT_mw_rack_count_live_load_and_utilization: undisclosed
+    engineering_snapshot_ref: dc_syntys_ooredoo_tunisia_portfolio
+    accelerators: {exact_GPU_inventory_and_NVIDIA_program_host_status: undisclosed}
+    certification_boundary: historical_Mghira_specific_ISO_27001_term_ended_2025_11_current_opco_scope_claim_does_not_identify_building_validity
+    sources:
+      - {title: Syntys current public roster, publisher: Iron_Mountain, date: 2026-07-18_accessed, url: "https://www.ironmountain.com/data-centers/locations/syntys-data-center"}
+      - {title: Ooredoo Tunisia Housing page, publisher: Ooredoo_Tunisia, date: 2026-07-18_accessed, url: "https://www.ooredoo.tn/Business/en/content/777-housing"}
+      - {title: El Mghira Housing FAQ, publisher: Ooredoo_Tunisia, date: 2015, url: "https://assistance.ooredoo.tn/questions/911047-offre-housing"}
+    confidence: high_for_current_named_facility_medium_for_marketing_snapshot_crosswalk_low_for_exact_address_IT_load_GPU_and_current_certificate
+
+  - id: dc_syntys_ooredoo_tunisia_charguia
+    name: Ooredoo Tunisia Charguia Data Center
+    record_granularity: individual_named_data_center
+    operator: Syntys
+    location:
+      country: Tunisia
+      locality: Charguia
+      historical_secondary_detail: La_Charguia_1_industrial_zone
+      exact_current_address_coordinate_parcel_and_building_number: undisclosed
+    lifecycle: operating_in_current_Syntys_roster
+    capacity: {included_in_Tunisia_aggregate_active_IT_mw: 2.0, exact_site_IT_mw_floor_area_racks_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_and_GPU_inventory: undisclosed}
+    sources:
+      - {title: Syntys current public roster, publisher: Iron_Mountain, date: 2026-07-18_accessed, url: "https://www.ironmountain.com/data-centers/locations/syntys-data-center"}
+      - {title: Historical Charguia data-center visit, publisher: Webmanagercenter, date: 2016-02-19, url: "https://www.webmanagercenter.com/2016/02/19/168444/technologies-visite-au-centre-nevralgique-de-ooredoo-tunisie-son-data-center-a-la-charguia/"}
+    confidence: high_for_current_named_facility_medium_for_historical_locality_detail_low_for_capacity_GPU_and_equipment
+
+  - id: dc_syntys_ooredoo_tunisia_manouba
+    name: Ooredoo Tunisia Manouba Data Center
+    record_granularity: individual_named_data_center
+    operator: Syntys
+    location: {country: Tunisia, locality: Manouba, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: operating_in_current_Syntys_roster
+    capacity: {included_in_Tunisia_aggregate_active_IT_mw: 2.0, exact_site_IT_mw_floor_area_racks_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_and_GPU_inventory: undisclosed}
+    sources:
+      - {title: Syntys current public roster, publisher: Iron_Mountain, date: 2026-07-18_accessed, url: "https://www.ironmountain.com/data-centers/locations/syntys-data-center"}
+    confidence: high_for_current_named_facility_low_for_exact_address_capacity_GPU_and_equipment
+
+  - id: dc_syntys_ooredoo_tunisia_sidi_rezig
+    name: Ooredoo Tunisia Sidi Rezig Data Center
+    record_granularity: individual_named_data_center
+    operator: Syntys
+    location: {country: Tunisia, locality: Sidi_Rezig, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: operating_in_current_Syntys_roster
+    capacity: {included_in_Tunisia_aggregate_active_IT_mw: 2.0, exact_site_IT_mw_floor_area_racks_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_and_GPU_inventory: undisclosed}
+    sources:
+      - {title: Syntys current public roster, publisher: Iron_Mountain, date: 2026-07-18_accessed, url: "https://www.ironmountain.com/data-centers/locations/syntys-data-center"}
+    confidence: high_for_current_named_facility_low_for_exact_address_capacity_GPU_and_equipment
+
+  - id: dc_syntys_ooredoo_tunisia_sousse
+    name: Ooredoo Tunisia Sousse Data Center
+    record_granularity: individual_named_data_center
+    operator: Syntys
+    location: {country: Tunisia, locality: Sousse, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: operating_in_current_Syntys_roster
+    capacity: {included_in_Tunisia_aggregate_active_IT_mw: 2.0, exact_site_IT_mw_floor_area_racks_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_and_GPU_inventory: undisclosed}
+    sources:
+      - {title: Syntys current public roster, publisher: Iron_Mountain, date: 2026-07-18_accessed, url: "https://www.ironmountain.com/data-centers/locations/syntys-data-center"}
+    confidence: high_for_current_named_facility_low_for_exact_address_capacity_GPU_and_equipment
+
 disclosure_gap_register:
   - exact_global_physical_data_center_count
   - Syntys_15_active_Q1_2026_headline_to_stale_13_center_19MW_caption_and_30MW_active_scope_reconciliation
   - Syntys_30MW_post_Q_Data_active_capacity_to_24_5MW_FY2025_plus_5MW_acquired_and_country_percent_rounding
   - Syntys_Iraq_and_Oman_carveout_completion_exact_entity_asset_and_facility_rosters
-  - Syntys_Kuwait_and_Tunisia_exact_addresses_coordinates_buildings_per_site_MW_and_lifecycle
+  - Syntys_Kuwait_HQ_and_Shuaiba_exact_addresses_coordinates_per_site_MW_live_load_H200_host_count_fabric_power_and_revenue
+  - Syntys_Kuwait_per_site_substation_transformer_switchgear_PDU_UPS_battery_generator_and_cooling_BOM_OEM_ratings_runtime_PUE_WUE_water_and_liquid_cooling
+  - Syntys_Tunisia_five_facility_exact_addresses_coordinates_per_site_MW_live_load_racks_and_lifecycle_phases
+  - Syntys_Tunisia_Mghira_188sqm_snapshot_exact_current_building_crosswalk_and_ISO_certificate_number_body_validity
+  - Syntys_Tunisia_Charguia_Manouba_Sidi_Rezig_Sousse_power_cooling_connectivity_certification_and_equipment_BOM
+  - Syntys_Tunisia_NVIDIA_GPU_model_count_delivery_host_site_ownership_fabric_power_utilization_and_revenue
   - Syntys_Qatar_sixth_pre_Q_Data_facility_and_GDC2_relationship_reconciliation
   - Syntys_Qatar_Hopper_exact_H100_H200_or_other_models_counts_servers_racks_fabric_host_building_ownership_power_and_utilization
   - Syntys_Qatar_legacy_QDC_per_site_IT_load_floor_area_racks_PUE_WUE_water_liquid_cooling_and_equipment_BOM
@@ -14873,7 +15213,9 @@ next_research_queue:
     - Iron_Mountain_per_site_energized_leased_utilized_IT_load_GPU_inventory_liquid_cooled_MW_PUE_WUE_water_and_equipment_OEMs
     - Iron_Mountain_Manassas_seven_operational_vs_five_plus_two_status_and_more_than_400MW_vs_280MW_scope_reconciliation
     - Iron_Mountain_CHI1_utility_substation_transformers_switchgear_generators_batteries_PUE_WUE_CDU_live_load_and_GPU_inventory
-    - Iron_Mountain_Syntys_Qatar_Kuwait_Tunisia_exact_facility_roster_MW_ownership_and_lifecycle
+    - Syntys_Kuwait_HQ_and_Shuaiba_exact_addresses_per_site_IT_load_H200_host_count_fabric_power_cooling_and_current_equipment_BOM
+    - Syntys_Tunisia_Mghira_188sqm_current_crosswalk_ISO_certificate_and_exact_power_cooling_equipment_ratings
+    - Syntys_Tunisia_Charguia_Manouba_Sidi_Rezig_Sousse_exact_addresses_per_site_IT_load_certification_power_cooling_and_GPU_inventory
     - CoreWeave_remaining_physical_sites_behind_56_AZ_identifiers_and_43_data_centers
     - CoreWeave_current_exact_GPU_count_and_per_site_accelerator_inventory
     - Kenilworth_final_phase_capacity_interconnection_equipment_and_energization
