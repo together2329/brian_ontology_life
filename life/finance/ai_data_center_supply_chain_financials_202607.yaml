@@ -77,6 +77,7 @@ stack_layers:
     - HD_Hyundai_Electric
     - Bloom_Energy
   operators_reits_utilities:
+    - Dubai_Electricity_and_Water_Authority_PJSC
     - Emirates_Telecommunications_Group_e_and
     - Beyon_BSC
     - Saudi_Data_and_AI_Authority_National_Information_Center
@@ -10512,8 +10513,224 @@ financial_profiles:
       - https://www.eand.com/en/news/10-07-26-eand-vodafone-investment-sale.html
     confidence: high_for_audited_FY2025_reviewed_Q1_2026_group_and_UAE_segment_financials_Khazna_exit_and_named_AI_platforms_low_for_data_center_only_economics_current_per_site_GPU_inventory_and_return_forecast
 
+  - id: company_dewa_pjsc
+    company: Dubai_Electricity_and_Water_Authority_PJSC
+    brand: DEWA
+    listing: {exchange: Dubai_Financial_Market, ticker: DEWA, status: publicly_listed}
+    layer: operators_reits_utilities
+    reporting_scope:
+      headquarters: Dubai_United_Arab_Emirates
+      consolidated_scope: regulated_electricity_water_district_cooling_IWPP_and_other_digital_and_commercial_subsidiaries
+      ownership:
+        Digital_DEWA_LLC_percent: 100
+        Data_Hub_Integrated_Solutions_LLC_MORO_percent: 100
+      campus_refs:
+        - dc_moro_hub_dubai_portfolio
+        - dc_moro_hub_jebel_ali
+        - dc_moro_hub_al_yalayis_green_data_center
+        - dc_moro_hub_mbr_solar_park
+        - dc_moro_hub_mbr_solar_park_pod1
+        - dc_moro_hub_mbr_solar_park_pod2
+        - dc_moro_hub_warsan
+      data_center_business_boundary: >-
+        MORO sits inside DEWA's diversified consolidated group. The audited
+        Others segment includes IT, infrastructure, networking and computer
+        system housing, but also potable water, investments, commercial and
+        energy businesses and building-efficiency services. Neither group nor
+        Others-segment figures are Moro data-center-only earnings.
+    FY2025_group_results:
+      period: year_ended_2025-12-31
+      accounting_basis: IFRS_consolidated_audited
+      audit_report_date: 2026-02-27
+      currency: AED
+      stored_unit: whole_AED_converted_from_statement_AED_thousand
+      revenue: 32841823000
+      cost_of_sales: 19776710000
+      gross_profit: 13065113000
+      derived_gross_margin_percent: 39.7819
+      administrative_expenses: 3321023000
+      credit_impairment_reversal: 105728000
+      other_income: 1101693000
+      operating_profit: 10951511000
+      derived_operating_margin_percent: 33.3462
+      company_reported_EBITDA: 17329368000
+      derived_EBITDA_margin_percent: 52.7662
+      profit_for_year_after_regulatory_deferral_and_tax: 9055344000
+      profit_attributable_to_owners: 8346887000
+      prior_year:
+        revenue: 30977351000
+        cost_of_sales: 19170338000
+        gross_profit: 11807013000
+        derived_gross_margin_percent: 38.1150
+        operating_profit: 9324525000
+        derived_operating_margin_percent: 30.1011
+        company_reported_EBITDA: 15725044000
+        derived_EBITDA_margin_percent: 50.7630
+        profit_for_year_after_regulatory_deferral_and_tax: 7234189000
+        profit_attributable_to_owners: 7012660000
+      boundary: Exact audited group values measure the whole DEWA group and are not attributable to Moro or any data-center campus.
+    FY2025_balance_sheet_cash_flow_and_capex:
+      currency: AED
+      unit: whole
+      total_assets: 195138777000
+      cash_and_cash_equivalents: 8391415000
+      current_borrowings: 6654393000
+      noncurrent_borrowings: 31921882000
+      derived_total_borrowings: 38576275000
+      net_cash_from_operating_activities: 21850477000
+      cash_purchase_of_PPE_adjusted_for_capital_payables_and_other_long_term_liabilities: 10590210000
+      audited_segment_note_capital_expenditure: 12100333000
+      future_commitments_including_capital_expenditure: 11883815000
+      directors_investment_description_AED_rounded: 11800000000
+      directors_investment_focus: IPP_IWP_transmission_and_distribution
+      boundary: >-
+        Cash PP&E purchases, segment-note capex, future commitments and the
+        directors' investment description use different definitions. Group capex
+        is dominated by utility infrastructure and cannot be assigned to Moro.
+    FY2025_Others_segment:
+      currency: AED
+      unit: whole
+      scope: potable_water_IT_infrastructure_networking_computer_housing_commercial_energy_and_efficiency_businesses
+      segment_revenue: 1993444000
+      cost_of_sales: 1120368000
+      gross_profit: 873076000
+      administrative_expenses: 577593000
+      credit_impairment_losses: 18896000
+      other_income: 72848000
+      operating_profit: 349435000
+      derived_operating_margin_percent: 17.5292
+      profit_before_tax: 560043000
+      profit_after_tax: 517246000
+      segment_assets: 10479066000
+      segment_liabilities: 7204979000
+      capital_expenditure: 601181000
+      depreciation_and_amortisation: 150448000
+      prior_year:
+        segment_revenue: 1830580000
+        cost_of_sales: 1006396000
+        gross_profit: 824184000
+        administrative_expenses: 566943000
+        credit_impairment_losses: 36458000
+        other_income: 69906000
+        operating_profit: 290689000
+        derived_operating_margin_percent: 15.8796
+        profit_before_tax: 478152000
+        profit_after_tax: 439390000
+        segment_assets: 8651206000
+        segment_liabilities: 5689490000
+        capital_expenditure: 416317000
+        depreciation_and_amortisation: 562660000
+      Moro_specific_bank_overdraft: {FY2025_AED: 0, FY2024_AED: 1000000}
+      boundary: >-
+        Others is the narrowest audited segment containing Moro but is materially
+        broader than data centers. The nil Moro overdraft is one borrowing line,
+        not proof of zero total debt or a standalone liquidity statement.
+    Q1_2026_group_results:
+      period: three_months_ended_2026-03-31
+      source_basis: official_company_release_rounded_KPIs
+      currency: AED
+      unit: whole
+      revenue_rounded: 6450000000
+      revenue_growth_percent: 8.18
+      EBITDA_rounded: 2880000000
+      EBITDA_growth_percent: 18.44
+      operating_profit_rounded: 1290000000
+      operating_profit_growth_percent: 53.58
+      net_profit_rounded: 940000000
+      net_profit_growth_percent: 89.87
+      cash_from_operations_rounded: 3890000000
+      cash_from_operations_growth_percent: 0.94
+      DEWA_standalone_net_profit_rounded: 1050000000
+      DEWA_standalone_net_profit_growth_percent: 55.8
+      boundary: Q1 values are rounded official release KPIs rather than exact audited statement amounts and remain group or parent, not Moro, results.
+    utility_and_clean_power_context:
+      year_end_2025_installed_generation_MW: 17979
+      year_end_2025_clean_capacity_share_percent: 21.5
+      FY2025_clean_generation_TWh: 10.10
+      FY2025_total_generation_TWh: 62.21
+      derived_FY2025_clean_generation_share_percent: 16.2353
+      Q1_2026_clean_generation_TWh: 2.06
+      Q1_2026_total_generation_TWh: 11.09
+      Q1_2026_clean_generation_share_percent_company_rounded: 18.5
+      Q1_2026_clean_installed_capacity_MW: 3860
+      MBR_Solar_Park_generation_capacity_MW_context: 3860
+      Warsan_waste_to_energy_capacity_MW_context: 200
+      boundary: >-
+        DEWA's generation fleet and plant capacities provide parent utility and
+        clean-power context. They are not dedicated data-center load, and no
+        reviewed disclosure supplies an hourly power-matching or rate contract
+        between a generating asset and each Moro campus.
+    data_center_and_AI_exposure:
+      direct_operator: Data_Hub_Integrated_Solutions_LLC_MORO
+      operating_or_inaugurated_locations: [Jebel_Ali, Al_Yalayis, Mohammed_bin_Rashid_Al_Maktoum_Solar_Park]
+      development_location: Warsan
+      disclosed_scale_examples:
+        MBR_full_plan: {phases: 10, total_capacity_mw: 100, area_sqm: 100000, capacity_definition: not_explicitly_IT_load}
+        MBR_phase_1: {green_electricity_capacity_mw: 6.3, vendor_case_racks: 200}
+        Warsan_full_plan: {capacity_mw_more_than: 100, area_sqm_more_than: 66000, phase_1_target: second_half_2026}
+      boundary: MBR's inaugurated phases and Warsan's planned capacity are different lifecycle scopes and are not summed as current operating MW.
+      accelerator_and_AI_programs:
+        - NVIDIA_accelerated_computing_platform_and_reference_architecture_agreement
+        - Rafay_sovereign_GPU_powered_platform_as_a_service
+        - Intel_Xeon_Scalable_Deep_Learning_Boost_CPU_inference_at_MBR
+        - Rise_Dell_and_other_AI_collaboration_MOUs
+      exact_data_center_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_utilization_and_ROIC: undisclosed
+      exact_GPU_models_counts_servers_racks_fabric_ownership_purchase_delivery_host_sites_power_cooling_utilization_customers_revenue_and_margin: undisclosed
+      boundary: >-
+        GPU PaaS and technology agreements show a commercial AI direction, but
+        no reviewed source provides a physical GPU inventory. Intel's disclosed
+        Deep Learning Boost is CPU inference and is not relabeled as a GPU.
+    shareholder_return_context:
+      annual_minimum_dividend_policy_AED: 6200000000
+      boundary: Dividend policy is group capital allocation and is not evidence of Moro free cash flow or campus returns.
+    outlook:
+      positive_drivers:
+        - vertically_connected_Dubai_utility_digital_and_data_center_platform
+        - MBR_ten_phase_100MW_plan_and_Warsan_greater_than_100MW_development_optionality
+        - named_government_enterprise_cloud_and_airline_customer_migrations
+        - sovereign_cloud_data_residency_and_GPU_service_demand
+        - strong_FY2025_group_operating_profit_EBITDA_and_cash_generation
+        - expanding_clean_generation_base_and_solar_park_location
+      risks:
+        - Moro_standalone_earnings_capex_debt_cash_flow_utilization_customer_and_return_opacity
+        - capacity_definition_phase_crosswalk_live_load_and_billing_disclosure_gaps
+        - Warsan_construction_commissioning_grid_customer_and_launch_execution
+        - exact_GPU_inventory_ownership_host_site_power_cooling_and_utilization_undisclosed
+        - full_power_and_cooling_equipment_PUE_WUE_water_and_hourly_matching_undisclosed
+        - large_group_capex_borrowings_regulatory_and_Dubai_concentration
+        - sustainability_claim_methodology_and_clean_energy_contract_detail_not_public
+      boundary: >-
+        DEWA supplies a listed and profitable parent route into Moro, but public
+        data does not support a standalone data-center earnings or return forecast.
+        Planned MW and AI partnerships must convert through construction,
+        energization, customer acceptance, utilization and billing.
+    watch_items:
+      - Moro_current_complete_physical_roster_and_Uptime_project_crosswalk
+      - MBR_per_phase_capacity_RFS_energized_leased_utilized_billed_load_and_customer_commitments
+      - Warsan_phase1_launch_phase2_scope_grid_financing_construction_customers_and_energization
+      - Moro_data_center_only_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_and_ROIC
+      - Moro_exact_GPU_inventory_owner_host_site_power_cooling_utilization_service_revenue_and_margin
+      - FY2026_group_and_Others_segment_revenue_operating_profit_EBITDA_capex_cash_flow_borrowings_and_returns
+    sources:
+      - https://www.dewa.gov.ae/-/media/Files/Investor-Relations-Files/DEWA_Consolidated-FS-2025_English.ashx
+      - https://www.dewa.gov.ae/en/about-us/media-publications/latest-news/2026/5/dubai-electricity-and-water-authority-pjsc
+      - https://www.dewa.gov.ae/en/about-us/media-publications/latest-news/2025/01/maktoum-bin-mohammed-inaugurates-second-phase
+      - https://dewa.gov.ae/en/about-us/media-publications/latest-news/2026/1/he-saeed-mohammed-al-tayer-reviews-construction-progress
+      - https://www.morohub.com/en/media-and-news/news/2024/02/moro-hub-to-collaborate-with-nvidia-in-developing-world-class-green-ai-data-centre-in-uae
+      - https://www.morohub.com/en/media-and-news/news/2025/10/moro-hub-partners-with-rafay-to-deliver-sovereign-gpu-powered-platform-as-a-service-for-ai-innovation
+    confidence: high_for_audited_FY2025_group_and_Others_segment_financials_rounded_Q1_2026_KPIs_ownership_and_named_projects_low_for_Moro_standalone_economics_current_live_load_complete_equipment_and_GPU_inventory
+
 cross_company_read_through:
   current_signals:
+    - DEWA owns 100% of Moro and Digital DEWA. FY2025 group revenue was AED32.842 billion, audited operating profit AED10.952 billion and EBITDA AED17.329 billion, but these are diversified utility-group results rather than data-center earnings.
+    - DEWA's broad Others segment, which includes IT and computer-system housing alongside water, investment, energy and efficiency businesses, produced AED1.993 billion of FY2025 revenue and AED349.4 million of operating profit, a derived 17.5% margin. It is the narrowest audited proxy but cannot be attributed to Moro.
+    - Moro's MBR Solar Park campus has inaugurated two phases and a ten-phase 100-MW/100,000-square-metre plan. A phase-one release states 6.3 MW of green-electricity capacity, Guinness records 33,311.11 square metres and a Dell case calls it a 200-rack facility; these different scopes are not added or silently reconciled.
+    - MBR's confirmed IT evidence includes Intel Xeon Scalable processors with Deep Learning Boost and Node Manager, spine-and-leaf networking, Cat 6A and OM4/TeraSPEED fiber with a 100G-to-400G path, and vendor density classes from below 4 kW to 12 kW. Xeon inference without a discrete accelerator is CPU evidence, not a GPU count.
+    - A Dell case documents more than 330 devices moved from two DEWA data centers into MBR in 72 hours with zero downtime. This establishes an operating migration and 200-rack facility scope but not current occupied racks, utilized IT MW, customer revenue or margin.
+    - Warsan remained a construction project in the latest reviewed official update: phase one was targeted for the second half of 2026, phase two had been awarded, and the full plan exceeded 100 MW and 66,000 square metres. No newer launch confirmation was located by July 18, so planned MW is not counted as operating capacity.
+    - Moro has an NVIDIA accelerated-computing agreement and a Rafay sovereign GPU PaaS, but no reviewed source identifies accelerator models, counts, owner, purchase, delivery, host site, power draw, cooling, utilization, customer revenue or margin. Agreements and service availability are not a physical GPU inventory.
+    - DEWA's FY2025 group operating cash flow was AED21.850 billion and audited segment-note capex AED12.100 billion, with AED38.576 billion of borrowings. These indicate substantial funding capacity and capital intensity, but utility investment cannot be assigned to Moro without project disclosure.
+    - DEWA's rounded Q1 2026 release reported AED6.45 billion revenue, AED2.88 billion EBITDA and AED1.29 billion operating profit, up 8.18%, 18.44% and 53.58%. The acceleration is a parent funding signal, not evidence that Moro capacity or GPU services have converted to revenue.
     - e& completed the sale of its entire 40% Khazna stake in March 2025 for about AED8.0 billion of cash proceeds and derecognized the associate. Current direct exposure is therefore its retained SmartHub and related UAE cloud/AI services; Khazna capacity is not counted as e& owned.
     - Official SmartHub scopes do not fully reconcile. A current FAQ names Fujairah, Dubai and Kalba, e& reported expansion to Abu Dhabi in Q1 2024, and a current services page still markets only Dubai and Fujairah. Four markets are retained without inventing a complete building count.
     - Fujairah now has four Tier III facilities and 4 MW of capacity after a 1.5-MW fourth facility. Its fact sheet provides 2.5 MW of IT power, 495 racks, 6 MW of diversified grid supply, N+N generators, 40,000 liters of underground diesel and N+N air-cooled chillers, but no building-level load or utilization bridge.
@@ -10735,6 +10952,11 @@ cross_company_read_through:
     - Separate earnings exposure already visible today from backlog and capacity exposure that depends on future execution.
     - Review employer income and direct SK hynix holdings together because both are exposed to the memory cycle.
   unresolved_questions:
+    - What are Moro's standalone revenue, operating profit, EBITDA, capex, debt, cash flow, customer concentration, utilization and return on invested capital, distinct from DEWA's broad Others segment?
+    - How do MBR Solar Park's 6.3-MW phase-one electricity figure, 100-MW ten-phase plan, 200-rack vendor case and POD 1/POD 2 Uptime projects reconcile to energized, leased, utilized and billed IT load?
+    - Did Warsan phase one launch in the second half of 2026, what does its greater-than-100-MW capacity measure, and what are its grid, solar, financing, contractor, customer and commissioning milestones?
+    - Which GPUs physically power Moro's sovereign GPU PaaS, who owns them, where are they installed, and what are their power draw, cooling, utilization, customer revenue and margin?
+    - What are the full substation, transformer, switchgear, UPS, battery, generator, fuel, chiller, CRAH, CRAC, CDU, PUE, WUE, water and renewable-matching ledgers for every Moro facility?
     - How do DAMAC Digital's 15 MW operating, 35 MW dual-site announced and 500 MW 2030 Saudi figures bridge by RYD-1, DMM-1 and future site, including energized, leased, utilized and billed IT load?
     - What are the exact legal ownership, addresses, grid connections, customer contracts, GPU inventories, power and cooling bills of materials, PUE, WUE and site economics of DAMAC Digital RYD-1 and DMM-1?
     - What are DAMAC Digital's standalone audited revenue, operating profit, EBITDA, capex, debt, cash flow, customer concentration and return on invested capital, and how will the 500-MW plan be financed?
@@ -10811,6 +11033,11 @@ cross_company_read_through:
     - How much announced utility load has received permits, financing, interconnection, and energization?
 
 research_limits:
+  - DEWA is a diversified listed utility group; audited group and broad Others-segment results are not Moro or data-center-only earnings.
+  - MBR Solar Park's 6.3-MW phase-one electricity capacity, ten-phase 100-MW plan, 200-rack vendor case and multiple area figures use different dates and scopes and are not added into current IT capacity.
+  - Warsan's greater-than-100-MW figure is planned development capacity with an undisclosed definition, not live or energized IT load; no newer official launch confirmation was found by July 18, 2026.
+  - Moro's NVIDIA agreement, Rafay GPU PaaS and AI-related MOUs do not disclose an exact physical GPU model, count, owner, host site, power draw, cooling, utilization or economics.
+  - DEWA generation fleet and solar-park capacity provide utility context but are not treated as dedicated data-center supply without site-level contracts, grid topology and hourly matching evidence.
   - e& is a diversified global telecommunications and technology group; group and e& UAE segment results are not SmartHub or data-center-only earnings.
   - e& sold its entire 40% Khazna stake in March 2025. Historical Etisalat facilities, the 12 contributed Khazna assets and retained SmartHub buildings lack a complete public crosswalk, so Khazna capacity is not treated as current e& ownership.
   - SmartHub roster disclosures are inconsistent across official pages, and the Abu Dhabi expansion lacks an identified physical building. Four geographic records do not equal a confirmed four-building count.

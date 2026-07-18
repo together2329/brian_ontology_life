@@ -17552,7 +17552,272 @@ campus_profiles:
       - {title: Etisalat Uptime award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/client/etisalat/64"}
     confidence: high_for_location_level_expansion_low_for_physical_building_identity_capacity_equipment_operation_and_GPU_inventory
 
+  - id: dc_moro_hub_dubai_portfolio
+    name: Moro Hub Dubai data-center portfolio and asset crosswalk
+    record_granularity: operator_portfolio_with_separate_operating_certification_and_development_ledgers
+    operator_and_parent:
+      legal_operator: Data_Hub_Integrated_Solutions_LLC_MORO
+      brand: Moro_Hub
+      digital_parent: Digital_DEWA_LLC
+      listed_parent: Dubai_Electricity_and_Water_Authority_PJSC
+      audited_parent_ownership_percent: 100
+      financial_profile_ref: company_dewa_pjsc
+    location: {country: United_Arab_Emirates, emirate: Dubai}
+    current_named_asset_ledger:
+      operating_or_inaugurated_locations: [Jebel_Ali, Al_Yalayis, Mohammed_bin_Rashid_Al_Maktoum_Solar_Park]
+      development_location: Warsan
+      exact_complete_current_physical_building_count: undisclosed
+      boundary: >-
+        Moro calls Warsan its fourth green data center, while Uptime's current
+        client ledger separately names four projects before Warsan: Jebel Ali,
+        MBR Solar Park POD 1, Green Data Center and MBR Solar Park POD 2. The
+        operator wording and certification-project count are different scopes and
+        are not reconciled into a four-building operating total.
+    Uptime_project_ledger:
+      projects:
+        - {name: Moro_Hub_Jebel_Ali_DC, design_documents: true, constructed_facility: true, operational_sustainability: not_found_in_reviewed_ledger}
+        - {name: Moro_Hub_MBR_Solar_Park_POD_1, design_documents: true, constructed_facility: true, operational_sustainability: Gold}
+        - {name: Green_Data_Center, design_documents: true, constructed_facility: true, operational_sustainability: not_found_in_reviewed_ledger}
+        - {name: Moro_Hub_MBR_Solar_Park_POD_2, design_documents: true, constructed_facility: true, operational_sustainability: not_found_in_reviewed_ledger}
+      unresolved_crosswalk: Green_Data_Center_may_relate_to_Al_Yalayis_but_no_reviewed_primary_source_proves_identity
+      boundary: Certification projects do not establish a complete current ownership, building, capacity, utilization or revenue ledger.
+    portfolio_colocation_design_terms:
+      resilience: Tier_III_primary_and_backup_power
+      optional_power_increment_kw: 1
+      optional_metered_zero_U_PDU: {voltage_V: 230, current_A: 32}
+      automatic_transfer_switch_available: true
+      services: [cabinet, cage, power, PDU, CCTV, interconnection, cross_connect, remote_hands]
+      minimum_contract_months: 12
+      boundary: These are service terms and are not assigned as an as-built equipment bill of materials for any one site.
+    accelerator_and_AI_ledger:
+      NVIDIA_2024_agreement: use_accelerated_computing_platform_and_reference_architecture_and_explore_green_AI_data_centers
+      Rafay_2025_service: sovereign_GPU_powered_platform_as_a_service_with_on_demand_GPU_infrastructure
+      Rise_2024_MOU: explore_AI_cloud_and_GPU_accelerated_use_cases
+      Dell_2025_MOU: explore_next_generation_cloud_and_AI_capabilities
+      exact_GPU_models_counts_servers_racks_fabric_owner_purchase_delivery_host_site_power_draw_cooling_utilization_customers_revenue_and_margin: undisclosed
+      boundary: Agreements, exploration language and an available GPU service do not prove an operator-owned physical GPU fleet or permit allocation to a child site.
+    child_refs:
+      - dc_moro_hub_jebel_ali
+      - dc_moro_hub_al_yalayis_green_data_center
+      - dc_moro_hub_mbr_solar_park
+      - dc_moro_hub_mbr_solar_park_pod1
+      - dc_moro_hub_mbr_solar_park_pod2
+      - dc_moro_hub_warsan
+    financial_profile_ref: company_dewa_pjsc
+    sources:
+      - {title: DEWA FY2025 audited consolidated financial statements, publisher: DEWA, date: 2026-02-27, url: "https://www.dewa.gov.ae/-/media/Files/Investor-Relations-Files/DEWA_Consolidated-FS-2025_English.ashx"}
+      - {title: Moro Hub Uptime award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/client/moro-data-hub/572"}
+      - {title: Moro Hub colocation service-specific terms, publisher: Moro_Hub, date: 2023-01-04, url: "https://morohub.com/media/ffklcxcc/04012023-colocation-service-specific-terms.pdf"}
+      - {title: NVIDIA green AI data-center agreement, publisher: Moro_Hub, date: 2024-02-12, url: "https://www.morohub.com/en/media-and-news/news/2024/02/moro-hub-to-collaborate-with-nvidia-in-developing-world-class-green-ai-data-centre-in-uae"}
+      - {title: Rafay sovereign GPU PaaS partnership, publisher: Moro_Hub, date: 2025-10-16, url: "https://www.morohub.com/en/media-and-news/news/2025/10/moro-hub-partners-with-rafay-to-deliver-sovereign-gpu-powered-platform-as-a-service-for-ai-innovation"}
+    confidence: high_for_legal_ownership_named_locations_Uptime_project_ledger_and_named_AI_agreements_low_for_complete_physical_roster_crosswalk_site_GPU_inventory_utilization_and_data_center_only_economics
+
+  - id: dc_moro_hub_jebel_ali
+    name: Moro Hub Jebel Ali data center
+    record_granularity: operating_named_facility_with_partial_procurement_evidence
+    operator: Data_Hub_Integrated_Solutions_LLC_MORO
+    location: {country: United_Arab_Emirates, emirate: Dubai, area: Jebel_Ali, exact_address_coordinates_parcel_and_building_number: undisclosed}
+    lifecycle:
+      current_evidence: SAP_2023_agreement_names_Jebel_Ali_as_an_available_Moro_data_center
+      Uptime_project: Moro_Hub_Jebel_Ali_DC
+      certification: {design_documents: true, constructed_facility: true, operational_sustainability: not_found_in_reviewed_ledger}
+      exact_RFS_customer_acceptance_occupancy_energized_leased_utilized_and_billed_load: undisclosed
+    size_and_capacity:
+      exact_IT_mw_facility_power_utility_service_racks_white_space_and_rack_density: undisclosed
+    partial_power_and_cooling_evidence:
+      UPS_battery_replacement_2022:
+        identified_strings:
+          - {UPS: UPS_DC1_B1, VRLA_batteries: 144, battery_rating_each: 12V_150Ah}
+          - {UPS: UPS_DC1_B3, VRLA_batteries: 144, battery_rating_each: 12V_150Ah}
+        derived_identified_battery_count: 288
+        boundary: The tender proves two named strings and 288 replacement batteries, not the facility's complete UPS or battery inventory.
+      generator_maintenance_2025:
+        scope: three_air_intake_sound_attenuators_plus_louvers_acoustic_door_and_mesh
+        boundary: Three attenuators are not converted into a generator count, model, rating or topology.
+      exact_grid_voltage_substation_transformer_switchgear_PDU_UPS_count_rating_generator_count_rating_fuel_chiller_CRAH_CRAC_CDU_models_topology_PUE_WUE_water_and_renewable_matching: undisclosed
+    accelerators_and_AI:
+      SAP_Public_Cloud_hosting_agreement: true
+      exact_GPU_models_counts_servers_racks_fabric_owner_hosted_customer_power_draw_cooling_utilization_revenue_and_margin: undisclosed
+      boundary: SAP hosting is cloud-workload evidence and not a physical accelerator inventory.
+    portfolio_ref: dc_moro_hub_dubai_portfolio
+    financial_profile_ref: company_dewa_pjsc
+    sources:
+      - {title: SAP hosting agreement naming Jebel Ali and MBR Solar Park, publisher: Moro_Hub, date: 2023-12-15, url: "https://www.morohub.com/media-and-news/news/2023/12/sap-is-moro-hubs-newest-customer-in-joint-initiative-to-accelerate-sustainable-digital-transformation"}
+      - {title: Moro Hub Jebel Ali Uptime project, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/datacenter/moro-hub-jebel-ali-dc/895"}
+      - {title: Jebel Ali generator electrical maintenance RFQ, publisher: DEWA, date: 2025, url: "https://www.dewa.gov.ae/api/RfxDownload/Get/2332501662"}
+      - {title: Jebel Ali UPS VRLA battery replacement RFQ, publisher: DEWA, date: 2022, url: "https://srm.dewa.gov.ae/sap/opu/odata/sap/ZSRM_RFX_REG_BID_SRV/AttachmentSet%28%272332201727%27%29/%24value"}
+    confidence: high_for_named_operating_use_Uptime_design_constructed_awards_and_two_battery_strings_low_for_total_capacity_complete_power_cooling_BOM_current_load_efficiency_and_GPU_inventory
+
+  - id: dc_moro_hub_al_yalayis_green_data_center
+    name: Moro Hub Al-Yalayis solar-powered Green Data Centre
+    record_granularity: individually_named_operating_solar_powered_facility_with_unresolved_Uptime_crosswalk
+    operator: Data_Hub_Integrated_Solutions_LLC_MORO
+    location: {country: United_Arab_Emirates, emirate: Dubai, area: Al_Yalayis, exact_address_coordinates_parcel_and_building_number: undisclosed}
+    lifecycle:
+      launch_date: 2020-10-28
+      operator_description: regions_first_solar_powered_certified_Tier_III_green_data_center
+      current_operation_customer_utilization_and_billing: undisclosed
+    size_and_capacity:
+      exact_IT_mw_facility_power_utility_service_racks_white_space_and_rack_density: undisclosed
+    power_cooling_and_sustainability:
+      company_claim: fully_powered_by_solar_energy
+      exact_solar_asset_contract_grid_connection_hourly_matching_storage_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_topology_PUE_WUE_water_and_measured_emissions: undisclosed
+    certification_crosswalk:
+      company_certification: Tier_III
+      possible_Uptime_project: Green_Data_Center
+      boundary: No reviewed primary source proves the Uptime project's identity, so its design and constructed awards are not assigned to Al-Yalayis.
+    accelerators_and_AI:
+      marketed_services: [cloud, IoT, AI]
+      exact_GPU_models_counts_servers_racks_fabric_ownership_power_draw_cooling_utilization_customers_revenue_and_margin: undisclosed
+      boundary: AI service marketing is not installed-GPU evidence.
+    portfolio_ref: dc_moro_hub_dubai_portfolio
+    financial_profile_ref: company_dewa_pjsc
+    sources:
+      - {title: Al-Yalayis solar-powered Green Data Centre launch, publisher: DEWA, date: 2020-10-28, url: "https://www.dewa.gov.ae/en/about-us/media-publications/latest-news/2020/10/moro-hub-launches-the-regions-first-solar-powered"}
+      - {title: Moro Hub Uptime award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/client/moro-data-hub/572"}
+    confidence: high_for_location_launch_Tier_III_and_solar_power_claim_low_for_Uptime_crosswalk_capacity_equipment_measured_sustainability_current_load_and_GPU_inventory
+
+  - id: dc_moro_hub_mbr_solar_park
+    name: Moro Hub Green Data Centre at Mohammed bin Rashid Al Maktoum Solar Park
+    aliases: [Moro_Hub_MBR_Solar_Park, worlds_largest_solar_powered_data_center]
+    record_granularity: multi_phase_campus_parent_record
+    operator: Data_Hub_Integrated_Solutions_LLC_MORO
+    location: {country: United_Arab_Emirates, emirate: Dubai, site: Mohammed_bin_Rashid_Al_Maktoum_Solar_Park, exact_coordinates_parcel_and_building_numbers: undisclosed}
+    lifecycle:
+      phase_1_inaugurated: 2023-02-16
+      phase_2_inaugurated: 2025-01-22
+      full_plan_phases: 10
+      current_energized_leased_utilized_billed_IT_load_and_per_phase_RFS: undisclosed
+    size_capacity_and_scope:
+      current_2025_full_development_plan: {total_capacity_mw: 100, capacity_definition: not_explicitly_IT_load, area_sqm: 100000, phases: 10}
+      phase_1_2023_green_electricity_capacity_mw: 6.3
+      phase_1_capacity_boundary: The 6.3 MW is described as green-electricity capacity and is not relabeled as live IT load.
+      Guinness_record_footprint_sqm: 33311.11
+      Dell_case_facility_racks: 200
+      Dell_case_migration: {source_data_centers: 2, devices_more_than: 330, execution_hours: 72, downtime: zero}
+      historical_2023_plan: {capacity_description: exceeding_100MW, area_description: exceeding_16000sqm}
+      boundary: >-
+        The newer 100-MW/100,000-sqm ten-phase plan, historical exceeding-100-MW
+        and exceeding-16,000-sqm wording, 33,311.11-sqm Guinness footprint,
+        6.3-MW phase-one electricity capacity and 200-rack vendor case describe
+        different dates or scopes. They are stored separately and not added.
+    power_cooling_and_sustainability:
+      company_claims: [fully_powered_by_solar_energy, carbon_neutral]
+      phase_1_annual_CO2_avoided_tonnes_more_than: 10500
+      cumulative_CO2_avoided_by_2025_01_tonnes_more_than: 17000
+      exact_grid_connection_solar_contract_hourly_matching_storage_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_topology_current_PUE_WUE_water_and_live_liquid_cooled_MW: undisclosed
+    compute_and_network_equipment:
+      confirmed_CPU_platform: Intel_Xeon_Scalable_processors
+      confirmed_features: [Intel_Deep_Learning_Boost, Intel_Node_Manager_4_0, Intel_SGX]
+      inference_boundary: Deep_Learning_Boost accelerates described inference without a discrete add-on accelerator; it is CPU evidence, not a GPU count.
+      future_processor_boundary: Intel_Xeon_6_is_described_as_a_likely_expansion_benefit_not_confirmed_current_installed_inventory
+      network_topology: spine_and_leaf
+      cabling: [CommScope_Category_6A_UTP, OM4_multimode_low_loss, OM4_multimode_preterminated_ULL, TeraSPEED_singlemode_preterminated_ULL]
+      design_path: 100G_to_400G
+      vendor_rack_density_classes_kw: {low: less_than_4, medium_and_high: 4_to_12}
+      boundary: Vendor classes describe the cabling design and do not establish the number of fitted or occupied racks at each density.
+    certification_and_security:
+      operator_Uptime_claim: Tier_III_design_constructed_and_Gold_operations
+      LEED: Gold
+      security_levels: 8
+      integrated_security_systems: 15
+      Uptime_child_crosswalk: [dc_moro_hub_mbr_solar_park_pod1, dc_moro_hub_mbr_solar_park_pod2]
+    customers_and_workloads:
+      named: [DEWA, SAP_Public_Cloud, Cloud4C_SAP_RISE_and_managed_services, Emirates_Group, Dubai_Police, Dubai_Courts]
+      Emirates_migration_target: mid_2026_start
+      Emirates_scope: [rack_space, power, cooling, equipment_supply, associated_services]
+      Emirates_energy_claim_boundary: The source says 3000 megawatts annually, a dimensionally defective unit retained as stated and not converted into power or energy.
+      exact_customer_contract_values_capacity_commitments_occupancy_concentration_revenue_and_margin: undisclosed
+    accelerators_and_AI:
+      CPU_AI_inference: confirmed_Intel_Xeon_Scalable_with_Deep_Learning_Boost
+      GPU_service_portfolio_related: true
+      exact_GPU_models_counts_servers_racks_fabric_owner_purchase_delivery_site_allocation_power_draw_cooling_utilization_customers_revenue_and_margin: undisclosed
+    child_refs: [dc_moro_hub_mbr_solar_park_pod1, dc_moro_hub_mbr_solar_park_pod2]
+    portfolio_ref: dc_moro_hub_dubai_portfolio
+    financial_profile_ref: company_dewa_pjsc
+    sources:
+      - {title: MBR Solar Park phase-two inauguration and ten-phase plan, publisher: DEWA, date: 2025-01-22, url: "https://www.dewa.gov.ae/en/about-us/media-publications/latest-news/2025/01/maktoum-bin-mohammed-inaugurates-second-phase"}
+      - {title: MBR Solar Park phase-one inauguration, publisher: DEWA, date: 2023-02-16, url: "https://www.dewa.gov.ae/en/about-us/media-publications/latest-news/2023/02/hamdan-bin-mohammed-inaugurates"}
+      - {title: Intel Moro Hub Green Data Center case study, publisher: Intel_and_Moro_Hub, date: 2025, url: "https://www.morohub.com/media/0yophtuw/moro-hub-case-study.pdf"}
+      - {title: Dell zero-downtime migration case study, publisher: Dell_Technologies_and_Moro_Hub, date: 2024, url: "https://morohub.com/media/b4wluyor/moro-hub-case-study_approved_11-12.pdf", access_boundary: indexed_official_PDF_content_remains_searchable_but_current_direct_request_redirects_to_Moro_homepage}
+      - {title: CommScope data-center cabling case study, publisher: CommScope_and_Moro_Hub, date: 2024-07, url: "https://www.morohub.com/media/uwpl1bpy/_cs-116013-en_moro-hub_mtdc-uae_d4-fnl-lr-1.pdf"}
+      - {title: Emirates Group colocation agreement, publisher: Moro_Hub, date: 2025-03-26, url: "https://www.morohub.com/en/media-and-news/news/2025/03/emirates-group-co-locates-to-worlds-largest-solar-powered-data-centre"}
+    confidence: high_for_dated_plan_phase_inaugurations_Guinness_area_200_racks_named_CPU_and_cabling_medium_for_customer_migration_status_low_for_current_live_IT_load_complete_power_cooling_BOM_measured_efficiency_and_GPU_inventory
+
+  - id: dc_moro_hub_mbr_solar_park_pod1
+    name: Moro Hub MBR Solar Park POD 1
+    record_granularity: Uptime_certification_project_child_of_MBR_campus
+    operator: Data_Hub_Integrated_Solutions_LLC_MORO
+    location: {country: United_Arab_Emirates, emirate: Dubai, parent_campus_ref: dc_moro_hub_mbr_solar_park, exact_building_address_and_coordinates: undisclosed}
+    certification: {design_documents: true, constructed_facility: true, operational_sustainability: Gold}
+    lifecycle_boundary: The Uptime project is certified, but no reviewed primary source explicitly crosswalks POD 1 to the operator's phase-one inauguration or discloses its individual RFS and current load.
+    exact_IT_mw_facility_power_racks_area_energized_leased_utilized_billed_load_power_chain_cooling_PUE_WUE_water_and_GPU_inventory: undisclosed
+    portfolio_ref: dc_moro_hub_dubai_portfolio
+    financial_profile_ref: company_dewa_pjsc
+    sources:
+      - {title: MBR Solar Park POD 1 Uptime project, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/datacenter/moro-hub-mbr-solar-park-pod-1/1572"}
+      - {title: MBR Solar Park phase-two inauguration and ten-phase plan, publisher: DEWA, date: 2025-01-22, url: "https://www.dewa.gov.ae/en/about-us/media-publications/latest-news/2025/01/maktoum-bin-mohammed-inaugurates-second-phase"}
+    confidence: high_for_named_Uptime_project_and_awards_low_for_phase_crosswalk_capacity_equipment_current_load_and_GPU_inventory
+
+  - id: dc_moro_hub_mbr_solar_park_pod2
+    name: Moro Hub MBR Solar Park POD 2
+    record_granularity: Uptime_certification_project_child_of_MBR_campus
+    operator: Data_Hub_Integrated_Solutions_LLC_MORO
+    location: {country: United_Arab_Emirates, emirate: Dubai, parent_campus_ref: dc_moro_hub_mbr_solar_park, exact_building_address_and_coordinates: undisclosed}
+    certification: {design_documents: true, constructed_facility: true, operational_sustainability: not_found_in_reviewed_ledger}
+    lifecycle_boundary: The Uptime project is certified, but no reviewed primary source explicitly crosswalks POD 2 to the operator's phase-two inauguration or discloses its individual RFS and current load.
+    exact_IT_mw_facility_power_racks_area_energized_leased_utilized_billed_load_power_chain_cooling_PUE_WUE_water_and_GPU_inventory: undisclosed
+    portfolio_ref: dc_moro_hub_dubai_portfolio
+    financial_profile_ref: company_dewa_pjsc
+    sources:
+      - {title: MBR Solar Park POD 2 Uptime project, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/list/datacenter/moro-hub-mbr-solar-park-pod-2/2062"}
+      - {title: MBR Solar Park phase-two inauguration and ten-phase plan, publisher: DEWA, date: 2025-01-22, url: "https://www.dewa.gov.ae/en/about-us/media-publications/latest-news/2025/01/maktoum-bin-mohammed-inaugurates-second-phase"}
+    confidence: high_for_named_Uptime_project_and_design_constructed_awards_low_for_phase_crosswalk_capacity_equipment_current_load_and_GPU_inventory
+
+  - id: dc_moro_hub_warsan
+    name: Moro Hub solar-powered Green Data Centre in Warsan
+    record_granularity: multi_phase_development_project_not_operating_capacity
+    operator: Data_Hub_Integrated_Solutions_LLC_MORO
+    location: {country: United_Arab_Emirates, emirate: Dubai, district: Warsan, exact_address_coordinates_parcel_and_building_numbers: undisclosed}
+    lifecycle:
+      status_at_2026_01_23: phase_1_under_construction_and_phase_2_awarded
+      phase_1_target_launch: second_half_2026
+      latest_reviewed_official_status_at_2026_07_18: no_newer_RFS_or_launch_confirmation_found
+      exact_construction_percent_commissioning_customer_acceptance_energized_leased_utilized_and_billed_load: undisclosed
+    size_and_capacity:
+      planned_capacity_mw_more_than: 100
+      capacity_definition: undisclosed
+      site_area_sqm_more_than: 66000
+      company_portfolio_description: fourth_green_data_center
+      boundary: The greater-than-100-MW figure is a full planned development and is not live, energized or IT-load capacity.
+    power_cooling_and_sustainability:
+      design_claims: [solar_powered, AI_ready, resilient, sustainable]
+      consultant_scope: [strategy, design, commissioning, operations, power, cooling, advanced_energy, site_readiness]
+      exact_solar_supply_grid_voltage_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_topology_PUE_WUE_water_hourly_matching_and_live_liquid_cooled_MW: undisclosed
+    accelerators_and_AI:
+      intended_services: [advanced_cloud_computing, cloud_hosting]
+      exact_GPU_models_counts_servers_racks_fabric_owner_purchase_delivery_power_draw_cooling_utilization_customers_revenue_and_margin: undisclosed
+      boundary: AI-ready project language and the operator's GPU PaaS do not prove hardware procurement or allocation to Warsan.
+    portfolio_ref: dc_moro_hub_dubai_portfolio
+    financial_profile_ref: company_dewa_pjsc
+    sources:
+      - {title: Warsan construction progress and phase-two award, publisher: DEWA, date: 2026-01-23, url: "https://dewa.gov.ae/en/about-us/media-publications/latest-news/2026/1/he-saeed-mohammed-al-tayer-reviews-construction-progress"}
+      - {title: Warsan construction progress duplicate, publisher: Moro_Hub, date: 2026-01-23, url: "https://www.morohub.com/en/media-and-news/news/2026/01/he-saeed-mohammed-al-tayer-reviews-construction-progress-at-moro-hub-s-new-green-data-centre-in-warsan"}
+    confidence: high_for_location_full_plan_area_phase_status_and_target_low_for_capacity_definition_current_progress_equipment_customers_and_GPU_inventory
+
 disclosure_gap_register:
+  - Moro_Hub_current_complete_physical_building_roster_and_fourth_green_data_center_to_Uptime_four_project_scope_reconciliation
+  - Moro_Hub_Uptime_Green_Data_Center_to_Al_Yalayis_exact_physical_crosswalk
+  - Moro_Hub_MBR_POD1_POD2_to_operator_phase1_phase2_exact_crosswalk_capacity_RFS_and_current_load
+  - Moro_Hub_Jebel_Ali_exact_IT_MW_facility_power_racks_area_live_load_utilization_and_complete_equipment_BOM
+  - Moro_Hub_Al_Yalayis_exact_capacity_solar_supply_hourly_matching_storage_equipment_PUE_WUE_water_and_current_operation
+  - Moro_Hub_MBR_6_3MW_100MW_exceeding100MW_200_racks_33311sqm_100000sqm_and_phase_scopes_exact_reconciliation
+  - Moro_Hub_MBR_current_energized_leased_utilized_billed_IT_load_customer_capacity_commitments_concentration_revenue_and_margin
+  - Moro_Hub_Warsan_phase1_launch_phase2_scope_capacity_definition_grid_solar_contract_financing_construction_commissioning_customers_and_energization
+  - Moro_Hub_per_site_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_and_topology
+  - Moro_Hub_per_site_PUE_WUE_water_hourly_renewable_matching_live_liquid_cooled_MW_and_measured_operating_performance
+  - Moro_Hub_exact_GPU_models_counts_servers_racks_fabric_ownership_purchase_delivery_host_site_power_cooling_utilization_customers_revenue_and_margin
+  - Moro_Hub_data_center_only_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_utilization_and_ROIC
   - e_and_current_direct_SmartHub_complete_physical_building_roster_and_Abu_Dhabi_building_identity
   - e_and_12_Khazna_contributed_assets_to_14_historical_Uptime_projects_and_retained_SmartHub_crosswalk
   - SmartHub_Fujairah_four_facilities_building_names_capacity_RFS_live_load_utilization_and_equipment_crosswalk
@@ -17856,6 +18121,13 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
+    - Moro_Hub_current_complete_physical_building_roster_and_operator_green_site_to_Uptime_project_crosswalk
+    - Moro_Hub_MBR_POD1_POD2_to_phase1_phase2_capacity_RFS_live_load_and_customer_commitments
+    - Moro_Hub_MBR_6_3MW_100MW_exceeding100MW_200_racks_and_area_scope_reconciliation
+    - Moro_Hub_Warsan_phase1_launch_phase2_capacity_grid_solar_financing_construction_customer_and_energization_status
+    - Moro_Hub_Jebel_Ali_and_Al_Yalayis_exact_capacity_power_chain_cooling_PUE_WUE_water_live_load_and_equipment_BOM
+    - Moro_Hub_exact_GPU_inventory_ownership_host_site_power_cooling_utilization_service_revenue_and_margin
+    - Moro_Hub_data_center_only_revenue_operating_profit_capex_cash_flow_customer_concentration_utilization_and_ROIC
     - e_and_current_direct_SmartHub_complete_physical_building_roster_and_Abu_Dhabi_asset_identity
     - e_and_12_Khazna_contributed_assets_14_historical_Uptime_projects_and_retained_SmartHub_exact_crosswalk
     - SmartHub_Fujairah_four_facilities_per_building_capacity_RFS_live_load_utilization_and_equipment_BOM
