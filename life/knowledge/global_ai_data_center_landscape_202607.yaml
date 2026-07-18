@@ -11820,6 +11820,140 @@ campus_profiles:
       - {title: Mexico announces CloudHQ Querétaro investment, publisher: Government_of_Mexico, date: 2025, url: "https://www.gob.mx/presidencia/prensa/plan-mexico-avanza-se-anuncia-inversion-de-4-mil-800-mdd-de-cloudhq-para-la-construccion-de-6-centros-de-datos-en-queretaro?idiom=es-MX"}
     confidence: high_for_current_20_page_registry_card_checksums_selected_campus_specs_10_OSM_crosswalk_two_asset_ABS_operating_economics_and_ownership_context_low_for_complete_23_campus_roster_live_fleet_load_GPU_inventory_equipment_BOM_consolidated_financials_and_site_returns
 
+  - id: dc_global_switch_europe_apac_portfolio
+    name: Global Switch Europe and Asia-Pacific carrier-neutral portfolio
+    record_granularity: provider_facility_labels_campuses_and_coming_soon_markets_not_one_uniform_physical_or_legal_asset_count
+    operator: Global_Switch
+    countries: [NL, DE, GB, ES, FR, HK, SG, MY, TH]
+    lifecycle_as_of_2026_07_19: mixed_completed_redevelopment_expansion_development_and_coming_soon
+    official_facility_registry_ref: life/imports/global_data_centers_20260717/global_switch_official_facility_registry.jsonl
+    official_facility_summary_ref: life/imports/global_data_centers_20260717/global_switch_official_facility_summary.json
+    registry_builder_ref: scripts/build_global_switch_official_facility_registry.py
+    current_published_scale:
+      directory_numeric_facility_labels: 16
+      directory_coming_soon_markets_without_numeric_MW: 2
+      directory_card_MW_checksum: 497
+      2025_ESG_data_centres_or_campuses: 8
+      2025_ESG_tier_1_cities: 7
+      2025_ESG_gross_floor_area_sqm_existing_and_in_progress: 410499
+      2025_annual_utility_power_supply_MVA: 488
+      2025_annual_saleable_capacity_MW: 252
+      2025_annual_completed_legal_investment_property_labels: 12
+      2025_annual_development_properties: [Frankfurt_3, London_South, Madrid_2, Johor]
+      scope_boundary: >-
+        The directory does not define its MW field. Its 497-MW checksum, 488
+        MVA of utility supply, 252 MW of saleable capacity, eight ESG
+        data-centres/campuses, 12 completed legal properties, four development
+        properties and 16 facility labels use different physical, legal,
+        electrical and commercial denominators.
+    directory_labels_by_market:
+      Amsterdam: [Amsterdam_West, Amsterdam_East]
+      Frankfurt: [Frankfurt_North, Frankfurt_South]
+      London: [London_East, London_North, London_South]
+      Madrid: [Madrid_1, Madrid_2]
+      Paris: [Paris_East, Paris_West, Paris_North, Paris_South]
+      Hong_Kong: [Hong_Kong]
+      Singapore: [Singapore_Tai_Seng, Singapore_Woodlands]
+      coming_soon: [Johor_capacity_available_2028, Bangkok_date_and_capacity_undisclosed]
+    selected_power_and_cooling:
+      Amsterdam_East:
+        all_stages: {gross_space_sqm: 32000, utility: 50kV_40MVA_planned, UPS: static_N_plus_1, generators: N_plus_1, fuel_hours: 24, cooling_mw: 35, cooling_redundancy: N_plus_2, method: chiller_assist_free_cooling_and_fan_walls}
+        phase_1_contracted_capacity_added_in_2025_mw: 8
+      Frankfurt_North:
+        {gross_space_sqm: 11862, utility: 10kV_N_plus_N_14MVA_current, UPS: static_N_plus_1, generators: N_plus_1, cooling_mw: 19, cooling_redundancy: N_plus_2, PUE_at_full_load_validated: 1.1}
+      Frankfurt_South:
+        {gross_space_sqm: 17686, utility: 10kV_N_plus_N_14MVA_current, UPS: diesel_rotary_N_plus_2, generators: 2_x_1_6MW_N_plus_N, cooling_mw: 11.8, cooling_redundancy: N_plus_1}
+      London_East:
+        {gross_space_sqm: 65542, utility: 132kV_N_plus_N_60MVA_current, UPS: diesel_rotary_N_plus_2, fuel_hours: 48, cooling_mw: 41.57, cooling_redundancy: N_plus_2, method: CRAH_chilled_water_and_in_rack_capability}
+      London_North:
+        {gross_space_sqm: 23439, utility: 11kV_N_plus_1_26MVA_current_and_planned, UPS: static_or_diesel_rotary_N_plus_1_by_area, fuel_hours: 48, cooling_mw: 16.1, cooling_redundancy: N_plus_1, Area_3_annualized_PUE_below: 1.3}
+      London_South:
+        lifecycle: development
+        directory_card_mw: 35
+        utility_MVA: 40
+        2024_announcement_IT_mw: 40
+        gross_space_sqm_up_to: 27000
+        density_w_per_sqm_standard_and_above: [3000, 5000]
+        cooling: air_and_liquid_optionality
+        boundary: 35MW_card_40MVA_utility_and_40MW_IT_are_not_assumed_equivalent_or_operating
+      Madrid_1:
+        {gross_space_sqm: 21922, utility: 15kV_N_plus_N_2_x_18MVA_current, UPS: static_2N, generators: N_plus_1, cooling_mw: 24, cooling_redundancy: N_plus_1, method: CRAC_condenser_water, water_tanks_cubic_metres: 600}
+      Paris_East:
+        {gross_space_sqm: 34915, utility: 15kV_N_plus_1_34MVA_current_and_planned, UPS: static_2N, generators: N_plus_1, fuel_hours: 48, cooling_mw: 22.8, cooling_redundancy: N_plus_1, method: CRAC_condenser_water}
+      Paris_West:
+        {gross_space_sqm: 16703, utility: 20kV_N_plus_1_25MVA_current, UPS: diesel_rotary_N_plus_2, fuel_hours: 48, cooling_mw: 18_installed_and_planned, cooling_redundancy: N_plus_1, method: CRAH_chilled_water_free_cooling}
+      Hong_Kong:
+        {gross_floor_area_sqm: 70545, buildings: 5, utility: 132kV_N_plus_1_100MVA_current, UPS: diesel_rotary_N_plus_2_or_static_N_plus_1_by_building, generators: N_plus_1_for_buildings_4_5, fuel_hours: 24, cooling_mw: 82_installed_and_planned, cooling_redundancy: N_plus_1, annualized_design_PUE_below: 1.3}
+      Singapore_Tai_Seng:
+        {gross_space_sqm: 26743, utility: 22kV_N_plus_N_30MVA_current_and_planned, UPS: static_2N_or_diesel_rotary_N_plus_1_by_wing, generators: N_plus_1_for_main_building_mechanical_systems, cooling_mw: 30, cooling_redundancy: N_plus_1}
+      Singapore_Woodlands:
+        {gross_floor_area_sqm_2025_ESG: 23946, utility: 22kV_N_plus_N_30MVA_current, UPS: diesel_rotary_N_plus_2_IT_and_N_plus_1_mechanical, fuel_hours: 24, cooling_mw: 28.8, cooling_redundancy: N_plus_1}
+      equipment_boundary: >-
+        Technical pages provide selected nameplate and redundancy facts, not a
+        complete as-built count of substations, transformers, switchgear, PDUs,
+        UPS modules, batteries, generators, chillers, CRAH/CRAC units or CDUs.
+        Installed and planned cooling values are not live IT or customer load.
+    accelerator_and_liquid_cooling:
+      NVIDIA_DGX_Ready_partner: true
+      liquid_cooling_available_across_portfolio: true
+      2025_expanded_liquid_cooling_markets: [London, Amsterdam, Paris]
+      showcase_or_deployment_markets: [London, Hong_Kong]
+      Hong_Kong_liquid_cooled_capacity_available_mw: 30
+      London_technologies: [single_phase_immersion, two_phase_direct_to_chip, single_phase_direct_to_chip, rear_door_heat_exchanger, two_phase_immersion]
+      named_partners: [Vertiv, Accelsius, Supermicro, Giga_Computing, LiquidStack, BP_Castrol, X_Fusion]
+      Global_Switch_owned_or_hosted_GPU_inventory_by_model_site_count_and_utilization: undisclosed
+      ownership_boundary: >-
+        The operator provides space, power, cooling and connectivity for
+        customer IT. DGX-Ready status, liquid-cooling demonstrations, dummy
+        heating loads and AI/HPC readiness do not prove operator-owned GPUs or
+        disclose hosted customer accelerator inventory.
+    public_map_crosswalk:
+      related_name_or_operator_OSM_objects: 7
+      raw_operator_tagged_OSM_objects: 5
+      raw_name_only_OSM_objects: 2
+      exact_provider_label_matches: 4
+      exact_labels: [London_East, London_North, Singapore_Tai_Seng, Singapore_Woodlands]
+      shared_campus_objects_unresolved_to_exact_label: 3
+      unresolved_markets: [Amsterdam, Frankfurt, Paris]
+      boundary: OSM_objects_and_footprints_are_not_facility_building_ownership_capacity_or_operating_totals
+    sustainability_2025:
+      total_energy_thousand_MWh: 985.6
+      renewable_energy_thousand_MWh: 864.1
+      renewable_energy_share_percent: 88
+      renewables_backed_electricity_procured_percent: 88.3
+      Europe_and_Singapore_renewables_backed_electricity_percent: 100
+      operational_average_PUE: {group: 1.61, Europe: 1.67, APAC: 1.52}
+      water_withdrawal_cubic_metres: 987814
+      operational_WUE_all_sources: {group: 1.61, Europe: 1.19, APAC: 2.14}
+      HVO_transition: under_evaluation
+      new_development_design_PUE_below: {Europe: 1.2, APAC: 1.4}
+      boundary: >-
+        Group and regional energy, PUE and WUE do not establish per-site
+        efficiency, hourly carbon-free matching, liquid-cooled load or customer
+        GPU utilization. Paris WUE improvement and renewable procurement are
+        not generalized to every site.
+    finance_and_outlook:
+      financial_profile_ref: company_global_switch
+      2025_new_business_signings_mw: 38.8
+      2025_new_business_total_contract_income_commitment_GBP_million_over_six_years: 57.0
+      2025_renewals_mw: 33.7
+      2025_renewal_total_contract_income_commitment_GBP_million: 58.5
+      growth_route: densification_redevelopment_and_selective_new_markets
+      explicit_expansions: [London_South, Madrid_2, Frankfurt_3, Johor_2028, Bangkok_coming_soon]
+      outlook_boundary: Signed_and_renewed_MW_are_contracting_activity_not_current_billed_or_utilized_load
+    sources:
+      - {title: Global Switch current data-centre directory, publisher: Global_Switch, accessed: 2026-07-19, url: "https://www.globalswitch.com/data-centres/"}
+      - {title: Global Switch Annual Report 2025, publisher: Global_Switch, date: 2026-03-13, url: "https://gswitch-cdn.com/wp-content/uploads/2026/03/16131953/Global-Switch-Holdings-Limited-31-December-2025_-FINAL-Euronext.pdf"}
+      - {title: Global Switch 2025 ESG Report, publisher: Global_Switch, date: 2026-04, url: "https://gswitch-cdn.com/wp-content/uploads/2026/04/24102809/2025-ESG-Report.pdf"}
+      - {title: Global Switch liquid cooling, publisher: Global_Switch, accessed: 2026-07-19, url: "https://www.globalswitch.com/our-offer/liquid-cooling/"}
+      - {title: Global Switch Johor coming soon, publisher: Global_Switch, accessed: 2026-07-19, url: "https://www.globalswitch.com/data-centres/johor/"}
+      - {title: London campus and London South, publisher: Global_Switch, accessed: 2026-07-19, url: "https://www.globalswitch.com/locations/london-data-centres/"}
+      - {title: Frankfurt campus technical profile, publisher: Global_Switch, accessed: 2026-07-19, url: "https://www.globalswitch.com/locations/frankfurt-data-centres/"}
+      - {title: Madrid campus technical profile, publisher: Global_Switch, accessed: 2026-07-19, url: "https://www.globalswitch.com/locations/madrid-data-centre/"}
+      - {title: Hong Kong technical profile, publisher: Global_Switch, accessed: 2026-07-19, url: "https://www.globalswitch.com/locations/hong-kong-data-centre/"}
+      - {title: Singapore technical profiles, publisher: Global_Switch, accessed: 2026-07-19, url: "https://www.globalswitch.com/locations/singapore-data-centres/"}
+    confidence: high_for_current_directory_2025_audited_financial_portfolio_ESG_legal_property_selected_engineering_liquid_cooling_and_OSM_evidence_low_for_directory_MW_definition_complete_physical_building_roster_Bangkok_detail_GPU_inventory_exact_equipment_BOM_site_load_and_site_economics
+
   - id: dc_firmus_project_southgate_australia
     name: Firmus Project Southgate Australia AI Factory program
     record_granularity: national_multi_site_AI_factory_program_not_one_campus
@@ -30529,6 +30663,16 @@ disclosure_gap_register:
   - CloudHQ_current_fleet_PUE_WUE_energy_water_emissions_renewable_matching_heat_reuse_and_live_liquid_cooled_MW
   - CloudHQ_Fateh_Family_Office_CloudCapital_related_party_asset_ownership_cap_table_consideration_consolidation_and_governance
   - CloudHQ_current_consolidated_revenue_operating_income_EBITDA_capex_debt_cash_flow_customer_concentration_site_economics_and_ROIC
+  - Global_Switch_16_numeric_directory_labels_8_ESG_campuses_12_completed_legal_properties_4_development_properties_and_18_labels_including_Johor_Bangkok_to_exact_building_ownership_and_lifecycle_reconciliation
+  - Global_Switch_497MW_undefined_directory_card_checksum_to_488MVA_utility_supply_252MW_saleable_and_per_site_energized_leased_utilized_customer_accepted_and_billed_IT_load
+  - Global_Switch_7_related_OSM_objects_4_exact_labels_3_shared_campus_objects_and_5_operator_tags_to_complete_facility_map_coverage
+  - Global_Switch_Paris_North_South_Madrid_1_Frankfurt_3_Bangkok_and_other_directory_or_development_labels_to_exact_address_coordinates_buildings_and_lifecycle
+  - Global_Switch_per_site_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_and_as_built_topology
+  - Global_Switch_exact_operator_and_customer_GPU_models_counts_servers_racks_fabric_ownership_power_utilization_revenue_and_margin
+  - Global_Switch_per_site_PUE_WUE_energy_water_emissions_renewable_matching_heat_reuse_and_live_liquid_cooled_MW
+  - Global_Switch_London_South_Madrid_2_Frankfurt_3_Johor_and_Bangkok_permitting_grid_construction_customer_acceptance_and_billed_revenue_milestones
+  - Global_Switch_FY2025_property_revaluation_exceptionals_capex_classification_power_pass_through_site_financials_customer_concentration_utilization_and_ROIC_bridge
+  - Global_Switch_shareholder_liquidity_process_to_transaction_terms_post_close_cap_table_control_valuation_and_financing
   - AirTrunk_current_post_2024_committed_energized_and_utilized_capacity_by_campus
   - HUMAIN_AirTrunk_Saudi_exact_location_capacity_hardware_power_and_delivery_schedule
   - Equinix_280_year_end_to_281_current_facility_reconciliation
@@ -30647,7 +30791,7 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
-    - global_coverage_remaining_P1_GlobalSwitch_OVHcloud_official_profiles
+    - global_coverage_remaining_P1_OVHcloud_official_profile
     - Cologix_49_codes_to_physical_buildings_current_load_GPU_inventory_power_cooling_BOM_and_private_financials
     - Sabey_eight_labels_to_physical_buildings_current_load_GPU_inventory_power_cooling_BOM_and_private_financials
     - Telehouse_31_labels_to_physical_buildings_current_load_GPU_inventory_power_cooling_BOM_and_KDDI_site_economics

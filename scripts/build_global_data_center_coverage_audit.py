@@ -74,6 +74,7 @@ PROFILED = [
     entity("Sabey_Data_Centers", ["Sabey", "Sabey Data Centers"], "reviewed_physical_operator_profile", ["dc_sabey_us_portfolio", "company_sabey_data_centers", "sabey_official_facility_registry.jsonl"], "Six energized campuses, seven current location pages, a North Texas pipeline record, historical building count, campus design values, OSM objects and customer-owned Horizon GPUs use different scopes."),
     entity("Cologix", ["Cologix"], "reviewed_physical_operator_profile", ["dc_cologix_north_america_portfolio", "company_cologix", "cologix_official_facility_registry.jsonl"], "Forty-nine provider codes, shared-address suites, company and market counts, OSM objects, design power, customer GPUs and private financing use different scopes."),
     entity("CloudHQ", ["CloudHQ"], "reviewed_physical_operator_profile", ["dc_cloudhq_global_portfolio", "company_cloudhq", "cloudhq_official_campus_registry.jsonl"], "Twenty current campus pages, a twenty-three-campus headline, mixed-lifecycle card MW, two operating ABS assets and OSM objects use different scopes."),
+    entity("Global_Switch", ["Global Switch"], "reviewed_physical_operator_profile", ["dc_global_switch_europe_apac_portfolio", "company_global_switch", "global_switch_official_facility_registry.jsonl"], "Sixteen numeric directory labels, two coming-soon markets, eight ESG campuses, legal properties, OSM objects, utility MVA and saleable MW use different scopes."),
     entity("DATA4", ["Data4", "data4", "Data4 Italia", "DATA4"], "reviewed_physical_operator_profile", ["dc_data4_european_portfolio", "company_data4"], "Published power terms vary between IT, reserve, total and available energy."),
     entity("AirTrunk", ["AirTrunk"], "reviewed_physical_operator_profile", ["dc_airtrunk_apac_portfolio", "company_airtrunk"], "Campus design capacity is not current live load."),
     entity("Aligned_Data_Centers", ["Aligned", "Aligned Data Centers", "Aligned Data Centres", "ODATA"], "reviewed_physical_operator_profile", ["dc_aligned_north_america_public_directory", "dc_odata_aligned_latam_portfolio", "company_aligned_data_centers"], "ODATA and Aligned labels are joined at current platform level, not treated as identical facility brands historically."),
@@ -99,7 +100,6 @@ PRIORITY_GAPS = {
     for entity_name, priority, names in [
         ("atNorth", "P1", ["atNorth"]),
         ("Switch", "P1", ["Switch"]),
-        ("Global_Switch", "P1", ["Global Switch"]),
         ("OVHcloud", "P1", ["OVHcloud"]),
         ("Bouygues_Telecom", "P2", ["Bouygues Telecom", "Bouygues Télécom"]),
         ("SFR", "P2", ["SFR"]),
