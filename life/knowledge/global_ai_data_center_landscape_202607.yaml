@@ -13066,6 +13066,193 @@ campus_profiles:
       - {title: Orange Q1 2026 results, publisher: Orange, date: 2026-04-23, url: "https://assets.orange.com/medias/domain12751/media101762/528618-b6xgiexxgx-75.pdf"}
     confidence: high_for_70_data_center_headline_Cloud_Avenue_denominators_three_French_campuses_FY2025_and_Q1_2026_financials_GPU_models_DC2020_scope_Normandie_2_generators_and_selected_cooling_medium_for_OSM_Grenoble_crosswalk_and_current_phase_completion_low_for_complete_building_roster_legal_ownership_site_capacity_live_load_full_equipment_BOM_GPU_inventory_site_economics_and_return_on_capital
 
+  - id: dc_pulsant_uk_regional_edge_portfolio
+    name: Pulsant UK regional edge data-center portfolio
+    record_granularity: current_provider_facility_codes_HTML_cards_downloadable_data_sheets_statutory_group_financials_and_OSM_objects_with_explicit_measure_boundaries
+    operator: Pulsant_Limited
+    countries: [GB]
+    lifecycle_as_of_2026_07_19: >-
+      Pulsant's current directory contains fourteen operating facility codes.
+      Birmingham WM-1 and Fareham SE-5 were acquired from SCC on 2 June 2025,
+      expanding the prior twelve-site platform to fourteen. Pulsant describes
+      the current sites as owned, operated and interconnected, but card capacity
+      does not establish that every MW is energized, leased or utilized.
+    official_facility_registry_ref: life/imports/global_data_centers_20260717/pulsant_official_facility_registry.jsonl
+    official_facility_summary_ref: life/imports/global_data_centers_20260717/pulsant_official_facility_summary.json
+    registry_builder_ref: scripts/build_pulsant_official_facility_registry.py
+    current_portfolio_reconciliation:
+      current_operating_facilities: 14
+      current_provider_codes: [SC_1, SC_2, SC_3, WM_1, YH_1, NE_1, NE_2, NW_1, SE_1, SE_2, SE_3, SE_4, LN_1, SE_5]
+      acquisition_bridge:
+        prior_facilities: 12
+        acquired_from_SCC: [Birmingham_WM_1, Fareham_SE_5]
+        completed: 2025_06_02
+        ESG_reported_capacity_increase_percent_approximately: 35
+        current_facilities: 14
+      current_HTML_card_checksums:
+        IT_power_mw: 22.12
+        building_sqm: 36477
+        data_hall_sqm: 17126
+      current_data_sheet_incoming_power_mva_checksum: 45.1
+      immediately_available_capacity_mw: 1.2
+      immediately_available_site: Milton_Keynes_SE_1
+      boundary: >-
+        The 22.12-MW figure sums current HTML IT-power cards; 45.1 MVA sums
+        incoming apparent-power fields in current downloadable sheets. The 1.2
+        MW is available high-density capacity already within a current site and
+        is not added to the card total. None is a live, leased, utilized, billed
+        or customer-accepted load total.
+    current_facilities:
+      - {code: SC_1, label: Edinburgh_South_Gyle, address: "The Clocktower, South Gyle Crescent, Edinburgh EH12 9LB", building_sqm: 4648, data_hall_sqm: 2628, current_card_IT_mw: 3.4, data_sheet_incoming_mva: 6, UPS: 2N, standby: N_plus_1, cooling: N_plus_1, OSM_objects: 3}
+      - {code: SC_2, label: Edinburgh_Medway, address: "7 Bankhead Medway, Sighthill Industrial Estate, Edinburgh EH11 4BY", building_sqm: 3121, data_hall_sqm: 1449, current_card_IT_mw: 2.16, data_sheet_incoming_mva: 3.2, UPS: N_plus_1, standby: N_plus_1, cooling: N_plus_1, OSM_objects: 1}
+      - {code: SC_3, label: Edinburgh_Newbridge, address: "7 Claylands Road, Newbridge, Edinburgh EH28 8LF", building_sqm: 991, data_hall_sqm: 630, current_card_IT_mw: 1.3, data_sheet_incoming_mva: 2, UPS: 2N, standby: N_plus_1, cooling: N_plus_1, OSM_objects: 1}
+      - {code: WM_1, label: Birmingham, address: "Westwood Avenue, Tyseley, Birmingham B11 3RZ", building_sqm: 5007, data_hall_sqm: 2405, current_card_IT_mw: 2, data_sheet_incoming_mva: 8, UPS: 2N, standby: N_plus_1, cooling: N_plus_1, OSM_objects: 0}
+      - {code: YH_1, label: Rotherham, address: "Unit 1, Pioneer Close, Manvers, Rotherham S63 7JZ", building_sqm: 2013, data_hall_sqm: 343, current_card_IT_mw: 0.18, data_sheet_incoming_mva: 2, UPS: 2N, standby: N, cooling: N_plus_1, OSM_objects: 0}
+      - {code: NE_1, label: Newcastle_Central, address: "5 Bridge View, Stepney Lane, Newcastle upon Tyne NE1 6PN", building_sqm: 557, data_hall_sqm: 464, current_card_IT_mw: 0.72, data_sheet_incoming_mva: 1.6, UPS: N_plus_1, standby: N, cooling: N_plus_1, OSM_objects: 0}
+      - {code: NE_2, label: Newcastle_North_Shields, address: "New York Way, North Shields, Tyne & Wear NE27 0QF", building_sqm: 816, data_hall_sqm: 374, current_card_IT_mw: 0.25, data_sheet_incoming_mva: 0.8, UPS: N, standby: N, cooling: N_plus_1, OSM_objects: 0}
+      - {code: NW_1, label: Manchester, address: "1-2 Ball Green, Cobra Court, Trafford Park M32 0QT", building_sqm: 1200, data_hall_sqm: 936, current_card_IT_mw: 1, data_sheet_incoming_mva: 2, UPS: 2N, standby: N_plus_1, cooling: N_plus_1, OSM_objects: 0}
+      - {code: SE_1, label: Milton_Keynes, address: "St. Neots House, Rockingham Drive, Milton Keynes MK14 6LY", building_sqm: 2027, data_hall_sqm: 1116, current_card_IT_mw: 2.2, data_sheet_incoming_mva: 3, UPS: 2N, standby: N_plus_1, cooling: N_plus_1, OSM_objects: 1}
+      - {code: SE_2, label: Maidenhead, address: "Bluesquare House, Priors Way, Maidenhead SL6 2HP", building_sqm: 941, data_hall_sqm: 860, current_card_IT_mw: 1, data_sheet_incoming_mva: 2, UPS: 2N, standby: N_plus_1, cooling: N_plus_1, OSM_objects: 2}
+      - {code: SE_3, label: Reading_South, address: "Unit 2, Smallmead Road, Reading RG2 0QS", building_sqm: 2494, data_hall_sqm: 1423, current_card_IT_mw: 2.8, data_sheet_incoming_mva: 4, UPS: 2N, standby: N_plus_1, cooling: N_plus_1, OSM_objects: 0}
+      - {code: SE_4, label: Reading_East, address: "Suttons Business Park, Reading RG6 1AZ", building_sqm: 1500, data_hall_sqm: 590, current_card_IT_mw: 0.76, data_sheet_incoming_mva: 1.5, UPS: 2N, standby: N_plus_1, cooling: N_plus_1, OSM_objects: 1}
+      - {code: LN_1, label: Croydon, address: "Unit 1, 35 Imperial Way, Croydon CR0 4RR", building_sqm: 3282, data_hall_sqm: 1223, current_card_IT_mw: 1.35, data_sheet_incoming_mva: 4, UPS: 2N, standby: N_plus_1, cooling: N_plus_1, OSM_objects: 1}
+      - {code: SE_5, label: Fareham, address: "18 Brunel Way, Fareham, Hampshire PO15 5TX", building_sqm: 7880, data_hall_sqm: 2685, current_card_IT_mw: 3, data_sheet_incoming_mva: 5, UPS: 2N, standby: N_plus_1, cooling: N_plus_1, OSM_objects: 0}
+    publication_conflicts:
+      SC_2_building_sqm: {current_HTML: 3121, data_sheet: 3131}
+      SC_3_IT_power_mw: {current_HTML: 1.3, data_sheet: 0.64}
+      NE_1_UPS: {current_HTML: N_plus_1, data_sheet: 2N}
+      SE_1_IT_power_mw: {current_HTML_and_new_hall_sheet: 2.2, older_sheet: 1.59}
+      SE_1_high_density_kw_per_rack_up_to: {dedicated_high_density_page: 20, current_facility_page_and_new_hall_sheet: 40}
+      resolution: retain_each_publication_scope_do_not_choose_or_sum_silently
+    selected_power_and_cooling:
+      all_current_cards:
+        cooling: N_plus_1
+        renewable_energy_percent: 100
+        renewable_boundary: >-
+          A 100% field on each card and REGO-backed procurement are contractual
+          or market-based claims, not hourly additional renewable matching.
+      Fareham_SE_5:
+        incoming_power_mva: 5
+        incoming_supplies: 2
+        grid: two_dedicated_secure_connections_to_diverse_substations_fed_from_132kV
+        electrical_distribution: 2N
+        cooling: chilled_water_N_plus_1
+      Birmingham_WM_1:
+        incoming_power_mva: 8
+        photovoltaic_kw: 650
+      Reading_SE_3: {incoming_power_mva: 4, data_sheet_PUE: 1.2}
+      Milton_Keynes_SE_1:
+        incoming_power_mva: 3
+        current_card_IT_mw: 2.2
+        high_density_expansion_mw: 1.2
+        expansion_completed: 2026_02_09
+        investment_GBP_million: 10
+      Manchester_NW_1:
+        investment_GBP_million: 4.5
+        additional_IT_capacity_kw: 300
+        additional_data_hall_sqm: 320
+        data_hall: 4
+        opened_release: 2024_03_19
+      portfolio_calendar_2024:
+        electricity_kwh: 78144241
+        estate_PUE: 1.501
+        estate_PUE_2023: 1.523
+        efficiency_savings_mwh: 1139
+        emissions_tCO2e: 31360
+        emissions_change_since_2019_percent: -31
+        most_site_cooling_consumes_no_water: true
+      targets: {PUE_2030: 1.3, net_zero: 2050, absolute_emissions_reduction_2030_percent_from_2019: 50, remove_FM_200_by: 2030}
+      boundary: >-
+        Current cards disclose topology labels but generally not unit counts,
+        ratings, OEMs, battery chemistry, runtime or final single-line design.
+    historical_or_unallocated_equipment_evidence:
+      Edinburgh_hosting_service_document:
+        exact_current_facility_code: unstated
+        grid: dual_independent_11kV_feeds
+        UPS: dual_battery_string_Chloride
+        generators: [Cummins_1_4MW_diesel, Cummins_850kW_diesel]
+        generator_testing: monthly
+        cooling: fivefold_redundant_air_handling_units
+        boundary: >-
+          A third-party G-Cloud service definition names Pulsant Edinburgh but
+          not one of the current facility codes or an as-of equipment inventory.
+      North_and_South_London_2013_project:
+        facilities: two_approximately_500sqm_data_centres
+        project_value_GBP_million: 7
+        UPS: N_plus_1_with_2N_distribution
+        cooling: DX_N_plus_1
+        generator_replacement: 930kVA_to_2250kVA_prime_containerized_with_24_hour_bulk_fuel
+        boundary: >-
+          The contractor scope is historical and spans two London locations; it
+          is not propagated to current LN-1 or treated as the estate BOM.
+    accelerators_and_AI:
+      services: [GPU_accelerated_IaaS, colocated_customer_accelerated_hardware, regional_AI_inference]
+      high_density_site: Milton_Keynes_SE_1
+      physical_accelerator_count: undisclosed
+      model_manufacturer_owner_financier_exact_site_delivery_power_and_utilization: undisclosed
+      accelerator_ledger_row: none_no_quantity_disclosure
+      boundary: >-
+        AI-ready, GPU-accelerated and high-density language establishes service
+        capability, not a physical Pulsant-owned or customer fleet inventory.
+    public_map_crosswalk:
+      related_OSM_objects: 12
+      operator_tagged_objects: 10
+      name_or_website_only_objects: 2
+      exact_or_same_facility_candidate_objects: 10
+      matched_current_facility_codes: 7
+      unmatched_current_facility_codes: 7
+      multi_object_facilities:
+        SC_1: 3
+        SE_2: 2
+      unresolved_objects:
+        - {OSM_ref: osm_way_96173979, reason: Reading_Pulsant_building_not_confidently_crosswalked_to_current_SE_3_or_SE_4_address}
+        - {OSM_ref: osm_node_13655340206, reason: Stockton_on_Tees_operator_node_not_in_current_fourteen_facility_roster}
+      footprint_area_m2_checksum: 19862.539
+      boundary: >-
+        Multiple OSM objects can belong to one facility, and seven current
+        facility codes have no exact public-map match. Object count and polygon
+        area are therefore QA evidence, not facility count or gross floor area.
+    corporate_and_financial_context:
+      financial_profile_ref: company_pulsant
+      ownership: Antin_Infrastructure_Partners_Mid_Cap_Fund_I
+      Pulsant_Limited_FY2024_GBP:
+        turnover: 100194062
+        gross_profit: 25810801
+        operating_profit: 8350387
+        net_profit: 275136
+      Monch_Topco_group_FY2024_GBP:
+        revenue: 100194000
+        EBITDA_before_exceptional: 21230000
+        normalized_EBITDA: 21291000
+        operating_loss: -23755000
+        net_loss: -25732000
+      refinancing_2025_GBP_million: 187
+      boundary: >-
+        The standalone operating company is profitable, while its consolidated
+        parent reports a loss after GBP33.041 million amortisation, GBP10.199
+        million depreciation and exceptional costs. Neither perimeter isolates
+        data-center, cloud, network, AI or site economics, and FY2024 predates
+        the two-site SCC acquisition.
+    linked_companies:
+      owner: [Antin_Infrastructure_Partners]
+      acquired_from: [SCC]
+      selected_historical_equipment: [Chloride, Cummins]
+      customer_or_partner_examples: [Dacoll]
+      financial_profile_refs: [company_pulsant]
+    sources:
+      - {title: Current Pulsant colocation directory, publisher: Pulsant, accessed: 2026-07-19, url: "https://www.pulsant.com/colocation"}
+      - {title: Pulsant 2024 ESG report, publisher: Pulsant, date: 2025, url: "https://www.pulsant.com/hubfs/PUL168%20ESG%20document%202024%20-%20Final.pdf"}
+      - {title: Milton Keynes high-density completion, publisher: Pulsant, date: 2026-02-09, url: "https://www.pulsant.com/knowledge-hub/announcements/uk-data-centre-operator-launches-high-density-facility-outside-london"}
+      - {title: SCC acquisition completion, publisher: Pulsant, date: 2025-06-02, url: "https://www.pulsant.com/knowledge-hub/announcements/pulsant-completes-acquisition-of-two-data-centres-from-scc"}
+      - {title: Five-year GBP187 million refinancing, publisher: Pulsant, date: 2025-10-09, url: "https://www.pulsant.com/knowledge-hub/announcements/pulsant-completes-five-year-refinancing"}
+      - {title: Pulsant Limited FY2024 accounts, publisher: UK_Companies_House, date: 2025, url: "https://find-and-update.company-information.service.gov.uk/company/03625971/filing-history/MzQ2OTgxNzgxNWFkaXF6a2N4/document?download=0&format=pdf"}
+      - {title: Monch Topco FY2024 group accounts, publisher: UK_Companies_House, date: 2025, url: "https://find-and-update.company-information.service.gov.uk/company/13469899/filing-history/MzQ2OTgxNzgxN2FkaXF6a2N4/document?format=pdf&download=0"}
+      - {title: Current Antin Pulsant portfolio page, publisher: Antin_Infrastructure_Partners, accessed: 2026-07-19, url: "https://www.antin-ip.com/investments/pulsant"}
+      - {title: Pulsant AI inferencing, publisher: Pulsant, accessed: 2026-07-19, url: "https://www.pulsant.com/ai-inferencing"}
+      - {title: Edinburgh hosting-service equipment disclosure, publisher: UK_Digital_Marketplace_supplier_document, date: 2022, url: "https://assets.applytosupply.digitalmarketplace.service.gov.uk/g-cloud-14/documents/92903/182334399614577-service-definition-document-2022-05-10-1450.pdf"}
+      - {title: Historical Pulsant London data-center project, publisher: DataProjeX, date: 2013, url: "https://www.dataprojex.pro/completed-projects/pulsant-data-center/"}
+    confidence: high_for_current_fourteen_code_roster_addresses_card_and_sheet_fields_acquisition_FY2024_accounts_ownership_refinancing_ESG_and_OSM_objects_medium_for_current_card_versus_sheet_recency_historical_equipment_allocation_and_current_high_density_fitout_low_for_live_utilized_load_complete_building_and_property_roster_current_as_built_equipment_GPU_inventory_site_economics_customer_concentration_and_ROIC
+
   - id: dc_ark_data_centres_uk_europe_portfolio
     name: Ark Data Centres UK and European portfolio
     record_granularity: provider_location_cards_statutory_operating_company_sites_and_OSM_footprints_with_explicit_lifecycle_operator_and_power_boundaries
@@ -32177,6 +32364,14 @@ disclosure_gap_register:
   - Sify_188MW_marketed_live_to_132MW_installed_129MW_sold_and_site_level_energized_utilized_capacity_reconciliation
   - Sify_GPUaaS_H100_L40S_L4_exact_inventory_ownership_site_allocation_utilization_power_and_revenue
   - Sify_per_site_transformer_UPS_generator_chiller_CDU_switchgear_counts_ratings_OEMs_PUE_WUE_and_water
+  - Pulsant_current_HTML_data_sheet_and_older_sheet_SC_2_SC_3_NE_1_SE_1_publication_conflict_resolution
+  - Pulsant_22_12MW_current_card_IT_power_45_1MVA_incoming_power_and_1_2MW_available_high_density_scope_reconciliation
+  - Pulsant_per_site_energized_leased_utilized_customer_accepted_and_billed_IT_load_occupancy_and_customer_concentration
+  - Pulsant_complete_building_parcel_property_title_lease_and_fourteen_facility_to_twelve_OSM_object_crosswalk
+  - Pulsant_per_site_substation_transformer_switchgear_busbar_PDU_UPS_battery_generator_fuel_runtime_chiller_CRAH_CRAC_CDU_counts_ratings_topology_and_OEMs
+  - Pulsant_physical_GPU_model_count_owner_site_delivery_power_draw_utilization_customer_revenue_and_margin
+  - Pulsant_FY2025_post_acquisition_group_accounts_and_colocation_cloud_network_AI_revenue_operating_profit_capex_cash_flow_debt_and_ROIC
+  - Pulsant_per_site_measured_PUE_WUE_water_energy_emissions_hourly_renewable_matching_and_live_high_density_or_liquid_cooled_MW
   - Ark_27_data_centres_9_locations_headline_to_eight_visible_pages_29_plus_card_count_and_Barcelona_reconciliation
   - Ark_page_card_549MW_operating_company_108_42MW_2030_446MW_and_UK_700MW_plus_power_runway_scope_reconciliation
   - Ark_per_site_operating_energized_leased_utilized_billed_and_customer_accepted_IT_load
@@ -32188,8 +32383,7 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
-    - global_coverage_next_P2_Orange_official_profile
-    - global_coverage_next_P2_Pulsant_official_profile
+    - global_coverage_next_P2_KIO_official_profile
     - Ark_27_9_29_plus_roster_108_42_549_700MW_GPU_equipment_current_load_group_financial_and_project_enrichment
     - Datacenter_United_13_11_14_16_roster_power_address_GPU_equipment_current_load_financial_and_project_enrichment
     - Verizon_nine_city_350_plus_tech_facility_and_13_OSM_object_exact_building_load_GPU_power_cooling_and_data_center_financial_enrichment

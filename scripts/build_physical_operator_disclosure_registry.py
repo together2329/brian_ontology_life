@@ -90,6 +90,7 @@ SPECS = [
     spec("DataBank", "company_databank_holdings", ["dc_databank_north_america_uk_portfolio"], "United_States_and_United_Kingdom", "private_or_unlisted", "76 current marketing cards summing to 1.023179 GW of mixed-lifecycle critical IT load", "Eleven cards are explicitly development or future; the full checksum is not operating, energized, leased, utilized or billed load."),
     spec("Ark_Data_Centres", "company_ark_data_centres", ["dc_ark_data_centres_uk_europe_portfolio"], "United_Kingdom_Belgium_and_Spain", "private_with_statutory_operating_company_financials", "27-data-centre and 9-location headline versus eight visible pages with at least 29 card labels, a 108.42-MW statutory built-capacity reconstruction and approximately 549 MW of mixed-lifecycle page capacity", "Location cards, physical buildings, statutory operating-company sites, group developments, OSM footprints, built MW, contracted power, customer-owned GPUs and utilized load use different scopes.", ["life/imports/global_data_centers_20260717/ark_data_centres_official_location_registry.jsonl", "life/imports/global_data_centers_20260717/ark_data_centres_official_location_summary.json"]),
     spec("Orange_Group_and_Orange_Business", "company_orange_group", ["dc_orange_group_data_center_cloud_and_network_portfolio"], "Global_with_selected_France_Norway_Sweden_and_Germany_detail", "public_parent_with_segment_or_platform_boundary", "70 Orange Business infrastructure data centers versus 10-plus European Cloud Avenue locations including four in France and three selected French colocation campuses", "Group infrastructure, cloud service locations, campuses, physical buildings, legacy telecom sites, OSM objects, IT MW, generators, chillers and GPUaaS models use different scopes.", ["life/imports/global_data_centers_20260717/orange_data_center_evidence_registry.jsonl", "life/imports/global_data_centers_20260717/orange_data_center_evidence_summary.json"]),
+    spec("Pulsant", "company_pulsant", ["dc_pulsant_uk_regional_edge_portfolio"], "United_Kingdom", "private_with_statutory_operating_and_group_financials", "fourteen current operating facility codes with a 22.12-MW IT-card checksum and 45.1-MVA incoming-power-sheet checksum", "Facility codes, buildings, OSM objects, IT MW, incoming MVA, available high-density MW, utilization, private-group financials and GPU-service capability use different scopes.", ["life/imports/global_data_centers_20260717/pulsant_official_facility_registry.jsonl", "life/imports/global_data_centers_20260717/pulsant_official_facility_summary.json"]),
 ]
 
 
@@ -133,7 +134,7 @@ def load_index(path: Path, key: str) -> dict[str, dict]:
 def build_records(finance_path: Path, landscape_path: Path, accessed_on: str) -> list[dict]:
     finance = load_index(finance_path, "financial_profiles")
     landscape = load_index(landscape_path, "campus_profiles")
-    assert len(SPECS) == 47
+    assert len(SPECS) == 48
     assert len({row["company"] for row in SPECS}) == len(SPECS)
     records = []
     for position, source in enumerate(SPECS, start=1):
