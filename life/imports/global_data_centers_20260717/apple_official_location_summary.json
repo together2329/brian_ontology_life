@@ -1,0 +1,116 @@
+{
+  "accelerator_and_PCC_boundary": {
+    "interpretation": "The Apple-owned fleet's exact Apple-silicon inventory remains undisclosed. The 2026 Google Cloud relationship establishes NVIDIA GPU use for new PCC workloads, but not GPU model, quantity, ownership, physical site, power, utilization, or contract economics.",
+    "original_PCC": {
+      "compute": "custom_Apple_silicon_servers",
+      "operator_boundary": "Apple_data_centers",
+      "workload": "large_language_model_inference"
+    },
+    "third_party_PCC": {
+      "compute": [
+        "NVIDIA_GPUs",
+        "Intel_CPUs_with_TDX",
+        "Google_Titan_chip"
+      ],
+      "partners": [
+        "Apple",
+        "Google",
+        "NVIDIA"
+      ],
+      "physical_operator": "Google_Cloud",
+      "physical_sites_GPU_models_counts_power_and_contract_value": "undisclosed",
+      "significance": "first_PCC_use_of_third_party_data_centers"
+    }
+  },
+  "coverage": {
+    "Apple_owned_data_center_labels": 8,
+    "China_owned_sites_in_one_aggregate_energy_row": 2,
+    "PCC_on_Google_Cloud_physical_site_count": null,
+    "colocation_physical_facility_count": null,
+    "countries": [
+      "China",
+      "Denmark",
+      "United States"
+    ],
+    "country_count": 3,
+    "site_specific_fiscal_2025_electricity_rows": 6,
+    "third_party_compute_physical_facility_count": null
+  },
+  "expansion": {
+    "added_buildings_MW_budget_and_completion_schedule": "undisclosed",
+    "construction_underway_as_of_2025_08": [
+      "Maiden",
+      "Prineville",
+      "Reno",
+      "Waukee"
+    ]
+  },
+  "fiscal_2025_energy_reconciliation": {
+    "China_two_owned_sites_aggregate_million_kwh": 218,
+    "boundary": "Annual electricity divided by 8,760 hours is a derived average metered draw, not utility capacity, contracted IT MW, peak demand, or current 2026 load. Apple excludes colocation cooling and building operations from its operational boundary, so owned and colocation electricity are not identical facility scopes.",
+    "colocation_derived_average_Apple_metered_draw_mw": 62.054,
+    "colocation_exact_electricity_kwh": 543594587,
+    "colocation_exact_equivalent_million_kwh": 543.594587,
+    "combined_derived_average_draw_mw": 295.045,
+    "owned_derived_average_facility_draw_mw": 232.991,
+    "owned_plus_colocation_exact_equivalent_million_kwh": 2584.594587,
+    "owned_sites_deduplicated_sum_million_kwh": 2041,
+    "reported_data_center_and_colocation_total_million_kwh": 2585,
+    "rounding_difference_million_kwh": 0.405413,
+    "six_site_specific_rows_sum_million_kwh": 1823
+  },
+  "generated_on": "2026-07-18",
+  "ownership_and_location_boundary": {
+    "PCC_2026_expansion": {
+      "compute": [
+        "NVIDIA_GPUs",
+        "Intel_CPUs_with_TDX",
+        "Google_Titan_chip"
+      ],
+      "partners": [
+        "Apple",
+        "Google",
+        "NVIDIA"
+      ],
+      "physical_operator": "Google_Cloud",
+      "physical_sites_GPU_models_counts_power_and_contract_value": "undisclosed",
+      "significance": "first_PCC_use_of_third_party_data_centers"
+    },
+    "colocation": "Apple reports U.S. and international electricity aggregates but no facility names, operators, addresses, contracts, or counts.",
+    "other_third_party_compute": "Apple reports use of on-demand cloud computing and storage but no vendor, location, capacity, or facility roster.",
+    "owned_site_labels": [
+      "Maiden",
+      "Mesa",
+      "Prineville",
+      "Reno",
+      "Viborg",
+      "Waukee",
+      "Ulanqab",
+      "Gui'an"
+    ],
+    "sold_site_excluded": "Newark_CA_sold_in_fiscal_2022"
+  },
+  "remaining_gaps": [
+    "Complete Apple-owned campus, building, street-address, parcel, and meter-boundary crosswalk",
+    "Complete colocation, third-party cloud, and Google Cloud PCC physical-site and operator roster",
+    "Per-site operating, energized, leased, utilized, and billed critical IT load",
+    "Apple-silicon and third-party GPU model, count, ownership, delivery, rack, fabric, site allocation, and utilization",
+    "Per-site utility, substation, transformer, switchgear, UPS, battery, generator, cooling, and equipment OEM bill of materials",
+    "Per-site current PUE, WUE, peak demand, cooling capacity, liquid-cooled MW, and hourly energy matching",
+    "Data-center and PCC revenue, operating profit, capex, depreciation, contract, and return reconciliation"
+  ],
+  "schema_version": 1,
+  "sources": {
+    "PCC_original_architecture": "https://security.apple.com/blog/private-cloud-compute/",
+    "PCC_third_party_expansion": "https://security.apple.com/blog/expanding-pcc/",
+    "US_expansion": "https://www.apple.com/newsroom/2025/08/apple-increases-us-commitment-to-600-billion-usd-announces-ambitious-program/",
+    "current_owned_count_fiscal_2025_energy_and_facility_design": "https://www.apple.com/environment/pdf/Apple_Environmental_Progress_Report_2026.pdf",
+    "hash_boundary": "Hashes cover extracted stable evidence rather than full HTML or PDF bytes, whose delivery metadata can vary.",
+    "named_owned_site_roster": "https://www.apple.com/environment/pdf/Apple_Environmental_Progress_Report_2025.pdf",
+    "retrieved_evidence_sha256": {
+      "energy": "8c50f97da394219ce26b3cda537970c7945e3baf474bc2b9cc976719d065ee02",
+      "expansion_and_PCC": "e9f1493c5a3e77ed5b5bc1edfd990830b3da44fbecd5280cdbedd6f26d512dc9",
+      "named_roster": "2f68aa9d9f96839311a14c964bac07831e1b1a44047d7ed422bb8d2d511b7daa"
+    }
+  }
+}

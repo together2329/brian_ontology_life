@@ -4810,6 +4810,10 @@ campus_profiles:
     operator: Apple
     lifecycle_as_of_2026_07_18: operating_and_expanding
     location:
+      official_registry:
+        official_raw_registry_ref: life/imports/global_data_centers_20260717/apple_official_location_registry.jsonl
+        official_registry_summary_ref: life/imports/global_data_centers_20260717/apple_official_location_summary.json
+        reproducible_builder_ref: scripts/build_apple_official_location_registry.py
       owned_data_centers_company_disclosed: 8
       regions: [North_America, Europe, Asia]
       owned_site_roster:
@@ -4931,8 +4935,18 @@ campus_profiles:
         workload: Apple_foundation_model_inference
         hardware: custom_built_Apple_silicon_servers
         exact_Apple_silicon_model_CPU_GPU_Neural_Engine_topology_node_count_racks_power_and_site_allocation: undisclosed
-        NVIDIA_or_AMD_GPU_inventory: undisclosed_and_no_reviewed_primary_source_establishes_a_merchant_GPU_fleet
+        Apple_owned_fleet_NVIDIA_or_AMD_GPU_inventory: undisclosed_and_no_reviewed_primary_source_establishes_a_merchant_GPU_fleet_at_Apple_owned_sites
         cloud_demand_mitigation: Apple runs many Apple Intelligence features on device and sends only requests needing larger models to PCC.
+      PCC_on_Google_Cloud_as_of_2026_06_08:
+        lifecycle: announced_current_architecture_for_new_Apple_Intelligence_workloads
+        significance: first_PCC_expansion_beyond_Apple_data_centers_to_third_party_data_centers
+        partners: [Apple, Google, NVIDIA]
+        disclosed_compute_components: [NVIDIA_GPUs_with_confidential_computing, Intel_CPUs_with_TDX, Google_Titan_chip]
+        exact_Google_Cloud_regions_data_centers_GPU_models_GPU_counts_ownership_racks_power_utilization_contract_value_and_revenue: undisclosed
+        boundary: >-
+          This proves NVIDIA GPU use in the third-party PCC architecture, but it
+          does not identify a physical Google facility or permit assignment of
+          Google's portfolio GPU, region, or power counts to Apple.
       disclosed_PCC_node_and_chassis_design:
         root_of_trust: Apple_silicon_SoC
         node_security: [Secure_Enclave, Secure_Boot, hardware_attestation, stateless_request_processing]
@@ -5027,6 +5041,10 @@ campus_profiles:
         publisher: Apple_Security_Research
         date: 2024-06-10
         url: https://security.apple.com/blog/private-cloud-compute/
+      - title: Expanding Private Cloud Compute
+        publisher: Apple_Security_Research
+        date: 2026-06-08
+        url: https://security.apple.com/blog/expanding-pcc/
       - title: Private Cloud Compute Security Guide - Hardware Integrity
         publisher: Apple_Security_Research
         date: 2026-07-18_accessed

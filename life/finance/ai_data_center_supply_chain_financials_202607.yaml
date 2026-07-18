@@ -3197,12 +3197,19 @@ financial_profiles:
     data_center_exposure:
       roles: [owned_data_center_operator, colocation_customer, third_party_compute_customer, custom_AI_server_and_silicon_designer, digital_services_provider]
       global_portfolio_ref: dc_apple_global_data_center_portfolio
+      official_location_registry_ref: life/imports/global_data_centers_20260717/apple_official_location_registry.jsonl
+      official_location_summary_ref: life/imports/global_data_centers_20260717/apple_official_location_summary.json
       owned_data_centers: 8
       2025_owned_and_colocation_electricity_million_kwh: 2585
       Private_Cloud_Compute:
         workload: foundation_model_inference
         hardware: custom_Apple_silicon_servers
         exact_silicon_model_server_node_chassis_rack_count_power_and_site_allocation: undisclosed
+        third_party_expansion_as_of_2026_06_08:
+          physical_operator: Google_Cloud
+          partners: [Apple, Google, NVIDIA]
+          disclosed_components: [NVIDIA_GPUs, Intel_CPUs_with_TDX, Google_Titan_chip]
+          exact_regions_sites_GPU_models_counts_ownership_power_utilization_and_contract_economics: undisclosed
       revenue_boundary: >-
         Services revenue includes the App Store, cloud, advertising, payment, and
         entertainment services and is not data-center or PCC revenue. Apple does
@@ -3220,6 +3227,7 @@ financial_profiles:
     watch_items:
       - Apple_Intelligence_and_PCC_adoption_and_utilization
       - custom_Apple_silicon_server_yield_supply_and_refresh_cadence
+      - Google_Cloud_and_NVIDIA_PCC_capacity_contract_concentration_and_economics
       - owned_versus_colocation_and_third_party_compute_economics
       - Services_growth_regulation_and_margin_mix
       - China_data_sovereignty_and_operating_arrangements
@@ -3229,6 +3237,7 @@ financial_profiles:
       - https://www.apple.com/newsroom/pdfs/fy2026q2/FY26_Q2_Consolidated_Financial_Statements.pdf
       - https://www.apple.com/environment/pdf/Apple_Environmental_Progress_Report_2026.pdf
       - https://security.apple.com/blog/private-cloud-compute/
+      - https://security.apple.com/blog/expanding-pcc/
       - https://security.apple.com/documentation/private-cloud-compute/hardwareintegrity
       - https://www.apple.com/newsroom/2025/08/apple-increases-us-commitment-to-600-billion-usd-announces-ambitious-program/
       - https://www.apple.com/newsroom/2026/02/apple-accelerates-us-manufacturing-with-mac-mini-production/
