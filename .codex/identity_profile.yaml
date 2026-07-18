@@ -3,7 +3,7 @@ status: draft
 profile:
   id: brian
   display_name: Brian
-  updated_at: 2026-07-17
+  updated_at: 2026-07-18
   birth_year: 1989
   birth_date: null
   sex: male
@@ -79,6 +79,7 @@ known_context:
     active_thought_threads_ref: life/knowledge/agent_architecture_thoughts.yaml
     evidence_backed_brian_os_ref: life/knowledge/evidence_backed_brian_os.yaml
     brian_os_next_direction_ref: life/knowledge/brian_os_next_direction_202607.yaml
+    life_quality_reflection_ref: life/knowledge/life_quality_reflection_20260718.yaml
     conversation_corpus_manifest_ref: life/imports/agent_sessions_20260717/ontology_manifest.yaml
     direction_analysis_ref: life/imports/agent_sessions_20260717/direction_analysis_report.json
     current_interest_refs:
@@ -203,7 +204,14 @@ known_context:
   happiness:
     confirmed_concept_ref: happiness_bundle
     fulfilled_mind_concept_ref: concept_fulfilled_mind
+    life_quality_operating_principle_ref: principle_better_state_over_more_output_20260718
     notes: Brian confirmed 행복꾸러미 as a bundle of things he defines as happiness.
+
+  language_learning:
+    english_conversation_intention_ref: intervention_english_first_ai_conversation_20260718
+    current_scope: AI conversation practice when Brian chooses to write in English.
+    boundaries: Existing personal records remain Korean or naturally mixed; Korean use is not treated as failure.
+    updated_at: 2026-07-18
 
 desired_identity:
   - id: desired_deep_and_executing_designer
@@ -241,6 +249,21 @@ pattern_candidates:
     needs_user_review: true
 
 operating_rules:
+  - id: rule_better_state_over_more_output
+    statement: Ask whether Brian lived in a better state, not only whether he produced more output.
+    applies_when:
+      - planning_day
+      - reviewing_day
+      - reviewing_week
+      - evaluating_productivity
+    recommended_actions:
+      - Check recovery and bodily energy.
+      - Check mental clarity and meaningful closure.
+      - Check relationship and present-moment connection.
+      - Do not require constant positive emotion or turn happiness into another performance obligation.
+    derived_from:
+      - principle_better_state_over_more_output_20260718
+    confidence: high
   - id: rule_do_not_optimize_only_productivity
     statement: Do not optimize Brian's plan only for output; preserve long-term wellbeing across all areas.
     applies_when:
