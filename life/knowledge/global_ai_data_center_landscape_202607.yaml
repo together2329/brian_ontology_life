@@ -33290,7 +33290,150 @@ campus_profiles:
       - {title: Russia public awards, publisher: Uptime_Institute, accessed: 2026-07-19, url: "https://uptimeinstitute.com/uptime-institute-awards/country/id/RU"}
     confidence: high_for_current_directory_page_transcription_BFO_financials_CNews_portfolio_counts_legal_identity_OSM_crosswalk_and_former_Tver_boundary_medium_for_future_project_schedule_and_EGRUL_ownership_display_low_for_exact_live_load_complete_as_built_equipment_current_certification_history_GPU_inventory_site_economics_and_ROIC
 
+  - id: dc_stellanor_uk_portfolio_and_legacy_redcentric_boundary
+    operator: Stellanor_Datacenters
+    geography: United_Kingdom
+    record_granularity: current_operating_facility_acquisition_lineage_legacy_operator_OSM_object_transaction_and_former_owner_financial_boundaries
+    evidence_snapshot: '2026-07-19'
+    official_facility_registry_ref: life/imports/global_data_centers_20260717/stellanor_official_facility_registry.jsonl
+    official_facility_summary_ref: life/imports/global_data_centers_20260717/stellanor_official_facility_summary.json
+    current_roster:
+      operating_data_centers: 11
+      facility_codes:
+        - London_City
+        - London_East
+        - London_North
+        - London_West
+        - Byfleet
+        - Cambridge
+        - Gatwick
+        - Hemel_Hempstead
+        - Reading
+        - West_Yorkshire
+        - Woking
+      secured_grid_capacity_mva: 39
+      acquisition_lineage:
+        former_Redcentric_2026: [London_City, London_West, Byfleet, Cambridge, Gatwick, Reading, West_Yorkshire, Woking]
+        former_Colt_Technology_Services_2025: [London_East, London_North]
+        former_Imagination_Technologies_2026: [Hemel_Hempstead]
+      boundary: >-
+        Stellanor is the current operator. The eight former Redcentric sites,
+        two former Colt Technology Services sites and one former Imagination
+        Technologies site preserve acquisition history but are not separate
+        current portfolios. Colt Technology Services is unrelated to Colt DCS.
+    published_facility_metrics:
+      London_City: {total_area_sqm: 2400, fitted_colocation_area_sqm: 1500, maximum_site_power_mva: 2}
+      London_East: {operating_since: 1999, total_area_sqm: 8046, fitted_colocation_area_sqm: 2940, maximum_site_power_mva: 4}
+      London_North: {operating_since: 2000, total_area_sqm: 25143, fitted_colocation_area_sqm: 12212, maximum_site_power_mva: 20}
+      London_West: {total_area_sqm: 18116, fitted_colocation_area_sqm: 12077, maximum_site_power_mva: 22, supported_rack_density_kw_up_to: 100}
+      Byfleet: {total_area_sqm: 1400, fitted_colocation_area_sqm: 600, maximum_site_power_mva: 1}
+      Cambridge: {total_area_sqm: undisclosed, fitted_colocation_area_sqm: undisclosed, maximum_site_power_mva: undisclosed, supported_cabinet_density_kw: 3}
+      Gatwick: {total_area_sqm: 1400, fitted_colocation_area_sqm: 818, maximum_site_power_mva: 1}
+      Hemel_Hempstead: {total_area_sqm: 2534, fitted_colocation_area_sqm: undisclosed, maximum_site_power_mva: 3}
+      Reading: {total_area_sqm: 1477, fitted_colocation_area_sqm: 1340, maximum_site_power_mva: 2}
+      West_Yorkshire: {total_area_sqm: 8305, fitted_colocation_area_sqm: 3437, maximum_site_power_mva: 9, supported_rack_density_kw_up_to: 30}
+      Woking: {total_area_sqm: 1477, fitted_colocation_area_sqm: 1340, maximum_site_power_mva: 4.5}
+    capacity_reconciliation:
+      current_provider_secured_grid_capacity_mva: 39
+      site_page_maximum_power_checksum_mva_excluding_Cambridge: 68.5
+      former_Redcentric_eight_site_electrical_feed_build_capacity_mw: 41.3
+      former_Redcentric_eight_site_racks_more_than: 4000
+      published_total_area_checksum_sqm_excluding_Cambridge: 70298
+      published_fitted_colocation_area_checksum_sqm_excluding_Cambridge_and_Hemel: 36264
+      boundary: >-
+        Secured grid capacity, site maximum power, former-portfolio electrical
+        feed build capacity, UPS output, generator rating, cooling capacity and
+        IT load have different denominators. The checksums are transcription
+        controls, not current energized, leased, utilized, billed or actual load.
+    electrical_and_backup_power:
+      London_City: {incoming: dual_redundant_2_MVA_feeds_published_verbatim, UPS: 500_kW_N_plus_N, generator: 1x1.1_MVA, fuel_runtime_hours_at_full_load: 48}
+      London_East: {incoming: dual_redundant_3_MVA_feeds_published_verbatim, UPS: 1500_kW_N_plus_1, generators: 2_total_4_MVA, fuel_runtime_hours: 24}
+      London_North:
+        incoming_published_verbatim: dual_redundant_10_MVA_7300_kW_feeds_to_dual_redundant_4_MVA_transformer_station
+        UPS_total_facility_capacity_kva: 9500
+        UPS_systems: [3x500_kVA, 4x625_kVA, 3x625_kVA_undergoing_upgrade, 3x500_kVA, 3x550_kVA]
+        battery_autonomy_minutes_per_module: 15
+        generator_published_verbatim: 4x4.3_MVA_giving_4_MVA
+        fuel_runtime_hours: 24
+      London_West: {incoming: dual_redundant_22_MVA_total, UPS: 3000_kW_2N_plus_1, generator_total_capacity_mva: 25, fuel_runtime_hours: 72}
+      Byfleet: {incoming_power_mva: 1, UPS: 600_kW_N_plus_1, generator: 1x2_MVA, fuel_runtime_hours: 72}
+      Cambridge: {UPS: 3x100_kVA_online_double_conversion, standby_diesel: 400V_three_phase_rating_undisclosed, fuel_runtime_hours: undisclosed}
+      Gatwick: {incoming_power_mva: 1, UPS: 400_kW_2N, generator: 1x1_MVA, fuel_runtime_hours: 72}
+      Hemel_Hempstead: {incoming: 1x3_MVA, UPS: 2_MW_N_plus_1, generators: 4.5_MVA_N_plus_1, UPS_bridge_minutes: 7, fuel_runtime_hours: 72}
+      Reading: {incoming: dual_redundant_2_MVA_feeds_published_verbatim, UPS: 1.6_MW_N_plus_1, generator: 1x2.4_MVA, fuel_runtime_hours: 72}
+      West_Yorkshire: {incoming: dual_redundant_9_MVA_total, UPS: 1_MW_N_plus_1, generators: 2_total_4_MVA, fuel_runtime_hours: 72}
+      Woking: {incoming: dual_redundant_4.5_MVA_total, UPS: 1_MW_N_plus_1, generators: 2_total_4_MVA, fuel_runtime_hours: 72}
+      publication_conflicts: >-
+        London North's page mixes several feed, transformer and generator
+        scopes, and Woking states 4 MW cooling at N alongside N+1 CCUs. Values
+        are retained verbatim and not converted into an as-built single line.
+    cooling:
+      London_City: {technology: [DX, in_row, CRAC], redundancy: N_plus_1}
+      London_East: {technology: chilled_water, capacity_mw: 3, redundancy: N_plus_1}
+      London_North: {published_average_density_w_per_sqm: 750, detailed_cooling_plant: undisclosed}
+      London_West: {technology: chilled_water, chillers: 8, capacity_mw: 8.5, CCU_redundancy: N_plus_1}
+      Byfleet: {technology: direct_evaporative, capacity_mw: 0.78, redundancy: N_plus_1}
+      Cambridge: {technology: [downflow_air, traditional_multi_unit_air_conditioning]}
+      Gatwick: {technology: chilled_water, cooling_towers: 2, capacity_mw: 1, high_density_options: [CCU, RDHx, immersion]}
+      Hemel_Hempstead: {technology: chilled_water, chillers: 3, dry_coolers: 1, capacity_mw: 8.5, high_density_options: [liquid_cooling, CCU]}
+      Reading: {technology: [free_air, DX], capacity_mw: 1.2, plant_redundancy: N_plus_2, CCU_redundancy_per_floor: N_plus_1}
+      West_Yorkshire: {technology: DX, chillers: 16, capacity_mw: 1.4, CCU_redundancy: N_plus_1}
+      Woking: {technology: chilled_water_DFU, chillers: 4, capacity_published_verbatim: 4_MW_at_N, CCU_redundancy: N_plus_1}
+      exact_live_liquid_cooled_MW_measured_PUE_WUE_absolute_water_and_actual_load: undisclosed
+    accelerator_and_AI_boundary:
+      exact_operator_owned_or_customer_GPU_model_count_site_delivery_fabric_power_utilization_revenue_and_margin: undisclosed
+      Hemel_customer_workload: Imagination_Technologies_GPU_and_AI_chip_design
+      London_West_supported_rack_density_kw_up_to: 100
+      West_Yorkshire_supported_rack_density_kw_up_to: 30
+      liquid_cooling_options: [Gatwick_RDHx_and_immersion, Hemel_liquid_cooling]
+      accelerator_ledger_action: no_numeric_row_created
+      boundary: >-
+        Customer workload, rack-density support and cooling options establish
+        hosting capability only. They do not establish a Stellanor-owned or
+        customer-owned installed accelerator model or quantity.
+    sustainability_boundary:
+      provider_claim_all_sites_green_energy_percent: 100
+      provider_target_CO2_neutral_year: 2030
+      provider_green_hydrogen_emergency_power_claim: exact_current_site_count_and_capacity_undisclosed
+      current_site_page_backup_fuel: diesel
+      boundary: Portfolio marketing does not establish hourly matching, site emissions or replacement of the listed diesel systems.
+    transaction_and_financial_boundary:
+      Redcentric_eight_site_sale_completed: '2026-04-30'
+      estimated_completion_settlement_GBP_million: 122.85
+      forecast_enterprise_value_GBP_million: 122.3
+      former_Redcentric_FY25_GBP_thousand: {revenue: 44571, adjusted_EBITDA: 16633, operating_profit: 3065, net_profit: 795}
+      current_Stellanor_standalone_financials: undisclosed_first_accounts_due_2026_09_30
+      backing: fund_managed_by_DWS_Group
+      financial_profile_ref: company_stellanor
+      boundary: >-
+        Former-owner discontinued-operation financials and transaction value
+        are not current Stellanor standalone results, equity value or site economics.
+    public_map_crosswalk:
+      related_OSM_objects_with_legacy_Redcentric_operator_label: 6
+      current_portfolio_sites_without_reviewed_OSM_operator_crosswalk: 5
+      mapped_current_sites: [London_City, London_West, Byfleet, Cambridge, Reading, West_Yorkshire]
+      boundary: OSM supports address crosswalks but is not a current-ownership, complete-roster, capacity or GPU census.
+    sources:
+      - {title: Current Stellanor data-center roster, publisher: Stellanor, accessed: 2026-07-19, url: "https://www.stellanordatacenters.com/our-data-centers/"}
+      - {title: Redcentric eight-site acquisition completion, publisher: Stellanor, accessed: 2026-07-19, url: "https://www.stellanordatacenters.com/stellanor-completes-acquisition-of-eight-data-centers-from-redcentric/"}
+      - {title: Two former Colt Technology Services sites online, publisher: Stellanor, accessed: 2026-07-19, url: "https://www.stellanordatacenters.com/stellanor-datacenters-now-online-and-already-growing/"}
+      - {title: Hemel Hempstead acquisition and AI-ready customer workload, publisher: Stellanor, date: 2026-04-08, url: "https://www.stellanordatacenters.com/stellanor-expands-to-11-facilities-with-acquisition-of-ai-ready-data-center-from-imagination-technologies/"}
+      - {title: London North technical data sheet, publisher: Stellanor, accessed: 2026-07-19, url: "https://www.stellanordatacenters.com/wp-content/uploads/2025/07/Stellanor-London-North-Datasheet.pdf"}
+      - {title: Sustainability claims, publisher: Stellanor, accessed: 2026-07-19, url: "https://www.stellanordatacenters.com/about-us/sustainable-data-centers/"}
+      - {title: Redcentric FY25 report and accounts, publisher: Redcentric_plc, date: 2025, url: "https://www.redcentricplc.com/wp-content/uploads/Redcentric-report-and-accounts-FY25.pdf"}
+      - {title: Completion of data-center disposal, publisher: Redcentric_plc_via_London_Stock_Exchange, date: 2026-05-01, url: "https://www.lse.co.uk/rns/completion-of-sale-of-redcentric-data-centres-ltd-d9mjg1do6k24a25.html"}
+      - {title: Stellanor Datacenters UK Limited company record, publisher: UK_Companies_House, accessed: 2026-07-19, url: "https://find-and-update.company-information.service.gov.uk/company/16344352"}
+      - {title: Stellanor Datacenters Group Limited company record, publisher: UK_Companies_House, accessed: 2026-07-19, url: "https://find-and-update.company-information.service.gov.uk/company/16534947"}
+    confidence: high_for_current_roster_site_page_transcription_acquisition_lineage_transaction_completion_former_owner_audited_financials_Companies_House_identity_and_OSM_crosswalk_medium_for_green_energy_and_green_hydrogen_marketing_scope_low_for_current_live_IT_load_utilization_complete_as_built_BOM_installed_GPU_inventory_Stellanor_standalone_financials_site_economics_and_ROIC
+
 disclosure_gap_register:
+  - Stellanor_eleven_current_sites_three_acquisition_lineages_and_six_legacy_Redcentric_OSM_objects_to_exact_non_overlapping_building_title_lease_and_lifecycle_census
+  - Stellanor_39MVA_secured_grid_68_5MVA_site_maximum_checksum_and_former_Redcentric_41_3MW_electrical_feed_build_capacity_to_same_date_operating_energized_leased_utilized_billed_and_actual_IT_load
+  - Stellanor_per_site_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CCU_CDU_models_counts_ratings_OEMs_and_as_built_topology
+  - Stellanor_per_site_live_liquid_cooled_MW_measured_PUE_WUE_absolute_water_hourly_renewable_matching_green_hydrogen_deployment_and_actual_load
+  - Stellanor_GPU_model_count_owner_host_site_delivery_fabric_power_utilization_customer_revenue_and_margin
+  - Stellanor_standalone_revenue_operating_profit_EBITDA_cash_flow_capex_debt_customer_concentration_site_economics_and_ROIC_after_first_accounts
+  - Stellanor_former_Redcentric_eight_site_sale_final_adjustment_customer_retention_integration_capex_and_post_close_performance
   - DataPro_four_current_directory_sites_two_deferred_project_pages_former_Tver_and_six_OSM_objects_to_exact_current_non_overlapping_building_title_lease_and_lifecycle_census
   - DataPro_6550_provider_current_racks_6553_CNews_end_2025_racks_10800_current_page_projected_checksum_15000_future_projected_racks_and_25800_six_page_checksum_to_same_date_installed_energized_leased_utilized_billed_and_actual_load
   - DataPro_V_and_VI_current_permit_land_grid_construction_financing_completion_customer_acceptance_and_revenue_status
