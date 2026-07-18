@@ -12662,6 +12662,188 @@ campus_profiles:
       - {title: Verizon Q1 2026 results and guidance, publisher: Verizon, date: 2026, url: "https://www.verizon.com/about/news/verizons-transformation-actions-deliver-growth-profitability-1q26-company-raises-adjusted-eps"}
     confidence: high_for_current_marketing_denominators_partner_addresses_Saint_Denis_regulatory_metrics_2017_sale_crosswalk_FY2025_financials_Q1_2026_guidance_and_OSM_count_medium_for_current_service_availability_and_AI_Connect_commercial_progress_low_for_complete_current_physical_roster_site_ownership_live_load_equipment_GPU_inventory_data_center_financials_and_site_returns
 
+  - id: dc_datacenter_united_belgium_portfolio
+    name: Datacenter United Belgium portfolio
+    record_granularity: provider_facility_labels_investor_locations_and_OSM_objects_with_explicit_shared_site_and_lifecycle_boundaries
+    operator: Datacenter_United
+    country: BE
+    lifecycle_as_of_2026_07_19: >-
+      Thirteen operating facility labels across eleven investor locations, plus
+      two separately retained development labels. The current provider directory
+      mixes twelve operating labels with Ghent 2 and Mouscron and omits the
+      separately evidenced operating Hasselt 2 label.
+    official_facility_registry_ref: life/imports/global_data_centers_20260717/datacenter_united_official_facility_registry.jsonl
+    official_facility_summary_ref: life/imports/global_data_centers_20260717/datacenter_united_official_facility_summary.json
+    registry_builder_ref: scripts/build_datacenter_united_official_facility_registry.py
+    current_portfolio_reconciliation:
+      latest_investor_basis:
+        facilities: 13
+        locations: 11
+        built_and_secured_IT_capacity_mw_rounded: 24
+      provider_directory:
+        labels: 14
+        operating_labels: 12
+        development_labels: 2
+        development: [Ghent_2, Mouscron]
+        omitted_operating_label: Hasselt_2
+      conflicting_marketing_article_basis:
+        data_centers: 16
+        locations: 13
+        status: unreconciled_not_used_as_current_operating_baseline
+      boundary: >-
+        Facility labels, shared-site locations, physical buildings and public-map
+        objects use different granularities. The investor 13/11 basis, provider
+        14-label directory and article 16/13 claim remain separate.
+    operating_facility_labels:
+      legacy_Datacenter_United:
+        - {label: Antwerp_1, code: ANTW1, address: "Haifastraat 6, 2030 Antwerp", location_key: antwerp_haifastraat, OSM_ref: osm_node_13614915734}
+        - {label: Antwerp_2, code: ANTW2, address: "Haifastraat 6, 2030 Antwerp", location_key: antwerp_haifastraat, OSM_ref: osm_node_13614915734}
+        - {label: Antwerp_3, legacy_label: DC_Flanders, address: "Noorderlaan 147, 2030 Antwerp", location_key: antwerp_noorderlaan, OSM_ref: osm_node_12637347290}
+        - {label: Brussels, city: Zaventem, address: "Excelsiorlaan 15, 1930 Zaventem", OSM_ref: osm_way_29417840}
+        - {label: Burcht, address: "Antwerpsesteenweg 221-223, 2070 Burcht", OSM_ref: osm_way_389875923}
+        - {label: Ghent, address: "Poortakkerstraat 33, 9051 Ghent", OSM_ref: osm_way_368995283}
+        - {label: Hasselt_1, address: "Veldstraat 101, 3500 Hasselt", OSM_ref: osm_way_746200227}
+        - {label: Hasselt_2, address: "Trichterheideweg 2, 3500 Hasselt", OSM_ref: osm_way_822844088, directory_status: omitted_from_current_14_label_directory_but_separately_evidenced}
+        - label: Oostkamp
+          operator_page_and_job_address: "Brugsestraat 196/1, 8200 Oostkamp"
+          2025_ISO_certificate_address: "Zwartegatstraat 7, 8020 Oostkamp"
+          OSM_ref: osm_way_139586790
+          address_status: unresolved_conflict_retained
+      Proximus_carveout:
+        - {label: Evere_1, address: "Carlistraat 2, 1140 Evere", location_key: evere_carlistraat, OSM_ref: osm_node_13320005875}
+        - {label: Evere_2, address: "Carlistraat 2, 1140 Evere", location_key: evere_carlistraat, OSM_ref: osm_node_13320005875}
+        - {label: Machelen, address: "Rittwegerlaan 15, 1830 Machelen", OSM_ref: osm_way_35130174}
+        - {label: Mechelen, address: "Stationsstraat 58-59, 2800 Mechelen", OSM_ref: osm_node_12633325927}
+      shared_site_boundary: >-
+        Antwerp 1/2 and Evere 1/2 each share one published address and one
+        provider page or map point. Their labels are retained but not converted
+        into four separately verified building footprints or meters.
+    development_labels:
+      - label: Mouscron
+        alternate_label: Moeskroen
+        address: "Slachthuisstraat 31, 7700 Mouscron"
+        lifecycle: provider_page_explicitly_under_development_and_coming_soon
+        OSM_ref: osm_way_148845282
+      - label: Ghent_2
+        exact_address: undisclosed
+        lifecycle: planning_and_site_preparation_2026_construction_2026_2027_capacity_after_2027
+        OSM_ref: null
+    development_boundary: Development labels are not included in the 13-operating-facility investor baseline or current live load.
+    acquisition_and_power:
+      legacy_DCU:
+        facility_count: 9
+        location_count: 8
+        built_IT_mw: 1.7
+        secured_expansion_mw: 7.1
+        accessible_total_mw: 8.8
+      Proximus_carveout:
+        facility_count: 4
+        location_count: 3
+        built_IT_mw: 4.0
+        secured_expansion_mw: 11.3
+        accessible_total_mw: 15.3
+        Proximus_sale_announcement_capacity_mw_approximate: 11
+      combined:
+        built_IT_mw_derived: 5.7
+        secured_expansion_mw_derived: 18.4
+        built_and_secured_accessible_mw: 24.1
+      later_Antwerp_power_secured_mw: 17
+      power_boundary: >-
+        The transaction's approximate 11 MW, investor 4.0-MW built and 15.3-MW
+        accessible values use different timing or power scopes. The later 17 MW
+        secured in Antwerp is future power foundation and is not added to 24.1
+        MW without a bridge. None is current energized, leased or utilized load.
+    acquisition_and_contracts:
+      Proximus_enterprise_value_EUR_million: 128
+      completion_date: 2025_02_28
+      real_estate_included_at: [Evere, Mechelen]
+      anchor_MSA: 10_year_index_linked_plus_two_5_year_extension_options
+      combined_enterprise_value_EUR_million: 200.5
+      top_30_customer_order_book_at_2026_03_31_EUR_million: 83.4
+      named_customers: [Proximus, Pfizer, Telenet, Atos]
+      boundary: Contracted order book is not recognized revenue, accepted load or cash collection.
+    power_cooling_and_AI:
+      disclosed_capabilities:
+        - liquid_cooling
+        - high_efficiency_chillers
+        - optimized_thermal_management
+        - advanced_free_air_cooling
+        - high_density_and_heavy_GPU_workload_support
+      2026_roadmap:
+        Machelen: liquid_cooling_and_high_density_design_Q2_deployment_Q3_commissioning_Q4
+        Antwerp: cooling_efficiency_design_Q2_components_Q3_activation_Q4
+        Oostkamp: cooling_access_and_technical_space_expansion_Q2_to_Q4
+      Antwerp_Tier_IV: explicitly_certified_at_Haifastraat_site
+      operator_marketing_redundancy_claim: 2N_plus_1
+      undisclosed:
+        - per_site_operating_energized_leased_utilized_customer_accepted_and_billed_IT_load
+        - utility_feeds_and_grid_capacity_by_site
+        - substations_transformers_switchgear_busbars_and_PDUs
+        - UPS_battery_generator_counts_ratings_topology_and_OEMs
+        - chiller_CRAH_CDU_heat_rejection_counts_ratings_and_OEMs
+        - site_level_live_liquid_cooled_mw_rack_count_and_density
+      boundary: >-
+        Tier IV evidence is site-specific and is not propagated to the portfolio.
+        Capability and upgrade schedules do not prove as-built equipment,
+        commissioning, operating performance or current high-density load.
+    accelerators:
+      direct_Datacenter_United_owned_GPU_inventory: undisclosed
+      customer_GPU_models_counts_sites_ownership_and_utilization: undisclosed
+      boundary: >-
+        AI-ready colocation, liquid cooling and heavy-GPU-workload support do not
+        establish operator ownership, a fleet count, delivery, power draw,
+        utilization, customer allocation, revenue or margin.
+    sustainability:
+      FY2025_operational_electricity_renewable_coverage_percent: 82
+      coverage_instruments: [PPAs, Guarantees_of_Origin]
+      operator_marketing_all_data_centers_renewable_percent: 100
+      operator_marketing_PUE: less_than_1_2
+      operator_solar_capacity_string_as_published: 3500Wp
+      Scope_1_and_2_reduction_target_percent_by_2031: 46.2
+      boundary: >-
+        The investor's measured 82% and operator's 100% marketing statement are
+        not silently reconciled. The published 3500Wp string is not converted to
+        3.5 MW, and sub-1.2 PUE is not treated as measured at every facility.
+    public_map_crosswalk:
+      related_OSM_objects: 12
+      operator_label_counts:
+        Datacenter_United: 10
+        Data_Center_United: 1
+        Datacenter_United_DCstar_nv: 1
+      shared_site_points: [Antwerp_1_and_2, Evere_1_and_2]
+      development_footprint: Mouscron
+      boundary: >-
+        OSM points and polygons are map evidence, not provider-verified ownership,
+        building count, gross floor area, data-hall area, lifecycle, power,
+        utilization, equipment or financial records.
+    finance_and_outlook:
+      financial_profile_ref: company_datacenter_united
+      FY2025_revenue_EUR_million: 36.1
+      FY2025_EBITDA_EUR_million: 11.3
+      FY2025_EBITDA_margin_percent_derived: 31.30
+      FY2025_pro_forma_revenue_EUR_million: 41.3
+      FY2025_pro_forma_EBITDA_EUR_million: 13.2
+      FY2025_pro_forma_EBITDA_margin_percent_derived: 31.96
+      accounting_operating_profit: undisclosed
+      current_program: capacity_expansion_higher_density_readiness_cooling_upgrades_and_modernization
+      outlook_boundary: >-
+        The first combined year excludes January and most of February for the
+        acquired assets. EBITDA and Belgian-GAAP pre-tax loss are not accounting
+        operating profit, and no site-level revenue, capex, utilization or return
+        on invested capital is disclosed.
+    sources:
+      - {title: Current Datacenter United facilities directory, publisher: Datacenter_United, accessed: 2026-07-19, url: "https://datacenterunited.com/en/our-datacenters/"}
+      - {title: Current Datacenter United investment page, publisher: Cordiant_Digital_Trust, accessed: 2026-07-19, url: "https://www.cordiantdigitaltrust.com/investments/current-assets/datacenter-united-dcu/"}
+      - {title: Belgian data-centre acquisitions announcement, publisher: Cordiant_Digital_Trust, date: 2024-10-25, url: "https://www.cordiantdigitaltrust.com/cordiant-digital-infrastructure-limited-to-acquire-stakes-in-two-belgian-data-centre-providers-expanding-its-presence-in-western-europe/"}
+      - {title: Belgian data-centre acquisition presentation, publisher: Cordiant_Digital_Trust, date: 2024-10, url: "https://wp-cordiantdigitaltrust-2022.s3.eu-west-2.amazonaws.com/media/2024/10/CDIL-Acquisition-of-DCCO-DCU-vF.pdf"}
+      - {title: Cordiant 2026 Annual Report, publisher: Cordiant_Digital_Trust, date: 2026-06, url: "https://wp-cordiantdigitaltrust-2022.s3.eu-west-2.amazonaws.com/media/2026/06/CORDIANT-AR-PROOF-09-18.06.26-FINAL.pdf"}
+      - {title: Proximus data-center sale announcement, publisher: Proximus, date: 2024-10-25, url: "https://www.proximus.com/news/2024/20241025-proximus-sells-its-datacenters.html"}
+      - {title: Datacenter United closes Proximus acquisition, publisher: Datacenter_United, date: 2025, url: "https://datacenterunited.com/en/datacenter-united-finalizes-acquisition-of-proximus-data-centers/"}
+      - {title: EUR120 million AI-ready financing, publisher: Datacenter_United, date: 2025, url: "https://datacenterunited.com/en/datacenter-united-announces-eur-120-million-funding-to-enable-sustainable-ai-ready-growth-2/"}
+      - {title: Infrastructure development roadmap, publisher: Datacenter_United, accessed: 2026-07-19, url: "https://datacenterunited.com/en/infrastructure-development/"}
+      - {title: AI-ready and sustainability claims, publisher: Datacenter_United, accessed: 2026-07-19, url: "https://datacenterunited.com/en/dcu-future-ready-infrastructuur-gebouwd-voor-ai-geoptimaliseerd-voor-duurzaamheid-2/"}
+    confidence: high_for_investor_13_11_basis_15_label_reconstruction_14_label_directory_Proximus_transaction_portfolio_power_buckets_FY2025_financials_financing_ownership_and_12_OSM_objects_medium_for_facility_label_to_physical_site_crosswalk_and_current_upgrade_status_low_for_exact_building_count_site_power_live_load_equipment_GPU_inventory_site_economics_and_roster_conflict_resolution
+
   - id: dc_firmus_project_southgate_australia
     name: Firmus Project Southgate Australia AI Factory program
     record_granularity: national_multi_site_AI_factory_program_not_one_campus
@@ -31432,6 +31614,18 @@ disclosure_gap_register:
   - Verizon_AI_Connect_more_than_USD1b_to_nearly_USD2b_funnel_to_signed_backlog_contract_value_revenue_operating_profit_capex_cash_and_ROIC_conversion
   - Verizon_Business_segment_to_data_center_colocation_fiber_and_AI_Connect_revenue_operating_profit_EBITDA_capex_cash_flow_customer_concentration_utilization_and_ROIC
   - Verizon_Frontier_asset_integration_to_incremental_facility_roster_fiber_power_land_capex_debt_repayment_synergy_and_AI_Connect_capacity
+  - Datacenter_United_13_facilities_11_locations_14_directory_labels_and_16_data_centers_13_locations_marketing_claim_reconciliation
+  - Datacenter_United_Antwerp_1_2_and_Evere_1_2_shared_site_labels_to_exact_separate_buildings_meters_and_certification_scope
+  - Datacenter_United_Hasselt_2_current_operating_evidence_and_reason_for_omission_from_current_provider_directory
+  - Datacenter_United_Oostkamp_Brugsestraat_196_1_and_Zwartegatstraat_7_address_property_facility_and_certification_crosswalk
+  - Datacenter_United_5_7MW_built_18_4MW_secured_24_1MW_accessible_11MW_Proximus_and_17MW_Antwerp_power_scope_and_date_bridge
+  - Datacenter_United_per_site_operating_energized_leased_utilized_customer_accepted_billed_IT_load_racks_occupancy_and_density
+  - Datacenter_United_per_site_grid_substation_transformer_switchgear_UPS_battery_generator_chiller_CRAH_CDU_heat_rejection_counts_ratings_topology_and_OEMs
+  - Datacenter_United_GPU_models_counts_owners_host_sites_delivery_power_draw_utilization_customers_revenue_and_margin
+  - Datacenter_United_82_percent_measured_renewable_coverage_to_100_percent_marketing_claim_and_per_site_PUE_WUE_energy_water_heat_reuse_bridge
+  - Datacenter_United_audited_accounting_operating_profit_D_and_A_capex_debt_cash_flow_customer_concentration_site_economics_and_ROIC
+  - Datacenter_United_EUR83_4m_order_book_to_recognized_revenue_customer_acceptance_billed_load_cash_and_Proximus_concentration
+  - Datacenter_United_Ghent_2_Mouscron_Machelen_Antwerp_Oostkamp_and_Evere_project_grid_permit_construction_commissioning_capex_customer_and_return_status
   - AirTrunk_current_post_2024_committed_energized_and_utilized_capacity_by_campus
   - HUMAIN_AirTrunk_Saudi_exact_location_capacity_hardware_power_and_delivery_schedule
   - Equinix_280_year_end_to_281_current_facility_reconciliation
@@ -31550,7 +31744,8 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
-    - global_coverage_next_P2_Datacenter_United_Ark_Data_Centres_official_profiles
+    - global_coverage_next_P2_Ark_Data_Centres_official_profile
+    - Datacenter_United_13_11_14_16_roster_power_address_GPU_equipment_current_load_financial_and_project_enrichment
     - Verizon_nine_city_350_plus_tech_facility_and_13_OSM_object_exact_building_load_GPU_power_cooling_and_data_center_financial_enrichment
     - UltraEdge_248_251_257_scope_reconciliation_exact_buildings_current_load_GPU_inventory_power_cooling_BOM_and_private_financials
     - SFR_transaction_close_operating_recovery_deleveraging_and_UltraEdge_exclusion_monitor
