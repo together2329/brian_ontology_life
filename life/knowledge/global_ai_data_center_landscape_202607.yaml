@@ -13253,6 +13253,219 @@ campus_profiles:
       - {title: Historical Pulsant London data-center project, publisher: DataProjeX, date: 2013, url: "https://www.dataprojex.pro/completed-projects/pulsant-data-center/"}
     confidence: high_for_current_fourteen_code_roster_addresses_card_and_sheet_fields_acquisition_FY2024_accounts_ownership_refinancing_ESG_and_OSM_objects_medium_for_current_card_versus_sheet_recency_historical_equipment_allocation_and_current_high_density_fitout_low_for_live_utilized_load_complete_building_and_property_roster_current_as_built_equipment_GPU_inventory_site_economics_customer_concentration_and_ROIC
 
+  - id: dc_kio_latin_america_portfolio
+    name: KIO Data Centers current Latin American portfolio
+    record_granularity: current_provider_facility_codes_and_site_engineering_with_historical_edge_Spain_pipeline_financial_and_OSM_boundaries
+    operator: KIO_Data_Centers_Sixsigma_Networks_Mexico
+    countries: [MX, CO, GT, PA, DO]
+    lifecycle_as_of_2026_07_19: >-
+      KIO's rebuilt current site publishes fifteen operating location pages in
+      five Latin American countries. QRO2 opened in December 2025. MEX8 and the
+      second Guatemala facility are construction projects and are excluded from
+      the fifteen-page roster. Older 40-plus-data-center/17-city material mixed
+      core and edge scopes and included Spain, which is now Kumo Networks under
+      El Corte Ingles ownership.
+    official_facility_registry_ref: life/imports/global_data_centers_20260717/kio_official_facility_registry.jsonl
+    official_facility_summary_ref: life/imports/global_data_centers_20260717/kio_official_facility_summary.json
+    registry_builder_ref: scripts/build_kio_official_facility_registry.py
+    current_portfolio_reconciliation:
+      current_provider_location_pages: 15
+      current_country_count: 5
+      current_country_distribution: {MX: 11, CO: 1, GT: 1, PA: 1, DO: 1}
+      current_codes: [BOG1, SDO1, GTM1, PAN1, MER1, HER1, MTY1, QRO2, QRO1, MEX6, MEX5, MEX4, MEX3, MEX2, MEX1]
+      current_page_data_hall_sqm_checksum: 28490
+      historical_claim_not_current: more_than_40_data_centers_in_17_cities_with_edge_and_Spain_scope
+      boundary: >-
+        The 15 pages are a current provider directory, not a physical-building
+        census. The square-metre checksum is a QA sum of page fields and is not
+        saleable, occupied or utilized area.
+    power_and_scale:
+      selected_site_evidence:
+        QRO2:
+          current_IT_load_mw: 12
+          expandable_IT_load_mw: 18
+          IT_blocks: five_2MW_plus_two_redundant_catcher_blocks
+          generators: eight_3MW
+          electrical_intake: 6MW_medium_voltage_plus_6MW_high_voltage
+          cooling: thirty_chilled_water_units_two_redundant_with_free_cooling_and_closed_loop
+          design_PUE: 1.5
+        QRO1:
+          data_hall_sqm: 5166
+          UPS: twenty_750kVA
+          generators: twelve_2MW
+          electrical_intake: two_14MVA_34_5kV_feeds
+          cooling: fifty_two_units_ten_redundant
+          design_PUE: 1.7
+        MEX5:
+          data_hall_sqm: 6817
+          UPS: thirty_two_600kVA
+          generators: twelve_2_4MW
+          electrical_intake: two_7_5MVA_critical_feeds_plus_2MVA_general_services
+          design_PUE: 1.6
+        BOG1:
+          current_PDF_IT_and_telecom_capacity_mw: 5.8
+          adjacent_BOG2_potential_mw: 11.2
+          UPS_publication_scope: three_or_six_500kVA_IT_branches_plus_three_600kVA_mechanical_branches
+          generators: three_1_65MW
+          electrical_intake: 10MVA_34_5kV
+          design_PUE: 1.4
+      portfolio_total_IT_load_mw: undisclosed
+      energized_leased_utilized_and_billed_mw: undisclosed
+      boundary: >-
+        IT MW, utility MW/MVA, UPS kVA, generator MW, expansion potential and
+        live load have different denominators and are never added. The QRO1 plus
+        QRO2 nearly-19-MW release is retained as a provider statement rather than
+        reconstructed from equipment nameplates.
+    equipment_disclosure:
+      current_pages_with_UPS_or_IT_block_detail: 15
+      current_pages_with_generator_detail: 15
+      current_pages_with_feed_voltage_or_capacity_detail: 15
+      current_pages_with_numeric_PUE: 14
+      selected_smaller_site_examples:
+        SDO1: {UPS: two_275kVA, generators: two_450kW, redundancy: 2N, cooling: 2N, PUE: 1.6}
+        GTM1: {UPS: two_250kVA, generators: two_450kW, redundancy: 2N, cooling: twelve_units_four_redundant, PUE: 1.6}
+        PAN1: {UPS: four_625kVA, generators: four_1_25MW, redundancy: 2N, feeds: two_5MVA_23kV, PUE: 1.8}
+        HER1: {UPS: six_219_6kVA, generators: two_600kW, cooling: seventeen_units_seven_redundant, PUE: 1.7}
+        MEX1: {UPS: eight_400kVA, generators: four_1_5MW, feeds: dual_23kV, cooling: N_plus_2, PUE: 1.7}
+      unresolved: exact_current_as_built_OEM_model_battery_chemistry_runtime_switchgear_transformer_PDU_busbar_chiller_CRAH_CDU_and_maintenance_state
+    publication_conflicts:
+      BOG1:
+        - current_page_1160sqm_initial_data_hall_versus_current_PDF_2352sqm_first_stage
+        - current_page_three_500kVA_IT_UPS_branches_versus_PDF_table_six
+        - current_PDF_5_8MW_versus_older_2025_sheet_5_6MW
+      MEX2:
+        - current_page_two_halls_1200sqm_versus_PDF_five_rooms_1457sqm
+        - current_page_design_PUE_1_5_versus_PDF_1_6
+        - generator_quantity_and_total_rating_are_ambiguous
+      QRO2:
+        - current_page_3120sqm_versus_PDF_narrative_3114sqm_and_hall_rows_3226sqm
+        - PDF_table_88_generators_is_a_typo_against_page_and_narrative_eight
+      MEX4: current_page_literally_publishes_cooling_redundancy_as_N_plus_question_mark
+      resolution: retain_each_publication_scope_without_silent_selection_or_false_precision
+    expansion_pipeline:
+      QRO2_opened_2025_12_08:
+        current_IT_load_mw: 12
+        QRO1_plus_QRO2_installed_capacity_mw_nearly: 19
+      GTM2_under_construction:
+        announced: 2025_09_25
+        initial_rooms: 2
+        initial_room_kw_each: 500
+        potential_IT_load_mw: 2
+        supported_density_kw_per_cabinet: [5, 12]
+        target_PUE: 1.5
+        target_renewable_percent_more_than: 80
+      MEX8_under_construction:
+        announced: 2026_03_09
+        investment_USD_million: 70
+        incremental_installed_capacity_mw: 4
+        renewable_energy_percent: 79
+      regional_CAPEX_claim_USD_million_more_than: 400
+      boundary: >-
+        The greater-than-USD400-million claim has no public spend schedule,
+        facility allocation, financing bridge or overlap reconciliation. Future
+        projects are not included in the current operating roster or capacity.
+    AI_and_accelerators:
+      readiness_evidence: [GTM2_AI_ready, QRO2_high_density, hyperscale_2MW_plus_offer]
+      historical_partner_service: Gcore_A100_and_H100_GPU_cloud
+      physical_KIO_owned_accelerator_count: undisclosed
+      accelerator_ledger_action: no_row_because_no_physical_or_model_specific_quantity_is_allocated_to_KIO
+      boundary: >-
+        AI-ready design, high-density colocation and a partner GPU service do not
+        identify KIO-owned or installed accelerator hardware.
+    ownership_and_financial_boundary:
+      current_owner: I_Squared_Capital_sponsored_funds
+      acquisition_completed: 2021_12_02
+      acquisition_price: undisclosed
+      IFC_equity_in_acquisition_vehicle_USD_million: 30.10
+      standalone_revenue_operating_profit_EBITDA_capex_debt_cash_flow_and_ROIC: undisclosed
+      financial_profile_ref: company_kio_data_centers
+    public_map_crosswalk:
+      related_OSM_objects: 10
+      raw_KIO_operator_objects: 9
+      name_only_MEX1_object: 1
+      current_facility_codes_matched: 11
+      current_facility_codes_unmatched: 4
+      unmatched_codes: [BOG1, SDO1, GTM1, PAN1]
+      QRO_boundary: one_OSM_polygon_names_QRO1_and_QRO2_at_the_same_published_address
+    supply_chain_links:
+      owner_or_sponsor: [I_Squared_Capital]
+      known_network_ecosystem_examples: [Arelion, ATC, Axtel_Alestra, Bestel, Cirion, Cogent, Flo_Networks, Gold_Data, Megaport, DE_CIX, Telmex, Totalplay]
+      customer_equipment_owner: customers_or_partners_not_KIO_unless_separately_disclosed
+      financial_profile_refs: [company_kio_data_centers]
+    sources:
+      - {title: Current KIO Data Centers home page, publisher: KIO_Data_Centers, accessed: 2026-07-19, url: "https://kiodatacenters.com/en"}
+      - {title: Current KIO Data Centers locations directory, publisher: KIO_Data_Centers, accessed: 2026-07-19, url: "https://kiodatacenters.com/en/locations"}
+      - {title: QRO2 opening, publisher: KIO_Data_Centers, date: 2025-12-08, url: "https://kiodatacenters.com/en/newsroom/expansion/kio-data-centers-launches-qro2-expanding-mexicos-most-important-digital-hub-for-critical-industries"}
+      - {title: Guatemala second data-center expansion, publisher: KIO_Data_Centers, date: 2025-09-25, url: "https://kiodatacenters.com/en/newsroom/expansion/kio-data-centers-will-invest-more-than-400-million-in-capex-in-the-region-and-quadruple-its-capacity-in-guatemala"}
+      - {title: MEX8 construction announcement, publisher: KIO_Data_Centers, date: 2026-03-09, url: "https://kiodatacenters.com/en/newsroom/expansion/kio-data-centers-boosts-cdmxs-digital-infrastructure-with-the-construction-of-mex8-its-new-data-center"}
+      - {title: IFC Project KIO investment disclosure, publisher: IFC, updated: 2024-05-05, url: "https://disclosures.ifc.org/project-detail/SII/45608/project-kio"}
+      - {title: Current I Squared active portfolio page, publisher: I_Squared_Capital, accessed: 2026-07-19, url: "https://isquaredcapital.com/txnm_status/active/page/5/"}
+    confidence: high_for_current_fifteen_page_five_country_roster_site_addresses_page_engineering_QRO2_opening_pipeline_ownership_IFC_and_OSM_crosswalk_medium_for_current_page_versus_PDF_recency_and_renewable_scope_low_for_live_load_as_built_BOM_GPU_inventory_standalone_financials_customer_concentration_and_ROIC
+
+  - id: dc_kumo_spain_legacy_kio_portfolio
+    name: Kumo Networks Spain current portfolio and legacy KIO Networks Espana boundary
+    record_granularity: current_two_facility_successor_portfolio_with_legacy_OSM_name_ownership_equipment_and_parent_financial_boundaries
+    operator: Kumo_Networks_SAU
+    countries: [ES]
+    lifecycle_as_of_2026_07_19: >-
+      Murcia has operated since 2014 and Paterna, Valencia was inaugurated in
+      June 2026. El Corte Ingles acquired the remaining 50 percent on 1 October
+      2024, now owns 100 percent and relaunched KIO Networks Espana as Kumo.
+    linked_KIO_summary_ref: life/imports/global_data_centers_20260717/kio_official_facility_summary.json
+    registry_builder_ref: scripts/build_kio_official_facility_registry.py
+    current_portfolio:
+      operating_facilities: 2
+      Murcia:
+        current_address: Calle_Santiago_Navarro_8_30100_Espinardo_Murcia
+        opened: 2014
+        technical_floor_phase_1_sqm: 172
+        stated_IT_capacity_kw: 528
+        maximum_cabinets: 78
+        redundancy: 2N_Tier_IV
+        UPS_capacity_kVA: 600
+        transformer_capacity_kVA: 1600
+        generators: two_1_2MW_published_capacity_denominator_ambiguous
+        diesel: four_tanks_21000L_total_96_hours
+        cooling: eighteen_units_nine_redundant_528kW
+      Valencia_Paterna:
+        current_address: Carrer_Corretger_33_46980_Paterna_Valencia
+        inaugurated: 2026_06
+        investment_EUR_million_more_than: 52
+        generators: two_units_published_2_5MW_denominator_ambiguous
+        diesel_liters: 100000
+        diesel_autonomy_days: 8
+        geothermal_wells: 71
+        CO2_storage: two_9000L_tanks
+        CO2_pumps: 10
+        cooling: closed_loop_CO2_with_geothermal_support
+      boundary: >-
+        Published generator and UPS capacity denominators are retained verbatim
+        where unit-versus-total wording is ambiguous. Equipment ratings are not
+        IT load or utilized capacity.
+    public_map_crosswalk:
+      legacy_KIO_Networks_Espana_OSM_objects: 2
+      current_successor: Kumo_Networks
+      facilities_matched: [Murcia, Valencia_Paterna]
+    ownership_and_financial_boundary:
+      owner: El_Corte_Ingles_100_percent
+      acquisition_date: 2024_10_01
+      current_Kumo_standalone_revenue_and_operating_profit: undisclosed
+      parent_FY2025_Surface_Commercialization: {revenue_EUR_million: 95, EBITDA_EUR_million: 58}
+      boundary: parent_segment_includes_store_and_independent_space_activity_and_is_not_Kumo_standalone
+      financial_profile_ref: company_kumo_networks
+    AI_and_accelerators:
+      service_context: AI_digital_sovereignty_and_private_cloud_ready
+      physical_accelerator_model_count_owner_site_and_utilization: undisclosed
+      accelerator_ledger_action: no_row
+    sources:
+      - {title: Current Kumo data centers, publisher: Kumo_Networks, accessed: 2026-07-19, url: "https://kumonetworks.es/en/data-centers"}
+      - {title: Murcia data-center datasheet, publisher: Kumo_Networks, date: 2025-04-14, url: "https://www.kumonetworks.es/wp-content/uploads/2025/04/Datasheet-DC-Murcia-14-04-2025_compressed.pdf"}
+      - {title: Paterna generator and fuel installation, publisher: Kumo_Networks, accessed: 2026-07-19, url: "https://www.kumonetworks.es/la-estructura-del-cpd-tier-iv-de-paterna-ya-esta-terminada/"}
+      - {title: Paterna CO2 cooling system, publisher: Kumo_Networks, accessed: 2026-07-19, url: "https://www.kumonetworks.es/depositos-co2-centro-datos-refrigeracion/"}
+      - {title: Current El Corte Ingles business lines and Kumo ownership, publisher: El_Corte_Ingles, accessed: 2026-07-19, url: "https://www.elcorteingles.es/informacioncorporativa/en/about-us/business-lines/"}
+      - {title: El Corte Ingles FY2025 group figures, publisher: El_Corte_Ingles, date: 2026-06-15, url: "https://www.elcorteingles.es/informacioncorporativa/en/financial-information/group-figures/"}
+    confidence: high_for_current_two_facility_roster_successor_ownership_Murcia_datasheet_Paterna_generator_fuel_geothermal_CO2_and_OSM_links_medium_for_published_equipment_denominators_low_for_live_load_GPU_inventory_Kumo_standalone_financials_and_ROIC
+
   - id: dc_ark_data_centres_uk_europe_portfolio
     name: Ark Data Centres UK and European portfolio
     record_granularity: provider_location_cards_statutory_operating_company_sites_and_OSM_footprints_with_explicit_lifecycle_operator_and_power_boundaries
@@ -32372,6 +32585,14 @@ disclosure_gap_register:
   - Pulsant_physical_GPU_model_count_owner_site_delivery_power_draw_utilization_customer_revenue_and_margin
   - Pulsant_FY2025_post_acquisition_group_accounts_and_colocation_cloud_network_AI_revenue_operating_profit_capex_cash_flow_debt_and_ROIC
   - Pulsant_per_site_measured_PUE_WUE_water_energy_emissions_hourly_renewable_matching_and_live_high_density_or_liquid_cooled_MW
+  - KIO_fifteen_current_codes_to_exact_physical_buildings_parcels_ownership_and_complete_OSM_crosswalk
+  - KIO_per_site_energized_leased_utilized_billed_and_customer_accepted_IT_load_occupancy_and_customer_concentration
+  - KIO_page_PDF_BOG1_MEX2_QRO2_and_renewable_publication_conflict_resolution
+  - KIO_per_site_complete_substation_transformer_switchgear_busbar_PDU_UPS_battery_generator_fuel_runtime_cooling_CDU_BOM_and_OEMs
+  - KIO_physical_GPU_model_count_owner_site_delivery_power_draw_utilization_customer_revenue_and_margin
+  - KIO_standalone_revenue_operating_profit_EBITDA_capex_debt_cash_flow_customer_concentration_and_ROIC
+  - KIO_GTM2_MEX8_and_400_million_USD_regional_CAPEX_schedule_funding_permits_power_customer_acceptance_and_revenue_bridge
+  - Kumo_Murcia_Paterna_current_live_load_utilization_equipment_rating_denominator_GPU_inventory_and_standalone_financials
   - Ark_27_data_centres_9_locations_headline_to_eight_visible_pages_29_plus_card_count_and_Barcelona_reconciliation
   - Ark_page_card_549MW_operating_company_108_42MW_2030_446MW_and_UK_700MW_plus_power_runway_scope_reconciliation
   - Ark_per_site_operating_energized_leased_utilized_billed_and_customer_accepted_IT_load
@@ -32383,7 +32604,7 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
-    - global_coverage_next_P2_KIO_official_profile
+    - global_coverage_next_P2_OPCORE_official_profile
     - Ark_27_9_29_plus_roster_108_42_549_700MW_GPU_equipment_current_load_group_financial_and_project_enrichment
     - Datacenter_United_13_11_14_16_roster_power_address_GPU_equipment_current_load_financial_and_project_enrichment
     - Verizon_nine_city_350_plus_tech_facility_and_13_OSM_object_exact_building_load_GPU_power_cooling_and_data_center_financial_enrichment
