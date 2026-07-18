@@ -33135,7 +33135,170 @@ campus_profiles:
       - {title: Colt Group Holdings 2024 accounts, publisher: UK_Companies_House, filed: 2025-05-19, url: "https://find-and-update.company-information.service.gov.uk/company/11530966/filing-history/MzQ2NjcxODM4M2FkaXF6a2N4/document?download=0&format=pdf"}
     confidence: high_for_current_navigation_facility_values_Inzai4_phase_German_Paris_Hayes_and_JV_projects_2025_sustainability_UK_financials_group_DCS_revenue_2021_and_2026_transactions_and_OSM_transcription_medium_for_Osaka_City_15_site_reconciliation_and_FRA74_mapping_low_for_exact_current_building_title_live_load_complete_equipment_BOM_GPU_inventory_global_DCS_profit_and_site_ROIC
 
+  - id: dc_datapro_moscow_portfolio
+    operator: DataPro
+    geography: Russia_Moscow_region
+    record_granularity: current_directory_facility_deferred_project_former_asset_legal_entity_and_OSM_object_boundaries
+    evidence_snapshot: '2026-07-19'
+    official_facility_registry_ref: life/imports/global_data_centers_20260717/datapro_official_facility_registry.jsonl
+    official_facility_summary_ref: life/imports/global_data_centers_20260717/datapro_official_facility_summary.json
+    roster:
+      current_provider_directory_sites: 4
+      current_facility_codes: [DataPro_I, DataPro_II, DataPro_III, DataPro_IV]
+      future_project_pages_outside_current_directory: [DataPro_V, DataPro_VI]
+      former_asset_outside_current_directory: DataPro_Tver
+      current_provider_headline_racks: 6550
+      CNews_end_2025_racks: 6553
+      CNews_new_racks_in_2025: 0
+      provider_development_potential_racks_more_than: 25000
+      provider_development_potential_power_mw_more_than: 100
+      boundary: >-
+        The current directory, still-addressable project pages, a former asset,
+        current rack totals and projected page values are different scopes.
+        DataPro V and VI are not counted as operating merely because official
+        pages retain stale launch dates or OSM footprints exist.
+    facilities:
+      DataPro_I:
+        lifecycle: operating
+        location: Moscow_Aviamotornaya_Street_69
+        current_racks: 2000
+        projected_racks: 4000
+        projected_area_sqm: 20000
+        projected_gross_facility_power_mw_more_than: 20
+        provider_resiliency_label: Tier_III
+      DataPro_II:
+        lifecycle: operating
+        location: Khimki_74_km_MKAD_possession_3
+        rack_publication_conflict: {card_current_or_capacity_usage: 1500, detail_current: 1600, card_projected: 1500}
+        projected_area_sqm: 6000
+        gross_facility_power_mw: 11
+        provider_resiliency_label: Tier_IV
+      DataPro_III:
+        lifecycle: operating_launched_Q1_2022
+        location: Moscow_Ryabinovaya_Street_53_building_3
+        projected_rack_publication_conflict: {card: 4200, detail_and_PDF: 4000}
+        current_site_racks: undisclosed
+        projected_area_sqm: 20000
+        gross_facility_power_mw: 30
+        provider_resiliency_label: Tier_IV
+      DataPro_IV:
+        lifecycle: operating
+        location: Moscow_Ryabinovaya_Street_53_building_4
+        rack_publication_conflict: {card_current: 1100, detail_current: 200, card_projected: 1100, detail_projected: 1000}
+        projected_area_sqm: 4000
+        gross_facility_power_mw: 9
+        provider_resiliency_label: Tier_IV
+      DataPro_V:
+        lifecycle: delayed_or_deferred_exact_current_construction_state_unconfirmed
+        location: Moscow_Ryabinovaya_Street_53_building_5
+        projected_racks: 7000
+        projected_area_sqm: 35000
+        gross_facility_power_mw: 50
+        stale_official_launch_year: 2023
+        current_directory_status: absent
+      DataPro_VI:
+        lifecycle: planned_or_deferred_exact_current_construction_state_unconfirmed
+        location: Moscow_Ryabinovaya_Street_53_building_2
+        projected_racks: 8000
+        gross_facility_power_mw: undisclosed
+        stale_official_launch_year: 2025
+        secondary_2024_schedule_year: 2027
+        current_directory_status: absent
+      DataPro_Tver:
+        lifecycle: former_DataPro_asset_sold_to_RT_Invest_Transport_Systems_in_2015
+        historical_racks: 400
+        historical_gross_facility_power_mw: 4.5
+        historical_gross_area_sqm: 2650
+        commercial_launch_year: 2013
+    rack_and_power_reconciliation:
+      current_directory_card_projected_rack_checksum: 10800
+      future_V_and_VI_projected_rack_checksum: 15000
+      six_page_projected_rack_checksum: 25800
+      four_current_page_gross_facility_power_checksum_mw_more_than: 70
+      boundary: >-
+        Current, projected and potential racks cannot be added. Gross facility
+        power is not critical IT, energized, leased, utilized, billed or
+        instantaneous load; the checksums are transcription controls only.
+    electrical_cooling_and_resiliency:
+      common_II_to_V_published_design:
+        utility_inlets: 2
+        IT_power_reservation_topology: 4_over_3N
+        cooling_redundancy: N_plus_1_each_independent_system
+        cooling_power_redundancy: 2N
+        modular_cooling_unit_published_rating_kw: 125
+        dynamic_UPS_published_rating_kw_each: 1520
+        static_UPS_II_published_rating_kw: 1200
+        static_UPS_III_to_V_published_rating: 2x800_kW
+        transformer_published_rating_kw_each: 1600
+        switchgear_published_value_verbatim: 10_kWatts
+      DataPro_I:
+        utility_inlets: 2
+        IT_power_reservation_topology: 4_over_3N
+        cooling: [Schneider_Electric_EcoBreeze_modular, precision_air_conditioning]
+        dynamic_UPS: [KINOLT, Hitec_Power_Protection]
+        distribution_substations: [Siemens, Eaton]
+        transformer_published_rating_kw_each: 1600
+      publication_unit_warning: >-
+        Provider English pages use mWatts and kWatts in places where MW, kV or
+        kVA may have been intended. Values are retained verbatim or explicitly
+        labelled as published and are not silently normalized.
+      exact_per_site_as_built_counts_models_ratings_single_line_topology_fuel_runtime_and_measured_PUE_WUE: undisclosed
+    certification_boundary:
+      provider_claims:
+        DataPro_I: Tier_III
+        DataPro_II_to_IV: Tier_IV_Design_and_Facility
+      current_Uptime_Russia_public_registry_exact_matches:
+        - DataPro_Moscow_1_Tier_III_Design_and_Constructed_Facility_stage_1
+        - DataPro_Tver_Tier_III_Design
+      exact_DataPro_II_III_IV_matches_in_reviewed_current_public_registry: not_found
+      boundary: >-
+        Provider claims and Uptime's currently visible public award roster are
+        preserved separately. No current exact match is not proof that a prior
+        award never existed.
+    accelerator_and_AI_boundary:
+      exact_owned_or_customer_GPU_model_count_site_delivery_fabric_power_utilization_revenue_and_margin: undisclosed
+      historical_high_density_context_kw_per_rack_up_to: 20
+      accelerator_ledger_action: no_numeric_row_created
+      boundary: A facility able to host a 20-kW rack does not establish a GPU model, count, owner or modern liquid-cooled AI capacity.
+    ownership_and_financial_boundary:
+      legal_entity: ООО_ДАТАПРО
+      INN: '7704825145'
+      OGRN: '1137746000435'
+      accounting_basis: Russian_statutory_BFO_unconsolidated_legal_entity
+      2025_RUB_thousand: {revenue: 5534902, operating_profit: 2712797, net_profit: 1872414, operating_cash_flow: 2502408, purchases_of_noncurrent_assets_cash_outflow: 458108, dividends_cash_outflow: 1880000, total_assets: 11215219, equity: 8597003}
+      2025_derived_percent: {revenue_growth: 9.23, operating_profit_growth: 9.55, operating_margin: 49.01, net_margin: 33.83, operating_cash_flow_margin: 45.21}
+      ownership_from_EGRUL_secondary_display: {Evgeny_Bogdanchikov_percent: 51.33, Tatyana_Bogdanchikova_percent: 48.67}
+      boundary: Legal-entity results are not site economics; the free-cash-flow proxy and ownership display remain source-labelled.
+      financial_profile_ref: company_datapro
+    public_map_crosswalk:
+      related_OSM_objects: 6
+      current_operating_objects: 4
+      future_or_deferred_project_objects: 2
+      boundary: OSM footprints support address crosswalks but do not prove racks, power, construction completion, current ownership or operation.
+    sources:
+      - {title: Current data-center directory, publisher: DataPro, accessed: 2026-07-19, url: "https://en.datapro.ru/data-centers"}
+      - {title: DataPro Moscow I, publisher: DataPro, accessed: 2026-07-19, url: "https://en.datapro.ru/data-centers/datapro-moscow-i"}
+      - {title: DataPro Moscow II, publisher: DataPro, accessed: 2026-07-19, url: "https://en.datapro.ru/data-centers/datapro-moscow-ii"}
+      - {title: DataPro Moscow III, publisher: DataPro, accessed: 2026-07-19, url: "https://en.datapro.ru/data-centers/datapro-moscow-iii"}
+      - {title: DataPro Moscow IV, publisher: DataPro, accessed: 2026-07-19, url: "https://en.datapro.ru/data-centers/datapro-moscow-iv"}
+      - {title: DataPro Moscow V legacy project page, publisher: DataPro, accessed: 2026-07-19, url: "https://en.datapro.ru/data-centers/datapro-moscow-v"}
+      - {title: DataPro Moscow VI legacy project page, publisher: DataPro, accessed: 2026-07-19, url: "https://en.datapro.ru/data-centers/datapro-moscow-vi"}
+      - {title: Official 2025 accounting report index for ООО ДАТАПРО, publisher: Russian_Federal_Tax_Service_BFO, accessed: 2026-07-19, url: "https://bo.nalog.gov.ru/nbo/organizations/7668900/bfo/"}
+      - {title: DataPro company and EGRUL ownership display, publisher: RBC_Companies, accessed: 2026-07-19, url: "https://companies.rbc.ru/id/1137746000435-ooo-datapro/"}
+      - {title: 2025 Russian commercial data-center rack roster, publisher: CNews, accessed: 2026-07-19, url: "https://corp.cnews.ru/reviews/tsentry_obrabotki_dannyh_2025/articles/ot_defitsita_stojko-mest_v_rossii"}
+      - {title: 2024 Russian commercial data-center revenue table, publisher: CNews, accessed: 2026-07-19, url: "https://corp.cnews.ru/reviews/tsentry_obrabotki_dannyh_2025/review_table/d2e45cfc70be7f70daf246462bb86f960ae21244"}
+      - {title: Russia public awards, publisher: Uptime_Institute, accessed: 2026-07-19, url: "https://uptimeinstitute.com/uptime-institute-awards/country/id/RU"}
+    confidence: high_for_current_directory_page_transcription_BFO_financials_CNews_portfolio_counts_legal_identity_OSM_crosswalk_and_former_Tver_boundary_medium_for_future_project_schedule_and_EGRUL_ownership_display_low_for_exact_live_load_complete_as_built_equipment_current_certification_history_GPU_inventory_site_economics_and_ROIC
+
 disclosure_gap_register:
+  - DataPro_four_current_directory_sites_two_deferred_project_pages_former_Tver_and_six_OSM_objects_to_exact_current_non_overlapping_building_title_lease_and_lifecycle_census
+  - DataPro_6550_provider_current_racks_6553_CNews_end_2025_racks_10800_current_page_projected_checksum_15000_future_projected_racks_and_25800_six_page_checksum_to_same_date_installed_energized_leased_utilized_billed_and_actual_load
+  - DataPro_V_and_VI_current_permit_land_grid_construction_financing_completion_customer_acceptance_and_revenue_status
+  - DataPro_per_site_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_models_counts_ratings_OEMs_and_as_built_topology
+  - DataPro_provider_Tier_IV_claims_for_II_III_IV_to_current_and_historical_Uptime_award_identifiers_scope_and_expiry
+  - DataPro_per_site_measured_PUE_WUE_water_energy_hourly_renewable_matching_live_liquid_cooled_MW_and_actual_load
+  - DataPro_GPU_model_count_owner_host_site_delivery_fabric_power_utilization_customer_revenue_and_margin
+  - DataPro_site_level_revenue_operating_profit_cash_flow_capex_debt_customer_concentration_economics_and_ROIC
   - Colt_DCS_15_operational_12_development_headlines_to_exact_current_non_overlapping_building_parcel_title_lease_and_lifecycle_roster
   - Colt_DCS_Osaka_City_and_Tokyo_Otemachi_current_service_ownership_customer_and_headline_count_status
   - Colt_DCS_222MW_operating_page_checksum_Rotterdam_15MW_potential_and_655_5MW_development_checksum_to_energized_leased_utilized_customer_accepted_billed_and_actual_load

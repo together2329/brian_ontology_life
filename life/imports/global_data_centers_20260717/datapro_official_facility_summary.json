@@ -1,0 +1,189 @@
+{
+  "OSM_crosswalk": {
+    "current_operating_objects": 4,
+    "future_or_deferred_project_objects": 2,
+    "related_objects": 6,
+    "rows": [
+      {
+        "capacity_counting_rule": "Only current operating classifications may contribute to a current-site count; an OSM building does not prove racks are installed or energized.",
+        "current_classification": "current_operating_building",
+        "facility_ref": "datapro_i",
+        "latitude": 55.7362494,
+        "longitude": 37.721151,
+        "match_basis": "coordinate_and_Aviamotornaya_site_match",
+        "name": "ДатаПро",
+        "osm_ref": "osm_way_166679654",
+        "raw_operator": "DataPro"
+      },
+      {
+        "capacity_counting_rule": "Only current operating classifications may contribute to a current-site count; an OSM building does not prove racks are installed or energized.",
+        "current_classification": "current_operating_site_relation",
+        "facility_ref": "datapro_ii",
+        "latitude": 55.8794025,
+        "longitude": 37.4338193,
+        "match_basis": "name_and_Khimki_coordinate_match",
+        "name": "DataPro Moscow II",
+        "osm_ref": "osm_relation_16532317",
+        "raw_operator": "DataPro"
+      },
+      {
+        "capacity_counting_rule": "Only current operating classifications may contribute to a current-site count; an OSM building does not prove racks are installed or energized.",
+        "current_classification": "current_operating_building",
+        "facility_ref": "datapro_iii",
+        "latitude": 55.6939256,
+        "longitude": 37.4316373,
+        "match_basis": "exact_name_building_number_and_coordinate_match",
+        "name": "DataPro III",
+        "osm_ref": "osm_way_37176485",
+        "raw_operator": "DataPro"
+      },
+      {
+        "capacity_counting_rule": "Only current operating classifications may contribute to a current-site count; an OSM building does not prove racks are installed or energized.",
+        "current_classification": "current_operating_building",
+        "facility_ref": "datapro_iv",
+        "latitude": 55.6941159,
+        "longitude": 37.4334243,
+        "match_basis": "exact_name_building_number_and_coordinate_match",
+        "name": "DataPro IV",
+        "osm_ref": "osm_way_37176483",
+        "raw_operator": "DataPro"
+      },
+      {
+        "capacity_counting_rule": "Only current operating classifications may contribute to a current-site count; an OSM building does not prove racks are installed or energized.",
+        "current_classification": "future_or_deferred_project_building_not_current_operating_capacity",
+        "facility_ref": "datapro_v",
+        "latitude": 55.6949994,
+        "longitude": 37.4343908,
+        "match_basis": "exact_name_building_number_and_coordinate_match",
+        "name": "DataPro V",
+        "osm_ref": "osm_way_37176481",
+        "raw_operator": "DataPro"
+      },
+      {
+        "capacity_counting_rule": "Only current operating classifications may contribute to a current-site count; an OSM building does not prove racks are installed or energized.",
+        "current_classification": "future_or_deferred_project_building_not_current_operating_capacity",
+        "facility_ref": "datapro_vi",
+        "latitude": 55.6936491,
+        "longitude": 37.4289534,
+        "match_basis": "exact_name_and_Ryabinovaya_cluster_match",
+        "name": "DataPro VI",
+        "osm_ref": "osm_way_37176486",
+        "raw_operator": "DataPro"
+      }
+    ],
+    "source_file": "life/imports/global_data_centers_20260717/osm_data_center_locations.jsonl",
+    "source_file_sha256": "3a0f1370f036f2ff5fa0c478bfadeb58c7809d90315bbee4e0a7c9cfd21d4733"
+  },
+  "accelerator_and_AI_boundary": {
+    "accelerator_ledger_action": "no_numeric_row_created",
+    "boundary": "A colocation site that can host a 20-kW rack does not establish any GPU model or unit count, and is below modern liquid-cooled AI-rack designs without further retrofit evidence.",
+    "owned_or_customer_hardware_split": "undisclosed",
+    "portfolio_owned_GPU_model_count_site_delivery_fabric_power_and_utilization": "undisclosed",
+    "public_high_density_context_kw_per_rack_up_to": 20
+  },
+  "accessed_on": "2026-07-19",
+  "certification_reconciliation": {
+    "DataPro_II_III_IV_exact_public_registry_matches": "not_found",
+    "boundary": "Provider claims and the current Uptime public award roster are retained as separate evidence; absence from the reviewed roster is not rewritten as proof that an award never existed.",
+    "current_Uptime_Russia_public_registry_exact_DataPro_matches": [
+      "DataPro_Moscow_1_Tier_III_Design_and_Constructed_Facility",
+      "DataPro_Tver_Tier_III_Design"
+    ],
+    "provider_claims": "DataPro I Tier III and DataPro II-IV Tier IV Design/Facility"
+  },
+  "facility_scope": {
+    "addressable_future_project_pages_outside_current_directory": 2,
+    "current_provider_directory_sites": 4,
+    "former_operator_asset_records": 1,
+    "roster_role_counts": {
+      "addressable_legacy_project_page_not_current_directory": 2,
+      "current_provider_directory": 4,
+      "former_asset_outside_current_provider_directory": 1
+    }
+  },
+  "financial_boundary": {
+    "INN": "7704825145",
+    "OGRN": "1137746000435",
+    "accounting_basis": "Russian_statutory_BFO_unconsolidated_legal_entity",
+    "boundary": "The BFO values cover the Russian legal entity, not site-level economics. Free cash flow is only operating cash flow less cash purchases of noncurrent assets, not a company-defined KPI. Zero borrowings in lines 1410/1510 does not eliminate lease, supplier, other-liability or off-balance-sheet obligations.",
+    "derived_free_cash_flow_proxy_RUB_thousand": 2044300,
+    "derived_metrics_percent": {
+      "net_margin": 33.83,
+      "net_profit_growth": 4.2,
+      "noncurrent_asset_purchase_intensity": 8.28,
+      "operating_cash_flow_margin": 45.21,
+      "operating_margin": 49.01,
+      "operating_profit_growth": 9.55,
+      "revenue_growth": 9.23
+    },
+    "legal_entity": "ООО ДАТАПРО",
+    "official_BFO_values": {
+      "cash": 236774,
+      "commercial_and_administrative_expenses": 214017,
+      "cost_of_sales": 2608088,
+      "dividends_cash_outflow": 1880000,
+      "equity": 8597003,
+      "fixed_assets_net": 9952907,
+      "gross_profit": 2926814,
+      "interest_bearing_borrowings_balance_sheet_lines_1410_and_1510": 0,
+      "interest_expense": 228463,
+      "interest_income": 40377,
+      "long_term_liabilities": 2273694,
+      "net_profit": 1872414,
+      "operating_cash_flow": 2502408,
+      "operating_profit": 2712797,
+      "profit_before_tax": 2506466,
+      "purchases_of_noncurrent_assets_cash_outflow": 458108,
+      "revenue": 5534902,
+      "short_term_liabilities": 344522,
+      "total_assets": 11215219
+    },
+    "ownership_from_EGRUL_secondary_display": {
+      "Evgeny_Bogdanchikov_percent": 51.33,
+      "Tatyana_Bogdanchikova_percent": 48.67
+    },
+    "prior_year_comparatives_RUB_thousand": {
+      "net_profit": 1796963,
+      "operating_profit": 2476403,
+      "revenue": 5067329
+    },
+    "reporting_period": "2025",
+    "unit": "RUB_thousand"
+  },
+  "id": "datapro_official_facility_summary_2026_07_19",
+  "operator": "DataPro",
+  "power_reconciliation": {
+    "DataPro_VI_power": "undisclosed",
+    "DataPro_V_gross_facility_power_mw": 50,
+    "boundary": "Provider general-capacity values are gross facility or input measures, not current critical IT, utilized, billed or instantaneous load; they are not summed with rack power.",
+    "four_current_page_gross_facility_power_checksum_mw_more_than": 70
+  },
+  "rack_reconciliation": {
+    "CNews_end_2025_racks": 6553,
+    "CNews_new_racks_in_2025": 0,
+    "boundary": "Current racks, card or detail projected racks, and future potential are different denominators. Internal page conflicts prevent a defensible per-site allocation of the 6,550/6,553 current portfolio total.",
+    "current_directory_card_projected_rack_checksum": 10800,
+    "future_V_and_VI_projected_rack_checksum": 15000,
+    "provider_current_headline_racks": 6550,
+    "provider_development_potential_headline_racks_more_than": 25000,
+    "six_page_projected_rack_checksum": 25800
+  },
+  "records_sha256": "a65572e042defa61d1efdbf247e18c495e150026995f6e144a8609f8f09798fe",
+  "sources": [
+    "https://en.datapro.ru/data-centers",
+    "https://en.datapro.ru/data-centers/datapro-moscow-i",
+    "https://en.datapro.ru/data-centers/datapro-moscow-ii",
+    "https://en.datapro.ru/data-centers/datapro-moscow-iii",
+    "https://en.datapro.ru/data-centers/datapro-moscow-iv",
+    "https://en.datapro.ru/data-centers/datapro-moscow-v",
+    "https://en.datapro.ru/data-centers/datapro-moscow-vi",
+    "https://bo.nalog.gov.ru/nbo/organizations/7668900",
+    "https://bo.nalog.gov.ru/nbo/organizations/7668900/bfo/",
+    "https://companies.rbc.ru/id/1137746000435-ooo-datapro/",
+    "https://corp.cnews.ru/reviews/tsentry_obrabotki_dannyh_2025/review_table/d2e45cfc70be7f70daf246462bb86f960ae21244",
+    "https://corp.cnews.ru/reviews/tsentry_obrabotki_dannyh_2025/articles/ot_defitsita_stojko-mest_v_rossii",
+    "https://www.comnews.ru/content/234517/2024-08-02/2024-w31/1180/reyting-krupneyshie-operatory-kommercheskikh-data-centrov-rossii-stoykam-vvedennym-ekspluataciyu",
+    "https://uptimeinstitute.com/uptime-institute-awards/country/id/RU",
+    "https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82%3A%D0%A6%D0%9E%D0%94_DataPro_%D0%A2%D0%B2%D0%B5%D1%80%D1%8C"
+  ]
+}
