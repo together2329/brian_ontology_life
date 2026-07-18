@@ -24,8 +24,8 @@ scope_and_method:
     builder_ref: scripts/build_global_data_center_coverage_audit.py
     raw_operator_labels: 822
     iso2_country_records: 112
-    reviewed_profile_routed_mapped_objects: 1690
-    reviewed_profile_routed_percent_of_operator_tagged_objects: 60.86
+    reviewed_profile_routed_mapped_objects: 1705
+    reviewed_profile_routed_percent_of_operator_tagged_objects: 61.40
     boundary: >-
       Routing an OSM operator label to a reviewed portfolio or company record is
       research coverage, not object-by-object official reconciliation. The audit
@@ -131,8 +131,8 @@ scope_and_method:
     disclosure_registry_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_registry.jsonl
     disclosure_summary_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_summary.json
     disclosure_registry_as_of: 2026-07-19
-    operator_records: 52
-    machine_generated_page_registry_operators: [CyrusOne, QTS, NEXTDC, Flexential, Lumen_Technologies, Csquare, CDC_Data_Centres, Switch, atNorth, NorthC, Telehouse, Sabey_Data_Centers, Cologix, CloudHQ, Global_Switch, OVHcloud, Bouygues_Telecom, UltraEdge_SFR_legacy, Verizon, Datacenter_United, Ark_Data_Centres, Orange_Group_and_Orange_Business, Pulsant, KIO_Data_Centers, Kumo_Networks, OPCORE, SoftBank_inherited_IDCF_data_centers]
+    operator_records: 54
+    machine_generated_page_registry_operators: [CyrusOne, QTS, NEXTDC, Flexential, Lumen_Technologies, Csquare, CDC_Data_Centres, Switch, atNorth, NorthC, Telehouse, Sabey_Data_Centers, Cologix, CloudHQ, Global_Switch, OVHcloud, Bouygues_Telecom, UltraEdge_SFR_legacy, Verizon, Datacenter_United, Ark_Data_Centres, Orange_Group_and_Orange_Business, Pulsant, KIO_Data_Centers, Kumo_Networks, OPCORE, SoftBank_inherited_IDCF_data_centers, VIRTUS_Data_Centres, DigiCo_Infrastructure_REIT]
     comparison_gate:
       - choose_one_physical_granularity
       - choose_one_lifecycle_date_and_state
@@ -32654,7 +32654,187 @@ campus_profiles:
       - {title: VIRTUS Holdco consolidated accounts, publisher: UK_Companies_House, date: 2025-08-26, url: "https://find-and-update.company-information.service.gov.uk/company/07670473/filing-history/MzQ3ODYxNTQzOWFkaXF6a2N4/document?format=pdf&download=1"}
     confidence: high_for_32_code_roster_provider_capacity_engineering_FY2024_statutory_portfolio_financial_boundary_ownership_and_OSM_transcription_medium_for_current_LONDON12_LONDON14_and_Saunderton_lifecycle_low_for_exact_current_physical_building_roster_live_load_GPU_inventory_complete_as_built_BOM_and_site_economics
 
+  - id: dc_digico_australia_north_america_portfolio
+    operator: DigiCo Infrastructure REIT
+    geography: Australia_and_United_States
+    record_granularity: legal_property_portfolio_with_current_directory_operating_development_sale_and_OSM_boundaries
+    evidence_snapshot: '2026-07-19'
+    official_property_registry_ref: life/imports/global_data_centers_20260717/digico_official_property_registry.jsonl
+    official_property_summary_ref: life/imports/global_data_centers_20260717/digico_official_property_summary.json
+    portfolio_scope:
+      legally_held_properties: 13
+      country_counts: {Australia: 8, United_States: 5}
+      current_provider_directory_labels: 11
+      source_established_operating_property_labels: 9
+      operating_property_codes: [DAL1, KCM1, BNE1, BNE2, BNE, TSV1, ADL1, ADL2, SYD1]
+      phased_delivery_and_sale_pending: [CHI1]
+      greenfield_development_not_operating: [BNE3]
+      vacant_land_or_withdrawn_development_sale_pending: [LAX1, LAX2]
+      boundary: >-
+        Thirteen legally held properties are not thirteen operating data
+        centers. CHI1 and the two LAX properties remain in the legal ledger
+        until reviewed sale-completion evidence is published; the current web
+        directory omits the two LAX land assets.
+    capacity_reconciliation:
+      replacement_PDS_property_design_checksum_mw: 237.7
+      FY2025:
+        billing_IT_mw: 53
+        contracted_IT_mw: 65
+        installed_IT_mw: 76
+        future_expansion_IT_mw: 156
+        planned_IT_mw: 232
+      HY2026:
+        billing_IT_mw: {North_America: 32, Australia: 19, total: 51}
+        contracted_IT_mw: {North_America: 44, Australia: 41, total: 85}
+        planned_IT_mw: {North_America: 110, Australia: 128, total: 238}
+      post_LAX1_withdrawal_announced_planned_IT_mw: 172
+      boundary: >-
+        The PDS design checksum, installed, contracted, billing, expansion and
+        post-withdrawal values use different dates and denominators. None is
+        current instantaneous IT load, utilized load or a GPU-power measure.
+    property_evidence:
+      DAL1:
+        lifecycle: operating_enterprise_facility
+        market: Dallas
+        PDS_IT_mw: {installed: 4.5, contracted: 4.5, planned: 4.5}
+        tier: III
+        publication_conflict: PDS_table_11915sqm_NLA_vs_narrative_11015sqm
+      KCM1:
+        lifecycle: operating_enterprise_facility
+        market: Kansas_City
+        PDS_IT_mw: {installed: 7.5, contracted: 7.5, planned: 7.5}
+        tier: III
+      CHI1:
+        lifecycle: phased_turnkey_delivery_partly_billing_sale_contract_signed_pending_close
+        contracted_and_planned_IT_mw: 32
+        derived_first_tranche_delivered_and_billing_mw: 20
+        remaining_contracted_mw_scheduled: 12
+        sale: {price_USD_million: 750, expected_close: Q1_FY2027, completion_confirmed: false}
+        derived_20MW_boundary: North_America_32MW_billing_less_DAL1_4_5MW_and_KCM1_7_5MW_not_a_site_meter_reading
+      LAX1:
+        lifecycle: vacant_office_land_development_application_withdrawn_sale_pending
+        PDS_design_IT_mw: 36
+        withdrawn_design:
+          data_halls: 7
+          emergency_generators: 12
+          generator_rating_mw_each: 4
+          installed: false
+        current_boundary: application_withdrawn_2026_04_07_and_conditional_sale_signed_2026_06_12
+      LAX2:
+        lifecycle: vacant_office_land_no_live_data_center_sale_pending
+        PDS_design_IT_mw: 36
+        current_boundary: conditional_sale_signed_2026_06_12
+      BNE1: {lifecycle: operating, PDS_installed_IT_mw: 1.8, PDS_contracted_IT_mw: 1.2, tier: III}
+      BNE2:
+        lifecycle: operating
+        PDS_installed_IT_mw: 1.7
+        PDS_contracted_IT_mw: 0.6
+        tier: IV
+        liquid_cooling_trial: true
+      BNE:
+        lifecycle: operating
+        legacy_PDS_code: BNE3
+        PDS_installed_IT_mw: 0.3
+        PDS_contracted_IT_mw: 0.2
+        fiber_ring_to_BNE1_and_BNE2_km: 60
+      TSV1: {lifecycle: operating, PDS_installed_IT_mw: 0.5, PDS_contracted_IT_mw: 0.2, cyclone_resistance: Category_5}
+      ADL1:
+        lifecycle: operating_with_expansion_option
+        PDS_IT_mw: {installed: 1.2, contracted: 0.6, planned: 9.2}
+        potential_expansion_upsize_mw: {from: 8, to: 15}
+        expansion_condition: cornerstone_customer
+      ADL2: {lifecycle: operating, PDS_installed_IT_mw: 0.6, PDS_contracted_IT_mw: 0.4, tier: II}
+      BNE3:
+        lifecycle: greenfield_development_not_operating
+        legacy_PDS_code: BNE4
+        PDS_planned_IT_mw: 19.6
+        projected_completion: CY2027
+        design_target: Tier_IV
+      SYD1:
+        lifecycle: operating_two_building_campus_with_approved_expansion
+        PDS_IT_mw: {installed: 26.2, contracted: 20, future_expansion: 61.8, planned: 88}
+        secured_power_MVA: 120
+        current_capacity_contracted_percent: 100
+        approved_expansion:
+          prior_total_IT_mw: 42.5
+          approved_total_IT_mw: 88
+          power_consumption_increase_mw: 47.5
+          additional_emergency_generators: 24
+          total_emergency_generators_after_expansion: 66
+          approval_date: '2025-12-23'
+        delivery:
+          first_15MW_practical_completion_confirmed: '2026-05-06'
+          remaining_5MW_target: before_2026_06_30
+          remaining_5MW_completion_confirmed_in_reviewed_sources: false
+          next_10MW_target: Q2_2027
+          full_expansion_target: FY2029
+        target_economics:
+          yield_on_cost_percent: 15
+          NAV_uplift_AUD_per_security_approximate: 1.50
+          achieved: false
+        cooling_and_density: liquid_cooling_and_5_to_10_plus_MW_deployment_ready
+        complete_as_built_equipment_BOM: undisclosed_or_commercial_in_confidence
+    sale_and_balance_sheet_transition:
+      CHI1_sale:
+        binding_price_USD_million: 750
+        premium_to_book_value_percent_approximate: 5
+        passing_yield_percent: 5.8
+        expected_close: Q1_FY2027
+        completion_confirmed: false
+      LAX1_and_LAX2_sale:
+        conditional_contract_date: '2026-06-12'
+        expected_close: 1H_FY2027
+        completion_confirmed: false
+      pro_forma_after_CHI1_sale:
+        net_debt_AUD_billion_approximate: 0.5
+        gearing_percent: 17
+        available_liquidity_AUD_billion_approximate: 0.9
+      available_liquidity_after_CHI1_and_LAX_agreements_AUD_billion_approximate: 1.0
+      boundary: Signed sales and pro-forma balance-sheet scenarios are not completed transactions or statutory period-end balances.
+    accelerator_and_AI_boundary:
+      SharonAI_SEC_hosting_partners_named_collectively: [NEXTDC, GreenSquare, DigiCo]
+      supported_model_families_named_collectively: [NVIDIA_B200, NVIDIA_B300, NVIDIA_GB300]
+      DigiCo_exact_site_model_and_count_allocation: undisclosed
+      Australia_wide_72MW_up_to_40000_GB300_assignable_to_DigiCo: false
+      unnamed_Australian_site_8200_B300_assignable_to_DigiCo: false
+      DigiCo_owned_GPU_model_count: undisclosed
+      accelerator_ledger_action: no_numeric_row_created
+      boundary: >-
+        SharonAI identifies DigiCo among several Australian hosting partners but
+        does not allocate a site, model or unit count. Countrywide and unnamed-
+        site deployments are not assigned to DigiCo.
+    public_map_crosswalk:
+      operator_tagged_OSM_objects: 7
+      matched_property_codes: [ADL1, ADL2, BNE1, BNE2, SYD1, TSV1]
+      SYD1_mapped_building_objects: 2
+      boundary: Seven OSM objects cover six property codes and are not a complete legal, operating or physical-building census.
+    linked_companies:
+      external_manager: [HMC_Capital]
+      tenant_and_sale_counterparties: [undisclosed_for_material_contracts]
+      GPU_hosting_ecosystem: [SharonAI]
+      financial_profile_refs: [company_digico_infrastructure_reit]
+    sources:
+      - {title: Replacement Product Disclosure Statement, publisher: DigiCo_Infrastructure_REIT_via_ASX, date: 2024-12-12, url: "https://announcements.asx.com.au/asxpdf/20241212/pdf/06ckxj5xhzpb18.pdf"}
+      - {title: Current data-centre directory, publisher: DigiCo, accessed: 2026-07-19, url: "https://www.digi-co.com.au/data-centres/"}
+      - {title: HY26 results presentation, publisher: DigiCo_Infrastructure_REIT, date: 2026-02, url: "https://www.hmccapital.com.au/investment-strategies/digital-infrastructure/digico-infrastructure-reit/financial-reports-presentations/hy26-results-presentation/"}
+      - {title: CHI1 sale and balance-sheet update, publisher: DigiCo_Infrastructure_REIT, date: 2026-05-06, url: "https://www.hmccapital.com.au/investment-strategies/digital-infrastructure/digico-infrastructure-reit/asx-announcements/sale-of-chi1-and-strengthened-balance-sheet/"}
+      - {title: LAX conditional sale, publisher: DigiCo_Infrastructure_REIT, date: 2026-06-12, url: "https://www.hmccapital.com.au/investment-strategies/digital-infrastructure/digico-infrastructure-reit/asx-announcements/digico-contracts-lax-sale/"}
+      - {title: LAX1 development application withdrawal, publisher: DigiCo_Infrastructure_REIT, date: 2026-04-07, url: "https://www.hmccapital.com.au/investment-strategies/digital-infrastructure/digico-infrastructure-reit/asx-announcements/digico-withdraws-lax1-development-application/"}
+      - {title: SYD1 expansion planning portal, publisher: NSW_Department_of_Planning_Housing_and_Infrastructure, accessed: 2026-07-19, url: "https://www.planningportal.nsw.gov.au/major-projects/projects/digico-syd1-data-centre-expansion?page=0"}
+      - {title: SharonAI 2025 Form 10-K, publisher: US_SEC, filed: 2026, url: "https://www.sec.gov/Archives/edgar/data/2068385/000149315226014068/form10-k.htm"}
+    confidence: high_for_13_property_legal_roster_11_current_pages_9_operating_labels_PDS_and_HY26_capacity_boundaries_sale_contracts_SYD1_approval_HY26_financial_link_and_seven_OSM_objects_medium_for_CHI1_20MW_derived_delivery_bridge_low_for_exact_sale_completion_current_per_site_load_GPU_allocation_complete_as_built_BOM_site_economics_and_ROIC
+
 disclosure_gap_register:
+  - DigiCo_13_legal_properties_to_exact_current_title_lease_non_overlapping_buildings_and_sale_completion
+  - DigiCo_11_current_directory_labels_9_operating_properties_CHI1_phased_delivery_BNE3_development_and_two_LAX_land_assets_to_current_physical_building_census
+  - DigiCo_PDS_237_7MW_FY2025_232MW_HY2026_238MW_and_post_LAX_withdrawal_172MW_to_same_date_operating_energized_contracted_billing_utilized_and_actual_load
+  - DigiCo_CHI1_remaining_12MW_delivery_customer_acceptance_billing_sale_close_and_disposition_economics
+  - DigiCo_SYD1_remaining_5MW_completion_next_10MW_grid_fitout_customer_acceptance_billing_and_full_88MW_schedule
+  - DigiCo_BNE3_ADL1_SYD1_expansion_permits_grid_energization_construction_cornerstone_customers_capex_and_returns
+  - DigiCo_per_site_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_models_counts_ratings_OEMs_and_as_built_topology
+  - DigiCo_per_site_measured_PUE_WUE_water_energy_hourly_renewable_matching_live_liquid_cooled_MW_and_actual_load
+  - DigiCo_SharonAI_hosted_GPU_exact_site_models_counts_servers_racks_fabric_owner_delivery_power_utilization_revenue_and_margin
+  - DigiCo_site_level_revenue_operating_profit_NOI_capex_debt_customer_concentration_utilization_and_ROIC
   - VIRTUS_32_provider_codes_to_exact_non_overlapping_physical_buildings_parcels_title_lease_and_current_lifecycle
   - VIRTUS_FY2024_11_live_sites_179_3MW_billable_181_8MW_contracted_606_3MW_design_to_2026_647_9MW_mixed_code_checksum_reconciliation
   - VIRTUS_UK_338_3MW_Germany_261_6MW_Italy_48MW_to_operating_energized_leased_utilized_billed_and_actual_metered_IT_load_by_site
