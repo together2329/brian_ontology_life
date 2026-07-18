@@ -12844,6 +12844,228 @@ campus_profiles:
       - {title: AI-ready and sustainability claims, publisher: Datacenter_United, accessed: 2026-07-19, url: "https://datacenterunited.com/en/dcu-future-ready-infrastructuur-gebouwd-voor-ai-geoptimaliseerd-voor-duurzaamheid-2/"}
     confidence: high_for_investor_13_11_basis_15_label_reconstruction_14_label_directory_Proximus_transaction_portfolio_power_buckets_FY2025_financials_financing_ownership_and_12_OSM_objects_medium_for_facility_label_to_physical_site_crosswalk_and_current_upgrade_status_low_for_exact_building_count_site_power_live_load_equipment_GPU_inventory_site_economics_and_roster_conflict_resolution
 
+  - id: dc_orange_group_data_center_cloud_and_network_portfolio
+    name: Orange Group data-center, Cloud Avenue and French network portfolio
+    record_granularity: group_infrastructure_headline_cloud_service_regions_selected_French_campuses_regulatory_buildings_and_OSM_network_sites_with_explicit_boundaries
+    operator: Orange_Group_and_Orange_Business
+    countries: [FR, DE, NO, SE, global_headline_without_complete_country_roster]
+    lifecycle_as_of_2026_07_19: >-
+      Orange Business describes 70 data centers in its own infrastructure, while
+      Cloud Avenue markets more than ten European data centers including four in
+      France. The current French colocation page selects three campuses, and a
+      separate 2022 release names Amilly. These are different infrastructure,
+      service, campus and building scopes rather than one current site roster.
+    evidence_registry_ref: life/imports/global_data_centers_20260717/orange_data_center_evidence_registry.jsonl
+    evidence_summary_ref: life/imports/global_data_centers_20260717/orange_data_center_evidence_summary.json
+    registry_builder_ref: scripts/build_orange_data_center_evidence_registry.py
+    current_portfolio_reconciliation:
+      Orange_Business_FY2025_own_infrastructure:
+        provider_data_centers: 70
+        exact_address_building_owner_lease_and_lifecycle_roster: undisclosed
+      Cloud_Avenue_current_service:
+        Europe_data_centers_more_than_or_equal: 10
+        France_data_centers: 4
+        complete_current_location_roster: unpublished_on_marketing_page
+      Flexible_Datacenter_France:
+        selected_campuses: 3
+        labels: [Val_de_Reuil, Chartres_Mainvilliers, Grenoble]
+      separate_network_and_customer_data_center:
+        label: Amilly
+        source_scope: 2022_Orange_corporate_release
+      boundary: >-
+        The 70-data-center infrastructure headline, 10-plus Cloud Avenue service
+        locations, four French Cloud Avenue locations, three selected colocation
+        campuses and individual buildings answer different questions. None is
+        added or treated as a complete physical-building or owned-property count.
+    selected_French_campuses:
+      Val_de_Reuil:
+        campus_hectares: 18
+        current_provider_operating_data_centers: 2
+        operating_since: [2012, 2021]
+        future_data_centers_possible: 2
+        Normandie_2_regulatory_scope:
+          building_received: 2021_07_27
+          operation_notified: 2021_09_10
+          constructed_IT_rooms: 6
+          initial_active_IT_rooms: 3
+          planned_full_active_IT_rooms_approximately_by: 2030
+          planned_generators_total: 17
+          planned_replacement_generators_non_simultaneous_boundary: 5
+          initial_generators_in_service: 8
+          initial_generators_simultaneous: 6
+          other_electrical: [batteries, electrical_distribution_rooms]
+          cooling: [air_handling_units, chiller_groups]
+          Carrier_2022_project:
+            liquid_chillers: 14
+            condenser_model: Carrier_AquaForce_30XA_1002_air_cooled
+            control_upgrade: floating_high_pressure_system
+            PED_compliance_scope_chillers: 4
+        phase_boundary: >-
+          Generator and room counts come from the Normandie 2 project and its
+          initial phase, not a current campus-wide as-built equipment census.
+      Chartres_Mainvilliers:
+        provider_count_conflict:
+          current_colocation_page_data_centers: 2
+          2023_2024_Orange_Business_white_paper_data_centers: 1
+          resolution: unresolved_do_not_sum_or_choose_silently
+        provider_IT_room_sqm: 5000
+        provider_opened: 2022
+        synchronous_replication_to_Val_de_Reuil_ms_less_than: 3
+        project_building_scope:
+          gross_surface_sqm: 18989
+          works_value_EUR_million: 67
+          delivery: 2020
+          cooling: direct_free_cooling
+        boundary: >-
+          Gross building area, IT-room area and provider data-center count use
+          different granularities. The one-versus-two publication conflict
+          prevents a confident current building total.
+      Grenoble:
+        provider_data_centers: 1
+        managed_by_Orange_Business_since: 2011
+        cloud: Cloud_Avenue_SecNum_deployed_through_La_Fabrique
+        building_history: former_Alstom_industrial_radiography_site_rehabilitated
+        envelope: {concrete_wall_m: 2, ceiling_m: 1.5}
+        cooling:
+          technology: groundwater_heat_exchange
+          aquifer_depth_m: 30
+          inlet_temperature_C: 13
+          discharge_temperature_C_approximately: 17
+          water_additives: none
+          WUE_claim: 0
+        electrical:
+          transformers: [very_low_loss, vegetable_oil]
+          UPS_efficiency_percent_more_than: 95
+          UPS_efficiency_load_threshold_percent: 25
+          rack_level_PDU_metering: true
+          hydrogen_fuel_cell_backup: discussion_only_not_installed_fact
+        energy: rooftop_and_facade_photovoltaics_supplement_grid_energy
+      Amilly:
+        current_Flexible_Datacenter_selected_campus: false
+        2022_release_building_surface_sqm: 16000
+        2022_release_IT_room_sqm: 5000
+        cooling: outside_air_free_cooling_more_than_ten_months_per_year
+        energy_impact_reduction_percent_vs_old_generation: 30
+        boundary: >-
+          The 2022 release groups Amilly, new Val-de-Reuil and the earlier
+          Val-de-Reuil building as three centers. It does not place Amilly in the
+          current three-campus Flexible Datacenter roster.
+    shared_DC2020_engineering_scope:
+      sites: [Chartres, Val_de_Reuil]
+      active_IT_room_sqm: 8400
+      IT_equipment_mw: 25
+      tier_range: Tier_II_plus_to_III_plus
+      cooling: direct_free_cooling
+      design_PUE: 1.3
+      boundary: >-
+        These are two-site project totals and are not allocated between campuses.
+        IT equipment MW is not current energized, leased, utilized or billed load.
+    accelerators_and_cloud_platform:
+      Cloud_Avenue_Dynamic_Nordic_and_Germany:
+        service_city_labels: [Stockholm, Oslo, Berlin, Frankfurt]
+        confirmed_GPU_models: [NVIDIA_L4, NVIDIA_L40, NVIDIA_H100]
+        GPU_allocation: dedicated_entire_GPU_unit_to_customer_environment
+        Orange_responsibility: [platform_operations, network_availability, hardware_and_software_maintenance, monitoring]
+      French_Trusted_GenAI:
+        platform: Cloud_Avenue
+        host_scope: Orange_data_centers_in_France
+        hardware_provider_and_model: HPE_GreenLake_as_a_service
+        uses: [training, fine_tuning, inference]
+      Cloud_Avenue_core_technologies: [HPE_Synergy, HPE_GreenLake, VMware_vCloud_Director, VMware_NSX]
+      Orange_owned_or_managed_physical_GPU_count: undisclosed
+      exact_model_by_site_delivery_state_power_draw_utilization_revenue_and_margin: undisclosed
+      boundary: >-
+        The December 2025 service description confirms L4, L40 and H100 models
+        in EU/EEA service scope but does not disclose how many exist, where each
+        model is installed, who finances title, or utilization. French and
+        Nordic/German offers remain separate evidence scopes.
+    energy_cooling_and_environment:
+      selected_Flexible_Datacenter_current_page:
+        free_or_natural_cooling: true
+        PUE_less_than: 1.3
+        WUE_near: 0
+        CUE: 0.0087
+      selected_Flexible_Datacenter_white_paper:
+        PUE_range: [1.29, 1.34]
+        Val_de_Reuil_and_Chartres_backup_architecture: 2N_plus_1_oil_fired_generators
+        UPS_efficiency_percent_more_than: 95
+      France_data_center_average_PUE:
+        "2025": 1.49
+        "2024": 1.59
+      Europe_outside_France_average_PUE_2025: 1.58
+      group_water_policy:
+        free_cooling_water_use: none
+        open_sky_adiabatic_cooling_current_sites: 0
+        closed_loop_adiabatic_normal_operation_sites: 3
+      renewable_procurement:
+        active_PPA_volume_2025_GWh_per_year_approximately: 700
+        share_of_2025_group_electricity_consumption_percent_approximately: 24
+        Amilly_and_Val_de_Reuil_three_building_equivalence: Boralex_Engie_TotalEnergies_PPAs
+      boundary: >-
+        Fleet averages, design values, selected-offer claims and group water or
+        PPA policies are not site-metered values. No reviewed source provides a
+        complete site-level energy, water, PUE, WUE or hourly matching ledger.
+    public_map_crosswalk:
+      related_OSM_objects: 11
+      raw_operator_labels: {Orange: 9, orange: 1, Orange_Business: 1}
+      exact_service_site_candidate:
+        OSM_ref: osm_way_50210667
+        label: Green_DataCenter_Eolas
+        relationship: Grenoble_La_Fabrique_service_site_candidate
+      landing_station_boundary:
+        OSM_ref: osm_way_683531738
+        label: Station_d_atterrage
+        treatment: submarine_landing_station_not_assumed_current_data_center
+      other_current_or_legacy_network_site_candidates: 9
+      footprint_area_m2_checksum: 25143.51
+      boundary: >-
+        The map contains current or legacy telecom exchanges, one landing station
+        and one Grenoble service-site candidate. OSM tags and footprints do not
+        establish Orange's official roster, building ownership, service status,
+        capacity, gross area, equipment, GPUs or utilization.
+    corporate_and_financial_context:
+      financial_profile_ref: company_orange_group
+      FY2025_Orange_Group_EUR_million:
+        revenue: 40396
+        EBITDAaL: 12470
+        operating_income: 3422
+        net_income: 1139
+        eCAPEX: 6208
+        organic_cash_flow: 3653
+        free_cash_flow_all_in: 2793
+      FY2025_Orange_Business_EUR_million:
+        revenue: 7325
+        EBITDAaL: 577
+        EBITDAaL_margin_percent: 7.9
+        operating_income: -277
+        eCAPEX: 279
+        tangible_and_intangible_investment: 383
+      boundary: >-
+        Orange Business spans fixed and mobile telecom, integration, cloud,
+        data, AI and cybersecurity. These public segment figures are not data-
+        center or GPUaaS revenue, profit, capex, cash flow or ROIC.
+    linked_companies:
+      operator_and_platform: [Orange_Group, Orange_Business, Orange_France, Cloud_Avenue, La_Fabrique]
+      compute_and_software: [NVIDIA, HPE, VMware, LightOn]
+      power_and_cooling: [Carrier, Boralex, Engie, TotalEnergies]
+      design_and_engineering: [Ingerop, A26_Architectures]
+      regulators: [DREAL_Normandie, Georisques]
+      financial_profile_refs: [company_orange_group]
+    sources:
+      - {title: Orange 2025 Universal Registration Document, publisher: Orange, date: 2026-04-02, url: "https://assets.orange.com/medias/domain12751/media101746/523986-yvts1td99t-75.pdf"}
+      - {title: Current Cloud Avenue offer, publisher: Orange_Business, accessed: 2026-07-19, url: "https://www.orange-business.com/en/our-solutions/cloud/cloud-avenue"}
+      - {title: Current French colocation offer, publisher: Orange_Business, accessed: 2026-07-19, url: "https://www.orange-business.com/fr/solutions/cloud/colocation"}
+      - {title: Orange Business green data-center white paper, publisher: Orange_Business_and_AdVaes, date: 2024, url: "https://www.orange-business.com/sites/default/files/ADVAES-WHITE-PAPER-ORANGE-BUSINESS-GREEN-DATA-CENTER-FINAL-EN_0_0.pdf"}
+      - {title: Cloud Avenue Dynamic service description, publisher: Orange_Business, date: 2025-12, url: "https://www.orange-business.com/sites/default/files/sd_cloud_avenue_osl_sthlm_ber_gbl_2025-12.pdf"}
+      - {title: Orange trusted GenAI offer, publisher: Orange_Business, date: 2024-03-19, url: "https://www.orange-business.com/en/press/orange-business-launches-new-trusted-genai-offers-end-end-french-customers"}
+      - {title: DC2020 two-site engineering scope, publisher: Ingerop, accessed: 2026-07-19, url: "https://www.ingerop.fr/projet/data-center-dc2020/"}
+      - {title: Val-de-Reuil Normandie 2 inspection, publisher: DREAL_Normandie_via_Georisques, date: 2023-01-25, url: "https://www.georisques.gouv.fr/webappReport/ws/installations/inspection/Bsbo7OaXtwPVs0JSGzPn87Z1hHsJcnSE"}
+      - {title: Val-de-Reuil cooling case study, publisher: Carrier, date: 2023-10, url: "https://www.carrier.com/commercial/en/se/media/fiche-reference-chantier-data-center-orange-en_tcm215-211619.pdf"}
+      - {title: Two new Orange data centers, publisher: Orange, date: 2022-06-01, url: "https://www.orange.com/fr/communiques/deux-nouveaux-datacenters-233480"}
+      - {title: Orange FY2025 results, publisher: Orange, date: 2026-02-18, url: "https://www.orange.com/en/assets/document/387974/download"}
+      - {title: Orange Q1 2026 results, publisher: Orange, date: 2026-04-23, url: "https://assets.orange.com/medias/domain12751/media101762/528618-b6xgiexxgx-75.pdf"}
+    confidence: high_for_70_data_center_headline_Cloud_Avenue_denominators_three_French_campuses_FY2025_and_Q1_2026_financials_GPU_models_DC2020_scope_Normandie_2_generators_and_selected_cooling_medium_for_OSM_Grenoble_crosswalk_and_current_phase_completion_low_for_complete_building_roster_legal_ownership_site_capacity_live_load_full_equipment_BOM_GPU_inventory_site_economics_and_return_on_capital
+
   - id: dc_ark_data_centres_uk_europe_portfolio
     name: Ark Data Centres UK and European portfolio
     record_granularity: provider_location_cards_statutory_operating_company_sites_and_OSM_footprints_with_explicit_lifecycle_operator_and_power_boundaries
