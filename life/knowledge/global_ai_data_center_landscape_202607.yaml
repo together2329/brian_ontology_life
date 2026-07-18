@@ -16118,16 +16118,38 @@ campus_profiles:
     operator: ByteDance_and_Volcano_Engine
     lifecycle_as_of_2026_07_17: operating_and_expanding_with_limited_public_disclosure
     location:
-      ECS_service_endpoint_regions_as_of_2025_06_30: [Beijing, Shanghai, Guangzhou, Hong_Kong, Johor, Jakarta]
+      official_registry_ref: life/imports/global_data_centers_20260717/volcengine_official_region_registry.jsonl
+      official_registry_summary_ref: life/imports/global_data_centers_20260717/volcengine_official_region_summary.json
+      source_scope_reconciliation:
+        unique_Region_ID_union: 9
+        union_boundary: nine_unique_IDs_across_three_service_document_scopes_not_nine_company_wide_physical_Regions
+        general_guide_as_of_2025_03_13:
+          Region_rows: 7
+          published_AZ_count: 24
+          captured_AZ_ID_rows: 19
+          unrendered_AZ_ID_residual: 5
+          Region_IDs: [cn-beijing, cn-beijing2, cn-datong, cn-wulanchabu, cn-shanghai, cn-guangzhou, cn-hongkong]
+        Container_Service_as_of_2025_09_30:
+          Region_rows: 6
+          AZ_ID_rows: 20
+          Region_IDs: [cn-beijing, cn-guangzhou, cn-shanghai, ap-southeast-1, ap-southeast-3, cn-hongkong]
+        ECS_API_endpoints_as_of_2025_06_30:
+          Region_rows: 6
+          Region_IDs: [cn-beijing, cn-shanghai, cn-guangzhou, cn-hongkong, ap-southeast-1, ap-southeast-3]
+          names: [Beijing, Shanghai, Guangzhou, Hong_Kong, Johor, Jakarta]
       provider_documentation_context:
         region_definition: geographic_area_where_physical_data_centers_are_located
         AZ_definition: physical_area_with_independent_power_and_network_within_a_region
-        product_specific_tables: inconsistent_in_region_and_AZ_availability
+        product_specific_AZ_count_conflicts:
+          cn_beijing: {general_guide: 9, Container_Service: 4}
+          cn_guangzhou: {general_guide: 4, Container_Service: 3}
+          cn_shanghai: {general_guide: 3, Container_Service: 5}
+          cn_hongkong: {general_guide: 2, Container_Service: 2}
         exact_current_company_wide_region_AZ_building_and_campus_count: undisclosed
       endpoint_boundary: >-
         Volcano Engine states that an API endpoint does not necessarily represent
-        the location where a product is directly provided. Product tables differ,
-        so no company-wide AZ total is reconstructed.
+        the location where a product is directly provided. The product tables
+        differ, so no company-wide Region or AZ total is reconstructed.
     campus_scale:
       exact_addresses_coordinates_land_area_MW_and_building_counts: undisclosed_in_reviewed_primary_sources
     accelerators:
@@ -16153,11 +16175,15 @@ campus_profiles:
         publisher: Volcano_Engine
         date: 2025-03-13
         url: https://www.volcengine.com/docs/6534/1131814
+      - title: Volcano Engine Container Service regions and availability zones
+        publisher: Volcano_Engine
+        date: 2025-09-30
+        url: https://www.volcengine.com/docs/6460/79643
       - title: ByteDance environmental sustainability
         publisher: ByteDance
         date: 2022-04-07
         url: https://gongyi.bytedance.com/detail/7161987661010602014
-    confidence: medium_for_service_regions_and_sustainability_metrics_low_for_company_wide_physical_site_count_MW_and_GPU_inventory
+    confidence: high_for_preserved_product_specific_service_rows_medium_for_sustainability_metrics_low_for_company_wide_physical_site_count_MW_and_GPU_inventory
 
   - id: dc_huawei_cloud_global_region_portfolio
     name: Huawei Cloud global region, AI-compute-center, and CloudMatrix portfolio

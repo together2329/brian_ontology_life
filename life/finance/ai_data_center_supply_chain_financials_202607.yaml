@@ -6055,6 +6055,13 @@ financial_profiles:
     data_center_exposure:
       roles: [consumer_AI_and_content_platform_operator, Volcano_Engine_cloud_operator, data_center_and_accelerator_buyer]
       confirmed_campus_refs: [dc_bytedance_volcano_engine_infrastructure_portfolio]
+      official_service_registry_ref: life/imports/global_data_centers_20260717/volcengine_official_region_registry.jsonl
+      official_service_registry_summary_ref: life/imports/global_data_centers_20260717/volcengine_official_region_summary.json
+      service_scope_reconciliation: >-
+        The reviewed official documents produce a nine-Region-ID union, but the
+        general guide, Container Service, and ECS endpoint rosters are different
+        service scopes. Their counts must not be converted into a company-wide
+        physical site, capacity, or operating-asset total.
       exact_owned_and_leased_site_count_MW_GPU_inventory_and_spending: undisclosed
     management_outlook:
       quantitative_public_financial_guidance: undisclosed
@@ -6067,8 +6074,9 @@ financial_profiles:
     sources:
       - https://www.volcengine.com/docs/6396/1581668?lang=zh
       - https://www.volcengine.com/docs/6534/1131814
+      - https://www.volcengine.com/docs/6460/79643
       - https://gongyi.bytedance.com/detail/7161987661010602014
-    confidence: high_for_public_disclosure_gap_medium_for_cloud_service_regions_low_for_private_financial_and_physical_infrastructure_scale
+    confidence: high_for_public_disclosure_gap_and_preserved_product_specific_service_rows_low_for_private_financial_and_physical_infrastructure_scale
 
   - id: company_huawei
     company: Huawei
