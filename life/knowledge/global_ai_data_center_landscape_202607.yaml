@@ -12138,6 +12138,174 @@ campus_profiles:
       - {title: OVHcloud environmental indicators, publisher: OVHcloud, accessed: 2026-07-19, url: "https://corporate.ovhcloud.com/asia/sustainability/environment/"}
     confidence: high_for_current_location_AZ_DC_counts_FY2025_owned_shared_server_financial_environmental_cooling_GPU_product_and_OSM_evidence_medium_for_current_44_to_46_asset_and_Milan_ownership_bridge_low_for_facility_MW_exact_building_roster_GPU_inventory_equipment_BOM_customer_load_and_site_economics
 
+  - id: dc_bouygues_telecom_french_network_data_center_and_towerlink_boundary
+    name: Bouygues Telecom French network data-center and Towerlink property boundary
+    record_granularity: provider_named_historical_locations_plus_passive_asset_transaction_batches_not_a_current_physical_building_census
+    operator_and_tenant: Bouygues_Telecom
+    property_platform: Towerlink_France
+    current_Towerlink_owner_as_of_2026_07_19: Vauban_Infra_Fibre
+    country: FR
+    lifecycle_as_of_2026_07_19: >-
+      Bouygues remains a telecom and IT operator and a Towerlink service or
+      lease counterparty, but the exact current operated, occupied and owned
+      building roster is undisclosed after multiple passive-asset sales.
+    official_evidence_registry_ref: life/imports/global_data_centers_20260717/bouygues_telecom_data_center_evidence_registry.jsonl
+    official_evidence_summary_ref: life/imports/global_data_centers_20260717/bouygues_telecom_data_center_evidence_summary.json
+    registry_builder_ref: scripts/build_bouygues_telecom_data_center_evidence_registry.py
+    provider_named_2021_data_centers:
+      Bievres:
+        country: FR
+        current_property_owner: undisclosed_at_named_location_level
+        current_Bouygues_operating_or_tenancy_status: undisclosed_at_named_location_level
+      Saclay:
+        country: FR
+        current_property_owner: undisclosed_at_named_location_level
+        current_Bouygues_operating_or_tenancy_status: undisclosed_at_named_location_level
+      Montigny_le_Bretonneux:
+        country: FR
+        opened: 2009
+        ISO_50001_since: 2012
+        European_Code_of_Conduct_participant: true
+        current_property_owner: undisclosed_at_named_location_level
+        current_Bouygues_operating_or_tenancy_status: undisclosed_at_named_location_level
+      evidence_boundary: >-
+        The provider page names three operated data centers but was last
+        modified in 2021. It is historical operating evidence, not a verified
+        2026 owned-building or tenancy roster after later transactions.
+    passive_asset_transfers_to_Towerlink:
+      "2021":
+        MSC_or_data_center_buildings_and_passive_infrastructure: 13
+        consideration_EUR_million: 199
+        disposal_gain_EUR_million: 114
+        timing: seven_in_March_eleven_and_EUR168m_in_H1_two_more_and_EUR31m_in_H2
+      "2022":
+        additional_MSC_or_data_center_buildings_and_passive_infrastructure: 4
+        consideration_EUR_million: 102
+        disposal_gain_EUR_million: 52
+      2024_2025_core_Ile_de_France_sale_and_leaseback:
+        board_authorized: 2024-06-20
+        sites: 5
+        "2024_12_18": {sites: 2, consideration_EUR_million: 63, gain_EUR_million: 7}
+        "2025_01": {sites: 3, consideration_EUR_million: 87, gain_EUR_million: 12}
+        IFRS_16_boundary: >-
+          The five-site transaction was a sale and leaseback. For the three
+          January 2025 sites, Bouygues reported EUR39 million in investing and
+          EUR48 million as retained-use or financing lease effects.
+      historical_transfer_checksum:
+        MSC_or_data_center_passive_assets: 22
+        consideration_EUR_million: 451
+        disposal_gain_EUR_million: 185
+        boundary: >-
+          This arithmetic checksum spans transaction batches. It is not a
+          current Towerlink site count and does not identify overlap with the
+          three provider-named 2021 data centers.
+    Towerlink_ownership:
+      historical_platform_plan:
+        2018_up_to_metropolitan_or_central_offices: 88
+        acquisition_option_up_to_MSC_and_metropolitan_offices: 62
+        planned_investment_EUR_million: 250
+        expected_incremental_adjusted_EBITDA_EUR_million: 39
+        later_target_edge_data_centers_by_2023: 100
+        boundary: Plans_options_and_targets_are_not_delivered_current_site_counts
+      current_transition:
+        seller: Cellnex
+        buyer: Vauban_Infra_Fibre
+        equity_interest_percent: 99.99
+        announced_consideration_EUR_million: 391
+        closing_date: 2026-01-23
+        continuing_customer: Bouygues_Telecom
+      ownership_boundary: >-
+        Towerlink owns passive property and infrastructure while Bouygues is a
+        continuing main customer, tenant or service user. Neither party
+        publishes the exact current site roster, IT equipment ownership or
+        occupied and billed load by building.
+    power_and_resilience:
+      disclosed:
+        - optimized_UPS_or_inverter_operation
+        - backup_generator_systems
+        - generator_use_reduction_target
+        - biofuel_development
+        - hybrid_solar_and_hydrogen_generator_tests
+      exact_site_MW_MVA_and_live_IT_load: undisclosed
+      equipment_boundary: >-
+        Utility feeds, substations, transformers, switchgear, busbars, PDUs,
+        UPS and battery counts, ratings, OEMs and topology, and generator
+        counts, ratings, OEMs, fuel and runtime remain undisclosed.
+    cooling:
+      design_and_operating_practices:
+        outside_air_free_cooling_below_C: 9
+        containment: cold_corridor
+        airflow: layout_and_hotspot_optimization
+        equipment: progressively_more_efficient_equipment
+        eco_cooling: planned_for_all_newly_commissioned_sites
+        refrigerants: alternatives_under_study
+      undisclosed: [site_PUE, site_WUE, absolute_site_energy, absolute_site_water, cooling_equipment_BOM_and_OEMs, liquid_cooling, high_density_AI_ready_MW, fleetwide_eco_cooling_deployment_share]
+    energy_and_environment:
+      2025_network_operations_share_of_scope_1_and_2_percent: 71
+      Statkraft_CPPA:
+        term_years: 10
+        electricity_requirements_covered_with_guarantees_of_origin_percent: 82
+      Suez_PPA:
+        signed: 2025_Q2
+        term_years: 15
+        renewable_energy_GWh_per_year: 53
+        source: household_waste
+      Ecowatt_winter_electricity_reduction_commitment_percent: 10
+      boundary: >-
+        Network-emission share, PPAs and commitments are company or network
+        procurement evidence, not data-center-only consumption, hourly
+        additional matching, measured savings or per-site efficiency.
+    accelerators_and_AI:
+      internal_AI_factory: Meudon_Technopole
+      Prisme_AI_studio: may_run_on_group_infrastructure_or_cloud_of_choice
+      external_services_and_partnerships: [Google_Cloud_voice_AI, OVHcloud_hybrid_cloud, NumSpot_sovereign_cloud, OUTSCALE_GPU_service]
+      direct_physical_GPU_inventory_by_model_site_count_owner_power_and_utilization: undisclosed
+      ownership_boundary: >-
+        Internal AI work, public-cloud products, reseller partnerships and a
+        consortium GPU service do not establish Bouygues-owned accelerators or
+        a deployment inside any named Bouygues facility.
+    public_map_crosswalk:
+      related_OSM_objects: 31
+      raw_operator_tagged_objects: 30
+      raw_name_only_objects: 1
+      Montigny_duplicate_point_and_footprint_representations: 2
+      unresolved_against_current_roster: 29
+      boundary: >-
+        The Montigny point and footprint represent one named location, not two
+        facilities. The remaining telecom/data-center map objects cannot be
+        called current data centers, properties or Towerlink assets without a
+        provider roster and transaction-level identity bridge.
+    finance_and_outlook:
+      financial_profile_ref: company_bouygues_telecom
+      2026_standalone_guidance: [customer_billed_sales_and_EBITDAaL_close_to_2025, gross_capex_about_EUR1_3B_ex_spectrum, FCF_before_WCR_about_EUR600M_ex_La_Poste_Telecom_and_tax_surcharge]
+      SFR_MOU:
+        signed: 2026-06-06
+        partners: [Orange, Free_Groupe_iliad]
+        expected_closing: 2027_H2_subject_to_social_legal_and_regulatory_conditions
+        total_enterprise_value_EUR_billion: 20.35
+        possible_earnout_EUR_million_up_to: 650
+        Bouygues_share_percent_approximate: 42
+        Bouygues_target_2025_revenue_scope_EUR_billion_approximate: 4.1
+        Bouygues_target_2025_EBITDAaL_scope_EUR_billion_approximate: 1.0
+        excluded: [XP_Fibre, UltraEdge, Altice_Technical_Services, overseas_operations]
+        boundary: >-
+          The transaction is not closed. UltraEdge is explicitly excluded, so
+          SFR or UltraEdge data centers must not be added to the Bouygues
+          property or operating roster.
+      outlook_boundary: >-
+        Group telecom guidance and acquisition synergies do not disclose
+        data-center-only revenue, operating profit, capex, current load,
+        customer concentration or site returns.
+    sources:
+      - {title: Bouygues Telecom energy-efficient data centers, publisher: Bouygues_Telecom, modified: 2021, accessed: 2026-07-19, url: "https://www.corporate.bouyguestelecom.fr/nos-engagements/demarche-societale-environnementale/numerique-positif-pour-la-planete/des-installations-performantes/"}
+      - {title: Bouygues Telecom 2021 CSR report, publisher: Bouygues_Telecom, date: 2022-06, url: "https://www.corporate.bouyguestelecom.fr/wp-content/uploads/2022/06/RapportRSE-2021-Partie2-BouyguesTelecom-Juin2022.pdf"}
+      - {title: Bouygues 2025 Universal Registration Document, publisher: Bouygues, date: 2026-03, url: "https://www.bouygues.com/app/uploads/2026/03/bouygues_deu_2025_uk_web.pdf"}
+      - {title: Cellnex 2018 Towerlink plan, publisher: Cellnex, date: 2019, url: "https://informeanual.cellnex.com/2018/2018-crecimiento-consolidacion-y-transformacion.html"}
+      - {title: Cellnex agreement to sell Towerlink France, publisher: Cellnex, date: 2025-10-22, url: "https://www.cellnex.com/dk-en/news/cellnex-agreement-towerlink-datacenter-france-vauban-infra/"}
+      - {title: Cellnex CNMV communications including Towerlink closing, publisher: Cellnex, date: 2026-01-23, url: "https://www.cellnex.com/es-es/relacion-con-inversores/comunicaciones-cnmv/"}
+      - {title: Bouygues Telecom and partners sign SFR acquisition MOU, publisher: Bouygues_Telecom, date: 2026-06-06, url: "https://www.corporate.bouyguestelecom.fr/archives-communique-presse/bouygues-telecom-franchit-une-etape-structurante-pour-son-developpement-futur-en-signant-aux-cotes-de-free-groupe-iliad-et-orange-un-protocole-daccord-avec-altice-france-en-vue-de-l/"}
+    confidence: high_for_historical_named_roster_transaction_counts_sale_and_leaseback_parent_financial_energy_cooling_and_SFR_MOU_evidence_medium_for_continuing_Towerlink_tenancy_platform_ownership_bridge_low_for_exact_current_roster_site_ownership_MW_equipment_GPU_inventory_and_site_economics
+
   - id: dc_firmus_project_southgate_australia
     name: Firmus Project Southgate Australia AI Factory program
     record_granularity: national_multi_site_AI_factory_program_not_one_campus
@@ -30870,6 +31038,18 @@ disclosure_gap_register:
   - OVHcloud_group_Private_Public_Web_Cloud_financials_to_data_center_GPU_service_and_site_level_revenue_EBITDA_EBIT_capex_cash_flow_customer_concentration_and_ROIC
   - OVHcloud_FY2026_positive_levered_FCF_33_to_35_percent_capex_and_5_to_7_percent_growth_guidance_to_full_year_reported_results
   - OVHcloud_Berlin_three_AZ_and_seven_planned_datacenters_to_exact_sites_ownership_permits_grid_power_construction_energization_products_customers_and_revenue
+  - Bouygues_Telecom_current_complete_operated_tenanted_and_property_owned_data_center_and_MSC_roster_after_2021_2025_Towerlink_transfers
+  - Bouygues_Telecom_Bievres_Saclay_and_Montigny_to_2024_2025_five_core_Ile_de_France_sale_and_leaseback_identity_crosswalk
+  - Bouygues_Telecom_22_passive_asset_transfer_checksum_to_current_Towerlink_Vauban_roster_ownership_lease_term_service_contract_and_lifecycle
+  - Bouygues_Telecom_31_related_OSM_objects_to_current_MSC_edge_exchange_data_center_property_and_duplicate_building_reconciliation
+  - Bouygues_Telecom_per_site_utility_MW_MVA_energized_leased_utilized_customer_accepted_billed_IT_load_racks_and_occupancy
+  - Bouygues_Telecom_per_site_substation_transformer_switchgear_busbar_PDU_UPS_battery_generator_fuel_runtime_counts_ratings_OEMs_and_as_built_topology
+  - Bouygues_Telecom_free_cooling_cold_corridor_eco_cooling_and_alternative_refrigerant_rollout_to_site_PUE_WUE_energy_water_equipment_and_live_high_density_load
+  - Bouygues_Telecom_direct_and_NumSpot_OUTSCALE_OVHcloud_Google_Cloud_GPU_models_counts_owner_host_site_power_utilization_revenue_and_margin
+  - Bouygues_Telecom_network_and_data_center_energy_consumption_to_Statkraft_Suez_PPA_allocation_hourly_matching_emissions_and_realized_Ecowatt_reduction
+  - Bouygues_Telecom_data_center_only_revenue_operating_profit_EBITDA_capex_cash_flow_customer_concentration_and_ROIC
+  - Bouygues_Telecom_FY2026_guidance_to_reported_results_and_La_Poste_Telecom_synergy_cash_conversion
+  - Bouygues_Orange_Free_SFR_MOU_to_definitive_agreements_regulatory_approval_financing_close_integration_and_synergy_realization_with_UltraEdge_exclusion_preserved
   - AirTrunk_current_post_2024_committed_energized_and_utilized_capacity_by_campus
   - HUMAIN_AirTrunk_Saudi_exact_location_capacity_hardware_power_and_delivery_schedule
   - Equinix_280_year_end_to_281_current_facility_reconciliation
