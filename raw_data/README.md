@@ -35,6 +35,11 @@ Rules:
   - Copied: 2026-06-13
   - Scope: BKE Group 2019 gratitude diary campaign document
   - SHA-256: `f725a7a272839b5e7537cb9f7a9c3cc4a140ea8cf1a3764da3c293e7e6adcde9`
+- `documents/bke_gratitude_campaign_2018/`
+  - Source: `/Users/brian/Desktop/BKE Group 감사일기 캠페인 2018년 _ 최정윤.docx`
+  - Copied: 2026-07-18
+  - Scope: BKE Group 2018 gratitude diary campaign document
+  - SHA-256: `f4da968185baaa4f925598f003b3a483f690dea98d9d3fe52fba60587baa493c`
 - `images/body/inbody_20260627_1000.jpg`
   - Source: Codex conversation image attachment
   - Copied: 2026-06-27

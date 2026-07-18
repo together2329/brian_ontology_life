@@ -1,0 +1,771 @@
+schema_version: 1
+generated_at: '2026-07-18T19:23:43'
+source:
+  id: bke_gratitude_diary_2018
+  raw_ref: raw_data/documents/bke_gratitude_campaign_2018/BKE Group 감사일기 캠페인 2018년 _ 최정윤.docx
+  original_source_path: /Users/brian/Desktop/BKE Group 감사일기 캠페인 2018년 _ 최정윤.docx
+  sha256: f4da968185baaa4f925598f003b3a483f690dea98d9d3fe52fba60587baa493c
+  source_type: gratitude_diary_docx
+  title: BKE Group 감사일기 캠페인 ( 2018년 4월 29일 ~ 2018년 12월 31일 )
+  personal_contact_fields_present: true
+  birth_date_field_present: true
+  name_field_present: true
+  duplicate_check:
+    method: sha256_of_whitespace_normalized_paragraph_text
+    compared_imports:
+    - import_ref: life/imports/bke_gratitude_diary_2019
+      exact_entry_hash_overlap_count: 0
+    total_exact_entry_hash_overlap_count: 0
+outputs:
+  manifest_ref: life/imports/bke_gratitude_diary_2018/manifest.yaml
+  source_markdown_ref: life/imports/bke_gratitude_diary_2018/source.md
+  normalized_entries_ref: life/imports/bke_gratitude_diary_2018/normalized_entries.jsonl
+  entity_linked_entries_ref: life/imports/bke_gratitude_diary_2018/entity_linked_entries.jsonl
+  daily_summary_ref: life/imports/bke_gratitude_diary_2018/daily_summary.jsonl
+  summary_ref: life/imports/bke_gratitude_diary_2018/summary.yaml
+  pattern_candidates_ref: life/patterns/bke_gratitude_diary_2018_pattern_candidates.yaml
+records:
+  entry_count: 1340
+  daily_count: 245
+  date_range:
+    start: '2018-04-29'
+    end: '2018-12-31'
+  by_month:
+    2018-04: 10
+    2018-05: 163
+    2018-06: 154
+    2018-07: 167
+    2018-08: 174
+    2018-09: 174
+    2018-10: 172
+    2018-11: 164
+    2018-12: 162
+  by_area:
+    MIND: 516
+    RELATION: 423
+    CAREER: 173
+    BODY: 174
+    MAINTENANCE: 14
+    FUN: 27
+    FINANCE: 13
+  by_emotion_tag:
+    grateful: 1340
+    happy: 146
+    calm: 28
+    relieved: 34
+    angry: 2
+    proud: 23
+    anxious: 8
+    moved: 7
+  by_theme_tag:
+    learning_growth: 48
+    conversation_connection: 110
+    relationship_spouse: 261
+    relationship_friend_colleague: 202
+    exercise_movement: 44
+    work_progress: 127
+    food_home_cooking: 215
+    happiness_presence: 154
+    problem_solving: 30
+    gratitude_practice: 29
+    goal_planning: 42
+    sleep_rest: 28
+    nature_scene: 11
+    travel_memory: 15
+    relationship_family: 19
+    health_recovery: 19
+    finance_home: 25
+  with_semantic_links: 1340
+  with_review_needed: 74
+link_counts:
+  by_object_type:
+    Activity: 1679
+    Person: 383
+    Concept: 16
+    Project: 15
+    Component: 5
+  top_entities:
+  - entity_ref: activity_gratitude
+    records: 1340
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20180429_001
+      date: '2018-04-29'
+      matched_alias: gratitude_diary_source
+      text_excerpt: 유튜브로 양질의 콘텐츠를 올려주시는 신영준 박사님 덕분에 태도를 어떻게 가져야 할지 배우고 있습니다. 감사합니다.
+    - entry_ref: bke_gratitude_20180429_002
+      date: '2018-04-29'
+      matched_alias: gratitude_diary_source
+      text_excerpt: 사랑하는 아름이와 멋진 마인드 관련하여 대화를 했습니다. 이런 대화를 사랑하는 사람과 함께 할 수 있다는 것이 축복인 것 같습니다. 사랑하고 감사합니다.
+    - entry_ref: bke_gratitude_20180429_003
+      date: '2018-04-29'
+      matched_alias: gratitude_diary_source
+      text_excerpt: '어벤져스 : 인피니티워 - 영화를 볼 수 있음에, 이런 풍요로움을 누릴 수 있음에 감사합니다.'
+    - entry_ref: bke_gratitude_20180429_004
+      date: '2018-04-29'
+      matched_alias: gratitude_diary_source
+      text_excerpt: ASICLAND의 SOC팀을 멋지게 이끌어가 주시는 팀장님의 열정에 존경을 표합니다. 감사합니다.
+    - entry_ref: bke_gratitude_20180429_005
+      date: '2018-04-29'
+      matched_alias: gratitude_diary_source
+      text_excerpt: 회사 앞에 헬스장이 있어 편하게 운동을 할 수 있습니다. 헬스장을 차려 주신 사장님께 감사합니다.
+  - entity_ref: person_wife
+    records: 254
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20180429_002
+      date: '2018-04-29'
+      matched_alias: 아름이
+      text_excerpt: 사랑하는 아름이와 멋진 마인드 관련하여 대화를 했습니다. 이런 대화를 사랑하는 사람과 함께 할 수 있다는 것이 축복인 것 같습니다. 사랑하고 감사합니다.
+    - entry_ref: bke_gratitude_20180430_005
+      date: '2018-04-30'
+      matched_alias: 아름이
+      text_excerpt: 아름이와 맛있는 삼겹살과 청하를 먹으며 행복 할 수 있어서 감사합니다.
+    - entry_ref: bke_gratitude_20180501_004
+      date: '2018-05-01'
+      matched_alias: 아름이
+      text_excerpt: 아름이가 저의 부족한 부분( 갈등 상황 회피 )에 대해 일깨워 주어서 감사합니다. 문제가 연속해서 발생하지 않도록 노력해보아야겠습니다. 감사합니다.
+    - entry_ref: bke_gratitude_20180502_002
+      date: '2018-05-02'
+      matched_alias: 아름이
+      text_excerpt: 사랑하는 아름이가 아침에 배려해주는 말을 해줘서 기운이 났습니다. 항상 감사한 마음입니다.
+    - entry_ref: bke_gratitude_20180504_004
+      date: '2018-05-04'
+      matched_alias: 아름이
+      text_excerpt: 붉은 대게를 3마리 사서 아름이와 함께 먹었습니다. 맛있게 먹어준 아름이에게 감사합니다.
+  - entity_ref: activity_conversation
+    records: 110
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20180429_002
+      date: '2018-04-29'
+      matched_alias: 대화
+      text_excerpt: 사랑하는 아름이와 멋진 마인드 관련하여 대화를 했습니다. 이런 대화를 사랑하는 사람과 함께 할 수 있다는 것이 축복인 것 같습니다. 사랑하고 감사합니다.
+    - entry_ref: bke_gratitude_20180501_003
+      date: '2018-05-01'
+      matched_alias: 이야기
+      text_excerpt: 결혼에 대해서 집에서 가지는 관심에 감사합니다. 더욱 더 상호 소통하며 이야기할 필요가 있음을 느꼈습니다. 이런 필요성을 느끼게 해주셔서 감사합니다.
+    - entry_ref: bke_gratitude_20180503_003
+      date: '2018-05-03'
+      matched_alias: 이야기
+      text_excerpt: 워크샵 가는 길에 태희형에게 부동산 관련 이야기를 들을 수 있음에 감사합니다. 덕분에 경매에 대해 더 관심을 가질 수 있게 되었습니다. 감사합니다.
+    - entry_ref: bke_gratitude_20180505_004
+      date: '2018-05-05'
+      matched_alias: 이야기
+      text_excerpt: 아름이와 결혼 관련된 이야기를 하며 다투었습니다. 그럼에도 불구하고 항상 아름이는 저에게 소중한 존재이고 사랑하는 존재입니다. 앞으로 더 노력하는 제가 되겠습니다. 사랑하고 감사합니다.
+    - entry_ref: bke_gratitude_20180511_005
+      date: '2018-05-11'
+      matched_alias: 대화
+      text_excerpt: 팀장님과 회사 현황 관련해서 미팅을 하며 안정감을 느꼈습니다. 더 자주 제가 미팅을 신청하고 대화를 많이 해야 겠습니다.
+  - entity_ref: activity_reading_learning
+    records: 43
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20180430_003
+      date: '2018-04-30'
+      matched_alias: 책을 읽
+      text_excerpt: 부자는 내가 정한다란 책을 읽고 영감을 받을 수 있어서 감사합니다.
+    - entry_ref: bke_gratitude_20180503_004
+      date: '2018-05-03'
+      matched_alias: 공부
+      text_excerpt: 스크럼 관련된 지식을 공부하시고 멋진 철학을 전달해주신 팀장님께 감사드립니다. 스크럼의 철학이 제가 추구하는 철학과 일맥상통함에 놀랐습니다. 더 깊이 파고들 필요가 있을 것 같습니다.
+        감사합니다.
+    - entry_ref: bke_gratitude_20180516_001
+      date: '2018-05-16'
+      matched_alias: 책을 읽
+      text_excerpt: 아침 5시 30분에 일어나서 샤워를 하고 "나는 마트 대신 부동산에 간다"라는 책을 읽었습니다. 이렇게 아침에 일어나 생산적으로 시간을 보낼 수 있음에 감사합니다.
+    - entry_ref: bke_gratitude_20180516_005
+      date: '2018-05-16'
+      matched_alias: 책 읽
+      text_excerpt: 라이프 리모델링 과제 제출, 부동산 관련 책 읽기, 회사 일 등 많은 일들 속에서 우선순위를 정하고 멋지게 나아갈 수 있었음에 감사합니다.
+    - entry_ref: bke_gratitude_20180520_004
+      date: '2018-05-20'
+      matched_alias: 책을 읽
+      text_excerpt: 나는 마트 대신 부동산 간다라는 책을 읽었습니다. 110p ~ 130p. 너무나도 좋은 내용에 메모를 많이 했습니다. 집 볼 때 꼭 활용해야 겠습니다. 감사합니다.
+  - entity_ref: activity_health_recovery
+    records: 35
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20180510_004
+      date: '2018-05-10'
+      matched_alias: 약
+      text_excerpt: 병원을 다녀왔습니다. 약을 지어왔습니다. 제 기침에 대해서 진찰해주고 약을 주는 곳이 있음에 감사합니다.
+    - entry_ref: bke_gratitude_20180512_001
+      date: '2018-05-12'
+      matched_alias: 회복
+      text_excerpt: 수면 시간이 많아서 기침이 조금 덜해진 것 같습니다. 회복하고 있는 제 몸에 감사합니다.
+    - entry_ref: bke_gratitude_20180515_003
+      date: '2018-05-15'
+      matched_alias: 건강
+      text_excerpt: 파리바케트에서 파는 샐러드를 사와 먹었습니다. 이렇게 맛있는 건강식인 샐러드를 판매해준 파리바게트 사장님에게 감사합니다.
+    - entry_ref: bke_gratitude_20180519_005
+      date: '2018-05-19'
+      matched_alias: 건강
+      text_excerpt: 우뭇가사리, 콩물을 함께 먹었습니다. 이렇게 건강한 콩물과 우뭇가사리를 제공해주신 두부집 사장님에게 감사합니다.
+    - entry_ref: bke_gratitude_20180526_004
+      date: '2018-05-26'
+      matched_alias: 건강
+      text_excerpt: 아름이와 건강검진을 받았습니다. 함께 건강검진을 받을 수 있어서 감사하고 무사히 끝나서 감사합니다.
+  - entity_ref: person_jihyeong
+    records: 35
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20180511_003
+      date: '2018-05-11'
+      matched_alias: 지형이형
+      text_excerpt: 지형이형이 툴 셋업 관련해서 대부분의 일을 해주고 있습니다. 바쁜 와중에도 멋지게 툴 설치를 해줘서 감사합니다.
+    - entry_ref: bke_gratitude_20180515_001
+      date: '2018-05-15'
+      matched_alias: 지형이형
+      text_excerpt: SWI 관련된 이슈를 해결 할 수 있도록 도움을 준 지형이형에게 감사합니다.
+    - entry_ref: bke_gratitude_20180515_004
+      date: '2018-05-15'
+      matched_alias: 지형이형
+      text_excerpt: 같이 창업했던 지형이형과 함께 같은 회사에서 일할 수 있음에 감사합니다.
+    - entry_ref: bke_gratitude_20180604_005
+      date: '2018-06-04'
+      matched_alias: 지형이형
+      text_excerpt: 지형이형과 영곤책임님과 함께 호흡을 잘 맞춰 일할 수 있음에 감사합니다.
+    - entry_ref: bke_gratitude_20180615_001
+      date: '2018-06-15'
+      matched_alias: 지형이형
+      text_excerpt: SPYGLASS LINT 툴이 정상적으로 동작합니다. 이런 환경을 구성해준 지형이형에게 감사합니다.
+  - entity_ref: activity_workout
+    records: 33
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20180429_005
+      date: '2018-04-29'
+      matched_alias: 운동
+      text_excerpt: 회사 앞에 헬스장이 있어 편하게 운동을 할 수 있습니다. 헬스장을 차려 주신 사장님께 감사합니다.
+    - entry_ref: bke_gratitude_20180430_001
+      date: '2018-04-30'
+      matched_alias: 운동
+      text_excerpt: 아침에 유산소 운동을 다녀온 나에게 감사합니다. 운동하고 나와서 맑은 날씨를 볼 수 있음에 감사합니다.
+    - entry_ref: bke_gratitude_20180501_001
+      date: '2018-05-01'
+      matched_alias: 헬스
+      text_excerpt: 농구로 땀흘린 후, 헬스장에서 편하게 샤워할 수 있음에 감사합니다.
+    - entry_ref: bke_gratitude_20180504_001
+      date: '2018-05-04'
+      matched_alias: 운동
+      text_excerpt: 워크샵 가서 운동을 하고 몸의 피로를 풀 수 있도록 사우나를 갔습니다. 사우나를 하고 나니 몸의 피로가 눈 녹듯이 사라졌습니다. 팀장님의 배려에 감사드립니다.
+    - entry_ref: bke_gratitude_20180508_001
+      date: '2018-05-08'
+      matched_alias: 운동
+      text_excerpt: 아침에 유산소 운동을 하고 왔습니다. 운동을 꽤나 꾸준히 하고 있는 제 자신에게 감사합니다.
+  - entity_ref: activity_cafe_reflection
+    records: 33
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20180512_003
+      date: '2018-05-12'
+      matched_alias: 카페
+      text_excerpt: Snail's coffee라는 집근처 카페에 와있습니다. 너무나도 풍경이 좋고 아늑합니다. 여기서 일정 정리와 제 삶에 대한 정리를 하고 있습니다. 마음이 평안하고 행복합니다. 이런
+        장소를 알려준 아름이에게 이런 카페를 만들어준 사장님께 감사합니다.
+    - entry_ref: bke_gratitude_20180518_005
+      date: '2018-05-18'
+      matched_alias: 카페
+      text_excerpt: 출근 길에 "세이노의 가르침"이란 카페에서 쓰여진 글들을 봤습니다. 제 삶에 동기부여가 많이 되었습니다. 이런 글을 써주신 세이노님에게 감사합니다.
+    - entry_ref: bke_gratitude_20180522_001
+      date: '2018-05-22'
+      matched_alias: 카페
+      text_excerpt: 아름이와 함께 부동산 이야기를 하며 카페에서 책을 읽을 수 있음에, 희망찬 미래를 바라보고 함께 할 수 있음에 감사합니다.
+    - entry_ref: bke_gratitude_20180609_003
+      date: '2018-06-09'
+      matched_alias: 커피를
+      text_excerpt: 부산 고모가 맛있는 케익과 커피를 사줬습니다. 감사합니다.
+    - entry_ref: bke_gratitude_20180611_002
+      date: '2018-06-11'
+      matched_alias: 카페
+      text_excerpt: 카페로 가서 Confluence를 읽었습니다. 힘들었던 마음이 조금 없어지는 느낌입니다. 감사합니다.
+  - entity_ref: activity_meal
+    records: 25
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20180504_004
+      date: '2018-05-04'
+      matched_alias: 맛있게 먹
+      text_excerpt: 붉은 대게를 3마리 사서 아름이와 함께 먹었습니다. 맛있게 먹어준 아름이에게 감사합니다.
+    - entry_ref: bke_gratitude_20180510_003
+      date: '2018-05-10'
+      matched_alias: 맛있게 먹
+      text_excerpt: 오랜만에 치킨을 먹었습니다. 몇개 먹진 않았지만 아주 맛있게 먹었습니다. 이런 음식을 먹을 수 있음에 감사합니다.
+    - entry_ref: bke_gratitude_20180513_001
+      date: '2018-05-13'
+      matched_alias: 식단
+      text_excerpt: 라이프 리모델링 코칭 때 들은 내용을 정리했습니다. 정말 주옥 같은 내용들이 많았고 특히 부동산, 식단 관련된 내용이 좋았습니다. 좋은 말씀, 조언 많이 해주셔서 감사합니다.
+    - entry_ref: bke_gratitude_20180516_002
+      date: '2018-05-16'
+      matched_alias: 식단
+      text_excerpt: 유산소 운동을 30분 했습니다. 꾸준히 운동함에, 운동을 함으로써 식단을 조절할 수 있음에 동기부여 할 수 있음에 감사합니다.
+    - entry_ref: bke_gratitude_20180518_003
+      date: '2018-05-18'
+      matched_alias: 식사
+      text_excerpt: 점심을 카레덮밥을 먹었습니다. 의식적인 노력으로 밥을 절반만 먹고 야채를 많이 먹었습니다. 이렇게 의식적으로 식사량을 조절할 수 있음에 감사합니다.
+  - entity_ref: person_younggon
+    records: 25
+    needs_user_review_records: 25
+    examples:
+    - entry_ref: bke_gratitude_20180514_003
+      date: '2018-05-14'
+      matched_alias: 영곤
+      text_excerpt: 하이비 과제 관련해서 팀장님, 영곤 책임님, 상진 책임님과 함께 회의 했습니다. 하이비 과제가 잘 마무리 되면 좋겠습니다. 감사합니다.
+    - entry_ref: bke_gratitude_20180521_002
+      date: '2018-05-21'
+      matched_alias: 영곤
+      text_excerpt: 107 과제 관련해서 많은 부분을 맡아주고 있는 영곤 책임님에게 감사합니다. 덕분에 프로젝트가 잘 진행되고 있는 것 같습니다.
+    - entry_ref: bke_gratitude_20180525_002
+      date: '2018-05-25'
+      matched_alias: 영곤
+      text_excerpt: 영곤 책임님이 책임감이 있게 프로젝트를 이끌어주셔서 감사합니다.
+    - entry_ref: bke_gratitude_20180604_005
+      date: '2018-06-04'
+      matched_alias: 영곤
+      text_excerpt: 지형이형과 영곤책임님과 함께 호흡을 잘 맞춰 일할 수 있음에 감사합니다.
+    - entry_ref: bke_gratitude_20180612_004
+      date: '2018-06-12'
+      matched_alias: 영곤
+      text_excerpt: 영곤 책임님의 책임감 있는 모습에 감사합니다. 저도 배우고 더 열심히 하겠습니다.
+  - entity_ref: person_taehee
+    records: 16
+    needs_user_review_records: 16
+    examples:
+    - entry_ref: bke_gratitude_20180503_003
+      date: '2018-05-03'
+      matched_alias: 태희형
+      text_excerpt: 워크샵 가는 길에 태희형에게 부동산 관련 이야기를 들을 수 있음에 감사합니다. 덕분에 경매에 대해 더 관심을 가질 수 있게 되었습니다. 감사합니다.
+    - entry_ref: bke_gratitude_20180504_003
+      date: '2018-05-04'
+      matched_alias: 태희형
+      text_excerpt: 속초에서 서울까지 차를 태워준 태희형에게 감사합니다. 덕분에 편하세 서울로 올 수 있었습니다.
+    - entry_ref: bke_gratitude_20180523_006
+      date: '2018-05-23'
+      matched_alias: 태희형
+      text_excerpt: 늦은밤 저를 태워준 태희형에게 감사합니다.
+    - entry_ref: bke_gratitude_20180625_005
+      date: '2018-06-25'
+      matched_alias: 태희형
+      text_excerpt: 회사에서 집까지 데려다준 태희형에게 감사합니다.
+    - entry_ref: bke_gratitude_20180711_006
+      date: '2018-07-11'
+      matched_alias: 태희형
+      text_excerpt: 태희형이 본체 주문을 대신 해줘서 감사합니다. 원래 굳은일이 제일 하기 싫은 일인데, 도맡아 해주셔서 감사합니다.
+  - entity_ref: activity_travel
+    records: 15
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20180505_001
+      date: '2018-05-05'
+      matched_alias: 여행
+      text_excerpt: 샤로수 길에 가서 베트남 음식을 먹었습니다. 팟타이, 카오팟. 지난 태국 여행을 떠올리게 해준 음식점 사장님께 감사합니다.
+    - entry_ref: bke_gratitude_20180508_003
+      date: '2018-05-08'
+      matched_alias: 대구
+      text_excerpt: 제 전화를 반갑게 받아주신 아름이 부모님께 감사드립니다. 곧 대구에 내려가서 뵙기를 바랍니다.
+    - entry_ref: bke_gratitude_20180512_002
+      date: '2018-05-12'
+      matched_alias: 제주도
+      text_excerpt: 아름이가 제주도를 새벽에 출발해야 하는데 저 때문에 잠을 많이 못잤습니다. 그럼에도 불구하고 제주도에서 반갑게 카톡을 해주는 아름이에게 감사합니다. 얼른 몸이 나아서 기침을 안하도록
+        해주세요. 감사합니다.
+    - entry_ref: bke_gratitude_20180607_003
+      date: '2018-06-07'
+      matched_alias: 여행
+      text_excerpt: 유럽여행을 다녀와서 향이 좋은 비누를 선물해주신 현상진 책임님께 감사합니다.
+    - entry_ref: bke_gratitude_20180610_005
+      date: '2018-06-10'
+      matched_alias: 경주
+      text_excerpt: 신경주역 까지 데려다준 동생 다정이에게 감사합니다.
+  - entity_ref: concept_fulfilled_mind
+    records: 15
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20180505_005
+      date: '2018-05-05'
+      matched_alias: 충만
+      text_excerpt: 이렇게 감사일기를 제안해준 BKE 그룹에 다시 한번 감사드립니다. 감사일기를 쓰면서 제 마음이 따뜻해지고 충만해짐을 느낍니다. 정말 감사드립니다.
+    - entry_ref: bke_gratitude_20180630_007
+      date: '2018-06-30'
+      matched_alias: 마음이 충만
+      text_excerpt: 4월 말부터 쓴 감사일기를 다시 쭉 읽어봤습니다. 마음이 충만하고 너무 좋습니다. 감사일기를 쓰게 끔 동기부여를 해준 BKE group 분들에게 다시 한 번 감사드립니다.
+    - entry_ref: bke_gratitude_20180706_001
+      date: '2018-07-06'
+      matched_alias: 충만감
+      text_excerpt: 아침에 6시에 일어날 수 있는 힘을 주셔서 감사합니다. 덕분에 아침에 30분 정도 산책을 하고 왔습니다. 산책 뿐만 아니라 모든 면에서 훨씬 여유가 있고 충만감이 드는 아침입니다. 너무나도
+        멋진 아침입니다. 앞으로 6시에 일어나는 기쁨을 매일 매일 느끼고 싶습니다. 감사합니다.
+    - entry_ref: bke_gratitude_20180706_004
+      date: '2018-07-06'
+      matched_alias: 충만함
+      text_excerpt: 감사일기를 쓰면 자연스럽게 더 타인을 생각하게 되고 더 개선시켜야 할 부분을 생각하게 되고 문제를 선물로 보게 되고 제 마음에 여유도 주게 되는 것 같습니다. 순간 순간 더 감사함을
+        가지고 충만함을 가지고 쓰려고 노력하겠습니다. 간만에 최고의 아침입니다. 감사합니다.
+    - entry_ref: bke_gratitude_20180723_005
+      date: '2018-07-23'
+      matched_alias: 충만
+      text_excerpt: 생산성이 매우 떨어지는 하루를 보낼 수 있게 해주셔서 감사합니다. 그로인해 다음날을 어떻게 계획해야하는지 알게되었습니다. 더 생산성이 높게 더 충만하게 하루를 보내겠습니다. 감사합니다.
+  - entity_ref: project_haibi
+    records: 15
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20180514_003
+      date: '2018-05-14'
+      matched_alias: 하이비
+      text_excerpt: 하이비 과제 관련해서 팀장님, 영곤 책임님, 상진 책임님과 함께 회의 했습니다. 하이비 과제가 잘 마무리 되면 좋겠습니다. 감사합니다.
+    - entry_ref: bke_gratitude_20180525_001
+      date: '2018-05-25'
+      matched_alias: 하이비
+      text_excerpt: 하이비 환경을 셋팅하는데 도움을 줄 수 있어 감사합니다.
+    - entry_ref: bke_gratitude_20180709_004
+      date: '2018-07-09'
+      matched_alias: 하이비
+      text_excerpt: 하이비 프로젝트에 Coverage, Post sim 관련하여 조금이나마 도움이 될 수 있어 감사합니다.
+    - entry_ref: bke_gratitude_20180823_003
+      date: '2018-08-23'
+      matched_alias: 하이비
+      text_excerpt: 하이비 프로젝트에 도움이 될 수 있음에 감사합니다.
+    - entry_ref: bke_gratitude_20180905_004
+      date: '2018-09-05'
+      matched_alias: 하이비
+      text_excerpt: 하이비 파워스킴 설명해주신 송태현 책임님과 이영곤 책임님에게 감사합니다.
+  - entity_ref: activity_sleep
+    records: 14
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20180512_001
+      date: '2018-05-12'
+      matched_alias: 수면
+      text_excerpt: 수면 시간이 많아서 기침이 조금 덜해진 것 같습니다. 회복하고 있는 제 몸에 감사합니다.
+    - entry_ref: bke_gratitude_20180517_001
+      date: '2018-05-17'
+      matched_alias: 수면
+      text_excerpt: 충분한 수면을 취해 개운하게 일어났습니다. 충분한 수면을 취할 수 있는 잠자리가 있어, 집이 있어 감사합니다.
+    - entry_ref: bke_gratitude_20180517_005
+      date: '2018-05-17'
+      matched_alias: 수면
+      text_excerpt: 충분한 수면과 맛있는 음식과 몰입할 수 있는 일이 저에게 있습니다. 이런 모든 환경에 감사합니다.
+    - entry_ref: bke_gratitude_20180622_002
+      date: '2018-06-22'
+      matched_alias: 수면
+      text_excerpt: 충분한 수면으로 기분이 좋습니다. 감사합니다.
+    - entry_ref: bke_gratitude_20180709_001
+      date: '2018-07-09'
+      matched_alias: 잘 잤
+      text_excerpt: 잠을 자고 일어났는데 잘 잤는데 아주 개운합니다. 푹 잘자고 일어날 수 있어서 감사합니다.
+  - entity_ref: activity_cleaning_organizing
+    records: 12
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20180606_004
+      date: '2018-06-06'
+      matched_alias: 청소
+      text_excerpt: 에어컨 청소를 해준 아름이에게 감사합니다.
+    - entry_ref: bke_gratitude_20180624_001
+      date: '2018-06-24'
+      matched_alias: 빨래
+      text_excerpt: 집근처에 빨래방을 설치해주신 사장님께 감사드립니다. 덕분에 이렇게 편하게 건조할 수 있습니다. 감사합니다.
+    - entry_ref: bke_gratitude_20180630_006
+      date: '2018-06-30'
+      matched_alias: 청소
+      text_excerpt: 오늘 5시간 정도 집을 정리하고 화장실을 청소하고 빨래를 하다 보니.. 쉽지 않음을 느낍니다. 매번 저보다도 더 집에 신경을 쓰는 아름이에게 미안하고 고맙습니다. 제가 더 신경쓰도록
+        하겠습니다. 다시 한번 아름이에게 감사합니다.
+    - entry_ref: bke_gratitude_20180706_003
+      date: '2018-07-06'
+      matched_alias: 청소
+      text_excerpt: ASICLAND FE팀 김대현 선임님이 매일 아침 청소를 해주시는 덕분에 제가 쾌적한 환경에서 일할 수 있습니다. 특히 오늘은 FE BE 팀의 문화의 날인데도 불구하고 이렇게 나와서
+        정리하시는 모습에 놀라움을 금치 못하겠습니다. 멋진 모습 배웁니다. 저도 돕겠습니다. 감사합니다.
+    - entry_ref: bke_gratitude_20180715_001
+      date: '2018-07-15'
+      matched_alias: 빨래
+      text_excerpt: 할 일이 많아 힘들텐데, 빨래를 해준 아름이에게 감사합니다.
+  - entity_ref: person_jang_director
+    records: 12
+    needs_user_review_records: 12
+    examples:
+    - entry_ref: bke_gratitude_20181024_001
+      date: '2018-10-24'
+      matched_alias: 장이사님
+      text_excerpt: 자꾸 물어보고 부딪혀야 저의 생각의 한계를 알 수 있다는 것을 모르고 있었습니다. 그걸 알려주신 장이사님과 이책임님에게 감사드립니다.
+    - entry_ref: bke_gratitude_20181026_002
+      date: '2018-10-26'
+      matched_alias: 장이사님
+      text_excerpt: 저에게 멋진 대우를 해주신 장이사님께 너무도 감사드립니다.
+    - entry_ref: bke_gratitude_20181026_003
+      date: '2018-10-26'
+      matched_alias: 장이사님
+      text_excerpt: 일을 취미처럼 하라는 말씀을 해주신 장이사님께 감사드립니다.
+    - entry_ref: bke_gratitude_20181031_004
+      date: '2018-10-31'
+      matched_alias: 장이사님
+      text_excerpt: 저와 장이사님 그리고 지형이형을 위해 펑리수 선물을 사온 존슨에게 참 감사합니다.
+    - entry_ref: bke_gratitude_20181109_011
+      date: '2018-11-09'
+      matched_alias: 장이사님
+      text_excerpt: 장이사님께서 스타벅스 커피를 10잔 선물해주셔서 감사합니다.
+  - entity_ref: person_grandmother
+    records: 10
+    needs_user_review_records: 10
+    examples:
+    - entry_ref: bke_gratitude_20180506_003
+      date: '2018-05-06'
+      matched_alias: 할머니
+      text_excerpt: 할머니로부터 전화가 왔습니다. 저의 안부를 묻고는 아름이의 안부도 물었습니다. 전화주셔서 감사합니다. 어릴 때 부터 사랑으로 저를 키워주셔서 감사합니다. 아름이의 안부도 물어주셔서 감사합니다.
+    - entry_ref: bke_gratitude_20180508_005
+      date: '2018-05-08'
+      matched_alias: 할머니
+      text_excerpt: 부모님, 할머니께 어버이날 전화를 하고 문자를 보낸 아름이에게 감사합니다. 덕분에 행복한 밤입니다. 감사합니다.
+    - entry_ref: bke_gratitude_20180602_004
+      date: '2018-06-02'
+      matched_alias: 할머니
+      text_excerpt: 이렇게 멋지게 저를 키워주신 아버지, 어머니, 할머니께 감사합니다.
+    - entry_ref: bke_gratitude_20180610_004
+      date: '2018-06-10'
+      matched_alias: 할머니
+      text_excerpt: 엄마 아빠 다정이 할머니, 항상 저를 소중하게 대해주셔서 감사합니다.
+    - entry_ref: bke_gratitude_20180807_001
+      date: '2018-08-07'
+      matched_alias: 할머니
+      text_excerpt: 할머니와 엄마와 함께 병원을 갈 수 있어서 감사합니다. 무사히 진료를 마치고 돌아올 수 있어서 감사합니다.
+  - entity_ref: person_mother
+    records: 9
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20180610_004
+      date: '2018-06-10'
+      matched_alias: 엄마
+      text_excerpt: 엄마 아빠 다정이 할머니, 항상 저를 소중하게 대해주셔서 감사합니다.
+    - entry_ref: bke_gratitude_20180807_001
+      date: '2018-08-07'
+      matched_alias: 엄마
+      text_excerpt: 할머니와 엄마와 함께 병원을 갈 수 있어서 감사합니다. 무사히 진료를 마치고 돌아올 수 있어서 감사합니다.
+    - entry_ref: bke_gratitude_20180807_002
+      date: '2018-08-07'
+      matched_alias: 엄마
+      text_excerpt: 할머니와 엄마와 맛있는 샤브샤브를 먹을 수 있어서 감사합니다.
+    - entry_ref: bke_gratitude_20180809_002
+      date: '2018-08-09'
+      matched_alias: 엄마
+      text_excerpt: 할머니, 엄마 덕분에 맛있는 전복죽을 먹었습니다. 감사합니다.
+    - entry_ref: bke_gratitude_20180822_006
+      date: '2018-08-22'
+      matched_alias: 엄마
+      text_excerpt: 7만원을 생일날 보내주신 엄마에게 너무나도 감사합니다.
+  - entity_ref: activity_happiness_bundle
+    records: 8
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20180530_004
+      date: '2018-05-30'
+      matched_alias: 행복꾸러미
+      text_excerpt: 행복꾸러미가 있어서 다행입니다. 제 자신이 언제 행복한지 알 수 있으니까요. 이렇게 행복꾸러미를 만들게 도와주신 모든 분들께 감사합니다.
+    - entry_ref: bke_gratitude_20180817_005
+      date: '2018-08-17'
+      matched_alias: 행복꾸러미
+      text_excerpt: 행복꾸러미를 꾸준히 적은 제 자신에게 감사합니다. 행복꾸러미 에너지의 힘을 알고 있는 제 자신에게 감사합니다.
+    - entry_ref: bke_gratitude_20180905_006
+      date: '2018-09-05'
+      matched_alias: 행복꾸러미
+      text_excerpt: 행복꾸러미에 두 가지를 추가할 수 있어 감사합니다. "함께 시읽기", "아침에 사당역 파리바게트 앞 테이블에서 햇살을 받으며 샌드위치 먹기" 두 가지 입니다. 이 행복한 순간을 그냥
+        넘지기 않고 기록하고 이 순간들을 의식적으로 늘리기 위해 노력함에 감사합니다.
+    - entry_ref: bke_gratitude_20181012_005
+      date: '2018-10-12'
+      matched_alias: 행복 꾸러미
+      text_excerpt: 행복 꾸러미를 썼음에 감사합니다. 덕분에 제가 언제 행복한지 분명하게 볼 수 있었습니다. 감사합니다.
+    - entry_ref: bke_gratitude_20181014_001
+      date: '2018-10-14'
+      matched_alias: 행복 꾸러미
+      text_excerpt: 아침에 산책을 하고 커피 한잔 하면 이야기하는 시간이 참 좋습니다 → 행복 꾸러미가 될 것 같습니다. 감사합니다.
+  - entity_ref: person_myeongsu
+    records: 8
+    needs_user_review_records: 8
+    examples:
+    - entry_ref: bke_gratitude_20180610_001
+      date: '2018-06-10'
+      matched_alias: 명수
+      text_excerpt: 명수에게 연락이 왔습니다. 연락주어 감사합니다. 경제적인 조언도 감사합니다.
+    - entry_ref: bke_gratitude_20180630_002
+      date: '2018-06-30'
+      matched_alias: 명수
+      text_excerpt: 명수와 만나서 멋진 이야기들(경제, 꿈, 현실, 결혼, 미래)을 나눌 수 있어서 감사합니다. 서로 정신적인 성장을 할 수 있어서 감사합니다.
+    - entry_ref: bke_gratitude_20180818_003
+      date: '2018-08-18'
+      matched_alias: 명수
+      text_excerpt: 선물해주신 모든 분들, 축하해주신 모든 분들에게 감사합니다. ( 이상대, 추민호-커피2개 선물, 한도영, 형진이-커피2개, 케익 선물, 지형이형-케익 선물, 전진성해병님, 권오성-커피
+        1개 선물, 성래형, 고모야, 쾌병이, 민호, 가족, 다정이-파리바게트 샌드위치 10개, 현세 전화,…
+    - entry_ref: bke_gratitude_20180909_001
+      date: '2018-09-09'
+      matched_alias: 명수
+      text_excerpt: 명수와 아침에 긴 시간 통화를 했습니다. 진지하게 하나 하나 탈모 관련된 지식을 알려주어 감사합니다.
+    - entry_ref: bke_gratitude_20181027_006
+      date: '2018-10-27'
+      matched_alias: 명수
+      text_excerpt: 명수를 오랜만에 볼 수 있어서 좋은 이야기를 많이 할 수 있어서 감사합니다.
+  - entity_ref: activity_rest
+    records: 7
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20180515_006
+      date: '2018-05-15'
+      matched_alias: 휴식
+      text_excerpt: 편히 티비보며 휴식할 수 있는 집이 있음에 감사합니다.
+    - entry_ref: bke_gratitude_20180524_002
+      date: '2018-05-24'
+      matched_alias: 휴식
+      text_excerpt: 자연을 바라보며 휴식 할 수 있음에 감사합니다.
+    - entry_ref: bke_gratitude_20180526_002
+      date: '2018-05-26'
+      matched_alias: 쉬었습니다
+      text_excerpt: 일요일에 출장을 가는 관계로 토요일 푹 쉬었습니다. 푹 쉴 수 있음에 감사합니다.
+    - entry_ref: bke_gratitude_20180606_001
+      date: '2018-06-06'
+      matched_alias: 휴식
+      text_excerpt: 고된 출장을 마치고 꿀같은 휴식입니다. 쉴 수 있음에 감사합니다. 쉼을 귀하게 여길 수 있음에 감사합니다.
+    - entry_ref: bke_gratitude_20180613_002
+      date: '2018-06-13'
+      matched_alias: 쉬었습니다
+      text_excerpt: 투표 날이라 쉬었습니다. 쉴 수 있음에 감사합니다.
+  - entity_ref: person_hyeongsik
+    records: 7
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20180708_004
+      date: '2018-07-08'
+      matched_alias: 형식이
+      text_excerpt: 오랜만에 형식이에게 연락하고 이야기 할 수 있어 좋습니다. 감사합니다.
+    - entry_ref: bke_gratitude_20180808_001
+      date: '2018-08-08'
+      matched_alias: 형식이
+      text_excerpt: 형식이와 같이 좋은 친구를 만날 수 있어서 감사합니다.
+    - entry_ref: bke_gratitude_20180909_005
+      date: '2018-09-09'
+      matched_alias: 형식이
+      text_excerpt: 형식이가 I feel pretty란 영화를 보고 좋았다고 합니다. 제가 추천한 영화를 재밌게 봐준 형식이에게 감사합니다.
+    - entry_ref: bke_gratitude_20180911_006
+      date: '2018-09-11'
+      matched_alias: 형식이
+      text_excerpt: 제가 24시간을 매일 매일 기록한 것을 보고 대단하다고 칭찬해준 형식이에게 감사합니다.
+    - entry_ref: bke_gratitude_20180916_003
+      date: '2018-09-16'
+      matched_alias: 형식이
+      text_excerpt: 형식이와 긴 시간 통화하며 행복할 수 있음에 감사합니다.
+  - entity_ref: activity_advertising
+    records: 2
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20180913_002
+      date: '2018-09-13'
+      matched_alias: 광고
+      text_excerpt: 탈모에도 불구하고 멋진 삶을 사시는 박웅현 광고인에게도 감사합니다. 용기를 주셔서 감사합니다.
+    - entry_ref: bke_gratitude_20181130_003
+      date: '2018-11-30'
+      matched_alias: 마케팅
+      text_excerpt: 스티브잡스의 마케팅 이야기를 들을 수 있어서 감사합니다.
+  - entity_ref: component_pcie
+    records: 2
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20181002_004
+      date: '2018-10-02'
+      matched_alias: PCIe
+      text_excerpt: SKT PCIe project 관련해서 히스토리 및 해야할일을 친절하게 설명해주신 양매니저님께 감사합니다.
+    - entry_ref: bke_gratitude_20181029_001
+      date: '2018-10-29'
+      matched_alias: PCIe
+      text_excerpt: PCIe를 보면서 집중할 수 있어서 감사합니다.
+  - entity_ref: component_fpga
+    records: 2
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20181011_003
+      date: '2018-10-11'
+      matched_alias: FPGA
+      text_excerpt: 시그널비젼 FPGA Version이 잘 동작하는 것 같아 감사합니다.
+    - entry_ref: bke_gratitude_20181019_003
+      date: '2018-10-19'
+      matched_alias: FPGA
+      text_excerpt: 시그널 비젼의 DNN, HMN 알고리즘이 안데스 FPGA 보드 기반으로 잘 돌아가서 감사합니다.
+  - entity_ref: person_byeongtak
+    records: 2
+    needs_user_review_records: 2
+    examples:
+    - entry_ref: bke_gratitude_20181205_011
+      date: '2018-12-05'
+      matched_alias: 병탁책임님
+      text_excerpt: 밤에 모듬회를 영곤책임님, 병탁책임님, 장이사님과 함께 먹을 수 있어서 감사합니다. 좋은 이야기도 많이 해주셔서 감사합니다.
+    - entry_ref: bke_gratitude_20181224_005
+      date: '2018-12-24'
+      matched_alias: 병탁 책임님
+      text_excerpt: 보드 관련해서 많은 것을 알려주신 병탁 책임님에게 감사합니다. 덕분에 하이비 보드가 많이 이해가 되었습니다. 감사합니다.
+  - entity_ref: person_youngil
+    records: 1
+    needs_user_review_records: 1
+    examples:
+    - entry_ref: bke_gratitude_20180608_001
+      date: '2018-06-08'
+      matched_alias: 영일이 형
+      text_excerpt: 자주 연락해주는 영일이 형에게 감사합니다. 저에게 더 없이 소중한 존재입니다.
+  - entity_ref: person_heedo
+    records: 1
+    needs_user_review_records: 1
+    examples:
+    - entry_ref: bke_gratitude_20180609_001
+      date: '2018-06-09'
+      matched_alias: 희도
+      text_excerpt: 희도와 민호를 봤습니다. 함께 할 수 있음에 감사합니다. 소중한 친구들입니다.
+  - entity_ref: person_father
+    records: 1
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20180610_004
+      date: '2018-06-10'
+      matched_alias: 아빠
+      text_excerpt: 엄마 아빠 다정이 할머니, 항상 저를 소중하게 대해주셔서 감사합니다.
+  - entity_ref: activity_memo
+    records: 1
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20180706_004
+      date: '2018-07-06'
+      matched_alias: 순간 순간
+      text_excerpt: 감사일기를 쓰면 자연스럽게 더 타인을 생각하게 되고 더 개선시켜야 할 부분을 생각하게 되고 문제를 선물로 보게 되고 제 마음에 여유도 주게 되는 것 같습니다. 순간 순간 더 감사함을
+        가지고 충만함을 가지고 쓰려고 노력하겠습니다. 간만에 최고의 아침입니다. 감사합니다.
+  - entity_ref: person_mother_in_law
+    records: 1
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20180806_006
+      date: '2018-08-06'
+      matched_alias: 어머님
+      text_excerpt: 하늘나라로 가신 주희 어머님께서 제게 주신 사랑에 감사합니다. 저도 베풀면서 살겠습니다.
+  - entity_ref: person_dasul
+    records: 1
+    needs_user_review_records: 1
+    examples:
+    - entry_ref: bke_gratitude_20180813_003
+      date: '2018-08-13'
+      matched_alias: 다슬이
+      text_excerpt: 맛있는 맥주를 사준, 날 보러 소중한 시간내어온 다슬이에게 감사합니다.
+  - entity_ref: activity_customer_service
+    records: 1
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20181022_005
+      date: '2018-10-22'
+      matched_alias: 감사의 인사
+      text_excerpt: 돈을 달라고 말하는 것은 참 어렵습니다. 저에겐 쉽지 않은 일이죠. 그럼에도 불구하고 지원해주시는 모든 분들에게 깊은 감사의 인사를 드립니다.
+  - entity_ref: component_cts
+    records: 1
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20181116_005
+      date: '2018-11-16'
+      matched_alias: clock
+      text_excerpt: 대신에 전류소모가 상당합니다. dnn을 돌릴때는 최대 200mA까지 소모합니다. LTV를 써서 이렇게 되는 것 같습니다. Core clock도 끌 수 있도록 설계했어야 하는데 그러질
+        못해 아쉽습니다. 그래도 처음으로 칩을 만들어서 이렇게 동작하는 모습을 보니 매우매우 신기합니다. 플래…
+  - entity_ref: concept_reading_to_operational_knowledge
+    records: 1
+    needs_user_review_records: 0
+    examples:
+    - entry_ref: bke_gratitude_20181124_002
+      date: '2018-11-24'
+      matched_alias: 금방 까먹을 것은 읽지도 마라
+      text_excerpt: 생각의 중요성을 알려준, 책 '금방 까먹을 것은 읽지도 마라' 필사 ← 블로그 글인데 내용이 너무 좋아 반했습니다. 책을 많이 읽는 것이 중요한게 아니라 멋지게 소화하는 것이 중요하다는
+        내용인데 참 도움이 많이 됩니다. 이런 좋은 글 올려주신 커리어 인사이터님에게 감사합니다.
