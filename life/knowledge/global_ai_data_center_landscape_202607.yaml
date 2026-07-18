@@ -14130,11 +14130,19 @@ campus_profiles:
         exact_addresses_coordinates_building_IDs_and_per_site_MW: undisclosed
       Iraq:
         Ooredoo_scope_active_facilities_at_2025_presentation: 7
-        exact_city_roster_and_post_carveout_status: undisclosed
+        Ooredoo_scope_active_IT_capacity_mw: 1.3
+        whole_Asiacell_technical_data_center_estate_claim_2025: 22
+        detailed_ref: dc_asiacell_iraq_data_center_portfolio
+        exact_seven_facility_carveout_roster_and_post_carveout_status: undisclosed
+        boundary: The 22-site Asiacell technical estate is not the same denominator as the seven-facility Ooredoo carve-out scope.
       Oman:
         Ooredoo_scope_active_facilities_at_2025_presentation: 6
-        known_public_site: Salalah_data_center_and_submarine_cable_landing_station
-        exact_complete_roster_and_post_carveout_status: undisclosed
+        Ooredoo_scope_active_IT_capacity_mw: 3.5
+        officially_confirmed_current_named_sites: [Bausher, Barka, Sohar, Salalah]
+        separately_consolidated_operating_subsidiary: Duqm_Data_Centre_SAOC
+        detailed_ref: dc_ooredoo_oman_data_center_portfolio
+        exact_six_facility_carveout_roster_and_post_carveout_status: undisclosed
+        boundary: Duqm is a current commercial subsidiary but no reviewed source assigns it to the six-facility carve-out scope.
     accelerators_and_AI:
       Qatar_live_service_launch: 2025-07-01
       disclosed_accelerator_generation: NVIDIA_Hopper
@@ -14162,7 +14170,7 @@ campus_profiles:
       minority_equity_partner: [Iron_Mountain]
       accelerator_and_software: [NVIDIA]
       public_hyperscaler_customers: [Microsoft, Google]
-      financial_profile_refs: [company_syntys, company_ooredoo_group, company_ooredoo_kuwait_nmtc, company_ooredoo_tunisia, company_iron_mountain, company_nvidia, company_microsoft, company_alphabet]
+      financial_profile_refs: [company_syntys, company_ooredoo_group, company_ooredoo_kuwait_nmtc, company_ooredoo_tunisia, company_ooredoo_oman, company_asiacell_iraq, company_iron_mountain, company_nvidia, company_microsoft, company_alphabet]
     sources:
       - title: 2025 Capital Markets Day presentation
         publisher: Ooredoo_Group
@@ -14940,11 +14948,481 @@ campus_profiles:
       - {title: Syntys current public roster, publisher: Iron_Mountain, date: 2026-07-18_accessed, url: "https://www.ironmountain.com/data-centers/locations/syntys-data-center"}
     confidence: high_for_current_named_facility_low_for_exact_address_capacity_GPU_and_equipment
 
+  - id: dc_ooredoo_oman_data_center_portfolio
+    name: Ooredoo Oman data-center portfolio
+    record_granularity: country_portfolio_with_scope_reconciliation_and_public_named_site_ledger
+    operator: Ooredoo_Oman
+    possible_future_platform: Syntys
+    lifecycle_as_of_2026_07_18: operating_with_carveout_completion_not_publicly_confirmed
+    location:
+      country: Oman
+      officially_confirmed_current_named_sites: [Bausher, Barka, Sohar, Salalah]
+      separately_consolidated_operating_subsidiary: Duqm_Data_Centre_SAOC
+      historical_or_secondary_candidates_not_promoted_to_current_roster: [Nizwa, Qalhat, legacy_Bausher_units, legacy_Sohar_units]
+      exact_addresses_coordinates_parcels_and_complete_current_roster: undisclosed
+    scope_reconciliation:
+      Ooredoo_November_2025_expected_carveout_scope:
+        active_data_centers: 6
+        active_IT_capacity_mw: 3.5
+        carveout_status_at_presentation: not_completed
+      official_2024_to_2025_named_operating_site_evidence:
+        site_count: 4
+        sites: [Bausher, Barka, Sohar, Salalah]
+      Duqm_subsidiary:
+        Ooredoo_Oman_ownership_percent: 71
+        commercial_operations_started: 2019
+        membership_in_six_facility_carveout_scope: unconfirmed
+      boundary: >-
+        Six sites and 3.5 MW are an Ooredoo presentation denominator for the
+        intended Oman carve-out, not a public building roster. The four named
+        sites and Duqm cannot be summed or forced into that denominator because
+        exact asset scope, duplicate legacy units and carve-out completion are
+        undisclosed.
+    facility_refs:
+      - dc_ooredoo_oman_bausher
+      - dc_ooredoo_oman_barka
+      - dc_ooredoo_oman_sohar
+      - dc_ooredoo_oman_salalah
+      - dc_ooredoo_oman_duqm_data_centre
+    scale_and_certification_boundary:
+      aggregate_Syntys_candidate_IT_capacity_mw: 3.5
+      Bausher_public_power_capacity_mw: 2.5
+      Sohar_public_power_supply_up_to_mw: 10
+      boundary: >-
+        Bausher and Sohar values are facility power or power-supply figures,
+        not disclosed IT load, and therefore cannot be added to or reconciled
+        against the 3.5 MW carve-out IT-capacity denominator.
+      operator_framework_claims: [Tier_3, Level_3_plus, class_3]
+      Uptime_Institute_Oman_award_for_reviewed_Ooredoo_sites: none_found
+      certification_boundary: Operator standards language is not relabeled as an Uptime Institute certification.
+    electrical_and_cooling:
+      current_vendor_primary_per_site_equipment_models_and_counts: undisclosed
+      exact_grid_voltage_substation_transformer_switchgear_PDU_UPS_battery_generator_chiller_CRAH_CDU_and_liquid_cooling_BOM: undisclosed
+      exact_PUE_WUE_water_live_IT_load_and_power_utilization: undisclosed
+      historical_project_evidence_boundary: >-
+        Historical contractor material names Huawei/Ooredoo and broad UPS,
+        generator, rectifier, HVAC, fire, LV-panel and BMS classes for an older
+        Sohar container project, but it is not assigned to the 2024-launched
+        10 MW-power-supply Sohar facility or treated as a current bill of materials.
+    accelerators_and_AI:
+      Ooredoo_group_2024_program: thousands_of_NVIDIA_Tensor_Core_GPUs_across_six_markets
+      Oman_named_in_program: true
+      2025_group_annual_report_status: additional_deployment_expected_to_go_live_in_2026
+      exact_live_status_model_count_servers_racks_fabric_host_site_ownership_power_utilization_customers_and_revenue: undisclosed
+      boundary: A regional procurement plan and an expected 2026 deployment are not evidence of a live Oman GPU fleet.
+    linked_companies:
+      operator: [Ooredoo_Oman]
+      controlling_parent: [Ooredoo_Group]
+      possible_future_platform: [Syntys]
+      minority_platform_partner: [Iron_Mountain]
+      planned_accelerator_supplier: [NVIDIA]
+      financial_profile_refs: [company_ooredoo_oman, company_ooredoo_group, company_syntys, company_iron_mountain, company_nvidia]
+    sources:
+      - title: 2025 Capital Markets Day presentation
+        publisher: Ooredoo_Group
+        date: 2025-11-03
+        url: https://www.ooredoo.com/wp-content/uploads/2025/11/FINAL-CMD_.pdf
+      - title: Completion of Salalah Sohar and Barka data centers
+        publisher: Ooredoo_Oman
+        date: 2024-09-17
+        url: https://www.ooredoo.om/en/press-release/ooredoo-bags-bronze-for-tech-excellence-at-2024-stevie-awards/
+      - title: FY2025 audited annual report
+        publisher: Ooredoo_Oman
+        date: 2026
+        url: https://www.ooredoo.om/wp-content/uploads/annualreport/Ooredoo_FS_English_2025.pdf
+      - title: Ooredoo Group NVIDIA collaboration
+        publisher: Ooredoo_Group
+        date: 2024-06-23
+        url: https://www.ooredoo.com/en/media/news_view/ooredoo-group-pioneers-ai-revolution-in-mena-region-with-nvidia-collaboration/
+      - title: 2025 annual report GPU deployment status
+        publisher: Ooredoo_Group
+        date: 2026
+        url: https://www.ooredoo.com/2025-annual-report/pdfs/2025%20Ooredoo%20Annual%20Report_English_compressed.pdf
+      - title: Oman Uptime Institute award ledger
+        publisher: Uptime_Institute
+        date: 2026-07-18_accessed
+        url: https://uptimeinstitute.com/uptime-institute-awards/country/id/OM
+    confidence: high_for_dated_six_site_3_5MW_scope_four_named_sites_and_Duqm_ownership_medium_for_possible_future_Syntys_scope_low_for_exact_six_site_roster_current_equipment_and_GPU_inventory
+
+  - id: dc_ooredoo_oman_bausher
+    name: Ooredoo Oman Bausher flagship data center
+    record_granularity: individual_named_data_center
+    operator: Ooredoo_Oman
+    location:
+      country: Oman
+      locality: Bausher_Muscat
+      site_context: hilltop
+      exact_address_coordinate_parcel_and_building_number: undisclosed
+    lifecycle:
+      opened: 2021-03-16
+      status_as_of_public_evidence: operating
+    scale:
+      gross_facility_area_sqm: 7000
+      stories: 3
+      public_power_capacity_mw: 2.5
+      power_metric_boundary: Facility power capacity; the source does not call it IT load.
+      preinstalled_rack_spaces_at_opening: 300
+      isolated_data_rooms: 2
+      room_allocation: [Ooredoo, data2cloud]
+      earlier_planned_total_racks: 600
+      exact_live_racks_IT_load_utilization_and_customer_mix: undisclosed
+    resilience_and_certification:
+      operator_claim: Tier_3_according_to_an_internationally_recognized_framework
+      operator_availability_claim_percent: 99.982
+      Uptime_Institute_award_verified: false
+      flood_risk_design_claim: hilltop_location
+      boundary: Company framework and uptime language is preserved as a claim, not converted to an Uptime certificate.
+    electrical_and_cooling:
+      local_Omani_electrical_switchgear_inputs_used_during_construction: true
+      exact_grid_voltage_substation_transformer_switchgear_OEM_ratings_counts_UPS_batteries_generators_cooling_BOM_PUE_WUE_and_water: undisclosed
+    accelerators: {exact_GPU_model_count_host_status_ownership_power_and_utilization: undisclosed}
+    portfolio_ref: dc_ooredoo_oman_data_center_portfolio
+    linked_companies: {operator: [Ooredoo_Oman], subsidiary_tenant: [data2cloud], financial_profile_refs: [company_ooredoo_oman, company_ooredoo_group]}
+    sources:
+      - {title: Bausher data center opening, publisher: Ooredoo_Oman, date: 2021-03-16, url: "https://www.ooredoo.om/en/press-release/ooredoos-most-advanced-data-centre-is-now-open-for-business/"}
+      - {title: Bausher construction and planned 600-rack scale, publisher: Ooredoo_Oman, date: 2020, url: "https://www.ooredoo.om/en/press-release/local-businesses-get-a-boost-in-construction-of-ooredoos-new-data-centre/"}
+    confidence: high_for_opening_area_power_and_rack_disclosures_low_for_IT_load_current_equipment_and_GPU_inventory
+
+  - id: dc_ooredoo_oman_barka
+    name: Ooredoo Oman Barka data center and cable landing facility
+    record_granularity: individual_named_data_center
+    operator: Ooredoo_Oman
+    location: {country: Oman, locality: Barka, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle:
+      construction_started: 2022
+      completed_by: 2024-09-17
+      subsea_landing_operational_by_FY2025: true
+    scale:
+      2022_planned_rack_capacity: more_than_500
+      exact_delivered_racks_IT_mw_facility_power_floor_area_live_load_and_utilization: undisclosed
+      boundary: The more-than-500 figure was a construction plan and is not relabeled as installed or occupied racks.
+    connectivity: {planned_and_operational_role: data_center_and_2Africa_subsea_cable_landing_facility}
+    certification: {2022_planned_operator_rating: Tier_3, independent_Uptime_award_verified: false}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_equipment_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_ooredoo_oman_data_center_portfolio
+    linked_companies: {operator: [Ooredoo_Oman], financial_profile_refs: [company_ooredoo_oman, company_ooredoo_group]}
+    sources:
+      - {title: Three new data centers groundbreaking, publisher: Ooredoo_Oman, date: 2022-08-02, url: "https://www.ooredoo.om/en/press-release/ooredoo-breaks-ground-on-three-new-data-centres/"}
+      - {title: Completion of Barka Sohar and Salalah, publisher: Ooredoo_Oman, date: 2024-09-17, url: "https://www.ooredoo.om/en/press-release/ooredoo-bags-bronze-for-tech-excellence-at-2024-stevie-awards/"}
+      - {title: FY2025 annual report, publisher: Ooredoo_Oman, date: 2026, url: "https://www.ooredoo.om/wp-content/uploads/annualreport/Ooredoo_FS_English_2025.pdf"}
+    confidence: high_for_named_completion_and_subsea_role_medium_for_planned_rack_scale_low_for_current_capacity_equipment_and_GPU_inventory
+
+  - id: dc_ooredoo_oman_sohar
+    name: Ooredoo Oman Sohar data center
+    record_granularity: individual_named_data_center
+    operator: Ooredoo_Oman
+    location: {country: Oman, locality: Sohar, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle:
+      completed_by: 2024-09-17
+      officially_launched: 2024-11-03
+      status: operating
+    scale:
+      total_rack_capacity: 1200
+      power_supply_up_to_mw: 10
+      power_metric_boundary: Power-supply ceiling; not disclosed as IT load or utilized power.
+      exact_floor_area_live_racks_live_IT_load_utilization_and_customer_mix: undisclosed
+    resilience_and_certification:
+      operator_standard_claim: Level_3_plus
+      independent_Uptime_award_verified: false
+      boundary: Level 3+ marketing is not relabeled as an Uptime Tier certificate.
+    electrical_and_cooling:
+      exact_grid_voltage_substation_transformer_switchgear_PDU_UPS_battery_generator_cooling_BOM_PUE_WUE_water_and_liquid_cooling: undisclosed
+      historical_container_project_boundary: >-
+        A historical Huawei/Ooredoo Sohar container project and contractor
+        maintenance ledger are not assigned to this 2024-launched facility
+        because no source proves they are the same physical generation.
+    accelerators: {exact_GPU_model_count_host_status_ownership_power_and_utilization: undisclosed}
+    portfolio_ref: dc_ooredoo_oman_data_center_portfolio
+    linked_companies: {operator: [Ooredoo_Oman], financial_profile_refs: [company_ooredoo_oman, company_ooredoo_group]}
+    sources:
+      - {title: Sohar data center launch, publisher: Ooredoo_Oman, date: 2024-11-03, url: "https://www.ooredoo.om/en/press-release/ooredoos-new-data-centre-in-sohar-upgrades-omans-tech-game/"}
+      - {title: Completion of Barka Sohar and Salalah, publisher: Ooredoo_Oman, date: 2024-09-17, url: "https://www.ooredoo.om/en/press-release/ooredoo-bags-bronze-for-tech-excellence-at-2024-stevie-awards/"}
+    confidence: high_for_launch_racks_and_power_supply_low_for_IT_load_equipment_GPU_and_Uptime_certification
+
+  - id: dc_ooredoo_oman_salalah
+    name: Ooredoo Oman Salalah data center and submarine cable landing station
+    record_granularity: individual_named_data_center
+    operator: Ooredoo_Oman
+    location: {country: Oman, region: Dhofar, locality: Salalah, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle:
+      completed_by: 2024-09-17
+      launched: 2025-08-17
+      status: operating
+    scale:
+      initial_full_server_racks: 125
+      phased_target_racks: 500
+      exact_IT_mw_facility_power_floor_area_live_load_utilization_and_customer_mix: undisclosed
+      boundary: The 500-rack figure is phased growth, not current occupied capacity.
+    connectivity: {integrated_submarine_cable_landing_station: true, regional_linkage: [Asia, Europe, Africa]}
+    workloads_marketed: [cloud, AI, edge_computing]
+    certification: {operator_claim: class_3_compliance, independent_Uptime_award_verified: false}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_equipment_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_ooredoo_oman_data_center_portfolio
+    linked_companies: {operator: [Ooredoo_Oman], financial_profile_refs: [company_ooredoo_oman, company_ooredoo_group]}
+    sources:
+      - {title: Salalah data center and cable landing station launch, publisher: Ooredoo_Oman, date: 2025-08-17, url: "https://www.ooredoo.om/en/press-release/ooredoo-launches-salalah-data-centre-to-strengthen-omans-role-as-a-regional-digital-hub/"}
+      - {title: FY2025 annual report, publisher: Ooredoo_Oman, date: 2026, url: "https://www.ooredoo.om/wp-content/uploads/annualreport/Ooredoo_FS_English_2025.pdf"}
+    confidence: high_for_launch_initial_and_target_racks_and_subsea_role_low_for_power_equipment_and_GPU_inventory
+
+  - id: dc_ooredoo_oman_duqm_data_centre
+    name: Duqm Data Centre SAOC
+    record_granularity: operating_data_center_subsidiary_with_exact_building_scope_undisclosed
+    operator: Duqm_Data_Centre_SAOC
+    location: {country: Oman, locality_inferred_from_legal_name: Duqm, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    ownership:
+      Ooredoo_Oman_percent: 71
+      acquired_initial_51_percent: 2015
+      increased_to_71_percent: 2019
+    lifecycle:
+      commercial_operations_started: 2019
+      status_as_of_FY2025_filing: operating_consolidated_subsidiary
+    scale:
+      subsidiary_assets_net_book_value_before_impairment_OMR_million: 2.7
+      exact_building_count_floor_area_racks_IT_mw_facility_power_live_load_and_utilization: undisclosed
+      boundary: The OMR2.7 million is collateral carrying value before impairment, not project cost, valuation or data-center capacity.
+    financing:
+      term_loan_interest_rate_percent: 6.5
+      long_term_balance_OMR_thousand_at_2025_year_end: 93
+      security: negative_lien_on_all_subsidiary_assets
+      boundary: The filing does not isolate data-center revenue, operating profit or cash flow.
+    Syntys_scope: {membership_in_Oman_six_facility_3_5MW_carveout: unconfirmed}
+    infrastructure_and_accelerators: {exact_power_cooling_equipment_PUE_WUE_water_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_ooredoo_oman_data_center_portfolio
+    linked_companies: {operator_and_owner: [Duqm_Data_Centre_SAOC, Ooredoo_Oman], ultimate_parent: [Ooredoo_Group], financial_profile_refs: [company_ooredoo_oman, company_ooredoo_group]}
+    sources:
+      - {title: FY2025 audited annual report, publisher: Ooredoo_Oman, date: 2026, url: "https://www.ooredoo.om/wp-content/uploads/annualreport/Ooredoo_FS_English_2025.pdf"}
+    confidence: high_for_ownership_commercial_status_and_loan_terms_low_for_exact_site_capacity_equipment_GPU_and_Syntys_scope
+
+  - id: dc_asiacell_iraq_data_center_portfolio
+    name: Asiacell Iraq data-center portfolio
+    record_granularity: nationwide_technical_data_center_estate_with_separate_Ooredoo_carveout_scope
+    operator: Asiacell
+    possible_future_platform: Syntys
+    lifecycle_as_of_2026_07_18: operating_and_expanding_with_carveout_completion_not_publicly_confirmed
+    location:
+      country: Iraq
+      current_Uptime_named_sites:
+        - Erbil_Data_Center_2
+        - Baghdad_Airport_Modular_Data_Center
+        - Asiacell_Baghdad_Digital_Campus_DC1
+        - Farmanday_MDC2
+      other_current_public_site_evidence: [Owerij_Data_Center, unnamed_Asiacell_data_center_in_Baghdad]
+      historical_named_site: Al_Masbah_Data_Centre_Baghdad
+      exact_complete_current_roster_addresses_coordinates_parcels_and_building_crosswalk: undisclosed
+    count_and_capacity_reconciliation:
+      2021_Asiacell_project_statement:
+        established_data_centers: 13
+        Tier_3_data_centers_company_claim: 4
+        remaining_sites_status_at_time: primary_development
+      2022_CSR_statement:
+        Asiacell_and_Huawei_installed_data_centers: more_than_17
+        Tier_III_sites_company_claim: 4
+      2025_Asiacell_whole_technical_estate_claim:
+        modern_data_centers: 22
+      FY2025_expansion:
+        newly_established_or_expanded_data_centers: 4
+        exact_names_and_incremental_capacity: undisclosed
+      Ooredoo_November_2025_intended_carveout_scope:
+        active_data_centers: 7
+        active_IT_capacity_mw: 1.3
+        carveout_status_at_presentation: not_completed
+      boundary: >-
+        The 22-site Asiacell technical estate is a broader telecom-network
+        denominator than Ooredoo's seven-site, 1.3 MW intended data-center
+        carve-out. The four Uptime-named sites, Owerij and historical Al-Masbah
+        are not forced into the seven-site roster without an official crosswalk.
+    facility_refs:
+      - dc_asiacell_erbil_data_center_2
+      - dc_asiacell_baghdad_airport_mdc
+      - dc_asiacell_baghdad_digital_campus_dc1
+      - dc_asiacell_farmanday_mdc2
+      - dc_asiacell_owerij_data_center
+      - dc_asiacell_al_masbah_historical
+    certification:
+      Uptime_named_facility_count: 4
+      named_award_ledger:
+        Erbil_Data_Center_2: [Tier_III_TCDD, Tier_III_TCCF]
+        Baghdad_Airport_MDC: [Tier_III_TCDD]
+        Baghdad_Digital_Campus_DC1_phases_1_and_2: [Tier_III_TCDD]
+        Farmanday_MDC2_phases_1_and_2: [Tier_III_TCDD]
+      boundary: Design certification is not evidence that every phase received a constructed-facility award; only Erbil has reviewed TCCF evidence.
+    portfolio_level_engineering_projects:
+      Huawei_Asiacell_prefabricated_program:
+        award: 2022_new_design_build_data_centre_project_of_the_year
+        design_target: Tier_III
+        solution: prefabricated_container_data_center
+        implementation_duration_reduction: two_years_to_one_year
+        disclosed_imported_equipment_classes: [generators, transformers, electrical_panels, prefabricated_containers, cooling]
+        cooling: DX_cooling_selected_to_reduce_hot_spots_and_PUE
+        unified_monitoring_scope: [access, racks, power, diesel_generation, transformer, environment, cooling, fire_fighting, security]
+        exact_site_models_counts_ratings_and_current_installation_status: undisclosed
+      historical_Al_Masbah_power_chain_ref: dc_asiacell_al_masbah_historical
+      exact_current_per_site_grid_voltage_substation_transformer_switchgear_UPS_battery_generator_cooling_BOM_PUE_WUE_water_and_liquid_cooling: undisclosed
+    accelerators_and_AI:
+      LigaData_AI_Fabric_status_2025: GPU_enabled
+      Manara_CAIR_2026:
+        target: up_to_100_universities_and_research_centers
+        hosting: nationally_hosted_within_Asiacell_smart_data_centers
+        compute_description: advanced_AI_and_computing_platforms
+      exact_GPU_OEM_model_count_servers_racks_fabric_host_sites_ownership_power_utilization_and_revenue: undisclosed
+      boundary: GPU-enabled software infrastructure and national hosting do not disclose a physical GPU inventory or prove that GPUs are in the seven-site carve-out scope.
+    linked_companies:
+      operator: [Asiacell]
+      controlling_parent: [Ooredoo_Group]
+      possible_future_platform: [Syntys]
+      infrastructure_vendors: [Huawei_Digital_Power, Cummins]
+      AI_partner: [LigaData]
+      financial_profile_refs: [company_asiacell_iraq, company_ooredoo_group, company_syntys, company_huawei, company_cummins]
+    sources:
+      - {title: Thirteen-data-center project statement, publisher: Asiacell, date: 2021-11-25, url: "https://www.asiacell.com/en/about-us/news-and-event/press-releases/DCDAward"}
+      - {title: Twenty-two modern data centers statement, publisher: Asiacell, date: 2025, url: "https://www.asiacell.com/en/about-us/news-and-event/news-room/IraqBusinessSummit2025"}
+      - {title: FY2025 annual report, publisher: Asiacell, date: 2026, url: "https://www.asiacell.com/resources/report/annual-report-2025-EN-Digital.pdf"}
+      - {title: Asiacell Uptime award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/client/asiacell-communications-pjsc-/818"}
+      - {title: Huawei and Asiacell prefabricated data-center project, publisher: DCS_Awards, date: 2022, url: "https://dcsawards.com/winners/2022"}
+      - {title: GPU-enabled LigaData AI Fabric, publisher: Asiacell, date: 2025-11-25, url: "https://www.asiacell.com/en/about-us/news-and-event/press-releases/PR2025/AsiacellLigaData"}
+      - {title: Manara national AI ecosystem, publisher: Asiacell, date: 2026-01, url: "https://www.asiacell.com/en/about-us/news-and-event/press-releases/PR2026/NewsSocial"}
+      - {title: 2025 Capital Markets Day presentation, publisher: Ooredoo_Group, date: 2025-11-03, url: "https://www.ooredoo.com/wp-content/uploads/2025/11/FINAL-CMD_.pdf"}
+    confidence: high_for_dated_counts_four_Uptime_names_1_3MW_scope_and_project_classes_medium_for_current_Owerij_evidence_low_for_exact_seven_site_crosswalk_current_equipment_and_GPU_inventory
+
+  - id: dc_asiacell_erbil_data_center_2
+    name: Asiacell Erbil Data Center - 2
+    record_granularity: individual_Uptime_named_data_center
+    operator: Asiacell
+    location: {country: Iraq, city: Erbil, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: {status: operating_or_certified_scope_not_further_disclosed}
+    certification:
+      awards: [Uptime_Tier_III_TCDD, Uptime_Tier_III_TCCF]
+      boundary: TCCF confirms reviewed constructed-facility scope but does not disclose capacity, utilization or current operating performance.
+    capacity: {included_in_broader_22_site_estate: likely_but_not_explicitly_crosswalked, membership_in_seven_site_1_3MW_carveout: unconfirmed, exact_IT_mw_racks_floor_area_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {exact_power_cooling_PUE_WUE_water_liquid_cooling_equipment_BOM_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_asiacell_iraq_data_center_portfolio
+    linked_companies: {operator: [Asiacell], financial_profile_refs: [company_asiacell_iraq, company_ooredoo_group]}
+    sources:
+      - {title: Erbil Data Center 2 award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/datacenter/erbil-data-center--2/1324"}
+    confidence: high_for_name_city_and_awards_low_for_capacity_equipment_GPU_and_carveout_scope
+
+  - id: dc_asiacell_baghdad_airport_mdc
+    name: Asiacell Baghdad Airport Modular Data Center
+    record_granularity: individual_Uptime_named_modular_data_center
+    operator: Asiacell
+    location: {country: Iraq, city: Baghdad, site_label: Baghdad_Airport, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: {status: design_certified_scope_with_current_operating_status_not_separately_disclosed}
+    certification:
+      awards: [Uptime_Tier_III_TCDD]
+      constructed_facility_award_verified: false
+      boundary: Design Documents certification is not a constructed-facility or operations certification.
+    capacity: {membership_in_seven_site_1_3MW_carveout: unconfirmed, exact_IT_mw_racks_floor_area_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {modular_form_factor_confirmed_by_name: true, exact_power_cooling_equipment_BOM_PUE_WUE_water_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_asiacell_iraq_data_center_portfolio
+    linked_companies: {operator: [Asiacell], financial_profile_refs: [company_asiacell_iraq, company_ooredoo_group]}
+    sources:
+      - {title: Baghdad Airport MDC award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/datacenter/baghdad-airport-modular-data-center-mdc-/1399"}
+    confidence: high_for_name_city_modular_label_and_design_award_low_for_operating_capacity_equipment_GPU_and_carveout_scope
+
+  - id: dc_asiacell_baghdad_digital_campus_dc1
+    name: Asiacell Baghdad Digital Campus DC1
+    record_granularity: named_campus_building_with_phase_level_design_awards
+    operator: Asiacell
+    location: {country: Iraq, city: Baghdad, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: {status: design_certified_phases_with_current_operating_status_not_separately_disclosed}
+    certification:
+      phases: [Phase_1, Phase_2]
+      award_by_reviewed_scope: Uptime_Tier_III_TCDD
+      constructed_facility_award_verified: false
+    capacity: {membership_in_seven_site_1_3MW_carveout: unconfirmed, exact_IT_mw_racks_floor_area_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {exact_power_cooling_equipment_BOM_PUE_WUE_water_liquid_cooling_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_asiacell_iraq_data_center_portfolio
+    linked_companies: {operator: [Asiacell], financial_profile_refs: [company_asiacell_iraq, company_ooredoo_group]}
+    sources:
+      - {title: Baghdad Digital Campus DC1 award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/datacenter/asiacell-baghdad-digital-campus-dc1-/1568"}
+    confidence: high_for_name_city_phases_and_design_awards_low_for_operating_capacity_equipment_GPU_and_carveout_scope
+
+  - id: dc_asiacell_farmanday_mdc2
+    name: Asiacell Farmanday MDC2
+    record_granularity: named_modular_data_center_with_phase_level_design_awards
+    operator: Asiacell
+    location: {country: Iraq, city: Sulaymaniyah, locality: Farmanday, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle: {status: design_certified_phases_with_current_operating_status_not_separately_disclosed}
+    certification:
+      phases: [Phase_1, Phase_2]
+      award_by_reviewed_scope: Uptime_Tier_III_TCDD
+      constructed_facility_award_verified: false
+    capacity: {membership_in_seven_site_1_3MW_carveout: unconfirmed, exact_IT_mw_racks_floor_area_live_load_and_utilization: undisclosed}
+    infrastructure_and_accelerators: {modular_form_factor_confirmed_by_name: true, exact_power_cooling_equipment_BOM_PUE_WUE_water_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_asiacell_iraq_data_center_portfolio
+    linked_companies: {operator: [Asiacell], financial_profile_refs: [company_asiacell_iraq, company_ooredoo_group]}
+    sources:
+      - {title: Farmanday MDC2 award ledger, publisher: Uptime_Institute, date: 2026-07-18_accessed, url: "https://uptimeinstitute.com/uptime-institute-awards/datacenter/farmanday-mdc2/2299"}
+    confidence: high_for_name_city_phases_and_design_awards_low_for_operating_capacity_equipment_GPU_and_carveout_scope
+
+  - id: dc_asiacell_owerij_data_center
+    name: Asiacell Owerij Data Center
+    record_granularity: individual_current_publicly_named_data_center
+    operator: Asiacell
+    location: {country: Iraq, locality: Owerij, exact_city_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle:
+      current_evidence: 2026_Asiacell_student_scientific_visit
+      status: operating_for_large_scale_data_center_operations_demonstration
+    capacity: {membership_in_seven_site_1_3MW_carveout: unconfirmed, exact_IT_mw_racks_floor_area_live_load_and_utilization: undisclosed}
+    certification: {Uptime_award_verified: false}
+    infrastructure_and_accelerators: {large_scale_operations_company_description: true, exact_power_cooling_equipment_PUE_WUE_water_liquid_cooling_and_GPU_inventory: undisclosed}
+    portfolio_ref: dc_asiacell_iraq_data_center_portfolio
+    linked_companies: {operator: [Asiacell], financial_profile_refs: [company_asiacell_iraq, company_ooredoo_group]}
+    sources:
+      - {title: Owerij Data Center scientific visit, publisher: Asiacell, date: 2026, url: "https://www.asiacell.com/en/about/asas/2026/asiacell-empowers-al-shaab-university-students-during-scientific-visit-to-owerij-data-center"}
+    confidence: high_for_current_named_site_medium_for_operating_description_low_for_exact_location_capacity_equipment_GPU_and_carveout_scope
+
+  - id: dc_asiacell_al_masbah_historical
+    name: Asiacell Al-Masbah Data Centre
+    record_granularity: historical_individual_data_center_with_detailed_prime_power_case
+    operator: Asiacell
+    location: {country: Iraq, city: Baghdad, locality: Al_Masbah, exact_address_coordinate_parcel_and_building_number: undisclosed}
+    lifecycle:
+      evidence_date: 2011_or_earlier_project
+      current_operating_status: unverified
+    historical_power_requirement:
+      total_data_center_power_requirement_including_mains_mw: 2.0
+      installed_prime_power_station_mw: 1.6
+      metric_boundary: These are historical total and prime-power figures, not IT load or current capacity.
+    historical_prime_power_equipment:
+      generator_sets:
+        OEM: Cummins_Power_Generation
+        model: C550_D5e
+        count: 4
+        engine: QSX15
+        enclosure: enclosed
+        topology: parallel
+      switchgear: low_voltage
+      controller: DMC1000
+      automatic_transfer_switch: {model: GTEC, rating_amperes: 1600, bypass: true}
+      additional_systems: [fuel_system, power_cables, control_cables, SCADA]
+      integrator: MICTA
+      integrator_roles: [consultant, mechanical_contractor, electrical_contractor]
+      exact_mains_voltage_transformers_UPS_batteries_cooling_PUE_WUE_water_and_current_equipment_state: undisclosed
+    capacity: {membership_in_current_22_site_estate_or_seven_site_carveout: unconfirmed, exact_IT_mw_racks_floor_area_live_load_and_utilization: undisclosed}
+    accelerators: {exact_historical_or_current_GPU_inventory: undisclosed}
+    portfolio_ref: dc_asiacell_iraq_data_center_portfolio
+    linked_companies: {operator: [Asiacell], generator_OEM: [Cummins], integrator: [MICTA], financial_profile_refs: [company_asiacell_iraq, company_cummins]}
+    sources:
+      - {title: Asiacell Al-Masbah Data Centre prime-power case history, publisher: Cummins_Power_Generation, date: 2011, url: "https://mart.cummins.com/imagelibrary/data/assetfiles/0057162.pdf"}
+    confidence: high_for_historical_power_equipment_and_location_low_for_current_status_capacity_and_GPU_inventory
+
 disclosure_gap_register:
   - exact_global_physical_data_center_count
   - Syntys_15_active_Q1_2026_headline_to_stale_13_center_19MW_caption_and_30MW_active_scope_reconciliation
   - Syntys_30MW_post_Q_Data_active_capacity_to_24_5MW_FY2025_plus_5MW_acquired_and_country_percent_rounding
   - Syntys_Iraq_and_Oman_carveout_completion_exact_entity_asset_and_facility_rosters
+  - Ooredoo_Oman_six_site_3_5MW_carveout_to_Bausher_Barka_Sohar_Salalah_Duqm_and_legacy_site_crosswalk
+  - Ooredoo_Oman_Bausher_2_5MW_facility_power_and_Sohar_10MW_power_supply_to_per_site_IT_load_and_3_5MW_carveout_reconciliation
+  - Ooredoo_Oman_per_site_substation_transformer_switchgear_PDU_UPS_battery_generator_cooling_OEM_BOM_PUE_WUE_water_and_liquid_cooling
+  - Ooredoo_Oman_GPU_model_count_delivery_host_site_ownership_fabric_power_utilization_revenue_and_margin
+  - Duqm_Data_Centre_exact_site_building_capacity_equipment_financial_contribution_and_Syntys_scope
+  - Asiacell_22_site_technical_estate_to_seven_site_1_3MW_carveout_and_named_Uptime_Owerij_Al_Masbah_crosswalk
+  - Asiacell_FY2025_four_new_or_expanded_data_center_names_capacity_equipment_capex_and_operating_status
+  - Asiacell_per_site_IT_load_racks_grid_substation_transformer_switchgear_UPS_battery_generator_cooling_OEM_BOM_PUE_WUE_water_and_liquid_cooling
+  - Asiacell_GPU_model_count_servers_racks_fabric_host_sites_ownership_power_utilization_revenue_and_margin
+  - Asiacell_Baghdad_Airport_Baghdad_Digital_Campus_Farmanday_Uptime_design_phases_to_constructed_operating_status
+  - Asiacell_Al_Masbah_historical_prime_power_system_to_current_facility_status_and_equipment_crosswalk
   - Syntys_Kuwait_HQ_and_Shuaiba_exact_addresses_coordinates_per_site_MW_live_load_H200_host_count_fabric_power_and_revenue
   - Syntys_Kuwait_per_site_substation_transformer_switchgear_PDU_UPS_battery_generator_and_cooling_BOM_OEM_ratings_runtime_PUE_WUE_water_and_liquid_cooling
   - Syntys_Tunisia_five_facility_exact_addresses_coordinates_per_site_MW_live_load_racks_and_lifecycle_phases

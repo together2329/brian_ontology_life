@@ -8301,6 +8301,13 @@ financial_profiles:
         - dc_syntys_qdata_qatar_free_zones_portfolio
         - dc_syntys_ooredoo_kuwait_portfolio
         - dc_syntys_ooredoo_tunisia_portfolio
+      intended_not_yet_confirmed_carveout_scopes:
+        Oman: {active_data_centers: 6, active_IT_capacity_mw: 3.5, portfolio_ref: dc_ooredoo_oman_data_center_portfolio}
+        Iraq: {active_data_centers: 7, active_IT_capacity_mw: 1.3, portfolio_ref: dc_asiacell_iraq_data_center_portfolio}
+        boundary: >-
+          These are Ooredoo's November 2025 intended carve-out denominators.
+          They are not added to Q1 2026 Syntys active centers or MW because
+          transfer completion and the exact asset rosters are not public.
     H1_2025_management_disclosure:
       period: six_months_ended_2025-06-30
       currency: QAR
@@ -8358,10 +8365,16 @@ financial_profiles:
         Earnings-accretive is a management claim without disclosed purchase price.
     AI_and_customer_exposure:
       Qatar_accelerator_generation: NVIDIA_Hopper
+      Oman_program_status: additional_NVIDIA_GPU_deployment_expected_to_go_live_in_2026
+      Iraq_Asiacell_program_status: LigaData_AI_Fabric_described_as_GPU_enabled
       exact_GPU_model_count_ownership_utilization_power_cost_revenue_and_margin: undisclosed
       company_shown_hyperscaler_customers: [Microsoft_Azure, Google_Cloud]
       portfolio_contract_positioning: USD_denominated_10_to_15_year_terms_with_renewal
-      boundary: Customer logos and contract positioning are not customer concentration, contracted backlog or site-level economics.
+      boundary: >-
+        Customer logos and contract positioning are not customer concentration,
+        contracted backlog or site-level economics. Oman's expected deployment
+        and Asiacell's GPU-enabled software description do not establish GPUs
+        inside the current consolidated Syntys scope.
     outlook:
       positive_drivers:
         - Qatar_hyperscaler_and_sovereign_AI_demand
@@ -8642,6 +8655,281 @@ financial_profiles:
       - https://www.ooredoo.com/en/media/news_view/ooredoo-group-pioneers-ai-revolution-in-mena-region-with-nvidia-collaboration/
     confidence: high_for_ownership_audited_subsidiary_summary_annual_review_and_Q1_2026_KPIs_medium_for_current_ISO_corporate_scope_low_for_data_center_only_earnings_GPU_inventory_and_site_returns
 
+  - id: company_ooredoo_oman
+    company: Ooredoo_Oman
+    legal_name: Omani_Qatari_Telecommunications_Company_SAOG
+    ticker: ORDS
+    exchange: Muscat_Stock_Exchange
+    layer: operators_reits_utilities
+    ownership_status: publicly_listed_Omani_telecommunications_operator_55_percent_owned_by_Ooredoo_Group
+    reporting_scope:
+      businesses: [mobile, fixed, wholesale, enterprise, cloud, data_centers]
+      data_center_relationship: >-
+        Ooredoo Oman operates the named Bausher, Barka, Sohar and Salalah
+        facilities and consolidates 71%-owned Duqm Data Centre. Ooredoo Group's
+        six-site, 3.5-MW figure describes an intended carve-out denominator,
+        not a completed Syntys transfer or a public building-by-building roster.
+      boundary: >-
+        Ooredoo Oman financials are dominated by broad telecommunications and
+        do not isolate data-center revenue, operating profit, capex, debt, cash
+        flow, customers, utilization or site-level returns.
+    FY2025_audited_consolidated_financials:
+      period: year_ended_2025-12-31
+      accounting_basis: IFRS_consolidated_audited_financial_statements
+      currency: OMR
+      exact_statement_unit: thousand
+      revenue: 242059
+      other_income: 303
+      network_and_interconnection_expenses: 101630
+      employee_costs: 49950
+      depreciation_and_amortisation: 63263
+      finance_costs: 2931
+      finance_income: 5
+      impairment_losses: 2887
+      other_gains: 12
+      royalty: 20784
+      profit_before_tax: 934
+      income_tax: 25
+      profit_for_year: 909
+      profit_attributable_to_owners: 833
+      profit_attributable_to_NCI: 76
+      derived_pre_finance_operating_like_result: 3860
+      derived_pre_finance_operating_like_margin_percent: 1.59
+      employee_restructuring_cost_included_above: 16000
+      operating_cash_flow_before_working_capital_changes: 71074
+      cash_generated_from_operations: 71337
+      net_cash_from_operating_activities: 66935
+      PP_and_E_additions: 42181
+      cash_purchase_of_PP_and_E: 45341
+      cash_purchase_of_license: 2669
+      cash_purchase_of_intangible_assets: 5046
+      capital_commitments: 15133
+      revenue_by_service:
+        mobile: 169837
+        fixed: 72222
+      operating_profit_boundary: >-
+        The audited statement does not label an IFRS operating-profit subtotal.
+        The OMR3.860 million operating-like result is derived as revenue plus
+        other income, less network, employee, D&A, impairment and royalty,
+        plus other gains, before finance and tax. It is not relabeled audited
+        operating profit, and the OMR16 million restructuring charge materially
+        affects FY2025 comparability.
+      capex_boundary: >-
+        PP&E additions and cash PP&E purchases differ because accrual and cash
+        timing differ. Neither measure is disclosed as data-center-only capex.
+    Q1_2026_management_results:
+      period: three_months_ended_2026-03-31
+      currency: OMR
+      unit: million
+      revenue: 61.9
+      revenue_growth_percent: -0.1
+      EBITDA: 29.4
+      EBITDA_growth_percent: 7.3
+      EBITDA_margin_percent: 47.4
+      net_profit: 4.6
+      net_profit_growth_percent: 144
+      capex: 6.1
+      capex_as_percent_of_revenue: 9.9
+      EBITDA_minus_capex_company_proxy: 23.3
+      gross_debt: 32.3
+      net_debt: 29.1
+      net_debt_to_EBITDA: 0.25
+      EBITDA_definition: earnings_before_interest_tax_depreciation_amortisation_royalty_and_group_fees
+      boundary: >-
+        EBITDA, EBITDA minus capex and net profit are presentation KPIs. The
+        release does not provide a full data-center segment reconciliation or
+        accounting operating profit, and Q1 cannot safely be annualized.
+    data_center_and_AI_exposure:
+      intended_Syntys_carveout:
+        active_data_centers: 6
+        active_IT_capacity_mw: 3.5
+        status_at_November_2025_presentation: not_completed
+      current_officially_named_operating_sites: [Bausher, Barka, Sohar, Salalah]
+      Duqm_Data_Centre:
+        Ooredoo_Oman_ownership_percent: 71
+        commercial_operations_started: 2019
+        membership_in_six_site_carveout: unconfirmed
+      GPU_program:
+        Oman_named_in_Ooredoo_NVIDIA_six_market_program: true
+        FY2025_group_status: additional_deployment_expected_to_go_live_in_2026
+        exact_live_status_model_count_servers_racks_fabric_host_site_ownership_power_utilization_revenue_and_margin: undisclosed
+      campus_refs:
+        - dc_ooredoo_oman_data_center_portfolio
+        - dc_ooredoo_oman_bausher
+        - dc_ooredoo_oman_barka
+        - dc_ooredoo_oman_sohar
+        - dc_ooredoo_oman_salalah
+        - dc_ooredoo_oman_duqm_data_centre
+      boundary: >-
+        The 3.5 MW carve-out figure is IT capacity, while Bausher's 2.5 MW and
+        Sohar's up-to-10 MW disclosures are facility-power measures. They are
+        not added, and an expected GPU deployment is not treated as live inventory.
+    outlook:
+      positive_drivers:
+        - Q1_profitability_rebound_after_FY2025_restructuring_charge
+        - strong_operating_cash_generation_and_low_reported_leverage
+        - enterprise_cloud_subsea_and_sovereign_hosting_demand
+        - Bausher_Barka_Sohar_Salalah_and_Duqm_operating_footprint
+        - Oman_NVIDIA_program_and_possible_Syntys_scale_support
+      risks:
+        - flat_Q1_revenue_despite_higher_EBITDA
+        - data_center_revenue_profit_capex_power_cost_and_returns_not_disclosed
+        - six_site_roster_Duqm_membership_and_carveout_completion_opacity
+        - facility_power_to_IT_load_and_utilization_reconciliation_gap
+        - GPU_delivery_model_count_ownership_utilization_and_margin_opacity
+        - telecom_competition_regulation_spectrum_and_hot_climate_cooling_cost
+      boundary: >-
+        Q1 profitability and cash capacity support investment, but the public
+        record does not show whether data-center growth is earning an adequate
+        return or how economics would change after a Syntys carve-out.
+    watch_items:
+      - FY2026_revenue_operating_profit_restructuring_normalization_and_cash_conversion
+      - data_center_segment_revenue_EBITDA_operating_profit_capex_debt_and_returns
+      - exact_six_site_carveout_roster_transfer_date_assets_liabilities_and_service_agreements
+      - Duqm_site_capacity_financial_contribution_and_Syntys_membership
+      - per_site_IT_load_power_equipment_PUE_WUE_water_utilization_and_customer_concentration
+      - Oman_GPU_model_count_host_site_ownership_power_utilization_revenue_and_margin
+    sources:
+      - https://www.ooredoo.om/wp-content/uploads/annualreport/Ooredoo_FS_English_2025.pdf
+      - https://www.ooredoo.om/wp-content/uploads/calendar/presentation/Ooredoo_Results_Presentation_Q1_2026.pdf
+      - https://www.ooredoo.com/wp-content/uploads/2025/11/FINAL-CMD_.pdf
+      - https://www.ooredoo.com/en/media/news_view/ooredoo-group-pioneers-ai-revolution-in-mena-region-with-nvidia-collaboration/
+      - https://www.ooredoo.com/2025-annual-report/pdfs/2025%20Ooredoo%20Annual%20Report_English_compressed.pdf
+    confidence: high_for_audited_FY2025_Q1_2026_ownership_named_sites_and_dated_carveout_scope_medium_for_derived_operating_like_result_low_for_data_center_only_economics_exact_carveout_roster_and_GPU_inventory
+
+  - id: company_asiacell_iraq
+    company: Asiacell
+    legal_name: Asiacell_Communications_PJSC
+    ticker: TASC
+    exchange: Iraq_Stock_Exchange
+    layer: operators_reits_utilities
+    ownership_status: publicly_listed_Iraqi_telecommunications_operator_64_1_percent_effectively_owned_by_Ooredoo_Group
+    reporting_scope:
+      businesses: [mobile, enterprise, digital_services, data_centers, AI_platforms]
+      data_center_relationship: >-
+        Asiacell described 22 modern data centers in its broad 2025 technical
+        estate and four new or expanded centers during FY2025. Ooredoo separately
+        presented seven active centers and 1.3 MW for an intended carve-out.
+      boundary: >-
+        Asiacell financials are broad telecommunications-company results, not
+        data-center-only revenue, operating profit, capex, debt or cash flow.
+        The 22-site estate and seven-site carve-out are not interchangeable.
+    FY2025_management_and_audited_financials:
+      period: year_ended_2025-12-31
+      currency: IQD
+      unit: billion
+      operating_revenue: 2024
+      audited_total_revenue: 2052
+      EBITDA: 929
+      EBITDA_growth_percent: 8
+      EBITDA_margin_percent: 46
+      net_profit: 519
+      net_profit_growth_percent: 32
+      capex: 466
+      capex_as_percent_of_operating_revenue_approximate: 23
+      subscribers_million: 20.024
+      subscriber_growth_percent: 4.7
+      accumulated_surplus: 1050
+      accumulated_surplus_prior_year: 996
+      accounting_operating_profit: undisclosed
+      boundary: >-
+        Operating revenue, EBITDA, capex and subscribers are annual-report
+        management KPIs; total revenue and net profit are supported by the
+        audited statements. EBITDA is not relabeled operating profit, and no
+        data-center contribution is isolated.
+    Q1_2026_statutory_financials:
+      period: three_months_ended_2026-03-31
+      accounting_basis: Iraqi_unified_accounting_system_interim_statement
+      currency: IQD
+      exact_statement_unit: million
+      operating_activity_revenue: 493181
+      salaries_and_wages: 25077
+      goods_and_materials: 186
+      services: 52120
+      contracting_and_services: 8195
+      purchases_for_resale_and_operations: 93797
+      depreciation_and_amortization: 88257
+      taxes_and_fees: 94130
+      total_current_expenses: 361762
+      statutory_surplus_from_current_operations_first_stage: 131419
+      transformational_activity_revenue: 538
+      other_income: 2007
+      transformational_activity_expenses: 2541
+      other_expenses_and_losses: 39
+      profit_before_tax: 131384
+      income_tax: 20750
+      profit_after_tax: 110634
+      net_cash_from_operating_activities: 237934
+      fixed_assets_and_projects_investing_outflow_or_increase: 85685
+      total_assets: 2724495
+      cash_and_cash_equivalents: 532468
+      property_plant_and_equipment: 1180241
+      boundary: >-
+        The IQD131.419 billion line is the statement's statutory "Surplus from
+        Current Operations (First Stage)" under the Iraqi unified system. It is
+        the closest disclosed operating-like subtotal but is not relabeled IFRS
+        operating profit or EBITDA. Interim data-center contribution is undisclosed.
+    data_center_and_AI_exposure:
+      broad_Asiacell_technical_estate:
+        modern_data_centers_2025: 22
+        newly_established_or_expanded_in_FY2025: 4
+      intended_Syntys_carveout:
+        active_data_centers: 7
+        active_IT_capacity_mw: 1.3
+        status_at_November_2025_presentation: not_completed
+      AI_programs:
+        LigaData_AI_Fabric_status: GPU_enabled
+        Manara_CAIR_target: up_to_100_universities_and_research_centers
+        hosting: within_Asiacell_smart_data_centers
+        exact_GPU_OEM_model_count_servers_racks_fabric_host_sites_ownership_power_utilization_revenue_and_margin: undisclosed
+      campus_refs:
+        - dc_asiacell_iraq_data_center_portfolio
+        - dc_asiacell_erbil_data_center_2
+        - dc_asiacell_baghdad_airport_mdc
+        - dc_asiacell_baghdad_digital_campus_dc1
+        - dc_asiacell_farmanday_mdc2
+        - dc_asiacell_owerij_data_center
+        - dc_asiacell_al_masbah_historical
+      boundary: >-
+        GPU-enabled software and nationally hosted compute do not disclose a
+        physical GPU inventory, and no public crosswalk assigns the named sites
+        or AI hardware to the seven-center, 1.3-MW carve-out.
+    outlook:
+      positive_drivers:
+        - more_than_20_million_subscribers_and_operating_revenue_growth
+        - 46_percent_FY2025_EBITDA_margin_and_strong_Q1_operating_cash_flow
+        - FY2025_four_data_center_expansion_or_establishment_projects
+        - enterprise_sovereign_AI_and_university_research_demand
+        - Ooredoo_Syntys_platform_and_vendor_partnership_support
+      risks:
+        - data_center_revenue_operating_profit_capex_and_returns_not_disclosed
+        - 22_site_estate_to_seven_site_carveout_crosswalk_and_transfer_opacity
+        - GPU_inventory_host_location_ownership_utilization_and_margin_opacity
+        - network_capex_power_reliability_security_and_execution_requirements
+        - telecommunications_competition_regulation_currency_and_geopolitical_risk
+        - EBITDA_and_local_statutory_subtotal_definition_noncomparability
+      boundary: >-
+        Strong telecom cash generation can fund digital infrastructure, but it
+        does not prove that the data-center or AI investments are independently
+        profitable or that the intended carve-out will complete on current terms.
+    watch_items:
+      - FY2026_revenue_EBITDA_statutory_operating_subtotal_capex_and_cash_flow
+      - data_center_segment_revenue_operating_profit_capex_debt_and_returns
+      - exact_22_site_roster_and_seven_site_carveout_crosswalk
+      - FY2025_four_new_or_expanded_data_center_names_capacity_and_spend
+      - per_site_IT_load_power_equipment_PUE_WUE_water_utilization_and_customers
+      - exact_GPU_model_count_host_site_ownership_power_utilization_revenue_and_margin
+    sources:
+      - https://www.asiacell.com/resources/report/annual-report-2025-EN-Digital.pdf
+      - https://www.asiacell.com/resources/images/asiacell/investors_material/Financial_Statements/sp-annual-report-2025-gene.pdf
+      - https://www.asiacell.com/resources/images/asiacell/investors_material/Financial_Statements/2026/Q1_2026_new_en_1.pdf
+      - https://www.asiacell.com/en/about-us/investor-relations/nfoinvestors
+      - https://www.asiacell.com/en/about-us/news-and-event/news-room/IraqBusinessSummit2025
+      - https://www.asiacell.com/en/about-us/news-and-event/press-releases/PR2025/AsiacellLigaData
+      - https://www.asiacell.com/en/about-us/news-and-event/press-releases/PR2026/NewsSocial
+      - https://www.ooredoo.com/wp-content/uploads/2025/11/FINAL-CMD_.pdf
+    confidence: high_for_FY2025_and_Q1_2026_financials_ownership_22_site_claim_and_dated_carveout_scope_medium_for_statutory_operating_like_interpretation_low_for_data_center_only_economics_site_crosswalk_and_GPU_inventory
+
   - id: company_ooredoo_group
     company: Ooredoo_Group
     legal_name: Ooredoo_QPSC
@@ -8723,10 +9011,15 @@ financial_profiles:
         - dc_syntys_qdata_qatar_free_zones_portfolio
         - dc_syntys_ooredoo_kuwait_portfolio
         - dc_syntys_ooredoo_tunisia_portfolio
+      intended_carveout_country_portfolio_refs:
+        - dc_ooredoo_oman_data_center_portfolio
+        - dc_asiacell_iraq_data_center_portfolio
       boundary: >-
         The derived percentages show that current disclosed Syntys earnings are
         still under 1% of Group quarterly revenue and EBITDA. They do not adjust
         for consolidation eliminations, minority ownership or acquisition timing.
+        Oman and Iraq are listed only as intended carve-out country scopes and
+        are not included in the disclosed Q1 Syntys counters.
     capital_allocation_and_outlook:
       Syntys_planned_investment_usd_billion: 1
       Syntys_initial_or_secured_financing_usd_million_approximate: 550
@@ -8741,6 +9034,8 @@ financial_profiles:
       Qatar_live_accelerator_generation: NVIDIA_Hopper
       Kuwait_announced_accelerator_model: NVIDIA_H200
       Tunisia_program_status: one_of_six_planned_NVIDIA_GPU_markets_with_no_published_model_or_count
+      Oman_program_status: additional_deployment_expected_to_go_live_in_2026_with_no_published_model_or_count
+      Iraq_Asiacell_separate_status: GPU_enabled_LigaData_AI_Fabric_with_no_published_physical_inventory
       exact_GPU_models_counts_ownership_and_unit_economics: undisclosed
       hyperscaler_relationships: [Microsoft, Google]
       data_center_minor_equity_partner: Iron_Mountain
@@ -8789,6 +9084,12 @@ cross_company_read_through:
     - NMTC's Q1 2026 consolidated revenue rose 11% to KWD197 million, EBITDA rose 15% to KWD80 million and owner net profit rose 21% to KWD22 million. Kuwait opco revenue and EBITDA were KWD67 million and KWD24 million; Tunisia was KWD37 million and KWD15 million. These are broad telecom-group and opco KPIs, not data-center earnings.
     - Syntys currently reports two Kuwait data centers with 2.2 MW aggregate active IT capacity and five Tunisia facilities with 2.0 MW. No per-site split is published. Kuwait announced NVIDIA H200 deployment into a local data center, but host building, count, servers, racks, fabric, ownership, power, utilization, customers and revenue remain undisclosed; Ooredoo's thousands-of-GPUs statement is a six-market plan and is not assigned to Kuwait or Tunisia.
     - Ooredoo Tunisia's FY2025 business review reports KWD145.4 million revenue and KWD61.0 million EBITDA, while the audited material-subsidiary note reports KWD17.067 million total profit before intra-group eliminations. Q1 2026 revenue grew 19% and EBITDA 28%, but operating profit and data-center contribution remain undisclosed, so fixed and ICT growth is demand evidence rather than proof of Syntys returns.
+    - Ooredoo Oman has four currently named operating facilities at Bausher, Barka, Sohar and Salalah plus a separately consolidated 71%-owned Duqm Data Centre subsidiary. Ooredoo's six-center, 3.5-MW figure is an intended carve-out denominator without a public asset crosswalk, so the named facilities are not forced into that count.
+    - Bausher discloses 2.5 MW of facility power and Sohar a power supply of up to 10 MW, whereas the intended Oman carve-out is 3.5 MW of IT capacity. These are different power measures and cannot be added or used to infer utilized load, revenue or GPU count.
+    - Ooredoo Oman's audited FY2025 revenue was OMR242.059 million and profit was OMR0.909 million after an OMR16 million employee-restructuring charge; its statement does not label operating profit, so a separately derived pre-finance operating-like result of OMR3.860 million is retained with its formula. Q1 2026 revenue was OMR61.9 million, EBITDA OMR29.4 million and net profit OMR4.6 million, but none is data-center-only.
+    - Asiacell's whole technical estate reached 22 modern data centers, while Ooredoo separately identified seven centers and 1.3 MW for an intended Iraq carve-out. Four Uptime-named facilities, Owerij and historical Al-Masbah improve the site ledger, but no official source crosswalks them to the seven-center denominator.
+    - Asiacell generated IQD2,024 billion of FY2025 operating revenue, IQD929 billion of EBITDA and IQD519 billion of net profit while spending IQD466 billion of capex. Q1 2026 statutory current-operations surplus was IQD131.419 billion and operating cash flow IQD237.934 billion; these are broad telecom results under different reporting definitions, not data-center operating profit.
+    - Oman's additional NVIDIA deployment was expected to go live in 2026, while Asiacell describes a GPU-enabled LigaData AI Fabric and nationally hosted AI compute. Neither disclosure provides a physical GPU model, count, host site, ownership, power draw, utilization, revenue or margin, and neither is assigned to current consolidated Syntys capacity.
     - Ooredoo Group's audited FY2025 revenue was QAR24.604 billion, company-reported EBIT was QAR5.986 billion and owner net profit was QAR3.865 billion. The IFRS statement does not label operating profit; a separately derived pre-finance, pre-associate operating-like result is QAR5.729 billion, and the two measures are retained with their different definitions.
     - Ooredoo's Q1 2026 Syntys disclosure represented only about 0.82% of Group revenue and 0.81% of Group EBITDA before elimination or minority adjustments. Ooredoo is therefore currently a diversified telecom exposure with a growing data-center option, not a pure-play data-center earnings proxy.
     - The USD1 billion Syntys program and approximately USD550 million of financing support a path toward 120 MW by 2030, but exact debt-equity mix, drawdown, interest, maturity, collateral, project allocation and incurred capex are missing. Q Data's acquisition price and PPA are also undisclosed, preventing a return-on-invested-capital test.
@@ -8946,6 +9247,12 @@ cross_company_read_through:
     - What are the exact terms, drawn balance, project allocation and parent guarantees for Syntys' approximately USD550 million financing, and how much of the USD1 billion plan is incurred capex?
     - Which NVIDIA Hopper models and how many GPUs power the Qatar service, who owns them, which building hosts them, and what are utilization, power cost, revenue and margin?
     - When will the Oman and Iraq data-center carve-outs complete, and how will their facilities, revenue, profit, assets, liabilities and minority economics enter Syntys reporting?
+    - Which exact six Oman facilities comprise the 3.5-MW carve-out, is Duqm included, and how do Bausher's 2.5-MW facility power and Sohar's up-to-10-MW power supply reconcile to IT load?
+    - What are Ooredoo Oman's data-center-only revenue, operating profit, capex, power cost, utilization, customer concentration, cash flow and return on invested capital?
+    - Which NVIDIA GPUs are physically deployed in Oman, at which site, under whose ownership, and with what utilization, power cost, revenue and margin?
+    - Which exact seven Iraqi facilities comprise the 1.3-MW carve-out, and how do they crosswalk to Asiacell's 22-site technical estate, four Uptime-named sites, Owerij and historical Al-Masbah?
+    - What are Asiacell's data-center-only revenue, operating profit, capex, power cost, utilization, customer concentration, cash flow and return on invested capital?
+    - Which physical GPUs support Asiacell's LigaData and Manara programs, where are they hosted, who owns them, and what are their power, utilization, revenue and margin?
     - How does MEEZA's derived 18 MW current operating total reconcile to the 22 MW 2026 forecast when MV8's first phase is described as 2 MW?
     - When will MV6's 6 MW first delivery, 24 MW current phase and 44 MW ultimate masterplan be financed, energized, accepted, utilized and recognized as revenue?
     - Which GPUs power MAI GPUaaS, who owns them, where are they installed, and what are their utilization, power cost, revenue and margin?
