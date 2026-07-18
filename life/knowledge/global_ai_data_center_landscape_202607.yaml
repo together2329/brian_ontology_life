@@ -51,6 +51,9 @@ scope_and_method:
     - utilities_and_power_developers
     - compute_network_electrical_and_cooling_supply_chain
   neocloud_scope:
+    disclosure_registry_ref: life/imports/global_data_centers_20260717/neocloud_disclosure_registry.jsonl
+    disclosure_summary_ref: life/imports/global_data_centers_20260717/neocloud_disclosure_summary.json
+    disclosure_registry_as_of: 2026-07-18
     primary_operator_roster:
       - CoreWeave
       - Nscale
@@ -75,6 +78,17 @@ scope_and_method:
       They are tracked separately because they may own powered campuses, lease
       capacity to a neocloud, convert crypto infrastructure to AI, or combine a
       hosting business with their own cloud service.
+    reconciliation_findings:
+      - IREN's approximately 150,000 GPUs are installed or on order, not a current active fleet count.
+      - Fluidstack's more than 100,000 GPUs are under management, not disclosed as owned inventory.
+      - Together AI's more than 500 MW is future independently capitalized compute commitment, not active load.
+      - Voltage Park says six data centers but publishes seven location labels; the source inconsistency remains unresolved.
+      - Vultr's 33 and RunPod's 31 Regions are provider service scopes, not owned physical-building counts.
+      - Cipher Barber Lake separates 168 MW phase I, 39 MW phase II and 244 MW phase-I gross support capacity.
+    comparison_boundary: >-
+      The registry deliberately does not publish a cross-company MW or GPU sum.
+      A comparison must first choose one lifecycle, one power metric, one hardware
+      ownership state, and one accounting period; otherwise the result is false precision.
     required_metrics:
       infrastructure:
         - physical_data_centers_and_service_AZs_with_scope_reconciliation

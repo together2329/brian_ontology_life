@@ -3932,6 +3932,215 @@ financial_profiles:
       - https://www.galaxy.com/newsroom/galaxy-completes-phase-i-of-its-helios-data-center-campus
     confidence: high_for_company_financials_power_and_contract_metrics_low_for_per_site_GPU_and_profitability
 
+  - id: company_nebius
+    company: Nebius
+    layer: AI_cloud_infrastructure_operator
+    ownership_status: public_NASDAQ_NBIS
+    fiscal_baseline:
+      period: Q1_2026_ended_2026_03_31
+      accounting_basis: US_GAAP_with_separate_non_GAAP_metrics
+      currency: USD
+      revenue_usd_million: 399.0
+      operating_loss_usd_million: 128.0
+      operating_margin_percent_derived: -32.08
+      net_income_from_continuing_operations_usd_million: 621.2
+      adjusted_net_loss_usd_million: 100.3
+      adjusted_EBITDA_usd_million: 129.5
+      purchases_of_property_equipment_and_intangibles_usd_million: 2472.9
+      cash_and_cash_equivalents_usd_million: 9298.2
+      noncurrent_debt_usd_million: 8432.0
+      investment_revaluation_gain_usd_million: 780.6
+      comparison_boundary: >-
+        GAAP net income was dominated by a $780.6 million investment revaluation
+        gain and is not evidence that the AI-cloud operation was profitable.
+        Adjusted EBITDA excludes defined items and does not replace GAAP operating loss.
+    data_center_exposure:
+      roles:
+        - AI_cloud_operator
+        - owned_AI_factory_developer
+        - dedicated_AI_cluster_provider
+      named_location_context:
+        - Kansas_City
+        - New_Jersey
+        - Iceland
+        - Pennsylvania
+      New_Jersey_build_to_suit_capacity_mw_up_to: 300
+      Pennsylvania_secured_power_and_land_gw_up_to: 1.2
+      current_exact_active_power_and_GPU_count: undisclosed
+      registry_ref: neocloud_nebius
+      boundary: >-
+        Named locations mix operating deployments, build-to-suit capacity and
+        secured development rights. None can be summed into current active IT load.
+    contract_and_capital_context:
+      Meta_initial_dedicated_cluster_orders_usd_billion: 12
+      Meta_initial_term_years: 5
+      Meta_unsold_capacity_backstop_usd_billion_up_to: 15
+      Meta_total_framework_usd_billion_up_to: 27
+      NVIDIA_investment_usd_billion: 2
+      boundary: >-
+        The Meta backstop is conditional support for unsold capacity and is not
+        equivalent to guaranteed backlog, recognized revenue or cash. NVIDIA's
+        investment is financing, not operating revenue.
+    management_outlook:
+      connected_power_end_2026_mw_range: [800, 1000]
+      NVIDIA_systems_enabled_end_2030_gw_more_than: 5
+      boundary: Targets are not current energized or billed capacity.
+    risk_and_watch_items:
+      - rapid_capex_and_debt_growth_ahead_of_capacity_acceptance
+      - Meta_and_large_customer_concentration
+      - investment_revaluation_volatility_masking_operating_loss
+      - power_interconnection_construction_and_GPU_delivery_execution
+      - conditional_backstop_versus_committed_revenue
+      - current_GPU_inventory_and_site_level_margin_opacity
+    sources:
+      - https://www.sec.gov/Archives/edgar/data/1513845/000110465926059872/tm2614392d1_ex99-1.htm
+      - https://www.sec.gov/Archives/edgar/data/1513845/000110465926027886/tm268879d1_6k.htm
+      - https://nebius.com/newsroom/nvidia-and-nebius-partner-to-scale-full-stack-ai-cloud
+      - https://nebius.com/newsroom/nebius-accelerates-us-expansion-adding-up-to-300-mw-capacity-at-new-data-center-in-new-jersey
+    confidence: high_for_latest_financials_contract_structure_and_announced_power_low_for_current_GPU_inventory_and_site_economics
+
+  - id: company_iren
+    company: IREN
+    layer: vertically_integrated_AI_cloud_and_data_center_operator
+    ownership_status: public_NASDAQ_IREN
+    fiscal_baseline:
+      period: Q3_FY2026_ended_2026_03_31
+      accounting_basis: US_GAAP_with_separate_non_GAAP_metrics
+      currency: USD
+      revenue_usd_million: 144.8
+      net_loss_usd_million: 247.8
+      EBITDA_loss_usd_million: 139.8
+      adjusted_EBITDA_usd_million: 59.5
+      nine_month_revenue_usd_million: 569.8
+      cash_and_cash_equivalents_usd_million: 2213.3
+      deferred_revenue_increase_from_AI_cloud_contracts_usd_million: 119.5
+      comparison_boundary: >-
+        Adjusted EBITDA excludes defined items and is not GAAP profit. Deferred
+        revenue and annualized run-rate revenue are not recognized quarterly revenue.
+    data_center_exposure:
+      roles:
+        - vertically_integrated_AI_cloud_operator
+        - data_center_and_power_portfolio_developer
+        - Bitcoin_mining_to_AI_infrastructure_converter
+      sites_with_executed_grid_or_equivalent_agreements: 7
+      portfolio_power_capacity_mw: 4510
+      named_portfolio:
+        - Childress_Texas
+        - Sweetwater_1_Texas
+        - Sweetwater_2_Texas
+        - Oklahoma
+        - Canal_Flats_British_Columbia
+        - Mackenzie_British_Columbia
+        - Prince_George_British_Columbia
+      registry_ref: host_iren
+      boundary: >-
+        Executed grid connections, letters or equivalents include development
+        capacity and cannot be converted into active AI IT load.
+    accelerator_disclosure:
+      GPUs_installed_or_on_order_as_of_2026_03_31_approximate: 150000
+      additional_NVIDIA_B300_purchase_more_than: 50000
+      additional_delivery_target: phased_H2_2026
+      NVIDIA_investment_right_vesting_ceiling_GPUs: 600000
+      boundary: >-
+        The 150,000 figure combines installed and ordered equipment. The 600,000
+        ceiling is a condition for investment-right vesting, not an order, delivery
+        or active fleet count.
+    contract_and_outlook:
+      AI_cloud_capacity_end_2026_target_mw: 480
+      AI_cloud_capacity_2027_in_build_target_mw: 1210
+      secured_global_power_pipeline_gw: 5
+      AI_cloud_ARR_under_contract_usd_billion: 3.1
+      AI_cloud_ARR_end_2026_target_usd_billion: 3.7
+      NVIDIA_contract_value_usd_billion: 3.4
+      NVIDIA_contract_term_years: 5
+      NVIDIA_contract_Childress_air_cooled_capacity_mw: 60
+      NVIDIA_contract_ramp_target: early_2027
+      boundary: >-
+        Contract value, ARR and targeted ARR are not current revenue. Operational
+        capacity being contracted ahead of commissioning requires delivery and
+        customer-acceptance evidence before it is called active or billed.
+    risk_and_watch_items:
+      - large_GPU_purchase_and_data_center_capex_commitments
+      - installed_versus_ordered_GPU_reconciliation
+      - Microsoft_and_NVIDIA_customer_concentration
+      - Bitcoin_mining_conversion_execution
+      - secured_power_to_connected_AI_IT_conversion
+      - debt_equity_and_vendor_financing_dilution
+    sources:
+      - https://www.sec.gov/Archives/edgar/data/1878848/000187884826000026/iren-20260331.htm
+      - https://www.sec.gov/Archives/edgar/data/1878848/000114036126007905/ny20064909x3_ex99-1.htm
+      - https://www.sec.gov/Archives/edgar/data/1878848/000187884826000025/irenreportsq3fy26results.htm
+    confidence: high_for_financials_orders_contracts_and_portfolio_rights_medium_for_operational_capacity_low_for_site_level_GPU_and_profitability
+
+  - id: company_cipher_digital
+    company: Cipher_Digital
+    former_name: Cipher_Mining
+    layer: data_center_developer_HPC_host_and_legacy_Bitcoin_miner
+    ownership_status: public_NASDAQ_CIFR
+    fiscal_baseline:
+      period: Q1_2026_ended_2026_03_31
+      accounting_basis: US_GAAP_with_separate_non_GAAP_metric
+      currency: USD
+      revenue_usd_million: 34.838
+      revenue_scope: Bitcoin_mining
+      operating_loss_usd_million: 114.569
+      operating_margin_percent_derived: -328.86
+      net_loss_usd_million: 114.316
+      adjusted_EBITDA_loss_usd_million: 48.222
+      cash_and_cash_equivalents_usd_million: 715.203
+      restricted_cash_current_usd_million: 3011.874
+      purchases_of_property_and_equipment_usd_million: 553.990
+      net_cash_provided_by_operating_activities_usd_million: 91.531
+      long_term_borrowings_carrying_value_usd_million: 4376.761
+      comparison_boundary: >-
+        Q1 revenue was entirely Bitcoin-mining revenue; it is not a current HPC
+        hosting run rate. Restricted cash is not unrestricted liquidity, and
+        adjusted EBITDA is not GAAP operating profit.
+    data_center_exposure:
+      roles:
+        - data_center_developer_and_owner
+        - HPC_colocation_host
+        - Bitcoin_mining_site_converter
+      named_programs:
+        - Barber_Lake_Fluidstack
+        - Black_Pearl_HPC_retrofit
+        - undisclosed_hyperscaler_site
+      Barber_Lake:
+        phase_I_Fluidstack_critical_IT_mw: 168
+        phase_I_maximum_gross_capacity_mw: 244
+        phase_I_delivery_target: 2026-09
+        phase_II_additional_critical_IT_mw: 39
+        phase_II_delivery_target: 2027-01
+        initial_lease_term_years: 10
+        initial_contract_value_usd_billion_approximate: 3
+        extension_contract_value_usd_billion_approximate: 7
+        Google_backstop_usd_billion: 1.4
+        Google_pro_forma_warrant_equity_percent_approximate: 5.4
+      HPC_pipeline_excluding_contracted_Fluidstack_mw_as_of_2025_09_approximate: 2400
+      registry_ref: host_cipher_digital
+      boundary: >-
+        Phase-I IT load, phase-II IT load, gross supporting capacity and pipeline
+        are different measures. Extension value requires option exercise and is
+        not base contract value or current revenue.
+    accelerator_disclosure:
+      GPU_count_models_and_delivery: undisclosed
+      ownership_boundary: >-
+        The recognition agreement contemplates Google-owned property inside the
+        tenant space. Cipher landlord assets, Fluidstack tenant assets and Google
+        property must not be collapsed into one GPU inventory.
+    risk_and_watch_items:
+      - Fluidstack_tenant_and_Google_backstop_dependency
+      - construction_delivery_and_rent_commencement
+      - high_debt_and_restricted_cash_structure
+      - Bitcoin_mining_to_HPC_transition
+      - GPU_owner_and_end_customer_opacity
+      - pipeline_power_to_contracted_and_billed_IT_conversion
+    sources:
+      - https://www.sec.gov/Archives/edgar/data/1819989/000181998926000028/cifr-20260331.htm
+      - https://investors.cipherdigital.com/news-releases/news-release-details/cipher-mining-signs-168-mw-10-year-ai-hosting-agreement/
+      - https://investors.cipherdigital.com/static-files/75bc38da-4315-46c6-85cc-f001ae925659
+    confidence: high_for_Q1_financials_lease_structure_and_phase_capacity_low_for_GPU_inventory_and_HPC_operating_economics
+
   - id: company_applied_digital
     company: Applied_Digital
     layer: data_center_developer_operator_and_lessor
