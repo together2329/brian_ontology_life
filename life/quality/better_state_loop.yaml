@@ -1,0 +1,143 @@
+schema_version: 1
+id: system_better_state_loop
+object_type: OperationalState
+state_type: assistant_guidance_protocol
+status: active
+date: '2026-07-18'
+subject_ref: person_brian
+area: MIND
+secondary_areas: [BODY, CAREER, FINANCE, RELATION, MAINTENANCE, FUN]
+title: 더 좋은 상태를 위한 가벼운 폐루프
+purpose: >-
+  Brian의 기록을 단순히 축적하거나 더 많은 개선 과제를 만드는 데 그치지 않고,
+  현재 상태에 맞는 작은 선택 하나를 제안하고 실제 결과를 회수해 다음 조언을
+  더 정확하게 만드는 로컬 삶의 질 피드백 시스템이다.
+north_star: 오늘 Brian은 더 많은 일을 했는가가 아니라 더 좋은 상태로 살았는가?
+
+activation_evidence:
+  - id: source_better_state_system_request_20260718
+    source_type: conversation
+    date: '2026-07-18'
+    raw_text: "좀 더 이런 개선을 위해 시스템을 좋게 만들 수 있을까?"
+    interpreted_intent: 삶의 질 향상을 위해 온톨로지와 조언 시스템을 실제 피드백이 닫히는 구조로 개선한다.
+    confidence: high
+
+operating_principles:
+  - id: better_state_loop_principle_one_change
+    statement: 기본적으로 동시에 하나의 작은 실험만 활성화한다.
+  - id: better_state_loop_principle_outcome_before_more_advice
+    statement: 새 조언을 계속 쌓기 전에 이전 조언의 수용 여부와 실제 결과를 먼저 확인한다.
+  - id: better_state_loop_principle_state_not_performance
+    statement: 삶의 질을 생산성 점수나 매일 지켜야 하는 의무로 만들지 않는다.
+  - id: better_state_loop_principle_evidence_not_causality
+    statement: 반복적으로 함께 나타난 기록을 개인 증거로 사용하되 인과관계로 단정하지 않는다.
+
+state_lens:
+  description: 관련 있는 축만 빠르게 살피며 모든 축을 매번 채우지 않는다.
+  dimensions:
+    - area: MIND
+      signals: [마음의 여유, 명료함, 충만함, 과부하]
+    - area: BODY
+      signals: [에너지, 수면과 회복, 통증과 불편, 움직임]
+    - area: RELATION
+      signals: [아름이와의 연결, 가족과 친구, 돌봄, 대화]
+    - area: CAREER
+      signals: [의미 있는 진전, 몰입, 열린 고리, 압박]
+    - area: FINANCE
+      signals: [의도적 지출, 불안, 선택 여력, 지속 가능성]
+    - area: MAINTENANCE
+      signals: [생활 마찰, 정리, 행정 부담, 환경 안정]
+    - area: FUN
+      signals: [즐거움, 호기심, 자연과 음악, 회복되는 놀이]
+  scoring_policy:
+    total_score_required: false
+    allowed_when_useful: [better, same, worse, unknown]
+    boundary: 힘든 감정이나 낮은 상태를 실패로 판단하지 않는다.
+
+closed_loop:
+  flow:
+    - meaningful_life_update
+    - current_state_signal
+    - historical_evidence_lookup
+    - one_small_choice
+    - accepted_declined_or_modified
+    - outcome_check
+    - feedback_record
+    - keep_modify_stop_or_promote
+  entry_condition: >-
+    Brian이 의미 있는 상태 변화, 선택, 어려움, 완료한 행동, 하루나 주간 회고를 공유했을 때만 적용한다.
+  quiet_condition: 무관한 기술 요청, 사소한 메시지, 단순 정보 질문에는 작동시키지 않는다.
+  intervention_limit: 1
+  open_loop_rule: >-
+    아직 결과가 확인되지 않은 실험이 있으면 기본적으로 새 실험을 추가하지 않고
+    먼저 accepted, declined, modified, pending 중 하나와 관찰된 결과를 확인한다.
+  outcome_timing:
+    immediate: 같은 대화에서 상태 변화가 관찰될 때
+    daily: 하루 선택의 결과를 다음 의미 있는 대화나 저녁 회고에서 확인할 때
+    weekly: 운동, 수면, 지출, 관계처럼 변동성이 큰 선택을 1주 단위로 볼 때
+  promotion_rule: >-
+    서로 다른 시점의 outcome evidence가 반복되고 반례도 검토된 뒤에만
+    pattern candidate를 operating rule 또는 confirmed principle로 승격한다.
+
+assistant_response_contract:
+  default_maximum:
+    observation: 1
+    evidence_or_reason: 1
+    next_choice: 1
+    outcome_question: 1
+  style:
+    - 짧고 다정하게 말한다.
+    - Brian의 선택권을 남긴다.
+    - 보호하거나 줄일 것을 더 많은 할 일보다 우선할 수 있다.
+    - 기록에 근거한 사실과 assistant의 추론을 구분한다.
+
+light_check_in:
+  status: active_optional
+  cadence: meaningful_update_or_when_brian_wants
+  questions:
+    - 오늘 나는 더 좋은 상태로 살았는가?
+    - 무엇이 그 상태를 만들거나 해쳤는가?
+    - 내일 하나만 보호하거나 바꾼다면 무엇인가?
+  answer_requirement: 한 문장만으로도 충분하다.
+  related_principle_ref: principle_better_state_over_more_output_20260718
+  related_routine_ref: routine_better_state_daily_review_20260718
+
+evidence_catalog:
+  historical_gratitude_2018_ref: life/imports/bke_gratitude_diary_2018/summary.yaml
+  historical_gratitude_2019_ref: life/imports/bke_gratitude_diary_2019/summary.yaml
+  happiness_bundle_ref: life/concepts/happiness_bundle.yaml
+  fulfilled_mind_ref: life/concepts/fulfilled_mind.yaml
+  current_mind_ref: life/mind/mind_active_log.yaml
+  current_body_ref: life/body/body_active_log.yaml
+  current_relation_ref: life/relation/relation_active_log.yaml
+  life_quality_reflection_ref: life/knowledge/life_quality_reflection_20260718.yaml
+
+current_cycle:
+  id: better_state_cycle_20260718_001
+  status: ready_for_next_meaningful_life_update
+  state_snapshot_ref: null
+  active_intervention_ref: null
+  outcome_feedback_ref: null
+  next_step: 다음 의미 있는 삶의 업데이트에서 현재 상태를 짧게 파악하고 필요한 경우 실험 하나만 제안한다.
+
+feedback_record_contract:
+  storage_ref: life/quality/better_state_feedback_log.yaml
+  record_when: 제안이 accepted, declined, modified되거나 실제 결과가 관찰되었을 때
+  fields:
+    - date
+    - triggering_state
+    - proposed_choice
+    - response
+    - observed_result
+    - affected_areas
+    - confidence
+    - next_decision
+  accepted_values: [accepted, declined, modified, pending]
+  missing_outcome_policy: explicit_pending_not_assumed_success
+
+privacy_boundary:
+  storage: local_only
+  external_transmission: requires_explicit_user_request
+
+confidence: high_for_protocol_medium_for_future_effectiveness
+needs_user_review: false

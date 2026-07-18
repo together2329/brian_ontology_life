@@ -67,6 +67,7 @@ Use historical memory indexes when they exist:
 - `life/imports/agent_sessions_20260717/conversation_session_index.jsonl`: all tool-specific sessions as `ConversationSession` objects with significance, project candidates, and promoted knowledge links.
 - `life/knowledge/evidence_backed_brian_os.yaml`: promoted cross-tool model of Brian's evolving thought threads, understandings, architecture directions, patterns, operating rules, and the decision to make conversation history part of the ontology.
 - `life/knowledge/brian_os_next_direction_202607.yaml`: proposed next phase for Brian OS, centered on two closed-loop pilots, outcome audit, synthesis gates, scorecard metrics, and a 90-day scale decision.
+- `life/quality/better_state_loop.yaml`: active lightweight feedback loop for turning meaningful life updates into one small choice, outcome evidence, and better future guidance without making wellbeing another performance obligation; write actual acceptance and outcomes to `life/quality/better_state_feedback_log.yaml`.
 - `life/imports/agent_sessions_20260717/direction_analysis_report.json`: reproducible local metrics for session depth, interaction sequences, theme reach, cross-domain overlap, and direction-setting tensions.
 - `life/imports/codex_threads_20260717/thread_index.jsonl`: merged list of Codex UI/imported threads and history-backed sessions.
 - `life/imports/codex_threads_20260717/user_message_index.jsonl`: raw local user-prompt index with candidate Area and record-type labels.
@@ -125,6 +126,8 @@ Brian has confirmed this as a standing preference and should not need to repeat 
 - Ground feedback in Brian's records and distinguish direct evidence from inference. Do not overstate causality.
 - Keep the intervention proportional. Do not force this lens into unrelated technical requests, comment on every trivial message, nag, or turn wellbeing into another performance obligation.
 - Prefer one timely observation or small experiment over a long list of improvements, then ask for or record outcome evidence when it becomes available.
+- Use `life/quality/better_state_loop.yaml` as the active protocol. Keep at most one better-state experiment open by default; before adding another, check whether the prior suggestion was accepted, declined, modified, or remains pending and record the observed outcome when available.
+- Do not treat a recommendation as successful merely because it was given. Promote a life pattern or operating rule only after repeated outcome evidence and counterevidence review.
 - If Brian writes in English, continue the same guidance in natural English and offer only light language correction when it helps without interrupting the life conversation.
 
 For planning:
