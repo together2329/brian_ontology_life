@@ -64,6 +64,7 @@ PROFILED = [
     entity("NEXTDC", ["NextDC", "NEXTDC", "NEXTDC Sdn Bhd"], "reviewed_physical_operator_profile", ["dc_nextdc_apac_portfolio", "company_nextdc", "nextdc_official_facility_registry.jsonl"], "Provider labels and OSM points or footprints are not one-to-one physical buildings."),
     entity("Flexential", ["Flexential"], "reviewed_physical_operator_profile", ["dc_flexential_us_portfolio", "company_flexential", "flexential_official_facility_registry.jsonl"], "Current cards, OSM objects, physical buildings and the 28-asset securitized pool use different scopes."),
     entity("Lumen_Technologies", ["Lumen Technologies"], "reviewed_physical_operator_profile", ["dc_lumen_north_america_colocation_network_portfolio", "company_lumen_technologies", "lumen_colocation_market_registry.jsonl"], "Current web, 2025 market rows, OSM objects, divested overseas labels and third-party network reach use different scopes."),
+    entity("Csquare", ["Centersquare", "CenterSquare", "Cyxtera"], "reviewed_physical_operator_profile", ["dc_csquare_north_america_uk_portfolio", "company_csquare", "csquare_official_facility_registry.jsonl"], "Final-prospectus site rows, marketed groups, OSM objects and legacy Cyxtera names use different legal and physical scopes."),
     entity("DATA4", ["Data4", "data4", "Data4 Italia", "DATA4"], "reviewed_physical_operator_profile", ["dc_data4_european_portfolio", "company_data4"], "Published power terms vary between IT, reserve, total and available energy."),
     entity("AirTrunk", ["AirTrunk"], "reviewed_physical_operator_profile", ["dc_airtrunk_apac_portfolio", "company_airtrunk"], "Campus design capacity is not current live load."),
     entity("Aligned_Data_Centers", ["Aligned", "Aligned Data Centers", "Aligned Data Centres", "ODATA"], "reviewed_physical_operator_profile", ["dc_aligned_north_america_public_directory", "dc_odata_aligned_latam_portfolio", "company_aligned_data_centers"], "ODATA and Aligned labels are joined at current platform level, not treated as identical facility brands historically."),
@@ -87,7 +88,6 @@ PROFILED = [
 PRIORITY_GAPS = {
     canonical_label(name): (entity_name, priority)
     for entity_name, priority, names in [
-        ("Centersquare", "P1", ["Centersquare", "CenterSquare"]),
         ("atNorth", "P1", ["atNorth"]),
         ("Switch", "P1", ["Switch"]),
         ("NorthC", "P1", ["NorthC"]),

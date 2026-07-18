@@ -131,8 +131,8 @@ scope_and_method:
     disclosure_registry_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_registry.jsonl
     disclosure_summary_ref: life/imports/global_data_centers_20260717/physical_operator_disclosure_summary.json
     disclosure_registry_as_of: 2026-07-19
-    operator_records: 30
-    machine_generated_page_registry_operators: [CyrusOne, QTS, NEXTDC, Flexential, Lumen_Technologies]
+    operator_records: 31
+    machine_generated_page_registry_operators: [CyrusOne, QTS, NEXTDC, Flexential, Lumen_Technologies, Csquare]
     comparison_gate:
       - choose_one_physical_granularity
       - choose_one_lifecycle_date_and_state
@@ -28407,7 +28407,177 @@ campus_profiles:
         url: https://ir.lumen.com/news/news-details/2026/Lumen-Marks-New-Phase-of-Transformation-at-2026-Investor-Day/default.aspx
     confidence: high_for_provider_market_transcription_current_fleet_ranges_divestiture_and_company_network_metrics_medium_for_market_to_OSM_crosswalk_low_for_current_exact_building_roster_site_MW_complete_BOM_installed_GPU_inventory_and_colocation_site_economics
 
+  - id: dc_csquare_north_america_uk_portfolio
+    name: Csquare North America and United Kingdom retail-colocation portfolio
+    record_granularity: SEC_disclosed_site_rows_with_separate_current_marketed_group_and_OSM_object_layers
+    operator: Csquare, Inc.
+    former_brand_and_acquisition_context: [CenterSquare, Cyxtera, Evoque]
+    country_scope: [US, CA, GB]
+    registry_refs:
+      detailed_site_records: life/imports/global_data_centers_20260717/csquare_official_facility_registry.jsonl
+      summary: life/imports/global_data_centers_20260717/csquare_official_facility_summary.json
+      builder: scripts/build_csquare_official_facility_registry.py
+    SEC_final_prospectus_scope_as_of_2026_03_31:
+      site_rows: 64
+      continuing_site_rows_excluding_slated_closures: 61
+      major_metropolitan_markets: 21
+      owned_site_rows: 35
+      leased_site_rows: 29
+      leased_site_share_percent: 45
+      slated_for_closure: [LHR2_A, LHR2_B, LAX4_A]
+      total_sellable_capacity_sq_ft: 2570759
+      reported_sold_capacity_sq_ft: 1726865
+      site_row_sold_capacity_checksum_sq_ft: 1726864
+      reported_sold_capacity_percent: 67.2
+      owned_2025_NOI_share_percent: 70.6
+      owned_Q1_2026_NOI_share_percent: 78.5
+      boundary: >-
+        A prospectus site row is the strongest reviewed legal roster but is not
+        automatically one physical building. The source's sold-capacity total
+        is one square foot above the row checksum and remains an explicit source
+        anomaly. Sellable square feet are not gross building area, occupied
+        area, rack count or IT MW.
+    power_capacity:
+      dated_series:
+        FY2023: {sellable_power_MW: 61, contracted_power_MW: 48, contracted_power_sold_percent: 78}
+        FY2024: {sellable_power_MW: 297, contracted_power_MW: 263, contracted_power_sold_percent: 88}
+        FY2025: {sellable_power_MW: 389, contracted_power_MW: 376, contracted_power_sold_percent: 97}
+        Q1_2026: {sellable_power_MW: 389, contracted_power_MW: 392, contracted_power_sold_percent: 101}
+      definitions:
+        sellable_power_capacity: installed_critical_IT_load_available_for_customer_use_whether_contracted_excludes_development
+        contracted_power_capacity: contracted_customer_power_not_actual_draw
+        contracted_power_sold: contracted_power_divided_by_sellable_power
+      boundary: >-
+        The 101% Q1 ratio reflects contracting and possible overbooking; it is
+        not physical utilization, metered load or evidence that 392 MW was
+        energized and consumed simultaneously.
+    current_2026_provider_spec_sheet_layer:
+      marketed_facility_groups: 36
+      detailed_group_metrics_in_registry: [address, total_area, utility_capacity_MW, UPS_capacity_MW, generator_capacity_MW, chilled_water, VESDA, pre_action_dry_pipe]
+      legal_rows_without_current_reviewed_spec_group_include: [DFW4_A, DFW5_A, YUL1_A, YUL1_B, YUL2_A, BNA1_A, BNA2_A, BNA2_B, RDU1_A, RDU1_B, PHX2_A, SFO9_A, YYZ3_A, TUL1_A]
+      known_scope_anomalies:
+        - DFW2_provider_publishes_14MW_UPS_versus_8_6MW_utility
+        - PHX1_utility_and_generator_capacity_undisclosed_in_current_PDF
+        - EWR5_2026_PDF_48867sqft_HTML_59572sqft_SEC_59407sqft_sellable_denominator
+        - MSP1_2026_PDF_28900sqft_HTML_29800sqft_SEC_17476sqft_sellable_denominator
+        - current_PDF_omits_the_three_prospectus_slated_closures_but_HTML_still_exposed_LAX4_during_review
+      power_boundary: >-
+        Utility, UPS and generator values have different service and redundancy
+        denominators. They are retained group by group, are not allocated to
+        individual SEC rows, and are neither summed nor added to the 389-MW
+        critical-IT measure.
+    OSM_crosswalk:
+      operator_tagged_objects: 22
+      operator_label_counts: {Centersquare: 17, Cyxtera: 5}
+      crosswalked_current_marketed_groups: 17
+      identity_anomalies:
+        - overall_IAD4_and_two_subfootprints_crosswalk_to_one_SEC_row
+        - Lynnwood_OSM_SE1_maps_by_current_address_to_SEA3
+        - Secaucus_OSM_NYC3_maps_by_current_address_to_EWR5
+        - Mesa_OSM_PHX1_maps_by_current_address_to_PHX3
+        - Evoque_Allen_DA1_maps_by_current_address_to_DFW2
+        - Cyxtera_names_are_legacy_identity_evidence_not_current_ownership_proof
+      boundary: >-
+        OSM points, whole-campus footprints and sub-building footprints can
+        overlap, and one marketed group can contain several SEC rows or
+        buildings. Twenty-two objects are not twenty-two facilities.
+    growth_and_customer_evidence:
+      customers_more_than: 1700
+      no_customer_above_2025_revenue_percent: 7
+      leading_hyperscaler_share_of_Q1_2026_MRR_approximate_percent: 11
+      interconnection_products_more_than: 36600
+      average_interconnection_products_per_customer: 21
+      bookings_USD_million:
+        FY2023: 45.279
+        FY2024: 141.821
+        FY2025: 205.279
+        Q1_2026: 64.216
+      net_revenue_churn_percent:
+        FY2023: 11.8
+        FY2024: 3.5
+        FY2025: 7.9
+        Q1_2026: 1.8
+      average_remaining_contract_term_months: {2024_year_end: 21, 2025_year_end: 30, 2026_Q1: 33}
+      interconnection_share_of_revenue_percent: {FY2023: 9.8, FY2024: 13.1, FY2025: 11.9, Q1_2025: 12.6, Q1_2026: 10.3}
+      boundary: Bookings, MRR mix, contract term and churn are commercial indicators, not site-level revenue, physical load, GPU inventory or cash returns.
+    AI_HPC_density_cooling_and_GPU:
+      average_contracted_density_kW_per_rack_approximate: 7.6
+      operated_customer_deployments_up_to_kW_per_rack: 150
+      design_capability_beyond_kW_per_rack: 250
+      air_cooling_capability_up_to_kW_per_rack_approximate: 50
+      liquid_cooling_capability_up_to_kW_per_rack_approximate: 250
+      LHR3_role: AI_and_liquid_cooling_Center_of_Excellence
+      top_10_2025_deals_AI_HPC_related_approximate_percent: 80
+      Q1_2026_MRR_AI_HPC_approximate_percent: 15
+      company_AI_HPC_definition: known_AI_company_or_more_than_24kW_per_rack_or_management_knows_deployment_is_AI_related
+      exact_physical_GPU_models_counts_servers_racks_fabric_owner_site_delivery_state_utilization_power_revenue_and_margin: undisclosed
+      boundary: >-
+        Customer deployments, commercial classification and density capability
+        do not establish a Csquare-owned accelerator fleet. The company's broad
+        AI/HPC definition cannot be converted into an estimated GPU count.
+    existing_site_expansion_opportunity:
+      potential_MW_approximate: 670
+      equipment_optimization_MW_approximate: 330
+      under_roof_expansion_MW_approximate: 340
+      target_net_cost_USD_million_per_MW: {low: 4, high: 8}
+      target_payback_years_less_than: 5
+      medium_term_adjusted_EBITDA_CAGR_target_more_than_percent: 14
+      medium_term_contribution_targets_percent:
+        pricing_and_leasing: 3_to_5
+        under_roof_expansion: 7_to_9
+        lease_buyouts_site_M_and_A_and_balance_sheet_optimization: 4_plus
+      boundary: >-
+        Potential MW, cost, payback and growth targets are management
+        opportunities. They are not permitted, built, energized, leased,
+        customer-accepted, utilized, billed or achieved returns.
+    linked_companies:
+      controlled_public_operator: [Csquare_Inc]
+      controlling_sponsor: [Brookfield]
+      legacy_or_acquired_portfolios: [Cyxtera, Evoque, Compass_Datacenters_affiliate_portfolio]
+      financial_profile_refs: [company_csquare]
+    capital_market_state:
+      IPO_closed: 2026-07-17
+      shares_sold_million: 50
+      net_proceeds_USD_million: 1010.0
+      boundary: The completed offering is a financing event; proceeds were primarily designated for debt repayment and are not operating revenue or data-center capacity.
+    sources:
+      - title: Final IPO prospectus
+        publisher: U.S. Securities and Exchange Commission
+        date: 2026-07-16
+        url: https://www.sec.gov/Archives/edgar/data/2105398/000110465926084293/tm264837-15_424b4.htm
+      - title: Csquare SEC submissions
+        publisher: U.S. Securities and Exchange Commission
+        date: 2026-07-19_accessed
+        url: https://data.sec.gov/submissions/CIK0002105398.json
+      - title: Current Csquare site map and market pages
+        publisher: Csquare
+        date: 2026-07-19_accessed
+        url: https://www.csquare.com/sitemap.xml
+      - title: Current 2026 market specification sheets
+        publisher: Csquare
+        date: 2026
+        url: https://www.csquare.com/hubfs/Centersquare%20website/docs/Csquare-IAD-SpecSheet.pdf
+      - title: IPO pricing announcement
+        publisher: Csquare
+        date: 2026-07-16
+        url: https://investor.csquare.com/news-releases/news-release-details/csquare-announces-pricing-initial-public-offering
+      - title: Form 8-K confirming IPO closing and net proceeds
+        publisher: U.S. Securities and Exchange Commission
+        date: 2026-07-17
+        url: https://www.sec.gov/Archives/edgar/data/2105398/000110465926084616/tm264837d22_8k.htm
+    confidence: high_for_final_prospectus_roster_power_financial_and_ownership_metrics_and_current_spec_sheet_transcription_medium_for_spec_group_to_SEC_row_and_OSM_identity_crosswalk_low_for_exact_physical_building_count_per_site_live_load_complete_BOM_and_GPU_inventory
+
 disclosure_gap_register:
+  - Csquare_64_SEC_site_rows_61_continuing_rows_36_current_spec_groups_and_22_OSM_objects_to_exact_non_overlapping_buildings_parcels_and_current_service_roster
+  - Csquare_three_slated_closures_completion_customer_migration_asset_disposition_and_financial_effect
+  - Csquare_389MW_sellable_392MW_contracted_and_101_percent_sold_to_site_level_energized_utilized_billed_and_actual_metered_load
+  - Csquare_670MW_existing_site_opportunity_to_per_site_permits_grid_equipment_construction_customer_commitments_RFS_and_incurred_capex
+  - Csquare_per_site_utility_feed_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_and_as_built_topology
+  - Csquare_per_site_measured_PUE_WUE_water_renewable_matching_live_liquid_cooled_MW_and_operating_performance
+  - Csquare_exact_installed_GPU_models_counts_servers_racks_fabric_owner_customer_delivery_host_site_power_utilization_revenue_and_margin
+  - Csquare_101_percent_contracted_power_sold_overbooking_policy_customer_acceptance_curtailed_load_and_service_risk
+  - Csquare_post_IPO_debt_repayment_final_balance_interest_savings_leverage_free_cash_flow_and_return_on_incremental_expansion_capex
+  - Csquare_site_level_revenue_NOI_customer_concentration_lease_expiry_utilization_and_ROIC
   - Lumen_current_200_plus_locations_120_plus_cities_2025_175_plus_data_centers_60_plus_markets_and_120_city_state_rows_to_exact_current_buildings_addresses_ownership_and_lifecycle
   - Lumen_25_OSM_objects_to_15_exact_market_crosswalks_6_post_divestiture_overseas_labels_and_4_unresolved_US_objects
   - Lumen_per_site_utility_feed_MW_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_counts_ratings_OEMs_and_as_built_topology
@@ -28784,7 +28954,7 @@ disclosure_gap_register:
 
 next_research_queue:
   campus_enrichment:
-    - global_coverage_P1_CenterSquare_Switch_atNorth_NorthC_Telehouse_CDC_Sabey_Cologix_CloudHQ_KDDI_GlobalSwitch_OVHcloud_official_profiles
+    - global_coverage_P1_CDC_Switch_atNorth_NorthC_Telehouse_Sabey_Cologix_CloudHQ_KDDI_GlobalSwitch_OVHcloud_official_profiles
     - NEXTDC_29_labels_to_physical_building_parcel_ownership_lifecycle_and_current_load_reconciliation
     - NEXTDC_TK2_and_KL1_current_power_grid_construction_customer_acceptance_and_billing_status
     - NEXTDC_exact_GPU_inventory_and_per_site_power_cooling_as_built_BOM_PUE_WUE_water_and_live_liquid_cooled_MW
