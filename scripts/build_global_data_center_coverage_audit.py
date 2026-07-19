@@ -100,6 +100,7 @@ PROFILED = [
     entity("Leading_Edge_Data_Centres", ["Leading Edge Data Centres", "Leading Edge Data Centre"], "reviewed_physical_operator_profile", ["dc_leading_edge_data_centres_australia_regional_portfolio", "company_leading_edge_data_centres", "leading_edge_official_facility_registry.jsonl"], "Six OSM ways crosswalk to all six current NSW facility cards; the singular Tamworth operator label, current 3.975-MW card checksum, historical 75-rack first-six design, older rollout plans, AI business names and investor financial scopes remain separate."),
     entity("Prime_Data_Centers", ["Prime", "Prime Data Centers"], "reviewed_physical_operator_profile", ["dc_prime_data_centers_north_america_emea_portfolio", "company_prime_data_centers", "prime_data_centers_official_facility_registry.jsonl"], "Six OSM objects cover four current facility candidates plus the historical Saeby plan; two Dallas footprints are one facility, and the current directory, portfolio headlines, pipeline, customer GPUs and private financials remain separate."),
     entity("TierPoint", ["TierPoint"], "reviewed_physical_operator_profile", ["dc_tierpoint_us_enterprise_and_ai_colocation_portfolio", "company_tierpoint", "tierpoint_official_facility_registry.jsonl"], "Five operator-tagged OSM objects plus ten name, owner or website crosswalks cover 15 current facility candidates; 37 page groups, 40 sheet records, 33 collateral assets, power/cooling evidence and customer hardware remain separate scopes."),
+    entity("Kao_Data", ["Kao Data"], "reviewed_physical_operator_profile", ["dc_kao_data_uk_ai_and_advanced_computing_portfolio", "company_kao_data", "kao_data_official_facility_registry.jsonl"], "Four operator-tagged OSM ways crosswalk to KLON-01, KLON-02, KLON-05 and KLON-06; seven current codes, Park Royal, mixed MW measures, customer GPUs and statutory or investor financial perimeters remain separate."),
     entity("DATA4", ["Data4", "data4", "Data4 Italia", "DATA4"], "reviewed_physical_operator_profile", ["dc_data4_european_portfolio", "company_data4"], "Published power terms vary between IT, reserve, total and available energy."),
     entity("AirTrunk", ["AirTrunk"], "reviewed_physical_operator_profile", ["dc_airtrunk_apac_portfolio", "company_airtrunk"], "Campus design capacity is not current live load."),
     entity("Aligned_Data_Centers", ["Aligned", "Aligned Data Centers", "Aligned Data Centres", "ODATA"], "reviewed_physical_operator_profile", ["dc_aligned_north_america_public_directory", "dc_odata_aligned_latam_portfolio", "company_aligned_data_centers"], "ODATA and Aligned labels are joined at current platform level, not treated as identical facility brands historically."),
@@ -131,7 +132,6 @@ PRIORITY_GAPS = {
         ("DataPro", "P2", ["DataPro"]),
         ("Rostelecom", "P2", ["Rostelecom"]),
         ("IXcellerate", "P2", ["IXcellerate"]),
-        ("Kao_Data", "P2", ["Kao Data"]),
         ("Verne_Global", "P2", ["Verne Global"]),
     ]
     for name in names

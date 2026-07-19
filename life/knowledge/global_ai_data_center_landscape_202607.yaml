@@ -34772,7 +34772,177 @@ campus_profiles:
       - {title: 320 million dollar preferred equity, publisher: TierPoint, date: 2020, url: "https://www.tierpoint.com/news/tierpoint-closes-320-million-in-equity-from-consortium-of-investors/"}
     confidence: high_for_current_37_page_40_sheet_reconciliation_sheet_level_power_cooling_33_asset_KBRA_metrics_financing_releases_and_15_OSM_crosswalk_medium_for_current_operational_marketing_state_and_grouped_Spokane_boundary_low_for_live_load_utilization_complete_as_built_BOM_owned_GPU_inventory_standalone_financials_current_cap_table_site_economics_and_valuation
 
+  - id: dc_kao_data_uk_ai_and_advanced_computing_portfolio
+    operator: Kao_Data
+    legal_entity_boundary: Kao_Data_Limited_group_Harlow_Operations_Limited_trading_site_and_project_subsidiaries
+    geography: United_Kingdom
+    record_granularity: current_facility_codes_Park_Royal_plan_capacity_power_cooling_GPU_customer_ESG_finance_and_OSM_scope
+    evidence_snapshot: '2026-07-19'
+    official_facility_registry_ref: life/imports/global_data_centers_20260717/kao_data_official_facility_registry.jsonl
+    official_facility_summary_ref: life/imports/global_data_centers_20260717/kao_data_official_facility_summary.json
+    current_provider_roster:
+      location_pages: 4
+      named_facility_codes: 7
+      separate_Park_Royal_plan_records: 1
+      lifecycle_counts: {operational: 4, under_development: 2, planned: 1, site_acquired_redevelopment_planned: 1}
+      current_card_IT_mw_checksum: 128.2
+      operational_card_IT_mw_checksum: 41.6
+      by_location:
+        Harlow:
+          codes: [KLON-01, KLON-02, KLON-03, KLON-04]
+          current_card_IT_mw: [8.8, 8.8, 17.6, 36]
+          lifecycle: [operational, operational, under_development, planned]
+          card_checksum_mw: 71.2
+        Northolt: {code: KLON-05, card_IT_mw: 4, lifecycle: operational, commercial_status: fully_occupied}
+        Slough: {code: KLON-06, card_IT_mw: 20, lifecycle: operational}
+        Manchester: {code: KMAN-01, card_IT_mw: 33, lifecycle: under_development}
+        Park_Royal: {code: undisclosed, card_IT_mw: undisclosed, site_acres: 4.7, site_sqft: 107000, lifecycle: site_acquired_redevelopment_planned, target_RFS: 2029}
+      boundary: >-
+        Facility code cards are not live-load measurements. Park Royal is a
+        separate acquired-site plan and is not assigned an invented code or MW.
+    capacity_scope_reconciliation:
+      current_numeric_card_IT_mw: 128.2
+      current_operational_card_IT_mw: 41.6
+      company_mixed_lifecycle_headline_IT_mw_more_than: 160
+      headline_minus_card_checksum_mw_at_least: 31.8
+      Infratil_FY2026_operating_capacity_mw: 37
+      Infratil_FY2026_Harlow_under_construction_mw: 18
+      Infratil_FY2026_future_build_pipeline_mw: 106
+      Harlow_future_site_accommodation_mw_up_to: 150
+      boundary: >-
+        The 37, 41.6, 106, 128.2, 150 and 160-plus MW measures use different
+        dates, lifecycle states or definitions. None is summed or relabeled as
+        operating, energized, customer-accepted, leased, utilized or billed load.
+    Harlow_power_and_cooling:
+      campus: {acres: 15, investment_GBP_million_more_than: 230, area_sqm: 61000, technical_area_sqm: 14000, technology_suites: 16}
+      historical_or_partial_power_sheet:
+        ITE_load_mw: 40
+        grid_connection: 43.5MVA_UKPN_from_Harlow_West_over_approximately_5km
+        on_site_substation_MVA: 43.5
+        transformers: 3x_33kV_to_11kV_30MVA_at_N_plus_1
+        feeds: dual_each_capable_of_supporting_whole_building_provider_sheet
+        generators: 7x_2.2MW_11kV_at_N_plus_1_with_six_rated_for_full_ITE_load
+        generator_start_to_full_load_seconds: 18_to_33
+        generator_fuel_hours_each: 48
+        refuel_SLA_hours: 8
+        UPS: N_plus_1_A_B_C_feeds_and_N_plus_2_distribution_to_rack
+        rack_density_kw_up_to: 80
+      cooling:
+        KLON-01: indirect_evaporative_refrigerant_free
+        KLON-03: hybrid_air_and_direct_to_chip_liquid
+      boundary: >-
+        The older 40MW sheet scope does not bridge to today's 71.2MW four-code
+        card sum, and its equipment is not allocated across every current building
+        without an as-built one-line, commissioning and ownership bridge.
+    facility_publication_conflicts:
+      KLON-02: current_8_8MW_versus_2022_and_2023_10MW_releases
+      KLON-06: current_20MW_PUE_1_25_versus_2022_and_ESG_16MW_and_release_PUE_below_1_2
+      KMAN-01: current_33MW_Q3_2027_versus_whitepaper_40MW_and_2026_response_operation_in_2028
+      Park_Royal: former_industrial_estate_provider_wording_versus_greenfield_investor_valuation_wording
+    AI_and_accelerator_boundary:
+      Cambridge_1_launch_configuration:
+        host: Kao_operated_Harlow_facility_exact_code_not_stated_in_NVIDIA_source
+        owner_and_compute_operator: NVIDIA
+        DGX_A100_systems: 80
+        A100_GPUs_per_system: 8
+        derived_A100_GPUs: 640
+        hardware: [A100, BlueField_2, HDR_InfiniBand]
+        boundary: launch_inference_from_two_NVIDIA_sources_not_current_inventory_or_Kao_owned_hardware
+      Ori:
+        host: Harlow
+        hardware: [H200_first_tranche, GB200_planned_from_April_2025]
+        exact_counts_delivery_and_current_state: undisclosed
+      Nebius:
+        host: Harlow_campus
+        agreement: {term_years: 10, deployment_mw: 22}
+        exact_facility_code_GPU_model_count_delivery_acceptance_price_revenue_and_margin: undisclosed
+        boundary: contract_MW_not_added_to_campus_capacity_or_treated_as_fully_live
+      Kao_owned_physical_GPU_inventory: not_established
+    sustainability_scope:
+      FY2025_statutory_SECR:
+        total_energy_GWh: 121.96
+        PUE: 1.52
+        WUE: 0.18
+        emissions_tCO2e: {scope_1: 628, scope_2_location: 8646, scope_3: 18811, total: 28085}
+      FY2024_25_ESG_report:
+        energy_MWh: 122101.95
+        estate_PUE: 1.53
+        estate_WUE: 0.26
+        potable_water_litres: 15669000
+        emissions_tCO2e: {scope_1: 477.55, scope_2_location: 8646.16, scope_3: 18811.64}
+        REF_percent: 100
+        market_based_CUE: 0
+        site_PUE: {KLON-01: 1.27, KLON-02: 1.63, KLON-05: 1.49, KLON-06: 1.74}
+      Shell_2026:
+        annual_supply_GWh_around: 140
+        matching: UK_renewable_assets_including_initial_Dogger_Bank_output_from_2025
+      boundary: >-
+        The audited SECR and ESG report differ slightly for an apparently similar
+        period and are retained separately. Certificate matching and market-based
+        CUE zero do not mean zero location-based emissions or hourly carbon-free power.
+    legal_financial_and_ownership_boundary:
+      financial_profile_ref: company_kao_data
+      parent: {name: Kao_Data_Limited, company_number: '11756346'}
+      website_trading_entity: {name: Harlow_Operations_Limited, company_number: '09227383'}
+      ownership_percent_at_2026_03_31: {Infratil: 54.7, Legal_and_General_Group: 33.4, Goldacre: 11.7, rounding_difference: 0.2}
+      governance: Infratil_significant_influence_without_unilateral_or_joint_control
+      FY2025_audited_GBP_million: {revenue: 63.814, operating_profit: 4.177, adjusted_EBITDA: 4.916, net_loss: -22.647, operating_cash_flow: 2.432, investment_property_expenditure: 80.142, net_debt: 104.208}
+      FY2026_IFRS_associate_100_percent_Kao_GBP_million: {revenue: 73.7, net_loss_after_tax: -26.8, assets: 788.1, liabilities: 422.6}
+      FY2026_investor_management_GBP_million: {revenue: 48, EBITDAF: 5, capex: 202, net_debt: 252}
+      independent_equity_valuation_GBP_million: {midpoint: 686.5, range: [622.7, 755.6]}
+      boundary: >-
+        FY2026 IFRS and management revenue perimeters are not reconciled. FY2025
+        operating profit is not projected into FY2026; valuation, debt, capex,
+        remaining performance obligations and customer contract MW are not revenue.
+    public_map_crosswalk:
+      operator_tagged_objects: 4
+      current_facility_refs: [kao_klon_01, kao_klon_02, kao_klon_05, kao_klon_06]
+      boundary: four_OSM_ways_are_a_partial_map_crosswalk_not_a_complete_portfolio_or_ownership_census
+    outlook:
+      positive_signals:
+        - 22MW_ten_year_Nebius_anchor_agreement
+        - FY2026_revenue_growth_and_positive_management_EBITDAF
+        - specialist_AI_HPC_and_liquid_cooling_positioning
+        - 106MW_future_pipeline_and_West_London_option
+        - institutional_equity_and_debt_access
+      risk_signals:
+        - FY2026_accounting_loss_and_very_high_capex
+        - net_debt_growth_and_long_delivery_schedule
+        - public_capacity_and_financial_scope_conflicts
+        - customer_concentration_contract_economics_and_live_load_undisclosed
+        - private_company_no_direct_public_security_and_no_Kao_owned_GPU_inventory
+      analytical_view: >-
+        Kao has credible UK AI-colocation positioning, an anchor neocloud contract
+        and growing revenue. It remains a capital-intensive buildout whose returns
+        depend on grid, construction, customer acceptance and billing. The public
+        look-through is mainly Infratil, where Kao is one associate, and the March
+        2026 valuation already embeds West London delivery and a lower discount rate.
+    sources:
+      - {title: Current Harlow location and four-code roster, publisher: Kao_Data, accessed: 2026-07-19, url: "https://kaodata.com/locations/harlow/"}
+      - {title: Current Northolt location, publisher: Kao_Data, accessed: 2026-07-19, url: "https://kaodata.com/locations/northolt/"}
+      - {title: Current Slough location, publisher: Kao_Data, accessed: 2026-07-19, url: "https://kaodata.com/locations/slough/"}
+      - {title: Current Manchester location, publisher: Kao_Data, accessed: 2026-07-19, url: "https://kaodata.com/locations/manchester/"}
+      - {title: Park Royal acquisition, publisher: Kao_Data, date: 2026-05-12, url: "https://kaodata.com/discover/news/kao-data-acquires-new-industrial-site-in-park-royal-west-london/"}
+      - {title: Harlow power resiliency sheet, publisher: Kao_Data, url: "https://kaodata.com/uploads/KDL1-Data-Sheet-Data-Centre-Power-Resiliency.pdf"}
+      - {title: Cambridge-1 launch configuration, publisher: NVIDIA, date: 2021, url: "https://nvidianews.nvidia.com/news/nvidia-calls-uk-ai-strategy-important-step-will-open-cambridge-1-supercomputer-to-uk-healthcare-startups"}
+      - {title: DGX A100 hardware specification, publisher: NVIDIA, accessed: 2026-07-19, url: "https://docs.nvidia.com/dgx/dgxa100-user-guide/introduction-to-dgxa100.html"}
+      - {title: Nebius 22MW Harlow agreement, publisher: Kao_Data, date: 2026-06-08, url: "https://kaodata.com/discover/news/nebius-chooses-kao-datas-harlow-campus-for-major-ai-infrastructure-deployment/"}
+      - {title: FY2024-25 ESG report, publisher: Kao_Data, url: "https://kaodata.com/uploads/Kao-Data-ESG-Report-2024-FINAL-compressed.pdf"}
+      - {title: Infratil Annual Report 2026, publisher: Infratil, date: 2026-05-26, url: "https://infratil.com/for-investors/annual-reports/annual-report-2026/"}
+      - {title: Infratil independent valuation update, publisher: Infratil, as_of: 2026-03-31, url: "https://infratil.com/for-investors/results/annual-results-for-the-year-ended-31-march-2026/infratil-31-march-2026-valuation-update/"}
+    confidence: high_for_current_seven_codes_card_values_lifecycles_128_2MW_checksum_FY2025_accounts_FY2026_investor_metrics_ownership_Cambridge_1_launch_configuration_ESG_metrics_and_four_OSM_crosswalk_medium_for_Park_Royal_to_30MW_plus_valuation_assumption_and_capacity_headline_reconciliation_low_for_live_load_complete_as_built_BOM_current_GPU_inventory_customer_economics_site_returns_and_future_delivery
+
 disclosure_gap_register:
+  - Kao_Data_seven_current_codes_Park_Royal_and_160MW_plus_headline_to_exact_legal_building_title_lease_and_lifecycle_bridge
+  - Kao_Data_128_2MW_cards_41_6MW_operational_cards_37MW_investor_operating_18MW_construction_106MW_pipeline_150MW_Harlow_and_160MW_plus_scope_reconciliation
+  - Kao_Data_per_site_operating_energized_customer_accepted_leased_utilized_billed_and_actual_IT_load
+  - Kao_Data_per_site_as_built_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_OEM_model_count_rating_acceptance_loading_and_remaining_life
+  - Kao_Data_per_site_live_liquid_cooled_MW_measured_PUE_WUE_energy_water_hourly_matching_and_emissions
+  - Kao_Data_Cambridge_1_Ori_Nebius_physical_GPU_model_count_current_delivery_owner_site_code_rack_fabric_power_utilization_revenue_and_margin
+  - Kao_Data_FY2026_IFRS_73_7m_to_management_48m_revenue_bridge_and_accounting_operating_profit_cash_flow_detail
+  - Kao_Data_customer_concentration_contract_pricing_acceptance_RPO_conversion_site_economics_ROIC_and_covenant_headroom
+  - Kao_Data_current_legal_subsidiary_to_each_site_and_project_asset_bridge_and_exact_current_shareholder_rights
+  - Kao_Data_Manchester_and_Park_Royal_permits_grid_substation_construction_customer_contract_acceptance_and_live_load
   - TierPoint_40_provider_records_37_page_groups_and_33_ABS_assets_to_exact_current_legal_building_title_lease_issuer_and_lifecycle_bridge
   - TierPoint_96MW_collateral_critical_load_and_TekPark_100MW_expansion_to_per_site_operating_energized_leased_utilized_billed_and_actual_IT_load
   - TierPoint_per_site_as_built_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_OEM_model_acceptance_loading_and_remaining_life
