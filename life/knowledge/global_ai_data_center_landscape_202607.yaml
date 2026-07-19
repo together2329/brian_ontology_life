@@ -38385,7 +38385,134 @@ campus_profiles:
       - {title: VNPT ownership and international partner page, publisher: VNPT, accessed: '2026-07-19', url: 'https://vnpt.com.vn/ve-vnpt/'}
     confidence: high_for_eight_center_current_headline_2025_rack_scale_Hoa_Lac_opening_scale_2025_audited_financials_2026_targets_and_four_OSM_objects_medium_for_three_OSM_provider_matches_and_dated_versus_current_rack_scope_low_for_complete_current_roster_site_power_live_load_equipment_BOM_GPU_inventory_segment_economics_and_direct_investability
 
+  - id: dc_yandex_russia_cloud_data_center_GPU_and_legacy_nebius_boundary
+    name: Yandex Russia cloud, data-center, GPU and legacy Nebius Finland boundary
+    type: public_diversified_Russian_technology_group_current_four_data_center_zone_GPU_financial_and_corporate_successor_scope_boundary
+    country: Russia
+    legacy_related_country: Finland
+    parent_and_operator: MKPAO_Yandex
+    ownership_and_listing:
+      current_Russian_group: {security: YDEX, exchange: MOEX, operator: MKPAO_Yandex}
+      legacy_international_successor: {security: NBIS, exchange: Nasdaq, operator: Nebius_Group, current_Yandex_Russia_exposure: false}
+    evidence_artifacts:
+      facility_registry: life/imports/global_data_centers_20260717/yandex_data_center_registry.jsonl
+      portfolio_summary: life/imports/global_data_centers_20260717/yandex_data_center_summary.json
+      registry_builder: scripts/build_yandex_data_center_registry.py
+    current_Russian_physical_and_zone_scope:
+      current_geo_scope_document: {Yandex_data_centers: 4, availability_zones: [ru-central1-a, ru-central1-b, ru-central1-d, ru-central1-e], separate_BareMetal_service_zone: ru-central1-m, page_updated: '2026-07-13'}
+      provider_address_article:
+        page_last_updated: '2025-07-23'
+        entries:
+          - {site: Vladimir, address: Energetik_microdistrict_Poiskovaya_Street_1_building_2, OSM_ref: osm_relation_17163450}
+          - {site: Sasovo, address: Pushkina_Street_21, OSM_ref: osm_way_192215351}
+          - {site: Kaluga, address: 1st_Avtomobilny_passage_8, OSM_ref: osm_way_1156034466}
+          - {site: Mytishchi, address: Silikatnaya_Street_19, OSM_evidence_status: absent_from_reviewed_operator_sample}
+      ru_central1_e: {launched: '2026-03-16', facility_wording: full_fledged_data_center_with_independent_power_and_network, power_MW: 40, racks: 2800, network_Tbps: 25.6, average_PUE: 1.1, cooling: year_round_outdoor_air_free_cooling, latency_to_a_ms_less_than: 1}
+      unresolved_bridge: The address article predates the ru-central1-e launch, while the current geo-scope page still says four Yandex data centers. No official zone-to-address crosswalk was established, so ru-central1-e is not added as a fifth building and no zone letter is assigned to an address.
+    OSM_crosswalk:
+      raw_Yandex_operator_tagged_objects_routed_by_coverage_audit: 4
+      current_Russia_exact_address_matches:
+        - {OSM_ref: osm_relation_17163450, site: Vladimir, footprint_m2: 79780.393, start_date: '2017'}
+        - {OSM_ref: osm_way_1156034466, site: Kaluga, footprint_m2: 129355.462}
+        - {OSM_ref: osm_way_192215351, site: Sasovo, footprint_m2: 353523.149}
+      current_Russia_mapped_footprint_sum_m2_not_floor_area: 562659.004
+      legacy_Finland_current_Nebius_related_geometries:
+        - {OSM_ref: osm_relation_17163169, name: Global_DC_OY, footprint_m2: 70219.810, raw_owner: Yandex}
+        - {OSM_ref: osm_way_1246864464, name: Global_DC_OY, footprint_m2: 4086.948}
+        - {OSM_ref: osm_way_846760920, name: Global_DC_OY, footprint_m2: 4088.392, raw_operator: Yandex}
+      legacy_Finland_mapped_footprint_sum_m2_not_floor_area: 78395.150
+      all_six_related_geometries_footprint_sum_m2_not_floor_area: 641054.154
+      boundary: Three Finland geometries are grouped as one legacy Mäntsälä campus and routed to current Nebius ownership. OSM footprint is not floor area, physical-building count, title, IT capacity or live load.
+    power_cooling_and_equipment:
+      current_ru_central1_e: {independent_power_and_network: true, power_MW_capacity_class_undefined: 40, average_PUE: 1.1, outdoor_air_free_cooling: year_round}
+      current_2025_largest_Yandex_data_centers_PUE: 1.12
+      dated_2020_portfolio_engineering:
+        grid: direct_110kV_or_higher_connections_with_own_cable_lines_and_substations
+        backup_power: DRUPS_from_multiple_unnamed_vendors_with_kinetic_flywheel_bridging_diesel_start
+        cooling: filtered_outdoor_air_to_cold_aisle_hot_collector_exhaust_and_controlled_recirculation
+        Sasovo_and_Vladimir_PUE_range: 1.05_to_1.07
+      dated_2021_server_and_efficiency_evidence: {CPU_families: [AMD_EPYC_Milan, Intel_Ice_Lake], operation_temperature_C_up_to: 40, Vladimir_and_Mantsala_PUE: 1.1}
+      exact_current_per_site_grid_contract_substation_transformer_switchgear_busway_PDU_DRUPS_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_pump_heat_exchanger_cooling_tower_OEM_model_count_rating_loading_test_state_age_and_remaining_life: undisclosed_or_unestablished
+      current_per_site_measured_PUE_WUE_energy_water_emissions_heat_reuse_and_live_liquid_cooled_MW: undisclosed_or_unestablished
+      boundary: The 2020 and 2021 disclosures are historical portfolio engineering evidence and are not propagated as a current site bill of materials. The 2025 PUE is scoped to the largest data centers, not every site.
+    AI_accelerators_and_supercomputers:
+      dated_exact_named_systems:
+        - {system: Chervonenkis, site: Sasovo, commissioned: '2021-06', nodes: 199, GPU_model: NVIDIA_A100_80GB, GPU_count: 1592, performance_PF: 21.53, power_kW: 583, RAM_TB: 199}
+        - {system: Galushkin, site: Vladimir, commissioned: '2021-06', nodes: 136, GPU_model: NVIDIA_A100_80GB, GPU_count: 1088, performance_PF: 16.02, power_kW: 330, RAM_TB: 136}
+        - {system: Lyapunov, site: Sasovo, commissioned: '2020-12', nodes: 137, GPU_model: NVIDIA_A100_40GB, GPU_count: 1096, performance_PF: 12.81, power_kW: 323, RAM_TB: 68.5}
+      dated_three_system_checksum: {nodes: 472, NVIDIA_A100_GPU_count: 3776, power_kW: 1236}
+      current_Yandex_Cloud_VM_models: [NVIDIA_V100_32GB, NVIDIA_A100_80GB, NVIDIA_T4_16GB, T4i_24GB]
+      V100_and_A100_VM_availability_zones: [ru-central1-a, ru-central1-b]
+      GPU_cluster_creation_zones: [ru-central1-a, ru-central1-d]
+      Gen2_customer_cluster_ceiling: {VMs: 20, GPUs_per_VM: 8, GPUs: 160, condition: subject_to_technical_availability}
+      exact_current_total_physical_GPU_accelerator_model_count_owner_site_delivery_acceptance_service_state_server_rack_fabric_power_utilization_revenue_margin_and_remaining_life: undisclosed_or_unestablished
+      boundary: The exact 3,776 A100 count is a 2020-2021 installed floor for three named systems, not a July 2026 total-fleet audit. Continued TOP500 listing, product availability and customer cluster ceilings do not establish current installed inventory.
+    legacy_Finland_current_Nebius_boundary:
+      corporate_transition: Yandex_NV_retained_Finland_and_international_businesses_then_completed_the_Russian_divestment_and_became_Nebius_Group_in_2024
+      current_operator: Nebius_Group
+      existing_Mantsala_power_MW: 75
+      expansion_completed: early_2026
+      current_GPU_disclosure: Europe_inaugural_operational_NVIDIA_GB300_NVL72_deployment_unit_count_undisclosed
+      dated_GPU_placement_ceiling_up_to: 60000
+      separate_announced_new_AI_factory_MW: 310
+      existing_fleet_cooling: filtered_outdoor_air_without_chillers_water_loops_or_refrigerants
+      PUE_at_full_capacity: 1.13
+      future_liquid_cooling_density_kW_per_rack_up_to: 200
+      boundary: Mäntsälä is current Nebius infrastructure, not current Russian Yandex inventory. The 60,000-GPU placement ceiling and separate 310-MW project are not current installed GPUs, live load or Yandex capacity.
+    financial_and_investability:
+      Yandex_Cloud_2025_RUB_b: {revenue: 27.6, growth_percent: 39, positive_EBITDA_margin_year_in_sequence: 4, exact_EBITDA_and_margin: undisclosed, external_revenue_percent: 93, external_customers: 51000, partners: 883, AI_Studio_revenue: 2.0}
+      Yandex_Group_FY2025_RUB_b: {revenue: 1441.1, IFRS_operating_profit: 173.6, net_income: 79.6, adjusted_EBITDA: 280.8, adjusted_EBITDA_margin_percent: 19.5, adjusted_net_income: 141.4, cash_cash_equivalents_and_deposits: 250.2, adjusted_net_debt_to_adjusted_EBITDA: 0.2}
+      B2B_Tech_FY2025_RUB_b: {revenue: 48.2, adjusted_EBITDA: 9.4, adjusted_EBITDA_margin_percent: 19.6, scope: Cloud_360_and_other_businesses_not_Cloud_only}
+      Yandex_Group_Q1_2026_RUB_b: {revenue: 372.7, operating_profit: 46.0, adjusted_EBITDA: 73.3, adjusted_EBITDA_margin_percent: 19.7, net_income: 28.9, adjusted_net_income: 34.7}
+      B2B_Tech_Q1_2026_RUB_b: {revenue: 13.6, growth_percent: 36, adjusted_EBITDA: 2.6, adjusted_EBITDA_growth_percent: 49, adjusted_EBITDA_margin_percent: 19.4}
+      data_center_or_Cloud_only_operating_profit_cash_flow_capex_assets_debt_customer_concentration_physical_utilization_and_ROIC: not_separately_disclosed
+      direct_public_equity_exposure: MOEX_YDEX_diversified_Russian_technology_group
+      boundary: B2B Tech includes Cloud, Yandex 360 and other businesses. Group results cannot be assigned to data centers or Cloud, and Nasdaq NBIS is the international Nebius successor rather than current Russian Yandex exposure.
+    outlook:
+      Yandex_Group_2026_guidance: {revenue_growth_percent_approx: 20, adjusted_EBITDA_RUB_b_approx: 350}
+      positive_signals: [Yandex_Cloud_2025_revenue_growth_39_percent, fourth_consecutive_positive_Cloud_EBITDA_margin_year, ru_central1_e_40MW_and_2800_racks_live, Q1_2026_B2B_Tech_growth, low_group_adjusted_leverage]
+      conversion_tests: [publish_post_launch_physical_roster_and_zone_address_crosswalk, disclose_current_installed_GPU_inventory, allocate_site_power_to_live_sold_and_billed_load, disclose_Cloud_only_profit_cash_flow_capex_and_ROIC, publish_current_site_equipment_and_efficiency_ledgers, deliver_2026_group_guidance]
+      risks: [Russia_market_access_geopolitical_regulatory_and_sanctions, currency, diversified_group_not_data_center_pure_play, Cloud_profitability_opacity, capital_intensity, GPU_and_site_utilization_opacity, legacy_asset_and_name_confusion]
+      analytical_view: Yandex offers fast-growing listed-parent cloud and AI-demand exposure, but it is a diversified Russian technology-group thesis rather than a data-center pure play. Cloud-only cash economics, current GPU inventory, physical utilization and a resolved post-launch site roster are the main proof points.
+    sources:
+      - {title: Current physical data-center addresses, publisher: Yandex_Cloud, updated: '2025-07-23', url: 'https://yandex.cloud/ru/docs/troubleshooting/legal/how-to/data-centers-physical-addresses'}
+      - {title: Current geographic scope, publisher: Yandex_Cloud, updated: '2026-07-13', url: 'https://yandex.cloud/en/docs/overview/concepts/geo-scope'}
+      - {title: ru-central1-e operation launch, publisher: Yandex_Cloud, date: '2026-03-16', url: 'https://yandex.cloud/ru/blog/ru-central1-e-exploitation'}
+      - {title: 2025 sustainability results, publisher: Yandex, date: '2026-06-17', url: 'https://ir.yandex.ru/press-releases?id=17-06-2026-01&year=2026'}
+      - {title: Data-center reliability episode one, publisher: Yandex_Cloud, date: '2020-09', url: 'https://yandex.cloud/ru-kz/blog/posts/2020/09/reliability-episode-1'}
+      - {title: Fourth-generation Yandex servers, publisher: Yandex, date: '2021-11-19', url: 'https://yandex.ru/company/news/2021-11-19'}
+      - {title: Current GPU documentation, publisher: Yandex_Cloud, updated: '2026-06-30', url: 'https://yandex.cloud/en/docs/compute/concepts/gpus'}
+      - {title: Current GPU-cluster creation documentation, publisher: Yandex_Cloud, updated: '2026-06-30', url: 'https://yandex.cloud/en/docs/compute/operations/gpu-cluster/gpu-cluster-create'}
+      - {title: Yandex supercomputers, publisher: Yandex, date: '2021', url: 'https://yandex.com/supercomputers'}
+      - {title: Supercomputer locations and technology, publisher: Yandex, date: '2021', url: 'https://yandex.ru/company/news/superkompyuter-yandeksa-priznali-samym-moschnym-v-rossii'}
+      - {title: Yandex Cloud 2025 results, publisher: Yandex, date: '2026-03-12', url: 'https://ir.yandex.ru/press-releases?id=12-03-2026-01&year=2026'}
+      - {title: Yandex Group FY2025 results, publisher: Yandex, date: '2026', url: 'https://ir.yandex.ru/financial-releases?report=q4&year=2025'}
+      - {title: Yandex Group Q1 2026 results, publisher: Yandex, date: '2026', url: 'https://ir.yandex.ru/financial-releases?report=q1&year=2026'}
+      - {title: Yandex N.V. initial Russian divestment closing, publisher: Yandex_NV, date: '2024-05-17', url: 'https://yandex.com/company/news/01-17-05-2024'}
+      - {title: Final Russian divestment closing, publisher: Nebius_Group, date: '2024-07-15', url: 'https://nebius.com/newsroom/ynv-announces-successful-completion-of-the-divestment-of-its-russia-based-businesses'}
+      - {title: Nebius name change and ticker, publisher: Nebius_Group, date: '2024-08', url: 'https://nebius.com/newsroom/nebius-group-n-v-announces-official-name-change-and-new-ticker-symbol'}
+      - {title: New 310 MW Finland AI factory and 75 MW existing expansion, publisher: Nebius_Group, date: '2026-03-31', url: 'https://nebius.com/newsroom/nebius-to-construct-310-mw-ai-factory-in-finland'}
+      - {title: Finland expansion to 75 MW, publisher: Nebius_Group, date: '2024', url: 'https://nebius.com/newsroom/nebius-to-triple-capacity-at-finland-data-center-to-75-mw'}
+      - {title: Mäntsälä sustainability and cooling, publisher: Nebius_Group, accessed: '2026-07-19', url: 'https://nebius.com/sustainability/our-greenfield-data-center-in-finland'}
+    confidence: high_for_current_four_data_center_statement_four_prelaunch_addresses_ru_e_capacity_three_exact_Russian_OSM_matches_dated_3776_A100_supercomputer_floor_Cloud_revenue_group_financials_and_Nebius_corporate_boundary_medium_for_current_site_roster_continuity_and_OSM_geometry_grouping_low_for_zone_to_address_mapping_current_total_GPU_inventory_site_live_load_complete_equipment_BOM_Cloud_only_profitability_and_ROIC
+
 disclosure_gap_register:
+  - Yandex_current_four_data_center_statement_prelaunch_four_address_article_ru_central1_e_launch_and_BareMetal_m_zone_exact_physical_building_and_zone_address_reconciliation
+  - Yandex_current_Vladimir_Sasovo_Kaluga_Mytishchi_and_any_post_launch_site_complete_land_parcel_building_data_hall_title_operator_customer_and_lifecycle_roster
+  - Yandex_ru_central1_e_40MW_to_utility_facility_critical_IT_operating_energized_available_sold_utilized_billed_peak_actual_and_customer_accepted_load_bridge
+  - Yandex_current_per_site_grid_voltage_contract_substation_transformer_switchgear_busway_PDU_DRUPS_UPS_battery_generator_fuel_OEM_model_count_rating_loading_test_age_and_remaining_life
+  - Yandex_current_per_site_chiller_CRAH_CRAC_CDU_pump_heat_exchanger_cooling_tower_air_and_liquid_cooling_OEM_model_count_rating_loading_and_live_liquid_cooled_MW
+  - Yandex_current_site_measured_PUE_WUE_energy_water_emissions_heat_reuse_hourly_carbon_free_matching_and_efficiency_boundary
+  - Yandex_dated_3776_A100_three_supercomputer_floor_to_current_total_physical_GPU_accelerator_model_count_owner_site_delivery_acceptance_service_state_server_rack_fabric_power_utilization_revenue_margin_and_remaining_life
+  - Yandex_GPU_VM_a_b_availability_GPU_cluster_a_d_creation_and_160_GPU_customer_configuration_ceiling_to_installed_physical_fleet_bridge
+  - Yandex_Cloud_27_6b_RUB_revenue_to_exact_EBITDA_margin_operating_profit_cash_flow_capex_assets_debt_customer_concentration_utilization_and_ROIC
+  - Yandex_B2B_Tech_Cloud_360_and_other_businesses_revenue_and_adjusted_EBITDA_to_Cloud_only_financial_bridge
+  - Yandex_current_YDEX_shareholder_structure_market_access_sanctions_regulatory_currency_and_data_center_capital_allocation_risk
+  - Yandex_Nebius_2024_divestment_complete_physical_asset_customer_IP_contract_employee_and_historical_financial_perimeter_bridge
+  - Nebius_Mantsala_75MW_current_operating_energized_sold_utilized_and_billed_IT_load_current_GPU_count_and_measured_efficiency
+  - Nebius_Mantsala_dated_up_to_60000_GPU_placement_ceiling_and_operational_GB300_NVL72_deployment_to_exact_installed_model_count_owner_rack_power_utilization_revenue_and_margin
+  - Nebius_separate_310MW_Finland_AI_factory_land_permits_grid_financing_construction_GPU_delivery_customer_acceptance_revenue_and_return_milestones
+  - Yandex_six_related_OSM_geometries_three_current_Russia_and_three_legacy_Finland_to_exact_building_role_title_floor_area_and_current_operator_bridge
   - VNPT_current_eight_large_scale_data_center_complete_site_name_address_building_title_ownership_operator_and_lifecycle_roster
   - VNPT_2024_4700_racks_and_58000m2_to_2025_approximately_11000_operating_capacity_racks_date_expansion_and_denominator_bridge
   - VNPT_2025_presentation_four_areas_but_three_named_cities_exact_fourth_area_and_site_allocation

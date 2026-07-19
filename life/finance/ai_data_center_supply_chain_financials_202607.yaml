@@ -21322,8 +21322,102 @@ financial_profiles:
       - dc_vnpt_vietnam_data_center_cloud_and_AI_portfolio
     confidence: high_for_state_ownership_current_eight_center_and_11000_rack_headlines_Hoa_Lac_scale_audited_group_financials_2026_targets_and_four_OSM_objects_medium_for_provider_match_and_expansion_scope_low_for_complete_roster_live_load_site_power_equipment_BOM_GPU_inventory_segment_profitability_and_direct_investability
 
+  - id: company_yandex_group_cloud_and_data_centers
+    name: Yandex Group cloud and data-center boundary
+    entity_type: public_listed_diversified_Russian_technology_group_with_Cloud_subsegment_and_separate_legacy_Nebius_successor
+    country: Russia
+    listing: {exchange: MOEX, ticker: YDEX}
+    not_current_Yandex_Russia_security: {exchange: Nasdaq, ticker: NBIS, entity: Nebius_Group, boundary: international_successor_after_2024_Russian_divestment}
+    portfolio_ref: dc_yandex_russia_cloud_data_center_GPU_and_legacy_nebius_boundary
+    evidence_artifacts:
+      facility_registry: life/imports/global_data_centers_20260717/yandex_data_center_registry.jsonl
+      portfolio_summary: life/imports/global_data_centers_20260717/yandex_data_center_summary.json
+      registry_builder: scripts/build_yandex_data_center_registry.py
+    physical_scope:
+      current_geo_scope_document: {Yandex_data_centers: 4, availability_zones: [ru-central1-a, ru-central1-b, ru-central1-d, ru-central1-e], separate_BareMetal_zone: ru-central1-m}
+      prelaunch_address_article_entries: [Vladimir, Sasovo, Kaluga, Mytishchi]
+      ru_central1_e: {launched: '2026-03-16', power_MW: 40, racks: 2800, network_Tbps: 25.6, average_PUE: 1.1}
+      current_Russian_OSM_exact_address_matches: 3
+      raw_Yandex_operator_tagged_OSM_objects: 4
+      legacy_Finland_OSM_geometries_current_Nebius_successor: 3
+      boundary: The current four-data-center statement, four-address page last updated before ru-central1-e and five zone identifiers lack a physical crosswalk. No fifth building or zone-address mapping is inferred, and Mäntsälä is not current Russian Yandex inventory.
+    AI_GPU_and_equipment_scope:
+      dated_named_supercomputer_floor: {systems: [Chervonenkis, Galushkin, Lyapunov], nodes: 472, NVIDIA_A100_GPU_count: 3776, power_kW: 1236, sites: [Sasovo, Vladimir]}
+      current_Yandex_Cloud_GPU_VM_models: [NVIDIA_V100_32GB, NVIDIA_A100_80GB, NVIDIA_T4_16GB, T4i_24GB]
+      current_total_physical_GPU_inventory: undisclosed_or_unestablished
+      current_2025_largest_data_center_PUE: 1.12
+      current_complete_site_power_and_cooling_equipment_BOM_live_load_and_utilization: undisclosed
+      boundary: The 3,776 A100s are an exact 2020-2021 installed floor for three named systems, not current total inventory. Current product availability, cluster ceilings, dated DRUPS architecture and PUE scopes do not establish current per-site equipment or load.
+    Cloud_operating_metrics_2025:
+      revenue_RUB_b: 27.6
+      revenue_growth_percent: 39
+      positive_EBITDA_margin_year_in_sequence: 4
+      exact_EBITDA_RUB_b_and_margin_percent: undisclosed
+      external_revenue_percent: 93
+      large_and_mid_sized_client_revenue_percent: 84
+      external_customers: 51000
+      external_customer_growth_percent: 17
+      partners: 883
+      partner_channel_growth_percent: 56
+      AI_and_security_revenue_percent: 9
+      AI_Studio_revenue_RUB_b: 2.0
+      AI_Studio_API_tokens_b: 234
+      live_VMs_more_than: 300000
+      infrastructure_solutions_revenue_growth_percent: 30
+      on_premise_revenue_percent: 3.4
+      boundary: Revenue and operating statistics do not disclose Cloud accounting operating profit, exact EBITDA, cash flow, capex, physical utilization or return on capital.
+    group_and_segment_financials:
+      FY2025_Yandex_Group_RUB_b:
+        revenue: 1441.1
+        IFRS_operating_profit: 173.6
+        net_income: 79.6
+        adjusted_EBITDA: 280.8
+        adjusted_EBITDA_margin_percent: 19.5
+        adjusted_net_income: 141.4
+        cash_cash_equivalents_and_deposits: 250.2
+        adjusted_net_debt_to_adjusted_EBITDA: 0.2
+      FY2025_B2B_Tech_RUB_b: {revenue: 48.2, adjusted_EBITDA: 9.4, adjusted_EBITDA_margin_percent: 19.6, scope: Cloud_360_and_other_businesses}
+      Q1_2026_Yandex_Group_RUB_b: {revenue: 372.7, revenue_growth_percent: 22, operating_profit: 46.0, adjusted_EBITDA: 73.3, adjusted_EBITDA_growth_percent: 50, adjusted_EBITDA_margin_percent: 19.7, net_income: 28.9, adjusted_net_income: 34.7}
+      Q1_2026_B2B_Tech_RUB_b: {revenue: 13.6, revenue_growth_percent: 36, adjusted_EBITDA: 2.6, adjusted_EBITDA_growth_percent: 49, adjusted_EBITDA_margin_percent: 19.4}
+      boundary: B2B Tech combines Cloud, Yandex 360 and other businesses. Diversified group and B2B Tech results cannot be attributed to data centers, Cloud, AI Studio or named sites.
+    investability_and_supply_chain_view:
+      direct_exposure: MOEX_YDEX_diversified_Russian_technology_group
+      public_pure_play_score: low
+      separate_legacy_successor_exposure: Nasdaq_NBIS_Nebius_not_current_Russian_Yandex
+      indirect_demand_categories: [grid_and_substations, transformers_and_switchgear, DRUPS_UPS_batteries_and_generators, free_and_liquid_cooling, servers_CPU_GPU_memory, InfiniBand_and_networking, racks_and_white_space]
+      positive_signals: [Cloud_revenue_growth_39_percent, fourth_positive_Cloud_EBITDA_margin_year, ru_central1_e_live_40MW_and_2800_racks, Q1_2026_B2B_Tech_growth, low_adjusted_group_leverage]
+      conversion_tests: [Cloud_only_operating_profit_cash_flow_capex_and_ROIC, current_GPU_inventory, post_launch_site_roster, live_and_billed_IT_load, current_equipment_and_efficiency, named_material_supplier_awards]
+      risks: [Russia_market_access_geopolitical_regulatory_and_sanctions, currency, diversified_group, segment_opacity, capital_intensity, GPU_obsolescence, utilization_opacity, corporate_successor_confusion]
+      analytical_view: YDEX offers direct access to Yandex's growing Russian cloud and AI platform, but not a data-center pure play. A purchase case must survive market-access and geopolitical constraints and should be based on Cloud cash economics and group valuation, not the 40-MW headline or historical A100 count alone.
+    outlook:
+      2026_group_guidance: {revenue_growth_percent_approx: 20, adjusted_EBITDA_RUB_b_approx: 350}
+      watch_items: [Cloud_revenue_and_exact_profitability, Q1_growth_conversion, post_launch_physical_roster, site_power_and_utilization, GPU_refresh_and_installed_count, capex_and_free_cash_flow, regulation_sanctions_currency_and_market_access]
+    sources:
+      - {title: Yandex Cloud 2025 results, publisher: Yandex, date: '2026-03-12', url: 'https://ir.yandex.ru/press-releases?id=12-03-2026-01&year=2026'}
+      - {title: Yandex Group FY2025 results, publisher: Yandex, date: '2026', url: 'https://ir.yandex.ru/financial-releases?report=q4&year=2025'}
+      - {title: Yandex Group Q1 2026 results, publisher: Yandex, date: '2026', url: 'https://ir.yandex.ru/financial-releases?report=q1&year=2026'}
+      - {title: Current geographic scope, publisher: Yandex_Cloud, updated: '2026-07-13', url: 'https://yandex.cloud/en/docs/overview/concepts/geo-scope'}
+      - {title: Current physical data-center addresses, publisher: Yandex_Cloud, updated: '2025-07-23', url: 'https://yandex.cloud/ru/docs/troubleshooting/legal/how-to/data-centers-physical-addresses'}
+      - {title: ru-central1-e operation launch, publisher: Yandex_Cloud, date: '2026-03-16', url: 'https://yandex.cloud/ru/blog/ru-central1-e-exploitation'}
+      - {title: Yandex supercomputers, publisher: Yandex, date: '2021', url: 'https://yandex.com/supercomputers'}
+      - {title: Current GPU documentation, publisher: Yandex_Cloud, updated: '2026-06-30', url: 'https://yandex.cloud/en/docs/compute/concepts/gpus'}
+      - {title: Final Russian divestment closing, publisher: Nebius_Group, date: '2024-07-15', url: 'https://nebius.com/newsroom/ynv-announces-successful-completion-of-the-divestment-of-its-russia-based-businesses'}
+      - {title: New 310 MW Finland AI factory and existing 75 MW expansion, publisher: Nebius_Group, date: '2026-03-31', url: 'https://nebius.com/newsroom/nebius-to-construct-310-mw-ai-factory-in-finland'}
+    related_profiles:
+      - dc_yandex_russia_cloud_data_center_GPU_and_legacy_nebius_boundary
+    confidence: high_for_Cloud_revenue_group_and_B2B_Tech_financials_current_four_data_center_statement_ru_e_capacity_historical_3776_A100_floor_and_YDEX_NBIS_boundary_medium_for_current_address_roster_continuity_low_for_Cloud_exact_profit_cash_flow_ROIC_current_GPU_inventory_live_site_load_complete_equipment_BOM_and_supplier_economics
+
 cross_company_read_through:
   current_signals:
+    - Yandex Cloud generated RUB27.6 billion of 2025 revenue, up 39%, with a fourth consecutive year of positive EBITDA margin. Exact Cloud EBITDA, accounting operating profit, cash flow, capex and ROIC remain undisclosed.
+    - Yandex Group reported RUB1.441 trillion of FY2025 revenue, RUB173.6 billion of IFRS operating profit and RUB280.8 billion of adjusted EBITDA. B2B Tech reported RUB48.2 billion of revenue and RUB9.4 billion of adjusted EBITDA but combines Cloud, Yandex 360 and other businesses.
+    - Q1 2026 B2B Tech revenue increased 36% to RUB13.6 billion and adjusted EBITDA increased 49% to RUB2.6 billion, while group revenue rose 22% to RUB372.7 billion. This supports current demand and operating-leverage momentum but not Cloud-only economics.
+    - The current geo-scope documentation says four Yandex data centers and exposes zones a, b, d and e plus a separate BareMetal m zone. A four-address article last updated before the e launch names Vladimir, Sasovo, Kaluga and Mytishchi, so no zone-address mapping or fifth building is inferred.
+    - ru-central1-e entered operation in March 2026 with 40MW, 2,800 racks, 25.6Tb/s, average PUE 1.1 and year-round outdoor-air free cooling. The power class, live IT load, sold load, utilization, equipment bill and exact address remain undisclosed.
+    - Three named Yandex supercomputers disclosed 3,776 NVIDIA A100 GPUs and 1.236MW of system power at 2020-2021 commissioning. This is a historical exact installed floor, not a July 2026 total-fleet audit or current service-state proof.
+    - Current Yandex Cloud documentation exposes V100, A100, T4 and T4i products and distinct VM and InfiniBand-cluster zone scopes. Service availability and a 160-GPU customer-cluster ceiling do not disclose current physical GPU inventory.
+    - Current Russian Yandex is directly listed as MOEX YDEX. Nasdaq NBIS is Nebius, the successor to the former international Yandex N.V. after the 2024 Russian divestment, and its 75MW Mäntsälä campus is not current Yandex Russia capacity.
+    - Yandex guides to about 20% group revenue growth and about RUB350 billion of adjusted EBITDA in 2026. The investment case must still pass Russian market-access, sanctions, regulation, currency, valuation, Cloud cash-return and physical-utilization gates.
     - VNPT's 2025 presentation reports eight large-scale Tier III data centers and approximately 11,000 racks of total operating capacity. It says four areas but names only Ha Noi, Ho Chi Minh City and Da Nang, so no fourth area or complete site roster is invented.
     - A 2024 VNPT Cloud page reported the same eight-center count but more than 58,000 square metres and 4,700 racks. The later approximately 11,000-rack figure is not treated as occupied or billed growth without a definition and site bridge.
     - Hoa Lac opened in October 2023 as VNPT's eighth IDC, with up to 23,000 square metres and 2,000 racks, N+1 redundancy and six security layers. These are site ceilings, not current utilization, IT MW or measured efficiency.
@@ -22133,6 +22227,14 @@ cross_company_read_through:
     - How much announced utility load has received permits, financing, interconnection, and energization?
 
 research_limits:
+  - Yandex Cloud's RUB27.6 billion revenue and positive EBITDA-margin wording do not disclose exact EBITDA, accounting operating profit, cash flow, capex, assets, debt, customer concentration, physical utilization or return on capital. B2B Tech includes Yandex 360 and other businesses and is not a Cloud-only bridge.
+  - The current four-Yandex-data-center statement, pre-ru-central1-e four-address article, four general availability zones and separate BareMetal m service zone lack an official physical crosswalk. No fifth building or zone-address assignment is inferred.
+  - ru-central1-e's 40MW, 2,800 racks, 25.6Tb/s and 1.1 average PUE do not disclose critical IT MW, current load, sold or billed capacity, utility contract, full equipment bill, water, emissions, utilization or site economics.
+  - The 3,776 NVIDIA A100s and 1.236MW checksum belong to three named systems commissioned in 2020-2021. Continued TOP500 listing and current GPU product availability do not establish unchanged hardware, current service state or Yandex's complete physical accelerator inventory.
+  - The 2020 DRUPS, 110kV-plus grid and air-free-cooling description and 2021 server disclosure are dated portfolio engineering evidence. They are not current per-site OEM, model, count, rating, loading, maintenance or remaining-life records.
+  - Three Russian OSM geometries match Vladimir, Kaluga and Sasovo and three Finland geometries map to the legacy Mäntsälä campus. Their 641,054.154-square-metre combined footprint is not floor area, capacity, building count, ownership title or current load.
+  - Mäntsälä is current Nebius infrastructure after the 2024 Russian divestment and is not current Yandex Russia inventory. Its 75MW existing campus, up-to-60,000-GPU dated placement ceiling and separate 310MW future AI factory remain distinct scopes.
+  - MOEX YDEX is a diversified Russian technology-group security subject to market-access, geopolitical, sanctions, regulatory and currency risks. Nasdaq NBIS is separate Nebius successor exposure and cannot be used as a proxy for current Russian Yandex earnings.
   - Verne's audited 52.3-MW FY2025 installed capacity, 140-MW-plus Iceland and 70-MW Helsinki cards, 120/240-MW Iceland substation, 70-MW Mäntsälä build, 500-MW France plan and 180-MW Norway grid request use different denominators and are not added.
   - Verne's USD105.7-million EBITDA includes continuing and discontinued operations and is not accounting operating profit or cash flow. Continuing operations reported a USD2.382-million operating loss, while post-divestment comparisons require a new perimeter.
   - Nscale's approximately 4,600 Blackwell Ultra GPUs are a 2026 customer deployment plan, not a July 2026 installed-inventory audit and not evidence of Verne-owned hardware. Exact delivery, acceptance, utilization, revenue and margin remain undisclosed.
