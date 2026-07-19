@@ -1,5 +1,5 @@
 schema_version: 1
-status: baseline_complete_with_explicit_open_gates
+status: priority_operator_baseline_complete_with_global_census_and_decision_gates_open
 updated_at: '2026-07-19'
 area: FINANCE
 secondary_areas:
@@ -10,23 +10,45 @@ audited_inventory:
   global_osm_mapped_objects: 4663
   global_iso2_country_records: 112
   distinct_nonempty_osm_operator_labels: 822
-  mapped_objects_routed_to_reviewed_profiles: 1771
-  reviewed_campus_profiles: 542
-  reviewed_financial_profiles: 160
+  osm_objects_with_operator_label: 2777
+  osm_objects_without_operator_label: 1886
+  mapped_objects_routed_to_reviewed_profiles: 1784
+  mapped_objects_not_routed_to_reviewed_profiles: 2879
+  operator_tagged_objects_not_routed_to_reviewed_profiles: 993
+  percent_of_all_mapped_objects_routed_to_reviewed_profiles: 38.26
+  percent_of_operator_tagged_objects_routed_to_reviewed_profiles: 64.24
+  priority_unreviewed_operator_entities: 0
+  reviewed_campus_profiles: 545
+  reviewed_financial_profiles: 163
   neocloud_and_linked_host_records: 17
-  physical_operator_records: 64
+  physical_operator_records: 67
   power_cooling_cable_utility_company_records: 25
   atomic_accelerator_claims: 52
 completed_baseline:
-- 4,663-object OSM baseline plus 112-country and 822-operator-label coverage audit with a ranked remaining-operator
-  queue
+- 4,663-object OSM baseline plus 112-country and 822-operator-label coverage audit
+- P1/P2 named operator research queue exhausted at 0 remaining entities
 - official hyperscaler and Chinese cloud Region or location registries with Region, AZ and building boundaries
 - scope-preserving neocloud and linked-host profiles
 - major physical data-center operator crosswalk
 - power, electrical, generation, cooling, cable and utility company crosswalk
 - atomic accelerator disclosure ledger with overlap groups and no false fleet total
 - company financial evidence ledger and Brian portfolio wrapper comparison
+coverage_interpretation:
+  reviewed_profile_routing_percent_of_all_OSM_objects: 38.26
+  reviewed_profile_routing_percent_of_operator_tagged_OSM_objects: 64.24
+  objects_without_operator_label: 1886
+  operator_tagged_objects_not_routed_to_reviewed_profiles: 993
+  boundary: A zero P1/P2 queue completes the selected priority sequence; it does not turn OSM into an exhaustive
+    global building, ownership or operating census.
 remaining_gates:
+- priority: A2
+  gap: Long-tail global facility, operator-alias and lifecycle resolution beyond the completed P1/P2 queue
+  why_it_matters: Only part of the OSM baseline routes to reviewed profiles, and OSM itself omits private, new,
+    secure or inconsistently tagged buildings.
+  completion_evidence: Country-by-country official facility rosters, legal-asset and alias joins, lifecycle dates,
+    coordinates and independent map reconciliation with explicit no-public-data outcomes.
+  decision_impact: Prevents the current baseline from being described as every data center worldwide or used as
+    operator market share.
 - priority: A1
   gap: Current ETF look-through holdings, weights, valuation date and cross-fund overlap
   why_it_matters: Ticker count cannot establish company or factor diversification.
@@ -75,7 +97,8 @@ remaining_gates:
   completion_evidence: Commissioned equipment model, rating, quantity, topology and measured operating data by site.
   decision_impact: Limits supplier attribution and physical bottleneck validation.
 research_completion_definition:
-  baseline_research: complete for the current 2026-07-19 scope
+  priority_operator_research_sequence: complete for the current 2026-07-19 P1/P2 queue
+  global_OSM_profile_routing: 38.26 percent of all objects and 64.24 percent of operator-tagged objects
   all_global_facilities_or_future_projects: not_claimed_and_not_possible_from_public_sources
   investment_execution: intentionally_gated_by_A1_and_A2_items
   rule: An explicit unknown is a completed audit result, not permission to estimate it into a fact.

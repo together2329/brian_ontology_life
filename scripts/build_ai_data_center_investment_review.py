@@ -177,7 +177,14 @@ def registry_counts(args: argparse.Namespace) -> dict:
         "global_osm_mapped_objects": coverage["baseline"]["osm_mapped_objects"],
         "global_iso2_country_records": coverage["baseline"]["iso2_country_records"],
         "distinct_nonempty_osm_operator_labels": coverage["baseline"]["distinct_nonempty_raw_operator_labels"],
+        "osm_objects_with_operator_label": coverage["baseline"]["objects_with_operator_label"],
+        "osm_objects_without_operator_label": coverage["baseline"]["objects_without_operator_label"],
         "mapped_objects_routed_to_reviewed_profiles": coverage["review_join"]["mapped_objects_whose_raw_operator_label_routes_to_a_reviewed_profile"],
+        "mapped_objects_not_routed_to_reviewed_profiles": coverage["baseline"]["osm_mapped_objects"] - coverage["review_join"]["mapped_objects_whose_raw_operator_label_routes_to_a_reviewed_profile"],
+        "operator_tagged_objects_not_routed_to_reviewed_profiles": coverage["baseline"]["objects_with_operator_label"] - coverage["review_join"]["mapped_objects_whose_raw_operator_label_routes_to_a_reviewed_profile"],
+        "percent_of_all_mapped_objects_routed_to_reviewed_profiles": coverage["review_join"]["percent_of_all_mapped_objects"],
+        "percent_of_operator_tagged_objects_routed_to_reviewed_profiles": coverage["review_join"]["percent_of_operator_tagged_mapped_objects"],
+        "priority_unreviewed_operator_entities": len(coverage["priority_unreviewed_operator_entities"]),
         "reviewed_campus_profiles": len(landscape["campus_profiles"]),
         "reviewed_financial_profiles": len(financials["financial_profiles"]),
         "neocloud_and_linked_host_records": neocloud["records"],
@@ -187,7 +194,7 @@ def registry_counts(args: argparse.Namespace) -> dict:
     }
 
 
-def build_comparison(finance: dict, products: list[dict], total: int, accessed_on: str) -> dict:
+def build_comparison(finance: dict, products: list[dict], total: int, counts: dict, accessed_on: str) -> dict:
     groups = build_groups(products, total)
     group_index = {row["mandate_group"]: row for row in groups}
     direct = group_index["direct_employer_linked_memory"]
@@ -196,6 +203,12 @@ def build_comparison(finance: dict, products: list[dict], total: int, accessed_o
         "ai_value_chain_mixed", "power_grid_infrastructure", "optical_network", "nuclear_generation",
     ]
     ai_linked = sum(group_index[key]["evaluation_amount_krw"] for key in ai_linked_groups)
+    layer_comparison = [dict(row) for row in LAYER_COMPARISON]
+    physical_operator_layer = next(row for row in layer_comparison if row["layer"] == "physical_data_center_operators")
+    physical_operator_layer["evidence_state"] = (
+        f"{counts['physical_operator_records']} operators have a scope-preserving crosswalk, but site economics, "
+        "utilization and return on capital remain limited, especially for private firms."
+    )
     known_total = next(row for row in finance["net_worth_estimates"] if row["id"] == "household_net_worth_estimate_20260715_all_reported_items")["assets"]["brian_stocks_etfs_gold_estimated_krw"]
     assert total == known_total
     return {
@@ -214,7 +227,9 @@ def build_comparison(finance: dict, products: list[dict], total: int, accessed_o
             "life/knowledge/global_ai_data_center_landscape_202607.yaml",
             "life/imports/global_data_centers_20260717/power_cooling_supply_chain_registry.jsonl",
             "life/imports/global_data_centers_20260717/accelerator_disclosure_ledger.jsonl",
+            "life/imports/global_data_centers_20260717/global_data_center_coverage_audit_summary.json",
         ],
+        "research_inventory": counts,
         "portfolio_snapshot": {
             "as_of": "2026-07-15",
             "scope": "Brian stocks, ETFs and gold captured from multiple account screenshots",
@@ -233,7 +248,7 @@ def build_comparison(finance: dict, products: list[dict], total: int, accessed_o
             "household_correlation": "Employment income, expected bonus, direct SK hynix, memory and semiconductor ETFs, spouse-reported Korean semiconductor holdings and KOSPI exposure can respond to the same cycle.",
             "conclusion": "Brian is diversified across several AI infrastructure layers, but not yet proven diversified across underlying companies, the semiconductor cycle, employer income or household liquidity.",
         },
-        "layer_comparison": LAYER_COMPARISON,
+        "layer_comparison": layer_comparison,
         "cashflow_first_decision": {
             "current_state": "Brian reported near-zero monthly savings flow, no current deficit pressure and no need to sell immediately, with a future bonus expected.",
             "sequence": [
@@ -253,21 +268,22 @@ def build_comparison(finance: dict, products: list[dict], total: int, accessed_o
             {"priority": 4, "candidate": "additional_compute_memory_or_neocloud_risk", "reason": "Already highly represented or financially riskier; require unusually strong valuation, cash-flow and concentration evidence."},
         ],
         "decision_boundary": "This is a personalized research and sequencing record, not an instruction to buy, sell or change an external account.",
-        "source_snapshot_sha256": canonical_hash(finance),
+        "source_snapshot_sha256": canonical_hash({"finance": finance, "research_inventory": counts}),
     }
 
 
 def build_gap_audit(counts: dict, accessed_on: str) -> dict:
     return {
         "schema_version": 1,
-        "status": "baseline_complete_with_explicit_open_gates",
+        "status": "priority_operator_baseline_complete_with_global_census_and_decision_gates_open",
         "updated_at": accessed_on,
         "area": "FINANCE",
         "secondary_areas": ["CAREER", "KNOWLEDGE"],
         "title": "Global AI data-center research final gap audit",
         "audited_inventory": counts,
         "completed_baseline": [
-            "4,663-object OSM baseline plus 112-country and 822-operator-label coverage audit with a ranked remaining-operator queue",
+            "4,663-object OSM baseline plus 112-country and 822-operator-label coverage audit",
+            f"P1/P2 named operator research queue exhausted at {counts['priority_unreviewed_operator_entities']} remaining entities",
             "official hyperscaler and Chinese cloud Region or location registries with Region, AZ and building boundaries",
             "scope-preserving neocloud and linked-host profiles",
             "major physical data-center operator crosswalk",
@@ -275,7 +291,21 @@ def build_gap_audit(counts: dict, accessed_on: str) -> dict:
             "atomic accelerator disclosure ledger with overlap groups and no false fleet total",
             "company financial evidence ledger and Brian portfolio wrapper comparison",
         ],
+        "coverage_interpretation": {
+            "reviewed_profile_routing_percent_of_all_OSM_objects": counts["percent_of_all_mapped_objects_routed_to_reviewed_profiles"],
+            "reviewed_profile_routing_percent_of_operator_tagged_OSM_objects": counts["percent_of_operator_tagged_objects_routed_to_reviewed_profiles"],
+            "objects_without_operator_label": counts["osm_objects_without_operator_label"],
+            "operator_tagged_objects_not_routed_to_reviewed_profiles": counts["operator_tagged_objects_not_routed_to_reviewed_profiles"],
+            "boundary": "A zero P1/P2 queue completes the selected priority sequence; it does not turn OSM into an exhaustive global building, ownership or operating census.",
+        },
         "remaining_gates": [
+            {
+                "priority": "A2",
+                "gap": "Long-tail global facility, operator-alias and lifecycle resolution beyond the completed P1/P2 queue",
+                "why_it_matters": "Only part of the OSM baseline routes to reviewed profiles, and OSM itself omits private, new, secure or inconsistently tagged buildings.",
+                "completion_evidence": "Country-by-country official facility rosters, legal-asset and alias joins, lifecycle dates, coordinates and independent map reconciliation with explicit no-public-data outcomes.",
+                "decision_impact": "Prevents the current baseline from being described as every data center worldwide or used as operator market share.",
+            },
             {
                 "priority": "A1",
                 "gap": "Current ETF look-through holdings, weights, valuation date and cross-fund overlap",
@@ -334,7 +364,8 @@ def build_gap_audit(counts: dict, accessed_on: str) -> dict:
             },
         ],
         "research_completion_definition": {
-            "baseline_research": f"complete for the current {accessed_on} scope",
+            "priority_operator_research_sequence": f"complete for the current {accessed_on} P1/P2 queue",
+            "global_OSM_profile_routing": f"{counts['percent_of_all_mapped_objects_routed_to_reviewed_profiles']} percent of all objects and {counts['percent_of_operator_tagged_objects_routed_to_reviewed_profiles']} percent of operator-tagged objects",
             "all_global_facilities_or_future_projects": "not_claimed_and_not_possible_from_public_sources",
             "investment_execution": "intentionally_gated_by_A1_and_A2_items",
             "rule": "An explicit unknown is a completed audit result, not permission to estimate it into a fact.",
@@ -368,8 +399,9 @@ def main() -> None:
     args = parser.parse_args()
     finance = yaml.safe_load(args.finance_log.read_text(encoding="utf-8"))
     products, total = build_products(finance)
-    comparison = build_comparison(finance, products, total, args.accessed_on)
-    audit = build_gap_audit(registry_counts(args), args.accessed_on)
+    counts = registry_counts(args)
+    comparison = build_comparison(finance, products, total, counts, args.accessed_on)
+    audit = build_gap_audit(counts, args.accessed_on)
     args.comparison_output.parent.mkdir(parents=True, exist_ok=True)
     args.audit_output.parent.mkdir(parents=True, exist_ok=True)
     args.comparison_output.write_text(yaml.safe_dump(comparison, allow_unicode=True, sort_keys=False, width=110), encoding="utf-8")
