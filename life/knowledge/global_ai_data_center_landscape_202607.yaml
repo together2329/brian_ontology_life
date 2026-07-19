@@ -35592,7 +35592,198 @@ campus_profiles:
       - {title: Infranity investment in ETIX, publisher: Infranity, date: '2024-05', url: "https://infranity.com/wp-content/uploads/2024/05/2024-05-Etix-Press-Release-EN_vF.pdf"}
     confidence: high_for_base_directory_cards_transaction_announcement_later_legal_control_event_selected_datasheets_and_non_additive_French_accounts_medium_for_OSM_crosswalk_low_for_exact_post_close_property_roster_live_load_complete_BOM_GPU_inventory_and_consolidated_financials
 
+  - id: dc_telemaxx_karlsruhe_regional_colocation_and_cloud_portfolio
+    operator: TelemaxX Telekommunikation GmbH
+    geography: [Karlsruhe_Germany, Stutensee_Germany]
+    status: municipally_anchored_regional_fiber_colocation_and_cloud_operator
+    as_of: '2026-07-19'
+    reproducible_registry:
+      facility_registry: life/imports/global_data_centers_20260717/telemaxx_official_facility_registry.jsonl
+      facility_summary: life/imports/global_data_centers_20260717/telemaxx_official_facility_summary.json
+      provider_directory_rows: 5
+      current_high_security_housing_data_centers: 4
+      current_network_POP_former_data_center_rows: 1
+      OSM_crosswalk_objects: 5
+      boundary: >-
+        The current housing and certification scope is IPC1, IPC3, IPC4 and IPC5.
+        POP Technologiepark Karlsruhe is the former IPC2 and remains a network
+        POP, so its directory row and legacy OSM data-center tag do not establish
+        a fifth current data center.
+    current_facility_scope:
+      - code: IPC1
+        lifecycle: current_housing_scope_certified_but_not_actively_marketed_for_new_colocation
+        published_data_center_usable_area_m2: 1200
+        availability_percent: 99.65
+        redundancy: N_plus_1
+      - code: IPC3
+        lifecycle: current_active_colocation_data_center
+        published_data_center_usable_area_m2: 1600
+        rack_ceiling_at_full_occupancy_approximate: 600
+        availability_percent: 99.9
+        redundancy: N_plus_1
+      - code: IPC4
+        lifecycle: current_active_colocation_data_center
+        published_data_center_usable_area_m2: 3000
+        address: Ohmstrasse_1_76229_Karlsruhe
+        availability_percent: 99.99
+        redundancy: N_plus_1
+      - code: IPC5
+        lifecycle: current_active_colocation_data_center
+        published_data_center_usable_area_m2: 2000
+        availability_percent: 99.99
+        redundancy: 2N_or_1_plus_1_as_component_worded
+        certifications: [ISO_27001_2024, ISAE_3402_Type_2, TUEV_TSI_Level_3_extended, EN_50600_availability_class_3]
+    area_reconciliation:
+      four_current_page_checksum_m2: 7800
+      homepage_colocation_area_claim_m2: more_than_8000
+      conflict: >-
+        The current pages are 200-plus square metres below the rounded
+        portfolio statement. No hidden whitespace or building area is added.
+      EMAS_total_scoped_usable_area_m2: 9993
+      boundary: >-
+        Facility-page usable area, portfolio colocation area, EMAS usable area,
+        land area, available whitespace and OSM footprints are not interchangeable.
+    electrical_and_backup_power:
+      factsheet_site_scope: [IPC3, IPC4, IPC5]
+      medium_voltage:
+        IPC3: one_simple_20kV_ring
+        IPC4: one_20kV_ring_with_redundant_transfer_and_metering
+        IPC5: two_20kV_rings_with_redundant_transfer_and_metering
+      transformers:
+        IPC3: N_plus_1
+        IPC4: N_plus_1
+        IPC5: 1_plus_1
+        infrastructure_page_unit_rating_kVA_without_complete_site_unit_count: 2000
+      emergency_generation:
+        IPC3: simple_topology_with_96_hour_fuel_autonomy
+        IPC4: N_plus_1_with_96_hour_fuel_autonomy
+        IPC5: 1_plus_1_with_120_hour_fuel_autonomy
+        EMAS_company_scope_units: 11
+        EMAS_A41_group_IPC1_IPC3_IPC5_units: 6
+        EMAS_O1_group_IPC4_units: 5
+        IPC1_IPC3_IPC5_individual_unit_allocation: undisclosed
+      UPS_full_load_autonomy_minutes_up_to: 30
+      complete_as_built_grid_transformer_switchgear_PDU_UPS_battery_generator_fuel_OEM_model_count_rating_loading_acceptance_and_remaining_life: undisclosed
+      boundary: >-
+        Redundancy and autonomy are provider designs. They do not disclose current
+        loading, tested deliverable IT MW, fuel replenishment contracts or equipment age.
+    cooling_and_efficiency:
+      IPC3:
+        chillers: 5_plus_1_buildout_with_up_to_five_440_kW_units
+        distribution: physically_ringed_glycol_water_network
+        climate_units: up_to_10_units_and_850_kW_total_per_section_as_page_worded
+        2025_changes: new_chillers_and_modular_UPS_contributed_to_lower_electricity
+      IPC4:
+        topology: N_plus_1_chillers_with_air_handling_and_water_ring
+        2025_changes: two_new_efficient_chillers_installed_at_year_end_with_more_planned
+        water_change: no_water_based_cooling_or_steam_humidification_since_end_2024_with_estimated_50_m3_saving
+      IPC5:
+        topology: 1_plus_1_chillers_with_air_handling_and_water_ring
+      shared_features: [cold_and_hot_aisles, cold_aisle_containment, free_cooling]
+      provider_current_measured_site_PUE_and_WUE: undisclosed
+      target: PUE_less_than_or_equal_to_1.3_by_2030_not_current_performance
+      liquid_cooling_boundary: >-
+        The reviewed liquid-cooling page is educational. It does not prove a live
+        facility deployment, CDU count, liquid-cooled MW or rack density.
+    environment_and_operating_energy_2025:
+      scope: four_data_centers_plus_offices_unless_more_narrowly_labeled
+      company_electricity_MWh: 30343
+      data_center_electricity_MWh: 29487
+      customer_IT_energy_MWh: 19860
+      cooling_energy_MWh: 5164
+      emergency_generator_preheat_energy_MWh: 243
+      customer_IT_share_percent_derived: 67.352
+      cooling_share_percent_derived: 17.513
+      customer_IT_energy_growth_2024_to_2025_percent_derived: 4.554
+      annual_average_customer_IT_load_MW_derived: 2.267
+      annual_energy_ratio_total_DC_to_customer_IT_derived: 1.485
+      calculation_boundary: >-
+        Annual MWh divided by 8,760 produces an average customer-IT energy load,
+        not installed, peak, available, contracted or billable MW. The annual
+        energy ratio is an analyst proxy and not provider-reported PUE or a site value.
+      renewable_electricity: 100_percent_since_2024_via_TUEV_certified_guarantees_of_origin
+      total_energy_renewable_share_percent: 98
+      IPC5_PV: {nameplate_kWp: 130, 2025_generation_MWh: 114}
+      additional_PV_end_2025: {systems_kWp: [120, 130], commissioning: start_2026, portfolio_total_kWp: 380}
+      water:
+        total_including_offices_m3: 1114
+        office_m3: 848
+        non_office_residual_m3_derived: 266
+        boundary: residual_not_allocated_to_cooling_or_individual_facilities
+      A41_estimation_boundary: 2025_electricity_values_estimated_while_bills_pending
+    AI_cloud_and_accelerators:
+      service_evidence: 2025_event_demonstrated_LLM_and_RAG_applications_on_TelemaxX_OpenCloud
+      reviewed_OpenCloud_public_SKUs: vCPU_and_vRAM_without_GPU_SKU
+      TelemaxX_owned_installed_GPU_model_count_owner_site_delivery_acceptance_rack_fabric_power_utilization_revenue_and_margin: not_disclosed_or_established
+      customer_GPU_inventory: undisclosed
+      boundary: AI_workload_and_educational_HPC_material_do_not_prove_owned_physical_accelerators
+    ownership:
+      public_listing: none
+      shareholders_percent:
+        Stadtwerke_Karlsruhe: 42.0
+        Stadtwerke_Baden_Baden: 9.1
+        Stadtwerke_Rastatt: 9.1
+        Stadtwerke_Ettlingen: 8.0
+        Energie_und_Wasserversorgung_Bruchsal: 8.0
+        Stadtwerke_Bretten: 6.8
+        Stadtwerke_Gaggenau: 6.8
+        Stadtwerke_Buehl: 5.7
+        Stadt_Stutensee: 4.5
+      shareholder_percent_checksum: 100.0
+      Breitbandkabel_Landkreis_Karlsruhe_interest_percent: 49
+    financial_boundary:
+      financial_profile_ref: company_telemaxx
+      FY2024_data_center_revenue_EUR_million: 14.774
+      FY2024_data_center_revenue_growth_percent_derived: 5.071
+      FY2024_data_center_share_of_company_revenue_percent_derived: 35.774
+      FY2025_latest_data_center_revenue_and_profit: undisclosed_in_reviewed_free_summary
+      site_level_revenue_operating_profit_cash_flow_capex_and_ROIC: undisclosed
+      business_scope: diversified_telecommunications_data_center_and_IT_services_company
+    OSM_crosswalk:
+      related_objects: 5
+      raw_operator_label: TelemaxX_Telekommunikation_GmbH
+      current_data_center_candidates: 4
+      current_network_POP_former_data_center_objects: 1
+      boundary: OSM_objects_add_zero_area_racks_MW_GPUs_or_current_facility_count
+    outlook:
+      positive_signals:
+        - municipal_and_regional_shareholder_base
+        - integrated_regional_fiber_colocation_and_cloud_position
+        - FY2024_data_center_revenue_growth_and_FY2025_company_profit_recovery
+        - customer_IT_energy_growth_and_efficiency_modernization
+      risk_signals:
+        - geographic_concentration_in_Karlsruhe_and_Stutensee
+        - no_current_site_MW_occupancy_billable_load_or_site_economics
+        - no_latest_detailed_data_center_segment_profit_or_cash_flow
+        - telecom_price_pressure_and_customer_consolidation
+        - no_installed_GPU_inventory_or_live_liquid_cooling_evidence
+        - 7800_versus_more_than_8000_square_metre_publication_conflict
+      analytical_view: >-
+        TelemaxX is a compact, municipally anchored regional platform rather than
+        a hyperscale or GPU pure play. Its integrated fiber, colocation and cloud
+        position, 2024 data-center growth and 2025 company profit recovery are
+        constructive, but investment underwriting still needs current segment
+        profit, occupancy, billable load, capex, cash flow and equipment evidence.
+    sources:
+      - {title: TelemaxX homepage, publisher: TelemaxX, accessed: '2026-07-19', url: "https://www.telemaxx.de/"}
+      - {title: Current data-center directory, publisher: TelemaxX, accessed: '2026-07-19', url: "https://www.telemaxx.de/services/rechenzentrum/datacenter/rechenzentren-der-telemaxx"}
+      - {title: Current data-center certifications, publisher: TelemaxX, accessed: '2026-07-19', url: "https://www.telemaxx.de/services/rechenzentrum/datacenter/zertifizierungen"}
+      - {title: Data-center factsheet, publisher: TelemaxX, accessed: '2026-07-19', url: "https://www.telemaxx.de/fileadmin/docs/Flyer/TelemaxX_Factsheet_Rechenzentren.pdf"}
+      - {title: EMAS environmental declaration 2026, publisher: TelemaxX, period: '2025', url: "https://www.telemaxx.de/fileadmin/docs/EMAS/TXX_Umwelterklaerung_2026_01.pdf"}
+      - {title: TelemaxX shareholders, publisher: TelemaxX, accessed: '2026-07-19', url: "https://www.telemaxx.de/ueber-uns/unternehmen/gesellschafter"}
+      - {title: TelemaxX financial filings extract, publisher: Handelsregister_ai, period: '2024-2025', url: "https://handelsregister.ai/de/organizations/karlsruhe/bau-von-versorgungseinrichtungen-fuer-elektrizitaet-und-telekommunikation/telemaxx-telekommunikation-gmbh-2ee96e3e04be3411618451185817e3ef"}
+    confidence: high_for_current_four_data_center_scope_former_IPC2_POP_facility_page_areas_factsheet_topologies_EMAS_energy_and_FY2024_financials_medium_for_OSM_address_crosswalk_and_FY2025_extracted_summary_low_for_current_site_MW_occupancy_complete_BOM_GPU_inventory_live_liquid_cooling_site_economics_and_valuation
+
 disclosure_gap_register:
+  - TelemaxX_exact_current_property_title_lease_building_address_and_physical_component_roster_for_IPC1_IPC3_IPC4_and_IPC5
+  - TelemaxX_7800_square_metre_facility_page_checksum_to_more_than_8000_square_metre_portfolio_claim_reconciliation
+  - TelemaxX_per_site_operating_energized_available_contracted_customer_accepted_leased_utilized_billed_peak_and_actual_IT_load
+  - TelemaxX_per_site_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_OEM_model_count_rating_loading_test_acceptance_age_and_remaining_life
+  - TelemaxX_IPC1_IPC3_IPC5_exact_allocation_of_six_EMAS_group_emergency_generators
+  - TelemaxX_per_site_current_measured_PUE_WUE_energy_water_emissions_renewable_hourly_matching_and_live_liquid_cooled_MW
+  - TelemaxX_or_customer_GPU_model_count_owner_site_delivery_acceptance_rack_fabric_power_utilization_revenue_and_margin
+  - TelemaxX_FY2025_original_filing_exact_EBIT_EBITDA_cash_flow_capex_debt_and_data_center_segment_revenue_profit
+  - TelemaxX_site_level_revenue_operating_profit_cash_flow_capex_customer_concentration_contract_pricing_ROIC_and_valuation
   - ETIX_exact_post_close_non_overlapping_site_building_address_title_lease_operator_and_lifecycle_roster
   - ETIX_15_to_19_site_transaction_bridge_and_Bangkok_2_current_count_energization_customer_acceptance_and_delivery_state
   - ETIX_Lille_Paris_Lyon_Bangkok_and_Occitanie_capacity_publication_conflict_reconciliation
