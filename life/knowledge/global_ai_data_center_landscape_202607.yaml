@@ -37222,7 +37222,160 @@ campus_profiles:
       - {title: BCX twelve-site secondary directory, publisher: DataCenterMap, accessed: '2026-07-19', url: "https://www.datacentermap.com/c/bcx/"}
     confidence: high_for_dated_ten_site_table_current_four_address_slice_two_OSM_grouping_Uptime_award_scope_and_audited_FY2026_financials_medium_for_current_twelve_site_marketing_scope_and_historical_engineering_low_for_complete_current_roster_live_load_current_BOM_GPU_inventory_and_data_center_economics
 
+  - id: dc_cirion_latin_america_data_center_fiber_and_high_density_boundary
+    name: Cirion Latin America data-center, fiber and high-density boundary
+    record_granularity: twenty_identified_current_facility_labels_one_RIO2_development_and_six_OSM_facility_or_network_objects
+    operator: Cirion_Technologies
+    geography: [Argentina, Brazil, Chile, Colombia, Ecuador, Peru, Venezuela, Mexico, Panama]
+    lifecycle_as_of_2026_07_19: current_integrated_data_center_and_network_platform_with_active_expansion
+    reproducible_registry:
+      facility_registry: life/imports/global_data_centers_20260717/cirion_data_center_registry.jsonl
+      facility_summary: life/imports/global_data_centers_20260717/cirion_data_center_summary.json
+      registry_builder: scripts/build_cirion_data_center_registry.py
+    portfolio_scope_reconciliation:
+      SOC2_period_2024_11_01_to_2025_10_31_facility_roster:
+        Argentina: [BUE1, MEN1, COR1, ROS1]
+        Brazil: [SAO1, CUR1, RIO1]
+        Chile: [SAN1]
+        Colombia: [BOG1, BOG2, CAL1]
+        Ecuador: [GUA1, QUI1, QUI2]
+        Peru: [LIM1]
+        Venezuela: [CAR1]
+        Mexico: [MEX1]
+        Panama: [PAN1]
+        count: 18
+      provider_2026_recent_activations: [LIM2, SAN2]
+      identified_current_facility_label_floor: 20
+      current_featured_directory: {cards: 12, operating_evidence_cards: 11, development_cards: [RIO2]}
+      provider_2024_ESG: {carrier_neutral_data_centers: 18, under_construction: 3}
+      provider_August_2025: {main_carrier_neutral_data_centers: 12, under_construction: 3, edge_data_centers: 10}
+      boundary: >-
+        The audited 18-row service roster plus LIM2 and SAN2 activation evidence
+        yields a twenty-label current evidence floor, not an assertion that the
+        current company total is exactly twenty. Featured main sites, edge sites,
+        audit-scope facilities, developments and construction counts use different
+        denominators and are not added.
+    featured_current_operating_card_checksums:
+      sites: [BOG2, BUE1, CAR1, CUR1, LIM1, LIM2, QUI2, RIO1, SAN1, SAN2, SAO1]
+      rack_FP: 7206
+      total_area_m2: 114478
+      floor_area_m2: 74279
+      power_label_MW: 98
+      cards_where_provider_floor_area_exceeds_provider_total_area: [BUE1, CAR1, LIM1, QUI2]
+      boundary: >-
+        These are arithmetic checks across eleven featured operating cards, not
+        fleet totals, normalized IT MW, usable floor area, live capacity, sold load
+        or a valuation metric. Four provider area inversions are preserved rather
+        than silently corrected.
+    selected_power_and_resilience:
+      BOG2: {power_label_MW: 7, rack_FP: 713, cabinet_density_kW: 4.9, utility_feeders: 5, UPS: distributed_N_plus_N_2N, generation: DC1_3x350kW_DC2_4x700kW_DC3_2x1100kW_DC4_2x1100kW_diesel, cooling: CRAC_N_plus_1}
+      BUE1: {power_label_MW: 7, rack_FP: 815, rack_expansion: approximately_160_and_more_than_2MW_separate_2025_announcement, cabinet_density_kW: 7.6, utility_feeders: 3, UPS: distributed_N_plus_N_2N, generation: 1x1250kVA_3x1100kVA_4x650kVA_2x1875kVA_diesel, cooling: CRAC_N_plus_1}
+      LIM1: {power_label_MW: 4, rack_FP: 609, rack_FP_expansion_plan: 68, cabinet_density_kW: 4.9, utility_feeders: 1, UPS: distributed_N_plus_N_2N, generation: 2x1135kW_2x1007kW_1x945kW_3x910kW_1x900kW_1x835kW_diesel, cooling: CRAC_N_plus_1}
+      LIM2: {power_label_MW: 20, rack_FP: 1200, alternative_press_racks_approximately: 1440, cabinet_density_kW: 9.8, utility_feeders: 9, UPS: distributed_N_plus_N_2N_plus_2C, generation: 6x2_1MW_DCC, cooling: spec_sheet_CRAC_N_plus_1_with_separate_liquid_cooling_capability_claim}
+      RIO1: {power_label_MW: 12, rack_FP: 483, cabinet_density_kW: 8, utility_feeders: 3, UPS: distributed_N_plus_1, generation: 13x450kVA_diesel_plus_3x1500kW_DRUPS, cooling: CRAC_N_plus_1}
+      SAN1: {power_label_MW: 4, rack_FP: 513, cabinet_density_kW: 3.2, utility_feeders: 3, UPS: distributed_N_plus_1, generation: 2x800kW_3x1250kW_2x1600kW_diesel, cooling: CRAC_plus_chillers_N_plus_1}
+      SAN2: {power_label_MW_more_than_or_equal: 20, rack_FP: 1200, cabinet_density_kW: 9.8, utility_feeders: 9, UPS: distributed_N_plus_N_2N_plus_2C, generation: six_units_rating_and_OEM_undisclosed, cooling: spec_sheet_CRAC_N_plus_1_with_separate_liquid_cooling_installation_capability_claim}
+      SAO1: {power_label_MW: 20, rack_FP: 1154, rack_FP_expansion_plan: 308, cabinet_density_kW: 4.6, utility_feeders: one_20MW, UPS: distributed_N_plus_N_2N, generation: 2x1915kW_2x1400kW_7x1200kW_1x1136kW_2x360kW_5x280kW_diesel, cooling: CRAC_N_plus_1}
+      boundary: >-
+        Provider technical sheets disclose useful topologies and equipment counts,
+        but power labels are not normalized as utility, facility, critical or live
+        IT load. Nameplates are not doubled for redundancy and do not establish
+        loading, condition, remaining life or current availability.
+    RIO2_development:
+      lifecycle: planned_for_construction_or_presale_with_2026_launch_not_confirmed_operational
+      land_m2_2024_announcement: 15000
+      spec_total_area_m2: 15055
+      spec_floor_area_m2: 6683
+      spec_power_label_MW: 60
+      spec_IT_capacity_label: 81MW_plus_880_racks
+      current_page_electrical_infrastructure_support_up_to_MW: 100
+      modular_blocks_MW: 2
+      rack_density: {spec_kW: 90, current_page_kW: 30_to_126, platform_headline_up_to_kW: 140}
+      cooling: CRAC_plus_liquid_cooling_N_plus_1_with_UPS_backed_CDUs_and_pumps
+      boundary: >-
+        The May 2026 release still calls RIO2 planned for construction and the
+        current page says opening in 2026. The 60MW, 81MW and 100MW labels conflict
+        or use different denominators, so none is treated as live load and no
+        operating or customer-accepted capacity is inferred.
+    OSM_crosswalk:
+      operator_tagged_objects: 4
+      additional_name_only_related_objects: 2
+      matched_data_center_facilities: [ROS1, BUE1, SAN1, LIM2, LIM1]
+      matched_facility_count: 5
+      excluded_network_asset: Las_Toninas_subsea_cable_landing_station
+      OSM_area_checksum_m2_where_available: 15043.652
+      boundary: Five OSM objects match provider facility names, addresses or cities; the landing station is excluded from compute counts despite its telecom=data_center tag, and OSM footprints are not provider floor area.
+    energy_and_environment_2024:
+      data_center_electricity_kWh: 175426663
+      data_center_renewable_electricity_kWh: 140504026
+      renewable_share_percent: 80
+      data_center_fuel_liters: 442515
+      data_center_refrigerants_kg: 1573
+      data_center_scope1_tCO2e: 4472
+      data_center_scope2_market_based_tCO2e: 7034
+      PUE_management: AI_enabled_infrastructure_management_and_room_containment_reported_30_percent_energy_efficiency_improvement
+      measured_site_or_portfolio_PUE_WUE: undisclosed
+      boundary: Renewable electricity includes certificates and contracts rather than proven hourly physical matching, and the 30% improvement is not converted into a PUE value.
+    certification:
+      current_Uptime_project_rows:
+        - BOG2_DC3_and_DC4_design_and_constructed
+        - LIM1_DC3_and_DC4_design
+        - SAN1_phase1_design
+        - QUI2_Carcelen_design_and_constructed
+        - SAO1_Cotia_design_and_constructed
+        - RIO1_DC5_to_DC8_design_and_constructed
+        - LIM2_DH1_to_DH6_design
+        - SAN2_DH1_to_DH6_design
+      boundary: Uptime project modules and provider site codes are not always one-to-one, and design awards are not upgraded to constructed-facility or operational-sustainability awards.
+    AI_accelerators_and_high_density:
+      services: [bare_metal, private_cloud, GPU_support, AI_ready_colocation]
+      exact_current_Cirion_owned_or_customer_GPU_model_count_owner_site_delivery_acceptance_rack_fabric_power_utilization_revenue_and_margin: undisclosed_or_unestablished
+      live_liquid_cooled_MW: undisclosed_or_unestablished
+      boundary: AI-ready design, GPU support and DCIM using AI do not prove physical accelerator inventory; RIO2 is not confirmed operational and LIM2/SAN2 capability language does not establish deployed liquid-cooled load.
+    ownership_and_financial_boundary:
+      financial_profile_ref: company_cirion_technologies
+      shareholders: [Stonepeak_managed_funds, AustralianSuper]
+      exact_current_percentages: undisclosed
+      2022_Lumen_sale_cash_value_USD_million: 2700
+      S_and_P_2024_actual_USD_million: {revenue: 799, reported_EBITDA: 244, adjusted_EBITDA: 267, EBIT_operating_profit: 55, capex: 241, FOCF: -276, adjusted_debt: 1341}
+      S_and_P_2025_estimate_USD_million: {revenue: 720, reported_EBITDA: 185, adjusted_EBITDA: 214, EBIT_operating_profit: 13, capex: 277, FOCF: -225, adjusted_debt: 1430}
+      S_and_P_2026_forecast_USD_million: {revenue: 753, reported_EBITDA: 234, adjusted_EBITDA: 253, EBIT_operating_profit: 47, capex: 230, FOCF: -89, adjusted_debt: 1430}
+      data_center_only_revenue_operating_profit_cash_flow_capex_debt_and_ROIC: undisclosed
+      boundary: S&P measures are rating-adjusted actuals, estimates or forecasts as labelled rather than audited company statements; Cirion also includes fiber, connectivity, cloud and communications, and the acquisition price is not current enterprise value.
+    outlook:
+      positive_signals: [LIM2_and_SAN2_recent_activations, three_long_term_US_hyperscaler_contracts, new_Chile_and_Peru_customers, dense_regional_interconnection, 2026_revenue_and_margin_recovery_forecast, sponsor_equity_support, renewable_and_high_density_design]
+      risk_signals: [2025_revenue_and_margin_contraction, B_minus_negative_outlook, 6_7x_adjusted_leverage_estimate, negative_FOCF_for_multiple_years, capital_intensity_and_refinancing_risk, legacy_service_wind_down_and_churn, count_and_capacity_scope_conflicts, no_exact_GPU_inventory_or_data_center_segment_economics]
+      analytical_view: >-
+        Cirion is one of Latin America's most important private integrated data-center
+        and fiber platforms. Its physical expansion and hyperscaler demand evidence
+        are credible, but the opportunity is paired with stressed leverage, negative
+        free cash flow, denominator conflicts and no separable data-center earnings.
+    sources:
+      - {title: Current featured data-center directory, publisher: Cirion, accessed: '2026-07-19', url: "https://www.ciriontechnologies.com/en/data-center/our-data-centers/"}
+      - {title: SOC 2 Type II service report and eighteen-facility roster, publisher: Cirion_and_independent_auditor, period_end: '2025-10-31', url: "https://lp.ciriontechnologies.com/hubfs/Other%20Files/Cirion%20Documentation/Certifications/Data-center/ISAE/REG%20-%20ISAE3402-SOC%202-Tipo%20II%20-%202023%20%20-%20Resumen.pdf"}
+      - {title: Sustainability Report 2024, publisher: Cirion, published: '2025-12', url: "https://lp.ciriontechnologies.com/hubfs/Other%20Files/Downloadable%20Assets/Reports/cirion-reporte-esg-2024-eng.pdf"}
+      - {title: May 2026 network and data-center platform update, publisher: Cirion, date: '2026-05-19', url: "https://press.ciriontechnologies.com/en/2026/05/19/launches-network-as-a-service-latin-america-own-fiber/"}
+      - {title: SAN2 Tier III design announcement, publisher: Cirion, date: '2026-04-29', url: "https://press.ciriontechnologies.com/en/2026/04/29/cirion-technologies-achieves-tier-iii-design-certification-for-its-san2-data-center-in-chile/"}
+      - {title: LIM2 Tier III design announcement, publisher: Cirion, date: '2025-07-10', url: "https://press.ciriontechnologies.com/en/2025/07/10/tier-iii-certification-uptime-lim2-data-center-peru/"}
+      - {title: RIO2 current development page, publisher: Cirion, accessed: '2026-07-19', url: "https://www.ciriontechnologies.com/en/data-center/our-data-centers/rio-de-janeiro-2/"}
+      - {title: RIO2 land and up-to-60MW announcement, publisher: Cirion, date: '2024-08-01', url: "https://press.ciriontechnologies.com/en/2024/08/01/cirion-ampliara-data-center-rio-de-janeiro/"}
+      - {title: Current Cirion Uptime award directory, publisher: Uptime_Institute, accessed: '2026-07-19', url: "https://uptimeinstitute.com/uptime-institute-awards/client/cirion-technologies/1091"}
+      - {title: Cirion rating update and forecast table, publisher: S_and_P_Global_Ratings, date: '2026-02-13', url: "https://www.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/3517660"}
+      - {title: Lumen closes Latin America sale to Stonepeak, publisher: Lumen, date: '2022-08-01', url: "https://ir.lumen.com/news/news-details/2022/Lumen-Closes-Sale-of-its-Latin-American-Business-to-Stonepeak/default.aspx"}
+      - {title: Cirion ownership and transaction close, publisher: Cirion, date: '2022-08-01', url: "https://press.ciriontechnologies.com/en/2022/01/08/2022-08-01-cirion-announces-its-transaction-close/"}
+    confidence: high_for_2025_eighteen_facility_roster_two_2026_activations_five_OSM_facility_matches_one_landing_station_exclusion_selected_specs_energy_and_rating_financial_table_medium_for_twenty_label_current_floor_and_equipment_transcription_low_for_exact_current_total_live_load_GPU_inventory_complete_BOM_shareholder_percentages_and_data_center_economics
+
 disclosure_gap_register:
+  - Cirion_complete_current_owned_leased_operated_main_edge_partner_and_service_facility_roster_reconciling_SOC2_18_recent_activations_featured_12_main_12_edge_10_and_construction_3_scopes
+  - Cirion_twenty_identified_current_label_floor_to_authoritative_current_total_and_per_site_lifecycle_ownership_title_address_building_and_customer_acceptance
+  - Cirion_featured_card_total_area_floor_area_inversions_for_BUE1_CAR1_LIM1_QUI2_and_provider_authoritative_corrections
+  - Cirion_per_site_power_label_denominator_grid_voltage_contract_capacity_current_draw_energized_available_allocated_sold_occupied_billed_peak_and_actual_IT_load
+  - Cirion_RIO2_60MW_power_81MW_IT_capacity_100MW_electrical_support_and_30_90_126_140kW_rack_density_label_reconciliation_commissioning_acceptance_and_ready_for_service
+  - Cirion_LIM2_1200_rack_FP_to_approximately_1440_rack_press_claim_and_SAN2_LIM2_current_module_energization_occupancy_and_liquid_cooling_deployment
+  - Cirion_per_site_substation_transformer_switchgear_busbar_PDU_UPS_battery_generator_fuel_OEM_model_serial_count_rating_loading_test_age_and_remaining_life
+  - Cirion_per_site_cooling_OEM_model_count_rating_redundancy_CRAH_CRAC_chiller_CDU_pump_water_loop_measured_PUE_WUE_water_and_live_liquid_cooled_MW
+  - Cirion_current_owned_leased_customer_and_partner_GPU_accelerator_model_count_owner_site_delivery_acceptance_rack_fabric_power_utilization_revenue_margin_and_remaining_life
+  - Cirion_current_shareholder_percentages_legal_structure_audited_consolidated_financial_statements_and_data_center_segment_or_site_revenue_operating_profit_cash_flow_capex_debt_customer_concentration_and_ROIC
   - BCX_complete_current_owned_operated_leased_partner_and_service_data_center_roster_reconciling_9_12_21_5_and_dated_10_site_scopes
   - BCX_2023_ten_site_12600m2_headline_to_12320m2_line_items_and_9_82MW_headline_to_9_98MW_line_items_authoritative_correction
   - BCX_current_site_lifecycle_ownership_address_building_count_white_space_racks_energized_available_allocated_sold_occupied_billed_peak_and_actual_IT_load
