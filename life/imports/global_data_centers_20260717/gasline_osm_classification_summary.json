@@ -1,0 +1,58 @@
+{
+  "OSM_reconciliation": {
+    "boundary": "Eight component footprints are not eight facilities. The classification can be reopened if GasLINE or another primary source publishes a server-room, colocation or IT-load role for the Dernbach sites.",
+    "by_site": {
+      "Dernbach_1": {
+        "classification": "GasLINE Verstärkerstandort (telecommunications amplifier site)",
+        "component_building_footprints": 3,
+        "enclosing_site_url": "https://www.openstreetmap.org/way/130064182",
+        "footprint_area_m2_checksum": 74.614
+      },
+      "Dernbach_2_and_3": {
+        "classification": "GasLINE Verstärkerstandort (telecommunications amplifier site)",
+        "component_building_footprints": 5,
+        "enclosing_site_url": "https://www.openstreetmap.org/way/129919020",
+        "footprint_area_m2_checksum": 410.285
+      }
+    },
+    "classification": "telecommunications_amplifier_site_components_not_established_as_physical_data_centers",
+    "component_footprint_area_m2_checksum": 484.899,
+    "named_amplifier_labels_within_groups": [
+      "Dernbach 1",
+      "Dernbach 2",
+      "Dernbach 3"
+    ],
+    "named_enclosing_amplifier_site_groups": 2,
+    "physical_data_center_count_contribution": 0,
+    "power_capacity_contribution_mw": 0,
+    "raw_GasLINE_tagged_buildings": 8
+  },
+  "accessed_on": "2026-07-19",
+  "id": "gasline_osm_classification_summary_2026_07_19",
+  "operator_label": "GasLINE",
+  "power_cooling_GPU_and_financial_boundary": {
+    "GPU_inventory": "not_applicable_and_not_disclosed",
+    "company_revenue_and_operating_profit": "not_added_to_the_physical_operator_financial_ledger_because_the_reviewed_objects_are_network_amplifier_sites_and_GasLINE_is_private",
+    "site_input_power_UPS_generation_cooling_and_IT_load": "not_disclosed_or_established_as_data_center_infrastructure",
+    "third_party_5MW_per_object_claims": "not_adopted_without_primary_source_or_defined_denominator"
+  },
+  "records_sha256": "8098fcee6caeb743836d1b2d2c14c7e78deac8bafe761bf12956dda4d5a6c7b2",
+  "reviewed_company_boundary": {
+    "NACE": "61.10_wireline_telecommunications",
+    "additional_route_km_under_expansion_to_2029": 5000,
+    "legal_name": "GasLINE Telekommunikationsnetzgesellschaft deutscher Gasversorgungsunternehmen mbH & Co. KG",
+    "official_business": "wireline telecommunications and dark-fibre infrastructure",
+    "official_data_centers_reachable_more_than": 350,
+    "official_fibre_route_km": 65000,
+    "ownership_boundary": "Reachable or connected third-party data centers are not GasLINE-owned or operated data centers."
+  },
+  "source_file": "life/imports/global_data_centers_20260717/osm_data_center_locations.jsonl",
+  "source_file_sha256": "3a0f1370f036f2ff5fa0c478bfadeb58c7809d90315bbee4e0a7c9cfd21d4733",
+  "sources": [
+    "https://www.gasline.de/",
+    "https://www.gasline.de/dark-fibre/",
+    "https://www.gasline.de/wp-content/uploads/Nachhaltigkeitsbericht_Zusammenfassung.pdf",
+    "https://www.openstreetmap.org/way/130064182",
+    "https://www.openstreetmap.org/way/129919020"
+  ]
+}
