@@ -35070,7 +35070,147 @@ campus_profiles:
       - {title: Jules I Limited FY2025 audited accounts, publisher: UK_Companies_House, filed: '2026-06-26', url: "https://find-and-update.company-information.service.gov.uk/company/14551205/filing-history/MzUyNzI0ODY2NWFkaXF6a2N4/document?download=1&format=pdf"}
     confidence: high_for_lifecycle_roster_FY2025_audited_financials_installed_capacity_selected_engineering_Nscale_plan_and_OSM_crosswalk_medium_for_current_post_transaction_retained_perimeter_low_for_live_load_complete_BOM_current_GPU_inventory_site_economics_and_pipeline_delivery
 
+  - id: dc_cogent_classic_edge_and_network_data_center_portfolio
+    operator: Cogent Communications Holdings, Inc.
+    geography: [United_States, Canada, France, Germany, Netherlands, Spain]
+    status: operating_network_integrated_classic_and_edge_portfolio_with_active_property_monetization
+    as_of: '2026-07-19'
+    reproducible_registry:
+      location_registry: life/imports/global_data_centers_20260717/cogent_official_data_center_registry.jsonl
+      location_summary: life/imports/global_data_centers_20260717/cogent_official_data_center_summary.json
+      records: 81
+      record_granularity:
+        North_America_market_labels: 62
+        European_facility_records: 19
+        exact_French_addresses: 16
+      boundary: >-
+        North America's 62 visible city labels map to 68 classic facilities, so
+        six buildings remain unallocated across markets. The 86 edge sites lack a
+        complete reviewed current address roster and are not represented by
+        invented rows.
+    current_marketing_scope:
+      classic_data_centers: 87
+      North_America_classic: 68
+      Europe_classic: 19
+      North_America_edge: 86
+      total_classic_plus_edge: 173
+      source_conflict: >-
+        Live pages show 87 classic facilities, while May 2026 brochures and
+        search-index copies can still state 99. The live-page value is used for
+        the current denominator and the conflict is retained.
+    FY2025_year_end_statutory_scope:
+      total_buildings: 187
+      classic_data_centers: 100
+      edge_data_centers: 87
+      floor_space_million_sqft: 2.1
+      published_power_mw: 213
+      edge_floor_space_thousand_sqft: 174
+      edge_available_power_mw: 31
+      boundary: >-
+        The 213MW term is a portfolio power disclosure, not an operating IT-load,
+        utilized, leased, billed or customer-accepted denominator. Year-end 2025
+        and live July 2026 counts are not interchangeable.
+    dated_count_reconciliation:
+      FY2025_total: 187
+      current_total: 173
+      net_reduction: 14
+      classic_reduction: 13
+      edge_reduction: 1
+      complete_site_by_site_bridge: undisclosed
+    separate_network_scope:
+      FY2025_carrier_neutral_data_centers: 1715
+      FY2025_carrier_neutral_buildings: 1511
+      current_marketing_carrier_neutral_data_centers_more_than: 1744
+      boundary: Cogent_lit_service_locations_not_Cogent_owned_facilities
+    power_and_cooling:
+      current_general_features:
+        space: 42U_cabinets_and_private_cages
+        power: redundant_power_UPS_and_backup_generation
+        cooling: HVAC_or_air_conditioning_with_temperature_and_humidity_control
+        fire: detection_and_suppression
+        security: access_control_cameras_and_some_biometric_controls
+      Cogent_Fiber_conversion_work:
+        - obsolete_equipment_and_rack_removal
+        - many_DC_to_AC_power_conversions
+        - HVAC_UPS_backup_generator_and_fire_suppression_upgrade_or_installation
+        - structural_work
+      complete_per_site_as_built_equipment_ledger: undisclosed
+      boundary: >-
+        General and conversion descriptions do not disclose grid feeds,
+        substations, transformers, switchgear, PDUs, UPS, batteries, generators,
+        chillers, CRAH/CRAC/CDUs, OEMs, models, counts, ratings, loading, acceptance
+        or remaining useful life by site.
+    AI_and_accelerators:
+      product: Cogent_Utility_Computing
+      availability: selected_classic_data_centers
+      published_configuration_dimensions: [CPU, RAM, disk_or_controller, network, Linux_or_bare_metal]
+      physical_Cogent_owned_GPU_model_count_and_site_allocation: not_disclosed_or_established
+      exact_server_models_counts_delivery_utilization_and_economics: undisclosed
+      boundary: managed_server_product_availability_is_not_accelerator_inventory_evidence
+    financial_crosswalk:
+      financial_profile_ref: company_cogent_communications
+      FY2025_revenue_USD_million: 975.766
+      FY2025_revenue_growth_percent: -5.823
+      FY2025_operating_loss_USD_million: -101.073
+      FY2025_operating_margin_percent: -10.358
+      FY2025_net_loss_USD_million: -182.174
+      FY2025_operating_cash_flow_USD_million: -10.579
+      FY2025_cash_PPandE_USD_million: 187.600
+      derived_note_principal_USD_million: 1730.4
+      boundary: consolidated_companywide_network_and_data_center_results_not_data_center_only_economics
+    property_and_optional_capacity:
+      facilities_marketed_for_sale_or_lease_at_FY2025: 24
+      terminated_nonbinding_LOI_two_facilities_USD_million: 144
+      boundary: marketed_assets_and_terminated_LOI_are_not_realized_proceeds_or_current_valuation
+    OSM_crosswalk:
+      related_objects: 10
+      raw_operator_counts: {Cogent: 8, 'Cogent Communications, Inc.': 2}
+      France_candidates: 9
+      Phoenix_market_candidate: 1
+      exact_or_named_candidates: [Dijon, Grenoble, Lille, Montpellier, Rennes, Rouen, Toulouse, Tours]
+      lower_confidence_candidates: [Strasbourg_Quiri_name_and_coordinate_conflict, Phoenix_without_official_address_bridge]
+      boundary: partial_map_geometry_not_complete_roster_or_capacity_evidence
+    outlook:
+      positive_signals:
+        - network_integrated_real_estate_power_and_interconnection_platform
+        - 213MW_and_2_1m_sqft_FY2025_scale
+        - converted_Sprint_facilities_create_colocation_and_monetization_optionality
+        - operating_loss_improved_by_USD96_5m_year_over_year
+        - direct_optical_network_supports_colocation_cross_sell
+      risk_signals:
+        - FY2025_revenue_declined_5_8_percent
+        - operating_loss_net_loss_and_negative_operating_cash_flow
+        - high_note_principal_and_interest_burden
+        - current_count_14_below_FY2025_without_site_bridge
+        - terminated_property_LOI_and_execution_risk
+        - no_data_center_only_economics_live_load_or_GPU_inventory
+      analytical_view: >-
+        Cogent supplies meaningful owned power, floor space and interconnection,
+        but the current portfolio is smaller than FY2025 and the company remains
+        loss-making with negative operating cash flow. AI and property upside
+        should be treated as unproven options until site-level utilization,
+        customer commitments, data-center economics, equipment and completed
+        monetizations are disclosed.
+    sources:
+      - {title: Current Cogent data center directory, publisher: Cogent_Communications, accessed: '2026-07-19', url: "https://www.cogentco.com/en/network/cogent-data-centers"}
+      - {title: North America directory, publisher: Cogent_Communications, accessed: '2026-07-19', url: "https://www.cogentco.com/en/network/cogent-data-centers/169-cdc-locations/1156-na-data-centers"}
+      - {title: Europe directory, publisher: Cogent_Communications, accessed: '2026-07-19', url: "https://cogentco.com/en/network/cogent-data-centers/169-cdc-locations/1165-eu-data-centers"}
+      - {title: France service locator, publisher: Cogent_Communications, accessed: '2026-07-19', url: "https://www.cogentco.com/en/?action=search&country=France&id=40&option=com_content&site_type=CDC&view=article"}
+      - {title: Cogent France facility features, publisher: Cogent_Communications, accessed: '2026-07-19', url: "https://www2.cogentco.com/en/cogent-france"}
+      - {title: Cogent FY2025 Form 10-K, publisher: US_SEC, period: '2025-12-31', url: "https://www.sec.gov/Archives/edgar/data/1158324/000110465926017968/ccoi-20251231x10k.htm"}
+      - {title: Utility Computing, publisher: Cogent_Communications, accessed: '2026-07-19', url: "https://www.cogentco.com/en/products-and-services/colocation/utility-computing"}
+    confidence: high_for_live_page_counts_visible_location_labels_French_addresses_FY2025_building_floor_space_power_and_companywide_financials_medium_for_general_engineering_and_OSM_crosswalk_low_for_current_site_bridge_live_load_complete_BOM_data_center_only_economics_owned_GPU_inventory_and_asset_monetization
+
 disclosure_gap_register:
+  - Cogent_exact_current_87_classic_and_86_edge_non_overlapping_building_address_title_lease_and_lifecycle_roster
+  - Cogent_187_FY2025_to_173_current_site_by_site_sale_decommission_reclassification_and_date_bridge
+  - Cogent_six_North_American_buildings_hidden_inside_62_market_labels_and_complete_86_edge_addresses
+  - Cogent_per_site_operating_energized_leased_customer_accepted_utilized_billed_and_actual_IT_load
+  - Cogent_per_site_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_OEM_model_count_rating_loading_acceptance_and_remaining_life
+  - Cogent_per_site_measured_PUE_WUE_energy_water_emissions_and_live_liquid_cooled_MW
+  - Cogent_GPU_model_count_owner_site_delivery_rack_fabric_power_utilization_revenue_and_margin
+  - Cogent_data_center_only_revenue_operating_profit_cash_flow_capex_ROIC_customer_concentration_occupancy_pricing_and_contract_term
+  - Cogent_24_marketed_facilities_exact_roster_asking_price_status_realized_proceeds_and_current_valuation
   - Verne_exact_current_retained_building_roster_legal_title_lease_and_site_to_subsidiary_bridge
   - Verne_per_site_operating_energized_leased_customer_accepted_utilized_billed_and_actual_IT_load
   - Verne_per_site_as_built_grid_transformer_switchgear_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_OEM_model_count_rating_loading_acceptance_and_remaining_life
