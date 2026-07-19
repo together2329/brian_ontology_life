@@ -21254,8 +21254,86 @@ financial_profiles:
       - dc_turkcell_tdc_turkiye_data_center_cloud_and_AI_portfolio
     confidence: high_for_ownership_asset_transfer_four_site_scale_data_center_cloud_revenue_group_financials_and_current_growth_medium_for_wider_roster_and_active_capacity_scope_low_for_live_load_complete_equipment_GPU_inventory_TDC_profitability_and_ROIC
 
+  - id: company_vnpt_group_data_centers
+    name: Vietnam Posts and Telecommunications Group data-center and cloud boundary
+    entity_type: state_owned_unlisted_diversified_telecom_and_digital_services_group
+    country: Vietnam
+    ownership: 100_percent_Vietnamese_state_owned
+    portfolio_ref: dc_vnpt_vietnam_data_center_cloud_and_AI_portfolio
+    evidence_artifacts:
+      facility_registry: life/imports/global_data_centers_20260717/vnpt_data_center_registry.jsonl
+      portfolio_summary: life/imports/global_data_centers_20260717/vnpt_data_center_summary.json
+      registry_builder: scripts/build_vnpt_data_center_registry.py
+    physical_scope:
+      current_2025: {large_scale_data_centers: 8, total_operating_capacity_racks_approx: 11000, named_cities: [Ha_Noi, Ho_Chi_Minh_City, Da_Nang]}
+      dated_2024: {data_centers: 8, total_area_m2_more_than: 58000, racks: 4700}
+      Hoa_Lac: {usable_floor_area_m2_up_to: 23000, racks_up_to: 2000, redundancy: N_plus_1}
+      OSM_operator_labeled_objects: 4
+      OSM_provider_reconciled_objects: 3
+      boundary: Current and dated rack measures, complete site roster, OSM locations, design ceilings, installed racks, occupied racks, site power and utilization use different scopes.
+    financials:
+      VNPT_Group_2025_audited_VND:
+        gross_revenue: 57947384233282
+        revenue_deductions: 4339610972
+        net_revenue: 57943044622310
+        gross_profit: 14946930453580
+        net_profit_from_business_operations: 5656509181996
+        profit_before_tax: 6568657049305
+        profit_after_tax: 5233493887015
+        profit_after_tax_attributable_to_parent: 5164402197849
+      VNPT_Group_2024_restated_VND: {net_revenue: 56090143847570, net_profit_from_business_operations: 6132537042360, profit_before_tax: 6925491831080, profit_after_tax: 5318496737880}
+      2025_press_total_revenue_VND_b: 61246
+      data_center_cloud_or_AI_segment_revenue_operating_profit_EBITDA_cash_flow_capex_assets_debt_customer_concentration_utilization_and_ROIC: not_separately_disclosed
+      boundary: Press total revenue and audited net revenue are separately scoped. Consolidated telecom and digital-services profit cannot be attributed to data centers or cloud.
+    2026_plan:
+      consolidated_targets_VND_b: {revenue: 64564, profit_before_tax: 7255, profit_after_tax: 5804}
+      parent_targets_VND_b: {revenue: 59810, profit_before_tax: 7068, profit_after_tax: 5654, total_investment: 15773, digital_services_customer_revenue: 11054}
+      data_center_project_total_investment_VND_m_including_VAT: {Nam_Thang_Long_data_center_and_broadband_expansion: 174652, Tan_Thuan_data_center_and_broadband_expansion: 222905, Tan_Thuan_IDC_expansion_equipment: 695921}
+      boundary: The two Tan Thuan entries may overlap and are not summed. Project total investment is not annual cash spend, supplier revenue, capacity, commissioning or return.
+    GPU_cloud_and_supplier_boundary:
+      cloud_stack_and_service: {OpenStack_disclosed_in_2024: true, network_max_Gbps: 100, service_commitment_percent: 99.99}
+      named_data_center_partner_strings: [NTT_Data, Next_DC, SambaNova]
+      Hoa_Lac_named_supplier_strings: [Cumin, Hitachi, Siemens]
+      exact_current_physical_GPU_model_count_owner_site_delivery_acceptance_power_utilization_and_economics: undisclosed_or_unestablished
+      complete_as_built_power_and_cooling_equipment_BOM_and_vendor_awards: undisclosed
+      boundary: Partner and supplier names establish potential value-chain relationships but not equipment category, award amount, installed accelerator inventory, attributable revenue or margin.
+    investability_and_supply_chain_view:
+      direct_exposure: none_established_state_owned_unlisted_group
+      pure_play_score: none_for_public_equity_and_low_for_data_center_economic_separation
+      indirect_demand_categories: [racks_and_white_space, grid_and_substations, transformers_and_switchgear, UPS_batteries_and_generators, air_and_liquid_cooling, fiber_and_interconnection, cloud_platforms, GPU_compute]
+      positive_signals: [eight_large_scale_Tier_III_centers, approximately_11000_racks_operating_capacity, Hoa_Lac_2000_rack_ceiling, 2026_expansion_projects, consolidated_growth_targets]
+      conversion_tests: [identify_project_supplier_awards, disclose_data_center_segment_economics, bridge_racks_to_live_and_billed_load, identify_GPU_inventory, publish_site_power_and_equipment, commission_expansion_projects]
+      risks: [no_direct_security, state_policy_and_procurement, capital_intensity, no_live_load, no_GPU_count, no_segment_profitability, rack_scope_conflict, supplier_award_opacity]
+      analytical_view: >-
+        VNPT is useful as Vietnamese infrastructure-demand evidence, not as a
+        directly purchasable data-center security. Public-equity read-through
+        belongs with suppliers only after a named award, material contract,
+        attributable revenue and margin are established.
+    outlook:
+      watch_items: [complete_site_roster, rack_occupancy, site_IT_MW, Nam_Thang_Long_and_Tan_Thuan_commissioning, equipment_awards, GPU_inventory, data_center_and_cloud_segment_profitability, project_cash_return]
+    sources:
+      - {title: 2025 VNPT presentation, publisher: VNPT, date: '2026-02-25', url: 'https://vnpt.com.vn/file/808080809b97b1bb019b9b3d370b02a9/upload/xdata/202602/20260225103734vnpt_presentation_update_112025_eng.pdf'}
+      - {title: VNPT IDC Hoa Lac opening, publisher: VNPT, date: '2023-10-25', url: 'https://danang.vnpt.com.vn/tin-tuc-su-kien/hoat-dong-vnpt/202311/khai-truong-trung-tam-du-lieu-vnpt-idc-hoa-lac-lon-nhat-hien-ai-nhat-viet-nam-f62011d/'}
+      - {title: VNPT Cloud portfolio scale, publisher: VNPT, date: '2024', url: 'https://vnpt.com.vn/gioi-thieu/tin-tuc/he-sinh-thai-vnpt-cloud-huong-toi-tuong-lai-ket-noi-toan-dien.html'}
+      - {title: VNPT 2025 consolidated financial statements, publisher: VNPT, date: '2026-03-30', url: 'https://vnpt.com.vn/file/808080809b97b1bb019b9b3d370b02a9/upload/xdata/202605/20260529144839bctc_hop_nhat_31.12.25.pdf'}
+      - {title: VNPT 2026 business and development investment plan, publisher: VNPT, date: '2026-04-23', url: 'https://vnpt.com.vn/file/808080809b97b1bb019b9b3d370b02a9/upload/xdata/202604/20260423110355bieu_2_bc_muc_tieu_tong_quat_khkd_2026.pdf'}
+      - {title: VNPT ownership and partner page, publisher: VNPT, accessed: '2026-07-19', url: 'https://vnpt.com.vn/ve-vnpt/'}
+    related_profiles:
+      - dc_vnpt_vietnam_data_center_cloud_and_AI_portfolio
+    confidence: high_for_state_ownership_current_eight_center_and_11000_rack_headlines_Hoa_Lac_scale_audited_group_financials_2026_targets_and_four_OSM_objects_medium_for_provider_match_and_expansion_scope_low_for_complete_roster_live_load_site_power_equipment_BOM_GPU_inventory_segment_profitability_and_direct_investability
+
 cross_company_read_through:
   current_signals:
+    - VNPT's 2025 presentation reports eight large-scale Tier III data centers and approximately 11,000 racks of total operating capacity. It says four areas but names only Ha Noi, Ho Chi Minh City and Da Nang, so no fourth area or complete site roster is invented.
+    - A 2024 VNPT Cloud page reported the same eight-center count but more than 58,000 square metres and 4,700 racks. The later approximately 11,000-rack figure is not treated as occupied or billed growth without a definition and site bridge.
+    - Hoa Lac opened in October 2023 as VNPT's eighth IDC, with up to 23,000 square metres and 2,000 racks, N+1 redundancy and six security layers. These are site ceilings, not current utilization, IT MW or measured efficiency.
+    - VNPT names Cumin, Hitachi and Siemens as Hoa Lac equipment suppliers but publishes no category, model, count, rating, installation or contract value. The exact Cumin spelling is preserved without silently identifying a vendor or device.
+    - Four VNPT-operator OSM objects cover Tan Thuan, Cau Giay, Hoa Lac and Nam Thang Long. Three mapped footprints sum to 5,924.731 square metres, which is footprint rather than provider floor area; Cau Giay remains outside the incomplete provider roster.
+    - VNPT's audited 2025 net revenue was VND57.943 trillion, net profit from business operations VND5.657 trillion, profit before tax VND6.569 trillion and profit after tax VND5.233 trillion. Its VND61.246 trillion press total-revenue measure uses a different definition and is not substituted.
+    - VNPT is 100% state-owned and unlisted, and data-center or cloud revenue, operating profit, cash flow, utilization and ROIC are not separately disclosed. It provides infrastructure-demand evidence rather than direct public-equity exposure.
+    - VNPT's 2026 plan targets VND64.564 trillion consolidated revenue and VND7.255 trillion pre-tax profit, with VND15.773 trillion of parent investment. These group targets do not isolate data centers.
+    - The 2026 investment list includes Nam Thang Long expansion at VND174.652 billion, Tan Thuan data-center and broadband expansion at VND222.905 billion and Tan Thuan IDC expansion equipment at VND695.921 billion, all including VAT. The two Tan Thuan entries may overlap and are not summed or converted into vendor revenue.
+    - VNPT publishes cloud and AI services and lists SambaNova, NTT Data and Next DC in a data-center partner category, but no physical accelerator model, count, owner or site is disclosed. Partnerships are not treated as GPU inventory.
     - Turkcell managed thirty-two data centers at 2025 year-end, while its current product page says eight and only four new-generation sites are precisely named as available for third-party sales. These are different network, commercial and facility perimeters.
     - Gebze, Izmir, Ankara Temelli and Tekirdag European publish 31,550 square metres of design white space and site IT-energy figures totaling 53.8MW, rounded by the company to 54MW potential. The separately disclosed 50MW active capacity is not site-allocated live or billed load.
     - Six OSM objects are related. Three match current new-generation sites and sum to 42,635.634 square metres of mapped footprint; Kartal was phased out in 2025, while Edirne and the operator-untagged Yenibosna point remain outside the complete undisclosed wider roster.

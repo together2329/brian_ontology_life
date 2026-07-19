@@ -38307,7 +38307,98 @@ campus_profiles:
       - {title: Q1 2026 results, publisher: Turkcell, date: '2026-05-12', url: 'https://medya.turkcell.com.tr/bulletins/turkcellden-5g-cagina-guclu-baslangic/'}
     confidence: high_for_parent_ownership_TDC_transfer_four_named_sites_site_power_white_space_revenue_group_financials_and_six_OSM_objects_medium_for_wider_current_roster_and_active_capacity_denominator_low_for_live_site_load_complete_equipment_BOM_GPU_inventory_TDC_profitability_and_ROIC
 
+  - id: dc_vnpt_vietnam_data_center_cloud_and_AI_portfolio
+    name: VNPT Vietnam data-center, cloud and AI boundary
+    type: state_owned_unlisted_telecom_eight_center_rack_Hoa_Lac_OSM_expansion_and_financial_scope_boundary
+    country: Vietnam
+    parent_and_operator: Vietnam_Posts_and_Telecommunications_Group_VNPT
+    ownership: 100_percent_Vietnamese_state_owned_unlisted_group
+    evidence_artifacts:
+      facility_registry: life/imports/global_data_centers_20260717/vnpt_data_center_registry.jsonl
+      portfolio_summary: life/imports/global_data_centers_20260717/vnpt_data_center_summary.json
+      registry_builder: scripts/build_vnpt_data_center_registry.py
+    portfolio_scale:
+      current_2025_presentation: {large_scale_data_centers: 8, total_operating_capacity_racks_approx: 11000, area_count_claim: 4, named_cities: [Ha_Noi, Ho_Chi_Minh_City, Da_Nang]}
+      dated_2024_cloud_page: {data_centers: 8, total_area_m2_more_than: 58000, racks: 4700, network_max_Gbps: 100, service_commitment_percent: 99.99}
+      complete_current_eight_site_name_address_building_title_and_lifecycle_roster: undisclosed_or_unestablished
+      boundary: The provider says four areas but names only three cities, so no fourth is invented. The dated 4,700-rack measure and later approximately 11,000-rack operating-capacity statement remain separate and neither discloses installed, occupied, billed or utilized racks by site.
+    Hoa_Lac:
+      opened: '2023-10-25'
+      provider_fleet_ordinal_at_opening: 8
+      usable_floor_area_m2_up_to: 23000
+      rack_capacity_up_to: 2000
+      redundancy: N_plus_1
+      security_layers: 6
+      connectivity_average_Gbps_per_rack: {domestic: 2.0, international: 0.5}
+      Uptime_at_opening: {TCDD: achieved, TCCF: achieved, TCOS: upcoming_not_current_evidence}
+      named_supplier_strings_exact_provider_spelling: [Cumin, Hitachi, Siemens]
+      boundary: Supplier strings disclose no equipment category, model, count, rating, installed state or ownership. Up-to floor area and racks are design or service ceilings, not current utilization, and no utility, facility or IT MW is disclosed.
+    OSM_crosswalk:
+      operator_labeled_objects: 4
+      provider_reconciled_objects: 3
+      matches:
+        - {OSM_ref: osm_way_1175244806, provider_code: TAN_THUAN, footprint_m2: 1645.202, OSM_building_levels: 7}
+        - {OSM_ref: osm_way_1511262966, provider_code: HOA_LAC, footprint_m2: 2249.189}
+        - {OSM_ref: osm_way_1511262965, provider_code: NAM_THANG_LONG, footprint_m2: 2030.340}
+      unreconciled:
+        - {OSM_ref: osm_node_13813612110, site: Cau_Giay, status: OSM_point_outside_complete_undisclosed_current_eight_site_roster}
+      mapped_footprint_sum_m2_not_floor_area: 5924.731
+      boundary: Three building footprints and one point are location evidence, not a provider roster, floor area or capacity. The Tan Thuan level tag is not a verified data-hall count.
+    power_cooling_and_equipment:
+      Hoa_Lac: {redundancy: N_plus_1, named_supplier_strings: [Cumin, Hitachi, Siemens]}
+      dated_Hoa_Lac_power_project: {project_title_exact_scope: two_underground_22KVA_power_lines, total_investment_VND_m_including_VAT: 82865, implementation_to_end_2024_VND_m: 62000, period: 2019_to_2024}
+      current_complete_per_site_grid_voltage_contract_substation_transformer_switchgear_busway_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_pump_heat_exchanger_cooling_tower_equipment_category_OEM_model_count_rating_loading_test_state_age_and_remaining_life: undisclosed_or_unestablished
+      current_measured_site_PUE_WUE_energy_water_emissions_and_live_liquid_cooled_MW: undisclosed
+      boundary: The official project's 22KVA title is preserved without engineering correction. N+1 and supplier names do not establish an as-built bill, power rating, current load or efficiency.
+    AI_accelerators_and_cloud:
+      cloud_stack_and_service: {OpenStack_disclosed_in_2024: true, network_max_Gbps: 100, service_commitment_percent: 99.99}
+      data_center_partner_page_names: [NTT_Data, Next_DC, SambaNova]
+      exact_current_VNPT_customer_or_partner_physical_GPU_accelerator_model_count_owner_site_delivery_acceptance_server_rack_fabric_power_utilization_revenue_margin_and_remaining_life: undisclosed_or_unestablished
+      boundary: Cloud and AI services plus a partner listing do not prove a VNPT-owned or deployed accelerator inventory. No SambaNova, NVIDIA or other physical quantity is inferred.
+    financial_and_investability:
+      VNPT_Group_2025_audited_VND: {gross_revenue: 57947384233282, revenue_deductions: 4339610972, net_revenue: 57943044622310, gross_profit: 14946930453580, net_profit_from_business_operations: 5656509181996, profit_before_tax: 6568657049305, profit_after_tax: 5233493887015, profit_after_tax_attributable_to_parent: 5164402197849}
+      VNPT_Group_2024_restated_VND: {net_revenue: 56090143847570, net_profit_from_business_operations: 6132537042360, profit_before_tax: 6925491831080, profit_after_tax: 5318496737880}
+      2025_press_total_revenue_VND_b: 61246
+      data_center_or_cloud_segment_revenue_operating_profit_EBITDA_cash_flow_capex_assets_debt_customer_concentration_utilization_and_ROIC: not_separately_disclosed
+      direct_public_equity_security: none_established
+      boundary: Press total revenue is not substituted for audited net revenue. Consolidated telecom and digital-service results cannot be attributed to data centers, cloud, AI or named sites.
+    outlook:
+      2026_consolidated_targets_VND_b: {revenue: 64564, profit_before_tax: 7255, profit_after_tax: 5804}
+      2026_parent_targets_VND_b: {revenue: 59810, profit_before_tax: 7068, profit_after_tax: 5654, total_investment: 15773, digital_services_customer_revenue: 11054}
+      2026_data_center_project_total_investment_VND_m_including_VAT: {Nam_Thang_Long_data_center_and_broadband_expansion: 174652, Tan_Thuan_data_center_and_broadband_expansion: 222905, Tan_Thuan_IDC_expansion_equipment: 695921}
+      project_amount_boundary: The two Tan Thuan entries may overlap or use different project scopes and are not summed. Total investment is not annual cash spend, vendor revenue, commissioned capacity or operating return.
+      positive_signals: [eight_large_scale_Tier_III_centers, approximately_11000_racks_operating_capacity, Hoa_Lac_2000_rack_ceiling, 2026_Nam_Thang_Long_and_Tan_Thuan_expansions, 2026_group_growth_targets, cloud_and_AI_strategy]
+      conversion_tests: [publish_complete_current_eight_site_roster, allocate_11000_racks_to_installed_occupied_and_billed_site_capacity, disclose_utility_and_IT_MW, identify_GPU_model_count_owner_and_site, commission_2026_expansions, disclose_data_center_and_cloud_revenue_profit_cash_flow_and_ROIC, publish_current_site_PUE_WUE_and_equipment_inventory]
+      risks: [state_owned_unlisted_no_direct_security, capital_intensity, no_site_power_or_live_load, no_GPU_inventory, no_segment_profitability, mixed_dated_rack_scopes, supplier_and_project_award_opacity]
+      analytical_view: >-
+        VNPT is evidence of rising Vietnamese rack, electrical, cooling,
+        connectivity and cloud demand, but not a direct listed data-center
+        investment. Investable read-through remains indirect until project
+        awards, supplier revenue and data-center economics are disclosed.
+    sources:
+      - {title: 2025 VNPT presentation, publisher: VNPT, date: '2026-02-25', url: 'https://vnpt.com.vn/file/808080809b97b1bb019b9b3d370b02a9/upload/xdata/202602/20260225103734vnpt_presentation_update_112025_eng.pdf'}
+      - {title: VNPT IDC Hoa Lac opening, publisher: VNPT, date: '2023-10-25', url: 'https://danang.vnpt.com.vn/tin-tuc-su-kien/hoat-dong-vnpt/202311/khai-truong-trung-tam-du-lieu-vnpt-idc-hoa-lac-lon-nhat-hien-ai-nhat-viet-nam-f62011d/'}
+      - {title: VNPT Cloud portfolio scale, publisher: VNPT, date: '2024', url: 'https://vnpt.com.vn/gioi-thieu/tin-tuc/he-sinh-thai-vnpt-cloud-huong-toi-tuong-lai-ket-noi-toan-dien.html'}
+      - {title: VNPT 2025 consolidated financial statements, publisher: VNPT, date: '2026-03-30', url: 'https://vnpt.com.vn/file/808080809b97b1bb019b9b3d370b02a9/upload/xdata/202605/20260529144839bctc_hop_nhat_31.12.25.pdf'}
+      - {title: VNPT 2025 operating results, publisher: VNPT, date: '2025-12', url: 'https://vnpt.com.vn/tin-tuc/thong-tin-bao-chi-pr/202512/vnpt-hoan-thanh-toan-dien-ke-hoach-giai-doan-20212025-tao-da-but-pha-voi-nhieu-dau-an-noi-bat-trong-nam-2025-bb23e59/'}
+      - {title: VNPT 2026 business and development investment plan, publisher: VNPT, date: '2026-04-23', url: 'https://vnpt.com.vn/file/808080809b97b1bb019b9b3d370b02a9/upload/xdata/202604/20260423110355bieu_2_bc_muc_tieu_tong_quat_khkd_2026.pdf'}
+      - {title: VNPT ownership and international partner page, publisher: VNPT, accessed: '2026-07-19', url: 'https://vnpt.com.vn/ve-vnpt/'}
+    confidence: high_for_eight_center_current_headline_2025_rack_scale_Hoa_Lac_opening_scale_2025_audited_financials_2026_targets_and_four_OSM_objects_medium_for_three_OSM_provider_matches_and_dated_versus_current_rack_scope_low_for_complete_current_roster_site_power_live_load_equipment_BOM_GPU_inventory_segment_economics_and_direct_investability
+
 disclosure_gap_register:
+  - VNPT_current_eight_large_scale_data_center_complete_site_name_address_building_title_ownership_operator_and_lifecycle_roster
+  - VNPT_2024_4700_racks_and_58000m2_to_2025_approximately_11000_operating_capacity_racks_date_expansion_and_denominator_bridge
+  - VNPT_2025_presentation_four_areas_but_three_named_cities_exact_fourth_area_and_site_allocation
+  - VNPT_11000_racks_to_site_level_design_installed_available_occupied_sold_billed_peak_actual_and_customer_accepted_capacity
+  - VNPT_site_level_utility_facility_critical_IT_operating_energized_contracted_available_sold_utilized_and_billed_MW
+  - VNPT_Hoa_Lac_23000m2_and_2000_rack_ceiling_to_current_installed_occupied_billed_load_and_measured_efficiency
+  - VNPT_Cumin_Hitachi_Siemens_equipment_category_OEM_exact_identity_model_count_rating_installed_state_contract_value_attributable_revenue_margin_and_repeat_award
+  - VNPT_per_site_grid_contract_substation_transformer_switchgear_busway_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_pump_heat_exchanger_cooling_tower_BOM_loading_test_age_and_remaining_life
+  - VNPT_current_measured_site_PUE_WUE_energy_water_emissions_and_live_liquid_cooled_MW
+  - VNPT_customer_partner_or_operator_physical_GPU_accelerator_model_count_owner_site_delivery_acceptance_server_rack_fabric_power_utilization_revenue_margin_and_remaining_life
+  - VNPT_data_center_cloud_and_AI_segment_revenue_operating_profit_EBITDA_cash_flow_capex_assets_debt_customer_concentration_utilization_and_ROIC
+  - VNPT_2026_Nam_Thang_Long_and_Tan_Thuan_expansion_total_investment_to_annual_cash_spend_vendor_awards_capacity_commissioning_customer_acceptance_revenue_and_return
+  - VNPT_four_OSM_objects_three_provider_matches_Cau_Giay_current_role_and_footprint_to_floor_area_boundary
   - Turkcell_TDC_thirty_two_managed_eight_commercial_four_new_generation_and_dated_thirty_three_site_complete_current_roster_and_lifecycle_reconciliation
   - Turkcell_TDC_four_site_53_8MW_checksum_54MW_potential_and_50MW_active_to_site_level_operating_energized_available_sold_occupied_billed_peak_actual_and_customer_accepted_IT_load_bridge
   - Turkcell_TDC_130972m2_current_four_site_sum_to_122000m2_product_page_value_authoritative_scope_and_date_reconciliation
