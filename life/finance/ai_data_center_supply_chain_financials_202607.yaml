@@ -20123,8 +20123,151 @@ financial_profiles:
       - dc_ucbl_insa_ccdd_lyontech_la_doua_academic_data_center_boundary
     confidence: high_for_public_university_status_FY2023_public_financial_metrics_current_2025_scale_CCDD_project_cost_phase_racks_design_and_migration_window_medium_for_current_physical_operation_low_for_current_acceptance_IT_MW_GPU_inventory_complete_BOM_certifications_CCDD_economics_and_any_equity_valuation
 
+  - id: company_aruba_spa
+    company: Aruba S.p.A.
+    ticker: none_private
+    status: private_Italian_cloud_data_center_hosting_and_digital_services_company
+    reporting_snapshot: '2026-07-19'
+    legal_entity_boundary:
+      VAT: '01573850516'
+      tax_code: '04552920482'
+      REA: BG_434483
+      registered_office: Via_San_Clemente_53_Ponte_San_Pietro
+      share_capital_EUR: 4000000
+      provider_ownership_wording: entirely_Italian_capital
+      current_shareholder_names_and_percentages: not_disclosed_in_reviewed_free_primary_sources
+      boundary: >-
+        Aruba S.p.A. is a private legal entity within a broader group and is not
+        a listed pure-play data-center security. The provider's Italian-capital
+        wording does not disclose shareholder identities, percentages, valuation
+        or fund-level access.
+    FY2024_legal_entity_EUR:
+      revenue: 300407397
+      reported_revenue_growth_percent: 13.7
+      net_profit: 22339752
+      net_margin_percent_derived: 7.44
+      FY2023_revenue: 264223630
+      FY2023_net_profit: 22841579
+      FY2022_revenue: 233863802
+      FY2022_net_profit: 14356360
+      source_quality: secondary_transcription_says_Italian_Companies_Register_updated_2026_07_07_original_filed_statement_not_reviewed
+      operating_profit_EBIT_EBITDA_cash_flow_capex_debt_and_interest: unavailable_in_reviewed_free_sources
+      employee_count: excluded_due_conflicting_secondary_values_and_entity_or_group_scope_uncertainty
+      boundary: >-
+        Net profit is not operating profit. The figures are a secondary
+        transcription attributed to the Companies Register; the original filed
+        statement and notes were not reviewed. Revenue and profit cover multiple
+        digital services and are not data-center-only or Aruba Group consolidated
+        measures.
+    business_scale:
+      users_million: 16
+      registered_and_managed_domains_million: 2.7
+      managed_email_accounts_million: 9.8
+      PEC_certified_email_accounts_million: 9
+      owned_data_centers: 7
+      partner_data_center_count: undisclosed
+      internet_interconnection_Tbps_more_than: 1
+      data_center_experts: 300
+      business_lines: [hosting_and_domains, cloud, PEC_and_trust_services, data_center_solutions, fiber, enterprise_solutions, cybersecurity, document_services]
+      boundary: Users, accounts, domains, staff and data centers are operating measures, not revenue units or customer-concentration disclosure.
+    data_center_exposure:
+      portfolio_ref: dc_aruba_europe_owned_and_partner_data_center_portfolio
+      current_owned_facilities_reconstructed: [IT1, IT2, IT3_DC_A, IT3_DC_B, IT3_DC_C, IT4_DC_A, CZ2]
+      exact_IT_power_label_checksum_MW: 37.5
+      additional_unspecified_power_labels_MW: 2.5
+      mixed_label_arithmetic_bridge_MW: 40
+      portfolio_IT_power_achievable_MW: 80
+      IT4_ultimate_buildout: {current_DC_A_IT_MW: 6, ultimate_buildings: 5, ultimate_IT_MW: 30}
+      gross_surface_checksum_m2: 67502
+      data_hall_surface_checksum_m2_excluding_CZ2_undisclosed: 24370
+      data_center_segment_revenue_operating_profit_cash_flow_capex_debt_occupancy_customer_concentration_and_ROIC: undisclosed
+      boundary: >-
+        The 40-MW bridge mixes exact IT and unspecified power labels; 80 MW is
+        achievable rather than current live load. Neither can be converted to
+        revenue, utilization, GPUs or valuation without contracts and operating data.
+    AI_and_cloud_read_through:
+      VMware_hosted_private_cloud: GPU_enabled_option_for_Private_AI
+      Xference_IT3:
+        launch: April_2026_production_beta
+        infrastructure_density_kW_per_rack_more_than: 20
+        Aruba_role: colocation_Hardware_as_a_Service_server_procurement_deployment_networking_and_security
+        GPU_model_count_owner_and_economics: undisclosed
+      exact_current_Aruba_owned_GPU_model_count_and_site_allocation: undisclosed_or_unestablished
+      analytical_boundary: >-
+        GPU-enabled product availability and a high-density AI customer demonstrate
+        demand and technical capability, but not Aruba-owned accelerator inventory,
+        utilization, revenue or margin. Hardware-as-a-Service wording alone does
+        not settle asset title.
+    power_cooling_and_supplier_read_through:
+      disclosed_demand_categories:
+        - redundant_UPS_batteries_and_diesel_generation
+        - substations_switchgear_PDUs_and_segmented_power_paths
+        - groundwater_chilled_water_and_indirect_or_dynamic_free_cooling
+        - CRAH_and_chiller_redundancy
+        - photovoltaic_and_hydroelectric_generation
+        - high_density_racks_networking_and_security
+      named_equipment_OEMs: undisclosed_in_reviewed_facility_sheets
+      current_measured_PUE_WUE_energy_water_and_live_liquid_cooled_MW: undisclosed
+      supplier_award_values_and_revenue_attribution: undisclosed
+      boundary: Engineering disclosure establishes equipment categories, not vendor winners, procurement value, installed age, current load or public-company revenue.
+    investability_and_supply_chain_view:
+      direct_public_equity_security: unavailable
+      direct_data_center_pure_play_score: low_for_equity_access_despite_real_operating_exposure
+      useful_read_through:
+        - private_European_sovereign_cloud_and_colocation_demand
+        - current_high_density_AI_inference_workload
+        - 40MW_named_facility_power_label_bridge_and_80MW_expansion_envelope
+        - redundant_power_and_free_cooling_equipment_demand
+        - carrier_neutral_interconnection_growth
+      analytical_view: >-
+        Aruba is a real and growing digital-infrastructure operator, but direct
+        equity access is unavailable and legal-entity earnings are not data-center
+        segment earnings. It is more useful as a demand and competitive-position
+        indicator for European sovereign cloud, networking, power and cooling than
+        as a directly purchasable pure play.
+    outlook:
+      positives:
+        - FY2024_legal_entity_revenue_growth_13_7_percent
+        - seven_current_owned_data_centers_with_detailed_engineering
+        - 80MW_achievable_portfolio_and_IT4_expansion_option
+        - Xference_IT3_high_density_AI_workload
+        - GPU_enabled_private_cloud
+        - active_Megaport_PoPs_at_IT3_and_IT4
+        - owned_hydroelectric_and_photovoltaic_generation
+        - current_Rating4_ISO22237_and_energy_management_evidence
+      risks:
+        - achievable_capacity_and_design_nameplates_not_current_live_or_billed_load
+        - IT4_future_building_demand_power_delivery_and_opening_timing_undisclosed
+        - exact_GPU_inventory_and_liquid_cooling_undisclosed
+        - per_site_efficiency_water_energy_and_complete_BOM_undisclosed
+        - private_primary_financial_statements_and_shareholder_percentages_not_reviewed
+        - no_data_center_segment_or_site_economics
+        - customer_concentration_grid_contract_and_supplier_awards_undisclosed
+    sources:
+      - {title: Aruba company profile and legal identity, publisher: Aruba, accessed: '2026-07-19', url: "https://www.aruba.it/chisiamo.aspx"}
+      - {title: Aruba data-center directory and 80MW headline, publisher: Aruba, accessed: '2026-07-19', url: "https://www.datacenter.it/en/"}
+      - {title: IT3 campus and engineering, publisher: Aruba, accessed: '2026-07-19', url: "https://www.datacenter.it/en/italy-bergamo-dc-it3"}
+      - {title: IT4 campus, publisher: Aruba, accessed: '2026-07-19', url: "https://www.datacenter.it/en/italy-rome-dc-it4/"}
+      - {title: IT4 DC-A technical sheet, publisher: Aruba, edition: '2025', url: "https://www.datacenter.it/doc/jcr%3Adf4926e6-32ed-4130-b6a6-0818982056e1/DCIT4-DCA-EN-2025.pdf/lang%3Aen/DCIT4-DCA-EN-2025.pdf"}
+      - {title: Current ISO 22237 and EN 50600 certificate, publisher: Bureau_Veritas_via_Aruba, cycle_start: '2025-10-19', url: "https://www.aruba.it/documents/certifications/it/aruba-spa-iso-22237.aspx"}
+      - {title: Xference private AI at IT3, publisher: Aruba, date: '2026-04-28', url: "https://www.aruba.it/en/press-kit/pivate-ai-xference-launches-its-european-infrastructure.aspx"}
+      - {title: VMware Hosted Private Cloud GPU option, publisher: Aruba, date: '2026-03-10', url: "https://www.aruba.it/press-kit/aruba-rafforza-offerta-private-cloud-con-vmware-cloud-foundation.aspx"}
+      - {title: Megaport PoPs at IT3 and IT4, publisher: Aruba, date: '2026-06-15', url: "https://www.aruba.it/en/press-kit/new-megaport-pops-activated-in-aruba-data-centers.aspx"}
+      - {title: Aruba S.p.A. FY2024 registry transcription, publisher: Aziende_it, source_claim: Registro_Imprese, updated: '2026-07-07', url: "https://www.aziende.it/aruba-s-p-a"}
+    related_profiles:
+      - dc_aruba_europe_owned_and_partner_data_center_portfolio
+    confidence: high_for_private_status_legal_identity_operating_scale_seven_owned_portfolio_and_facility_specs_medium_for_secondary_financial_transcription_low_for_primary_financial_detail_ownership_percentages_data_center_segment_economics_and_GPU_inventory
+
 cross_company_read_through:
   current_signals:
+    - Aruba reports seven owned data centers but five site codes. Current ISO 22237 evidence for IT3 DC-A/B/C and IT4, plus IT1, IT2 and CZ2, reconciles seven physical facilities; partner sites and four future IT4 buildings remain separate.
+    - Aruba's detailed current facility sheets provide 37.5MW explicitly labelled IT power and another 2.5MW under IT2 and CZ2 unspecified power labels, a 40MW arithmetic bridge rather than current live IT load. The separate 80MW portfolio headline is achievable capacity.
+    - IT4 currently has one 6MW IT data center inaugurated in October 2024. The 30MW figure is the ultimate five-building campus envelope, so the four future buildings are not counted as operating facilities.
+    - Two adjacent Aruba-tagged Rome OSM ways are grouped into current IT4 DC-A; their exact data-hall-versus-power-center roles are unverified. IT1 and IT2 are exact named OSM buildings, while IT3 A/B/C and CZ2 are absent from the reviewed OSM operator sample.
+    - IT3 A/B/C publish 29MW IT in aggregate with 2N power, 2N+1 UPS, 2N generation, groundwater primary cooling and emergency chillers. IT4 DC-A publishes 6MW IT, 14-40kW racks and indirect free cooling. These are design and nameplate values, not utilization.
+    - Xference began an IT3 production beta requiring more than 20kW per rack, with Aruba procuring and deploying Hardware-as-a-Service servers and managing networking and security. GPU model, count, ownership, utilization and economics remain undisclosed.
+    - Aruba's FY2024 legal-entity revenue of EUR300.407 million and net profit of EUR22.340 million come from a secondary Companies Register transcription. Net profit is not operating profit, the original filing was not reviewed, and the results are not data-center-only.
+    - Aruba is private and not directly exchange-listed. Its value in this investment map is European sovereign-cloud, high-density colocation, interconnection, electrical and cooling demand evidence rather than a purchasable pure-play security.
     - UCBL and INSA Lyon's CCDD maps as five adjacent identically named OSM ways, but they form one facility group: one 561.998-square-metre main geometry and four small support or technical structures whose exact roles are unverified. The 862.953-square-metre footprint sum is not five data centers.
     - Official project disclosure gives 3,280 square metres, 150 racks in the first tranche and 300 ultimate racks across two tranches. These are floor-area and design envelopes, not current accepted, occupied or utilized capacity, and they are not reconciled to the OSM footprint or three-level tag.
     - Planned production dates moved from summer or October 2024 to early 2025, while the current P2CHPD page says resources migrate in 2025 and 2026. The facility is therefore recorded as physical and in a migration window, without claiming completed acceptance or full rack fill.
