@@ -23,6 +23,8 @@ decision_boundary: >
   Tax basis, account type, emergency cash, debt, pension assets, spouse holdings, employer
   restrictions and material non-public information boundaries must be checked before an
   external buy, sale or rebalance.
+execution_ledger_ref: life/finance/brian_investment_policy_execution_202607.yaml
+execution_builder_ref: scripts/analyze_brian_investment_policy.py
 
 source_records:
   - id: source_investment_strategy_request_20260719
@@ -125,6 +127,27 @@ current_diagnosis:
     - The household can experience one semiconductor-cycle shock through income, bonus and portfolio value at the same time.
     - Power, optical and nuclear positions diversify AI layers but still depend materially on sustained AI capital spending and financing.
     - The dominant risk is not missing AI upside; it is losing financial flexibility during a correlated downturn.
+
+current_stress_read:
+  source_ref: life/finance/brian_investment_policy_execution_202607.yaml
+  boundary: Deterministic primary-mandate sensitivities, not forecasts or probabilities; income and uncaptured household assets are excluded.
+  direct_sk_hynix_minus_50_percent:
+    captured_securities_impact_krw: -34172999
+    captured_securities_impact_percent: -27.68
+  correlated_semiconductor_downcycle:
+    captured_securities_impact_krw: -48288222
+    captured_securities_impact_percent: -39.12
+  ai_capex_and_financing_reversal:
+    captured_securities_impact_krw: -48876019
+    captured_securities_impact_percent: -39.59
+  ai_reflexive_upside:
+    captured_securities_impact_krw: 40631114
+    captured_securities_impact_percent: 32.91
+    ending_direct_sk_hynix_percent: 58.32
+  interpretation:
+    - A normal sector thesis can coexist with a household-level drawdown too large for Brian's actual risk capacity.
+    - A successful AI cycle can push concentration higher and trigger a trim even without a broken business thesis.
+    - The missing six-month income-loss overlay equals six times essential monthly spending minus reliable other income during the gap.
 
 policy_hierarchy:
   - priority: 1
@@ -478,6 +501,7 @@ source_refs:
     - life/finance/investment_philosophy_research.yaml
     - life/finance/memory_ai_investor_views_research.yaml
     - life/finance/ai_data_center_investment_comparison_202607.yaml
+    - life/finance/brian_investment_policy_execution_202607.yaml
     - life/finance/global_memory_semiconductor_supply_chain_202607.yaml
     - life/finance/global_optical_communications_supply_chain_202607.yaml
     - life/finance/global_ai_power_infrastructure_supply_chain_202607.yaml
@@ -522,6 +546,20 @@ source_refs:
       published_at: '2026-04-02'
       url: https://corporate.vanguard.com/content/corporatesite/us/en/corp/articles/50-years-50-facts-indexing-since-1976.html
       relevance: Low-cost broad-market ownership as the default diversified core.
+    - title: Concentrate on Concentration Risk
+      publisher: FINRA
+      published_at: '2022-06-15'
+      url: https://www.finra.org/investors/insights/concentration-risk
+      relevance: Employer stock, correlated sector funds and overlapping ETFs can create hidden concentration.
+    - title: Love Your Company Stock? Here's What to Know.
+      publisher: FINRA
+      published_at: '2023-08-11'
+      url: https://www.finra.org/investors/insights/love-your-company-stock-what-to-know
+      relevance: Employment and portfolio losses can occur together; the page notes that some experts use ten percent as a single-stock ceiling.
+    - title: Asset Allocation and Diversification
+      publisher: Investor.gov
+      url: https://www.investor.gov/introduction-investing/getting-started/asset-allocation
+      relevance: Narrow ETFs and multiple funds do not automatically provide diversification; underlying holdings must be checked.
 
 user_confirmation_fields:
   policy_confirmed: false
