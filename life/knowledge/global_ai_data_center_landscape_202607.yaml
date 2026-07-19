@@ -35388,7 +35388,110 @@ campus_profiles:
       - {title: Kyndryl FY2026 results and FY2027 outlook, publisher: Kyndryl, accessed: '2026-07-19', url: "https://investors.kyndryl.com/news-releases/news-release-details/kyndryl-reports-fourth-quarter-and-full-year-2026-results"}
     confidence: high_for_separation_selected_certification_sites_FY2026_company_financials_and_FY2027_outlook_medium_for_group_level_OSM_crosswalk_low_for_complete_current_property_roster_title_MW_BOM_GPU_inventory_and_data_center_only_economics
 
+  - id: dc_compass_datacenters_current_hyperscale_and_transition_market_portfolio
+    operator: Compass Datacenters, LLC
+    geography: [United_States, Canada, Italy, Israel]
+    status: private_hyperscale_developer_with_current_and_transferred_market_scopes
+    as_of: '2026-07-19'
+    reproducible_registry:
+      market_registry: life/imports/global_data_centers_20260717/compass_datacenters_market_registry.jsonl
+      market_summary: life/imports/global_data_centers_20260717/compass_datacenters_market_summary.json
+      current_market_or_campus_rows: 8
+      where_we_have_built_transition_rows: 8
+      OSM_crosswalk_objects: 21
+      boundary: >-
+        Current market, campus and development rows are not necessarily physical
+        buildings. The transition rows are projects Compass built but the current
+        page generally says are now independently owned and operated.
+    current_market_reconciliation:
+      markets: [Chicago_Hoffman_Estates, Meridian_Mississippi, Dallas_Red_Oak, Northern_Virginia_Loudoun, Phoenix_Goodyear, Phoenix_El_Mirage, Greater_Toronto, Milan_Noviglio]
+      numeric_row_checksum_mw: 1327
+      unknown_MW_rows: [Greater_Toronto]
+      North_America_marketing_headline: more_than_2GW
+      boundary: >-
+        The 1,327MW checksum mixes current-site, campus, development and minimum
+        IT-load-plan wording. It is not operating, energized, leased, utilized or
+        billed load and does not reconcile the broader more-than-2GW headline.
+    dated_2023_investor_scope:
+      operating_capacity_mw: 170
+      operating_contracted_and_reserved_capacity_mw: 735
+      contracted_capacity_mw: 675
+      investment_grade_hyperscaler_support_percent: 85
+      weighted_average_contract_duration_years: 13
+      triple_net_share_percent_approx: 60
+      boundary: Brookfield_Q2_2023_acquisition_snapshot_not_current_capacity
+    power_and_cooling:
+      hyperscale_design_ceiling_mw: 360
+      published_substation_wording: 450_MDA
+      published_substation_boundary: apparent_typographical_or_unit_anomaly_preserved_verbatim_and_not_changed_to_MVA
+      cloud_design_package_mw_range: [6, 80]
+      Siemens_five_year_contract_ceiling_modular_MV_skids: 1500
+      Siemens_components: [8DJH_36_gas_insulated_arc_resistant_medium_voltage_switchgear, transformers]
+      Siemens_boundary: contracted_maximum_not_delivered_installed_accepted_or_operating_count
+      backup_generation: Cummins_generators_and_HVO_capability_without_site_level_model_count_rating_or_runtime
+      cooling: Vertiv_CoolPhase_Flex_hybrid_air_and_direct_to_chip_liquid_cooling_capability
+      complete_per_site_as_built_equipment_ledger: undisclosed
+      live_liquid_cooled_MW_rack_density_PUE_WUE_energy_and_water_by_site: undisclosed
+    AI_and_accelerators:
+      marketed_readiness: high_density_GPU_and_AI_ready
+      Compass_owned_installed_GPU_count: not_disclosed_or_established
+      customer_GPU_model_count_owner_site_delivery_acceptance_and_utilization: undisclosed
+      TikTok_OSM_name: unverified_tenant_label_not_used_as_contract_or_GPU_evidence
+    ownership_and_finance:
+      financial_profile_ref: company_compass_datacenters
+      2023_acquirers: [Brookfield_Infrastructure, Ontario_Teachers_Pension_Plan]
+      2023_transaction_enterprise_value_USD_billion_approx: 5.0
+      2023_Brookfield_co_control_stake_purchase_USD_billion: 1.35
+      2026_KKR_permanent_capital_agreement: announced_with_amount_stake_asset_perimeter_consideration_and_closing_status_undisclosed
+      standalone_revenue_operating_profit_cash_flow_capex_debt_ROIC_and_valuation: undisclosed
+    OSM_crosswalk:
+      related_objects: 21
+      raw_operator_counts: {Compass: 1, True_North_Data_Solutions: 6, none: 14}
+      Red_Oak_building_or_component_objects: 11
+      Thunderball_raw_True_North_objects: 6
+      Thunderball_exact_addresses_in_Virginia_DEQ_Compass_permit: 4
+      boundary: >-
+        Virginia DEQ and Loudoun permits identify Compass Datacenters, LLC at the
+        four exact Thunderball addresses, so the raw True North label is preserved
+        but not used as current operator evidence. A TikTok-named footprint and
+        campus envelope remain group-level candidates without tenant proof.
+    outlook:
+      positive_signals:
+        - large_current_market_and_development_program
+        - dated_long_duration_hyperscaler_contract_evidence
+        - Brookfield_Ontario_Teachers_and_KKR_long_term_capital_support
+        - standardized_prefabricated_electrical_supply_chain
+        - hybrid_air_and_liquid_cooling_readiness
+      risk_signals:
+        - current_operating_contracted_reserved_and_pipeline_MW_not_reconciled
+        - private_standalone_financials_and_customer_concentration_undisclosed
+        - transition_market_ownership_conflict_and_KKR_perimeter_undisclosed
+        - grid_permit_supply_chain_construction_and_customer_acceptance_execution
+        - no_installed_GPU_inventory_or_site_level_economics
+      analytical_view: >-
+        Compass is a credible private hyperscale developer with useful engineering
+        and dated contract evidence, but current live capacity and standalone
+        economics remain opaque. Public-market exposure is indirect and blended
+        through Brookfield or KKR rather than a listed Compass pure play.
+    sources:
+      - {title: Current data-center markets, publisher: Compass_Datacenters, accessed: '2026-07-19', url: "https://www.compassdatacenters.com/data-center-markets/"}
+      - {title: Hyperscale design, publisher: Compass_Datacenters, accessed: '2026-07-19', url: "https://www.compassdatacenters.com/design/hyperscale/"}
+      - {title: Future-ready cooling for AI, publisher: Compass_Datacenters, accessed: '2026-07-19', url: "https://www.compassdatacenters.com/future-ready-cooling-for-ai/"}
+      - {title: Siemens modular electrical agreement, publisher: Siemens, accessed: '2026-07-19', url: "https://press.siemens.com/global/en/pressrelease/siemens-and-compass-datacenters-sign-multi-year-custom-electrical-solution-agreement"}
+      - {title: Virginia DEQ Compass permit, publisher: Virginia_DEQ, accessed: '2026-07-19', url: "https://www.deq.virginia.gov/home/showpublisheddocument/25859/638628780385130000"}
+      - {title: Brookfield Q2 2023 letter, publisher: Brookfield_Infrastructure, period: '2023-Q2', url: "https://bip.brookfield.com/bip/reports-filings/letters-unitholders/bip-q2-2023-letter-unitholders"}
+      - {title: KKR permanent-capital partnership, publisher: Compass_Datacenters, date: '2026-03-16', url: "https://www.compassdatacenters.com/in-the-news/kkr-permanent-capital-partnership/"}
+    confidence: high_for_current_page_rows_dated_2023_investor_snapshot_engineering_agreements_and_four_permit_addresses_medium_for_OSM_market_crosswalk_low_for_current_live_capacity_transition_property_bridge_complete_BOM_installed_GPU_inventory_and_standalone_financials
+
 disclosure_gap_register:
+  - Compass_exact_current_non_overlapping_campus_building_address_title_lease_operator_and_lifecycle_roster
+  - Compass_current_more_than_2GW_headline_to_1327MW_rows_and_current_operating_energized_contracted_reserved_customer_accepted_leased_utilized_billed_and_actual_IT_load
+  - Compass_transition_market_property_by_property_owner_operator_transaction_and_Montreal_publication_conflict_bridge
+  - Compass_per_site_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_OEM_model_count_rating_loading_acceptance_and_remaining_life
+  - Compass_per_site_live_liquid_cooled_MW_rack_density_measured_PUE_WUE_energy_water_and_emissions
+  - Compass_or_customer_GPU_model_count_owner_site_delivery_acceptance_rack_fabric_power_utilization_revenue_and_margin
+  - Compass_standalone_revenue_operating_profit_cash_flow_capex_debt_ROIC_customer_concentration_contract_pricing_and_current_valuation
+  - Compass_KKR_permanent_capital_amount_ownership_asset_perimeter_consideration_and_closing_status
   - IBM_Cloud_exact_current_code_closure_roster_and_code_to_street_address_building_campus_title_lease_operator_bridge
   - IBM_Cloud_per_site_operating_energized_leased_customer_accepted_utilized_billed_and_actual_IT_load
   - IBM_Cloud_per_site_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_OEM_model_count_rating_loading_acceptance_and_remaining_life
