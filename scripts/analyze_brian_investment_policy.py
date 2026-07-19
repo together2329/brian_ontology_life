@@ -18,6 +18,16 @@ from pathlib import Path
 import yaml
 
 
+CORE_MACRO_ECONOMIES = (
+    "korea",
+    "united_states",
+    "china",
+    "taiwan",
+    "japan",
+    "euro_area",
+)
+
+
 ROLE_MAP = {
     "direct_sk_hynix": {
         "holding_mode": "legacy_concentrated_cyclical_conviction",
@@ -336,9 +346,45 @@ def personalized_projection(checkpoints: list[dict], monthly: int | None, bonus:
     }
 
 
+def build_macro_execution_overlay(macro_overlay: dict) -> dict:
+    profiles = macro_overlay.get("economy_profiles", {})
+    missing = [economy for economy in CORE_MACRO_ECONOMIES if economy not in profiles]
+    if missing:
+        raise ValueError(f"Macro overlay is missing required economy profiles: {', '.join(missing)}")
+
+    economy_rows = []
+    for economy_id in CORE_MACRO_ECONOMIES:
+        profile = profiles[economy_id]
+        economy_rows.append({
+            "economy_id": economy_id,
+            "display_name": profile["display_name"],
+            "regime": profile["regime"],
+            "policy_rate": profile["policy_rate"],
+            "growth": profile["growth"],
+            "inflation": profile["inflation"],
+            "labor": profile["labor"],
+            "fx": profile["fx"],
+            "credit_and_financial_stability": profile["credit_and_financial_stability"],
+            "brian_transmission": profile["brian_transmission"],
+            "portfolio_rule": profile["portfolio_rule"],
+        })
+
+    return {
+        "source_as_of": macro_overlay["as_of"],
+        "coverage_boundary": macro_overlay["coverage"]["boundary"],
+        "comparability_boundary": macro_overlay["comparability_boundary"],
+        "cross_economy_summary": macro_overlay["cross_economy_regime"]["summary"],
+        "economies": economy_rows,
+        "currency_role_policy": macro_overlay["currency_role_policy"],
+        "decision_gates": macro_overlay["macro_decision_gates"],
+        "scenario_map": macro_overlay["scenario_map"],
+    }
+
+
 def build_execution(
     comparison: dict,
     policy: dict,
+    macro_overlay: dict,
     accessed_on: str,
     monthly_surplus_krw: int | None,
     bonus_krw: int | None,
@@ -360,9 +406,9 @@ def build_execution(
         "created_at": accessed_on,
         "updated_at": accessed_on,
         "area": "FINANCE",
-        "title": "Brian investment policy execution, stress and glide-path ledger",
+        "title": "Brian investment policy execution, stress, country-macro and glide-path ledger",
         "privacy": "Personal holdings and scenario inputs remain local; no external trade is authorized.",
-        "purpose": "Turn the investment policy into repeatable stress tests, holding roles, concentration checkpoints and monthly decision gates.",
+        "purpose": "Turn the investment policy into repeatable stress tests, holding roles, country-macro checks, concentration checkpoints and monthly decision gates.",
         "human_readable_summary_ko": {
             "core_read": f"반도체 동반 하락 민감도에서는 포착된 증권자산이 {abs(downcycle['result']['portfolio_impact_percent']):.2f}% 감소하고, AI 설비투자 반전 민감도에서는 {abs(ai_bust['result']['portfolio_impact_percent']):.2f}% 감소한다.",
             "success_risk": f"AI 상승 민감도에서는 포트폴리오가 {upside['result']['portfolio_impact_percent']:.2f}% 증가하지만 SK하이닉스 비중도 {upside['result']['ending_direct_sk_hynix_percent']:.2f}%로 올라가므로 성공 자체가 리밸런싱 사유가 될 수 있다.",
@@ -377,8 +423,10 @@ def build_execution(
             "source_refs": [
                 "life/finance/ai_data_center_investment_comparison_202607.yaml",
                 "life/finance/brian_investment_policy_202607.yaml",
+                "life/finance/country_macro_investment_overlay_202607.yaml",
             ],
         },
+        "country_macro_execution_overlay": build_macro_execution_overlay(macro_overlay),
         "holding_role_register": build_holdings(products),
         "stress_test_method": {
             "type": "deterministic_sensitivity_not_forecast",
@@ -418,6 +466,10 @@ def build_execution(
             "explicit_ai_percent": None,
             "broad_global_core_percent": None,
             "new_ai_purchase_krw": 0,
+            "country_macro_snapshot_as_of": macro_overlay["as_of"],
+            "country_regimes_reviewed": [],
+            "material_rate_fx_labor_or_credit_change": None,
+            "currency_role_policy_breach": None,
             "policy_breach": None,
             "one_decision_for_next_month": None,
         },
@@ -427,9 +479,10 @@ def build_execution(
             {"gate": 3, "question": "Is the liquid reserve at the nine-month target?", "if_no": "Use the policy's seventy-percent reserve and thirty-percent global-core rule."},
             {"gate": 4, "question": "Are employer stock and explicit AI inside their transition bands?", "if_no": "Send no new money to AI; use global core, safe assets and non-AI diversifiers."},
             {"gate": 5, "question": "Are exact ETF holdings, valuation, taxes and household overlap known?", "if_no": "Research only; do not add the position."},
-            {"gate": 6, "question": "Does the investment score at least eighty with written falsifiers?", "if_no": "Reject or watchlist."},
-            {"gate": 7, "question": "Does the initial size remain inside every cap after a fifty-percent loss?", "if_no": "Reduce size or do not buy."},
-            {"gate": 8, "question": "Has operating evidence improved after the initial position?", "if_yes": "Scale only if valuation remains attractive; otherwise hold or exit."},
+            {"gate": 6, "question": "Does the thesis survive the relevant country's rate, FX, labor, demand, credit and geopolitical regime while matching Brian's KRW liabilities?", "if_no": "Research only, change the wrapper or reduce the proposed risk budget."},
+            {"gate": 7, "question": "Does the investment score at least eighty with written falsifiers?", "if_no": "Reject or watchlist."},
+            {"gate": 8, "question": "Does the initial size remain inside every cap after a fifty-percent loss?", "if_no": "Reduce size or do not buy."},
+            {"gate": 9, "question": "Has operating evidence improved after the initial position?", "if_yes": "Scale only if valuation remains attractive; otherwise hold or exit."},
         ],
         "simplification_queue": [
             {
@@ -481,7 +534,7 @@ def build_execution(
             },
         ],
         "decision_boundary": "No trade follows automatically from this artifact. User confirmation, current account data, tax review and employer compliance remain required.",
-        "source_snapshot_sha256": canonical_hash({"comparison": comparison, "policy": policy}),
+        "source_snapshot_sha256": canonical_hash({"comparison": comparison, "policy": policy, "macro_overlay": macro_overlay}),
     }
 
 
@@ -490,19 +543,22 @@ def main() -> None:
     parser.add_argument("--accessed-on", default=dt.date.today().isoformat())
     parser.add_argument("--comparison", type=Path, default=Path("life/finance/ai_data_center_investment_comparison_202607.yaml"))
     parser.add_argument("--policy", type=Path, default=Path("life/finance/brian_investment_policy_202607.yaml"))
+    parser.add_argument("--macro-overlay", type=Path, default=Path("life/finance/country_macro_investment_overlay_202607.yaml"))
     parser.add_argument("--output", type=Path, default=Path("life/finance/brian_investment_policy_execution_202607.yaml"))
     parser.add_argument("--monthly-surplus-krw", type=int)
     parser.add_argument("--bonus-krw", type=int)
     args = parser.parse_args()
     comparison = load_yaml(args.comparison)
     policy = load_yaml(args.policy)
-    result = build_execution(comparison, policy, args.accessed_on, args.monthly_surplus_krw, args.bonus_krw)
+    macro_overlay = load_yaml(args.macro_overlay)
+    result = build_execution(comparison, policy, macro_overlay, args.accessed_on, args.monthly_surplus_krw, args.bonus_krw)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(yaml.safe_dump(result, allow_unicode=True, sort_keys=False, width=120), encoding="utf-8")
     print(json.dumps({
         "output": str(args.output),
         "holdings": len(result["holding_role_register"]),
         "stress_tests": len(result["stress_tests"]),
+        "macro_economies": len(result["country_macro_execution_overlay"]["economies"]),
         "glide_rows": len(result["no_sale_glide_path_matrix"]["rows"]),
         "source_snapshot_sha256": result["source_snapshot_sha256"],
     }, ensure_ascii=False))

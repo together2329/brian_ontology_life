@@ -7,12 +7,13 @@ secondary_areas:
   - MIND
 profile_ref: person_brian
 title: Finance active log
-current_phase: Investment policy execution system built; close July cashflow, fund the reserve, and capture current ETF look-through and tax-lot data before allocation changes.
+current_phase: Investment policy execution system now includes a six-economy macro and currency overlay; close July cashflow, fund the reserve, and capture current ETF look-through and tax-lot data before allocation changes.
 
 investment_philosophy_research_refs:
   - life/finance/investment_philosophy_research.yaml
   - life/finance/memory_ai_investor_views_research.yaml
   - life/finance/global_macro_research_20260715.yaml
+  - life/finance/country_macro_investment_overlay_202607.yaml
   - life/finance/ai_data_center_investment_comparison_202607.yaml
   - life/quality/global_ai_data_center_research_gap_audit_202607.yaml
   - life/finance/brian_investment_policy_202607.yaml
@@ -20,6 +21,18 @@ investment_philosophy_research_refs:
   - life/finance/brian_investment_playbook_ko_202607.md
 
 source_records:
+  - id: source_finance_country_macro_request_20260719
+    source_type: chat
+    original_date: 2026-07-19
+    imported_at: 2026-07-19
+    parse_status: parsed
+    raw_text: "각나라의 경제 상황도 고려해줘. 금리 환율 고용 등등 모든 상황"
+    interpretation: Brian asked to integrate country-level growth, inflation, rates, FX, labor, credit and financial-stability conditions into the saved investment strategy.
+    promoted_record_ref: finance_status_20260719_country_macro_overlay_integrated
+    artifact_ref: life/finance/country_macro_investment_overlay_202607.yaml
+    confidence: high
+    needs_user_review: false
+
   - id: source_finance_conversation_20260715_prior_ps_deferred_payment
     source_type: chat
     original_date: 2026-07-15
@@ -884,6 +897,23 @@ tool_trials:
     source_ref: source_finance_conversation_20260617_ai_tool_testing_cost_400usd
 
 finance_status_updates:
+  - id: finance_status_20260719_country_macro_overlay_integrated
+    date: 2026-07-19
+    area: FINANCE
+    status: active_research_integrated
+    summary: Korea, United States, China, Taiwan, Japan and euro-area growth, inflation, policy-rate, labor, FX and credit regimes were normalized and connected to Brian's AI-cycle policy and execution gates.
+    interpretation: >
+      Korea's AI export strength supports the earnings thesis but intensifies Brian's employer,
+      bonus and portfolio correlation. Currency is now assigned by asset role: KRW for emergency
+      and near-term liabilities, ordinary global FX exposure for the long-term equity core, and
+      KRW or hedged exposure for the safe short-duration bucket.
+    decision_boundary: The overlay changes research and position-size gates; it does not authorize an external trade or predict short-term FX direction.
+    source_ref: source_finance_country_macro_request_20260719
+    artifact_refs:
+      - life/finance/country_macro_investment_overlay_202607.yaml
+      - life/finance/brian_investment_policy_202607.yaml
+      - life/finance/brian_investment_policy_execution_202607.yaml
+
   - id: finance_status_20260617_ai_tool_testing_cost_recorded
     date: 2026-06-17
     area: FINANCE

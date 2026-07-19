@@ -25,6 +25,7 @@ decision_boundary: >
   external buy, sale or rebalance.
 execution_ledger_ref: life/finance/brian_investment_policy_execution_202607.yaml
 execution_builder_ref: scripts/analyze_brian_investment_policy.py
+country_macro_overlay_ref: life/finance/country_macro_investment_overlay_202607.yaml
 
 source_records:
   - id: source_investment_strategy_request_20260719
@@ -148,6 +149,38 @@ current_stress_read:
     - A normal sector thesis can coexist with a household-level drawdown too large for Brian's actual risk capacity.
     - A successful AI cycle can push concentration higher and trigger a trim even without a broken business thesis.
     - The missing six-month income-loss overlay equals six times essential monthly spending minus reliable other income during the gap.
+
+country_macro_operating_overlay:
+  as_of: '2026-07-19'
+  full_profile_economies:
+    - korea
+    - united_states
+    - china
+    - taiwan
+    - japan
+    - euro_area
+  core_read: >
+    AI investment is stronger than broad demand, but the rate and currency backdrop is not uniformly
+    easy: Korea and the euro area have raised rates, US inflation and long yields remain elevated,
+    China combines export strength with weak domestic demand, Taiwan is in an AI-led boom with
+    financial heat, and Japan is normalizing from accommodative real rates.
+  brian_specific_transmission:
+    - Korea's AI-export strength supports Brian's employer and portfolio thesis, but also increases the correlation among salary, bonus, direct stock and Korean wrappers.
+    - US rates and long yields are the main discount-rate and refinancing gate for hyperscalers, neoclouds, power projects and data-center pipelines.
+    - China affects electronics demand, memory pricing, competing supply and trade controls; headline GDP alone is not sufficient.
+    - Taiwan foundry and server exposure remains inside the same AI risk budget and adds a geographic tail risk.
+    - Japan and Europe can add equipment, materials, grid and industrial layers, but they do not remove semiconductor-capex, energy or financing risk.
+  currency_role_policy:
+    emergency_reserve_and_under_three_year_money: Keep in KRW-denominated or KRW-matched safe assets.
+    global_equity_core: Allow normal unhedged currency exposure for long-term diversification and contribute on schedule rather than waiting for a perfect exchange rate.
+    safe_bond_bucket: Prefer KRW or KRW-hedged high-quality short-duration exposure because the job is stability.
+    thematic_equity: Select using business evidence, valuation and correlation; do not use tactical FX direction as the primary thesis.
+    wrapper_recording_rule: Record hedged and unhedged products as different roles with hedge cost and intended horizon.
+  required_gate_before_new_risk: >
+    The investment must survive the relevant country's rate, FX, labor, demand, credit and
+    geopolitical regime while remaining consistent with Brian's KRW liabilities and employer-linked
+    concentration. If the mapping is incomplete, research only and do not increase size.
+  detail_ref: life/finance/country_macro_investment_overlay_202607.yaml
 
 policy_hierarchy:
   - priority: 1
@@ -459,9 +492,11 @@ review_cadence:
     - Close spending and record savings rate.
     - Transfer the planned amount before discretionary spending.
     - Record contributions and verify that no thematic purchase bypassed the gates.
+    - Record material official policy-rate, FX, inflation and employment changes only when they alter liquidity, financing survival, position size or thesis evidence.
   quarterly:
     - Update all position weights and look-through ETF constituents.
     - Review SK hynix and the AI reflexivity dashboard.
+    - Refresh the Korea, United States, China, Taiwan, Japan and euro-area macro profiles and reconcile them with revenue, cost, funding and listing-currency exposure.
     - Rescore only material thesis changes; do not manufacture activity.
     - Compare direct employer stock and explicit AI exposure with transition checkpoints.
   annually:
@@ -500,6 +535,8 @@ source_refs:
     - life/finance/finance_active_log.yaml
     - life/finance/investment_philosophy_research.yaml
     - life/finance/memory_ai_investor_views_research.yaml
+    - life/finance/global_macro_research_20260715.yaml
+    - life/finance/country_macro_investment_overlay_202607.yaml
     - life/finance/ai_data_center_investment_comparison_202607.yaml
     - life/finance/brian_investment_policy_execution_202607.yaml
     - life/finance/global_memory_semiconductor_supply_chain_202607.yaml

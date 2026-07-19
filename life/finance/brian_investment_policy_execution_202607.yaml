@@ -3,10 +3,10 @@ status: active_execution_draft_awaiting_household_inputs
 created_at: '2026-07-19'
 updated_at: '2026-07-19'
 area: FINANCE
-title: Brian investment policy execution, stress and glide-path ledger
+title: Brian investment policy execution, stress, country-macro and glide-path ledger
 privacy: Personal holdings and scenario inputs remain local; no external trade is authorized.
-purpose: Turn the investment policy into repeatable stress tests, holding roles, concentration checkpoints and monthly decision
-  gates.
+purpose: Turn the investment policy into repeatable stress tests, holding roles, country-macro checks, concentration checkpoints
+  and monthly decision gates.
 human_readable_summary_ko:
   core_read: 반도체 동반 하락 민감도에서는 포착된 증권자산이 39.12% 감소하고, AI 설비투자 반전 민감도에서는 39.59% 감소한다.
   success_risk: AI 상승 민감도에서는 포트폴리오가 32.91% 증가하지만 SK하이닉스 비중도 58.32%로 올라가므로 성공 자체가 리밸런싱 사유가 될 수 있다.
@@ -20,6 +20,401 @@ source_snapshot:
   source_refs:
   - life/finance/ai_data_center_investment_comparison_202607.yaml
   - life/finance/brian_investment_policy_202607.yaml
+  - life/finance/country_macro_investment_overlay_202607.yaml
+country_macro_execution_overlay:
+  source_as_of: '2026-07-19'
+  coverage_boundary: 'This is not a literal survey of every sovereign economy. It is the smallest decision-complete set for
+    Brian''s current portfolio and expands through the documented trigger rule.
+
+    '
+  comparability_boundary:
+  - Growth figures retain their published basis; year-over-year, quarter-over-quarter and annualized rates are not compared
+    as if identical.
+  - Inflation is a twelve-month change unless another basis is stated.
+  - Labor indicators use each authority's published concepts and are directional rather than perfectly cross-country comparable.
+  - Policy rates have different operating frameworks and cannot be ranked as simple measures of tightness.
+  - ECB-derived USD crosses are arithmetic reference values, not transaction prices or forecasts.
+  - Taiwan's FX observation is a June monthly average and is not same-date comparable with the 2026-07-17 ECB reference rates.
+  cross_economy_summary: 'The AI investment cycle remains stronger than broad global demand, while energy and imported inflation
+    have pushed the United States, Korea and euro area toward restrictive or renewed tightening. China combines strong supply
+    and exports with weak domestic demand and property investment. Taiwan is in an exceptional AI-export boom with ample liquidity,
+    while Japan is gradually normalizing policy from still-accommodative real rates. Brian therefore faces both an earnings
+    opportunity and unusually correlated valuation, financing, FX and employment risk.
+
+    '
+  economies:
+  - economy_id: korea
+    display_name: South Korea
+    regime: AI-export acceleration with inflation, household-debt and housing risks forcing renewed tightening.
+    policy_rate:
+      value_percent: 2.75
+      previous_percent: 2.5
+      decision_date: '2026-07-16'
+      stance: Raised unanimously; the Bank of Korea signaled that further increases may be needed.
+      source_ref: bok_20260716_monetary_policy_decision
+    growth:
+      latest_read: Exports and facilities investment have strengthened, led by AI-related semiconductors.
+      forecast_read: The Bank of Korea expects 2026 growth to considerably exceed its May forecast of 2.6 percent.
+      basis: central_bank_directional_assessment_not_a_new_point_forecast
+      source_ref: bok_20260716_monetary_policy_decision
+    inflation:
+      headline_yoy_percent: 3.2
+      core_ex_food_and_energy_yoy_percent: 2.5
+      period: 2026-06
+      source_ref: korea_statistics_202606_cpi
+    labor:
+      unemployment_percent: 2.8
+      employment_million: 29.12
+      period: 2026-05
+      nuance: Manufacturing employment is declining while services employment is growing.
+      source_refs:
+      - korea_statistics_key_indicators_202607
+      - bok_20260716_monetary_policy_decision
+    fx:
+      pair: USD/KRW
+      reference_value: 1485.32
+      date: '2026-07-17'
+      method: Derived as ECB EUR/KRW 1698.46 divided by ECB EUR/USD 1.1435.
+      interpretation: The won strengthened from the mid-1500s noted around the policy period, but remains a volatile household
+        and import-cost channel.
+      source_refs:
+      - ecb_fx_usd_20260717
+      - ecb_fx_krw_20260717
+      - bok_20260716_monetary_policy_decision
+    credit_and_financial_stability:
+      read: Seoul housing prices and household debt remain upside financial-stability risks; treasury yields rose around the
+        decision.
+      source_ref: bok_20260716_monetary_policy_decision
+    brian_transmission:
+    - Salary, bonus, severance expectations and direct SK hynix ownership share the same Korean memory cycle.
+    - KRW liabilities and essential spending make household liquidity a liability-matching problem, not an FX speculation
+      problem.
+    - A strong Korean AI boom can increase both portfolio concentration and lifestyle confidence before the cycle turns.
+    portfolio_rule: 'Keep the emergency reserve and money needed within three years in KRW-matched safe assets; do not add
+      Korean memory or AI concentration merely because near-term growth is strong.
+
+      '
+  - economy_id: united_states
+    display_name: United States
+    regime: Resilient growth and AI capital spending with sticky inflation, slowing labor momentum and high long-term yields.
+    policy_rate:
+      target_range_percent:
+      - 3.5
+      - 3.75
+      decision_date: '2026-06-17'
+      stance: Held; the median June projection placed the end-2026 rate at 3.8 percent.
+      source_refs:
+      - fed_20260617_fomc_statement
+      - fed_20260617_sep
+    growth:
+      real_gdp_qoq_saar_percent: 2.1
+      period: 2026-Q1-third-estimate
+      final_private_domestic_purchases_qoq_saar_percent: 1.7
+      median_2026_projection_percent: 2.2
+      source_refs:
+      - bea_2026q1_gdp_third_estimate
+      - fed_20260617_sep
+    inflation:
+      cpi_yoy_percent: 3.5
+      core_cpi_yoy_percent: 2.6
+      energy_yoy_percent: 15.7
+      period: 2026-06
+      median_2026_pce_projection_percent: 3.6
+      source_refs:
+      - bls_202606_cpi
+      - fed_20260617_sep
+    labor:
+      payroll_change_thousand: 57
+      unemployment_percent: 4.2
+      participation_percent: 61.5
+      period: 2026-06
+      median_2026_unemployment_projection_percent: 4.3
+      source_refs:
+      - bls_202606_employment_situation
+      - fed_20260617_sep
+    fx:
+      reference: USD is the portfolio reporting currency for many global holdings; use the bilateral entries below rather
+        than a single dollar-strength label.
+    credit_and_financial_stability:
+      read: Long yields remain above the policy-rate midpoint at the far end, keeping financing and discount-rate pressure
+        material for leveraged projects.
+      inference: true
+      evidence_ref: us_treasury_daily_curve_20260717
+    brian_transmission:
+    - US AI-company earnings and valuation drive several owned semiconductor, AI, power and optical ETFs.
+    - High financing costs matter most for pre-profit neoclouds, speculative generation and long-duration data-center pipelines.
+    - An unhedged US equity position diversifies KRW exposure over long horizons but can be volatile in KRW over short horizons.
+    portfolio_rule: 'Require AI revenue, free-cash-flow conversion and return-on-capital evidence to justify capex; do not
+      treat falling payroll momentum or a strong dollar as an automatic market-timing signal.
+
+      '
+  - economy_id: china
+    display_name: China
+    regime: Strong industrial supply and exports but weak domestic demand, property investment and private fixed investment.
+    policy_rate:
+      one_year_lpr_percent: 3.0
+      five_year_plus_lpr_percent: 3.5
+      date: '2026-06-22'
+      stance: Appropriately accommodative financing conditions.
+      source_refs:
+      - china_lpr_20260622
+      - china_state_council_credit_20260520
+    growth:
+      h1_gdp_yoy_percent: 4.7
+      q2_gdp_yoy_percent: 4.3
+      q2_gdp_qoq_percent: 0.9
+      high_tech_manufacturing_yoy_percent: 13.3
+      retail_sales_yoy_percent: 1.3
+      fixed_asset_investment_yoy_percent: -5.7
+      real_estate_development_investment_yoy_percent: -18.0
+      private_investment_yoy_percent: -8.5
+      period: 2026-H1
+      source_ref: china_nbs_2026h1_economy
+    inflation:
+      cpi_yoy_percent: 1.0
+      core_cpi_yoy_percent: 1.0
+      ppi_yoy_percent: 4.1
+      period: 2026-06
+      source_ref: china_nbs_2026h1_economy
+    labor:
+      surveyed_urban_unemployment_percent: 5.0
+      h1_average_percent: 5.2
+      manufacturing_pmi_employment_index: 48.5
+      nonmanufacturing_pmi_employment_index: 45.8
+      period: 2026-06
+      source_refs:
+      - china_nbs_2026h1_economy
+      - china_nbs_202606_pmi
+    fx:
+      pair: USD/CNY
+      reference_value: 6.7775
+      date: '2026-07-17'
+      method: Derived as ECB EUR/CNY 7.7501 divided by ECB EUR/USD 1.1435.
+      source_refs:
+      - ecb_fx_usd_20260717
+      - ecb_fx_cny_20260717
+    credit_and_financial_stability:
+      read: H1 new yuan loans were 10.72 trillion; outstanding loans rose 5.2 percent and M2 rose 8.0 percent, while real-estate
+        investment remained deeply negative.
+      source_refs:
+      - china_state_council_credit_20260715
+      - china_nbs_2026h1_economy
+    brian_transmission:
+    - China affects memory pricing, electronics demand, equipment demand and competing supply.
+    - Export strength can benefit Asian suppliers while weak property and consumption limit broad cyclical spillover.
+    - A low policy rate does not remove demand, credit-quality or geopolitical risk.
+    portfolio_rule: 'Separate export and high-tech manufacturing beneficiaries from domestic-demand exposure; require pricing,
+      receivables and trade-control evidence rather than treating headline GDP as a complete signal.
+
+      '
+  - economy_id: taiwan
+    display_name: Taiwan
+    regime: Exceptional AI-export and manufacturing boom with ample liquidity, rising producer prices and equity-credit heat.
+    policy_rate:
+      discount_rate_percent: 2.0
+      secured_loan_rate_percent: 2.375
+      temporary_accommodation_rate_percent: 4.25
+      decision_date: '2026-06-18'
+      stance: Held; domestic liquidity remains ample.
+      source_ref: taiwan_cbc_20260618_decision
+    growth:
+      q1_gdp_yoy_percent: 14.55
+      q1_gdp_qoq_saar_percent: 6.94
+      official_2026_forecast_percent: 9.64
+      real_exports_q1_yoy_percent: 35.76
+      manufacturing_q1_yoy_percent: 26.18
+      source_ref: taiwan_dgbas_2026q1_and_forecast
+    inflation:
+      cpi_yoy_percent: 2.6
+      ppi_yoy_percent: 15.1
+      period: 2026-06
+      official_2026_cpi_forecast_percent: 1.93
+      source_refs:
+      - taiwan_dgbas_202606_cpi
+      - taiwan_dgbas_2026q1_and_forecast
+    labor:
+      unemployment_percent: 3.27
+      seasonally_adjusted_unemployment_percent: 3.32
+      employment_million: 11.634
+      participation_percent: 59.5
+      period: 2026-05
+      source_ref: taiwan_dgbas_202605_labor
+    fx:
+      pair: USD/TWD
+      monthly_average: 31.618
+      period: 2026-06
+      source_ref: taiwan_cbc_202606_fx_average
+    credit_and_financial_stability:
+      read: Jan-May M2 averaged 6.12 percent growth, bank loans and investments 7.94 percent, and equity-investment lending
+        increased sharply.
+      housing_read: Real-estate lending share fell to 35.2 percent from a 37.6 percent peak.
+      source_ref: taiwan_cbc_20260618_decision
+    brian_transmission:
+    - TSMC-linked and Taiwan-heavy semiconductor holdings are cycle diversification inside AI, not diversification away from
+      AI.
+    - Producer inflation and capacity investment can lift revenue while squeezing downstream margins.
+    - Geographic and cross-strait concentration remains a separate tail risk that domestic GDP strength does not solve.
+    portfolio_rule: 'Count Taiwan semiconductor exposure inside the same explicit AI risk budget; require customer, capacity,
+      utilization and geopolitical scenario evidence before increasing it.
+
+      '
+  - economy_id: japan
+    display_name: Japan
+    regime: Moderate recovery and AI-related investment with labor tightness and gradual monetary normalization.
+    policy_rate:
+      overnight_rate_percent: 1.0
+      deposit_rate_percent: 1.0
+      basic_loan_rate_percent: 1.25
+      decision_date: '2026-06-16'
+      stance: Held; real rates remain significantly negative and further data-dependent increases are possible.
+      source_ref: boj_20260616_monetary_policy
+    growth:
+      q1_real_gdp_qoq_percent: 0.5
+      q1_real_gdp_qoq_saar_percent: 1.8
+      period: 2026-Q1-second-estimate
+      source_ref: japan_cao_2026q1_gdp_second_estimate
+    inflation:
+      headline_cpi_yoy_percent: 1.5
+      period: 2026-05
+      policy_nuance: Oil and pass-through effects create upside risk even though the latest headline rate is moderate.
+      source_refs:
+      - japan_stats_202605_cpi
+      - boj_20260616_monetary_policy
+    labor:
+      unemployment_percent: 2.5
+      employment_million: 68.9
+      employment_yoy_change_thousand: 520
+      period: 2026-05
+      source_ref: japan_stats_202605_labor
+    fx:
+      pair: USD/JPY
+      reference_value: 162.35
+      date: '2026-07-17'
+      method: Derived as ECB EUR/JPY 185.65 divided by ECB EUR/USD 1.1435.
+      source_refs:
+      - ecb_fx_usd_20260717
+      - ecb_fx_jpy_20260717
+    credit_and_financial_stability:
+      read: Monetary conditions remain accommodative in real terms, but normalization can reprice duration and leveraged assets.
+      source_ref: boj_20260616_monetary_policy
+    brian_transmission:
+    - Japanese equipment and materials add a different value-chain layer but remain exposed to global semiconductor capital
+      spending.
+    - Yen weakness can improve exporters' translated earnings while raising import costs; normalization can reverse that relationship.
+    - Currency direction should not substitute for company valuation and cycle evidence.
+    portfolio_rule: 'Treat equipment and materials as semiconductor-cycle exposure in look-through analysis; record hedge
+      status explicitly and avoid tactical yen timing.
+
+      '
+  - economy_id: euro_area
+    display_name: Euro area
+    regime: Weak growth with energy-led inflation and renewed rate tightening, creating stagflation pressure.
+    policy_rate:
+      deposit_facility_percent: 2.25
+      main_refinancing_percent: 2.4
+      marginal_lending_percent: 2.65
+      decision_date: '2026-06-11'
+      effective_date: '2026-06-17'
+      stance: Raised each rate by 25 basis points.
+      source_ref: ecb_20260611_policy_decision
+    growth:
+      q1_gdp_qoq_percent: -0.2
+      q1_employment_qoq_percent: 0.1
+      period: 2026-Q1
+      source_ref: eurostat_2026q1_gdp_employment
+    inflation:
+      headline_hicp_yoy_percent: 2.8
+      ex_energy_and_unprocessed_food_yoy_percent: 2.2
+      energy_yoy_percent: 8.7
+      period: 2026-06
+      ecb_2026_forecast_percent: 3.0
+      source_refs:
+      - eurostat_202606_inflation
+      - ecb_20260611_policy_decision
+    labor:
+      unemployment_percent: 6.2
+      period: 2026-05
+      direction: Stable month over month.
+      source_ref: eurostat_202605_unemployment
+    fx:
+      pair: EUR/USD
+      reference_value: 1.1435
+      date: '2026-07-17'
+      quote_convention: US dollars per euro
+      source_ref: ecb_fx_usd_20260717
+    credit_and_financial_stability:
+      read: Higher rates and a shrinking APP and PEPP portfolio increase financing sensitivity in a weak-growth environment.
+      source_ref: ecb_20260611_policy_decision
+    brian_transmission:
+    - European electrical and grid companies may capture AI and electrification demand even when the regional economy is weak.
+    - Higher financing and energy costs can delay data-center projects and compress industrial customer margins.
+    - The regional stock thesis must distinguish export-driven equipment suppliers from domestic cyclical exposure.
+    portfolio_rule: 'Require backlog quality, pricing power, cash conversion and customer geography; do not infer that structural
+      grid demand removes rate, energy or recession risk.
+
+      '
+  currency_role_policy:
+    principle: Match the currency policy to the asset's job, not to a forecast about the next FX move.
+    emergency_reserve_and_under_three_year_money:
+      default: KRW-denominated or KRW-matched insured and high-quality short-duration assets.
+      reason: Brian's essential spending, debt service and near-term obligations are primarily KRW liabilities.
+    global_equity_core:
+      default: Allow ordinary unhedged global-currency exposure as part of long-horizon diversification and invest on a schedule.
+      reason: Waiting for a perfect USD/KRW entry can become market timing and leave the global core permanently underfunded.
+    safe_bond_bucket:
+      default: Prefer KRW or KRW-hedged high-quality short-duration exposure.
+      reason: The bucket's job is stability and opportunity capital, not currency return.
+    thematic_equity:
+      default: Select on business evidence, valuation and portfolio correlation; do not make tactical FX direction the primary
+        thesis.
+    recording_rule: Record hedged and unhedged wrappers as distinct roles, including hedge cost, benchmark and intended holding
+      horizon.
+  decision_gates:
+  - gate_id: macro_01_household_liability_match
+    question: Are emergency money and spending within three years matched to KRW obligations?
+    if_no: Correct the liquidity role before adding risk assets.
+  - gate_id: macro_02_country_exposure_map
+    question: Are revenue, cost, funding, listing currency and geopolitical exposure separated rather than inferred from listing
+      country?
+    if_no: Research only; country labels are not sufficient evidence.
+  - gate_id: macro_03_rate_and_financing_survival
+    question: Can the business or project survive current rates, refinancing needs and a delay in AI demand?
+    if_no: Reject or reduce the proposed risk budget.
+  - gate_id: macro_04_fx_role
+    question: Is the FX exposure consistent with the asset's documented job and time horizon?
+    if_no: Change the wrapper or hedge design before deciding on size.
+  - gate_id: macro_05_labor_and_demand
+    question: Do employment, wage, consumption and order data support the revenue assumption?
+    if_no: Lower the base case and require stronger company evidence.
+  - gate_id: macro_06_brian_correlation
+    question: Does the position increase correlation with Brian's employer, bonus, KRW economy or existing AI wrappers?
+    if_yes: Count it inside the explicit AI and employer-linked limits; do not call it diversification.
+  scenario_map:
+  - scenario_id: sticky_inflation_and_higher_for_longer
+    evidence_to_watch: Fed, BOK and ECB decisions; energy inflation; US long yields; KRW import prices.
+    vulnerable_exposures: Leveraged neoclouds, speculative generation, long-duration growth and unfunded data-center pipelines.
+    resilient_evidence_required: Positive free cash flow, fixed-rate funding, contractual pass-through and near-term energized
+      capacity.
+  - scenario_id: global_ai_capex_reversal
+    evidence_to_watch: Hyperscaler returns, accelerator and HBM orders, foundry utilization, power reservations and optical
+      lead times.
+    vulnerable_exposures: Brian's employer income, direct SK hynix, overlapping semiconductor funds, power, optical and data-center
+      options.
+    response_rule: Use the existing deterministic stress ledger and liquidity floor; do not improvise leverage or average
+      down automatically.
+  - scenario_id: china_domestic_demand_and_property_drag
+    evidence_to_watch: Retail sales, private investment, property investment, PMI employment, credit growth and memory pricing.
+    vulnerable_exposures: Broad China demand, commodity cyclicals and suppliers relying on a rapid household-demand recovery.
+    resilient_evidence_required: Export demand, market share, pricing, receivable quality and balance-sheet strength.
+  - scenario_id: taiwan_geopolitical_or_supply_disruption
+    evidence_to_watch: Official security developments, customer diversification, inventory, alternative capacity and logistics.
+    vulnerable_exposures: Foundry, packaging, semiconductor equipment, servers and all dependent AI layers.
+    response_rule: Treat it as a portfolio-wide tail risk; GDP growth and position count do not diversify it.
+  - scenario_id: synchronized_soft_labor_and_demand
+    evidence_to_watch: US payrolls and participation, Korea manufacturing employment, China PMI employment and euro-area unemployment.
+    vulnerable_exposures: Consumer-sensitive end demand, cyclical industrial orders and earnings forecasts that assume broad
+      spillover from AI.
+    resilient_evidence_required: Contracted demand, recurring revenue, replacement demand and conservative working capital.
 holding_role_register:
 - product_id: direct_sk_hynix
   label: SK하이닉스 직접주식
@@ -525,6 +920,10 @@ monthly_dashboard_template:
   explicit_ai_percent: null
   broad_global_core_percent: null
   new_ai_purchase_krw: 0
+  country_macro_snapshot_as_of: '2026-07-19'
+  country_regimes_reviewed: []
+  material_rate_fx_labor_or_credit_change: null
+  currency_role_policy_breach: null
   policy_breach: null
   one_decision_for_next_month: null
 decision_tree:
@@ -544,12 +943,16 @@ decision_tree:
   question: Are exact ETF holdings, valuation, taxes and household overlap known?
   if_no: Research only; do not add the position.
 - gate: 6
+  question: Does the thesis survive the relevant country's rate, FX, labor, demand, credit and geopolitical regime while matching
+    Brian's KRW liabilities?
+  if_no: Research only, change the wrapper or reduce the proposed risk budget.
+- gate: 7
   question: Does the investment score at least eighty with written falsifiers?
   if_no: Reject or watchlist.
-- gate: 7
+- gate: 8
   question: Does the initial size remain inside every cap after a fifty-percent loss?
   if_no: Reduce size or do not buy.
-- gate: 8
+- gate: 9
   question: Has operating evidence improved after the initial position?
   if_yes: Scale only if valuation remains attractive; otherwise hold or exit.
 simplification_queue:
@@ -602,4 +1005,4 @@ external_reference_notes:
   relevance: Several narrow ETFs do not necessarily provide diversification; top holdings and overlap should be checked.
 decision_boundary: No trade follows automatically from this artifact. User confirmation, current account data, tax review
   and employer compliance remain required.
-source_snapshot_sha256: 360d9409303f70d83929d49fd598a38262ef2a8a3299e21f7d144ece1f683da2
+source_snapshot_sha256: d6a4a84d948b6436a5695a0b779030b60ffa2f685b5bdcadeb811f5c4dbef4e9
