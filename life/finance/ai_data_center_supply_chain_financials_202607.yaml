@@ -19511,8 +19511,139 @@ financial_profiles:
       - dc_refsatel_formosa_parque_industrial_data_center_and_fiber_node_boundary
     confidence: high_for_provider_service_scope_one_Parque_Industrial_shelter_official_map_crosswalk_and_government_equipment_classes_medium_for_current_homepage_network_metrics_and_state_created_identity_low_for_exact_legal_perimeter_audited_financials_current_MW_utilization_complete_BOM_equipment_ownership_GPU_inventory_site_economics_and_valuation
 
+  - id: company_edf_group
+    company: Electricite de France SA
+    ticker: wholly_French_State_owned_and_delisted
+    legal_entity_boundary: EDF_Group_consolidated_financials_with_internal_data_centers_and_external_data_center_power_exposure_not_separately_reported
+    status: integrated_low_carbon_generation_network_supply_and_energy_services_group_with_internal_HPC_data_centers
+    reporting_snapshot: '2026-07-19'
+    ownership_and_listing:
+      French_State_share_capital_and_voting_rights_percent: 100
+      Euronext_Paris_listing_period: 2005_11_21_to_2023_06_08
+      delisting_date: '2023-06-08'
+      direct_public_equity_security: none
+      boundary: >-
+        EDF remains a public-interest French limited company and publishes
+        regulated financial information, but it is no longer a publicly traded
+        security available as a direct listed data-center investment route.
+    FY2025_consolidated_EUR_million:
+      sales: 113266
+      EBITDA: 29256
+      operating_profit: 13104
+      net_income_group_share: 8367
+      operating_cash_flow: 9600
+      net_financial_debt: 51500
+      adjusted_economic_debt: 81700
+      net_financial_debt_to_EBITDA_x: 1.8
+      derived_operating_margin_percent: 11.569
+      derived_EBITDA_margin_percent: 25.83
+    FY2024_comparative_EUR_million:
+      sales: 118690
+      EBITDA: 36523
+      operating_profit: 18327
+      net_income_group_share: 11406
+      net_financial_debt: 54300
+      derived_operating_margin_percent: 15.441
+      derived_EBITDA_margin_percent: 30.772
+    FY2025_change:
+      sales_percent_derived: -4.57
+      EBITDA_percent_derived: -19.899
+      operating_profit_percent_derived: -28.499
+      net_income_group_share_percent_derived: -26.645
+      net_financial_debt_EUR_million_change: -2800
+      boundary: >-
+        Group earnings reflect electricity production, networks, supply, services,
+        market prices, nuclear output and impairments. The declines are not
+        attributed to internal data centers or external data-center customers.
+    outlook_and_capital_boundary:
+      2026_EBITDA_outlook: strong_but_expected_to_retreat_slightly_with_lower_market_prices
+      2027_net_financial_debt_to_EBITDA_target_max_x: 2.5
+      2026_2027_France_nuclear_output_TWh_range: [350, 370]
+      data_center_specific_capex_revenue_operating_profit_and_ROIC: undisclosed
+      boundary: >-
+        EDF's group outlook and leverage targets are not a forecast of data-center
+        power-contract revenue or internal IT cost. Large nuclear, network and
+        grid-investment requirements dominate the consolidated capital profile.
+    internal_data_center_read_through:
+      current_certified_sites: [Datacenter_NOE_Val_de_Reuil, Datacenter_de_Pacy_sur_Eure]
+      current_HPC_systems: [CRONOS, SELENA]
+      combined_compute_power_petaflops_more_than: 15
+      SELENA_cooling: direct_liquid_cooling
+      SELENA_PUE_approx: 1.04
+      historical_GAIA_GPU_inventory: {model: NVIDIA_V100, count: 64, replaced_by_SELENA: 2025}
+      current_GPU_inventory: not_disclosed_or_established
+      current_site_MW_racks_utilization_and_economics: undisclosed
+      portfolio_ref: dc_edf_france_internal_data_center_and_hpc_boundary
+    external_data_center_revenue_optionality:
+      Data4_CAPN:
+        allocated_nuclear_power_MW: 40
+        term_years: 12
+        first_delivery: 2026
+        forecast_annual_volume_GWh_approx: 230
+      Bouchain_SoftBank:
+        planned_data_center_MW: 400
+        state: preferred_bidder_selected_not_operating
+      Creys_Mepieu: 2026_call_for_expressions_of_interest_under_building_lease
+      former_industrial_site_program: six_sites_to_be_proposed_by_2026
+      revenue_margin_and_returns: undisclosed
+      boundary: >-
+        Allocated electricity, master-plan capacity, grid potential, preferred-bidder
+        selection and building leases have different economic perimeters. No MW is
+        treated as energized data-center IT load or EDF revenue without delivery,
+        metering, pricing and accounting evidence.
+    investability_and_supply_chain_view:
+      direct_equity_investability: unavailable_after_2023_delisting
+      public_market_read_through:
+        - EDF_bonds_and_credit_for_debt_investors_subject_to_instrument_specific_review
+        - listed_data_center_operators_and_suppliers_that_contract_with_EDF
+        - diversified_ETFs_with_French_utility_grid_electrical_or_nuclear_exposure
+      analytical_view: >-
+        EDF offers strategically important but non-pure-play exposure to AI data-center
+        electricity demand. Its low-carbon generation, long-term supply contracts,
+        grid expertise and former industrial sites can monetize load growth, while
+        its internal centers and HPC fleet provide operational credibility. Direct
+        equity is unavailable, project economics are undisclosed, and nuclear,
+        market-price, regulatory, balance-sheet and execution risks dominate group returns.
+    outlook:
+      positives:
+        - 100_percent_state_backing_and_strategic_role
+        - 515_TWh_2025_group_output_and_373_TWh_France_nuclear_output
+        - positive_operating_cash_flow_and_lower_net_financial_debt
+        - long_duration_Data4_nuclear_allocation_contract
+        - brownfield_sites_with_existing_grid_connection_potential
+        - two_internal_data_centers_and_current_HPC_operating_expertise
+      risks:
+        - FY2025_sales_EBITDA_operating_profit_and_net_income_declines
+        - very_large_nuclear_grid_and_generation_capital_requirements
+        - state_policy_regulatory_and_power_price_exposure
+        - project_grid_connection_and_construction_execution
+        - undisclosed_data_center_contract_prices_margin_capex_and_returns
+        - no_current_site_MW_utilization_complete_BOM_or_GPU_inventory
+        - no_direct_listed_equity_security
+    sources:
+      - {title: EDF 2025 annual results, publisher: EDF, date: '2026-02-20', url: "https://www.edf.fr/en/2025-annual-results"}
+      - {title: EDF 2025 annual results financial statement extract, publisher: EDF, date: '2026-02-20', url: "https://www.edf.fr/sites/groupe/files/2026-02/PR%202025%20annual%20results.pdf"}
+      - {title: EDF ownership and articles, publisher: EDF, accessed: '2026-07-19', url: "https://www.edf.fr/en/the-edf-group/dedicated-sections/investors/articles-of-association"}
+      - {title: EDF SA ISO 14001 certificate and data-center site list, publisher: AFNOR_and_EDF, period: '2024', url: "https://www.edf.fr/sites/groupe/files/2024-06/edfgroup_rse_certificat-iso14001_edf-sa_2024.pdf"}
+      - {title: EDF trusted cloud selection, publisher: EDF, date: '2025-11-05', url: "https://www.edf.fr/groupe-edf/espaces-dedies/journalistes/tous-les-communiques-de-presse/edf-renforce-la-souverainete-de-ses-donnees-en-se-dotant-de-son-cloud-de-confiance-et-selectionne-bleu-et-s3ns-deux-acteurs-francais-de-l-hebergement-de-donnees"}
+      - {title: SELENA commissioning, publisher: EDF_R_and_D, date: '2025-10-09', url: "https://www.edf.fr/groupe-edf/innover/rd-un-savoir-faire-mondial/toutes-les-actualites-de-la-rd/mise-en-service-du-supercalculateur-selena-une-nouvelle-etape-pour-le-calcul-haute-performance"}
+      - {title: Data4 nuclear allocation contract, publisher: EDF_and_Data4, date: '2025-09-04', url: "https://www.edf.fr/groupe-edf/espaces-dedies/journalistes/tous-les-communiques-de-presse/data4-signe-un-accord-avec-edf-pour-lapprovisionnement-en-electricite-bas-carbone-de-ses-datacenters-en-france"}
+      - {title: Bouchain preferred bidder, publisher: EDF, date: '2026-05-30', url: "https://www.edf.fr/en/the-edf-group/dedicated-sections/journalists/all-press-releases/edf-selects-softbank-group-as-preferred-bidder-for-the-development-of-a-large-scale-data-center-at-its-bouchain-site"}
+      - {title: Creys-Mepieu data-center call, publisher: EDF, date: '2026-07-03', url: "https://www.edf.fr/en/the-edf-group/supporting-our-clients/cei-data-centers"}
+    related_profiles:
+      - dc_edf_france_internal_data_center_and_hpc_boundary
+      - dc_data4_european_portfolio
+      - dc_opcore_france_hyperscale_and_edge_portfolio
+    confidence: high_for_ownership_delisting_FY2025_financials_current_two_site_certified_roster_HPC_systems_historical_GAIA_inventory_Data4_contract_and_Bouchain_status_medium_for_internal_operating_expertise_read_through_low_for_data_center_specific_revenue_profit_capex_returns_current_GPU_inventory_site_MW_and_external_project_delivery_economics
+
 cross_company_read_through:
   current_signals:
+    - EDF's 2024 AFNOR certificate names two current internal data-center sites, NOE at Val-de-Reuil and Pacy-sur-Eure. Five OSM geometries reconcile to those two site groups; a sixth Saint-Ouen point beside RTE's national control centre lacks current official corroboration and is excluded.
+    - NOE hosts CRONOS and SELENA, giving EDF more than 15 petaflops of current disclosed HPC capability. SELENA uses direct liquid cooling and reduced system PUE from 1.4 to approximately 1.04.
+    - EDF's 2019 GAIA system disclosed 64 NVIDIA V100 GPUs across 32 GPU nodes, but SELENA replaced GAIA in 2025. That historical count is not current installed inventory, and no current GPU floor is inferred.
+    - EDF FY2025 sales were EUR113.266 billion, EBITDA EUR29.256 billion and operating profit EUR13.104 billion, down from FY2024. Operating cash flow was EUR9.6 billion and net financial debt fell to EUR51.5 billion, but these are group energy and network results rather than data-center earnings.
+    - EDF's Data4 contract allocates 40MW of nuclear production for 12 years with approximately 230GWh of annual delivery expected from 2026. Bouchain's 400MW SoftBank project and Creys-Mepieu call remain pre-operating, with contract economics and EDF returns undisclosed.
+    - EDF is 100% French-state owned and has been delisted since June 2023, so its AI data-center investment exposure is strategic and indirect rather than a directly purchasable listed pure play.
     - REFSA Telecomunicaciones has one verified data-center shelter at Parque Industrial. Nine other related OSM points align within 3.8 to 87.2 metres of official Formosa Digital network nodes and are excluded from data-center counts.
     - The current homepage markets housing and hosting and claims more than 2,000km of fiber, 1,729 connected points, 725 education centers and 731 government organizations or services. These visibly 2022-era network metrics are not current data-center capacity or utilization.
     - Provincial reports establish UPS and cooling-system monitoring, generator and air-conditioner maintenance, a FreeNAS server, two IBM servers and a Huawei S6730 switch at Parque Industrial. They do not disclose MW, racks, full equipment BOM, ownership, PUE, WUE, water or site economics.

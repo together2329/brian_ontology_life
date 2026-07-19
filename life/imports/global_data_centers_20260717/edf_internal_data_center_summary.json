@@ -1,0 +1,250 @@
+{
+  "OSM_crosswalk": {
+    "records": [
+      {
+        "OSM_footprint_area_m2": 7806.54,
+        "OSM_name": "Datacenter EDF",
+        "OSM_ref": "osm_way_226250681",
+        "classification": "current_official_enterprise_data_center_site_representative",
+        "current_verified_site_count_inclusion": true,
+        "physical_role": "main_mapped_data_center_building",
+        "site_group": "Pacy-sur-Eure"
+      },
+      {
+        "OSM_footprint_area_m2": 448.942,
+        "OSM_name": null,
+        "OSM_ref": "osm_way_226246636",
+        "classification": "ancillary_building_within_official_data_center_site_not_separate_facility",
+        "current_verified_site_count_inclusion": false,
+        "physical_role": "small_campus_building_geometry",
+        "site_group": "Pacy-sur-Eure"
+      },
+      {
+        "OSM_footprint_area_m2": 458.955,
+        "OSM_name": null,
+        "OSM_ref": "osm_way_226246780",
+        "classification": "ancillary_building_within_official_data_center_site_not_separate_facility",
+        "current_verified_site_count_inclusion": false,
+        "physical_role": "small_campus_building_geometry",
+        "site_group": "Pacy-sur-Eure"
+      },
+      {
+        "OSM_footprint_area_m2": 442.214,
+        "OSM_name": null,
+        "OSM_ref": "osm_way_226247994",
+        "classification": "ancillary_building_within_official_data_center_site_not_separate_facility",
+        "current_verified_site_count_inclusion": false,
+        "physical_role": "small_campus_building_geometry",
+        "site_group": "Pacy-sur-Eure"
+      },
+      {
+        "OSM_footprint_area_m2": 104506.128,
+        "OSM_name": null,
+        "OSM_ref": "osm_way_952744491",
+        "classification": "current_official_enterprise_data_center_site_representative",
+        "current_verified_site_count_inclusion": true,
+        "physical_role": "works_or_campus_boundary_not_data_hall_area",
+        "site_group": "NOE_Val-de-Reuil"
+      },
+      {
+        "OSM_footprint_area_m2": null,
+        "OSM_name": "Datacenter EDF",
+        "OSM_ref": "osm_node_8297551605",
+        "classification": "uncorroborated_OSM_point_not_in_current_certified_EDF_data_center_roster",
+        "current_verified_site_count_inclusion": false,
+        "physical_role": "lone_point_beside_RTE_national_control_center",
+        "site_group": "Saint-Ouen-sur-Seine_candidate"
+      }
+    ],
+    "related_objects": 6,
+    "source_file": "life/imports/global_data_centers_20260717/osm_data_center_locations.jsonl",
+    "source_file_sha256": "3a0f1370f036f2ff5fa0c478bfadeb58c7809d90315bbee4e0a7c9cfd21d4733"
+  },
+  "accessed_on": "2026-07-19",
+  "digital_strategy": {
+    "2025_private_cloud_share_of_EDF_data_near_percent": 80,
+    "boundary": "Cloud migration and service-provider selection do not identify additional EDF-owned physical sites or transfer ownership of NOE and Pacy.",
+    "trusted_cloud_providers_selected": [
+      "BLEU",
+      "THALES_S3NS"
+    ]
+  },
+  "external_data_center_growth_exposure": {
+    "Bouchain_SoftBank": {
+      "planned_data_center_MW": 400,
+      "state": "preferred_bidder_selected_2026_05_30_not_operating"
+    },
+    "Creys_Mepieu": {
+      "state": "2026_call_for_expressions_of_interest_for_large_scale_data_center_under_building_lease"
+    },
+    "Data4_CAPN": {
+      "allocated_nuclear_power_MW": 40,
+      "first_delivery": 2026,
+      "forecast_annual_volume_GWh_approx": 230,
+      "term_years": 12
+    },
+    "economics_boundary": "Contract prices, EDF revenue, margin, required grid capex and returns are undisclosed. Planned customer MW and site potential are not internal operating data-center MW.",
+    "six_site_program": "EDF said six former industrial sites would be proposed by 2026; individual proposals, grid connection potential and operator projects are not current EDF-operated data centers."
+  },
+  "id": "edf_internal_data_center_summary_2026_07_19",
+  "operator": "EDF",
+  "outlook": {
+    "analytical_view": "EDF is not a data-center pure play. Its strongest AI-infrastructure exposure is as a low-carbon electricity producer, long-term supplier, grid and brownfield-site partner, while NOE and Pacy provide internal operating expertise. The opportunity is potentially large, but contract economics and data-center-specific earnings are not disclosed and the group outlook remains dominated by nuclear, network, market-price and capital-execution risks.",
+    "positive_signals": [
+      "two_current_certified_internal_sites",
+      "current_15_plus_petaflop_HPC_platform",
+      "SELENA_direct_liquid_cooling_and_approx_1_04_PUE",
+      "trusted_cloud_hybrid_strategy",
+      "long_term_nuclear_power_contracts",
+      "brownfield_industrial_land_and_grid_connection_strategy",
+      "FY2025_positive_operating_cash_flow_and_lower_net_financial_debt"
+    ],
+    "risk_signals": [
+      "FY2025_sales_EBITDA_and_operating_profit_declined",
+      "large_nuclear_and_grid_capital_program",
+      "state_policy_and_regulatory_exposure",
+      "internal_data_center_economics_undisclosed",
+      "site_level_MW_utilization_and_complete_BOM_undisclosed",
+      "current_GPU_count_undisclosed",
+      "external_data_center_projects_are_pre_operating_and_execution_dependent"
+    ]
+  },
+  "ownership_and_financials": {
+    "FY2024_comparatives_EUR_million": {
+      "EBITDA": 36523,
+      "net_financial_debt": 54300,
+      "net_income_group_share": 11406,
+      "operating_profit": 18327,
+      "sales": 118690
+    },
+    "FY2025_EUR_million": {
+      "EBITDA": 29256,
+      "net_financial_debt": 51500,
+      "net_income_group_share": 8367,
+      "operating_cash_flow": 9600,
+      "operating_profit": 13104,
+      "sales": 113266
+    },
+    "boundary": "EDF Group energy and network earnings are not internal-data-center earnings and are not allocated to NOE, Pacy, HPC systems, or external data-center power customers.",
+    "data_center_segment_and_site_revenue_operating_profit_capex_customer_concentration_and_ROIC": "undisclosed",
+    "ownership": "100_percent_French_State",
+    "public_listing": "delisted_from_Euronext_Paris_on_2023_06_08"
+  },
+  "portfolio_reconciliation": {
+    "NOE_OSM_works_or_campus_geometries": 1,
+    "Pacy_OSM_building_geometries": 4,
+    "boundary": "Five OSM objects reconcile to two current AFNOR-listed EDF internal data-center sites. Buildings and a works polygon are not separately counted; the sixth point lacks current official corroboration.",
+    "current_official_certified_data_center_sites": 2,
+    "current_official_site_names": [
+      "Datacenter NOE",
+      "Datacenter de Pacy-sur-Eure"
+    ],
+    "related_OSM_rows": 6,
+    "uncorroborated_Saint_Ouen_OSM_points_excluded": 1
+  },
+  "records_sha256": "11cc6952651cd2015e154aeac9c3d15e3da28cbdb3ce86f353d452d3702b3b37",
+  "site_engineering": {
+    "NOE": {
+      "2016_availability_estimate_percent": 99.995,
+      "2016_features": [
+        "fiber_connections",
+        "high_hosting_capacity_for_EDF_applications",
+        "very_high_speed_communications"
+      ],
+      "current_GPU_model_count_and_owner": "not_publicly_disclosed; the 64-V100 GAIA count is historical and must not be presented as current after SELENA replaced GAIA",
+      "current_HPC": {
+        "combined_EDF_group_compute_power_petaflops_more_than": 15,
+        "location_evidence": "TOP500_EDF_site_Val_de_Reuil",
+        "systems": [
+          {
+            "CPU": "Intel_Xeon_Platinum_8260",
+            "Rmax_GFLOPS": 4299330,
+            "Rpeak_GFLOPS": 7136870,
+            "cores": 81600,
+            "deployed": 2021,
+            "name": "CRONOS",
+            "platform": "BullSequana_X",
+            "vendor": "Bull"
+          },
+          {
+            "CPU": "AMD_EPYC_9354",
+            "Rmax_GFLOPS": 5420100,
+            "Rpeak_GFLOPS": 5501180,
+            "commissioned": 2025,
+            "cores": 107904,
+            "name": "SELENA",
+            "platform": "BullSequana_XH3000",
+            "vendor": "Bull"
+          }
+        ]
+      },
+      "current_cooling": {
+        "SELENA": "direct_liquid_cooling",
+        "SELENA_PUE_after_approx": 1.04,
+        "SELENA_PUE_before": 1.4
+      },
+      "design_firm_published_project": {
+        "completed": 2010,
+        "cost_EUR_million_ex_tax": 69,
+        "gross_project_area_m2": 16000,
+        "server_area_m2": 4600
+      },
+      "historical_accelerator_inventory": {
+        "GPU_count": 64,
+        "GPU_model": "NVIDIA_V100",
+        "GPU_nodes": 32,
+        "air_cooled_cold_aisle_racks": 19,
+        "installed": 2019,
+        "racks_42U": 37,
+        "replaced_by_SELENA": 2025,
+        "storage_PB": 15,
+        "system": "GAIA",
+        "water_door_cooled_racks": 18
+      },
+      "location": "Val-de-Reuil_France",
+      "official_address": "2 voie de l'Orée, FR-27100 Val-de-Reuil",
+      "role": "internal_EDF_Group_data_center_and_HPC_host"
+    },
+    "Pacy_sur_Eure": {
+      "OSM_main_building_footprint_m2": 7806.54,
+      "OSM_three_small_building_footprint_checksum_m2": 1350.111,
+      "cooling_modernization": {
+        "contractor_context": "Dalkia_group_with_Climatelec_reference",
+        "contractor_revenue_EUR_million": 1.8,
+        "pipe_diameter_range": "DN100_to_DN350",
+        "preinsulated_PE_pipe_metres": 1000,
+        "project_duration_months": 24,
+        "roof_304L_stainless_pipe_metres": 2500,
+        "scope": "migration_to_multiple_chillers_and_chilled_water_air_conditioning_cabinets_with_capacity_and_continuity_upgrade",
+        "work_hours": 12000
+      },
+      "current_GPU_model_count_and_owner": "not_publicly_disclosed_or_established",
+      "official_address": "141 rue Isambard, FR-27120 Pacy-sur-Eure",
+      "role": "internal_EDF_Group_data_center"
+    },
+    "complete_current_grid_feed_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_OEM_model_count_rating_redundancy_loading_acceptance_age_and_remaining_life": "undisclosed",
+    "current_rack_count_server_count_and_measured_site_PUE_WUE_water": "undisclosed_except_SELENA_system_PUE_and_historical_GAIA_racks",
+    "operating_energized_available_contracted_customer_accepted_leased_utilized_billed_peak_and_actual_IT_MW_by_site": "undisclosed",
+    "shared_2015_energy_context": {
+      "boundary": "Historical portfolio energy consumption is not IT load, power capacity, current energy, or a site allocation.",
+      "two_sites_annual_energy_GWh": 70
+    }
+  },
+  "sources": [
+    "https://www.edf.fr/sites/groupe/files/2024-06/edfgroup_rse_certificat-iso14001_edf-sa_2024.pdf",
+    "https://www.edf.fr/sites/groupe/files/contrib/groupe-edf/espaces-dedies/espace-medias/cp/2016/cp_edf_20160217_datacenters_vf.pdf",
+    "https://www.edf.fr/sites/default/files/EDF_RechercheDeveloppement/Pages_CommunauteScientifique/Kiosque/2019.07.03_-_rd_inside_-_hpc.pdf",
+    "https://www.edf.fr/groupe-edf/innover/rd-un-savoir-faire-mondial/toutes-les-actualites-de-la-rd/mise-en-service-du-supercalculateur-selena-une-nouvelle-etape-pour-le-calcul-haute-performance",
+    "https://www.edf.fr/groupe-edf/espaces-dedies/journalistes/tous-les-communiques-de-presse/edf-renforce-la-souverainete-de-ses-donnees-en-se-dotant-de-son-cloud-de-confiance-et-selectionne-bleu-et-s3ns-deux-acteurs-francais-de-l-hebergement-de-donnees",
+    "https://top500.org/site/50679/",
+    "https://www.enia.fr/en/projet/edf-projet-noe",
+    "https://www.climatelec.fr/sites/climatelec/files/2024-07/C1%20C2%20C3%20EDF%20%20Data%20Center.pdf",
+    "https://www.edf.fr/en/2025-annual-results",
+    "https://www.edf.fr/sites/groupe/files/2026-02/PR%202025%20annual%20results.pdf",
+    "https://www.edf.fr/en/the-edf-group/dedicated-sections/investors/articles-of-association",
+    "https://www.edf.fr/groupe-edf/inventer-l-avenir-de-l-energie/rd-un-savoir-faire-mondial/les-pepites-de-la-rd/data-centers/les-enjeux",
+    "https://www.edf.fr/en/the-edf-group/dedicated-sections/journalists/all-press-releases/edf-selects-softbank-group-as-preferred-bidder-for-the-development-of-a-large-scale-data-center-at-its-bouchain-site",
+    "https://www.edf.fr/en/the-edf-group/supporting-our-clients/cei-data-centers",
+    "https://www.edf.fr/groupe-edf/espaces-dedies/journalistes/tous-les-communiques-de-presse/data4-signe-un-accord-avec-edf-pour-lapprovisionnement-en-electricite-bas-carbone-de-ses-datacenters-en-france"
+  ]
+}

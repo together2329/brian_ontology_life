@@ -36031,7 +36031,164 @@ campus_profiles:
       - {title: REFSA electricity distributor authorization, publisher: Argentine_Official_Gazette, date: '2012-07-02', url: "https://www.boletinoficial.gob.ar/detalleAviso/primera/71799/20120702"}
     confidence: high_for_one_Parque_Industrial_shelter_official_map_node_crosswalk_provider_services_and_2020_2022_2023_government_equipment_classes_medium_for_current_homepage_network_metrics_and_legal_brand_identity_low_for_current_MW_area_racks_utilization_complete_BOM_equipment_ownership_GPU_inventory_financials_site_economics_and_valuation
 
+  - id: dc_edf_france_internal_data_center_and_hpc_boundary
+    operator: EDF
+    geography: [France]
+    status: two_current_certified_internal_data_center_sites_with_current_HPC_and_one_uncorroborated_OSM_point_excluded
+    as_of: '2026-07-19'
+    reproducible_registry:
+      facility_registry: life/imports/global_data_centers_20260717/edf_internal_data_center_registry.jsonl
+      facility_summary: life/imports/global_data_centers_20260717/edf_internal_data_center_summary.json
+      related_OSM_rows: 6
+      current_official_certified_data_center_sites: 2
+      Pacy_OSM_building_geometries: 4
+      NOE_OSM_works_or_campus_geometries: 1
+      uncorroborated_Saint_Ouen_OSM_points_excluded: 1
+      boundary: >-
+        Five OSM objects reconcile to the two data-center sites in EDF's current
+        AFNOR certificate. Four Pacy building geometries form one site and the NOE
+        works polygon is a campus boundary. The sixth point beside RTE's national
+        control centre is not in the certified EDF roster and adds no facility count.
+    current_official_sites:
+      NOE:
+        location: Val_de_Reuil_France
+        official_address: 2_voie_de_l_Oree_FR_27100_Val_de_Reuil
+        roles: [internal_EDF_Group_data_center, HPC_host]
+        design_firm_published_project:
+          completed: 2010
+          gross_project_area_m2: 16000
+          server_area_m2: 4600
+          cost_EUR_million_ex_tax: 69
+        2016_estimated_availability_percent: 99.995
+        boundary: >-
+          Project area and server area come from the design firm and are not current
+          rack count, operating IT load, available capacity or utilization.
+      Pacy_sur_Eure:
+        official_address: 141_rue_Isambard_FR_27120_Pacy_sur_Eure
+        role: internal_EDF_Group_data_center
+        OSM_main_building_footprint_m2: 7806.54
+        OSM_three_small_building_footprint_checksum_m2: 1350.111
+        boundary: OSM_geometry_is_not_gross_floor_data_hall_or_IT_area
+    portfolio_energy_and_digital_strategy:
+      two_sites_2015_annual_energy_GWh: 70
+      2025_private_cloud_share_of_EDF_data_near_percent: 80
+      2025_trusted_cloud_providers_selected: [BLEU, THALES_S3NS]
+      boundary: >-
+        Historical energy is not current capacity or IT load. Cloud-provider
+        selection does not establish another EDF-owned physical data center or
+        change the current NOE and Pacy ownership and operating-site boundary.
+    HPC_and_accelerators:
+      current_location_evidence: TOP500_EDF_site_Val_de_Reuil
+      current_systems:
+        - {name: CRONOS, vendor: Bull, platform: BullSequana_X, CPU: Intel_Xeon_Platinum_8260, cores: 81600, Rmax_GFLOPS: 4299330, Rpeak_GFLOPS: 7136870, deployed: 2021}
+        - {name: SELENA, vendor: Bull, platform: BullSequana_XH3000, CPU: AMD_EPYC_9354, cores: 107904, Rmax_GFLOPS: 5420100, Rpeak_GFLOPS: 5501180, commissioned: 2025}
+      current_combined_EDF_Group_compute_power_petaflops_more_than: 15
+      historical_GAIA:
+        installed: 2019
+        replaced_by_SELENA: 2025
+        GPU_model: NVIDIA_V100
+        GPU_count: 64
+        GPU_nodes: 32
+        racks_42U: 37
+        water_door_cooled_racks: 18
+        air_cooled_cold_aisle_racks: 19
+        storage_PB: 15
+      current_GPU_model_count_owner_and_utilization: not_publicly_disclosed
+      boundary: >-
+        GAIA's 64 V100 GPUs are a historical installed inventory, not a current
+        floor after EDF said SELENA replaced GAIA in 2025. CRONOS and SELENA's
+        public TOP500 records are CPU systems; this does not prove EDF has zero
+        other current GPUs.
+    power_cooling_and_equipment:
+      NOE_SELENA:
+        cooling: direct_liquid_cooling
+        prior_PUE: 1.4
+        PUE_after_approx: 1.04
+      Pacy_cooling_modernization:
+        operator_and_contractor_context: EDF_with_Dalkia_and_Climatelec_reference
+        scope: multiple_chillers_and_chilled_water_air_conditioning_cabinets_with_capacity_and_continuity_upgrade
+        preinsulated_PE_pipe_metres: 1000
+        roof_304L_stainless_pipe_metres: 2500
+        diameter_range: DN100_to_DN350
+        project_duration_months: 24
+        contractor_revenue_EUR_million: 1.8
+        work_hours: 12000
+      complete_current_grid_feed_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_OEM_model_count_rating_redundancy_loading_acceptance_age_and_remaining_life: undisclosed
+      current_site_measured_PUE_WUE_water_energy_emissions_and_live_liquid_cooled_MW: undisclosed_except_SELENA_system_PUE
+    operating_capacity:
+      operating_energized_available_contracted_customer_accepted_leased_utilized_billed_peak_and_actual_IT_MW_by_site: undisclosed
+      current_rack_and_server_count: undisclosed_except_historical_GAIA_racks
+      exact_current_workload_customer_and_internal_entity_allocation: undisclosed
+    ownership_and_financial_boundary:
+      financial_profile_ref: company_edf_group
+      ownership: 100_percent_French_State
+      public_listing: delisted_from_Euronext_Paris_on_2023_06_08
+      FY2025_sales_EUR_million: 113266
+      FY2025_EBITDA_EUR_million: 29256
+      FY2025_operating_profit_EUR_million: 13104
+      FY2025_net_income_group_share_EUR_million: 8367
+      FY2025_operating_cash_flow_EUR_million: 9600
+      FY2025_net_financial_debt_EUR_million: 51500
+      data_center_segment_and_site_economics: undisclosed
+      boundary: >-
+        EDF Group energy and network earnings are not NOE, Pacy, HPC or external
+        data-center power-contract earnings and are not allocated to individual sites.
+    external_data_center_growth_exposure:
+      Data4_CAPN: {allocated_nuclear_power_MW: 40, term_years: 12, first_delivery: 2026, forecast_annual_volume_GWh_approx: 230}
+      Bouchain_SoftBank: {planned_data_center_MW: 400, state: preferred_bidder_selected_not_operating}
+      Creys_Mepieu: call_for_expressions_of_interest_for_large_scale_data_center_under_building_lease
+      six_site_program: EDF_said_six_former_industrial_sites_would_be_proposed_by_2026
+      economics_boundary: >-
+        Contract prices, EDF revenue and margin, grid capex and returns are
+        undisclosed. Customer project MW and industrial-site connection potential
+        are not EDF's internal operating data-center capacity.
+    outlook:
+      positive_signals:
+        - two_current_certified_internal_data_center_sites
+        - current_15_plus_petaflop_HPC_platform
+        - SELENA_direct_liquid_cooling_and_approx_1_04_PUE
+        - hybrid_private_and_trusted_cloud_strategy
+        - long_term_low_carbon_power_contracts
+        - former_industrial_land_and_grid_connection_strategy
+        - FY2025_positive_operating_cash_flow_and_lower_net_financial_debt
+      risk_signals:
+        - FY2025_sales_EBITDA_and_operating_profit_declined
+        - large_nuclear_and_grid_capital_program
+        - state_policy_and_regulatory_exposure
+        - internal_data_center_economics_undisclosed
+        - site_level_MW_utilization_and_complete_BOM_undisclosed
+        - current_GPU_inventory_undisclosed
+        - external_data_center_projects_are_pre_operating_and_execution_dependent
+      analytical_view: >-
+        EDF is not a data-center pure play. Its strongest AI-infrastructure exposure
+        is as a low-carbon electricity producer, long-term supplier, grid and
+        brownfield-site partner, while NOE and Pacy provide internal operating and
+        HPC expertise. The opportunity may be large, but contract economics and
+        data-center-specific earnings are undisclosed and group returns remain
+        dominated by nuclear, networks, power prices and capital execution.
+    sources:
+      - {title: EDF SA ISO 14001 certificate and data-center site list, publisher: AFNOR_and_EDF, period: '2024', url: "https://www.edf.fr/sites/groupe/files/2024-06/edfgroup_rse_certificat-iso14001_edf-sa_2024.pdf"}
+      - {title: EDF data centers obtain ISO 50001, publisher: EDF, date: '2016-02-17', url: "https://www.edf.fr/sites/groupe/files/contrib/groupe-edf/espaces-dedies/espace-medias/cp/2016/cp_edf_20160217_datacenters_vf.pdf"}
+      - {title: GAIA HPC technical dossier, publisher: EDF_R_and_D, period: '2019-06', url: "https://www.edf.fr/sites/default/files/EDF_RechercheDeveloppement/Pages_CommunauteScientifique/Kiosque/2019.07.03_-_rd_inside_-_hpc.pdf"}
+      - {title: SELENA commissioning, publisher: EDF_R_and_D, date: '2025-10-09', url: "https://www.edf.fr/groupe-edf/innover/rd-un-savoir-faire-mondial/toutes-les-actualites-de-la-rd/mise-en-service-du-supercalculateur-selena-une-nouvelle-etape-pour-le-calcul-haute-performance"}
+      - {title: EDF TOP500 site, publisher: TOP500, accessed: '2026-07-19', url: "https://top500.org/site/50679/"}
+      - {title: EDF Noe project, publisher: enia_architects, accessed: '2026-07-19', url: "https://www.enia.fr/en/projet/edf-projet-noe"}
+      - {title: Pacy cooling refurbishment, publisher: Climatelec, period: '2024', url: "https://www.climatelec.fr/sites/climatelec/files/2024-07/C1%20C2%20C3%20EDF%20%20Data%20Center.pdf"}
+      - {title: EDF trusted cloud selection, publisher: EDF, date: '2025-11-05', url: "https://www.edf.fr/groupe-edf/espaces-dedies/journalistes/tous-les-communiques-de-presse/edf-renforce-la-souverainete-de-ses-donnees-en-se-dotant-de-son-cloud-de-confiance-et-selectionne-bleu-et-s3ns-deux-acteurs-francais-de-l-hebergement-de-donnees"}
+      - {title: EDF 2025 annual results, publisher: EDF, date: '2026-02-20', url: "https://www.edf.fr/en/2025-annual-results"}
+      - {title: EDF ownership and articles, publisher: EDF, accessed: '2026-07-19', url: "https://www.edf.fr/en/the-edf-group/dedicated-sections/investors/articles-of-association"}
+      - {title: Data4 nuclear allocation contract, publisher: EDF_and_Data4, date: '2025-09-04', url: "https://www.edf.fr/groupe-edf/espaces-dedies/journalistes/tous-les-communiques-de-presse/data4-signe-un-accord-avec-edf-pour-lapprovisionnement-en-electricite-bas-carbone-de-ses-datacenters-en-france"}
+      - {title: Bouchain preferred bidder, publisher: EDF, date: '2026-05-30', url: "https://www.edf.fr/en/the-edf-group/dedicated-sections/journalists/all-press-releases/edf-selects-softbank-group-as-preferred-bidder-for-the-development-of-a-large-scale-data-center-at-its-bouchain-site"}
+    confidence: high_for_current_two_site_AFNOR_roster_NOE_Pacy_OSM_grouping_2019_GAIA_inventory_2025_replacement_SELENA_cooling_TOP500_systems_FY2025_financials_and_state_ownership_medium_for_design_firm_project_metrics_and_Pacy_contractor_scope_low_for_Saint_Ouen_point_complete_current_BOM_site_MW_utilization_current_GPU_inventory_data_center_specific_earnings_and_external_project_economics
+
 disclosure_gap_register:
+  - EDF_current_two_site_internal_data_center_building_parcel_ownership_lease_operating_entity_and_lifecycle_detail_beyond_AFNOR_site_rows
+  - EDF_NOE_and_Pacy_operating_energized_available_internal_allocated_utilized_peak_and_actual_IT_MW_current_racks_servers_workloads_and_site_economics
+  - EDF_NOE_and_Pacy_grid_feed_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_OEM_model_count_rating_redundancy_loading_acceptance_age_and_remaining_life
+  - EDF_NOE_and_Pacy_current_measured_PUE_WUE_energy_water_emissions_renewable_matching_and_live_liquid_cooled_MW_beyond_SELENA_system_PUE
+  - EDF_current_GPU_accelerator_model_count_owner_site_allocation_delivery_acceptance_rack_fabric_power_utilization_and_economics_after_GAIA_retirement
+  - EDF_Saint_Ouen_OSM_point_current_identity_physical_geometry_operator_role_and_reason_for_absence_from_AFNOR_data_center_roster
+  - EDF_Data4_Bouchain_SoftBank_Creys_Mepieu_and_other_six_site_program_contract_prices_revenue_margin_grid_capex_delivery_and_return_on_capital
   - REFSA_Telecomunicaciones_exact_current_legal_entity_parent_subsidiary_division_share_capital_ownership_and_consolidation_perimeter
   - REFSA_Telecomunicaciones_complete_current_facility_building_module_address_title_lease_operator_lifecycle_and_customer_roster_beyond_Parque_Industrial
   - REFSA_Telecomunicaciones_nine_OSM_and_official_map_fiber_nodes_confirmation_as_non_compute_network_nodes_and_any_hosted_IT_equipment
