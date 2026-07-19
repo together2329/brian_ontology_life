@@ -34932,7 +34932,153 @@ campus_profiles:
       - {title: Infratil independent valuation update, publisher: Infratil, as_of: 2026-03-31, url: "https://infratil.com/for-investors/results/annual-results-for-the-year-ended-31-march-2026/infratil-31-march-2026-valuation-update/"}
     confidence: high_for_current_seven_codes_card_values_lifecycles_128_2MW_checksum_FY2025_accounts_FY2026_investor_metrics_ownership_Cambridge_1_launch_configuration_ESG_metrics_and_four_OSM_crosswalk_medium_for_Park_Royal_to_30MW_plus_valuation_assumption_and_capacity_headline_reconciliation_low_for_live_load_complete_as_built_BOM_current_GPU_inventory_customer_economics_site_returns_and_future_delivery
 
+  - id: dc_verne_northern_europe_ai_colocation_portfolio
+    operator: Verne
+    legal_entity_boundary: Jules_I_Limited_consolidated_group_with_Finland_discontinued_operation_and_London_sale_transition_separated
+    geography: [Iceland, Finland, United_Kingdom, France_planned, Norway_planned]
+    status: mixed_retained_operating_divested_sale_agreement_under_construction_and_planned
+    as_of: '2026-07-19'
+    reproducible_registry:
+      facility_registry: life/imports/global_data_centers_20260717/verne_official_facility_registry.jsonl
+      facility_summary: life/imports/global_data_centers_20260717/verne_official_facility_summary.json
+      records: 8
+      lifecycle_counts:
+        retained_operating: 2
+        divested_2026_02_02: 2
+        definitive_sale_agreement_currently_operated_by_verne_pending_close_confirmation: 1
+        under_construction: 1
+        planned: 2
+    facility_roster:
+      retained_operating:
+        - {name: Iceland_Keflavik, campus_capacity_mw_more_than: 140, FY2025_installed_capacity_all_site_perimeter: not_site_allocated}
+        - {name: Helsinki_Vantaa, campus_capacity_mw: 70, FY2025_expansion_under_construction_mw: 11.7}
+      divested_completed_2026_02_02:
+        - {name: Pori_The_Rock, legacy_capacity_mw: 11, buyer: GleSYS}
+        - {name: Tampere_The_Deck, legacy_capacity_mw: 0.5, buyer: GleSYS}
+      transitional:
+        - {name: London_Volta, capacity_mw: 6, event: Arcus_definitive_100_percent_acquisition_agreement_2026_07_02, close_confirmation: not_found_by_as_of_date}
+      build_and_plans:
+        - {name: Mantsala_Kapuli, status: under_construction, initial_phase_mw: 70, construction_start: '2026-06-17'}
+        - {name: Ile_de_France, status: planned, masterplan_mw: 500, initial_by_2030_mw_more_than: 200, investment_eur_billion_up_to: 5}
+        - {name: Norway_Stjordal_Lauvasen, status: planned, grid_request_in_capacity_queue_mw: 180, municipal_plan_approved: '2026-02-26'}
+    capacity_reconciliation:
+      FY2025_installed_operational_capacity_mw: 52.3
+      FY2024_installed_operational_capacity_mw: 51
+      FY2025_average_occupancy_percent: 94
+      Iceland_campus_envelope_mw_more_than: 140
+      Iceland_substation_initial_operational_mw: 120
+      Iceland_substation_planned_total_by_end_2026_mw: 240
+      Helsinki_campus_envelope_mw: 70
+      Mantsala_initial_construction_mw: 70
+      France_masterplan_mw: 500
+      Norway_grid_request_in_queue_mw: 180
+      boundary: >-
+        The audited 52.3MW installed denominator covered the then Iceland,
+        Finland and UK operation. Campus cards, substation supply, build phase,
+        masterplan and grid-queue values are neither additive nor evidence of
+        live, leased, utilized, billed or actual load.
+    power_and_cooling:
+      Iceland:
+        grid: dual_33kV_transmission_feeds_on_diverse_routes
+        generation: 2N
+        UPS: 2N
+        cooling: year_round_free_cooling_N_plus_2_and_direct_liquid_cooling_enabled
+        electricity: 100_percent_renewable_geothermal_and_hydro_provider_claim
+        new_substation: 1500_sqm_11kV_switchgear_control_and_high_voltage_halls_flood_protected_transformers_and_five_fire_protection_systems
+      Helsinki:
+        grid: two_separate_20kV_feeds_on_diverse_routes
+        generation_and_UPS: cell_based_N_plus_1
+        cooling: indirect_free_cooling_rotating_heat_exchanger_N_plus_1
+        electricity: 100_percent_renewable_wind_provider_claim
+        heat_reuse: district_heating
+        backup_fuel: HVO
+      legacy_Pori_and_Tampere: >-
+        The registry preserves their former 20kV-feed, UPS, generator, free-cooling,
+        liquid-cooling and fire-system evidence but does not attribute it to the
+        retained July 2026 fleet after the completed sale.
+      boundary: complete_as_built_OEM_model_count_rating_loading_acceptance_and_remaining_life_ledgers_are_undisclosed
+    AI_and_accelerators:
+      related_campus_profile: dc_nscale_verne_iceland
+      customer: Nscale
+      agreement_date: '2025-11-20'
+      contract_mw: 15
+      planned_NVIDIA_Blackwell_Ultra_GPUs_approximately: 4600
+      deployment_window: throughout_2026
+      cooling_share_percent: {liquid: 85, air: 15}
+      ownership: customer_deployment_not_established_as_Verne_owned_inventory
+      exact_delivered_installed_accepted_operating_count: undisclosed
+      boundary: signed deployment plan rather than a July 2026 physical inventory audit
+    sustainability:
+      FY2025_energy_GWh: {Iceland: 181.300, Finland: 21.912, UK: 28.575, total: 231.787}
+      FY2025_PUE: {Iceland: 1.2, Finland_excluding_heat_reuse: 1.39, UK: 1.5}
+      FY2025_tCO2e: {scope_1: 119.59, scope_2_market_based: 7.82, scope_1_plus_2_market_based: 127.41, scope_2_location_based: 7244.46}
+      WUE_and_absolute_water: undisclosed
+      boundary: Nordic renewable claims and the wider low_carbon_mix_are_not_equated_to_all_site_hourly_carbon_free_operation
+    financial_crosswalk:
+      financial_profile_ref: company_verne
+      FY2025_total_revenue_USD_million: 172.9
+      FY2025_continuing_revenue_USD_million: 161.454
+      FY2025_continuing_operating_loss_USD_million: -2.382
+      FY2025_group_net_loss_USD_million: -34.140
+      FY2025_EBITDA_including_continuing_and_discontinued_USD_million: 105.7
+      FY2025_operating_cash_flow_USD_million: 60.184
+      FY2025_cash_capex_PPE_USD_million: 117.520
+      FY2025_net_debt_USD_million: 676.536
+      boundary: EBITDA_is_not_operating_profit_and_total_revenue_includes_the_discontinued_Finland_operation
+    ownership_and_transactions:
+      owner: Ardian_infrastructure_funds
+      public_security: none
+      Ardian_committed_expansion_capital_USD_billion_up_to: 1.2
+      Finnish_divestment_completed: '2026-02-02'
+      London_sale: signed_not_confirmed_closed_by_2026_07_19
+      historical_D9_max_equity_price_USD_million: 575
+      IFRS_acquisition_consideration_USD_million: 399.043
+      boundary: transaction_maximum_accounting_consideration_and_later_settlement_are_different_scopes
+    OSM_crosswalk:
+      related_objects: 5
+      raw_operator_tagged_objects: 4
+      distinct_facility_records_crosswalked: 3
+      Iceland_objects: one_campus_relation_plus_two_building_ways_counted_as_one_campus
+      boundary: partial_map_crosswalk_not_complete_roster_or_capacity_evidence
+    outlook:
+      positive_signals:
+        - 94_percent_average_occupancy_on_audited_installed_capacity
+        - high_Iceland_segment_EBITDA_and_low_carbon_high_density_position
+        - 15MW_approximately_4600_Blackwell_Ultra_customer_plan
+        - Helsinki_and_Mantsala_growth_with_large_France_and_Norway_options
+        - Ardian_capital_commitment_and_undrawn_facilities
+      risk_signals:
+        - USD676_5m_net_debt_12_2_times_net_debt_to_equity_and_USD51_0m_finance_cost
+        - continuing_operating_loss_and_group_net_loss
+        - installed_capacity_far_below_mixed_pipeline_headlines
+        - grid_permit_financing_customer_and_schedule_execution
+        - Iceland_and_IaaS_revenue_concentration
+        - divestments_change_reporting_perimeter_and_no_direct_public_security
+      analytical_view: >-
+        Verne is strong evidence of Nordic AI demand and scarce low-carbon,
+        liquid-cooling-ready infrastructure. Its large option set is balanced by
+        high leverage and a major installed-to-pipeline delivery gap. Because it
+        is private, public-market relevance is mainly read-through to grid,
+        electrical, cooling and accelerator suppliers rather than a direct pure play.
+    sources:
+      - {title: Iceland 2025 datasheet, publisher: Verne, url: "https://www.verneglobal.com/hubfs/Downloadable_Content/Datasheets%202025/Iceland_Datasheet%20.pdf"}
+      - {title: Helsinki 2025 datasheet, publisher: Verne, url: "https://www.verneglobal.com/hubfs/Datasheets%202025/Helsinki%20Datasheet-1.pdf"}
+      - {title: Nscale 15MW Blackwell Ultra deployment, publisher: Verne, date: '2025-11-20', url: "https://www.verne.co/news/news-verne-and-nscale"}
+      - {title: Mäntsälä construction start, publisher: Verne, date: '2026-06-17', url: "https://www.verne.co/news/news-verne-begins-construction-of-the-first-70-mw-on-its-data-center-campus-in-m%C3%A4nts%C3%A4l%C3%A4"}
+      - {title: Île-de-France plan, publisher: Ardian_and_Verne, accessed: '2026-07-19', url: "https://www.verne.co/news/news-at-choose-france-ardian-and-verne-announce-plans-for-a-digital-infrastructure-campus-in-%C3%AEle-de-france-to-strengthen-europes-industrial-and-ai-capacity?hs_amp=true"}
+      - {title: London acquisition agreement, publisher: Arcus_Infrastructure_Partners, date: '2026-07-02', url: "https://arcusip.com/news/"}
+      - {title: Jules I Limited FY2025 audited accounts, publisher: UK_Companies_House, filed: '2026-06-26', url: "https://find-and-update.company-information.service.gov.uk/company/14551205/filing-history/MzUyNzI0ODY2NWFkaXF6a2N4/document?download=1&format=pdf"}
+    confidence: high_for_lifecycle_roster_FY2025_audited_financials_installed_capacity_selected_engineering_Nscale_plan_and_OSM_crosswalk_medium_for_current_post_transaction_retained_perimeter_low_for_live_load_complete_BOM_current_GPU_inventory_site_economics_and_pipeline_delivery
+
 disclosure_gap_register:
+  - Verne_exact_current_retained_building_roster_legal_title_lease_and_site_to_subsidiary_bridge
+  - Verne_per_site_operating_energized_leased_customer_accepted_utilized_billed_and_actual_IT_load
+  - Verne_per_site_as_built_grid_transformer_switchgear_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_OEM_model_count_rating_loading_acceptance_and_remaining_life
+  - Verne_Nscale_Blackwell_Ultra_delivered_installed_accepted_operating_count_owner_rack_fabric_power_utilization_revenue_and_margin
+  - Verne_Helsinki_expansion_London_sale_Mantsala_France_and_Norway_delivery_transaction_grid_permit_financing_customer_and_acceptance_state
+  - Verne_site_level_revenue_operating_profit_cash_flow_capex_debt_ROIC_customer_concentration_and_contract_pricing
+  - Verne_current_enterprise_value_Ardian_fund_economics_and_exit_terms
+  - Verne_current_WUE_absolute_water_hourly_matching_and_per_site_emissions
   - Kao_Data_seven_current_codes_Park_Royal_and_160MW_plus_headline_to_exact_legal_building_title_lease_and_lifecycle_bridge
   - Kao_Data_128_2MW_cards_41_6MW_operational_cards_37MW_investor_operating_18MW_construction_106MW_pipeline_150MW_Harlow_and_160MW_plus_scope_reconciliation
   - Kao_Data_per_site_operating_energized_customer_accepted_leased_utilized_billed_and_actual_IT_load
