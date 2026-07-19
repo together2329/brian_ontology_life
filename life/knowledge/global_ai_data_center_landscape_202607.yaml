@@ -37911,7 +37911,188 @@ campus_profiles:
       - {title: PAX 1.35GW project announcement, publisher: PowerHouse_Data_Centers, date: '2025-07-15', url: 'https://www.powerhousedata.com/news/pennsylvania-data-center-partners-and-powerhouse-data-centers-launch-joint-venture-to-build-next-gen-1-35-gw-hyperscale-data-center-campus-in-carlisle-pennsylvania'}
     confidence: high_for_current_13_card_roster_two_home_only_labels_homepage_headlines_five_OSM_crosswalks_selected_JV_customer_power_and_design_claims_and_AREP_Fund_IV_medium_for_project_to_partner_current_bridge_low_for_current_commissioning_live_IT_load_complete_equipment_BOM_GPU_inventory_project_ownership_standalone_financials_and_site_ROIC
 
+  - id: dc_rowan_us_hyperscale_AI_power_and_financing_pipeline
+    name: Rowan US hyperscale AI, power, project-phase and financing boundary
+    type: current_private_developer_portfolio_with_delivered_construction_pipeline_OSM_power_water_GPU_ownership_and_financial_scope_boundary
+    developer: Rowan_Digital_Infrastructure
+    legacy_legal_or_operator_name: Rowan_Green_Data_LLC
+    country: United_States
+    evidence_artifacts:
+      project_registry: life/imports/global_data_centers_20260717/rowan_digital_infrastructure_registry.jsonl
+      project_summary: life/imports/global_data_centers_20260717/rowan_digital_infrastructure_summary.json
+      registry_builder: scripts/build_rowan_digital_infrastructure_registry.py
+    current_roster_and_platform_reconciliation:
+      current_portfolio_cards: 4
+      current_project_identifiers: 6
+      provider_site_selection_metrics: {active_sites: 6, states: 3, acreage: 1790, under_development_GW: 1.6}
+      current_card_capacity_checksum_MW_using_Bauxite_600MW_label: 1500
+      current_homepage: {leased_GW: 1.2, operational_MW: 230, contracted_power_GW: 1.6, pipeline_GW: 6}
+      June_2026_brand_release: {employees: more_than_200, under_construction_GW: more_than_2, states: 3, construction_financing_USD: more_than_7_billion}
+      Quinbrook_platform: {sites_across_US: 20_plus, states: 20, capacity_under_evaluation_or_active_development_GW: 5_to_6_plus}
+      boundary: >-
+        Current cards, named projects, active sites, regional sites, employees,
+        card capacity, development, contracted power, leased power, operating
+        power and pipeline all use different denominators. The 230MW operating
+        headline is not silently allocated to a site and none is treated as
+        current utilized IT load.
+    current_project_profiles:
+      Cinco:
+        current_card: {location: Medina_County_near_San_Antonio_Texas, acres: 440, capacity_MW: 300, lifecycle: construction_target_completion_2027}
+        customer: Top_5_US_technology_company_for_long_term_needs
+        minimum_local_investment_USD: 900000000
+        current_Quinbrook_portfolio_scope: {acres: 440, total_power_envelope_GW: 1, Cinco_1_MW: 300, first_phase_delivery: late_2026}
+        separate_Quinbrook_project_page_scope: {acres: 220, near_term_MW: 300, additional_secured_MW: 400, full_delivery: before_2030, estimated_power_rate_discount_percent: 35}
+        utility: American_Electric_Power
+        boundary: The 300MW current project, 700MW secured-page scope and 1GW wider envelope are not added or treated as current live load.
+      Percheron:
+        current_card: {location: Morrow_County_near_Boardman_Oregon, acres: 275, capacity_MW: 300, lifecycle: phased_buildout_target_completion_2030}
+        county_application: {applicant: Rowan_Percheron_LLC, parcel_acres: approximately_274, permanent_project_footprint_acres: approximately_190, application_date: '2023-05-18'}
+        customer: undisclosed
+        boundary: The county application is conceptual and the four OSM polygons carry no lifecycle tags; neither establishes current construction, operation or customer acceptance.
+      Temple:
+        first_phase: {location: Temple_and_Bell_County_Texas, acres: approximately_700, capacity_MW: 300, lifecycle: construction_with_2027_operations_or_substantial_completion_target}
+        broader_region: {controlled_acres: more_than_1350, power_capacity_GW: 1.6, power_window: 2026_to_2030}
+        customer: top_global_technology_company_long_term_customer
+        utility: Oncor
+        minimum_local_investment_USD: 700000000
+        project_debt_USD: nearly_3000000000
+        boundary: The 300MW first campus and 1.6GW wider region are separate scopes; the debt and investment amount are not revenue or spent capex.
+      Bauxite:
+        location: Frederick_County_Quantum_Loophole_campus_Maryland
+        current_group_card: {acres: 375, numeric_capacity_MW: 600, prose_capacity_MW: more_than_630, lifecycle: Bauxite_I_substantial_completion_2025_with_II_and_III_advancing_to_2026_and_2027}
+        Quinbrook_scope: {industrial_development_acres: 2000, total_utility_load_MW: 626, approximate_total_MW_variant: 625, Bauxite_I_MW: 231, Bauxite_II_and_III_remaining_MW: 395, broader_planned_utility_load_GW: more_than_1}
+        Bauxite_I_planned_facility_sq_ft: 777151
+        Bauxite_I_lifecycle: substantial_completion_July_2025_and_fully_delivered_late_2025_per_Quinbrook
+        Bauxite_II_lifecycle: broke_ground_February_2025_and_advancing_toward_2026_delivery
+        Bauxite_III_lifecycle: broke_ground_August_2025_and_advancing_toward_2027_delivery
+        phase_financing_USD: {Bauxite_I: 975000000, Bauxite_II: 1200000000, Bauxite_III: 925000000, reported_total: more_than_3100000000}
+        boundary: >-
+          The 600MW card label, more-than-630MW prose, approximately 625MW,
+          626MW utility load and more-than-1GW wider planned utility scope are
+          retained separately. The 777,151-square-foot value was a planned
+          Bauxite I facility disclosure, not a current measured floor-area or
+          operating-load audit.
+    lifecycle_boundary:
+      delivered: [Bauxite_I]
+      construction_or_advancing: [Bauxite_II, Bauxite_III, Cinco, Temple]
+      long_dated_phased_buildout: [Percheron]
+      aggregate_operational_headline_MW: 230
+      treatment: The 230MW headline is not silently assigned to Bauxite I despite its numerical proximity to the 231MW delivered-phase disclosure.
+    brand_legal_ownership_and_operating_boundary:
+      founded: November_2020
+      initial_JV: Quinbrook_and_Birch_Infrastructure
+      January_2023: Rowan_wholly_owned_by_Quinbrook
+      August_2024: UPP_co_investment_with_financial_terms_undisclosed
+      April_2026: Blackstone_affiliated_funds_acquired_significant_minority_with_terms_undisclosed
+      current_web_footer_variants: [Rowan_Digital_Infrastructure_LLC, Rowan_Digital_Infrastructure_Pty_Ltd]
+      OSM_operator: Rowan_Green_Data_LLC
+      OSM_owner: Rowan_Digital_Infrastructure_Pty_Ltd
+      exact_current_equity_percentages_voting_rights_preference_terms_project_asset_title_debt_guarantees_and_accounting_consolidation: undisclosed_or_incomplete
+      boundary: Historical whole ownership, later co-investments, current brand, legal footers, project entities, mapped operator and property title are different scopes.
+    OSM_crosswalk:
+      related_objects: 4
+      operator_tagged_objects: 4
+      raw_name: Percheron_DC
+      mapped_provider_scope: one_Percheron_campus
+      footprint_area_m2_sum_not_floor_area: 93340.429
+      each_geometry_m2_approximate: 23335
+      lifecycle_tags: absent
+      boundary: Four OSM building polygons are four mapped geometries inside one campus, not four confirmed provider facilities, current operating buildings or gross floor area.
+    Percheron_2023_conceptual_power_water_and_equipment:
+      grid_and_electrical:
+        existing_adjacent_transmission_kV: 230
+        proposed_new_transmission_kV: 230
+        distribution_kV: 34.5
+        utility: Pacific_Power
+        line_route_to_Carty_miles: 1.6
+        onsite_substations: conceptual_component
+        backup_generation: onsite_systems_sufficient_for_reliability_without_count_rating_topology_fuel_or_runtime
+      nearby_Carty_context_not_dedicated_supply: {PGE_combined_cycle_generation_MW: 450, switchyard_and_substation: present}
+      water_and_cooling:
+        industrial_process_and_cooling_water_gallons_per_year: 20_to_60_million
+        black_and_grey_water_gallons_per_day: 10000_to_15000
+        initial_exempt_potable_well_gallons_per_day: up_to_5000
+        industrial_wastewater: recycle_onsite_then_treat_or_manage_in_retention_or_evaporation_ponds
+        cooling_towers: mentioned_as_possible_noise_source_not_as_built_inventory
+      boundary: >-
+        This is a 2023 land-use application and conceptual layout, not an
+        as-built bill of materials. The nearby Carty plant is context and not a
+        dedicated supply allocation. Generator, transformer, switchgear, UPS,
+        battery, chiller, tower and CDU counts or ratings remain undisclosed.
+    current_power_cooling_sustainability_and_equipment_boundary:
+      Bauxite_I: {energy_efficiency_increase_percent: 17, embodied_carbon_reduction_percent: 23, trees_planted_or_preserved_acres: 28, measurement_baselines: undisclosed}
+      Cinco: {water_offset_percent: 250, boundary: offset_program_not_current_site_WUE_or_actual_water_use}
+      Temple: {construction_waste_recycling_target_percent: more_than_85, water_conservation: provider_commitment_without_absolute_use}
+      platform: {substation_and_transmission_integration: provider_capability, high_density_support: provider_capability, renewable_pathways: where_appropriate}
+      complete_per_site_grid_transformer_switchgear_busway_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_pump_heat_exchanger_cooling_tower_OEM_model_count_rating_loading_test_age_and_remaining_life: undisclosed_or_incomplete
+      measured_site_PUE_WUE_energy_water_emissions_hourly_renewable_matching_and_live_liquid_cooled_MW: undisclosed_or_unestablished
+      boundary: Relative improvements, offsets, recycling targets and design capability do not establish current equipment, efficiency, actual load, water use or remaining life.
+    AI_accelerators_and_high_density:
+      workload_evidence: [Bauxite_cloud_and_AI_workloads, Cinco_top_5_US_technology_customer, Temple_top_global_technology_customer, platform_hyperscale_AI_and_cloud_demand]
+      exact_current_Rowan_customer_or_partner_GPU_accelerator_model_count_owner_site_delivery_acceptance_rack_fabric_power_utilization_revenue_margin_and_remaining_life: undisclosed_or_unestablished
+      boundary: Cloud, AI and hyperscale workloads describe customer demand, not Rowan-owned hardware or an installed accelerator count. No GPU total is inferred.
+    financing_financial_and_investability:
+      project_debt_not_revenue_USD: {Bauxite_I: 975000000, Bauxite_II: 1200000000, Bauxite_III: 925000000, Bauxite_total: more_than_3100000000, Cinco: 550000000, Temple: nearly_3000000000}
+      corporate_credit_facility_USD: 300000000
+      Green_Finance_Framework_three_projects_USD: 4400000000
+      June_2026_portfolio_construction_financing_USD: more_than_7000000000
+      current_sustainability_page_conflict: 1_4_billion_Green_Loan_Framework_versus_4_4_billion_Green_Finance_Framework_press_release
+      standalone_audited_revenue_operating_profit_EBITDA_net_income_cash_flow_capex_debt_assets_customer_concentration_utilization_and_ROIC: undisclosed
+      direct_public_equity_security: unavailable
+      indirect_listed_exposure: Blackstone_is_public_but_its_fund_affiliated_significant_minority_amount_and_Rowan_attribution_are_undisclosed
+      boundary: Construction debt, corporate credit, project investment, fund stakes and cumulative financing are not revenue, profit, enterprise value, equity value, spent capex or unrestricted cash.
+    named_party_read_through_without_revenue_attribution:
+      capital: [Quinbrook, University_Pension_Plan_Ontario, Blackstone_affiliated_funds]
+      utilities: [American_Electric_Power, Oncor, Pacific_Power]
+      Bauxite_III_lenders: [SMBC, MUFG, Mizuho, Societe_Generale]
+      corporate_credit_parties: [Apterra, Investec, Standard_Chartered, Celtic_Bank]
+      customers: [unnamed_Top_5_US_technology_company_at_Cinco, unnamed_top_global_technology_company_at_Temple, unnamed_hyperscalers_at_Bauxite]
+      boundary: A named relationship does not establish a material equipment award, attributable revenue, operating profit, margin or repeat business.
+    outlook:
+      positive_signals: [Bauxite_I_delivered, 230MW_operational_platform_headline, 1_2GW_leased, 1_6GW_contracted_power, more_than_7_billion_USD_construction_financing, top_technology_customers, Blackstone_and_UPP_capital_support, power_first_site_strategy, 6GW_pipeline]
+      conversion_tests: [reconcile_card_project_active_site_and_platform_denominators, allocate_230MW_operational_and_1_2GW_leased_to_assets, deliver_Bauxite_II_III_Cinco_and_Temple_to_customer_acceptance_and_billing, publish_current_cap_table_and_project_ownership, bridge_project_debt_to_revenue_cash_flow_and_returns, publish_as_built_equipment_and_measured_efficiency, identify_installed_accelerators_and_live_liquid_cooled_load]
+      risks: [large_debt_funded_construction_program, customer_concentration, power_and_interconnection_timing, project_and_region_scope_conflicts, private_financial_opacity, unclear_ownership_percentages, no_site_level_utilization_or_returns, no_GPU_inventory_or_AI_revenue_bridge]
+      analytical_view: >-
+        Rowan has moved beyond a paper pipeline because Bauxite I is delivered
+        and the platform reports 230MW operational. The next investment test is
+        whether more than $7 billion of financing converts into accepted,
+        leased, utilized and cash-generating capacity without leverage, power
+        or customer concentration eroding returns. Direct investment is
+        unavailable; listed read-through remains conditional on disclosed
+        contracts and revenue materiality.
+    sources:
+      - {title: Current Rowan homepage scale and portfolio, publisher: Rowan_Digital_Infrastructure, accessed: '2026-07-19', url: 'https://rowan.digital/'}
+      - {title: Current Rowan portfolio directory, publisher: Rowan_Digital_Infrastructure, accessed: '2026-07-19', url: 'https://rowan.digital/portfolio/'}
+      - {title: Current Bauxite I II III card, publisher: Rowan_Digital_Infrastructure, accessed: '2026-07-19', url: 'https://rowan.digital/portfolio/bauxite-i-ii-iii/'}
+      - {title: Current Cinco card, publisher: Rowan_Digital_Infrastructure, accessed: '2026-07-19', url: 'https://rowan.digital/portfolio/cinco-texas/'}
+      - {title: Current Temple card, publisher: Rowan_Digital_Infrastructure, accessed: '2026-07-19', url: 'https://rowan.digital/portfolio/temple/'}
+      - {title: Current Percheron card, publisher: Rowan_Digital_Infrastructure, accessed: '2026-07-19', url: 'https://rowan.digital/portfolio/percheron/'}
+      - {title: Rowan Bauxite and corporate financing milestones, publisher: Rowan_Digital_Infrastructure, date: '2025-09-11', url: 'https://rowan.digital/rowan-secures-1-2-billion-for-hyperscale-data-center-expansion-and-sustainability-initiatives/'}
+      - {title: Rowan Temple green financing, publisher: Rowan_Digital_Infrastructure, date: '2026-05-27', url: 'https://rowan.digital/rowan-closes-3b-green-financing-for-turnkey-hyperscale-campus-in-high-growth-texas-market/'}
+      - {title: Rowan growth and financing scale, publisher: Rowan_Digital_Infrastructure, date: '2026-06-04', url: 'https://rowan.digital/rowans-new-mark/'}
+      - {title: Quinbrook Rowan current portfolio and project history, publisher: Quinbrook, accessed: '2026-07-19', url: 'https://www.quinbrook.com/our-portfolio/rowan-digital-infrastructure/'}
+      - {title: UPP Rowan co-investment, publisher: Quinbrook_and_UPP, date: '2024-08-13', url: 'https://www.quinbrook.com/news-insights/upp-invests-in-data-center-developer-rowan-digital-infrastructure/'}
+      - {title: Blackstone significant minority recapitalization, publisher: Quinbrook_and_Blackstone, date: '2026-04-09', url: 'https://www.quinbrook.com/news-insights/rowan-digital-infrastructure-announces-strategic-recapitalization/'}
+      - {title: Morrow County Percheron pending action and supporting documents, publisher: Morrow_County_Oregon, date: '2023-06-27', url: 'https://www.co.morrow.or.us/planning/page/june-27-2023-rowan-green-data-llc-pending-action'}
+      - {title: Percheron data center land-use application narrative, publisher: Rowan_Percheron_LLC_via_Morrow_County, date: '2023-05-18', url: 'http://www.morrowcountyor.gov/sites/default/files/fileattachments/planning/page/16692/rowan_percheron_data_center_land_use_application_05182023.pdf'}
+    confidence: high_for_current_four_cards_six_project_identifiers_platform_headlines_Bauxite_I_delivery_financing_history_four_Percheron_OSM_geometries_and_conceptual_permit_details_medium_for_current_project_lifecycle_and_brand_legal_boundary_low_for_exact_current_cap_table_project_title_live_IT_load_complete_equipment_BOM_GPU_inventory_standalone_financials_and_site_ROIC
+
 disclosure_gap_register:
+  - Rowan_four_current_cards_six_project_identifiers_six_active_sites_1790_acres_1_5GW_card_checksum_1_6GW_under_development_or_contracted_1_2GW_leased_230MW_operational_and_6GW_pipeline_denominator_reconciliation
+  - Rowan_Bauxite_600MW_card_more_than_630MW_prose_625_or_626MW_utility_load_231MW_Bauxite_I_395MW_remaining_and_more_than_1GW_wider_plan_reconciliation
+  - Rowan_Cinco_300MW_440_acre_current_card_to_220_acre_700MW_secured_page_and_1GW_wider_power_envelope_reconciliation
+  - Rowan_Temple_300MW_700_acre_first_phase_to_1350_plus_acre_1_6GW_regional_scope_and_current_project_identity_reconciliation
+  - Rowan_230MW_operational_1_2GW_leased_and_1_6GW_contracted_power_asset_by_asset_energized_customer_accepted_utilized_billed_and_actual_IT_load_allocation
+  - Rowan_complete_current_project_land_parcel_address_building_phase_pod_title_lease_operator_customer_and_lifecycle_roster
+  - Rowan_Percheron_four_OSM_building_geometries_exact_current_physical_role_construction_state_title_gross_floor_area_and_provider_building_count
+  - Rowan_Percheron_2023_conceptual_230kV_34_5kV_substations_generators_cooling_towers_and_water_system_to_current_as_built_equipment_and_operating_state_validation
+  - Rowan_per_site_grid_contract_voltage_interconnection_substation_transformer_switchgear_busway_PDU_UPS_battery_generator_fuel_OEM_model_count_rating_loading_test_age_and_remaining_life
+  - Rowan_per_site_chiller_CRAH_CRAC_CDU_pump_heat_exchanger_cooling_tower_water_loop_OEM_model_count_rating_loading_measured_PUE_WUE_energy_water_emissions_and_live_liquid_cooled_MW
+  - Rowan_current_hyperscaler_customer_and_partner_GPU_accelerator_model_count_owner_site_delivery_acceptance_rack_fabric_power_utilization_revenue_margin_and_remaining_life
+  - Rowan_current_Quinbrook_UPP_Blackstone_and_other_investor_equity_percentages_voting_rights_preferences_board_rights_guarantees_project_ownership_and_accounting_consolidation
+  - Rowan_more_than_7_billion_USD_construction_financing_to_current_drawn_debt_rates_maturities_covenants_hedges_project_capex_remaining_cost_and_customer_revenue_bridge
+  - Rowan_standalone_audited_revenue_operating_profit_EBITDA_net_income_cash_flow_capex_debt_assets_customer_concentration_utilization_backlog_project_economics_and_ROIC
+  - Rowan_named_utilities_lenders_design_construction_and_equipment_parties_to_exact_contract_scope_value_revenue_margin_delivery_and_repeat_award
   - PowerHouse_current_118_data_centers_8_1GW_nine_market_32_2m_sqft_headlines_to_thirteen_sitemap_cards_sixteen_project_identifiers_eleven_visible_rollups_and_exact_non_overlapping_building_lifecycle_census
   - PowerHouse_ABX1_current_sold_Q4_2024_buyer_price_title_lease_transfer_CyrusOne_30_year_lease_accounting_and_21529_versus_21629_Beaumeade_address_reconciliation
   - PowerHouse_current_project_card_delivery_and_power_targets_to_current_per_building_construction_completion_commissioning_utility_energization_customer_acceptance_and_ready_for_service
