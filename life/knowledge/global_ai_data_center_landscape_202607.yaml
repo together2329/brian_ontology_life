@@ -38210,7 +38210,117 @@ campus_profiles:
       - {title: Rozzano district-heating project, publisher: Noovle, date: '2025-09-17', url: 'https://www.noovle.com/it/news/calore-data-center-rozzano-teleriscaldamento/'}
     confidence: high_for_current_sixteen_certificate_sites_category_counts_planned_Rome_project_dated_portfolio_power_equipment_WUE_enterprise_and_group_financials_and_seven_OSM_objects_medium_for_provider_category_to_site_bridge_and_current_capacity_state_low_for_site_level_live_IT_load_complete_BOM_GPU_inventory_Noovle_financials_and_data_center_ROIC
 
+  - id: dc_turkcell_tdc_turkiye_data_center_cloud_and_AI_portfolio
+    name: Turkcell and TDC Turkiye data-center, cloud and AI boundary
+    type: current_four_site_new_generation_portfolio_with_wider_managed_roster_OSM_GPU_revenue_and_parent_financial_scope_boundary
+    country: Turkiye
+    parent: Turkcell_Iletisim_Hizmetleri_AS
+    asset_holder_and_operator: TDC_Veri_Hizmetleri_AS
+    commercial_and_network_interfaces: [Turkcell, Turkcell_Superonline, Turkcell_Digital_Business_Services]
+    evidence_artifacts:
+      site_registry: life/imports/global_data_centers_20260717/turkcell_tdc_data_center_registry.jsonl
+      portfolio_summary: life/imports/global_data_centers_20260717/turkcell_tdc_data_center_summary.json
+      registry_builder: scripts/build_turkcell_data_center_registry.py
+    ownership_and_scope:
+      TDC_incorporated: '2024-07-11'
+      asset_transfer: Turkcell_Superonline_data_center_assets_transferred_to_TDC_by_partial_demerger_on_2025_02_20
+      TDC_effective_ownership_at_2025_year_end_percent: 100
+      listed_parent: Turkcell_Iletisim_Hizmetleri_AS_NYSE_TKC_and_BIST_TCELL
+      ultimate_parent: Turkiye_Wealth_Fund
+      boundary: TDC holds the data-center and cloud business after the demerger while Turkcell and Superonline remain commercial and network interfaces. TDC, data-center, cloud, Digital Business Services, Turkcell Turkiye and group reporting perimeters are not interchangeable.
+    site_count_reconciliation:
+      managed_data_centers_2025_20F: 32
+      current_corporate_product_page_data_centers: 8
+      current_new_generation_sites_available_for_third_party_sales: 4
+      dated_2024_company_statement_data_centers: 33
+      named_new_generation_roster: [Kocaeli_Gebze, Izmir_Menderes, Ankara_Temelli, Tekirdag_Europe_Corlu]
+      current_complete_other_managed_or_eight_product_page_site_roster: undisclosed
+      boundary: Thirty-two is the current wider managed perimeter, eight is a commercial page count and four is the exactly named new-generation external-sales portfolio. The dated thirty-three-site statement is not treated as current after the Kartal phase-out.
+    new_generation_site_scale:
+      provider_headline: {design_white_space_m2: 31550, potential_IT_power_capacity_MW: 54, commissioned_active_capacity_MW: 50}
+      site_numeric_checksum: {gross_site_area_m2: 130972, design_white_space_m2: 31550, total_IT_energy_capacity_MW: 53.8}
+      sites:
+        - {code: GEBZE, opened: 2016, gross_site_area_m2: 33000, design_white_space_m2: 10000, total_IT_energy_capacity_MW: 17.0}
+        - {code: IZMIR, opened: 2018, gross_site_area_m2: 14500, design_white_space_m2: 2350, total_IT_energy_capacity_MW: 3.4}
+        - {code: ANKARA_TEMELLI, opened: 2019, gross_site_area_m2: 46200, design_white_space_m2: 12000, total_IT_energy_capacity_MW: 20.9}
+        - {code: EUROPE_CORLU, opened: 2021, gross_site_area_m2: 37272, design_white_space_m2: 7200, total_IT_energy_capacity_MW: 12.5}
+      product_page_closed_area_m2: 122000
+      boundary: The 54MW headline rounds four site figures summing to 53.8MW. Active capacity is not allocated by site or equated with live, sold, occupied, billed or customer-accepted load. The 122,000-square-metre page value conflicts with the current site sum and remains separately scoped.
+    OSM_crosswalk:
+      related_objects: 6
+      operator_labeled_objects: 5
+      current_new_generation_matches: 3
+      matches:
+        - {OSM_ref: osm_way_422730372, provider_code: GEBZE, footprint_m2: 10894.717}
+        - {OSM_ref: osm_way_742363207, provider_code: ANKARA_TEMELLI, footprint_m2: 20070.569}
+        - {OSM_ref: osm_way_808990471, provider_code: EUROPE_CORLU, footprint_m2: 11670.348}
+      legacy_or_unreconciled:
+        - {OSM_ref: osm_way_657222646, site: Kartal, status: phased_out_in_2025_with_IT_relocation_to_Sogutozu_targeted_for_2026, footprint_m2: 3650.678}
+        - {OSM_ref: osm_way_532115060, site: Edirne, status: outside_named_four_site_roster_and_complete_wider_roster_undisclosed, footprint_m2: 343.086}
+        - {OSM_ref: osm_node_4673303646, site: Yenibosna, status: named_but_operator_untagged_point_outside_named_four_site_roster}
+      matched_footprint_sum_m2_not_floor_area: 42635.634
+      all_related_footprint_sum_m2_not_floor_area: 46629.398
+      boundary: OSM objects are location evidence, not a current provider roster, floor area, capacity or revenue measure.
+    power_cooling_and_equipment:
+      disclosed_portfolio_features: [modular_architecture, hot_and_cold_aisle_management, redundant_cooling, UPS, generators, redundant_fiber, radiolink, four_location_geographic_redundancy]
+      certifications: [Uptime_Tier_III_Design_Facility_and_Operations, LEED_Gold, PCI_DSS, ISO_9001_27001_27017_20000_22301_10002_50001_45001_14001, ISAE_3402, TSE_50600]
+      Ankara: {solar: parking_lot_panels, historical_generation_kWh_per_year: 300000, water: rainwater_recovery_without_current_WUE_or_absolute_use}
+      complete_per_site_grid_voltage_contract_substation_transformer_switchgear_busway_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_pump_heat_exchanger_cooling_tower_OEM_model_count_rating_loading_acceptance_age_and_remaining_life: undisclosed_or_incomplete
+      current_measured_site_PUE_WUE_energy_water_emissions_and_live_liquid_cooled_MW: undisclosed
+      boundary: Capabilities and certifications do not provide an as-built equipment bill, current loading or measured efficiency.
+    AI_accelerators_and_cloud:
+      internal_GPU_evidence: on_premise_LLMs_run_exclusively_on_internal_GPU_infrastructure
+      Google_Cloud_region: planned_Turkiye_region_with_three_or_more_AZs_expected_in_or_around_2028_to_2029
+      Turkcell_investment_target_USD_b_to_2032: 1
+      public_joint_investment_statement_USD_b: 3
+      capacity_target: more_than_double_by_end_2032
+      data_center_reach_and_cloud_revenue_target: sixfold_in_USD_terms_by_end_2032
+      exact_current_Turkcell_TDC_Google_customer_or_partner_physical_GPU_accelerator_model_count_owner_site_delivery_acceptance_server_rack_fabric_power_utilization_revenue_margin_and_remaining_life: undisclosed_or_unestablished
+      boundary: Internal GPU use does not disclose model, count or site. Future Google capabilities and partnership investment are not a current Turkcell-owned GPU inventory.
+    financial_and_investability:
+      data_center_and_cloud_2025_TRY_m: {data_center_revenue: 3148.5, cloud_service_revenue: 1945.8, combined_checksum: 5094.3, rounded_public_combined_statement: 5100, 2024_combined_public_statement: 3500, real_growth_percent: 45.0}
+      Digital_Business_Services_2025_TRY_m: {revenue: 22759.1, recurring_services_revenue: 16477.9, hardware_revenue: 6281.2}
+      Turkcell_Group_2025_TRY_m_IAS29: {revenue: 241470.8, operating_profit: 38313.6, adjusted_EBITDA: 104017.0, profit_for_year: 17604.0}
+      TDC: {five_year_murabaha_financing_EUR_m: 100, standalone_revenue_operating_profit_EBITDA_cash_flow_capex_assets_debt_customer_concentration_utilization_and_ROIC: undisclosed}
+      Q1_2026: {group_revenue_TRY_b: 68.4, adjusted_EBITDA_TRY_b: 28.3, net_profit_TRY_b: 4.6, data_center_and_cloud_growth_percent: 21, Digital_Business_Services_growth_percent: 64}
+      direct_public_equity_security: Turkcell_parent_listed_on_NYSE_and_BIST_not_data_center_pure_play
+      boundary: Data-center and cloud revenue is visible but its operating profit and cash return are not. DBS and group margins cannot be attributed to TDC.
+    outlook:
+      2026_group_guidance: {revenue_growth_percent: 5_to_7, adjusted_EBITDA_margin_percent: 40_to_42, operational_capex_to_revenue_percent: approximately_25}
+      positive_signals: [four_named_Tier_III_new_generation_sites, 50MW_active_capacity, 2025_combined_data_center_and_cloud_revenue_5_0943_billion_TRY, Q1_2026_data_center_and_cloud_growth_21_percent, Google_Cloud_region, 100_million_EUR_TDC_financing, internal_GPU_infrastructure]
+      conversion_tests: [publish_complete_site_rosters, bridge_potential_and_active_to_live_and_billed_load, identify_GPU_model_count_owner_and_site, disclose_TDC_operating_profit_cash_flow_and_ROIC, deliver_Google_region_and_capacity_expansion, publish_current_site_PUE_WUE_and_equipment_inventory]
+      risks: [capital_intensity, power_supply_and_energy_cost, hyperinflation_and_currency, Google_execution_and_dependency, no_GPU_inventory, no_site_utilization, no_TDC_profitability, mixed_network_and_commercial_site_counts]
+      analytical_view: >-
+        Turkcell is unusually informative listed-parent exposure because it
+        discloses named site power and data-center plus cloud revenue. It is
+        still a diversified telecom, so the proof requires TDC profitability,
+        live billed load, GPU ownership and execution of the Google-linked
+        expansion rather than capacity headlines alone.
+    sources:
+      - {title: 2025 Form 20-F, publisher: Turkcell, date: '2026-04-17', url: 'https://s.turkcell.com.tr/SiteAssets/Hakkimizda/yatirimci-iliskileri/documents/pdf/20F2025.pdf'}
+      - {title: Current corporate data-center service page, publisher: Turkcell, accessed: '2026-07-19', url: 'https://www.turkcell.com.tr/kurumsal/dijital-is-servisleri/veri-merkezi-data-center'}
+      - {title: Current wholesale four-site roster, publisher: Turkcell_Superonline, accessed: '2026-07-19', url: 'https://www.turkcell.com.tr/en-en/about-us/wholesale/fixed-data-services/hosting-data-center-services-and-local-network-access/detail'}
+      - {title: 2026 data-center planning and operations guide, publisher: Turkcell, date: '2026', url: 'https://kariyerim.turkcell.com.tr/Documents/Veri_Merkezi_Departman_Tanitim_Klavuzu.pdf'}
+      - {title: TDC EUR100 million financing, publisher: Turkcell, date: '2025-05-20', url: 'https://medya.turkcell.com.tr/en/bulletins/turkcell-secures-e100-million-investment-to-boost-data-center-business-expansion/'}
+      - {title: Google Cloud Turkiye region partnership, publisher: Turkcell, date: '2025-11-12', url: 'https://medya.turkcell.com.tr/en/bulletins/turkcell-announces-strategic-partnership-with-google-cloud-with-plans-to-establish-a-google-cloud-region-in-turkiye/'}
+      - {title: 2025 results and 2026 targets, publisher: Turkcell, date: '2026-03-07', url: 'https://medya.turkcell.com.tr/bulletins/turkcell-2026da-gelirinin-yuzde-25ini-yatirima-ayiracak-hizini-katlayacak/'}
+      - {title: Q1 2026 results, publisher: Turkcell, date: '2026-05-12', url: 'https://medya.turkcell.com.tr/bulletins/turkcellden-5g-cagina-guclu-baslangic/'}
+    confidence: high_for_parent_ownership_TDC_transfer_four_named_sites_site_power_white_space_revenue_group_financials_and_six_OSM_objects_medium_for_wider_current_roster_and_active_capacity_denominator_low_for_live_site_load_complete_equipment_BOM_GPU_inventory_TDC_profitability_and_ROIC
+
 disclosure_gap_register:
+  - Turkcell_TDC_thirty_two_managed_eight_commercial_four_new_generation_and_dated_thirty_three_site_complete_current_roster_and_lifecycle_reconciliation
+  - Turkcell_TDC_four_site_53_8MW_checksum_54MW_potential_and_50MW_active_to_site_level_operating_energized_available_sold_occupied_billed_peak_actual_and_customer_accepted_IT_load_bridge
+  - Turkcell_TDC_130972m2_current_four_site_sum_to_122000m2_product_page_value_authoritative_scope_and_date_reconciliation
+  - Turkcell_TDC_Kartal_phase_out_Sogutozu_relocation_Edirne_and_Yenibosna_current_physical_role_title_operator_and_lifecycle
+  - Turkcell_TDC_complete_current_land_parcel_address_building_data_hall_rack_title_lease_operator_customer_and_service_roster
+  - Turkcell_TDC_per_site_grid_voltage_contract_substation_transformer_switchgear_busway_PDU_UPS_battery_generator_fuel_OEM_model_count_rating_loading_test_age_and_remaining_life
+  - Turkcell_TDC_per_site_chiller_CRAH_CRAC_CDU_pump_heat_exchanger_cooling_tower_OEM_model_count_rating_loading_measured_PUE_WUE_energy_water_and_live_liquid_cooled_MW
+  - Turkcell_TDC_internal_Google_customer_or_partner_GPU_accelerator_model_count_owner_site_delivery_acceptance_server_rack_fabric_power_utilization_revenue_margin_and_remaining_life
+  - Turkcell_TDC_data_center_3148_5m_TRY_and_cloud_1945_8m_TRY_revenue_to_operating_profit_EBITDA_cash_flow_capex_assets_energy_cost_customer_concentration_utilization_and_ROIC
+  - Turkcell_TDC_100m_EUR_murabaha_draw_to_site_project_capex_commissioning_live_load_revenue_cash_flow_and_return_allocation
+  - Turkcell_Google_three_or_more_AZ_region_2028_2029_exact_land_building_power_investment_ownership_GPU_equipment_customer_acceptance_and_revenue_allocation
+  - Turkcell_2032_more_than_double_capacity_sixfold_USD_revenue_and_one_billion_USD_investment_baseline_denominator_milestones_and_return_bridge
+  - Turkcell_TDC_named_equipment_utility_hyperscaler_construction_and_cooling_parties_to_contract_value_attributable_revenue_margin_and_repeat_award
   - TIM_Noovle_sixteen_active_sites_seventeen_future_sites_and_eight_latest_generation_sites_lifecycle_and_count_reconciliation
   - TIM_Noovle_2022_40MW_IT_2024_100_8MW_POD_and_2026_125MW_installed_target_denominator_and_asset_allocation
   - TIM_Noovle_current_per_site_grid_contract_capacity_energized_sold_occupied_utilized_billed_customer_accepted_and_actual_IT_load
