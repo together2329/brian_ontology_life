@@ -34217,7 +34217,191 @@ campus_profiles:
       - {title: IXcellerate public awards, publisher: Uptime_Institute, accessed: 2026-07-19, url: "https://airs.uptimeinstitute.com/uptime-institute-awards/list/client/ixcellerate/618"}
     confidence: high_for_current_facility_cards_MOS3_launch_MOS7_construction_campus_plans_audited_2024_group_financials_2025_Russian_statutory_entities_legal_bridge_high_density_capability_and_OSM_crosswalk_medium_for_current_post_launch_MOS3_rack_delivery_equipment_continuity_and_PSC_control_interpretation_low_for_live_IT_load_utilization_complete_as_built_BOM_measured_environmental_metrics_physical_GPU_inventory_site_economics_and_pipeline_delivery
 
+  - id: dc_leading_edge_data_centres_australia_regional_portfolio
+    operator: Leading_Edge_Data_Centres
+    legal_entity: Edge_Data_Centres_Pty_Ltd
+    geography: New_South_Wales_Australia_with_Victoria_and_Queensland_coming_soon
+    record_granularity: current_facility_card_power_cooling_network_AI_legal_financial_and_OSM_scope
+    evidence_snapshot: '2026-07-19'
+    official_facility_registry_ref: life/imports/global_data_centers_20260717/leading_edge_official_facility_registry.jsonl
+    official_facility_summary_ref: life/imports/global_data_centers_20260717/leading_edge_official_facility_summary.json
+    current_operating_scope:
+      provider_cards: 6
+      state: New_South_Wales
+      facility_codes: [NTL1, TMW1, DBO1, ABX1, CFS1, WGA1]
+      card_checksum:
+        total_site_capacity_mw: 3.975
+        total_available_area_sqm: 3034
+      derived_module_capacity_equivalent: 13
+      current_card_rack_count: undisclosed
+      boundary: >-
+        The 13-module equivalent is capacity divided by each card's 375-kW or
+        150-kW module field and is not a physical installed-module count. Total
+        site capacity, module IT load, available area, racks, energized load,
+        utilized load and billed load are different measures.
+    facility_card_reconciliation:
+      NTL1: {city: Newcastle, total_site_capacity_kw: 1500, available_sqm: 1160, IT_load_per_module_kw: 375}
+      TMW1: {city: Tamworth, total_site_capacity_kw: 375, available_sqm: 290, IT_load_per_module_kw: 375}
+      DBO1: {city: Dubbo, total_site_capacity_kw: 750, available_sqm: 580, IT_load_per_module_kw: 375}
+      ABX1: {city: Albury, total_site_capacity_kw: 750, available_sqm: 580, IT_load_per_module_kw: 375}
+      CFS1: {city: Coffs_Harbour, total_site_capacity_kw: 300, available_sqm: 212, IT_load_per_module_kw: 150}
+      WGA1: {city: Wagga_Wagga, total_site_capacity_kw: 300, available_sqm: 212, IT_load_per_module_kw: 150}
+      lifecycle: all_six_have_current_provider_cards_marketed_as_operating
+      opening_evidence:
+        NTL1: historical_first_facility_opening_material
+        TMW1: provider_records_2021_11_05_grand_opening
+        DBO1: provider_records_2021_12_10_opening_and_2021_12_13_announcement
+        ABX1_CFS1_WGA1: current_card_is_operating_evidence_but_reviewed_first_party_history_is_not_a_precise_current_RFS_ledger
+    historical_rollout_boundary:
+      Schneider_first_six_program_AUD_million: 30
+      historical_first_six_design: {racks_per_site: 75, power_density_kw_per_rack: 5, derived_rack_checksum: 450}
+      historical_rollout_headlines: [more_than_20, 26, more_than_30]
+      current_network_page_Victoria_and_Queensland: coming_soon_without_current_facility_cards
+      service_network_conflict: >-
+        The 2022 IaaS brochure's more-than-30 regional data-centre language and
+        map include service, partner or rollout scope. It is not substituted for
+        the six current owned or operated facility cards.
+      boundary: >-
+        Older rack and rollout statements are program design or pipeline
+        evidence, not current installed racks, operating buildings, customer
+        acceptance or utilized load.
+    selected_power_cooling_network_and_security_evidence:
+      common_power:
+        supply_redundancy: N_plus_1
+        rack_power_topology: 2N_A_and_B
+        backup_generation: redundant_1000_kVA_diesel_generators
+        UPS: present
+        distribution: isolated_parallel_bus
+      common_cooling:
+        technology: in_row_direct_expansion
+        redundancy: N_plus_1_independent_cooling
+        airflow: hot_aisle_containment
+        controls: [temperature_and_humidity_monitoring, dehumidification, filtration]
+      common_network:
+        redundancy: N_plus_1
+        card_network_availability_SLA_percent: 99.95
+        layer_2_service: 100_Mbps_to_100_Gbps
+        internet_or_transit_up_to_Gbps: 100
+        DCI: redundant_wavelength_backbone
+      security:
+        NTL1_TMW1_DBO1_ABX1_cameras: 30_plus
+        CFS1_WGA1_cameras: 9_plus
+        design: SCEC_Zone_2
+        framework: Australian_Government_PSPF
+      WGA1_publication_conflict: >-
+        The Wagga Wagga card says its dark fibre connects to the Coffs Harbour
+        NBN POI. This apparent copy carry-over is retained rather than silently
+        corrected.
+      boundary: >-
+        Card topologies and ratings do not form a complete current as-built
+        equipment, fuel, meter, failure-domain or utilization ledger.
+    suppliers_and_products:
+      Schneider_Electric:
+        role: design_build_commission_maintain_and_monitor_first_six_program
+        named_products:
+          - EcoStruxure_IT_Expert
+          - EcoStruxure_Asset_Advisor
+          - Power_Monitoring_Expert
+          - InRow_DX
+          - Galaxy_UPS
+          - APC_NetShelter_SX
+          - APC_metered_PDUs
+          - EcoAisle_containment
+      Cisco: historical_core_network_backbone
+      boundary: >-
+        Supplier and product-family evidence is not a current per-site BOM with
+        exact model, count, rating, serial, acceptance or remaining life.
+    sustainability_and_certification_boundary:
+      solar_shield_provider_claimed_PUE_improvement: 0.3
+      roof_mounted_on_site_solar: true
+      net_zero_target: before_2040_or_better
+      provider_transition_stage: 1
+      facility_card_wording: Tier_Design_Tier_III
+      sustainability_page_wording: each_DC_completed_ISO27001_and_Tier_III_certified
+      Tier_Ready_modular_design: true
+      independent_facility_specific_award_captured_in_review: false
+      measured_site_or_fleet_PUE_WUE_water_energy_renewable_share_and_hourly_matching: undisclosed
+      boundary: >-
+        Provider certification language and the Tier-Ready design are preserved
+        as published. No facility-specific independent award identifier was
+        captured in the reviewed public sources; that is not proof that an award
+        does not exist.
+    AI_and_accelerator_boundary:
+      new_business_names_from_2026_03_11: [AI_DATA_CENTRES, AI_DC, LEDC_AI]
+      interpretation: AI_oriented_brand_direction_signal
+      current_site_AI_product_or_hardware_ledger: not_found_in_reviewed_official_site
+      physical_GPU_model_count_owner_host_site_delivery_fabric_power_utilization_revenue_and_margin: undisclosed
+      accelerator_ledger_action: no_numeric_physical_inventory_row_created
+    legal_ownership_and_financial_boundary:
+      legal_entity: Edge_Data_Centres_Pty_Ltd
+      ABN: '55_632_303_827'
+      ACN: '632_303_827'
+      entity_status: active_Australian_private_company
+      current_named_investors: [WHSP, DigitalBridge]
+      exact_current_stakes_valuation_and_governance: undisclosed
+      historical_funding_AUD_million:
+        WHSP_2020: 20
+        DigitalBridge_2022_equity_secondary_source: 30
+      WHSP_vehicle_boundary: >-
+        WHSP FY2025 lists WHSP Leading Edge Pty Limited as a 100%-controlled
+        vehicle. That does not establish 100% ownership of Edge Data Centres Pty
+        Ltd, whose current provider page also names DigitalBridge as an investor.
+      financial_profile_ref: company_leading_edge_data_centres
+      standalone_revenue_operating_profit_EBITDA_cash_flow_capex_debt_customer_concentration_and_ROIC: undisclosed
+    public_map_crosswalk:
+      related_objects: 6
+      exact_current_facility_candidates: [NTL1, TMW1, DBO1, ABX1, CFS1, WGA1]
+      raw_operator_labels: [Leading_Edge_Data_Centres, Leading_Edge_Data_Centre]
+      Tamworth_label_boundary: singular_operator_spelling
+      boundary: >-
+        Six OSM ways map to all six current cards, but object footprints and raw
+        operator tags do not prove title, capacity, lifecycle, utilization or
+        financial scope.
+    outlook:
+      positive_signals:
+        - six_current_regional_NSW_facility_cards
+        - modest_but_reconciled_3_975MW_card_capacity_base
+        - redundant_interconnected_edge_network
+        - Schneider_and_Cisco_supplier_history
+        - 2026_AI_business_name_registrations
+      risk_signals:
+        - small_current_card_scale_and_NSW_concentration
+        - Victoria_and_Queensland_still_coming_soon
+        - older_rollout_targets_not_delivered_as_current_cards
+        - no_physical_GPU_inventory
+        - no_standalone_financials_current_cap_table_or_utilization
+      analytical_view: >-
+        LEDC is a real six-site regional edge platform with a modest current
+        published capacity base and a 2026 AI-oriented naming signal. Public
+        evidence does not support a valuation or operating-margin comparison
+        until ownership, standalone earnings, utilization, expansion funding and
+        physical accelerator deployment are disclosed.
+    sources:
+      - {title: Current network map, publisher: Leading_Edge_Data_Centres, accessed: 2026-07-19, url: "https://leadingedgedc.com/network-map/"}
+      - {title: Newcastle NTL1, publisher: Leading_Edge_Data_Centres, accessed: 2026-07-19, url: "https://leadingedgedc.com/dc_location/newcastle/"}
+      - {title: Tamworth TMW1, publisher: Leading_Edge_Data_Centres, accessed: 2026-07-19, url: "https://leadingedgedc.com/dc_location/tamworth/"}
+      - {title: Dubbo DBO1, publisher: Leading_Edge_Data_Centres, accessed: 2026-07-19, url: "https://leadingedgedc.com/dc_location/dubbo/"}
+      - {title: Albury ABX1, publisher: Leading_Edge_Data_Centres, accessed: 2026-07-19, url: "https://leadingedgedc.com/dc_location/albury/"}
+      - {title: Coffs Harbour CFS1, publisher: Leading_Edge_Data_Centres, accessed: 2026-07-19, url: "https://leadingedgedc.com/dc_location/coffs-harbour/"}
+      - {title: Wagga Wagga WGA1, publisher: Leading_Edge_Data_Centres, accessed: 2026-07-19, url: "https://leadingedgedc.com/dc_location/wagga-wagga/"}
+      - {title: Schneider customer story, publisher: Schneider_Electric, accessed: 2026-07-19, url: "https://www.se.com/au/en/work/campaign/customer-stories/leading-edge/"}
+      - {title: Sustainability, publisher: Leading_Edge_Data_Centres, accessed: 2026-07-19, url: "https://leadingedgedc.com/sustainability/"}
+      - {title: Data Centre Interconnect, publisher: Leading_Edge_Data_Centres, accessed: 2026-07-19, url: "https://leadingedgedc.com/data-centre-interconnect/"}
+      - {title: About and current investors, publisher: Leading_Edge_Data_Centres, accessed: 2026-07-19, url: "https://leadingedgedc.com/about/"}
+      - {title: Australian Business Register record, publisher: Australian_Business_Register, updated: 2026-03-11, accessed: 2026-07-19, url: "https://abr.business.gov.au/ABN/View/55632303827"}
+    confidence: high_for_six_current_cards_card_checksums_common_engineering_current_investor_names_legal_entity_and_six_OSM_crosswalk_medium_for_provider_certification_and_historical_program_continuity_low_for_current_racks_modules_live_load_complete_BOM_measured_efficiency_physical_GPU_inventory_exact_cap_table_standalone_financials_site_economics_and_future_rollout
+
 disclosure_gap_register:
+  - Leading_Edge_six_current_cards_and_six_OSM_ways_to_exact_non_overlapping_legal_building_title_lease_and_lifecycle_roster
+  - Leading_Edge_3_975MW_total_site_capacity_13_derived_module_equivalent_and_historical_450_rack_first_six_plan_to_current_installed_racks_modules_energized_leased_utilized_billed_and_actual_IT_load
+  - Leading_Edge_per_site_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_models_counts_ratings_OEMs_and_as_built_topology
+  - Leading_Edge_per_site_measured_PUE_WUE_water_energy_renewable_matching_live_liquid_cooled_MW_and_actual_load
+  - Leading_Edge_provider_ISO27001_Tier_III_and_Tier_Ready_wording_to_facility_specific_current_independent_award_identifiers_scope_and_expiry
+  - Leading_Edge_AI_DATA_CENTRES_AI_DC_and_LEDC_AI_names_to_current_strategy_products_customers_hardware_capex_and_revenue
+  - Leading_Edge_GPU_model_count_owner_host_site_delivery_fabric_power_utilization_customer_revenue_and_margin
+  - Leading_Edge_standalone_revenue_operating_profit_EBITDA_cash_flow_capex_debt_customer_concentration_site_economics_and_ROIC
+  - Leading_Edge_current_WHSP_DigitalBridge_stakes_valuation_governance_and_cap_table
+  - Leading_Edge_Victoria_Queensland_and_historical_NSW_pipeline_land_permit_grid_financing_construction_customer_launch_and_cancellation_status
   - IXcellerate_11329_current_card_full_design_racks_10329_end_2025_provider_total_and_MOS3_1400_functioning_plus_1000_January_2026_delivery_to_exact_July_2026_installed_accepted_leased_utilized_and_billed_roster
   - IXcellerate_MOS6_MOS7_MOS8_MOS11_and_MOS12_current_construction_grid_energization_acceptance_customer_and_launch_status
   - IXcellerate_127_7MW_operating_card_checksum_150MW_2024_installed_grid_power_300MW_plus_South_130MW_plus_Veshki_and_380MW_high_density_page_to_common_operating_IT_and_actual_draw_denominator
