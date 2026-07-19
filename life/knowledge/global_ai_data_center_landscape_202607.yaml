@@ -34036,7 +34036,197 @@ campus_profiles:
       - {title: FY2023 results summary and historical roster, publisher: Spark_New_Zealand, date: 2023, url: "https://investors.sparknz.co.nz/FormBuilder/_Resource/_module/gXbeer80tkeL4nEaF-kwFA/FY23_Results_Summary_FINAL.pdf"}
     confidence: high_for_current_operator_ownership_transaction_headline_capacity_current_map_labels_South_and_Central_details_financial_vintages_and_OSM_legacy_crosswalk_medium_for_eleven_component_reconciliation_historical_roster_transition_and_engineering_continuity_low_for_exact_current_legal_facility_roster_live_IT_load_complete_as_built_BOM_physical_GPU_inventory_post_close_standalone_financials_site_economics_and_future_consent_option
 
+  - id: dc_ixcellerate_moscow_campus_portfolio
+    operator: IXcellerate
+    geography: Moscow_Russia
+    record_granularity: campus_facility_lifecycle_power_cooling_legal_financial_certification_and_OSM_scope
+    evidence_snapshot: '2026-07-19'
+    official_facility_registry_ref: life/imports/global_data_centers_20260717/ixcellerate_official_facility_registry.jsonl
+    official_facility_summary_ref: life/imports/global_data_centers_20260717/ixcellerate_official_facility_summary.json
+    current_operating_scope:
+      campuses: [Moscow_North, Moscow_South]
+      facilities: [MOS1, MOS2, MOS3, MOS4, MOS5]
+      facility_count: 5
+      full_design_card_checksum:
+        racks: 11329
+        published_power_mw: 127.7
+        useful_area_sqm: 37028
+      provider_end_2025_North_plus_South_racks: 10329
+      difference_racks: 1000
+      reconciliation: >-
+        The card checksum exceeds the provider's end-2025 total by exactly the
+        1,000 MOS3 racks that were contracted for delivery by January 2026.
+        MOS3 launched on 29 October 2025 with 1,400 racks functioning; no later
+        reviewed source establishes the exact July 2026 installed, accepted,
+        leased or billed split.
+      boundary: >-
+        Full-design racks, unspecified card power, useful area, functioning
+        racks and contracted delivery are different measures. They are not
+        converted into current IT load, utilization or revenue.
+    lifecycle_and_campus_plans:
+      Moscow_North:
+        current_facilities: [MOS1, MOS2, MOS3, MOS4]
+        current_card_checksum: {racks: 6327, published_power_mw: 63.7, useful_area_sqm: 18528}
+        stale_directory_conflict: directory_prose_still_describes_MOS3_and_MOS4_as_development
+        resolution: dated_launch_and_current_facility_cards_supersede_stale_prose
+      Moscow_South:
+        land_hectares: 14
+        full_build_facilities: [MOS5, MOS6, MOS7, MOS8]
+        full_build_racks_more_than: 19300
+        full_build_power_mw_more_than: 300
+        full_build_design_PUE: 1.3
+        MOS5: operating_final_phase_launched_2025
+        MOS6: development_no_current_numeric_card
+        MOS7: construction_confirmed_2025_12_16
+        MOS8: future_listed_without_numeric_card
+      Moscow_Veshki:
+        land_hectares: 5.5
+        full_build_facilities: [MOS11, MOS12]
+        full_build_racks: 7500
+        full_build_power_mw_more_than: 130
+        MOS11: first_phase_scheduled_summer_2026_no_reviewed_launch_found
+        MOS12: construction_planned_2027_with_2029_to_2030_phases
+      boundary: >-
+        South and Veshki totals are full-build plans and overlap facility
+        records. They are not added to the operating checksum or treated as
+        energized, customer-accepted or billing capacity.
+    selected_power_and_cooling_evidence:
+      MOS1:
+        diesel_redundancy: N_plus_1
+        lithium_ion_battery_runtime_minutes_at_full_load: 10
+        cooling: adiabatic_chillers_N_plus_1
+        design_PUE_below: 1.6
+        maximum_kw_per_rack: 10
+      MOS2:
+        UPS_topology: 2N
+        diesel_redundancy: N_plus_1
+        lithium_ion_battery_runtime_minutes_at_full_load: 10
+        cooling: Vertiv_PDX_and_EconoPhase_N_plus_1
+        design_PUE_below: 1.5
+        maximum_kw_per_rack: 12
+      MOS3:
+        city_10_kV_inputs: 6
+        rack_level_topology_launch_news: 2N
+        current_card_UPS_redundancy: 4_of_3
+        diesel_redundancy: 8_of_7
+        cooling: chiller_fan_coil_year_round_free_cooling_N_plus_1
+        precision_air_conditioners: 12
+        heat_recovery: true
+        design_PUE_below_at_full_load: 1.3
+        average_design_kw_per_rack: 8
+        maximum_kw_per_rack: 25
+      MOS4:
+        UPS_and_diesel_redundancy: 4_of_3
+        cooling: LSV_cold_walls_N_plus_1
+        design_PUE_below: 1.3
+        maximum_kw_per_rack: 15
+      MOS5:
+        historical_2023_distribution_substations: 4
+        historical_2023_substation_mw_each: 16
+        historical_2023_transformers: 40
+        historical_2023_transformer_kVA_each: 2500
+        UPS_and_diesel_redundancy: 4_of_3
+        cooling: cold_wall_N_plus_1
+        average_annual_PUE_below_at_full_load: 1.3
+        maximum_kw_per_rack: 55
+      MOS7_and_MOS11: project_design_not_as_built
+      boundary: >-
+        Historical counts, design topology and current card claims do not form
+        a complete current as-built equipment, fuel, metered PUE, WUE, water or
+        actual-load ledger.
+    high_density_and_AI_boundary:
+      air_cooling_maximum_kw_per_rack: 55
+      combined_air_liquid_cooling_above_kw_per_rack: 60
+      dedicated_supercomputer_and_AI_halls: true
+      solution_scale_racks: 1_to_1000_plus
+      provider_high_density_page_total_power_mw: 380
+      total_power_denominator: unclear_mixed_lifecycle_not_operating
+      physical_GPU_model_count_owner_site_delivery_fabric_power_utilization_revenue_and_margin: undisclosed
+      hosted_customer_workload_not_operator_owned_GPU_proof: true
+      accelerator_ledger_action: no_numeric_physical_inventory_row_created
+    legal_ownership_and_facility_bridge:
+      UK_parent: IXcellerate_Limited_company_07265372
+      accounts_control_statement: no_ultimate_controlling_party
+      current_PSC_register: The_Goldman_Sachs_Group_Inc_over_25_and_up_to_50_percent_shares_and_votes
+      reconciliation: >-
+        A shareholder can meet the statutory PSC threshold without controlling
+        the group under the shareholder agreement and board composition.
+      Russian_entities:
+        IXcellerate_LLC: {INN: '7715904744', OGRN: '1127746106773'}
+        IXcellerate_3_LLC: {INN: '9715371955', OGRN: '1197746731808'}
+        IXcellerate_4_LLC: {INN: '9715390330', OGRN: '1207700361428'}
+      facility_bridge_from_2024_accounts:
+        MOS1: LLC_IXcellerate
+        MOS2: LLC_Olimax
+        MOS4: JSC_SMAK
+        MOS5: LLC_IXcellerate_3
+        MOS3: LLC_IXcellerate_4_property_and_technical_operator_with_LLC_IXcellerate_client_operator
+    financial_boundary:
+      audited_2024_consolidated_USD_million:
+        revenue: 93.610
+        prior_revenue: 71.157
+        colocation_revenue: 87.401
+        gross_profit: 55.979
+        operating_profit: 41.376
+        EBITDA: 56.772
+        adjusted_EBITDA: 57.166
+        profit_before_tax: 37.337
+        net_profit: 29.771
+        operating_cash_flow: 46.570
+        capex: 66.311
+        cash: 143.279
+        long_term_borrowings: 108.357
+        short_term_borrowings: 17.010
+      audited_2024_derived:
+        revenue_growth_percent: 31.55
+        colocation_revenue_share_percent: 93
+        gross_margin_percent: 60
+        operating_margin_percent: 44
+      installed_grid_power_at_2024_12_31_mw: {North: 69, South: 81, total: 150}
+      Russian_2025_statutory_entities: available_in_linked_financial_profile
+      financial_profile_ref: company_ixcellerate
+      boundary: >-
+        The 150-MW accounts measure is installed grid power at year end, not IT
+        load or actual draw. Three 2025 Russian legal-entity statements contain
+        intercompany transactions and cannot be summed as consolidated group
+        revenue or profit.
+    certification_boundary:
+      independent_Uptime_public_awards_found:
+        - Moscow_One_Datacentre_Phase_3
+        - Moscow_Two_Datacentre
+      provider_certificate_page_additional_claim: MOS5_Tier_III_Design
+      boundary: >-
+        General Tier III wording and provider-hosted certificates are not
+        expanded into constructed-facility awards without matching independent
+        award entries.
+    public_map_crosswalk:
+      related_objects: 5
+      facility_candidates: [MOS1, MOS2, MOS3, MOS4, MOS5]
+      boundary: >-
+        The five exact IXcellerate-labelled OSM objects cover the current
+        operating facility roster but remain geometry, not capacity, ownership,
+        lifecycle or financial evidence.
+    sources:
+      - {title: Data center directory, publisher: IXcellerate, accessed: 2026-07-19, url: "https://www.ixcellerate.com/data-centers/"}
+      - {title: Moscow North campus, publisher: IXcellerate, accessed: 2026-07-19, url: "https://www.ixcellerate.com/data-centers/moscow-north-campus/"}
+      - {title: Moscow South campus, publisher: IXcellerate, accessed: 2026-07-19, url: "https://www.ixcellerate.com/data-centers/moscow-south-campus/"}
+      - {title: Moscow Veshki campus, publisher: IXcellerate, accessed: 2026-07-19, url: "https://www.ixcellerate.com/data-centers/moscow-veshki-campus/"}
+      - {title: MOS3 launch, publisher: IXcellerate, date: 2025-10-29, url: "https://www.ixcellerate.com/news/ixcellerate-opens-mos3-data-center-the-capacity-of-the-providers-entire-ecosystem-exceeds-10000-rack-spaces/"}
+      - {title: High power density solutions, publisher: IXcellerate, accessed: 2026-07-19, url: "https://www.ixcellerate.com/services/high-power-density-solutions/"}
+      - {title: 2024 consolidated accounts, publisher: UK_Companies_House, filed: 2026-04-11, url: "https://find-and-update.company-information.service.gov.uk/company/07265372/filing-history/MzUxNDEwNDkzNWFkaXF6a2N4/document?download=1"}
+      - {title: IXcellerate public awards, publisher: Uptime_Institute, accessed: 2026-07-19, url: "https://airs.uptimeinstitute.com/uptime-institute-awards/list/client/ixcellerate/618"}
+    confidence: high_for_current_facility_cards_MOS3_launch_MOS7_construction_campus_plans_audited_2024_group_financials_2025_Russian_statutory_entities_legal_bridge_high_density_capability_and_OSM_crosswalk_medium_for_current_post_launch_MOS3_rack_delivery_equipment_continuity_and_PSC_control_interpretation_low_for_live_IT_load_utilization_complete_as_built_BOM_measured_environmental_metrics_physical_GPU_inventory_site_economics_and_pipeline_delivery
+
 disclosure_gap_register:
+  - IXcellerate_11329_current_card_full_design_racks_10329_end_2025_provider_total_and_MOS3_1400_functioning_plus_1000_January_2026_delivery_to_exact_July_2026_installed_accepted_leased_utilized_and_billed_roster
+  - IXcellerate_MOS6_MOS7_MOS8_MOS11_and_MOS12_current_construction_grid_energization_acceptance_customer_and_launch_status
+  - IXcellerate_127_7MW_operating_card_checksum_150MW_2024_installed_grid_power_300MW_plus_South_130MW_plus_Veshki_and_380MW_high_density_page_to_common_operating_IT_and_actual_draw_denominator
+  - IXcellerate_per_site_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_models_counts_ratings_OEMs_and_as_built_topology
+  - IXcellerate_per_site_live_liquid_cooled_MW_measured_PUE_WUE_absolute_water_energy_hourly_matching_and_actual_load
+  - IXcellerate_GPU_model_count_owner_host_site_delivery_fabric_power_utilization_customer_revenue_and_margin_beyond_hosted_AI_readiness
+  - IXcellerate_exact_current_Uptime_award_identifiers_types_scope_and_expiry_beyond_two_independent_entries_and_provider_MOS5_design_certificate
+  - IXcellerate_2025_consolidated_group_revenue_operating_profit_cash_flow_capex_debt_customer_concentration_site_economics_and_ROIC_with_intercompany_eliminations
+  - IXcellerate_current_shareholder_percentages_voting_rights_governance_and_ultimate_economic_ownership_beyond_PSC_threshold_and_no_control_statement
   - TenPeaks_eleven_facility_headline_nine_current_operating_map_labels_two_South_pods_two_Central_buildings_and_nine_legacy_Spark_OSM_objects_to_exact_current_legal_asset_building_address_ownership_lease_and_lifecycle_roster
   - TenPeaks_historical_Spark_sixteen_site_roster_and_2022_handbook_addresses_to_current_eleven_facility_transaction_perimeter_and_retained_or_exited_assets
   - TenPeaks_more_than_23MW_12_3MW_South_22_3MW_FY2024_23MW_FY2025_87_to_88_percent_contracted_utilisation_and_130MW_plus_pipeline_to_per_site_operating_energized_leased_utilized_billed_and_actual_IT_load

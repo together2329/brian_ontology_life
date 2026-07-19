@@ -1,0 +1,276 @@
+{
+  "OSM_crosswalk": {
+    "boundary": "Five OSM objects map to MOS1-MOS5 but do not establish capacity, lifecycle, ownership or financial scope.",
+    "related_objects": 5,
+    "rows": [
+      {
+        "address": null,
+        "capacity_counting_rule": "OSM geometry is a crosswalk, not a rack, power, ownership, utilization, revenue or GPU source.",
+        "classification": "exact_current_provider_facility_candidate",
+        "facility_ref": "ixcellerate_mos1",
+        "footprint_area_m2": 5309.336,
+        "latitude": 55.862505,
+        "longitude": 37.5773657,
+        "name": "IXcellerate North MOS 1",
+        "osm_ref": "osm_way_207145308",
+        "raw_operator": "IXcellerate",
+        "raw_owner": "IXcellerate"
+      },
+      {
+        "address": null,
+        "capacity_counting_rule": "OSM geometry is a crosswalk, not a rack, power, ownership, utilization, revenue or GPU source.",
+        "classification": "exact_current_provider_facility_candidate",
+        "facility_ref": "ixcellerate_mos2",
+        "footprint_area_m2": 4599.706,
+        "latitude": 55.8627884,
+        "longitude": 37.5797578,
+        "name": "IXcellerate North MOS 2",
+        "osm_ref": "osm_way_277554026",
+        "raw_operator": "IXcellerate",
+        "raw_owner": "IXcellerate"
+      },
+      {
+        "address": null,
+        "capacity_counting_rule": "OSM geometry is a crosswalk, not a rack, power, ownership, utilization, revenue or GPU source.",
+        "classification": "exact_current_provider_facility_candidate",
+        "facility_ref": "ixcellerate_mos3",
+        "footprint_area_m2": 2296.716,
+        "latitude": 55.8633744,
+        "longitude": 37.5782193,
+        "name": "IXcellerate North MOS 3",
+        "osm_ref": "osm_way_413169015",
+        "raw_operator": "IXcellerate",
+        "raw_owner": "IXcellerate"
+      },
+      {
+        "address": {
+          "city": "Москва",
+          "postcode": "127410"
+        },
+        "capacity_counting_rule": "OSM geometry is a crosswalk, not a rack, power, ownership, utilization, revenue or GPU source.",
+        "classification": "exact_current_provider_facility_candidate",
+        "facility_ref": "ixcellerate_mos4",
+        "footprint_area_m2": 1121.583,
+        "latitude": 55.8632245,
+        "longitude": 37.5771213,
+        "name": "IXcellerate North MOS 4",
+        "osm_ref": "osm_way_1140704048",
+        "raw_operator": "IXcellerate",
+        "raw_owner": "IXcellerate"
+      },
+      {
+        "address": null,
+        "capacity_counting_rule": "OSM geometry is a crosswalk, not a rack, power, ownership, utilization, revenue or GPU source.",
+        "classification": "exact_current_provider_facility_candidate",
+        "facility_ref": "ixcellerate_mos5",
+        "footprint_area_m2": 23980.125,
+        "latitude": 55.6030213,
+        "longitude": 37.6439979,
+        "name": "IXcellerate South MOS5",
+        "osm_ref": "osm_relation_8834520",
+        "raw_operator": "IXcellerate",
+        "raw_owner": null
+      }
+    ],
+    "source_file": "life/imports/global_data_centers_20260717/osm_data_center_locations.jsonl",
+    "source_file_sha256": "3a0f1370f036f2ff5fa0c478bfadeb58c7809d90315bbee4e0a7c9cfd21d4733"
+  },
+  "accessed_on": "2026-07-19",
+  "campus_full_build_plans": {
+    "Moscow_South": {
+      "boundary": "Full-build plan, not operating capacity.",
+      "design_PUE": 1.3,
+      "facilities": [
+        "MOS5",
+        "MOS6",
+        "MOS7",
+        "MOS8"
+      ],
+      "land_hectares": 14,
+      "power_mw_more_than": 300,
+      "racks_more_than": 19300
+    },
+    "Moscow_Veshki": {
+      "boundary": "Campus plan; MOS11 lacks a reviewed launch and MOS12 is future.",
+      "facilities": [
+        "MOS11",
+        "MOS12"
+      ],
+      "land_hectares": 5.5,
+      "power_mw_more_than": 130,
+      "racks": 7500
+    },
+    "boundary": "Campus totals overlap facility records and are not added to operating-card checksums."
+  },
+  "certification_boundary": {
+    "boundary": "General Tier III wording and the provider certificate page are not expanded into constructed-facility awards absent matching independent award entries.",
+    "independent_Uptime_public_awards_found": [
+      "Moscow_One_Datacentre_Phase_3",
+      "Moscow_Two_Datacentre"
+    ],
+    "provider_certificate_page_additional_claim": "MOS5_Tier_III_Design"
+  },
+  "facility_scope": {
+    "campuses": 3,
+    "operating_card_power_mw_checksum": 127.7,
+    "operating_facilities_supported": 5,
+    "operating_facility_codes": [
+      "MOS1",
+      "MOS2",
+      "MOS3",
+      "MOS4",
+      "MOS5"
+    ],
+    "operating_full_design_racks_card_checksum": 11329,
+    "operating_useful_area_sqm_checksum": 37028,
+    "provider_end_2025_North_plus_South_racks": 10329,
+    "reconciliation": "The 11,329 current-card full-design checksum exceeds the provider's end-2025 10,329-rack total by exactly the 1,000 MOS3 racks contracted for delivery by January 2026. The exact July 2026 installed and accepted split remains undisclosed.",
+    "reconciliation_difference_racks": 1000
+  },
+  "financials": {
+    "Russian_2025_statutory_thousand_RUB": {
+      "IXcellerate_3_LLC": {
+        "net_profit": 2327114,
+        "profit_before_tax": 3108757,
+        "profit_from_sales_line_2200": 4294089,
+        "revenue": 7063184
+      },
+      "IXcellerate_4_LLC": {
+        "net_profit": -509588,
+        "profit_before_tax": -677779,
+        "profit_from_sales_line_2200": 849166,
+        "revenue": 1839966
+      },
+      "IXcellerate_LLC": {
+        "net_profit": 730310,
+        "profit_before_tax": 985940,
+        "profit_from_sales_line_2200": 3730035,
+        "revenue": 7643531
+      }
+    },
+    "Russian_statutory_boundary": "The three Russian legal entities contain intercompany transactions and no consolidation eliminations; their revenue and profit lines must not be summed as group performance. Profit from sales is a Russian statutory line, not IFRS group operating profit.",
+    "audited_2024_consolidated_USD_million": {
+      "EBITDA": 56.772,
+      "adjusted_EBITDA": 57.166,
+      "capex": 66.311,
+      "cash": 143.279,
+      "colocation_revenue": 87.401,
+      "equity": 254.739,
+      "gross_profit": 55.979,
+      "long_term_borrowings": 108.357,
+      "net_profit": 29.771,
+      "operating_cash_flow": 46.57,
+      "operating_profit": 41.376,
+      "prior_revenue": 71.157,
+      "profit_before_tax": 37.337,
+      "property_plant_and_equipment": 232.591,
+      "revenue": 93.61,
+      "short_term_borrowings": 17.01,
+      "total_assets": 424.373
+    },
+    "audited_2024_derived": {
+      "colocation_share_percent": 93,
+      "gross_margin_percent": 60,
+      "operating_margin_percent": 44,
+      "revenue_growth_percent": 31.55
+    },
+    "installed_grid_power_at_2024_12_31_mw": {
+      "North": 69,
+      "South": 81,
+      "boundary": "Grid capacity at the accounts date, not current card power, IT load or actual draw.",
+      "total": 150
+    }
+  },
+  "high_density_and_AI_boundary": {
+    "accelerator_ledger_action": "no_numeric_physical_inventory_row_created",
+    "air_cooling_maximum_kw_per_rack": 55,
+    "combined_air_liquid_cooling_above_kw_per_rack": 60,
+    "dedicated_halls_for_supercomputers_and_AI": true,
+    "hosted_customer_workloads_not_operator_owned_GPU_proof": true,
+    "physical_GPU_model_count_owner_site_delivery_fabric_power_utilization_revenue_and_margin": "undisclosed",
+    "provider_high_density_page_total_power_mw": 380,
+    "solution_scale_racks": "1_to_1000_plus",
+    "total_power_denominator": "unclear_mixed_lifecycle_not_operating"
+  },
+  "id": "ixcellerate_official_facility_summary_2026_07_19",
+  "legal_and_ownership_boundary": {
+    "PSC_and_accounts_reconciliation": "A major shareholder can satisfy the PSC threshold without controlling the group under the shareholder agreement and board composition.",
+    "Russian_entities": {
+      "IXcellerate_3_LLC": {
+        "INN": "9715371955",
+        "OGRN": "1197746731808"
+      },
+      "IXcellerate_4_LLC": {
+        "INN": "9715390330",
+        "OGRN": "1207700361428"
+      },
+      "IXcellerate_LLC": {
+        "INN": "7715904744",
+        "OGRN": "1127746106773"
+      }
+    },
+    "UK_accounts_statement": "no_ultimate_controlling_party",
+    "UK_parent": "IXcellerate_Limited_company_07265372",
+    "active_PSC_register_entry": "The_Goldman_Sachs_Group_Inc_over_25_and_up_to_50_percent_shares_and_votes",
+    "facility_legal_bridge_from_2024_accounts": {
+      "MOS1": "LLC_IXcellerate_operator_or_property_holder",
+      "MOS2": "LLC_Olimax_operator_or_property_holder",
+      "MOS3": "LLC_IXcellerate_4_property_holder_and_technical_operator_with_LLC_IXcellerate_client_operator",
+      "MOS4": "JSC_SMAK_operator_or_property_holder",
+      "MOS5": "LLC_IXcellerate_3_owner_operator"
+    }
+  },
+  "operator": "IXcellerate",
+  "outlook": {
+    "analytical_view": "IXcellerate combines strong audited 2024 growth and margin with five operating Moscow facilities and a large expansion path. The investment case remains private, Russia-concentrated and execution-heavy; pipeline MW, design racks and hosted AI readiness should not be valued as operating load or operator-owned compute.",
+    "positive_signals": [
+      "2024_consolidated_revenue_growth_32_percent_reported",
+      "2024_operating_margin_44_percent",
+      "MOS3_and_final_MOS5_phase_launched_in_2025",
+      "South_and_Veshki_large_development_option",
+      "high_density_air_and_combined_liquid_cooling_design"
+    ],
+    "risk_signals": [
+      "Russia_only_geographic_concentration",
+      "geopolitical_and_imported_equipment_availability_risk",
+      "large_pipeline_requires_grid_capex_customers_and_delivery",
+      "mixed_lifecycle_380MW_marketing_denominator",
+      "no_physical_GPU_inventory_or_site_economics",
+      "MOS11_launch_not_found_and_MOS7_still_construction_in_reviewed_evidence"
+    ]
+  },
+  "records_sha256": "8f4a2e7794ff555d6a561e97faa93b071e861f559c5466181774c77943d0cfa7",
+  "remaining_material_gaps": [
+    "exact_July_2026_MOS3_installed_accepted_and_billed_rack_split",
+    "MOS6_MOS7_MOS8_MOS11_MOS12_current_construction_energization_acceptance_and_customer_status",
+    "per_site_operating_energized_leased_utilized_billed_and_actual_IT_load",
+    "per_site_complete_as_built_grid_transformer_switchgear_UPS_battery_generator_fuel_and_cooling_BOM",
+    "per_site_measured_PUE_WUE_absolute_water_energy_and_live_liquid_cooled_MW",
+    "physical_GPU_model_count_owner_site_delivery_fabric_power_utilization_revenue_and_margin",
+    "site_level_revenue_operating_profit_cash_flow_capex_customer_concentration_and_ROIC",
+    "fully_eliminated_2025_consolidated_group_financials_and_current_shareholder_percentages"
+  ],
+  "sources": [
+    "https://www.ixcellerate.com/data-centers/",
+    "https://www.ixcellerate.com/data-centers/moscow-north-campus/",
+    "https://www.ixcellerate.com/data-centers/moscow-south-campus/",
+    "https://www.ixcellerate.com/data-centers/moscow-veshki-campus/",
+    "https://www.ixcellerate.com/news/ixcellerate-opens-mos3-data-center-the-capacity-of-the-providers-entire-ecosystem-exceeds-10000-rack-spaces/",
+    "https://www.ixcellerate.com/news/ixcellerate-povysil-moshhnost-data-tsentra-mos5-do-64mvt/",
+    "https://www.ixcellerate.com/news/ixcellerate-strengthens-russian-connectivity-ecosystem-and-expands-capacity-of-its-telehouse-in-the-moscow-south-campus/",
+    "https://www.ixcellerate.com/news/a-time-capsule-laid-in-the-mos7-data-center/",
+    "https://www.ixcellerate.com/news/ixcellerate-expands-its-presence-in-the-moscow-region-with-the-launch-of-new-130-mw-campus/",
+    "https://www.ixcellerate.com/news/launching-the-third-campus-we-are-investing-in-the-digital-infrastructure-of-the-future-said-andrei-aksenov-ceo-of-ixcellerate/",
+    "https://www.ixcellerate.com/services/high-power-density-solutions/",
+    "https://www.ixcellerate.com/requisites/",
+    "https://www.ixcellerate.com/certificates/",
+    "https://airs.uptimeinstitute.com/uptime-institute-awards/list/client/ixcellerate/618",
+    "https://find-and-update.company-information.service.gov.uk/company/07265372",
+    "https://find-and-update.company-information.service.gov.uk/company/07265372/filing-history/MzUxNDEwNDkzNWFkaXF6a2N4/document?download=1",
+    "https://find-and-update.company-information.service.gov.uk/company/07265372/persons-with-significant-control",
+    "https://find-and-update.company-information.service.gov.uk/company/07265372/filing-history/MzUyNzIxMzQ3MWFkaXF6a2N4/document?download=1",
+    "https://bo.nalog.gov.ru/organizations-card/1414458?period=2025",
+    "https://bo.nalog.gov.ru/organizations-card/11209915?period=2025",
+    "https://bo.nalog.gov.ru/organizations-card/11412971?period=2025"
+  ]
+}

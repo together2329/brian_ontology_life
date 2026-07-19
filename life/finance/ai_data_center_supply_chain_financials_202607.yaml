@@ -17628,6 +17628,204 @@ financial_profiles:
         url: https://investors.sparknz.co.nz/FormBuilder/_Resource/_module/gXbeer80tkeL4nEaF-kwFA/doc/2024_Spark_Annual_Report.pdf
     confidence: high_for_ownership_transaction_pre_sale_business_and_H1_discontinued_operation_metrics_public_parent_look_through_current_scale_and_pipeline_medium_for_component_roster_reconciliation_historical_engineering_and_project_execution_low_for_post_close_standalone_financials_accounting_operating_profit_debt_site_economics_exact_legal_assets_live_load_physical_GPU_inventory_and_future_ownership_changes
 
+  - id: company_ixcellerate
+    company: IXcellerate
+    geography: Moscow_Russia
+    role: private_carrier_neutral_data_center_operator_with_audited_UK_consolidated_parent_and_Russian_statutory_entities
+    evidence_snapshot: '2026-07-19'
+    ownership_and_legal_boundary:
+      parent: IXcellerate_Limited
+      UK_company_number: '07265372'
+      public_equity_status: private_unlisted
+      audited_accounts_control_statement: no_ultimate_controlling_party
+      active_PSC_register_entry:
+        entity: The_Goldman_Sachs_Group_Inc
+        shares_and_votes: over_25_and_up_to_50_percent
+        notified: '2021-11-20'
+      reconciliation: >-
+        The PSC threshold does not by itself prove group control. The audited
+        accounts state that the major shareholder lacks control under the
+        shareholder agreement and board composition.
+      Russian_entities:
+        IXcellerate_LLC: {INN: '7715904744', OGRN: '1127746106773'}
+        IXcellerate_3_LLC: {INN: '9715371955', OGRN: '1197746731808'}
+        IXcellerate_4_LLC: {INN: '9715390330', OGRN: '1207700361428'}
+      2024_consolidated_subsidiaries:
+        - LLC_IXcellerate
+        - LLC_IXcellerate_3
+        - LLC_IXcellerate_4
+        - LLC_IXcellerate_5
+        - JSC_SMAK
+        - LLC_Olimax
+        - LLC_Eurasia_Peering
+        - LTD_IXC_Holding_Abu_Dhabi
+      shareholder_register_boundary: >-
+        The 2026 confirmation statement lists multiple institutional vehicles,
+        including Goldman-related West Street and AGLQ, MIC Capital Partners,
+        IFC, Summit and Viroch. No underlying beneficial owner is inferred for
+        each vehicle and the filing is not collapsed into a synthetic cap table.
+    facility_and_legal_entity_bridge_from_2024_accounts:
+      MOS1: LLC_IXcellerate_operator_or_property_holder
+      MOS2: LLC_Olimax_operator_or_property_holder
+      MOS4: JSC_SMAK_operator_or_property_holder
+      MOS5: LLC_IXcellerate_3_owner_operator
+      MOS3: LLC_IXcellerate_4_property_holder_and_technical_operator_with_LLC_IXcellerate_client_operator
+    audited_2024_consolidated_USD_million:
+      revenue: 93.610
+      prior_revenue: 71.157
+      colocation_revenue: 87.401
+      prior_colocation_revenue: 65.809
+      gross_profit: 55.979
+      operating_profit: 41.376
+      prior_operating_profit: 26.579
+      EBITDA: 56.772
+      adjusted_EBITDA: 57.166
+      prior_adjusted_EBITDA: 40.227
+      profit_before_tax: 37.337
+      net_profit: 29.771
+      operating_cash_flow: 46.570
+      capex: 66.311
+      cash: 143.279
+      long_term_borrowings: 108.357
+      short_term_borrowings: 17.010
+      property_plant_and_equipment: 232.591
+      total_assets: 424.373
+      equity: 254.739
+    audited_2024_derived:
+      revenue_growth_percent: 31.55
+      colocation_growth_percent: 32.81
+      colocation_revenue_share_percent: 93.37
+      gross_margin_percent: 59.80
+      operating_margin_percent: 44.20
+      net_margin_percent: 31.80
+      capex_to_revenue_percent: 70.84
+      borrowings_total_USD_million: 125.367
+      operating_cash_flow_less_capex_arithmetic_USD_million: -19.741
+      boundary: >-
+        The cash-flow-minus-capex arithmetic is a simple analyst proxy, not the
+        company's free-cash-flow measure. EBITDA, adjusted EBITDA and accounting
+        operating profit are not interchangeable.
+    installed_grid_power_at_2024_12_31_mw:
+      North: 69
+      South: 81
+      total: 150
+      boundary: >-
+        Installed grid power at the accounts date is not current facility-card
+        power, IT load, actual draw, leased capacity or billing utilization.
+    Russian_2025_statutory_financials_thousand_RUB:
+      IXcellerate_LLC:
+        revenue: 7643531
+        cost_of_sales: 3113080
+        gross_profit: 4530451
+        management_expense: 800416
+        profit_from_sales_line_2200: 3730035
+        profit_before_tax: 985940
+        net_profit: 730310
+        2024_comparative: {revenue: 4798512, profit_from_sales_line_2200: 2339193, net_profit: 1676616}
+      IXcellerate_3_LLC:
+        revenue: 7063184
+        cost_of_sales: 2245710
+        gross_profit: 4817474
+        management_expense: 523385
+        profit_from_sales_line_2200: 4294089
+        profit_before_tax: 3108757
+        net_profit: 2327114
+      IXcellerate_4_LLC:
+        revenue: 1839966
+        cost_of_sales: 970985
+        gross_profit: 868981
+        management_expense: 19815
+        profit_from_sales_line_2200: 849166
+        profit_before_tax: -677779
+        net_profit: -509588
+      boundary: >-
+        These are separate Russian statutory legal-entity statements containing
+        intercompany transactions and no consolidation eliminations. Their
+        revenue and profit cannot be summed as group results, and line 2200
+        profit from sales is not IFRS consolidated operating profit.
+    operating_and_development_read_through:
+      operating_facilities: 5
+      operating_full_design_card_checksum: {racks: 11329, published_power_mw: 127.7, useful_area_sqm: 37028}
+      provider_end_2025_racks: 10329
+      MOS3_launch_reconciliation: 1400_functioning_plus_1000_contracted_for_January_2026_delivery
+      Moscow_South_full_build: {racks_more_than: 19300, power_mw_more_than: 300}
+      Moscow_Veshki_full_build: {racks: 7500, power_mw_more_than: 130}
+      boundary: >-
+        Facility cards, year-end provider racks, installed grid power and campus
+        full-build plans use different dates and denominators. None is converted
+        into current utilized load or future revenue.
+    accelerator_and_AI_boundary:
+      air_cooling_maximum_kw_per_rack: 55
+      combined_air_liquid_cooling_above_kw_per_rack: 60
+      dedicated_AI_and_supercomputer_halls: true
+      provider_high_density_page_total_power_mw: 380
+      380MW_denominator: unclear_mixed_lifecycle_not_operating
+      physical_GPU_model_count_owner_site_delivery_fabric_power_utilization_revenue_and_margin: undisclosed
+      accelerator_ledger_action: no_numeric_physical_inventory_row_created
+    outlook:
+      positive_signals:
+        - audited_2024_revenue_growth_of_31_55_percent
+        - audited_2024_operating_margin_of_44_20_percent
+        - 93_percent_plus_colocation_revenue_mix
+        - MOS3_and_final_MOS5_phase_launched_in_2025
+        - large_South_and_Veshki_expansion_option
+        - high_density_and_combined_air_liquid_cooling_capability
+      risk_signals:
+        - private_unlisted_with_no_direct_public_equity_route
+        - Russia_only_geographic_and_regulatory_concentration
+        - geopolitical_and_imported_equipment_availability_risk
+        - capex_exceeded_operating_cash_flow_in_2024
+        - large_pipeline_requires_grid_capital_customers_and_execution
+        - MOS11_launch_not_found_and_MOS7_still_construction_in_reviewed_evidence
+        - no_physical_GPU_inventory_or_site_level_economics
+      decisive_missing_evidence:
+        - audited_2025_consolidated_group_financials_with_eliminations
+        - current_shareholder_percentages_voting_rights_and_ultimate_economic_ownership
+        - exact_current_installed_energized_leased_utilized_billed_and_actual_IT_load_by_site
+        - construction_grid_customer_acceptance_and_return_bridge_for_each_pipeline_facility
+        - complete_as_built_power_cooling_equipment_PUE_WUE_water_and_liquid_cooling
+        - physical_GPU_inventory_site_power_utilization_revenue_and_margin
+      analytical_view: >-
+        IXcellerate has attractive audited growth, a high accounting operating
+        margin and a five-facility Moscow operating base. Its expansion path and
+        high-density cooling capability are meaningful, but it is a private,
+        Russia-concentrated and capital-intensive exposure. South and Veshki
+        pipeline MW should be valued only after grid, construction, customer
+        acceptance and billing evidence; AI-ready hosting does not prove an
+        operator-owned accelerator fleet.
+    linked_data_center_profiles:
+      - dc_ixcellerate_moscow_campus_portfolio
+    sources:
+      - title: 2024 consolidated accounts
+        publisher: UK_Companies_House
+        filed: 2026-04-11
+        url: https://find-and-update.company-information.service.gov.uk/company/07265372/filing-history/MzUxNDEwNDkzNWFkaXF6a2N4/document?download=1
+      - title: Persons with significant control
+        publisher: UK_Companies_House
+        accessed: 2026-07-19
+        url: https://find-and-update.company-information.service.gov.uk/company/07265372/persons-with-significant-control
+      - title: 2026 confirmation statement
+        publisher: UK_Companies_House
+        filed: 2026-06-22
+        url: https://find-and-update.company-information.service.gov.uk/company/07265372/filing-history/MzUyNzIxMzQ3MWFkaXF6a2N4/document?download=1
+      - title: IXcellerate LLC 2025 statutory accounts
+        publisher: Russian_Federal_Tax_Service_BFO
+        accessed: 2026-07-19
+        url: https://bo.nalog.gov.ru/organizations-card/1414458?period=2025
+      - title: IXcellerate 3 LLC 2025 statutory accounts
+        publisher: Russian_Federal_Tax_Service_BFO
+        accessed: 2026-07-19
+        url: https://bo.nalog.gov.ru/organizations-card/11209915?period=2025
+      - title: IXcellerate 4 LLC 2025 statutory accounts
+        publisher: Russian_Federal_Tax_Service_BFO
+        accessed: 2026-07-19
+        url: https://bo.nalog.gov.ru/organizations-card/11412971?period=2025
+      - title: Current data center directory
+        publisher: IXcellerate
+        accessed: 2026-07-19
+        url: https://www.ixcellerate.com/data-centers/
+    confidence: high_for_audited_2024_consolidated_financials_2025_Russian_statutory_entities_legal_facility_bridge_current_facility_cards_MOS3_launch_campus_plans_and_high_density_capability_medium_for_current_shareholder_control_bridge_equipment_continuity_and_pipeline_execution_low_for_audited_2025_consolidated_results_live_IT_load_site_economics_physical_GPU_inventory_and_exact_current_ownership_percentages
+
 cross_company_read_through:
   current_signals:
     - TenPeaks became the current operator of Spark's transferred data-centre business on 30 January 2026. PEP controls 75% and Spark retained 25%, two board seats and a key-customer relationship; OIO permission for PEP-managed funds to reach 100% is not evidence that Spark has sold its stake.
