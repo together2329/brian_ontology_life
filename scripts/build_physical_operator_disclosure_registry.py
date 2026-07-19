@@ -114,6 +114,7 @@ SPECS = [
     spec("IBM_Cloud", "company_ibm", ["dc_ibm_cloud_global_physical_code_and_accelerator_portfolio"], "Global", "public_diversified_parent_with_segment_and_cloud_service_location_boundary", "47 unique current IBM Cloud physical codes across 42 classic-code rows and 13 cloud Regions", "Physical codes, Regions, zones, campuses, buildings, closure states, legal title, MW, orderable accelerator profiles, installed GPUs and companywide or Infrastructure-segment financials use different scopes.", ["life/imports/global_data_centers_20260717/ibm_cloud_kyndryl_boundary_registry.jsonl", "life/imports/global_data_centers_20260717/ibm_cloud_kyndryl_boundary_summary.json"]),
     spec("Kyndryl", "company_kyndryl", ["dc_kyndryl_global_managed_infrastructure_and_legacy_ibm_facility_boundary"], "Global_with_selected_France_and_Germany_certification_sites", "public_managed_infrastructure_services_company_with_partial_certification_site_roster", "eleven selected France and Germany certification site-group rows against a 9.0-million-square-foot combined data-center-and-office real-estate scope", "Certificates, named components, buildings, owned versus colocation facilities, legacy IBM labels, legal title, MW, GPUs, combined real estate and companywide services financials use different scopes.", ["life/imports/global_data_centers_20260717/ibm_cloud_kyndryl_boundary_registry.jsonl", "life/imports/global_data_centers_20260717/ibm_cloud_kyndryl_boundary_summary.json"]),
     spec("Compass_Datacenters", "company_compass_datacenters", ["dc_compass_datacenters_current_hyperscale_and_transition_market_portfolio"], "United_States_Canada_Italy_and_historical_Israel", "private_or_unlisted", "eight current market or campus rows with a 1,327-MW mixed-lifecycle checksum plus eight built or transition rows", "Current markets, physical buildings, operating load, development plans, transferred assets, dated contracted capacity, OSM geometries and private financials use different scopes.", ["life/imports/global_data_centers_20260717/compass_datacenters_market_registry.jsonl", "life/imports/global_data_centers_20260717/compass_datacenters_market_summary.json"]),
+    spec("ETIX", "company_etix", ["dc_etix_france_belgium_thailand_edge_and_ai_ready_portfolio"], "France_Belgium_and_Thailand", "private_with_selected_non_additive_French_social_accounts", "fifteen older-directory base sites, four June 2026 Occitanie legal-control-transition rows and one separately marketed Bangkok expansion row", "Directory counts, transaction assets, marketed expansion, card MW, cumulative delivery, physical buildings, live load, GPUs and separate legal-entity financials use different scopes.", ["life/imports/global_data_centers_20260717/etix_official_facility_registry.jsonl", "life/imports/global_data_centers_20260717/etix_official_facility_summary.json"]),
 ]
 
 
@@ -157,7 +158,7 @@ def load_index(path: Path, key: str) -> dict[str, dict]:
 def build_records(finance_path: Path, landscape_path: Path, accessed_on: str) -> list[dict]:
     finance = load_index(finance_path, "financial_profiles")
     landscape = load_index(landscape_path, "campus_profiles")
-    assert len(SPECS) == 71
+    assert len(SPECS) == 72
     assert len({row["company"] for row in SPECS}) == len(SPECS)
     records = []
     for position, source in enumerate(SPECS, start=1):
