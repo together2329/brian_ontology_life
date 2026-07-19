@@ -1,0 +1,389 @@
+{
+  "AI_and_accelerator_boundary": {
+    "LAX01_Lambda": {
+      "Prime_role": "facility_power_cooling_and_delivery",
+      "customer_and_compute_operator": "Lambda",
+      "first_AI_data_halls_provider_says_online": true,
+      "hardware_family": "NVIDIA_Blackwell",
+      "initial_lease_mw": 21
+    },
+    "Prime_owned_physical_GPU_inventory": "not_established",
+    "accelerator_ledger_action": "no_numeric_Prime_owned_physical_inventory_row_created",
+    "physical_GPU_model_variant_count_owner_delivery_state_rack_count_fabric_power_utilization_revenue_and_margin": "undisclosed"
+  },
+  "OSM_crosswalk": {
+    "boundary": "Six OSM objects represent four current facility candidates plus one Saeby plan. DFW01-01 has two building footprints, so objects and facilities are not equal denominators.",
+    "current_facility_candidates": 4,
+    "current_facility_refs": [
+      "prime_dfw01_01",
+      "prime_sjc02",
+      "prime_sjc03",
+      "prime_sjc04"
+    ],
+    "historical_or_pipeline_candidate_refs": [
+      "prime_aal01_saeby_campus_plan"
+    ],
+    "raw_operator_labels": [
+      "Prime",
+      "Prime Data Centers"
+    ],
+    "related_objects": 6,
+    "rows": [
+      {
+        "address": {
+          "city": "Dallas",
+          "postcode": "75247",
+          "state": "TX"
+        },
+        "capacity_counting_rule": "OSM geometry is a crosswalk only; duplicate footprints do not create additional facility capacity.",
+        "classification": "exact_facility_building_component",
+        "facility_ref": "prime_dfw01_01",
+        "footprint_area_m2": 4618.285,
+        "latitude": 32.8378141,
+        "longitude": -96.8798458,
+        "name": "Prime DFW01-01",
+        "osm_ref": "osm_way_1461896928",
+        "raw_operator": "Prime"
+      },
+      {
+        "address": {
+          "city": "Dallas",
+          "postcode": "75247",
+          "state": "TX"
+        },
+        "capacity_counting_rule": "OSM geometry is a crosswalk only; duplicate footprints do not create additional facility capacity.",
+        "classification": "second_building_footprint_component_same_facility_and_address",
+        "facility_ref": "prime_dfw01_01",
+        "footprint_area_m2": 8261.855,
+        "latitude": 32.837958,
+        "longitude": -96.8784007,
+        "name": "Prime DFW01-01",
+        "osm_ref": "osm_way_465032380",
+        "raw_operator": "Prime"
+      },
+      {
+        "address": null,
+        "capacity_counting_rule": "OSM geometry is a crosswalk only; duplicate footprints do not create additional facility capacity.",
+        "classification": "exact_current_facility",
+        "facility_ref": "prime_sjc02",
+        "footprint_area_m2": 2791.907,
+        "latitude": 37.3750172,
+        "longitude": -121.9532497,
+        "name": "Prime Santa Clara",
+        "osm_ref": "osm_way_209073636",
+        "raw_operator": "Prime"
+      },
+      {
+        "address": null,
+        "capacity_counting_rule": "OSM geometry is a crosswalk only; duplicate footprints do not create additional facility capacity.",
+        "classification": "exact_current_address_point",
+        "facility_ref": "prime_sjc03",
+        "footprint_area_m2": null,
+        "latitude": 37.366662,
+        "longitude": -121.962865,
+        "name": "Prime Santa Clara",
+        "osm_ref": "osm_node_12437277166",
+        "raw_operator": "Prime"
+      },
+      {
+        "address": null,
+        "capacity_counting_rule": "OSM geometry is a crosswalk only; duplicate footprints do not create additional facility capacity.",
+        "classification": "exact_current_facility",
+        "facility_ref": "prime_sjc04",
+        "footprint_area_m2": 2398.193,
+        "latitude": 37.3750292,
+        "longitude": -121.9548775,
+        "name": "Prime SANTA CLARA DATA CENTER",
+        "osm_ref": "osm_way_209073659",
+        "raw_operator": "Prime"
+      },
+      {
+        "address": null,
+        "capacity_counting_rule": "OSM geometry is a crosswalk only; duplicate footprints do not create additional facility capacity.",
+        "classification": "historical_announced_plan_footprint_current_lifecycle_unconfirmed",
+        "facility_ref": "prime_aal01_saeby_campus_plan",
+        "footprint_area_m2": 1940.564,
+        "latitude": 57.3186485,
+        "longitude": 10.5007399,
+        "name": "Prime Data Centers - Saeby Campus AAL01",
+        "osm_ref": "osm_way_618756435",
+        "raw_operator": "Prime Data Centers"
+      }
+    ],
+    "source_file": "life/imports/global_data_centers_20260717/osm_data_center_locations.jsonl",
+    "source_file_sha256": "3a0f1370f036f2ff5fa0c478bfadeb58c7809d90315bbee4e0a7c9cfd21d4733"
+  },
+  "accessed_on": "2026-07-19",
+  "current_directory_scope": {
+    "boundary": "The 1.09-GW sum spans current page campus headlines across operating, powered-shell, construction and development states. Only 760 MW is allocated to numeric facility cards, and even the 151-MW operational-card checksum is design or marketed critical IT rather than measured live, utilized or billed load.",
+    "campus_headline_critical_IT_mw_checksum": 1090,
+    "campus_minus_numeric_card_mw": 330,
+    "facility_card_lifecycle_counts": {
+      "construction": 6,
+      "development": 15,
+      "operational": 6,
+      "powered_shell": 1
+    },
+    "facility_card_numeric_critical_IT_mw_checksum": 760,
+    "facility_card_numeric_mw_by_lifecycle": {
+      "construction": 222,
+      "development": 378,
+      "operational": 151,
+      "powered_shell": 9
+    },
+    "operational_card_numeric_mw_checksum": 151,
+    "unallocated_difference": {
+      "AUS01": 240,
+      "ORD01": 90
+    },
+    "visible_facility_cards": 28,
+    "visible_location_pages": 9
+  },
+  "id": "prime_data_centers_official_facility_summary_2026_07_19",
+  "legal_entity": "Prime Data Centers LLC",
+  "legal_ownership_and_financial_boundary": {
+    "2025_investment_terms": "undisclosed",
+    "2025_strategic_investors": [
+      "Snowhawk",
+      "Nuveen"
+    ],
+    "Macquarie_2025_action": "partially_realised_its_stake_without_public_value_or_remaining_percentage",
+    "Siemens_FY2025_disclosures": {
+      "Prime_Data_Centers_LLC_equity_interest_percent": 3,
+      "Prime_Data_Centers_LLC_net_income_and_equity": "not_available",
+      "Prime_Super_Holding_One_LLC_equity_interest_percent": 9,
+      "Prime_Super_Holding_One_LLC_latest_local_GAAP_equity_EUR_million": 491,
+      "Prime_Super_Holding_One_LLC_latest_local_GAAP_net_income_EUR_million": -14
+    },
+    "Siemens_boundary": "Direct and holding-entity interests have different legal perimeters and cannot be added into an inferred Siemens economic stake in Prime.",
+    "boundary": "Investor stakes, parent financial statements, project investment plans and customer spending are not Prime standalone revenue, profit, cash flow, incurred capex or valuation.",
+    "company_status": "private_and_currently_described_as_majority_founder_owned",
+    "founder_and_CEO": "Nicholas_Laag",
+    "other_named_institutional_investors": [
+      "Macquarie_Capital",
+      "Ares_Management",
+      "Siemens_Financial_Services"
+    ],
+    "project_investment_headlines": {
+      "ESB01_full_build_EUR_billion_expected": 6,
+      "ESB01_phase_1_EUR_billion_approximate": 2,
+      "Macquarie_2021_ten_year_target_USD_billion_more_than": 5,
+      "PHX01_Prime_investment_USD_billion_more_than": 3
+    },
+    "standalone_revenue_operating_profit_EBITDA_net_income_cash_flow_capex_debt_customer_concentration_site_economics_ROIC_and_valuation": "undisclosed"
+  },
+  "operator": "Prime Data Centers",
+  "outlook": {
+    "analytical_view": "Prime has credible hyperscale and AI delivery evidence, a large development pipeline and deep institutional backing. The public investment case remains non-underwritable as a standalone operator because live load, utilization, contracted economics, customer concentration, leverage, current cap table and project-level returns are not disclosed, while most published capacity is not an operating denominator.",
+    "positive_signals": [
+      "4GW_plus_roadmap",
+      "large_US_and_Europe_development_optionality",
+      "operating_LAX01_Lambda_Blackwell_deployment",
+      "contracted_or_leased_capacity_at_multiple_projects",
+      "institutional_equity_support",
+      "closed_loop_and_liquid_cooling_capability"
+    ],
+    "risk_signals": [
+      "only_9_current_directory_pages_against_13_or_14_campus_headlines",
+      "mixed_lifecycle_1_09GW_scope",
+      "330MW_unallocated_between_campus_and_card_values",
+      "large_permitting_grid_and_construction_execution_burden",
+      "private_standalone_financials_and_leverage_undisclosed",
+      "customer_concentration_undisclosed",
+      "no_Prime_owned_GPU_inventory",
+      "no_per_site_as_built_BOM_or_measured_PUE_WUE"
+    ]
+  },
+  "publication_scope_reconciliation": {
+    "2025_sustainability_report_2024_basis": {
+      "locations": 22,
+      "roadmap_GW_more_than": 3
+    },
+    "Macquarie_as_of_2025_11_03": {
+      "data_centers": 29,
+      "extension_pipeline_GW_more_than": 4,
+      "global_campuses": 14
+    },
+    "boundary": "Campus, location, data-center, facility-card, market and roadmap counts come from different dates and granularity. The public sources do not provide a current legal-building bridge that reconciles them.",
+    "current_directory": {
+      "facility_cards": 28,
+      "location_pages": 9
+    },
+    "current_home_page": {
+      "campuses": 13,
+      "pipeline_GW_more_than": 4
+    },
+    "current_named_roadmap_markets_from_2025_investment_release": [
+      "Chicago",
+      "Phoenix",
+      "Austin",
+      "Los_Angeles",
+      "Silicon_Valley",
+      "Frankfurt",
+      "Berlin",
+      "Helsinki",
+      "Madrid"
+    ],
+    "separately_reviewed_Denmark_plans": [
+      "AAL01_Saeby_2023",
+      "ESB01_Esbjerg_2026"
+    ]
+  },
+  "records_sha256": "fac2e5c664d51da24d685f5a280cd073518aca95665dca6ae7be479467811a4e",
+  "remaining_material_gaps": [
+    "current_13_or_14_campus_22_location_29_data_center_and_28_card_counts_to_exact_legal_building_title_lease_and_lifecycle_roster",
+    "per_site_operating_energized_customer_accepted_leased_utilized_billed_and_actual_IT_load",
+    "per_site_grid_voltage_feeds_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_OEM_model_count_rating_acceptance_and_remaining_life",
+    "per_site_measured_PUE_WUE_CUE_energy_water_renewable_hourly_matching_and_live_liquid_cooled_MW",
+    "physical_GPU_model_variant_count_owner_host_site_delivery_rack_fabric_power_utilization_customer_revenue_and_margin",
+    "standalone_revenue_operating_profit_EBITDA_net_income_cash_flow_capex_debt_customer_concentration_site_economics_ROIC_and_valuation",
+    "current_founder_Snowhawk_Nuveen_Macquarie_Ares_Siemens_stakes_preferences_voting_rights_governance_and_ultimate_economic_ownership",
+    "Berlin_Helsinki_Saeby_and_other_hidden_campus_land_permit_grid_financing_construction_customer_launch_or_cancellation_status",
+    "ESB01_EIA_permits_grid_connection_financing_customer_contract_final_design_construction_and_go_live"
+  ],
+  "selected_power_and_cooling_evidence": {
+    "2025_standard_design": {
+      "CFD_and_hydraulic_analysis": true,
+      "automated_free_cooling_controls": true,
+      "automated_variable_speed_cooling": true,
+      "high_efficiency_magnetic_bearing_chillers": true,
+      "integrated_BMS_and_EPMS": true
+    },
+    "AAL01_plan": {
+      "biofuel_backup_generators": true,
+      "district_heat": true,
+      "in_rack_kw_per_cabinet_up_to": 50,
+      "partner": "New_Nordic_Data_Cooling_ApS"
+    },
+    "AI_capability_page": {
+      "cooling_options": [
+        "air",
+        "direct_to_chip_liquid",
+        "immersion",
+        "hybrid"
+      ],
+      "named_supported_hardware": [
+        "NVIDIA_H100",
+        "NVIDIA_A100",
+        "NVIDIA_HGX_B200"
+      ],
+      "network_fabrics": [
+        "NVLink",
+        "InfiniBand",
+        "Ethernet"
+      ],
+      "rack_density_kw_more_than": 100
+    },
+    "DFW01": {
+      "HVO_exclusive_in_new_backup_generators_from_2024": true
+    },
+    "LAX01": {
+      "HVO_exclusive_in_new_backup_generators_from_2024": true,
+      "combined_liquid_cooling_kw_per_rack_up_to": 120,
+      "generator_buildings": true,
+      "standard_air_cooling_kw_per_rack_up_to": 40
+    },
+    "PHX01": {
+      "closed_loop_zero_process_water_during_operations_provider_claim": true,
+      "phase_1_commissioned_as_of_2026_05_21": true,
+      "substation_phase_1_mw": 250
+    },
+    "as_built_per_site_transformer_switchgear_PDU_UPS_battery_generator_chiller_CRAH_CRAC_CDU_OEM_model_count_rating_acceptance_and_remaining_life": "undisclosed",
+    "boundary": "Portfolio design features and capability marketing are not a per-site as-built bill of materials. Named AI hardware is supported-customer equipment, not Prime inventory.",
+    "current_location_pages": {
+      "M_and_E": "concurrently_maintainable",
+      "cooling": "closed_loop_air_and_liquid",
+      "utility_and_substation": {
+        "AUS01": {
+          "substation": "on_site",
+          "utility": "Blue_Bonnet_Electric_Cooperative"
+        },
+        "DFW01": {
+          "substation": "in_close_proximity",
+          "utility": "Oncor"
+        },
+        "FRA01": {
+          "substation": "in_close_proximity",
+          "utility": "undisclosed"
+        },
+        "LAX01": {
+          "substation": "on_site",
+          "utility": "Vernon_Power_Utility"
+        },
+        "MAD01": {
+          "substation": "on_site",
+          "utility": "Iberdrola"
+        },
+        "ORD01": {
+          "substation": "adjacent_to_campus",
+          "utility": "ComEd"
+        },
+        "PHX01": {
+          "substation": "on_site",
+          "utility": "Salt_River_Project"
+        },
+        "SJC": {
+          "substation": "in_close_proximity",
+          "utility": "Silicon_Valley_Power_and_PG&E"
+        },
+        "SMF01": {
+          "substation": "on_site",
+          "utility": "SMUD"
+        }
+      }
+    }
+  },
+  "sources": [
+    "https://primedatacenters.com/",
+    "https://primedatacenters.com/locations/",
+    "https://primedatacenters.com/locations/austin/",
+    "https://primedatacenters.com/locations/chicago/",
+    "https://primedatacenters.com/locations/dallas/",
+    "https://primedatacenters.com/locations/los-angeles/",
+    "https://primedatacenters.com/locations/phoenix/",
+    "https://primedatacenters.com/locations/sacramento/",
+    "https://primedatacenters.com/locations/silicon-valley/",
+    "https://primedatacenters.com/locations/frankfurt/",
+    "https://primedatacenters.com/locations/madrid/",
+    "https://primedatacenters.com/about/",
+    "https://primedatacenters.com/ai/",
+    "https://primedatacenters.com/sustainability/",
+    "https://primedatacenters.com/wp-content/uploads/2025/08/Prime-Data-Centers_2025-Sustainability-Report_FINAL-optimised.pdf",
+    "https://primedatacenters.com/news/prime-data-centers-dallas-and-sacramento-facilities-earn-energy-star-certification-for-superior-energy-performance/",
+    "https://primedatacenters.com/news/prime-opens-los-angeles-data-center/",
+    "https://primedatacenters.com/news/prime-data-centers-and-lambda-partner-to-power-the-next-era-of-superintelligence-with-ai-optimized-infrastructure-in-southern-california/",
+    "https://primedatacenters.com/news/prime-data-centers-breaks-ground-on-three-buildings-at-its-240mw-phoenix-campus-advancing-3billion-dollar-investment-in-avondale/",
+    "https://primedatacenters.com/news/prime-announces-its-first-phoenix-data-center-campus/",
+    "https://primedatacenters.com/news/prime-data-centers-breaks-ground-on-second-sacramento-data-center-expanding-regional-campus-footprint/",
+    "https://primedatacenters.com/news/prime-launches-construction-at-second-silicon-valley-location/",
+    "https://primedatacenters.com/news/prime-enters-denmark-with-124-megawatt-data-center-campus-that-delivers-a-net-positive-environmental-impact/",
+    "https://primedatacenters.com/news/prime-data-centers-announces-plans-for-major-data-center-development-in-esbjerg-denmark/",
+    "https://primedatacenters.com/news/snowhawk-and-nuveen-make-strategic-investment-in-prime-data-centers/",
+    "https://primedatacenters.com/news/prime-data-centers-announces-strategic-partnership-and-equity-investment-with-macquarie-capital/",
+    "https://www.macquarie.com/ie/en/insights/supporting-and-investing-in-large-scale-data-storage-in-the-americas.html",
+    "https://assets.new.siemens.com/siemens/assets/api/uuid:428ea18a-e7ab-4f93-a160-33908f1c3540/Siemens-Annual-Report-2025.pdf"
+  ],
+  "sustainability_and_measured_performance_boundary": {
+    "ENERGY_STAR_2026": [
+      "DFW01-01",
+      "SMF01-01"
+    ],
+    "all_current_data_centers_provider_wording": "non_evaporative_closed_loop_cooling",
+    "average_renewable_share_from_grid_US_operating_portfolio_percent": 28,
+    "boundary": "PUE and WUE are design metrics, not measured facility results. The absolute water, renewable and CUE figures use the 2024 operating/reporting boundary and must not be applied to the 2026 mixed-lifecycle directory.",
+    "design_PUE": 1.2,
+    "design_WUE_site_l_per_kWh": 0.002,
+    "design_WUE_source": 4.054,
+    "electricity_from_grid": "nearly_100_percent_with_less_than_1_percent_from_on_site_emergency_generators",
+    "high_stress_sites_not_operational_during_reporting_period": [
+      "Los_Angeles",
+      "Phoenix"
+    ],
+    "market_based_CUE_kg_CO2e_per_IT_kWh": 0.109,
+    "operating_data_center_water_consumption_cubic_meters": 2400,
+    "operating_site_water_in_high_or_extremely_high_stress_regions_percent": 0,
+    "renewable_energy_certificate_coverage_of_US_operating_energy_percent": 36,
+    "reporting_period": "calendar_2024_with_qualitative_discussion_through_2025_H1",
+    "water_restoration_certificate_coverage_percent": 120
+  }
+}

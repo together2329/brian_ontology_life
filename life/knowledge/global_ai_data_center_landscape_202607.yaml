@@ -34391,7 +34391,263 @@ campus_profiles:
       - {title: Australian Business Register record, publisher: Australian_Business_Register, updated: 2026-03-11, accessed: 2026-07-19, url: "https://abr.business.gov.au/ABN/View/55632303827"}
     confidence: high_for_six_current_cards_card_checksums_common_engineering_current_investor_names_legal_entity_and_six_OSM_crosswalk_medium_for_provider_certification_and_historical_program_continuity_low_for_current_racks_modules_live_load_complete_BOM_measured_efficiency_physical_GPU_inventory_exact_cap_table_standalone_financials_site_economics_and_future_rollout
 
+  - id: dc_prime_data_centers_north_america_emea_portfolio
+    operator: Prime_Data_Centers
+    legal_entity: Prime_Data_Centers_LLC
+    geography: North_America_and_EMEA
+    record_granularity: current_directory_cards_pipeline_power_cooling_GPU_ownership_financial_and_OSM_scope
+    evidence_snapshot: '2026-07-19'
+    official_facility_registry_ref: life/imports/global_data_centers_20260717/prime_data_centers_official_facility_registry.jsonl
+    official_facility_summary_ref: life/imports/global_data_centers_20260717/prime_data_centers_official_facility_summary.json
+    current_directory_scope:
+      visible_location_pages: 9
+      visible_facility_cards: 28
+      campus_codes: [AUS01, ORD01, DFW01, LAX01, PHX01, SMF01, SJC_portfolio, FRA01, MAD01]
+      lifecycle_counts:
+        operational: 6
+        powered_shell: 1
+        construction: 6
+        development: 15
+      campus_headline_critical_IT_mw_checksum: 1090
+      numeric_facility_card_critical_IT_mw_checksum: 760
+      numeric_card_mw_by_lifecycle: {operational: 151, powered_shell: 9, construction: 222, development: 378}
+      campus_minus_numeric_card_mw: 330
+      unallocated_difference_mw: {AUS01: 240, ORD01: 90}
+      boundary: >-
+        The 1.09-GW campus checksum spans current pages but mixes lifecycle states.
+        Only 760 MW is allocated to numeric facility cards, because seven Austin
+        cards have blank capacity and Chicago's campus headline exceeds its three
+        card values. Neither the 1.09 GW nor the 151-MW operating-card checksum is
+        measured live, utilized, billed or actual IT load.
+    current_page_reconciliation:
+      AUS01:
+        locality: Lockhart_Texas
+        cards: 8
+        campus_critical_IT_mw: 384
+        numeric_card_mw: 144
+        lifecycle: all_development
+        utility: Blue_Bonnet_Electric_Cooperative
+        substation: on_site
+      ORD01:
+        locality: Elk_Grove_Village_Illinois
+        cards: 3
+        campus_critical_IT_mw: 270
+        numeric_card_mw: 180
+        lifecycle: {operational: 1, development: 2}
+        utility: ComEd
+        substation: adjacent_to_campus
+        size_conflict: headline_985K_sq_ft_versus_overview_958000_sq_ft
+      DFW01:
+        locality: Dallas_Texas
+        cards: 2
+        campus_and_card_critical_IT_mw: 20
+        lifecycle: {operational: 1, construction: 1}
+        utility: Oncor
+        substation: in_close_proximity
+      LAX01:
+        locality: Vernon_California
+        cards: 1
+        campus_and_card_critical_IT_mw: 33
+        lifecycle: {operational: 1}
+        utility: Vernon_Power_Utility
+        substation: on_site
+      PHX01:
+        locality: Avondale_Arizona
+        cards: 5
+        campus_and_card_critical_IT_mw: 240
+        lifecycle: {construction: 4, development: 1}
+        utility: Salt_River_Project
+        substation: on_site
+      SMF01:
+        locality: McClellan_Park_California
+        cards: 2
+        campus_and_card_critical_IT_mw: 26
+        lifecycle: {operational: 1, construction: 1}
+        utility: SMUD
+        substation: on_site
+        naming_conflict: current_card_SMF01_02_versus_2026_release_SMF02
+      SJC_portfolio:
+        localities: [Hayward, Santa_Clara, San_Jose]
+        cards: 5
+        campus_and_card_critical_IT_mw: 57
+        lifecycle: {operational: 2, powered_shell: 1, development: 2}
+        utilities: [Silicon_Valley_Power, PG&E]
+        substations: in_close_proximity
+        SJC03_conflict: current_2215_Martin_development_versus_2022_release_2175_Martin_and_H2_2023_completion_plan
+      FRA01:
+        locality: Main_Taunus_Kreis_Germany
+        cards: 1
+        campus_and_card_critical_IT_mw: 20
+        lifecycle: {development: 1}
+        utility: undisclosed
+        substation: in_close_proximity
+      MAD01:
+        locality: Alcobendas_Spain
+        cards: 1
+        campus_and_card_critical_IT_mw: 40
+        lifecycle: {development: 1}
+        utility: Iberdrola
+        substation: on_site
+    portfolio_publication_scope_conflicts:
+      current_home_page: {campuses: 13, pipeline_GW_more_than: 4}
+      current_directory: {location_pages: 9, facility_cards: 28}
+      Macquarie_as_of_2025_11_03: {global_campuses: 14, data_centers: 29, extension_pipeline_GW_more_than: 4}
+      sustainability_report_2024_basis: {locations: 22, roadmap_GW_more_than: 3}
+      named_2025_roadmap_markets: [Chicago, Phoenix, Austin, Los_Angeles, Silicon_Valley, Frankfurt, Berlin, Helsinki, Madrid]
+      boundary: >-
+        Campuses, locations, data centers, cards and markets are different
+        granularities and publication dates. No current public legal-building
+        bridge reconciles the 9, 13, 14, 22, 28 and 29 counts.
+    separate_Denmark_pipeline:
+      AAL01_Saeby:
+        announcement_date: '2023-02-02'
+        plan: {critical_IT_mw: 124, hyperscale_data_centers: 3}
+        current_status: former_location_page_absent_from_current_directory_and_not_revalidated
+        power_and_cooling: [100_percent_renewable_plan, biofuel_backup_generator_plan, Saeby_Varmevaerk_district_heat, New_Nordic_Data_Cooling_in_rack_up_to_50kW_per_cabinet]
+      ESB01_Esbjerg:
+        announcement_date: '2026-03-27'
+        lifecycle: EIA_and_preconstruction
+        site_sqm: 640000
+        first_phase: {IT_mw: 160, investment_EUR_billion_approximate: 2}
+        full_assessed: {IT_mw: 550, investment_EUR_billion_expected: 6}
+        construction_start_anticipated: 2027
+        initial_go_live_target: late_2029
+        conditions: [EIA, permits, grid_connection, demand, construction]
+      boundary: >-
+        Denmark plan values are not operating capacity, committed financing,
+        incurred capex, current asset value or revenue. Saeby's present lifecycle
+        remains unconfirmed; Esbjerg is subject to multiple preconstruction gates.
+    selected_power_cooling_and_equipment_evidence:
+      common_current_location_page:
+        M_and_E: concurrently_maintainable
+        cooling: closed_loop_air_and_liquid
+        exact_redundancy_and_as_built_topology: undisclosed
+      standard_design_2025:
+        - high_efficiency_magnetic_bearing_chillers
+        - automated_variable_speed_cooling
+        - computational_fluid_dynamics_and_hydraulic_analysis
+        - integrated_building_management_and_electrical_power_monitoring_system
+        - automated_free_cooling_controls
+      LAX01:
+        generator_buildings: true
+        standard_air_cooling_kw_per_rack_up_to: 40
+        combined_liquid_cooling_kw_per_rack_up_to: 120
+        HVO_exclusive_in_new_backup_generators_from_2024: true
+      DFW01:
+        HVO_exclusive_in_new_backup_generators_from_2024: true
+      PHX01:
+        substation_phase_one_mw: 250
+        phase_one_commissioned_as_of_2026_05_21: true
+        closed_loop_zero_process_water_during_operations_provider_claim: true
+      HVO_boundary:
+        US_goal: main_fuel_for_all_backup_generators_by_2030
+        Chicago_exception: HVO_and_traditional_diesel_blend_for_cold_weather
+        emergency_resupply_exception: traditional_diesel_if_HVO_unavailable
+      missing_as_built_BOM: [grid_voltage_and_feeds, transformers, switchgear, PDUs, UPS_models, batteries, generator_models_and_counts, fuel_capacity, chillers, CRAH_CRAC, CDUs, OEMs, acceptance, remaining_life]
+      boundary: >-
+        Design standards, fuel policy and selected project details are not a
+        complete per-site as-built equipment ledger. Equipment nameplate and
+        utility values are not IT load.
+    sustainability_measurement_boundary:
+      reporting_period: calendar_2024_with_qualitative_discussion_through_2025_H1
+      design_metrics: {PUE: 1.20, WUE_site_l_per_kWh: 0.002, WUE_source: 4.054}
+      market_based_CUE_kg_CO2e_per_IT_kWh: 0.109
+      operating_data_center_water_cubic_meters: 2400
+      water_restoration_certificate_coverage_percent: 120
+      US_operating_energy_REC_coverage_percent: 36
+      average_US_operating_grid_renewable_share_percent: 28
+      electricity_source: nearly_100_percent_grid_with_less_than_1_percent_on_site_emergency_generation
+      operating_water_in_high_or_extremely_high_stress_regions_percent: 0
+      high_stress_sites_not_operational_in_2024_reporting_period: [Los_Angeles, Phoenix]
+      ENERGY_STAR_2026: [DFW01_01, SMF01_01]
+      boundary: >-
+        PUE and WUE are design metrics rather than per-site measured results. The
+        absolute water, CUE and renewable figures use the 2024 operating scope
+        and cannot be propagated to the July 2026 mixed-lifecycle directory.
+    AI_and_accelerator_boundary:
+      capability_page:
+        supported_rack_density_kw_more_than: 100
+        cooling: [air, direct_to_chip_liquid, immersion, hybrid]
+        named_supported_hardware: [NVIDIA_H100, NVIDIA_A100, NVIDIA_HGX_B200]
+        named_fabrics: [NVLink, InfiniBand, Ethernet]
+      LAX01_Lambda:
+        initial_lease_mw: 21
+        hardware_family: NVIDIA_Blackwell
+        customer_and_compute_operator: Lambda
+        Prime_role: facility_power_cooling_and_delivery
+        provider_says_first_AI_data_halls_online: true
+      Prime_owned_physical_GPU_inventory: not_established
+      physical_model_variant_count_owner_delivery_racks_fabric_power_utilization_revenue_and_margin: undisclosed
+      accelerator_ledger_action: no_numeric_Prime_owned_inventory_row_created
+    legal_ownership_and_financial_boundary:
+      status: private_and_majority_founder_owned
+      founder_and_CEO: Nicholas_Laag
+      current_named_institutional_investors: [Snowhawk, Nuveen, Macquarie_Capital, Ares_Management, Siemens_Financial_Services]
+      transaction_terms_and_current_cap_table: undisclosed
+      Macquarie_2025: partially_realised_stake_without_public_value_or_remaining_percentage
+      Siemens_FY2025:
+        Prime_Data_Centers_LLC_interest_percent: 3
+        Prime_Data_Centers_LLC_net_income_and_equity: not_available
+        Prime_Super_Holding_One_LLC_interest_percent: 9
+        Prime_Super_Holding_One_LLC_latest_local_GAAP_net_income_EUR_million: -14
+        Prime_Super_Holding_One_LLC_latest_local_GAAP_equity_EUR_million: 491
+        boundary: direct_and_holding_entity_interests_cannot_be_added_into_an_inferred_Prime_stake
+      financial_profile_ref: company_prime_data_centers
+      standalone_revenue_operating_profit_EBITDA_net_income_cash_flow_capex_debt_customer_concentration_ROIC_and_valuation: undisclosed
+    public_map_crosswalk:
+      related_objects: 6
+      current_facility_candidates: 4
+      current_facility_refs: [prime_dfw01_01, prime_sjc02, prime_sjc03, prime_sjc04]
+      current_object_count: 5
+      historical_or_pipeline_candidates: [AAL01_Saeby]
+      raw_operator_labels: [Prime, Prime_Data_Centers]
+      DFW01_01_boundary: two_OSM_building_footprints_at_one_facility_and_address
+      boundary: >-
+        Six OSM objects cover four current facility candidates and one Saeby plan.
+        Object, footprint and facility counts are different denominators and do
+        not prove ownership, capacity, lifecycle, utilization or economics.
+    outlook:
+      positive_signals:
+        - 4GW_plus_development_roadmap
+        - credible_LAX01_Lambda_Blackwell_delivery
+        - leased_or_contracted_capacity_across_multiple_projects
+        - institutional_equity_support
+        - closed_loop_high_density_and_liquid_cooling_capability
+      risk_signals:
+        - current_9_page_directory_does_not_reconcile_to_13_or_14_campuses
+        - most_of_1_09GW_is_not_an_operating_denominator
+        - large_grid_permit_construction_and_financing_execution_burden
+        - standalone_financials_leverage_and_customer_concentration_undisclosed
+        - no_Prime_owned_GPU_inventory_or_complete_equipment_BOM
+      analytical_view: >-
+        Prime has credible hyperscale and AI delivery evidence, a large option-rich
+        pipeline and deep institutional backing. It cannot yet be underwritten as
+        a standalone investment from public evidence because live load,
+        utilization, contracted economics, customer concentration, leverage,
+        current ownership and project returns remain undisclosed.
+    sources:
+      - {title: Current home page and portfolio headline, publisher: Prime_Data_Centers, accessed: 2026-07-19, url: "https://primedatacenters.com/"}
+      - {title: Current data center directory, publisher: Prime_Data_Centers, accessed: 2026-07-19, url: "https://primedatacenters.com/locations/"}
+      - {title: AI solutions, publisher: Prime_Data_Centers, accessed: 2026-07-19, url: "https://primedatacenters.com/ai/"}
+      - {title: 2025 sustainability report, publisher: Prime_Data_Centers, data_period: 2024, url: "https://primedatacenters.com/wp-content/uploads/2025/08/Prime-Data-Centers_2025-Sustainability-Report_FINAL-optimised.pdf"}
+      - {title: Lambda and LAX01 Blackwell deployment, publisher: Prime_Data_Centers, date: 2025-11-13, url: "https://primedatacenters.com/news/prime-data-centers-and-lambda-partner-to-power-the-next-era-of-superintelligence-with-ai-optimized-infrastructure-in-southern-california/"}
+      - {title: Phoenix 240 MW groundbreaking, publisher: Prime_Data_Centers, date: 2026-05-21, url: "https://primedatacenters.com/news/prime-data-centers-breaks-ground-on-three-buildings-at-its-240mw-phoenix-campus-advancing-3billion-dollar-investment-in-avondale/"}
+      - {title: Esbjerg ESB01 plan, publisher: Prime_Data_Centers, date: 2026-03-27, url: "https://primedatacenters.com/news/prime-data-centers-announces-plans-for-major-data-center-development-in-esbjerg-denmark/"}
+      - {title: Snowhawk and Nuveen investment, publisher: Prime_Data_Centers, date: 2025-07-31, url: "https://primedatacenters.com/news/snowhawk-and-nuveen-make-strategic-investment-in-prime-data-centers/"}
+      - {title: Prime current investment and platform summary, publisher: Macquarie_Capital, as_of: 2025-11-03, url: "https://www.macquarie.com/ie/en/insights/supporting-and-investing-in-large-scale-data-storage-in-the-americas.html"}
+      - {title: Siemens Annual Report 2025, publisher: Siemens, date: 2025, url: "https://assets.new.siemens.com/siemens/assets/api/uuid:428ea18a-e7ab-4f93-a160-33908f1c3540/Siemens-Annual-Report-2025.pdf"}
+    confidence: high_for_current_nine_pages_28_cards_lifecycle_card_and_campus_checksums_Lambda_deployment_sustainability_metrics_investor_names_and_OSM_crosswalk_medium_for_current_home_and_investor_count_reconciliation_and_Denmark_project_continuity_low_for_live_load_utilization_complete_as_built_BOM_Prime_owned_GPU_inventory_current_cap_table_standalone_financials_site_economics_and_pipeline_delivery
+
 disclosure_gap_register:
+  - Prime_9_current_location_pages_13_home_page_campuses_14_Macquarie_campuses_22_sustainability_locations_28_cards_and_29_data_centers_to_exact_current_legal_building_title_lease_and_lifecycle_roster
+  - Prime_1090MW_campus_headline_760MW_numeric_cards_151MW_operational_cards_and_4GW_plus_pipeline_to_operating_energized_customer_accepted_leased_utilized_billed_and_actual_IT_load
+  - Prime_per_site_grid_voltage_feeds_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_OEM_model_count_rating_acceptance_and_remaining_life
+  - Prime_per_site_measured_PUE_WUE_CUE_energy_water_renewable_hourly_matching_actual_load_and_live_liquid_cooled_MW
+  - Prime_LAX01_Lambda_Blackwell_to_physical_GPU_model_variant_count_owner_delivery_racks_fabric_power_utilization_customer_revenue_and_margin
+  - Prime_standalone_revenue_operating_profit_EBITDA_net_income_cash_flow_capex_debt_customer_concentration_site_economics_ROIC_and_valuation
+  - Prime_current_founder_Snowhawk_Nuveen_Macquarie_Ares_Siemens_stakes_preferences_voting_rights_governance_and_ultimate_economic_ownership
+  - Prime_Berlin_Helsinki_Saeby_and_other_hidden_campus_land_permit_grid_financing_construction_customer_launch_or_cancellation_status
+  - Prime_ESB01_EIA_permits_grid_connection_financing_customer_contract_final_design_construction_and_go_live
   - Leading_Edge_six_current_cards_and_six_OSM_ways_to_exact_non_overlapping_legal_building_title_lease_and_lifecycle_roster
   - Leading_Edge_3_975MW_total_site_capacity_13_derived_module_equivalent_and_historical_450_rack_first_six_plan_to_current_installed_racks_modules_energized_leased_utilized_billed_and_actual_IT_load
   - Leading_Edge_per_site_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_models_counts_ratings_OEMs_and_as_built_topology
