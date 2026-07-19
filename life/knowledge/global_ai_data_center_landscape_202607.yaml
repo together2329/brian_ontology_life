@@ -36358,7 +36358,208 @@ campus_profiles:
       - {title: BNP Paribas FY2025 results, publisher: BNP_Paribas, date: '2026-02-05', url: "https://invest.bnpparibas/document/4q25-pr"}
     confidence: high_for_current_three_French_JRC_site_groups_two_Belgian_sites_Marne_Est_grouping_Val_de_Reuil_transition_MAE2_regulatory_design_hosted_atNorth_boundary_IBM_cloud_relationship_and_FY2025_financials_medium_for_MAE2_constructed_state_and_Belgian_contractor_area_scopes_low_for_complete_global_BNP_site_roster_MAE2_production_acceptance_site_MW_utilization_complete_BOM_current_GPU_inventory_and_data_center_economics
 
+  - id: dc_vodafone_group_and_legacy_cww_data_center_subsea_and_brand_boundary
+    operator: Vodafone_Group_with_legacy_Cable_and_Wireless_Worldwide
+    geography: [United_Kingdom, Germany, Ireland, Turkey, global_network_and_partner_scope]
+    status: current_exact_site_floor_with_country_level_direct_hosting_dated_UK_and_historical_fleet_scopes
+    as_of: '2026-07-19'
+    reproducible_registry:
+      facility_registry: life/imports/global_data_centers_20260717/vodafone_legacy_cww_data_center_evidence_registry.jsonl
+      facility_summary: life/imports/global_data_centers_20260717/vodafone_legacy_cww_data_center_evidence_summary.json
+      related_OSM_rows: 16
+      OSM_operator_rows: {Vodafone: 5, Cable_and_Wireless: 5, Vodafone_Turkiye: 1}
+      additional_name_only_rows: 5
+      current_exact_provider_or_certifier_site_floor: 2
+      current_exact_OSM_site_inclusions: 1
+      cable_landing_station_rows_excluded_from_compute_count: 7
+      boundary: >-
+        Two is an evidence floor, not Vodafone's current global fleet count. The
+        seven-site UK regulatory roster is dated 2020, the 18-site statement is
+        dated FY2015, country-level owned or managed hosting does not enumerate
+        buildings, and partner data centers are not Vodafone physical inventory.
+    current_direct_scope:
+      exact_site_floor:
+        Ratingen:
+          address: Rehhecke_50_40885_Ratingen_Germany
+          evidence: current_European_Commission_JRC_participant_page
+          adhesion_year: 2012
+          current_IT_MW_racks_servers_and_complete_BOM: undisclosed
+        Esenyurt:
+          address_scope: Esenyurt_34510_Istanbul_Turkey
+          OSM_ref: osm_way_1241724628
+          OSM_footprint_area_m2: 3875.595
+          TIA_942_certificate: TIA942TR250328001
+          valid: '2025-03-28_to_2028-03-27'
+          rating: Rated_3_architecture_telecommunications_electrical_and_mechanical
+          current_IT_MW_racks_servers_and_complete_BOM: undisclosed
+      owned_or_managed_hosting_country_evidence:
+        countries: [United_Kingdom, Germany, Ireland]
+        evidence: Vodafone_FY2025_ESG_methodology
+        exact_current_site_roster_and_count: undisclosed
+      direct_current_global_site_and_building_count: undisclosed
+    dated_and_marketing_scopes:
+      UK_2020_climate_change_agreement:
+        sites: [Swindon, Brentford, Gotts_Road_Leeds, Melbourne_Street_Leeds, Watford_Units_5_and_6, Uxbridge, Park_Royal]
+        facility_count: 7
+        OSM_exact_match: Swindon
+        current_2026_revalidation: not_established
+      FY2015:
+        data_centers: 18
+        geographies: [United_Kingdom, Ireland, Germany, Africa]
+        customers_more_than: 1200
+        boundary: historical_portfolio_statement_not_current_building_or_operating_count
+      current_colocation_marketing:
+        global_data_center_space_m2_more_than: 800000
+        availability_percent_more_than: 99.982
+        electricity_outage_operation_up_to_days: 30
+        partner_data_centers_more_than: 165
+        partners: [Equinix, Digital_Realty]
+        boundary: >-
+          Vodafone does not allocate the 800,000-square-metre headline between
+          owned, managed, leased, customer, partner or other space. The 165-plus
+          facilities are explicitly partner access and not direct physical inventory.
+    OSM_and_physical_role_reconciliation:
+      Dublin:
+        OSM_geometries: 2
+        grouped_candidate_sites: 1
+        current_exact_site_inclusion: false
+      candidate_or_dated_compute_rows:
+        - {site: Berlin, status: current_OSM_operator_candidate_without_exact_provider_or_certifier_match}
+        - {site: Swindon, status: exact_match_to_dated_2020_UK_CCA_roster}
+        - {site: London_Docklands, status: legacy_CWW_label_current_title_lease_operation_and_service_state_unverified}
+        - {site: Dublin, status: current_country_level_and_historical_support_but_no_exact_current_provider_roster}
+      submarine_cable_landing_stations:
+        sites: [Brean, Porthcurno, Lanis_1_Blackpool, Reynoldston, Bude, Winterton, Shirley_New_York]
+        compute_facility_count: 0
+        current_provider_confirmation: Bude_2Africa_landing
+      boundary: >-
+        Landing stations are network infrastructure and are not counted as compute
+        data centers. A building or operator name in OSM is retained as a candidate
+        unless current provider, certifier, permit or audited evidence bridges it.
+    corporate_and_brand_boundaries:
+      Cable_and_Wireless_Worldwide:
+        Vodafone_acquisition_effective: '2012-07-27'
+        acquired_network_context: {UK_fiber_km: 20500, international_cable_network_km: 425000}
+        boundary: Legacy_CWW_labels_route_to_Vodafone_research_but_do_not_prove_current_site_ownership_or_operation
+      Cable_and_Wireless_Communications:
+        separated_from_CWW: 2010_demerger
+        Liberty_Global_acquisition_completed: '2016-05-16'
+        current_regional_parent_boundary: Liberty_Latin_America_for_CW_Panama_and_regional_businesses
+        boundary: CWC_and_CW_Panama_are_not_Vodafone_Group_physical_inventory
+      One_New_Zealand:
+        former_brand: Vodafone_New_Zealand
+        current_parent: Infratil
+        Infratil_ownership_percent: 99.9
+        current_standard_product_sites: [Albany, Hamilton, Avalon_Lower_Hutt]
+        current_premium_product_sites: [Orbit_Auckland, Kapua_Hamilton, Abel_Wellington, Gloucester_Christchurch]
+        product_roster_boundary: separate_service_scopes_not_summed_without_provider_bridge
+        Manukau_OSM_status: legacy_brand_candidate_absent_from_two_reviewed_current_service_rosters
+      Vodafone_PNG:
+        legal_operator: Digitec_Communications_Limited
+        ownership: ATH_and_Austel_Investment
+        boundary: brand_affiliation_is_not_Vodafone_Group_physical_ownership
+    power_cooling_and_environment:
+      FY2026_group_energy:
+        total_energy_GWh: 5966.56
+        mobile_fixed_access_network_and_technology_centres_GWh: 5648
+        purchased_electricity_matched_renewable_percent: 100
+        boundary: >-
+          The network and technology-centre denominator combines radio, fixed and
+          other technology infrastructure. Renewable matching is not data-center-
+          only energy, onsite generation or hourly carbon-free supply.
+      Turkey_2023_24:
+        four_data_center_VFD_annual_energy_savings_MWh: 1100
+        four_data_center_VFD_avoided_tCO2: 525
+        AI_thermal_control_reported_PUE_improvement_percent: 10
+        AI_thermal_control_reported_cooling_energy_savings_up_to_percent: 30
+        Esenyurt_rooftop_solar_investment_TRY_million: 3.2
+        Esenyurt_reported_installed_solar_value_and_unit: 475_kWh_as_printed_unit_inconsistent_with_power_capacity
+        Esenyurt_solar_generation_MWh: {FY2022_23: 517, FY2023_24: 489}
+        Esenyurt_solar_avoided_FY2023_24_tCO2e: 234
+        boundary: portfolio_programs_do_not_disclose_baseline_current_site_PUE_or_IT_load
+      historical_PUE:
+        FY2014_global_and_regional_average: 1.49
+        FY2010_Ratingen: 1.47
+        FY2010_Dublin: 1.61
+        boundary: historical_values_not_current_site_metrics
+      One_NZ_separate_group_engineering:
+        standard_rack_kW: 2
+        standard_battery_runtime_minutes: 20
+        standard_backup: emergency_diesel_and_dual_feeds
+        premium_average_full_rack_kW: 6.2
+        premium_single_rack_limit_without_approval_kW: 12
+        Christchurch_solar: {panels: 142, panel_W: 580, derived_nameplate_kW: 82.36, stated_peak_up_to_kW: 90, inverter_kW: 110}
+        boundary: One_NZ_values_are_not_Vodafone_Group_capacity_or_Manukau_evidence
+      complete_current_site_power_chain_and_equipment_BOM: undisclosed
+      current_site_PUE_WUE_energy_water_and_live_liquid_cooled_MW: undisclosed
+    accelerators_and_AI:
+      current_Vodafone_owned_or_leased_GPU_model_count_by_site: not_publicly_disclosed_or_established
+      current_partner_or_customer_GPU_inventory_on_Vodafone_colocation: not_publicly_disclosed_or_established
+      evidence: [Turkey_AI_thermal_management, operational_and_customer_service_AI, hyperscaler_and_cloud_partnerships]
+      boundary: >-
+        AI software, thermal-control algorithms, partner access and cloud services
+        do not establish physical GPU model, count, owner, delivery, site allocation
+        or utilization.
+    ownership_and_financial_boundary:
+      financial_profile_ref: company_vodafone_group
+      listing: London_Stock_Exchange_VOD
+      FY2026_EUR_million:
+        revenue: 40461
+        service_revenue: 33480
+        operating_profit: 2844
+        adjusted_EBITDAaL: 11351
+        profit_continuing_operations: 59
+        operating_cash_inflow: 14291
+        adjusted_free_cash_flow: 2621
+        capital_additions: 7291
+        net_debt: 25411
+      derived: {operating_margin_percent: 7.029, adjusted_EBITDAaL_margin_percent: 28.054, capital_additions_to_revenue_percent: 18.019}
+      data_center_segment_and_site_economics: undisclosed
+      boundary: Group_telecom_results_cannot_be_allocated_to_data_centers_landing_stations_partners_or_sites
+    outlook:
+      FY2027_guidance:
+        adjusted_EBITDAaL_EUR_billion: 11.9_to_12.2
+        adjusted_free_cash_flow_EUR_billion: 2.6_to_2.9
+        Europe_adjusted_EBITDAaL_EUR_billion: 7.6_to_7.9
+        restructuring_and_integration_costs_EUR_billion_approx: 0.7
+      medium_term:
+        organic_adjusted_free_cash_flow_growth: double_digit
+        EU_opex_reduction_FY2027_to_FY2030_EUR_billion: 1
+        VodafoneThree_annual_cost_and_capex_synergies_by_FY2030_GBP_million: 700
+      positive_signals: [owned_or_managed_hosting_in_three_named_European_countries, current_Ratingen_and_Esenyurt_exact_site_evidence, global_fiber_subsea_and_partner_reach, FY2026_revenue_EBITDAaL_and_operating_profit_improvement, FY2027_growth_guidance]
+      risk_signals: [data_center_consolidation_toward_hyperscalers, complete_direct_site_count_and_MW_undisclosed, legacy_and_brand_license_map_labels, partner_versus_direct_ambiguity, GPU_and_site_economics_undisclosed, integration_regulatory_cyber_and_resilience_risk]
+      analytical_view: >-
+        Vodafone provides listed connectivity, enterprise hosting and subsea-network
+        exposure rather than a data-center pure play. Direct physical capacity is
+        much less transparent than broad marketing, and hyperscaler consolidation
+        makes partner reach and owned capacity especially important to separate.
+    sources:
+      - {title: Vodafone colocation services, publisher: Vodafone_Business, accessed: '2026-07-19', url: "https://www.vodafone.com/business/products/cloud-and-edge/cloud-services/colocation"}
+      - {title: Vodafone FY2025 ESG methodology for data centers, publisher: Vodafone_Group, period: 'FY2025', url: "https://reports.investors.vodafone.com/view/997622618/28/"}
+      - {title: Vodafone FY2026 annual report, publisher: Vodafone_Group, period: 'FY2026', url: "https://reports.investors.vodafone.com/view/500231330/"}
+      - {title: Vodafone FY2026 preliminary results, publisher: Vodafone_Group, date: '2026-05-12', url: "https://www.vodafone.com/~/media/Files/V/vodafone/corp/results-and-presentations/vodafone-fy26-preliminary-results.pdf"}
+      - {title: Cable and Wireless Worldwide acquisition, publisher: Vodafone_Group, date: '2012-07-30', url: "https://www.vodafone.com/news/newsroom/corporate-and-financial/cww"}
+      - {title: Vodafone UK data-center climate change agreement, publisher: UK_Environment_Agency, date: '2020-12-18', url: "https://s3.amazonaws.com/thegovernmentsays-files/attachments/177/1777179-1-Umbrella_climate_change_agreement_for_the_data_centre_sector.pdf"}
+      - {title: EU Data Centre Code of Conduct participant list, publisher: European_Commission_JRC, accessed: '2026-07-19', url: "https://e3p.jrc.ec.europa.eu/en/groups/data-centres-code-conduct/participants?order=field_adhesion_date&page=2&partner_search=&sort=desc"}
+      - {title: Esenyurt TIA-942 Rated-3 certificate, publisher: TIA, valid_from: '2025-03-28', url: "https://tiaonline.org/wp-content/uploads/2025/08/Turkey_Vodafone-Data-Centre_DCCC_TIA942TR250328001-TIA942-Certificate-Signed.pdf"}
+      - {title: Vodafone Turkiye 2024 sustainability report, publisher: Vodafone_Turkiye, period: 'FY2023-24', url: "https://cms.vodafone.com.tr/static/files/25-02/28/vodafone-turkiye-2024-csy-raporu.pdf"}
+      - {title: One NZ standard data-centre service description, publisher: One_New_Zealand, period: '2023', url: "https://one.nz/_document/20230321155847/?id=00000187-05bd-d0f2-adc7-dffd91520000"}
+      - {title: One NZ premium data-centre service description, publisher: One_New_Zealand, period: '2023', url: "https://one.nz/_document/20230321151004/?id=00000187-0593-d1fd-a597-ed97163c0000"}
+      - {title: Liberty Global closes CWC acquisition, publisher: Liberty_Global, date: '2016-05-16', url: "https://www.libertyglobal.com/pdf/press-release/05-16-Closing-CWC-Acquisition-FINAL.pdf"}
+    confidence: high_for_Ratingen_Esenyurt_exact_site_floor_current_country_level_direct_hosting_TIA_certificate_2020_UK_roster_CWW_and_CWC_corporate_lineages_One_NZ_parent_FY2026_financials_and_OSM_landing_station_boundary_medium_for_Dublin_Berlin_Swindon_and_Docklands_candidate_roles_low_for_complete_current_direct_site_roster_800000_m2_denominator_site_MW_complete_BOM_current_PUE_WUE_GPU_inventory_and_data_center_economics
+
 disclosure_gap_register:
+  - Vodafone_complete_current_direct_global_owned_leased_managed_operated_data_center_site_building_module_address_title_lifecycle_and_service_roster
+  - Vodafone_2020_UK_CCA_seven_site_roster_current_2026_revalidation_and_changes
+  - Vodafone_UK_Germany_and_Ireland_exact_current_owned_or_managed_hosting_site_building_and_address_roster
+  - Vodafone_800000_square_metre_marketing_headline_owned_managed_leased_customer_partner_and_other_denominator_allocation
+  - Vodafone_current_site_operating_energized_available_contracted_customer_accepted_leased_utilized_billed_peak_and_actual_IT_MW_area_racks_servers_and_workloads
+  - Vodafone_per_site_grid_feed_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_OEM_model_count_rating_redundancy_loading_test_acceptance_age_and_remaining_life
+  - Vodafone_per_site_current_measured_PUE_WUE_energy_water_emissions_renewable_matching_onsite_generation_and_live_liquid_cooled_MW
+  - Vodafone_owned_leased_partner_and_customer_GPU_model_count_owner_site_delivery_acceptance_rack_fabric_power_utilization_revenue_and_margin
+  - Vodafone_One_NZ_Manukau_legacy_OSM_label_current_identity_operator_lifecycle_and_relationship_to_current_product_rosters
+  - Vodafone_legacy_CWW_landing_station_current_title_lease_operator_network_role_hosted_compute_and_service_status
+  - Vodafone_data_center_segment_and_site_revenue_operating_profit_cash_flow_capex_customer_concentration_contract_pricing_ROIC_and_valuation
   - BNP_Paribas_complete_global_current_owned_leased_operated_and_hosted_data_center_site_building_module_address_and_lifecycle_roster_beyond_the_five_site_minimum
   - BNP_Paribas_MAE2_current_commissioning_customer_acceptance_production_use_energized_available_allocated_peak_and_actual_IT_load
   - BNP_Paribas_Marne_Est_Nord_Sud_Bastogne_and_Vaux_sur_Sure_current_operating_energized_available_internal_allocated_utilized_peak_and_actual_IT_MW_area_racks_servers_workloads_and_site_economics
