@@ -34638,7 +34638,149 @@ campus_profiles:
       - {title: Siemens Annual Report 2025, publisher: Siemens, date: 2025, url: "https://assets.new.siemens.com/siemens/assets/api/uuid:428ea18a-e7ab-4f93-a160-33908f1c3540/Siemens-Annual-Report-2025.pdf"}
     confidence: high_for_current_nine_pages_28_cards_lifecycle_card_and_campus_checksums_Lambda_deployment_sustainability_metrics_investor_names_and_OSM_crosswalk_medium_for_current_home_and_investor_count_reconciliation_and_Denmark_project_continuity_low_for_live_load_utilization_complete_as_built_BOM_Prime_owned_GPU_inventory_current_cap_table_standalone_financials_site_economics_and_pipeline_delivery
 
+  - id: dc_tierpoint_us_enterprise_and_ai_colocation_portfolio
+    operator: TierPoint
+    legal_entity_boundary: TierPoint_LLC_and_financing_parents_or_issuers
+    geography: United_States
+    record_granularity: current_provider_pages_spec_sheets_securitized_collateral_power_cooling_customer_compute_finance_and_OSM_scope
+    evidence_snapshot: '2026-07-19'
+    official_facility_registry_ref: life/imports/global_data_centers_20260717/tierpoint_official_facility_registry.jsonl
+    official_facility_summary_ref: life/imports/global_data_centers_20260717/tierpoint_official_facility_summary.json
+    current_directory_scope:
+      provider_headline_data_centers: 40
+      US_markets: 20
+      current_page_groups: 37
+      current_spec_sheet_records: 40
+      grouped_page_reconciliation:
+        New_York_Hawthorne: [HWT, HW2]
+        Oklahoma_City: [OKC, OK2]
+        Spokane: [SPO01_02_combined_spec, SPO03]
+      specification_sheet_checksums:
+        facility_or_gross_space_sqft: 2595140
+        production_or_data_center_space_sqft: 826840
+      boundary: >-
+        The Spokane first address and sheet are combined as SPO01/02 and counted
+        once. The two area checksums reproduce heterogeneous gross, production,
+        raised-floor and expansion fields; they are not standardized sellable
+        area, current ownership area, operating floor area or critical load.
+    securitized_collateral_scope:
+      measurement_date: '2025-05-31'
+      facilities: 33
+      sellable_sqft: 647314
+      critical_load_mw: 96.0
+      unique_customers: 2562
+      weighted_average_remaining_contract_term_years: 1.9
+      fee_simple_facilities: 10
+      leasehold_facilities: 23
+      annualized_monthly_recurring_revenue_usd_million: 471.5
+      annualized_adjusted_net_operating_income_usd_million: 240.3
+      derived_AANOI_to_AMRR_percent: 50.965
+      boundary: >-
+        KBRA's values describe the 33-facility securitized collateral pool, not
+        all 40 TierPoint records or audited standalone company results. AANOI to
+        AMRR is a collateral NOI-style ratio, not TierPoint operating margin.
+    selected_power_and_cooling_evidence:
+      registry_records_with_utility_generator_UPS_cooling_and_BMS_fields: 40
+      high_density_service_page:
+        provider_wording_facilities: a_dozen
+        rack_density_kw_in_excess_of: 130
+        cooling: [direct_to_chip_liquid, liquid_to_air]
+        monitoring: cabinet_level_power_and_thermal
+        resilience: upgraded_redundant_UPS_and_generators
+      spec_sheets_explicitly_marketing_up_to_85kw_per_cabinet: [LIT, JAX, MRL, CL4, OK2, TEK, DAL2]
+      selected_equipment_evidence:
+        LIT: {utility: 2N_A_B_dual_3000kVA_transformers, generation: 2x2250kW_Kohler, UPS: true_2N, cooling: N_plus_1_CRAH_and_N_plus_3_pumps}
+        LEN: {utility: 2N_A_B_dual_3000kVA_transformers, generation: 2x2500kW_Caterpillar, UPS: true_2N, cooling: N_plus_1_CRAH_and_chillers}
+        DAL: {utility: 2N_four_transformers, generation: current_page_6x2MW, UPS: true_2N, cooling: N_plus_1_CRAH}
+        DFW: {utility: 12MW_2N_A_B_two_25kV_feeds_eight_2500kVA_transformers, generation: 8x2_25MW_2N, UPS: true_2N, cooling: N_plus_1_airside_economizers}
+        SEA: {utility: 12000A_480_277V_A_B, generation: 5x2MW_N_plus_2, UPS: redundant, cooling: N_plus_1}
+      publication_conflicts: >-
+        Current pages and sheets conflict at Jacksonville, Andover, Marlborough,
+        Omaha, Charlotte, Oklahoma City, TekPark, Nashville, Dallas, Dallas Allen,
+        Spokane and Milwaukee; the registry preserves both scopes and obvious
+        publisher typos instead of silently normalizing equipment or area values.
+      boundary: >-
+        130+kW and 85kW are configuration ceilings, not deployed rack counts,
+        current densities or live liquid-cooled MW. Public sheets do not provide
+        complete as-built one-lines, OEM-model inventories, battery runtime,
+        acceptance tests, maintenance state, remaining life or actual loading.
+    AI_and_accelerator_boundary:
+      CoreWeave_2023:
+        relationship: long_term_ultra_high_density_colocation
+        TierPoint_site: undisclosed
+        site_mw_GPU_models_counts_and_financial_terms: undisclosed
+      Groq_Spokane:
+        customer_hardware: Groq_LPU_inference_systems
+        TierPoint_role: facility_power_cooling_connectivity_and_colocation
+        liquid_cooling: capability_as_customer_evolves
+      TierPoint_owned_physical_GPU_inventory: not_established
+      physical_GPU_or_LPU_model_count_owner_delivery_site_rack_fabric_power_utilization_revenue_and_margin: undisclosed
+      boundary: >-
+        CoreWeave and Groq validate customer workloads. Groq LPUs are not GPUs,
+        and neither customer's hardware is assigned to TierPoint's asset ledger.
+    ownership_financing_and_expansion:
+      status: private
+      majority_shareholder_as_of_2025_07_14: Argo_Infrastructure_Partners
+      2020_preferred_equity_usd_million: 320
+      2025_parent_term_loan_usd_million: 250
+      2025_ABS_usd_million: 240
+      cumulative_four_transaction_ABS_issuance_usd_billion: 1.99
+      TekPark:
+        formerly_leased_building_and_137_acre_campus_acquired: true
+        power_expansion_mw: 100
+        target: second_half_2026
+        boundary: expansion_target_not_current_critical_load
+      financial_profile_ref: company_tierpoint
+      standalone_revenue_operating_profit_EBITDA_net_income_cash_flow_capex_net_debt_customer_concentration_ROIC_and_valuation: undisclosed
+    public_map_crosswalk:
+      related_objects: 15
+      distinct_current_facility_candidates: 15
+      operator_tagged_objects: 5
+      name_owner_or_website_only_objects: 10
+      boundary: >-
+        Only five objects carry operator=TierPoint. Ten more are reconciled from
+        names, owner, website, locality or coordinates; none proves a complete
+        physical-building census, ownership, capacity, lifecycle or economics.
+    outlook:
+      positive_signals:
+        - forty_current_US_facility_records
+        - 96MW_securitized_collateral_base
+        - a_dozen_high_density_facilities_and_130kW_plus_design_ceiling
+        - CoreWeave_and_Groq_customer_validation
+        - TekPark_100MW_expansion_program
+        - institutional_sponsor_and_capital_market_access
+      risk_signals:
+        - standalone_company_financials_and_current_cap_table_undisclosed
+        - collateral_pool_smaller_than_provider_roster
+        - weighted_average_remaining_contract_term_only_1_9_years
+        - 23_of_33_collateral_facilities_are_leasehold
+        - no_site_level_live_load_utilization_or_TierPoint_owned_GPU_inventory
+        - specification_conflicts_and_expansion_execution_risk
+      analytical_view: >-
+        TierPoint has unusually useful site-level engineering evidence and a
+        credible enterprise-to-AI colocation upgrade path. The securitized pool
+        provides a partial earnings and capacity window, but it does not support
+        a standalone equity valuation or company operating-margin conclusion.
+    sources:
+      - {title: Current data center directory, publisher: TierPoint, accessed: 2026-07-19, url: "https://www.tierpoint.com/data-centers/"}
+      - {title: AI and high-density colocation, publisher: TierPoint, accessed: 2026-07-19, url: "https://www.tierpoint.com/services/data-center-services/ai-high-density-colocation/"}
+      - {title: CoreWeave high-density agreement, publisher: TierPoint, date: 2023, accessed: 2026-07-19, url: "https://www.tierpoint.com/news/tierpoint-to-provide-ultra-high-density-colocation-services-to-coreweave-to-serve-industries-in-emerging-technology/"}
+      - {title: Groq customer story, publisher: TierPoint, accessed: 2026-07-19, url: "https://www.tierpoint.com/success-stories/groq/"}
+      - {title: 2025-3 and 2025-4 securitization analysis, publisher: KBRA, measurement_date: 2025-05-31, url: "https://www.kbra.com/publications/NWSCDPYs/kbra-assigns-ratings-to-tierpoint-issuer-llc-series-2025-3-and-series-2025-4-and-takes-other-rating-actions"}
+      - {title: 240 million dollar securitization and TekPark acquisition, publisher: TierPoint, date: 2025-10-23, url: "https://www.tierpoint.com/news/tierpoint-completes-240-million-securitization-financing-and-acquisition-of-pennsylvania-data-center-and-campus/"}
+      - {title: 250 million dollar parent term loan, publisher: TierPoint, date: 2025-07-14, url: "https://www.tierpoint.com/news/tierpoint-parent-closes-upsized-250-million-term-loan/"}
+      - {title: 320 million dollar preferred equity, publisher: TierPoint, date: 2020, url: "https://www.tierpoint.com/news/tierpoint-closes-320-million-in-equity-from-consortium-of-investors/"}
+    confidence: high_for_current_37_page_40_sheet_reconciliation_sheet_level_power_cooling_33_asset_KBRA_metrics_financing_releases_and_15_OSM_crosswalk_medium_for_current_operational_marketing_state_and_grouped_Spokane_boundary_low_for_live_load_utilization_complete_as_built_BOM_owned_GPU_inventory_standalone_financials_current_cap_table_site_economics_and_valuation
+
 disclosure_gap_register:
+  - TierPoint_40_provider_records_37_page_groups_and_33_ABS_assets_to_exact_current_legal_building_title_lease_issuer_and_lifecycle_bridge
+  - TierPoint_96MW_collateral_critical_load_and_TekPark_100MW_expansion_to_per_site_operating_energized_leased_utilized_billed_and_actual_IT_load
+  - TierPoint_per_site_as_built_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_OEM_model_acceptance_loading_and_remaining_life
+  - TierPoint_per_site_live_liquid_cooled_MW_actual_rack_density_measured_PUE_WUE_energy_water_and_emissions
+  - TierPoint_CoreWeave_and_Groq_to_physical_GPU_or_LPU_model_count_owner_site_delivery_rack_fabric_power_utilization_revenue_and_margin
+  - TierPoint_33_asset_AMRR_AANOI_to_standalone_revenue_operating_profit_EBITDA_net_income_cash_flow_capex_net_debt_customer_concentration_site_economics_ROIC_and_valuation
+  - TierPoint_current_Argo_and_other_investor_percentages_preferences_voting_rights_governance_and_ultimate_economic_ownership
+  - TierPoint_TekPark_100MW_permits_grid_energization_construction_customer_contract_acceptance_and_live_load
   - Prime_9_current_location_pages_13_home_page_campuses_14_Macquarie_campuses_22_sustainability_locations_28_cards_and_29_data_centers_to_exact_current_legal_building_title_lease_and_lifecycle_roster
   - Prime_1090MW_campus_headline_760MW_numeric_cards_151MW_operational_cards_and_4GW_plus_pipeline_to_operating_energized_customer_accepted_leased_utilized_billed_and_actual_IT_load
   - Prime_per_site_grid_voltage_feeds_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_OEM_model_count_rating_acceptance_and_remaining_life
