@@ -37507,7 +37507,164 @@ campus_profiles:
       - {title: Current French establishment register, publisher: L_Annuaire_des_Entreprises, accessed: '2026-07-19', url: 'https://annuaire-entreprises.data.gouv.fr/entreprise/840088439'}
     confidence: high_for_current_eight_site_roster_legacy_six_site_acquisition_five_OSM_matches_current_numeric_cards_and_audited_group_accounts_medium_for_legal_entity_and_transaction_to_site_bridge_low_for_live_load_complete_equipment_BOM_GPU_inventory_France_segment_economics_and_current_refinancing_state
 
+  - id: dc_h5_data_centers_us_wholesale_colocation_and_managed_portfolio
+    name: H5 Data Centers US wholesale, colocation, managed and joint-venture portfolio boundary
+    type: current_private_operator_directory_with_Hyscale_HyscaleIX_OSM_power_AI_and_financial_boundary
+    operator: H5_Data_Centers
+    country: United_States
+    evidence_artifacts:
+      facility_registry: life/imports/global_data_centers_20260717/h5_data_centers_registry.jsonl
+      facility_summary: life/imports/global_data_centers_20260717/h5_data_centers_summary.json
+      registry_builder: scripts/build_h5_data_centers_registry.py
+    current_roster_reconciliation:
+      provider_directory_labels: 32
+      distinct_directory_addresses: 31
+      provider_homepage_markets: 25
+      provider_homepage_space_under_management: 4_million_plus_sq_ft
+      directory_label_groups:
+        Buffalo: [BUF1, BUF2, BUF3]
+        Cincinnati: [CIN1, CIN2]
+        Quincy: [QCY1, QCY2, QCY3]
+        Northern_Virginia: [ASH, HER, VA]
+      multi_building_cards:
+        Albuquerque: two_facilities_225000_sq_ft_combined
+        Buffalo_I_II: two_data_centers_409200_sq_ft_combined
+        Denver: two_independent_data_centers_300000_sq_ft_campus
+        Herndon: two_buildings_53000_sq_ft_combined
+        Quincy_II_III: two_data_centers_452300_sq_ft_combined
+        San_Antonio: two_facilities_85000_sq_ft_combined
+        Virginia_Chantilly: three_buildings_145000_sq_ft_combined
+      Nashville_conflict:
+        directory_address: 211_Commerce_Street_Suite_700
+        current_site_page_address: 147_Fourth_Avenue_North_8th_Floor
+        treatment: one_current_card_using_current_page_for_acquired_carrier_hotel_identity_not_two_facilities
+      boundary: >-
+        Directory labels, distinct addresses, markets, physical buildings,
+        managed area, owned assets, operating sites and revenue-producing assets
+        are different scopes. Shared-address and multi-building cards prevent a
+        simple label or area sum from being a physical census.
+    ownership_and_platform_boundary:
+      H5: privately_owned_operator_without_direct_public_equity_security
+      Hyscale_Data_Centers:
+        formed: '2025-01-15'
+        partners: [Novacap, H5_Data_Centers]
+        disclosed_facilities: 4
+        directory_bridge: [BUF1, BUF2, OMA, QCY3]
+        focus: wholesale_colocation_development_and_repositioning
+      HyscaleIX:
+        announced: '2026-02-02'
+        partners: [Novacap, H5_Data_Centers]
+        disclosed_facilities: 4
+        acquired_from_365_Data_Centers: [BUF3, BNA, TPA]
+        fourth_market: STL_per_current_Novacap_portfolio_page
+        focus: carrier_hotels_local_internet_exchanges_and_interconnection
+      exact_current_H5_and_JV_asset_title_lease_management_contract_ownership_percentages_voting_rights_guarantees_and_accounting_consolidation: undisclosed
+      boundary: >-
+        The H5 directory includes direct, managed and two joint-venture scopes.
+        H5 operating expertise, a provider card and legal ownership are not
+        treated as synonymous, and an asset is assigned to a JV only where
+        transaction, permit or property evidence supports the bridge.
+    selected_scale_and_lifecycle_not_additive:
+      Ashburn: {area_sq_ft: 255000, ultimate_critical_load_MW: 42, provider_power_MVA: 60, lifecycle: current_marketing_page_with_stale_Q3_2024_phase_copy_and_no_exact_current_live_MW}
+      Buffalo_I_II: {combined_area_sq_ft: 409200, two_substations_MVA: 44, legacy_permit_diesel_generators: 38}
+      Charlotte: {existing_mixed_use_area_sq_ft: 207000, future_adjacent_area_sq_ft: 200000, future_critical_MW: 20}
+      Chicago: {area_sq_ft: 185000, initial_phase_MW: 18, ultimate_MW: 36, target_conflict: first_half_versus_second_half_2027}
+      Cleveland: {area_sq_ft: 351000, future_expansion_MW: 10_plus, target: Q1_2027}
+      Herndon: {combined_area_sq_ft: 53000, critical_capacity_MW: 15}
+      Phoenix: {area_sq_ft: 180000, current_page_capacity_MW: 26, historical_full_buildout_MW: 30, current_source_density_text: 20_watts_per_cabinet_not_silently_corrected}
+      Quincy: {area_sq_ft: 240000, full_buildout_MW: 40}
+      Virginia_Chantilly: {three_building_area_sq_ft: 145000, critical_capacity_MW: 23}
+      boundary: >-
+        Area includes property, mixed-use, campus and multi-building values;
+        power includes critical, full-buildout, future, utility-access and MVA
+        labels. These values are not summed into current live capacity.
+    OSM_crosswalk:
+      related_objects: 9
+      operator_tagged_routed_objects: 7
+      operator_aliases: [H5, H5_Data_Centers]
+      exact_or_current_matches:
+        osm_way_491914767: CLE_name_and_website_match_without_operator_tag
+        osm_way_131874718: MSP
+        osm_way_300959969: PHX
+        osm_node_12471740457: NJ
+        osm_node_13748555787: PDX
+        osm_way_234722720: ASH_exact_21800_Beaumeade_match
+        osm_way_102129663: SAT
+        osm_way_231664575: SEA_converted_former_Seattle_Times_building
+        osm_way_283051474: QCY1_current_H5_name_and_website_with_raw_legacy_Intuit_operator
+      Intuit_alias_added: false
+      boundary: >-
+        The Quincy object's raw Intuit tag is retained as legacy evidence and
+        does not route all Intuit objects to H5. OSM footprints are not provider
+        floor area, white space, MW, ownership or a complete current estate.
+    power_electrical_and_resilience:
+      selected_design_evidence:
+        Ashburn: Tier_III_or_N_plus_2C_up_to_60_MVA_air_cooled_chillers_and_concurrent_maintainability
+        Buffalo_I_II: two_substations_44_MVA_N_plus_1_cooling_and_38_legacy_permit_diesel_generators
+        Cleveland: 2N_UPS_2N_generator_farm_48_hour_runtime_more_than_20kW_per_rack_and_2N_cooling
+        Denver: 2N_UPS_N_plus_1_generators_48_hour_runtime_N_plus_1_chillers_and_cooling_towers_N_plus_20_percent_CRAHs
+        New_Jersey: 2N_UPS_multiple_diesel_generators_48_hour_runtime_and_N_plus_1_chillers_cooling_towers_CRACs
+        Phoenix: N_plus_1_UPS_48_hour_runtime_and_N_plus_1_chillers_cooling_towers
+        Quincy: 2N_UPS_2N_backup_generators_and_N_plus_1_chillers_cooling_towers
+        Virginia_Chantilly: 2N_UPS_48_hour_diesel_runtime_N_plus_1_CRACs_and_high_density_cooling_solutions
+      exact_per_site_utility_voltage_contract_current_draw_substation_transformer_switchgear_busway_PDU_UPS_battery_generator_fuel_OEM_model_count_rating_loading_test_age_and_remaining_life: incomplete_or_undisclosed
+      operating_energized_available_allocated_sold_occupied_billed_peak_and_actual_IT_load: undisclosed
+      boundary: Design redundancy, runtime and nameplate capacity do not establish as-built inventory, equipment condition, current loading or live IT load.
+    cooling_energy_and_water:
+      provider_AI_solution: air_cooled_water_cooled_or_liquid_cooled_high_density_clusters
+      Chicago_brochure: high_density_AI_deployments_with_liquid_cooling
+      Denver_onsite_solar_kW_for_general_campus_use: 460
+      Quincy_energy_claim: low_cost_renewable_hydropower
+      exact_live_liquid_cooled_MW_and_per_site_measured_PUE_WUE_absolute_energy_water_emissions_and_hourly_renewable_matching: undisclosed_or_unestablished
+      boundary: Facility readiness and power-source marketing do not prove a commissioned liquid-cooling plant, current liquid load, measured efficiency or hourly carbon-free matching.
+    AI_accelerators_and_high_density:
+      provider_claims: [AI_workload_support, air_water_or_liquid_cooled_high_density_clusters, Chicago_high_density_liquid_cooling]
+      exact_current_H5_JV_customer_or_partner_GPU_accelerator_model_count_owner_site_delivery_acceptance_rack_fabric_power_utilization_revenue_margin_and_remaining_life: undisclosed_or_unestablished
+      boundary: H5 markets physical capability rather than an accelerator fleet. No GPU count or AI revenue is inferred.
+    ownership_financial_and_investability:
+      financial_profile_ref: company_h5_data_centers
+      Novacap_Digital_Infrastructure_Fund_I: more_than_USD1_billion_in_primary_commitments_and_co_investments
+      H5_standalone_audited_revenue_operating_profit_EBITDA_net_income_cash_flow_capex_debt_assets_customer_concentration_and_ROIC: undisclosed
+      Hyscale_and_HyscaleIX_transaction_prices_financing_and_financial_results: undisclosed
+      third_party_revenue_estimates: excluded_due_to_conflicting_roughly_USD39_6m_to_USD380m_scopes_and_no_primary_audit
+      direct_public_equity_security: unavailable
+      boundary: The sponsor fund is not H5-only committed capital, enterprise value, revenue or assets. Managed area and property transactions do not establish standalone earnings.
+    outlook:
+      positive_signals: [25_market_and_4_million_plus_sq_ft_management_scale, eight_facility_two_JV_expansion, regional_carrier_hotel_interconnection_moats, Ashburn_wholesale_leasing_signal, Chicago_and_Cleveland_pipeline, low_cost_Central_Washington_power, AI_high_density_and_liquid_cooling_addressable_demand, Novacap_institutional_capital]
+      conversion_tests: [exact_legal_asset_and_building_roster, directory_conflict_resolution, Ashburn_Chicago_Cleveland_commissioning_and_customer_acceptance, design_power_to_contracted_billed_load, live_liquid_cooled_MW_and_measured_efficiency, H5_and_JV_financial_return_disclosure]
+      risks: [private_financial_opacity, JV_and_managed_asset_scope_complexity, future_capacity_not_live_load, power_and_equipment_bottlenecks, shared_address_and_multi_building_double_counting, legacy_asset_repositioning_capex, no_GPU_or_AI_revenue_bridge, no_site_profit_or_ROIC]
+      analytical_view: >-
+        H5 has credible scale in regional carrier hotels, enterprise colocation
+        and selected wholesale campuses, with Novacap providing acquisition and
+        repositioning capital. The investment read-through remains indirect:
+        H5 and both JVs are private, and growth must be verified through power
+        delivery, commissioning, customer acceptance and billed load rather than
+        directory, managed-area or design-MW headlines.
+    sources:
+      - {title: Current 32-label facility directory, publisher: H5_Data_Centers, accessed: '2026-07-19', url: 'https://h5datacenters.com/data-centers.html'}
+      - {title: Current homepage market and managed-area headline, publisher: H5_Data_Centers, accessed: '2026-07-19', url: 'https://h5datacenters.com/'}
+      - {title: AI facility support page, publisher: H5_Data_Centers, accessed: '2026-07-19', url: 'https://h5datacenters.com/Ai-in-data-centers.html'}
+      - {title: Hyscale joint-venture formation, publisher: Novacap, date: '2025-01-15', url: 'https://novacapcorp.com/news/novacap-h5-data-centers-joint-venture-advanced-data-center-solutions-north-america/'}
+      - {title: Digital Infrastructure Fund I close, publisher: Novacap, date: '2025-01-22', url: 'https://novacapcorp.com/news/novacap-closes-first-digital-infrastructure-fund/'}
+      - {title: HyscaleIX formation and 365 portfolio acquisition, publisher: Novacap, date: '2026-02-02', url: 'https://novacapcorp.com/news/novacap-and-h5-data-centers-launch-hyscaleix-data-centers/'}
+      - {title: HyscaleIX current portfolio description, publisher: Novacap, accessed: '2026-07-19', url: 'https://novacapcorp.com/company/hyscaleix/'}
+      - {title: Lockport air permit with two facilities and 38 generators, publisher: New_York_DEC, expiry: '2027-01-13', url: 'https://extapps.dec.ny.gov/data/dar/afs/permits/929260015800002_r1.pdf'}
+      - {title: Ashburn 255000-square-foot and 42-MW release, publisher: H5_Data_Centers, date: '2023-03-21', url: 'https://h5datacenters.com/H5-Data-Centers-Breaks-Ground-on-new-ashburn-build.html'}
+    confidence: high_for_current_directory_labels_addresses_provider_headlines_JV_count_and_partners_nine_OSM_crosswalks_and_selected_provider_designs_medium_for_JV_property_bridge_and_current_lifecycle_low_for_live_load_complete_equipment_BOM_GPU_inventory_standalone_financials_JV_economics_and_ROIC
+
 disclosure_gap_register:
+  - H5_32_directory_labels_31_addresses_25_markets_4_million_plus_sqft_under_management_and_multi_building_cards_to_exact_current_non_overlapping_land_parcel_building_suite_title_lease_manager_operator_and_lifecycle_census
+  - H5_direct_Hyscale_HyscaleIX_and_other_management_contract_asset_by_asset_legal_ownership_percentages_voting_rights_guarantees_and_accounting_consolidation_bridge
+  - H5_Nashville_211_Commerce_directory_to_147_Fourth_Avenue_current_page_and_other_directory_page_address_or_link_conflict_resolution
+  - H5_Ashburn_42MW_critical_60MVA_Q3_2024_first_phase_and_fully_leased_claim_to_current_commissioned_customer_accepted_energized_billed_and_actual_IT_load
+  - H5_Chicago_18MW_initial_36MW_total_first_half_versus_second_half_2027_and_Cleveland_10_plus_MW_Q1_2027_grid_permit_financing_construction_customer_acceptance_and_RFS
+  - H5_per_site_utility_voltage_contract_substation_transformer_switchgear_busway_PDU_UPS_battery_generator_fuel_OEM_model_count_rating_loading_test_acceptance_age_and_remaining_life
+  - H5_per_site_chiller_CRAH_CRAC_CDU_pump_heat_exchanger_cooling_tower_OEM_model_count_rating_loading_measured_PUE_WUE_water_and_live_liquid_cooled_MW
+  - H5_per_site_operating_energized_available_allocated_sold_occupied_billed_peak_and_actual_IT_load_and_mixed_critical_full_buildout_future_MVA_denominator_reconciliation
+  - H5_current_operator_JV_customer_and_partner_GPU_accelerator_model_count_owner_site_delivery_acceptance_rack_fabric_power_utilization_revenue_margin_and_remaining_life
+  - H5_Phoenix_26MW_current_page_30MW_historical_full_buildout_and_20_watts_per_cabinet_source_text_authoritative_correction
+  - H5_standalone_and_Hyscale_HyscaleIX_audited_revenue_operating_profit_EBITDA_cash_flow_capex_debt_assets_customer_concentration_site_economics_and_ROIC
+  - H5_Novacap_Digital_Infrastructure_Fund_I_capital_allocated_called_invested_and_remaining_for_Hyscale_HyscaleIX_with_transaction_prices_financing_and_covenants
   - nLighten_France_complete_current_land_building_suite_ownership_lease_operating_and_customer_acceptance_roster_reconciling_eight_site_cards_seven_legal_establishments_and_physical_buildings
   - nLighten_France_legacy_Euclyde_DC1_DC2_DC3_DC5_DC6_DC7_to_NCE1_MLH1_NCE2_LYS1_PAR1_SXB1_legal_and_asset_chain_and_absent_DC4_explanation
   - nLighten_France_NCE1_800kW_to_6000kW_NCE2_900kW_to_6000kW_and_MLH1_1200kW_to_1500kW_dated_provider_capacity_conflict_reconciliation
