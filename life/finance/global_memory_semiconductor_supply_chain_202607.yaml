@@ -1,0 +1,792 @@
+id: global_memory_semiconductor_supply_chain_202607
+object_type: FinancialResearchArtifact
+title: Global memory semiconductor manufacturers and enabling supply chain
+version: 1
+status: active_research
+as_of: 2026-07-19
+timezone: Asia/Seoul
+language: mixed_English_schema_with_Korean_interpretation
+
+research_scope:
+  primary_question: >-
+    Compare TSMC, Samsung Electronics, SK hynix and the major global suppliers
+    of DRAM, HBM, NAND and strategic specialty memory, then connect them to the
+    equipment, materials, packaging, test and controller value chain.
+  core_manufacturer_boundary: >-
+    The manufacturer registry covers the globally significant commodity-memory
+    IDMs, the strategically relevant Taiwanese and Chinese memory producers, and
+    TSMC as a foundry and advanced-packaging enabler. It is not a literal list of
+    every EEPROM, module, controller or small specialty-memory vendor.
+  evidence_policy:
+    - Prefer company filings, investor relations and official product or fab disclosures.
+    - Use market-research estimates only for cross-company market share and pricing.
+    - Preserve preliminary, audited, forecast and management-plan states separately.
+    - Do not infer a named customer or supplier relationship from product-category exposure.
+    - Do not add Kioxia and Sandisk joint-venture wafer capacity as two independent factories.
+  investment_boundary: >-
+    This is research input for portfolio and risk review, not a direct buy or sell instruction.
+
+executive_findings:
+  - >-
+    The AI-memory market is a three-company DRAM oligopoly: Samsung, SK hynix and
+    Micron represented 89.7% of estimated 1Q26 branded DRAM revenue. HBM adds a
+    qualification, yield, thermal and packaging moat on top of conventional DRAM.
+  - >-
+    TSMC is not a memory manufacturer. Its strategic role is manufacturing advanced
+    logic and HBM base dies, and providing CoWoS and SoIC-class integration that
+    connects accelerators to HBM.
+  - >-
+    NAND has more suppliers than DRAM, but Kioxia and Sandisk share manufacturing
+    through Flash Ventures at Yokkaichi and Kitakami. Their revenue and product
+    exposure can be compared, while their wafer capacity must not be double-counted.
+  - >-
+    The current profit surge is not a normalized run rate. 1Q26 conventional DRAM
+    contract prices were estimated up 90-95% quarter over quarter and 2Q26 NAND
+    contract prices up 70-75%, making revenue and margins unusually price-sensitive.
+  - >-
+    The most difficult HBM bottlenecks extend beyond DRAM wafers: EUV and high-aspect-
+    ratio process steps, known-good-die testing, wafer thinning, TSV and bonding,
+    base-die logic, interposers, substrates and advanced packaging all matter.
+  - >-
+    For Brian, SK hynix operating exposure, direct or ETF semiconductor exposure and
+    employment income can move together. A strong company thesis can therefore still
+    create an overly concentrated household cash-flow and portfolio outcome.
+
+market_snapshot:
+  global_memory_revenue_estimate:
+    source: TrendForce
+    2026_usd_billion: 551.6
+    2027_usd_billion: 842.7
+    2027_yoy_growth_percent: 53
+    estimate_boundary: Market-research forecast, not company guidance or audited revenue.
+  branded_DRAM_1Q26:
+    source: TrendForce
+    total_revenue_usd_billion_derived: 96.96
+    suppliers:
+      - {company: Samsung_Electronics, revenue_usd_billion: 37.32, share_percent: 38.5}
+      - {company: SK_hynix, revenue_usd_billion: 27.98, share_percent: 28.8}
+      - {company: Micron_Technology, revenue_usd_billion: 21.75, share_percent: 22.4}
+      - {company: Nanya_Winbond_PSMC_and_others, revenue_usd_billion_derived: 9.91, share_percent_derived: 10.3}
+    top_three_share_percent: 89.7
+  NAND_1Q26:
+    source: TrendForce
+    suppliers:
+      - {company: Samsung_Electronics, revenue_usd_billion: 13.51, share_percent: 31.6}
+      - {company: SK_hynix_and_Solidigm, revenue_usd_billion: 7.53, share_percent: 17.6}
+      - {company: Kioxia, revenue_usd_billion: 5.96, share_percent: 13.9}
+      - {company: Micron_Technology, revenue_usd_billion: 5.95, share_percent: 13.9}
+      - {company: Sandisk, revenue_usd_billion: 5.95, share_percent: 13.9}
+      - {company: YMTC_and_others, share_percent_derived: 9.1}
+    Kioxia_Sandisk_capacity_boundary: >-
+      Kioxia and Sandisk are separate commercial entities but jointly develop and
+      fund production at Yokkaichi and Kitakami; their shares must not be converted
+      into independent physical wafer-capacity totals.
+  HBM_capacity_intensity:
+    source: TrendForce
+    HBM_share_of_top_three_DRAM_wafer_input_percent_estimate:
+      end_2025: 18
+      end_2026: 22
+      end_2027: 30
+    implication: >-
+      HBM consumes more wafer and packaging resources per delivered bit than
+      conventional DRAM, so HBM growth can tighten DDR and mobile DRAM even without
+      a collapse in non-AI end demand.
+  contract_price_cycle:
+    1Q26_conventional_DRAM_qoq_percent_range: [90, 95]
+    1Q26_NAND_qoq_percent_range: [55, 60]
+    2Q26_conventional_DRAM_qoq_percent_range: [58, 63]
+    2Q26_NAND_qoq_percent_range: [70, 75]
+    1H26_NOR_cumulative_percent_range: [100, 120]
+    1H26_SLC_NAND_cumulative_percent_range: [130, 150]
+    normalization_warning: >-
+      Current manufacturer results reflect extreme pricing and allocation power.
+      They should be stress-tested against lower ASP, higher supply and inventory
+      correction rather than extrapolated mechanically.
+
+manufacturers:
+  - id: memory_company_tsmc
+    company: Taiwan_Semiconductor_Manufacturing_Company
+    ticker: 2330_TW_or_TSM_US
+    country: Taiwan
+    classification: foundry_and_advanced_packaging_enabler_not_memory_IDM
+    core_products: [leading_edge_logic, HBM_base_die_foundry, CoWoS, SoIC, InFO, COUPE]
+    AI_memory_role:
+      - manufactures_advanced_logic_for_accelerators_and_memory_base_dies
+      - integrates_logic_and_HBM_through_advanced_packaging
+      - provides_the_process_and_packaging_bridge_between_GPU_or_custom_ASIC_and_HBM
+    latest_financial_snapshot:
+      period: Q2_2026
+      revenue_twd_million: 1270381
+      operating_income_twd_million: 766603
+      operating_margin_percent: 60.3
+      HPC_revenue_mix_percent: 66
+      advanced_7nm_and_below_wafer_revenue_percent: 77
+      H1_2026_capex_usd_billion: 26.8
+    FY2026_outlook:
+      revenue_growth_usd_percent: slightly_above_40
+      capex_usd_billion_range: [60, 64]
+      advanced_packaging_test_mask_and_other_capex_percent_range: [10, 20]
+    manufacturing_footprint:
+      Taiwan: [Hsinchu, Central_Taiwan, Southern_Taiwan, advanced_packaging_sites]
+      United_States: [Arizona]
+      Japan: [Kumamoto]
+      Europe: [Dresden_under_development]
+      scope_boundary: Site list is strategic, not a physical-building or wafer-start ledger.
+    roadmap:
+      N2: high_volume_manufacturing_started_Q4_2025
+      A14: planned_2028
+      memory_connection: SK_hynix_16_high_48GB_HBM4_disclosed_as_powered_by_TSMC_advanced_logic_base_die
+    main_dependencies: [ASML_EUV, process_equipment, silicon_wafers, advanced_packaging_tools, substrates, utilities]
+    primary_risks: [Taiwan_geopolitics, earthquake_and_water_risk, customer_concentration, overseas_fab_cost, CoWoS_execution]
+    sources:
+      - https://investor.tsmc.com/static/annualReports/2025/english/index.html
+      - https://investor.tsmc.com/english/quarterly-results/2026/q2
+      - https://news.skhynix.com/tsmc-technology-symposium-2026/
+
+  - id: memory_company_samsung
+    company: Samsung_Electronics
+    ticker: 005930_KS
+    country: South_Korea
+    classification: diversified_electronics_IDM_and_foundry
+    core_products: [HBM, server_DRAM, DDR5, LPDDR, GDDR, V_NAND, enterprise_SSD, memory_base_die, foundry]
+    market_position:
+      1Q26_DRAM_revenue_share_percent_estimate: 38.5
+      1Q26_NAND_revenue_share_percent_estimate: 31.6
+      interpretation: Largest estimated supplier in both branded DRAM and NAND in 1Q26.
+    latest_financial_snapshot:
+      period: Q1_2026
+      consolidated_revenue_krw_trillion: 133.9
+      consolidated_operating_profit_krw_trillion: 57.2
+      DS_revenue_krw_trillion: 81.7
+      DS_operating_profit_krw_trillion: 53.7
+      DS_operating_margin_percent_derived: 65.7
+      boundary: DS includes Memory, Foundry and System LSI; it is not memory-only profit.
+    preliminary_update:
+      period: Q2_2026_guidance_published_2026_07_07
+      consolidated_sales_krw_trillion_approximate: 171.0
+      consolidated_operating_profit_krw_trillion_approximate: 89.4
+      detailed_results_due: 2026-07-30
+      boundary: No detailed DS or memory split was available by this artifact's as-of date.
+    manufacturing_footprint:
+      memory_front_end: [Hwaseong_Korea, Pyeongtaek_Korea, Xian_China]
+      legacy_R_and_D_and_mixed: [Giheung_Korea]
+      assembly_and_test: [Cheonan_Korea, Onyang_Korea, Suzhou_China, Tianjin_China]
+      foundry: [Giheung_Korea, Hwaseong_Korea, Pyeongtaek_Korea, Austin_US, Taylor_US_under_ramp]
+      double_count_boundary: The foundry list includes sites not dedicated to memory wafer production.
+    roadmap:
+      HBM4: mass_product_sales_started_for_NVIDIA_Vera_Rubin_in_Q1_2026
+      HBM4E: first_samples_scheduled_Q2_2026
+      foundry_base_die: 4nm_HBM_base_die_supply_and_increased_Q2_2026_output
+      NAND_and_storage: PCIe_Gen6_enterprise_SSD_and_high_value_V_NAND
+    competitive_strengths:
+      - largest_scale_across_DRAM_NAND_foundry_and_packaging
+      - ability_to_internalize_HBM_base_die_and_memory_manufacturing
+      - broad_server_mobile_PC_and_storage_customer_mix
+    primary_risks:
+      - conglomerate_financials_obscure_memory_only_economics
+      - HBM_yield_qualification_and_customer_share_volatility
+      - simultaneous_foundry_memory_and_device_capex
+      - China_fab_and_export_control_exposure
+      - current_price_cycle_may_overstate_normalized_margin
+    sources:
+      - https://news.samsung.com/global/samsung-electronics-announces-fourth-quarter-and-fy-2025-results
+      - https://news.samsung.com/global/samsung-electronics-announces-first-quarter-2026-results
+      - https://news.samsung.com/global/samsung-electronics-announces-earnings-guidance-for-second-quarter-2026
+      - https://semiconductor.samsung.com/foundry/manufacturing/manufacturing-sites/
+      - https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2025_4Q_Interim_Report.pdf
+
+  - id: memory_company_sk_hynix
+    company: SK_hynix_and_Solidigm
+    ticker: 000660_KS
+    country: South_Korea
+    classification: memory_focused_IDM
+    core_products: [HBM, server_DRAM, DDR5, LPDDR, NAND, enterprise_SSD, Solidigm_SSD]
+    market_position:
+      1Q26_DRAM_revenue_share_percent_estimate: 28.8
+      1Q26_NAND_revenue_share_percent_including_Solidigm_estimate: 17.6
+      HBM: estimated_leader_with_highest_HBM_bit_mix_among_top_three
+    latest_financial_snapshot:
+      period: Q1_2026_preliminary
+      revenue_krw_trillion: 52.5763
+      operating_profit_krw_trillion: 37.6103
+      operating_margin_percent: 72
+      net_income_krw_trillion: 40.3459
+      net_cash_krw_trillion: 35.0
+      boundary: Preliminary K-IFRS results and an exceptionally strong price and mix cycle.
+    manufacturing_footprint:
+      DRAM_and_HBM: [Icheon_Korea, Cheongju_M15_and_M15X_Korea, Wuxi_China]
+      NAND_and_SSD: [Cheongju_Korea, Dalian_China, Solidigm_global_operations]
+      future: [Yongin_cluster_Korea, Southwestern_region_cluster_Korea_long_term]
+      packaging: [Korea_HBM_packaging_network]
+      capacity_boundary: No single official current wafer-start ledger was located.
+    roadmap:
+      HBM4: 12_high_and_16_high_products_with_mass_production_system_established
+      HBM4_characteristics: [2048_IO, over_10Gbps, over_40_percent_power_efficiency_improvement, Advanced_MR_MUF]
+      HBM4E: 12_high_48GB_up_to_16Gbps_and_approximately_4TB_per_second_demo
+      NAND: 321_layer_1Tb_TLC_4D_NAND_and_AI_enterprise_SSD
+      base_die: advanced_logic_base_die_partnership_with_TSMC
+    announced_long_term_investment:
+      Yongin_cluster_krw_trillion: 600
+      Cheongju_krw_trillion: 100
+      Southwestern_region_krw_trillion: 400
+      total_krw_trillion: 1100
+      boundary: Multi-year strategic envelopes, not current-period capex or committed cash outflow on one schedule.
+    confirmed_supply_chain_links:
+      - {partner: TSMC, role: advanced_logic_HBM_base_die_and_3D_integration, evidence: official_joint_technology_disclosure}
+      - {partner: Applied_Materials, role: next_generation_DRAM_HBM_materials_process_and_3D_packaging_R_and_D, evidence: official_collaboration}
+      - {partner: Hanmi_Semiconductor, role: HBM4_TC_bonder, evidence: public_supply_contract_disclosure_2026_06}
+    primary_risks:
+      - household_and_employment_concentration_for_Brian
+      - HBM_customer_and_platform_concentration
+      - huge_multiyear_capex_execution_and_power_water_requirements
+      - memory_ASP_normalization
+      - China_and_export_control_exposure
+    sources:
+      - https://news.skhynix.com/q1-2026-business-results/
+      - https://news.skhynix.com/sk-hynix-completes-worlds-first-hbm4-development-and-readies-mass-production/
+      - https://news.skhynix.com/tsmc-technology-symposium-2026/
+      - https://news.skhynix.com/new-facility-investment-for-yongin-semiconductor-cluster/
+      - https://news.skhynix.com/fact-05/
+
+  - id: memory_company_micron
+    company: Micron_Technology
+    ticker: MU_US
+    country: United_States
+    classification: memory_focused_IDM
+    core_products: [HBM, DRAM, NAND, enterprise_SSD, SOCAMM2, managed_memory]
+    market_position:
+      1Q26_DRAM_revenue_share_percent_estimate: 22.4
+      1Q26_NAND_revenue_share_percent_estimate: 13.9
+    latest_financial_snapshot:
+      period: Q3_FY2026_ended_2026_05_28
+      revenue_usd_billion: 41.456
+      operating_income_usd_billion: 33.318
+      operating_margin_percent: 80.4
+      net_income_usd_billion: 28.243
+      operating_cash_flow_usd_billion: 25.390
+      cloud_plus_core_data_center_revenue_usd_billion_derived: 25.293
+      cloud_plus_core_data_center_share_percent_derived: 61.0
+    manufacturing_footprint:
+      DRAM: [Taiwan, Hiroshima_Japan, Virginia_US_legacy, Boise_Idaho_under_construction]
+      NAND: [Singapore]
+      assembly_and_test: [Taiwan, Singapore, Malaysia, China, India]
+      future_US: [Boise_fab_1_first_wafer_mid_2027, Boise_fab_2_first_wafer_late_2028, New_York_up_to_four_fabs]
+      Singapore_expansion: [HBM_advanced_packaging, new_double_story_wafer_fab]
+    roadmap:
+      HBM4: 36GB_12_high_in_high_volume_for_lead_customer_and_sampling_multiple_customers
+      HBM4_performance: over_2_8TB_per_second_and_over_20_percent_power_efficiency_improvement_vs_HBM3E
+      HBM4_16_high: 48GB_sampling
+      HBM4E: volume_expected_calendar_2027
+      storage: PCIe_Gen6_and_245TB_QLC_enterprise_SSD
+    confirmed_supply_chain_links:
+      - {partner: Applied_Materials, role: next_generation_DRAM_HBM_and_NAND_R_and_D, evidence: official_collaboration}
+      - {partner: PSMC, role: Tongluo_fab_transaction_and_future_advanced_packaging_or_process_cooperation, evidence: official_transaction_and_LOI}
+    primary_risks:
+      - current_80_percent_operating_margin_is_cycle_sensitive
+      - HBM4_and_HBM4E_customer_qualification
+      - multi_site_US_capex_and_subsidy_execution
+      - China_export_and_market_access
+      - strategic_customer_concentration
+    sources:
+      - https://investors.micron.com/node/50671
+      - https://investors.micron.com/news-releases/news-release-details/micron-high-volume-production-hbm4-designed-nvidia-vera-rubin
+      - https://investors.micron.com/static-files/7a1f8c6f-1ce9-4efe-bc6e-722b6b9c4550
+      - https://investors.micron.com/node/50776
+      - https://investors.micron.com/news-releases/news-release-details/micron-breaks-ground-advanced-wafer-fabrication-facility
+
+  - id: memory_company_kioxia
+    company: Kioxia_Holdings
+    ticker: 285A_TSE
+    country: Japan
+    classification: NAND_focused_IDM_and_joint_venture_manufacturer
+    core_products: [BiCS_3D_NAND, enterprise_SSD, client_SSD, embedded_flash]
+    latest_financial_snapshot:
+      period: FY2025_ended_2026_03_31
+      revenue_jpy_billion: 2337.6
+      operating_profit_jpy_billion: 870.4
+      operating_margin_percent_derived: 37.2
+      parent_net_income_jpy_billion: 554.5
+      operating_cash_flow_jpy_billion: 616.5
+      property_plant_and_equipment_purchases_jpy_billion: 281.1
+      interest_bearing_debt_jpy_billion: 1022.8
+      largest_customer_Apple_revenue_share_percent: 20.4
+    manufacturing_footprint:
+      owned_and_operated_sites: [Yokkaichi_Japan, Kitakami_Japan]
+      joint_venture_partner: Sandisk
+      JV_term_through: 2034-12-31
+      physical_boundary: Sandisk shares output and economics from the same fab system.
+    roadmap_and_capex:
+      FY2026_capex_jpy_billion_plan: 450
+      FY2027_capex_direction: similar_level_to_FY2026
+      bit_growth_target_CAGR_percent: 22
+      programs: [BiCS8_expansion, BiCS10_ramp, Yokkaichi_Fab7, Kitakami_Fab2]
+      existing_building_capacity_horizon: through_calendar_2029_under_current_plan
+    primary_risks: [NAND_ASP_cycle, Apple_customer_concentration, JV_governance, yen_and_capex, enterprise_SSD_execution]
+    sources:
+      - https://www.kioxia-holdings.com/content/dam/kioxia-hd/en-jp/ir/library/securities/asset/Annual-Securities-Report-FY2025-EN.pdf
+      - https://www.kioxia-holdings.com/content/dam/kioxia-hd/en-jp/ir/library/event/asset/Investor-Day-2026-Eng-QA.pdf
+      - https://www.kioxia-holdings.com/en-jp/news.html
+      - https://investor.sandisk.com/news-releases/news-release-details/kioxia-and-sandisk-extend-yokkaichi-joint-venture-agreement
+
+  - id: memory_company_sandisk
+    company: Sandisk_Corporation
+    ticker: SNDK_US
+    country: United_States
+    classification: NAND_product_company_and_joint_venture_manufacturer
+    core_products: [BiCS_3D_NAND, data_center_SSD, client_storage, removable_and_consumer_storage]
+    latest_financial_snapshot:
+      period: Q3_FY2026
+      revenue_usd_billion: 5.950
+      operating_income_usd_billion: 4.111
+      operating_margin_percent_derived: 69.1
+      net_income_usd_billion: 3.615
+      gross_margin_percent: 78.4
+      data_center_revenue_usd_billion: 1.467
+      edge_revenue_usd_billion: 3.663
+      consumer_revenue_usd_billion: 0.820
+    manufacturing_footprint:
+      joint_venture_fabs: [Yokkaichi_Japan, Kitakami_Japan]
+      partner: Kioxia
+      JV_term_through: 2034-12-31
+      support_and_media_manufacturing: [Penang_Malaysia, Shanghai_assembly_and_test]
+      physical_boundary: Do not add JV wafer capacity again after counting Kioxia sites.
+    roadmap:
+      BiCS10_1Tb_TLC: sampling_2026_07
+      JV_extension_payment_to_Kioxia_usd_billion: 1.165
+      payment_period: 2026_to_2029
+    primary_risks: [shared_fab_dependency, NAND_ASP_cycle, post_Western_Digital_separation_execution, customer_mix, capex_commitments]
+    sources:
+      - https://investor.sandisk.com/news-releases/news-release-details/sandisk-reports-fiscal-third-quarter-2026-financial-results
+      - https://investor.sandisk.com/news-releases/news-release-details/kioxia-and-sandisk-extend-yokkaichi-joint-venture-agreement
+      - https://investor.sandisk.com/static-files/342a38e2-e204-4f50-ad22-3e3a28e2f6ff
+
+  - id: memory_company_nanya
+    company: Nanya_Technology
+    ticker: 2408_TW
+    country: Taiwan
+    classification: DRAM_focused_IDM
+    core_products: [DDR5, DDR4, LPDDR, customized_AI_UWIO_memory]
+    latest_financial_snapshot:
+      period: Q2_2026
+      revenue_twd_billion: 82.549
+      gross_profit_twd_billion: 65.619
+      gross_margin_percent: 79.5
+      operating_income_twd_billion: 60.826
+      operating_margin_percent: 73.7
+      net_income_twd_billion: 50.192
+      boundary: Price-upcycle result; do not treat as steady-state margin.
+    manufacturing_footprint:
+      existing: [New_Taipei_Taiwan_DRAM_operations]
+      new_fab: New_Taipei_12_inch_DRAM_fab
+    new_fab_plan:
+      phase_1_capacity_wafers_per_month_target: 30000
+      phase_1_target_year: 2028
+      full_capacity_wafers_per_month: 45000
+      total_investment_twd_billion: 480
+      equipment_move_in: Q1_2027
+      process: [1C, 1D, 1E, EUV]
+    strategic_signal:
+      H1_2026_AI_infrastructure_and_server_revenue_share_percent_more_than: 20
+      private_placement_twd_billion: 78.72
+      private_placement_participants: four_major_customers
+    primary_risks: [subscale_vs_top_three, commodity_DRAM_cycle, new_fab_ramp_and_yield, customer_concentration, Taiwan_power_water]
+    sources:
+      - https://www.nanya.com/en/IR/16/Press%20Release?IRId=13150
+      - https://www.nanya.com/Content/InvestorCalendar/5692_20260413_1Q26_Investor%20Conference_EG.pdf
+      - https://www.nanya.com/Content/InvestorCalendar/5692_20260413_Press%20Release_NTC%201Q26%20Financial%20Report.pdf
+
+  - id: memory_company_winbond
+    company: Winbond_Electronics
+    ticker: 2344_TW
+    country: Taiwan
+    classification: specialty_DRAM_NOR_and_SLC_NAND_IDM
+    core_products: [customized_DRAM, mobile_DRAM, NOR_flash, secure_flash, SLC_NAND, logic_IC]
+    latest_financial_snapshot:
+      period: Q1_2026
+      revenue_twd_billion: 38.253
+      gross_margin_percent: 53.4
+      parent_net_income_twd_billion: 10.114
+      revenue_mix_percent: {customized_memory: 47, flash: 32, logic: 21}
+      application_mix_percent: {consumer: 30, automotive_and_industrial: 30, communications: 27, computing: 13}
+    manufacturing_footprint:
+      fabs: [CTSP_Taichung_12_inch, Kaohsiung_Science_Park_12_inch]
+      historical_CTSP_design_capacity_wafers_per_month: 48000
+      capacity_boundary: Historical design number is not a current combined output ledger.
+    roadmap: [45nm_NOR_mass_production, 24nm_SLC_NAND_mass_production, 20nm_CMS_DRAM_primary, 16nm_expected_mass_production_2026]
+    primary_risks: [mature_node_price_cycle, China_NOR_competition, subscale_capex, auto_and_industrial_cycle]
+    sources:
+      - https://www.winbond.com/hq/about-winbond/news-and-events/news/news00582.html?__locale=en_TW
+      - https://www.winbond.com/hq/about-winbond/locations/index.html?__locale=en
+      - https://www.winbond.com/export/sites/winbond/about-winbond/investor/financial-information/annual-report/report/2025_Winbond_Annual_Report__EN.pdf?__locale=en
+
+  - id: memory_company_macronix
+    company: Macronix_International
+    ticker: 2337_TW
+    country: Taiwan
+    classification: specialty_nonvolatile_memory_IDM
+    core_products: [NOR_flash, SLC_NAND, serial_NAND, eMMC, ROM, specialty_foundry]
+    latest_financial_snapshot:
+      period: Q1_2026
+      revenue_twd_billion: 10.469
+      gross_margin_percent: 40.8
+      operating_income_twd_billion: 1.933
+      operating_margin_percent: 18.5
+      net_income_twd_billion: 1.779
+      EBITDA_twd_billion: 3.443
+      revenue_mix_percent: {NOR: 58, NAND: 30, ROM: 8, foundry: 4}
+    manufacturing_footprint:
+      fabs: [Fab5_Hsinchu_12_inch, Fab2_Hsinchu_8_inch]
+    strategic_position: long_lifecycle_high_reliability_NOR_and_embedded_nonvolatile_memory
+    primary_risks: [specialty_memory_cycle, automotive_and_consumer_demand, smaller_scale, process_migration_cost]
+    sources:
+      - https://www.macronix.com/Lists/QuarterlyResults/Attachments/651/2026q1_release_ch.pdf
+      - https://www.macronix.com/en-us/about/Pages/company-overview.aspx
+      - https://www.macronix.com/en-us/about/news/Pages/ArmorFlash-ASIL-D.aspx
+
+  - id: memory_company_psmc
+    company: Powerchip_Semiconductor_Manufacturing_Corporation
+    ticker: 6770_TW
+    country: Taiwan
+    classification: specialty_logic_and_memory_foundry
+    core_products: [DRAM_foundry, flash_foundry, niche_memory, WoW_3D_AI, silicon_interposer, PMIC]
+    latest_financial_snapshot:
+      period: Q1_2026
+      status: official_financial_statement_available_but_not_normalized_in_this_pass
+      reason: The reviewed English IR index did not expose a stable machine-readable result table.
+    manufacturing_footprint:
+      current_structure_after_Tongluo_sale: three_12_inch_and_two_8_inch_fabs
+      Hsinchu_12_inch_memory_capacity_wafers_per_month: 50000
+      P3_memory_line_wafers_per_month_more_than: 30000
+      process: 2x_nm_DRAM_and_flash_foundry_with_upgrade_plan
+    transaction_and_capital:
+      Tongluo_P5_sale_to_Micron_cash_usd_billion: 1.8
+      transaction_completion_announced: 2026-03-16
+      GDS_and_employee_subscription_raise_usd_million: 886
+      planned_use: machinery_and_equipment
+    roadmap: [P3_DRAM_process_upgrade_with_Micron_support, DRAM_advanced_packaging, WoW, interposers, IPD]
+    primary_risks: [technology_gap, customer_funding_and_partner_dependence, mature_node_cycle, restructuring_execution]
+    sources:
+      - https://www.powerchip.com/en-global/insights/press-releases/content/20260121
+      - https://www.powerchip.com/en-global/insights/press-releases/content/20260117
+      - https://www.powerchip.com/en-global/insights/press-releases/content/20260610
+      - https://www.powerchip.com/en-global/financials/quarterly?target=target_title
+
+  - id: memory_company_cxmt
+    company: ChangXin_Memory_Technologies
+    ticker: private
+    country: China
+    classification: private_DRAM_IDM
+    core_products: [DDR5, LPDDR5X, DDR4, LPDDR4X, server_and_client_DRAM]
+    financial_disclosure: private_and_not_comparable_in_reviewed_primary_sources
+    manufacturing_footprint:
+      official_milestones: [Fab_A_Hefei, Fab_A2_Hefei, Fab_C1_Beijing_trial_line, Fab_C2_Beijing]
+      exact_current_wafer_capacity: undisclosed_in_reviewed_primary_sources
+    strategic_position: largest_visible_Chinese_DRAM_challenger
+    HBM_boundary: >-
+      Public reporting discusses HBM ambitions, but the reviewed official site did
+      not provide a comparable high-volume HBM shipment, customer qualification or
+      current capacity disclosure. Do not treat roadmap reporting as equivalent to
+      Samsung, SK hynix or Micron volume status.
+    primary_risks: [export_controls, equipment_access, yield_and_process_gap, private_financial_opacity, geopolitical_market_access]
+    sources:
+      - https://www.cxmt.com/en/
+      - https://www.cxmt.com/en/about.html
+
+  - id: memory_company_ymtc
+    company: Yangtze_Memory_Technologies
+    ticker: private
+    country: China
+    classification: private_3D_NAND_IDM
+    core_products: [3D_NAND_wafers, packaged_NAND, embedded_memory, consumer_SSD, enterprise_SSD]
+    financial_disclosure: private_and_not_comparable_in_reviewed_primary_sources
+    manufacturing_footprint:
+      primary_location: Wuhan_China
+      exact_current_wafer_capacity: undisclosed_in_reviewed_primary_sources
+    roadmap:
+      Gen4_TLC_and_QLC: mass_production_2023
+      Gen5_TLC: developed_and_mass_produced_2024
+      Gen5_QLC: developed_and_mass_produced_2025
+      architecture: Xtacking_4_0
+    strategic_position: Chinese_NAND_challenger_with_independent_logic_and_memory_wafer_bonding_architecture
+    primary_risks: [export_controls, tool_and_spares_access, private_financial_opacity, yield_and_reliability, enterprise_customer_qualification]
+    sources:
+      - https://www.ymtc.com/en/intro.html
+      - https://www.ymtc.com/en/technicalintroduction.html
+      - https://www.ymtc.com/en/buslist.html?cat=35
+
+adjacent_memory_supplier_roster:
+  purpose: Keep important specialty and fabless memory names visible without pretending they are comparable commodity-memory IDMs.
+  companies:
+    - {company: Infineon_Technologies, role: automotive_industrial_and_high_reliability_NOR, manufacturing_model: IDM, comparison_boundary: diversified_semiconductor_group}
+    - {company: GigaDevice, role: fabless_NOR_flash_and_niche_DRAM, manufacturing_model: fabless, comparison_boundary: wafer_capacity_belongs_to_foundry_partners}
+    - {company: Microchip_Technology, role: EEPROM_SRAM_and_specialty_nonvolatile_memory, manufacturing_model: mixed_IDM, comparison_boundary: diversified_MCU_and_analog_group}
+    - {company: Everspin_Technologies, role: MRAM, manufacturing_model: specialty_supplier, comparison_boundary: small_emerging_memory_category}
+    - {company: ISSI, role: specialty_DRAM_SRAM_and_flash, manufacturing_model: fabless, comparison_boundary: privately_controlled_and_not_commodity_leader}
+
+supply_chain_layers:
+  - id: layer_lithography
+    stage: wafer_front_end
+    bottleneck: advanced_DRAM_EUV_and_multi_patterning_productivity
+    suppliers:
+      - {company: ASML, role: EUV_DUV_lithography_and_metrology, evidence_level: category_exposure, criticality: extreme}
+    current_signal:
+      ASML_Q1_2026_revenue_eur_billion: 8.767
+      ASML_Q1_2026_net_income_eur_billion: 2.757
+      ASML_2026_revenue_guidance_eur_billion_range: [36, 40]
+      memory_connection: significant_2026_EUV_growth_expected_from_advanced_logic_and_DRAM
+
+  - id: layer_deposition_etch_clean
+    stage: wafer_front_end_and_advanced_packaging
+    bottleneck: DRAM_capacitor_scaling_NAND_high_aspect_ratio_etch_TSV_and_metallization
+    suppliers:
+      - {company: Applied_Materials, role: deposition_etch_materials_engineering_and_packaging, evidence_level: confirmed_SK_hynix_and_Micron_R_and_D_collaboration, criticality: extreme}
+      - {company: Lam_Research, role: deposition_etch_strip_clean_and_high_aspect_ratio_NAND, evidence_level: category_exposure, criticality: extreme}
+      - {company: Tokyo_Electron, role: coat_develop_etch_deposition_clean_bonding_and_probing, evidence_level: category_exposure_and_all_major_customer_POR_statements, criticality: extreme}
+      - {company: ASM_International, role: ALD_and_epitaxy, evidence_level: category_exposure, criticality: high}
+      - {company: SEMES, role: cleaning_etch_and_track_equipment, evidence_level: Samsung_affiliate_category_exposure, criticality: high, ownership: private_Samsung_affiliate}
+      - {company: Wonik_IPS, role: deposition_and_thermal_process_equipment, evidence_level: category_exposure, criticality: high}
+      - {company: PSK, role: photoresist_strip_and_dry_clean, evidence_level: category_exposure, criticality: high}
+      - {company: Jusung_Engineering, role: CVD_and_ALD, evidence_level: category_exposure, criticality: medium_high}
+      - {company: HPSP, role: high_pressure_hydrogen_annealing, evidence_level: category_exposure, criticality: medium_high}
+    current_signals:
+      Applied_Q2_FY2026: {revenue_usd_billion: 7.91, operating_income_usd_billion: 2.52, DRAM_share_of_Semiconductor_Systems_revenue_percent: 29, flash_share_percent: 4}
+      Lam_March_2026_quarter: {revenue_usd_billion: 5.841, operating_income_usd_billion: 2.047, operating_margin_percent: 35.0}
+      Tokyo_Electron_FY2026: {revenue_jpy_billion: 2443.5, operating_income_jpy_billion: 624.9, operating_margin_percent: 25.6}
+
+  - id: layer_process_control
+    stage: wafer_front_end_and_advanced_packaging
+    bottleneck: yield_learning_for_EUV_DRAM_HBM_TSV_hybrid_bonding_and_3D_NAND
+    suppliers:
+      - {company: KLA, role: wafer_and_pattern_inspection_metrology, evidence_level: official_HBM_DRAM_revenue_driver_disclosure, criticality: extreme}
+      - {company: Onto_Innovation, role: metrology_inspection_and_advanced_packaging_control, evidence_level: category_exposure, criticality: high}
+    current_signal:
+      KLA_Q3_FY2026_revenue_usd_billion: 3.415
+      KLA_semiconductor_process_control_revenue_usd_billion: 3.084
+      KLA_memory_signal: Korea_revenue_up_80_percent_yoy_on_memory_investment
+
+  - id: layer_wafer_thinning_dicing_and_bonding
+    stage: HBM_stack_and_advanced_packaging
+    bottleneck: thin_die_warpage_alignment_bond_quality_and_stack_yield
+    suppliers:
+      - {company: DISCO, role: grinding_thinning_dicing_and_laser_processing, evidence_level: category_exposure, criticality: extreme}
+      - {company: Hanmi_Semiconductor, role: TC_bonders_for_HBM, evidence_level: confirmed_SK_hynix_public_supply_contract, criticality: extreme}
+      - {company: Hanwha_Semitech, role: TC_bonders_for_HBM, evidence_level: reported_customer_supply_not_normalized_to_contract_value, criticality: high}
+      - {company: BE_Semiconductor_Industries, role: hybrid_and_thermocompression_bonding, evidence_level: category_exposure, criticality: high}
+      - {company: ASMPT, role: die_attach_TC_bonding_and_advanced_packaging, evidence_level: category_exposure, criticality: high}
+      - {company: Applied_Materials, role: hybrid_bonding_and_3D_packaging_process, evidence_level: confirmed_R_and_D_collaboration, criticality: high}
+      - {company: Tokyo_Electron, role: wafer_bonder_debonder_and_HBM_process_tools, evidence_level: category_exposure, criticality: high}
+    technology_transition: TC_bonding_is_current_volume_backbone_while_hybrid_bonding_is_a_next_generation_option_not_yet_a_blanket_replacement
+
+  - id: layer_test
+    stage: wafer_sort_stack_test_final_test_and_system_level_test
+    bottleneck: known_good_die_and_stack_yield_as_HBM_layers_IO_and_speed_rise
+    suppliers:
+      - {company: Advantest, role: memory_and_SoC_test_systems, evidence_level: official_high_performance_DRAM_and_NVM_growth, criticality: extreme}
+      - {company: Teradyne, role: memory_and_SoC_automatic_test_equipment, evidence_level: official_memory_and_AI_demand_signal, criticality: high}
+      - {company: KLA, role: inspection_and_yield_control, evidence_level: category_exposure, criticality: high}
+    current_signals:
+      Advantest_FY2025: {revenue_jpy_billion: 1128.6, operating_income_jpy_billion: 499.1, operating_margin_percent: 44.2, test_system_revenue_jpy_billion: 1019.4}
+      Teradyne_Q1_2026: {revenue_usd_billion: 1.282, semiconductor_test_revenue_usd_billion: 1.111, net_income_usd_million: 398.9}
+
+  - id: layer_foundry_interposer_and_OSAT
+    stage: HBM_base_die_interposer_package_and_final_test
+    bottleneck: CoWoS_class_capacity_package_yield_substrate_and_thermal_integration
+    suppliers:
+      - {company: TSMC, role: HBM_base_die_logic_CoWoS_and_SoIC, evidence_level: confirmed_SK_hynix_product_and_technology_disclosure, criticality: extreme}
+      - {company: Samsung_Foundry, role: internal_and_external_HBM_base_die_and_advanced_packaging, evidence_level: official_internal_business_disclosure, criticality: extreme}
+      - {company: Amkor_Technology, role: advanced_packaging_and_test, evidence_level: confirmed_10_year_TSMC_Arizona_agreement, criticality: high}
+      - {company: ASE_Technology_Holding, role: OSAT_advanced_packaging_and_test, evidence_level: category_exposure, criticality: high}
+      - {company: JCET_Group, role: OSAT_and_advanced_packaging, evidence_level: category_exposure, criticality: medium_high}
+    current_signal:
+      Amkor_Q1_2026: {revenue_usd_billion: 1.685, operating_income_usd_million: 100, operating_margin_percent: 6.0}
+      comparison_boundary: OSAT group revenue is not HBM-only revenue.
+
+  - id: layer_silicon_wafers
+    stage: substrate_input
+    bottleneck: leading_edge_300mm_quality_long_qualification_and_supply_contracts
+    suppliers:
+      - {company: Shin_Etsu_Chemical, role: 300mm_silicon_wafers_and_photoresist, evidence_level: category_exposure, criticality: extreme}
+      - {company: SUMCO, role: 300mm_silicon_wafers, evidence_level: official_advanced_DRAM_and_NAND_demand_disclosure, criticality: extreme}
+      - {company: SK_Siltron, role: silicon_wafers, evidence_level: category_exposure, criticality: high, ownership: private_SK_group}
+      - {company: GlobalWafers, role: silicon_wafers, evidence_level: category_exposure, criticality: high}
+    relationship_boundary: Public product exposure does not disclose each memory maker's wafer allocation or price.
+
+  - id: layer_photoresist_masks_chemicals_and_gases
+    stage: consumable_materials
+    bottleneck: purity_defectivity_process_qualification_and_export_controls
+    suppliers:
+      - {company: JSR, role: advanced_photoresist_and_materials, evidence_level: category_exposure, criticality: high}
+      - {company: Tokyo_Ohka_Kogyo, role: photoresist_and_high_purity_chemicals, evidence_level: category_exposure, criticality: high}
+      - {company: Fujifilm_Electronic_Materials, role: photoresist_CMP_and_process_chemicals, evidence_level: category_exposure, criticality: high}
+      - {company: Entegris, role: filtration_delivery_specialty_chemicals_and_materials, evidence_level: category_exposure, criticality: high}
+      - {company: Linde, role: electronic_specialty_and_bulk_gases, evidence_level: category_exposure, criticality: high}
+      - {company: Air_Liquide, role: electronic_gases_and_on_site_supply, evidence_level: category_exposure, criticality: high}
+      - {company: Air_Products, role: electronic_gases_and_on_site_supply, evidence_level: category_exposure, criticality: high}
+      - {company: Soulbrain, role: etchants_and_high_purity_process_chemicals, evidence_level: category_exposure, criticality: high}
+      - {company: Dongjin_Semichem, role: photoresist_and_process_chemicals, evidence_level: category_exposure, criticality: high}
+      - {company: Hansol_Chemical, role: hydrogen_peroxide_and_precursors, evidence_level: category_exposure, criticality: medium_high}
+      - {company: Kanto_Denka_Kogyo, role: specialty_fluorine_and_electronic_gases, evidence_level: category_exposure, criticality: medium_high}
+    disclosure_boundary: Exact customer mix and recipe-level materials are generally confidential.
+
+  - id: layer_photomasks_and_package_substrates
+    stage: patterning_and_package_interconnect
+    bottleneck: advanced_mask_quality_ABF_substrate_layer_count_yield_and_lead_time
+    suppliers:
+      - {company: Toppan_Holdings, role: photomasks_and_semiconductor_packaging_materials, evidence_level: category_exposure, criticality: high}
+      - {company: Dai_Nippon_Printing, role: photomasks_and_packaging_materials, evidence_level: category_exposure, criticality: high}
+      - {company: Ibiden, role: high_end_IC_package_substrates, evidence_level: category_exposure, criticality: high}
+      - {company: Shinko_Electric_Industries, role: package_substrates_and_assembly, evidence_level: category_exposure, criticality: high}
+      - {company: Unimicron, role: IC_substrates_and_PCB, evidence_level: category_exposure, criticality: high}
+      - {company: Nan_Ya_PCB, role: IC_substrates_and_PCB, evidence_level: category_exposure, criticality: medium_high}
+
+  - id: layer_controllers_interfaces_and_modules
+    stage: NAND_productization_and_system_interface
+    bottleneck: firmware_controller_validation_signal_integrity_and_supply_assurance
+    suppliers:
+      - {company: Phison_Electronics, role: NAND_controllers_and_enterprise_client_storage_solutions, evidence_level: category_exposure, criticality: high}
+      - {company: Silicon_Motion, role: SSD_and_embedded_storage_controllers, evidence_level: category_exposure, criticality: high}
+      - {company: Marvell_Technology, role: enterprise_storage_controllers_and_interconnect, evidence_level: category_exposure, criticality: high}
+      - {company: Rambus, role: DDR_memory_interface_chips_and_IP, evidence_level: category_exposure, criticality: high}
+      - {company: Kingston_Technology, role: DRAM_modules_and_SSDs, evidence_level: downstream_customer_and_module_exposure, criticality: medium_high, ownership: private}
+      - {company: ADATA_Technology, role: DRAM_modules_and_SSDs, evidence_level: downstream_customer_and_module_exposure, criticality: medium}
+    physical_boundary: Module and controller revenue is not new DRAM or NAND wafer capacity.
+
+value_chain_connections:
+  HBM:
+    sequence:
+      - advanced_DRAM_wafer_with_increasing_EUV_and_process_intensity
+      - wafer_sort_and_known_good_die
+      - thinning_dicing_TSV_metallization_and_stack_bonding
+      - advanced_logic_base_die
+      - interposer_or_3D_integration_and_package_substrate
+      - final_test_thermal_validation_and_accelerator_qualification
+    highest_current_bottlenecks: [known_good_die_and_yield, bonding_throughput_and_warpage, base_die_and_CoWoS_class_capacity, test_time, power_and_thermal_limits]
+  DRAM:
+    sequence: [silicon_wafer, lithography, deposition_and_capacitor, etch_clean, test, package_and_module]
+    structural_effect: HBM_and_server_DRAM_capacity_priority_reduces_commodity_supply
+  NAND:
+    sequence: [silicon_wafer, repeated_deposition, very_high_aspect_ratio_etch, bonding_or_peripheral_integration, test, controller_firmware, SSD_qualification]
+    structural_effect: enterprise_SSD_demand_and_layer_transitions_raise_process_and_controller_complexity
+  specialty_memory:
+    sequence: [mature_or_specialty_node, long_lifecycle_qualification, automotive_or_industrial_package_and_test]
+    structural_effect: capacity_exit_by_large_IDMs_can_create_NOR_and_SLC_shortages_even_without_high_unit_growth
+
+competitive_comparison:
+  - company: Samsung_Electronics
+    best_fit_exposure: broad_memory_leader_plus_internal_foundry_and_device_ecosystem
+    upside_driver: HBM4_share_recovery_plus_DRAM_NAND_pricing_and_internal_base_die
+    main_tradeoff: conglomerate_complexity_and_multiple_capex_fronts
+  - company: SK_hynix
+    best_fit_exposure: highest_purity_leading_HBM_and_AI_memory
+    upside_driver: HBM_lead_M15X_and_server_memory_mix
+    main_tradeoff: highest_memory_cycle_and_Brian_household_correlation
+  - company: Micron_Technology
+    best_fit_exposure: US_listed_pure_memory_with_HBM_and_data_center_mix
+    upside_driver: HBM4_ramp_and_US_supply_expansion
+    main_tradeoff: extreme_current_margin_and_large_US_capex_execution
+  - company: TSMC
+    best_fit_exposure: picks_and_shovels_for_accelerator_logic_base_die_and_advanced_packaging
+    upside_driver: AI_accelerator_and_CoWoS_class_demand_across_multiple_designers
+    main_tradeoff: Taiwan_concentration_and_valuation_or_capex_without_memory_ASP_purity
+  - company: Kioxia_and_Sandisk
+    best_fit_exposure: NAND_and_enterprise_storage_upcycle
+    upside_driver: BiCS10_and_data_center_SSD
+    main_tradeoff: shared_fab_economics_and_NAND_cycle_volatility
+  - company: equipment_suppliers
+    best_fit_exposure: capital_intensity_and_process_complexity_across_multiple_IDMs
+    upside_driver: EUV_DRAM_HBM_packaging_test_and_NAND_layer_growth
+    main_tradeoff: customer_capex_timing_export_controls_and_order_volatility
+  - company: specialty_memory_suppliers
+    best_fit_exposure: mature_node_shortage_auto_industrial_and_edge_AI
+    upside_driver: long_lifecycle_supply_and_capacity_exit_by_larger_IDMs
+    main_tradeoff: smaller_scale_lower_liquidity_and_demand_normalization
+
+scenario_framework:
+  bull:
+    conditions:
+      - AI_training_and_inference_memory_demand_stays_ahead_of_supply_through_2027
+      - HBM4_and_enterprise_SSD_qualification_remain_tight
+      - new_fab_and_packaging_capacity_ramps_gradually_with_disciplined_bit_growth
+    likely_beneficiaries: [SK_hynix, Samsung, Micron, TSMC, ASML, Applied_Materials, Lam_Research, KLA, Advantest, bonding_and_packaging_suppliers]
+  base:
+    conditions:
+      - HBM_grows_but_conventional_memory_prices_begin_to_normalize
+      - supplier_capex_expands_2027_output_without_immediate_glut
+      - product_mix_and_yield_separate_company_results_more_than_spot_pricing
+    interpretation: Prefer execution, qualification, balance sheet and household diversification over simple revenue extrapolation.
+  bear:
+    conditions:
+      - hyperscaler_or_accelerator_deployment_slows
+      - customer_inventory_rebuild_turns_into_double_ordering_correction
+      - Samsung_Micron_and_Chinese_capacity_ramp_faster_than_demand
+      - export_controls_or_geopolitical_events_disrupt_tools_customers_or_fabs
+    most_exposed: [commodity_memory_IDMs, subscale_memory_fabs, late_cycle_equipment_orders, highly_levered_or_single_customer_suppliers]
+
+brian_portfolio_and_cash_flow_lens:
+  known_correlation_channels:
+    - SK_hynix_employment_income_and_bonus
+    - direct_SK_hynix_or_semiconductor_equity_exposure
+    - Korean_and_global_semiconductor_or_AI_ETFs
+    - NVIDIA_Google_and_data_center_supply_chain_exposure
+  decision_rule: >-
+    Evaluate new semiconductor exposure against the combined household factor,
+    not as an isolated ticker. A diversified ETF can still be concentrated in the
+    same AI-capex and memory-price factor already driving salary and bonus.
+  cash_flow_priority: >-
+    Preserve monthly free cash flow and emergency liquidity before increasing a
+    cyclical semiconductor position. This is compatible with holding a long-term
+    thesis without reacting to every quarterly price move.
+  review_questions:
+    - What share of household income, bonus and investable assets rises or falls with the same memory cycle?
+    - Is the proposed exposure adding a new value-chain factor or duplicating SK hynix and AI-capex beta?
+    - Does the thesis survive a 30-50% memory ASP correction and two years of heavy capex?
+    - Is the expected return coming from durable process or qualification advantage, or from extrapolating current prices?
+
+monitoring_dashboard:
+  monthly:
+    - DRAM_NAND_and_NOR_contract_and_spot_price_direction
+    - memory_supplier_monthly_revenue_where_available
+    - HBM_customer_qualification_and_shipment_status
+    - equipment_orders_export_license_and_lead_time_signals
+  quarterly:
+    - Samsung_DS_SK_hynix_Micron_revenue_margin_bit_shipment_and_ASP
+    - HBM_mix_and_HBM_wafer_input_share
+    - TSMC_HPC_mix_and_advanced_packaging_capex
+    - Kioxia_Sandisk_enterprise_SSD_mix_and_JV_capex
+    - Applied_Lam_TEL_KLA_Advantest_memory_and_Korea_revenue_signals
+    - Nanya_Winbond_Macronix_PSMC_capacity_and_process_migration
+  annual_or_event_driven:
+    - Yongin_M15X_Boise_New_York_Nanya_new_fab_and_Kioxia_BiCS10_ramp
+    - CXMT_YMTC_process_capacity_and_export_control_changes
+    - power_water_substrate_and_advanced_packaging_capacity
+
+unresolved_gaps:
+  - Current comparable wafer-start capacity by company, fab, node and product.
+  - HBM output, yield, stack mix, customer allocation and realized price by supplier.
+  - Samsung Memory-only revenue, operating profit and capex separate from DS.
+  - Kioxia and Sandisk JV wafer ownership, output allocation and cost reconciliation by fab.
+  - CXMT and YMTC audited financials, actual capacity, yield and external customer qualification.
+  - Named supplier allocation and spend for most tools, wafers, chemicals, gases and substrates.
+  - Exact household portfolio weights and factor overlap after Brian's next expense and portfolio update.
+
+source_registry:
+  market_research:
+    - https://www.trendforce.com/presscenter/news/20260601-13070.html
+    - https://www.trendforce.com/presscenter/news/20260525-13058.html
+    - https://www.trendforce.com/presscenter/news/20260331-12995.html
+    - https://www.trendforce.com/presscenter/news/20260202-12911.html
+    - https://www.trendforce.com/presscenter/news/20260602-13074.html
+    - https://www.trendforce.com/presscenter/news/20260616-13102.html
+    - https://www.trendforce.com/presscenter/news/20260122-12893.html
+  equipment_and_materials:
+    - https://www.asml.com/en/news/press-releases/2026/q1-2026-financial-results
+    - https://www.asml.com/en/investors/annual-report/2025/financials
+    - https://ir.appliedmaterials.com/news-releases/news-release-details/applied-materials-announces-second-quarter-2026-results/
+    - https://investor.lamresearch.com/2026-04-22-Lam-Research-Corporation-Reports-Financial-Results-for-the-Quarter-Ended-March-29%2C-2026
+    - https://www.tel.com/ir/library/investors-guide/hq95qj0000000734-att/InvestorsGuide_E20260511_rev00.pdf
+    - https://ir.kla.com/sec-filings/all-sec-filings/content/0000319201-26-000016/0000319201-26-000016.pdf
+    - https://www.advantest.com/en/investors/financial-highlights/review/
+    - https://investors.teradyne.com/news-events/press-releases/detail/440/teradyne-reports-first-quarter-2026-results
+    - https://ir.amkor.com/news-releases/news-release-details/tsmc-and-amkor-technology-announce-long-term-partnership
+    - https://www.shinetsu.co.jp/en/products/semiconductor-silicon-business/silicon-wafers/
+    - https://www.sumcosi.com/english/aboutus/growth.html
