@@ -36726,7 +36726,169 @@ campus_profiles:
       - {title: SRCE data-center maintenance locations, publisher: SRCE, period: '2022', url: "https://www.srce.unizg.hr/sites/default/files/srce/javna-nabava/2022/E-VV_11-01-2022-MK/prilog_2._prijedlog_okvirnog_sporazuma_odrzavanje_tehnickih_sustava_podatkovnih_centara_hr-zoo.pdf"}
     confidence: high_for_six_site_current_roster_five_OSM_matches_2025_area_rack_power_generator_UPS_cooling_specs_97_A100_floor_ZG2_placement_HR_ZOO_project_and_FY2025_budget_results_medium_for_current_asset_title_by_site_and_2026_upgrade_execution_low_for_live_IT_load_current_PUE_WUE_energy_water_complete_BOM_AI_expansion_hardware_and_site_economics
 
+  - id: dc_ucbl_insa_ccdd_lyontech_la_doua_academic_data_center_boundary
+    name: UCBL and INSA Lyon CCDD LyonTech-La Doua academic data-center boundary
+    record_granularity: one_current_facility_group_with_one_main_and_four_support_or_technical_OSM_geometries_project_phase_HPC_migration_and_public_university_financial_scope
+    operator_boundary:
+      project_owner: Universite_Claude_Bernard_Lyon_1_UCBL
+      joint_project_carriers: [Universite_Claude_Bernard_Lyon_1, INSA_Lyon]
+      operating_service: Centre_inter_etablissement_pour_les_services_reseaux_CISR
+      raw_OSM_operator_label: Universite_Claude_Bernard_Lyon_1
+      boundary: >-
+        UCBL is the project owner, UCBL and INSA Lyon carry the joint project,
+        and CISR operates the service. The reviewed sources do not allocate legal
+        land, building, plant, IT-equipment and customer-asset title between them.
+    geography: [Villeurbanne, Auvergne_Rhone_Alpes, France]
+    lifecycle_as_of_2026_07_19: current_physical_facility_with_2025_2026_migration_window_and_complete_production_acceptance_undisclosed
+    reproducible_registry:
+      facility_registry: life/imports/global_data_centers_20260717/ucbl_ccdd_data_center_hpc_registry.jsonl
+      facility_summary: life/imports/global_data_centers_20260717/ucbl_ccdd_data_center_hpc_summary.json
+      registry_builder: scripts/build_ucbl_ccdd_data_center_hpc_registry.py
+    OSM_building_group:
+      operator_tagged_geometries: 5
+      current_facility_groups: 1
+      main_geometry:
+        OSM_ref: osm_way_1342103499
+        footprint_area_m2: 561.998
+        building_levels_tag: 3
+      support_or_technical_geometries:
+        - {OSM_ref: osm_way_1288320747, footprint_area_m2: 71.312, exact_role: unverified}
+        - {OSM_ref: osm_way_1342103498, footprint_area_m2: 70.016, exact_role: unverified}
+        - {OSM_ref: osm_way_1342103500, footprint_area_m2: 80.318, exact_role: unverified}
+        - {OSM_ref: osm_way_1342103501, footprint_area_m2: 79.309, exact_role: unverified}
+      total_OSM_footprint_area_m2: 862.953
+      boundary: >-
+        The five adjacent ways have the same CCDD name and form one facility
+        group, not five data centers. OSM footprint and level tags are mapping
+        evidence rather than provider-certified floor area or capacity.
+    project_scale:
+      official_gross_floor_area_m2: 3280
+      press_kit_storey_wording: one_upper_storey_with_ground_and_roof_technical_or_office_spaces
+      phase_one_racks: 150
+      ultimate_racks: 300
+      project_configuration: two_150_rack_tranches
+      phase_one_project_cost_EUR_million: 11.1
+      boundary: >-
+        EUR11.1 million is the first-phase project cost, not annual capex,
+        revenue or valuation. The 150- and 300-rack values are phase and ultimate
+        design envelopes, not current installed, accepted, occupied or utilized
+        racks. The 3,280-square-metre floor-area disclosure and 862.953-square-metre
+        OSM footprint sum use different denominators. The press-kit storey wording
+        is not reconciled to the OSM three-level tag.
+    lifecycle_evidence:
+      April_2023_press_kit_planned_exploitation: summer_2024
+      2023_annual_report_planned_production: October_2024
+      November_2024_strategy_planned_delivery: early_2025
+      current_P2CHPD_page_migration_window: 2025_and_2026
+      complete_current_commissioning_acceptance_migration_rack_fill_and_live_load: undisclosed
+      boundary: >-
+        The changing planned dates are retained rather than converted into a
+        current completed-operation claim. The current P2CHPD page establishes a
+        2025-2026 migration window, but not completion or full production acceptance.
+    power_network_and_resilience:
+      published_design:
+        - redundant_electrical_feed_architecture
+        - dual_high_voltage_adduction
+        - dual_telecommunications_network_adduction
+        - central_and_remote_supervision
+      current_grid_or_IT_MW: undisclosed
+      undisclosed:
+        - grid_service_voltage_and_contract_capacity
+        - substations_transformers_switchgear_busbars_and_PDUs
+        - UPS_battery_counts_ratings_topology_runtime_OEMs_and_loading
+        - generator_counts_ratings_OEMs_fuel_runtime_and_acceptance_tests
+        - operating_energized_available_allocated_occupied_peak_actual_and_billed_IT_load
+      excluded_third_party_claim:
+        value_MW: 5
+        reason: no_reviewed_official_source_supported_the_denominator_or_current_state
+      boundary: >-
+        Redundant and dual-feed design language does not establish an operating
+        MW value. The excluded directory claim is not used as project capacity.
+    cooling_energy_and_environment:
+      design:
+        - optimized_high_temperature_chilled_water
+        - adiabatic_chiller_free_cooling
+        - hot_and_cold_aisle_airflow_containment
+        - variable_flow_control
+        - secondary_loop_heat_recovery_offered_to_internal_or_nearby_buildings
+      published_water_regime_C: [17, 22]
+      legacy_dispersed_baseline: {PUE: 2.15, annual_electricity_GWh: 12.6, GHG_tCO2e: 1056}
+      CCDD_project_target: {PUE: 1.30, annual_electricity_GWh: 7.6, GHG_tCO2e: 638}
+      planned_saving: {annual_electricity_GWh: 5.0, GHG_tCO2e: 418, GHG_percent: 40}
+      current_measured_CCDD_PUE_WUE_energy_water_emissions_heat_reuse_and_renewable_matching: undisclosed
+      complete_chiller_pump_heat_exchanger_CRAH_CRAC_CDU_dry_cooler_and_water_BOM: undisclosed
+      boundary: >-
+        PUE 1.30, 7.6GWh and 638tCO2e are targets against a prior dispersed
+        estate, not current metered CCDD results. Planned savings are never
+        substituted for actual consumption.
+    HPC_and_accelerators:
+      P2CHPD_role: UCBL_hosted_academic_HPC_centre_attached_to_CCDD
+      current_page_migration_window: resources_to_be_migrated_in_2025_and_2026
+      historical_manual_snapshot:
+        document_version: '2021-02-10'
+        last_updated: '2021-05-18'
+        GPU_partition_servers: 8
+        GPU_model_or_label_families_listed: [A100, C6000_unresolved_label, RTX3090]
+        separate_legacy_parallel_GPU_models: [K20m, K80]
+        network_examples: [10GbE, InfiniBand_FDR]
+      current_exact_physical_GPU_or_accelerator_count_at_CCDD: undisclosed
+      current_model_count_owner_rack_site_delivery_acceptance_fabric_power_utilization_cost_and_remaining_life: undisclosed
+      boundary: >-
+        The dated manual proves a historical P2CHPD snapshot, not current 2026
+        inventory. It gives eight GPU-partition servers but no accelerator-unit
+        count, and it does not prove that every listed model or label has migrated
+        to or is operating in CCDD.
+    security_and_certification:
+      planned_or_in_progress_in_2024: [ISO_27001, HDS_health_data_hosting, DGRI_labelling, ZRR_restricted_zone]
+      current_achieved_certificate_identifiers_scope_and_expiry: not_established_in_reviewed_sources
+      boundary: Design_intent_and_in_progress_processes_are_not_recorded_as_achieved_certification
+    ownership_and_financial_boundary:
+      financial_profile_ref: company_universite_claude_bernard_lyon_1
+      direct_public_equity_security: unavailable
+      FY2023_public_university:
+        budget_execution_EUR: more_than_500_million
+        accounting_result_EUR_million: -0.3
+        self_financing_capacity_EUR_million: 16.7
+        own_source_resources_EUR_million_more_than: 102
+        investment_expenditure_EUR_million: 47
+      current_2025_budget_EUR_million_more_than: 420
+      commercial_revenue_operating_profit_EBIT_EBITDA_and_net_income: not_comparable_or_not_reported_in_reviewed_public_university_sources
+      CCDD_revenue_cost_energy_cost_cash_flow_capex_chargeback_customer_concentration_ROIC_and_social_return: undisclosed
+      boundary: >-
+        Public-university budget execution, accounting result and self-financing
+        capacity are not commercial-company revenue, operating profit or EBITDA,
+        and none is allocated to CCDD.
+    outlook:
+      institutional_target: converge_100_percent_of_UCBL_digital_infrastructure_into_CCDD
+      positive_signals: [current_physical_facility_and_active_migration_window, 150_rack_first_phase_and_300_rack_ultimate_design, dual_power_and_network_adduction, target_PUE_1_30_and_5GWh_saving, academic_HPC_and_health_data_demand]
+      risk_signals: [completion_and_current_rack_fill_undisclosed, current_IT_MW_and_complete_BOM_undisclosed, current_GPU_count_and_migration_state_undisclosed, target_metrics_not_current_measurement, current_certification_achievement_not_established, public_budget_dependency, no_direct_equity_security, CCDD_segment_economics_undisclosed]
+      analytical_view: >-
+        CCDD is a real public academic consolidation and efficiency project, not
+        an investable data-center company. It is demand evidence for HPC,
+        electrical resilience and cooling suppliers, but investment read-through
+        requires awarded contracts and current installed-load disclosure.
+    sources:
+      - {title: CCDD enters construction, publisher: Universite_Claude_Bernard_Lyon_1, date: '2023-04', url: "https://www.univ-lyon1.fr/actualites/le-centre-de-calcul-et-de-donnees-lyonytech-la-doua-ccdd-entre-dans-sa-phase-de-construction"}
+      - {title: CCDD press kit, publisher: Universite_Claude_Bernard_Lyon_1, date: '2023-04', url: "https://www.univ-lyon1.fr/medias/fichier/dp-data-center-lyontech-la-doua-avril2023_1682587936670-pdf?ID_FICHE=105213&INLINE=FALSE"}
+      - {title: UCBL 2035 sustainability strategy, publisher: Universite_Claude_Bernard_Lyon_1, date: '2024-11', url: "https://icap-formations.univ-lyon1.fr/pluginfile.php/18697/mod_resource/content/1/SD%20DDRSE%20UCBL%202035%20-%20Former%2C%20innover%20et%20transformer%20pour%20un%20avenir%20durable%20_%2011%202024%20%281%29.pdf"}
+      - {title: P2CHPD current home and CCDD migration statement, publisher: Universite_Claude_Bernard_Lyon_1, accessed: '2026-07-19', url: "https://p2chpd.univ-lyon1.fr/"}
+      - {title: P2CHPD dated computing-resource manual, publisher: Universite_Claude_Bernard_Lyon_1, version: '2021-02-10', url: "https://p2chpd.univ-lyon1.fr/manual"}
+      - {title: Current CISR organisation page, publisher: Universite_Claude_Bernard_Lyon_1, modified: '2026-04-02', url: "https://www.univ-lyon1.fr/universite/organisation/centre-inter-etablissement-pour-les-services-reseaux-cisr"}
+      - {title: UCBL 2023 annual report, publisher: Universite_Claude_Bernard_Lyon_1, published: '2024-12-20', url: "https://www.univ-lyon1.fr/medias/fichier/2023-rapportactivite-web_1734690509480-pdf"}
+      - {title: UCBL 2025 scale presentation, publisher: Universite_Claude_Bernard_Lyon_1, date: '2025-09-01', url: "https://master-info.univ-lyon1.fr/SRS/documents/2025_08_29_presentationSRS-rentree.key.pdf"}
+    confidence: high_for_one_facility_group_five_OSM_geometry_grouping_project_cost_floor_area_phase_and_ultimate_racks_design_architecture_target_efficiency_public_university_financial_boundary_and_migration_window_medium_for_current_physical_operation_low_for_complete_acceptance_current_rack_fill_IT_MW_complete_BOM_current_GPU_inventory_achieved_certifications_and_CCDD_economics
+
 disclosure_gap_register:
+  - UCBL_INSA_CCDD_exact_land_building_room_plant_IT_equipment_and_customer_asset_title_lease_custody_and_operating_rights_between_UCBL_INSA_CISR_and_funders
+  - UCBL_INSA_CCDD_five_OSM_geometries_exact_main_support_or_technical_structure_roles_and_3280_square_metre_floor_area_to_862_953_square_metre_footprint_and_three_level_tag_reconciliation
+  - UCBL_INSA_CCDD_phase_one_complete_commissioning_acceptance_production_operation_migration_completion_and_current_installed_occupied_available_and_utilized_rack_count
+  - UCBL_INSA_CCDD_grid_service_voltage_contract_capacity_substation_transformer_switchgear_busbar_PDU_UPS_battery_generator_fuel_OEM_count_rating_topology_loading_test_acceptance_age_and_remaining_life
+  - UCBL_INSA_CCDD_operating_energized_available_allocated_occupied_peak_actual_and_billed_IT_MW_and_reconciliation_to_excluded_third_party_5MW_claim
+  - UCBL_INSA_CCDD_current_measured_PUE_WUE_energy_water_emissions_renewable_matching_heat_reuse_and_target_to_actual_bridge
+  - UCBL_INSA_CCDD_chiller_pump_heat_exchanger_CRAH_CRAC_CDU_dry_cooler_water_loop_OEM_count_rating_redundancy_loading_and_live_liquid_cooled_MW
+  - UCBL_INSA_P2CHPD_current_GPU_accelerator_model_count_owner_host_site_migration_delivery_acceptance_rack_fabric_power_utilization_cost_revenue_and_remaining_life
+  - UCBL_INSA_CCDD_current_ISO27001_HDS_DGRI_ZRR_certificate_or_label_identifiers_scope_award_date_expiry_and_audit_state
+  - UCBL_INSA_CCDD_revenue_operating_cost_energy_cost_cash_flow_capex_internal_chargeback_customer_concentration_ROIC_social_return_and_supplier_award_values
   - SRCE_complete_site_land_building_room_and_equipment_title_lease_custody_operator_and_lifecycle_by_asset
   - SRCE_six_sites_operating_energized_available_allocated_hosted_utilized_peak_and_actual_IT_load
   - SRCE_per_site_current_measured_PUE_WUE_energy_water_emissions_renewable_supply_and_live_liquid_cooled_load

@@ -20003,8 +20003,139 @@ financial_profiles:
       - dc_srce_hr_zoo_croatia_academic_data_center_and_hpc_portfolio
     confidence: high_for_public_budget_results_institutional_role_HR_ZOO_funding_six_site_scale_and_current_A100_floor_medium_for_supplier_demand_read_through_low_for_data_center_economics_2027_AI_hardware_funding_delivery_and_any_equity_valuation
 
+  - id: company_universite_claude_bernard_lyon_1
+    company: Universite Claude Bernard Lyon 1
+    ticker: none_public_university
+    legal_entity_boundary: French_public_university_budget_and_accounting_scope_with_CCDD_and_HPC_results_not_separately_reported
+    status: unlisted_public_academic_and_research_institution_and_joint_data_center_project_carrier
+    reporting_snapshot: '2026-07-19'
+    ownership_and_institutional_role:
+      legal_form: French_public_university
+      direct_public_equity_security: unavailable
+      listed_parent: none
+      CCDD_roles:
+        UCBL: project_owner_maitre_d_ouvrage_and_joint_project_carrier
+        INSA_Lyon: joint_project_carrier
+        CISR: operating_service
+      boundary: >-
+        UCBL is an academic institution rather than a commercial data-center
+        company. Its public budget and accounting results are not comparable to
+        listed operator revenue, EBITDA, EBIT or shareholder return.
+    FY2023_public_university_EUR:
+      total_budget_execution: more_than_500_million
+      accounting_result_million: -0.3
+      self_financing_capacity_million: 16.7
+      working_capital_fund_million: 80.4
+      own_source_resources_million_more_than: 102
+      own_source_resources_share_of_budgetary_receipts_percent: 25
+      investment_expenditure_million: 47
+      multi_year_operations_count_more_than: 1800
+      multi_year_operations_value_million_approximate: 480
+      research_contracts_within_multi_year_operations_million: 267
+      other_multi_year_programmes_million: 162
+      commercial_revenue_operating_profit_EBIT_EBITDA_and_net_income: not_comparable_or_not_reported_in_reviewed_public_university_sources
+      boundary: >-
+        Budget execution, accounting result, self-financing capacity and working
+        capital are public-university measures. They are retained in their native
+        accounting scope and are not relabelled as company revenue, EBIT, EBITDA
+        or free cash flow.
+    current_2025_scale:
+      university_budget_EUR_million_more_than: 420
+      students_approximate: 42000
+      staff_context: more_than_2600_teaching_and_research_plus_more_than_2000_BIATSS
+      sites: 14
+      boundary: Current scale comes from an official 2025 academic presentation, not a full audited annual financial statement.
+    CCDD_project_funding_and_design:
+      phase_one_project_cost_EUR_million: 11.1
+      official_floor_area_m2: 3280
+      phase_one_racks: 150
+      ultimate_racks: 300
+      project_configuration: two_150_rack_tranches
+      boundary: >-
+        Project cost is not annual university capex, CCDD revenue, enterprise
+        value or a supplier award. Rack counts are design envelopes, not current
+        accepted or utilized inventory.
+    data_center_and_AI_read_through:
+      current_facility_groups: 1
+      OSM_geometries_grouped_into_facility: 5
+      lifecycle: physical_facility_with_2025_2026_migration_window_and_completion_undisclosed
+      target_PUE: 1.30
+      planned_annual_energy_saving_GWh: 5
+      historical_P2CHPD_GPU_partition_servers: 8
+      historical_model_or_label_families: [A100, C6000_unresolved_label, RTX3090]
+      current_exact_physical_GPU_count_at_CCDD: undisclosed
+      current_IT_MW_complete_power_cooling_BOM_and_certification_state: undisclosed
+      portfolio_ref: dc_ucbl_insa_ccdd_lyontech_la_doua_academic_data_center_boundary
+      boundary: >-
+        The P2CHPD manual is a 2021 snapshot and gives server rather than GPU-unit
+        count. It does not prove current CCDD placement or migration completion.
+        Project targets are not current operating measurements.
+    data_center_economics_boundary:
+      CCDD_or_HPC_service_revenue: undisclosed
+      operating_cost_energy_cost_and_internal_chargeback: undisclosed
+      site_cash_flow_capex_and_ROIC: undisclosed
+      supplier_awards_and_customer_concentration: undisclosed
+      social_and_research_return: undisclosed
+      boundary: >-
+        University-wide public financial measures cannot be allocated to CCDD,
+        P2CHPD, individual racks or hosted institutions without an activity,
+        contract and cost bridge.
+    investability_and_supply_chain_view:
+      direct_equity_investability: unavailable
+      direct_data_center_pure_play_score: none
+      useful_read_through:
+        - public_academic_data_center_consolidation
+        - HPC_and_health_data_hosting_demand
+        - redundant_power_and_network_infrastructure
+        - high_temperature_chilled_water_and_adiabatic_free_cooling
+        - migration_and_compute_refresh_demand
+      analytical_view: >-
+        UCBL cannot be purchased as an equity security. CCDD is useful as demand
+        evidence for public academic compute, resilient electrical systems and
+        efficient cooling, but a vendor or investment thesis requires awarded
+        contracts, current installed load and current accelerator inventory.
+    outlook:
+      positives:
+        - current_physical_CCDD_facility_and_active_migration_window
+        - 150_rack_first_phase_and_300_rack_ultimate_design
+        - dual_high_voltage_and_network_adduction
+        - target_PUE_1_30_and_5GWh_annual_saving
+        - plan_to_converge_100_percent_of_UCBL_digital_infrastructure_into_CCDD
+        - academic_HPC_and_health_data_demand
+      risks:
+        - complete_commissioning_acceptance_and_current_rack_fill_undisclosed
+        - current_IT_MW_and_complete_power_cooling_BOM_undisclosed
+        - current_GPU_count_and_migration_state_undisclosed
+        - current_measured_PUE_WUE_energy_water_and_emissions_undisclosed
+        - achieved_ISO27001_HDS_DGRI_and_ZRR_status_not_established
+        - public_budget_and_policy_dependency
+        - no_data_center_segment_economics
+        - no_direct_public_equity_security
+    sources:
+      - {title: UCBL 2023 annual report, publisher: Universite_Claude_Bernard_Lyon_1, published: '2024-12-20', url: "https://www.univ-lyon1.fr/medias/fichier/2023-rapportactivite-web_1734690509480-pdf"}
+      - {title: UCBL 2025 scale presentation, publisher: Universite_Claude_Bernard_Lyon_1, date: '2025-09-01', url: "https://master-info.univ-lyon1.fr/SRS/documents/2025_08_29_presentationSRS-rentree.key.pdf"}
+      - {title: CCDD enters construction, publisher: Universite_Claude_Bernard_Lyon_1, date: '2023-04', url: "https://www.univ-lyon1.fr/actualites/le-centre-de-calcul-et-de-donnees-lyonytech-la-doua-ccdd-entre-dans-sa-phase-de-construction"}
+      - {title: CCDD press kit, publisher: Universite_Claude_Bernard_Lyon_1, date: '2023-04', url: "https://www.univ-lyon1.fr/medias/fichier/dp-data-center-lyontech-la-doua-avril2023_1682587936670-pdf?ID_FICHE=105213&INLINE=FALSE"}
+      - {title: UCBL 2035 sustainability strategy, publisher: Universite_Claude_Bernard_Lyon_1, date: '2024-11', url: "https://icap-formations.univ-lyon1.fr/pluginfile.php/18697/mod_resource/content/1/SD%20DDRSE%20UCBL%202035%20-%20Former%2C%20innover%20et%20transformer%20pour%20un%20avenir%20durable%20_%2011%202024%20%281%29.pdf"}
+      - {title: P2CHPD current migration statement, publisher: Universite_Claude_Bernard_Lyon_1, accessed: '2026-07-19', url: "https://p2chpd.univ-lyon1.fr/"}
+      - {title: P2CHPD dated resource manual, publisher: Universite_Claude_Bernard_Lyon_1, version: '2021-02-10', url: "https://p2chpd.univ-lyon1.fr/manual"}
+    related_profiles:
+      - dc_ucbl_insa_ccdd_lyontech_la_doua_academic_data_center_boundary
+    confidence: high_for_public_university_status_FY2023_public_financial_metrics_current_2025_scale_CCDD_project_cost_phase_racks_design_and_migration_window_medium_for_current_physical_operation_low_for_current_acceptance_IT_MW_GPU_inventory_complete_BOM_certifications_CCDD_economics_and_any_equity_valuation
+
 cross_company_read_through:
   current_signals:
+    - UCBL and INSA Lyon's CCDD maps as five adjacent identically named OSM ways, but they form one facility group: one 561.998-square-metre main geometry and four small support or technical structures whose exact roles are unverified. The 862.953-square-metre footprint sum is not five data centers.
+    - Official project disclosure gives 3,280 square metres, 150 racks in the first tranche and 300 ultimate racks across two tranches. These are floor-area and design envelopes, not current accepted, occupied or utilized capacity, and they are not reconciled to the OSM footprint or three-level tag.
+    - Planned production dates moved from summer or October 2024 to early 2025, while the current P2CHPD page says resources migrate in 2025 and 2026. The facility is therefore recorded as physical and in a migration window, without claiming completed acceptance or full rack fill.
+    - CCDD publishes redundant electrical architecture, dual high-voltage and telecommunications adduction and central or remote supervision, but no current grid capacity, IT MW, UPS, battery, generator, transformer, switchgear or PDU bill of materials. An unsupported third-party 5MW directory claim is excluded.
+    - The design targets PUE 1.30 and 7.6GWh per year versus a 2.15 PUE and 12.6GWh dispersed-estate baseline, implying planned savings of 5GWh and 418tCO2e. These are project targets, not current measured CCDD performance.
+    - Cooling design uses high-temperature chilled water, adiabatic free cooling, airflow containment, variable flow and possible secondary-loop heat recovery. Current PUE, WUE, energy, water, heat reuse, live liquid-cooled MW and equipment counts remain undisclosed.
+    - A dated 2021 P2CHPD manual lists eight GPU-partition servers and A100, unresolved C6000 and RTX3090 labels, plus legacy K20m and K80 models in another partition. It gives no GPU-unit count and does not establish current CCDD placement after migration.
+    - ISO27001, HDS, DGRI labelling and ZRR appeared as planned or in-progress states in 2024. No current certificate identifier, scope, award date or expiry was established, so the project is not marked certified.
+    - The first-phase project cost is EUR11.1 million. It is not annual university capex, vendor revenue, enterprise value or current facility valuation.
+    - UCBL's FY2023 public-university budget execution exceeded EUR500 million, with a EUR0.3 million accounting deficit, EUR16.7 million self-financing capacity, more than EUR102 million of own-source resources and EUR47 million of investment expenditure. These public-accounting measures are not commercial revenue, EBIT or EBITDA and are not allocated to CCDD.
+    - An official 2025 presentation places UCBL's current budget above EUR420 million. UCBL is not directly investable; CCDD provides supplier-demand evidence rather than data-center pure-play earnings.
     - SRCE reported six current data centers at FY2025 year-end; all five HR-ZOO sites exactly match OSM, while the sixth, Srce ZG3, is absent from the reviewed operator sample.
     - The six-site engineering ledger sums to 1.875MW of designed DC power, 2,768.56 square metres gross, 688.73 square metres of computer halls and 135 ICT racks. These are design and physical measures, not live utilized IT load.
     - Installed nameplates sum to 2.312MW of diesel generation, 2.020MW of UPS and 1.592MW of general cooling, with a separately reported 334kW ZG2 DLC system. Different redundancy and engineering denominators are not added into capacity.
