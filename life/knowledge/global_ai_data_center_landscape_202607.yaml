@@ -35901,7 +35901,147 @@ campus_profiles:
       - {title: Class B legal-custodian transfer, publisher: DPL_News, date: '2025-12-30', url: "https://dplnews.com/venezuela-aprueban-traspaso-de-acciones-clase-b-de-cantv-al-ministerio-para-ciencia-y-tecnologia/"}
     confidence: high_for_El_Hatillo_current_service_evidence_2022_ownership_and_2023_audited_copy_medium_for_H1_2024_copy_listing_and_2025_custodian_change_low_for_complete_current_facility_roster_OSM_building_roles_site_MW_equipment_GPU_inventory_latest_results_site_economics_and_valuation
 
+  - id: dc_refsatel_formosa_parque_industrial_data_center_and_fiber_node_boundary
+    operator: REFSA Telecomunicaciones
+    geography: [Formosa_Province_Argentina]
+    status: provincial_state_created_fiber_operator_with_one_verified_data_center_shelter_and_nine_OSM_fiber_nodes
+    as_of: '2026-07-19'
+    reproducible_registry:
+      facility_registry: life/imports/global_data_centers_20260717/refsatel_data_center_and_fiber_node_registry.jsonl
+      facility_summary: life/imports/global_data_centers_20260717/refsatel_data_center_and_fiber_node_summary.json
+      related_OSM_rows: 10
+      current_verified_data_center_candidates: 1
+      fiber_network_nodes_excluded_from_data_center_count: 9
+      OSM_operator_tagged_rows: 8
+      OSM_name_only_rows: 2
+      maximum_OSM_to_official_map_distance_m: 87.2
+      boundary: >-
+        The OSM modular-center point is 16.5 metres from the official Parque
+        Industrial node, and provincial reports identify a REFSA Telecomunicaciones
+        data-center shelter at that location. The other nine OSM rows align within
+        3.8 to 87.2 metres of official map network nodes and add no data-center count.
+    current_verified_facility:
+      label: REFSA_Telecomunicaciones_Parque_Industrial_data_center_shelter
+      location: Parque_Industrial_Formosa_Argentina
+      lifecycle: current_provider_marketed_service_and_2023_government_operating_evidence
+      roles: [data_center_shelter, fiber_network_node, housing, hosting]
+      map_boundary: >-
+        Formosa Digital classifies the map point as a node. Data-center status comes
+        from the provider's marketed service and government operating reports, not
+        from the map category alone.
+    official_fiber_node_crosswalk:
+      excluded_from_current_data_center_count: 9
+      labels:
+        - Tatane
+        - El_Colorado
+        - General_Lucio_Victorio_Mansilla
+        - Villa_Dos_Trece
+        - Villa_Escolar
+        - Colonia_Mayor_Villafane
+        - Herradura
+        - Presidente_Irigoyen
+        - Mision_San_Francisco_de_Laishi
+      boundary: Official_map_network_nodes_not_verified_data_centers_racks_or_compute_sites
+    current_business_scale:
+      homepage_fiber_route_km_more_than: 2000
+      connected_points: 1729
+      connected_education_centers: 725
+      connected_government_organizations_and_services: 731
+      data_center_services: [housing, hosting]
+      network_context: Red_Capricornio_more_than_15000_km_public_private_fiber_initiative
+      freshness_boundary: >-
+        These are current homepage claims on a site whose visible news feed and
+        copyright date remain 2022. They are network and customer-point measures,
+        not current physical data-center capacity.
+    electrical_and_backup_power:
+      2020_evidence:
+        UPS_and_cooling_system_monitoring: PLC_devices_for_Parque_Industrial_and_UPSTI
+        generator: maintenance_for_both_centers_without_site_unit_allocation_or_rating
+        Parque_Industrial_air_conditioning: maintenance_reported
+      2022_evidence:
+        generator: maintenance_for_both_UPSTI_and_REFSA_Parque_Industrial_centers
+        Parque_Industrial_air_conditioning: maintenance_reported
+      complete_site_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_OEM_model_count_rating_redundancy_loading_acceptance_age_and_remaining_life: undisclosed
+      boundary: >-
+        The reports establish equipment classes and maintenance activity but do not
+        consistently allocate shared provincial, UPSTI, REFSA or customer ownership.
+    IT_network_and_cooling:
+      2020_network_context: {edge_Gbps: 10, service_trunk_Gbps: 20}
+      2020_CDN_service_context: [Google_GGC, Facebook_FBN_implementation_started]
+      2023_Parque_Industrial_evidence:
+        - shelter_connectivity_work
+        - FreeNAS_06_server_racked_and_placed_in_production
+        - two_IBM_servers_installed
+        - Huawei_S6730_switch_installed
+      cooling_topology_chiller_CRAH_CRAC_CDU_OEM_model_count_rating_redundancy_and_live_liquid_cooled_MW: undisclosed
+      measured_site_PUE_WUE_energy_water_emissions_and_renewable_electricity: undisclosed
+      equipment_ownership_boundary: government_reports_do_not_consistently_separate_REFSA_UPSTI_hosted_customer_and_shared_provincial_equipment
+    operating_capacity:
+      operating_energized_available_contracted_customer_accepted_leased_utilized_billed_peak_and_actual_IT_MW: undisclosed
+      gross_or_IT_area_racks_and_building_or_module_count: undisclosed
+      exact_current_customer_and_workload_roster: undisclosed
+    CDTREFSA_2022:
+      announcement_state: planned_or_launch_language_not_proven_as_separate_current_physical_facility
+      described_resources: [cutting_edge_servers, IT_infrastructure, hosting, storage, data_transmission]
+      planned_cloud_services: [PaaS, IaaS, SaaS, Apps]
+      physical_identity_to_Parque_Industrial_or_another_site: undisclosed
+      boundary: The_announcement_adds_no_facility_building_MW_rack_GPU_or_revenue_count
+    AI_and_accelerators:
+      REFSA_or_customer_GPU_model_count_owner_site_delivery_acceptance_rack_fabric_power_utilization_revenue_and_margin: not_disclosed_or_established
+      boundary: High_density_servers_IBM_servers_virtual_machines_cloud_plans_and_CDN_services_do_not_prove_accelerators
+    ownership_and_financial_boundary:
+      financial_profile_ref: company_refsa_telecomunicaciones
+      ownership: created_by_Government_of_Formosa_according_to_provider_homepage
+      public_listing: none_established
+      exact_legal_entity_parent_subsidiary_division_share_capital_and_consolidation_perimeter: undisclosed
+      latest_revenue_operating_profit_cash_flow_capex_debt_and_balance_sheet: not_found_in_reviewed_public_sources
+      data_center_segment_and_site_economics: undisclosed
+      REFSA_Energia_boundary: >-
+        The electricity distributor and REFSA Telecomunicaciones brand share REFSA
+        identity, but no reviewed financial consolidation or operating-segment bridge
+        supports allocating energy-company economics to the telecom data center.
+    outlook:
+      positive_signals:
+        - provincial_state_mandate
+        - more_than_2000_km_fiber_network
+        - one_Parque_Industrial_housing_and_hosting_site
+        - public_and_private_customer_connectivity
+        - Red_Capricornio_regional_reach
+      risk_signals:
+        - single_verified_data_center
+        - homepage_metrics_visibly_stale
+        - no_current_MW_area_racks_utilization_or_site_economics
+        - legal_and_financial_perimeter_undisclosed
+        - no_GPU_inventory
+        - public_sector_customer_and_governance_concentration
+        - Argentina_inflation_and_currency_risk
+      analytical_view: >-
+        REFSA Telecomunicaciones is evidence of provincial edge and sovereign-service
+        demand, not an investable data-center pure play. Its one verified shelter and
+        broad fiber network may support regional services, but current capacity,
+        utilization, equipment ownership, financial results and returns are unavailable.
+    sources:
+      - {title: REFSA Telecomunicaciones homepage and services, publisher: REFSA_Telecomunicaciones, accessed: '2026-07-19', url: "https://www.refsatel.com.ar/"}
+      - {title: REFSA Technology Development Center announcement, publisher: REFSA_Telecomunicaciones, date: '2022-11-08', url: "https://www.refsatel.com.ar/?access=noticia&id=7"}
+      - {title: Formosa Digital official map, publisher: Government_of_Formosa, accessed: '2026-07-19', url: "https://fd.formosa.gob.ar/mapa"}
+      - {title: Government works and actions report, publisher: Government_of_Formosa, period: '2023', url: "https://archivos.formosa.gob.ar/media/uploads/obras_acciones/pdf_1709291983.pdf"}
+      - {title: Government works and actions report, publisher: Government_of_Formosa, period: '2022', url: "https://archivos.formosa.gob.ar/media/uploads/obras_acciones/pdf_1677679927.pdf"}
+      - {title: Government works and actions report, publisher: Government_of_Formosa, period: '2020', url: "https://archivos.formosa.gob.ar/media/uploads/obras_acciones/pdf_1614568663.pdf"}
+      - {title: REFSA Energia official website, publisher: Recursos_y_Energia_Formosa, accessed: '2026-07-19', url: "https://www.recursosyenergia.com.ar/"}
+      - {title: REFSA electricity distributor authorization, publisher: Argentine_Official_Gazette, date: '2012-07-02', url: "https://www.boletinoficial.gob.ar/detalleAviso/primera/71799/20120702"}
+    confidence: high_for_one_Parque_Industrial_shelter_official_map_node_crosswalk_provider_services_and_2020_2022_2023_government_equipment_classes_medium_for_current_homepage_network_metrics_and_legal_brand_identity_low_for_current_MW_area_racks_utilization_complete_BOM_equipment_ownership_GPU_inventory_financials_site_economics_and_valuation
+
 disclosure_gap_register:
+  - REFSA_Telecomunicaciones_exact_current_legal_entity_parent_subsidiary_division_share_capital_ownership_and_consolidation_perimeter
+  - REFSA_Telecomunicaciones_complete_current_facility_building_module_address_title_lease_operator_lifecycle_and_customer_roster_beyond_Parque_Industrial
+  - REFSA_Telecomunicaciones_nine_OSM_and_official_map_fiber_nodes_confirmation_as_non_compute_network_nodes_and_any_hosted_IT_equipment
+  - REFSA_Telecomunicaciones_Parque_Industrial_operating_energized_available_contracted_customer_accepted_leased_utilized_billed_peak_and_actual_IT_load_area_racks_and_building_or_module_count
+  - REFSA_Telecomunicaciones_Parque_Industrial_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_OEM_model_count_rating_redundancy_loading_test_acceptance_age_and_remaining_life
+  - REFSA_Telecomunicaciones_Parque_Industrial_current_measured_PUE_WUE_energy_water_emissions_renewable_electricity_and_live_liquid_cooled_MW
+  - REFSA_Telecomunicaciones_Parque_Industrial_equipment_ownership_between_REFSA_UPSTI_provincial_government_and_hosted_customers
+  - REFSA_Telecomunicaciones_or_customer_GPU_model_count_owner_site_delivery_acceptance_rack_fabric_power_utilization_revenue_and_margin
+  - REFSA_Telecomunicaciones_CDTREFSA_physical_identity_current_lifecycle_server_inventory_cloud_service_delivery_and_relationship_to_Parque_Industrial
+  - REFSA_Telecomunicaciones_latest_audited_revenue_operating_profit_cash_flow_capex_debt_balance_sheet_data_center_segment_and_site_economics
   - CANTV_complete_current_provider_facility_building_address_title_lease_operator_lifecycle_and_service_roster_beyond_El_Hatillo
   - CANTV_seven_OSM_central_office_objects_provider_permit_or_audited_asset_confirmation_and_El_Hatillo_geospatial_bridge
   - CANTV_El_Hatillo_operating_energized_available_contracted_customer_accepted_leased_utilized_billed_peak_and_actual_IT_load_area_racks_and_building_count
