@@ -35774,7 +35774,143 @@ campus_profiles:
       - {title: TelemaxX financial filings extract, publisher: Handelsregister_ai, period: '2024-2025', url: "https://handelsregister.ai/de/organizations/karlsruhe/bau-von-versorgungseinrichtungen-fuer-elektrizitaet-und-telekommunikation/telemaxx-telekommunikation-gmbh-2ee96e3e04be3411618451185817e3ef"}
     confidence: high_for_current_four_data_center_scope_former_IPC2_POP_facility_page_areas_factsheet_topologies_EMAS_energy_and_FY2024_financials_medium_for_OSM_address_crosswalk_and_FY2025_extracted_summary_low_for_current_site_MW_occupancy_complete_BOM_GPU_inventory_live_liquid_cooling_site_economics_and_valuation
 
+  - id: dc_cantv_venezuela_data_center_and_telecommunications_central_office_boundary
+    operator: Compañía Anónima Nacional Teléfonos de Venezuela (CANTV)
+    geography: [Venezuela]
+    status: state_controlled_integrated_telecom_with_one_current_provider_named_data_center_and_seven_unverified_OSM_central_offices
+    as_of: '2026-07-19'
+    reproducible_registry:
+      facility_registry: life/imports/global_data_centers_20260717/cantv_data_center_and_central_office_registry.jsonl
+      facility_summary: life/imports/global_data_centers_20260717/cantv_data_center_and_central_office_summary.json
+      registry_rows: 8
+      current_provider_named_data_center_records: 1
+      OSM_operator_tagged_central_office_or_exchange_candidates: 7
+      OSM_objects_confirmed_as_current_commercial_data_centers: 0
+      OSM_objects_matching_Data_Center_El_Hatillo: 0
+      boundary: >-
+        Current service evidence names Data Center El Hatillo. Seven separate CANTV
+        OSM objects carry telecom=data_center tags but have central-office or local
+        telecom-building names; they are retained as public-location evidence and
+        excluded from verified data-center counts until provider, permit or audited
+        asset evidence establishes their role.
+    current_provider_named_facility:
+      label: Data_Center_El_Hatillo
+      location: El_Hatillo_Miranda_Venezuela
+      lifecycle: current_commercial_service_evidence_as_of_2026_04
+      services:
+        - data_storage
+        - digital_security
+        - business_continuity
+        - high_speed_connectivity
+        - web_hosting
+        - database_hosting
+        - dedicated_servers
+      network_context: supported_by_CANTV_fiber_network
+      source_boundary: >-
+        The current service evidence is a CANTV announcement reproduced by
+        Venezuelan press. No reviewed current provider facility directory or
+        technical sheet established a complete national roster.
+    OSM_central_office_boundary:
+      related_objects: 7
+      labels:
+        - CANTV_Alta_Vista
+        - CANTV_Caura
+        - CANTV_Chirica
+        - CANTV_La_Sabanita
+        - CANTV_Vista_Hermosa
+        - Central_CANTV_Caracas
+        - Central_CANTV_Barcelona
+      footprint_area_checksum_m2: 10033.201
+      classification: telecommunications_central_office_or_exchange_unverified_as_current_commercial_data_center
+      boundary: >-
+        The footprint checksum is OSM geometry, not data-hall or gross facility
+        area. The raw tag, name and operator establish no racks, MW, equipment,
+        GPU inventory, revenue, operating status or match to El Hatillo.
+    electrical_and_backup_power:
+      H1_2024_company_investment_language:
+        - modernization_of_power_plants
+        - data_center_adaptations
+      El_Hatillo_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_OEM_model_count_rating_loading_redundancy_acceptance_age_and_remaining_life: undisclosed
+      boundary: >-
+        Companywide investment descriptions do not identify an affected site,
+        equipment vendor, model, unit count, rating, delivered configuration or
+        operating state.
+    cooling_and_efficiency:
+      El_Hatillo_cooling_topology_chiller_CRAH_CRAC_CDU_model_count_rating: undisclosed
+      live_liquid_cooled_MW: not_established
+      measured_site_PUE_WUE_energy_water_emissions_and_renewable_electricity: undisclosed
+    operating_capacity:
+      El_Hatillo_gross_or_IT_area_racks_building_count: undisclosed
+      operating_energized_available_contracted_customer_accepted_leased_utilized_billed_peak_and_actual_IT_MW: undisclosed
+      national_portfolio_count: not_established_beyond_one_current_provider_named_facility
+    AI_and_accelerators:
+      CANTV_or_customer_GPU_model_count_owner_site_delivery_acceptance_rack_fabric_power_utilization_revenue_and_margin: not_disclosed_or_established
+      boundary: Hosting_database_and_dedicated_server_services_do_not_prove_an_accelerator_fleet_or_GPU_service
+    ownership_and_listing:
+      public_market: Caracas_Stock_Exchange
+      class_D_ticker: TDV.D
+      2022_prospectus_state_class_B_share_percent: 91.02
+      2022_state_holders: [CORPOSTEL, BANDES]
+      2025_legal_custodian_change: dissolved_CORPOSTEL_Class_B_shares_transferred_to_Ministry_for_Science_and_Technology
+      current_exact_post_transfer_share_class_and_free_float_reconciliation: not_established
+      boundary: >-
+        The 2025 legal-custodian change is not treated as a change in the 91.02
+        percent state ownership percentage without a current cap table.
+    financial_boundary:
+      financial_profile_ref: company_cantv
+      latest_reviewed_audited_period: FY2023
+      FY2023_revenue_VES: 7459399503
+      FY2023_accounting_operating_profit_VES: 105409690
+      FY2023_operating_margin_percent_derived: 1.413
+      FY2023_net_income_VES: 116814687
+      H1_2024_unaudited_accounting_operating_profit_VES: 809404949
+      H1_2024_unaudited_net_loss_VES: 90790473
+      latest_2025_or_2026_results: not_found_in_reviewed_sources
+      data_center_segment_and_site_economics: undisclosed
+      currency_boundary: >-
+        Venezuelan-bolivar figures are not converted to USD. Nominal growth is not
+        real growth, and inflation and exchange-rate regimes prevent safe cross-period
+        or cross-company ranking without a dated translation method.
+    outlook:
+      positive_signals:
+        - current_El_Hatillo_enterprise_hosting_services
+        - national_fiber_and_GPON_modernization
+        - H1_2024_accounting_operating_profit
+        - minority_public_listing
+      risk_signals:
+        - state_control_governance_and_local_market_liquidity
+        - inflation_currency_convertibility_and_translation
+        - FY2023_thin_operating_margin_and_FX_driven_net_result
+        - H1_2024_net_loss
+        - no_current_audited_2024_or_2025_results_reviewed
+        - no_complete_facility_roster_site_MW_equipment_GPU_or_economics
+        - OSM_central_office_false_positive_risk
+      analytical_view: >-
+        CANTV may benefit from sovereign hosting and fiber modernization, but it is
+        a state-controlled diversified telecom rather than a disclosed data-center
+        pure play. The 2023 result was supported by foreign-exchange gains, and a
+        current investment case is constrained by stale audited accounts, nominal
+        currency comparability, incomplete physical disclosure and absent site economics.
+    sources:
+      - {title: CANTV and Cavecom visit Data Center El Hatillo, publisher: Ciudad_CCS, date: '2026-04-24', url: "https://www.ciudadccs.info/publicacion/43407"}
+      - {title: CANTV and Cavecom digital economy announcement, publisher: Estamos_en_Linea, date: '2026-04-25', url: "https://www.estamosenlinea.com.ve/2026/04/25/cantv-y-cavecom-e-articulan-acciones-para-impulsar-la-economia-digital-en-venezuela/"}
+      - {title: FY2023 audited financial-statement copy, publisher: Scribd_user_upload, period: '2023', url: "https://es.scribd.com/document/730255998/INFORMACION-FINANCIERA-DE-LA-EMPRESA-CANTV-AUDITADOS-AL-CIERRE-DICIEMBRE-2023-2022"}
+      - {title: H1 2024 unaudited financial-statement copy, publisher: Scribd_user_upload, period: '2024-H1', url: "https://es.scribd.com/document/756288762/COMPANIA-ANONIMA-NACIONAL-TELEFONOS-DE-VENEZUELA-Cantv-Estados-Financieros-Trimestral-Jun24-vs-Jun23"}
+      - {title: CANTV Class D prospectus, publisher: CANTV_and_placement_agents, period: '2022', url: "https://www.ratiocb.com/wp-content/uploads/2022/09/CANTV-Prospecto.pdf"}
+      - {title: Caracas Stock Exchange market, publisher: Bolsa_de_Valores_de_Caracas, accessed: '2026-07-19', url: "https://market.bolsadecaracas.com/es"}
+      - {title: Class B legal-custodian transfer, publisher: DPL_News, date: '2025-12-30', url: "https://dplnews.com/venezuela-aprueban-traspaso-de-acciones-clase-b-de-cantv-al-ministerio-para-ciencia-y-tecnologia/"}
+    confidence: high_for_El_Hatillo_current_service_evidence_2022_ownership_and_2023_audited_copy_medium_for_H1_2024_copy_listing_and_2025_custodian_change_low_for_complete_current_facility_roster_OSM_building_roles_site_MW_equipment_GPU_inventory_latest_results_site_economics_and_valuation
+
 disclosure_gap_register:
+  - CANTV_complete_current_provider_facility_building_address_title_lease_operator_lifecycle_and_service_roster_beyond_El_Hatillo
+  - CANTV_seven_OSM_central_office_objects_provider_permit_or_audited_asset_confirmation_and_El_Hatillo_geospatial_bridge
+  - CANTV_El_Hatillo_operating_energized_available_contracted_customer_accepted_leased_utilized_billed_peak_and_actual_IT_load_area_racks_and_building_count
+  - CANTV_El_Hatillo_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_OEM_model_count_rating_loading_test_acceptance_age_and_remaining_life
+  - CANTV_El_Hatillo_current_measured_PUE_WUE_energy_water_emissions_renewable_electricity_and_live_liquid_cooled_MW
+  - CANTV_or_customer_GPU_model_count_owner_site_delivery_acceptance_rack_fabric_power_utilization_revenue_and_margin
+  - CANTV_original_issuer_or_exchange_FY2023_audited_H1_2024_unaudited_and_latest_2024_2025_financial_filings
+  - CANTV_current_exact_post_2025_share_class_state_ownership_free_float_market_liquidity_and_governance_reconciliation
+  - CANTV_data_center_segment_and_site_revenue_operating_profit_cash_flow_capex_customer_concentration_contract_pricing_ROIC_and_valuation
   - TelemaxX_exact_current_property_title_lease_building_address_and_physical_component_roster_for_IPC1_IPC3_IPC4_and_IPC5
   - TelemaxX_7800_square_metre_facility_page_checksum_to_more_than_8000_square_metre_portfolio_claim_reconciliation
   - TelemaxX_per_site_operating_energized_available_contracted_customer_accepted_leased_utilized_billed_peak_and_actual_IT_load
