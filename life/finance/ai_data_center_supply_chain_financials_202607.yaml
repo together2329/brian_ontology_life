@@ -18685,8 +18685,230 @@ financial_profiles:
       - dc_cogent_classic_edge_and_network_data_center_portfolio
     confidence: high_for_FY2025_audited_companywide_financials_year_end_building_floor_space_power_and_note_principal_medium_for_current_live_marketing_roster_and_general_engineering_low_for_site_bridge_live_load_data_center_only_economics_complete_BOM_owned_GPU_inventory_and_property_realization
 
+  - id: company_ibm
+    company: International Business Machines Corporation
+    ticker: NYSE_IBM
+    legal_entity_boundary: IBM_consolidated_companywide_with_Infrastructure_segment_read_through
+    status: public_global_hybrid_cloud_AI_software_services_and_infrastructure_company
+    reporting_snapshot: '2026-07-19'
+    business_scope:
+      IBM_Cloud_physical_code_records: 47
+      classic_table_codes: 42
+      cloud_regions: 13
+      Infrastructure_segment_components: [IBM_Z, distributed_infrastructure_Power_and_Storage, infrastructure_support, hybrid_infrastructure_and_IaaS]
+      portfolio_ref: dc_ibm_cloud_global_physical_code_and_accelerator_portfolio
+      boundary: >-
+        Public cloud codes are service locations rather than a complete legal
+        building or ownership roster. Infrastructure segment revenue includes
+        hardware and support and is not IBM Cloud or data-center-only revenue.
+    FY2025_audited_consolidated_USD_million:
+      period: year_ended_2025_12_31
+      revenue: 67535
+      services_revenue: 30714
+      sales_revenue: 36085
+      financing_revenue: 737
+      total_cost: 28239
+      gross_profit: 39297
+      selling_general_and_administrative: 20123
+      research_development_and_engineering: 8316
+      intellectual_property_and_custom_development_income: 964
+      other_income: 442
+      interest_expense: 1935
+      derived_pre_interest_pre_other_operating_like_result: 11822
+      derived_operating_like_margin_percent: 17.505
+      reported_GAAP_operating_income_line: not_presented
+      pretax_income_from_continuing_operations: 10328
+      tax_benefit: 242
+      income_from_continuing_operations: 10571
+      net_income: 10593
+      operating_cash_flow: 13193
+      net_capex_approx: 1600
+      company_defined_free_cash_flow_non_GAAP: 14700
+      cash_restricted_cash_and_marketable_securities: 14471
+      short_term_debt: 6424
+      long_term_debt: 54836
+      derived_total_short_and_long_term_debt: 61260
+      property_plant_and_equipment_gross: 17874
+      property_plant_and_equipment_net: 5899
+      boundary: >-
+        The USD11.822bn derived result equals gross profit less SG&A and R&D plus
+        IP/custom-development income. It is not labeled reported GAAP operating
+        income. Company free cash flow is IBM's non-GAAP measure and includes the
+        financing-receivables effect; it is not simple operating cash flow less
+        capex. No data-center-only income statement, cash flow or capex is disclosed.
+    FY2025_Infrastructure_segment_USD_million:
+      revenue: 15718
+      FY2024_revenue: 14020
+      reported_growth_percent: 12.1
+      constant_currency_growth_percent: 10.4
+      hybrid_infrastructure_revenue: 10618
+      infrastructure_support_revenue: 5100
+      gross_profit: 9216
+      gross_margin_percent: 58.6
+      segment_profit: 3458
+      FY2024_segment_profit: 2450
+      segment_profit_growth_percent: 41.2
+      segment_profit_margin_percent: 22.0
+      boundary: >-
+        Segment profit is IBM's segment measure and the perimeter includes IBM Z,
+        Power, Storage, support and IaaS. Strong z17 product-cycle performance is
+        not evidence of equivalent IBM Cloud data-center revenue or margin growth.
+    accelerator_and_AI_boundary:
+      exact_code_product_availability:
+        H100_codes: 10
+        H200_codes: 7
+        Gaudi3_codes: 4
+        B300_codes: 1
+      per_orderable_profile_quantity:
+        H100: eight_80GB_GPUs
+        H200: eight_141GB_GPUs
+        Gaudi3: eight_128GB_accelerators
+        B300: eight_288GB_GPUs
+      Vela_research_evaluation_scale: approximately_1500_GPUs_not_current_installed_count
+      Vela_December_2023_update: approximately_twice_as_many_GPUs_without_exact_baseline_or_current_count
+      exact_installed_IBM_owned_customer_owned_available_utilized_and_site_allocated_GPU_units: undisclosed
+      data_center_AI_revenue_margin_backlog_and_ROIC: undisclosed
+    outlook:
+      positives:
+        - FY2025_Infrastructure_revenue_growth_of_12_1_percent
+        - FY2025_Infrastructure_segment_profit_growth_of_41_2_percent
+        - broad_hybrid_cloud_and_accelerator_catalog
+        - strong_companywide_cash_generation
+        - Vela_and_Blue_Vela_system_engineering_evidence
+      risks:
+        - Infrastructure_growth_materially_influenced_by_z17_product_cycle
+        - IBM_Cloud_data_center_revenue_profit_capex_and_ROIC_not_disclosed
+        - exact_site_MW_ownership_installed_GPU_and_utilization_not_disclosed
+        - some_classic_codes_set_to_close_without_public_code_roster
+        - derived_USD61_260bn_short_plus_long_term_debt_and_cross_segment_capital_allocation
+      analytical_view: >-
+        IBM provides diversified listed exposure to enterprise AI, hybrid cloud,
+        infrastructure hardware and accelerated-compute services. Its cash flow
+        and segment momentum are stronger evidence than the physical-fleet data:
+        code-level GPU availability does not reveal installed units or data-center
+        returns, so a pure AI-infrastructure valuation requires unsupported assumptions.
+    sources:
+      - {title: IBM FY2025 annual report, publisher: US_SEC, period: '2025-12-31', url: "https://www.sec.gov/Archives/edgar/data/51143/000005114326000010/ibm-20251231_d2.htm"}
+      - {title: IBM FY2025 annual letter, publisher: IBM, period: '2025', url: "https://www.ibm.com/downloads/documents/us-en/15db1aa422b5a2d8"}
+      - {title: IBM Cloud locations, publisher: IBM, accessed: '2026-07-19', url: "https://cloud.ibm.com/docs/overview?topic=overview-locations"}
+      - {title: Gen 3 accelerated profiles, publisher: IBM, accessed: '2026-07-19', url: "https://cloud.ibm.com/docs/vpc?interface=ui&topic=vpc-accelerated-profile-family"}
+      - {title: Gen 4 B300 accelerated profiles, publisher: IBM, accessed: '2026-07-19', url: "https://cloud.ibm.com/docs/vpc?topic=vpc-accelerated-profile-family-gen4"}
+      - {title: Vela research paper, publisher: IBM_Research, accessed: '2026-07-19', url: "https://research.ibm.com/publications/vela-a-virtualized-llm-training-system-with-gpu-direct-and-roce"}
+    related_profiles:
+      - dc_ibm_cloud_global_physical_code_and_accelerator_portfolio
+    confidence: high_for_FY2025_audited_companywide_and_segment_financials_current_code_tables_and_accelerator_profile_specs_medium_for_Vela_scale_low_for_data_center_only_economics_current_installed_GPU_fleet_site_MW_and_valuation
+
+  - id: company_kyndryl
+    company: Kyndryl Holdings, Inc.
+    ticker: NYSE_KD
+    legal_entity_boundary: Kyndryl_Holdings_Inc_consolidated_companywide_managed_infrastructure_and_consulting
+    status: public_global_managed_infrastructure_services_company_separated_from_IBM
+    reporting_snapshot: '2026-07-19'
+    business_scope:
+      IBM_separation_completed: '2021-11-03'
+      facility_model: own_facilities_plus_colocation_partners
+      selected_France_certificate_site_groups: 7
+      selected_Germany_explicit_DC_rows: 4
+      owned_or_leased_real_estate_million_sqft: 9.0
+      portfolio_ref: dc_kyndryl_global_managed_infrastructure_and_legacy_ibm_facility_boundary
+      boundary: >-
+        Substantially all 9.0 million square feet covers data centers and offices,
+        but Kyndryl does not split the categories or publish a complete current
+        global facility count, MW or GPU roster. Certification sites are partial.
+    FY2026_audited_consolidated_USD_million:
+      period: year_ended_2026_03_31
+      revenue: 15092
+      cost_of_services: 11803
+      selling_general_and_administrative: 2654
+      workforce_rebalancing_charges: 60
+      transaction_related_costs: 41
+      derived_pre_interest_pre_other_operating_like_result: 534
+      derived_operating_like_margin_percent: 3.538
+      reported_GAAP_operating_income_line: not_presented
+      interest_expense: 89
+      other_expense: 32
+      pretax_income: 414
+      net_income: 198
+      operating_cash_flow: 948
+      net_capex: 543
+      company_defined_free_cash_flow_non_GAAP: 406
+      cash_approx: 2600
+      current_debt: 1796
+      long_term_debt: 2293
+      derived_current_plus_long_term_debt_including_revolver: 4089
+      boundary: >-
+        The USD534m derived result equals revenue less cost of services, SG&A,
+        workforce rebalancing and transaction-related costs. It is not reported
+        GAAP operating income or data-center-only profit. Company free cash flow
+        is non-GAAP and the debt total includes the USD1bn revolver.
+    real_estate_scope_million_sqft:
+      worldwide_total_owned_or_leased: 9.0
+      United_States: 3.6
+      Japan: 0.8
+      Principal_Markets: 2.7
+      Strategic_Markets: 2.0
+      data_center_only_area: undisclosed
+      exact_data_center_count_MW_and_GPU_inventory: undisclosed
+      boundary: rounded_geographic_values_and_combined_office_plus_data_center_scope_are_not_an_additive_exact_facility_ledger
+    FY2026_growth_indicators_USD_million:
+      hyperscaler_related_revenue: 1900
+      hyperscaler_related_revenue_growth_percent: 59
+      consult_revenue: 3500
+      consult_revenue_growth_percent: 18
+      signings: 13500
+      boundary: companywide_operational_measures_not_data_center_only_revenue_capacity_or_margin
+    FY2027_company_outlook_USD_million:
+      adjusted_pretax_income_range: [600, 700]
+      free_cash_flow_range: [400, 500]
+      constant_currency_revenue_growth_range_percent: [-2, 0]
+      boundary: outlook_is_companywide_and_uses_non_GAAP_or_constant_currency_measures
+    accelerator_and_facility_boundary:
+      Kyndryl_owned_GPU_model_count_site_allocation_delivery_and_utilization: undisclosed
+      hosted_customer_and_hyperscaler_hardware: does_not_prove_Kyndryl_ownership
+      per_site_power_cooling_equipment_MW_PUE_WUE_and_economics: undisclosed
+      legacy_IBM_property_transfer_by_building: undisclosed
+    control_and_financing_risk:
+      material_weaknesses_in_internal_control_at_2026_03_31: true
+      derived_current_plus_long_term_debt_including_revolver_USD_million: 4089
+      exact_data_center_collateral_and_refinancing_allocation: undisclosed
+    outlook:
+      positives:
+        - hyperscaler_related_revenue_growth_of_59_percent
+        - consult_revenue_growth_of_18_percent
+        - positive_operating_cash_flow_and_free_cash_flow
+        - FY2027_adjusted_pretax_income_improvement_target
+        - hybrid_own_plus_colocation_delivery_position
+      risks:
+        - FY2027_constant_currency_revenue_flat_to_down_2_percent
+        - low_derived_operating_like_margin
+        - internal_control_material_weaknesses
+        - debt_and_refinancing_requirements
+        - no_data_center_only_economics_complete_facility_roster_MW_or_GPU_inventory
+      analytical_view: >-
+        Kyndryl's hyperscaler and consulting growth support its hybrid-infrastructure
+        transformation, but group revenue remains pressured and facility economics
+        are opaque. It is a services and integration exposure, not a disclosed
+        owned AI data-center pure play; margin, controls and refinancing matter
+        more to the equity case than unsupported facility or GPU estimates.
+    sources:
+      - {title: Kyndryl FY2026 Form 10-K, publisher: US_SEC, period: '2026-03-31', url: "https://www.sec.gov/Archives/edgar/data/1867072/000110465926067881/kd-20260331x10k.htm"}
+      - {title: Kyndryl FY2026 results and FY2027 outlook, publisher: Kyndryl, accessed: '2026-07-19', url: "https://investors.kyndryl.com/news-releases/news-release-details/kyndryl-reports-fourth-quarter-and-full-year-2026-results"}
+      - {title: Kyndryl modern data-center strategy, publisher: Kyndryl, date: '2026-05', url: "https://www.kyndryl.com/ie/en/about-us/news/2026/05/hybrid-it-modern-data-center-strategy"}
+      - {title: IBM completes Kyndryl separation, publisher: IBM, date: '2021-11-03', url: "https://newsroom.ibm.com/2021-11-03-IBM-Completes-the-Separation-of-Kyndryl"}
+      - {title: Kyndryl France ISO 22301 certificate, publisher: Kyndryl, accessed: '2026-07-19', url: "https://www.kyndryl.com/content/dam/kyndrylprogram/certifications/iso22301/kyndryl_france_iso_22301_2019_01_feb_2029.pdf"}
+      - {title: Kyndryl Germany ISO 27001 certificate, publisher: Kyndryl, accessed: '2026-07-19', url: "https://www.kyndryl.com/content/dam/kyndrylprogram/certifications/iso27001/kyndryl_germany_iso_27001_31_oct_2025.pdf"}
+    related_profiles:
+      - dc_kyndryl_global_managed_infrastructure_and_legacy_ibm_facility_boundary
+    confidence: high_for_FY2026_audited_companywide_financials_FY2027_outlook_separation_and_selected_certificate_sites_medium_for_real_estate_scope_and_group_level_OSM_crosswalk_low_for_data_center_only_economics_complete_property_roster_MW_GPU_inventory_and_current_valuation
+
 cross_company_read_through:
   current_signals:
+    - IBM Cloud publishes 42 classic codes and 13 cloud regions whose physical-code union is 47. Codes, Regions, zones, campuses and buildings are not interchangeable, and some classic codes are flagged for future closure without a public affected-code roster.
+    - IBM publishes exact orderable H100, H200, Gaudi3 and B300 code availability and eight-accelerator profile configurations. These are product configurations, not installed fleet counts; Vela's approximately 1,500-GPU research evaluation and later doubling statement are also not current site inventory.
+    - IBM FY2025 revenue was USD67.535 billion, net income USD10.593 billion and operating cash flow USD13.193 billion. Infrastructure segment revenue grew 12.1% and segment profit 41.2%, but the segment includes Z, Power, Storage, support and IaaS and is not data-center-only.
+    - Kyndryl's selected France and Germany certificates provide eleven site-group rows while nine OSM objects crosswalk to those groups. The certificates, legacy IBM labels and 2021 separation do not prove legal title, exact building count, current operator or global completeness.
+    - Kyndryl FY2026 revenue was USD15.092 billion, net income USD198 million and operating cash flow USD948 million. Its derived USD534 million operating-like result is not reported GAAP operating income; FY2027 constant-currency revenue is guided flat to down 2% despite higher adjusted profit expectations.
+    - Kyndryl's USD1.9 billion of hyperscaler-related revenue grew 59%, but no Kyndryl-owned GPU count or data-center-only margin is disclosed. The FY2026 internal-control material weaknesses, debt and incomplete facility perimeter remain important risks.
     - Cogent's live pages market 87 classic and 86 edge data centers, while its FY2025 10-K reported 187 buildings, 2.1 million square feet and 213MW. The 14-building decline lacks a complete public site bridge, and 213MW is not treated as live IT load.
     - Cogent's FY2025 revenue fell 5.8% to USD975.766 million, with a USD101.073 million operating loss, USD182.174 million net loss and USD10.579 million operating cash outflow. The physical platform is substantial, but current economics do not yet prove an AI data-center earnings inflection.
     - Cogent's derived note principal is USD1.7304 billion and cash interest paid was USD154.748 million. Twenty-four facilities were marketed for sale or lease, but a USD144 million nonbinding LOI for two sites terminated, so monetization is optionality rather than realized liquidity.

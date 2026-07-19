@@ -35201,7 +35201,203 @@ campus_profiles:
       - {title: Utility Computing, publisher: Cogent_Communications, accessed: '2026-07-19', url: "https://www.cogentco.com/en/products-and-services/colocation/utility-computing"}
     confidence: high_for_live_page_counts_visible_location_labels_French_addresses_FY2025_building_floor_space_power_and_companywide_financials_medium_for_general_engineering_and_OSM_crosswalk_low_for_current_site_bridge_live_load_complete_BOM_data_center_only_economics_owned_GPU_inventory_and_asset_monetization
 
+  - id: dc_ibm_cloud_global_physical_code_and_accelerator_portfolio
+    operator: IBM Cloud
+    geography: [United_States, Canada, Brazil, Netherlands, Germany, United_Kingdom, Spain, France, India, Japan, Singapore, Australia]
+    status: current_public_cloud_service_location_portfolio_with_code_level_accelerator_availability
+    as_of: '2026-07-19'
+    reproducible_registry:
+      combined_registry: life/imports/global_data_centers_20260717/ibm_cloud_kyndryl_boundary_registry.jsonl
+      combined_summary: life/imports/global_data_centers_20260717/ibm_cloud_kyndryl_boundary_summary.json
+      IBM_Cloud_physical_code_records: 47
+      Kyndryl_certification_records_kept_separate: 11
+      boundary: >-
+        The IBM rows are provider-published physical data-center codes, not a
+        complete street-address, legal-property, building, ownership or physical-
+        operator roster. Kyndryl certificate sites are a separate post-spin scope.
+    location_reconciliation:
+      classic_table_codes: 42
+      normal_multizone_regions: 9
+      normal_multizone_physical_codes: 28
+      single_campus_multizone_regions: 4
+      single_campus_multizone_physical_codes: 8
+      union_unique_physical_codes: 47
+      all_regions: 13
+      physical_building_count: not_inferred
+      closure_state: some_classic_codes_are_set_to_close_but_the_reviewed_closure_page_does_not_publish_the_affected_code_roster
+      excluded_scope: network_points_of_presence
+    power_and_cooling:
+      portfolio_level_features:
+        - N_plus_1_power_and_cooling
+        - classic_POD_racks_servers_network_storage_and_backup_generators
+        - 24x7_onsite_security_and_restricted_server_room_access
+      normal_MZR_definition: at_least_three_data_centers_independent_power_cooling_and_network_minimum_one_mile_separation_under_2ms_and_more_than_1000Gbps
+      SC_MZR_definition: three_zones_in_one_building_or_campus_with_potentially_overlapping_dependencies_and_concurrent_maintainability
+      per_code_MW_area_PUE_WUE_energy_water_and_emissions: undisclosed
+      complete_per_code_as_built_equipment_ledger: undisclosed
+      boundary: >-
+        General architecture does not disclose grid feeds, substations,
+        transformers, switchgear, PDUs, UPS, batteries, generators, chillers,
+        CRAH/CRAC/CDUs, OEMs, models, counts, ratings, loading, acceptance or
+        remaining useful life by code.
+    AI_and_accelerators:
+      orderable_profile_models: [V100, L4, L40S, A100, H100, H200, Intel_Gaudi3, AMD_MI300X, NVIDIA_B300]
+      exact_physical_code_availability:
+        Gaudi3: [DAL12, FRA02, WDC06, WDC07]
+        H100: [DAL10, FRA04, LON05, MAD05, SAO01, SYD04, TOK05, TOR05, WDC06, WDC07]
+        H200: [CHE02, FRA04, LON05, SYD05, TOR05, WDC06, WDC07]
+        B300: [WDC07]
+      orderable_profile_configuration:
+        H100: eight_80GB_GPUs
+        H200: eight_141GB_GPUs
+        Gaudi3: eight_128GB_accelerators
+        MI300X: eight_accelerators
+        B300: eight_288GB_GPUs
+      cluster_network:
+        H100_codes: [FRA04, WDC06, WDC07]
+        published_max: 3_2Tbps_via_eight_400Gbps_NVIDIA_ConnectX_7_links
+        H200_table_conflict: profile_and_region_tables_have_inconsistent_dedicated_cluster_network_markers
+      source_conflict: product_specific_H200_page_includes_CHE02_while_reviewed_generic_logical_zone_page_does_not
+      product_boundary: per_instance_GPU_quantity_and_code_availability_are_not_installed_fleet_count_inventory_owner_utilization_or_continuous_stock
+      Vela:
+        online_since: '2022-05'
+        location: one_undisclosed_IBM_Cloud_data_center
+        node: eight_A100_80GB_two_Cascade_Lake_CPUs_1_5TB_DRAM_four_3_2TB_NVMe_and_multiple_100G_links
+        research_evaluation_scale: approximately_1500_GPUs_not_current_installed_count
+        December_2023_update: approximately_twice_as_many_GPUs_after_upgrade_without_exact_baseline_or_current_count
+      Blue_Vela: H100_based_Dell_NVIDIA_IBM_Storage_Scale_platform_without_disclosed_site_or_fleet_count
+      exact_installed_owned_customer_accepted_available_and_utilized_GPU_count_by_site: undisclosed
+    financial_crosswalk:
+      financial_profile_ref: company_ibm
+      FY2025_revenue_USD_million: 67535
+      FY2025_derived_pre_interest_pre_other_operating_like_result_USD_million: 11822
+      FY2025_derived_operating_like_margin_percent: 17.505
+      FY2025_reported_GAAP_operating_income_line: not_presented
+      FY2025_net_income_USD_million: 10593
+      FY2025_operating_cash_flow_USD_million: 13193
+      FY2025_company_defined_free_cash_flow_non_GAAP_USD_million: 14700
+      boundary: companywide_IBM_results_not_IBM_Cloud_or_data_center_only_economics
+    OSM_crosswalk:
+      IBM_operator_tagged_objects: 8
+      IBM_name_or_owner_only_objects: 8
+      Kyndryl_operator_tagged_objects_kept_in_separate_profile: 2
+      IBM_Cloud_code_to_OSM_building_matches: 0
+      boundary: >-
+        Legacy IBM names and IBM owner tags cannot be mapped to current public
+        cloud codes without an official code-to-address bridge. The two Washington-
+        area IBM-owner buildings do not prove which WDC code or current operator.
+    outlook:
+      positive_signals:
+        - broad_47_code_cloud_service_footprint
+        - B300_H200_H100_Gaudi3_and_other_accelerator_product_breadth
+        - Vela_and_Blue_Vela_large_scale_AI_system_engineering
+        - strong_FY2025_Infrastructure_growth_and_company_cash_generation
+      risk_signals:
+        - exact_site_ownership_MW_GPU_counts_and_cloud_data_center_economics_undisclosed
+        - some_classic_codes_set_to_close_without_public_code_list
+        - Infrastructure_growth_heavily_influenced_by_z17_cycle
+        - high_consolidated_debt_and_cross_segment_capital_allocation
+      analytical_view: >-
+        IBM is a broad listed technology and cash-generation exposure with a
+        credible accelerated-compute product surface, but the disclosures do not
+        support valuing it as a pure-play owned AI data-center fleet. Availability
+        tables prove orderable configurations, not fleet size or site economics.
+    sources:
+      - {title: IBM Cloud locations, publisher: IBM, accessed: '2026-07-19', url: "https://cloud.ibm.com/docs/overview?topic=overview-locations"}
+      - {title: IBM Cloud data-center closures, publisher: IBM, accessed: '2026-07-19', url: "https://cloud.ibm.com/docs/account?topic=account-dc-closure"}
+      - {title: IBM data-center design, publisher: IBM, accessed: '2026-07-19', url: "https://www.ibm.com/solutions/cloud-data-centers"}
+      - {title: Gen 3 accelerated profiles, publisher: IBM, accessed: '2026-07-19', url: "https://cloud.ibm.com/docs/vpc?interface=ui&topic=vpc-accelerated-profile-family"}
+      - {title: Gen 4 B300 accelerated profiles, publisher: IBM, accessed: '2026-07-19', url: "https://cloud.ibm.com/docs/vpc?topic=vpc-accelerated-profile-family-gen4"}
+      - {title: Vela research paper, publisher: IBM_Research, accessed: '2026-07-19', url: "https://research.ibm.com/publications/vela-a-virtualized-llm-training-system-with-gpu-direct-and-roce"}
+      - {title: IBM FY2025 annual report, publisher: US_SEC, period: '2025-12-31', url: "https://www.sec.gov/Archives/edgar/data/51143/000005114326000010/ibm-20251231_d2.htm"}
+    confidence: high_for_current_public_code_tables_region_definitions_accelerator_profile_specs_and_FY2025_company_financials_medium_for_Vela_scale_and_general_design_low_for_code_to_building_ownership_MW_complete_BOM_installed_GPU_count_and_data_center_only_economics
+
+  - id: dc_kyndryl_global_managed_infrastructure_and_legacy_ibm_facility_boundary
+    operator: Kyndryl Holdings, Inc.
+    geography: [Global, France, Germany, United_Kingdom_legacy_candidate]
+    status: managed_infrastructure_operator_using_own_and_colocation_facilities_with_selected_certified_sites
+    as_of: '2026-07-19'
+    reproducible_registry:
+      combined_registry: life/imports/global_data_centers_20260717/ibm_cloud_kyndryl_boundary_registry.jsonl
+      combined_summary: life/imports/global_data_centers_20260717/ibm_cloud_kyndryl_boundary_summary.json
+      selected_certificate_site_group_records: 11
+      France_site_groups: 7
+      France_named_components_if_labels_are_split: 11
+      Germany_explicit_DC_rows: 4
+      boundary: selected_certification_scope_not_complete_global_fleet_or_legal_property_ledger
+    corporate_boundary:
+      IBM_separation_completed: '2021-11-03'
+      current_operating_model: own_facilities_plus_colocation_partners_with_bespoke_co_creation_at_select_Kyndryl_owned_data_centers
+      title_and_transfer_boundary: >-
+        The IBM separation, historical IBM labels and current Kyndryl certificates
+        do not prove that every legacy IBM property transferred, remains owned or
+        leased, or is exclusively operated by Kyndryl today.
+    selected_certification_scope:
+      France_groups: [Montpellier_and_Grabels, Clermont_I_and_II, Collegien_I_and_II, Clichy_I_and_II, Seclin, Venissieux, Marcoussis]
+      Germany_DCs: [Kelsterbach, Schwalbach_at_Eschborn, Oberursel, Ruesselsheim]
+      capacity_MW_area_PUE_WUE_power_cooling_BOM_and_GPU_inventory: not_disclosed_by_certificates
+    OSM_crosswalk:
+      current_Kyndryl_operator_objects: 2
+      legacy_IBM_operator_objects_matching_current_France_certificate_groups: 7
+      mapped_certificate_group_candidates: 9
+      unresolved_or_separate_scope_IBM_or_Kyndryl_objects: 9
+      France_detail: two_Collegien_objects_one_Seclin_three_Clermont_and_one_Grabels
+      Germany_detail: one_Eschborn_and_one_Oberursel
+      boundary: >-
+        The Clermont certificate names I and II but OSM contains three objects, so
+        no one-to-one building allocation is inferred. All OSM geometries add zero
+        facilities, MW or GPUs beyond the cited certificate scope.
+    power_cooling_and_accelerators:
+      complete_global_site_roster: undisclosed
+      per_site_power_and_cooling_equipment: undisclosed
+      physical_Kyndryl_owned_GPU_inventory: undisclosed
+      hosted_customer_or_partner_hardware_boundary: service_and_hyperscaler_revenue_do_not_prove_Kyndryl_owned_accelerators
+    financial_crosswalk:
+      financial_profile_ref: company_kyndryl
+      FY2026_revenue_USD_million: 15092
+      FY2026_derived_pre_interest_pre_other_operating_like_result_USD_million: 534
+      FY2026_derived_operating_like_margin_percent: 3.538
+      FY2026_reported_GAAP_operating_income_line: not_presented
+      FY2026_net_income_USD_million: 198
+      FY2026_operating_cash_flow_USD_million: 948
+      FY2026_company_defined_free_cash_flow_non_GAAP_USD_million: 406
+      real_estate_million_sqft: 9.0
+      boundary: companywide_Kyndryl_results_and_combined_office_plus_data_center_real_estate_not_data_center_only_economics
+    outlook:
+      positive_signals:
+        - FY2026_hyperscaler_related_revenue_USD1_9bn_and_59_percent_growth
+        - positive_operating_cash_flow
+        - FY2027_adjusted_pretax_income_and_free_cash_flow_improvement_outlook
+        - hybrid_own_plus_colocation_infrastructure_position
+      risk_signals:
+        - FY2027_constant_currency_revenue_flat_to_down_2_percent
+        - low_derived_operating_like_margin
+        - debt_refinancing_and_internal_control_material_weaknesses
+        - no_complete_facility_count_MW_GPU_or_data_center_only_economics
+      analytical_view: >-
+        Kyndryl has real hybrid-infrastructure relevance and growing hyperscaler
+        integration revenue, but remains primarily a services transformation rather
+        than a disclosed AI data-center owner. Facility, MW, GPU and site-economics
+        gaps prevent a pure-play infrastructure valuation.
+    sources:
+      - {title: IBM completes Kyndryl separation, publisher: IBM, date: '2021-11-03', url: "https://newsroom.ibm.com/2021-11-03-IBM-Completes-the-Separation-of-Kyndryl"}
+      - {title: Kyndryl France ISO 22301 certificate, publisher: Kyndryl, accessed: '2026-07-19', url: "https://www.kyndryl.com/content/dam/kyndrylprogram/certifications/iso22301/kyndryl_france_iso_22301_2019_01_feb_2029.pdf"}
+      - {title: Kyndryl Germany ISO 27001 certificate, publisher: Kyndryl, accessed: '2026-07-19', url: "https://www.kyndryl.com/content/dam/kyndrylprogram/certifications/iso27001/kyndryl_germany_iso_27001_31_oct_2025.pdf"}
+      - {title: Kyndryl modern data-center strategy, publisher: Kyndryl, date: '2026-05', url: "https://www.kyndryl.com/ie/en/about-us/news/2026/05/hybrid-it-modern-data-center-strategy"}
+      - {title: Kyndryl FY2026 Form 10-K, publisher: US_SEC, period: '2026-03-31', url: "https://www.sec.gov/Archives/edgar/data/1867072/000110465926067881/kd-20260331x10k.htm"}
+      - {title: Kyndryl FY2026 results and FY2027 outlook, publisher: Kyndryl, accessed: '2026-07-19', url: "https://investors.kyndryl.com/news-releases/news-release-details/kyndryl-reports-fourth-quarter-and-full-year-2026-results"}
+    confidence: high_for_separation_selected_certification_sites_FY2026_company_financials_and_FY2027_outlook_medium_for_group_level_OSM_crosswalk_low_for_complete_current_property_roster_title_MW_BOM_GPU_inventory_and_data_center_only_economics
+
 disclosure_gap_register:
+  - IBM_Cloud_exact_current_code_closure_roster_and_code_to_street_address_building_campus_title_lease_operator_bridge
+  - IBM_Cloud_per_site_operating_energized_leased_customer_accepted_utilized_billed_and_actual_IT_load
+  - IBM_Cloud_per_site_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_OEM_model_count_rating_loading_acceptance_and_remaining_life
+  - IBM_Cloud_per_site_measured_PUE_WUE_energy_water_emissions_and_live_liquid_cooled_MW
+  - IBM_and_customer_GPU_model_count_owner_site_delivery_acceptance_rack_fabric_power_utilization_revenue_and_margin
+  - IBM_Cloud_data_center_only_revenue_operating_profit_cash_flow_capex_ROIC_customer_concentration_and_contract_terms
+  - Kyndryl_complete_current_global_owned_leased_and_colocation_facility_building_address_lifecycle_title_and_operator_roster
+  - Kyndryl_legacy_IBM_property_by_property_separation_and_current_operator_bridge
+  - Kyndryl_per_site_MW_equipment_PUE_WUE_GPU_inventory_utilization_and_economics
   - Cogent_exact_current_87_classic_and_86_edge_non_overlapping_building_address_title_lease_and_lifecycle_roster
   - Cogent_187_FY2025_to_173_current_site_by_site_sale_decommission_reclassification_and_date_bridge
   - Cogent_six_North_American_buildings_hidden_inside_62_market_labels_and_complete_86_edge_addresses
