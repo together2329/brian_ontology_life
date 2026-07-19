@@ -102,6 +102,7 @@ SPECS = [
     spec("DataPro", "company_datapro", ["dc_datapro_moscow_portfolio"], "Russia_Moscow_region", "private_Russian_legal_entity_with_public_statutory_BFO", "four current-directory facilities, 6,550/6,553 current rack scopes and two deferred future projects yielding a 25,800 projected-rack page checksum", "Current racks, projected racks, gross facility power, provider certification claims, Uptime's current public roster, former assets, OSM footprints and legal-entity financials use different boundaries.", ["life/imports/global_data_centers_20260717/datapro_official_facility_registry.jsonl", "life/imports/global_data_centers_20260717/datapro_official_facility_summary.json"]),
     spec("Stellanor_and_legacy_Redcentric", "company_stellanor", ["dc_stellanor_uk_portfolio_and_legacy_redcentric_boundary"], "United_Kingdom", "private_newly_formed_operator_with_former_owner_segment_financial_proxy", "11 current operating sites and 39 MVA secured grid capacity versus a 68.5-MVA checksum of ten site-page maximum values", "Current Stellanor sites, three acquisition lineages, legacy Redcentric OSM labels, secured grid, site maxima, UPS, generation, cooling, former-owner financials and transaction consideration use different scopes.", ["life/imports/global_data_centers_20260717/stellanor_official_facility_registry.jsonl", "life/imports/global_data_centers_20260717/stellanor_official_facility_summary.json"]),
     spec("Rostelecom_RTK_COD", "company_rostelecom_rtk_cod", ["dc_rostelecom_rtk_cod_russia_portfolio"], "Russia", "public_diversified_parent_with_management_cluster_financials", "26 data centers, 27,637 detailed or 27,800 rounded provider racks, 28,000 rounded Group racks and 235 MW of undefined total power", "Provider and Group rack values, named markets, selected facility records, OSM objects, mixed power terms, Tier claims, GPU services, management-cluster earnings and diversified-parent financials use different scopes.", ["life/imports/global_data_centers_20260717/rostelecom_rtk_cod_facility_registry.jsonl", "life/imports/global_data_centers_20260717/rostelecom_rtk_cod_facility_summary.json"]),
+    spec("Selectel", "company_selectel", ["dc_selectel_russia_owned_and_global_service_footprint"], "Russia_with_international_product_service_locations", "private_with_audited_consolidated_financials", "six current own physical facilities with 3,612 racks, 30 MW connected power and 7,780 square metres of server rooms", "Six physical cards, four investor sites, partner or service locations, regions, availability zones, pools, Yurlovsky plans, connected power, GPU configurations and consolidated financials use different scopes.", ["life/imports/global_data_centers_20260717/selectel_official_facility_registry.jsonl", "life/imports/global_data_centers_20260717/selectel_official_facility_summary.json"]),
 ]
 
 
@@ -145,7 +146,7 @@ def load_index(path: Path, key: str) -> dict[str, dict]:
 def build_records(finance_path: Path, landscape_path: Path, accessed_on: str) -> list[dict]:
     finance = load_index(finance_path, "financial_profiles")
     landscape = load_index(landscape_path, "campus_profiles")
-    assert len(SPECS) == 59
+    assert len(SPECS) == 60
     assert len({row["company"] for row in SPECS}) == len(SPECS)
     records = []
     for position, source in enumerate(SPECS, start=1):

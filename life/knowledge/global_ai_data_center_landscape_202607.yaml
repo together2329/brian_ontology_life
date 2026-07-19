@@ -33606,7 +33606,221 @@ campus_profiles:
       - {title: Russia public awards, publisher: Uptime_Institute, accessed: 2026-07-19, url: "https://uptimeinstitute.com/uptime-institute-awards/country/id/RU"}
     confidence: high_for_portfolio_headline_selected_facility_transcription_management_cluster_and_parent_financials_GPU_service_models_ownership_transaction_and_OSM_crosswalk_medium_for_facility_continuity_and_provider_certification_scope_low_for_complete_current_26_building_roster_power_denominator_live_load_complete_as_built_BOM_physical_GPU_inventory_pure_data_center_financials_current_ownership_stakes_site_economics_and_IPO_outcome
 
+  - id: dc_selectel_russia_owned_and_global_service_footprint
+    operator: AO_Selectel
+    geography: Russia_with_service_locations_in_Uzbekistan_Kazakhstan_and_Kenya
+    record_granularity: current_own_physical_facility_partner_and_product_service_location_development_OSM_and_financial_scope
+    evidence_snapshot: '2026-07-19'
+    official_facility_registry_ref: life/imports/global_data_centers_20260717/selectel_official_facility_registry.jsonl
+    official_facility_summary_ref: life/imports/global_data_centers_20260717/selectel_official_facility_summary.json
+    current_own_facility_checksum:
+      facilities: 6
+      racks: 3612
+      connected_power_mw: 30
+      server_room_area_sqm: 7780
+      campus_or_market_groups: [Saint_Petersburg, Dubrovka_Leningrad_Oblast, Moscow]
+      boundary: >-
+        The six current facility cards reconcile exactly to the provider
+        headline. Connected power is not IT load, energized, leased, utilized,
+        billed or actual draw.
+    current_own_facilities:
+      - {name: Tsvetochnaya_1, address: 21_Tsvetochnaya_Street_litera_A_Saint_Petersburg, server_room_area_sqm: 679, racks: 227, connected_power_mw: 3, product_locations: [SPB-1]}
+      - {name: Tsvetochnaya_2, FIAS_address: 28_Koli_Tomchaka_Street_litera_K_Saint_Petersburg, public_card_address: 19_Tsvetochnaya_Street, server_room_area_sqm: 1885, racks: 969, connected_power_mw: 10, product_locations: [SPB-2, ru-3, gis-2a]}
+      - {name: Dubrovka_1, address: 1_Sovetskaya_Street_litera_A_Dubrovka, server_room_area_sqm: 740, racks: 424, connected_power_mw: 2.5, product_locations: [SPB-4, ru-1a]}
+      - {name: Dubrovka_2, address: 1_Sovetskaya_Street_litera_B_Dubrovka, server_room_area_sqm: 931, racks: 291, connected_power_mw: 2.5, product_locations: [SPB-5, ru-1c, ru-9a]}
+      - {name: Dubrovka_3, address: 1_Sovetskaya_Street_litera_I_Dubrovka, server_room_area_sqm: 768, racks: 281, connected_power_mw: 2, product_locations: [SPB-3, ru-1b]}
+      - {name: Berzarina, address: 36_Berzarina_Street_building_3_Moscow, server_room_area_sqm: 2777, racks: 1420, connected_power_mw: 10, product_locations: [ru-2, ru-6b, ru-7, gis-1a, MSK-1, MSK-2]}
+    service_location_boundary:
+      explicit_partner_data_centers:
+        - {name: Aviamotornaya, address: 69_Aviamotornaya_Street_Moscow, product_location: MSK-3}
+        - {name: Svetlaya_Nextremum, address: 21_Svetlaya_Street_Kudryashovsky_Novosibirsk, product_locations: [ru-8, NSK-1]}
+      other_current_product_service_locations:
+        - Moscow_North_Data_Center_Group
+        - Ryabinovaya_Moscow
+        - UNICON_Tashkent
+        - East_Telecom_Tashkent
+        - Kazteleport_Sairam_Almaty
+        - iColo_NBO1_Nairobi
+      current_product_infrastructure: {countries: 4, regions: 6, availability_zones: 11, pools: 26}
+      current_Russia_main_page_product_scope: {regions: 3, availability_zones: 6, pools: 16}
+      investor_material_own_data_center_sites: 4
+      boundary: >-
+        Partner and product locations are not inferred to be Selectel-owned.
+        Regions, availability zones and pools are fault or service domains, not
+        physical buildings. No exact official bridge reconciles the investor
+        four-site statement to six current physical facility cards.
+    power_cooling_and_certification:
+      common_current_facility_evidence:
+        UPS: present_current_count_rating_topology_battery_and_runtime_undisclosed
+        diesel_generators: present_and_load_tested_current_count_rating_OEM_fuel_and_runtime_undisclosed
+        cooling_redundancy: N_plus_2
+        network_nodes_redundancy: N_plus_1
+        network_carriers: 55
+        fire_suppression: central_autonomous_gas_Halon_125
+      cooling_by_site:
+        Tsvetochnaya_1: freon_direct_expansion
+        Tsvetochnaya_2: chillers_and_historical_indirect_free_cooling
+        Dubrovka_1: chillers
+        Dubrovka_2: freon_direct_expansion
+        Dubrovka_3: direct_free_cooling_with_natural_gas_absorption_chiller_summer_trim
+        Berzarina: direct_free_cooling_with_adiabatic_trim
+      published_PUE_claims: {Dubrovka_3_approximately: 1.25, Berzarina_approximately: 1.20}
+      Tsvetochnaya_2_historical_engineering:
+        electrical_design: 2N
+        independent_10_kV_lines: 2
+        own_two_section_10_kV_distribution_substation: true
+        transformer_publications: [per_floor_two_2500_kVA, later_eight_2000_kVA_plus_two_2500_kVA]
+        UPS_cluster_article_wording: six_400_kW_units_2N
+        diesel_generation: N_plus_1
+        diesel_start_seconds: 5_to_10
+        fuel_runtime_hours: 48
+      Berzarina_historical_section_evidence:
+        utility_inputs: 2
+        UPS_OEM: GE
+        generator_OEM: Gesan_with_Volvo_Penta_engines
+        generator_peak_rating_kw_each: 504
+        standard_fuel_runtime_hours: 10
+        Berzarina_2_project_power_mw: 2.5
+      provider_reliability_wording: six_current_facilities_correspond_to_Tier_III
+      exact_Selectel_match_on_current_Uptime_Russia_award_roster: false
+      boundary: >-
+        Historical engineering articles do not establish a complete current
+        as-built BOM. The current N+2 cooling statement and historical N+1
+        publications retain their dates and scopes. Provider Tier wording is
+        not relabelled as an Uptime certification ledger.
+    Yurlovsky_development:
+      lifecycle: construction_or_pre_operation_current_launch_not_officially_confirmed
+      planned_racks: 2000
+      planned_connected_power_mw: 20
+      planned_servers_up_to: 80000
+      planned_machine_hall_area_sqm: 4500
+      planned_average_rack_density_kw: 8
+      planned_independent_lines: 2
+      planned_nearby_supply_center_kV: 500
+      planned_redundancy: six_fifths_N
+      planned_cooling: direct_free_cooling_with_adiabatic_mats
+      target_PUE: 1.10_to_1.15
+      target_reliability: Tier_IV_design_target
+      H1_2025_data_center_infrastructure_capex_including_Yurlovsky_RUB_billion: 1.1
+      boundary: >-
+        The original first-phase date was 2025, but the current 2026 six-site
+        operating page omits Yurlovsky and no reviewed official launch release
+        confirms operation. All capacity, PUE and Tier values remain targets.
+    accelerator_and_AI_boundary:
+      documented_GPU_service_models:
+        - NVIDIA_A100_40GB
+        - NVIDIA_A100_40GB_NVLink_on_request
+        - NVIDIA_A100_80GB
+        - NVIDIA_Tesla_T4
+        - NVIDIA_A30_24GB
+        - NVIDIA_A2_16GB
+        - NVIDIA_GTX_1080
+        - NVIDIA_RTX_2080_Ti
+        - NVIDIA_RTX_4090_24GB
+        - NVIDIA_RTX_4090_48GB
+        - NVIDIA_RTX_6000_Ada_48GB
+        - NVIDIA_A2000_6GB
+        - NVIDIA_A5000_24GB
+        - NVIDIA_H100_80GB
+        - NVIDIA_H200_141GB
+        - NVIDIA_L4_24GB
+        - NVIDIA_RTX_6000_Pro_documented_memory_conflict
+        - NVIDIA_B300
+      B300_HGX_GPUs_per_server: 8
+      fixed_or_custom_product_configuration_ceiling_GPUs: 8
+      AI_investment_since_2020_RUB_billion_approximately: 3.6
+      planned_AI_investment_through_2031_RUB_billion: 10
+      AI_ITMO_joint_venture_investment_RUB_billion_more_than: 1
+      physical_GPU_model_count_owner_host_site_delivery_fabric_power_utilization_revenue_and_margin: undisclosed
+      accelerator_ledger_action: no_numeric_physical_inventory_row_created
+      boundary: >-
+        Eight B300 GPUs describe one HGX server configuration and an eight-GPU
+        product ceiling is not fleet inventory. The provider does not disclose
+        physical unit counts or their facility and financial allocation.
+    financial_boundary:
+      audited_FY2025_RUB_thousand:
+        revenue: 18311791
+        operating_profit: 6234426
+        derived_operating_margin_percent: 34.05
+        net_profit: 3018458
+        operating_cash_flow: 6417110
+        PPE_purchases: 7591112
+        intangible_purchases: 354037
+        data_center_services_revenue: 1452020
+        data_center_services_revenue_share_percent: 8
+        cloud_infrastructure_revenue: 15879579
+        top_five_customer_revenue_share_percent: 17.3
+        customers: 33000
+      FY2025_management_metrics:
+        adjusted_EBITDA_RUB_billion: 9.692
+        adjusted_EBITDA_margin_percent: 53
+        capex_RUB_billion: 7.9
+        data_center_infrastructure_capex_RUB_billion: 2.9
+        adjusted_free_cash_flow_RUB_billion: -1.5
+        net_debt_RUB_billion: 16.813
+        net_debt_to_adjusted_EBITDA: 1.7
+      Q1_2026_management_metrics:
+        revenue_RUB_billion: 5
+        revenue_growth_percent: 14
+        data_center_services_revenue_RUB_billion: 0.4
+        data_center_services_revenue_growth_percent: 10
+        adjusted_EBITDA_RUB_billion: 2.7
+        adjusted_EBITDA_growth_percent: 5
+        adjusted_EBITDA_margin_percent: 54
+        margin_change_percentage_points: -5
+        customers: 36600
+        capex_RUB_billion: 2.8
+        data_center_infrastructure_capex_RUB_billion: 0.9
+        adjusted_free_cash_flow_RUB_billion: -1.3
+        net_debt_RUB_billion: 18.1
+        net_debt_to_adjusted_EBITDA: 1.8
+      financial_profile_ref: company_selectel
+      boundary: >-
+        Consolidated accounting operating profit is not data-center-services
+        segment profit and cannot be allocated to six facilities. Adjusted
+        metrics and Q1 management results are not audited accounting profit.
+    ownership_and_control:
+      direct_parent: Servertech_Holding_Ltd_UAE
+      ultimate_controlling_party_at_2025_year_end: Vyacheslav_Mikhailovich_Mirilashvili
+      subsidiaries_percent_owned: {Edinaya_Set: 100, Selectel_Lab: 100, Selectel_Invest: 100}
+      Tier_5_2023_stake_percent: 25
+      Catalystic_People_2025_stake_percent: 25
+      Catalystic_People_ownership: {T_Technologies_percent: 50.01, Interros_percent: 49.99}
+      exact_stake_transition_bridge: not_fully_disclosed
+    public_map_crosswalk:
+      related_objects_including_one_name_only_building: 7
+      Selectel_operator_objects: 6
+      objects_joined_to_facility_candidates: 6
+      unresolved_geospatial_conflicts: 1
+      Tsvetochnaya_overlapping_objects: 2
+      boundary: >-
+        OSM lacks an exact Tsvetochnaya 2 mapping, includes an off-address
+        Berzarina node and has overlapping Tsvetochnaya objects. It is not a
+        complete roster, ownership source or capacity census.
+    sources:
+      - {title: Current data centers, publisher: Selectel, accessed: 2026-07-19, url: "https://selectel.ru/about/data-centers/"}
+      - {title: Infrastructure locations, publisher: Selectel, updated: 2026-07-17, url: "https://docs.selectel.ru/en/infrastructure/locations/"}
+      - {title: Free cooling details, publisher: Selectel, url: "https://selectel.ru/blog/free-cooling-details/"}
+      - {title: Tsvetochnaya 2 engineering, publisher: Selectel, url: "https://selectel.ru/blog/datacenter-cvt2/"}
+      - {title: Yurlovsky construction announcement, publisher: Selectel, date: 2022, url: "https://selectel.ru/about/newsroom/press/selectelselectel-pristupila-k-stroitelstvu-v-moskve-novogo-20-mvt-data-centra-na-2-tys-stoek/"}
+      - {title: Current GPU configurations, publisher: Selectel, updated: 2026-07-15, url: "https://docs.selectel.ru/en/cloud-servers/create/gpus/"}
+      - {title: NVIDIA B300 availability, publisher: Selectel, date: 2026, url: "https://selectel.ru/about/newsroom/news/novye-videokarty-nvidia-b300-dlya-krupnomasshtabnyh-ai-nagruzok-stali-dostupny-v-selectel/"}
+      - {title: Audited IFRS consolidated financial statements 2025, publisher: Selectel, date: 2026-03-31, url: "https://investors.selectel.ru/wp-content/uploads/2026/03/Selectel_IFRS_Cons_FS.pdf"}
+      - {title: Q1 2026 financial results, publisher: Selectel, date: 2026-05, url: "https://investors.selectel.ru/wp-content/uploads/2026/05/3m-2026_Selectel_Financial-results_Press-release.pdf"}
+      - {title: Catalystic People acquisition of 25 percent, publisher: Interros, date: 2025-12-29, url: "https://interros.ru/press/news/sovmestnoe-predpriyatie-interrosa-i-t-tekhnologiy-pokupaet-dolyu-v-krupneyshem-nezavisimom-rossiysko/"}
+      - {title: Russia public awards, publisher: Uptime_Institute, accessed: 2026-07-19, url: "https://uptimeinstitute.com/uptime-institute-awards/country/id/RU"}
+    confidence: high_for_six_current_facility_checksum_service_location_transcription_audited_financials_GPU_service_models_ownership_events_and_OSM_crosswalk_medium_for_historical_engineering_current_equipment_continuity_and_investor_site_scope_low_for_Yurlovsky_current_status_live_IT_load_complete_as_built_BOM_physical_GPU_inventory_site_economics_exact_shareholder_bridge_and_Uptime_award_mapping
+
 disclosure_gap_register:
+  - Selectel_six_current_physical_facilities_four_investor_sites_eight_partner_or_product_service_locations_and_seven_OSM_objects_to_exact_non_overlapping_building_ownership_tenure_and_lifecycle_roster
+  - Selectel_3612_racks_30MW_connected_power_and_7780_sqm_server_rooms_to_per_site_operating_energized_leased_utilized_billed_and_actual_IT_load
+  - Selectel_Yurlovsky_2000_rack_20MW_plan_to_current_construction_grid_energization_acceptance_customer_and_launch_status
+  - Selectel_per_site_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_models_counts_ratings_OEMs_and_as_built_topology
+  - Selectel_per_site_measured_PUE_WUE_absolute_water_energy_hourly_renewable_matching_live_liquid_cooled_MW_and_actual_load
+  - Selectel_provider_Tier_III_wording_and_Yurlovsky_Tier_IV_target_to_exact_current_Uptime_award_identifiers_types_scope_and_expiry
+  - Selectel_GPU_model_count_owner_host_site_delivery_fabric_power_utilization_customer_revenue_and_margin_beyond_service_models_and_per_server_configuration
+  - Selectel_data_center_services_to_accounting_operating_profit_cash_flow_capex_debt_customer_concentration_site_economics_and_ROIC
+  - Selectel_exact_current_shareholder_table_and_2023_to_2025_25_percent_stake_transition
   - Rostelecom_RTK_COD_26_data_centers_ten_named_markets_nine_reviewed_facility_evidence_records_and_six_OSM_objects_to_exact_current_non_overlapping_address_building_title_lease_and_lifecycle_roster
   - Rostelecom_RTK_COD_27637_exact_rack_park_27800_rounded_provider_28000_Group_and_235MW_total_power_to_same_date_operating_energized_leased_utilized_billed_and_actual_IT_load
   - Rostelecom_RTK_COD_selected_facility_installed_total_incoming_and_per_rack_power_terms_to_common_input_IT_and_actual_draw_denominator
