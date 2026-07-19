@@ -37774,7 +37774,157 @@ campus_profiles:
       - {title: PPF Group 2025 audited annual accounts, publisher: PPF_Group, year: 2025, url: 'https://www.datocms-assets.com/40359/1777974326-ppfgroup_annual_accounts_2025_public.pdf'}
     confidence: high_for_current_six_service_identifiers_four_addresses_four_OSM_matches_SOC3_ownership_boundary_Stodulky_reserved_input_and_PPF_financials_medium_for_current_certification_state_low_for_object_level_title_live_IT_load_complete_equipment_BOM_GPU_inventory_liquid_cooling_data_center_only_economics_and_vendor_attribution
 
+  - id: dc_powerhouse_us_hyperscale_AI_development_and_JV_pipeline
+    name: PowerHouse US hyperscale, AI, JV and development-pipeline boundary
+    type: current_private_developer_project_card_roster_with_OSM_power_cooling_GPU_capital_and_financial_scope_boundary
+    developer: PowerHouse_Data_Centers
+    parent: American_Real_Estate_Partners
+    country: United_States
+    evidence_artifacts:
+      project_registry: life/imports/global_data_centers_20260717/powerhouse_data_centers_registry.jsonl
+      project_summary: life/imports/global_data_centers_20260717/powerhouse_data_centers_summary.json
+      registry_builder: scripts/build_powerhouse_data_centers_registry.py
+    current_roster_reconciliation:
+      current_sitemap_project_cards: 13
+      project_identifiers_inside_cards: 14
+      home_only_labels_without_current_project_cards: [QC, PowerHouse_Joliet]
+      reconstructed_project_or_location_identifiers: 16
+      current_homepage_headlines: {facilities_underway_planning_or_completed_sq_ft: 32200000, data_centers_underway_or_planning: 118, power_GW: more_than_8_1, major_US_markets: 9}
+      visible_homepage_location_rollups: 11
+      project_card_checksums_not_operating_totals:
+        numeric_developable_area_sq_ft_excluding_CTP23: 26043400
+        maximum_buildings: 94
+        maximum_utility_power_MW: 6591
+        acreage: 2500
+      cards:
+        - {code: ABX1, market: Ashburn_VA, acreage: 10, developable_sq_ft: 265850, buildings: 1, max_utility_MW: 60, lifecycle: delivered_October_2023_and_current_card_sold_Q4_2024}
+        - {code: PAC, market: Ashburn_VA, acreage: 43, developable_sq_ft: 1131350, buildings: 3, max_utility_MW: 265, lifecycle: development_Q3_2026_to_Q2_2027}
+        - {code: ARC, market: Arcola_VA, acreage: 30_card_versus_37_release, developable_sq_ft: 615000, buildings: 2, max_utility_MW: 120, lifecycle: development_with_long_term_hyperscale_lease}
+        - {code: PH95, market: Spotsylvania_VA, acreage: 227, developable_sq_ft: 3600000, buildings: up_to_12, max_utility_MW: 900, lifecycle: development_with_delivery_Q3_2026_and_power_Q3_2027_conflict}
+        - {code: IRV, market: Irving_TX, acreage: 50, developable_sq_ft: 946200, buildings: up_to_3, max_utility_MW: 201, lifecycle: current_card_retains_passed_Q1_2026_target_without_commissioning_confirmation}
+        - {code: CTP23, market: Chesterfield_VA, acreage: 42, developable_sq_ft: undisclosed, buildings: 2, max_utility_MW: 120, lifecycle: construction_build_to_suit_fully_leased_target_Q1_2027}
+        - {code: DD, market: Chesterfield_VA, acreage: 100, developable_sq_ft: 695000, buildings: up_to_5, max_utility_MW: 300_plus, lifecycle: development_target_Q3_2027}
+        - {code: CLT, market: Charlotte_NC, acreage: 122, developable_sq_ft: 1500000_card_versus_2500000_release, buildings: up_to_5, max_utility_MW: 300_with_400_card_future_versus_500_release_potential, lifecycle: development}
+        - {code: LOU, market: Louisville_KY, acreage: 154, developable_sq_ft: 1800000, buildings: up_to_6, max_utility_MW: 525, lifecycle: development_target_Q4_2026}
+        - {code: GP, market: Grand_Prairie_TX, acreage: 810_card_versus_768_release, developable_sq_ft: 8500000, buildings: up_to_28, max_utility_MW: 1800_switchyard_envelope_with_first_500_ERCOT_approved, lifecycle: development}
+        - {code: PAX1, market: Carlisle_PA, acreage: 693, developable_sq_ft: 4200000, buildings: up_to_18, max_utility_MW: 1350_expandable_to_1800, lifecycle: development_2025_to_2031}
+        - {code: HOB, market: Hobart_IN, acreage: 170, developable_sq_ft: 1890000, buildings: up_to_6, max_utility_MW: 450, lifecycle: development_with_timeline_conflict}
+        - {code: RENO, market: Storey_County_NV, acreage: 49, developable_sq_ft: 900000, buildings: up_to_3, max_utility_MW: 200, lifecycle: current_card_retains_passed_April_2026_and_Q4_2025_targets_without_commissioning_confirmation}
+      boundary: >-
+        The homepage headline, visible market rollups, sitemap cards, project
+        identifiers, maximum buildings, developable area and maximum utility
+        power use different denominators. They mix completed and sold ABX-1,
+        leases, fully leased construction, grid stages and long-dated plans and
+        are not an operating-fleet total.
+    material_card_and_release_conflicts:
+      ABX1: current_card_60MW_versus_older_80MW_scaling_and_300MW_shared_substation_language
+      Arcola: 30_card_acres_versus_37_release_acres_and_delivery_before_power_timing
+      PH95: current_227_acres_900MW_12_buildings_3_6m_sq_ft_versus_older_145_acres_800MW_8_buildings_3_5m_sq_ft
+      Charlotte: current_1_5m_sq_ft_300MW_400MW_future_versus_2024_2_5m_sq_ft_300MW_secured_500MW_potential
+      Louisville: current_card_525MW_versus_130_first_335_initial_402_near_term_and_402_home_rollup
+      Grand_Prairie: current_card_810_acres_1_8GW_versus_release_768_acres_first_500MW_ERCOT_approved_and_500MW_home_rollup
+      Reno: current_card_200MW_versus_dated_more_than_65MW_bridging_power
+      boundary: Dated, phased, shared-substation, secured, approved, bridging and maximum utility values are retained without choosing whichever produces the largest apparent operating fleet.
+    ownership_JV_and_customer_boundary:
+      parent_control: PowerHouse_is_fully_owned_and_operated_by_private_AREP_per_provider_material
+      selected_project_partners:
+        Harrison_Street: [ABX1, initial_Northern_Virginia_program, PH95, IRV, RENO]
+        Chirisa_Technology_Parks_and_Blue_Owl: [CTP23_and_AI_HPC_program]
+        Chirisa_Technology_Parks: [Digital_Drive]
+        Town_Lane: [Charlotte]
+        Poe_Companies: [Louisville]
+        Provident_Data_Centers: [Grand_Prairie]
+        Pennsylvania_Data_Center_Partners: [PAX1]
+      customer_or_lessee_evidence:
+        ABX1: 30_year_whole_building_CyrusOne_lease_announced_2023_then_current_card_sold_Q4_2024
+        CTP_program: initial_120MW_for_CoreWeave_in_2025_and_2026
+        Arcola: undisclosed_long_term_hyperscale_lease_announced_January_2026
+      exact_current_asset_title_JV_percentages_voting_rights_preferences_guarantees_debt_lease_sale_buyer_and_accounting_consolidation: incomplete_or_undisclosed
+      boundary: Parent ownership of the developer, project title, capital ownership, tenant operation and sold-asset title are different scopes.
+    OSM_crosswalk:
+      related_objects: 5
+      operator_tagged_objects: 4
+      exact_and_cluster_matches:
+        osm_way_1188715508: ABX1_exact_name_and_website
+        osm_way_1085712184: unnamed_PowerHouse_component_inside_CTP_cluster
+        osm_way_1449347339: CTP02_named_building_geometry
+        osm_way_1493522242: CTP02_named_construction_geometry
+        osm_way_800436891: CTP03_name_only_construction_land_or_campus_polygon
+      boundary: Four Chesterfield geometries reconcile to one two-building provider card and are not four operating data centers. The 260,931.695-square-metre CTP-03 polygon is not treated as floor area.
+    power_electrical_and_resilience:
+      portfolio_design: {minimum_redundancy: N_plus_1, PUE_design_target: 1_2_to_1_3, baseline_cooling: air_cooled_rooftop_chillers_with_optional_evaporative_component}
+      selected_power_stages:
+        Louisville: {first_MW: 130, initial_secured_MW: 335, near_term_MW: 402, current_card_max_utility_MW: 525, infrastructure: new_LGE_switch_station_and_dedicated_onsite_substation}
+        Grand_Prairie: {switchyard_envelope_MW: 1800, first_ERCOT_approved_tranche_MW: 500}
+        PAX1: {three_substations_MW_each: 450, near_term_power_MW: 300, utility: PPL_Electric}
+        Charlotte: {bridging_power_MW: 15, current_card_MW: 300, card_future_MW: 400, release_potential_MW: 500, utility: Duke_Energy}
+        ABX1: {current_card_MW: 60, shared_GIS_substation_MW: 300, utility: Dominion_Energy}
+        Reno: {current_card_MW: 200, dated_bridging_MW: 65, utility: NV_Energy}
+      complete_per_site_grid_transformer_switchgear_busway_PDU_UPS_battery_generator_fuel_OEM_model_count_rating_loading_test_age_and_remaining_life: incomplete_or_undisclosed
+      current_energized_available_allocated_sold_occupied_billed_peak_and_actual_IT_load: undisclosed
+      boundary: Maximum utility, switchyard, substation, secured, approved, bridging and critical values are not interchangeable with live IT load.
+    cooling_energy_water_and_sustainability:
+      CTP23: direct_on_chip_liquid_cooling_marketed_as_almost_twice_as_energy_efficient_as_traditional_air_cooling
+      Arcola: high_density_GPU_and_liquid_cooled_environment_support_with_Tier_III_plus_or_IV_ready_design
+      Reno: water_reuse_design_and_claimed_50_percent_lighting_and_30_percent_cooling_energy_reduction
+      Louisville: water_system_and_Ohio_River_access_not_actual_facility_water_use
+      exact_live_liquid_cooled_MW_measured_PUE_WUE_energy_water_emissions_and_hourly_renewable_matching: undisclosed_or_unestablished
+      boundary: Comparative design and readiness language does not prove commissioned equipment, measured savings or current liquid-cooled load.
+    AI_accelerators_and_high_density:
+      homepage_capability: [HPC, high_density_power, immersive_cooling, OCP_ready, DGX_ready]
+      named_AI_customer_boundary: CoreWeave_initial_120MW_CTP_program
+      exact_current_PowerHouse_AREP_JV_tenant_or_partner_GPU_accelerator_model_count_owner_site_delivery_acceptance_rack_fabric_power_utilization_revenue_margin_and_remaining_life: undisclosed_or_unestablished
+      boundary: DGX-ready, GPU support, AI-ready design and a named AI cloud tenant are not PowerHouse-owned accelerator inventory. No GPU total is inferred.
+    ownership_financial_and_investability:
+      financial_profile_ref: company_powerhouse_data_centers
+      AREP_homepage: {acquired_sq_ft: 38000000, acquisitions_to_date_USD: 21_billion_plus}
+      AREP_Fund_IV: {equity_commitments_USD: 309000000, target_allocation_to_PowerHouse_percent: 80}
+      selected_non_additive_capital_headlines_USD: {Harrison_Street_JV_commitment: 1000000000, Blue_Owl_CTP_PowerHouse_deployment_capacity: 5000000000, second_Blue_Owl_transaction_tranche: 750000000, PAX_three_campus_project: 15000000000}
+      PowerHouse_and_AREP_audited_revenue_operating_profit_EBITDA_net_income_cash_flow_capex_debt_assets_customer_concentration_utilization_and_ROIC: undisclosed
+      direct_public_equity_security: unavailable
+      boundary: Fund equity, project cost, JV deployment capacity, transaction tranches and acquisitions-to-date are not PowerHouse revenue, profit, enterprise value, cash, spent capex or owned asset value.
+    named_party_read_through_without_revenue_attribution:
+      capital_and_development: [Harrison_Street, Blue_Owl_Capital, Chirisa_Technology_Parks, Town_Lane, Poe_Companies, Provident_Data_Centers, Pennsylvania_Data_Center_Partners]
+      customers_or_lessees: [CyrusOne, CoreWeave, undisclosed_Arcola_hyperscaler]
+      utilities_or_grid: [Dominion_Energy, NV_Energy, Duke_Energy, Louisville_Gas_and_Electric_PPL, PPL_Electric, ERCOT]
+      design_construction_and_fit_out: [Integra_Mission_Critical, DPR_Construction, Corgan, kW_Mission_Critical_Engineering, Rosendin_Electric]
+      boundary: A named project role does not establish contract value, equipment award, attributable revenue, profit, margin or repeat business.
+    outlook:
+      positive_signals: [large_power_secured_or_planned_pipeline, multiple_institutional_capital_partners, CoreWeave_and_hyperscale_lease_demand, AI_HPC_and_liquid_cooling_design_capability, utility_and_substation_relationships, national_market_expansion]
+      conversion_tests: [reconcile_118_8_1GW_32_2m_sq_ft_and_current_cards, confirm_commissioning_of_passed_and_near_term_targets, convert_grid_envelopes_to_energized_customer_accepted_billed_IT_load, publish_project_ownership_and_financial_allocation, disclose_measured_efficiency_and_live_liquid_cooled_MW, identify_installed_accelerators_and_supplier_awards]
+      risks: [pipeline_not_operating_capacity, multi_JV_ownership_and_accounting_complexity, transmission_and_power_timing, card_and_release_conflicts, customer_concentration, construction_financing_and_cost_inflation, private_financial_opacity, no_GPU_inventory_or_AI_revenue_bridge]
+      analytical_view: >-
+        PowerHouse is strong evidence that AI demand is converting into land,
+        utility, substation, liquid-cooling and construction pipelines. It is
+        also a private developer whose headline GW and building count are mostly
+        future envelopes. Investment conclusions should follow commissioning,
+        customer acceptance, billed load and supplier awards rather than count
+        the whole pipeline as operating capacity or revenue.
+    sources:
+      - {title: Current PowerHouse homepage pipeline and markets, publisher: PowerHouse_Data_Centers, accessed: '2026-07-19', url: 'https://www.powerhousedata.com/'}
+      - {title: Current PowerHouse sitemap project roster, publisher: PowerHouse_Data_Centers, accessed: '2026-07-19', url: 'https://www.powerhousedata.com/sitemap.xml'}
+      - {title: PowerHouse design approach and baseline cooling, publisher: PowerHouse_Data_Centers, accessed: '2026-07-19', url: 'https://www.powerhousedata.com/approach'}
+      - {title: PowerHouse sustainability design claims, publisher: PowerHouse_Data_Centers, accessed: '2026-07-19', url: 'https://www.powerhousedata.com/sustainability'}
+      - {title: AREP Fund IV close and PowerHouse allocation, publisher: American_Real_Estate_Partners, date: '2025-02-18', url: 'https://www.americanrepartners.com/news/arep-fund-iv-oversubscribed-at-309m'}
+      - {title: Blue Owl CTP PowerHouse second transaction tranche, publisher: PowerHouse_Data_Centers, date: '2025-05-27', url: 'https://www.powerhousedata.com/news/blue-owl-chirisa-technology-parks-and-powerhouse-data-centers-announce-next-phase-of-5-billion-joint-venture-development-partnership'}
+      - {title: Arcola hyperscale lease and high-density design, publisher: PowerHouse_Data_Centers, date: '2026-01-15', url: 'https://www.powerhousedata.com/news/powerhouse-lease-arcola'}
+      - {title: PAX 1.35GW project announcement, publisher: PowerHouse_Data_Centers, date: '2025-07-15', url: 'https://www.powerhousedata.com/news/pennsylvania-data-center-partners-and-powerhouse-data-centers-launch-joint-venture-to-build-next-gen-1-35-gw-hyperscale-data-center-campus-in-carlisle-pennsylvania'}
+    confidence: high_for_current_13_card_roster_two_home_only_labels_homepage_headlines_five_OSM_crosswalks_selected_JV_customer_power_and_design_claims_and_AREP_Fund_IV_medium_for_project_to_partner_current_bridge_low_for_current_commissioning_live_IT_load_complete_equipment_BOM_GPU_inventory_project_ownership_standalone_financials_and_site_ROIC
+
 disclosure_gap_register:
+  - PowerHouse_current_118_data_centers_8_1GW_nine_market_32_2m_sqft_headlines_to_thirteen_sitemap_cards_sixteen_project_identifiers_eleven_visible_rollups_and_exact_non_overlapping_building_lifecycle_census
+  - PowerHouse_ABX1_current_sold_Q4_2024_buyer_price_title_lease_transfer_CyrusOne_30_year_lease_accounting_and_21529_versus_21629_Beaumeade_address_reconciliation
+  - PowerHouse_current_project_card_delivery_and_power_targets_to_current_per_building_construction_completion_commissioning_utility_energization_customer_acceptance_and_ready_for_service
+  - PowerHouse_13_card_6_591GW_maximum_utility_checksum_home_8_1GW_headline_visible_7_053GW_market_rollups_and_QC_Joliet_missing_card_denominator_reconciliation
+  - PowerHouse_PH95_Arcola_Charlotte_Grand_Prairie_Louisville_Reno_and_ABX_card_press_release_area_building_power_and_timeline_conflict_authoritative_resolution
+  - PowerHouse_complete_project_land_parcel_address_building_title_lease_developer_operator_tenant_JV_percentages_voting_rights_preferences_guarantees_debt_and_accounting_consolidation
+  - PowerHouse_per_site_grid_voltage_interconnection_stage_substation_transformer_switchgear_busway_PDU_UPS_battery_generator_fuel_OEM_model_count_rating_loading_test_age_and_remaining_life
+  - PowerHouse_per_site_chiller_rooftop_unit_CRAH_CRAC_CDU_pump_heat_exchanger_cooling_tower_and_direct_on_chip_liquid_cooling_OEM_model_count_rating_loading_measured_PUE_WUE_energy_water_and_live_liquid_cooled_MW
+  - PowerHouse_per_site_maximum_utility_substation_switchyard_secured_approved_bridging_critical_to_operating_energized_available_allocated_sold_occupied_billed_peak_and_actual_IT_load
+  - PowerHouse_CoreWeave_CyrusOne_Arcola_hyperscaler_and_other_tenant_GPU_accelerator_model_count_owner_site_delivery_acceptance_rack_fabric_power_utilization_revenue_margin_and_remaining_life
+  - PowerHouse_AREP_Harrison_Street_Blue_Owl_CTP_Town_Lane_Poe_Provident_Pennsylvania_DCP_project_by_project_capital_commitment_called_invested_spent_remaining_and_return_allocation
+  - PowerHouse_and_AREP_audited_revenue_operating_profit_EBITDA_cash_flow_capex_debt_assets_customer_concentration_utilization_backlog_project_economics_and_ROIC
+  - PowerHouse_named_utility_design_construction_fit_out_and_equipment_parties_to_exact_contract_scope_value_revenue_margin_delivery_and_repeat_award
   - O2_Czech_CETIN_six_current_service_identifiers_to_four_current_address_entries_exact_land_building_suite_title_lease_operator_and_lifecycle_reconciliation_for_Nagano_and_Hradec_Kralove
   - O2_Czech_CETIN_SOC3_portfolio_ownership_statement_to_asset_by_asset_CETIN_title_O2_service_rights_intercompany_contract_cost_revenue_capex_energy_and_accounting_allocation
   - O2_Czech_Chodov_Nagano_Hradec_Kralove_Tier_III_certificate_identifiers_award_types_scopes_award_dates_expiries_and_current_audit_state_and_built_to_wording_for_other_sites
