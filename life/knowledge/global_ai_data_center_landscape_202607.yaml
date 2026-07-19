@@ -36181,7 +36181,193 @@ campus_profiles:
       - {title: Bouchain preferred bidder, publisher: EDF, date: '2026-05-30', url: "https://www.edf.fr/en/the-edf-group/dedicated-sections/journalists/all-press-releases/edf-selects-softbank-group-as-preferred-bidder-for-the-development-of-a-large-scale-data-center-at-its-bouchain-site"}
     confidence: high_for_current_two_site_AFNOR_roster_NOE_Pacy_OSM_grouping_2019_GAIA_inventory_2025_replacement_SELENA_cooling_TOP500_systems_FY2025_financials_and_state_ownership_medium_for_design_firm_project_metrics_and_Pacy_contractor_scope_low_for_Saint_Ouen_point_complete_current_BOM_site_MW_utilization_current_GPU_inventory_data_center_specific_earnings_and_external_project_economics
 
+  - id: dc_bnp_paribas_internal_data_center_and_hosted_hpc_boundary
+    operator: BNP_Paribas
+    geography: [France, Belgium, Iceland_hosted, Sweden_hosted]
+    status: five_current_direct_site_groups_minimum_with_Marne_Est_building_boundary_and_third_party_hosted_compute_separated
+    as_of: '2026-07-19'
+    reproducible_registry:
+      facility_registry: life/imports/global_data_centers_20260717/bnp_paribas_internal_and_hosted_data_center_registry.jsonl
+      facility_summary: life/imports/global_data_centers_20260717/bnp_paribas_internal_and_hosted_data_center_summary.json
+      related_OSM_rows: 6
+      OSM_operator_tagged_rows: 5
+      OSM_name_only_campus_relations: 1
+      current_France_site_groups: 3
+      current_Belgium_site_groups: 2
+      current_minimum_BNP_operated_site_groups: 5
+      boundary: >-
+        The minimum contains Marne Est, Marne Nord and Marne Sud in France plus
+        Bastogne and Vaux-sur-Sure in Belgium. MAE1, MAE2 and the Marne Est site
+        relation are one campus group; legacy Val-de-Reuil is now NDC Rouen and
+        atNorth-hosted compute is not BNP physical facility inventory.
+    France:
+      current_JRC_site_groups: [Marne_Est_1_MAE1, Marne_Nord_MN, Marne_Sud_MS]
+      Marne_Est:
+        count: 1
+        campus_land_hectares_2021: 7.4
+        MAE1:
+          first_authorized: 2012
+          regulatory_2021_building_footprint_m2: 3180
+          regulatory_2021_IT_rooms: 2
+          OSM_multipolygon_area_m2: 5829.914
+        MAE2:
+          state: constructed_and_mapped_current_production_acceptance_not_established
+          planned_building_footprint_m2: 6008
+          planned_floor_area_m2: 10891
+          planned_IT_rooms: 2
+          planned_IT_room_area_each_m2: 1000
+          OSM_current_footprint_area_m2: 5348.676
+          planned_generator_system: {count: 6, unit_kW: 6300, nameplate_total_MW: 37.8}
+          planned_UPS_or_battery_banks: {count: 32, published_total_kW: 928, runtime_minutes: 10}
+          planned_cooling:
+            rooftop_chillers: {count: 16, refrigerant: R1234ze, refrigerant_kg: 2576}
+            rooftop_heat_pumps: {count: 5, refrigerant: R410A, refrigerant_kg: 350}
+          planned_fuel:
+            additional_underground_double_wall_tanks: 3
+            each_m3: 100
+            daily_tanks: 6
+            daily_tank_each_m3: 0.5
+            additional_fuel_mass_tonnes: 254
+          planned_main_low_voltage_switchboards: 8
+        energy_context_2021:
+          site_electricity_2019_GWh: 37.6
+          MAE2_2025_increment_forecast_GWh: 7.8
+          MAE2_2040_forecast_GWh: 50.8
+          two_building_2040_forecast_GWh: 126.95
+          permit_MAE2_apparent_electrical_need_MVA: 8.7
+          permit_site_apparent_electrical_need_MVA: 22.2
+          current_site_PUE_estimate_in_2021: 1.6
+          planned_final_site_PUE: 1.4
+          forecast_post_project_generators_sitewide: 15
+          forecast_post_project_fuel_m3_per_year: 123
+          quality_boundary: >-
+            The MRAe explicitly requested correction or clarification of power
+            figures. Forecast energy, apparent power and generator nameplate are
+            not current operating, energized, utilized or actual IT load.
+        efficiency_design: [partial_free_chilling_below_10C, high_performance_chillers, optimized_IT_room_airflow, heat_pumps_for_waste_heat, LED_lighting]
+      Marne_Nord:
+        count: 1
+        OSM_building_footprint_m2: 13149.426
+      Marne_Sud:
+        count: 1
+        OSM_building_footprint_m2: 3577.703
+      Val_de_Reuil_legacy:
+        current_BNP_count: 0
+        sale_year: 2021
+        current_operator: Nation_Data_Center
+        current_name: NDC_Rouen
+        post_sale_redevelopment: {initial_IT_MW: 1.2, target_IT_MW: 1.8, IT_area_m2: 2000, target_PUE: 1.2, cooling: surface_geothermal_and_free_cooling, power_resilience: two_redundant_generator_plants, onsite_energy: photovoltaic_roof_and_parking}
+        boundary: Post_sale_NDC_values_are_not_current_BNP_capacity
+    Belgium:
+      current_sites: [Bastogne, Vaux_sur_Sure]
+      current_evidence: BNP_2026_job_listing_for_Belgian_data_center_estate_and_Bastogne_Nord_base
+      original_2013_program:
+        investment_EUR_more_than_million: 200
+        required_electrical_power_per_site_MW: 30
+        planned_each_site_technical_and_IT_buildings: 3
+        planned_each_building_area_m2_approx: 8000
+        planned_each_site_logistics_building_m2: 1200
+        planned_combined_building_area_m2_more_than: 50000
+        planned_certification: ISO_27001
+        design_tier: Tier_3_plus
+        planned_PUE: 1.3
+        cooling: outdoor_air_free_cooling
+        planned_phases: [2015, 2020, 2025]
+      contractor_scopes_non_additive:
+        BPC: {construction_period: 2014_01_to_2015_11, combined_surface_m2: 43680}
+        Semaco: {period: 2016_to_2017, budget_EUR_million: 140, stated_surface_m2_each: 30000}
+        Dorsalys: {year: 2016, design: dual_site_IT_Tier_III, computer_or_storage_room_area: 4_x_1500_m2, new_rooms_operated_by: IBM}
+      boundary: >-
+        Original plans and contractor work packages use different phases and
+        area perimeters. They are not added into a current area, capex or IT-load total.
+    hosted_and_cloud:
+      atNorth_Iceland:
+        relationship: hosted_as_a_service_not_BNP_physical_site
+        migration_year: 2018
+        BNP_total_compute_capacity_increase_percent_nearly: 30
+        energy_reduction_percent_more_than: 50
+        CO2_reduction_percent: 85
+        hardware: Dell_PowerEdge_HPC_servers
+        exact_atNorth_site_code: undisclosed
+      atNorth_SWE01:
+        relationship: hosted_at_atNorth_operated_facility
+        provider_site_power_MW: 12
+        provider_facility_area_m2: 6400
+        provider_PUE_up_to: 1.2
+        BNP_grid_capacity_increase_percent: 20
+        cooling: direct_liquid_and_N_plus_1_chilled_water_mechanical
+        backup: UPS_and_generator_fuel_for_34_hours
+        waste_heat: up_to_85_percent_electricity_reused_for_up_to_20000_homes
+        boundary: Provider_site_metrics_are_not_BNP_contracted_utilized_or_owned_capacity
+      IBM_Cloud:
+        hosted_in_BNP_data_centers_since: 2019
+        new_dedicated_area_target: 2028
+        partnership_term_years: 10
+        stated_capability: GPUs_as_a_service_and_dedicated_cloud_native_environment
+        boundary: Service_capability_does_not_disclose_physical_GPU_inventory_or_site_allocation
+    power_cooling_and_environment:
+      energy_management_certification: ISO_50001
+      buildings_including_data_centers_environmental_management: ISO_14001
+      monitored_or_optimized: [chillers, chilled_water_loop, IT_room_temperature, HVAC_fan_speed, air_handling_units, free_cooling]
+      first_CUBE_Datacenter_competition:
+        overall_energy_reduction_percent: 2.81
+        building_energy_efficiency_improvement_percent: 28.25
+      complete_current_grid_feed_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_OEM_model_count_rating_redundancy_loading_acceptance_age_and_remaining_life_by_site: undisclosed
+      current_measured_site_PUE_WUE_energy_water_emissions_and_live_liquid_cooled_MW: undisclosed
+    accelerators:
+      current_BNP_owned_or_leased_GPU_model_count_by_site: not_publicly_disclosed_or_established
+      current_atNorth_hosted_BNP_GPU_count: not_publicly_disclosed_or_established
+      IBM_GPU_as_a_service_physical_inventory_allocated_to_BNP: not_publicly_disclosed_or_established
+      boundary: >-
+        HPC, high-density CPU servers, direct liquid cooling, generative-AI
+        language and GPUs-as-a-service do not prove a physical BNP GPU inventory.
+    operating_capacity:
+      operating_energized_available_internal_allocated_contracted_customer_accepted_leased_utilized_billed_peak_and_actual_IT_MW_by_site: undisclosed
+      current_racks_servers_workloads_customer_allocation_and_complete_BOM: undisclosed
+    ownership_and_financial_boundary:
+      financial_profile_ref: company_bnp_paribas
+      listing: Euronext_Paris_BNP
+      FY2025_revenues_net_banking_income_EUR_million: 51223
+      FY2025_gross_operating_income_EUR_million: 19849
+      FY2025_operating_income_EUR_million: 16296
+      FY2025_net_income_group_share_EUR_million: 12225
+      data_center_segment_and_site_economics: undisclosed
+      boundary: >-
+        Banking revenue and operating income are not infrastructure-site earnings
+        and cannot be allocated to Marne, Belgium, IBM Cloud or atNorth workloads.
+    outlook:
+      positive_signals: [five_site_current_minimum, MAE2_expansion, IBM_Cloud_dedicated_environment_through_2028, atNorth_low_carbon_HPC_and_heat_reuse, ISO_50001, FY2025_growth_and_raised_2028_targets]
+      risk_signals: [site_and_segment_economics_undisclosed, site_MW_utilization_and_complete_BOM_undisclosed, GPU_inventory_undisclosed, MAE2_production_acceptance_unverified, operational_resilience_cybersecurity_and_regulatory_risk, hosted_cloud_dependency]
+      analytical_view: >-
+        BNP Paribas is an enterprise operator and hosted-compute customer, not a
+        data-center pure play. The estate demonstrates private-cloud resilience,
+        efficiency and circular-HPC demand, but investment returns remain banking-led.
+    sources:
+      - {title: EU Data Centre Code of Conduct participants, publisher: European_Commission_JRC, accessed: '2026-07-19', url: "https://e3p.jrc.ec.europa.eu/de/groups/data-centres-code-conduct/participants?order=field_adhesion_date&page=0&partner_search=&sort=desc"}
+      - {title: MAE2 environmental authority opinion, publisher: MRAe_Ile_de_France, date: '2021-08-18', url: "https://www.drieat.ile-de-france.developpement-durable.gouv.fr/IMG/pdf/avis_mrae_-_projet_d_extension_d_un_data_center_-_bailly-romainvilliers_-_18082021.pdf"}
+      - {title: Belgian data centers groundbreaking, publisher: BNP_Paribas_Fortis, date: '2013-10-22', url: "https://www.bnpparibasfortis.com/newsroom/press-release/bnp_paribas_group_breaks_ground_for_new_data_centres_in_belgium"}
+      - {title: Current Belgian data-center job evidence, publisher: BNP_Paribas, updated: '2026-06-30', url: "https://group.bnpparibas/en/careers/job-offer/data-center-facility-manager-bastogne-et-vaux-sur-sure-1"}
+      - {title: BNP Belgian data-center construction, publisher: BPC_Group, accessed: '2026-07-19', url: "https://bpcgroup.be/realisation/bnp-data-centers/"}
+      - {title: IBM dual-site extension, publisher: Dorsalys_Eiffage, accessed: '2026-07-19', url: "https://www.dorsalys.com/en/references/ibm-extension-data-centres"}
+      - {title: Val-de-Reuil sale and redevelopment history, publisher: Ville_de_Val_de_Reuil, date: '2024-11-18', url: "https://www.valdereuil.fr/wp-content/uploads/2024/12/Proces-verbal-du-Conseil-municipal-du-18-novembre-2024.pdf"}
+      - {title: Normandie Data Center redevelopment, publisher: Artelia, accessed: '2026-07-19', url: "https://www.arteliagroup.com/fr/project/bnp-paribas-marne-est/"}
+      - {title: BNP data-center energy optimization, publisher: BNP_Paribas, date: '2025-02-27', url: "https://group.bnpparibas/en/news/bnp-paribas-wins-awards-for-optimising-energy-consumption-in-its-data-centres"}
+      - {title: atNorth BNP migration, publisher: atNorth, period: '2023-03', url: "https://www.atnorth.com/news/atnorth-announces-bnp-paribas-at-swe01-facility/"}
+      - {title: atNorth and Dell BNP case study, publisher: Dell_atNorth_and_BNP_Paribas, period: '2022-06', url: "https://www.atnorth.com/uploads/Dell_atNorth_case-study.pdf"}
+      - {title: IBM Cloud ten-year partnership, publisher: BNP_Paribas_and_IBM, date: '2025-05-14', url: "https://group.bnpparibas/en/press-release/bnp-paribas-signs-a-new-multi-year-partnership-agreement-with-ibm-cloud"}
+      - {title: BNP Paribas FY2025 results, publisher: BNP_Paribas, date: '2026-02-05', url: "https://invest.bnpparibas/document/4q25-pr"}
+    confidence: high_for_current_three_French_JRC_site_groups_two_Belgian_sites_Marne_Est_grouping_Val_de_Reuil_transition_MAE2_regulatory_design_hosted_atNorth_boundary_IBM_cloud_relationship_and_FY2025_financials_medium_for_MAE2_constructed_state_and_Belgian_contractor_area_scopes_low_for_complete_global_BNP_site_roster_MAE2_production_acceptance_site_MW_utilization_complete_BOM_current_GPU_inventory_and_data_center_economics
+
 disclosure_gap_register:
+  - BNP_Paribas_complete_global_current_owned_leased_operated_and_hosted_data_center_site_building_module_address_and_lifecycle_roster_beyond_the_five_site_minimum
+  - BNP_Paribas_MAE2_current_commissioning_customer_acceptance_production_use_energized_available_allocated_peak_and_actual_IT_load
+  - BNP_Paribas_Marne_Est_Nord_Sud_Bastogne_and_Vaux_sur_Sure_current_operating_energized_available_internal_allocated_utilized_peak_and_actual_IT_MW_area_racks_servers_workloads_and_site_economics
+  - BNP_Paribas_per_site_grid_feed_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_OEM_model_count_rating_redundancy_loading_test_acceptance_age_and_remaining_life
+  - BNP_Paribas_per_site_current_measured_PUE_WUE_energy_water_emissions_renewable_matching_and_live_liquid_cooled_MW
+  - BNP_Paribas_current_owned_leased_and_hosted_GPU_model_count_owner_site_delivery_acceptance_rack_fabric_power_utilization_revenue_and_margin
+  - BNP_Paribas_atNorth_Iceland_exact_site_code_contracted_power_racks_server_count_and_current_workload_perimeter
+  - BNP_Paribas_IBM_Cloud_2019_and_2028_exact_internal_site_area_power_hardware_GPU_service_inventory_allocation_and_economics
+  - BNP_Paribas_data_center_segment_and_site_revenue_operating_profit_cash_flow_capex_customer_or_internal_allocation_contract_pricing_ROIC_and_valuation
   - EDF_current_two_site_internal_data_center_building_parcel_ownership_lease_operating_entity_and_lifecycle_detail_beyond_AFNOR_site_rows
   - EDF_NOE_and_Pacy_operating_energized_available_internal_allocated_utilized_peak_and_actual_IT_MW_current_racks_servers_workloads_and_site_economics
   - EDF_NOE_and_Pacy_grid_feed_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_OEM_model_count_rating_redundancy_loading_acceptance_age_and_remaining_life
