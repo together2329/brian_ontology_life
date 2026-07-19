@@ -404,6 +404,8 @@ manufacturers:
     latest_financial_snapshot:
       period: Q1_2026
       revenue_twd_billion: 38.253
+      operating_income_twd_billion: 12.550
+      operating_margin_percent: 32.8
       gross_margin_percent: 53.4
       parent_net_income_twd_billion: 10.114
       revenue_mix_percent: {customized_memory: 47, flash: 32, logic: 21}
@@ -417,6 +419,7 @@ manufacturers:
     sources:
       - https://www.winbond.com/hq/about-winbond/news-and-events/news/news00582.html?__locale=en_TW
       - https://www.winbond.com/hq/about-winbond/locations/index.html?__locale=en
+      - https://www.winbond.com/export/sites/winbond/about-winbond/investor/investor-conference/1Q26-investor-conference_EN_Final.pdf
       - https://www.winbond.com/export/sites/winbond/about-winbond/investor/financial-information/annual-report/report/2025_Winbond_Annual_Report__EN.pdf?__locale=en
 
   - id: memory_company_macronix
@@ -450,9 +453,16 @@ manufacturers:
     classification: specialty_logic_and_memory_foundry
     core_products: [DRAM_foundry, flash_foundry, niche_memory, WoW_3D_AI, silicon_interposer, PMIC]
     latest_financial_snapshot:
-      period: Q1_2026
-      status: official_financial_statement_available_but_not_normalized_in_this_pass
-      reason: The reviewed English IR index did not expose a stable machine-readable result table.
+      period: Q1_2026_preliminary_self_assessed
+      status: preliminary_not_CPA_reviewed
+      revenue_twd_billion: 13.572462
+      operating_income_twd_billion: 14.226108
+      operating_margin_percent_derived: 104.82
+      income_before_tax_twd_billion: 14.331913
+      boundary: >-
+        The company labels these results preliminary and not reviewed by CPAs.
+        Operating income exceeded revenue and is not a normalized foundry margin;
+        it must be reviewed with the Tongluo P5 transaction and other operating items.
     manufacturing_footprint:
       current_structure_after_Tongluo_sale: three_12_inch_and_two_8_inch_fabs
       Hsinchu_12_inch_memory_capacity_wafers_per_month: 50000
@@ -469,6 +479,7 @@ manufacturers:
       - https://www.powerchip.com/en-global/insights/press-releases/content/20260121
       - https://www.powerchip.com/en-global/insights/press-releases/content/20260117
       - https://www.powerchip.com/en-global/insights/press-releases/content/20260610
+      - https://www.powerchip.com/en-global/financials/quarterlyincome?target=target_title
       - https://www.powerchip.com/en-global/financials/quarterly?target=target_title
 
   - id: memory_company_cxmt

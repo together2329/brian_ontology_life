@@ -1,0 +1,1234 @@
+id: global_semiconductor_manufacturing_backend_network_202607
+object_type: FinancialResearchArtifact
+title: Global memory, foundry and semiconductor backend manufacturing network
+version: 1
+status: active_research
+as_of: 2026-07-19
+timezone: Asia/Seoul
+language: mixed_English_schema_with_Korean_interpretation
+
+purpose: >-
+  Connect the existing memory-company research to disclosed front-end fabs,
+  foundry portfolios, internal assembly/test sites and independent OSAT/test
+  companies. Keep revenue, operating profit, physical capacity, shipments,
+  utilization, floor area, capex and management plans in their original units
+  so that unlike denominators are never added together.
+
+linked_research:
+  memory_company_artifact:
+    id: global_memory_semiconductor_supply_chain_202607
+    path: life/finance/global_memory_semiconductor_supply_chain_202607.yaml
+    company_section: manufacturers
+    supply_chain_section: supply_chain_layers
+    relationship_boundary: >-
+      The linked supplier rows are category and process-layer exposures unless
+      the source explicitly names a customer, contract, joint venture or
+      collaboration. They are not customer-specific allocations.
+
+research_scope:
+  linked_memory_and_enabler_company_ids:
+    - memory_company_tsmc
+    - memory_company_samsung
+    - memory_company_sk_hynix
+    - memory_company_micron
+    - memory_company_kioxia
+    - memory_company_sandisk
+    - memory_company_nanya
+    - memory_company_winbond
+    - memory_company_macronix
+    - memory_company_psmc
+    - memory_company_cxmt
+    - memory_company_ymtc
+  additional_foundry_company_ids:
+    - foundry_intel
+    - foundry_umc
+    - foundry_globalfoundries
+    - foundry_smic
+    - foundry_hua_hong
+    - foundry_tower
+    - foundry_db_hitek
+    - foundry_vis
+  independent_backend_company_ids:
+    - backend_ase
+    - backend_amkor
+    - backend_jcet
+    - backend_pti
+    - backend_chipmos
+    - backend_kyec
+    - backend_tongfu
+    - backend_hana_micron
+    - backend_sfa_semicon
+    - backend_lb_semicon
+    - backend_doosan_tesna
+    - backend_nepes_ark
+  company_boundary: >-
+    This is a decision-useful roster of major global foundries and OSAT/test
+    companies plus strategically relevant Korean backend suppliers. It is not a
+    claim that every small private packaging, substrate or test-house company is included.
+
+comparison_contracts:
+  financial:
+    - Preserve reporting period, currency, accounting perimeter and reported, preliminary or derived status.
+    - Samsung Foundry is not reported as a standalone profit center; the DS segment includes Memory, Foundry and System LSI.
+    - Intel Foundry revenue is predominantly intersegment; external revenue and the segment operating loss remain visible.
+    - ASE consolidated revenue includes EMS; its ATM segment is the closer packaging-and-test comparison boundary.
+    - Do not compare one quarter with a fiscal year without labeling the period.
+  production:
+    - Installed wafer capacity, actual wafer shipments, utilization, floor area, capex and value-based equipment capacity are separate measures.
+    - Never sum 8-inch-equivalent, 12-inch-equivalent, native-wafer, package, test-hour, square-foot or currency-denominated capacity.
+    - Planned, under-construction and target capacity is not current production.
+    - An undisclosed physical throughput remains null even when revenue or factory floor area is known.
+  facilities:
+    - A campus, fab building, cleanroom line and company portfolio can overlap; each record retains its scope.
+    - Kioxia and Sandisk share Yokkaichi and Kitakami through Flash Ventures; those fab records have one non-additive joint-venture group.
+    - Site lists do not imply that all products, nodes or customers run at every listed building.
+  relationships:
+    - Category capability is not a named customer relationship.
+    - Research, qualification, MOU, order, shipment and recognized revenue are distinct states.
+    - Internal vertical integration is kept separate from an arm's-length supplier relationship.
+
+linked_company_overrides:
+  - company_id: memory_company_tsmc
+    category_tags: [foundry, advanced_packaging, memory_enabler]
+  - company_id: memory_company_samsung
+    category_tags: [memory_IDM, foundry, internal_backend]
+  - company_id: memory_company_sk_hynix
+    category_tags: [memory_IDM, internal_backend]
+  - company_id: memory_company_micron
+    category_tags: [memory_IDM, internal_backend]
+  - company_id: memory_company_kioxia
+    category_tags: [memory_IDM, joint_venture_manufacturer]
+  - company_id: memory_company_sandisk
+    category_tags: [NAND_product_company, joint_venture_manufacturer]
+  - company_id: memory_company_nanya
+    category_tags: [memory_IDM]
+  - company_id: memory_company_winbond
+    category_tags: [specialty_memory_IDM]
+  - company_id: memory_company_macronix
+    category_tags: [specialty_memory_IDM]
+  - company_id: memory_company_psmc
+    category_tags: [specialty_memory_manufacturer, foundry]
+  - company_id: memory_company_cxmt
+    category_tags: [memory_IDM, private_company]
+  - company_id: memory_company_ymtc
+    category_tags: [memory_IDM, private_company]
+
+additional_companies:
+  - id: foundry_intel
+    company: Intel_Foundry
+    legal_parent: Intel_Corporation
+    ticker: INTC_US
+    country: United_States
+    category_tags: [foundry, internal_manufacturing_network]
+    latest_financial_snapshot:
+      period: Q1_2026
+      status: reported
+      currency: USD_million
+      revenue: 5400
+      operating_profit: -2400
+      operating_margin_percent_derived: -44.4
+      external_revenue: 174
+      intersegment_revenue: 5200
+      boundary: Segment revenue is predominantly sales to Intel Products; external foundry revenue is shown separately.
+    annual_reference:
+      period: FY2025
+      revenue_usd_million: 17826
+      operating_profit_usd_million: -10318
+    sources:
+      - https://www.intc.com/filings-reports/all-sec-filings/content/0000050863-26-000079/intc-20260328.htm
+      - https://www.intc.com/filings-reports/all-sec-filings/content/0000050863-26-000011/intc-20251227.htm
+      - https://www.intel.com/content/www/us/en/foundry/manufacturing.html
+      - https://www.intel.com/content/www/us/en/support/articles/000089875/programs/intel-corporation.html
+
+  - id: foundry_umc
+    company: United_Microelectronics_Corporation
+    ticker: 2303_TW_or_UMC_US
+    country: Taiwan
+    category_tags: [pure_play_foundry]
+    latest_financial_snapshot:
+      period: Q1_2026
+      status: reported_with_derived_operating_profit
+      currency: TWD_billion
+      revenue: 61.04
+      operating_profit: 11.294
+      operating_margin_percent: 18.5
+      utilization_percent: 79
+      boundary: Operating profit is revenue multiplied by the company-reported operating margin and is therefore derived.
+    portfolio_capacity:
+      value: 400000
+      unit: 12_inch_equivalent_wafers_per_month
+      status: company_disclosed_portfolio_capacity_floor
+    sources:
+      - https://www.umc.com/en/Download/quarterly_results/QuarterlyResultsDetail/2026/2026Q1
+      - https://www.umc.com/en/News/press_release/Content/investor/20260527
+
+  - id: foundry_globalfoundries
+    company: GlobalFoundries
+    ticker: GFS_US
+    country: United_States
+    category_tags: [pure_play_foundry]
+    latest_financial_snapshot:
+      period: Q1_2026
+      status: reported
+      currency: USD_million
+      revenue: 1634
+      operating_profit: 180
+      operating_margin_percent_derived: 11.0
+      actual_wafer_shipments: 579000
+      shipment_unit: 300mm_equivalent_wafers_in_quarter
+    annual_reference:
+      period: FY2025
+      revenue_usd_million: 6791
+      actual_wafer_shipments_300mm_equivalent: 2345000
+    sources:
+      - https://investors.gf.com/news-releases/news-release-details/globalfoundries-reports-first-quarter-2026-financial-results
+      - https://investors.gf.com/news-releases/news-release-details/globalfoundries-reports-fourth-quarter-2025-and-fiscal-year-2025
+      - https://investors.gf.com/news-releases/news-release-details/globalfoundries-plans-billion-euro-investment-expand-chip
+
+  - id: foundry_smic
+    company: Semiconductor_Manufacturing_International_Corporation
+    ticker: 0981_HK_or_688981_SH
+    country: China
+    category_tags: [pure_play_foundry]
+    latest_financial_snapshot:
+      period: Q1_2026
+      status: reported
+      currency: USD_million
+      revenue: 2505.487
+      operating_profit: 247.792
+      operating_margin_percent_derived: 9.89
+      monthly_capacity_8_inch_equivalent_wafers: 1078250
+      actual_shipments_8_inch_equivalent_wafers_in_quarter: 2509137
+      utilization_percent: 93.1
+      capex: 1562.8
+    sources:
+      - https://www.hkexnews.hk/listedco/listconews/sehk/2026/0514/2026051400908.pdf
+      - https://www.hkexnews.hk/listedco/listconews/sehk/2026/0210/2026021000518.pdf
+
+  - id: foundry_hua_hong
+    company: Hua_Hong_Semiconductor
+    ticker: 1347_HK_or_688347_SH
+    country: China
+    category_tags: [pure_play_foundry]
+    latest_financial_snapshot:
+      period: Q1_2026
+      status: reported_with_derived_operating_profit
+      currency: USD_million
+      revenue: 660.925
+      operating_profit: -19.554
+      operating_margin_percent_derived: -2.96
+      actual_shipments_8_inch_equivalent_wafers_in_quarter: 1453000
+      utilization_percent: 99.7
+      boundary: Operating profit is derived as gross profit minus operating expenses because the release does not present that subtotal separately.
+    annual_capacity_reference:
+      period: FY2025
+      installed_capacity_8_inch_equivalent_wafers_per_month: 486000
+      actual_shipments_8_inch_equivalent_wafers: 5384000
+      utilization_percent: 106.1
+    sources:
+      - https://www.hkexnews.hk/listedco/listconews/sehk/2026/0514/2026051400506.pdf
+      - https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0326/2026032602730.pdf
+
+  - id: foundry_tower
+    company: Tower_Semiconductor
+    ticker: TSEM_US_or_TASE
+    country: Israel
+    category_tags: [specialty_foundry]
+    latest_financial_snapshot:
+      period: Q1_2026
+      status: reported
+      currency: USD_million
+      revenue: 413.631
+      operating_profit: 64.565
+      operating_margin_percent_derived: 15.61
+    sources:
+      - https://ir.towersemi.com/news-releases/news-release-details/tower-semiconductor-reports-first-quarter-2026-financial-results
+      - https://ir.towersemi.com/shareholder-services/fact-sheet
+
+  - id: foundry_db_hitek
+    company: DB_HiTek
+    ticker: 000990_KS
+    country: South_Korea
+    category_tags: [specialty_foundry]
+    latest_financial_snapshot:
+      period: Q1_2026
+      status: reported
+      currency: KRW_billion
+      revenue: 374.6
+      operating_profit: 63.7
+      operating_margin_percent_derived: 17.0
+    sources:
+      - https://www.dbhitek.com/kr/media/news/view/2601
+      - https://www.dbhitek.com/en/customer-support/network
+
+  - id: foundry_vis
+    company: Vanguard_International_Semiconductor
+    ticker: 5347_TW
+    country: Taiwan
+    category_tags: [specialty_foundry]
+    latest_financial_snapshot:
+      period: Q1_2026
+      status: company_document_mirrored
+      currency: TWD_billion
+      revenue: 12.532
+      operating_profit: 2.087
+      operating_margin_percent: 16.7
+      boundary: The management report is retained through a public document mirror; capacity uses a dated SEMI member profile.
+    portfolio_capacity_reference:
+      period: 2024
+      value: 282000
+      unit: 8_inch_wafers_per_month
+      status: dated_industry_association_profile
+    sources:
+      - https://www.marketscreener.com/news/vanguard-international-semiconductor-5-5-1q26-management-report-ce7f58dfdf80f022
+      - https://www.semi.org/en/resources/member-directory/vanguard-international
+
+  - id: backend_ase
+    company: ASE_Technology_Holding
+    ticker: 3711_TW_or_ASX_US
+    country: Taiwan
+    category_tags: [OSAT, packaging, test, EMS_parent]
+    latest_financial_snapshot:
+      period: Q1_2026
+      status: reported
+      currency: TWD_million
+      revenue: 173662
+      operating_profit: 17540
+      operating_margin_percent: 10.1
+      comparable_ATM_segment_revenue: 112434
+      comparable_ATM_segment_operating_profit: 15877
+      comparable_ATM_segment_operating_margin_percent: 14.1
+      Q1_capex_usd_million: 1003
+      boundary: Consolidated revenue includes EMS; ATM is the packaging-and-test segment comparison.
+    sources:
+      - https://www.prnewswire.com/news-releases/ase-technology-holding-co-ltd-reports-its-unaudited-consolidated-financial-results-for-the-first-quarter-of-2026-302756590.html
+      - https://www.sec.gov/Archives/edgar/data/1122411/000119312526135585/d50802d20f.htm
+      - https://ase.aseglobal.com/ch/about-ase/manufacturing-facilities/
+
+  - id: backend_amkor
+    company: Amkor_Technology
+    ticker: AMKR_US
+    country: United_States
+    category_tags: [OSAT, packaging, test]
+    latest_financial_snapshot:
+      period: Q1_2026
+      status: reported
+      currency: USD_million
+      revenue: 1685
+      operating_profit: 100
+      operating_margin_percent_derived: 5.93
+      advanced_products_revenue: 1372
+      packaging_revenue_mix_percent: 89
+      test_revenue_mix_percent: 11
+      FY2026_capex_guidance_usd_billion_range: [2.5, 3.0]
+    sources:
+      - https://ir.amkor.com/news-releases/news-release-details/amkor-technology-reports-financial-results-first-quarter-2026
+      - https://www.sec.gov/Archives/edgar/data/1047127/000104712726000014/amkr-20251231.htm
+      - https://amkor.com/contact-us/
+
+  - id: backend_jcet
+    company: JCET_Group
+    ticker: 600584_SH
+    country: China
+    category_tags: [OSAT, packaging, test]
+    latest_financial_snapshot:
+      period: FY2025
+      status: audited
+      currency: CNY_million
+      revenue: 38871.348
+      operating_profit: 1739.319
+      operating_margin_percent_derived: 4.47
+      profit_before_tax: 1738
+      parent_net_income: 1570
+      advanced_packaging_revenue_approximate: 27000
+    sources:
+      - https://static.cninfo.com.cn/finalpage/2026-04-10/1225091498.PDF
+      - https://www.prnewswire.com/apac/news-releases/jcet-releases-2025-annual-report-posts-record-high-full-year-revenue-and-higher-profit-before-tax-302738488.html
+      - https://www.jcetglobal.com/en
+
+  - id: backend_pti
+    company: Powertech_Technology
+    ticker: 6239_TW
+    country: Taiwan
+    category_tags: [OSAT, memory_packaging, memory_test, modules]
+    latest_financial_snapshot:
+      period: Q1_2026
+      status: reported
+      currency: TWD_million
+      revenue: 21314.167
+      operating_profit: 2760.690
+      operating_margin_percent_derived: 12.95
+      packaging_revenue: 14207.519
+      testing_revenue: 4771.977
+      module_revenue: 2322.772
+    sources:
+      - https://www.pti.com.tw/en/ir/financial/quarter
+      - https://www.pti.com.tw/en/ir/news/qa
+
+  - id: backend_chipmos
+    company: ChipMOS_Technologies
+    ticker: 8150_TW_or_IMOS_US
+    country: Taiwan
+    category_tags: [OSAT, memory_test, display_driver_test, packaging]
+    latest_financial_snapshot:
+      period: Q1_2026
+      status: reported
+      currency: TWD_million
+      revenue: 6935.6
+      operating_profit: 519.7
+      operating_margin_percent: 7.5
+      overall_utilization_percent: 68
+      memory_revenue_mix_percent: 50.7
+      capex: 534.9
+    sources:
+      - https://www.chipmos.com/upfiles/ADUpload/english/en_ir_lawsaid_3853460068.pdf
+      - https://www.chipmos.com/upfiles/ADUpload/english/en_ir_lawsaid_2853460359.pdf
+
+  - id: backend_kyec
+    company: King_Yuan_Electronics
+    ticker: 2449_TW
+    country: Taiwan
+    category_tags: [semiconductor_test, wafer_probe, final_test, burn_in]
+    latest_financial_snapshot:
+      period: Q1_2026
+      status: reported
+      currency: TWD_million
+      revenue: 10191.9
+      operating_profit: 2772.0
+      operating_margin_percent_derived: 27.2
+      capex: 6785.8
+      service_mix_percent: {wafer_probe: 32.1, final_test: 58.9, assembly: 1.4, burn_in: 7.3, other: 0.3}
+    sources:
+      - https://www.kyec.com.tw/en/Ir/Quarterly
+      - https://www.kyec.com.tw/en/About/Traffic
+
+  - id: backend_tongfu
+    company: Tongfu_Microelectronics
+    ticker: 002156_SZ
+    country: China
+    category_tags: [OSAT, packaging, test]
+    latest_financial_snapshot:
+      period: FY2025
+      status: audited
+      currency: CNY_million
+      revenue: 27921.425
+      operating_profit: 1748.432
+      operating_margin_percent_derived: 6.26
+      net_income: 1377.230
+    sources:
+      - https://static.cninfo.com.cn/finalpage/2026-04-17/1225112762.PDF
+      - https://en.tfme.com/About.html
+      - https://en.tfme.com/contact.html
+      - https://en.tfme.com/news/400.html
+
+  - id: backend_hana_micron
+    company: Hana_Micron
+    ticker: 067310_KQ
+    country: South_Korea
+    category_tags: [OSAT, memory_packaging, test, modules]
+    latest_financial_snapshot:
+      period: FY2025
+      status: reported
+      currency: KRW_billion
+      revenue: 1534.4
+      operating_profit: 127.7
+      operating_margin_percent_derived: 8.32
+      net_income: 65.6
+    sources:
+      - https://hanamicron.com/contents/cont.do?mId=66&mPid=41&sCode=eng
+      - https://hanamicron.com/contents/cont.do?mId=62&mPid=10&sCode=eng
+      - https://hanamicron.com/contents/cont.do?mId=65&mPid=10&sCode=eng
+      - https://hanamicron.com/contents/cont.do?mId=64&mPid=10&sCode=eng
+
+  - id: backend_sfa_semicon
+    company: SFA_Semicon
+    ticker: 036540_KQ
+    country: South_Korea
+    category_tags: [OSAT, packaging, test, bump]
+    latest_financial_snapshot:
+      period: FY2025
+      status: audited
+      currency: KRW_billion
+      revenue: 367.389
+      operating_profit: -19.627
+      operating_margin_percent_derived: -5.34
+      net_income: -19.131
+    sources:
+      - https://kind.krx.co.kr/external/2026/03/23/001039/20260323004733/11011.htm
+      - https://www.sfa.co.kr/en/company06/
+      - https://edge.pse.com.ph/companyInformation/form.do?cmpy_id=655
+
+  - id: backend_lb_semicon
+    company: LB_Semicon
+    ticker: 061970_KQ
+    country: South_Korea
+    category_tags: [bumping, wafer_probe, assembly, final_test, COF]
+    latest_financial_snapshot:
+      period: Q1_2026
+      status: reported
+      currency: KRW_billion
+      revenue: 134.252
+      operating_profit: 7.643
+      operating_margin_percent_derived: 5.69
+      semiconductor_segment_revenue: 130.968
+      semiconductor_segment_operating_profit: 6.873
+      boundary: Merger and segment changes reduce direct comparability with FY2025.
+    sources:
+      - https://kind.krx.co.kr/external/2026/05/15/002000/20260515004431/11013.htm
+
+  - id: backend_doosan_tesna
+    company: Doosan_Tesna
+    ticker: 131970_KQ
+    country: South_Korea
+    category_tags: [wafer_test, package_test, die_preparation]
+    latest_financial_snapshot:
+      period: FY2025
+      status: audited
+      currency: KRW_billion
+      revenue: 303.874
+      operating_profit: -0.941
+      operating_margin_percent_derived: -0.31
+      boundary: Published production-capacity measures are currency-value equipment proxies, not chip or wafer counts.
+    sources:
+      - https://kind.krx.co.kr/external/2026/03/23/001554/20260323006637/11011.htm
+
+  - id: backend_nepes_ark
+    company: Nepes_Ark
+    ticker: 330860_KQ
+    country: South_Korea
+    category_tags: [wafer_test, package_test, system_semiconductor_test]
+    latest_financial_snapshot:
+      period: FY2025
+      status: audited
+      currency: KRW_billion
+      revenue: 114.090
+      operating_profit: 4.756
+      operating_margin_percent_derived: 4.17
+      boundary: Nepes Ark is separated from the broader Nepes group turnkey bump, WLP, FOWLP, PLP and SiP capability.
+    sources:
+      - https://kind.krx.co.kr/external/2026/03/11/000720/20260311001916/00660.htm
+      - https://www.nepesark.co.kr/eng/about/abt04.php
+      - https://www.nepesark.co.kr/solution/
+
+facility_groups:
+  - id: facility_group_tsmc
+    company_ids: [memory_company_tsmc]
+    portfolio_boundary: Fab identifiers are company location labels; annual capacity is a companywide 12-inch-equivalent measure.
+    portfolio_capacity_measures:
+      - {metric_type: installed_capacity, value: 17000000, unit: 12_inch_equivalent_wafers_per_year, period: FY2025, status: reported_greater_than, scope: company_portfolio}
+      - {metric_type: actual_shipments, value: 15000000, unit: 12_inch_equivalent_wafers_per_year, period: FY2025, status: reported, scope: company_portfolio}
+    sites:
+      - {id: fab_tsmc_hsinchu, site_name: Hsinchu_fab_cluster_Fabs_2_3_5_8_12_20, country: Taiwan, city_or_region: Hsinchu, lifecycle: operating_and_ramping, functions: [foundry, R_and_D, advanced_nodes], wafer_sizes: [6_inch, 8_inch, 12_inch], capacity_disclosure: portfolio_only}
+      - {id: fab_tsmc_central_taiwan, site_name: Central_Taiwan_Fab_15, country: Taiwan, city_or_region: Taichung, lifecycle: operating, functions: [foundry], wafer_sizes: [12_inch], capacity_disclosure: portfolio_only}
+      - {id: fab_tsmc_southern_taiwan, site_name: Southern_Taiwan_Fabs_6_14_18_22, country: Taiwan, city_or_region: Tainan_and_Kaohsiung, lifecycle: operating_and_ramping, functions: [foundry, leading_edge_logic], wafer_sizes: [8_inch, 12_inch], capacity_disclosure: portfolio_only}
+      - {id: fab_tsmc_washington, site_name: Washington_Fab_11, country: United_States, city_or_region: Camas_Washington, lifecycle: operating, functions: [foundry], wafer_sizes: [8_inch], capacity_disclosure: undisclosed}
+      - {id: fab_tsmc_shanghai, site_name: Shanghai_Fab_10, country: China, city_or_region: Shanghai, lifecycle: operating, functions: [foundry], wafer_sizes: [8_inch], capacity_disclosure: undisclosed}
+      - {id: fab_tsmc_nanjing, site_name: Nanjing_Fab_16, country: China, city_or_region: Nanjing, lifecycle: operating, functions: [foundry], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+      - {id: fab_tsmc_arizona, site_name: Arizona_Fab_21, country: United_States, city_or_region: Phoenix_Arizona, lifecycle: operating_and_under_expansion, functions: [foundry, advanced_nodes], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+      - {id: fab_tsmc_kumamoto, site_name: Kumamoto_Fab_23_JASM, country: Japan, city_or_region: Kumamoto, lifecycle: operating_and_under_expansion, functions: [foundry], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+      - {id: fab_tsmc_dresden, site_name: Dresden_ESMC, country: Germany, city_or_region: Dresden, lifecycle: under_development, functions: [foundry], wafer_sizes: [12_inch], capacity_disclosure: planned_undisclosed}
+    sources:
+      - https://investor.tsmc.com/static/annualReports/2025/english/index.html
+      - https://investor.tsmc.com/sites/ir/sec-filings/2025_20F%20Report.pdf
+
+  - id: facility_group_samsung
+    company_ids: [memory_company_samsung]
+    portfolio_boundary: Samsung does not publish a current site-by-site wafer-start ledger; mixed campuses can serve memory, foundry or both.
+    sites:
+      - {id: fab_samsung_giheung, site_name: Giheung_campus_Line_6_and_S1, country: South_Korea, city_or_region: Yongin, lifecycle: operating, functions: [memory_R_and_D, mature_foundry], wafer_sizes: [8_inch, 12_inch], capacity_disclosure: undisclosed}
+      - {id: fab_samsung_hwaseong, site_name: Hwaseong_campus_S3, country: South_Korea, city_or_region: Hwaseong, lifecycle: operating, functions: [DRAM, HBM, NAND, foundry], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+      - {id: fab_samsung_pyeongtaek, site_name: Pyeongtaek_campus_S5_and_advanced_lines, country: South_Korea, city_or_region: Pyeongtaek, lifecycle: operating_and_expanding, functions: [DRAM, HBM, NAND, advanced_foundry], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+      - {id: fab_samsung_xian, site_name: Xian_memory_fab, country: China, city_or_region: Xian, lifecycle: operating, functions: [V_NAND], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+      - {id: fab_samsung_austin, site_name: Austin_S2, country: United_States, city_or_region: Austin_Texas, lifecycle: operating, functions: [foundry], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+      - {id: fab_samsung_taylor, site_name: Taylor_advanced_foundry_site, country: United_States, city_or_region: Taylor_Texas, lifecycle: under_ramp, functions: [advanced_foundry], wafer_sizes: [12_inch], capacity_disclosure: planned_undisclosed}
+      - {id: backend_samsung_onyang, site_name: Onyang_backend_site, country: South_Korea, city_or_region: Asan, lifecycle: operating, functions: [assembly, packaging, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_samsung_cheonan, site_name: Cheonan_backend_site, country: South_Korea, city_or_region: Cheonan, lifecycle: operating, functions: [assembly, packaging, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_samsung_suzhou, site_name: Suzhou_backend_site, country: China, city_or_region: Suzhou, lifecycle: operating, functions: [assembly, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+    sources:
+      - https://semiconductor.samsung.com/foundry/manufacturing/manufacturing-sites/
+      - https://semiconductor.samsung.com/about-us/locations/
+      - https://download.semiconductor.samsung.com/resources/others/Quality_Handbook_Web_Rev.05.pdf
+
+  - id: facility_group_sk_hynix
+    company_ids: [memory_company_sk_hynix]
+    portfolio_boundary: Official current wafer-start capacity by fab was not located; future cluster investment envelopes are not current capacity.
+    sites:
+      - {id: fab_sk_hynix_icheon, site_name: Icheon_campus, country: South_Korea, city_or_region: Icheon, lifecycle: operating, functions: [DRAM, HBM, R_and_D, assembly, test], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+      - {id: fab_sk_hynix_cheongju, site_name: Cheongju_M15_and_M15X, country: South_Korea, city_or_region: Cheongju, lifecycle: operating_and_ramping, functions: [NAND, DRAM, HBM, assembly, test], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+      - {id: fab_sk_hynix_wuxi, site_name: Wuxi_DRAM_fab, country: China, city_or_region: Wuxi, lifecycle: operating, functions: [DRAM], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+      - {id: fab_sk_hynix_dalian, site_name: Dalian_NAND_and_Solidigm_site, country: China, city_or_region: Dalian, lifecycle: operating, functions: [NAND, SSD], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+      - {id: backend_sk_hynix_chongqing, site_name: Chongqing_backend_site, country: China, city_or_region: Chongqing, lifecycle: operating, functions: [assembly, packaging, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: fab_sk_hynix_yongin, site_name: Yongin_semiconductor_cluster, country: South_Korea, city_or_region: Yongin, lifecycle: planned_and_under_development, functions: [future_memory_fabs], wafer_sizes: [12_inch], capacity_disclosure: planned_undisclosed}
+    sources:
+      - https://m.skhynix.com/quality/UI-FR-QT01_T2/
+      - https://news.skhynix.com/new-facility-investment-for-yongin-semiconductor-cluster/
+
+  - id: facility_group_micron
+    company_ids: [memory_company_micron]
+    portfolio_boundary: The 10-K reports functions by country; individual-building throughput is undisclosed and announced U.S. fabs remain future capacity.
+    sites:
+      - {id: fab_micron_taiwan, site_name: Taiwan_DRAM_and_HBM_network, country: Taiwan, city_or_region: Taichung_and_Taoyuan, lifecycle: operating_and_modernizing, functions: [DRAM, HBM, component_assembly, test], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+      - {id: fab_micron_singapore, site_name: Singapore_NAND_network, country: Singapore, city_or_region: Singapore, lifecycle: operating_and_expanding, functions: [NAND, R_and_D, assembly, test, future_HBM_packaging], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+      - {id: fab_micron_hiroshima, site_name: Hiroshima_DRAM_fab, country: Japan, city_or_region: Higashihiroshima, lifecycle: operating_and_modernizing, functions: [DRAM, R_and_D], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+      - {id: fab_micron_virginia, site_name: Manassas_legacy_memory_fab, country: United_States, city_or_region: Manassas_Virginia, lifecycle: operating, functions: [long_lifecycle_memory], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+      - {id: fab_micron_boise_1, site_name: Boise_fab_1, country: United_States, city_or_region: Boise_Idaho, lifecycle: under_construction, functions: [future_DRAM], wafer_sizes: [12_inch], capacity_disclosure: planned_undisclosed, first_output_target: second_half_2027}
+      - {id: fab_micron_boise_2, site_name: Boise_fab_2, country: United_States, city_or_region: Boise_Idaho, lifecycle: planned, functions: [future_DRAM], wafer_sizes: [12_inch], capacity_disclosure: planned_undisclosed}
+      - {id: fab_micron_new_york, site_name: New_York_megafab_program_up_to_four_fabs, country: United_States, city_or_region: Clay_New_York, lifecycle: planned, functions: [future_DRAM], wafer_sizes: [12_inch], capacity_disclosure: planned_undisclosed}
+      - {id: backend_micron_malaysia, site_name: Malaysia_backend_network, country: Malaysia, city_or_region: Penang_and_Batu_Kawan, lifecycle: operating_and_expanding, functions: [assembly, test, modules, SSD], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_micron_china, site_name: China_backend_network, country: China, city_or_region: Xian, lifecycle: operating, functions: [assembly, test, modules], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_micron_india, site_name: Gujarat_assembly_and_test_site, country: India, city_or_region: Sanand_Gujarat, lifecycle: ramping, functions: [assembly, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+    sources:
+      - https://www.sec.gov/Archives/edgar/data/723125/000072312525000028/mu-20250828.htm
+      - https://investors.micron.com/news-releases/news-release-details/micron-breaks-ground-advanced-wafer-fabrication-facility
+
+  - id: facility_group_flash_ventures
+    company_ids: [memory_company_kioxia, memory_company_sandisk]
+    non_additive_group: flash_ventures_yokkaichi_kitakami
+    portfolio_boundary: Two commercial companies share the same NAND fab system; site capacity must be counted once, not once per company.
+    sites:
+      - {id: fab_flash_ventures_yokkaichi, site_name: Yokkaichi_Fabs_2_through_7, country: Japan, city_or_region: Yokkaichi_Mie, lifecycle: operating_and_expanding, functions: [BiCS_3D_NAND], wafer_sizes: [12_inch], capacity_disclosure: undisclosed_joint_venture}
+      - {id: fab_flash_ventures_kitakami, site_name: Kitakami_Fabs_1_and_2, country: Japan, city_or_region: Kitakami_Iwate, lifecycle: operating_and_ramping, functions: [BiCS_3D_NAND], wafer_sizes: [12_inch], capacity_disclosure: undisclosed_joint_venture}
+    sources:
+      - https://www.kioxia-holdings.com/content/dam/kioxia-hd/en-jp/ir/library/securities/asset/Annual-Securities-Report-FY2025-EN.pdf
+      - https://investor.sandisk.com/news-releases/news-release-details/kioxia-and-sandisk-extend-yokkaichi-joint-venture-agreement
+
+  - id: facility_group_nanya
+    company_ids: [memory_company_nanya]
+    sites:
+      - {id: fab_nanya_taishan, site_name: Taishan_existing_DRAM_fab, country: Taiwan, city_or_region: New_Taipei, lifecycle: operating, functions: [DRAM], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+      - id: fab_nanya_new_fab
+        site_name: New_Taipei_new_DRAM_fab
+        country: Taiwan
+        city_or_region: New_Taipei
+        lifecycle: under_construction_and_ramp
+        functions: [advanced_DRAM]
+        wafer_sizes: [12_inch]
+        capacity_disclosure: planned
+        capacity_measures:
+          - {metric_type: planned_installed_capacity, value: 30000, unit: 12_inch_wafers_per_month, period: by_2028_phase_1, status: management_plan, scope: site}
+          - {metric_type: planned_installed_capacity, value: 45000, unit: 12_inch_wafers_per_month, period: full_buildout, status: management_plan, scope: site}
+    sources:
+      - https://www.nanya.com/en/IR/16/Press%20Release?IRId=13150
+
+  - id: facility_group_winbond
+    company_ids: [memory_company_winbond]
+    portfolio_boundary: Q1 2026 utilization is disclosed for the memory business and is not a per-fab wafer-start count.
+    portfolio_capacity_measures:
+      - {metric_type: utilization, value: 100, unit: percent_approximate, period: Q1_2026, status: reported_approximate, scope: memory_business}
+    sites:
+      - {id: fab_winbond_taichung, site_name: Central_Taiwan_Science_Park_fab, country: Taiwan, city_or_region: Taichung, lifecycle: operating, functions: [specialty_DRAM, NOR_flash], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+      - {id: fab_winbond_kaohsiung, site_name: Kaohsiung_12_inch_fab, country: Taiwan, city_or_region: Kaohsiung, lifecycle: operating_and_ramping, functions: [specialty_DRAM, NOR_flash], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+    sources:
+      - https://www.winbond.com/hq/about-winbond/locations/index.html?__locale=en
+
+  - id: facility_group_macronix
+    company_ids: [memory_company_macronix]
+    sites:
+      - {id: fab_macronix_2, site_name: Fab_2, country: Taiwan, city_or_region: Hsinchu, lifecycle: operating, functions: [NOR_flash, ROM, SLC_NAND], wafer_sizes: [8_inch], capacity_disclosure: undisclosed}
+      - {id: fab_macronix_5, site_name: Fab_5, country: Taiwan, city_or_region: Hsinchu, lifecycle: operating, functions: [NOR_flash, ROM, SLC_NAND], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+    sources:
+      - https://www.macronix.com/en-us/about/Pages/company-overview.aspx
+
+  - id: facility_group_psmc
+    company_ids: [memory_company_psmc]
+    portfolio_boundary: Disclosures below apply to named Hsinchu memory capacity and Tongluo P3, not every PSMC foundry line.
+    sites:
+      - id: fab_psmc_hsinchu_memory
+        site_name: Hsinchu_12_inch_memory_capacity
+        country: Taiwan
+        city_or_region: Hsinchu
+        lifecycle: operating
+        functions: [DRAM, specialty_memory, foundry]
+        wafer_sizes: [12_inch]
+        capacity_disclosure: disclosed
+        capacity_measures:
+          - {metric_type: installed_capacity, value: 50000, unit: 12_inch_wafers_per_month, period: disclosure_2026, status: reported, scope: named_Hsinchu_memory_capacity}
+      - id: fab_psmc_hsinchu_p3
+        site_name: Hsinchu_P3
+        country: Taiwan
+        city_or_region: Hsinchu
+        lifecycle: operating_and_process_upgrade_planned
+        functions: [DRAM, specialty_memory, foundry]
+        wafer_sizes: [12_inch]
+        capacity_disclosure: disclosed_floor
+        capacity_measures:
+          - {metric_type: installed_capacity, value: 30000, unit: 12_inch_wafers_per_month, period: disclosure_2026, status: reported_greater_than, scope: site}
+      - {id: fab_psmc_tongluo_p5, site_name: Tongluo_P5, country: Taiwan, city_or_region: Tongluo_Miaoli, lifecycle: ownership_transfer_to_Micron_announced, functions: [DRAM, foundry], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+    sources:
+      - https://www.powerchip.com/en-global/insights/press-releases/content/20260121
+      - https://www.powerchip.com/en-global/insights/press-releases/content/20260117
+
+  - id: facility_group_cxmt
+    company_ids: [memory_company_cxmt]
+    sites:
+      - {id: fab_cxmt_hefei, site_name: Hefei_Fab_A, country: China, city_or_region: Hefei, lifecycle: operating, functions: [DRAM], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+      - {id: fab_cxmt_beijing, site_name: Beijing_Fab_C, country: China, city_or_region: Beijing, lifecycle: operating_or_ramping, functions: [DRAM], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+    sources:
+      - https://www.cxmt.com/en/about.html
+
+  - id: facility_group_ymtc
+    company_ids: [memory_company_ymtc]
+    sites:
+      - {id: fab_ymtc_wuhan, site_name: Wuhan_NAND_campus, country: China, city_or_region: Wuhan, lifecycle: operating_and_expanding, functions: [3D_NAND, Xtacking], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+    sources:
+      - https://www.ymtc.com/en/intro.html
+      - https://www.ymtc.com/en/technicalintroduction
+
+  - id: facility_group_intel
+    company_ids: [foundry_intel]
+    portfolio_boundary: Intel reported 15 wafer fabs at 10 locations; records below group the major process and backend campuses, not every fab building.
+    sites:
+      - {id: fab_intel_oregon, site_name: Oregon_fab_and_development_network, country: United_States, city_or_region: Hillsboro_Oregon, lifecycle: operating_and_ramping, functions: [R_and_D, Intel_18A, foundry], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+      - {id: fab_intel_arizona, site_name: Arizona_fab_network, country: United_States, city_or_region: Chandler_Arizona, lifecycle: operating_and_ramping, functions: [Intel_7, Intel_18A, foundry], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+      - {id: fab_intel_ireland, site_name: Leixlip_fab_network, country: Ireland, city_or_region: Leixlip, lifecycle: operating, functions: [Intel_4, Intel_3, foundry], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+      - {id: fab_intel_israel, site_name: Kiryat_Gat_fab_network, country: Israel, city_or_region: Kiryat_Gat, lifecycle: operating_and_expanding, functions: [Intel_7, foundry], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+      - {id: backend_intel_chengdu, site_name: Chengdu_assembly_and_test, country: China, city_or_region: Chengdu, lifecycle: operating, functions: [assembly, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_intel_penang_kulim, site_name: Penang_and_Kulim_backend_network, country: Malaysia, city_or_region: Penang_and_Kulim, lifecycle: operating_and_expanding, functions: [advanced_packaging, assembly, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_intel_vietnam, site_name: Ho_Chi_Minh_City_assembly_and_test, country: Vietnam, city_or_region: Ho_Chi_Minh_City, lifecycle: operating, functions: [assembly, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_intel_costa_rica, site_name: Costa_Rica_assembly_and_test, country: Costa_Rica, city_or_region: San_Jose, lifecycle: operating, functions: [assembly, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+    sources:
+      - https://www.intel.com/content/www/us/en/support/articles/000089875/programs/intel-corporation.html
+      - https://www.intel.com/content/www/us/en/foundry/manufacturing.html
+
+  - id: facility_group_umc
+    company_ids: [foundry_umc]
+    portfolio_boundary: UMC discloses 12 fabs and a combined portfolio capacity, not a current per-building ledger in the cited release.
+    portfolio_capacity_measures:
+      - {metric_type: installed_capacity, value: 400000, unit: 12_inch_equivalent_wafers_per_month, period: disclosure_2026, status: reported_greater_than, scope: 12_fab_company_portfolio}
+      - {metric_type: utilization, value: 79, unit: percent, period: Q1_2026, status: reported, scope: company_portfolio}
+    sites:
+      - {id: fab_umc_taiwan_portfolio, site_name: Taiwan_fab_portfolio, country: Taiwan, city_or_region: Hsinchu_Tainan_and_other_sites, lifecycle: operating, functions: [foundry], wafer_sizes: [8_inch, 12_inch], capacity_disclosure: portfolio_only}
+      - {id: fab_umc_singapore, site_name: Singapore_fab_portfolio, country: Singapore, city_or_region: Singapore, lifecycle: operating_and_expanding, functions: [foundry], wafer_sizes: [8_inch, 12_inch], capacity_disclosure: portfolio_only}
+      - {id: fab_umc_suzhou, site_name: HeJian_Suzhou, country: China, city_or_region: Suzhou, lifecycle: operating, functions: [foundry], wafer_sizes: [8_inch], capacity_disclosure: portfolio_only}
+      - {id: fab_umc_xiamen, site_name: United_Semiconductor_Xiamen, country: China, city_or_region: Xiamen, lifecycle: operating, functions: [foundry], wafer_sizes: [12_inch], capacity_disclosure: portfolio_only}
+    sources:
+      - https://www.umc.com/en/News/press_release/Content/investor/20260527
+      - https://www.umc.com/en/Download/quarterly_results/QuarterlyResultsDetail/2026/2026Q1
+
+  - id: facility_group_globalfoundries
+    company_ids: [foundry_globalfoundries]
+    portfolio_capacity_measures:
+      - {metric_type: actual_shipments, value: 579000, unit: 300mm_equivalent_wafers_per_quarter, period: Q1_2026, status: reported, scope: company_portfolio}
+    sites:
+      - {id: fab_gf_malta, site_name: Fab_8_Malta, country: United_States, city_or_region: Malta_New_York, lifecycle: operating_and_expanding, functions: [foundry], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+      - {id: fab_gf_burlington, site_name: Burlington_fab, country: United_States, city_or_region: Burlington_Vermont, lifecycle: operating, functions: [foundry], wafer_sizes: [8_inch], capacity_disclosure: undisclosed}
+      - id: fab_gf_dresden
+        site_name: Dresden_fab_network
+        country: Germany
+        city_or_region: Dresden
+        lifecycle: operating_and_expanding
+        functions: [foundry]
+        wafer_sizes: [12_inch]
+        capacity_disclosure: target
+        capacity_measures:
+          - {metric_type: planned_installed_capacity, value: 1000000, unit: wafers_per_year, period: by_2028, status: management_target_greater_than, scope: site_network}
+      - {id: fab_gf_singapore, site_name: Singapore_fab_network, country: Singapore, city_or_region: Singapore, lifecycle: operating, functions: [foundry], wafer_sizes: [8_inch, 12_inch], capacity_disclosure: undisclosed}
+    sources:
+      - https://investors.gf.com/news-releases/news-release-details/globalfoundries-reports-first-quarter-2026-financial-results
+      - https://investors.gf.com/news-releases/news-release-details/globalfoundries-plans-billion-euro-investment-expand-chip
+
+  - id: facility_group_smic
+    company_ids: [foundry_smic]
+    portfolio_capacity_measures:
+      - {metric_type: installed_capacity, value: 1078250, unit: 8_inch_equivalent_wafers_per_month, period: Q1_2026, status: reported, scope: company_portfolio}
+      - {metric_type: actual_shipments, value: 2509137, unit: 8_inch_equivalent_wafers_per_quarter, period: Q1_2026, status: reported, scope: company_portfolio}
+      - {metric_type: utilization, value: 93.1, unit: percent, period: Q1_2026, status: reported, scope: company_portfolio}
+    sites:
+      - {id: fab_smic_shanghai, site_name: Shanghai_fab_network, country: China, city_or_region: Shanghai, lifecycle: operating_and_expanding, functions: [foundry], wafer_sizes: [8_inch, 12_inch], capacity_disclosure: portfolio_only}
+      - {id: fab_smic_beijing, site_name: Beijing_fab_network, country: China, city_or_region: Beijing, lifecycle: operating_and_expanding, functions: [foundry], wafer_sizes: [12_inch], capacity_disclosure: portfolio_only}
+      - {id: fab_smic_tianjin, site_name: Tianjin_fab_network, country: China, city_or_region: Tianjin, lifecycle: operating, functions: [foundry], wafer_sizes: [8_inch], capacity_disclosure: portfolio_only}
+      - {id: fab_smic_shenzhen, site_name: Shenzhen_fab_network, country: China, city_or_region: Shenzhen, lifecycle: operating_and_expanding, functions: [foundry], wafer_sizes: [12_inch], capacity_disclosure: portfolio_only}
+    sources:
+      - https://www.hkexnews.hk/listedco/listconews/sehk/2026/0514/2026051400908.pdf
+
+  - id: facility_group_hua_hong
+    company_ids: [foundry_hua_hong]
+    portfolio_capacity_measures:
+      - {metric_type: installed_capacity, value: 486000, unit: 8_inch_equivalent_wafers_per_month, period: FY2025, status: reported, scope: company_portfolio}
+      - {metric_type: actual_shipments, value: 5384000, unit: 8_inch_equivalent_wafers_per_year, period: FY2025, status: reported, scope: company_portfolio}
+      - {metric_type: utilization, value: 99.7, unit: percent, period: Q1_2026, status: reported, scope: company_portfolio}
+    sites:
+      - {id: fab_hua_hong_shanghai_1, site_name: Shanghai_Fab_1, country: China, city_or_region: Shanghai, lifecycle: operating, functions: [foundry], wafer_sizes: [8_inch], capacity_disclosure: portfolio_only}
+      - {id: fab_hua_hong_shanghai_2, site_name: Shanghai_Fab_2, country: China, city_or_region: Shanghai, lifecycle: operating, functions: [foundry], wafer_sizes: [8_inch], capacity_disclosure: portfolio_only}
+      - {id: fab_hua_hong_shanghai_3, site_name: Shanghai_Fab_3, country: China, city_or_region: Shanghai, lifecycle: operating, functions: [foundry], wafer_sizes: [8_inch], capacity_disclosure: portfolio_only}
+      - {id: fab_hua_hong_wuxi_7, site_name: Wuxi_Fab_7, country: China, city_or_region: Wuxi, lifecycle: operating, functions: [foundry], wafer_sizes: [12_inch], capacity_disclosure: portfolio_only}
+      - {id: fab_hua_hong_wuxi_9, site_name: Wuxi_Fab_9, country: China, city_or_region: Wuxi, lifecycle: ramping_phase_1_and_building_phase_2, functions: [foundry], wafer_sizes: [12_inch], capacity_disclosure: portfolio_only}
+    sources:
+      - https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0326/2026032602730.pdf
+      - https://www.hkexnews.hk/listedco/listconews/sehk/2026/0514/2026051400506.pdf
+
+  - id: facility_group_tower
+    company_ids: [foundry_tower]
+    sites:
+      - {id: fab_tower_migdal_haemek, site_name: Migdal_Haemek_200mm_fab, country: Israel, city_or_region: Migdal_Haemek, lifecycle: operating, functions: [specialty_foundry], wafer_sizes: [8_inch], capacity_disclosure: undisclosed}
+      - {id: fab_tower_newport_beach, site_name: Newport_Beach_200mm_fab, country: United_States, city_or_region: Newport_Beach_California, lifecycle: operating, functions: [specialty_foundry], wafer_sizes: [8_inch], capacity_disclosure: undisclosed}
+      - id: fab_tower_san_antonio
+        site_name: San_Antonio_200mm_fab
+        country: United_States
+        city_or_region: San_Antonio_Texas
+        lifecycle: operating_and_expanding
+        functions: [specialty_foundry]
+        wafer_sizes: [8_inch]
+        capacity_disclosure: expansion
+        capacity_measures:
+          - {metric_type: incremental_installed_capacity, value: 28000, unit: 8_inch_wafers_per_month, period: announced_expansion, status: management_plan, scope: site}
+      - id: fab_tower_japan_jv
+        site_name: TPSCo_Japan_fab_network
+        country: Japan
+        city_or_region: Uozu_Tonami_and_Arai
+        lifecycle: operating
+        functions: [specialty_foundry]
+        wafer_sizes: [8_inch, 12_inch]
+        capacity_disclosure: incremental_portfolio_reference
+        capacity_measures:
+          - {metric_type: incremental_installed_capacity, value: 800000, unit: 8_inch_equivalent_wafers_per_year, period: fact_sheet_reference, status: reported_approximate, scope: Japanese_JV_network}
+      - {id: fab_tower_agrate, site_name: Agrate_300mm_shared_fab, country: Italy, city_or_region: Agrate_Brianza, lifecycle: operating_and_ramping, functions: [specialty_foundry], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+    sources:
+      - https://ir.towersemi.com/shareholder-services/fact-sheet
+
+  - id: facility_group_db_hitek
+    company_ids: [foundry_db_hitek]
+    sites:
+      - id: fab_db_hitek_bucheon
+        site_name: Bucheon_Fab_1
+        country: South_Korea
+        city_or_region: Bucheon
+        lifecycle: operating
+        functions: [specialty_foundry]
+        wafer_sizes: [8_inch]
+        capacity_disclosure: disclosed
+        process_range: 0.35um_to_0.15um
+        capacity_measures:
+          - {metric_type: installed_capacity, value: 91000, unit: 8_inch_wafers_per_month, period: current_site_profile, status: reported, scope: site}
+      - id: fab_db_hitek_sangwoo
+        site_name: Sangwoo_Fab_2
+        country: South_Korea
+        city_or_region: Eumseong
+        lifecycle: operating
+        functions: [specialty_foundry]
+        wafer_sizes: [8_inch]
+        capacity_disclosure: disclosed
+        process_range: 0.18um_to_90nm
+        capacity_measures:
+          - {metric_type: installed_capacity, value: 63000, unit: 8_inch_wafers_per_month, period: current_site_profile, status: reported, scope: site}
+    sources:
+      - https://www.dbhitek.com/en/customer-support/network
+
+  - id: facility_group_vis
+    company_ids: [foundry_vis]
+    portfolio_boundary: The 282,000-wafers-per-month figure is a dated 2024 portfolio reference; VSMC is future 12-inch JV capacity.
+    portfolio_capacity_measures:
+      - {metric_type: installed_capacity, value: 282000, unit: 8_inch_wafers_per_month, period: 2024, status: dated_SEMI_profile, scope: five_fab_portfolio}
+    sites:
+      - {id: fab_vis_taiwan_portfolio, site_name: Taiwan_8_inch_fab_network, country: Taiwan, city_or_region: Hsinchu_and_Taoyuan, lifecycle: operating, functions: [specialty_foundry], wafer_sizes: [8_inch], capacity_disclosure: portfolio_only}
+      - {id: fab_vis_singapore_existing, site_name: Singapore_8_inch_fab, country: Singapore, city_or_region: Singapore, lifecycle: operating, functions: [specialty_foundry], wafer_sizes: [8_inch], capacity_disclosure: portfolio_only}
+      - {id: fab_vis_vsmc, site_name: VSMC_12_inch_JV_fab, country: Singapore, city_or_region: Singapore, lifecycle: under_construction, functions: [future_specialty_foundry], wafer_sizes: [12_inch], capacity_disclosure: planned_undisclosed, initial_production_target: 2027}
+    sources:
+      - https://www.semi.org/en/resources/member-directory/vanguard-international
+
+  - id: facility_group_ase
+    company_ids: [backend_ase]
+    portfolio_boundary: Major company-disclosed manufacturing site groups are listed; packaging, test and EMS activities differ by site and physical unit throughput is not published as one comparable portfolio number.
+    portfolio_capacity_measures:
+      - {metric_type: capex, value: 1003, unit: USD_million, period: Q1_2026, status: reported, scope: consolidated_capex}
+    sites:
+      - {id: backend_ase_kaohsiung, site_name: ASE_Kaohsiung_campus, country: Taiwan, city_or_region: Kaohsiung, lifecycle: operating_and_expanding, functions: [advanced_packaging, packaging, test], wafer_sizes: [8_inch, 12_inch], capacity_disclosure: undisclosed}
+      - {id: backend_ase_chungli, site_name: ASE_Chungli, country: Taiwan, city_or_region: Taoyuan, lifecycle: operating, functions: [packaging, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_ase_nantou, site_name: ASE_Nantou, country: Taiwan, city_or_region: Nantou, lifecycle: operating, functions: [packaging, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_spil_taiwan, site_name: SPIL_Taiwan_network, country: Taiwan, city_or_region: Taichung_and_other_sites, lifecycle: operating, functions: [packaging, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_ase_china, site_name: ASE_and_SPIL_China_network, country: China, city_or_region: Shanghai_Kunshan_Suzhou_and_Weihai, lifecycle: operating, functions: [packaging, test, EMS], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_ase_malaysia, site_name: ASE_Malaysia, country: Malaysia, city_or_region: Penang, lifecycle: operating, functions: [packaging, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_ase_korea, site_name: ASE_Korea, country: South_Korea, city_or_region: Paju, lifecycle: operating, functions: [packaging, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_ase_japan, site_name: ASE_Japan, country: Japan, city_or_region: Takahata, lifecycle: operating, functions: [packaging, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+    sources:
+      - https://ase.aseglobal.com/ch/about-ase/manufacturing-facilities/
+      - https://www.sec.gov/Archives/edgar/data/1122411/000119312526135585/d50802d20f.htm
+      - https://www.aseglobal.com/press-room/ase-breaks-ground-on-new-high-tech-facility-in-kaohsiung/
+
+  - id: facility_group_amkor
+    company_ids: [backend_amkor]
+    portfolio_boundary: FY2025 facility area is a manufacturing-footprint proxy, not package or tested-chip throughput.
+    portfolio_capacity_measures:
+      - {metric_type: manufacturing_facility_area, value: 12.633, unit: million_square_feet, period: FY2025, status: reported, scope: global_portfolio}
+      - {metric_type: planned_capex, value: [2.5, 3.0], unit: USD_billion_range, period: FY2026, status: guidance, scope: company_portfolio}
+    sites:
+      - {id: backend_amkor_korea, site_name: Korea_K3_K4_K5_network, country: South_Korea, city_or_region: Bupyeong_Gwangju_and_Songdo, lifecycle: operating, functions: [advanced_packaging, packaging, test], wafer_sizes: [], capacity_disclosure: floor_area_only, facility_area_million_square_feet: 4.481}
+      - {id: backend_amkor_philippines, site_name: Philippines_P1_P3_P4_network, country: Philippines, city_or_region: Muntinlupa_and_Laguna, lifecycle: operating, functions: [packaging, test], wafer_sizes: [], capacity_disclosure: floor_area_only, facility_area_million_square_feet: 1.322}
+      - {id: backend_amkor_japan, site_name: Japan_J3_through_J7_network, country: Japan, city_or_region: Kumamoto_Fukuoka_Kitakami_Oita_Usuki_Fukui_Hakodate, lifecycle: operating, functions: [packaging, test], wafer_sizes: [], capacity_disclosure: floor_area_only, facility_area_million_square_feet: 1.775}
+      - {id: backend_amkor_china, site_name: China_C3, country: China, city_or_region: Shanghai, lifecycle: operating, functions: [packaging, test], wafer_sizes: [], capacity_disclosure: floor_area_only, facility_area_million_square_feet: 1.398}
+      - {id: backend_amkor_malaysia, site_name: Malaysia_M1, country: Malaysia, city_or_region: Penang, lifecycle: operating, functions: [packaging, test], wafer_sizes: [], capacity_disclosure: floor_area_only, facility_area_million_square_feet: 0.434}
+      - {id: backend_amkor_portugal, site_name: Portugal_E1, country: Portugal, city_or_region: Porto, lifecycle: operating, functions: [packaging, test], wafer_sizes: [], capacity_disclosure: floor_area_only, facility_area_million_square_feet: 0.583}
+      - {id: backend_amkor_taiwan, site_name: Taiwan_T1_T3_T5_T6_network, country: Taiwan, city_or_region: Taoyuan_and_Hukou, lifecycle: operating, functions: [advanced_packaging, packaging, test], wafer_sizes: [], capacity_disclosure: floor_area_only, facility_area_million_square_feet: 1.173}
+      - {id: backend_amkor_vietnam, site_name: Vietnam_Bac_Ninh, country: Vietnam, city_or_region: Bac_Ninh, lifecycle: operating_and_ramping, functions: [advanced_packaging, packaging, test], wafer_sizes: [], capacity_disclosure: floor_area_only, facility_area_million_square_feet: 1.467}
+      - {id: backend_amkor_arizona, site_name: Arizona_advanced_packaging_and_test, country: United_States, city_or_region: Peoria_Arizona, lifecycle: under_construction, functions: [future_advanced_packaging, future_test], wafer_sizes: [], capacity_disclosure: planned_floor_area, facility_area_million_square_feet: 1.8, first_phase_target: first_half_2028}
+    sources:
+      - https://www.sec.gov/Archives/edgar/data/1047127/000104712726000014/amkr-20251231.htm
+      - https://amkor.com/contact-us/
+
+  - id: facility_group_jcet
+    company_ids: [backend_jcet]
+    portfolio_boundary: JCET reports eight manufacturing facilities across China, South Korea and Singapore; the country/site groups below do not manufacture eight additional implied campuses.
+    sites:
+      - {id: backend_jcet_jiangyin, site_name: Jiangyin_headquarters_and_manufacturing_network, country: China, city_or_region: Jiangyin_Jiangsu, lifecycle: operating, functions: [advanced_packaging, wafer_level_packaging, test], wafer_sizes: [8_inch, 12_inch], capacity_disclosure: undisclosed}
+      - {id: backend_jcet_suzhou, site_name: Suzhou_manufacturing_site, country: China, city_or_region: Suzhou_Jiangsu, lifecycle: operating, functions: [packaging, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_jcet_chuzhou, site_name: Chuzhou_manufacturing_site, country: China, city_or_region: Chuzhou_Anhui, lifecycle: operating, functions: [packaging, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_jcet_korea, site_name: JCET_STATS_ChipPAC_Korea, country: South_Korea, city_or_region: Incheon, lifecycle: operating, functions: [advanced_packaging, packaging, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_jcet_singapore, site_name: JCET_STATS_ChipPAC_Singapore_network, country: Singapore, city_or_region: Singapore, lifecycle: operating, functions: [advanced_packaging, packaging, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+    sources:
+      - https://static.cninfo.com.cn/finalpage/2026-04-10/1225091498.PDF
+      - https://www.jcetglobal.com/en
+
+  - id: facility_group_pti
+    company_ids: [backend_pti]
+    portfolio_boundary: Service revenue is disclosed by packaging, testing and module categories; physical package or tested-chip capacity is not.
+    sites:
+      - {id: backend_pti_hq, site_name: Hsinchu_Industrial_Park_headquarters, country: Taiwan, city_or_region: Hsinchu, lifecycle: operating, functions: [memory_packaging, memory_test, modules], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_pti_plant_2, site_name: Hsinchu_Industrial_Park_Plant_2, country: Taiwan, city_or_region: Hsinchu, lifecycle: operating, functions: [packaging, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_pti_plant_3, site_name: Hsinchu_Industrial_Park_Plant_3, country: Taiwan, city_or_region: Hsinchu, lifecycle: operating, functions: [packaging, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+    sources:
+      - https://www.pti.com.tw/en/ir/news/qa
+
+  - id: facility_group_chipmos
+    company_ids: [backend_chipmos]
+    portfolio_capacity_measures:
+      - {metric_type: utilization, value: 68, unit: percent, period: Q1_2026, status: reported, scope: company_portfolio}
+    sites:
+      - {id: backend_chipmos_hsinchu_science_park, site_name: Hsinchu_Science_Park_site, country: Taiwan, city_or_region: Hsinchu, lifecycle: operating, functions: [wafer_probe, packaging, final_test], wafer_sizes: [], capacity_disclosure: utilization_only}
+      - {id: backend_chipmos_hsinchu_industrial_park, site_name: Hsinchu_Industrial_Park_site, country: Taiwan, city_or_region: Hsinchu, lifecycle: operating, functions: [memory_packaging, memory_test], wafer_sizes: [], capacity_disclosure: utilization_only}
+      - {id: backend_chipmos_southern_taiwan, site_name: Southern_Taiwan_Science_Park_site, country: Taiwan, city_or_region: Tainan, lifecycle: operating, functions: [display_driver_packaging, display_driver_test], wafer_sizes: [], capacity_disclosure: utilization_only}
+    sources:
+      - https://www.chipmos.com/upfiles/ADUpload/english/en_ir_lawsaid_2853460359.pdf
+
+  - id: facility_group_kyec
+    company_ids: [backend_kyec]
+    portfolio_boundary: Service mix and capex are disclosed, but the cited quarterly materials do not provide a single physical throughput count.
+    sites:
+      - {id: backend_kyec_hsinchu, site_name: Hsinchu_headquarters_and_site, country: Taiwan, city_or_region: Hsinchu, lifecycle: operating, functions: [wafer_probe, final_test, burn_in], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_kyec_chunan, site_name: Chunan_site, country: Taiwan, city_or_region: Zhunan_Miaoli, lifecycle: operating_and_expanding, functions: [wafer_probe, final_test, burn_in], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_kyec_tongluo, site_name: Tongluo_site, country: Taiwan, city_or_region: Tongluo_Miaoli, lifecycle: operating_and_expanding, functions: [wafer_probe, final_test, burn_in], wafer_sizes: [], capacity_disclosure: undisclosed}
+    sources:
+      - https://www.kyec.com.tw/en/About/Traffic
+      - https://www.kyec.com.tw/en/Ir/Quarterly
+
+  - id: facility_group_tongfu
+    company_ids: [backend_tongfu]
+    portfolio_boundary: The company describes seven major production bases; headquarters and named subsidiaries can overlap a campus boundary.
+    sites:
+      - {id: backend_tongfu_nantong, site_name: Nantong_headquarters_and_production_base, country: China, city_or_region: Nantong_Jiangsu, lifecycle: operating, functions: [packaging, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_tongfu_hefei, site_name: Hefei_production_base, country: China, city_or_region: Hefei_Anhui, lifecycle: operating, functions: [packaging, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_tongfu_xiamen, site_name: Xiamen_production_base, country: China, city_or_region: Xiamen_Fujian, lifecycle: operating, functions: [packaging, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_tongfu_suzhou, site_name: TF_AMD_Suzhou, country: China, city_or_region: Suzhou_Jiangsu, lifecycle: operating, functions: [advanced_packaging, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_tongfu_penang, site_name: TF_AMD_Penang, country: Malaysia, city_or_region: Penang, lifecycle: operating, functions: [advanced_packaging, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_tongfu_taiwan, site_name: Taiwan_Tongfu, country: Taiwan, city_or_region: Taiwan, lifecycle: operating, functions: [packaging, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_tongfu_nantong_tongke, site_name: Nantong_Tongke, country: China, city_or_region: Nantong_Jiangsu, lifecycle: operating, functions: [packaging, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+    sources:
+      - https://en.tfme.com/About.html
+      - https://en.tfme.com/contact.html
+
+  - id: facility_group_hana_micron
+    company_ids: [backend_hana_micron]
+    sites:
+      - {id: backend_hana_micron_asan, site_name: Asan_package_and_test_site, country: South_Korea, city_or_region: Asan, lifecycle: operating, functions: [memory_packaging, test, modules], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_hana_wls, site_name: HANA_WLS_Line_4, country: South_Korea, city_or_region: Asan, lifecycle: operating, functions: [bump, wafer_level_test], wafer_sizes: [12_inch], capacity_disclosure: undisclosed}
+      - {id: backend_hana_pangyo, site_name: Pangyo_test_center, country: South_Korea, city_or_region: Seongnam, lifecycle: operating, functions: [test, R_and_D], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_hana_vietnam_yen_phong, site_name: Vietnam_Yen_Phong_site, country: Vietnam, city_or_region: Bac_Ninh, lifecycle: operating, functions: [packaging, test, modules], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_hana_vietnam_van_trung, site_name: Vietnam_Van_Trung_site, country: Vietnam, city_or_region: Bac_Giang, lifecycle: operating, functions: [packaging, test, modules], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_hana_brazil_sao_leopoldo, site_name: HT_Micron_Sao_Leopoldo, country: Brazil, city_or_region: Sao_Leopoldo, lifecycle: operating, functions: [packaging, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_hana_brazil_manaus, site_name: HANA_Electronics_Manaus, country: Brazil, city_or_region: Manaus, lifecycle: operating, functions: [modules], wafer_sizes: [], capacity_disclosure: undisclosed}
+    sources:
+      - https://hanamicron.com/contents/cont.do?mId=62&mPid=10&sCode=eng
+      - https://hanamicron.com/contents/cont.do?mId=65&mPid=10&sCode=eng
+      - https://hanamicron.com/contents/cont.do?mId=64&mPid=10&sCode=eng
+
+  - id: facility_group_sfa_semicon
+    company_ids: [backend_sfa_semicon]
+    sites:
+      - {id: backend_sfa_cheonan_1, site_name: Cheonan_Plant_1, country: South_Korea, city_or_region: Cheonan, lifecycle: operating, functions: [packaging, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+      - {id: backend_sfa_cheonan_2, site_name: Cheonan_Plant_2, country: South_Korea, city_or_region: Cheonan, lifecycle: operating, functions: [bump], wafer_sizes: [8_inch, 12_inch], capacity_disclosure: undisclosed}
+      - {id: backend_sfa_philippines, site_name: Clark_Philippines_site, country: Philippines, city_or_region: Clark, lifecycle: operating, functions: [packaging, test], wafer_sizes: [], capacity_disclosure: undisclosed}
+    sources:
+      - https://kind.krx.co.kr/external/2026/03/23/001039/20260323004733/11011.htm
+      - https://edge.pse.com.ph/companyInformation/form.do?cmpy_id=655
+
+  - id: facility_group_lb_semicon
+    company_ids: [backend_lb_semicon]
+    portfolio_boundary: Bumping is reported in sheets and COF in million pieces; those measures remain separate and are not added.
+    portfolio_capacity_measures:
+      - {metric_type: production_capacity, value: 364200, unit: bump_wafers_or_sheets_in_quarter, period: Q1_2026, status: reported, scope: company_portfolio}
+      - {metric_type: actual_output, value: 241129, unit: bump_wafers_or_sheets_in_quarter, period: Q1_2026, status: reported, scope: company_portfolio}
+      - {metric_type: utilization, value: 66.21, unit: percent, period: Q1_2026, status: reported, scope: bumping}
+      - {metric_type: production_capacity, value: 183, unit: million_COF_pieces_in_quarter, period: Q1_2026, status: reported, scope: company_portfolio}
+      - {metric_type: actual_output, value: 136, unit: million_COF_pieces_in_quarter, period: Q1_2026, status: reported, scope: company_portfolio}
+      - {metric_type: utilization, value: 74.41, unit: percent, period: Q1_2026, status: reported, scope: COF}
+    sites:
+      - {id: backend_lb_pyeongtaek, site_name: Pyeongtaek_site, country: South_Korea, city_or_region: Pyeongtaek, lifecycle: operating, functions: [bump, wafer_probe, assembly, final_test], wafer_sizes: [8_inch, 12_inch], capacity_disclosure: portfolio_only}
+      - {id: backend_lb_anseong, site_name: Anseong_site, country: South_Korea, city_or_region: Anseong, lifecycle: operating, functions: [bump, test], wafer_sizes: [8_inch, 12_inch], capacity_disclosure: portfolio_only}
+      - {id: backend_lb_gumi, site_name: Gumi_site, country: South_Korea, city_or_region: Gumi, lifecycle: operating, functions: [COF, assembly], wafer_sizes: [], capacity_disclosure: portfolio_only}
+      - {id: backend_lb_cheongju, site_name: Cheongju_site, country: South_Korea, city_or_region: Cheongju, lifecycle: operating, functions: [semiconductor_backend], wafer_sizes: [], capacity_disclosure: portfolio_only}
+    sources:
+      - https://kind.krx.co.kr/external/2026/05/15/002000/20260515004431/11013.htm
+
+  - id: facility_group_doosan_tesna
+    company_ids: [backend_doosan_tesna]
+    portfolio_boundary: Capacity uses monetary-value equipment proxies calculated from equipment prices, machine counts, customer prices and 720 operating hours per month; it is not physical wafer or chip throughput.
+    portfolio_capacity_measures:
+      - {metric_type: value_based_equipment_capacity, value: 618.049, unit: KRW_billion_equipment_value_proxy, period: FY2025, status: reported, scope: wafer_test}
+      - {metric_type: value_based_output, value: 280.964, unit: KRW_billion_equipment_value_proxy, period: FY2025, status: reported, scope: wafer_test}
+      - {metric_type: utilization, value: 45.5, unit: percent, period: FY2025, status: reported, scope: wafer_test}
+      - {metric_type: value_based_equipment_capacity, value: 30.617, unit: KRW_billion_equipment_value_proxy, period: FY2025, status: reported, scope: package_test}
+      - {metric_type: utilization, value: 58.9, unit: percent, period: FY2025, status: reported, scope: package_test}
+      - {metric_type: value_based_equipment_capacity, value: 40.046, unit: KRW_billion_equipment_value_proxy, period: FY2025, status: reported, scope: die_preparation}
+      - {metric_type: utilization, value: 12.2, unit: percent, period: FY2025, status: reported, scope: die_preparation}
+    sites:
+      - {id: backend_doosan_pyeongtaek, site_name: Pyeongtaek_headquarters_and_plant, country: South_Korea, city_or_region: Pyeongtaek, lifecycle: operating, functions: [wafer_test, package_test, R_and_D], wafer_sizes: [], capacity_disclosure: value_proxy_only}
+      - {id: backend_doosan_anseong, site_name: Anseong_line_network, country: South_Korea, city_or_region: Anseong, lifecycle: operating, functions: [wafer_test, package_test, die_preparation], wafer_sizes: [], capacity_disclosure: value_proxy_only}
+      - {id: backend_doosan_west_anseong, site_name: West_Anseong_plant, country: South_Korea, city_or_region: Anseong, lifecycle: operating, functions: [semiconductor_test], wafer_sizes: [], capacity_disclosure: value_proxy_only}
+    sources:
+      - https://kind.krx.co.kr/external/2026/03/23/001554/20260323006637/11011.htm
+
+  - id: facility_group_nepes_ark
+    company_ids: [backend_nepes_ark]
+    portfolio_boundary: Nepes Ark test sites are separated from the broader Nepes group packaging network; physical test throughput is undisclosed.
+    sites:
+      - {id: backend_nepes_ark_cheongju, site_name: Cheongju_Campus_2, country: South_Korea, city_or_region: Cheongju, lifecycle: operating, functions: [wafer_test, package_test], wafer_sizes: [8_inch, 12_inch], capacity_disclosure: undisclosed}
+      - {id: backend_nepes_ark_cheongan, site_name: Cheongan_Campus, country: South_Korea, city_or_region: Eumseong_Cheongan, lifecycle: operating, functions: [wafer_test, package_test], wafer_sizes: [8_inch, 12_inch], capacity_disclosure: undisclosed}
+    sources:
+      - https://www.nepesark.co.kr/eng/about/abt04.php
+      - https://www.nepesark.co.kr/about/abt02.php
+
+external_entities:
+  - {id: external_intel_products, name: Intel_Products, entity_type: internal_segment}
+  - {id: external_amd, name: Advanced_Micro_Devices, entity_type: fabless_semiconductor_company}
+  - {id: external_applied_materials, name: Applied_Materials, entity_type: semiconductor_equipment_supplier}
+  - {id: external_hanmi_semiconductor, name: Hanmi_Semiconductor, entity_type: semiconductor_equipment_supplier}
+  - {id: external_nvidia, name: NVIDIA, entity_type: accelerator_designer}
+  - {id: external_advantest, name: Advantest, entity_type: semiconductor_test_equipment_supplier}
+
+explicit_relationships:
+  - id: relation_kioxia_sandisk_flash_ventures
+    from_id: memory_company_kioxia
+    to_id: memory_company_sandisk
+    relation_type: manufacturing_joint_venture
+    process_layer: NAND_wafer_fabrication
+    products: [BiCS_3D_NAND]
+    status: active_extended_through_2034_12_31
+    facility_refs: [fab_flash_ventures_yokkaichi, fab_flash_ventures_kitakami]
+    evidence: Both companies jointly develop and fund production at Yokkaichi and Kitakami.
+    not_imply: Do not count the shared wafer capacity twice or assume identical commercial revenue.
+    sources:
+      - https://investor.sandisk.com/news-releases/news-release-details/kioxia-and-sandisk-extend-yokkaichi-joint-venture-agreement
+
+  - id: relation_sk_hynix_tsmc_hbm_base_die
+    from_id: memory_company_sk_hynix
+    to_id: memory_company_tsmc
+    relation_type: technology_and_manufacturing_collaboration
+    process_layer: HBM_advanced_logic_base_die_and_3D_integration
+    products: [HBM4, HBM4E]
+    status: official_joint_disclosure
+    facility_refs: []
+    evidence: SK hynix disclosed TSMC advanced logic base-die and 3D integration collaboration for next-generation HBM.
+    not_imply: No fab allocation, wafer volume or commercial value is inferred.
+    sources:
+      - https://news.skhynix.com/tsmc-technology-symposium-2026/
+
+  - id: relation_sk_hynix_applied_materials_R_and_D
+    from_id: memory_company_sk_hynix
+    to_id: external_applied_materials
+    relation_type: research_collaboration
+    process_layer: DRAM_HBM_materials_process_and_3D_packaging
+    products: [next_generation_DRAM, HBM]
+    status: official_collaboration
+    facility_refs: []
+    evidence: Official joint R&D collaboration.
+    not_imply: Research collaboration is not equipment order value or installed share.
+    sources:
+      - https://news.skhynix.com/sk-hynix-and-applied-materials-sign-mou-for-next-generation-memory/
+
+  - id: relation_micron_applied_materials_R_and_D
+    from_id: memory_company_micron
+    to_id: external_applied_materials
+    relation_type: research_collaboration
+    process_layer: DRAM_HBM_and_NAND_process_development
+    products: [DRAM, HBM, NAND]
+    status: official_collaboration
+    facility_refs: []
+    evidence: Official collaboration on next-generation memory technologies.
+    not_imply: Research collaboration is not equipment order value or installed share.
+    sources:
+      - https://newsroom.appliedmaterials.com/news-releases/news-release-details/applied-materials-and-micron-expand-collaboration-accelerate
+
+  - id: relation_sk_hynix_hanmi_tc_bonder
+    from_id: memory_company_sk_hynix
+    to_id: external_hanmi_semiconductor
+    relation_type: equipment_supply_contract
+    process_layer: HBM_thermal_compression_bonding
+    products: [HBM4]
+    status: public_supply_contract_2026_06
+    facility_refs: []
+    evidence: Public HBM4 TC-bonder supply-contract disclosure.
+    not_imply: The contract does not establish all HBM bonder share or future order volumes.
+    sources:
+      - https://news.skhynix.com/fact-05/
+
+  - id: relation_psmc_micron_tongluo
+    from_id: memory_company_psmc
+    to_id: memory_company_micron
+    relation_type: announced_fab_transaction_and_cooperation
+    process_layer: DRAM_fabrication_and_advanced_packaging
+    products: [DRAM, advanced_packaging]
+    status: P5_sale_and_P3_process_cooperation_announced_2026
+    facility_refs: [fab_psmc_tongluo_p5, fab_psmc_hsinchu_p3]
+    evidence: PSMC announced a USD 1.8 billion Tongluo P5 sale to Micron, long-term advanced-packaging cooperation and Micron support for the Hsinchu P3 process upgrade.
+    not_imply: The announced transaction is not treated as completed ownership or current Micron output.
+    sources:
+      - https://www.powerchip.com/en-global/insights/press-releases/content/20260117
+
+  - id: relation_tongfu_amd
+    from_id: backend_tongfu
+    to_id: external_amd
+    relation_type: primary_packaging_and_test_supplier
+    process_layer: advanced_packaging_and_test
+    products: [AMD_semiconductor_products]
+    status: company_disclosed_operating_relationship
+    facility_refs: [backend_tongfu_suzhou, backend_tongfu_penang]
+    evidence: Tongfu states the TF-AMD joint ventures serve as AMD's primary packaging and testing supplier.
+    not_imply: No current AMD revenue allocation or unit volume is inferred.
+    sources:
+      - https://en.tfme.com/news/400.html
+
+  - id: relation_intel_foundry_intel_products
+    from_id: foundry_intel
+    to_id: external_intel_products
+    relation_type: internal_segment_supply
+    process_layer: wafer_fabrication_and_advanced_packaging
+    products: [Intel_products]
+    status: current_intersegment_reporting
+    facility_refs: [fab_intel_oregon, fab_intel_arizona, fab_intel_ireland, fab_intel_israel]
+    evidence: Q1 2026 Foundry revenue was approximately USD 5.2 billion intersegment and USD 174 million external.
+    not_imply: Intersegment revenue is not third-party foundry market revenue.
+    sources:
+      - https://www.intc.com/filings-reports/all-sec-filings/content/0000050863-26-000079/intc-20260328.htm
+
+  - id: relation_samsung_memory_foundry_internal
+    from_id: memory_company_samsung
+    to_id: memory_company_samsung
+    relation_type: internal_vertical_integration_capability
+    process_layer: memory_die_base_die_foundry_and_packaging
+    products: [HBM4, memory_base_die]
+    status: internal_capability_and_product_disclosure
+    facility_refs: [fab_samsung_hwaseong, fab_samsung_pyeongtaek, backend_samsung_onyang, backend_samsung_cheonan]
+    evidence: Samsung combines memory, foundry and internal backend capabilities and disclosed 4nm HBM base-die supply.
+    not_imply: DS segment results do not reveal a memory-to-foundry transfer price or standalone foundry profit.
+    sources:
+      - https://news.samsung.com/global/samsung-electronics-announces-first-quarter-2026-results
+      - https://semiconductor.samsung.com/foundry/manufacturing/manufacturing-sites/
+
+  - id: relation_samsung_hbm4_nvidia_platform
+    from_id: memory_company_samsung
+    to_id: external_nvidia
+    relation_type: qualified_product_supply_disclosure
+    process_layer: HBM_product
+    products: [HBM4_for_Vera_Rubin]
+    status: mass_product_sales_started_Q1_2026
+    facility_refs: []
+    evidence: Samsung disclosed HBM4 mass-product sales for NVIDIA Vera Rubin.
+    not_imply: No unit volume, revenue allocation or long-term market share is inferred.
+    sources:
+      - https://news.samsung.com/global/samsung-electronics-announces-first-quarter-2026-results
+
+process_routes:
+  - id: route_HBM
+    product_family: HBM
+    stages:
+      - {sequence: 1, stage: DRAM_die_fabrication, company_ids: [memory_company_samsung, memory_company_sk_hynix, memory_company_micron]}
+      - {sequence: 2, stage: advanced_logic_base_die, company_ids: [memory_company_tsmc, memory_company_samsung], boundary: Capability list; only named relationships above are confirmed allocations.}
+      - {sequence: 3, stage: thinning_TSV_bonding_and_stack_assembly, company_ids: [memory_company_samsung, memory_company_sk_hynix, memory_company_micron], boundary: Primarily internal HBM integration; no independent OSAT allocation inferred.}
+      - {sequence: 4, stage: known_good_die_and_stack_test, company_ids: [memory_company_samsung, memory_company_sk_hynix, memory_company_micron, external_advantest], boundary: The existing linked supply-chain artifact identifies test-equipment exposure; this is not a test-house customer allocation.}
+      - {sequence: 5, stage: accelerator_package_integration, company_ids: [memory_company_tsmc, memory_company_samsung, backend_ase, backend_amkor], boundary: Foundry and OSAT capability map only; product-specific customer flows require separate evidence.}
+    not_customer_allocation: true
+
+  - id: route_commodity_DRAM
+    product_family: commodity_and_server_DRAM
+    stages:
+      - {sequence: 1, stage: wafer_fabrication, company_ids: [memory_company_samsung, memory_company_sk_hynix, memory_company_micron, memory_company_nanya, memory_company_psmc, memory_company_cxmt]}
+      - {sequence: 2, stage: assembly_and_packaging, company_ids: [memory_company_samsung, memory_company_sk_hynix, memory_company_micron, backend_ase, backend_amkor, backend_jcet, backend_pti, backend_hana_micron, backend_sfa_semicon]}
+      - {sequence: 3, stage: test_and_burn_in, company_ids: [memory_company_samsung, memory_company_sk_hynix, memory_company_micron, backend_ase, backend_amkor, backend_jcet, backend_pti, backend_chipmos, backend_kyec, backend_hana_micron, backend_doosan_tesna, backend_nepes_ark]}
+    not_customer_allocation: true
+
+  - id: route_NAND_and_SSD
+    product_family: NAND_and_SSD
+    stages:
+      - {sequence: 1, stage: NAND_wafer_fabrication, company_ids: [memory_company_samsung, memory_company_sk_hynix, memory_company_micron, memory_company_kioxia, memory_company_sandisk, memory_company_ymtc]}
+      - {sequence: 2, stage: NAND_packaging_and_test, company_ids: [memory_company_samsung, memory_company_sk_hynix, memory_company_micron, memory_company_kioxia, memory_company_sandisk, backend_ase, backend_amkor, backend_jcet, backend_pti, backend_chipmos, backend_hana_micron]}
+      - {sequence: 3, stage: controller_firmware_and_module_integration, company_ids: [memory_company_samsung, memory_company_sk_hynix, memory_company_micron, memory_company_kioxia, memory_company_sandisk], boundary: Controller vendors are retained in the linked memory supply-chain layer rather than assigned to a specific NAND maker.}
+    not_customer_allocation: true
+
+  - id: route_specialty_memory
+    product_family: NOR_SLC_specialty_DRAM_and_long_lifecycle_memory
+    stages:
+      - {sequence: 1, stage: wafer_fabrication, company_ids: [memory_company_winbond, memory_company_macronix, memory_company_nanya, memory_company_psmc, foundry_umc, foundry_globalfoundries, foundry_hua_hong, foundry_tower, foundry_db_hitek, foundry_vis]}
+      - {sequence: 2, stage: bump_packaging_and_test, company_ids: [backend_ase, backend_amkor, backend_jcet, backend_chipmos, backend_kyec, backend_lb_semicon, backend_doosan_tesna, backend_nepes_ark]}
+    not_customer_allocation: true
+
+executive_findings:
+  - >-
+    Public capacity transparency is strongest at the portfolio level for pure-play
+    foundries and weakest for leading memory fabs and OSAT physical throughput.
+    Therefore the registry can compare disclosed metrics without producing a false
+    single global wafer or package total.
+  - >-
+    TSMC, Samsung and Intel connect front-end logic to advanced packaging, while
+    ASE, Amkor, JCET and the specialist test houses provide broad backend capability.
+    HBM remains more vertically integrated at the memory IDMs than conventional
+    DRAM or NAND, so generic OSAT capability must not be read as confirmed HBM volume.
+  - >-
+    Samsung Q1 2026 DS operating profit was KRW 53.7 trillion, but it cannot be
+    partitioned into memory and foundry from the public release. Intel Foundry's
+    Q1 USD 5.4 billion revenue likewise includes about USD 5.2 billion intersegment.
+  - >-
+    Comparable pure-play foundry disclosures span different denominators: UMC's
+    more-than-400,000 monthly 12-inch-equivalent installed capacity, SMIC's
+    1,078,250 monthly 8-inch-equivalent capacity, and GlobalFoundries' 579,000
+    quarterly 300mm-equivalent shipments are intentionally not added.
+  - >-
+    Backend production disclosure is heterogeneous: ChipMOS provides utilization,
+    Amkor provides floor area, LB Semicon provides bump and COF outputs, and Doosan
+    Tesna provides value-based equipment proxies. Missing physical throughput is
+    recorded as a disclosure gap rather than estimated.
+
+disclosure_gaps:
+  - id: gap_memory_site_capacity
+    priority: high
+    companies: [memory_company_samsung, memory_company_sk_hynix, memory_company_micron, memory_company_kioxia, memory_company_sandisk, memory_company_cxmt, memory_company_ymtc]
+    missing: Current site-level wafer starts and product allocation.
+    handling: Keep capacity null; use only official portfolio or plan disclosures.
+  - id: gap_foundry_segment_boundary
+    priority: high
+    companies: [memory_company_samsung, foundry_intel]
+    missing: Standalone third-party foundry economics directly comparable with pure-play foundries.
+    handling: Retain DS and intersegment boundaries.
+  - id: gap_osat_physical_throughput
+    priority: high
+    companies: [backend_ase, backend_amkor, backend_jcet, backend_pti, backend_kyec, backend_tongfu, backend_hana_micron, backend_sfa_semicon, backend_nepes_ark]
+    missing: Comparable physical packages, tested dies or test-hours by site.
+    handling: Use disclosed service mix, utilization, area or capex without converting them into units.
+  - id: gap_china_private_memory_financials
+    priority: medium
+    companies: [memory_company_cxmt, memory_company_ymtc]
+    missing: Audited public revenue, operating profit and site capacity.
+    handling: Preserve private-company disclosure gap and do not substitute market estimates for company financials.
+  - id: gap_named_customer_flows
+    priority: high
+    companies: [backend_ase, backend_amkor, backend_jcet, backend_pti, backend_chipmos, backend_kyec]
+    missing: Product-specific customer volume and revenue allocation.
+    handling: Record only explicit named relationships; all other routes are capability maps.
+
+retrieval_examples:
+  - question: Which facilities have directly disclosed current installed wafer capacity?
+    query_hint: Filter facility records where a capacity measure has metric_type installed_capacity and status reported.
+  - question: Which companies have latest operating losses?
+    query_hint: Filter company financial records where latest_financial_snapshot operating_profit is below zero while preserving period and currency.
+  - question: How does an HBM package move across the network?
+    query_hint: Read route_HBM together with explicit_relationships; do not treat capability-stage membership as a customer allocation.
+  - question: Where is backend throughput unknown?
+    query_hint: Filter facility records by capacity_disclosure undisclosed, floor_area_only, utilization_only or value_proxy_only.
