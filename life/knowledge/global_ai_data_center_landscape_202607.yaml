@@ -37652,7 +37652,139 @@ campus_profiles:
       - {title: Ashburn 255000-square-foot and 42-MW release, publisher: H5_Data_Centers, date: '2023-03-21', url: 'https://h5datacenters.com/H5-Data-Centers-Breaks-Ground-on-new-ashburn-build.html'}
     confidence: high_for_current_directory_labels_addresses_provider_headlines_JV_count_and_partners_nine_OSM_crosswalks_and_selected_provider_designs_medium_for_JV_property_bridge_and_current_lifecycle_low_for_live_load_complete_equipment_BOM_GPU_inventory_standalone_financials_JV_economics_and_ROIC
 
+  - id: dc_o2_czech_cetin_owned_colocation_cloud_and_service_portfolio
+    name: O2 Czech service and CETIN-owned physical data-center portfolio boundary
+    type: current_diversified_telecom_service_roster_with_sister_company_title_OSM_power_certification_GPU_and_financial_scope_boundary
+    operator_boundary: CETIN_owned_O2_service_and_customer_interface
+    country: Czech_Republic
+    evidence_artifacts:
+      facility_registry: life/imports/global_data_centers_20260717/o2_czech_data_center_registry.jsonl
+      facility_summary: life/imports/global_data_centers_20260717/o2_czech_data_center_summary.json
+      registry_builder: scripts/build_o2_czech_data_center_registry.py
+    current_roster_reconciliation:
+      service_location_identifiers: 6
+      service_locations: [DC_Stodulky, DC_Chodov, DC_Nagano, DC_Hradec_Kralove, DC_Brno_FASTER_CZ, DC_Uherske_Hradiste_DC_Monaco]
+      current_provider_address_entries: 4
+      addressed_locations: [DC_Stodulky, DC_Chodov, DC_Brno_FASTER_CZ, DC_Uherske_Hradiste_DC_Monaco]
+      identifiers_without_current_public_address: [DC_Nagano, DC_Hradec_Kralove]
+      older_history_evidence: provider_blog_says_Nagano_was_the_first_O2_data_center_in_2002
+      boundary: >-
+        The current support and technical sections identify six service
+        locations, while the current contact directory supplies four addresses.
+        Nagano and Hradec Kralove remain service identifiers, but no current
+        address, building or extra facility is invented for them.
+    ownership_and_operating_boundary:
+      physical_title: O2_SOC3_states_the_data_centers_are_owned_by_sister_company_CETIN_a_s
+      non_IT_facility_and_access_operations: CETIN_a_s
+      service_customer_IT_and_security_interface: O2_Czech_Republic_a_s
+      intercompany_contract: CETIN_2024_accounts_identify_data_center_services_as_one_of_three_key_contracts_with_O2
+      group_control: O2_Czech_Republic_and_CETIN_are_100_percent_PPF_owned
+      boundary: >-
+        An O2 brand or OSM operator label identifies the marketed service and
+        customer interface, not physical title or the company recognizing every
+        facility asset, energy cost and capital expenditure. The SOC3 statement
+        is portfolio evidence rather than an object-level cadastral search.
+    OSM_crosswalk:
+      raw_operator_aliases: [O2_Czech_Republic_a_s]
+      routed_objects: 4
+      exact_current_address_roster_matches:
+        osm_way_281398489: DC_Brno_FASTER_CZ
+        osm_way_127931842: DC_Chodov
+        osm_node_11436652400: DC_Uherske_Hradiste_DC_Monaco
+        osm_way_49548520: DC_Stodulky
+      numeric_footprints_m2: {Brno: 1033.164, Chodov: 1690.252, Stodulky: 2903.259}
+      Monaco: point_without_footprint
+      broad_O2_alias_added: false
+      boundary: >-
+        The four raw operator objects exactly cover the four current address
+        entries. O2 is not used as a broad alias because it could conflate
+        unrelated country companies. OSM footprint is not floor area, white
+        space, owned area, MW or financial contribution.
+    power_electrical_and_resilience:
+      Stodulky:
+        final_reserved_input_MW: 3.5
+        input_power_denominator: total_final_reserved_input_not_IT_load_current_draw_or_customer_load
+        utility_and_rack_topology: two_utility_feeds_two_independent_rack_circuits_and_two_PDUs_per_rack
+        UPS: N_plus_1_in_each_branch
+        diesel_generators: N_plus_1
+        fleet_diesel_runtime: minimum_24_hours
+        standard_42U_rack_service_power_kW: up_to_5_9_with_other_offers_possible
+        electrical_outputs: [AC_230V, AC_400V]
+        power_and_cooling_availability_percent: 99.982
+        optical_connectivity: three_independent_directions_up_to_100_Gbps
+      other_five:
+        rack_power: two_PDUs_and_two_independent_circuits
+        UPS: N_plus_1
+        diesel_generators: N_plus_1
+        connectivity: internet_or_MPLS_100_Mbps_to_10_Gbps
+      complete_per_site_grid_transformer_switchgear_busway_PDU_UPS_battery_generator_fuel_OEM_model_count_rating_loading_test_age_and_remaining_life: undisclosed
+      current_operating_energized_available_allocated_sold_occupied_billed_peak_and_actual_IT_load: undisclosed
+      boundary: Stodulky's reserved input, service rack power and design redundancy are not fleet IT capacity, current draw, utilization or equipment inventory.
+    cooling_environment_and_fire:
+      Stodulky: {maximum_PUE: 1.5, temperature_C: 23_plus_or_minus_2, humidity_percent: 30_to_70, hot_cold_aisle_separation: true, fire_suppression: inert_gas, raised_floor_load_kg_per_m2: 1000}
+      other_five: {fire_detection: VESDA, suppression: FM200_or_Inergen}
+      exact_per_site_cooling_topology_chiller_CRAH_CRAC_CDU_pump_heat_exchanger_cooling_tower_OEM_model_count_rating_loading_and_live_liquid_cooled_MW: undisclosed
+      measured_site_PUE_WUE_absolute_energy_water_emissions_and_hourly_renewable_matching: undisclosed
+      boundary: The 1.5 value is a provider maximum for Stodulky, not current measured annual PUE or evidence of liquid cooling.
+    certification_boundary:
+      provider_built_to_statement: all_O2_data_centers_built_to_Tier_III_specifications
+      provider_current_certified_list: [DC_Chodov, DC_Nagano, DC_Hradec_Kralove]
+      certificate_identifiers_award_types_scopes_award_dates_expiries_and_current_audit_state: not_established_on_reviewed_page
+      treatment: Stodulky_Brno_and_Uherske_Hradiste_are_not_silently_upgraded_from_built_to_to_certified
+    area_rack_and_customer_scope:
+      Komercni_banka_Stodulky_dedicated_hall_m2: 290
+      hall_denominator: customer_dedicated_area_not_whole_facility_area
+      exact_facility_gross_floor_area_white_space_current_racks_available_sold_occupied_and_utilized_cabinets: undisclosed
+    AI_accelerators_and_high_density:
+      O2_IT_Services_companywide_operations_claim: more_than_5000_servers_and_500_applications
+      PPF_AI_statement: Dataclair_ai_is_an_in_house_AI_competence_center
+      exact_current_O2_CETIN_customer_or_partner_physical_GPU_accelerator_model_count_owner_site_delivery_acceptance_rack_fabric_power_utilization_revenue_margin_and_remaining_life: undisclosed_or_unestablished
+      live_liquid_cooled_MW: undisclosed_or_unestablished
+      boundary: >-
+        The managed-server statement is not a physical fleet census and has no
+        site or ownership allocation. An AI competence center is software and
+        organizational evidence, not accelerator inventory. No GPU total is
+        inferred.
+    financial_and_investability:
+      financial_profile_ref: company_o2_czech_republic
+      O2_Czech_2024_PPF_segment_EUR_m: {external_revenue: 1473, total_revenue: 1483, operating_profit_excluding_depreciation_amortization_and_impairments: 470, net_profit: 182, capex: 195, depreciation_and_amortization: 182, assets: 1652, liabilities: 1021, equity: 631}
+      PPF_Czech_telecom_subgroup_2025_EUR_m: {scope: O2_Czech_plus_CETIN_Czech, revenue: 1961, EBITDA: 1000, net_profit_from_continuing_operations: 357, assets: 4635, equity: 1151}
+      data_center_only_revenue_operating_profit_EBITDA_capex_assets_energy_cost_utilization_customer_concentration_and_ROIC: undisclosed
+      direct_public_equity_security: unavailable_after_O2_squeeze_out_with_private_PPF_parent
+      boundary: The 2024 O2 segment is diversified telecom and ICT; the 2025 Czech telecom subgroup combines O2 and CETIN. Neither isolates data-center earnings or asset returns.
+    outlook:
+      positive_signals: [six_location_national_service_footprint, CETIN_physical_infrastructure_plus_O2_enterprise_distribution, redundant_power_and_network_architecture, hosting_cloud_managed_services_cross_sell, PPF_group_AI_capability]
+      conversion_tests: [reconcile_four_address_and_six_service_rosters, publish_current_certification_identifiers_and_scopes, bridge_Stodulky_reserved_input_to_live_IT_and_billed_load, disclose_site_equipment_and_measured_efficiency, identify_installed_accelerators_and_liquid_cooling, separate_O2_CETIN_and_data_center_financials]
+      risks: [diversified_telecom_scope, sister_company_asset_cost_and_revenue_allocation, no_fleet_MW_or_utilization, no_GPU_or_AI_revenue_bridge, private_parent_and_no_direct_security, equipment_and_vendor_opacity]
+      analytical_view: >-
+        O2 and CETIN provide credible Czech enterprise hosting infrastructure,
+        but the direct investment route is absent and data-center economics are
+        not separated. The observable read-through is demand for electrical
+        redundancy, cooling and connectivity; vendor winners require contract
+        or equipment disclosure.
+    sources:
+      - {title: Current O2 data-center service locations and engineering, publisher: O2_Czech_Republic, accessed: '2026-07-19', url: 'https://www.o2.cz/podnikatele-a-firmy/cloud/datove-centrum'}
+      - {title: Current O2 support roster, publisher: O2_Czech_Republic, accessed: '2026-07-19', url: 'https://www.o2.cz/podpora/it-reseni-pro-firmy/datove-centrum'}
+      - {title: O2 data-center history, publisher: O2_Czech_Republic, date: '2018-07-12', url: 'https://blog.o2.cz/2018/07/12/prijdte-si-pohovorit-spolehlivosti-datovych-center'}
+      - {title: Komercni banka dedicated Stodulky hall reference, publisher: O2_Czech_Republic, accessed: '2026-07-19', url: 'https://www.o2.cz/podnikatele-a-firmy/reference/komercni-banka-datacentrum'}
+      - {title: O2 IT Services server and application operations reference, publisher: O2_IT_Services, accessed: '2026-07-19', url: 'https://www.o2its.cz/reference/provoz-it/'}
+      - {title: SOC3 ownership and operating-control boundary, publisher: O2_Czech_Republic, accessed: '2026-07-19', url: 'https://www.o2.cz/spolecnost/soubory-certifikaty/soc3-report/SOC-3-Report-O2-EN-a-CZ.pdf'}
+      - {title: CETIN 2024 annual report and O2 key contracts, publisher: CETIN, year: 2024, url: 'https://www.cetin.cz/documents/105239/147890/KonsoVZ_2024_CETIN_CZ_signed.pdf/b344fd4c-a5c9-3718-974d-6fb2dd734f73?t=1743769297560'}
+      - {title: PPF Group 2024 audited annual accounts, publisher: PPF_Group, year: 2024, url: 'https://www.datocms-assets.com/40359/1746540335-ppfgroup_annual_accounts_2024.pdf'}
+      - {title: PPF Group 2025 audited annual accounts, publisher: PPF_Group, year: 2025, url: 'https://www.datocms-assets.com/40359/1777974326-ppfgroup_annual_accounts_2025_public.pdf'}
+    confidence: high_for_current_six_service_identifiers_four_addresses_four_OSM_matches_SOC3_ownership_boundary_Stodulky_reserved_input_and_PPF_financials_medium_for_current_certification_state_low_for_object_level_title_live_IT_load_complete_equipment_BOM_GPU_inventory_liquid_cooling_data_center_only_economics_and_vendor_attribution
+
 disclosure_gap_register:
+  - O2_Czech_CETIN_six_current_service_identifiers_to_four_current_address_entries_exact_land_building_suite_title_lease_operator_and_lifecycle_reconciliation_for_Nagano_and_Hradec_Kralove
+  - O2_Czech_CETIN_SOC3_portfolio_ownership_statement_to_asset_by_asset_CETIN_title_O2_service_rights_intercompany_contract_cost_revenue_capex_energy_and_accounting_allocation
+  - O2_Czech_Chodov_Nagano_Hradec_Kralove_Tier_III_certificate_identifiers_award_types_scopes_award_dates_expiries_and_current_audit_state_and_built_to_wording_for_other_sites
+  - O2_Czech_Stodulky_3_5MW_final_reserved_input_to_contract_capacity_current_draw_energized_available_allocated_sold_occupied_billed_peak_and_actual_IT_load
+  - O2_Czech_CETIN_per_site_grid_voltage_feeds_substation_transformer_switchgear_busway_PDU_UPS_battery_generator_fuel_OEM_model_count_rating_loading_test_age_and_remaining_life
+  - O2_Czech_CETIN_per_site_cooling_topology_chiller_CRAH_CRAC_CDU_pump_heat_exchanger_cooling_tower_OEM_model_count_rating_loading_measured_PUE_WUE_energy_water_and_live_liquid_cooled_MW
+  - O2_Czech_5000_server_500_application_companywide_operations_claim_to_physical_server_owner_site_placement_and_current_GPU_accelerator_model_count_delivery_acceptance_rack_fabric_power_utilization_and_remaining_life
+  - O2_Czech_Stodulky_290m2_Komercni_banka_hall_to_whole_facility_gross_floor_white_space_rack_and_customer_capacity_boundary
+  - O2_Czech_and_CETIN_current_separate_audited_revenue_EBITDA_operating_profit_cash_flow_capex_debt_assets_customer_concentration_utilization_and_data_center_only_site_economics_ROIC
+  - PPF_2025_Czech_telecom_combined_O2_CETIN_revenue_EBITDA_profit_assets_and_equity_to_each_legal_entity_and_data_center_activity_bridge
   - H5_32_directory_labels_31_addresses_25_markets_4_million_plus_sqft_under_management_and_multi_building_cards_to_exact_current_non_overlapping_land_parcel_building_suite_title_lease_manager_operator_and_lifecycle_census
   - H5_direct_Hyscale_HyscaleIX_and_other_management_contract_asset_by_asset_legal_ownership_percentages_voting_rights_guarantees_and_accounting_consolidation_bridge
   - H5_Nashville_211_Commerce_directory_to_147_Fourth_Avenue_current_page_and_other_directory_page_address_or_link_conflict_resolution

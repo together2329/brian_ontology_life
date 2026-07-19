@@ -20722,8 +20722,106 @@ financial_profiles:
       - dc_h5_data_centers_us_wholesale_colocation_and_managed_portfolio
     confidence: high_for_directory_and_provider_headlines_JV_count_and_partners_and_selected_facility_scales_medium_for_asset_to_JV_bridge_low_for_standalone_financials_current_live_load_GPU_inventory_complete_BOM_JV_economics_and_ROIC
 
+  - id: company_o2_czech_republic
+    company: O2 Czech Republic with CETIN physical data-center ownership boundary
+    category: private_PPF_owned_Czech_diversified_telecom_ICT_cloud_and_data_center_service_platform
+    public_private: private_after_squeeze_out
+    direct_public_equity_security: unavailable
+    parent: PPF_Group_private
+    portfolio_ref: dc_o2_czech_cetin_owned_colocation_cloud_and_service_portfolio
+    legal_and_operating_scope:
+      O2_Czech_Republic: service_provider_customer_interface_IT_and_security_services
+      CETIN_a_s: physical_data_center_owner_and_non_IT_facility_access_operations_per_O2_SOC3
+      group_control: both_100_percent_PPF_owned
+      intercompany_relationship: CETIN_2024_accounts_identify_data_center_services_as_one_of_three_key_contracts_with_O2
+      boundary: Physical title, facility operations, customer service, ICT delivery, intercompany charging and consolidated results are different legal and financial scopes.
+    O2_Czech_segment_2024:
+      source_scope: PPF_Group_consolidation_segment_for_O2_Czech_not_data_center_only
+      currency: EUR_million
+      external_revenue: 1473
+      total_revenue: 1483
+      operating_profit_excluding_depreciation_amortization_and_impairments: 470
+      net_profit: 182
+      capital_expenditure: 195
+      depreciation_and_amortization: 182
+      segment_assets: 1652
+      segment_liabilities: 1021
+      segment_equity: 631
+      comparable_2023:
+        external_revenue: 1453
+        total_revenue: 1466
+        operating_profit_excluding_depreciation_amortization_and_impairments: 472
+        net_profit: 216
+        capital_expenditure: 82
+        depreciation_and_amortization: 165
+      derived_change_2024_vs_2023_percent:
+        external_revenue: 1.38
+        total_revenue: 1.16
+        operating_profit_excluding_depreciation_amortization_and_impairments: -0.42
+        net_profit: -15.74
+        capital_expenditure: 137.8
+      boundary: The operating measure excludes depreciation, amortization and impairments and is not silently relabelled statutory EBIT or data-center EBITDA. Capex is companywide segment capex.
+    Czech_telecom_subgroup_2025:
+      entity_scope: PPF_TMT_Holdco_2_combines_O2_Czech_and_CETIN_Czech
+      currency: EUR_million
+      revenue: 1961
+      EBITDA: 1000
+      net_profit_from_continuing_operations: 357
+      total_assets: 4635
+      equity: 1151
+      comparable_2024: {revenue: 1825, EBITDA: 861, net_profit_from_continuing_operations: 204, total_assets: 4425, equity: 956}
+      derived_change_2025_vs_2024_percent: {revenue: 7.45, EBITDA: 16.14, net_profit_from_continuing_operations: 75.0, total_assets: 4.75, equity: 20.4}
+      boundary: These combined values cannot be assigned to O2, CETIN or data centers without eliminations and a segment bridge.
+    data_center_exposure:
+      current_service_location_identifiers: 6
+      current_provider_address_entries: 4
+      exact_OSM_matches: 4
+      Stodulky_final_reserved_input_MW: 3.5
+      exact_fleet_IT_MW_racks_area_utilization_and_billed_load: undisclosed
+      data_center_only_revenue_operating_profit_EBITDA_cash_flow_capex_assets_energy_cost_customer_concentration_and_ROIC: undisclosed
+      boundary: A national service footprint and one site's reserved input do not support a data-center revenue, margin, valuation or asset-return estimate.
+    AI_GPU_and_supplier_boundary:
+      O2_IT_Services_operations_claim: more_than_5000_servers_and_500_applications_companywide
+      PPF_AI_statement: Dataclair_ai_in_house_competence_center
+      exact_current_O2_CETIN_customer_or_partner_physical_GPU_model_count_owner_site_delivery_acceptance_fabric_power_utilization_revenue_margin_and_remaining_life: undisclosed_or_unestablished
+      complete_power_and_cooling_BOM: undisclosed
+      potential_demand_categories: [utility_and_grid_connection, transformers_and_switchgear, UPS_batteries_and_generators, air_and_liquid_cooling, fiber_and_interconnection, managed_cloud_and_security]
+      boundary: Operations scale and AI capability indicate potential infrastructure demand but do not identify installed accelerators, equipment vendors, contract winners or attributable revenue.
+    investability_and_supply_chain_view:
+      direct_public_equity_security: unavailable
+      direct_data_center_pure_play_score: low_due_to_private_parent_diversified_telecom_and_no_data_center_segment_financials
+      indirect_read_through: [Czech_electricity_and_grid_demand, electrical_resilience_equipment, cooling_and_environmental_control, fiber_and_interconnection, enterprise_cloud_security_and_managed_ICT]
+      analytical_view: >-
+        O2 and CETIN are economically substantial Czech telecom assets with a
+        credible enterprise hosting footprint, but neither is directly listed
+        and the reviewed accounts do not isolate data-center earnings. The
+        investable signal is supplier demand conditional on equipment awards,
+        power conversion and billed utilization, not a direct O2 data-center
+        valuation.
+    outlook:
+      positives: [O2_enterprise_customer_distribution, CETIN_physical_infrastructure, six_service_locations, redundant_power_and_connectivity, cloud_hosting_managed_ICT_cross_sell, PPF_group_AI_capability]
+      conversion_tests: [publish_O2_CETIN_intercompany_data_center_allocation, reconcile_service_and_address_rosters, disclose_live_IT_and_billed_load, identify_equipment_and_GPU_inventory, separate_data_center_revenue_margin_capex_and_ROIC]
+      risks: [private_parent_and_no_direct_security, diversified_telecom_denominator, ownership_and_cost_allocation_complexity, no_fleet_MW_or_utilization, equipment_vendor_opacity, no_GPU_or_AI_revenue_bridge]
+    sources:
+      - {title: Current O2 data-center service and engineering page, publisher: O2_Czech_Republic, accessed: '2026-07-19', url: 'https://www.o2.cz/podnikatele-a-firmy/cloud/datove-centrum'}
+      - {title: O2 SOC3 ownership and operating-control boundary, publisher: O2_Czech_Republic, accessed: '2026-07-19', url: 'https://www.o2.cz/spolecnost/soubory-certifikaty/soc3-report/SOC-3-Report-O2-EN-a-CZ.pdf'}
+      - {title: CETIN 2024 annual report and O2 key contracts, publisher: CETIN, year: 2024, url: 'https://www.cetin.cz/documents/105239/147890/KonsoVZ_2024_CETIN_CZ_signed.pdf/b344fd4c-a5c9-3718-974d-6fb2dd734f73?t=1743769297560'}
+      - {title: PPF Group 2024 audited annual accounts, publisher: PPF_Group, year: 2024, url: 'https://www.datocms-assets.com/40359/1746540335-ppfgroup_annual_accounts_2024.pdf'}
+      - {title: PPF Group 2025 audited annual accounts, publisher: PPF_Group, year: 2025, url: 'https://www.datocms-assets.com/40359/1777974326-ppfgroup_annual_accounts_2025_public.pdf'}
+    related_profiles:
+      - dc_o2_czech_cetin_owned_colocation_cloud_and_service_portfolio
+    confidence: high_for_PPF_segment_and_subgroup_financials_SOC3_ownership_boundary_and_current_service_roster_low_for_data_center_only_economics_live_load_complete_BOM_GPU_inventory_vendor_attribution_and_direct_investability
+
 cross_company_read_through:
   current_signals:
+    - O2 Czech currently identifies six data-center service locations, but publishes current addresses for four. The four O2 Czech Republic a.s.-tagged OSM objects exactly match those four addressed sites; Nagano and Hradec Kralove are not assigned invented current addresses.
+    - O2's SOC3 report says sister company CETIN owns the data centers and operates non-IT facility and access technologies, while O2 remains the customer, IT and security service interface. Operator brand and physical title are therefore separated.
+    - Stodulky publishes 3.5MW of final reserved input with dual utility and rack feeds, N+1 UPS branches and N+1 diesel generation. Reserved input is not current IT load, sold capacity or fleet MW.
+    - Chodov, Nagano and Hradec Kralove are described as Tier III certified, while all O2 sites are described as built to Tier III specifications. Sites outside the named certified list are not silently upgraded, and certificate identifiers and expiries remain open.
+    - O2 IT Services says it operates more than 5,000 servers and 500 applications, but the statement has no physical ownership or site allocation and cannot be used as a GPU count. No exact accelerator inventory or live liquid-cooled MW was established.
+    - PPF's 2024 O2 Czech segment reported EUR1.483 billion total revenue and EUR470 million operating profit excluding depreciation, amortization and impairments. These are diversified telecom and ICT measures, not data-center-only results.
+    - PPF's 2025 Czech telecom subgroup, combining O2 Czech and CETIN Czech, reported EUR1.961 billion revenue and EUR1.000 billion EBITDA. The combined perimeter cannot be allocated to either company or to data centers without a bridge.
+    - O2 and CETIN are wholly owned by private PPF and have no direct listed security. Their value in this map is indirect Czech power, electrical resilience, cooling, connectivity and managed-ICT demand evidence, pending vendor contracts and data-center segment economics.
     - H5 Data Centers' current directory contains 32 facility labels and 31 listed addresses, while the corporate headline is 25 US markets and more than 4 million square feet under management. Directory labels, addresses, markets, buildings and managed area are different denominators.
     - Hyscale and HyscaleIX each contain four facilities. Shared-address, multi-building, directly operated, managed and joint-venture scopes are preserved rather than collapsed into a single owned-building count.
     - Nine reviewed OSM objects relate to H5 facilities, but only seven carry H5 operator labels routed by the coverage audit. The Quincy object's legacy Intuit operator tag is preserved and is not silently aliased to H5.
