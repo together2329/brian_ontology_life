@@ -36548,7 +36548,193 @@ campus_profiles:
       - {title: Liberty Global closes CWC acquisition, publisher: Liberty_Global, date: '2016-05-16', url: "https://www.libertyglobal.com/pdf/press-release/05-16-Closing-CWC-Acquisition-FINAL.pdf"}
     confidence: high_for_Ratingen_Esenyurt_exact_site_floor_current_country_level_direct_hosting_TIA_certificate_2020_UK_roster_CWW_and_CWC_corporate_lineages_One_NZ_parent_FY2026_financials_and_OSM_landing_station_boundary_medium_for_Dublin_Berlin_Swindon_and_Docklands_candidate_roles_low_for_complete_current_direct_site_roster_800000_m2_denominator_site_MW_complete_BOM_current_PUE_WUE_GPU_inventory_and_data_center_economics
 
+  - id: dc_srce_hr_zoo_croatia_academic_data_center_and_hpc_portfolio
+    operator: University_of_Zagreb_University_Computing_Centre_SRCE
+    geography: [Zagreb, Osijek, Rijeka, Split, Croatia]
+    status: six_current_academic_data_centers_with_exact_power_and_A100_HPC_floor
+    as_of: '2026-07-19'
+    reproducible_registry:
+      facility_registry: life/imports/global_data_centers_20260717/srce_hr_zoo_data_center_hpc_registry.jsonl
+      facility_summary: life/imports/global_data_centers_20260717/srce_hr_zoo_data_center_hpc_summary.json
+      current_provider_sites: 6
+      OSM_operator_tagged_rows: 5
+      exact_OSM_matches: 5
+      off_sample_current_site: Srce_ZG3
+      boundary: >-
+        OSM contains the five HR-ZOO project sites. SRCE's current 2025 roster
+        contains a sixth facility, Srce ZG3, so the source sample is 83.33%
+        complete against the provider roster and is expanded rather than treated
+        as a complete physical inventory.
+    current_sites:
+      HR_ZOO_ZG1:
+        location: {city: Zagreb, address: Josipa_Marohnica_5}
+        gross_area_m2: 359
+        computer_hall_area_m2: 182.28
+        ICT_racks: 63
+        designed_DC_power_kW: 350
+        generator: {count: 2, unit_kW: 352, unit_kVA: 451}
+        UPS: {count: 4, unit_kW: 160, unit_kVA: 160}
+        cooling: {count: 2, unit_kW: 250}
+        OSM_ref: osm_node_13809854904
+      HR_ZOO_ZG2:
+        location: {city: Zagreb, address: Borongajska_cesta_83L}
+        gross_area_m2: 1317
+        computer_hall_area_m2: 208.32
+        ICT_racks: 35
+        designed_DC_power_kW: 1100
+        generator: {count: 1, unit_kW: 1000, unit_kVA: 1250}
+        UPS: {count: 2, unit_kW: 500, unit_kVA: 500}
+        cooling: {count: 3, unit_kW: 250}
+        separate_DLC_system_kW: [100, 117, 117]
+        OSM_ref: osm_node_13809854905
+      Srce_ZG3:
+        location: {city: Zagreb, address: Borongajska_cesta_83F_object_210}
+        gross_area_m2: 89.56
+        computer_hall_area_m2: 52.71
+        ICT_racks: 7
+        designed_DC_power_kW: 50
+        generator: {count: 1, unit_kW: 80, unit_kVA: 100}
+        UPS: {count: 2, unit_kW: 40, unit_kVA: 40}
+        cooling: {count: 3, unit_kW: 14}
+        OSM_ref: null
+      HR_ZOO_OS:
+        location: {city: Osijek, address: Petra_Svacica_1c}
+        gross_area_m2: 411
+        computer_hall_area_m2: 91.6
+        ICT_racks: 10
+        designed_DC_power_kW: 125
+        generator: {count: 1, unit_kW: 176, unit_kVA: 220}
+        UPS: {count: 1, unit_kW: 100, unit_kVA: 100}
+        cooling: {count: 1, unit_kW: 100}
+        OSM_ref: osm_node_13809854906
+      HR_ZOO_RI:
+        location: {city: Rijeka, address: Radmile_Matejcic_2}
+        gross_area_m2: 213
+        computer_hall_area_m2: 69.6
+        ICT_racks: 10
+        designed_DC_power_kW: 125
+        generator: {count: 1, unit_kW: 176, unit_kVA: 220}
+        UPS: {count: 1, unit_kW: 100, unit_kVA: 100}
+        cooling: {count: 1, unit_kW: 100}
+        OSM_ref: osm_node_13809856865
+      HR_ZOO_ST:
+        location: {city: Split, address: Rudera_Boskovica_32}
+        gross_area_m2: 379
+        computer_hall_area_m2: 84.22
+        ICT_racks: 10
+        designed_DC_power_kW: 125
+        generator: {count: 1, unit_kW: 176, unit_kVA: 220}
+        UPS: {count: 1, unit_kW: 100, unit_kVA: 100}
+        cooling: {count: 1, unit_kW: 100}
+        OSM_ref: osm_node_13809859002
+    portfolio_totals:
+      gross_area_m2: 2768.56
+      computer_hall_area_m2: 688.73
+      ICT_racks: 135
+      designed_DC_power_kW: 1875
+      generator_nameplate: {kW: 2312, kVA: 2912}
+      UPS_nameplate: {kW: 2020, kVA: 2020}
+      air_or_water_cooling_nameplate_kW: 1592
+      separately_reported_ZG2_DLC_system_nameplate_kW: 334
+      boundary: >-
+        Designed DC power, generator, UPS, cooling and DLC nameplates are
+        different engineering denominators. They are not added into operating
+        capacity and do not disclose live, usable, redundancy-adjusted or utilized IT load.
+    power_cooling_and_monitoring:
+      rack_power: separate_A_and_B_branches_with_intelligent_metered_PDUs
+      serviceability: subsystems_serviceable_and_testable_without_data_center_interruption
+      UPS_minimum_full_load_autonomy_minutes: 6
+      backup: diesel_generator_sets_at_all_sites
+      cooling_setpoints: {cold_zone_C: 25, relative_humidity_percent: 45, UPS_battery_room_C: 22}
+      cooling_topology: two_separate_pipe_routes_heat_exchangers_chilled_water_tanks_and_dual_variable_speed_pumps
+      chiller_configuration: 2N_plus_1
+      efficiency: [hot_and_cold_aisles, winter_free_cooling, central_infrastructure_monitoring, PUE_calculator]
+      monitoring_points_more_than: 1600
+      current_measured_per_site_PUE_WUE_energy_water_emissions_and_renewable_supply: undisclosed
+      complete_OEM_model_age_loading_test_acceptance_and_remaining_life_BOM: undisclosed
+    accelerators_and_compute:
+      site: HR_ZOO_ZG2_Borongaj
+      Supek:
+        platform: HPE_Cray
+        processor_cores: 8384
+        performance_PFLOPS: 1.25
+        working_memory_TB: 32
+        compute_GPU_nodes: 20
+        GPUs_per_compute_node: 4
+        compute_node_GPUs: 80
+        access_node_GPUs: 1
+        reported_total_GPUs: 81
+        GPU_model: NVIDIA_A100_40GB
+        DLC_heat_removal_percent: 100
+        2025_GPU_hours: 482826
+      Vrancic:
+        platform: OpenStack
+        processor_cores: 11520
+        working_memory_TB_2025_report: 57
+        GPU_nodes: 4
+        GPUs_per_node: 4
+        total_GPUs: 16
+        GPU_model: NVIDIA_A100_40GB
+        2025_vGPU_hours: 93846
+      current_exact_physical_GPU_floor: 97
+      boundary: >-
+        Supek's 81 equals 80 compute-node GPUs plus one access-node GPU and is
+        not added again to the 80-row subtotal. Vrancic's 16 are separate; both
+        systems are explicitly placed at ZG2. Serial numbers, rack position,
+        fabric, power draw, acquisition cost and remaining life are undisclosed.
+    services_and_network:
+      inter_site_network_Gbps: 100
+      distributed_object_storage_PB: 10
+      hosted_examples: [GEANT_node, VeriSign_com_and_org_servers, HAKOM_RIPE_and_eduroam_probes, Cogent, Hurricane_Electric, CARNET]
+      boundary: Hosted_third_party_equipment_is_not_SRCE_owned_GPU_or_facility_inventory
+    ownership_and_financial_boundary:
+      financial_profile_ref: company_srce_university_computing_centre
+      institution: University_of_Zagreb_University_Computing_Centre
+      founded: 1971
+      listed_equity: false
+      HR_ZOO_project_EUR: {total: 24616609.76, EU_ERDF: 20924118.30, EU_share_percent: 85}
+      FY2025_public_budget_EUR:
+        operating_revenue: 10730031.79
+        operating_expenditure: 10598065.48
+        derived_operating_surplus: 131966.31
+        total_revenue_and_receipts: 10730031.79
+        total_expenditure_and_outlays: 11068303.30
+        current_period_deficit: 338271.51
+      operating_profit_EBIT_EBITDA_and_net_income: not_applicable_or_not_reported_under_reviewed_public_budget_statement
+      data_center_segment_and_site_economics: undisclosed
+      boundary: The_budget_operating_surplus_is_not_commercial_operating_profit_or_EBIT
+    outlook:
+      2026_plan: [upgrade_ZG1_chillers, upgrade_ZG1_and_ZG2_ventilation_security_and_monitoring, install_second_ZG2_diesel_generator_for_2N_backup]
+      maintenance_procurement_EUR_payable_from_2027: {VDC: 3500000, Supek_and_Vrancic: 550000}
+      new_AI_supercomputer_resource_target: 2027
+      new_AI_resource_model_GPU_count_power_committed_funding_and_award: undisclosed_or_not_established
+      positive_signals: [six_current_sites, detailed_power_and_cooling_disclosure, 97_current_A100_GPU_floor, high_2025_GPU_use, ZG2_resilience_upgrade, planned_2027_AI_resource, public_and_EU_funding]
+      risk_signals: [small_1_875_MW_designed_portfolio, public_budget_dependency, FY2025_current_period_deficit, current_PUE_WUE_energy_and_water_undisclosed, complete_title_and_BOM_undisclosed, AI_expansion_delivery_unestablished, no_listed_equity_or_segment_economics]
+      analytical_view: >-
+        SRCE is a transparent national academic infrastructure operator and real
+        AI-compute user, not an investable data-center company. It provides demand
+        evidence for HPE, NVIDIA, electrical, UPS and cooling suppliers rather than
+        standalone equity earnings.
+    sources:
+      - {title: SRCE 2025 annual work report, publisher: SRCE, date: '2026-03-25', url: "https://www.srce.unizg.hr/sites/default/files/srce/o-srcu/Izvjestaji_o_radu/srce_izvjestaj2025.pdf"}
+      - {title: SRCE data centers, publisher: SRCE, accessed: '2026-07-19', url: "https://www.srce.unizg.hr/podatkovni-centri"}
+      - {title: SRCE data-center brochure, publisher: SRCE, accessed: '2026-07-19', url: "https://www.srce.unizg.hr/sites/default/files/srce/pzz/Brosura_DC_web.pdf"}
+      - {title: SRCE advanced computing, publisher: SRCE, accessed: '2026-07-19', url: "https://www.srce.unizg.hr/en/advanced-computing"}
+      - {title: HR-ZOO project, publisher: SRCE, accessed: '2026-07-19', url: "https://www.srce.unizg.hr/projekti/hr-zoo"}
+      - {title: SRCE FY2025 financial statements, publisher: SRCE, date: '2026-02-02', url: "https://www.srce.unizg.hr/dokumenti/financijski-izvjestaj/2025"}
+      - {title: SRCE 2026 financial plan and 2027-2028 projections, publisher: SRCE, date: '2025-12-22', url: "https://www.srce.unizg.hr/sites/default/files/srce/o-srcu/planovi_rada/2026/Plan2026-Financijski_plan-20251222_ur.pdf"}
+      - {title: SRCE data-center maintenance locations, publisher: SRCE, period: '2022', url: "https://www.srce.unizg.hr/sites/default/files/srce/javna-nabava/2022/E-VV_11-01-2022-MK/prilog_2._prijedlog_okvirnog_sporazuma_odrzavanje_tehnickih_sustava_podatkovnih_centara_hr-zoo.pdf"}
+    confidence: high_for_six_site_current_roster_five_OSM_matches_2025_area_rack_power_generator_UPS_cooling_specs_97_A100_floor_ZG2_placement_HR_ZOO_project_and_FY2025_budget_results_medium_for_current_asset_title_by_site_and_2026_upgrade_execution_low_for_live_IT_load_current_PUE_WUE_energy_water_complete_BOM_AI_expansion_hardware_and_site_economics
+
 disclosure_gap_register:
+  - SRCE_complete_site_land_building_room_and_equipment_title_lease_custody_operator_and_lifecycle_by_asset
+  - SRCE_six_sites_operating_energized_available_allocated_hosted_utilized_peak_and_actual_IT_load
+  - SRCE_per_site_current_measured_PUE_WUE_energy_water_emissions_renewable_supply_and_live_liquid_cooled_load
+  - SRCE_per_site_grid_feed_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_OEM_model_serial_count_rating_redundancy_loading_test_acceptance_age_and_remaining_life
+  - SRCE_Supek_and_Vrancic_GPU_serial_delivery_acceptance_rack_fabric_interconnect_power_cost_utilization_allocation_and_remaining_life
+  - SRCE_current_colocation_available_versus_total_hall_area_racks_power_customer_allocation_and_pricing_reconciliation
+  - SRCE_2027_AI_supercomputer_model_GPU_count_vendor_site_power_cooling_procurement_funding_delivery_acceptance_and_operating_date
+  - SRCE_data_center_and_HPC_service_revenue_cost_cash_flow_capex_internal_chargeback_customer_concentration_ROIC_and_social_return
   - Vodafone_complete_current_direct_global_owned_leased_managed_operated_data_center_site_building_module_address_title_lifecycle_and_service_roster
   - Vodafone_2020_UK_CCA_seven_site_roster_current_2026_revalidation_and_changes
   - Vodafone_UK_Germany_and_Ireland_exact_current_owned_or_managed_hosting_site_building_and_address_roster

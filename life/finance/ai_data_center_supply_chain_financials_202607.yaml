@@ -19889,8 +19889,131 @@ financial_profiles:
       - dc_vodafone_group_and_legacy_cww_data_center_subsea_and_brand_boundary
     confidence: high_for_listing_FY2026_financials_FY2027_guidance_current_exact_site_floor_country_level_hosting_CWW_and_CWC_lineage_and_partner_boundary_medium_for_direct_infrastructure_demand_read_through_low_for_complete_current_direct_site_roster_MW_utilization_GPU_inventory_data_center_segment_economics_and_pure_play_valuation
 
+  - id: company_srce_university_computing_centre
+    company: University of Zagreb University Computing Centre SRCE
+    ticker: none_public_academic_institution
+    legal_entity_boundary: University_of_Zagreb_computing_centre_public_budget_reporting_with_data_center_and_HPC_results_not_separately_reported
+    status: unlisted_national_academic_e_infrastructure_operator_and_AI_compute_user
+    reporting_snapshot: '2026-07-19'
+    ownership_and_institutional_role:
+      founded: 1971
+      founder_context: University_of_Zagreb
+      role: central_Croatian_academic_and_research_e_infrastructure_institution
+      direct_public_equity_security: unavailable
+      listed_parent: none
+      boundary: >-
+        SRCE is a public academic infrastructure institution, not a commercial
+        data-center company. Its budget statements and social mission are not
+        comparable to listed operator revenue, EBITDA or shareholder return.
+    FY2025_public_budget_EUR:
+      operating_revenue: 10730031.79
+      operating_expenditure: 10598065.48
+      derived_public_budget_operating_surplus: 131966.31
+      total_revenue_and_receipts: 10730031.79
+      total_expenditure_and_outlays: 11068303.30
+      current_period_deficit: 338271.51
+      carried_surplus_before_current_deficit: 1111793.42
+      surplus_available_next_period: 773521.91
+      operating_profit_EBIT_EBITDA_net_income: not_applicable_or_not_reported
+      boundary: >-
+        The derived EUR131,966.31 result is operating revenue minus operating
+        expenditure under public-budget accounting. It is not commercial operating
+        profit or EBIT, and total expenditure includes nonfinancial asset spending.
+    FY2024_comparative_public_budget_EUR:
+      operating_revenue: 10465669.62
+      operating_expenditure: 10289771.52
+      total_revenue_and_receipts: 10465669.62
+      total_expenditure_and_outlays: 10875877.63
+      current_period_deficit: 410208.01
+    HR_ZOO_project_funding_EUR:
+      total: 24616609.76
+      EU_ERDF: 20924118.30
+      EU_share_percent: 85
+      implementation: '2017-07-01_to_2023-05-01'
+      boundary: project_value_is_not_annual_revenue_capex_or_current_enterprise_value
+    data_center_and_AI_read_through:
+      current_sites: 6
+      designed_DC_power_MW: 1.875
+      computer_hall_area_m2: 688.73
+      ICT_racks: 135
+      current_exact_NVIDIA_A100_40GB_floor: 97
+      Supek: {GPUs: 81, performance_PFLOPS: 1.25, 2025_GPU_hours: 482826}
+      Vrancic: {GPUs: 16, 2025_vGPU_hours: 93846}
+      2025_projects: 490
+      2025_institutions: 110
+      new_AI_supercomputer_target: 2027
+      portfolio_ref: dc_srce_hr_zoo_croatia_academic_data_center_and_hpc_portfolio
+    power_and_supplier_read_through:
+      installed_generator_nameplate_kW: 2312
+      installed_UPS_nameplate_kW: 2020
+      cooling_nameplate_kW: 1592
+      ZG2_DLC_system_nameplate_kW: 334
+      disclosed_vendors_and_technology: [HPE_Cray, NVIDIA_A100, AMD_EPYC, ClusterStor, OpenStack, direct_liquid_cooling, intelligent_PDUs, diesel_generation, UPS, free_cooling]
+      2026_plan: [ZG1_chiller_upgrade, ZG1_and_ZG2_ventilation_security_and_monitoring_upgrades, second_ZG2_generator_for_2N]
+      maintenance_procurement_payable_from_2027_EUR: {VDC: 3500000, Supek_and_Vrancic: 550000}
+      boundary: Nameplates_and_planned_procurements_are_not_live_load_supplier_revenue_or_awarded_contracts
+    data_center_economics_boundary:
+      data_center_or_HPC_service_revenue: undisclosed
+      operating_cost_and_energy_cost: undisclosed
+      site_cash_flow_capex_and_ROIC: undisclosed
+      internal_chargeback_and_social_return: undisclosed
+      colocation_price_utilization_and_customer_concentration: undisclosed
+      boundary: >-
+        Institution-wide budget revenue and expenditure cannot be allocated to the
+        six facilities, Supek, Vrancic or third-party housing without a disclosed
+        activity and cost bridge.
+    investability_and_supply_chain_view:
+      direct_equity_investability: unavailable
+      direct_data_center_pure_play_score: none
+      useful_read_through:
+        - sovereign_and_academic_AI_compute_demand
+        - HPE_and_NVIDIA_accelerator_refresh
+        - UPS_generator_switchgear_and_metered_PDU_demand
+        - direct_liquid_and_free_cooling_demand
+        - EU_and_national_public_infrastructure_funding
+      analytical_view: >-
+        SRCE cannot be purchased as an equity security. It is useful as unusually
+        transparent evidence that public academic AI demand drives real A100 use,
+        liquid cooling, power-resilience upgrades and future accelerator procurement.
+    outlook:
+      positives:
+        - six_current_sites_with_detailed_engineering_disclosure
+        - 97_current_A100_GPU_floor
+        - 482826_Supek_GPU_hours_in_2025
+        - planned_ZG2_2N_generator_upgrade
+        - planned_2027_AI_supercomputer
+        - public_and_EU_funding_support
+      risks:
+        - small_1_875_MW_designed_portfolio
+        - FY2025_current_period_budget_deficit
+        - public_budget_and_policy_dependency
+        - 2027_AI_resource_model_funding_award_and_delivery_unestablished
+        - current_PUE_WUE_energy_water_and_complete_BOM_undisclosed
+        - no_data_center_segment_economics
+        - no_direct_public_equity_security
+    sources:
+      - {title: SRCE FY2025 financial statements, publisher: SRCE, date: '2026-02-02', url: "https://www.srce.unizg.hr/dokumenti/financijski-izvjestaj/2025"}
+      - {title: SRCE FY2025 revenue and expenditure statement, publisher: SRCE, period: 'FY2025', url: "https://www.srce.unizg.hr/sites/default/files/srce/o-srcu/financijski_izvjestaji/2025/Godi%C5%A1nji%20izvje%C5%A1taj/Izvje%C5%A1taj%20o%20prihodima%20i%20rashodima%2C%20primicima%20i%20izdacima%20za%202025.%20godinu.pdf"}
+      - {title: SRCE 2025 annual work report, publisher: SRCE, date: '2026-03-25', url: "https://www.srce.unizg.hr/sites/default/files/srce/o-srcu/Izvjestaji_o_radu/srce_izvjestaj2025.pdf"}
+      - {title: SRCE 2026 financial plan and 2027-2028 projections, publisher: SRCE, date: '2025-12-22', url: "https://www.srce.unizg.hr/sites/default/files/srce/o-srcu/planovi_rada/2026/Plan2026-Financijski_plan-20251222_ur.pdf"}
+      - {title: SRCE advanced computing, publisher: SRCE, accessed: '2026-07-19', url: "https://www.srce.unizg.hr/en/advanced-computing"}
+      - {title: HR-ZOO project, publisher: SRCE, accessed: '2026-07-19', url: "https://www.srce.unizg.hr/projekti/hr-zoo"}
+      - {title: About SRCE, publisher: SRCE, accessed: '2026-07-19', url: "https://www.srce.unizg.hr/en/about-srce"}
+    related_profiles:
+      - dc_srce_hr_zoo_croatia_academic_data_center_and_hpc_portfolio
+    confidence: high_for_public_budget_results_institutional_role_HR_ZOO_funding_six_site_scale_and_current_A100_floor_medium_for_supplier_demand_read_through_low_for_data_center_economics_2027_AI_hardware_funding_delivery_and_any_equity_valuation
+
 cross_company_read_through:
   current_signals:
+    - SRCE reported six current data centers at FY2025 year-end; all five HR-ZOO sites exactly match OSM, while the sixth, Srce ZG3, is absent from the reviewed operator sample.
+    - The six-site engineering ledger sums to 1.875MW of designed DC power, 2,768.56 square metres gross, 688.73 square metres of computer halls and 135 ICT racks. These are design and physical measures, not live utilized IT load.
+    - Installed nameplates sum to 2.312MW of diesel generation, 2.020MW of UPS and 1.592MW of general cooling, with a separately reported 334kW ZG2 DLC system. Different redundancy and engineering denominators are not added into capacity.
+    - SRCE's rack power uses separate A/B branches and metered intelligent PDUs, UPS autonomy is at least six minutes at full load, and the cooling design uses separate water circuits, 2N+1 chillers and winter free cooling. Current measured site PUE, WUE, energy and water remain undisclosed.
+    - Supek at ZG2 contains 81 NVIDIA A100 40GB GPUs: 80 across 20 compute nodes plus one access-node GPU. Vrančić adds 16 separate A100s, establishing a current exact site GPU floor of 97 rather than 81 plus 80 plus 16.
+    - In 2025, Supek recorded 482,826 GPU-hours and Vrančić 93,846 vGPU-hours across an advanced-computing service used by 490 projects from 110 institutions, showing real academic AI and HPC demand.
+    - SRCE FY2025 public-budget operating revenue was EUR10.730 million and operating expenditure EUR10.598 million, a derived EUR131,966 surplus. This is not EBIT; after nonfinancial-asset spending, the current-period deficit was EUR338,272.
+    - The 2026 plan includes a second ZG2 diesel generator for 2N backup, ZG1 chiller work and ZG1/ZG2 monitoring and ventilation upgrades, while a new AI supercomputer is contemplated for 2027 without disclosed model, GPU count, funding award or delivery date.
+    - SRCE is an unlisted University of Zagreb public academic infrastructure institution. It is investment demand evidence for HPE, NVIDIA, power and cooling suppliers, not a directly investable data-center company.
     - Vodafone's current exact provider- or certifier-listed direct-site evidence floor is two: Rehhecke in Ratingen and TIA-942 Rated-3-certified Esenyurt. This is not the complete current global fleet count.
     - Vodafone's ESG methodology supports owned or managed centralized hosting in the UK, Germany and Ireland, but it does not publish the current exact site roster or building count for those countries.
     - The current colocation page advertises more than 800,000 square metres globally and access to more than 165 Equinix and Digital Realty partner data centers. The area denominator is unallocated and partner facilities are not Vodafone physical inventory.
