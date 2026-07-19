@@ -20258,6 +20258,101 @@ financial_profiles:
       - dc_aruba_europe_owned_and_partner_data_center_portfolio
     confidence: high_for_private_status_legal_identity_operating_scale_seven_owned_portfolio_and_facility_specs_medium_for_secondary_financial_transcription_low_for_primary_financial_detail_ownership_percentages_data_center_segment_economics_and_GPU_inventory
 
+  - id: company_bcx_telkom_segment
+    company: Business Connexion Group Ltd / BCX
+    parent: Telkom SA SOC Limited
+    category: African_enterprise_ICT_connectivity_cloud_cybersecurity_and_data_center_operator
+    public_private: wholly_owned_subsidiary_of_publicly_listed_parent
+    exchange_access:
+      direct_BCX_security: unavailable
+      parent_exchange: Johannesburg_Stock_Exchange
+      parent_ticker: TKG
+    ownership_as_of_2026_03_31:
+      Telkom_ownership_of_Business_Connexion_Group_percent: 100
+      South_African_government_Telkom_share_percent: 40.5
+      Public_Investment_Corporation_Telkom_share_percent: 11.08
+      boundary: Government and PIC holdings are interests in listed parent Telkom, not direct percentages in a separately traded BCX security.
+    FY2026_ZAR_million:
+      period_end: '2026-03-31'
+      subsidiary_interest_before_eliminations:
+        revenue: 11412
+        EBITDA: 1104
+        EBIT_operating_profit: 614
+        net_profit: 472
+      reportable_segment:
+        external_revenue: 10308
+        intersegment_revenue: 1104
+        total_revenue: 11412
+        adjusted_EBITDA_including_intersegment: 1076
+        adjusted_EBITDA_margin_percent_derived: 9.43
+        capex: 359
+      parent_Telkom_group:
+        revenue: 44477
+        EBITDA: 12480
+        operating_profit: 5933
+        free_cash_flow: 3068
+      boundary: >-
+        The R1,104m subsidiary-interest EBITDA and R1,076m reportable-segment
+        adjusted EBITDA are different audited pre-elimination and segment scopes
+        and are not averaged or treated as interchangeable. BCX revenue includes
+        connectivity, IT services, hardware, software, cybersecurity, cloud and
+        data centers; none of these figures is data-center-only.
+    FY2025_comparison_ZAR_million:
+      subsidiary_interest_before_eliminations: {revenue: 12345, EBITDA: 1189, EBIT_operating_profit: 599, net_profit: 406}
+      reportable_segment: {total_revenue: 12346, adjusted_EBITDA_including_intersegment: 1376, capex: 392}
+      boundary: The AFS exposes a one-million-rand FY2025 total-revenue presentation difference between subsidiary-interest and reportable-segment tables, preserved by scope.
+    operating_read_through:
+      FY2026_total_revenue_change_percent: -7.6
+      FY2026_cybersecurity_revenue_growth_percent: 21.1
+      FY2026_IT_hardware_and_software_revenue_growth_percent: 5.6
+      FY2026_adjusted_EBITDA_change_percent_derived: -21.8
+      FY2026_EBIT_change_percent_derived: 2.5
+      FY2026_net_profit_change_percent_derived: 16.3
+      management_direction: repositioning_under_new_leadership_as_connectivity_provider_for_digital_services_with_cloud_software_and_efficiency_focus
+      boundary: Growth rates describe business lines or companywide BCX outcomes and do not disclose data-center utilization, pricing, margins or returns.
+    data_center_exposure:
+      current_provider_headlines: {own_data_centers: 12, South_Africa_PCI_wording: 9, global_marketing: 21, Veeam_DR_scope: 5}
+      dated_2023_official_footprint: {facilities: 10, headline_white_space_m2: 12600, headline_IT_capacity_MW: 9.82, line_item_white_space_checksum_m2: 12320, line_item_critical_load_checksum_MW: 9.98, racks: 3978}
+      local_sovereign_cloud_role: BCX_NDC1_is_secondary_AZ_for_local_Alibaba_Cloud_Apsara_Stack_region
+      data_center_segment_revenue_EBITDA_operating_profit_cash_flow_capex_debt_occupancy_customer_concentration_and_ROIC: undisclosed
+      boundary: Portfolio counts and dated power establish physical exposure, but not a current complete roster or separable data-center economics.
+    AI_and_GPU_boundary:
+      service_catalog: [E_HPC_GPU_instance, E_HPC_FPGA_instance, AI_and_big_data_services]
+      Dell_relationship: generative_AI_architecture_and_implementation_services
+      exact_current_BCX_owned_GPU_model_count_owner_site_delivery_rack_fabric_power_utilization_revenue_and_margin: undisclosed_or_unestablished
+      boundary: Product availability and implementation capability are demand signals, not proof of owned installed accelerator inventory.
+    power_cooling_and_supplier_read_through:
+      disclosed_demand_categories: [grid_and_substation_capacity, redundant_UPS, diesel_generation, air_and_water_cooling, monitoring_and_metering, high_density_compute_and_networking]
+      dated_Midrand_evidence: {incremental_supply_MVA: 1, generators_post_upgrade: 8, UPS_devices_post_upgrade: 6, additional_air_conditioning_units: 6}
+      dated_Bellville2_secondary_evidence: {dual_UPS_paths_kW_each: 2400, dual_cooling_power_supplies_kW_each: 2300, cooling_modules: 14}
+      named_current_equipment_OEMs_models_supplier_awards_and_procurement_values: undisclosed
+      boundary: Historical engineering identifies equipment categories but does not establish current vendor winners, installed condition, current loading or attributable supplier revenue.
+    investability_and_supply_chain_view:
+      direct_public_equity_security: parent_Telkom_TKG_only
+      direct_data_center_pure_play_score: low
+      useful_read_through: [South_African_enterprise_cloud_and_sovereign_region_demand, cybersecurity_and_software_growth, local_colocation_power_and_resilience_demand, African_connectivity_to_digital_services_transition]
+      analytical_view: >-
+        BCX provides real African data-center and sovereign-cloud exposure through
+        listed parent Telkom, with positive audited earnings. It is not a data-center
+        pure play: declining total revenue, blended business lines, conflicting
+        current facility counts and absent accelerator and site economics sharply
+        limit standalone valuation.
+    outlook:
+      positives: [audited_positive_EBIT_and_net_profit, FY2026_EBIT_and_net_profit_growth, cybersecurity_growth, hardware_and_software_growth, local_NDC1_Apsara_Stack_AZ, twelve_own_data_center_service_headline]
+      risks: [FY2026_revenue_decline, adjusted_EBITDA_decline, legacy_connectivity_migration, challenging_IT_market, conflicting_current_facility_counts, dated_capacity_checksum_conflicts, no_current_complete_BOM, no_exact_GPU_inventory, no_data_center_segment_economics]
+    sources:
+      - {title: Telkom Annual Financial Statements FY2026, publisher: Telkom, period_end: '2026-03-31', url: "https://group.telkom.co.za/documents/ir/financial-information/annual-results-2026/Annual%20Financial%20Statements%20FY2026.pdf"}
+      - {title: Telkom FY2026 current results release, publisher: Telkom, date: '2026-06-02', url: "https://group.telkom.co.za/about-us/mediacentre/currentreleases/2026/Telkom-financial-results-20260602.html"}
+      - {title: Telkom investor site tours and BCX ten-site table, publisher: Telkom, date: '2023', url: "https://group.telkom.co.za/documents/ir/financial-information/presentation-2023/Telkom_Investors_Site_Tours_Presentations.pdf"}
+      - {title: BCX certifications, publisher: BCX, accessed: '2026-07-19', url: "https://www.bcx.co.za/certifications/"}
+      - {title: Managed infrastructure and twelve own data centres, publisher: BCX, accessed: '2026-07-19', url: "https://www.bcx.co.za/solutions/services/managed-infrastructure-and-cloud-services/"}
+      - {title: BCX Apsara Stack local region, publisher: BCX, accessed: '2026-07-19', url: "https://www.bcx.co.za/bcx-alibaba-apl-cloud-offering/"}
+      - {title: BCX Alibaba Cloud service catalog, publisher: BCX, accessed: '2026-07-19', url: "https://www.bcx.co.za/bcx-alibaba-cloud-offering/"}
+      - {title: BCX Dell generative AI relationship, publisher: BCX, accessed: '2026-07-19', url: "https://www.bcx.co.za/insights/unlocking-the-power-of-generative-ai-for-organisations/"}
+    related_profiles:
+      - dc_bcx_south_africa_data_center_cloud_and_legacy_roster_boundary
+    confidence: high_for_parent_ownership_FY2026_audited_group_segment_and_subsidiary_interest_financials_medium_for_current_marketing_count_scope_and_dated_facility_table_low_for_current_complete_roster_data_center_economics_and_GPU_inventory
+
 cross_company_read_through:
   current_signals:
     - Aruba reports seven owned data centers but five site codes. Current ISO 22237 evidence for IT3 DC-A/B/C and IT4, plus IT1, IT2 and CZ2, reconciles seven physical facilities; partner sites and four future IT4 buildings remain separate.

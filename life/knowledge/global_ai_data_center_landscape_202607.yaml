@@ -37080,7 +37080,158 @@ campus_profiles:
       - {title: Aruba S.p.A. FY2024 registry transcription, publisher: Aziende_it, source_claim: Registro_Imprese, updated: '2026-07-07', url: "https://www.aziende.it/aruba-s-p-a"}
     confidence: high_for_seven_owned_reconciliation_facility_specs_current_certification_IT4_first_building_and_power_label_boundaries_medium_for_OSM_component_grouping_and_private_legal_entity_financial_transcription_low_for_current_live_load_GPU_inventory_complete_BOM_site_economics_and_shareholder_percentages
 
+  - id: dc_bcx_south_africa_data_center_cloud_and_legacy_roster_boundary
+    name: BCX South Africa data-center, cloud and legacy-roster boundary
+    record_granularity: dated_ten_facility_disclosures_plus_two_current_OSM_facility_groups_and_conflicting_live_marketing_scopes
+    operator: BCX_Business_Connexion_Group
+    parent: Telkom_SA_SOC_Limited
+    geography: [South_Africa, broader_African_and_global_service_marketing]
+    lifecycle_as_of_2026_07_19: current_operator_with_dated_2023_facility_table_and_incomplete_current_roster
+    reproducible_registry:
+      facility_registry: life/imports/global_data_centers_20260717/bcx_data_center_registry.jsonl
+      facility_summary: life/imports/global_data_centers_20260717/bcx_data_center_summary.json
+      registry_builder: scripts/build_bcx_data_center_registry.py
+    portfolio_count_reconciliation:
+      current_provider_own_data_centers_service_page: 12
+      current_provider_PCI_wording_South_Africa_data_centers: 9
+      current_provider_global_marketing_data_centers: 21
+      current_provider_Veeam_disaster_recovery_scope_data_centers: 5
+      current_provider_hosting_space_m2_more_than: 16000
+      official_2023_national_footprint:
+        facilities: 10
+        headline_white_space_m2: 12600
+        headline_IT_capacity_MW: 9.82
+        line_item_white_space_checksum_m2: 12320
+        line_item_critical_load_checksum_MW: 9.98
+        line_item_rack_capacity_checksum: 3978
+      secondary_twelve_name_bridge: [NDC1, NDC2, HUB, NEXUS, Crown_Mines, Hartbeeshoek, KZN_DC1, KZN_DC2, KZN_DC3, Century_City, Bellville_DC1, Bellville_DC2]
+      boundary: >-
+        The provider's current pages expose 9, 12, 21 and 5 counts with different
+        ownership, geography, certification and service denominators and no complete
+        current official roster. The dated 2023 ten-site line items sum to 12,320m2
+        and 9.98MW, not the slide headlines of 12,600m2 and 9.82MW. The third-party
+        twelve-name bridge is retained as secondary evidence and not promoted to a
+        current provider roster.
+    official_2023_dated_facility_table:
+      Centurion_HUB: {white_space_m2: 2850, racks: 884, critical_load_MW: 1.8, provider_tier_wording: Tier_III_Certified, year: 2002}
+      Hartbeeshoek_HBDC: {white_space_m2: 600, racks: 179, critical_load_MW: 0.48, provider_tier_wording: Tier_3_Compliant, year: 2009}
+      Centurion_NEXUS: {white_space_m2: 2650, racks: 742, critical_load_MW: 1.8, provider_tier_wording: Tier_3_Compliant, year: 2002}
+      Midrand_NDC1: {white_space_m2: 920, racks: 326, critical_load_MW: 1.0, provider_tier_wording: Tier_IV_Certified, year: 2004}
+      Midrand_NDC2: {white_space_m2: 1920, racks: 633, critical_load_MW: 1.4, provider_tier_wording: Tier_IV_Certified, year: 2006}
+      Bellville1: {white_space_m2: 1200, racks: 466, critical_load_MW: 1.25, provider_tier_wording: Tier_3_Compliant, year: 1987}
+      Bellville2: {white_space_m2: 1600, racks: 586, critical_load_MW: 1.97, provider_tier_wording: Tier_IV_Certified, year: 2009}
+      Durban_DHF2: {white_space_m2: 190, racks: 39, critical_load_MW: 0.09, provider_tier_wording: Tier_2_Compliant, year: 2003}
+      Durban_DHF1: {white_space_m2: 240, racks: 67, critical_load_MW: 0.09, provider_tier_wording: Tier_2_Compliant, year: 2003}
+      Centrex_Durban: {white_space_m2: 150, racks: 56, critical_load_MW: 0.1, provider_tier_wording: Tier_2_Compliant, year: 2012}
+      boundary: These are dated disclosure rows, not a verified 2026 operating, owned, available, sold or utilized roster.
+    current_provider_exact_location_slice:
+      NDC1: International Business Gateway Park, corner New Road and 6th Street, 12A Challenger Avenue
+      NDC2: International Business Gateway Park, corner New Road and 6th Street, 113 Elizabeth Road
+      HUB: Telkom Park, 61 Oak Avenue Gate 1, Technopark, Highveld, Centurion
+      NEXUS: Telkom Park, 61 Oak Avenue Gate 3, Technopark, Highveld, Centurion
+      NDC2_conflict: A secondary directory says 113 Enterprise Avenue; the current provider image says 113 Elizabeth Road and controls pending cadastral confirmation.
+      boundary: The current provider image discloses four exact locations, not the complete current 9-, 12- or 21-site scope.
+    OSM_crosswalk:
+      raw_operator_label: BCX
+      operator_tagged_objects: 4
+      physical_facility_groups: 2
+      NDC1:
+        building: {OSM_ref: osm_way_248815424, footprint_area_m2: 2592.658}
+        enclosing_site_or_campus_geometry: {OSM_ref: osm_way_803853242, area_m2: 11404.842}
+      NDC2:
+        building: {OSM_ref: osm_way_1286206068, footprint_area_m2: 1716.533}
+        enclosing_site_or_campus_geometry: {OSM_ref: osm_way_1286206067, area_m2: 7390.724}
+      four_geometry_arithmetic_checksum_m2: 23104.757
+      boundary: The building and enclosing geometry overlap at each site, so four OSM objects represent two facility groups and their areas are not summed as physical floor area.
+    power_resilience_and_cooling:
+      dated_2011_Midrand_upgrade_unallocated_between_NDC1_and_NDC2:
+        incremental_supply_MVA: 1
+        post_upgrade_generators: 8
+        post_upgrade_UPS_devices: 6
+        additional_air_conditioning_units: 6
+        installed_cable_m: 1300
+        metering: all_power_boards
+      dated_2009_Bellville2_design_secondary_evidence:
+        grid: dual_Eskom_substations_Stikland_and_Oakdale
+        data_floor_UPS: dual_2400kW_paths_each_described_as_full_data_room_capacity
+        cooling_power_supplies: dual_2300kW
+        generation: offsite_diesel_exact_count_rating_and_runtime_undisclosed
+        cooling_modules: 14
+        outside_air_cooling_threshold_C_below: 24
+        raised_floor_m: 1.2
+        airflow: cold_aisle_hot_aisle_with_roof_exhaust
+      boundary: >-
+        The Midrand release does not allocate the equipment to NDC1 or NDC2 and
+        the Bellville2 report is historical design-era secondary evidence. Neither
+        is a current as-built bill of materials, operating load, maintenance record
+        or remaining-life assessment.
+      current_undisclosed:
+        - per_site_grid_contract_voltage_capacity_and_current_draw
+        - substation_transformer_switchgear_busbar_PDU_OEM_model_count_rating
+        - UPS_battery_generator_fuel_OEM_count_rating_loading_test_age_and_remaining_life
+        - cooling_OEM_model_count_rating_redundancy_measured_PUE_WUE_water_and_live_liquid_cooled_MW
+        - energized_available_allocated_sold_occupied_billed_peak_and_actual_IT_load
+    certification:
+      provider_page_claim: three_Tier_IV_and_one_Tier_III_design_certified_data_centers
+      current_Uptime_directory:
+        BCX_NDC1: Tier_IV_Certification_of_Design_Documents
+        BCX_NDC2: Tier_IV_Certification_of_Design_Documents
+        Telkom_Bellville2: Tier_IV_Certification_of_Design_Documents
+        Telkom_NBSC2_Centurion: Tier_III_Certification_of_Design_Documents
+      boundary: Current Uptime rows establish design-document awards only, not constructed-facility or operational-sustainability certification; provider shorthand is retained without upgrading its scope.
+    AI_accelerators_and_cloud:
+      local_Apsara_Stack_region:
+        primary_AZ: Teraco_Isando_JB3_third_party
+        secondary_AZ: BCX_NDC1_Midrand
+      catalog: [E_HPC_GPU_instance, E_HPC_FPGA_instance, bare_metal, elastic_compute, storage, network, AI_and_big_data_services]
+      Dell_relationship: generative_AI_architecture_and_implementation_services
+      current_BCX_owned_GPU_model_count_owner_site_delivery_rack_fabric_power_utilization_and_economics: undisclosed_or_unestablished
+      boundary: A GPU product category and NDC1 availability-zone relationship do not establish a specific installed GPU model, count, owner, current availability or site allocation; Teraco JB3 is third-party inventory.
+    ownership_and_financial_boundary:
+      financial_profile_ref: company_bcx_telkom_segment
+      parent: Telkom_SA_SOC_Limited
+      Telkom_ownership_percent: 100
+      parent_listing: JSE_TKG
+      FY2026_BCX_subsidiary_interest_before_eliminations_ZAR_million: {revenue: 11412, EBITDA: 1104, EBIT_operating_profit: 614, net_profit: 472}
+      FY2026_BCX_reportable_segment_ZAR_million: {external_revenue: 10308, intersegment_revenue: 1104, total_revenue: 11412, adjusted_EBITDA_including_intersegment: 1076, capex: 359}
+      data_center_segment_revenue_operating_profit_cash_flow_capex_occupancy_customer_concentration_and_ROIC: undisclosed
+      boundary: The subsidiary-interest EBITDA and reportable-segment adjusted EBITDA use different scopes and are not averaged; both include connectivity and broader IT services rather than data-center-only economics.
+    outlook:
+      positive_signals: [twelve_own_data_center_service_headline, local_NDC1_Apsara_Stack_AZ, FY2026_cybersecurity_revenue_growth_21_1_percent, FY2026_hardware_and_software_revenue_growth_5_6_percent, FY2026_EBIT_and_net_profit_growth, audited_positive_earnings]
+      risk_signals: [FY2026_total_revenue_decline_7_6_percent, adjusted_EBITDA_decline, conflicting_current_portfolio_counts, dated_line_item_checksum_conflicts, incomplete_current_roster, no_current_complete_BOM, no_exact_GPU_inventory, no_data_center_segment_economics]
+      analytical_view: >-
+        BCX is a real, state-influenced African enterprise ICT and data-center
+        platform with audited positive earnings and a local sovereign-cloud role.
+        Direct equity access is through Telkom, but current physical capacity,
+        accelerator inventory and data-center economics remain too blended for
+        pure-play valuation.
+    sources:
+      - {title: BCX certifications and location image, publisher: BCX, accessed: '2026-07-19', url: "https://www.bcx.co.za/certifications/"}
+      - {title: BCX data-centre locations image, publisher: BCX, accessed: '2026-07-19', url: "https://www.bcx.co.za/wp-content/uploads/2023/04/BCX-data-centre-locations.png"}
+      - {title: Managed infrastructure and twelve own data centres, publisher: BCX, accessed: '2026-07-19', url: "https://www.bcx.co.za/solutions/services/managed-infrastructure-and-cloud-services/"}
+      - {title: BCX offices and global footprint, publisher: BCX, accessed: '2026-07-19', url: "https://www.bcx.co.za/our-offices/"}
+      - {title: Telkom investor site tours, publisher: Telkom, date: '2023', url: "https://group.telkom.co.za/documents/ir/financial-information/presentation-2023/Telkom_Investors_Site_Tours_Presentations.pdf"}
+      - {title: Uptime Institute South Africa directory, publisher: Uptime_Institute, accessed: '2026-07-19', url: "https://uptimeinstitute.com/uptime-institute-awards/country/id/ZA"}
+      - {title: BCX Alibaba Cloud offering, publisher: BCX, accessed: '2026-07-19', url: "https://www.bcx.co.za/bcx-alibaba-cloud-offering/"}
+      - {title: BCX Apsara Stack local region, publisher: BCX, accessed: '2026-07-19', url: "https://www.bcx.co.za/bcx-alibaba-apl-cloud-offering/"}
+      - {title: BCX Dell generative AI relationship, publisher: BCX, accessed: '2026-07-19', url: "https://www.bcx.co.za/insights/unlocking-the-power-of-generative-ai-for-organisations/"}
+      - {title: Telkom Annual Financial Statements FY2026, publisher: Telkom, period_end: '2026-03-31', url: "https://group.telkom.co.za/documents/ir/financial-information/annual-results-2026/Annual%20Financial%20Statements%20FY2026.pdf"}
+      - {title: Telkom FY2026 current results release, publisher: Telkom, date: '2026-06-02', url: "https://group.telkom.co.za/about-us/mediacentre/currentreleases/2026/Telkom-financial-results-20260602.html"}
+      - {title: Tier IV cloud data-centre Midrand upgrade, publisher: BCX_press_office, date: '2011-06-01', url: "https://companies.mybroadband.co.za/bcx/2011/06/01/what-it-takes-to-power-a-tier-iv-cloud-data-centre/"}
+      - {title: Telkom Bellville2 Cybernest design report, publisher: MyBroadband, date: '2009', url: "https://mybroadband.co.za/news/telecoms/10606-telkom-s-r350-million-cybernest-details.html"}
+      - {title: BCX twelve-site secondary directory, publisher: DataCenterMap, accessed: '2026-07-19', url: "https://www.datacentermap.com/c/bcx/"}
+    confidence: high_for_dated_ten_site_table_current_four_address_slice_two_OSM_grouping_Uptime_award_scope_and_audited_FY2026_financials_medium_for_current_twelve_site_marketing_scope_and_historical_engineering_low_for_complete_current_roster_live_load_current_BOM_GPU_inventory_and_data_center_economics
+
 disclosure_gap_register:
+  - BCX_complete_current_owned_operated_leased_partner_and_service_data_center_roster_reconciling_9_12_21_5_and_dated_10_site_scopes
+  - BCX_2023_ten_site_12600m2_headline_to_12320m2_line_items_and_9_82MW_headline_to_9_98MW_line_items_authoritative_correction
+  - BCX_current_site_lifecycle_ownership_address_building_count_white_space_racks_energized_available_allocated_sold_occupied_billed_peak_and_actual_IT_load
+  - BCX_NDC1_NDC2_OSM_building_and_enclosing_geometry_exact_cadastral_and_gross_floor_area_reconciliation
+  - BCX_per_site_grid_voltage_contract_substation_transformer_switchgear_busbar_PDU_UPS_battery_generator_fuel_OEM_model_count_rating_loading_test_age_and_remaining_life
+  - BCX_current_cooling_OEM_model_count_rating_redundancy_measured_PUE_WUE_water_emissions_heat_reuse_and_live_liquid_cooled_MW
+  - BCX_current_owned_leased_customer_and_partner_GPU_accelerator_model_count_owner_site_delivery_acceptance_rack_fabric_power_utilization_revenue_margin_and_remaining_life
+  - BCX_current_certification_constructed_facility_operational_sustainability_and_provider_certified_or_compliant_wording_bridge
+  - BCX_data_center_segment_and_site_revenue_EBITDA_operating_profit_cash_flow_capex_debt_occupancy_customer_concentration_and_ROIC
   - Aruba_seven_owned_data_center_headline_single_source_facility_by_facility_bridge_and_partner_facility_exact_roster_ownership_contract_and_lifecycle
   - Aruba_IT4_two_OSM_geometries_exact_data_center_power_center_or_other_component_roles_and_provider_floor_area_reconciliation
   - Aruba_per_site_operating_energized_available_allocated_sold_occupied_billed_peak_and_actual_IT_load_and_40MW_mixed_label_to_80MW_achievable_bridge
