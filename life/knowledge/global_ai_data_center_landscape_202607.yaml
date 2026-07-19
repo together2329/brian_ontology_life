@@ -37365,7 +37365,161 @@ campus_profiles:
       - {title: Cirion ownership and transaction close, publisher: Cirion, date: '2022-08-01', url: "https://press.ciriontechnologies.com/en/2022/01/08/2022-08-01-cirion-announces-its-transaction-close/"}
     confidence: high_for_2025_eighteen_facility_roster_two_2026_activations_five_OSM_facility_matches_one_landing_station_exclusion_selected_specs_energy_and_rating_financial_table_medium_for_twenty_label_current_floor_and_equipment_transcription_low_for_exact_current_total_live_load_GPU_inventory_complete_BOM_shareholder_percentages_and_data_center_economics
 
+  - id: dc_euclyde_nlighten_france_edge_data_center_legacy_and_current_boundary
+    name: Legacy Euclyde and current nLighten France edge data-center boundary
+    type: current_operator_portfolio_with_legacy_brand_OSM_and_audited_group_financial_boundary
+    operator: nLighten_France
+    legacy_operator: Euclyde_Data_Centers
+    country: France
+    evidence_artifacts:
+      facility_registry: life/imports/global_data_centers_20260717/euclyde_nlighten_france_data_center_registry.jsonl
+      facility_summary: life/imports/global_data_centers_20260717/euclyde_nlighten_france_data_center_summary.json
+      registry_builder: scripts/build_euclyde_nlighten_france_registry.py
+    ownership_and_brand_timeline:
+      '2023-06-01': nLighten_acquired_six_carrier_neutral_Euclyde_sites_in_five_French_markets
+      Euclyde_transaction_consideration: undisclosed
+      '2024-04-01': EI_Data_Center_France_acquired_in_seven_site_EXA_related_party_transaction
+      EI_Data_Center_France_consideration_EUR_million: 4.696
+      '2024-11-25': Euclyde_rebranded_as_nLighten_France
+      '2026-02-02': Emerainville_acquired_from_oXya_as_PAR3_and_became_eighth_France_site
+      PAR3_transaction_consideration: undisclosed
+      sponsor: I_Squared_Capital
+      fund_at_initial_Euclyde_acquisition: ISQ_Global_Infrastructure_Fund_III
+    roster_reconciliation:
+      current_provider_site_cards: 8
+      current_codes: [NCE1, MLH1, NCE2, LYS1, PAR1, PAR2, PAR3, SXB1]
+      legacy_Euclyde_six_site_codes: [DC1, DC2, DC3, DC5, DC6, DC7]
+      legacy_to_current:
+        DC1: NCE1_Antibes
+        DC2: MLH1_Besancon
+        DC3: NCE2_Valbonne
+        DC5: LYS1_Lyon
+        DC6: PAR1_Lognes
+        DC7: SXB1_Strasbourg
+      post_Euclyde_additions: [PAR2_from_EXA_transaction, PAR3_from_oXya_transaction]
+      boundary: >-
+        The current eight-site directory supersedes the legacy six-site Euclyde
+        roster. No DC4 appears in the acquired six-site sequence, so no missing
+        site is invented. Site codes, markets, legal establishments, physical
+        buildings and OSM objects are different granularities.
+    current_sites:
+      - {code: NCE1, current_name: Antibes, legacy_code: DC1, address: '49 Rue Emile Hugues, 06600 Antibes, Sophia-Antipolis, France', space_m2: 1500, site_capacity_end_state_kW: 6000}
+      - {code: MLH1, current_name: Besancon, legacy_code: DC2, address: '2 Rue Albert Einstein, 25000 Besancon, France', space_m2: 300, site_capacity_end_state_kW: 1200}
+      - {code: NCE2, current_name: Valbonne, legacy_code: DC3, address: '930 Route des Dolines, 06560 Valbonne, Sophia Antipolis, France', space_m2: 700, site_capacity_end_state_kW: 6000}
+      - {code: LYS1, current_name: Lyon, legacy_code: DC5, address: '45-47 Rue Francis de Pressense, 69100 Villeurbanne, France', space_m2: 560, site_capacity_end_state_kW: 1200}
+      - {code: PAR1, current_name: Paris_PAR1, legacy_code: DC6, address: '3-5 Mail Barthelemy Thimonnier, Newton A, 77185 Lognes, France', space_m2: 3300, site_capacity_end_state_kW: 2400}
+      - {code: PAR2, current_name: Paris_PAR2, legacy_code: null, address: '34 Rue des Gardinoux, 93300 Aubervilliers, France', space_m2: 1800, site_capacity_end_state_kW: 2200}
+      - {code: PAR3, current_name: Paris_PAR3, legacy_code: null, address: 'Rue Vladimir Jankelevitch, 77184 Emerainville, France', space_m2: undisclosed, site_capacity_end_state_kW: undisclosed}
+      - {code: SXB1, current_name: Strasbourg, legacy_code: DC7, address: 'Rue Jean-Dominique Cassini, 67400 Illkirch-Graffenstaden, France', space_m2: 600, site_capacity_end_state_kW: 1200}
+    numeric_card_arithmetic_checksum_not_live_capacity:
+      seven_numeric_site_space_m2: 8760
+      seven_numeric_site_capacity_end_state_MW: 20.2
+      PAR3_numeric_capacity: undisclosed
+      dated_provider_conflicts:
+        NCE1: older_2024_datasheet_800kW_proposed_end_state_versus_current_page_6000kW
+        NCE2: older_2024_datasheet_900kW_proposed_end_state_versus_current_page_6000kW
+        MLH1: provider_pages_or_datasheets_have_shown_1200kW_and_1500kW
+      boundary: >-
+        The sums are reproducibility checks across seven current provider cards,
+        not operating, live, IT, energized, sold, occupied, utilized, billed or
+        peak load. PAR3 has no current numeric capacity card and is excluded.
+    OSM_crosswalk:
+      raw_operator_labels: [Euclyde, Euclyde_Datacenters]
+      matched_objects: 5
+      matches:
+        osm_relation_1074421: NCE1_DC1_Antibes
+        osm_way_843508896: NCE2_DC3_Valbonne
+        osm_way_84607738: LYS1_DC5_Lyon
+        osm_way_116116518: PAR1_DC6_Lognes
+        osm_way_1061336199: SXB1_DC7_Strasbourg
+      off_sample_current_sites: [MLH1, PAR2, PAR3]
+      OSM_footprint_area_m2_checksum: 5956.646
+      boundary: The five objects route legacy labels to current facilities; their footprints are not provider floor area, capacity, lifecycle, ownership or a complete current estate.
+    power_and_electrical:
+      published_common_design:
+        cabinet_feeds: independent_A_and_B
+        standard_air_cooled_density_kW_per_cabinet: 2_to_7_up_to_15
+        high_density_AI_ready_kW_per_cabinet: 15_to_150_plus
+        high_density_qualifier: on_request_at_five_numeric_sites_but_not_shown_for_NCE1_or_NCE2
+        design_PUE: 1.29
+        design_target: Tier_III
+      exact_utility_feeds_voltage_contract_capacity_current_draw_substation_transformer_switchgear_busbar_PDU_UPS_battery_generator_fuel_OEM_model_count_rating_loading_test_age_and_remaining_life: undisclosed
+      boundary: Tier III is a provider design target rather than an established Uptime certified-design, constructed-facility or operational-sustainability award, and end-state site capacity is not live IT load.
+    cooling_and_water:
+      provider_common_design: cooling_and_humidity_compliant_with_ASHRAE_A1_allowable_category
+      high_density_readiness: 15_to_150_plus_kW_per_cabinet
+      exact_chiller_CRAH_CRAC_CDU_pump_heat_exchanger_dry_cooler_water_loop_OEM_model_count_rating_redundancy_loading_and_live_liquid_cooled_MW: undisclosed
+      current_measured_site_PUE_WUE_energy_water_and_heat_reuse: undisclosed
+      boundary: High-density readiness and scalable cooling language do not prove a liquid-cooling installation or live liquid-cooled capacity.
+    certification_and_security:
+      current_security_directory: site_scoped_ISO_HDS_and_selected_PCI_DSS_SOC1_ISO50001_rows
+      exact_certificate_identifiers_scope_award_date_expiry_and_audit_state: not_fully_reproduced_in_this_profile
+      boundary: Provider directory labels are not silently upgraded to broader group or Uptime certifications.
+    energy_and_sustainability:
+      site_page_claim: 100_percent_carbon_free_energy_backed_by_Guarantees_of_Origin
+      PPA_claim: true
+      France_energy_agreement_start: '2026-01-01'
+      parties: [nLighten, Axpo, independent_wind_power_producer]
+      scope: all_France_locations
+      tracking: granular_hourly_renewable_tracking
+      group_ICFEn_average_applied_to_France: false
+      France_absolute_electricity_measured_PUE_WUE_water_emissions_and_heat_reuse: undisclosed
+      boundary: Guarantees of Origin, PPAs, supply contracts, hourly accounting and physical hourly matching remain distinct; a group average is not assigned to France.
+    AI_accelerators_and_high_density:
+      provider_claims: [AI_ready_15_to_150_plus_kW_per_cabinet, PAR3_scalable_power_and_cooling]
+      exact_current_operator_or_customer_GPU_accelerator_model_count_owner_site_delivery_acceptance_rack_fabric_power_utilization_revenue_margin_and_remaining_life: undisclosed_or_unestablished
+      live_liquid_cooled_MW: undisclosed_or_unestablished
+      boundary: AI-ready facility design does not establish installed accelerators, their ownership or economics.
+    ownership_and_financial_boundary:
+      financial_profile_ref: company_nlighten_france_and_legacy_euclyde
+      audited_group: nLighten_UK_TopCo_Limited_consolidated_European_group
+      audited_2024_EUR_million:
+        revenue: 59.963
+        UK_destination_revenue: 29.970
+        rest_of_Europe_destination_revenue: 29.993
+        gross_profit: 26.948
+        operating_loss: -31.957
+        net_loss: -39.837
+        net_cash_used_in_operating_activities: -19.647
+        purchases_of_property_plant_and_equipment: 74.596
+        loans_and_borrowings_including_leases: 189.705
+      France_only_revenue_operating_profit_cash_flow_capex_debt_utilization_customer_concentration_and_ROIC: undisclosed
+      boundary: The audited results consolidate multiple European countries and acquisition dates. Rest of Europe is not a France segment, French legal entities are non-additive and site economics remain unavailable.
+    outlook:
+      positive_signals: [eight_current_France_sites, PAR2_and_PAR3_expansion, high_density_design_range, hourly_renewable_tracking_contract, group_revenue_growth, EUR74_596m_group_PPE_investment, I_Squared_sponsor]
+      risk_signals: [2024_group_operating_and_net_losses, negative_operating_cash_flow, acquisition_integration_costs, EUR189_705m_loans_and_leases, March_2026_facility_refinancing_uncertain_at_accounts_authorization, no_reviewed_current_refinancing_confirmation, end_state_capacity_not_live_load, no_France_segment_profit, no_GPU_inventory, equipment_and_measured_efficiency_opacity]
+      analytical_view: >-
+        nLighten France has a credible regional edge footprint and visible
+        sponsor-funded expansion. It is not directly investable, and the audited
+        group was loss-making and cash-consuming during rapid acquisition
+        integration. The decisive conversion tests are refinancing, turning
+        end-state power into contracted billed load, measured efficiency and
+        evidence that high-density readiness produces recurring returns.
+    sources:
+      - {title: Current France location directory, publisher: nLighten, accessed: '2026-07-19', url: 'https://www.nlighten.com/en/locations-detail-pages/france/'}
+      - {title: Euclyde six-site acquisition, publisher: nLighten, date: '2023-06-01', url: 'https://www.nlighten.com/en/press-releases/nlighten-acquires-euclyde-data-centers-a-leading-edge-data-center-platform-in-france/'}
+      - {title: Seven-site EXA Infrastructure transaction, publisher: nLighten, date: '2024-04-04', url: 'https://www.nlighten.com/en/press-releases/nlighten-expands-throughout-europe/'}
+      - {title: Euclyde rebrand to nLighten France, publisher: nLighten, date: '2024-11-25', url: 'https://www.nlighten.com/fr/communiques-de-presse/euclyde-datacenters-annonce-le-rebranding-en-nlighten-france-au-dc-world-de-paris/'}
+      - {title: PAR3 acquisition from oXya, publisher: nLighten, date: '2026-02-02', url: 'https://www.nlighten.com/en/nlighten-expands-french-data-center-footprint-through-paris-site-acquisition/'}
+      - {title: Current France security and compliance directory, publisher: nLighten, accessed: '2026-07-19', url: 'https://www.nlighten.com/en/security-and-compliance/'}
+      - {title: France hourly renewable supply agreement, publisher: nLighten, date: '2025-12-16', url: 'https://www.nlighten.com/en/press-releases/new-energy-agreement-brings-enhanced-renewable-transparency-to-nlightens-french-data-center-operations/'}
+      - {title: nLighten UK TopCo 2024 audited group accounts, publisher: UK_Companies_House, filed: '2026-02-18', url: 'https://find-and-update.company-information.service.gov.uk/company/14348462/filing-history'}
+      - {title: Current French establishment register, publisher: L_Annuaire_des_Entreprises, accessed: '2026-07-19', url: 'https://annuaire-entreprises.data.gouv.fr/entreprise/840088439'}
+    confidence: high_for_current_eight_site_roster_legacy_six_site_acquisition_five_OSM_matches_current_numeric_cards_and_audited_group_accounts_medium_for_legal_entity_and_transaction_to_site_bridge_low_for_live_load_complete_equipment_BOM_GPU_inventory_France_segment_economics_and_current_refinancing_state
+
 disclosure_gap_register:
+  - nLighten_France_complete_current_land_building_suite_ownership_lease_operating_and_customer_acceptance_roster_reconciling_eight_site_cards_seven_legal_establishments_and_physical_buildings
+  - nLighten_France_legacy_Euclyde_DC1_DC2_DC3_DC5_DC6_DC7_to_NCE1_MLH1_NCE2_LYS1_PAR1_SXB1_legal_and_asset_chain_and_absent_DC4_explanation
+  - nLighten_France_NCE1_800kW_to_6000kW_NCE2_900kW_to_6000kW_and_MLH1_1200kW_to_1500kW_dated_provider_capacity_conflict_reconciliation
+  - nLighten_France_per_site_end_state_capacity_to_utility_contract_energized_available_allocated_sold_occupied_billed_peak_and_actual_IT_load
+  - nLighten_France_PAR3_space_power_design_PUE_equipment_commissioning_and_post_acquisition_customer_capacity
+  - nLighten_France_per_site_grid_feed_voltage_substation_transformer_switchgear_busbar_PDU_UPS_battery_generator_fuel_OEM_model_count_rating_loading_test_acceptance_age_and_remaining_life
+  - nLighten_France_per_site_chiller_CRAH_CRAC_CDU_pump_heat_exchanger_dry_cooler_water_loop_OEM_model_count_rating_redundancy_loading_measured_PUE_WUE_water_and_live_liquid_cooled_MW
+  - nLighten_France_current_operator_customer_and_partner_GPU_accelerator_model_count_owner_site_delivery_acceptance_rack_fabric_power_utilization_revenue_margin_and_remaining_life
+  - nLighten_France_site_certificate_identifiers_scopes_award_dates_expiry_audit_state_and_Tier_III_design_target_to_Uptime_award_boundary
+  - nLighten_France_absolute_energy_hourly_carbon_free_match_PUE_WUE_water_emissions_heat_reuse_and_ICFEn_site_scores
+  - nLighten_France_audited_France_only_revenue_EBITDA_operating_profit_cash_flow_capex_debt_utilization_customer_concentration_and_ROIC_reconciling_France_RE_France_and_Holding_entities
+  - nLighten_group_March_2026_ICG_Longbow_facility_refinancing_completion_terms_covenants_liquidity_and_current_debt_maturity_profile
   - Cirion_complete_current_owned_leased_operated_main_edge_partner_and_service_facility_roster_reconciling_SOC2_18_recent_activations_featured_12_main_12_edge_10_and_construction_3_scopes
   - Cirion_twenty_identified_current_label_floor_to_authoritative_current_total_and_per_site_lifecycle_ownership_title_address_building_and_customer_acceptance
   - Cirion_featured_card_total_area_floor_area_inversions_for_BUE1_CAR1_LIM1_QUI2_and_provider_authoritative_corrections
