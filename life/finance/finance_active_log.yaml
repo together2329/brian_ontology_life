@@ -7,7 +7,7 @@ secondary_areas:
   - MIND
 profile_ref: person_brian
 title: Finance active log
-current_phase: The first equity-policy backtest milestone is complete; cashflow-only dilution reduced historical drawdown and concentration but did not reach the policy checkpoints, so exact ETF NAV/look-through and tax-aware position-cap tests are the next evidence gates before allocation changes.
+current_phase: Two equity-policy backtest milestones are complete; the active candidate is no-sale 80/15/5 new-money dilution while inputs are missing, a 40-percent direct-employer review trigger rather than auto-sale, and a 60/15/20/5 long-run destination pending exact tax lots, reserve, ETF and employer-window evidence.
 
 investment_philosophy_research_refs:
   - life/finance/investment_philosophy_research.yaml
@@ -21,8 +21,25 @@ investment_philosophy_research_refs:
   - life/finance/brian_investment_playbook_ko_202607.md
   - life/finance/brian_equity_backtest_spec_202607.yaml
   - life/finance/brian_equity_backtest_report_ko_202607.md
+  - life/finance/brian_equity_policy_comparison_spec_202607.yaml
+  - life/finance/brian_equity_policy_comparison_report_ko_202607.md
 
 source_records:
+  - id: source_finance_equity_backtest_goal_second_milestone_20260720
+    source_type: goal_continuation
+    original_date: 2026-07-20
+    imported_at: 2026-07-20
+    parse_status: parsed
+    raw_text: "Brian의 실제 보유자산과 현금흐름을 기준으로 AI 집중 유지, 신규자금 희석, 비중 상한, 목표 자산배분 전략을 백테스트한다."
+    interpretation: The active Goal continued from cashflow-only dilution into position-cap and destination-allocation comparisons.
+    promoted_record_ref: finance_status_20260720_equity_policy_comparison_second_milestone
+    artifact_refs:
+      - life/finance/brian_equity_policy_comparison_spec_202607.yaml
+      - life/finance/brian_equity_policy_comparison_report_ko_202607.md
+      - life/imports/investment_policy_comparison_202607/results.json
+    confidence: high
+    needs_user_review: false
+
   - id: source_finance_equity_backtest_goal_20260720
     source_type: chat
     original_date: 2026-07-20
@@ -914,6 +931,30 @@ tool_trials:
     source_ref: source_finance_conversation_20260617_ai_tool_testing_cost_400usd
 
 finance_status_updates:
+  - id: finance_status_20260720_equity_policy_comparison_second_milestone
+    date: 2026-07-20
+    area: FINANCE
+    status: second_milestone_completed
+    summary: Fifteen initial, annual and month-end-triggered position-cap or destination strategies were tested across three start windows and three abstract sale-friction cases, producing 135 reproducible scenarios.
+    evidence:
+      - Every cap or destination case improved maximum drawdown versus both the same-cashflow concentrated baseline and no-sale dilution baseline, but no case had a higher backcast terminal value because the current winner-heavy portfolio was selected with hindsight.
+      - Annual 40-percent enforcement reached 65.74 percent before the next enforcement date; month-end excess enforcement reduced the maximum pre-action observation to 52.30 percent and ended near 40 percent.
+      - The 40-percent month-end trigger generated 4.17-10.71 billion KRW of cumulative backcast gross sales and 0.90-54.72 million KRW of total modeled cost, rejecting mechanical auto-sale as the current policy.
+      - Annual destination allocation allowed explicit AI to reach 32.70 percent; the policy-band trigger limited the maximum observation to 29.63 percent and ended near 24.22 percent, at the cost of additional turnover.
+    policy_candidate:
+      immediate_default: No-sale 80/15/5 eligible new-money dilution after the reserve gate while transaction inputs are incomplete.
+      transition_review_trigger: Review direct-employer exposure at 40 percent monthly, but require tax-lot, compliance, thesis and household-risk checks before any action.
+      long_run_destination: 60 percent global core, 15 percent safe short duration, 20 percent explicit AI and 5 percent gold, including 5 percent direct employer stock.
+    decision_boundary: The candidate is an internal decision policy, not an external transaction authorization or expected-return forecast.
+    source_ref: source_finance_equity_backtest_goal_second_milestone_20260720
+    artifact_refs:
+      - life/finance/brian_equity_policy_comparison_spec_202607.yaml
+      - life/finance/brian_equity_policy_comparison_report_ko_202607.md
+      - life/imports/investment_policy_comparison_202607/results.json
+      - life/imports/investment_policy_comparison_202607/source_manifest.yaml
+      - scripts/build_brian_equity_policy_comparison.py
+      - scripts/validate_brian_equity_policy_comparison.py
+
   - id: finance_status_20260720_equity_backtest_first_milestone
     date: 2026-07-20
     area: FINANCE

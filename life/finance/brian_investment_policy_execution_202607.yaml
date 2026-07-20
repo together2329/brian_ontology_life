@@ -12,6 +12,7 @@ human_readable_summary_ko:
   success_risk: AI 상승 민감도에서는 포트폴리오가 32.91% 증가하지만 SK하이닉스 비중도 58.32%로 올라가므로 성공 자체가 리밸런싱 사유가 될 수 있다.
   action_now: 현금흐름과 비상자금을 먼저 복구하고, 신규 AI 매수를 멈춘 채 ETF 실구성·세금·가계 전체 노출을 측정한다.
   backtest_read: 무매도 신규자금 희석은 54개 비교 모두에서 낙폭과 집중도를 낮췄지만 최대 납입 조합도 AI 78.73%, SK하이닉스 67.97%에 머물러 현금흐름만으로 정책 체크포인트에 도달하지 못했다.
+  cap_and_destination_read: 40% 연말 점검은 월중 65.74%까지 재상승했고 월말 초과 트리거도 행동 전 52.30%까지 올라갔다. 따라서 40%는 자동매도선이 아니라 세금·고용주 제한·가계위험을 다시 여는 검토선이며, 장기 목적지는 글로벌 60·안전자산 15·AI 20·금 5의 비교 기준으로 유지한다.
 source_snapshot:
   as_of: '2026-07-15'
   securities_and_gold_total_krw: 123448709
@@ -32,6 +33,31 @@ equity_backtest_checkpoint:
   report_ref: life/finance/brian_equity_backtest_report_ko_202607.md
   operating_read: Preserve cashflow-only dilution as the risk-reduction baseline, but test exact ETF histories and tax-aware position caps before deciding whether a glide path needs sales.
   boundary: Counterfactual backcast only; no transaction is authorized.
+equity_policy_comparison_checkpoint:
+  as_of: '2026-07-20'
+  status: second_milestone_complete
+  strategy_count: 15
+  scenario_count: 135
+  sale_friction_bps_grid: [10, 100, 500]
+  transition_review_threshold_percent: 40
+  threshold_action: Open a decision review; never execute an automatic sale from the threshold alone.
+  long_run_destination_percent:
+    broad_global_core: 60
+    safe_short_duration: 15
+    explicit_ai: 20
+    gold: 5
+    direct_employer_inside_explicit_ai: 5
+  empirical_boundaries:
+    annual_40_cap_maximum_pre_enforcement_percent: 65.74
+    month_end_40_trigger_maximum_pre_enforcement_percent: 52.30
+    month_end_40_trigger_gross_sales_krw_range: [417420547, 1071158967]
+    month_end_40_trigger_total_modeled_cost_krw_range: [896504, 54721549]
+    destination_annual_maximum_explicit_ai_percent: 32.70
+    destination_band_trigger_maximum_explicit_ai_percent: 29.63
+    destination_band_trigger_ending_explicit_ai_percent: 24.22
+  result_ref: life/imports/investment_policy_comparison_202607/results.json
+  report_ref: life/finance/brian_equity_policy_comparison_report_ko_202607.md
+  boundary: Backcast and abstract-cost sensitivity only; tax lots, compliance and exact ETF histories remain gates.
 country_macro_execution_overlay:
   source_as_of: '2026-07-19'
   coverage_boundary: 'This is not a literal survey of every sovereign economy. It is the smallest decision-complete set for

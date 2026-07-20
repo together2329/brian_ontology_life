@@ -28,6 +28,8 @@ execution_builder_ref: scripts/analyze_brian_investment_policy.py
 country_macro_overlay_ref: life/finance/country_macro_investment_overlay_202607.yaml
 equity_backtest_spec_ref: life/finance/brian_equity_backtest_spec_202607.yaml
 equity_backtest_report_ref: life/finance/brian_equity_backtest_report_ko_202607.md
+equity_policy_comparison_spec_ref: life/finance/brian_equity_policy_comparison_spec_202607.yaml
+equity_policy_comparison_report_ref: life/finance/brian_equity_policy_comparison_report_ko_202607.md
 
 source_records:
   - id: source_investment_strategy_request_20260719
@@ -352,6 +354,45 @@ cashflow_only_backtest_checkpoint_20260720:
     - life/finance/brian_equity_backtest_spec_202607.yaml
     - life/finance/brian_equity_backtest_report_ko_202607.md
     - life/imports/investment_backtest_202607/results.json
+
+policy_candidate_after_backtests_20260720:
+  status: evidence_supported_candidate_awaiting_tax_lots_and_household_inputs
+  immediate_default_while_inputs_are_missing:
+    rule: Keep existing holdings unchanged and route eligible new long-term money outside explicit AI using the phase-3 80/15/5 rule only after the liquidity-reserve gate.
+    reason: The no-sale backcast reduced drawdown and concentration in all paired cases without requiring an unverified taxable transaction.
+  transition_monitoring_candidate:
+    direct_employer_review_threshold_percent: 40
+    monitoring_frequency: month_end
+    action_when_above: Open a tax-lot, employer-window, thesis and household-risk review; do not create an automatic sale.
+    evidence:
+      - Annual 40-percent enforcement still reached 65.74 percent before the next enforcement point in the tested winner path.
+      - Month-end excess enforcement reduced the maximum observed pre-action weight to 52.30 percent and ended near 40 percent.
+      - The same trigger generated 4.17-10.71 billion KRW of backcast gross sales and up to 54.72 million KRW of modeled cost, so mechanical monthly execution is rejected.
+  long_run_destination_candidate:
+    broad_global_core_percent: 60
+    safe_short_duration_percent: 15
+    explicit_ai_percent: 20
+    gold_percent: 5
+    direct_employer_within_explicit_ai_percent: 5
+    review_triggers:
+      direct_employer_above_percent: 10
+      explicit_ai_above_percent: 25
+    interpretation: Use this as a destination and monitoring baseline, not a one-trade rebalance instruction.
+  rejected_as_complete_controls:
+    - An initial-only cap, because the direct position subsequently drifted far above every tested cap.
+    - A calendar-year cap labeled as a permanent ceiling, because the rapid 2026 path breached it materially between dates.
+    - Automatic month-end sales, because turnover, abstract tax cost and employer restrictions are unresolved.
+    - Selecting the concentrated baseline only because it had the highest backcast terminal value, because current winners were selected with hindsight.
+  required_before_any_external_transaction:
+    - Account-level quantity, acquisition price, tax lot and account tax treatment
+    - Current employer trading window and compliance restrictions
+    - Verified emergency reserve and essential monthly spending
+    - Household look-through exposure including spouse holdings and employment correlation
+    - Exact ETF NAV, distribution and historical constituent evidence where available
+  refs:
+    - life/finance/brian_equity_policy_comparison_spec_202607.yaml
+    - life/finance/brian_equity_policy_comparison_report_ko_202607.md
+    - life/imports/investment_policy_comparison_202607/results.json
 
 concentrated_position_glide_path:
   current_direct_sk_hynix_percent: 55.36
