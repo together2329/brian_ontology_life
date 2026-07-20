@@ -1,0 +1,72 @@
+schema_version: 1
+generated_on: '2026-07-20'
+quality_gate_status: pass
+quality_checks:
+- gate: first_milestone_hash_chain
+  status: pass
+  first_manifest_sha256: 703cf1843dcc0bf905f837c2d8494631c3289405bf98ea692a3a9bd048bed440
+  inherited_raw_sources: 16
+- gate: portfolio_value_reconciles
+  status: pass
+  value_krw: 123448709
+- gate: all_products_have_one_proxy
+  status: pass
+  product_count: 17
+- gate: proxy_component_weights_sum_to_one
+  status: pass
+  proxy_count: 13
+- gate: complete_monthly_market_coverage
+  status: pass
+  first_return_month: 2016-01
+  last_return_month: 2026-06
+  series_count_including_primary_fx_and_cash: 15
+- gate: primary_fx_sanity_and_validation
+  status: pass_with_documented_yahoo_anomalies
+  primary_series: DEXKOUS
+  yahoo_validation_anomaly_months:
+  - 2016-01
+  - 2016-07
+  - 2017-09
+  maximum_valid_month_end_difference_percent: 1.5424
+  decision: Use FRED DEXKOUS; retain Yahoo KRW=X only as validation evidence.
+- gate: complete_unique_policy_grid
+  status: pass
+  strategy_count: 15
+  scenario_count: 135
+- gate: cap_and_destination_transaction_invariants
+  status: pass
+  cap_scenarios: 108
+  destination_scenarios: 27
+- gate: sale_friction_monotonicity
+  status: pass
+  rule: Higher modeled sale friction never increases terminal value and never lowers
+    total modeled cost.
+source_files:
+- file: life/finance/brian_equity_policy_comparison_spec_202607.yaml
+  sha256: c2e358615ca8211f3bc2fece70458ad3834a8c5a4cd4422705b0636064a510e1
+  bytes: 9146
+- file: life/finance/brian_equity_backtest_spec_202607.yaml
+  sha256: df712d101e481151f202523f933c48b3a8e80985eae4b74b2df1131a29057fec
+  bytes: 13415
+- file: life/finance/ai_data_center_investment_comparison_202607.yaml
+  sha256: 34024028ed3a8fa3628af29bff34ac4af3daac56c36ee2e42a6f455729ebc17b
+  bytes: 22319
+- file: life/imports/investment_backtest_202607/results.json
+  sha256: bffea5f27ac404289b68affdbd608a134719c031c0cddfc78022e3c9d9de38d2
+  bytes: 105343
+- file: life/imports/investment_backtest_202607/source_manifest.yaml
+  sha256: 703cf1843dcc0bf905f837c2d8494631c3289405bf98ea692a3a9bd048bed440
+  bytes: 4468
+- file: scripts/build_brian_equity_policy_comparison.py
+  sha256: ca702e54b8cffa0d2c9842ec0aff3de2fee12765d9a51d0dca24137c2d07cb17
+  bytes: 42413
+- file: scripts/validate_brian_equity_policy_comparison.py
+  sha256: 77fe885a34edd1d0214b3354e7ceb5b54a1ea424028a821ad24ae67f98c029ee
+  bytes: 4922
+generated_outputs:
+- file: life/imports/investment_policy_comparison_202607/results.json
+  sha256: f85874ae2322c5953fd65afd0359182f699d278cecbcadea01346121e50af774
+  bytes: 402098
+- file: life/finance/brian_equity_policy_comparison_report_ko_202607.md
+  sha256: 3e96778e758634fde70730ed9a0372b64dd0fffee3108f79839ab68997a8112f
+  bytes: 12820

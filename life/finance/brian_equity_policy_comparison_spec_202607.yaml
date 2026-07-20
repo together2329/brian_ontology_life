@@ -1,0 +1,175 @@
+schema_version: 1
+status: active_second_milestone
+created_at: '2026-07-20'
+updated_at: '2026-07-20'
+area: FINANCE
+profile_ref: person_brian
+title: Brian position-cap and destination-allocation backtest specification
+goal: >
+  Extend the no-sale cashflow milestone with explicit SK hynix position caps and the provisional
+  destination allocation, while exposing how sale-side tax and execution uncertainty changes the
+  historical risk, return, concentration and cost trade-off.
+decision_boundary: >
+  This is a counterfactual policy comparison, not a reconstruction of Brian's realized return and
+  not authorization to trade. The sale-friction grid is an abstract haircut because tax lots,
+  account types, investor tax status and exact wrapper tax treatment are not captured.
+
+source_record:
+  id: source_finance_equity_backtest_goal_second_milestone_20260720
+  source_type: goal_continuation
+  original_date: '2026-07-20'
+  imported_at: '2026-07-20'
+  raw_text: Brian의 실제 보유자산과 현금흐름을 기준으로 AI 집중 유지, 신규자금 희석, 비중 상한, 목표 자산배분 전략을 백테스트한다.
+  interpretation: The active Goal requires position-cap and target-allocation strategies after the first no-sale dilution checkpoint.
+  confidence: high
+  needs_user_review: false
+
+input_refs:
+  first_milestone_spec: life/finance/brian_equity_backtest_spec_202607.yaml
+  first_milestone_results: life/imports/investment_backtest_202607/results.json
+  first_milestone_manifest: life/imports/investment_backtest_202607/source_manifest.yaml
+  portfolio_snapshot: life/finance/ai_data_center_investment_comparison_202607.yaml
+  investment_policy: life/finance/brian_investment_policy_202607.yaml
+  market_data_directory: life/imports/investment_backtest_202607/raw
+
+test_design:
+  base_currency: KRW
+  source_portfolio_as_of: '2026-07-15'
+  source_portfolio_initial_value_krw: 123448709
+  start_months: ['2016-01', '2020-01', '2023-01']
+  end_month: '2026-06'
+  window_interpretation:
+    '2016-01': Long window spanning semiconductor cycles, the pandemic shock, inflation/rate normalization and the AI investment boom.
+    '2020-01': Pandemic shock and recovery, zero-rate conditions, the 2022 tightening drawdown and the AI boom.
+    '2023-01': High-rate AI-acceleration window dominated by the exceptional 2025-2026 winner path.
+  monthly_contribution_krw: 1000000
+  one_time_bonus_krw: 20000000
+  bonus_timing: End of month 12 after return, policy transaction and ordinary monthly contribution ordering are applied.
+  contribution_purchase_cost_bps: 10
+  sale_friction_bps_grid: [10, 100, 500]
+  sale_friction_interpretation: Abstract combined sale tax, fee, spread and execution haircut; not a statement of Brian's actual tax rate.
+  policy_event_order:
+    - Initial policy transaction before the first test-month return.
+    - Monthly market return.
+    - December annual cap or rebalance event when configured.
+    - End-of-month external contribution and month-12 bonus.
+  distributions: Proxy adjusted-close distributions are reinvested before Brian-specific withholding and account tax.
+  tax_lot_method: unavailable_not_inferred
+
+cap_strategy_design:
+  caps_percent: [40, 30, 20, 10]
+  enforcement_modes:
+    - initial_once
+    - initial_and_each_december
+    - initial_and_month_end_trigger
+  asset_capped: direct_sk_hynix
+  initial_pre_policy_percent: 55.36
+  sale_proceeds_rule:
+    global_core_unhedged_percent: 80
+    krw_safe_short_duration_percent: 15
+    gold_unhedged_percent: 5
+  new_money_rule: Same 80/15/5 allocation as the first-milestone no-sale dilution policy.
+  other_existing_holdings: Never sold or rebalanced by the cap-only strategies.
+  annual_boundary: The position may drift above its cap between December enforcement dates; maximum monthly exposure is reported.
+  month_end_trigger_boundary: The position is restored to its cap only after a month-end observation exceeds it; intramonth and one-month jump risk remain.
+
+destination_strategy_design:
+  strategy_ids:
+    - destination_initial_buy_and_hold
+    - destination_initial_and_annual_rebalance
+    - destination_policy_band_triggered_rebalance
+  target_weights:
+    global_core_unhedged: 0.60
+    krw_safe_short_duration: 0.15
+    gold_unhedged: 0.05
+    direct_sk_hynix: 0.05
+    semiconductor_unhedged: 0.03
+    power_grid_unhedged: 0.05
+    ai_value_chain_unhedged: 0.03
+    optical_current_top_three_backcast: 0.02
+    nuclear_unhedged: 0.02
+  target_classification:
+    broad_global_core_percent: 60
+    safe_short_duration_percent: 15
+    explicit_ai_satellite_percent: 20
+    gold_percent: 5
+    other_non_ai_diversifier_percent: 0
+  policy_alignment:
+    - Global core uses the top of its 50-60 percent band while the separate other-non-AI sleeve uses the allowed zero-percent band floor.
+    - The explicit AI sleeve follows the policy's 5 direct employer, 3 other compute, 5 power, 3 platform, 2 optical and 2 operator/generation percentages.
+  initial_matching_rule:
+    direct_sk_hynix: direct_sk_hynix
+    semiconductor_unhedged: semiconductor_unhedged
+    power_grid_unhedged: power_grid_unhedged
+    ai_value_chain_unhedged: ai_value_chain_unhedged
+    optical_current_top_three_backcast: optical_current_top_three_backcast
+    nuclear_unhedged: nuclear_unhedged
+    gold_unhedged: gold_unhedged
+  matching_boundary: Existing products mapped to the same unhedged proxy are consolidated without a fictional sale; unmatched, hedged and hybrid products require modeled turnover.
+  contribution_rule: Allocate new money at the target weights after purchase cost.
+  annual_rebalance_month: '12'
+  band_trigger:
+    review_frequency: month_end
+    tolerance_percent_points: 0.50
+    rebalance_to_target_if_any:
+      broad_global_core_outside_percent: [50, 60]
+      safe_short_duration_outside_percent: [10, 20]
+      gold_outside_percent: [3, 7]
+      explicit_ai_above_percent: 25
+      direct_employer_above_percent: 10
+    boundary: This is a monitoring convention for comparison, not permission to trade monthly or ignore employer windows.
+
+comparison_baselines:
+  strategy_ids:
+    - current_style_continue
+    - no_sale_dilution_80_15_5
+  source: first_milestone_results_default_cashflow_cases
+
+required_metrics:
+  - terminal_value_krw
+  - net_gain_after_contributions_krw
+  - money_weighted_return_annualized_percent
+  - time_weighted_return_annualized_percent
+  - annualized_volatility_percent
+  - maximum_drawdown_percent
+  - maximum_underwater_months
+  - worst_month_percent
+  - worst_rolling_twelve_month_percent
+  - sharpe_over_krw_cash
+  - sortino_over_krw_cash
+  - calmar_ratio
+  - ending_direct_employer_percent
+  - maximum_direct_employer_after_initial_policy_percent
+  - ending_explicit_ai_percent
+  - maximum_explicit_ai_after_initial_policy_percent
+  - gross_sales_krw
+  - initial_policy_cost_krw
+  - annual_policy_cost_krw
+  - contribution_purchase_cost_krw
+  - total_modeled_cost_krw
+
+quality_gates:
+  - Inputs and market-return hashes must match the first-milestone manifest.
+  - Every cap strategy starts at its configured cap after modeled transaction costs within numerical tolerance.
+  - Every annual cap event restores the direct position to its configured cap before that month's contribution.
+  - Destination target weights sum to one and initial target weights reconcile after modeled costs.
+  - Annual destination rebalance events restore all target weights within numerical tolerance.
+  - Each start, strategy and sale-friction combination occurs exactly once.
+  - All strategies use the same initial holdings, market returns and external cashflow schedule.
+  - Modeled costs reduce portfolio value and are never treated as an external contribution.
+
+known_biases_and_limits:
+  - All first-milestone current-holdings, proxy, survivor, constituent-selection and adjusted-close boundaries still apply.
+  - Applying 2026 holdings and a 2026 policy destination to earlier periods is a hindsight backcast, not a point-in-time investable portfolio.
+  - Sale friction is deliberately abstract and cannot replace account-level tax-lot analysis or current Korean tax guidance.
+  - Annual enforcement is a convention, not a recommendation; employer trading windows may prevent the modeled date.
+  - Target-allocation turnover is estimated at proxy-bucket level, not security and lot level.
+  - Employment income, bonus loss and spouse correlated assets are not included in securities TWR and remain separate household stress overlays.
+  - Historical dominance of a concentrated winner does not establish a future expected-return advantage.
+
+decision_rule_for_candidate_policy:
+  - Do not select the highest terminal value alone.
+  - Require material concentration reduction and drawdown improvement across all three starts.
+  - Reject a cap label that is frequently breached between enforcement dates unless the drift is explicitly accepted.
+  - Compare lower-risk benefit with total modeled cost across all three sale-friction cases.
+  - Treat a strategy as a policy candidate only if its result is stable across starts and cost assumptions and its implementation requirements are feasible.

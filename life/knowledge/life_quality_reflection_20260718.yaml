@@ -1,0 +1,275 @@
+schema_version: 1
+id: knowledge_life_quality_reflection_20260718
+object_type: KnowledgeBundle
+status: active_user_confirmed_standing_guidance
+updated_at: '2026-07-18'
+title: 더 많이가 아니라 더 좋은 상태로 사는 삶
+profile_ref: person_brian
+area: MIND
+secondary_areas: [BODY, CAREER, FINANCE, RELATION, MAINTENANCE, FUN]
+area_refs: [MIND, BODY, CAREER, FINANCE, RELATION, MAINTENANCE, FUN]
+
+purpose: >
+  Brian의 장기 기록과 현재 온톨로지를 바탕으로 삶의 질과 충만함을 다시 검토한
+  2026-07-18 대화를 보존한다. Brian이 직접 말하거나 확인한 내용, assistant의
+  evidence-backed synthesis, 아직 수용되지 않은 실천 제안을 분리한다.
+
+source_records:
+  - id: source_life_quality_conversation_20260718_restart_from_ontology
+    source_name: current_codex_conversation
+    source_type: chat
+    original_date: '2026-07-18'
+    imported_at: '2026-07-18'
+    raw_text: "자.. 처음부터 다시... 나의 온톨로지 쭉 살펴보고... 이걸 기반으로 어떻게 삶의질을 높이면서 충만한 삶을 살 수 있을지 함께 고민좀"
+    raw_metadata: {authorship: person_brian, language: ko}
+    parse_status: parsed
+
+  - id: source_life_quality_conversation_20260718_english_study_need
+    source_name: current_codex_conversation
+    source_type: chat
+    original_date: '2026-07-18'
+    imported_at: '2026-07-18'
+    raw_text: "I need english study as well :)"
+    raw_metadata: {authorship: person_brian, language: en}
+    parse_status: parsed
+
+  - id: source_life_quality_conversation_20260718_records_nearly_all_shared
+    source_name: current_codex_conversation
+    source_type: chat
+    original_date: '2026-07-18'
+    imported_at: '2026-07-18'
+    raw_text: "아주 좋은 정리야. 내가 정말 거의 대부분의 나의 기록을 너에게 주긴 했거든"
+    raw_metadata: {authorship: person_brian, language: ko}
+    parse_status: parsed
+
+  - id: source_life_quality_conversation_20260718_english_messages_intention
+    source_name: current_codex_conversation
+    source_type: chat
+    original_date: '2026-07-18'
+    imported_at: '2026-07-18'
+    raw_text: "I will send all msg in English."
+    raw_metadata: {authorship: person_brian, language: en}
+    parse_status: parsed
+
+  - id: source_life_quality_conversation_20260718_improve_life_question
+    source_name: current_codex_conversation
+    source_type: chat
+    original_date: '2026-07-18'
+    imported_at: '2026-07-18'
+    raw_text: "Can you explain how to improve my life ?"
+    raw_metadata: {authorship: person_brian, language: en}
+    parse_status: parsed
+
+  - id: source_life_quality_conversation_20260718_find_improvement_points
+    source_name: current_codex_conversation
+    source_type: chat
+    original_date: '2026-07-18'
+    imported_at: '2026-07-18'
+    raw_text: "개선 포인트를 찾고 싶어"
+    raw_metadata: {authorship: person_brian, language: ko}
+    parse_status: parsed
+
+  - id: source_life_quality_conversation_20260718_better_state_resonance
+    source_name: current_codex_conversation
+    source_type: chat
+    original_date: '2026-07-18'
+    imported_at: '2026-07-18'
+    raw_text: "더 좋은 상태로 살았는가? 이거 너무 좋은 말이야"
+    raw_metadata: {authorship: person_brian, language: ko}
+    parse_status: parsed
+
+  - id: source_life_quality_conversation_20260718_record_request
+    source_name: current_codex_conversation
+    source_type: chat
+    original_date: '2026-07-18'
+    imported_at: '2026-07-18'
+    raw_text: "너무 좋은데? 오늘의 대화를 좀 기록해줘"
+    raw_metadata: {authorship: person_brian, language: ko}
+    parse_status: parsed
+
+  - id: source_life_quality_conversation_20260718_standing_feedback_request
+    source_name: current_codex_conversation
+    source_type: chat
+    original_date: '2026-07-18'
+    imported_at: '2026-07-18'
+    raw_text: "하이 나 하이. 내가 이거 더 좋은 상태로 살아가는 삶 이걸 다음에도 내가 얘기하지 않아도 네가 계속 피드백할 수 있게 해줘."
+    raw_metadata: {authorship: person_brian, language: ko}
+    parse_status: parsed
+
+confirmed_user_signals:
+  - id: observation_20260718_ontology_based_life_quality_intent
+    object_type: Observation
+    date: '2026-07-18'
+    observation_type: decision_and_reflection_intent
+    area: MIND
+    secondary_areas: [BODY, CAREER, FINANCE, RELATION, MAINTENANCE, FUN]
+    value: Brian wants to use his accumulated ontology to improve quality of life and live a more fulfilled life.
+    source_refs:
+      - source_life_quality_conversation_20260718_restart_from_ontology
+      - source_life_quality_conversation_20260718_find_improvement_points
+    confidence: high
+    needs_user_review: false
+
+  - id: observation_20260718_personal_record_coverage_report
+    object_type: Observation
+    date: '2026-07-18'
+    observation_type: ontology_coverage_user_report
+    area: MIND
+    value: Brian reports that he has provided nearly all of his personal records to the ontology conversation context.
+    interpretation_boundary: This is a user-reported sense of coverage, not a verified completeness percentage; unrecorded life remains possible.
+    source_refs:
+      - source_life_quality_conversation_20260718_records_nearly_all_shared
+    confidence: high_for_user_report_low_for_exact_completeness
+    needs_user_review: false
+
+  - id: observation_20260718_english_growth_intention
+    object_type: Observation
+    date: '2026-07-18'
+    observation_type: learning_intention
+    area: MIND
+    secondary_areas: [CAREER, FUN]
+    value: Brian wants English study included in life improvement and intends to use English in AI conversations.
+    interpretation_boundary: The intention applies clearly to conversation practice; it does not confirm bulk translation of the ontology or an English-only rule for emotional and relationship records.
+    source_refs:
+      - source_life_quality_conversation_20260718_english_study_need
+      - source_life_quality_conversation_20260718_english_messages_intention
+    confidence: high
+    needs_user_review: false
+
+  - id: preference_20260718_proactive_better_state_feedback
+    object_type: Preference
+    date: '2026-07-18'
+    preference_type: standing_assistant_guidance
+    area: MIND
+    secondary_areas: [BODY, CAREER, FINANCE, RELATION, MAINTENANCE, FUN]
+    value: >
+      Brian wants the assistant to apply the better-state principle proactively in future
+      life-related conversations without requiring him to repeat the request.
+    source_refs:
+      - source_life_quality_conversation_20260718_standing_feedback_request
+    confidence: high
+    needs_user_review: false
+
+promoted_operating_principle:
+  id: principle_better_state_over_more_output_20260718
+  object_type: OperatingRule
+  date: '2026-07-18'
+  status: active_user_confirmed_core_question
+  title: 더 많이가 아니라 더 좋은 상태로 살았는가
+  area_refs: [MIND, BODY, CAREER, FINANCE, RELATION, MAINTENANCE, FUN]
+  core_question_ko: "나는 더 많이 했는가가 아니라, 더 좋은 상태로 살았는가?"
+  daily_question_en: "Did I end today in a better state than I started it?"
+  weekly_question_en: "Did I live well this week—not just accomplish more?"
+  rule: >
+    하루와 주를 산출량만으로 평가하지 않고, 수행 이후의 몸과 마음, 명료함,
+    의미 있는 진전과 closure, 관계의 연결, 현재 순간을 느낀 경험을 함께 본다.
+  confirmation_evidence:
+    - source_life_quality_conversation_20260718_better_state_resonance
+  assistant_behavior:
+    - 계획과 리뷰에서 output quantity보다 end state와 sustainability를 함께 묻는다.
+    - 항상 편안하거나 행복해야 좋은 상태라고 해석하지 않는다.
+    - 의미 있는 어려움을 수행했더라도 회복 가능성, 명료함, 연결, closure가 남았는지 본다.
+    - 행복과 회복을 또 하나의 성과 의무로 만들지 않는다.
+  confidence: high
+  needs_user_review: false
+
+assistant_synthesis_candidates:
+  - id: candidate_fulfilled_life_definition_20260718
+    object_type: Concept
+    status: proposed_from_ontology_review
+    title: Brian의 충만한 삶 초안
+    statement: >
+      몸의 에너지 위에서, 스스로 선택한 어려운 문제를 깊이 이해해 가치로 만들고,
+      사랑하는 존재들과 나누며, 지금의 아름다움을 충분히 느끼고,
+      열린 고리를 적게 남기는 삶.
+    supporting_refs:
+      - life/concepts/happiness_bundle.yaml
+      - life/concepts/fulfilled_mind.yaml
+      - life/knowledge/life_success_operating_principles.yaml
+      - life/knowledge/brian_os_next_direction_202607.yaml
+    confidence: medium_high
+    needs_user_review: true
+
+  - id: candidate_five_fulfillment_dimensions_20260718
+    object_type: Concept
+    status: proposed_from_ontology_review
+    dimensions:
+      vitality: BODY 기반 에너지와 회복.
+      mastery_and_contribution: CAREER와 MIND의 깊은 이해, 창작, 문제 해결, 설명, 가치 제공.
+      connection_and_care: RELATION의 배우자, 가족, 반려견, 친구, 동료와의 연결과 돌봄.
+      presence_and_savoring: MIND와 FUN의 음악, 햇살, 자연, 음식, 사진, 여행, 현재 순간 음미.
+      security_and_order: FINANCE와 MAINTENANCE의 현금흐름, 정돈, 방치한 일의 closure.
+    interpretation_boundary: 각 영역의 시간을 똑같이 나누라는 모델이 아니라, 중요한 축이 장기간 0이 되지 않게 보는 렌즈다.
+    confidence: medium_high
+    needs_user_review: true
+
+improvement_candidates:
+  status: proposed_not_committed
+  priority_order:
+    - id: improvement_reduce_open_loops
+      direction: 모든 관심사와 task를 동시에 active로 느끼지 않고 visible Now를 작게 유지한다.
+    - id: improvement_protect_recovery
+      direction: 높은 CAREER·AI·운동 output과 함께 수면, 회복, 마음의 여유를 보호한다.
+    - id: improvement_restore_deep_focus
+      direction: 탐색과 도구 전환 전에 한 질문을 깊게 생각하고 bounded closure를 남긴다.
+    - id: improvement_activate_relation_and_savoring
+      direction: 배우자, 지구·해이, 식사, 음악, 자연, 사진과 좋은 기억을 남는 시간으로만 미루지 않는다.
+    - id: improvement_collect_outcomes
+      direction: 한 번에 한 intervention만 시험하고 실제 수용 여부와 결과를 회수한다.
+    - id: improvement_normalize_cashflow
+      direction: 실제 월 지출을 확인한 뒤 건강·관계·지속 가능한 일을 해치지 않는 저축 여력을 만든다.
+    - id: improvement_integrate_english
+      direction: 영어를 별도 과목으로만 두지 않고 실제 일, 생각, 운동, 관계와 행복 장면을 표현하는 언어로 사용한다.
+  confidence: medium_high
+  needs_user_review: true
+
+english_conversation_experiment:
+  id: intervention_english_first_ai_conversation_20260718
+  object_type: Intervention
+  date: '2026-07-18'
+  status: active_user_intention_flexible
+  active_scope:
+    - Brian이 선택할 때 AI 대화의 user message를 영어로 작성한다.
+    - assistant는 자연스러운 영어로 답하고 중요한 오류만 가볍게 교정한다.
+    - 교정이 본 대화의 의미와 흐름을 방해하지 않게 한다.
+  not_activated:
+    - 기존 개인 온톨로지 전체의 영어 번역
+    - 감정·관계 기록의 영어 전용 강제
+    - 한국어 사용을 실패로 취급하는 규칙
+  source_refs:
+    - source_life_quality_conversation_20260718_english_study_need
+    - source_life_quality_conversation_20260718_english_messages_intention
+  outcome_check_time: null
+  outcome: null
+  confidence: high_for_intention_medium_for_future_cadence
+  needs_user_review: false
+
+proposed_review_template:
+  id: routine_better_state_daily_review_20260718
+  object_type: RoutineTemplate
+  status: proposed_not_committed
+  cadence: daily_or_when_useful
+  questions:
+    - 오늘 나는 더 좋은 상태로 살았는가?
+    - 무엇이 나를 더 좋은 상태로 만들었는가?
+    - 내일 하나만 바꾼다면 무엇인가?
+  non_pressure_boundary:
+    - 매일 기록해야 하는 의무로 만들지 않는다.
+    - 점수 하나로 삶 전체를 판정하지 않는다.
+    - 힘든 감정을 실패로 취급하지 않는다.
+  related_principle_ref: principle_better_state_over_more_output_20260718
+  confidence: medium_high
+  needs_user_review: true
+
+assistant_usage:
+  - Brian의 day/week review에서 principle_better_state_over_more_output_20260718을 핵심 질문으로 사용한다.
+  - Brian이 의미 있는 삶의 상태, 선택, 어려움, 완료한 행동을 공유하면 다시 요청하지 않아도 더 좋은 상태의 관점에서 짧게 피드백한다.
+  - 피드백은 현재 상태, 원하는 삶과의 거리, 줄이거나 보호할 것, 가장 작은 다음 선택, 선택 후 실제 상태를 필요에 따라 점검한다.
+  - 무관한 기술 요청이나 사소한 메시지에는 이 관점을 억지로 끼워 넣지 않고, 잔소리나 강제된 긍정으로 만들지 않는다.
+  - 개선안을 한꺼번에 활성화하지 말고, 가장 작은 실험 하나와 outcome check를 연결한다.
+  - 영어 사용은 자연스러운 대화 기반 연습으로 지원하되 한국어 전환을 실패로 해석하지 않는다.
+  - raw user statements, confirmed principle, assistant synthesis candidate를 계속 분리한다.
+
+privacy_boundary:
+  - 이 기록과 연결된 개인 생애 기록은 로컬에 유지한다.
+  - Brian의 명시적 요청 없이 외부 서비스로 전송하지 않는다.

@@ -1,20 +1,72 @@
 schema_version: 1
 status: active
-updated_at: 2026-07-15
+updated_at: 2026-07-20
 area: FINANCE
 secondary_areas:
   - CAREER
   - MIND
 profile_ref: person_brian
 title: Finance active log
-current_phase: Current stock/ETF/gold holdings snapshot captured; build thesis, risk, overlap, and learning links before future trades.
+current_phase: Two equity-policy backtest milestones are complete; the active candidate is no-sale 80/15/5 new-money dilution while inputs are missing, a 40-percent direct-employer review trigger rather than auto-sale, and a 60/15/20/5 long-run destination pending exact tax lots, reserve, ETF and employer-window evidence.
 
 investment_philosophy_research_refs:
   - life/finance/investment_philosophy_research.yaml
   - life/finance/memory_ai_investor_views_research.yaml
   - life/finance/global_macro_research_20260715.yaml
+  - life/finance/country_macro_investment_overlay_202607.yaml
+  - life/finance/ai_data_center_investment_comparison_202607.yaml
+  - life/quality/global_ai_data_center_research_gap_audit_202607.yaml
+  - life/finance/brian_investment_policy_202607.yaml
+  - life/finance/brian_investment_policy_execution_202607.yaml
+  - life/finance/brian_investment_playbook_ko_202607.md
+  - life/finance/brian_equity_backtest_spec_202607.yaml
+  - life/finance/brian_equity_backtest_report_ko_202607.md
+  - life/finance/brian_equity_policy_comparison_spec_202607.yaml
+  - life/finance/brian_equity_policy_comparison_report_ko_202607.md
 
 source_records:
+  - id: source_finance_equity_backtest_goal_second_milestone_20260720
+    source_type: goal_continuation
+    original_date: 2026-07-20
+    imported_at: 2026-07-20
+    parse_status: parsed
+    raw_text: "Brian의 실제 보유자산과 현금흐름을 기준으로 AI 집중 유지, 신규자금 희석, 비중 상한, 목표 자산배분 전략을 백테스트한다."
+    interpretation: The active Goal continued from cashflow-only dilution into position-cap and destination-allocation comparisons.
+    promoted_record_ref: finance_status_20260720_equity_policy_comparison_second_milestone
+    artifact_refs:
+      - life/finance/brian_equity_policy_comparison_spec_202607.yaml
+      - life/finance/brian_equity_policy_comparison_report_ko_202607.md
+      - life/imports/investment_policy_comparison_202607/results.json
+    confidence: high
+    needs_user_review: false
+
+  - id: source_finance_equity_backtest_goal_20260720
+    source_type: chat
+    original_date: 2026-07-20
+    imported_at: 2026-07-20
+    parse_status: parsed
+    raw_text: "주식 관련 backtest 위주로 가능? / goal로 만들어서 진행해"
+    interpretation: Brian asked to make the investment-system development equity-backtest-driven and authorized execution as a Goal.
+    promoted_record_ref: finance_status_20260720_equity_backtest_first_milestone
+    artifact_refs:
+      - life/finance/brian_equity_backtest_spec_202607.yaml
+      - life/finance/brian_equity_backtest_report_ko_202607.md
+      - life/imports/investment_backtest_202607/results.json
+    confidence: high
+    needs_user_review: false
+
+  - id: source_finance_country_macro_request_20260719
+    source_type: chat
+    original_date: 2026-07-19
+    imported_at: 2026-07-19
+    parse_status: parsed
+    raw_text: "각나라의 경제 상황도 고려해줘. 금리 환율 고용 등등 모든 상황"
+    interpretation: Brian asked to integrate country-level growth, inflation, rates, FX, labor, credit and financial-stability conditions into the saved investment strategy.
+    promoted_record_ref: finance_status_20260719_country_macro_overlay_integrated
+    artifact_ref: life/finance/country_macro_investment_overlay_202607.yaml
+    confidence: high
+    needs_user_review: false
+
   - id: source_finance_conversation_20260715_prior_ps_deferred_payment
     source_type: chat
     original_date: 2026-07-15
@@ -879,6 +931,69 @@ tool_trials:
     source_ref: source_finance_conversation_20260617_ai_tool_testing_cost_400usd
 
 finance_status_updates:
+  - id: finance_status_20260720_equity_policy_comparison_second_milestone
+    date: 2026-07-20
+    area: FINANCE
+    status: second_milestone_completed
+    summary: Fifteen initial, annual and month-end-triggered position-cap or destination strategies were tested across three start windows and three abstract sale-friction cases, producing 135 reproducible scenarios.
+    evidence:
+      - Every cap or destination case improved maximum drawdown versus both the same-cashflow concentrated baseline and no-sale dilution baseline, but no case had a higher backcast terminal value because the current winner-heavy portfolio was selected with hindsight.
+      - Annual 40-percent enforcement reached 65.74 percent before the next enforcement date; month-end excess enforcement reduced the maximum pre-action observation to 52.30 percent and ended near 40 percent.
+      - The 40-percent month-end trigger generated 4.17-10.71 billion KRW of cumulative backcast gross sales and 0.90-54.72 million KRW of total modeled cost, rejecting mechanical auto-sale as the current policy.
+      - Annual destination allocation allowed explicit AI to reach 32.70 percent; the policy-band trigger limited the maximum observation to 29.63 percent and ended near 24.22 percent, at the cost of additional turnover.
+    policy_candidate:
+      immediate_default: No-sale 80/15/5 eligible new-money dilution after the reserve gate while transaction inputs are incomplete.
+      transition_review_trigger: Review direct-employer exposure at 40 percent monthly, but require tax-lot, compliance, thesis and household-risk checks before any action.
+      long_run_destination: 60 percent global core, 15 percent safe short duration, 20 percent explicit AI and 5 percent gold, including 5 percent direct employer stock.
+    decision_boundary: The candidate is an internal decision policy, not an external transaction authorization or expected-return forecast.
+    source_ref: source_finance_equity_backtest_goal_second_milestone_20260720
+    artifact_refs:
+      - life/finance/brian_equity_policy_comparison_spec_202607.yaml
+      - life/finance/brian_equity_policy_comparison_report_ko_202607.md
+      - life/imports/investment_policy_comparison_202607/results.json
+      - life/imports/investment_policy_comparison_202607/source_manifest.yaml
+      - scripts/build_brian_equity_policy_comparison.py
+      - scripts/validate_brian_equity_policy_comparison.py
+
+  - id: finance_status_20260720_equity_backtest_first_milestone
+    date: 2026-07-20
+    area: FINANCE
+    status: first_milestone_completed
+    summary: A reproducible 81-scenario backtest compared continuing the current concentrated allocation with two no-sale new-money dilution policies across 2016, 2020 and 2023 starts and nine monthly-contribution/bonus combinations.
+    evidence:
+      - Both dilution policies improved maximum drawdown and reduced ending explicit-AI and direct-employer concentration in all 54 paired comparisons against the same-cashflow concentrated baseline.
+      - Neither dilution policy produced a higher terminal value in the backcast; this is not evidence of future inferiority because current winner-heavy holdings and current optical constituents were selected with hindsight.
+      - Even the largest tested cashflow left explicit-AI exposure at or above 78.73 percent and direct SK hynix exposure at or above 67.97 percent, above the policy's 20 percent destination and 45 percent first checkpoint.
+      - Yahoo monthly KRW=X contained approximately 10,000-fold unit anomalies in 2016-01, 2016-07 and 2017-09; conversion was rebuilt from FRED DEXKOUS daily data aggregated to the last observation of each month.
+    interpretation: Cashflow-only dilution is supported as a risk-reduction direction but is not sufficient by itself to normalize concentration under the tested paths; exact-fund data and tax-aware 40/30/20/10 percent cap scenarios remain necessary.
+    decision_boundary: This is a counterfactual policy test, not Brian's realized account return, a forecast, or authorization to trade.
+    source_ref: source_finance_equity_backtest_goal_20260720
+    artifact_refs:
+      - life/finance/brian_equity_backtest_spec_202607.yaml
+      - life/finance/brian_equity_backtest_report_ko_202607.md
+      - life/imports/investment_backtest_202607/results.json
+      - life/imports/investment_backtest_202607/source_manifest.yaml
+      - scripts/fetch_brian_equity_backtest_sources.py
+      - scripts/build_brian_equity_backtest.py
+      - scripts/validate_brian_equity_backtest.py
+
+  - id: finance_status_20260719_country_macro_overlay_integrated
+    date: 2026-07-19
+    area: FINANCE
+    status: active_research_integrated
+    summary: Korea, United States, China, Taiwan, Japan and euro-area growth, inflation, policy-rate, labor, FX and credit regimes were normalized and connected to Brian's AI-cycle policy and execution gates.
+    interpretation: >
+      Korea's AI export strength supports the earnings thesis but intensifies Brian's employer,
+      bonus and portfolio correlation. Currency is now assigned by asset role: KRW for emergency
+      and near-term liabilities, ordinary global FX exposure for the long-term equity core, and
+      KRW or hedged exposure for the safe short-duration bucket.
+    decision_boundary: The overlay changes research and position-size gates; it does not authorize an external trade or predict short-term FX direction.
+    source_ref: source_finance_country_macro_request_20260719
+    artifact_refs:
+      - life/finance/country_macro_investment_overlay_202607.yaml
+      - life/finance/brian_investment_policy_202607.yaml
+      - life/finance/brian_investment_policy_execution_202607.yaml
+
   - id: finance_status_20260617_ai_tool_testing_cost_recorded
     date: 2026-06-17
     area: FINANCE

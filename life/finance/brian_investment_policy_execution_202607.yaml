@@ -1,0 +1,1045 @@
+schema_version: 1
+status: active_execution_draft_awaiting_household_inputs
+created_at: '2026-07-19'
+updated_at: '2026-07-20'
+area: FINANCE
+title: Brian investment policy execution, stress, country-macro and glide-path ledger
+privacy: Personal holdings and scenario inputs remain local; no external trade is authorized.
+purpose: Turn the investment policy into repeatable stress tests, holding roles, country-macro checks, concentration checkpoints
+  and monthly decision gates.
+human_readable_summary_ko:
+  core_read: 반도체 동반 하락 민감도에서는 포착된 증권자산이 39.12% 감소하고, AI 설비투자 반전 민감도에서는 39.59% 감소한다.
+  success_risk: AI 상승 민감도에서는 포트폴리오가 32.91% 증가하지만 SK하이닉스 비중도 58.32%로 올라가므로 성공 자체가 리밸런싱 사유가 될 수 있다.
+  action_now: 현금흐름과 비상자금을 먼저 복구하고, 신규 AI 매수를 멈춘 채 ETF 실구성·세금·가계 전체 노출을 측정한다.
+  backtest_read: 무매도 신규자금 희석은 54개 비교 모두에서 낙폭과 집중도를 낮췄지만 최대 납입 조합도 AI 78.73%, SK하이닉스 67.97%에 머물러 현금흐름만으로 정책 체크포인트에 도달하지 못했다.
+  cap_and_destination_read: 40% 연말 점검은 월중 65.74%까지 재상승했고 월말 초과 트리거도 행동 전 52.30%까지 올라갔다. 따라서 40%는 자동매도선이 아니라 세금·고용주 제한·가계위험을 다시 여는 검토선이며, 장기 목적지는 글로벌 60·안전자산 15·AI 20·금 5의 비교 기준으로 유지한다.
+source_snapshot:
+  as_of: '2026-07-15'
+  securities_and_gold_total_krw: 123448709
+  product_records: 17
+  direct_sk_hynix_amount_krw: 68345998
+  explicit_ai_lower_bound_amount_krw: 112099369
+  source_refs:
+  - life/finance/ai_data_center_investment_comparison_202607.yaml
+  - life/finance/brian_investment_policy_202607.yaml
+  - life/finance/country_macro_investment_overlay_202607.yaml
+  - life/finance/brian_equity_backtest_spec_202607.yaml
+  - life/imports/investment_backtest_202607/results.json
+equity_backtest_checkpoint:
+  as_of: '2026-07-20'
+  status: first_milestone_complete
+  scenario_count: 81
+  result_ref: life/imports/investment_backtest_202607/results.json
+  report_ref: life/finance/brian_equity_backtest_report_ko_202607.md
+  operating_read: Preserve cashflow-only dilution as the risk-reduction baseline, but test exact ETF histories and tax-aware position caps before deciding whether a glide path needs sales.
+  boundary: Counterfactual backcast only; no transaction is authorized.
+equity_policy_comparison_checkpoint:
+  as_of: '2026-07-20'
+  status: second_milestone_complete
+  strategy_count: 15
+  scenario_count: 135
+  sale_friction_bps_grid: [10, 100, 500]
+  transition_review_threshold_percent: 40
+  threshold_action: Open a decision review; never execute an automatic sale from the threshold alone.
+  long_run_destination_percent:
+    broad_global_core: 60
+    safe_short_duration: 15
+    explicit_ai: 20
+    gold: 5
+    direct_employer_inside_explicit_ai: 5
+  empirical_boundaries:
+    annual_40_cap_maximum_pre_enforcement_percent: 65.74
+    month_end_40_trigger_maximum_pre_enforcement_percent: 52.30
+    month_end_40_trigger_gross_sales_krw_range: [417420547, 1071158967]
+    month_end_40_trigger_total_modeled_cost_krw_range: [896504, 54721549]
+    destination_annual_maximum_explicit_ai_percent: 32.70
+    destination_band_trigger_maximum_explicit_ai_percent: 29.63
+    destination_band_trigger_ending_explicit_ai_percent: 24.22
+  result_ref: life/imports/investment_policy_comparison_202607/results.json
+  report_ref: life/finance/brian_equity_policy_comparison_report_ko_202607.md
+  boundary: Backcast and abstract-cost sensitivity only; tax lots, compliance and exact ETF histories remain gates.
+country_macro_execution_overlay:
+  source_as_of: '2026-07-19'
+  coverage_boundary: 'This is not a literal survey of every sovereign economy. It is the smallest decision-complete set for
+    Brian''s current portfolio and expands through the documented trigger rule.
+
+    '
+  comparability_boundary:
+  - Growth figures retain their published basis; year-over-year, quarter-over-quarter and annualized rates are not compared
+    as if identical.
+  - Inflation is a twelve-month change unless another basis is stated.
+  - Labor indicators use each authority's published concepts and are directional rather than perfectly cross-country comparable.
+  - Policy rates have different operating frameworks and cannot be ranked as simple measures of tightness.
+  - ECB-derived USD crosses are arithmetic reference values, not transaction prices or forecasts.
+  - Taiwan's FX observation is a June monthly average and is not same-date comparable with the 2026-07-17 ECB reference rates.
+  cross_economy_summary: 'The AI investment cycle remains stronger than broad global demand, while energy and imported inflation
+    have pushed the United States, Korea and euro area toward restrictive or renewed tightening. China combines strong supply
+    and exports with weak domestic demand and property investment. Taiwan is in an exceptional AI-export boom with ample liquidity,
+    while Japan is gradually normalizing policy from still-accommodative real rates. Brian therefore faces both an earnings
+    opportunity and unusually correlated valuation, financing, FX and employment risk.
+
+    '
+  economies:
+  - economy_id: korea
+    display_name: South Korea
+    regime: AI-export acceleration with inflation, household-debt and housing risks forcing renewed tightening.
+    policy_rate:
+      value_percent: 2.75
+      previous_percent: 2.5
+      decision_date: '2026-07-16'
+      stance: Raised unanimously; the Bank of Korea signaled that further increases may be needed.
+      source_ref: bok_20260716_monetary_policy_decision
+    growth:
+      latest_read: Exports and facilities investment have strengthened, led by AI-related semiconductors.
+      forecast_read: The Bank of Korea expects 2026 growth to considerably exceed its May forecast of 2.6 percent.
+      basis: central_bank_directional_assessment_not_a_new_point_forecast
+      source_ref: bok_20260716_monetary_policy_decision
+    inflation:
+      headline_yoy_percent: 3.2
+      core_ex_food_and_energy_yoy_percent: 2.5
+      period: 2026-06
+      source_ref: korea_statistics_202606_cpi
+    labor:
+      unemployment_percent: 2.8
+      employment_million: 29.12
+      period: 2026-05
+      nuance: Manufacturing employment is declining while services employment is growing.
+      source_refs:
+      - korea_statistics_key_indicators_202607
+      - bok_20260716_monetary_policy_decision
+    fx:
+      pair: USD/KRW
+      reference_value: 1485.32
+      date: '2026-07-17'
+      method: Derived as ECB EUR/KRW 1698.46 divided by ECB EUR/USD 1.1435.
+      interpretation: The won strengthened from the mid-1500s noted around the policy period, but remains a volatile household
+        and import-cost channel.
+      source_refs:
+      - ecb_fx_usd_20260717
+      - ecb_fx_krw_20260717
+      - bok_20260716_monetary_policy_decision
+    credit_and_financial_stability:
+      read: Seoul housing prices and household debt remain upside financial-stability risks; treasury yields rose around the
+        decision.
+      source_ref: bok_20260716_monetary_policy_decision
+    brian_transmission:
+    - Salary, bonus, severance expectations and direct SK hynix ownership share the same Korean memory cycle.
+    - KRW liabilities and essential spending make household liquidity a liability-matching problem, not an FX speculation
+      problem.
+    - A strong Korean AI boom can increase both portfolio concentration and lifestyle confidence before the cycle turns.
+    portfolio_rule: 'Keep the emergency reserve and money needed within three years in KRW-matched safe assets; do not add
+      Korean memory or AI concentration merely because near-term growth is strong.
+
+      '
+  - economy_id: united_states
+    display_name: United States
+    regime: Resilient growth and AI capital spending with sticky inflation, slowing labor momentum and high long-term yields.
+    policy_rate:
+      target_range_percent:
+      - 3.5
+      - 3.75
+      decision_date: '2026-06-17'
+      stance: Held; the median June projection placed the end-2026 rate at 3.8 percent.
+      source_refs:
+      - fed_20260617_fomc_statement
+      - fed_20260617_sep
+    growth:
+      real_gdp_qoq_saar_percent: 2.1
+      period: 2026-Q1-third-estimate
+      final_private_domestic_purchases_qoq_saar_percent: 1.7
+      median_2026_projection_percent: 2.2
+      source_refs:
+      - bea_2026q1_gdp_third_estimate
+      - fed_20260617_sep
+    inflation:
+      cpi_yoy_percent: 3.5
+      core_cpi_yoy_percent: 2.6
+      energy_yoy_percent: 15.7
+      period: 2026-06
+      median_2026_pce_projection_percent: 3.6
+      source_refs:
+      - bls_202606_cpi
+      - fed_20260617_sep
+    labor:
+      payroll_change_thousand: 57
+      unemployment_percent: 4.2
+      participation_percent: 61.5
+      period: 2026-06
+      median_2026_unemployment_projection_percent: 4.3
+      source_refs:
+      - bls_202606_employment_situation
+      - fed_20260617_sep
+    fx:
+      reference: USD is the portfolio reporting currency for many global holdings; use the bilateral entries below rather
+        than a single dollar-strength label.
+    credit_and_financial_stability:
+      read: Long yields remain above the policy-rate midpoint at the far end, keeping financing and discount-rate pressure
+        material for leveraged projects.
+      inference: true
+      evidence_ref: us_treasury_daily_curve_20260717
+    brian_transmission:
+    - US AI-company earnings and valuation drive several owned semiconductor, AI, power and optical ETFs.
+    - High financing costs matter most for pre-profit neoclouds, speculative generation and long-duration data-center pipelines.
+    - An unhedged US equity position diversifies KRW exposure over long horizons but can be volatile in KRW over short horizons.
+    portfolio_rule: 'Require AI revenue, free-cash-flow conversion and return-on-capital evidence to justify capex; do not
+      treat falling payroll momentum or a strong dollar as an automatic market-timing signal.
+
+      '
+  - economy_id: china
+    display_name: China
+    regime: Strong industrial supply and exports but weak domestic demand, property investment and private fixed investment.
+    policy_rate:
+      one_year_lpr_percent: 3.0
+      five_year_plus_lpr_percent: 3.5
+      date: '2026-06-22'
+      stance: Appropriately accommodative financing conditions.
+      source_refs:
+      - china_lpr_20260622
+      - china_state_council_credit_20260520
+    growth:
+      h1_gdp_yoy_percent: 4.7
+      q2_gdp_yoy_percent: 4.3
+      q2_gdp_qoq_percent: 0.9
+      high_tech_manufacturing_yoy_percent: 13.3
+      retail_sales_yoy_percent: 1.3
+      fixed_asset_investment_yoy_percent: -5.7
+      real_estate_development_investment_yoy_percent: -18.0
+      private_investment_yoy_percent: -8.5
+      period: 2026-H1
+      source_ref: china_nbs_2026h1_economy
+    inflation:
+      cpi_yoy_percent: 1.0
+      core_cpi_yoy_percent: 1.0
+      ppi_yoy_percent: 4.1
+      period: 2026-06
+      source_ref: china_nbs_2026h1_economy
+    labor:
+      surveyed_urban_unemployment_percent: 5.0
+      h1_average_percent: 5.2
+      manufacturing_pmi_employment_index: 48.5
+      nonmanufacturing_pmi_employment_index: 45.8
+      period: 2026-06
+      source_refs:
+      - china_nbs_2026h1_economy
+      - china_nbs_202606_pmi
+    fx:
+      pair: USD/CNY
+      reference_value: 6.7775
+      date: '2026-07-17'
+      method: Derived as ECB EUR/CNY 7.7501 divided by ECB EUR/USD 1.1435.
+      source_refs:
+      - ecb_fx_usd_20260717
+      - ecb_fx_cny_20260717
+    credit_and_financial_stability:
+      read: H1 new yuan loans were 10.72 trillion; outstanding loans rose 5.2 percent and M2 rose 8.0 percent, while real-estate
+        investment remained deeply negative.
+      source_refs:
+      - china_state_council_credit_20260715
+      - china_nbs_2026h1_economy
+    brian_transmission:
+    - China affects memory pricing, electronics demand, equipment demand and competing supply.
+    - Export strength can benefit Asian suppliers while weak property and consumption limit broad cyclical spillover.
+    - A low policy rate does not remove demand, credit-quality or geopolitical risk.
+    portfolio_rule: 'Separate export and high-tech manufacturing beneficiaries from domestic-demand exposure; require pricing,
+      receivables and trade-control evidence rather than treating headline GDP as a complete signal.
+
+      '
+  - economy_id: taiwan
+    display_name: Taiwan
+    regime: Exceptional AI-export and manufacturing boom with ample liquidity, rising producer prices and equity-credit heat.
+    policy_rate:
+      discount_rate_percent: 2.0
+      secured_loan_rate_percent: 2.375
+      temporary_accommodation_rate_percent: 4.25
+      decision_date: '2026-06-18'
+      stance: Held; domestic liquidity remains ample.
+      source_ref: taiwan_cbc_20260618_decision
+    growth:
+      q1_gdp_yoy_percent: 14.55
+      q1_gdp_qoq_saar_percent: 6.94
+      official_2026_forecast_percent: 9.64
+      real_exports_q1_yoy_percent: 35.76
+      manufacturing_q1_yoy_percent: 26.18
+      source_ref: taiwan_dgbas_2026q1_and_forecast
+    inflation:
+      cpi_yoy_percent: 2.6
+      ppi_yoy_percent: 15.1
+      period: 2026-06
+      official_2026_cpi_forecast_percent: 1.93
+      source_refs:
+      - taiwan_dgbas_202606_cpi
+      - taiwan_dgbas_2026q1_and_forecast
+    labor:
+      unemployment_percent: 3.27
+      seasonally_adjusted_unemployment_percent: 3.32
+      employment_million: 11.634
+      participation_percent: 59.5
+      period: 2026-05
+      source_ref: taiwan_dgbas_202605_labor
+    fx:
+      pair: USD/TWD
+      monthly_average: 31.618
+      period: 2026-06
+      source_ref: taiwan_cbc_202606_fx_average
+    credit_and_financial_stability:
+      read: Jan-May M2 averaged 6.12 percent growth, bank loans and investments 7.94 percent, and equity-investment lending
+        increased sharply.
+      housing_read: Real-estate lending share fell to 35.2 percent from a 37.6 percent peak.
+      source_ref: taiwan_cbc_20260618_decision
+    brian_transmission:
+    - TSMC-linked and Taiwan-heavy semiconductor holdings are cycle diversification inside AI, not diversification away from
+      AI.
+    - Producer inflation and capacity investment can lift revenue while squeezing downstream margins.
+    - Geographic and cross-strait concentration remains a separate tail risk that domestic GDP strength does not solve.
+    portfolio_rule: 'Count Taiwan semiconductor exposure inside the same explicit AI risk budget; require customer, capacity,
+      utilization and geopolitical scenario evidence before increasing it.
+
+      '
+  - economy_id: japan
+    display_name: Japan
+    regime: Moderate recovery and AI-related investment with labor tightness and gradual monetary normalization.
+    policy_rate:
+      overnight_rate_percent: 1.0
+      deposit_rate_percent: 1.0
+      basic_loan_rate_percent: 1.25
+      decision_date: '2026-06-16'
+      stance: Held; real rates remain significantly negative and further data-dependent increases are possible.
+      source_ref: boj_20260616_monetary_policy
+    growth:
+      q1_real_gdp_qoq_percent: 0.5
+      q1_real_gdp_qoq_saar_percent: 1.8
+      period: 2026-Q1-second-estimate
+      source_ref: japan_cao_2026q1_gdp_second_estimate
+    inflation:
+      headline_cpi_yoy_percent: 1.5
+      period: 2026-05
+      policy_nuance: Oil and pass-through effects create upside risk even though the latest headline rate is moderate.
+      source_refs:
+      - japan_stats_202605_cpi
+      - boj_20260616_monetary_policy
+    labor:
+      unemployment_percent: 2.5
+      employment_million: 68.9
+      employment_yoy_change_thousand: 520
+      period: 2026-05
+      source_ref: japan_stats_202605_labor
+    fx:
+      pair: USD/JPY
+      reference_value: 162.35
+      date: '2026-07-17'
+      method: Derived as ECB EUR/JPY 185.65 divided by ECB EUR/USD 1.1435.
+      source_refs:
+      - ecb_fx_usd_20260717
+      - ecb_fx_jpy_20260717
+    credit_and_financial_stability:
+      read: Monetary conditions remain accommodative in real terms, but normalization can reprice duration and leveraged assets.
+      source_ref: boj_20260616_monetary_policy
+    brian_transmission:
+    - Japanese equipment and materials add a different value-chain layer but remain exposed to global semiconductor capital
+      spending.
+    - Yen weakness can improve exporters' translated earnings while raising import costs; normalization can reverse that relationship.
+    - Currency direction should not substitute for company valuation and cycle evidence.
+    portfolio_rule: 'Treat equipment and materials as semiconductor-cycle exposure in look-through analysis; record hedge
+      status explicitly and avoid tactical yen timing.
+
+      '
+  - economy_id: euro_area
+    display_name: Euro area
+    regime: Weak growth with energy-led inflation and renewed rate tightening, creating stagflation pressure.
+    policy_rate:
+      deposit_facility_percent: 2.25
+      main_refinancing_percent: 2.4
+      marginal_lending_percent: 2.65
+      decision_date: '2026-06-11'
+      effective_date: '2026-06-17'
+      stance: Raised each rate by 25 basis points.
+      source_ref: ecb_20260611_policy_decision
+    growth:
+      q1_gdp_qoq_percent: -0.2
+      q1_employment_qoq_percent: 0.1
+      period: 2026-Q1
+      source_ref: eurostat_2026q1_gdp_employment
+    inflation:
+      headline_hicp_yoy_percent: 2.8
+      ex_energy_and_unprocessed_food_yoy_percent: 2.2
+      energy_yoy_percent: 8.7
+      period: 2026-06
+      ecb_2026_forecast_percent: 3.0
+      source_refs:
+      - eurostat_202606_inflation
+      - ecb_20260611_policy_decision
+    labor:
+      unemployment_percent: 6.2
+      period: 2026-05
+      direction: Stable month over month.
+      source_ref: eurostat_202605_unemployment
+    fx:
+      pair: EUR/USD
+      reference_value: 1.1435
+      date: '2026-07-17'
+      quote_convention: US dollars per euro
+      source_ref: ecb_fx_usd_20260717
+    credit_and_financial_stability:
+      read: Higher rates and a shrinking APP and PEPP portfolio increase financing sensitivity in a weak-growth environment.
+      source_ref: ecb_20260611_policy_decision
+    brian_transmission:
+    - European electrical and grid companies may capture AI and electrification demand even when the regional economy is weak.
+    - Higher financing and energy costs can delay data-center projects and compress industrial customer margins.
+    - The regional stock thesis must distinguish export-driven equipment suppliers from domestic cyclical exposure.
+    portfolio_rule: 'Require backlog quality, pricing power, cash conversion and customer geography; do not infer that structural
+      grid demand removes rate, energy or recession risk.
+
+      '
+  currency_role_policy:
+    principle: Match the currency policy to the asset's job, not to a forecast about the next FX move.
+    emergency_reserve_and_under_three_year_money:
+      default: KRW-denominated or KRW-matched insured and high-quality short-duration assets.
+      reason: Brian's essential spending, debt service and near-term obligations are primarily KRW liabilities.
+    global_equity_core:
+      default: Allow ordinary unhedged global-currency exposure as part of long-horizon diversification and invest on a schedule.
+      reason: Waiting for a perfect USD/KRW entry can become market timing and leave the global core permanently underfunded.
+    safe_bond_bucket:
+      default: Prefer KRW or KRW-hedged high-quality short-duration exposure.
+      reason: The bucket's job is stability and opportunity capital, not currency return.
+    thematic_equity:
+      default: Select on business evidence, valuation and portfolio correlation; do not make tactical FX direction the primary
+        thesis.
+    recording_rule: Record hedged and unhedged wrappers as distinct roles, including hedge cost, benchmark and intended holding
+      horizon.
+  decision_gates:
+  - gate_id: macro_01_household_liability_match
+    question: Are emergency money and spending within three years matched to KRW obligations?
+    if_no: Correct the liquidity role before adding risk assets.
+  - gate_id: macro_02_country_exposure_map
+    question: Are revenue, cost, funding, listing currency and geopolitical exposure separated rather than inferred from listing
+      country?
+    if_no: Research only; country labels are not sufficient evidence.
+  - gate_id: macro_03_rate_and_financing_survival
+    question: Can the business or project survive current rates, refinancing needs and a delay in AI demand?
+    if_no: Reject or reduce the proposed risk budget.
+  - gate_id: macro_04_fx_role
+    question: Is the FX exposure consistent with the asset's documented job and time horizon?
+    if_no: Change the wrapper or hedge design before deciding on size.
+  - gate_id: macro_05_labor_and_demand
+    question: Do employment, wage, consumption and order data support the revenue assumption?
+    if_no: Lower the base case and require stronger company evidence.
+  - gate_id: macro_06_brian_correlation
+    question: Does the position increase correlation with Brian's employer, bonus, KRW economy or existing AI wrappers?
+    if_yes: Count it inside the explicit AI and employer-linked limits; do not call it diversification.
+  scenario_map:
+  - scenario_id: sticky_inflation_and_higher_for_longer
+    evidence_to_watch: Fed, BOK and ECB decisions; energy inflation; US long yields; KRW import prices.
+    vulnerable_exposures: Leveraged neoclouds, speculative generation, long-duration growth and unfunded data-center pipelines.
+    resilient_evidence_required: Positive free cash flow, fixed-rate funding, contractual pass-through and near-term energized
+      capacity.
+  - scenario_id: global_ai_capex_reversal
+    evidence_to_watch: Hyperscaler returns, accelerator and HBM orders, foundry utilization, power reservations and optical
+      lead times.
+    vulnerable_exposures: Brian's employer income, direct SK hynix, overlapping semiconductor funds, power, optical and data-center
+      options.
+    response_rule: Use the existing deterministic stress ledger and liquidity floor; do not improvise leverage or average
+      down automatically.
+  - scenario_id: china_domestic_demand_and_property_drag
+    evidence_to_watch: Retail sales, private investment, property investment, PMI employment, credit growth and memory pricing.
+    vulnerable_exposures: Broad China demand, commodity cyclicals and suppliers relying on a rapid household-demand recovery.
+    resilient_evidence_required: Export demand, market share, pricing, receivable quality and balance-sheet strength.
+  - scenario_id: taiwan_geopolitical_or_supply_disruption
+    evidence_to_watch: Official security developments, customer diversification, inventory, alternative capacity and logistics.
+    vulnerable_exposures: Foundry, packaging, semiconductor equipment, servers and all dependent AI layers.
+    response_rule: Treat it as a portfolio-wide tail risk; GDP growth and position count do not diversify it.
+  - scenario_id: synchronized_soft_labor_and_demand
+    evidence_to_watch: US payrolls and participation, Korea manufacturing employment, China PMI employment and euro-area unemployment.
+    vulnerable_exposures: Consumer-sensitive end demand, cyclical industrial orders and earnings forecasts that assume broad
+      spillover from AI.
+    resilient_evidence_required: Contracted demand, recurring revenue, replacement demand and conservative working capital.
+holding_role_register:
+- product_id: direct_sk_hynix
+  label: SK하이닉스 직접주식
+  mandate_group: direct_employer_linked_memory
+  evaluation_amount_krw: 68345998
+  snapshot_percent: 55.36
+  holding_mode: legacy_concentrated_cyclical_conviction
+  portfolio_job: Domain-edge business position, but also employer-linked household risk.
+  default_action_now: freeze_additions_and_review_quarterly
+  review_focus:
+  - HBM qualification and yield
+  - DRAM supply discipline
+  - free-cash-flow conversion
+  - employer and household correlation
+  duplicate_risk: very_high
+- product_id: ace_nvidia_value_chain
+  label: ACE 엔비디아밸류체인액티브
+  mandate_group: ai_value_chain_mixed
+  evaluation_amount_krw: 7770193
+  snapshot_percent: 6.29
+  holding_mode: secular_trend_satellite
+  portfolio_job: AI picks-and-shovels exposure across multiple layers.
+  default_action_now: hold_without_new_cash_until_constituents_and_valuation_are_checked
+  review_focus:
+  - NVIDIA and semiconductor overlap
+  - top holdings
+  - valuation
+  - active-manager drift
+  duplicate_risk: very_high
+- product_id: rise_samsung_sk_bond_mix_50
+  label: RISE 삼성전자SK하이닉스채권혼합50
+  mandate_group: korea_memory_equity_bond_mix
+  evaluation_amount_krw: 7196032
+  snapshot_percent: 5.83
+  holding_mode: transition_hybrid
+  portfolio_job: Partial fixed-income wrapper that still carries concentrated Korean memory equity.
+  default_action_now: hold_and_capture_current_equity_bond_split
+  review_focus:
+  - current equity and bond weights
+  - Samsung and SK hynix weights
+  - duration
+  - fees
+  duplicate_risk: high
+- product_id: time_global_ai_active
+  label: TIME 글로벌AI인공지능액티브
+  mandate_group: ai_value_chain_mixed
+  evaluation_amount_krw: 7128532
+  snapshot_percent: 5.77
+  holding_mode: secular_trend_satellite
+  portfolio_job: Active cross-layer AI exposure.
+  default_action_now: hold_without_new_cash_until_constituents_and_style_drift_are_checked
+  review_focus:
+  - current constituents
+  - platform and semiconductor overlap
+  - turnover
+  - fees
+  duplicate_risk: very_high
+- product_id: plus_global_hbm
+  label: PLUS 글로벌HBM반도체
+  mandate_group: memory_hbm_thematic
+  evaluation_amount_krw: 6619472
+  snapshot_percent: 5.36
+  holding_mode: cyclical_trend_satellite
+  portfolio_job: Explicit HBM and memory value-chain conviction.
+  default_action_now: freeze_additions
+  review_focus:
+  - memory supplier weights
+  - HBM capacity and pricing
+  - foundry and packaging overlap
+  - valuation
+  duplicate_risk: very_high
+- product_id: ace_google_value_chain
+  label: ACE 구글밸류체인액티브
+  mandate_group: ai_value_chain_mixed
+  evaluation_amount_krw: 6117516
+  snapshot_percent: 4.96
+  holding_mode: compounder_trend_hybrid
+  portfolio_job: Google ecosystem and AI value-chain exposure.
+  default_action_now: hold_without_new_cash_until_constituents_and_capex_returns_are_checked
+  review_focus:
+  - Google weight
+  - AI capex returns
+  - supplier overlap
+  - active-manager drift
+  duplicate_risk: high
+- product_id: kodex_us_semiconductor
+  label: KODEX 미국반도체
+  mandate_group: broad_semiconductor
+  evaluation_amount_krw: 4291825
+  snapshot_percent: 3.48
+  holding_mode: cyclical_sector_satellite
+  portfolio_job: Broad U.S. semiconductor cycle exposure.
+  default_action_now: freeze_additions_and_compare_with_other_semiconductor_funds
+  review_focus:
+  - index methodology
+  - top holdings
+  - memory and NVIDIA overlap
+  - fees
+  duplicate_risk: very_high
+- product_id: kodex_us_ai_power_infra
+  label: KODEX 미국AI전력핵심인프라
+  mandate_group: power_grid_infrastructure
+  evaluation_amount_krw: 4057016
+  snapshot_percent: 3.29
+  holding_mode: secular_infrastructure_satellite
+  portfolio_job: Power, grid, cooling and electrical bottleneck exposure.
+  default_action_now: hold_and_research_value_capture_without_adding
+  review_focus:
+  - top-five concentration
+  - orders to cash conversion
+  - data-center revenue boundary
+  - valuation
+  duplicate_risk: medium
+- product_id: kodex_200
+  label: KODEX 200
+  mandate_group: broad_korea_equity
+  evaluation_amount_krw: 3385308
+  snapshot_percent: 2.74
+  holding_mode: regional_core_not_global_core
+  portfolio_job: Broad Korean equity exposure with embedded semiconductor concentration.
+  default_action_now: hold_but_do_not_count_as_global_core
+  review_focus:
+  - Samsung and SK hynix index weights
+  - household Korea exposure
+  - fees
+  duplicate_risk: high
+- product_id: rise_us_semiconductor_nyse_h
+  label: RISE 미국반도체NYSE(H)
+  mandate_group: broad_semiconductor
+  evaluation_amount_krw: 2534408
+  snapshot_percent: 2.05
+  holding_mode: cyclical_sector_satellite
+  portfolio_job: Currency-hedged U.S. semiconductor exposure.
+  default_action_now: freeze_additions_and_compare_for_consolidation
+  review_focus:
+  - hedging cost
+  - index methodology
+  - overlap
+  - fees
+  duplicate_risk: very_high
+- product_id: kodex_us_ai_optical_network
+  label: KODEX 미국AI광통신네트워크
+  mandate_group: optical_network
+  evaluation_amount_krw: 1999715
+  snapshot_percent: 1.62
+  holding_mode: secular_infrastructure_satellite
+  portfolio_job: Optical and networking bottleneck exposure.
+  default_action_now: hold_at_satellite_size_without_adding
+  review_focus:
+  - top-three concentration
+  - port-speed transition
+  - component commoditization
+  - valuation
+  duplicate_risk: medium_high
+- product_id: rise_global_nuclear
+  label: RISE 글로벌원자력
+  mandate_group: nuclear_generation
+  evaluation_amount_krw: 1628013
+  snapshot_percent: 1.32
+  holding_mode: long_cycle_policy_project_satellite
+  portfolio_job: Firm-generation and nuclear-policy exposure.
+  default_action_now: hold_at_satellite_size_without_adding
+  review_focus:
+  - fund constituents
+  - project timelines
+  - policy risk
+  - power-fund overlap
+  duplicate_risk: medium
+- product_id: gold_9999
+  label: 금 99.99
+  mandate_group: non_ai_gold_diversifier
+  evaluation_amount_krw: 768000
+  snapshot_percent: 0.62
+  holding_mode: non_ai_diversifier
+  portfolio_job: Visible non-AI diversifier and geopolitical hedge.
+  default_action_now: retain_and_review_inside_total_household_assets
+  review_focus:
+  - total gold weight
+  - spread and custody
+  - role versus KRW liabilities
+  duplicate_risk: low
+- product_id: tiger_philadelphia_semiconductor
+  label: TIGER 미국필라델피아반도체나스닥
+  mandate_group: broad_semiconductor
+  evaluation_amount_krw: 757500
+  snapshot_percent: 0.61
+  holding_mode: cyclical_sector_satellite
+  portfolio_job: Additional U.S. semiconductor index exposure.
+  default_action_now: freeze_additions_and_compare_for_consolidation
+  review_focus:
+  - overlap
+  - index methodology
+  - fees
+  - tax treatment
+  duplicate_risk: very_high
+- product_id: koact_global_ai_memory
+  label: KoAct 글로벌AI메모리반도체액티브
+  mandate_group: memory_hbm_thematic
+  evaluation_amount_krw: 459540
+  snapshot_percent: 0.37
+  holding_mode: small_cyclical_trend_satellite
+  portfolio_job: Small active AI-memory exposure.
+  default_action_now: freeze_additions_and_test_whether_the_wrapper_is_redundant
+  review_focus:
+  - current constituents
+  - SK hynix and Micron weights
+  - turnover
+  - fees
+  duplicate_risk: very_high
+- product_id: kiwoom_global_grid
+  label: KIWOOM 글로벌전력GRID인프라
+  mandate_group: power_grid_infrastructure
+  evaluation_amount_krw: 365420
+  snapshot_percent: 0.3
+  holding_mode: small_secular_infrastructure_satellite
+  portfolio_job: Small global grid-infrastructure exposure.
+  default_action_now: hold_without_adding_until_overlap_is_known
+  review_focus:
+  - utilities versus equipment split
+  - power-fund overlap
+  - fees
+  - valuation
+  duplicate_risk: medium_high
+- product_id: hanaro_us_ai_memory_top4
+  label: HANARO 미국AI메모리반도체TOP4
+  mandate_group: memory_hbm_thematic
+  evaluation_amount_krw: 24221
+  snapshot_percent: 0.02
+  holding_mode: tiny_concentrated_option
+  portfolio_job: Very small top-four memory option that duplicates the dominant thesis.
+  default_action_now: do_not_add_and_review_for_simplification
+  review_focus:
+  - top-four names
+  - weighting method
+  - fees
+  - redundancy
+  duplicate_risk: very_high
+stress_test_method:
+  type: deterministic_sensitivity_not_forecast
+  method: Apply the stated shock to every product's primary mandate and sum KRW impacts.
+  known_limitations:
+  - Current ETF constituent weights are not yet captured.
+  - Income, bonus, pension, cash, debt, housing, tax and spouse assets are excluded.
+  - Cross-asset correlations and recovery paths are not estimated.
+  - A stress result is not a prediction or probability statement.
+stress_tests:
+- scenario_id: direct_employer_stock_minus_50
+  name: Direct employer stock shock
+  purpose: Isolate the effect of a fifty-percent SK hynix decline while every other captured asset is unchanged.
+  shocks_percent:
+    direct_employer_linked_memory: -50
+  result:
+    portfolio_impact_krw: -34172999
+    portfolio_impact_percent: -27.68
+    ending_securities_value_krw: 89275710
+    ending_direct_sk_hynix_percent: 38.28
+    largest_absolute_contributors:
+    - product_id: direct_sk_hynix
+      shock_percent: -50
+      impact_krw: -34172999
+  boundary: Sensitivity only; not a probability-weighted forecast. Income loss, tax, trading restrictions and ETF look-through
+    are excluded.
+- scenario_id: semiconductor_downcycle
+  name: Correlated semiconductor downcycle
+  purpose: Test a memory and semiconductor contraction that also weakens Korean equities and AI wrappers.
+  shocks_percent:
+    direct_employer_linked_memory: -50
+    korea_memory_equity_bond_mix: -20
+    broad_korea_equity: -20
+    memory_hbm_thematic: -40
+    broad_semiconductor: -35
+    ai_value_chain_mixed: -25
+    power_grid_infrastructure: -15
+    optical_network: -25
+    nuclear_generation: -10
+    non_ai_gold_diversifier: 10
+  result:
+    portfolio_impact_krw: -48288222
+    portfolio_impact_percent: -39.12
+    ending_securities_value_krw: 75160487
+    ending_direct_sk_hynix_percent: 45.47
+    largest_absolute_contributors:
+    - product_id: direct_sk_hynix
+      shock_percent: -50
+      impact_krw: -34172999
+    - product_id: plus_global_hbm
+      shock_percent: -40
+      impact_krw: -2647789
+    - product_id: ace_nvidia_value_chain
+      shock_percent: -25
+      impact_krw: -1942548
+    - product_id: time_global_ai_active
+      shock_percent: -25
+      impact_krw: -1782133
+    - product_id: ace_google_value_chain
+      shock_percent: -25
+      impact_krw: -1529379
+  boundary: Sensitivity only; not a probability-weighted forecast. Income loss, tax, trading restrictions and ETF look-through
+    are excluded.
+- scenario_id: ai_capex_and_financing_bust
+  name: AI capex and financing reversal
+  purpose: Test Soros-style reflexive reversal across compute, network, power and project-financed infrastructure.
+  shocks_percent:
+    direct_employer_linked_memory: -45
+    korea_memory_equity_bond_mix: -20
+    broad_korea_equity: -20
+    memory_hbm_thematic: -45
+    broad_semiconductor: -40
+    ai_value_chain_mixed: -35
+    power_grid_infrastructure: -30
+    optical_network: -40
+    nuclear_generation: -25
+    non_ai_gold_diversifier: 15
+  result:
+    portfolio_impact_krw: -48876019
+    portfolio_impact_percent: -39.59
+    ending_securities_value_krw: 74572690
+    ending_direct_sk_hynix_percent: 50.41
+    largest_absolute_contributors:
+    - product_id: direct_sk_hynix
+      shock_percent: -45
+      impact_krw: -30755699
+    - product_id: plus_global_hbm
+      shock_percent: -45
+      impact_krw: -2978762
+    - product_id: ace_nvidia_value_chain
+      shock_percent: -35
+      impact_krw: -2719568
+    - product_id: time_global_ai_active
+      shock_percent: -35
+      impact_krw: -2494986
+    - product_id: ace_google_value_chain
+      shock_percent: -35
+      impact_krw: -2141131
+  boundary: Sensitivity only; not a probability-weighted forecast. Income loss, tax, trading restrictions and ETF look-through
+    are excluded.
+- scenario_id: ai_reflexive_upside
+  name: AI reflexive upside and concentration drift
+  purpose: Show that success can increase concentration and create a rebalance need even without a broken thesis.
+  shocks_percent:
+    direct_employer_linked_memory: 40
+    korea_memory_equity_bond_mix: 15
+    broad_korea_equity: 15
+    memory_hbm_thematic: 35
+    broad_semiconductor: 30
+    ai_value_chain_mixed: 25
+    power_grid_infrastructure: 20
+    optical_network: 30
+    nuclear_generation: 15
+    non_ai_gold_diversifier: -5
+  result:
+    portfolio_impact_krw: 40631114
+    portfolio_impact_percent: 32.91
+    ending_securities_value_krw: 164079823
+    ending_direct_sk_hynix_percent: 58.32
+    largest_absolute_contributors:
+    - product_id: direct_sk_hynix
+      shock_percent: 40
+      impact_krw: 27338399
+    - product_id: plus_global_hbm
+      shock_percent: 35
+      impact_krw: 2316815
+    - product_id: ace_nvidia_value_chain
+      shock_percent: 25
+      impact_krw: 1942548
+    - product_id: time_global_ai_active
+      shock_percent: 25
+      impact_krw: 1782133
+    - product_id: ace_google_value_chain
+      shock_percent: 25
+      impact_krw: 1529379
+  boundary: Sensitivity only; not a probability-weighted forecast. Income loss, tax, trading restrictions and ETF look-through
+    are excluded.
+income_interruption_overlay:
+  status: awaiting_essential_monthly_spending
+  six_month_income_gap_formula: 6 * essential_monthly_spending_krw - reliable_other_income_during_gap_krw
+  combined_downcycle_formula: 48288222 + six_month_income_gap_krw
+  reason: The household risk is larger than the securities drawdown when salary and bonus are correlated with the semiconductor
+    cycle.
+concentration_checkpoints:
+- checkpoint_id: first_transition
+  direct_sk_hynix_target_percent: 45
+  explicit_ai_target_percent: 80
+  non_sk_capital_required_krw: 28431287
+  non_ai_capital_required_krw: 16675503
+  binding_no_sale_requirement_krw: 28431287
+  binding_constraint: direct_sk_hynix
+- checkpoint_id: second_transition
+  direct_sk_hynix_target_percent: 40
+  explicit_ai_target_percent: 60
+  non_sk_capital_required_krw: 47416286
+  non_ai_capital_required_krw: 63383573
+  binding_no_sale_requirement_krw: 63383573
+  binding_constraint: explicit_ai
+- checkpoint_id: destination
+  direct_sk_hynix_target_percent: 10
+  explicit_ai_target_percent: 20
+  non_sk_capital_required_krw: 560011271
+  non_ai_capital_required_krw: 437048136
+  binding_no_sale_requirement_krw: 560011271
+  binding_constraint: direct_sk_hynix
+no_sale_glide_path_matrix:
+  assumption: Prices remain unchanged and every contribution and bonus is invested outside both SK hynix and explicit AI exposure.
+  rows:
+  - monthly_non_ai_surplus_krw: 500000
+    one_time_non_ai_bonus_krw: 0
+    months_to_first_transition: 57
+    months_to_second_transition: 127
+  - monthly_non_ai_surplus_krw: 500000
+    one_time_non_ai_bonus_krw: 10000000
+    months_to_first_transition: 37
+    months_to_second_transition: 107
+  - monthly_non_ai_surplus_krw: 500000
+    one_time_non_ai_bonus_krw: 20000000
+    months_to_first_transition: 17
+    months_to_second_transition: 87
+  - monthly_non_ai_surplus_krw: 500000
+    one_time_non_ai_bonus_krw: 30000000
+    months_to_first_transition: 0
+    months_to_second_transition: 67
+  - monthly_non_ai_surplus_krw: 1000000
+    one_time_non_ai_bonus_krw: 0
+    months_to_first_transition: 29
+    months_to_second_transition: 64
+  - monthly_non_ai_surplus_krw: 1000000
+    one_time_non_ai_bonus_krw: 10000000
+    months_to_first_transition: 19
+    months_to_second_transition: 54
+  - monthly_non_ai_surplus_krw: 1000000
+    one_time_non_ai_bonus_krw: 20000000
+    months_to_first_transition: 9
+    months_to_second_transition: 44
+  - monthly_non_ai_surplus_krw: 1000000
+    one_time_non_ai_bonus_krw: 30000000
+    months_to_first_transition: 0
+    months_to_second_transition: 34
+  - monthly_non_ai_surplus_krw: 1500000
+    one_time_non_ai_bonus_krw: 0
+    months_to_first_transition: 19
+    months_to_second_transition: 43
+  - monthly_non_ai_surplus_krw: 1500000
+    one_time_non_ai_bonus_krw: 10000000
+    months_to_first_transition: 13
+    months_to_second_transition: 36
+  - monthly_non_ai_surplus_krw: 1500000
+    one_time_non_ai_bonus_krw: 20000000
+    months_to_first_transition: 6
+    months_to_second_transition: 29
+  - monthly_non_ai_surplus_krw: 1500000
+    one_time_non_ai_bonus_krw: 30000000
+    months_to_first_transition: 0
+    months_to_second_transition: 23
+  - monthly_non_ai_surplus_krw: 2000000
+    one_time_non_ai_bonus_krw: 0
+    months_to_first_transition: 15
+    months_to_second_transition: 32
+  - monthly_non_ai_surplus_krw: 2000000
+    one_time_non_ai_bonus_krw: 10000000
+    months_to_first_transition: 10
+    months_to_second_transition: 27
+  - monthly_non_ai_surplus_krw: 2000000
+    one_time_non_ai_bonus_krw: 20000000
+    months_to_first_transition: 5
+    months_to_second_transition: 22
+  - monthly_non_ai_surplus_krw: 2000000
+    one_time_non_ai_bonus_krw: 30000000
+    months_to_first_transition: 0
+    months_to_second_transition: 17
+  - monthly_non_ai_surplus_krw: 3000000
+    one_time_non_ai_bonus_krw: 0
+    months_to_first_transition: 10
+    months_to_second_transition: 22
+  - monthly_non_ai_surplus_krw: 3000000
+    one_time_non_ai_bonus_krw: 10000000
+    months_to_first_transition: 7
+    months_to_second_transition: 18
+  - monthly_non_ai_surplus_krw: 3000000
+    one_time_non_ai_bonus_krw: 20000000
+    months_to_first_transition: 3
+    months_to_second_transition: 15
+  - monthly_non_ai_surplus_krw: 3000000
+    one_time_non_ai_bonus_krw: 30000000
+    months_to_first_transition: 0
+    months_to_second_transition: 12
+  interpretation: If the second checkpoint takes too long, the policy calls for a tax-aware staged-sale discussion after liquidity
+    and household inputs are complete.
+personalized_glide_path:
+  status: awaiting_actual_monthly_surplus_and_bonus
+  monthly_non_ai_surplus_krw: null
+  one_time_non_ai_bonus_krw: null
+  checkpoint_projection: []
+monthly_dashboard_template:
+  month: null
+  take_home_income_krw: null
+  essential_spending_krw: null
+  discretionary_spending_krw: null
+  total_outflow_krw: null
+  monthly_surplus_krw: null
+  savings_rate_percent: null
+  liquid_reserve_krw: null
+  reserve_months: null
+  direct_sk_hynix_percent: null
+  explicit_ai_percent: null
+  broad_global_core_percent: null
+  new_ai_purchase_krw: 0
+  country_macro_snapshot_as_of: '2026-07-19'
+  country_regimes_reviewed: []
+  material_rate_fx_labor_or_credit_change: null
+  currency_role_policy_breach: null
+  policy_breach: null
+  one_decision_for_next_month: null
+decision_tree:
+- gate: 1
+  question: Is monthly cashflow positive and measured?
+  if_no: No new discretionary investment; close spending and fixed costs.
+- gate: 2
+  question: Is the liquid reserve at least three months of essential spending?
+  if_no: Send one hundred percent of new surplus to liquidity.
+- gate: 3
+  question: Is the liquid reserve at the nine-month target?
+  if_no: Use the policy's seventy-percent reserve and thirty-percent global-core rule.
+- gate: 4
+  question: Are employer stock and explicit AI inside their transition bands?
+  if_no: Send no new money to AI; use global core, safe assets and non-AI diversifiers.
+- gate: 5
+  question: Are exact ETF holdings, valuation, taxes and household overlap known?
+  if_no: Research only; do not add the position.
+- gate: 6
+  question: Does the thesis survive the relevant country's rate, FX, labor, demand, credit and geopolitical regime while matching
+    Brian's KRW liabilities?
+  if_no: Research only, change the wrapper or reduce the proposed risk budget.
+- gate: 7
+  question: Does the investment score at least eighty with written falsifiers?
+  if_no: Reject or watchlist.
+- gate: 8
+  question: Does the initial size remain inside every cap after a fifty-percent loss?
+  if_no: Reduce size or do not buy.
+- gate: 9
+  question: Has operating evidence improved after the initial position?
+  if_yes: Scale only if valuation remains attractive; otherwise hold or exit.
+simplification_queue:
+- priority: 1
+  group: semiconductor_and_memory_wrappers
+  products:
+  - plus_global_hbm
+  - kodex_us_semiconductor
+  - rise_us_semiconductor_nyse_h
+  - tiger_philadelphia_semiconductor
+  - koact_global_ai_memory
+  - hanaro_us_ai_memory_top4
+  decision_needed: After same-date holdings and tax lots are captured, determine whether one or two wrappers can express the
+    intended exposure with less duplication.
+- priority: 2
+  group: active_ai_value_chain_wrappers
+  products:
+  - ace_nvidia_value_chain
+  - time_global_ai_active
+  - ace_google_value_chain
+  decision_needed: Compare current constituents, fees, turnover and unique exposure before retaining all three.
+- priority: 3
+  group: power_grid_generation_wrappers
+  products:
+  - kodex_us_ai_power_infra
+  - kiwoom_global_grid
+  - rise_global_nuclear
+  decision_needed: Separate equipment, utility and generation economics and keep only genuinely distinct roles.
+next_required_inputs:
+- verified essential monthly spending
+- current liquid cash and deposits
+- expected after-tax bonus range and timing
+- tax lot and account type for every holding
+- same-date official ETF constituent files
+- spouse holdings and household income dependency
+- maximum tolerable drawdown in KRW and percent
+external_reference_notes:
+- title: Concentrate on Concentration Risk
+  publisher: FINRA
+  url: https://www.finra.org/investors/insights/concentration-risk
+  relevance: ETF count can conceal correlated company, sector and employer exposure; look under each fund's hood.
+- title: Love Your Company Stock? Here's What to Know.
+  publisher: FINRA
+  url: https://www.finra.org/investors/insights/love-your-company-stock-what-to-know
+  relevance: Employer problems can hit employment and investments together; the page notes that some experts use ten percent
+    as a ceiling, while circumstances can justify less.
+- title: Asset Allocation and Diversification
+  publisher: Investor.gov
+  url: https://www.investor.gov/introduction-investing/getting-started/asset-allocation
+  relevance: Several narrow ETFs do not necessarily provide diversification; top holdings and overlap should be checked.
+decision_boundary: No trade follows automatically from this artifact. User confirmation, current account data, tax review
+  and employer compliance remain required.
+source_snapshot_sha256: d6a4a84d948b6436a5695a0b779030b60ffa2f685b5bdcadeb811f5c4dbef4e9

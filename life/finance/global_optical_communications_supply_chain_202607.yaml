@@ -1,0 +1,1295 @@
+id: global_optical_communications_supply_chain_202607
+object_type: FinancialResearchArtifact
+title: Global optical communications companies and supply chain
+version: 1
+status: active_research
+as_of: 2026-07-19
+timezone: Asia/Seoul
+language: mixed_English_schema_with_Korean_interpretation
+
+research_scope:
+  primary_question: >-
+    Map the globally significant companies that manufacture or enable optical
+    communications, from glass, compound-semiconductor substrates and fiber to
+    lasers, DSPs, modules, switches, transport systems, test equipment and
+    submarine networks, with special attention to AI data centers.
+  roster_boundary: >-
+    "모두"는 상장된 주요 기업, AI 데이터센터의 확인된 공급망 참여자,
+    핵심 비상장 기술기업, 중국·일본·한국의 전략적 공급자를 포함한다는 뜻이다.
+    모든 지역의 소규모 설치업체·통신사·유통사까지 문자 그대로 전수 집계한
+    명부는 아니다. 누락 가능성이 큰 한국 중소형주는 별도 watchlist로 남겼다.
+  evidence_policy:
+    - Prefer filings, investor relations, official product pages and named ecosystem announcements.
+    - Keep product-category exposure separate from a named customer allocation.
+    - Keep design, sample, qualification, purchase commitment, capacity right, shipment and recognized revenue separate.
+    - Keep group, segment and optical-product revenue boundaries separate; do not add currencies.
+    - Treat announced factory capacity as a plan until ramp or production is explicitly evidenced.
+    - Consolidate acquired companies under their current parent and retain the former name only as lineage.
+  investment_boundary: >-
+    This is an evidence ledger for portfolio review, not a buy, sell or target-price instruction.
+
+comparison_contracts:
+  financial: >-
+    Preserve currency, period and GAAP, IFRS, K-IFRS or derived status. Group
+    revenue is not optical revenue unless the company reports that segment boundary.
+  capacity: >-
+    Wafer diameter, wafer starts, floor area, cable-kilometres, module units,
+    revenue capacity and employee count are different denominators and are never summed.
+  commercial: >-
+    Partnership, investment, multiyear purchase commitment, capacity access right,
+    framework order, shipment and recognized revenue remain different lifecycle states.
+  architecture: >-
+    Pluggable optics, linear pluggable optics, near-package optics, co-packaged optics,
+    optical I/O and coherent transport can coexist; a roadmap is not market-wide replacement.
+  duplication: >-
+    Acacia is inside Cisco, Infinera inside Nokia, Juniper inside HPE, Celestial AI
+    inside Marvell, CommScope CCS inside Amphenol and II-VI/Finisar inside Coherent.
+  customer_allocation: >-
+    A supplier's technical ability to serve hyperscalers, telecom operators or NVIDIA
+    platforms is not converted to customer revenue without primary named evidence.
+
+executive_findings:
+  - >-
+    AI optical demand is not one market. Scale-up links inside a rack or pod, scale-out
+    Ethernet/InfiniBand, campus DCI, metro or long-haul transport and subsea systems use
+    different reach, power, modulation, packaging and qualification requirements.
+  - >-
+    The most constrained layers are high-power reliable InP lasers, advanced photonic
+    packaging and module yield, 200G-per-lane DSP/SerDes, high-density fiber and connector
+    assemblies, and automated test. Revenue can migrate between pluggable modules and CPO,
+    but these physical capabilities remain necessary.
+  - >-
+    NVIDIA's named 2025 silicon-photonics ecosystem linked TSMC, Browave, Coherent,
+    Corning, Fabrinet, Foxconn, Lumentum, SENKO, SPIL, Sumitomo Electric and TFC; it also
+    named Coherent, Eoptolink, Fabrinet and InnoLight for pluggable transceivers. This is
+    ecosystem evidence, not a bill of materials or revenue allocation.
+  - >-
+    NVIDIA's 2026 nonexclusive agreements with both Coherent and Lumentum each included
+    a $2 billion investment plus multibillion-dollar purchase commitments and capacity
+    rights. That validates laser scarcity while also showing deliberate dual sourcing.
+  - >-
+    Corning's 2026 NVIDIA plan calls for 10x U.S. optical-connectivity capacity, more
+    than 50% more U.S. fiber capacity and three plants. Separate Meta and Amazon agreements
+    show that high-density fiber and connectivity are hyperscaler-scale constraints too.
+  - >-
+    Chinese module makers InnoLight and Eoptolink already operate at revenue scale and
+    are central to pluggable optics, while U.S. and allied-country policy is encouraging
+    domestic laser, fiber and silicon-photonics capacity. Export controls and customer
+    geography therefore matter as much as headline AI demand.
+  - >-
+    Brian's KODEX 미국AI광통신네트워크 ETF is concentrated rather than whole-chain:
+    its 2026-05-31 sheet had 59.73% in Ciena, Coherent and Lumentum, and 73.98% in the
+    top five. It gives useful optical exposure but little direct ownership of Chinese
+    module leaders, private optical-I/O firms, Japanese fiber specialists or test vendors.
+
+architecture_routes:
+  - id: route_scale_up_optical_io
+    use_case: GPU_or_XPU_to_GPU_or_XPU_within_rack_or_pod
+    typical_reach: centimetres_to_tens_of_metres
+    competing_forms: [electrical_copper, active_electrical_cable, NPO, CPO, optical_IO_chiplet]
+    critical_layers: [SerDes, photonic_engine, external_laser, advanced_packaging, fiber_connector]
+  - id: route_scale_out_datacenter
+    use_case: switch_to_switch_and_server_to_switch_AI_fabric
+    typical_reach: metres_to_two_kilometres
+    competing_forms: [AEC, 400G_pluggable, 800G_pluggable, 1.6T_pluggable, LPO, CPO]
+    critical_layers: [switch_ASIC, DSP, laser, module_assembly, MPO_or_VSFF_connectivity, test]
+  - id: route_DCI_metro_longhaul
+    use_case: campus_to_campus_metro_and_backbone
+    typical_reach: kilometres_to_thousands_of_kilometres
+    competing_forms: [coherent_pluggable, transponder, packet_optical_transport]
+    critical_layers: [coherent_DSP, tunable_laser, modulator, amplifier, ROADM, line_system]
+  - id: route_access_and_telecom
+    use_case: PON_mobile_fronthaul_backhaul_enterprise_and_carrier
+    typical_reach: access_to_metro
+    competing_forms: [PON, coherent_access, Ethernet_optics, microwave_or_copper_at_edges]
+    critical_layers: [fiber_cable, splitters, transceivers, OLT_ONU, transport_system]
+  - id: route_subsea
+    use_case: intercontinental_backbone
+    typical_reach: thousands_of_kilometres
+    competing_forms: [repeatered_submarine_cable, unrepeatered_regional_links]
+    critical_layers: [submarine_fiber, repeaters, branching_units, cable_ship, landing_station, coherent_terminal]
+
+companies:
+  - id: optical_company_corning
+    company: Corning
+    ticker: GLW_US
+    country: United_States
+    ownership: public
+    roles: [fiber_preform_and_fiber, cable, high_density_connectivity, photonics_assemblies]
+    core_products: [single_mode_fiber, ribbon_and_high_count_cable, EDGE_and_Evolv_connectivity, faceplate_to_chip_assemblies]
+    financial_profile_ref: company_corning
+    evidence_state: official_financial_and_named_customer_capacity_evidence
+    sources:
+      - https://investor.corning.com/financials/quarterly-results/default.aspx
+      - https://nvidianews.nvidia.com/news/nvidia-and-corning-announce-long-term-partnership-to-strengthen-us-manufacturing-for-ai-infrastructure
+      - https://www.corning.com/worldwide/en/about-us/news-events/news-releases/2026/06/amazon-announces-agreement-with-corning-to-boost-us-fiber-optics-manufacturing-creating-1000-advanced-manufacturing-jobs-in-north-carolina.html
+
+  - id: optical_company_prysmian
+    company: Prysmian
+    ticker: PRY_IT
+    country: Italy
+    ownership: public
+    roles: [fiber, telecom_cable, high_density_cable, connectivity, submarine_cable]
+    core_products: [optical_fiber, FlexRibbon, Sirocco_HD, telecom_network_cable, submarine_systems]
+    financial_profile_ref: company_prysmian
+    evidence_state: official_financial_and_product_evidence
+    sources:
+      - https://www.prysmian.com/en/investors/results-centre
+      - https://www.prysmian.com/en/product-centre/telecoms
+
+  - id: optical_company_furukawa_electric
+    company: Furukawa_Electric
+    ticker: 5801_JP
+    country: Japan
+    ownership: public
+    roles: [fiber, cable, connectivity, ferrules, laser_chips, fusion_splicers]
+    core_products: [optical_fiber_and_cable, MT_ferrules, DFB_lasers, fusion_splicers]
+    evidence_state: official_segment_financial_and_product_evidence
+    sources:
+      - https://www.furukawaelectric.com/en/ir/achievements/highlight.html
+      - https://www.furukawaelectric.com/en/ir/achievements/segment/communication.html
+
+  - id: optical_company_fujikura
+    company: Fujikura
+    ticker: 5803_JP
+    country: Japan
+    ownership: public
+    roles: [fiber, ultra_high_density_cable, connectivity, fusion_splicers]
+    core_products: [SWR_WTC_cable, fiber_connectivity, fusion_splicers]
+    evidence_state: official_product_evidence_financial_snapshot_not_normalized_here
+    sources:
+      - https://www.fujikura.co.jp/eng/products/telecommunication/
+      - https://www.fujikura.co.jp/eng/ir/
+
+  - id: optical_company_sumitomo_electric
+    company: Sumitomo_Electric_Industries
+    ticker: 5802_JP
+    country: Japan
+    ownership: public
+    roles: [fiber, cable, connectors, fusion_splicers, InP_and_GaAs_materials, optical_devices]
+    core_products: [ultra_low_loss_fiber, multi_core_fiber, connectors, fusion_splicers, compound_semiconductor_substrates]
+    evidence_state: official_product_and_strategy_evidence
+    sources:
+      - https://sumitomoelectric.com/ir/library
+      - https://sumitomoelectric.com/sites/default/files/2025-11/download_documents/Growth%20strategy%20for%20data%20center-related%20business_2025.pdf
+
+  - id: optical_company_yofc
+    company: YOFC
+    ticker: 601869_CN_or_6869_HK
+    country: China
+    ownership: public
+    roles: [preform, fiber, cable, connectivity, modules, hollow_core_fiber]
+    core_products: [preforms, optical_fiber, optical_cable, active_and_passive_components, hollow_core_fiber]
+    evidence_state: official_FY2025_results_and_product_evidence
+    sources:
+      - https://en.yofc.com/view/3557.html
+      - https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042903081.pdf
+
+  - id: optical_company_ztt
+    company: ZTT_Group
+    ticker: 600522_CN
+    country: China
+    ownership: public
+    roles: [preform, fiber, ultra_high_density_cable, transceivers, submarine_cable]
+    core_products: [preform, optical_fiber, 17280_fiber_AI_data_center_cable, optical_transceivers, submarine_cable]
+    evidence_state: official_company_and_product_evidence_financial_boundary_not_captured
+    sources:
+      - https://www.zttgroup.com/index.html
+      - https://www.zttgroup.com/news/show-733.html
+      - https://www.zttgroup.com/mobile/product/Optical-transceiver.html
+
+  - id: optical_company_hengtong
+    company: Hengtong_Group
+    ticker: 600487_CN
+    country: China
+    ownership: public
+    roles: [preform, fiber, cable, submarine_cable_and_systems]
+    core_products: [optical_fiber_and_cable, submarine_cable, marine_engineering]
+    evidence_state: strategic_roster_official_company_evidence_financial_refresh_needed
+    sources:
+      - https://www.hengtonggroup.com/en/
+
+  - id: optical_company_stl
+    company: Sterlite_Technologies_STL
+    ticker: STLTECH_IN
+    country: India
+    ownership: public
+    roles: [glass_preform, fiber, cable, connectivity, data_center_cabling, hollow_core_fiber]
+    core_products: [optical_fiber, high_count_cable, connectivity, data_center_solutions]
+    evidence_state: official_FY2026_results_and_product_evidence
+    sources:
+      - https://stl.tech/stl-delivers-resilient-fy26-performance-ai-data-centre-business-emerges-as-key-growth-engine/
+
+  - id: optical_company_amphenol
+    company: Amphenol
+    ticker: APH_US
+    country: United_States
+    ownership: public
+    roles: [connectors, cable_assemblies, fiber_connectivity, data_center_interconnect]
+    core_products: [fiber_connectors, high_speed_cable_assemblies, CommScope_CCS_portfolio]
+    evidence_state: official_financial_and_completed_acquisition_evidence
+    lineage: CommScope_Connectivity_and_Cable_Solutions_acquired_2026_01
+    sources:
+      - https://investor.amphenol.com/
+      - https://investor.amphenol.com/news-and-events/news-details/2026/Amphenol-Completes-Acquisition-of-CCS-Business-From-CommScope/default.aspx
+
+  - id: optical_company_te_connectivity
+    company: TE_Connectivity
+    ticker: TEL_US
+    country: Ireland_and_United_States
+    ownership: public
+    roles: [connectors, high_speed_copper_and_fiber_interconnect, data_center_cabling]
+    core_products: [fiber_connectivity, high_speed_interconnect, cable_assemblies]
+    evidence_state: official_group_financial_and_product_evidence
+    sources:
+      - https://investors.te.com/news-releases/press-release-details/2026/TE-Connectivity-delivers-results-above-guidance-with-15-sales-growth-and-over-20-EPS-growth-in-second-quarter-of-fiscal-2026/default.aspx
+
+  - id: optical_company_senko
+    company: SENKO_Advanced_Components
+    country: Japan_and_United_States
+    ownership: private
+    roles: [fiber_connectors, VSFF_connectivity, CPO_connectivity]
+    core_products: [SN_connector, MPO, optical_backplane_and_CPO_connectivity]
+    evidence_state: named_NVIDIA_ecosystem_and_official_product_evidence
+    sources:
+      - https://www.senko.com/
+      - https://nvidianews.nvidia.com/news/nvidia-spectrum-x-co-packaged-optics-networking-switches-ai-factories
+
+  - id: optical_company_us_conec
+    company: US_Conec
+    country: United_States
+    ownership: private_joint_venture
+    roles: [multi_fiber_connectors, ferrules, VSFF_connectivity]
+    core_products: [MPO, MMC, MDC, multi_fiber_ferrules]
+    evidence_state: official_product_evidence
+    sources:
+      - https://www.usconec.com/
+
+  - id: optical_company_axt
+    company: AXT
+    ticker: AXTI_US
+    country: United_States_and_China
+    ownership: public
+    roles: [InP_substrates, GaAs_substrates, germanium_substrates]
+    core_products: [indium_phosphide_substrates_for_lasers_and_photonic_devices]
+    evidence_state: official_Q1_2026_financial_and_capacity_financing_evidence
+    sources:
+      - https://investors.axt.com/Investors/news/news-details/2026/AXT-Inc--Announces-First-Quarter-2026-Financial-Results/default.aspx
+
+  - id: optical_company_iqe
+    company: IQE
+    ticker: IQE_LN
+    country: United_Kingdom
+    ownership: public
+    roles: [compound_semiconductor_epiwafers, InP_photonics]
+    core_products: [InP_epiwafers, GaAs_epiwafers, photonics_materials]
+    evidence_state: official_FY2025_financial_and_product_evidence
+    sources:
+      - https://www.iqep.com/media/press-releases/2026/full-year-2025-results/
+
+  - id: optical_company_coherent
+    company: Coherent
+    ticker: COHR_US
+    country: United_States
+    ownership: public
+    roles: [InP_materials, lasers, photodiodes, silicon_photonics, transceivers, optical_components]
+    core_products: [EML_and_CW_lasers, VCSEL, photodiodes, 800G_and_1.6T_transceivers, optical_engines]
+    financial_profile_ref: company_coherent
+    evidence_state: official_financial_and_named_NVIDIA_commitment
+    lineage: II_VI_and_Finisar_combined_in_current_Coherent
+    sources:
+      - https://investor.coherent.com/financial-information/quarterly-results
+      - https://www.coherent.com/news/press-releases/nvidia-and-coherent-announce-strategic-partnership
+      - https://www.coherent.com/news/press-releases/a-chip-letter-of-intent-for-50m-to-expand-world-leading-manufacturing-facility-for-ai-infrastructure
+
+  - id: optical_company_lumentum
+    company: Lumentum
+    ticker: LITE_US
+    country: United_States
+    ownership: public
+    roles: [InP_lasers, EML, photonic_components, coherent_components]
+    core_products: [CW_lasers, EMLs, tunable_lasers, optical_amplifiers, photonic_components]
+    evidence_state: official_Q3_FY2026_financial_and_named_NVIDIA_commitment
+    sources:
+      - https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-Announces-Third-Quarter-of-Fiscal-Year-2026-Financial-Results/default.aspx
+      - https://investor.lumentum.com/financial-news-releases/news-details/2026/NVIDIA-Announces-Strategic-Partnership-With-Lumentum-to-Develop-State-of-the-Art-Optics-Technology/default.aspx
+      - https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-Announces-New-U-S--Manufacturing-Facility-to-Produce-Advanced-Lasers-for-the-Worlds-Largest-AI-Data-Centers/default.aspx
+
+  - id: optical_company_macom
+    company: MACOM_Technology_Solutions
+    ticker: MTSI_US
+    country: United_States
+    ownership: public
+    roles: [InP_lasers, photodiodes, drivers, TIAs, RF_and_analog]
+    core_products: [lasers, modulators, photodiodes, drivers, transimpedance_amplifiers]
+    evidence_state: official_Q2_FY2026_financial_and_product_evidence
+    sources:
+      - https://ir.macom.com/news-releases/news-release-details/macom-reports-fiscal-second-quarter-2026-financial-results
+
+  - id: optical_company_broadcom
+    company: Broadcom
+    ticker: AVGO_US
+    country: United_States
+    ownership: public
+    roles: [switch_ASIC, SerDes, DSP, optical_components, CPO]
+    core_products: [Tomahawk, Jericho, optical_DSP, PHY, TH6_Davisson_CPO]
+    financial_profile_ref: company_broadcom
+    evidence_state: official_financial_and_product_ecosystem_evidence
+    sources:
+      - https://investors.broadcom.com/financial-information/quarterly-results
+      - https://www.broadcom.com/company/news/product-releases/63626
+      - https://www.broadcom.com/company/news/product-releases/64031
+
+  - id: optical_company_marvell
+    company: Marvell_Technology
+    ticker: MRVL_US
+    country: United_States
+    ownership: public
+    roles: [switch_ASIC, PAM4_and_coherent_DSP, SerDes, custom_XPU, optical_interconnect]
+    core_products: [Teralynx, Alaska_PAM4_DSP, COLORZ_DCI, custom_compute, Celestial_AI_photonic_fabric]
+    evidence_state: official_Q1_FY2027_financial_and_acquisition_evidence
+    lineage: Celestial_AI_and_XConn_acquired_in_2026
+    sources:
+      - https://investor.marvell.com/news-events/press-releases/detail/1023/marvell-technology-inc-reports-first-quarter-of-fiscal-year-2027-financial-results
+      - https://investor.marvell.com/sec-filings/all-sec-filings/content/0001835632-26-000019/mrvl-20260502.htm
+
+  - id: optical_company_credo
+    company: Credo_Technology
+    ticker: CRDO_US
+    country: Cayman_Islands_and_United_States
+    ownership: public
+    roles: [SerDes, retimers, AEC, optical_DSP]
+    core_products: [high_speed_SerDes, retimers, active_electrical_cables, optical_DSP]
+    evidence_state: official_Q4_FY2026_financial_and_product_evidence
+    sources:
+      - https://www.sec.gov/Archives/edgar/data/1807794/000162828026039474/credoq42026ex-991.htm
+
+  - id: optical_company_semtech
+    company: Semtech
+    ticker: SMTC_US
+    country: United_States
+    ownership: public
+    roles: [PAM4_DSP, laser_driver, TIA, signal_integrity]
+    core_products: [FiberEdge, CopperEdge, 800G_and_1.6T_signal_chain]
+    evidence_state: official_Q1_FY2027_financial_and_product_evidence
+    sources:
+      - https://www.sec.gov/Archives/edgar/data/88941/000008894126000009/smtc-04262026x8k991.htm
+
+  - id: optical_company_maxlinear
+    company: MaxLinear
+    ticker: MXL_US
+    country: United_States
+    ownership: public
+    roles: [optical_DSP, Ethernet_PHY, TIAs_and_drivers]
+    core_products: [PAM4_DSP, PHY, optical_transceiver_ICs]
+    evidence_state: official_Q1_2026_financial_and_product_evidence
+    sources:
+      - https://investors.maxlinear.com/press-releases/detail/607/maxlinear-inc-announces-first-quarter-2026-financial
+
+  - id: optical_company_innolight
+    company: Zhongji_Innolight
+    ticker: 300308_CN
+    country: China
+    ownership: public
+    roles: [high_speed_transceivers, optical_engines, NPO_and_XPO]
+    core_products: [400G_800G_1.6T_modules, coherent_modules, 3.2T_and_6.4T_roadmap]
+    evidence_state: official_FY2025_financial_and_NVIDIA_ecosystem_evidence
+    sources:
+      - https://static.cninfo.com.cn/finalpage/2026-03-31/1225056458.PDF
+      - https://nvidianews.nvidia.com/news/nvidia-spectrum-x-co-packaged-optics-networking-switches-ai-factories
+
+  - id: optical_company_eoptolink
+    company: Eoptolink_Technology
+    ticker: 300502_CN
+    country: China
+    ownership: public
+    roles: [high_speed_transceivers, coherent_pluggables]
+    core_products: [400G_800G_1.6T_modules, coherent_transceivers]
+    evidence_state: official_FY2025_financial_and_NVIDIA_ecosystem_evidence
+    sources:
+      - https://static.cninfo.com.cn/finalpage/2026-04-24/1225172615.PDF
+      - https://nvidianews.nvidia.com/news/nvidia-spectrum-x-co-packaged-optics-networking-switches-ai-factories
+
+  - id: optical_company_accelink
+    company: Accelink_Technologies
+    ticker: 002281_CN
+    country: China
+    ownership: public
+    roles: [optical_chips, components, transceivers, amplifiers]
+    core_products: [optical_transceivers, passive_components, EDFAs, optical_chips]
+    evidence_state: official_9M2025_financial_evidence_annual_refresh_needed
+    sources:
+      - https://static.cninfo.com.cn/finalpage/2025-10-25/1224733881.PDF
+
+  - id: optical_company_aoi
+    company: Applied_Optoelectronics
+    ticker: AAOI_US
+    country: United_States_and_Taiwan_and_China
+    ownership: public
+    roles: [laser_chips, optical_components, transceivers]
+    core_products: [laser_diodes, 400G_800G_and_1.6T_modules, CATV_optics]
+    evidence_state: official_Q1_2026_financial_and_vertically_integrated_facility_evidence
+    sources:
+      - https://investors.ao-inc.com/static-files/be9aadfe-6391-4eb5-9ca2-681f1c63033b
+
+  - id: optical_company_fabrinet
+    company: Fabrinet
+    ticker: FN_US
+    country: Cayman_Islands_and_Thailand
+    ownership: public
+    roles: [contract_manufacturing, advanced_optical_packaging, test]
+    core_products: [optical_module_and_component_manufacturing, DCI_and_datacom_assembly]
+    evidence_state: official_Q3_FY2026_financial_and_NVIDIA_ecosystem_evidence
+    sources:
+      - https://investor.fabrinet.com/news-releases/news-release-details/fabrinet-announces-third-quarter-fiscal-year-2026-financial
+      - https://investor.fabrinet.com/static-files/c4186233-7a8e-4531-a39e-bae22502a986
+
+  - id: optical_company_celestica
+    company: Celestica
+    ticker: CLS_US_or_CLS_CA
+    country: Canada
+    ownership: public
+    roles: [network_switch_design_and_manufacturing, optical_system_integration]
+    core_products: [hyperscale_switches, hardware_platform_solutions, CPO_system_integration]
+    evidence_state: official_product_and_Broadcom_ecosystem_evidence
+    sources:
+      - https://www.celestica.com/our-expertise/platform-solutions/networking
+      - https://www.broadcom.com/company/news/product-releases/63626
+
+  - id: optical_company_foxconn_fit
+    company: Foxconn_Interconnect_Technology
+    ticker: 6088_HK
+    country: Taiwan_and_China
+    ownership: public
+    roles: [connectors, cable_assemblies, optical_modules, system_manufacturing]
+    core_products: [high_speed_interconnect, optical_connectivity, module_and_switch_manufacturing]
+    evidence_state: named_NVIDIA_ecosystem_and_official_company_evidence
+    sources:
+      - https://www.fit-foxconn.com/
+      - https://nvidianews.nvidia.com/news/nvidia-spectrum-x-co-packaged-optics-networking-switches-ai-factories
+
+  - id: optical_company_source_photonics
+    company: Source_Photonics
+    country: United_States_and_China
+    ownership: private
+    roles: [laser_chips, transceivers]
+    core_products: [PON_optics, 400G_800G_and_1.6T_transceivers]
+    evidence_state: official_product_evidence_financials_private
+    sources:
+      - https://www.sourcephotonics.com/
+
+  - id: optical_company_hisense_broadband
+    company: Hisense_Broadband
+    country: China
+    ownership: private_subsidiary
+    roles: [optical_components, transceivers, PON_optics]
+    core_products: [datacom_transceivers, access_network_optics]
+    evidence_state: official_company_evidence_financial_boundary_not_captured
+    sources:
+      - https://www.hisensebroadband.com/
+
+  - id: optical_company_oe_solutions
+    company: OE_Solutions
+    ticker: 138080_KS
+    country: South_Korea
+    ownership: public
+    roles: [optical_transceivers, laser_diodes, access_and_datacenter_optics]
+    core_products: [Ethernet_transceivers, mobile_fronthaul_optics, tunable_transceivers]
+    evidence_state: Korean_strategic_watchlist_product_evidence_financial_refresh_needed
+    sources:
+      - https://www.oesolutions.com/
+
+  - id: optical_company_opticore
+    company: OptiCore
+    ticker: 380540_KQ
+    country: South_Korea
+    ownership: public
+    roles: [optical_transceivers, telecom_and_datacenter_optics]
+    core_products: [wireless_fronthaul_and_backhaul_transceivers, datacom_modules]
+    evidence_state: Korean_watchlist_product_evidence_financial_and_customer_validation_needed
+    sources:
+      - https://www.opticore.co.kr/
+
+  - id: optical_company_wooriro
+    company: Wooriro
+    ticker: 046970_KQ
+    country: South_Korea
+    ownership: public
+    roles: [PLC_splitters, photodiodes, SPAD, optical_components]
+    core_products: [PLC, photodiode, single_photon_detector]
+    evidence_state: Korean_watchlist_group_includes_non_optical_businesses
+    sources:
+      - https://www.wooriro.com/
+
+  - id: optical_company_taihan_fiberoptics
+    company: Taihan_Fiberoptics
+    ticker: 010170_KQ
+    country: South_Korea
+    ownership: public
+    roles: [preform, fiber, cable, special_fiber]
+    core_products: [optical_preform, optical_fiber, optical_cable]
+    evidence_state: Korean_watchlist_product_evidence_named_AI_customer_validation_needed
+    sources:
+      - https://www.taihanfiber.com/
+
+  - id: optical_company_ls_cable
+    company: LS_Cable_and_System
+    country: South_Korea
+    ownership: private_subsidiary_of_LS
+    roles: [optical_fiber_cable, submarine_cable, data_center_cabling]
+    core_products: [optical_cable, submarine_cable, structured_cabling]
+    evidence_state: Korean_strategic_supplier_private_financial_boundary
+    sources:
+      - https://www.lscns.com/en/main.asp
+
+  - id: optical_company_tsmc
+    company: TSMC
+    ticker: 2330_TW_or_TSM_US
+    country: Taiwan
+    ownership: public
+    roles: [silicon_photonics_foundry, advanced_packaging, switch_and_DSP_foundry]
+    core_products: [COUPE, SoIC, advanced_logic, photonic_electronic_integration]
+    related_profile_ref: memory_company_tsmc
+    evidence_state: named_NVIDIA_and_Broadcom_ecosystem_evidence
+    sources:
+      - https://nvidianews.nvidia.com/news/nvidia-spectrum-x-co-packaged-optics-networking-switches-ai-factories
+      - https://www.broadcom.com/company/news/product-releases/63626
+
+  - id: optical_company_globalfoundries
+    company: GlobalFoundries
+    ticker: GFS_US
+    country: United_States
+    ownership: public
+    roles: [silicon_photonics_foundry, RF_and_mixed_signal_foundry, photonic_packaging]
+    core_products: [GF_Fotonix, 300mm_silicon_photonics, SCALE_CPO_module]
+    related_profile_ref: foundry_globalfoundries
+    evidence_state: official_foundry_and_CPO_product_evidence
+    sources:
+      - https://gf.com/technologies/silicon-photonics/
+      - https://gf.com/news-and-events/news/globalfoundries-accelerates-adoption-of-co-packaged-optics-for-advanced-ai-data-centers-with-scale-optical-module-solution/
+
+  - id: optical_company_tower
+    company: Tower_Semiconductor
+    ticker: TSEM_US
+    country: Israel
+    ownership: public
+    roles: [silicon_photonics_foundry, analog_and_RF_foundry]
+    core_products: [PH18_silicon_photonics, optical_devices, analog_ICs]
+    related_profile_ref: foundry_tower
+    evidence_state: official_foundry_and_partner_evidence
+    sources:
+      - https://ir.towersemi.com/static-files/2bd7b050-4b74-4c20-893a-2a9274e86ecb
+
+  - id: optical_company_ase_spil
+    company: ASE_Technology_and_SPIL
+    ticker: ASX_US_or_3711_TW
+    country: Taiwan
+    ownership: public
+    roles: [advanced_packaging, photonic_packaging, test]
+    core_products: [2.5D_3D_packaging, optical_engine_assembly, system_in_package, test]
+    related_profile_ref: backend_ase
+    evidence_state: SPIL_named_in_NVIDIA_ecosystem_parent_consolidated
+    sources:
+      - https://nvidianews.nvidia.com/news/nvidia-spectrum-x-co-packaged-optics-networking-switches-ai-factories
+      - https://www.aseglobal.com/
+
+  - id: optical_company_amkor
+    company: Amkor_Technology
+    ticker: AMKR_US
+    country: United_States
+    ownership: public
+    roles: [advanced_packaging, photonic_packaging, test]
+    core_products: [flip_chip, wafer_level_packaging, optical_sensor_and_photonic_packaging]
+    related_profile_ref: backend_amkor
+    evidence_state: official_capability_evidence_no_named_customer_allocation
+    sources:
+      - https://amkor.com/technology/
+
+  - id: optical_company_ayar_labs
+    company: Ayar_Labs
+    country: United_States
+    ownership: private
+    roles: [optical_IO_chiplets, external_laser_sources]
+    core_products: [TeraPHY_UCIe_optical_chiplet, SuperNova_laser_source]
+    evidence_state: official_product_and_2026_funding_evidence_pre_volume_risk
+    sources:
+      - https://ayarlabs.com/news/
+      - https://ayarlabs.com/news/ayar-labs-unveils-worlds-first-ucie-optical-chiplet-for-ai-scale-up-architectures/
+
+  - id: optical_company_lightmatter
+    company: Lightmatter
+    country: United_States
+    ownership: private
+    roles: [photonic_interconnect, optical_IO, NPO_and_OBO]
+    core_products: [Passage, Passage_L20, photonic_fabric]
+    evidence_state: official_product_and_partner_evidence_sampling_not_volume_revenue
+    sources:
+      - https://lightmatter.co/press-release/lightmatter-expands-photonic-interconnect-roadmap-with-passage-l20-unified-optical-engine-for-npo-and-obo-applications/
+      - https://lightmatter.co/press-release/lightmatter-and-guc-partner-to-produce-co-packaged-optics-cpo-solutions-for-ai-hyperscalers/
+
+  - id: optical_company_ranovus
+    company: Ranovus
+    country: Canada
+    ownership: private
+    roles: [silicon_photonics, CPO_optical_engines]
+    core_products: [ODIN_6.4T_optical_engine]
+    evidence_state: official_product_and_Jabil_manufacturing_collaboration
+    sources:
+      - https://ranovus.com/news/
+
+  - id: optical_company_xscape
+    company: Xscape_Photonics
+    country: United_States
+    ownership: private
+    roles: [multi_wavelength_lasers, silicon_photonics, optical_IO]
+    core_products: [FalconX_multi_color_laser_platform]
+    evidence_state: official_funding_and_Tower_PH18_partner_evidence_pre_volume
+    sources:
+      - https://www.xscapephotonics.com/news
+
+  - id: optical_company_poet
+    company: POET_Technologies
+    ticker: POET_US
+    country: Canada
+    ownership: public
+    roles: [optical_interposer, optical_engines, module_subassemblies]
+    core_products: [Optical_Interposer, 800G_and_1.6T_engines]
+    evidence_state: official_Q1_2026_emerging_revenue_and_framework_order_evidence
+    sources:
+      - https://www.poet-technologies.com/news/poet-technologies-reports-first-quarter-2026-financial-results
+
+  - id: optical_company_nvidia
+    company: NVIDIA
+    ticker: NVDA_US
+    country: United_States
+    ownership: public
+    roles: [InfiniBand_and_Ethernet_switching, switch_ASIC, CPO_system_architecture]
+    core_products: [Spectrum_X, Quantum_X, silicon_photonics_switches, ConnectX]
+    financial_profile_ref: company_nvidia
+    evidence_state: official_product_and_named_ecosystem_evidence
+    sources:
+      - https://nvidianews.nvidia.com/news/nvidia-spectrum-x-co-packaged-optics-networking-switches-ai-factories
+
+  - id: optical_company_arista
+    company: Arista_Networks
+    ticker: ANET_US
+    country: United_States
+    ownership: public
+    roles: [Ethernet_switching, routing, optical_system_architecture]
+    core_products: [Ethernet_switches, EOS, 800G_and_1.6T_network_platforms, XPO]
+    financial_profile_ref: company_arista_networks
+    evidence_state: official_financial_and_product_evidence
+    sources:
+      - https://investors.arista.com/financial-information/quarterly-results
+
+  - id: optical_company_cisco
+    company: Cisco
+    ticker: CSCO_US
+    country: United_States
+    ownership: public
+    roles: [switching, routing, coherent_DSP_and_pluggables, optical_transport]
+    core_products: [Silicon_One, Nexus, Acacia_coherent_DSP_and_modules, routed_optical_networking]
+    financial_profile_ref: company_cisco
+    lineage: Acacia_integrated_in_Cisco
+    evidence_state: official_financial_and_product_evidence
+    sources:
+      - https://investor.cisco.com/financial-information/quarterly-results/default.aspx
+      - https://www.cisco.com/site/us/en/products/networking/optics-transceivers/index.html
+
+  - id: optical_company_ciena
+    company: Ciena
+    ticker: CIEN_US
+    country: United_States
+    ownership: public
+    roles: [coherent_DSP, pluggable_optics, packet_optical_transport, DCI]
+    core_products: [WaveLogic, WaveLogic_5_and_6, Waveserver, optical_line_systems]
+    evidence_state: official_Q2_FY2026_financial_and_product_evidence
+    sources:
+      - https://investor.ciena.com/news/news-details/2026/Ciena-Reports-Fiscal-Second-Quarter-2026-Financial-Results/default.aspx
+
+  - id: optical_company_nokia
+    company: Nokia
+    ticker: NOK_US_or_NOKIA_FI
+    country: Finland
+    ownership: public
+    roles: [optical_transport, coherent_DSP, IP_routing, PON]
+    core_products: [PSE_coherent_DSP, 1830_PSS, IP_routing, access_networks, Infinera_portfolio]
+    lineage: Infinera_integrated_in_Nokia_ASN_80_percent_sold_to_French_state
+    evidence_state: official_Q1_2026_financial_and_optical_strategy_evidence
+    sources:
+      - https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q1-2026/
+
+  - id: optical_company_hpe
+    company: Hewlett_Packard_Enterprise
+    ticker: HPE_US
+    country: United_States
+    ownership: public
+    roles: [Ethernet_switching, routing, data_center_networking]
+    core_products: [HPE_Juniper_Networking, Junos, Apstra, switching_and_routing]
+    lineage: Juniper_acquired_and_consolidated_in_HPE
+    evidence_state: official_Q2_FY2026_segment_financial_evidence
+    sources:
+      - https://investors.hpe.com/~/media/Files/H/HP-Enterprise-IR/documents/q2-2026/q2-2026-earnings-press-release.pdf
+
+  - id: optical_company_adtran
+    company: ADTRAN_Holdings
+    ticker: ADTN_US
+    country: United_States_and_Germany
+    ownership: public
+    roles: [access_networks, optical_transport, DCI_and_datacenter_optics]
+    core_products: [FSP_3000, coherent_optics, PON, LiteWave800]
+    evidence_state: official_Q1_2026_financial_and_product_evidence
+    sources:
+      - https://investors.adtran.com/news/news-details/2026/ADTRAN-Holdings-Inc--reports-first-quarter-2026-financial-results/default.aspx
+
+  - id: optical_company_huawei
+    company: Huawei
+    country: China
+    ownership: private_employee_owned_claim
+    roles: [optical_transport, PON, routers, switches, optical_modules]
+    core_products: [OptiX_OSN, all_optical_network, PON, datacenter_switching]
+    evidence_state: official_FY2025_group_and_ICT_financial_evidence_export_control_boundary
+    sources:
+      - https://www.huawei.com/en/annual-report/2025
+      - https://www.huawei.com/en/news/2026/3/next-generation-optical
+
+  - id: optical_company_zte
+    company: ZTE
+    ticker: 000063_CN_or_0763_HK
+    country: China
+    ownership: public
+    roles: [optical_transport, PON, routers, switches]
+    core_products: [optical_access, OTN, coherent_transport, data_center_networking]
+    evidence_state: official_FY2025_and_Q1_2026_financial_evidence
+    sources:
+      - https://www.zte.com.cn/global/about/news/ZTE-Reports-2025-Revenue-of-RMB-133-90-Billion-Advancing-Full-stack-AI-Capabilities.html
+      - https://www.zte.com.cn/global/about/news/ZTE-Reports-First-Quarter-Revenue-of-RMB-35-Billion%2C-Up-6-YoY%2C-with-Computing-Revenue-Mix-Rising-to-27.html
+
+  - id: optical_company_viavi
+    company: VIAVI_Solutions
+    ticker: VIAV_US
+    country: United_States
+    ownership: public
+    roles: [network_test, optical_component_test, fiber_inspection]
+    core_products: [800G_1.6T_test, OTN_and_coherent_test, fiber_certification_and_inspection]
+    evidence_state: official_Q3_FY2026_financial_and_product_evidence
+    sources:
+      - https://investor.viavisolutions.com/news-events/news-releases/news-details/2026/VIAVI-Announces-Third-Quarter-Fiscal-2026-Results/default.aspx
+
+  - id: optical_company_keysight
+    company: Keysight_Technologies
+    ticker: KEYS_US
+    country: United_States
+    ownership: public
+    roles: [high_speed_digital_test, optical_test, SerDes_validation]
+    core_products: [BERT, oscilloscopes, optical_modulation_analyzers, Ethernet_and_PCIe_validation]
+    evidence_state: official_Q2_FY2026_financial_and_product_evidence
+    sources:
+      - https://investor.keysight.com/investor-news-and-events/financial-press-releases/press-release-details/2026/Keysight-Technologies-Reports-Second-Quarter-2026-Results/default.aspx
+
+  - id: optical_company_anritsu
+    company: Anritsu
+    ticker: 6754_JP
+    country: Japan
+    ownership: public
+    roles: [network_test, optical_and_transport_test]
+    core_products: [BERT, optical_spectrum_analyzers, transport_network_test]
+    evidence_state: official_financial_library_and_product_evidence
+    sources:
+      - https://www.anritsu.com/en/about-anritsu/investor-relations/ir-library/financial-materials
+
+  - id: optical_company_exfo
+    company: EXFO
+    country: Canada
+    ownership: private
+    roles: [fiber_test, optical_network_assurance, field_instrumentation]
+    core_products: [OTDR, optical_spectrum_analysis, network_assurance]
+    evidence_state: official_product_evidence_financials_private
+    sources:
+      - https://www.exfo.com/en/products/
+
+  - id: optical_company_asn
+    company: Alcatel_Submarine_Networks
+    country: France
+    ownership: French_state_80_percent_Nokia_20_percent
+    roles: [submarine_cable_system_design, repeaters, cable_manufacturing, marine_installation]
+    core_products: [repeatered_subsea_systems, repeaters, branching_units, cable_ship_operations]
+    evidence_state: official_factory_fleet_and_contract_evidence
+    sources:
+      - https://www.asn.com/press-release/asn-invests-in-its-industrial-production-facilities/
+      - https://www.asn.com/press-release/asn-and-oms-group-selected-by-intra-asia-marine-networks-co-ltd-to-build-the-intra-asia-marine-i-am-cable-system/
+
+  - id: optical_company_nec
+    company: NEC
+    ticker: 6701_JP
+    country: Japan
+    ownership: public
+    roles: [submarine_cable_systems, repeaters, terminal_equipment, system_integration]
+    core_products: [subsea_repeaters, terminal_equipment, cable_system_integration]
+    evidence_state: official_deployed_length_and_named_2026_contract
+    sources:
+      - https://www.nec.com/en/global/prod/nw/submarine/index.html
+      - https://www.nec.com/en/press/202607/global_20260703_02.html
+
+  - id: optical_company_subcom
+    company: SubCom
+    country: United_States
+    ownership: private_subsidiary_of_Cerberus
+    roles: [submarine_cable_manufacturing, repeaters, marine_installation]
+    core_products: [submarine_cable_systems, repeaters, branching_units, cable_ships]
+    evidence_state: official_2026_capacity_expansion_evidence_financials_private
+    sources:
+      - https://www.subcom.com/documents/SubCom_of_Newington_plans_multi-million-dollar_expansion-20JAN2026.pdf
+
+  - id: optical_company_hmn
+    company: HMN_Technologies
+    country: China
+    ownership: private
+    roles: [submarine_cable_systems, repeaters, marine_installation]
+    core_products: [submarine_cable, repeaters, system_integration]
+    evidence_state: strategic_roster_official_company_evidence_contract_and_financial_refresh_needed
+    sources:
+      - https://www.hmntech.com/
+
+financial_snapshots:
+  - company_ref: optical_company_marvell
+    period: Q1_FY2027_ended_2026_05_02
+    currency: USD_million
+    revenue: 2417.8
+    operating_profit: 339.4
+    data_center_revenue: 1832.7
+    data_center_revenue_mix_percent: 76
+    boundary: Data center includes more than optical connectivity and is not optical-only revenue.
+  - company_ref: optical_company_lumentum
+    period: Q3_FY2026_ended_2026_03_28
+    currency: USD_million
+    revenue: 808.4
+    operating_profit: 174.5
+    operating_margin_percent: 21.6
+  - company_ref: optical_company_fabrinet
+    period: Q3_FY2026_ended_2026_03_27
+    currency: USD_million
+    revenue: 1214.293
+    operating_profit: 120.044
+    optical_communications_revenue: 888.7
+    boundary: Optical communications includes telecom and datacom; contract-manufacturing customer concentration applies.
+  - company_ref: optical_company_aoi
+    period: Q1_2026
+    currency: USD_million
+    revenue: 151.144
+    operating_profit: -12.991
+    data_center_revenue: 81.404
+    data_center_revenue_mix_percent: 53.9
+  - company_ref: optical_company_credo
+    period: Q4_FY2026_ended_2026_05_02
+    currency: USD_million
+    revenue: 437.003
+    operating_profit_derived: 155.845
+    boundary: Company exposure includes AEC and retimers as well as optical products; customer concentration is high.
+  - company_ref: optical_company_macom
+    period: Q2_FY2026_ended_2026_04_03
+    currency: USD_million
+    revenue: 289.0
+    operating_profit: 50.8
+    operating_margin_percent: 17.6
+  - company_ref: optical_company_semtech
+    period: Q1_FY2027_ended_2026_04_26
+    currency: USD_million
+    revenue: 291.0
+    operating_profit: 25.8
+    boundary: Group result includes non-optical signal integrity, IoT and infrastructure products.
+  - company_ref: optical_company_maxlinear
+    period: Q1_2026
+    currency: USD_million
+    revenue: 137.188
+    operating_profit: -17.209
+  - company_ref: optical_company_ciena
+    period: Q2_FY2026_ended_2026_05_02
+    currency: USD_million
+    revenue: 1570.739
+    operating_profit: 237.871
+  - company_ref: optical_company_hpe
+    period: Q2_FY2026_ended_2026_04_30
+    currency: USD_billion
+    group_revenue: 10.7
+    networking_revenue: 2.7
+    networking_operating_margin_percent: 21.6
+    boundary: Networking includes the consolidated Juniper portfolio and is not optical-only.
+  - company_ref: optical_company_adtran
+    period: Q1_2026
+    currency: USD_million
+    revenue: 286.086
+    operating_profit: 6.375
+    operating_margin_percent: 2.2
+  - company_ref: optical_company_te_connectivity
+    period: Q2_FY2026
+    currency: USD_million
+    revenue: 4744
+    operating_profit: 954
+    boundary: Group result is not data-center or optical-only.
+  - company_ref: optical_company_axt
+    period: Q1_2026
+    currency: USD_million
+    revenue: 26.9
+    net_income: -1.6
+    boundary: Operating profit was not captured in the source summary; net loss is retained separately.
+  - company_ref: optical_company_iqe
+    period: FY2025
+    currency: GBP_million
+    revenue: 97.3
+    reported_profit_before_tax: -37.0
+    photonics_revenue: 57.1
+  - company_ref: optical_company_furukawa_electric
+    period: FY2025_ended_2026_03_31
+    currency: JPY_billion
+    group_revenue: 1307.6
+    group_operating_profit: 63.9
+    communications_solutions_revenue: 229.3
+    communications_solutions_operating_profit: 11.8
+  - company_ref: optical_company_innolight
+    period: FY2025
+    currency: CNY_billion
+    revenue: 38.240
+    operating_profit: 13.597
+  - company_ref: optical_company_eoptolink
+    period: FY2025
+    currency: CNY_billion
+    revenue: 24.842
+    net_income: 9.532
+    boundary: Operating profit was not captured; net income is not substituted for operating profit.
+  - company_ref: optical_company_yofc
+    period: FY2025
+    currency: CNY_billion
+    revenue: 14.252
+    net_income: 0.814
+    optical_transmission_revenue: 8.346
+    optical_interconnect_components_revenue: 3.144
+  - company_ref: optical_company_viavi
+    period: Q3_FY2026_ended_2026_03_28
+    currency: USD_million
+    revenue: 406.8
+    operating_profit: 24.8
+    network_and_service_enablement_revenue: 321.5
+    network_and_service_enablement_operating_profit: 55.4
+  - company_ref: optical_company_poet
+    period: Q1_2026
+    currency: USD_million
+    NRE_and_product_revenue: 0.503
+    boundary: Early commercial revenue; framework purchase-order ceilings are not recognized revenue.
+  - company_ref: optical_company_huawei
+    period: FY2025
+    currency: CNY_billion
+    revenue: 880.941
+    operating_profit: 96.937
+    ICT_infrastructure_revenue: 375.014
+    boundary: ICT infrastructure includes far more than optical networks.
+  - company_ref: optical_company_zte
+    period: FY2025
+    currency: CNY_billion
+    revenue: 133.90
+    net_income: 5.62
+    operator_network_revenue: 62.86
+    boundary: Operator network includes wireless and core products beyond optical access and transport.
+
+supply_chain_stages:
+  - id: stage_compound_materials
+    stage: compound_semiconductor_substrates_and_epiwafers
+    bottleneck: >-
+      High-quality InP substrate and epitaxy, defect control and the move from smaller
+      wafers to 6-inch production constrain reliable high-power lasers.
+    supplier_refs: [optical_company_axt, optical_company_iqe, optical_company_sumitomo_electric, optical_company_coherent]
+  - id: stage_fiber_preform_cable
+    stage: glass_preform_fiber_and_cable
+    bottleneck: >-
+      AI clusters need unusually dense, bend-tolerant and quickly installable fiber;
+      preform, draw, ribbon, connectorization and domestic capacity must ramp together.
+    supplier_refs: [optical_company_corning, optical_company_prysmian, optical_company_furukawa_electric, optical_company_fujikura, optical_company_sumitomo_electric, optical_company_yofc, optical_company_ztt, optical_company_hengtong, optical_company_stl, optical_company_taihan_fiberoptics, optical_company_ls_cable]
+  - id: stage_connectivity
+    stage: connectors_ferrules_and_cable_assemblies
+    bottleneck: >-
+      Fiber count, insertion loss, cleaning, field installation and front-panel density
+      become system-level availability constraints at 800G, 1.6T and CPO scale.
+    supplier_refs: [optical_company_corning, optical_company_amphenol, optical_company_te_connectivity, optical_company_senko, optical_company_us_conec, optical_company_sumitomo_electric, optical_company_furukawa_electric, optical_company_foxconn_fit]
+  - id: stage_lasers_photodetectors
+    stage: lasers_modulators_photodiodes_drivers_and_TIAs
+    bottleneck: >-
+      Laser power, lifetime, thermal drift and packaging yield determine module and CPO
+      capacity; an external-laser architecture changes placement but not the need for lasers.
+    supplier_refs: [optical_company_coherent, optical_company_lumentum, optical_company_macom, optical_company_aoi, optical_company_accelink, optical_company_oe_solutions, optical_company_wooriro]
+  - id: stage_DSP_SerDes_switch_silicon
+    stage: DSP_SerDes_PHY_and_switch_ASIC
+    bottleneck: >-
+      200G-per-lane signal integrity, power and interoperability control how quickly
+      1.6T pluggables and 102.4T switches move from samples to deployable systems.
+    supplier_refs: [optical_company_broadcom, optical_company_marvell, optical_company_credo, optical_company_semtech, optical_company_maxlinear, optical_company_cisco, optical_company_nvidia]
+  - id: stage_photonic_foundry_packaging
+    stage: silicon_photonics_foundry_advanced_packaging_and_optical_IO
+    bottleneck: >-
+      Electronic-photonic co-design, laser attach, fiber alignment, thermal control,
+      known-good-die and high-volume test are a combined manufacturing problem.
+    supplier_refs: [optical_company_tsmc, optical_company_globalfoundries, optical_company_tower, optical_company_ase_spil, optical_company_amkor, optical_company_ayar_labs, optical_company_lightmatter, optical_company_ranovus, optical_company_xscape, optical_company_poet]
+  - id: stage_transceivers_modules
+    stage: transceiver_and_optical_engine_design_and_manufacturing
+    bottleneck: >-
+      Module makers must secure lasers, DSPs and connectors while maintaining assembly
+      yield and reliability under rapid 400G to 800G to 1.6T transitions.
+    supplier_refs: [optical_company_coherent, optical_company_innolight, optical_company_eoptolink, optical_company_accelink, optical_company_aoi, optical_company_fabrinet, optical_company_foxconn_fit, optical_company_source_photonics, optical_company_hisense_broadband, optical_company_oe_solutions, optical_company_opticore]
+  - id: stage_switches_transport_access
+    stage: switches_routers_packet_optical_transport_and_access_systems
+    bottleneck: >-
+      Customers buy validated systems, not isolated components; software, telemetry,
+      routing, optics interoperability and operational support determine deployment.
+    supplier_refs: [optical_company_nvidia, optical_company_arista, optical_company_cisco, optical_company_ciena, optical_company_nokia, optical_company_hpe, optical_company_adtran, optical_company_huawei, optical_company_zte, optical_company_celestica]
+  - id: stage_test_measurement
+    stage: laboratory_production_and_field_test
+    bottleneck: >-
+      High-speed BERT, optical modulation analysis, wafer and module test, fiber inspection
+      and field certification can become hidden throughput and warranty constraints.
+    supplier_refs: [optical_company_viavi, optical_company_keysight, optical_company_anritsu, optical_company_exfo, optical_company_fabrinet, optical_company_ase_spil, optical_company_amkor]
+  - id: stage_subsea
+    stage: submarine_system_design_cable_repeaters_and_marine_installation
+    bottleneck: >-
+      Factory throughput, repeater reliability, cable-ship availability, permits and
+      landing routes create multiyear lead times independent of data-center optics cycles.
+    supplier_refs: [optical_company_asn, optical_company_nec, optical_company_subcom, optical_company_hmn, optical_company_prysmian, optical_company_hengtong]
+
+facility_and_capacity_records:
+  - id: optical_facility_corning_US_AI_expansion
+    company_ref: optical_company_corning
+    geography: North_Carolina_and_Texas_US
+    lifecycle: announced_expansion
+    measures:
+      - {metric: US_optical_connectivity_capacity_multiplier, value: 10, unit: times, state: planned}
+      - {metric: US_fiber_capacity_increase, value: 50, unit: percent_more_than, state: planned}
+      - {metric: new_advanced_manufacturing_facilities, value: 3, unit: plants, state: planned}
+      - {metric: jobs, value: 3000, unit: more_than_jobs, state: planned}
+    boundary: No module-unit, fiber-kilometre, capex or completed-ramp total was disclosed.
+    source: https://nvidianews.nvidia.com/news/nvidia-and-corning-announce-long-term-partnership-to-strengthen-us-manufacturing-for-ai-infrastructure
+  - id: optical_facility_coherent_sherman
+    company_ref: optical_company_coherent
+    geography: Sherman_Texas_US
+    lifecycle: expansion
+    measures:
+      - {metric: InP_wafer_diameter, value: 6, unit: inch, state: production_expansion}
+      - {metric: fab_floor_area_before, value: 70000, unit: square_feet, state: baseline}
+      - {metric: fab_floor_area_after, value: 140000, unit: square_feet, state: planned}
+      - {metric: wafer_capacity_multiplier, value: 4, unit: times, state: planned}
+      - {metric: CHIPS_preliminary_funding, value: 50, unit: USD_million, state: letter_of_intent}
+    boundary: Floor area and wafer-capacity multiple are not laser units or recognized revenue.
+    source: https://www.coherent.com/news/press-releases/a-chip-letter-of-intent-for-50m-to-expand-world-leading-manufacturing-facility-for-ai-infrastructure
+  - id: optical_facility_lumentum_greensboro
+    company_ref: optical_company_lumentum
+    geography: Greensboro_North_Carolina_US
+    lifecycle: announced_retrofit_and_future_ramp
+    measures:
+      - {metric: facility_area, value: 240000, unit: square_feet, state: planned_retrofit}
+      - {metric: InP_wafer_diameter, value: 6, unit: inch, state: planned}
+      - {metric: ramp_start, value: 2028_midyear, unit: date_window, state: target}
+      - {metric: stated_annual_revenue_capacity, value: 5, unit: USD_billion_up_to, state: management_capacity_claim}
+    boundary: Revenue-capacity ceiling is not physical output, order value or recognized revenue.
+    source: https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-Announces-New-U-S--Manufacturing-Facility-to-Produce-Advanced-Lasers-for-the-Worlds-Largest-AI-Data-Centers/default.aspx
+  - id: optical_facility_fabrinet_thailand_network
+    company_ref: optical_company_fabrinet
+    geography: Thailand_primary_with_China_Israel_and_US_operations
+    lifecycle: operating_and_expanding
+    measures: []
+    boundary: Official result shows production scale financially, but comparable module-unit capacity was not disclosed.
+    source: https://investor.fabrinet.com/static-files/c4186233-7a8e-4531-a39e-bae22502a986
+  - id: optical_facility_globalfoundries_photonics
+    company_ref: optical_company_globalfoundries
+    geography: Malta_New_York_and_Singapore
+    lifecycle: operating_and_product_ramp
+    measures:
+      - {metric: silicon_photonics_wafer_diameter, value: 300, unit: millimetre, state: operating_platform}
+      - {metric: legacy_and_complementary_diameter, value: 200, unit: millimetre, state: operating_platform}
+    boundary: Platform availability is not dedicated photonics wafer starts or customer allocation.
+    source: https://gf.com/technologies/silicon-photonics/
+  - id: optical_facility_asn_industrial_network
+    company_ref: optical_company_asn
+    geography: France_and_United_Kingdom
+    lifecycle: operating_with_2026_to_2028_investment
+    measures:
+      - {metric: European_factories, value: 3, unit: factories, state: operating}
+      - {metric: cable_ships, value: 7, unit: ships, state: operating_fleet}
+      - {metric: cumulative_deployed_system_length, value: 850000, unit: kilometres_more_than, state: historical}
+      - {metric: announced_factory_investment, value: 100, unit: EUR_million, state: planned_2026_2028}
+    boundary: Cumulative deployed length is not current factory throughput or order backlog.
+    source: https://www.asn.com/press-release/asn-invests-in-its-industrial-production-facilities/
+  - id: optical_facility_subcom_newington
+    company_ref: optical_company_subcom
+    geography: Newington_New_Hampshire_US
+    lifecycle: operating_with_expansion
+    measures:
+      - {metric: current_annual_cable_capacity, value: 58000, unit: kilometres_per_year, state: baseline_2026}
+      - {metric: end_2026_target_capacity, value: 77000, unit: kilometres_per_year, state: target}
+      - {metric: ultimate_capacity, value: 100000, unit: kilometres_per_year, state: long_term_target}
+    boundary: Factory cable capacity is not installed route length, contract backlog or revenue.
+    source: https://www.subcom.com/documents/SubCom_of_Newington_plans_multi-million-dollar_expansion-20JAN2026.pdf
+
+explicit_relationships:
+  - id: optical_rel_nvidia_photonics_ecosystem_2025
+    parties: [optical_company_nvidia, optical_company_tsmc, optical_company_coherent, optical_company_corning, optical_company_fabrinet, optical_company_foxconn_fit, optical_company_lumentum, optical_company_senko, optical_company_ase_spil, optical_company_sumitomo_electric]
+    relationship_type: named_silicon_photonics_ecosystem
+    announced_on: 2025-03-18
+    commercial_state: ecosystem_collaboration_not_revenue_allocation
+    source: https://nvidianews.nvidia.com/news/nvidia-spectrum-x-co-packaged-optics-networking-switches-ai-factories
+  - id: optical_rel_nvidia_pluggable_ecosystem_2025
+    parties: [optical_company_nvidia, optical_company_coherent, optical_company_eoptolink, optical_company_fabrinet, optical_company_innolight]
+    relationship_type: named_pluggable_transceiver_support
+    announced_on: 2025-03-18
+    commercial_state: platform_support_not_supplier_share
+    source: https://nvidianews.nvidia.com/news/nvidia-spectrum-x-co-packaged-optics-networking-switches-ai-factories
+  - id: optical_rel_nvidia_coherent_2026
+    parties: [optical_company_nvidia, optical_company_coherent]
+    relationship_type: nonexclusive_investment_purchase_commitment_and_capacity_rights
+    announced_on: 2026-03-02
+    measures:
+      - {metric: NVIDIA_investment, value: 2, unit: USD_billion, state: announced}
+      - {metric: purchase_commitment, value: multibillion, unit: USD, state: multiyear_commitment}
+    commercial_state: commitment_and_capacity_rights_not_recognized_revenue
+    source: https://www.coherent.com/news/press-releases/nvidia-and-coherent-announce-strategic-partnership
+  - id: optical_rel_nvidia_lumentum_2026
+    parties: [optical_company_nvidia, optical_company_lumentum]
+    relationship_type: nonexclusive_investment_purchase_commitment_and_capacity_rights
+    announced_on: 2026-03-02
+    measures:
+      - {metric: NVIDIA_investment, value: 2, unit: USD_billion, state: announced}
+      - {metric: purchase_commitment, value: multibillion, unit: USD, state: multiyear_commitment}
+    commercial_state: commitment_and_capacity_rights_not_recognized_revenue
+    source: https://investor.lumentum.com/financial-news-releases/news-details/2026/NVIDIA-Announces-Strategic-Partnership-With-Lumentum-to-Develop-State-of-the-Art-Optics-Technology/default.aspx
+  - id: optical_rel_nvidia_corning_2026
+    parties: [optical_company_nvidia, optical_company_corning]
+    relationship_type: multiyear_commercial_technology_and_US_capacity_partnership
+    announced_on: 2026-05-06
+    commercial_state: named_partnership_with_capacity_plan_contract_value_not_disclosed
+    source: https://nvidianews.nvidia.com/news/nvidia-and-corning-announce-long-term-partnership-to-strengthen-us-manufacturing-for-ai-infrastructure
+  - id: optical_rel_amazon_corning_2026
+    parties_external_and_internal: [Amazon, optical_company_corning]
+    relationship_type: multiyear_multibillion_fiber_optics_agreement
+    announced_on: 2026-06-08
+    commercial_state: agreement_not_recognized_revenue
+    source: https://www.corning.com/worldwide/en/about-us/news-events/news-releases/2026/06/amazon-announces-agreement-with-corning-to-boost-us-fiber-optics-manufacturing-creating-1000-advanced-manufacturing-jobs-in-north-carolina.html
+  - id: optical_rel_broadcom_tsmc_corning_TH6
+    parties: [optical_company_broadcom, optical_company_tsmc, optical_company_corning]
+    parties_external: [Celestica, HPE, Micas_Networks, NextHop_AI]
+    relationship_type: Tomahawk_6_Davisson_CPO_technology_and_system_ecosystem
+    commercial_state: product_ecosystem_not_revenue_allocation
+    source: https://www.broadcom.com/company/news/product-releases/63626
+  - id: optical_rel_lightmatter_GUC
+    parties: [optical_company_lightmatter]
+    parties_external: [Global_Unichip]
+    relationship_type: CPO_design_and_production_partnership
+    commercial_state: partnership_and_productization_not_volume_revenue
+    source: https://lightmatter.co/press-release/lightmatter-and-guc-partner-to-produce-co-packaged-optics-cpo-solutions-for-ai-hyperscalers/
+  - id: optical_rel_ranovus_jabil
+    parties: [optical_company_ranovus]
+    parties_external: [Jabil]
+    relationship_type: mass_production_collaboration_for_ODIN_optical_engines
+    commercial_state: manufacturing_collaboration_volume_and_revenue_not_disclosed
+    source: https://ranovus.com/news/
+  - id: optical_rel_nec_I2SEA
+    parties: [optical_company_nec]
+    parties_external: [Singtel, Tata_Communications, Microsoft, Lightstorm]
+    relationship_type: submarine_system_supply_contract
+    announced_on: 2026-07-03
+    commercial_state: named_contract_value_not_disclosed
+    source: https://www.nec.com/en/press/202607/global_20260703_02.html
+  - id: optical_rel_asn_IAM
+    parties: [optical_company_asn]
+    parties_external: [OMS_Group, Intra_Asia_Marine_Networks]
+    relationship_type: submarine_system_build_contract
+    measures:
+      - {metric: cable_length, value: 8100, unit: kilometres, state: contracted_system}
+      - {metric: fiber_pairs, value: 16, unit: pairs, state: design}
+      - {metric: system_capacity, value: 320, unit: terabits_per_second, state: design}
+    commercial_state: named_contract_value_not_disclosed
+    source: https://www.asn.com/press-release/asn-and-oms-group-selected-by-intra-asia-marine-networks-co-ltd-to-build-the-intra-asia-marine-i-am-cable-system/
+
+investment_exposure:
+  instrument: KODEX_미국AI광통신네트워크
+  ticker: 0173Y0_KR
+  holding_snapshot_date: 2026-05-31
+  sheet_basis_date: 2026-05-29
+  Brian_position_ref: life/finance/ai_data_center_investment_comparison_202607.yaml
+  holdings:
+    - {company_ref: optical_company_ciena, weight_percent: 20.93}
+    - {company_ref: optical_company_coherent, weight_percent: 19.75}
+    - {company_ref: optical_company_lumentum, weight_percent: 19.05}
+    - {company_ref: optical_company_marvell, weight_percent: 7.27}
+    - {company_ref: optical_company_nokia, weight_percent: 6.98}
+    - {company_ref: optical_company_aoi, weight_percent: 6.63}
+    - {company_ref: optical_company_tower, weight_percent: 6.09}
+    - {company_ref: optical_company_corning, weight_percent: 5.37}
+    - {company_ref: optical_company_celestica, weight_percent: 4.41}
+    - {company_ref: optical_company_fabrinet, weight_percent: 3.52}
+  checks:
+    weights_sum_percent: 100.0
+    top_three_percent: 59.73
+    top_five_percent: 73.98
+  interpretation:
+    covered_value_pools: [coherent_transport, lasers_and_components, modules, DSP_and_switch_silicon, foundry, fiber, system_manufacturing]
+    direct_gaps: [Chinese_module_leaders, private_optical_IO, Japanese_fiber_specialists, test_and_measurement, submarine_systems, Korean_suppliers]
+    warning: Holdings change over time; this is the official 2026-05-31 snapshot, not a current July portfolio file.
+  sources:
+    - https://m.samsungfund.com/sheet/20260604/2ETFU3_20260531.pdf
+    - https://m.samsungfund.com/etf/product/view.do?id=2ETFU3
+
+bottleneck_register:
+  - id: bottleneck_InP_laser_capacity
+    severity: high
+    evidence: dual_NVIDIA_multibillion_commitments_and_US_6inch_fab_expansions
+    beneficiaries_if_execution_succeeds: [optical_company_coherent, optical_company_lumentum, optical_company_axt, optical_company_iqe, optical_company_sumitomo_electric]
+    failure_modes: [fab_ramp_delay, yield, laser_reliability, customer_dual_sourcing, overbuild_after_shortage]
+  - id: bottleneck_module_packaging_yield
+    severity: high
+    evidence: high_growth_of_module_leaders_and_named_contract_manufacturing_ecosystem
+    beneficiaries_if_execution_succeeds: [optical_company_innolight, optical_company_eoptolink, optical_company_fabrinet, optical_company_coherent, optical_company_aoi]
+    failure_modes: [laser_or_DSP_shortage, qualification_delay, customer_concentration, ASP_compression, CPO_mix_shift]
+  - id: bottleneck_fiber_connectivity
+    severity: high
+    evidence: Corning_NVIDIA_Meta_and_Amazon_capacity_commitments
+    beneficiaries_if_execution_succeeds: [optical_company_corning, optical_company_prysmian, optical_company_fujikura, optical_company_sumitomo_electric, optical_company_amphenol, optical_company_senko]
+    failure_modes: [capacity_arrives_after_demand, installation_labor, connector_contamination, hyperscaler_price_power]
+  - id: bottleneck_DSP_SerDes_switch
+    severity: high
+    evidence: 200G_per_lane_1.6T_and_102.4T_switch_transition
+    beneficiaries_if_execution_succeeds: [optical_company_broadcom, optical_company_marvell, optical_company_credo, optical_company_cisco, optical_company_nvidia]
+    failure_modes: [power_budget, standards_delay, interoperability, custom_silicon_displacement]
+  - id: bottleneck_test
+    severity: medium_high
+    evidence: more_lanes_more_wavelengths_and_CPO_raise_validation_complexity
+    beneficiaries_if_execution_succeeds: [optical_company_viavi, optical_company_keysight, optical_company_anritsu, optical_company_exfo]
+    failure_modes: [customer_internal_test, equipment_cycle, pricing, qualification_timing]
+  - id: bottleneck_subsea_industrial_capacity
+    severity: medium_high
+    evidence: ASN_and_SubCom_factory_investments_and_multiyear_system_contracts
+    beneficiaries_if_execution_succeeds: [optical_company_asn, optical_company_subcom, optical_company_nec, optical_company_prysmian, optical_company_hmn]
+    failure_modes: [permits, cable_ship_availability, geopolitics, route_damage, project_financing]
+
+acquisition_and_lineage_register:
+  - {former_entity: Acacia_Communications, current_parent_ref: optical_company_cisco, treatment: do_not_count_separately}
+  - {former_entity: Infinera, current_parent_ref: optical_company_nokia, treatment: do_not_count_separately}
+  - {former_entity: Juniper_Networks, current_parent_ref: optical_company_hpe, treatment: do_not_count_separately}
+  - {former_entity: Celestial_AI, current_parent_ref: optical_company_marvell, treatment: do_not_count_separately}
+  - {former_entity: XConn_Technologies, current_parent_ref: optical_company_marvell, treatment: do_not_count_separately}
+  - {former_entity: CommScope_CCS, current_parent_ref: optical_company_amphenol, treatment: do_not_count_separately_after_2026_01_close}
+  - {former_entity: II_VI_and_Finisar, current_parent_ref: optical_company_coherent, treatment: historical_lineage_only}
+  - {former_entity: SPIL, current_parent_ref: optical_company_ase_spil, treatment: retain_brand_but_use_ASE_consolidated_financials}
+
+unresolved_gaps:
+  - Exact hyperscaler and network-OEM supplier shares by laser, DSP, module, connector and test platform.
+  - Comparable module-unit capacity, yield, lead time, pricing and cancellation rights across suppliers.
+  - InP substrate and epitaxy capacity mapped to laser output after qualification and scrap.
+  - Current Chinese export-control, entity-list and customer-geography effects by product generation.
+  - Korean company audited 2025 and 1H26 optical-only revenue, operating profit, customer and capacity disclosures.
+  - Private-company revenue, unit shipments and volume-production dates for Ayar Labs, Lightmatter, Ranovus and Xscape.
+  - A common physical-capacity denominator for subsea cable, repeaters and cable-ship installation.
+
+quality_gates:
+  company_parent_deduplication: true
+  group_revenue_not_called_optical_revenue: true
+  named_ecosystem_not_called_customer_allocation: true
+  commitments_not_called_recognized_revenue: true
+  capacity_metrics_keep_denominators: true
+  ETF_weights_reconcile_to_100_percent: true
+  Korean_watchlist_disclosure_gaps_preserved: true

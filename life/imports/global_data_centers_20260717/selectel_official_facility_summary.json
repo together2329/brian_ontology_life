@@ -1,0 +1,323 @@
+{
+  "OSM_crosswalk": {
+    "Selectel_operator_objects": 6,
+    "Tsvetochnaya_overlapping_objects": 2,
+    "boundary": "OSM does not map an exact Tsvetochnaya 2 object, contains an off-address Berzarina node and has overlapping Tsvetochnaya objects. It is not a complete or non-overlapping roster.",
+    "objects_joined_to_facility_candidates": 6,
+    "related_objects_including_one_name_only_building": 7,
+    "rows": [
+      {
+        "capacity_counting_rule": "An OSM object is a public-map crosswalk, not an ownership, facility-count, rack, MW, utilization, revenue or GPU record.",
+        "classification": "nearby_campus_building_overlaps_Tsvetochnaya_1_node_exact_phase_mapping_unresolved",
+        "facility_candidate_ref": "selectel_tsvetochnaya_1",
+        "footprint_area_m2": 2715.124,
+        "latitude": 59.8872253,
+        "longitude": 30.3291308,
+        "name": "Selectel",
+        "osm_ref": "osm_way_105594096",
+        "raw_operator": null,
+        "raw_owner": null
+      },
+      {
+        "capacity_counting_rule": "An OSM object is a public-map crosswalk, not an ownership, facility-count, rack, MW, utilization, revenue or GPU record.",
+        "classification": "official_address_facility_candidate",
+        "facility_candidate_ref": "selectel_berzarina",
+        "footprint_area_m2": 1254.236,
+        "latitude": 55.7910734,
+        "longitude": 37.4670233,
+        "name": "Selectel Berzarina",
+        "osm_ref": "osm_way_105462159",
+        "raw_operator": "Selectel",
+        "raw_owner": null
+      },
+      {
+        "capacity_counting_rule": "An OSM object is a public-map crosswalk, not an ownership, facility-count, rack, MW, utilization, revenue or GPU record.",
+        "classification": "named_Tsvetochnaya_1_candidate",
+        "facility_candidate_ref": "selectel_tsvetochnaya_1",
+        "footprint_area_m2": null,
+        "latitude": 59.886598,
+        "longitude": 30.329423,
+        "name": "Selectel Tsvetochnaya 1",
+        "osm_ref": "osm_node_2639510695",
+        "raw_operator": "Selectel",
+        "raw_owner": "Selectel"
+      },
+      {
+        "capacity_counting_rule": "An OSM object is a public-map crosswalk, not an ownership, facility-count, rack, MW, utilization, revenue or GPU record.",
+        "classification": "Berzarina_name_but_coordinate_far_from_official_address_geospatial_conflict",
+        "facility_candidate_ref": null,
+        "footprint_area_m2": null,
+        "latitude": 55.931083,
+        "longitude": 37.779871,
+        "name": "Берзарина",
+        "osm_ref": "osm_node_13068243349",
+        "raw_operator": "Selectel",
+        "raw_owner": null
+      },
+      {
+        "capacity_counting_rule": "An OSM object is a public-map crosswalk, not an ownership, facility-count, rack, MW, utilization, revenue or GPU record.",
+        "classification": "named_Dubrovka_1_facility_candidate",
+        "facility_candidate_ref": "selectel_dubrovka_1",
+        "footprint_area_m2": 2006.907,
+        "latitude": 59.8343917,
+        "longitude": 30.9327013,
+        "name": "ЦОД \"Дубровка-1\"",
+        "osm_ref": "osm_way_168582094",
+        "raw_operator": "Selectel",
+        "raw_owner": null
+      },
+      {
+        "capacity_counting_rule": "An OSM object is a public-map crosswalk, not an ownership, facility-count, rack, MW, utilization, revenue or GPU record.",
+        "classification": "named_Dubrovka_2_facility_candidate",
+        "facility_candidate_ref": "selectel_dubrovka_2",
+        "footprint_area_m2": 1540.147,
+        "latitude": 59.8345989,
+        "longitude": 30.9338251,
+        "name": "ЦОД \"Дубровка-2\"",
+        "osm_ref": "osm_way_168582099",
+        "raw_operator": "Selectel",
+        "raw_owner": null
+      },
+      {
+        "capacity_counting_rule": "An OSM object is a public-map crosswalk, not an ownership, facility-count, rack, MW, utilization, revenue or GPU record.",
+        "classification": "named_Dubrovka_3_facility_candidate",
+        "facility_candidate_ref": "selectel_dubrovka_3",
+        "footprint_area_m2": 1570.122,
+        "latitude": 59.8346464,
+        "longitude": 30.9354837,
+        "name": "ЦОД \"Дубровка-3\"",
+        "osm_ref": "osm_way_517923512",
+        "raw_operator": "Selectel",
+        "raw_owner": null
+      }
+    ],
+    "source_file": "life/imports/global_data_centers_20260717/osm_data_center_locations.jsonl",
+    "source_file_sha256": "3a0f1370f036f2ff5fa0c478bfadeb58c7809d90315bbee4e0a7c9cfd21d4733",
+    "unresolved_geospatial_conflicts": 1
+  },
+  "Yurlovsky_development_boundary": {
+    "H1_2025_data_center_infrastructure_capex_including_Yurlovsky_RUB_billion": 1.1,
+    "boundary": "The project was omitted from the current six-facility operating page. Planned capacity, PUE and reliability are not current operating facts.",
+    "current_official_operating_launch_confirmed": false,
+    "planned_average_rack_density_kw": 8,
+    "planned_connected_power_mw": 20,
+    "planned_racks": 2000,
+    "planned_servers_up_to": 80000,
+    "target_PUE": "1.10_to_1.15",
+    "target_reliability": "Tier_IV_design_target"
+  },
+  "accelerator_and_AI_boundary": {
+    "AI_ITMO_joint_venture_investment_RUB_billion_more_than": 1,
+    "AI_investment_since_2020_RUB_billion_approximately": 3.6,
+    "B300_HGX_GPUs_per_server": 8,
+    "accelerator_ledger_action": "no_numeric_physical_inventory_row_created",
+    "boundary": "Eight B300 GPUs describe one HGX server configuration, and an eight-GPU product ceiling is not installed inventory. Model availability and investment plans do not disclose fleet units or economics.",
+    "currently_documented_service_models": [
+      "NVIDIA_A100_40GB",
+      "NVIDIA_A100_40GB_NVLink_on_request",
+      "NVIDIA_A100_80GB",
+      "NVIDIA_Tesla_T4",
+      "NVIDIA_A30_24GB",
+      "NVIDIA_A2_16GB",
+      "NVIDIA_GTX_1080",
+      "NVIDIA_RTX_2080_Ti",
+      "NVIDIA_RTX_4090_24GB",
+      "NVIDIA_RTX_4090_48GB",
+      "NVIDIA_RTX_6000_Ada_48GB",
+      "NVIDIA_A2000_6GB",
+      "NVIDIA_A5000_24GB",
+      "NVIDIA_H100_80GB",
+      "NVIDIA_H200_141GB",
+      "NVIDIA_L4_24GB",
+      "NVIDIA_RTX_6000_Pro_documented_memory_conflict",
+      "NVIDIA_B300_in_8_GPU_HGX_server_configuration"
+    ],
+    "fixed_or_custom_configuration_ceiling_GPUs": 8,
+    "host_sites_delivery_power_utilization_revenue_and_margin": "undisclosed",
+    "physical_GPU_total_and_per_model_units": "undisclosed",
+    "planned_AI_investment_through_2031_RUB_billion": 10
+  },
+  "accessed_on": "2026-07-19",
+  "audited_FY2025_financials_RUB_thousand": {
+    "PPE": 21852879,
+    "PPE_purchases": 7591112,
+    "administrative_expenses": 2601751,
+    "boundary": "The audited consolidated operating profit is not a data-center-services segment profit and cannot be assigned to six facilities. Cloud infrastructure and physical data-center service revenue remain separate categories.",
+    "cash": 868909,
+    "cloud_infrastructure_revenue": 15879579,
+    "cost_of_sales": 4932248,
+    "current_debt": 7326734,
+    "customers": 33000,
+    "data_center_services_revenue": 1452020,
+    "data_center_services_revenue_share_percent": 8,
+    "depreciation_and_amortization": 2952156,
+    "derived_operating_margin_percent": 34.05,
+    "dividends": 1670978,
+    "equity": 6790605,
+    "finance_expense": 2726169,
+    "finance_income": 542596,
+    "income_tax": 962297,
+    "intangible_purchases": 354037,
+    "long_term_debt": 10040119,
+    "net_profit": 3018458,
+    "operating_cash_flow": 6417110,
+    "operating_profit": 6234426,
+    "other_revenue": 980192,
+    "profit_before_tax": 3980755,
+    "revenue": 18311791,
+    "selling_expenses": 1451703,
+    "top_five_customer_revenue_share_percent": 17.3
+  },
+  "current_own_facility_checksum": {
+    "boundary": "The six physical-facility cards reconcile exactly to the provider headline. Connected power is not IT load, actual draw, utilization or billed capacity.",
+    "cities_or_campus_groups": [
+      "Saint_Petersburg",
+      "Dubrovka_Leningrad_Oblast",
+      "Moscow"
+    ],
+    "connected_power_mw": 30.0,
+    "facilities": 6,
+    "racks": 3612,
+    "server_room_area_sqm": 7780
+  },
+  "id": "selectel_official_facility_summary_2026_07_19",
+  "management_metrics_and_latest_trend": {
+    "FY2025_adjusted_EBITDA_RUB_billion": 9.692,
+    "FY2025_adjusted_EBITDA_margin_percent": 53,
+    "FY2025_adjusted_free_cash_flow_RUB_billion": -1.5,
+    "FY2025_capex_RUB_billion": 7.9,
+    "FY2025_data_center_infrastructure_capex_RUB_billion": 2.9,
+    "FY2025_net_debt_RUB_billion": 16.813,
+    "FY2025_net_debt_to_adjusted_EBITDA": 1.7,
+    "FY2025_server_capex_RUB_billion": 4.7,
+    "Q1_2026": {
+      "adjusted_EBITDA_RUB_billion": 2.7,
+      "adjusted_EBITDA_growth_percent": 5,
+      "adjusted_EBITDA_margin_percent": 54,
+      "adjusted_free_cash_flow_RUB_billion": -1.3,
+      "capex_RUB_billion": 2.8,
+      "cloud_infrastructure_revenue_RUB_billion": 4.3,
+      "customers": 36600,
+      "data_center_infrastructure_capex_RUB_billion": 0.9,
+      "data_center_services_revenue_RUB_billion": 0.4,
+      "margin_change_percentage_points": -5,
+      "net_debt_RUB_billion": 18.1,
+      "net_debt_to_adjusted_EBITDA": 1.8,
+      "net_profit_RUB_billion": 0.9,
+      "revenue_RUB_billion": 5.0,
+      "revenue_growth_percent": 14
+    },
+    "boundary": "Adjusted metrics and Q1 management results are not the same as audited accounting operating profit. Rising capex and net debt, negative adjusted FCF and slower Q1 growth are material execution and financing signals."
+  },
+  "operator": "AO_Selectel",
+  "outlook": {
+    "analytical_view": "Selectel combines strong growth, high adjusted margins, a broad GPU menu and substantial infrastructure investment. The main constraints are rising debt and finance cost, negative adjusted FCF, slower Q1 2026 growth, the unconfirmed Yurlovsky launch and the absence of physical GPU, site-utilization and site-economics disclosure.",
+    "positive_signals": [
+      "FY2025_audited_revenue_growth_about_39_percent_and_operating_profit_growth_about_28_5_percent",
+      "FY2025_adjusted_EBITDA_margin_53_percent",
+      "Q1_2026_customers_36600_and_data_center_services_revenue_growth_10_percent",
+      "broad_current_GPU_service_menu_including_H100_H200_B300",
+      "RUB10_billion_AI_investment_plan_through_2031",
+      "top_five_customer_share_17_3_percent"
+    ],
+    "risk_signals": [
+      "Q1_2026_revenue_growth_slowed_to_14_percent_and_adjusted_EBITDA_growth_to_5_percent",
+      "Q1_2026_adjusted_EBITDA_margin_down_5_percentage_points",
+      "FY2025_net_profit_declined_and_finance_expense_increased",
+      "negative_adjusted_free_cash_flow_with_high_capex",
+      "net_debt_increased_to_RUB18_1_billion_and_leverage_to_1_8x",
+      "Yurlovsky_operating_launch_not_confirmed",
+      "GPU_procurement_import_and_supply_chain_risk",
+      "private_unlisted_company_with_no_public_equity_pure_play"
+    ]
+  },
+  "ownership_and_control": {
+    "Catalystic_People_2025_stake_percent": 25,
+    "Catalystic_People_ownership": {
+      "Interros_percent": 49.99,
+      "T_Technologies_percent": 50.01
+    },
+    "Tier_5_2023_stake_percent": 25,
+    "boundary": "The exact 2023-to-2025 seller and shareholder-table bridge is not inferred. IFRS control and announced minority transactions are preserved as separate evidence.",
+    "direct_parent": "Servertech_Holding_Ltd_UAE",
+    "stake_transition_bridge": "not_fully_disclosed_in_reviewed_sources",
+    "subsidiaries_percent_owned": {
+      "Edinaya_Set": 100,
+      "Selectel_Invest": 100,
+      "Selectel_Lab": 100
+    },
+    "ultimate_controlling_party_at_2025_year_end": "Vyacheslav_Mikhailovich_Mirilashvili"
+  },
+  "power_cooling_and_certification_boundary": {
+    "all_six_current_facilities": "UPS_and_load_tested_diesel_generation_present",
+    "boundary": "Provider Tier wording is not relabelled as a current Uptime award ledger. Historical engineering and redundancy snapshots remain scoped to their publication dates and facility sections.",
+    "cooling_technologies": [
+      "freon_direct_expansion",
+      "chillers",
+      "direct_free_cooling",
+      "adiabatic_trim",
+      "natural_gas_absorption_chiller_trim"
+    ],
+    "current_portfolio_cooling_redundancy": "N_plus_2",
+    "exact_Selectel_match_on_current_Uptime_Russia_roster": false,
+    "fire_suppression": "central_autonomous_gas_Halon_125",
+    "network_carriers": 55,
+    "network_nodes_redundancy": "N_plus_1",
+    "provider_reliability_wording": "six_facilities_correspond_to_Tier_III",
+    "published_site_PUE_claims": {
+      "Berzarina_approximately": 1.2,
+      "Dubrovka_3_approximately": 1.25
+    }
+  },
+  "records_sha256": "c4b1251c3ce57e7e5116e8e9e2d1f25dc33c2351e14e930c0b23d2cd92d6f5f7",
+  "remaining_material_gaps": [
+    "exact_bridge_between_six_physical_facilities_four_investor_sites_and_service_regions_AZs_and_pools",
+    "current_Yurlovsky_construction_energization_acceptance_and_launch_status",
+    "per_site_operating_energized_leased_utilized_billed_and_actual_IT_load",
+    "per_site_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_and_cooling_as_built_BOM",
+    "per_site_measured_PUE_WUE_absolute_water_energy_hourly_renewable_matching_and_liquid_cooled_MW",
+    "physical_GPU_model_count_owner_host_site_delivery_fabric_power_utilization_revenue_and_margin",
+    "data_center_services_accounting_operating_profit_cash_flow_capex_debt_customer_concentration_site_economics_and_ROIC",
+    "exact_current_shareholder_table_and_2023_to_2025_25_percent_stake_transition",
+    "exact_current_Uptime_award_identifiers_types_scope_and_expiry_for_provider_Tier_wording"
+  ],
+  "roster_scope_reconciliation": {
+    "boundary": "The investor four-site statement likely uses a campus or platform boundary, but no exact official bridge to six physical facilities is published. Regions, availability zones and pools are service and fault-domain constructs, not buildings.",
+    "current_explicit_partner_or_other_product_service_location_records": 8,
+    "current_product_infrastructure": {
+      "availability_zones": 11,
+      "countries": 4,
+      "pools": 26,
+      "regions": 6
+    },
+    "current_provider_enumerated_own_physical_facilities": 6,
+    "investor_material_own_data_center_sites": 4,
+    "provider_main_page_Russia_product_scope": {
+      "availability_zones": 6,
+      "pools": 16,
+      "regions": 3
+    },
+    "unconfirmed_development_records": 1
+  },
+  "sources": [
+    "https://selectel.ru/about/data-centers/",
+    "https://docs.selectel.ru/en/infrastructure/locations/",
+    "https://selectel.ru/blog/tcvetochnaya-2/",
+    "https://selectel.ru/blog/datacenter-cvt2/",
+    "https://selectel.ru/blog/free-cooling-details/",
+    "https://selectel.ru/blog/data-center/",
+    "https://selectel.ru/blog/kak-eto-rabotaet-data-centr-berzarina/",
+    "https://selectel.ru/about/newsroom/press/novyi-cod-selectel-v-moskve/",
+    "https://selectel.ru/about/newsroom/press/selectelselectel-pristupila-k-stroitelstvu-v-moskve-novogo-20-mvt-data-centra-na-2-tys-stoek/",
+    "https://selectel.ru/about/newsroom/news/selectel-obyavlyaet-finansovye-rezultaty-po-itogam-1-polugodiya-2025-vyruchka-sostavila-89-mlrd-rublej-uvelichivshis-na-46-god-k-godu/",
+    "https://docs.selectel.ru/en/cloud-servers/create/gpus/",
+    "https://selectel.ru/about/newsroom/news/novye-videokarty-nvidia-b300-dlya-krupnomasshtabnyh-ai-nagruzok-stali-dostupny-v-selectel/",
+    "https://selectel.ru/about/newsroom/news/selectel-obyavil-o-zapuske-sobstvennogo-vysokoproizvoditelnogo-ai-servera/",
+    "https://selectel.ru/about/newsroom/news/selectel-investiruet-bolee-1-mlrd-v-sovmestnoe-predpriyatie-s-itmo-dlya-razvitiya-ai-servisov/",
+    "https://investors.selectel.ru/wp-content/uploads/2026/03/Selectel_IFRS_Cons_FS.pdf",
+    "https://investors.selectel.ru/wp-content/uploads/2026/05/3m-2026_Selectel_Financial-results_Press-release.pdf",
+    "https://selectel.ru/about/newsroom/news/investicionnyj-fond-tier-5-priobrel-25-provajdera-it-infrastruktury-selectel/",
+    "https://interros.ru/press/news/sovmestnoe-predpriyatie-interrosa-i-t-tekhnologiy-pokupaet-dolyu-v-krupneyshem-nezavisimom-rossiysko/",
+    "https://uptimeinstitute.com/uptime-institute-awards/country/id/RU"
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "ECS_API_endpoint_guide": {
+    "document_updated_on": "2025-06-30",
+    "region_endpoint_rows": 6
+  },
+  "accessed_on": "2026-07-18",
+  "canonical_record_sha256": "6f4d018a60ba983314e13d46f5d1a7777ab9b2a70cfe3cb552dd4b41172bac67",
+  "container_service_guide": {
+    "AZ_ID_rows": 20,
+    "document_updated_on": "2025-09-30",
+    "region_rows": 6
+  },
+  "general_guide": {
+    "captured_AZ_ID_rows": 19,
+    "document_updated_on": "2025-03-13",
+    "published_AZ_count": 24,
+    "region_rows": 7,
+    "unrendered_AZ_ID_residual": 5
+  },
+  "portfolio_sustainability_context": {
+    "allocation_boundary": "The reviewed company page does not map these portfolio statements to a Region, AZ, campus, building, or capacity.",
+    "metric_year": 2020,
+    "renewable_energy_utilization_at_some_data_centers_percent_up_to": 100,
+    "reported_cooling": "indirect_evaporative_natural_cooling",
+    "reported_data_center_PUE": 1.14,
+    "site_selection_preference": "areas_rich_in_wind_and_solar_resources",
+    "source_date": "2022-04-07"
+  },
+  "registry": "Volcano Engine scope-preserving official Region and AZ registry",
+  "scope_reconciliation": {
+    "container_and_ECS_only_region_IDs": [
+      "ap-southeast-1",
+      "ap-southeast-3"
+    ],
+    "general_and_container_common_region_IDs": [
+      "cn-beijing",
+      "cn-guangzhou",
+      "cn-hongkong",
+      "cn-shanghai"
+    ],
+    "general_only_region_IDs": [
+      "cn-beijing2",
+      "cn-datong",
+      "cn-wulanchabu"
+    ],
+    "product_specific_AZ_count_conflicts": {
+      "cn_beijing": {
+        "container_service": 4,
+        "general_guide": 9
+      },
+      "cn_guangzhou": {
+        "container_service": 3,
+        "general_guide": 4
+      },
+      "cn_hongkong": {
+        "container_service": 2,
+        "general_guide": 2
+      },
+      "cn_shanghai": {
+        "container_service": 5,
+        "general_guide": 3
+      }
+    },
+    "source_presence_counts": {
+      "present_in_1_source_scopes": 3,
+      "present_in_2_source_scopes": 2,
+      "present_in_3_source_scopes": 4
+    }
+  },
+  "source_snapshots": {
+    "ByteDance_sustainability_context": {
+      "normalized_evidence_sha256": "c07c0e517e54f7a8e783e6caf3362cc32b0af89863ff42a53d8ab026c4154967",
+      "url": "https://gongyi.bytedance.com/detail/7161987661010602014"
+    },
+    "ECS_API_endpoint_guide": {
+      "access_boundary": "Endpoint roster only; provider disclaimer preserved.",
+      "normalized_evidence_sha256": "5b48b653f7af18ffc8a7774b2f6aeafb997fdceacb931dfe4510a065e5ee4cbf",
+      "url": "https://www.volcengine.com/docs/6396/1581668?lang=zh"
+    },
+    "container_service_Region_AZ_guide": {
+      "access_boundary": "Product-specific official documentation snapshot.",
+      "normalized_evidence_sha256": "6ddcfc38a2fbb642edc143e38de3b3ca827f58acc878b259d569b400a1cc6a97",
+      "url": "https://www.volcengine.com/docs/6460/79643"
+    },
+    "general_Region_AZ_guide": {
+      "access_boundary": "Client-rendered source; reviewed official search snapshot retained as normalized rows.",
+      "normalized_evidence_sha256": "a65536dda8f02868ed59caa0f1c1a8cc18863177a1a85063d7aeaafcac623e97",
+      "url": "https://www.volcengine.com/docs/6534/1131814"
+    }
+  },
+  "source_union_count_boundary": "Nine unique IDs across three reviewed service-document scopes, not nine company-wide physical Regions.",
+  "source_union_region_id_count": 9
+}

@@ -1,0 +1,42 @@
+schema_version: 1
+generated_at: '2026-07-18T19:23:43'
+import_id: bke_gratitude_diary_2018
+source:
+  raw_ref: raw_data/documents/bke_gratitude_campaign_2018/BKE Group 감사일기 캠페인 2018년 _ 최정윤.docx
+  original_source_path: /Users/brian/Desktop/BKE Group 감사일기 캠페인 2018년 _ 최정윤.docx
+  sha256: f4da968185baaa4f925598f003b3a483f690dea98d9d3fe52fba60587baa493c
+  source_type: docx
+  title: BKE Group 감사일기 캠페인 ( 2018년 4월 29일 ~ 2018년 12월 31일 )
+  header_line_count: 5
+  personal_contact_fields_present: true
+  birth_date_field_present: true
+  name_field_present: true
+parse:
+  parser: tools/import_bke_gratitude_diary.py
+  method: docx_word_document_xml_paragraph_extraction
+  markdown_normalization: local_xml_fallback_markitdown_and_pandoc_unavailable
+  date_pattern: YYYY년 M월 D일 weekday
+  record_model: one GratitudeEntry per dated bullet/paragraph
+document_structure:
+  table_count: 0
+  embedded_media_count: 1
+  embedded_media:
+  - path: word/media/image1.png
+    bytes: 371
+    sha256: a422f75046652ec7b97247359e11feebc2c02e4a886f109c2c11f94ffea46262
+    pixel_width: 16
+    pixel_height: 16
+    content_role: decorative_or_list_marker
+duplicate_check:
+  method: sha256_of_whitespace_normalized_paragraph_text
+  compared_imports:
+  - import_ref: life/imports/bke_gratitude_diary_2019
+    exact_entry_hash_overlap_count: 0
+  total_exact_entry_hash_overlap_count: 0
+outputs:
+  source_markdown: life/imports/bke_gratitude_diary_2018/source.md
+  normalized_entries: life/imports/bke_gratitude_diary_2018/normalized_entries.jsonl
+  entity_linked_entries: life/imports/bke_gratitude_diary_2018/entity_linked_entries.jsonl
+  daily_summary: life/imports/bke_gratitude_diary_2018/daily_summary.jsonl
+  summary: life/imports/bke_gratitude_diary_2018/summary.yaml
+  pattern_candidates: life/patterns/bke_gratitude_diary_2018_pattern_candidates.yaml

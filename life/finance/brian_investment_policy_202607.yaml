@@ -1,0 +1,674 @@
+schema_version: 1
+status: proposed_for_brian_review
+created_at: '2026-07-19'
+updated_at: '2026-07-20'
+area: FINANCE
+secondary_areas:
+  - CAREER
+  - MAINTENANCE
+  - MIND
+profile_ref: person_brian
+title: Brian investment policy synthesis for the AI infrastructure cycle
+purpose: >
+  Convert Brian's saved cashflow, portfolio, AI data-center, semiconductor, optical-network
+  and power-infrastructure research into a repeatable investment policy. The policy combines
+  the business-owner discipline of Warren Buffett, the error avoidance and opportunity-cost
+  discipline of Charlie Munger, Philip Fisher's qualitative investigation, Stanley
+  Druckenmiller's forward-looking sizing and flexibility, George Soros's fallibility and
+  reflexivity, Howard Marks's price and cycle discipline, and John Bogle's low-cost diversified
+  core.
+privacy: Personal holdings, cashflow and household-risk observations remain local in this repository.
+decision_boundary: >
+  This is a personalized research framework and proposed policy, not authorization to trade.
+  Tax basis, account type, emergency cash, debt, pension assets, spouse holdings, employer
+  restrictions and material non-public information boundaries must be checked before an
+  external buy, sale or rebalance.
+execution_ledger_ref: life/finance/brian_investment_policy_execution_202607.yaml
+execution_builder_ref: scripts/analyze_brian_investment_policy.py
+country_macro_overlay_ref: life/finance/country_macro_investment_overlay_202607.yaml
+equity_backtest_spec_ref: life/finance/brian_equity_backtest_spec_202607.yaml
+equity_backtest_report_ref: life/finance/brian_equity_backtest_report_ko_202607.md
+equity_policy_comparison_spec_ref: life/finance/brian_equity_policy_comparison_spec_202607.yaml
+equity_policy_comparison_report_ref: life/finance/brian_equity_policy_comparison_report_ko_202607.md
+
+source_records:
+  - id: source_investment_strategy_request_20260719
+    object_type: Source
+    source_type: chat
+    original_date: '2026-07-19'
+    imported_at: '2026-07-19'
+    parse_status: parsed
+    raw_text: 워렌버핏, 찰리멍거, 피셔, 드러켄 밀러, 조지소로스 등등의 말들을 종합해서 이 모든 데이터를 통해서 어떻게 투자를 해야할지 전략을 짜줘
+    interpretation: Brian requested a single investment strategy synthesized from major investors and all saved research.
+    confidence: high
+    needs_user_review: false
+
+evidence_boundary:
+  portfolio_snapshot_as_of: '2026-07-15'
+  known_securities_and_gold_only: true
+  missing_or_incomplete:
+    - Liquid cash and deposits available for emergencies
+    - Monthly essential spending and verified take-home income
+    - Debt balances, rates and repayment dates
+    - Pension, severance, insurance and housing assets
+    - Tax lots and account-specific tax treatment
+    - Current full constituents of every owned ETF
+    - Complete spouse holdings and household income correlation
+    - Brian's maximum tolerable drawdown in KRW and percent
+  implication: >
+    Destination percentages are provisional bands. They become a confirmed household policy
+    only after the missing balance-sheet and cashflow fields are captured.
+
+executive_decision:
+  one_sentence: >
+    Keep the long-run AI thesis, stop increasing the already dominant exposure, rebuild monthly
+    surplus and a nine-month liquidity reserve, route new money toward a low-cost global core,
+    and manage concentrated positions with written evidence, valuation, size and invalidation rules.
+  why_this_fits_brian:
+    - Brian has unusually strong domain knowledge in memory and AI infrastructure, so the thesis deserves a bounded satellite rather than a blanket ban.
+    - Employment income, expected bonus, direct SK hynix ownership and semiconductor funds can all weaken in the same cycle.
+    - Monthly salary cashflow is currently near zero, so optionality is more scarce than another AI ticker.
+    - No current deficit pressure or forced-sale need has been reported, allowing an orderly transition rather than an emotional liquidation.
+    - The existing research is deep enough to improve selection, but research depth does not by itself reduce portfolio correlation.
+  current_default_actions:
+    - Do not add new salary cash to SK hynix, memory, semiconductor, AI value-chain, optical, power, nuclear or neocloud positions yet.
+    - Continue existing holdings only under the thesis and risk-review rules below; no automatic sell follows from concentration alone.
+    - Direct all recurring-cost savings created in July to the liquidity reserve until the first reserve gate is met.
+    - Complete household look-through exposure and tax-lot capture before setting a dated sale schedule.
+
+investor_synthesis:
+  - investor: Warren Buffett
+    useful_principle: Own understandable businesses with durable economics and trustworthy managers; avoid leverage and permanent loss; let compounding work.
+    brian_rule: Treat every holding as a business and require owner-earnings, reinvestment and balance-sheet evidence rather than buying an AI label.
+    failure_if_used_alone: Long holding periods can become an excuse to ignore technological or thesis deterioration.
+  - investor: Charlie Munger
+    useful_principle: Invert, respect incentives and opportunity cost, use multiple mental models and avoid major errors.
+    brian_rule: Ask how the thesis can fail, what management and customers are incentivized to do, and what a new purchase displaces in the portfolio.
+    failure_if_used_alone: Concentration in a great business is unsafe when the investor's job, bonus and household assets share the same risk.
+  - investor: Philip Fisher
+    useful_principle: Investigate customers, competitors, suppliers, employees, R&D, margins, management depth and growth runway before holding for years.
+    brian_rule: Use public filings, calls, supplier and customer disclosures to triangulate the AI value pool; never use employer-confidential information.
+    failure_if_used_alone: A superb company can still be a poor investment when expectations and price are extreme.
+  - investor: Stanley Druckenmiller
+    useful_principle: Look eighteen months to three years ahead, start with a survivable position, add when evidence confirms, and reverse when the thesis changes.
+    brian_rule: Separate research positions from full positions and scale only after forward evidence improves.
+    failure_if_used_alone: Fast-changing concentrated trading is unsuitable for emergency money or for a portfolio already dominated by one correlated theme.
+  - investor: George Soros
+    useful_principle: Investors are fallible, and beliefs, prices, financing, capacity and fundamentals can reinforce one another before reversing.
+    brian_rule: Track the AI feedback loop from demand to orders, capex, financing, new supply, pricing and customer returns; write disconfirming evidence in advance.
+    failure_if_used_alone: Reflexivity can encourage overtrading if every price move is mistaken for a regime change.
+  - investor: Howard Marks
+    useful_principle: A real transformative technology can still be a bad investment if too much success is already priced or if capital floods the sector.
+    brian_rule: Compare expectations embedded in price with bear, base and bull cashflow cases; keep the AI position moderate and selective.
+    failure_if_used_alone: Excessive defensiveness can leave the portfolio outside a genuine long-duration change.
+  - investor: John Bogle
+    useful_principle: Broad diversification, low cost and discipline provide the default core for investors who do not have a repeatable edge everywhere.
+    brian_rule: Put most new long-term money into a broad global market core rather than adding more overlapping thematic wrappers.
+    failure_if_used_alone: A pure market portfolio does not make use of Brian's real industry knowledge, so a bounded active satellite remains appropriate.
+
+current_diagnosis:
+  securities_and_gold_total_krw: 123448709
+  direct_sk_hynix:
+    amount_krw: 68345998
+    snapshot_percent: 55.36
+  clearly_ai_or_data_center_linked_primary_mandates:
+    amount_krw: 112099369
+    snapshot_percent: 90.81
+    boundary: Excludes KODEX 200 and the Samsung/SK hynix bond-mix wrapper even though both contain semiconductor exposure.
+  current_layer_weights_percent:
+    direct_employer_linked_memory: 55.36
+    korea_memory_equity_bond_mix: 5.83
+    broad_korea_equity: 2.74
+    memory_hbm_thematic: 5.75
+    broad_semiconductor: 6.14
+    ai_value_chain_mixed: 17.02
+    power_grid_infrastructure: 3.58
+    optical_network: 1.62
+    nuclear_generation: 1.32
+    gold: 0.62
+  diagnosis:
+    - Seventeen products create wrapper variety but not proven look-through diversification.
+    - SK hynix is simultaneously an employer, a bonus driver, a direct security and an underlying exposure inside several wrappers.
+    - The household can experience one semiconductor-cycle shock through income, bonus and portfolio value at the same time.
+    - Power, optical and nuclear positions diversify AI layers but still depend materially on sustained AI capital spending and financing.
+    - The dominant risk is not missing AI upside; it is losing financial flexibility during a correlated downturn.
+
+current_stress_read:
+  source_ref: life/finance/brian_investment_policy_execution_202607.yaml
+  boundary: Deterministic primary-mandate sensitivities, not forecasts or probabilities; income and uncaptured household assets are excluded.
+  direct_sk_hynix_minus_50_percent:
+    captured_securities_impact_krw: -34172999
+    captured_securities_impact_percent: -27.68
+  correlated_semiconductor_downcycle:
+    captured_securities_impact_krw: -48288222
+    captured_securities_impact_percent: -39.12
+  ai_capex_and_financing_reversal:
+    captured_securities_impact_krw: -48876019
+    captured_securities_impact_percent: -39.59
+  ai_reflexive_upside:
+    captured_securities_impact_krw: 40631114
+    captured_securities_impact_percent: 32.91
+    ending_direct_sk_hynix_percent: 58.32
+  interpretation:
+    - A normal sector thesis can coexist with a household-level drawdown too large for Brian's actual risk capacity.
+    - A successful AI cycle can push concentration higher and trigger a trim even without a broken business thesis.
+    - The missing six-month income-loss overlay equals six times essential monthly spending minus reliable other income during the gap.
+
+country_macro_operating_overlay:
+  as_of: '2026-07-19'
+  full_profile_economies:
+    - korea
+    - united_states
+    - china
+    - taiwan
+    - japan
+    - euro_area
+  core_read: >
+    AI investment is stronger than broad demand, but the rate and currency backdrop is not uniformly
+    easy: Korea and the euro area have raised rates, US inflation and long yields remain elevated,
+    China combines export strength with weak domestic demand, Taiwan is in an AI-led boom with
+    financial heat, and Japan is normalizing from accommodative real rates.
+  brian_specific_transmission:
+    - Korea's AI-export strength supports Brian's employer and portfolio thesis, but also increases the correlation among salary, bonus, direct stock and Korean wrappers.
+    - US rates and long yields are the main discount-rate and refinancing gate for hyperscalers, neoclouds, power projects and data-center pipelines.
+    - China affects electronics demand, memory pricing, competing supply and trade controls; headline GDP alone is not sufficient.
+    - Taiwan foundry and server exposure remains inside the same AI risk budget and adds a geographic tail risk.
+    - Japan and Europe can add equipment, materials, grid and industrial layers, but they do not remove semiconductor-capex, energy or financing risk.
+  currency_role_policy:
+    emergency_reserve_and_under_three_year_money: Keep in KRW-denominated or KRW-matched safe assets.
+    global_equity_core: Allow normal unhedged currency exposure for long-term diversification and contribute on schedule rather than waiting for a perfect exchange rate.
+    safe_bond_bucket: Prefer KRW or KRW-hedged high-quality short-duration exposure because the job is stability.
+    thematic_equity: Select using business evidence, valuation and correlation; do not use tactical FX direction as the primary thesis.
+    wrapper_recording_rule: Record hedged and unhedged products as different roles with hedge cost and intended horizon.
+  required_gate_before_new_risk: >
+    The investment must survive the relevant country's rate, FX, labor, demand, credit and
+    geopolitical regime while remaining consistent with Brian's KRW liabilities and employer-linked
+    concentration. If the mapping is incomplete, research only and do not increase size.
+  detail_ref: life/finance/country_macro_investment_overlay_202607.yaml
+
+policy_hierarchy:
+  - priority: 1
+    objective: Prevent forced selling and protect essential life obligations.
+  - priority: 2
+    objective: Restore a positive, repeatable monthly savings flow.
+  - priority: 3
+    objective: Build a globally diversified low-cost compounding core.
+  - priority: 4
+    objective: Keep a bounded AI-infrastructure satellite where Brian has evidence and domain edge.
+  - priority: 5
+    objective: Pursue tactical or asymmetric ideas only after the first four priorities are funded.
+
+liquidity_policy:
+  operating_cash_target: One month of normal bills in the transaction account.
+  emergency_reserve_minimum: Six months of essential household spending.
+  emergency_reserve_target: Nine months of essential household spending.
+  extension_to_twelve_months_if:
+    - A single employer supplies most household income.
+    - Bonus and equity compensation remain highly cyclical.
+    - Debt, housing or family obligations make income interruption unusually costly.
+  eligible_assets:
+    - Insured bank deposits
+    - Money-market or short-duration government instruments appropriate to the account and currency
+  excluded_assets:
+    - Stocks and thematic ETFs
+    - Pension, severance estimates and home equity
+    - Assets that can suffer a large mark-to-market loss when cash is needed
+  rationale: Brian's human capital and current portfolio are correlated, so the reserve should exceed a generic three-month rule.
+
+destination_allocation_after_emergency_reserve:
+  status: provisional_until_household_balance_sheet_is_complete
+  scope: Investable financial assets excluding the emergency reserve and near-term known spending.
+  target_percentages:
+    broad_global_equity_core:
+      target: 55
+      band: [50, 60]
+      definition: Low-cost, broad, market-cap-weighted global equity exposure; no narrow country, sector or AI label.
+    safe_short_duration_assets:
+      target: 15
+      band: [10, 20]
+      definition: KRW or liability-matched high-quality short-duration assets for stability and opportunity capital.
+    explicit_ai_infrastructure_satellite:
+      target: 20
+      band: [15, 25]
+      definition: All direct employer stock plus AI, memory, semiconductor, power, optical, nuclear, operator and neocloud thematic positions.
+    gold_and_real_asset_diversifier:
+      target: 5
+      band: [3, 7]
+      definition: A diversifier rather than an AI return engine.
+    other_non_ai_diversifiers:
+      target: 5
+      band: [0, 10]
+      definition: Broad non-AI exposures selected only after fees, taxes and correlation are checked.
+  notes:
+    - Broad global funds will still contain AI leaders; the 20 percent satellite cap covers only explicit, intentional theme exposure.
+    - These bands are a destination, not an instruction to force the current portfolio into shape in one trade.
+
+explicit_ai_satellite_design:
+  total_target_percent_of_investable_assets: 20
+  sleeves:
+    - sleeve: compute_memory_semiconductors
+      target_percent: 8
+      band: [6, 10]
+      includes: Direct SK hynix, memory/HBM funds, semiconductor funds and accelerator value-chain exposure.
+      current_view: Highest knowledge and strongest thesis, but no new cash while personal correlation is extreme.
+    - sleeve: power_grid_cooling_electrical
+      target_percent: 5
+      band: [3, 6]
+      includes: Transformers, switchgear, UPS, busway, cooling, grid equipment, EPC and related utilities.
+      current_view: Best next research area for distinct earnings exposure; valuation and ETF constituent overlap remain gates.
+    - sleeve: hyperscalers_platforms_and_applications
+      target_percent: 3
+      band: [2, 4]
+      includes: Cloud buyers, AI platforms and application value capture.
+      current_view: Require evidence that revenue and cash returns justify capex and that active wrappers do not duplicate the core.
+    - sleeve: optical_and_network
+      target_percent: 2
+      band: [1, 3]
+      includes: Optical components, transceivers, switching, fiber and connectivity.
+      current_view: Real bottleneck, but the owned optical ETF is itself concentrated and belongs in a small satellite sleeve.
+    - sleeve: operators_generation_and_optional_asymmetry
+      target_percent: 2
+      band: [0, 3]
+      includes: Data-center operators, nuclear generation, neoclouds and pre-profit infrastructure options.
+      current_view: Use only when leverage, contracts, utilization, customer concentration and dilution risks are explicit.
+  sublimits:
+    direct_employer_stock_long_run_target_percent: 5
+    direct_employer_stock_long_run_ceiling_percent: 10
+    narrow_thematic_etf_ceiling_percent: 5
+    pre_revenue_or_high_financing_risk_single_name_initial_percent: 0.25
+    pre_revenue_or_high_financing_risk_single_name_ceiling_percent: 1
+    pre_revenue_or_high_financing_risk_total_ceiling_percent: 2
+  overriding_rule: No sleeve may be funded merely because another AI sleeve has a lower current weight; expected return after valuation and household correlation still governs.
+
+transition_plan:
+  principle: Use cashflow and new contributions first, then consider gradual tax-aware sales if inflows cannot reach the agreed concentration path.
+  phase_0_through_2026_07_31:
+    actions:
+      - Change the GPT/Codex and mobile plans as already committed and record actual monthly savings.
+      - Close July spending and calculate verified essential monthly spending.
+      - Make no new discretionary AI-theme purchase.
+      - Route one hundred percent of newly freed recurring cash to the reserve account.
+  phase_1_reserve_below_three_months:
+    new_surplus_rule:
+      liquidity_reserve_percent: 100
+      new_thematic_investment_percent: 0
+    exception: Continue only mandatory or already automated retirement contributions that would be costly to interrupt.
+  phase_2_reserve_between_three_and_nine_months:
+    new_surplus_rule:
+      liquidity_reserve_percent: 70
+      broad_global_core_percent: 30
+      new_explicit_ai_percent: 0
+  phase_3_reserve_at_or_above_nine_months_and_ai_above_target:
+    new_long_term_money_rule:
+      broad_global_core_percent: 80
+      safe_short_duration_percent: 15
+      gold_or_other_non_ai_diversifier_percent: 5
+      new_explicit_ai_percent: 0
+    continue_until: Explicit AI exposure is inside its transition band and employer-stock risk has an agreed glide path.
+  phase_4_portfolio_inside_destination_bands:
+    rule: Allocate new money to the most underweight destination bucket; do not mechanically buy every bucket each month.
+  bonus_waterfall:
+    - Pay known tax and near-term obligations.
+    - Fill the nine-month emergency-reserve target.
+    - Allocate the remainder using the phase 3 rule while AI concentration is above target.
+    - Add to AI only after all hard gates pass and the explicit AI bucket is below its upper band.
+
+dilution_math_if_no_sales:
+  assumptions:
+    - The 2026-07-15 values remain unchanged.
+    - All added capital goes outside the measured concentration.
+    - Market movement, taxes, dividends and new overlap are ignored.
+  direct_sk_hynix:
+    to_45_percent_additional_non_sk_krw: 28431287
+    to_40_percent_additional_non_sk_krw: 47416286
+    to_35_percent_additional_non_sk_krw: 71825571
+    to_30_percent_additional_non_sk_krw: 104371284
+  explicit_ai_lower_bound:
+    to_80_percent_additional_non_ai_krw: 16675502
+    to_70_percent_additional_non_ai_krw: 36693247
+    to_60_percent_additional_non_ai_krw: 63383573
+    to_50_percent_additional_non_ai_krw: 100750029
+  interpretation: >
+    New-money dilution can begin the transition but may be too slow by itself. After cashflow,
+    reserve, tax lots and the household balance sheet are known, Brian can choose between a
+    longer glide path and scheduled partial sales; no immediate forced sale is assumed.
+
+cashflow_only_backtest_checkpoint_20260720:
+  status: first_milestone_complete
+  design: Current 2026-07-15 holdings were backcast from 2016, 2020 and 2023 starts under three strategies and nine cashflow combinations per start, for 81 total scenarios.
+  paired_result:
+    candidate_vs_current_style_cases: 54
+    lower_maximum_drawdown_cases: 54
+    lower_ending_explicit_ai_cases: 54
+    lower_ending_direct_employer_cases: 54
+    higher_terminal_value_cases: 0
+  best_concentration_reached_any_candidate_case:
+    ending_explicit_ai_percent: 78.73
+    ending_direct_employer_percent: 67.97
+    explicit_ai_destination_target_percent: 20
+    direct_employer_first_checkpoint_percent: 45
+  interpretation: Cashflow-only dilution consistently improved the tested risk path but did not reach either concentration checkpoint, even at the largest tested monthly contribution and bonus.
+  return_boundary: The current winner-heavy holdings and current optical constituents were selected with hindsight, so lower candidate terminal values do not establish future return inferiority.
+  decision_boundary: This checkpoint supports further exact-data and tax-aware testing; it does not authorize a sale or make a return forecast.
+  refs:
+    - life/finance/brian_equity_backtest_spec_202607.yaml
+    - life/finance/brian_equity_backtest_report_ko_202607.md
+    - life/imports/investment_backtest_202607/results.json
+
+policy_candidate_after_backtests_20260720:
+  status: evidence_supported_candidate_awaiting_tax_lots_and_household_inputs
+  immediate_default_while_inputs_are_missing:
+    rule: Keep existing holdings unchanged and route eligible new long-term money outside explicit AI using the phase-3 80/15/5 rule only after the liquidity-reserve gate.
+    reason: The no-sale backcast reduced drawdown and concentration in all paired cases without requiring an unverified taxable transaction.
+  transition_monitoring_candidate:
+    direct_employer_review_threshold_percent: 40
+    monitoring_frequency: month_end
+    action_when_above: Open a tax-lot, employer-window, thesis and household-risk review; do not create an automatic sale.
+    evidence:
+      - Annual 40-percent enforcement still reached 65.74 percent before the next enforcement point in the tested winner path.
+      - Month-end excess enforcement reduced the maximum observed pre-action weight to 52.30 percent and ended near 40 percent.
+      - The same trigger generated 4.17-10.71 billion KRW of backcast gross sales and up to 54.72 million KRW of modeled cost, so mechanical monthly execution is rejected.
+  long_run_destination_candidate:
+    broad_global_core_percent: 60
+    safe_short_duration_percent: 15
+    explicit_ai_percent: 20
+    gold_percent: 5
+    direct_employer_within_explicit_ai_percent: 5
+    review_triggers:
+      direct_employer_above_percent: 10
+      explicit_ai_above_percent: 25
+    interpretation: Use this as a destination and monitoring baseline, not a one-trade rebalance instruction.
+  rejected_as_complete_controls:
+    - An initial-only cap, because the direct position subsequently drifted far above every tested cap.
+    - A calendar-year cap labeled as a permanent ceiling, because the rapid 2026 path breached it materially between dates.
+    - Automatic month-end sales, because turnover, abstract tax cost and employer restrictions are unresolved.
+    - Selecting the concentrated baseline only because it had the highest backcast terminal value, because current winners were selected with hindsight.
+  required_before_any_external_transaction:
+    - Account-level quantity, acquisition price, tax lot and account tax treatment
+    - Current employer trading window and compliance restrictions
+    - Verified emergency reserve and essential monthly spending
+    - Household look-through exposure including spouse holdings and employment correlation
+    - Exact ETF NAV, distribution and historical constituent evidence where available
+  refs:
+    - life/finance/brian_equity_policy_comparison_spec_202607.yaml
+    - life/finance/brian_equity_policy_comparison_report_ko_202607.md
+    - life/imports/investment_policy_comparison_202607/results.json
+
+concentrated_position_glide_path:
+  current_direct_sk_hynix_percent: 55.36
+  current_action: Freeze additions and keep the business thesis under quarterly review.
+  first_transition_checkpoint_percent: 45
+  second_transition_checkpoint_percent: 40
+  destination_ceiling_percent: 10
+  decision_gate: >
+    Once the emergency reserve, tax basis, employer trading rules and full household exposure
+    are known, compare the time required to dilute below 40 percent with realistic savings and
+    bonus inflows. If the path is unreasonably long, prepare a four-quarter tax-aware reduction
+    schedule for the amount above the agreed transition ceiling.
+  do_not_sell_only_because:
+    - The share price rose.
+    - A short-term headline or normal semiconductor volatility appeared.
+    - The portfolio would look cosmetically cleaner afterward.
+  review_or_reduce_if:
+    - HBM qualification, yield, technology lead or customer position deteriorates materially.
+    - DRAM supply discipline breaks and inventory, capacity or contract pricing signals a damaging downcycle.
+    - Capital spending rises without acceptable free-cash-flow conversion or return on capital.
+    - Management candor, accounting quality or capital allocation deteriorates.
+    - The position exceeds the agreed band after a price surge.
+    - Household income, bonus and spouse exposure make the same downside larger than previously measured.
+  compliance_rule: Use public information only and follow all employer trading windows and restrictions.
+
+new_investment_scorecard:
+  total_points: 100
+  categories:
+    - category: circle_of_competence_and_evidence_quality
+      points: 10
+      question: Can Brian explain the business, value chain and key evidence without relying on an ETF label or confidential information?
+    - category: structural_growth_and_value_pool
+      points: 10
+      question: Is demand durable, and which layer retains the economics after competition and customer bargaining?
+    - category: moat_or_bottleneck
+      points: 12
+      question: Are technology, qualification, switching costs, scale, regulation or supply constraints durable?
+    - category: returns_on_capital_and_owner_earnings
+      points: 12
+      question: Does growth convert to free cash after required maintenance and expansion capital?
+    - category: management_incentives_and_candor
+      points: 10
+      question: Are incentives aligned and disclosures balanced about risks, dilution and capital allocation?
+    - category: balance_sheet_and_downside_survival
+      points: 10
+      question: Can the company and Brian survive a demand delay, refinancing shock or fifty-percent drawdown?
+    - category: valuation_and_embedded_expectations
+      points: 15
+      question: What growth, margins and capital intensity are already required by the price in bear, base and bull cases?
+    - category: forward_catalyst_and_confirmation
+      points: 8
+      question: What should become visible in the next six, twelve and twenty-four months if the thesis is right?
+    - category: reflexivity_crowding_and_financing
+      points: 5
+      question: Are rising prices enabling capex and supply that can later destroy the original scarcity?
+    - category: portfolio_correlation_and_opportunity_cost
+      points: 8
+      question: Does this improve the household portfolio more than cash, a broad core or an existing holding?
+  thresholds:
+    below_70: Reject or continue research; no position.
+    from_70_to_79: Watchlist only while any portfolio or liquidity gate is breached; otherwise maximum 0.5 percent research position.
+    from_80_to_89: Initial position up to 1 percent and evidence-confirmed ceiling of 3 percent, subject to all bucket caps.
+    from_90_to_100: Initial position of 1 to 2 percent and exceptional ceiling of 5 percent, subject to all household caps.
+  hard_vetoes:
+    - Emergency-reserve gate not met
+    - Borrowed money or money needed within three years
+    - Material non-public or employer-confidential information is needed for the thesis
+    - No written falsifier or downside case
+    - Household, single-name or theme cap would be breached
+    - Liquidity, financing or counterparty risk cannot be described
+    - ETF holdings, fees or top-position concentration are unknown
+
+thesis_card_required_fields:
+  - One-sentence reason this business or fund should outperform what the market already expects
+  - Business-owner case and owner-earnings bridge
+  - Fisher-style public evidence from customers, competitors and suppliers
+  - Bear, base and bull valuation with required assumptions
+  - Six, twelve and twenty-four-month confirmation signals
+  - Three specific falsifiers and the action attached to each
+  - Initial size, maximum size and funding source
+  - Look-through overlap with employer, spouse and existing funds
+  - Expected holding mode: long-duration compounder, eighteen-month-to-three-year trend or small option
+  - Tax and employer-compliance checks
+
+buy_scale_hold_exit_rules:
+  buy:
+    - A passing scorecard and completed thesis card are necessary but not sufficient.
+    - Initial position size must remain small enough that a fifty-percent decline does not change family plans or behavior.
+    - Prefer limit-sized tranches tied to evidence rather than a single all-in purchase.
+  scale:
+    - Add only when operating evidence improves, expected value remains attractive and the price has not absorbed all upside.
+    - Never average down solely to lower the average purchase price.
+    - A price decline is useful only when the business thesis and balance sheet remain intact.
+  hold:
+    - Long-duration compounders are reviewed for economics, reinvestment and management, not daily price movement.
+    - Trend positions are reviewed against their six, twelve and twenty-four-month evidence path.
+  trim_or_exit:
+    - Exit or reduce when a written falsifier occurs, management integrity fails or financing threatens survival.
+    - Trim when a position exceeds its band or when valuation leaves little return under the base case.
+    - Replace a holding only when the after-tax expected advantage of the alternative is material.
+    - Price action is evidence to investigate, not an automatic command.
+
+ai_reflexivity_dashboard:
+  purpose: Separate genuine end-user economics from a self-reinforcing capital-spending narrative.
+  monitor_quarterly:
+    end_demand:
+      - Paid inference use and application revenue
+      - Customer retention and willingness to pay
+      - Productivity or cost savings captured by end users
+    hyperscaler_economics:
+      - AI revenue relative to capital expenditure
+      - Depreciation life assumptions and free-cash-flow conversion
+      - Concentration of purchases among related AI companies
+    semiconductor_and_memory:
+      - HBM qualification, yield, mix and customer concentration
+      - DRAM inventory, contract price, capacity and supplier discipline
+      - Packaging, foundry and substrate bottlenecks
+    power_and_data_centers:
+      - Energized megawatts versus announced pipelines
+      - Interconnection delays, transformer and switchgear lead times
+      - Contracted utilization, financing cost and customer credit quality
+    optical_and_network:
+      - Port-speed transition, orders, lead times and gross-margin capture
+      - New capacity and component commoditization
+    market_feedback:
+      - Equity issuance, debt financing and capex enabled by rising valuations
+      - Multiple expansion unsupported by owner-earnings revisions
+      - Reactions to good and bad news and changes in market leadership
+  warning_pattern: >
+    The technology can remain real while investment returns deteriorate if high prices fund
+    excessive capacity, supply arrives after the shortage, pricing falls and leverage forces a
+    rapid reversal.
+
+research_to_action_priority:
+  - priority: 1
+    area: Household cashflow and balance-sheet completion
+    action: Measure before buying anything new.
+    reason: It determines survival boundaries and makes every later position-size decision more accurate.
+  - priority: 2
+    area: Broad global core implementation
+    action: Compare low-cost total-market candidates, taxes, account eligibility and currency exposure.
+    reason: This is the primary destination for new long-term money while AI exposure is excessive.
+  - priority: 3
+    area: Power, grid, cooling and electrical value pool
+    action: Continue valuation and constituent-level comparison without buying yet.
+    reason: The research shows real bottlenecks and Brian's explicit weight is smaller than chips, but the existing ETF top holdings are concentrated.
+  - priority: 4
+    area: Optical network
+    action: Monitor economics and owned-fund concentration.
+    reason: The bottleneck is real, but the owned ETF's top three were 59.73 percent in the saved review.
+  - priority: 5
+    area: Memory, HBM and semiconductors
+    action: Maintain the thesis dashboard and stop incremental exposure.
+    reason: This is Brian's strongest knowledge area and largest existing household risk.
+  - priority: 6
+    area: Data-center operators, neoclouds and speculative generation
+    action: Treat as optionality only after financing, utilization, leverage and customer concentration pass the hard gates.
+    reason: Announced gigawatts, GPUs or backlog do not by themselves establish owner earnings.
+
+review_cadence:
+  monthly:
+    - Close spending and record savings rate.
+    - Transfer the planned amount before discretionary spending.
+    - Record contributions and verify that no thematic purchase bypassed the gates.
+    - Record material official policy-rate, FX, inflation and employment changes only when they alter liquidity, financing survival, position size or thesis evidence.
+  quarterly:
+    - Update all position weights and look-through ETF constituents.
+    - Review SK hynix and the AI reflexivity dashboard.
+    - Refresh the Korea, United States, China, Taiwan, Japan and euro-area macro profiles and reconcile them with revenue, cost, funding and listing-currency exposure.
+    - Rescore only material thesis changes; do not manufacture activity.
+    - Compare direct employer stock and explicit AI exposure with transition checkpoints.
+  annually:
+    - Recalculate household net worth, income correlation, emergency months and destination bands.
+    - Rebalance using new cash first and sales second, after tax and account review.
+    - Review whether Brian's domain edge remains real and whether the active satellite earned its complexity.
+  event_driven:
+    - Job change, bonus change or employer equity event
+    - Debt, housing, family or health obligation change
+    - Thesis falsifier, accounting or management-integrity event
+    - Position or bucket exceeds its hard ceiling
+
+next_actions:
+  - id: action_finance_20260731_close_spending_and_fixed_cost_reset
+    due_date: '2026-07-31'
+    action: Complete the existing subscription, mobile-plan and July-spending tasks and record actual monthly savings.
+  - id: action_finance_measure_essential_monthly_spending
+    due_date: '2026-07-31'
+    action: Calculate one, three, six, nine and twelve months of essential household spending in KRW.
+  - id: action_finance_capture_household_balance_sheet
+    due_date: null
+    action: Add cash, deposits, debt, pensions, severance, housing and spouse holdings without sending private data externally.
+  - id: action_finance_capture_tax_lots_and_etf_constituents
+    due_date: null
+    action: Record account type, tax basis and current fund constituents before any rebalance decision.
+  - id: action_finance_confirm_risk_capacity
+    due_date: null
+    action: Brian defines the maximum tolerable portfolio drawdown in both KRW and percent and the minimum cash floor.
+  - id: action_finance_confirm_or_edit_policy
+    due_date: null
+    action: Review and confirm or edit the reserve target, destination bands, AI cap and employer-stock glide path.
+
+source_refs:
+  local:
+    - life/finance/cashflow_normalization_202607.yaml
+    - life/finance/finance_active_log.yaml
+    - life/finance/investment_philosophy_research.yaml
+    - life/finance/memory_ai_investor_views_research.yaml
+    - life/finance/global_macro_research_20260715.yaml
+    - life/finance/country_macro_investment_overlay_202607.yaml
+    - life/finance/ai_data_center_investment_comparison_202607.yaml
+    - life/finance/brian_investment_policy_execution_202607.yaml
+    - life/finance/global_memory_semiconductor_supply_chain_202607.yaml
+    - life/finance/global_optical_communications_supply_chain_202607.yaml
+    - life/finance/global_ai_power_infrastructure_supply_chain_202607.yaml
+    - life/knowledge/global_ai_data_center_landscape_202607.yaml
+  public_primary_or_first_party:
+    - title: Berkshire Hathaway Owner's Manual
+      url: https://berkshirehathaway.com/ownman.pdf
+      relevance: Business-owner mindset, leverage restraint and protection from permanent loss.
+    - title: Berkshire Hathaway 2023 Shareholder Letter
+      url: https://www.berkshirehathaway.com/letters/2023ltr.pdf
+      relevance: Wonderful businesses at fair prices, incentives, enduring economics, trust and liquidity.
+    - title: Berkshire Hathaway 2024 Shareholder Letter
+      url: https://berkshirehathaway.com/letters/2024ltr.pdf
+      relevance: Long-run preference for productive businesses while retaining financial resilience.
+    - title: Common Stocks and Uncommon Profits and Other Writings
+      author: Philip A. Fisher
+      publisher: Wiley
+      first_published: 1958
+      relevance: Qualitative investigation, management quality, growth runway and scuttlebutt.
+    - title: Hard Lessons - Stan Druckenmiller
+      publisher: Morgan Stanley
+      published_at: '2026-02-27'
+      url: https://www.morganstanley.com/insights/videos/hard-lessons/duquesne-stan-druckenmiller-iliana-bouzali
+      relevance: Forward change, small initial size, evidence-based scaling, flexibility and narrative-bubble risk.
+    - title: Remarks delivered at the INET Annual Plenary Conference
+      author: George Soros
+      published_at: '2012-04-12'
+      url: https://www.georgesoros.com/2012/04/12/george_soros_remarks_at_the_institute_for_new_economic_thinking_annual_plen/
+      relevance: Fallibility, reflexive feedback loops and endogenous boom-bust processes.
+      access_verification:
+        method: insane_search_engine
+        verified_at: '2026-07-19'
+        result: weak_ok
+    - title: AI Hurtles Ahead
+      author: Howard Marks
+      publisher: Oaktree Capital Management
+      published_at: '2026-02-26'
+      url: https://www.oaktreecapital.com/insights/memo/ai-hurtles-ahead
+      relevance: Real AI demand does not establish fair valuation; use a moderate, selective and prudent position.
+    - title: 50 years. 50 facts. Indexing since 1976.
+      publisher: Vanguard
+      published_at: '2026-04-02'
+      url: https://corporate.vanguard.com/content/corporatesite/us/en/corp/articles/50-years-50-facts-indexing-since-1976.html
+      relevance: Low-cost broad-market ownership as the default diversified core.
+    - title: Concentrate on Concentration Risk
+      publisher: FINRA
+      published_at: '2022-06-15'
+      url: https://www.finra.org/investors/insights/concentration-risk
+      relevance: Employer stock, correlated sector funds and overlapping ETFs can create hidden concentration.
+    - title: Love Your Company Stock? Here's What to Know.
+      publisher: FINRA
+      published_at: '2023-08-11'
+      url: https://www.finra.org/investors/insights/love-your-company-stock-what-to-know
+      relevance: Employment and portfolio losses can occur together; the page notes that some experts use ten percent as a single-stock ceiling.
+    - title: Asset Allocation and Diversification
+      publisher: Investor.gov
+      url: https://www.investor.gov/introduction-investing/getting-started/asset-allocation
+      relevance: Narrow ETFs and multiple funds do not automatically provide diversification; underlying holdings must be checked.
+
+user_confirmation_fields:
+  policy_confirmed: false
+  confirmed_at: null
+  emergency_reserve_target_months: null
+  explicit_ai_target_percent: null
+  employer_stock_destination_ceiling_percent: null
+  maximum_tolerable_drawdown_percent: null
+  maximum_tolerable_drawdown_krw: null
+  notes: Await Brian's review; do not convert proposed limits into confirmed personal rules automatically.

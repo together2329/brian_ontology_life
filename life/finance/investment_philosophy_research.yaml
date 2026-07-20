@@ -1,6 +1,6 @@
 schema_version: 1
 status: active_research
-updated_at: 2026-07-15
+updated_at: 2026-07-19
 area: FINANCE
 secondary_areas:
   - CAREER
@@ -8,10 +8,11 @@ secondary_areas:
 profile_ref: person_brian
 title: Brian investment philosophy research
 summary: >
-  Stanley Druckenmiller, Warren Buffett, Philip Fisher, and Charlie Munger research
-  preserved separately from Brian's confirmed rules. The working synthesis combines
-  forward-looking trend selection, qualitative business research, quality and valuation,
-  position sizing, liquidity, humility, and protection against permanent capital loss.
+  Stanley Druckenmiller, Warren Buffett, Philip Fisher, Charlie Munger, George Soros,
+  Howard Marks and John Bogle research preserved separately from Brian's confirmed rules.
+  The working synthesis combines forward-looking trend selection, qualitative business
+  research, quality and valuation, reflexivity and cycle awareness, position sizing,
+  low-cost diversification, liquidity, humility, and protection against permanent capital loss.
 
 source_records:
   - id: source_investment_philosophy_conversation_20260715
@@ -153,6 +154,84 @@ research_profiles:
         source_type: primary_shareholder_letter_with_munger_influence_summary
         url: https://www.berkshirehathaway.com/letters/2023ltr.pdf
         accessed_at: 2026-07-15
+
+  - id: investor_research_george_soros_20260719
+    investor_name: George Soros
+    research_status: reviewed
+    core_philosophy: >
+      Begin with fallibility: an investor's model is always incomplete. In reflexive markets,
+      beliefs influence prices and financing, those changes influence fundamentals, and the
+      resulting feedback can strengthen a boom before reversing suddenly.
+    verified_principles:
+      - Participant views and the situation can affect each other through a feedback loop.
+      - A bubble can combine a real trend with a biased interpretation of that trend.
+      - Rising prices and easier financing can change the fundamentals rather than merely reflect them.
+      - Leverage and forced liquidation can make the reversal faster and more damaging than the buildup.
+      - The timing and magnitude of a reflexive process are not reliably predictable.
+    brian_relevance: >
+      AI demand is real, but high valuations can finance more chips, power, data centers and
+      optical capacity. The same positive feedback that validates the thesis can eventually
+      create excess supply, lower returns and a rapid reversal. Brian therefore needs written
+      falsifiers and size limits even when the secular trend remains intact.
+    sources:
+      - source_id: source_soros_inet_2012_reflexivity
+        title: Remarks delivered at the INET Annual Plenary Conference
+        source_type: primary_speech_transcript
+        url: https://www.georgesoros.com/2012/04/12/george_soros_remarks_at_the_institute_for_new_economic_thinking_annual_plen/
+        published_at: 2012-04-12
+        accessed_at: 2026-07-19
+        access_verification: insane_search_engine_weak_ok
+
+  - id: investor_research_howard_marks_20260719
+    investor_name: Howard Marks
+    research_status: reviewed
+    core_philosophy: >
+      Focus on risk, cycles, market expectations and price rather than assuming that a correct
+      forecast of the future automatically produces a good investment.
+    verified_principles:
+      - Investors usually cannot make repeatably superior short-term macro forecasts.
+      - Security prices reflect events relative to expectations, not events alone.
+      - A transformative technology can be genuine while its securities are overpriced.
+      - AI infrastructure can run ahead of end demand, and circular revenue can obscure ultimate value capture.
+      - Uncertainty argues for a moderate, selective and prudent position rather than all-in or all-out.
+    brian_relevance: >
+      Brian's research validates the AI buildout but does not by itself establish expected return.
+      Each layer must pass valuation, owner-earnings, financing and portfolio-correlation tests.
+    sources:
+      - source_id: source_marks_what_really_matters_2022
+        title: What Really Matters?
+        source_type: primary_investor_memo
+        url: https://www.oaktreecapital.com/insights/memo/what-really-matters
+        published_at: 2022-11-22
+        accessed_at: 2026-07-19
+      - source_id: source_marks_ai_hurtles_ahead_2026
+        title: AI Hurtles Ahead
+        source_type: primary_investor_memo
+        url: https://www.oaktreecapital.com/insights/memo/ai-hurtles-ahead
+        published_at: 2026-02-26
+        accessed_at: 2026-07-19
+
+  - id: investor_research_john_bogle_20260719
+    investor_name: John Bogle
+    research_status: reviewed
+    core_philosophy: >
+      Most investors are best served by owning the broad market at low cost, minimizing
+      unnecessary turnover and keeping a disciplined long-term plan.
+    verified_principles:
+      - Broad-market ownership reduces dependence on selecting a few winners.
+      - Costs compound against the investor and are among the most controllable variables.
+      - A simple diversified core reduces decision burden and behavioral error.
+      - Active ideas should not displace the core unless there is a genuine, repeatable edge.
+    brian_relevance: >
+      A low-cost global core is the cleanest destination for new money while Brian's employer,
+      memory and AI exposure exceeds the proposed household risk boundary.
+    sources:
+      - source_id: source_vanguard_indexing_50_years_2026
+        title: 50 years. 50 facts. Indexing since 1976.
+        source_type: first_party_institutional_history
+        url: https://corporate.vanguard.com/content/corporatesite/us/en/corp/articles/50-years-50-facts-indexing-since-1976.html
+        published_at: 2026-04-02
+        accessed_at: 2026-07-19
 
 source_retrieval_index:
   purpose: >
@@ -298,15 +377,71 @@ source_retrieval_index:
       quotation_caveat: Confirm exact quotations against the best available authorized transcript or recording.
       fallback_search_query: '"A Lesson on Elementary, Worldly Wisdom" Munger USC 1994 transcript'
 
+    - source_id: source_soros_inet_2012_reflexivity
+      investor: George Soros
+      exact_title: Remarks delivered at the INET Annual Plenary Conference
+      publisher_or_host: GeorgeSoros.com
+      publication_date_or_year: 2012-04-12
+      canonical_url: https://www.georgesoros.com/2012/04/12/george_soros_remarks_at_the_institute_for_new_economic_thinking_annual_plen/
+      source_authority: primary_speech_transcript_on_official_site
+      relevant_locations:
+        - "Sections defining fallibility and reflexivity as a circular feedback loop"
+        - "Sections describing a real trend plus biased interpretation in boom-bust processes"
+        - "Sections describing leverage and forced liquidation during reversals"
+      access_verification:
+        method: insane_search_engine
+        verified_at: 2026-07-19
+        result: weak_ok
+      fallback_search_query: 'site:georgesoros.com INET reflexivity fallibility boom bust'
+
+    - source_id: source_marks_what_really_matters_2022
+      investor: Howard Marks
+      exact_title: What Really Matters?
+      publisher_or_host: Oaktree Capital Management
+      publication_date_or_year: 2022-11-22
+      canonical_url: https://www.oaktreecapital.com/insights/memo/what-really-matters
+      source_authority: primary_investor_memo
+      relevant_locations:
+        - "What Doesn't Matter: Short-Term Events"
+        - "Events, expectations and security prices"
+      fallback_search_query: 'site:oaktreecapital.com/insights/memo "What Really Matters" Howard Marks'
+
+    - source_id: source_marks_ai_hurtles_ahead_2026
+      investor: Howard Marks
+      exact_title: AI Hurtles Ahead
+      publisher_or_host: Oaktree Capital Management
+      publication_date_or_year: 2026-02-26
+      canonical_url: https://www.oaktreecapital.com/insights/memo/ai-hurtles-ahead
+      source_authority: primary_investor_memo
+      relevant_locations:
+        - "PDF page 9: demand, infrastructure pipeline, circular revenue and valuation"
+        - "PDF page 9: moderate position, selectivity and prudence"
+      fallback_search_query: 'site:oaktreecapital.com/insights/memo "AI Hurtles Ahead"'
+
+    - source_id: source_vanguard_indexing_50_years_2026
+      investor: John Bogle
+      exact_title: 50 years. 50 facts. Indexing since 1976.
+      publisher_or_host: Vanguard
+      publication_date_or_year: 2026-04-02
+      canonical_url: https://corporate.vanguard.com/content/corporatesite/us/en/corp/articles/50-years-50-facts-indexing-since-1976.html
+      source_authority: first_party_institutional_history
+      relevant_locations:
+        - "Foundations of index fund investing: broad market at low cost"
+        - "Costs and long-term investor returns"
+      fallback_search_query: 'site:corporate.vanguard.com "50 years. 50 facts. Indexing since 1976"'
+
 working_synthesis:
-  id: brian_investment_philosophy_candidate_v0_2
+  id: brian_investment_philosophy_candidate_v0_3
   status: candidate_not_confirmed
-  title: Brian investment philosophy candidate v0.2
+  title: Brian investment philosophy candidate v0.3
   role_mapping:
     trend_and_timing: Stanley Druckenmiller
     qualitative_growth_research: Philip Fisher
     business_quality_and_compounding: Warren Buffett
     valuation_psychology_and_error_avoidance: Charlie Munger
+    fallibility_reflexivity_and_feedback_loops: George Soros
+    cycle_risk_and_embedded_expectations: Howard Marks
+    low_cost_diversified_core: John Bogle
   candidate_rules:
     - Invest in large long-run changes, but do not buy merely because an asset carries an AI label.
     - Treat every stock as a fractional business ownership interest.
@@ -318,15 +453,22 @@ working_synthesis:
     - Separate long-duration compounders from two-to-four-year trend positions and use different review and exit rules.
     - Use only public information and comply with employer trading and information-handling rules.
     - Preserve liquidity so a wrong thesis never forces harm to housing, family, or companion-animal care.
+    - Use a low-cost global market portfolio as the core and treat active AI exposure as a bounded satellite.
+    - Track how prices and financing can create supply that later weakens the original AI scarcity thesis.
+    - Require price and embedded expectations to pass alongside technology and company quality.
   proposed_structure_not_yet_confirmed:
-    cash_bonds_deposits_percent: 25
-    global_core_compounders_percent: 35
-    ai_conviction_total_percent: 35
-    gold_and_other_percent: 5
-  status_note: These percentages and rules remain research-derived candidates until Brian explicitly confirms them.
+    emergency_reserve_months: 9
+    broad_global_equity_core_percent: 55
+    safe_short_duration_percent: 15
+    explicit_ai_infrastructure_satellite_percent: 20
+    gold_and_real_asset_diversifier_percent: 5
+    other_non_ai_diversifiers_percent: 5
+  policy_ref: life/finance/brian_investment_policy_202607.yaml
+  status_note: The detailed policy and percentages remain proposed until Brian reviews and confirms them.
 
 next_research_actions:
   - Calculate look-through overlap across Brian and spouse holdings before setting a final AI concentration ceiling.
   - Separate holdings into long-duration compounders, trend positions, diversifiers, and liquidity.
-  - Create a one-page pre-investment checklist and review template after Brian confirms the philosophy.
+  - Capture monthly essential spending, emergency cash, tax lots and employer trading constraints.
+  - Convert the saved scorecard into a one-page pre-investment checklist after Brian confirms the policy.
   - Review the selected philosophy against actual behavior during the next investment decision.

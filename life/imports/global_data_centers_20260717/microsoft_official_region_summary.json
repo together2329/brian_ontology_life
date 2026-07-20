@@ -1,0 +1,100 @@
+{
+  "coverage": {
+    "azure_learn_coming_soon_rows": 1,
+    "azure_learn_only_region_labels": [
+      "Australia Central 2",
+      "Brazil Southeast",
+      "France South",
+      "Germany North",
+      "Korea South",
+      "Norway West",
+      "South Africa West",
+      "Switzerland West",
+      "UAE Central",
+      "West India"
+    ],
+    "azure_learn_public_cloud_region_rows": 57,
+    "azure_learn_restricted_region_rows": 8,
+    "datacenters_globe_availability_zone_status_counts": {
+      "available": 39,
+      "nearest": 11,
+      "soon": 10
+    },
+    "datacenters_globe_continent_counts_raw": {
+      "africa": 1,
+      "asia": 22,
+      "europe": 17,
+      "northamerica": 13,
+      "oceania": 5,
+      "southamerica": 2
+    },
+    "datacenters_globe_geography_records": 37,
+    "datacenters_globe_lifecycle_counts": {
+      "coming_or_not_open": 9,
+      "open": 51
+    },
+    "datacenters_globe_only_region_labels": [
+      "China East",
+      "China East 2",
+      "China North",
+      "China North 2",
+      "China North 3",
+      "East US 3",
+      "Greece Central",
+      "North Europe 3",
+      "North Europe 4",
+      "Saudi Arabia East",
+      "Southeast Asia 3",
+      "Taiwan North",
+      "Thailand South"
+    ],
+    "datacenters_globe_region_records": 60,
+    "datacenters_globe_region_type_counts": {
+      "aregionaz": 6,
+      "region": 12,
+      "regionaz": 42
+    },
+    "source_presence_counts": {
+      "azure_learn_public_table_only": 10,
+      "both": 47,
+      "datacenters_globe_only": 13
+    },
+    "union_region_labels": 70
+  },
+  "generated_on": "2026-07-18",
+  "interpretation": {
+    "company_headline_boundary": "The separate 500-plus datacenter and 80-plus announced-region headlines use broader company scopes and cannot be reconciled one-for-one to this registry.",
+    "coordinates": "Globe latitude and longitude values are map anchors for regions, not disclosed building coordinates.",
+    "physical_building_count": "No exact building roster follows from either list. A region and an availability zone each can contain one or more datacenters.",
+    "why_counts_differ": "The Globe mixes public, sovereign, open, and coming-soon map records; Microsoft Learn documents the public Azure cloud and includes restricted regions."
+  },
+  "remaining_gaps": [
+    "Complete physical campus and building addresses behind each region and availability zone",
+    "Owned versus leased, controlled, colocation, and partner-operated facility mapping",
+    "Per-site operating, energized, leased, utilized, and billed critical IT load",
+    "Per-site GPU, accelerator, rack, network-fabric, and utilization inventory",
+    "Per-site utility feed, substation, transformer, switchgear, UPS, battery, generator, chiller, and CDU bill of materials",
+    "Construction, commissioning, customer-acceptance, and revenue-start dates for each building"
+  ],
+  "schema_version": 1,
+  "source_anomalies": [
+    {
+      "expected_from_geography": "europe",
+      "field": "continent",
+      "handling": "raw_value_preserved_not_silently_corrected",
+      "raw_value": "oceania",
+      "region": "Austria East"
+    }
+  ],
+  "sources": {
+    "azure_learn_public_cloud_regions": "https://learn.microsoft.com/en-us/azure/reliability/regions-list",
+    "azure_learn_updated_at": "2026-06-26T06:03:00Z",
+    "datacenters_globe_geographies": "https://datacenters.microsoft.com/wp-json/globe/geographies",
+    "datacenters_globe_regions": "https://datacenters.microsoft.com/wp-json/globe/regions",
+    "retrieved_content_sha256": {
+      "azure_learn_public_cloud_regions": "e5a708a244678e7e8fa8b4ef7437f798583d9ce6a75230e91e218468f98fab7f",
+      "datacenters_globe_geographies": "71006069f18be6cda255381ffde27aebbeaa9b8ba6b203833585debac9eb70f5",
+      "datacenters_globe_regions": "9bace5a9e0045b1113da13f0721f79f5ed740262ec504e969f0de6b84d022154"
+    }
+  }
+}

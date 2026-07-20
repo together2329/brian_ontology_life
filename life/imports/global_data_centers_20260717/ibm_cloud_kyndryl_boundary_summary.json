@@ -1,0 +1,496 @@
+{
+  "IBM_Cloud_location_reconciliation": {
+    "all_regions": 13,
+    "closure_state": "IBM says some classic codes are set to close soon but the reviewed page does not publish the affected code list.",
+    "current_classic_table_codes": 42,
+    "excluded_scope": "network points of presence are not counted as physical data-center codes",
+    "normal_multizone_physical_codes": 28,
+    "normal_multizone_regions": 9,
+    "physical_building_lower_bound": "not_inferred_because_a_code_can_represent_a_building_or_campus_scope_and_SC_MZR_dependencies_can_overlap",
+    "single_campus_multizone_physical_codes": 8,
+    "single_campus_multizone_regions": 4,
+    "union_unique_physical_codes": 47
+  },
+  "IBM_Cloud_power_cooling_and_facility_design": {
+    "SC_MZR_definition": "Three zones in one building or campus with potentially overlapping dependencies and concurrent maintainability.",
+    "normal_MZR_definition": "At least three data centers with independent power, cooling and network; minimum one mile separation, under 2ms latency and more than 1000Gbps between zones.",
+    "per_code_MW_area_measured_PUE_WUE_energy_water_and_emissions": "undisclosed",
+    "per_code_grid_feeds_substations_transformers_switchgear_PDU_UPS_battery_generator_chiller_CRAH_CRAC_CDU_OEM_model_count_rating_loading_acceptance_and_remaining_life": "undisclosed",
+    "portfolio_level_features": [
+      "N_plus_1_power_and_cooling",
+      "backup_generators_for_classic_POD_architecture",
+      "racks_servers_network_and_storage_in_classic_PODs",
+      "24x7_onsite_security",
+      "restricted_server_room_access"
+    ]
+  },
+  "IBM_FY2025_financials_USD_million": {
+    "boundary": "Companywide IBM results; the derived result equals gross profit less SG&A and R&D plus IP/custom-development income and is not reported GAAP operating income. IBM Cloud data-center-only revenue, profit, cash flow and capex are undisclosed.",
+    "cash_restricted_cash_and_marketable_securities": 14471,
+    "company_defined_free_cash_flow_non_GAAP": 14700,
+    "derived_operating_like_margin_percent": 17.505,
+    "derived_pre_interest_pre_other_operating_like_result": 11822,
+    "gross_profit": 39297,
+    "net_capex_approx": 1600,
+    "net_income": 10593,
+    "operating_cash_flow": 13193,
+    "pretax_income_from_continuing_operations": 10328,
+    "property_plant_and_equipment_gross": 17874,
+    "property_plant_and_equipment_net": 5899,
+    "reported_GAAP_operating_income_line": "not_presented",
+    "revenue": 67535,
+    "short_and_long_term_debt": 61260
+  },
+  "IBM_Infrastructure_segment_FY2025_USD_million": {
+    "boundary": "The segment includes IBM Z, Power, Storage, support and IaaS; it is not a data-center-only segment, and z17 product-cycle strength should not be read as IBM Cloud facility economics.",
+    "constant_currency_growth_percent": 10.4,
+    "gross_margin_percent": 58.6,
+    "gross_profit": 9216,
+    "hybrid_infrastructure_revenue": 10618,
+    "infrastructure_support_revenue": 5100,
+    "reported_growth_percent": 12.1,
+    "revenue": 15718,
+    "segment_profit": 3458,
+    "segment_profit_margin_percent": 22.0
+  },
+  "IBM_accelerator_product_and_physical_inventory_boundary": {
+    "Blue_Vela": "H100-based Dell/NVIDIA/IBM Storage Scale platform conceived in spring 2024; reviewed source does not disclose site or fleet count.",
+    "H100_cluster_network": "WDC06, WDC07 and FRA04; up to 3.2Tbps through eight 400Gbps NVIDIA ConnectX-7 links.",
+    "H200_network_table_conflict": "The profile row and regional availability table use inconsistent dedicated-cluster-network markers; no site-level installed network is inferred from the conflict.",
+    "H200_source_conflict": "The product-specific physical-code page includes CHE02 while the generic logical-zone page reviewed did not; CHE02 is retained with the product-page citation rather than silently harmonized.",
+    "Vela": {
+      "December_2023_update": "around_twice_as_many_GPUs_after_upgrade_without_exact_baseline_or_current_count",
+      "node_configuration": "eight_NVIDIA_A100_80GB_GPUs_two_Cascade_Lake_CPUs_1_5TB_DRAM_four_3_2TB_NVMe_and_multiple_100G_links",
+      "online_since": "2022-05",
+      "research_evaluation_scale": "approximately_1500_GPUs_not_a_current_installed_fleet_count",
+      "site_scope": "one_undisclosed_IBM_Cloud_data_center",
+      "throughput_result": "approximately_80_percent_of_ideal_on_a_50B_parameter_model_and_approximately_70_percent_per_GPU_FLOPS"
+    },
+    "exact_physical_code_product_availability": {
+      "B300": [
+        "WDC07"
+      ],
+      "Gaudi3": [
+        "DAL12",
+        "FRA02",
+        "WDC06",
+        "WDC07"
+      ],
+      "H100": [
+        "DAL10",
+        "FRA04",
+        "LON05",
+        "MAD05",
+        "SAO01",
+        "SYD04",
+        "TOK05",
+        "TOR05",
+        "WDC06",
+        "WDC07"
+      ],
+      "H200": [
+        "CHE02",
+        "FRA04",
+        "LON05",
+        "SYD05",
+        "TOR05",
+        "WDC06",
+        "WDC07"
+      ]
+    },
+    "product_profile_boundary": "GPUs per orderable instance are not a fleet count. Exact installed, accepted, available, utilized, customer-owned and IBM-owned units by site are undisclosed.",
+    "published_profile_models": {
+      "A100": "one_or_two_80GB_GPUs_per_profile",
+      "B300": "eight_288GB_GPUs_per_profile",
+      "Gaudi3": "eight_128GB_accelerators_per_profile",
+      "H100": "eight_80GB_GPUs_per_profile",
+      "H200": "eight_141GB_GPUs_per_profile",
+      "L4": "one_two_or_four_24GB_GPUs_per_profile",
+      "L40S": "one_or_two_48GB_GPUs_per_profile",
+      "MI300X": "eight_accelerators_per_profile",
+      "V100": "one_or_two_16GB_GPUs_per_profile"
+    }
+  },
+  "Kyndryl_FY2026_financials_USD_million": {
+    "boundary": "Companywide Kyndryl results. The derived result equals revenue less cost of services, SG&A, workforce rebalancing and transaction-related costs; it is not reported GAAP operating income or data-center-only profit.",
+    "cash_approx": 2600,
+    "company_defined_free_cash_flow_non_GAAP": 406,
+    "current_plus_long_term_debt_including_revolver": 4089,
+    "derived_operating_like_margin_percent": 3.538,
+    "derived_pre_interest_pre_other_operating_like_result": 534,
+    "internal_control_risk": "The FY2026 auditor report identifies material weaknesses in internal control over financial reporting as of 2026-03-31.",
+    "net_capex": 543,
+    "net_income": 198,
+    "operating_cash_flow": 948,
+    "owned_or_leased_real_estate_million_sqft": 9.0,
+    "period_ended": "2026-03-31",
+    "pretax_income": 414,
+    "real_estate_boundary": "Substantially all of the 9.0 million square feet is data-center and office space, but the filing does not split the categories or disclose an exact data-center count, MW or GPU inventory.",
+    "reported_GAAP_operating_income_line": "not_presented",
+    "revenue": 15092
+  },
+  "Kyndryl_FY2027_company_outlook_USD_million": {
+    "FY2026_consult_revenue": 3500,
+    "FY2026_consult_revenue_growth_percent": 18,
+    "FY2026_hyperscaler_related_revenue": 1900,
+    "FY2026_hyperscaler_related_revenue_growth_percent": 59,
+    "FY2026_signings": 13500,
+    "adjusted_pretax_income_range": [
+      600,
+      700
+    ],
+    "boundary": "Outlook and growth measures are companywide and largely non-GAAP or operational; none is data-center-only revenue, margin or booked capacity.",
+    "constant_currency_revenue_growth_range_percent": [
+      -2,
+      0
+    ],
+    "free_cash_flow_range": [
+      400,
+      500
+    ]
+  },
+  "Kyndryl_separation_and_current_facility_boundary": {
+    "IBM_separation_completed": "2021-11-03",
+    "boundary": "Certificates are a partial compliance scope, not a complete global roster or proof of property title. IBM's historical label, the separation, and an OSM coordinate do not alone prove which property transferred or who operates it today.",
+    "combined_registry_rows": 11,
+    "current_strategy": "Kyndryl says it hosts workloads in its own facilities and colocation partners, with bespoke co-creation at select Kyndryl-owned data centers.",
+    "selected_France_certificate_site_groups": 7,
+    "selected_France_named_components_if_labels_are_split": 11,
+    "selected_Germany_explicit_DC_rows": 4
+  },
+  "OSM_crosswalk": {
+    "all_related_objects": 18,
+    "boundary": "The OSM objects are partial geometry and identity candidates. They do not add facilities, area, power or GPU capacity to either provider scope.",
+    "current_Kyndryl_certificate_group_candidates": 9,
+    "raw_operator_counts": {
+      "IBM": 8,
+      "Kyndryl Deutschland GmbH": 2,
+      "None": 8
+    },
+    "rows": [
+      {
+        "address": null,
+        "classification": "legacy_IBM_label_matches_current_Kyndryl_certified_site_group_but_not_one_to_one_building_allocation",
+        "counting_rule": "OSM is a location crosswalk only. This object contributes no extra facility, MW or GPU count.",
+        "footprint_area_m2": 2953.002,
+        "latitude": 48.8308625,
+        "longitude": 2.6725645,
+        "name": "Datacenter IBM",
+        "osm_ref": "osm_relation_1604367",
+        "raw_operator": "IBM",
+        "raw_owner": null,
+        "registry_ref": "kyndryl_fr_collegien_i_ii"
+      },
+      {
+        "address": null,
+        "classification": "legacy_IBM_label_matches_current_Kyndryl_certified_site_group_but_not_one_to_one_building_allocation",
+        "counting_rule": "OSM is a location crosswalk only. This object contributes no extra facility, MW or GPU count.",
+        "footprint_area_m2": 884.426,
+        "latitude": 48.8325795,
+        "longitude": 2.6929285,
+        "name": "Datacenter IBM",
+        "osm_ref": "osm_way_113167016",
+        "raw_operator": "IBM",
+        "raw_owner": null,
+        "registry_ref": "kyndryl_fr_collegien_i_ii"
+      },
+      {
+        "address": {
+          "city": "Seclin",
+          "postcode": "59113"
+        },
+        "classification": "legacy_IBM_label_and_city_match_current_Kyndryl_certified_site_group",
+        "counting_rule": "OSM is a location crosswalk only. This object contributes no extra facility, MW or GPU count.",
+        "footprint_area_m2": 3573.132,
+        "latitude": 50.5651944,
+        "longitude": 3.0307579,
+        "name": "Datacenter IBM",
+        "osm_ref": "osm_way_125557451",
+        "raw_operator": "IBM",
+        "raw_owner": null,
+        "registry_ref": "kyndryl_fr_seclin"
+      },
+      {
+        "address": null,
+        "classification": "legacy_IBM_label_matches_current_Kyndryl_certified_site_group_but_three_OSM_objects_cannot_map_one_to_one_to_I_and_II",
+        "counting_rule": "OSM is a location crosswalk only. This object contributes no extra facility, MW or GPU count.",
+        "footprint_area_m2": 3612.475,
+        "latitude": 45.8077191,
+        "longitude": 3.1423865,
+        "name": "Datacenter IBM",
+        "osm_ref": "osm_way_66911687",
+        "raw_operator": "IBM",
+        "raw_owner": null,
+        "registry_ref": "kyndryl_fr_clermont_i_ii"
+      },
+      {
+        "address": null,
+        "classification": "legacy_IBM_label_matches_current_Kyndryl_certified_site_group_but_three_OSM_objects_cannot_map_one_to_one_to_I_and_II",
+        "counting_rule": "OSM is a location crosswalk only. This object contributes no extra facility, MW or GPU count.",
+        "footprint_area_m2": 1762.733,
+        "latitude": 45.836133,
+        "longitude": 3.1377595,
+        "name": "Datacenter IBM",
+        "osm_ref": "osm_way_91286607",
+        "raw_operator": "IBM",
+        "raw_owner": null,
+        "registry_ref": "kyndryl_fr_clermont_i_ii"
+      },
+      {
+        "address": null,
+        "classification": "legacy_IBM_label_matches_current_Kyndryl_certified_site_group_but_three_OSM_objects_cannot_map_one_to_one_to_I_and_II",
+        "counting_rule": "OSM is a location crosswalk only. This object contributes no extra facility, MW or GPU count.",
+        "footprint_area_m2": 1837.106,
+        "latitude": 45.8363938,
+        "longitude": 3.1378014,
+        "name": "Datacenter IBM",
+        "osm_ref": "osm_way_91288538",
+        "raw_operator": "IBM",
+        "raw_owner": null,
+        "registry_ref": "kyndryl_fr_clermont_i_ii"
+      },
+      {
+        "address": null,
+        "classification": "legacy_IBM_Grabels_label_matches_current_Kyndryl_certified_site_group",
+        "counting_rule": "OSM is a location crosswalk only. This object contributes no extra facility, MW or GPU count.",
+        "footprint_area_m2": 2951.207,
+        "latitude": 43.6426889,
+        "longitude": 3.8298901,
+        "name": "Datacenter IBM - Grabels",
+        "osm_ref": "osm_way_82894448",
+        "raw_operator": "IBM",
+        "raw_owner": null,
+        "registry_ref": "kyndryl_fr_montpellier_grabels"
+      },
+      {
+        "address": {
+          "city": "Eschborn",
+          "postcode": "65760"
+        },
+        "classification": "current_Kyndryl_operator_and_city_match_certified_DC_Schwalbach_address_in_Eschborn",
+        "counting_rule": "OSM is a location crosswalk only. This object contributes no extra facility, MW or GPU count.",
+        "footprint_area_m2": 853.655,
+        "latitude": 50.1442635,
+        "longitude": 8.5533231,
+        "name": "Kyndryl Data Center",
+        "osm_ref": "osm_way_26225758",
+        "raw_operator": "Kyndryl Deutschland GmbH",
+        "raw_owner": null,
+        "registry_ref": "kyndryl_de_schwalbach_eschborn"
+      },
+      {
+        "address": {
+          "city": "Oberursel (Taunus)",
+          "postcode": "61440"
+        },
+        "classification": "current_Kyndryl_operator_and_city_match_certified_DC_Oberursel",
+        "counting_rule": "OSM is a location crosswalk only. This object contributes no extra facility, MW or GPU count.",
+        "footprint_area_m2": 911.341,
+        "latitude": 50.1925315,
+        "longitude": 8.5922876,
+        "name": "Kyndryl Data Center",
+        "osm_ref": "osm_way_38754141",
+        "raw_operator": "Kyndryl Deutschland GmbH",
+        "raw_owner": null,
+        "registry_ref": "kyndryl_de_oberursel"
+      },
+      {
+        "address": null,
+        "classification": "legacy_IBM_Horsham_label_with_RSA_owner_current_facility_operator_and_lifecycle_unconfirmed",
+        "counting_rule": "OSM is a location crosswalk only. This object contributes no extra facility, MW or GPU count.",
+        "footprint_area_m2": 5262.911,
+        "latitude": 51.0215574,
+        "longitude": -0.350469,
+        "name": "IBM Horsham",
+        "osm_ref": "osm_way_128487593",
+        "raw_operator": "IBM",
+        "raw_owner": "Royal & Sun Alliance",
+        "registry_ref": null
+      },
+      {
+        "address": null,
+        "classification": "Chile_IBM_name_only_candidate_without_current_IBM_Cloud_or_Kyndryl_official_bridge",
+        "counting_rule": "OSM is a location crosswalk only. This object contributes no extra facility, MW or GPU count.",
+        "footprint_area_m2": 9548.0,
+        "latitude": -33.5534861,
+        "longitude": -70.711743,
+        "name": "IBM data center / Centro Tecnológico San Bernardo",
+        "osm_ref": "osm_way_1295392065",
+        "raw_operator": null,
+        "raw_owner": null,
+        "registry_ref": null
+      },
+      {
+        "address": null,
+        "classification": "Spain_IBM_name_only_candidate_without_current_IBM_Cloud_or_Kyndryl_official_bridge",
+        "counting_rule": "OSM is a location crosswalk only. This object contributes no extra facility, MW or GPU count.",
+        "footprint_area_m2": 6481.731,
+        "latitude": 41.4898179,
+        "longitude": 2.1080726,
+        "name": "Centre de Processament de Dades IBM",
+        "osm_ref": "osm_way_368613614",
+        "raw_operator": null,
+        "raw_owner": null,
+        "registry_ref": null
+      },
+      {
+        "address": null,
+        "classification": "Kyndryl_UK_name_only_candidate_not_present_in_selected_France_or_Germany_certificate_scope",
+        "counting_rule": "OSM is a location crosswalk only. This object contributes no extra facility, MW or GPU count.",
+        "footprint_area_m2": 5658.174,
+        "latitude": 51.5425077,
+        "longitude": -0.3366447,
+        "name": "Kyndryl UK Ltd",
+        "osm_ref": "osm_way_218905097",
+        "raw_operator": null,
+        "raw_owner": null,
+        "registry_ref": null
+      },
+      {
+        "address": null,
+        "classification": "New_Zealand_IBM_name_only_candidate_without_current_official_bridge",
+        "counting_rule": "OSM is a location crosswalk only. This object contributes no extra facility, MW or GPU count.",
+        "footprint_area_m2": 5633.435,
+        "latitude": -36.9427863,
+        "longitude": 174.8702826,
+        "name": "IBM Data Centre",
+        "osm_ref": "osm_way_205832460",
+        "raw_operator": null,
+        "raw_owner": null,
+        "registry_ref": null
+      },
+      {
+        "address": null,
+        "classification": "IBM_owner_tag_near_Washington_service_market_without_code_to_building_bridge",
+        "counting_rule": "OSM is a location crosswalk only. This object contributes no extra facility, MW or GPU count.",
+        "footprint_area_m2": 4022.317,
+        "latitude": 38.9092366,
+        "longitude": -77.4722656,
+        "name": null,
+        "osm_ref": "osm_way_258519934",
+        "raw_operator": null,
+        "raw_owner": "IBM",
+        "registry_ref": null
+      },
+      {
+        "address": null,
+        "classification": "IBM_owner_tag_near_Washington_service_market_without_code_to_building_bridge",
+        "counting_rule": "OSM is a location crosswalk only. This object contributes no extra facility, MW or GPU count.",
+        "footprint_area_m2": 2991.129,
+        "latitude": 38.909796,
+        "longitude": -77.4734544,
+        "name": null,
+        "osm_ref": "osm_way_258519959",
+        "raw_operator": null,
+        "raw_owner": "IBM",
+        "registry_ref": null
+      },
+      {
+        "address": {
+          "city": "Albany",
+          "postcode": "12207",
+          "state": "NY"
+        },
+        "classification": "Albany_commercial_IBM_Building_with_telecom_tag_not_proven_as_current_data_center",
+        "counting_rule": "OSM is a location crosswalk only. This object contributes no extra facility, MW or GPU count.",
+        "footprint_area_m2": 1424.225,
+        "latitude": 42.6493531,
+        "longitude": -73.7527453,
+        "name": "IBM Building",
+        "osm_ref": "osm_way_69827429",
+        "raw_operator": null,
+        "raw_owner": null,
+        "registry_ref": null
+      },
+      {
+        "address": {
+          "city": "Poughkeepsie",
+          "postcode": "12601",
+          "state": "NY"
+        },
+        "classification": "IBM_Quantum_Data_Center_is_a_separate_quantum_facility_not_a_public_IBM_Cloud_code_bridge",
+        "counting_rule": "OSM is a location crosswalk only. This object contributes no extra facility, MW or GPU count.",
+        "footprint_area_m2": 6678.778,
+        "latitude": 41.6603798,
+        "longitude": -73.9400178,
+        "name": "IBM Quantum Data Center",
+        "osm_ref": "osm_way_195803647",
+        "raw_operator": null,
+        "raw_owner": null,
+        "registry_ref": null
+      }
+    ],
+    "source_file": "life/imports/global_data_centers_20260717/osm_data_center_locations.jsonl",
+    "source_file_sha256": "3a0f1370f036f2ff5fa0c478bfadeb58c7809d90315bbee4e0a7c9cfd21d4733",
+    "unresolved_or_separate_scope_objects": 9
+  },
+  "accessed_on": "2026-07-19",
+  "id": "ibm_cloud_kyndryl_boundary_summary_2026_07_19",
+  "outlook": {
+    "IBM_positive_signals": [
+      "broad_47_code_cloud_service_footprint",
+      "B300_H200_H100_Gaudi3_and_other_accelerator_product_breadth",
+      "strong_FY2025_Infrastructure_growth_and_cash_generation",
+      "Vela_and_Blue_Vela_demonstrate_large_scale_AI_system_engineering"
+    ],
+    "IBM_risk_signals": [
+      "exact_site_ownership_MW_GPU_counts_and_cloud_data_center_economics_undisclosed",
+      "some_classic_codes_set_to_close_without_public_code_list",
+      "Infrastructure_growth_heavily_influenced_by_z17_cycle_not_pure_cloud_facility_demand",
+      "high_consolidated_debt_and_cross_segment_capital_allocation"
+    ],
+    "Kyndryl_positive_signals": [
+      "FY2026_hyperscaler_related_revenue_growth_of_59_percent",
+      "positive_operating_cash_flow_and_FY2027_profit_improvement_outlook",
+      "own_plus_colocation_hybrid_infrastructure_position"
+    ],
+    "Kyndryl_risk_signals": [
+      "FY2027_constant_currency_revenue_outlook_flat_to_down_2_percent",
+      "no_complete_current_facility_count_MW_GPU_or_data_center_only_economics",
+      "debt_refinancing_and_internal_control_material_weaknesses",
+      "certificate_and_legacy_IBM_labels_do_not_prove_title_or_current_operator_by_building"
+    ],
+    "analytical_view": "IBM is the more investable broad technology and cash-generation exposure, but its data-center economics cannot be isolated and its accelerator tables prove product availability rather than fleet size. Kyndryl benefits from hybrid and hyperscaler integration growth, yet remains a lower-margin services transformation with incomplete facility disclosure, revenue pressure and control risk. Neither should be valued as a pure-play owned AI data-center fleet from these disclosures."
+  },
+  "records_sha256": "6005f8a008fe2d0739b781f4d1738eb32d88783b59dbe8c4d034011da0c06889",
+  "registry_scope": {
+    "IBM_Cloud_physical_code_records": 47,
+    "Kyndryl_selected_certification_site_group_records": 11,
+    "boundary": "IBM Cloud codes and Kyndryl certification sites are different sources, legal entities and granularities. They are not added into a single fleet count.",
+    "total_records": 58
+  },
+  "remaining_material_gaps": [
+    "IBM_Cloud_exact_current_code_closure_roster_and_code_to_street_address_building_campus_title_lease_operator_bridge",
+    "IBM_Cloud_per_site_operating_energized_leased_utilized_billed_and_actual_IT_load",
+    "IBM_Cloud_per_site_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_OEM_model_count_rating_loading_acceptance_and_remaining_life",
+    "IBM_Cloud_per_site_measured_PUE_WUE_energy_water_emissions_and_live_liquid_cooled_MW",
+    "IBM_and_customer_GPU_model_count_owner_site_delivery_acceptance_rack_fabric_power_utilization_revenue_and_margin",
+    "IBM_Cloud_data_center_only_revenue_operating_profit_cash_flow_capex_ROIC_customer_concentration_and_contract_terms",
+    "Kyndryl_complete_current_global_owned_leased_and_colocation_facility_building_address_lifecycle_title_and_operator_roster",
+    "Kyndryl_legacy_IBM_property_by_property_separation_and_current_operator_bridge",
+    "Kyndryl_per_site_MW_equipment_PUE_WUE_GPU_inventory_utilization_and_economics",
+    "current_share_prices_enterprise_values_and_valuation_require_same_date_market_data"
+  ],
+  "sources": [
+    "https://cloud.ibm.com/docs/overview?topic=overview-locations",
+    "https://cloud.ibm.com/docs/account?topic=account-dc-closure",
+    "https://www.ibm.com/solutions/cloud-data-centers",
+    "https://cloud.ibm.com/docs/vpc?interface=cli&topic=vpc-profiles",
+    "https://cloud.ibm.com/docs/vpc?interface=ui&topic=vpc-accelerated-profile-family",
+    "https://cloud.ibm.com/docs/vpc?topic=vpc-accelerated-profile-family-gen4",
+    "https://research.ibm.com/publications/vela-a-virtualized-llm-training-system-with-gpu-direct-and-roce",
+    "https://research.ibm.com/blog/AI-supercomputer-Vela-GPU-cluster",
+    "https://research.ibm.com/blog/vela-ai-supercomputer-updates",
+    "https://research.ibm.com/blog/ibm-storage-scale-mlperf",
+    "https://www.sec.gov/Archives/edgar/data/51143/000005114326000010/ibm-20251231_d2.htm",
+    "https://www.ibm.com/downloads/documents/us-en/15db1aa422b5a2d8",
+    "https://www.kyndryl.com/us/en/compliance/certifications",
+    "https://www.kyndryl.com/content/dam/kyndrylprogram/certifications/iso22301/kyndryl_france_iso_22301_2019_01_feb_2029.pdf",
+    "https://www.kyndryl.com/content/dam/kyndrylprogram/certifications/hds/kyndryl_france_hds_30_jul_25.pdf",
+    "https://www.kyndryl.com/content/dam/kyndrylprogram/certifications/iso27001/kyndryl_germany_iso_27001_31_oct_2025.pdf",
+    "https://www.kyndryl.com/ie/en/about-us/news/2026/05/hybrid-it-modern-data-center-strategy",
+    "https://www.sec.gov/Archives/edgar/data/1867072/000110465926067881/kd-20260331x10k.htm",
+    "https://investors.kyndryl.com/news-releases/news-release-details/kyndryl-reports-fourth-quarter-and-full-year-2026-results",
+    "https://newsroom.ibm.com/2021-11-03-IBM-Completes-the-Separation-of-Kyndryl"
+  ]
+}

@@ -1,0 +1,257 @@
+schema_version: 1
+status: active_first_milestone
+created_at: '2026-07-20'
+updated_at: '2026-07-20'
+area: FINANCE
+secondary_areas:
+  - CAREER
+profile_ref: person_brian
+title: Brian equity-policy backtest specification
+goal: >
+  Test whether keeping the existing AI-heavy portfolio without selling while routing new monthly
+  surplus and a one-time bonus to a global core, KRW safe assets and gold would have improved
+  drawdown, recovery time and concentration without destroying long-run compounding.
+decision_boundary: >
+  This is a counterfactual policy test, not a reconstruction of Brian's realized return and not a
+  trade instruction. The saved records do not contain transaction dates, and several owned ETFs
+  did not exist through the full test period. Current holding amounts seed every test window and
+  explicit long-history proxies supply returns.
+privacy: >
+  Public ticker and macro series are fetched externally. Brian's quantities, account data and
+  household cashflow remain local and are joined only after public data are saved.
+
+source_records:
+  - id: source_finance_equity_backtest_goal_20260720
+    object_type: Source
+    source_type: chat
+    original_date: '2026-07-20'
+    imported_at: '2026-07-20'
+    raw_text: 주식 관련 backtest 위주로 가능? / goal로 만들어서 진행해
+    interpretation: Brian asked to make the investment-system development primarily equity-backtest-driven and authorized execution as a Goal.
+    confidence: high
+    needs_user_review: false
+
+input_refs:
+  portfolio_snapshot: life/finance/ai_data_center_investment_comparison_202607.yaml
+  investment_policy: life/finance/brian_investment_policy_202607.yaml
+  policy_execution: life/finance/brian_investment_policy_execution_202607.yaml
+  optical_constituent_evidence: life/finance/global_optical_communications_supply_chain_202607.yaml
+  market_data_directory: life/imports/investment_backtest_202607
+
+test_design:
+  base_currency: KRW
+  source_portfolio_as_of: '2026-07-15'
+  source_portfolio_initial_value_krw: 123448709
+  price_frequency: monthly_adjusted_close
+  start_months:
+    - '2016-01'
+    - '2020-01'
+    - '2023-01'
+  end_month: '2026-06'
+  contribution_timing: End of month after the month's market return.
+  bonus_timing: One time at the end of month 12 in each counterfactual window.
+  contribution_purchase_cost_bps: 10
+  sale_cost_bps: 10
+  tax_basis: excluded_first_milestone_because_no_strategy_sells
+  distribution_tax_boundary: Proxy adjusted-close distributions are reinvested before Brian-specific withholding and account tax.
+  inflation_adjustment: excluded_first_milestone
+  rebalance_policy: Existing holdings are never sold or rebalanced in the first milestone.
+  default_cashflow_case:
+    monthly_contribution_krw: 1000000
+    one_time_bonus_krw: 20000000
+  sensitivity_grid:
+    monthly_contribution_krw: [500000, 1000000, 2000000]
+    one_time_bonus_krw: [0, 20000000, 100000000]
+
+strategy_definitions:
+  - strategy_id: current_style_continue
+    label_ko: 현재 집중형 계속 적립
+    existing_holdings: Never sell.
+    new_money_rule: Allocate every contribution and bonus pro rata to the 2026-07-15 product weights.
+    interpretation: Counterfactual baseline for continuing to reinforce the current portfolio style.
+  - strategy_id: no_sale_dilution_80_15_5
+    label_ko: 무매도 글로벌 코어 희석
+    existing_holdings: Never sell.
+    new_money_rule:
+      global_equity_core_percent: 80
+      krw_safe_short_duration_percent: 15
+      gold_percent: 5
+      explicit_ai_percent: 0
+    interpretation: First-milestone implementation of the current policy while concentration remains above its transition band.
+  - strategy_id: no_sale_global_core_only
+    label_ko: 무매도 글로벌 코어 100%
+    existing_holdings: Never sell.
+    new_money_rule:
+      global_equity_core_percent: 100
+      explicit_ai_percent: 0
+    interpretation: Isolate the effect of pure global-core dilution from the safe-asset and gold sleeves.
+
+market_series:
+  yahoo_chart_endpoint_template: https://query1.finance.yahoo.com/v8/finance/chart/{symbol}
+  yahoo_query:
+    interval: 1mo
+    events: div,splits
+    price_lookback_start: '2015-12-01'
+    required_return_start: '2016-01'
+    period_end_exclusive: '2026-07-01'
+  usdkrw_primary:
+    provider: Federal Reserve Bank of St. Louis FRED
+    series_id: DEXKOUS
+    label: South Korean Won to U.S. Dollar Spot Exchange Rate
+    url: https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXKOUS&cosd=2015-11-01&coed=2026-06-30
+    monthly_aggregation: last_non_missing_daily_observation
+    unit: KRW_per_USD
+  usdkrw_validation_symbol: KRW=X
+  krw_cash_rate:
+    provider: Federal Reserve Bank of St. Louis FRED
+    series_id: IR3TIB01KRM156N
+    label: 3-Month or 90-day Rates and Yields - Interbank Rates for the Republic of Korea
+    url: https://fred.stlouisfed.org/graph/fredgraph.csv?id=IR3TIB01KRM156N&cosd=2016-01-01&coed=2026-06-30
+    conversion_to_monthly_return: (1 + annual_percent / 100) ** (1 / 12) - 1
+  symbols:
+    - {symbol: 000660.KS, label: SK hynix, currency: KRW, role: direct_employer_stock_proxy}
+    - {symbol: 005930.KS, label: Samsung Electronics, currency: KRW, role: Korean_memory_peer_proxy}
+    - {symbol: 069500.KS, label: KODEX 200, currency: KRW, role: broad_Korea_equity_proxy}
+    - {symbol: VT, label: Vanguard Total World Stock ETF, currency: USD, role: global_equity_core_proxy}
+    - {symbol: SOXX, label: iShares Semiconductor ETF, currency: USD, role: semiconductor_and_memory_proxy}
+    - {symbol: QQQ, label: Invesco QQQ Trust, currency: USD, role: AI_value_chain_and_platform_proxy}
+    - {symbol: GRID, label: First Trust NASDAQ Clean Edge Smart Grid Infrastructure Index Fund, currency: USD, role: power_grid_proxy}
+    - {symbol: CIEN, label: Ciena, currency: USD, role: optical_current_top_three_component}
+    - {symbol: COHR, label: Coherent, currency: USD, role: optical_current_top_three_component}
+    - {symbol: LITE, label: Lumentum, currency: USD, role: optical_current_top_three_component}
+    - {symbol: URA, label: Global X Uranium ETF, currency: USD, role: nuclear_proxy}
+    - {symbol: IAU, label: iShares Gold Trust, currency: USD, role: gold_proxy}
+    - {symbol: KRW=X, label: US dollar to Korean won, currency: KRW_per_USD, role: FX_validation_only}
+
+proxy_definitions:
+  direct_sk_hynix:
+    components: [{series: 000660.KS, weight: 1.0, currency_mode: native_krw}]
+  korea_memory_equity_bond_mix:
+    components:
+      - {series: 000660.KS, weight: 0.25, currency_mode: native_krw}
+      - {series: 005930.KS, weight: 0.25, currency_mode: native_krw}
+      - {series: KRW_CASH, weight: 0.50, currency_mode: native_krw}
+    rebalance: monthly_constant_weight_proxy
+    boundary: The exact historical equity and bond sleeve weights were not captured; 25/25/50 is a name-based approximation.
+  broad_korea_equity:
+    components: [{series: 069500.KS, weight: 1.0, currency_mode: native_krw}]
+  memory_hbm_unhedged:
+    components: [{series: SOXX, weight: 1.0, currency_mode: unhedged_usd_to_krw}]
+    boundary: SOXX is a broad semiconductor proxy and does not isolate HBM or reproduce a Korean ETF's holdings.
+  semiconductor_unhedged:
+    components: [{series: SOXX, weight: 1.0, currency_mode: unhedged_usd_to_krw}]
+  semiconductor_hedged:
+    components: [{series: SOXX, weight: 1.0, currency_mode: hedged_usd_local_return}]
+    boundary: Local USD total return approximates a KRW-hedged wrapper; hedge cost and basis are excluded.
+  ai_value_chain_unhedged:
+    components: [{series: QQQ, weight: 1.0, currency_mode: unhedged_usd_to_krw}]
+    boundary: QQQ is a long-history platform and growth proxy, not an exact reconstruction of the active Korean funds.
+  power_grid_unhedged:
+    components: [{series: GRID, weight: 1.0, currency_mode: unhedged_usd_to_krw}]
+  optical_current_top_three_backcast:
+    components:
+      - {series: CIEN, weight: 0.350410179139461, currency_mode: unhedged_usd_to_krw}
+      - {series: COHR, weight: 0.330654612422568, currency_mode: unhedged_usd_to_krw}
+      - {series: LITE, weight: 0.318935208437971, currency_mode: unhedged_usd_to_krw}
+    rebalance: monthly_constant_weight_proxy
+    boundary: >
+      Backcasts the 2026-05-31 top three constituents, normalized from 20.93, 19.75 and 19.05 percent.
+      This intentionally matches the current economic exposure but contains survivor and constituent-selection bias.
+  nuclear_unhedged:
+    components: [{series: URA, weight: 1.0, currency_mode: unhedged_usd_to_krw}]
+  gold_unhedged:
+    components: [{series: IAU, weight: 1.0, currency_mode: unhedged_usd_to_krw}]
+  global_core_unhedged:
+    components: [{series: VT, weight: 1.0, currency_mode: unhedged_usd_to_krw}]
+  krw_safe_short_duration:
+    components: [{series: KRW_CASH, weight: 1.0, currency_mode: native_krw}]
+
+product_proxy_map:
+  direct_sk_hynix: direct_sk_hynix
+  ace_nvidia_value_chain: ai_value_chain_unhedged
+  rise_samsung_sk_bond_mix_50: korea_memory_equity_bond_mix
+  time_global_ai_active: ai_value_chain_unhedged
+  plus_global_hbm: memory_hbm_unhedged
+  ace_google_value_chain: ai_value_chain_unhedged
+  kodex_us_semiconductor: semiconductor_unhedged
+  kodex_us_ai_power_infra: power_grid_unhedged
+  kodex_200: broad_korea_equity
+  rise_us_semiconductor_nyse_h: semiconductor_hedged
+  kodex_us_ai_optical_network: optical_current_top_three_backcast
+  rise_global_nuclear: nuclear_unhedged
+  gold_9999: gold_unhedged
+  tiger_philadelphia_semiconductor: semiconductor_unhedged
+  koact_global_ai_memory: memory_hbm_unhedged
+  kiwoom_global_grid: power_grid_unhedged
+  hanaro_us_ai_memory_top4: memory_hbm_unhedged
+
+exposure_classification:
+  direct_employer_product_ids:
+    - direct_sk_hynix
+  explicit_ai_product_ids:
+    - direct_sk_hynix
+    - ace_nvidia_value_chain
+    - time_global_ai_active
+    - plus_global_hbm
+    - ace_google_value_chain
+    - kodex_us_semiconductor
+    - kodex_us_ai_power_infra
+    - rise_us_semiconductor_nyse_h
+    - kodex_us_ai_optical_network
+    - rise_global_nuclear
+    - tiger_philadelphia_semiconductor
+    - koact_global_ai_memory
+    - kiwoom_global_grid
+    - hanaro_us_ai_memory_top4
+  boundary: Matches the policy's explicit AI lower bound and excludes the bond-mix wrapper and KODEX 200 despite embedded semiconductor exposure.
+
+assessment_thresholds_from_policy:
+  direct_employer_first_transition_checkpoint_percent: 45
+  explicit_ai_destination_target_percent: 20
+  source_ref: life/finance/brian_investment_policy_202607.yaml
+  boundary: These are assessment markers, not automatic trade triggers.
+
+required_metrics:
+  - terminal_value_krw
+  - total_external_contributions_krw
+  - money_weighted_return_annualized_percent
+  - time_weighted_return_annualized_percent
+  - annualized_volatility_percent
+  - maximum_drawdown_percent
+  - maximum_underwater_months
+  - worst_month_percent
+  - worst_rolling_twelve_month_percent
+  - sharpe_over_krw_cash
+  - sortino_over_krw_cash
+  - calmar_ratio
+  - ending_direct_employer_percent
+  - maximum_direct_employer_percent
+  - ending_explicit_ai_percent
+  - maximum_explicit_ai_percent
+  - purchase_cost_krw
+
+quality_gates:
+  - Every required market series covers each configured start month through the end month without a missing monthly observation.
+  - Product IDs and initial values reconcile exactly to the saved 2026-07-15 securities and gold total.
+  - Proxy component weights sum to one within numerical tolerance.
+  - All strategies begin with identical holdings and differ only in documented new-money rules.
+  - No strategy sells or rebalances existing holdings in milestone one.
+  - USD assets are reported in KRW with same-month USD/KRW conversion except the explicitly hedged semiconductor proxy.
+  - Cashflows occur after monthly returns and are not given the same month's return.
+  - Backtest outputs retain source hashes and the specification hash.
+
+known_biases_and_limits:
+  - Current holdings and current optical constituents are backcast, creating selection and survivor bias.
+  - Proxy ETF histories do not reconstruct the exact Korean ETF NAV, expenses, tracking error, holdings or hedge execution.
+  - The exercise does not reconstruct Brian's actual purchase dates, realized tax, dividends received or account cashflows.
+  - The first milestone excludes spouse assets, salary loss and bonus reduction from the return path; those remain separate stress overlays.
+  - Yahoo chart adjusted-close data are a convenient public research source, not the official exchange record, and require sample cross-checks before stronger conclusions.
+  - Yahoo's monthly KRW=X series contained three approximately 10,000-fold unit anomalies, so it is retained only as validation evidence; FRED DEXKOUS daily observations aggregated to month-end are the conversion source.
+  - A successful historical policy does not establish future expected return.
+
+next_milestones_after_first_result:
+  - Replace proxy returns with exact Korean ETF NAV or total-return histories where trustworthy same-date data exist.
+  - Add SK hynix position-cap strategies at 40, 30, 20 and 10 percent with tax and trading-rule boundaries.
+  - Add point-in-time macro gates using publication-date or vintage data rather than revised hindsight values.
+  - Add household income and bonus shocks to the securities return path.
+  - Add walk-forward and parameter-stability tests before using any tactical signal.

@@ -45,6 +45,11 @@ def looks_like_path(v):
     return "/" in v or v.lower().endswith(FILE_EXT)
 
 
+def local_file_path(v):
+    """Return the filesystem portion of a local reference with an optional anchor."""
+    return v.split("#", 1)[0].split("?", 1)[0]
+
+
 def collect_ids(node, into):
     if isinstance(node, dict):
         if isinstance(node.get("id"), str):
@@ -109,7 +114,7 @@ def main():
 
     broken_ids = [r for r in id_refs if r[3] not in known]
     missing_files = [r for r in file_refs
-                     if not os.path.exists(os.path.join(ROOT, r[3]))]
+                     if not os.path.exists(os.path.join(ROOT, local_file_path(r[3])))]
 
     print(f"yaml files       : {len(yaml_files)}  (parse failures: {len(parse_fail)})")
     print(f"jsonl files      : {len(jsonl_files)}")

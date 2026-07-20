@@ -1,0 +1,247 @@
+{
+  "FY2025_public_budget_financials_EUR": {
+    "boundary": "The derived operating surplus is budget-accounting operating revenue minus operating expenditure, not commercial operating profit or EBIT. Total expenditure includes nonfinancial asset spending.",
+    "carried_surplus_before_current_deficit": 1111793.42,
+    "data_center_segment_and_site_revenue_cost_cash_flow_capex_and_ROIC": "undisclosed",
+    "derived_public_budget_operating_surplus": 131966.31,
+    "operating_expenditure": 10598065.48,
+    "operating_profit_EBIT_EBITDA_net_income": "not_applicable_or_not_reported_under_reviewed_public_budget_statement",
+    "operating_revenue": 10730031.79,
+    "surplus_available_next_period": 773521.91,
+    "total_current_period_deficit": 338271.51,
+    "total_expenditure_and_outlays": 11068303.3,
+    "total_revenue_and_receipts": 10730031.79
+  },
+  "OSM_crosswalk": {
+    "records": [
+      {
+        "ICT_racks": 63,
+        "OSM_in_source_sample": true,
+        "OSM_latitude": 45.792281,
+        "OSM_longitude": 15.969654,
+        "OSM_name": "Podatkovni centar HR-ZOO ZG1",
+        "OSM_ref": "osm_node_13809854904",
+        "designed_DC_power_kW": 350,
+        "site": "HR-ZOO_ZG1"
+      },
+      {
+        "ICT_racks": 35,
+        "OSM_in_source_sample": true,
+        "OSM_latitude": 45.815124,
+        "OSM_longitude": 16.042654,
+        "OSM_name": "Podatkovni centar HR-ZOO ZG2",
+        "OSM_ref": "osm_node_13809854905",
+        "designed_DC_power_kW": 1100,
+        "site": "HR-ZOO_ZG2"
+      },
+      {
+        "ICT_racks": 7,
+        "OSM_in_source_sample": false,
+        "OSM_latitude": null,
+        "OSM_longitude": null,
+        "OSM_name": null,
+        "OSM_ref": null,
+        "designed_DC_power_kW": 50,
+        "site": "Srce_ZG3"
+      },
+      {
+        "ICT_racks": 10,
+        "OSM_in_source_sample": true,
+        "OSM_latitude": 45.556511,
+        "OSM_longitude": 18.705178,
+        "OSM_name": "Podatkovni centar HR-ZOO OS",
+        "OSM_ref": "osm_node_13809854906",
+        "designed_DC_power_kW": 125,
+        "site": "HR-ZOO_OS"
+      },
+      {
+        "ICT_racks": 10,
+        "OSM_in_source_sample": true,
+        "OSM_latitude": 45.328761,
+        "OSM_longitude": 14.466794,
+        "OSM_name": "Podatkovni centar HR-ZOO RI",
+        "OSM_ref": "osm_node_13809856865",
+        "designed_DC_power_kW": 125,
+        "site": "HR-ZOO_RI"
+      },
+      {
+        "ICT_racks": 10,
+        "OSM_in_source_sample": true,
+        "OSM_latitude": 43.511599,
+        "OSM_longitude": 16.469651,
+        "OSM_name": "Podatkovni centar HR-ZOO ST",
+        "OSM_ref": "osm_node_13809859002",
+        "designed_DC_power_kW": 125,
+        "site": "HR-ZOO_ST"
+      }
+    ],
+    "source_file": "life/imports/global_data_centers_20260717/osm_data_center_locations.jsonl",
+    "source_file_sha256": "3a0f1370f036f2ff5fa0c478bfadeb58c7809d90315bbee4e0a7c9cfd21d4733"
+  },
+  "accelerators_and_compute": {
+    "2025_use": {
+      "Supek_GPU_hours": 482826,
+      "Vrancic_vGPU_hours": 93846,
+      "institutions": 110,
+      "projects": 490
+    },
+    "GPU_floor_boundary": "Supek's 81 includes 80 GPUs in compute nodes plus one access-node GPU; it is not 81 plus 80. Vrancic's 16 are separate, and official evidence places both systems at ZG2.",
+    "Supek": {
+      "DLC_heat_removal_percent": 100,
+      "GPU_model": "NVIDIA_A100_40GB",
+      "GPUs_per_compute_node": 4,
+      "HPE_Cray": true,
+      "access_node_GPU": 1,
+      "compute_GPU_nodes": 20,
+      "performance_PFLOPS": 1.25,
+      "processor_cores": 8384,
+      "reported_total_GPUs": 81,
+      "working_memory_TB": 32
+    },
+    "Vrancic": {
+      "GPU_model": "NVIDIA_A100_40GB",
+      "GPU_nodes": 4,
+      "GPUs": 16,
+      "GPUs_per_node": 4,
+      "OpenStack": true,
+      "processor_cores": 11520,
+      "working_memory_TB_2025_report": 57
+    },
+    "complete_delivery_serial_rack_fabric_power_utilization_cost_and_remaining_life": "not_disclosed",
+    "current_exact_physical_GPU_floor": 97,
+    "site": "HR-ZOO_ZG2_Borongaj"
+  },
+  "accessed_on": "2026-07-19",
+  "current_2025_physical_totals": {
+    "ICT_racks": 135,
+    "ZG2_separately_reported_DLC_system_nameplate_kW": 334,
+    "boundary": "Designed DC power, generator, UPS, cooling and DLC nameplates are different engineering denominators. They are not live IT load, usable redundancy-adjusted capacity or additive operating MW.",
+    "computer_hall_area_m2": 688.73,
+    "designed_DC_power_kW": 1875,
+    "gross_area_m2": 2768.56,
+    "installed_UPS_nameplate_kVA": 2020,
+    "installed_UPS_nameplate_kW": 2020,
+    "installed_air_or_water_cooling_nameplate_kW": 1592,
+    "installed_generator_nameplate_kVA": 2912,
+    "installed_generator_nameplate_kW": 2312
+  },
+  "id": "srce_hr_zoo_data_center_hpc_summary_2026_07_19",
+  "operator": "University of Zagreb University Computing Centre SRCE",
+  "outlook": {
+    "2026_plan": [
+      "upgrade_ZG1_chillers",
+      "upgrade_ZG1_and_ZG2_ventilation_security_and_environmental_monitoring",
+      "install_second_ZG2_diesel_generator_for_2N_backup"
+    ],
+    "AI_resource_model_GPU_count_power_cost_committed_funding_and_procurement_award": "not_disclosed_or_established_in_final_plan",
+    "analytical_view": "SRCE is a transparent national academic infrastructure operator and real AI-compute user, not an investable data-center company. Its value is demand and public-infrastructure evidence for HPE, NVIDIA, power, UPS and cooling suppliers rather than standalone equity earnings.",
+    "new_AI_supercomputer_resource_target": 2027,
+    "planned_maintenance_procurement_EUR": {
+      "Supek_and_Vrancic_payable_from_2027": 550000,
+      "VDC_hardware_software_warranty_and_licenses_payable_from_2027": 3500000
+    },
+    "positive_signals": [
+      "six_current_sites",
+      "detailed_power_and_cooling_disclosure",
+      "97_current_A100_GPU_floor",
+      "high_2025_GPU_use",
+      "ZG2_power_resilience_upgrade",
+      "planned_2027_AI_resource",
+      "public_and_EU_infrastructure_funding"
+    ],
+    "risk_signals": [
+      "small_1_875_MW_designed_portfolio",
+      "public_budget_dependency",
+      "current_period_deficit",
+      "site_PUE_WUE_energy_and_water_undisclosed",
+      "full_asset_title_and_BOM_undisclosed",
+      "AI_expansion_model_funding_and_delivery_not_yet_established",
+      "no_listed_equity_or_data_center_segment_economics"
+    ]
+  },
+  "ownership_and_project": {
+    "HR_ZOO_project_EUR": {
+      "EU_ERDF": 20924118.3,
+      "EU_share_percent": 85,
+      "total": 24616609.76
+    },
+    "founded": 1971,
+    "institution": "University_of_Zagreb_University_Computing_Centre",
+    "listed_equity": false,
+    "regional_site_building_context": "OS_RI_and_ST_are_in_spaces_owned_by_their_respective_universities",
+    "role": "national_public_academic_and_research_e_infrastructure_institution",
+    "site_land_building_and_equipment_title_by_asset": "not_completely_disclosed"
+  },
+  "portfolio": {
+    "HR_ZOO_project_sites": 5,
+    "OSM_operator_tagged_rows": 5,
+    "boundary": "The five OSM rows exactly match the five HR-ZOO sites. The current six-site SRCE roster also includes Srce ZG3, which is not present in the reviewed OSM operator sample.",
+    "cities": [
+      "Osijek",
+      "Rijeka",
+      "Split",
+      "Zagreb"
+    ],
+    "current_provider_reported_sites": 6,
+    "current_provider_roster_match_rate_percent": 83.33,
+    "off_sample_current_site": "Srce_ZG3",
+    "sites": [
+      "HR-ZOO_ZG1",
+      "HR-ZOO_ZG2",
+      "Srce_ZG3",
+      "HR-ZOO_OS",
+      "HR-ZOO_RI",
+      "HR-ZOO_ST"
+    ]
+  },
+  "power_and_cooling_architecture": {
+    "UPS_minimum_full_load_autonomy_minutes": 6,
+    "backup": "diesel_generator_sets_at_all_sites",
+    "chiller_configuration": "2N_plus_1",
+    "complete_OEM_model_age_loading_acceptance_test_and_remaining_life_BOM": "not_disclosed",
+    "cooling_setpoints": {
+      "UPS_battery_room_C": 22,
+      "cold_zone_C": 25,
+      "relative_humidity_percent": 45
+    },
+    "cooling_topology": "two_separate_pipe_routes_heat_exchangers_chilled_water_tanks_and_dual_variable_speed_pumps",
+    "current_measured_site_PUE_WUE_energy_water_emissions_and_renewable_electricity": "not_disclosed_in_reviewed_sources",
+    "efficiency": [
+      "hot_and_cold_aisles",
+      "winter_free_cooling",
+      "central_infrastructure_monitoring",
+      "PUE_calculator"
+    ],
+    "fault_tolerance": "subsystems_serviceable_and_testable_without_data_center_interruption",
+    "monitoring_points_more_than": 1600,
+    "rack_power": "separate_A_and_B_branches_with_intelligent_metered_PDUs"
+  },
+  "records_sha256": "2152fcbfcb91a4a06912b1007d27395da37fad7b95699262f91d5832a5aed90a",
+  "services_and_network": {
+    "boundary": "Hosted third-party equipment and distributed storage do not become SRCE-owned accelerator or facility inventory.",
+    "distributed_object_storage_PB": 10,
+    "hosted_infrastructure_examples": [
+      "GEANT_node",
+      "VeriSign_com_and_org_servers",
+      "HAKOM_RIPE_and_eduroam_probes",
+      "Cogent",
+      "Hurricane_Electric",
+      "CARNET"
+    ],
+    "inter_site_network_Gbps": 100
+  },
+  "sources": [
+    "https://www.srce.unizg.hr/podatkovni-centri",
+    "https://www.srce.unizg.hr/projekti/hr-zoo",
+    "https://www.srce.unizg.hr/sites/default/files/srce/o-srcu/Izvjestaji_o_radu/srce_izvjestaj2025.pdf",
+    "https://www.srce.unizg.hr/en/advanced-computing",
+    "https://www.srce.unizg.hr/sites/default/files/srce/pzz/Brosura_DC_web.pdf",
+    "https://www.srce.unizg.hr/dokumenti/financijski-izvjestaj/2025",
+    "https://www.srce.unizg.hr/sites/default/files/srce/o-srcu/financijski_izvjestaji/2025/Godi%C5%A1nji%20izvje%C5%A1taj/Izvje%C5%A1taj%20o%20prihodima%20i%20rashodima%2C%20primicima%20i%20izdacima%20za%202025.%20godinu.pdf",
+    "https://www.srce.unizg.hr/sites/default/files/srce/o-srcu/planovi_rada/2026/Plan2026-Financijski_plan-20251222_ur.pdf",
+    "https://www.srce.unizg.hr/sites/default/files/srce/javna-nabava/2026/Plan_nabava_2026/I.%20izmjena%20Plana%20nabava%202026_20260219.pdf",
+    "https://www.srce.unizg.hr/sites/default/files/srce/javna-nabava/2022/E-VV_11-01-2022-MK/prilog_2._prijedlog_okvirnog_sporazuma_odrzavanje_tehnickih_sustava_podatkovnih_centara_hr-zoo.pdf",
+    "https://www.srce.unizg.hr/en/about-srce",
+    "https://www.srce.unizg.hr/srce-i-zajednica/otvorena-vrata-eu-projekata-20230630"
+  ]
+}

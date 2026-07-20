@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
-"""Import the 2019 BKE gratitude diary into ontology-friendly indexes."""
+"""Import a yearly BKE gratitude diary into ontology-friendly indexes."""
 
 from __future__ import annotations
 
+import argparse
 import datetime as dt
 import hashlib
 import json
 import re
+import struct
 import zipfile
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -16,14 +18,17 @@ from xml.etree import ElementTree as ET
 import yaml
 
 
-RAW_DIR = Path("raw_data/documents/bke_gratitude_campaign_2019")
+YEAR = 2019
+IMPORT_ID = f"bke_gratitude_diary_{YEAR}"
+RAW_DIR = Path(f"raw_data/documents/bke_gratitude_campaign_{YEAR}")
 SOURCE_PATH = next(RAW_DIR.glob("BKE Group*.docx"))
 ORIGINAL_SOURCE_PATH = (
     "/Users/brian/Downloads/BKE Group 감사일기 캠페인 2019년 최정윤.docx"
 )
 CATALOG_PATH = Path("life/entities/semantic_entity_catalog.yaml")
-IMPORT_DIR = Path("life/imports/bke_gratitude_diary_2019")
+IMPORT_DIR = Path(f"life/imports/{IMPORT_ID}")
 MANIFEST_PATH = IMPORT_DIR / "manifest.yaml"
+SOURCE_MARKDOWN_PATH = IMPORT_DIR / "source.md"
 NORMALIZED_PATH = IMPORT_DIR / "normalized_entries.jsonl"
 LINKED_PATH = IMPORT_DIR / "entity_linked_entries.jsonl"
 DAILY_SUMMARY_PATH = IMPORT_DIR / "daily_summary.jsonl"
@@ -32,6 +37,32 @@ README_PATH = IMPORT_DIR / "README.md"
 PATTERN_PATH = Path("life/patterns/bke_gratitude_diary_pattern_candidates.yaml")
 
 DATE_RE = re.compile(r"^(20\d{2})년\s+(\d{1,2})월\s+(\d{1,2})일\s+([월화수목금토일])요일$")
+
+
+def configure_import(year: int, source_path: Path, original_source_path: str) -> None:
+    """Configure paths and stable import IDs for a diary year."""
+    global YEAR, IMPORT_ID, RAW_DIR, SOURCE_PATH, ORIGINAL_SOURCE_PATH
+    global IMPORT_DIR, MANIFEST_PATH, SOURCE_MARKDOWN_PATH, NORMALIZED_PATH
+    global LINKED_PATH, DAILY_SUMMARY_PATH, SUMMARY_PATH, README_PATH, PATTERN_PATH
+
+    YEAR = year
+    IMPORT_ID = f"bke_gratitude_diary_{year}"
+    RAW_DIR = source_path.parent
+    SOURCE_PATH = source_path
+    ORIGINAL_SOURCE_PATH = original_source_path
+    IMPORT_DIR = Path("life/imports") / IMPORT_ID
+    MANIFEST_PATH = IMPORT_DIR / "manifest.yaml"
+    SOURCE_MARKDOWN_PATH = IMPORT_DIR / "source.md"
+    NORMALIZED_PATH = IMPORT_DIR / "normalized_entries.jsonl"
+    LINKED_PATH = IMPORT_DIR / "entity_linked_entries.jsonl"
+    DAILY_SUMMARY_PATH = IMPORT_DIR / "daily_summary.jsonl"
+    SUMMARY_PATH = IMPORT_DIR / "summary.yaml"
+    README_PATH = IMPORT_DIR / "README.md"
+    PATTERN_PATH = Path("life/patterns") / (
+        "bke_gratitude_diary_pattern_candidates.yaml"
+        if year == 2019
+        else f"bke_gratitude_diary_{year}_pattern_candidates.yaml"
+    )
 
 AREA_KEYWORDS = {
     "RELATION": [
@@ -284,6 +315,31 @@ def dump_jsonl(path: Path, rows: Iterable[Dict[str, Any]]) -> None:
             f.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
 
 
+def compare_existing_gratitude_imports(entries: List[Dict[str, Any]]) -> Dict[str, Any]:
+    entry_hashes = {entry["raw_text_sha256"] for entry in entries}
+    comparisons = []
+    for path in sorted(Path("life/imports").glob("bke_gratitude_diary_*/normalized_entries.jsonl")):
+        if path == NORMALIZED_PATH:
+            continue
+        other_hashes = set()
+        with path.open(encoding="utf-8") as stream:
+            for line in stream:
+                other_hashes.add(json.loads(line)["raw_text_sha256"])
+        comparisons.append(
+            {
+                "import_ref": str(path.parent),
+                "exact_entry_hash_overlap_count": len(entry_hashes & other_hashes),
+            }
+        )
+    return {
+        "method": "sha256_of_whitespace_normalized_paragraph_text",
+        "compared_imports": comparisons,
+        "total_exact_entry_hash_overlap_count": sum(
+            item["exact_entry_hash_overlap_count"] for item in comparisons
+        ),
+    }
+
+
 def text_excerpt(text: str, limit: int = 160) -> str:
     compact = " ".join(text.split())
     if len(compact) <= limit:
@@ -302,6 +358,54 @@ def extract_docx_paragraphs(path: Path) -> List[Dict[str, Any]]:
         if text:
             paragraphs.append({"paragraph_index": paragraph_index, "text": " ".join(text.split())})
     return paragraphs
+
+
+def inspect_docx_structure(path: Path) -> Dict[str, Any]:
+    ns = {"w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main"}
+    with zipfile.ZipFile(path) as docx:
+        root = ET.fromstring(docx.read("word/document.xml"))
+        media = []
+        for name in sorted(item for item in docx.namelist() if item.startswith("word/media/")):
+            data = docx.read(name)
+            media_item: Dict[str, Any] = {
+                "path": name,
+                "bytes": len(data),
+                "sha256": hashlib.sha256(data).hexdigest(),
+            }
+            if data.startswith(b"\x89PNG\r\n\x1a\n") and len(data) >= 24:
+                width, height = struct.unpack(">II", data[16:24])
+                media_item["pixel_width"] = width
+                media_item["pixel_height"] = height
+                if width <= 32 and height <= 32:
+                    media_item["content_role"] = "decorative_or_list_marker"
+            media.append(media_item)
+    return {
+        "table_count": len(root.findall(".//w:tbl", ns)),
+        "embedded_media_count": len(media),
+        "embedded_media": media,
+    }
+
+
+def write_source_markdown(paragraphs: List[Dict[str, Any]]) -> None:
+    """Write a readable normalization while preserving paragraph order and text."""
+    lines = [
+        "<!-- Locally normalized from the raw DOCX; paragraph text is preserved. -->",
+        "",
+    ]
+    seen_date = False
+    for paragraph in paragraphs:
+        text = paragraph["text"]
+        if parse_date(text):
+            seen_date = True
+            if lines[-1]:
+                lines.append("")
+            lines.extend([f"## {text}", ""])
+        elif not seen_date and not any(line.startswith("# ") for line in lines):
+            lines.extend([f"# {text}", ""])
+        else:
+            lines.append(f"- {text}")
+    SOURCE_MARKDOWN_PATH.parent.mkdir(parents=True, exist_ok=True)
+    SOURCE_MARKDOWN_PATH.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
 
 
 def parse_date(text: str) -> Tuple[str, str] | None:
@@ -385,7 +489,7 @@ def parse_entries(paragraphs: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]
         theme_tags = detect_theme_tags(text)
         entry = {
             "id": f"bke_gratitude_{current_date.replace('-', '')}_{entry_no:03d}",
-            "source_ref": "bke_gratitude_diary_2019",
+            "source_ref": IMPORT_ID,
             "source_type": "gratitude_diary_docx",
             "source_path": str(SOURCE_PATH),
             "source_paragraph_index": paragraph["paragraph_index"],
@@ -564,7 +668,7 @@ def summarize(entries: List[Dict[str, Any]], daily_rows: List[Dict[str, Any]], m
         "schema_version": 1,
         "generated_at": dt.datetime.now().replace(microsecond=0).isoformat(),
         "source": {
-            "id": "bke_gratitude_diary_2019",
+            "id": IMPORT_ID,
             "raw_ref": str(SOURCE_PATH),
             "original_source_path": ORIGINAL_SOURCE_PATH,
             "sha256": sha256_file(SOURCE_PATH),
@@ -576,6 +680,7 @@ def summarize(entries: List[Dict[str, Any]], daily_rows: List[Dict[str, Any]], m
         },
         "outputs": {
             "manifest_ref": str(MANIFEST_PATH),
+            "source_markdown_ref": str(SOURCE_MARKDOWN_PATH),
             "normalized_entries_ref": str(NORMALIZED_PATH),
             "entity_linked_entries_ref": str(LINKED_PATH),
             "daily_summary_ref": str(DAILY_SUMMARY_PATH),
@@ -636,32 +741,32 @@ def build_pattern_candidates(entries: List[Dict[str, Any]]) -> Dict[str, Any]:
     candidates = []
     specs = [
         (
-            "bke_gratitude_2019_spouse_support",
-            "2019 감사일기에서 spouse support, shared meals, conversation, future planning이 반복적인 감사 근거로 등장한다.",
+            f"bke_gratitude_{YEAR}_spouse_support",
+            f"{YEAR} 감사일기에서 spouse support, shared meals, conversation, future planning이 반복적인 감사 근거로 등장한다.",
             lambda entry: has_entity(entry, "person_wife"),
         ),
         (
-            "bke_gratitude_2019_learning_growth",
+            f"bke_gratitude_{YEAR}_learning_growth",
             "Books, lectures, study, role models, and new technical understanding repeatedly appear as gratitude and growth evidence.",
             lambda entry: "learning_growth" in entry["theme_tags"],
         ),
         (
-            "bke_gratitude_2019_work_progress",
+            f"bke_gratitude_{YEAR}_work_progress",
             "Work focus, technical problem solving, helpful leaders, and project progress repeatedly appear as gratitude evidence.",
             lambda entry: "work_progress" in entry["theme_tags"] or "problem_solving" in entry["theme_tags"],
         ),
         (
-            "bke_gratitude_2019_shared_travel",
+            f"bke_gratitude_{YEAR}_shared_travel",
             "Shared travel and vivid place memories repeatedly appear as happiness and gratitude anchors.",
             lambda entry: "travel_memory" in entry["theme_tags"],
         ),
         (
-            "bke_gratitude_2019_food_care",
+            f"bke_gratitude_{YEAR}_food_care",
             "Home-cooked meals, shared meals, and being cared for through food repeatedly appear as gratitude evidence.",
             lambda entry: "food_home_cooking" in entry["theme_tags"],
         ),
         (
-            "bke_gratitude_2019_gratitude_practice",
+            f"bke_gratitude_{YEAR}_gratitude_practice",
             "The gratitude-writing practice itself appears as an evidence-backed calming and focusing ritual candidate.",
             lambda entry: "gratitude_practice" in entry["theme_tags"] or "감사일기" in entry["gratitude_text"],
         ),
@@ -674,7 +779,7 @@ def build_pattern_candidates(entries: List[Dict[str, Any]]) -> Dict[str, Any]:
         candidates.append(
             {
                 "id": candidate_id,
-                "source_import_ref": "bke_gratitude_diary_2019",
+                "source_import_ref": IMPORT_ID,
                 "statement": statement,
                 "evidence_count": total,
                 "evidence": evidence,
@@ -686,16 +791,18 @@ def build_pattern_candidates(entries: List[Dict[str, Any]]) -> Dict[str, Any]:
     return {
         "schema_version": 1,
         "generated_at": dt.datetime.now().replace(microsecond=0).isoformat(),
-        "source_import_ref": "life/imports/bke_gratitude_diary_2019/summary.yaml",
+        "source_import_ref": str(SUMMARY_PATH),
         "pattern_candidates": candidates,
     }
 
 
-def build_manifest(metadata: Dict[str, Any]) -> Dict[str, Any]:
+def build_manifest(
+    metadata: Dict[str, Any], structure: Dict[str, Any], duplicate_check: Dict[str, Any]
+) -> Dict[str, Any]:
     return {
         "schema_version": 1,
         "generated_at": dt.datetime.now().replace(microsecond=0).isoformat(),
-        "import_id": "bke_gratitude_diary_2019",
+        "import_id": IMPORT_ID,
         "source": {
             "raw_ref": str(SOURCE_PATH),
             "original_source_path": ORIGINAL_SOURCE_PATH,
@@ -710,10 +817,14 @@ def build_manifest(metadata: Dict[str, Any]) -> Dict[str, Any]:
         "parse": {
             "parser": "tools/import_bke_gratitude_diary.py",
             "method": "docx_word_document_xml_paragraph_extraction",
+            "markdown_normalization": "local_xml_fallback_markitdown_and_pandoc_unavailable",
             "date_pattern": "YYYY년 M월 D일 weekday",
             "record_model": "one GratitudeEntry per dated bullet/paragraph",
         },
+        "document_structure": structure,
+        "duplicate_check": duplicate_check,
         "outputs": {
+            "source_markdown": str(SOURCE_MARKDOWN_PATH),
             "normalized_entries": str(NORMALIZED_PATH),
             "entity_linked_entries": str(LINKED_PATH),
             "daily_summary": str(DAILY_SUMMARY_PATH),
@@ -725,21 +836,22 @@ def build_manifest(metadata: Dict[str, Any]) -> Dict[str, Any]:
 
 def write_readme() -> None:
     README_PATH.write_text(
-        """# BKE Gratitude Diary 2019
+        f"""# BKE Gratitude Diary {YEAR}
 
-Ontology import for Brian's 2019 BKE Group gratitude diary campaign document.
+Ontology import for Brian's {YEAR} BKE Group gratitude diary campaign document.
 
-Raw source stays under `raw_data/documents/bke_gratitude_campaign_2019/`.
+Raw source stays under `{RAW_DIR}/`.
 
 Generated files:
 
 - `manifest.yaml`: source and parser metadata.
+- `source.md`: locally normalized, human-readable DOCX text.
 - `normalized_entries.jsonl`: one `GratitudeEntry` per dated gratitude paragraph.
 - `entity_linked_entries.jsonl`: gratitude entries with semantic object links.
 - `daily_summary.jsonl`: one row per diary date.
 - `summary.yaml`: aggregate counts for querying.
 
-Pattern candidates are written to `life/patterns/bke_gratitude_diary_pattern_candidates.yaml`.
+Pattern candidates are written to `{PATTERN_PATH}`.
 """,
         encoding="utf-8",
     )
@@ -747,18 +859,28 @@ Pattern candidates are written to `life/patterns/bke_gratitude_diary_pattern_can
 
 def main() -> None:
     paragraphs = extract_docx_paragraphs(SOURCE_PATH)
+    structure = inspect_docx_structure(SOURCE_PATH)
     entries, metadata = parse_entries(paragraphs)
+    if not entries:
+        raise ValueError(f"No dated gratitude entries found in {SOURCE_PATH}")
+    entry_years = {int(entry["original_date"][:4]) for entry in entries}
+    if entry_years != {YEAR}:
+        raise ValueError(f"Expected only {YEAR} entries, found years={sorted(entry_years)}")
+    duplicate_check = compare_existing_gratitude_imports(entries)
     catalog = load_yaml(CATALOG_PATH)
     entities = build_entities(catalog)
     relations = catalog.get("link_relations", {})
     linked_entries = [link_entry(entry, entities, relations) for entry in entries]
     daily_rows = summarize_daily(linked_entries)
 
-    dump_yaml(MANIFEST_PATH, build_manifest(metadata))
+    write_source_markdown(paragraphs)
+    dump_yaml(MANIFEST_PATH, build_manifest(metadata, structure, duplicate_check))
     dump_jsonl(NORMALIZED_PATH, entries)
     dump_jsonl(LINKED_PATH, linked_entries)
     dump_jsonl(DAILY_SUMMARY_PATH, daily_rows)
-    dump_yaml(SUMMARY_PATH, summarize(linked_entries, daily_rows, metadata))
+    summary = summarize(linked_entries, daily_rows, metadata)
+    summary["source"]["duplicate_check"] = duplicate_check
+    dump_yaml(SUMMARY_PATH, summary)
     dump_yaml(PATTERN_PATH, build_pattern_candidates(linked_entries))
     write_readme()
 
@@ -768,5 +890,25 @@ def main() -> None:
     print(f"review_needed={sum(1 for entry in linked_entries if entry['semantic_needs_user_review'])}")
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--year", type=int, default=2019, help="Diary year")
+    parser.add_argument("--source", type=Path, help="Raw DOCX snapshot path")
+    parser.add_argument(
+        "--original-source",
+        help="Original local source path to retain as provenance",
+    )
+    return parser.parse_args()
+
+
 if __name__ == "__main__":
+    args = parse_args()
+    source = args.source
+    if source is None:
+        raw_dir = Path(f"raw_data/documents/bke_gratitude_campaign_{args.year}")
+        matches = sorted(raw_dir.glob("BKE Group*.docx"))
+        if len(matches) != 1:
+            raise ValueError(f"Expected one BKE Group DOCX in {raw_dir}, found {len(matches)}")
+        source = matches[0]
+    configure_import(args.year, source, args.original_source or str(source.resolve()))
     main()

@@ -1,0 +1,107 @@
+{
+  "coverage": {
+    "announced_region_labels": [
+      "Kingdom of Saudi Arabia",
+      "South America (Chile)"
+    ],
+    "announced_regions": 2,
+    "available_AZs_marketing_sum": 123,
+    "available_regions": 39,
+    "available_regions_absent_from_standard_account_table": [
+      "AWS European Sovereign Cloud (Germany)",
+      "AWS GovCloud (US-East)",
+      "AWS GovCloud (US-West)",
+      "Mainland China (Beijing)",
+      "Mainland China (Ningxia)"
+    ],
+    "available_regions_by_partition": {
+      "aws": 34,
+      "aws-cn": 2,
+      "aws-eusc": 1,
+      "aws-us-gov": 2
+    },
+    "global_marketing_region_records_total": 41,
+    "standard_account_announced_AZ_rows": 1,
+    "standard_account_current_AZ_ID_rows": 108,
+    "standard_account_region_rows": 34
+  },
+  "generated_on": "2026-07-18",
+  "marketing_map_id_anomalies": [
+    {
+      "handling": "both_values_preserved_marketing_map_id_not_used_as_programmatic_code",
+      "marketing_map_id_raw": "eu-sovereign-4",
+      "programmatic_region_code": "eusc-de-east-1",
+      "region": "AWS European Sovereign Cloud (Germany)"
+    },
+    {
+      "handling": "both_values_preserved_marketing_map_id_not_used_as_programmatic_code",
+      "marketing_map_id_raw": "ap-southeast-7",
+      "programmatic_region_code": "ap-southeast-6",
+      "region": "Asia Pacific (New Zealand)"
+    },
+    {
+      "handling": "both_values_preserved_marketing_map_id_not_used_as_programmatic_code",
+      "marketing_map_id_raw": "ap-northeast-4",
+      "programmatic_region_code": "ap-east-2",
+      "region": "Asia Pacific (Taipei)"
+    },
+    {
+      "handling": "both_values_preserved_marketing_map_id_not_used_as_programmatic_code",
+      "marketing_map_id_raw": "ap-southeast-7x",
+      "programmatic_region_code": "ap-southeast-7",
+      "region": "Asia Pacific (Thailand)"
+    },
+    {
+      "handling": "both_values_preserved_marketing_map_id_not_used_as_programmatic_code",
+      "marketing_map_id_raw": "cn-north-4",
+      "programmatic_region_code": "cn-north-1",
+      "region": "Mainland China (Beijing)"
+    },
+    {
+      "handling": "both_values_preserved_marketing_map_id_not_used_as_programmatic_code",
+      "marketing_map_id_raw": "cn-northwest-4",
+      "programmatic_region_code": "cn-northwest-1",
+      "region": "Mainland China (Ningxia)"
+    }
+  ],
+  "official_headline": "The AWS Cloud spans 123 Availability Zones within 39 Geographic Regions, with announced plans for 7 more Availability Zones and 2 more AWS Regions in the Kingdom of Saudi Arabia, and Chile.",
+  "physical_lower_bound": {
+    "boundary": "This is a logical lower bound, not a disclosed building roster or ownership count.",
+    "derivation": "AWS defines each AZ as one or more discrete data centers.",
+    "operating_AZs": 123,
+    "physical_data_center_buildings_at_least": 123
+  },
+  "planned_AZ_reconciliation": {
+    "boundary": "The current map assigns three planned AZs to Saudi Arabia and zero to Chile; the documentation separately lists one coming Maryland AZ. The remaining three are a headline residual consistent with the minimum-three-AZ Region model, not a site-level assignment.",
+    "headline_more_AZs": 7,
+    "separately_listed_announced_AZ_rows": 1,
+    "structured_announced_region_AZ_sum": 3,
+    "unallocated_residual_derived": 3
+  },
+  "remaining_gaps": [
+    "Complete physical campus and building addresses behind all 123 current AZs",
+    "Owned versus leased, controlled, colocation, and partner-operated facility mapping",
+    "Exact building count above the 123-building logical lower bound",
+    "Per-site operating, energized, leased, utilized, and billed critical IT load",
+    "Per-site GPU, Trainium, Inferentia, rack, network-fabric, and utilization inventory",
+    "Per-site utility feed, substation, transformer, switchgear, UPS, battery, generator, chiller, and CDU bill of materials",
+    "Construction, commissioning, customer-acceptance, and revenue-start dates for each building"
+  ],
+  "schema_version": 1,
+  "sources": {
+    "China_region_codes": "https://docs.amazonaws.cn/en_us/aws/latest/userguide/ARNs.md",
+    "European_Sovereign_region_code": "https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-instance-regions.md",
+    "GovCloud_region_codes": "https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/using-govcloud.md",
+    "global_infrastructure_page": "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/",
+    "source_evidence_sha256": {
+      "China_region_codes": "b1f657ef5ecad8dbf8a06af2117ccb852af06ac0cf7c01025103716511ef092e",
+      "European_Sovereign_region_code": "7b2fb70a5cd2734fef13677f0495f25ccb45b6c0b14fdb20f1418cc95fe2fbbf",
+      "GovCloud_region_codes": "6fe3ed3c3273634c9cba1be6d512f744667749de9ea389075f358816cd0aaa12",
+      "global_infrastructure_page": "c0384495f3b4afe4b96b7420241ed803d302d2984e0963c827c2e72743d8d7f0",
+      "standard_account_AZ_ID_table": "a9be2442b95e68d76cd4d4756900f53f35d9db1cf8faab24839849598d2f62af",
+      "standard_account_region_table": "9a79186d30cfbda666b3e0144a9906219fdc946b8baf6b42a545cb01d26aa7eb"
+    },
+    "standard_account_AZ_ID_table": "https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-availability-zones.md",
+    "standard_account_region_table": "https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions.md"
+  }
+}

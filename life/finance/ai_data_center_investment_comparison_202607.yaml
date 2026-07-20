@@ -1,0 +1,495 @@
+schema_version: 1
+status: active_decision_support
+updated_at: '2026-07-19'
+area: FINANCE
+title: Brian AI data-center investment comparison
+purpose: Connect the saved portfolio snapshot to the reviewed AI data-center stack without mistaking ETF count for
+  look-through diversification or research evidence for a trade instruction.
+privacy: Personal portfolio analysis remains in Brian's local life-ontology repository; external execution is not
+  authorized by this file.
+source_refs:
+- life/finance/finance_active_log.yaml
+- life/finance/cashflow_normalization_202607.yaml
+- life/finance/investment_philosophy_research.yaml
+- life/finance/ai_data_center_supply_chain_financials_202607.yaml
+- life/knowledge/global_ai_data_center_landscape_202607.yaml
+- life/imports/global_data_centers_20260717/power_cooling_supply_chain_registry.jsonl
+- life/imports/global_data_centers_20260717/accelerator_disclosure_ledger.jsonl
+- life/imports/global_data_centers_20260717/global_data_center_coverage_audit_summary.json
+research_inventory:
+  global_osm_mapped_objects: 4663
+  global_iso2_country_records: 112
+  distinct_nonempty_osm_operator_labels: 822
+  osm_objects_with_operator_label: 2777
+  osm_objects_without_operator_label: 1886
+  mapped_objects_routed_to_reviewed_profiles: 1962
+  mapped_objects_not_routed_to_reviewed_profiles: 2701
+  operator_tagged_objects_not_routed_to_reviewed_profiles: 815
+  percent_of_all_mapped_objects_routed_to_reviewed_profiles: 42.08
+  percent_of_operator_tagged_objects_routed_to_reviewed_profiles: 70.65
+  priority_unreviewed_operator_entities: 0
+  reviewed_campus_profiles: 570
+  reviewed_financial_profiles: 188
+  neocloud_and_linked_host_records: 17
+  physical_operator_records: 92
+  power_cooling_cable_utility_company_records: 25
+  atomic_accelerator_claims: 52
+portfolio_snapshot:
+  as_of: '2026-07-15'
+  scope: Brian stocks, ETFs and gold captured from multiple account screenshots
+  total_evaluation_amount_krw: 123448709
+  product_records: 17
+  calculation: Use reported evaluation amount when present; otherwise derive quantity times average cost plus evaluation
+    profit.
+  products:
+  - product_id: direct_sk_hynix
+    label: SK하이닉스 직접주식
+    mandate_group: direct_employer_linked_memory
+    research_layers:
+    - compute_memory_network
+    overlap_note: Same company drives employment income, expected bonus and direct equity value.
+    source_asset_names:
+    - SK하이닉스 보통주
+    - SK하이닉스
+    source_lot_ids:
+    - lot_sk_hynix_special_27
+    - lot_sk_hynix_regular_6
+    quantity: 33
+    evaluation_amount_krw: 68345998
+    valuation_methods:
+    - reported
+    - derived_as_quantity_times_average_cost_plus_evaluation_profit
+    snapshot_percent: 55.36
+    constituent_evidence_status: direct_security
+  - product_id: ace_nvidia_value_chain
+    label: ACE 엔비디아밸류체인액티브
+    mandate_group: ai_value_chain_mixed
+    research_layers:
+    - compute_memory_network
+    - power_cooling_electrical
+    - physical_data_center_operators
+    overlap_note: Value-chain label can repeat NVIDIA and its suppliers already present in semiconductor and HBM
+      funds.
+    source_asset_names:
+    - ACE 엔비디아밸류체인액티브
+    source_lot_ids:
+    - lot_ace_nvidia_value_chain_73
+    - lot_ace_nvidia_value_chain_211
+    quantity: 284
+    evaluation_amount_krw: 7770193
+    valuation_methods:
+    - derived_as_quantity_times_average_cost_plus_evaluation_profit
+    snapshot_percent: 6.29
+    constituent_evidence_status: current_fund_constituent_weights_not_captured
+  - product_id: rise_samsung_sk_bond_mix_50
+    label: RISE 삼성전자SK하이닉스채권혼합50
+    mandate_group: korea_memory_equity_bond_mix
+    research_layers:
+    - compute_memory_network
+    - fixed_income_component
+    overlap_note: The wrapper mixes concentrated Samsung/SK hynix equity with bonds; exact current sleeves require
+      a constituent capture.
+    source_asset_names:
+    - RISE 삼성전자SK하이닉스채권혼합50
+    source_lot_ids:
+    - lot_rise_samsung_sk_bond_mix_125
+    - lot_rise_samsung_sk_bond_mix_82
+    - lot_rise_samsung_sk_bond_mix_305
+    quantity: 512
+    evaluation_amount_krw: 7196032
+    valuation_methods:
+    - derived_as_quantity_times_average_cost_plus_evaluation_profit
+    snapshot_percent: 5.83
+    constituent_evidence_status: current_fund_constituent_weights_not_captured
+  - product_id: time_global_ai_active
+    label: TIME 글로벌AI인공지능액티브
+    mandate_group: ai_value_chain_mixed
+    research_layers:
+    - hyperscale_buyers_and_cloud
+    - compute_memory_network
+    - applications_and_services
+    overlap_note: Active mandate may change holdings and can overlap Google, NVIDIA and broad semiconductor wrappers.
+    source_asset_names:
+    - TIME 글로벌AI인공지능액티브
+    source_lot_ids:
+    - lot_time_global_ai_33
+    - lot_time_global_ai_75
+    quantity: 108
+    evaluation_amount_krw: 7128532
+    valuation_methods:
+    - derived_as_quantity_times_average_cost_plus_evaluation_profit
+    snapshot_percent: 5.77
+    constituent_evidence_status: current_fund_constituent_weights_not_captured
+  - product_id: plus_global_hbm
+    label: PLUS 글로벌HBM반도체
+    mandate_group: memory_hbm_thematic
+    research_layers:
+    - compute_memory_network
+    overlap_note: Likely repeats memory, foundry and accelerator supply-chain holdings already owned directly or
+      through other funds.
+    source_asset_names:
+    - PLUS 글로벌HBM반도체
+    source_lot_ids:
+    - lot_plus_global_hbm_20
+    - lot_plus_global_hbm_36
+    quantity: 56
+    evaluation_amount_krw: 6619472
+    valuation_methods:
+    - derived_as_quantity_times_average_cost_plus_evaluation_profit
+    snapshot_percent: 5.36
+    constituent_evidence_status: current_fund_constituent_weights_not_captured
+  - product_id: ace_google_value_chain
+    label: ACE 구글밸류체인액티브
+    mandate_group: ai_value_chain_mixed
+    research_layers:
+    - hyperscale_buyers_and_cloud
+    - compute_memory_network
+    - power_cooling_electrical
+    overlap_note: Google ecosystem exposure can overlap the global AI active fund and other infrastructure wrappers.
+    source_asset_names:
+    - ACE 구글밸류체인액티브
+    source_lot_ids:
+    - lot_ace_google_value_chain_64
+    - lot_ace_google_value_chain_179
+    quantity: 243
+    evaluation_amount_krw: 6117516
+    valuation_methods:
+    - derived_as_quantity_times_average_cost_plus_evaluation_profit
+    snapshot_percent: 4.96
+    constituent_evidence_status: current_fund_constituent_weights_not_captured
+  - product_id: kodex_us_semiconductor
+    label: KODEX 미국반도체
+    mandate_group: broad_semiconductor
+    research_layers:
+    - compute_memory_network
+    overlap_note: Likely overlaps the Philadelphia, NYSE hedged, HBM and NVIDIA value-chain wrappers.
+    source_asset_names:
+    - KODEX 미국반도체
+    source_lot_ids:
+    - lot_kodex_us_semiconductor_69
+    quantity: 69
+    evaluation_amount_krw: 4291825
+    valuation_methods:
+    - derived_as_quantity_times_average_cost_plus_evaluation_profit
+    snapshot_percent: 3.48
+    constituent_evidence_status: current_fund_constituent_weights_not_captured
+  - product_id: kodex_us_ai_power_infra
+    label: KODEX 미국AI전력핵심인프라
+    mandate_group: power_grid_infrastructure
+    research_layers:
+    - power_cooling_electrical
+    - utilities_and_generation
+    overlap_note: Provides a different bottleneck wrapper, but exact overlap with grid, nuclear and value-chain
+      funds is not captured.
+    source_asset_names:
+    - KODEX 미국AI전력핵심인프라
+    source_lot_ids:
+    - lot_kodex_us_ai_power_infra_170
+    quantity: 170
+    evaluation_amount_krw: 4057016
+    valuation_methods:
+    - derived_as_quantity_times_average_cost_plus_evaluation_profit
+    snapshot_percent: 3.29
+    constituent_evidence_status: current_fund_constituent_weights_not_captured
+  - product_id: kodex_200
+    label: KODEX 200
+    mandate_group: broad_korea_equity
+    research_layers:
+    - broad_equity_with_embedded_semiconductors
+    overlap_note: Broad label still embeds Samsung Electronics, SK hynix and the Korean cycle.
+    source_asset_names:
+    - KODEX 200
+    source_lot_ids:
+    - lot_kodex_200_1
+    - lot_kodex_200_28
+    quantity: 29
+    evaluation_amount_krw: 3385308
+    valuation_methods:
+    - derived_as_quantity_times_average_cost_plus_evaluation_profit
+    snapshot_percent: 2.74
+    constituent_evidence_status: current_fund_constituent_weights_not_captured
+  - product_id: rise_us_semiconductor_nyse_h
+    label: RISE 미국반도체NYSE(H)
+    mandate_group: broad_semiconductor
+    research_layers:
+    - compute_memory_network
+    overlap_note: Currency-hedged U.S. semiconductor exposure likely overlaps the unhedged U.S. semiconductor wrappers.
+    source_asset_names:
+    - RISE 미국반도체NYSE(H)
+    source_lot_ids:
+    - lot_rise_us_semiconductor_nyse_h_72
+    quantity: 72
+    evaluation_amount_krw: 2534408
+    valuation_methods:
+    - derived_as_quantity_times_average_cost_plus_evaluation_profit
+    snapshot_percent: 2.05
+    constituent_evidence_status: current_fund_constituent_weights_not_captured
+  - product_id: kodex_us_ai_optical_network
+    label: KODEX 미국AI광통신네트워크
+    mandate_group: optical_network
+    research_layers:
+    - compute_memory_network
+    overlap_note: Optical and networking suppliers can also be held in semiconductor and NVIDIA value-chain funds.
+    source_asset_names:
+    - KODEX 미국AI광통신네트워크
+    source_lot_ids:
+    - lot_kodex_us_ai_network_154
+    quantity: 154
+    evaluation_amount_krw: 1999715
+    valuation_methods:
+    - derived_as_quantity_times_average_cost_plus_evaluation_profit
+    snapshot_percent: 1.62
+    constituent_evidence_status: current_fund_constituent_weights_not_captured
+  - product_id: rise_global_nuclear
+    label: RISE 글로벌원자력
+    mandate_group: nuclear_generation
+    research_layers:
+    - utilities_and_generation
+    overlap_note: Generation exposure is distinct from chips but can overlap the power-infrastructure wrappers and
+      adds policy or project risk.
+    source_asset_names:
+    - RISE 글로벌원자력
+    source_lot_ids:
+    - lot_rise_global_nuclear_44
+    quantity: 44
+    evaluation_amount_krw: 1628013
+    valuation_methods:
+    - derived_as_quantity_times_average_cost_plus_evaluation_profit
+    snapshot_percent: 1.32
+    constituent_evidence_status: current_fund_constituent_weights_not_captured
+  - product_id: gold_9999
+    label: 금 99.99
+    mandate_group: non_ai_gold_diversifier
+    research_layers:
+    - non_AI_diversifier
+    overlap_note: Only visible holding in this securities snapshot whose mandate is structurally outside the AI
+      and Korean equity chain.
+    source_asset_names:
+    - 금 99.99_1kg
+    source_lot_ids:
+    - lot_gold_9999_1kg_4
+    quantity: 4
+    evaluation_amount_krw: 768000
+    valuation_methods:
+    - reported
+    snapshot_percent: 0.62
+    constituent_evidence_status: direct_security
+  - product_id: tiger_philadelphia_semiconductor
+    label: TIGER 미국필라델피아반도체나스닥
+    mandate_group: broad_semiconductor
+    research_layers:
+    - compute_memory_network
+    overlap_note: Likely overlaps other U.S. semiconductor and NVIDIA value-chain wrappers; exact weights are not
+      captured.
+    source_asset_names:
+    - TIGER 미국필라델피아반도체나스닥
+    source_lot_ids:
+    - lot_tiger_philadelphia_semiconductor_15
+    quantity: 15
+    evaluation_amount_krw: 757500
+    valuation_methods:
+    - derived_as_quantity_times_average_cost_plus_evaluation_profit
+    snapshot_percent: 0.61
+    constituent_evidence_status: current_fund_constituent_weights_not_captured
+  - product_id: koact_global_ai_memory
+    label: KoAct 글로벌AI메모리반도체액티브
+    mandate_group: memory_hbm_thematic
+    research_layers:
+    - compute_memory_network
+    overlap_note: Directly reinforces the existing employer, SK hynix and HBM concentration.
+    source_asset_names:
+    - KoAct 글로벌AI메모리반도체액티브
+    source_lot_ids:
+    - lot_koact_ai_memory_semiconductor_27
+    quantity: 27
+    evaluation_amount_krw: 459540
+    valuation_methods:
+    - derived_as_quantity_times_average_cost_plus_evaluation_profit
+    snapshot_percent: 0.37
+    constituent_evidence_status: current_fund_constituent_weights_not_captured
+  - product_id: kiwoom_global_grid
+    label: KIWOOM 글로벌전력GRID인프라
+    mandate_group: power_grid_infrastructure
+    research_layers:
+    - power_cooling_electrical
+    - utilities_and_generation
+    overlap_note: Grid-equipment and utility holdings may overlap the AI power and nuclear wrappers.
+    source_asset_names:
+    - KIWOOM 글로벌전력GRID인프라
+    source_lot_ids:
+    - lot_kiwoom_global_grid_22
+    quantity: 22
+    evaluation_amount_krw: 365420
+    valuation_methods:
+    - derived_as_quantity_times_average_cost_plus_evaluation_profit
+    snapshot_percent: 0.3
+    constituent_evidence_status: current_fund_constituent_weights_not_captured
+  - product_id: hanaro_us_ai_memory_top4
+    label: HANARO 미국AI메모리반도체TOP4
+    mandate_group: memory_hbm_thematic
+    research_layers:
+    - compute_memory_network
+    overlap_note: Concentrated top-four design increases single-name overlap despite its small current value.
+    source_asset_names:
+    - HANARO 미국AI메모리반도체TOP4
+    source_lot_ids:
+    - lot_hanaro_us_ai_memory_top4_2
+    quantity: 2
+    evaluation_amount_krw: 24221
+    valuation_methods:
+    - derived_as_quantity_times_average_cost_plus_evaluation_profit
+    snapshot_percent: 0.02
+    constituent_evidence_status: current_fund_constituent_weights_not_captured
+primary_mandate_groups:
+- mandate_group: direct_employer_linked_memory
+  evaluation_amount_krw: 68345998
+  snapshot_percent: 55.36
+  products:
+  - direct_sk_hynix
+  boundary: Primary wrapper mandate only; not a look-through sum of underlying companies or sectors.
+- mandate_group: korea_memory_equity_bond_mix
+  evaluation_amount_krw: 7196032
+  snapshot_percent: 5.83
+  products:
+  - rise_samsung_sk_bond_mix_50
+  boundary: Primary wrapper mandate only; not a look-through sum of underlying companies or sectors.
+- mandate_group: broad_korea_equity
+  evaluation_amount_krw: 3385308
+  snapshot_percent: 2.74
+  products:
+  - kodex_200
+  boundary: Primary wrapper mandate only; not a look-through sum of underlying companies or sectors.
+- mandate_group: memory_hbm_thematic
+  evaluation_amount_krw: 7103233
+  snapshot_percent: 5.75
+  products:
+  - plus_global_hbm
+  - koact_global_ai_memory
+  - hanaro_us_ai_memory_top4
+  boundary: Primary wrapper mandate only; not a look-through sum of underlying companies or sectors.
+- mandate_group: broad_semiconductor
+  evaluation_amount_krw: 7583733
+  snapshot_percent: 6.14
+  products:
+  - kodex_us_semiconductor
+  - rise_us_semiconductor_nyse_h
+  - tiger_philadelphia_semiconductor
+  boundary: Primary wrapper mandate only; not a look-through sum of underlying companies or sectors.
+- mandate_group: ai_value_chain_mixed
+  evaluation_amount_krw: 21016241
+  snapshot_percent: 17.02
+  products:
+  - ace_nvidia_value_chain
+  - time_global_ai_active
+  - ace_google_value_chain
+  boundary: Primary wrapper mandate only; not a look-through sum of underlying companies or sectors.
+- mandate_group: power_grid_infrastructure
+  evaluation_amount_krw: 4422436
+  snapshot_percent: 3.58
+  products:
+  - kodex_us_ai_power_infra
+  - kiwoom_global_grid
+  boundary: Primary wrapper mandate only; not a look-through sum of underlying companies or sectors.
+- mandate_group: optical_network
+  evaluation_amount_krw: 1999715
+  snapshot_percent: 1.62
+  products:
+  - kodex_us_ai_optical_network
+  boundary: Primary wrapper mandate only; not a look-through sum of underlying companies or sectors.
+- mandate_group: nuclear_generation
+  evaluation_amount_krw: 1628013
+  snapshot_percent: 1.32
+  products:
+  - rise_global_nuclear
+  boundary: Primary wrapper mandate only; not a look-through sum of underlying companies or sectors.
+- mandate_group: non_ai_gold_diversifier
+  evaluation_amount_krw: 768000
+  snapshot_percent: 0.62
+  products:
+  - gold_9999
+  boundary: Primary wrapper mandate only; not a look-through sum of underlying companies or sectors.
+concentration_read:
+  direct_SK_hynix_amount_krw: 68345998
+  direct_SK_hynix_snapshot_percent: 55.36
+  clearly_AI_or_data_center_linked_primary_mandates_amount_krw: 112099369
+  clearly_AI_or_data_center_linked_primary_mandates_percent: 90.81
+  lower_bound_boundary: The lower bound excludes KODEX 200 and the Samsung/SK hynix bond-mix wrapper even though
+    both contain semiconductor exposure.
+  household_correlation: Employment income, expected bonus, direct SK hynix, memory and semiconductor ETFs, spouse-reported
+    Korean semiconductor holdings and KOSPI exposure can respond to the same cycle.
+  conclusion: Brian is diversified across several AI infrastructure layers, but not yet proven diversified across
+    underlying companies, the semiconductor cycle, employer income or household liquidity.
+layer_comparison:
+- layer: compute_memory_network
+  evidence_state: Strong current revenue and order evidence exists for leading semiconductor, memory and networking
+    companies, while cyclicality, valuation and customer concentration remain material.
+  brian_exposure_state: Very high by direct SK hynix, memory/HBM, broad semiconductor, NVIDIA value-chain and employment
+    links.
+  incremental_cash_view: Not the default destination for new salary cash until household look-through concentration
+    and liquidity are measured.
+- layer: hyperscale_buyers_and_cloud
+  evidence_state: Official region registries and financial profiles show broad buildout, but service Regions, AZs
+    and architecture maxima do not equal physical buildings or returns.
+  brian_exposure_state: Present through Google and global-AI wrappers, with exact weights unknown.
+  incremental_cash_view: Compare valuation, capex burden and current constituent overlap before adding another platform
+    wrapper.
+- layer: power_cooling_electrical
+  evidence_state: Backlog, orders and data-center demand are visible across electrical and cooling suppliers, but
+    data-center-only revenue and margins are rarely disclosed.
+  brian_exposure_state: Explicitly present through AI power and grid wrappers and indirectly through value-chain
+    funds; primary-mandate value is much smaller than chips.
+  incremental_cash_view: Best candidate for further comparison inside the AI thesis, but only after exact holdings
+    and valuation show that it is genuinely different exposure.
+- layer: utilities_and_generation
+  evidence_state: Large-load agreements and generation needs are real, while permits, interconnection, cost recovery
+    and energization create long execution paths.
+  brian_exposure_state: Present through power/grid and global nuclear wrappers.
+  incremental_cash_view: Treat as regulated or project-risk diversification, not a simple leveraged proxy for data-center
+    MW headlines.
+- layer: physical_data_center_operators
+  evidence_state: 92 operators have a scope-preserving crosswalk, but site economics, utilization and return on
+    capital remain limited, especially for private firms.
+  brian_exposure_state: Possible indirect exposure through value-chain funds; exact weights are unknown.
+  incremental_cash_view: Do not rank by facility or GW headlines; require reporting boundary, leverage, utilization
+    and valuation first.
+- layer: neoclouds
+  evidence_state: Demand and contracted pipelines are strong, but financing, depreciation, customer concentration
+    and installed-versus-ordered GPU ambiguity are high.
+  brian_exposure_state: Possible indirect exposure through active AI or value-chain wrappers; exact weights are
+    unknown.
+  incremental_cash_view: Not a core allocation candidate until ownership, cash generation, leverage and customer
+    concentration pass a stricter gate.
+cashflow_first_decision:
+  current_state: Brian reported near-zero monthly savings flow, no current deficit pressure and no need to sell
+    immediately, with a future bonus expected.
+  sequence:
+  - Complete the 2026-07-31 GPT/Codex tier and mobile-plan reductions and record actual recurring savings.
+  - Close July spending and set a sustainable August automatic-savings candidate before increasing investment risk.
+  - Define a liquid emergency reserve target separately from securities, pension, severance and home equity.
+  - Capture current underlying holdings and weights for all owned ETFs plus the spouse portfolio before claiming
+    household diversification.
+  - Only then compare valuation and incremental exposure; inside the AI thesis, test whether power, grid and cooling
+    add genuinely different earnings exposure versus existing chip-heavy wrappers.
+  default_for_new_salary_cash_now: Preserve monthly surplus and liquidity rather than automatically adding another
+    AI or semiconductor ticker.
+  existing_holdings_boundary: No forced-sale conclusion follows from this review; future buy, hold, rebalance or
+    sell decisions require tax, valuation, liquidity and concentration thresholds.
+candidate_order_after_gates:
+- priority: 1
+  candidate: cash_and_liquidity_buffer
+  reason: Restores optionality and breaks the current near-zero salary-surplus pattern.
+- priority: 2
+  candidate: existing_broad_or_non_AI_diversifier
+  reason: Reduces dependence on employer, memory and AI-capex outcomes if look-through evidence confirms genuine
+    diversification.
+- priority: 3
+  candidate: power_grid_cooling_value_pool
+  reason: Research shows real bottlenecks and order growth, while Brian's primary-mandate weight is smaller than
+    chips; valuation and constituent overlap remain required.
+- priority: 4
+  candidate: additional_compute_memory_or_neocloud_risk
+  reason: Already highly represented or financially riskier; require unusually strong valuation, cash-flow and concentration
+    evidence.
+decision_boundary: This is a personalized research and sequencing record, not an instruction to buy, sell or change
+  an external account.
+source_snapshot_sha256: 2b80654ed7692e67e3540c727e23e5a6c784a60fa9ccb018a5f7fdfaa05a7681

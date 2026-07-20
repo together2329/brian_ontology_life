@@ -1,0 +1,282 @@
+{
+  "GPU_AI_and_liquid_cooling": {
+    "AI_workload_evidence": "A 2025 event demonstrated LLM and RAG applications on TelemaxX OpenCloud.",
+    "OpenCloud_public_SKUs": "vCPU_and_vRAM_without_reviewed_GPU_SKU",
+    "TelemaxX_owned_installed_GPU_model_count_owner_site_delivery_rack_fabric_power_utilization_revenue_and_margin": "not_disclosed_or_established",
+    "customer_GPU_inventory": "undisclosed",
+    "liquid_cooling": "reviewed_provider_article_is_educational_not_deployment_evidence",
+    "reviewed_live_facility_cooling": "factsheet_describes_air_and_chilled_or_glycol_water_systems_for_IPC3_IPC4_IPC5"
+  },
+  "OSM_crosswalk": {
+    "current_data_center_candidates": 4,
+    "current_network_POP_former_data_center_objects": 1,
+    "raw_operator_counts": {
+      "TelemaxX Telekommunikation GmbH": 5
+    },
+    "records": [
+      {
+        "address": {
+          "city": "Karlsruhe",
+          "postcode": "76189"
+        },
+        "classification": "current_housing_facility_exact_name_and_locality_candidate",
+        "counting_rule": "OSM preserves public location evidence but adds no facility, usable-area, rack, MW or GPU count. The IPC2 point is a current network POP, not a fifth current housing data center.",
+        "footprint_area_m2": 634.965,
+        "latitude": 49.0134919,
+        "longitude": 8.3472565,
+        "name": "TelemaxX IPC1",
+        "osm_ref": "osm_way_51763539",
+        "raw_operator": "TelemaxX Telekommunikation GmbH",
+        "registry_ref": "telemaxx_ipc1",
+        "start_date": null
+      },
+      {
+        "address": {
+          "city": "Karlsruhe",
+          "postcode": "76131"
+        },
+        "classification": "current_network_POP_with_legacy_data_center_tag",
+        "counting_rule": "OSM preserves public location evidence but adds no facility, usable-area, rack, MW or GPU count. The IPC2 point is a current network POP, not a fifth current housing data center.",
+        "footprint_area_m2": null,
+        "latitude": 49.019584,
+        "longitude": 8.439803,
+        "name": "TelemaxX IPC2",
+        "osm_ref": "osm_node_4231017085",
+        "raw_operator": "TelemaxX Telekommunikation GmbH",
+        "registry_ref": "telemaxx_pop_tpk_former_ipc2",
+        "start_date": null
+      },
+      {
+        "address": {
+          "city": "Karlsruhe",
+          "postcode": "76227"
+        },
+        "classification": "current_active_colocation_facility_exact_name_candidate",
+        "counting_rule": "OSM preserves public location evidence but adds no facility, usable-area, rack, MW or GPU count. The IPC2 point is a current network POP, not a fifth current housing data center.",
+        "footprint_area_m2": 882.529,
+        "latitude": 49.0200971,
+        "longitude": 8.4782667,
+        "name": "TelemaxX IPC3",
+        "osm_ref": "osm_way_334161493",
+        "raw_operator": "TelemaxX Telekommunikation GmbH",
+        "registry_ref": "telemaxx_ipc3",
+        "start_date": "2009"
+      },
+      {
+        "address": null,
+        "classification": "current_active_colocation_facility_exact_name_candidate",
+        "counting_rule": "OSM preserves public location evidence but adds no facility, usable-area, rack, MW or GPU count. The IPC2 point is a current network POP, not a fifth current housing data center.",
+        "footprint_area_m2": 1758.146,
+        "latitude": 49.0271158,
+        "longitude": 8.4732288,
+        "name": "TelemaxX IPC4",
+        "osm_ref": "osm_way_258148708",
+        "raw_operator": "TelemaxX Telekommunikation GmbH",
+        "registry_ref": "telemaxx_ipc4",
+        "start_date": "2012..2013"
+      },
+      {
+        "address": {
+          "city": "Stutensee",
+          "postcode": "76297"
+        },
+        "classification": "current_active_colocation_facility_exact_name_and_locality_candidate",
+        "counting_rule": "OSM preserves public location evidence but adds no facility, usable-area, rack, MW or GPU count. The IPC2 point is a current network POP, not a fifth current housing data center.",
+        "footprint_area_m2": 2230.189,
+        "latitude": 49.0777621,
+        "longitude": 8.4582302,
+        "name": "TelemaxX IPC5",
+        "osm_ref": "osm_way_549728082",
+        "raw_operator": "TelemaxX Telekommunikation GmbH",
+        "registry_ref": "telemaxx_ipc5",
+        "start_date": "2017"
+      }
+    ],
+    "related_objects": 5,
+    "source_file": "life/imports/global_data_centers_20260717/osm_data_center_locations.jsonl",
+    "source_file_sha256": "3a0f1370f036f2ff5fa0c478bfadeb58c7809d90315bbee4e0a7c9cfd21d4733"
+  },
+  "accessed_on": "2026-07-19",
+  "engineering": {
+    "EMAS_generator_count": {
+      "A41_group_IPC1_IPC3_IPC5": 6,
+      "O1_group_IPC4": 5,
+      "company_scope_total": 11,
+      "site_allocation_inside_A41_group": "undisclosed"
+    },
+    "IPC3_chillers": "5_plus_1_buildout_with_up_to_five_440_kW_units",
+    "UPS_full_load_autonomy_minutes_up_to": 30,
+    "complete_as_built_per_site_grid_transformer_switchgear_PDU_UPS_battery_generator_fuel_chiller_CRAH_CRAC_CDU_OEM_model_count_rating_loading_acceptance_and_remaining_life": "undisclosed",
+    "emergency_generation": {
+      "IPC3": "simple_96_hours",
+      "IPC4": "N_plus_1_96_hours",
+      "IPC5": "1_plus_1_120_hours"
+    },
+    "factsheet_detailed_site_scope": [
+      "IPC3",
+      "IPC4",
+      "IPC5"
+    ],
+    "medium_voltage": {
+      "IPC3": "one_simple_20kV_ring",
+      "IPC4": "one_20kV_ring_redundant_transfer_metering",
+      "IPC5": "two_20kV_rings_redundant_transfer_metering"
+    },
+    "transformers": {
+      "IPC3": "N_plus_1",
+      "IPC4": "N_plus_1",
+      "IPC5": "1_plus_1",
+      "published_unit_rating_kVA_without_complete_site_count": 2000
+    }
+  },
+  "environment_and_operating_energy_2025": {
+    "A41_2025_estimation_boundary": "A41 electricity values were estimated while bills were pending.",
+    "IPC5_solar": {
+      "generation_2025_MWh": 114,
+      "nameplate_kWp": 130
+    },
+    "PUE_target": "less_than_or_equal_to_1.3_by_2030_not_current_measured_PUE",
+    "additional_PV_end_2025": {
+      "commissioning": "start_2026",
+      "portfolio_total_after_expansion_kWp": 380,
+      "systems_kWp": [
+        120,
+        130
+      ]
+    },
+    "annual_average_customer_IT_load_MW_derived": 2.267,
+    "annual_energy_ratio_total_DC_electricity_to_customer_IT_energy_derived": 1.485,
+    "cooling_energy_MWh": 5164,
+    "cooling_share_percent_derived": 17.513,
+    "customer_IT_energy_MWh": 19860,
+    "customer_IT_energy_growth_2024_to_2025_percent_derived": 4.554,
+    "customer_IT_share_percent_derived": 67.352,
+    "data_center_electricity_MWh": 29487,
+    "electricity_procurement": "100_percent_renewable_electricity_since_2024_via_TUEV_certified_guarantees_of_origin",
+    "emergency_generator_preheat_energy_MWh": 243,
+    "non_office_residual_m3_derived": 266,
+    "office_water_m3": 848,
+    "ratio_boundary": "The average load and energy ratio are analyst calculations from annual MWh. The ratio is not provider-reported PUE and neither value is installed, peak, available or billable MW.",
+    "reporting_scope": "four_data_centers_plus_offices_unless_more_narrowly_labeled",
+    "total_energy_renewable_share_percent": 98,
+    "total_scoped_usable_area_m2": 9993,
+    "total_water_m3_including_offices": 1114,
+    "water_boundary": "The residual is not assigned to cooling or individual facilities because the declaration perimeter does not support that allocation."
+  },
+  "financials": {
+    "FY2024": {
+      "EBITDA_EUR_million": 8.073,
+      "EBITDA_margin_percent_derived": 19.548,
+      "EBIT_EUR_million": 1.552,
+      "EBIT_margin_percent_derived": 3.758,
+      "EBT_EUR_million": -0.765,
+      "bank_debt_EUR_million": 21.561,
+      "cash_EUR_million": 5.475,
+      "data_center_revenue_EUR_million": 14.774,
+      "data_center_revenue_growth_percent_derived": 5.071,
+      "data_center_revenue_share_percent_derived": 35.774,
+      "equity_EUR_million": 27.649,
+      "impairment_of_Phone_maxX_interest_or_loan_EUR_million": 2.074,
+      "investments_EUR_million": 5.814,
+      "net_result_EUR_million": -1.361,
+      "revenue_EUR_million": 41.298298
+    },
+    "FY2024_audited_source_boundary": "Original report text reproduced by commercial extractor, identifying Bundesanzeiger as source and an unqualified audit opinion.",
+    "FY2025_latest_extracted_summary": {
+      "EBITDA": "not_established_from_reviewed_latest_free_summary",
+      "balance_sheet_total_EUR_million": 54.54,
+      "boundary": "The 2025 values are a commercial extracted summary; the original filing was not reviewed. The operating result is an analyst calculation from rounded lines and is not a provider-reported metric.",
+      "equity_EUR_million": 28.03,
+      "filing_publication_date": "2026-04-10",
+      "latest_data_center_segment_revenue_and_profit": "not_disclosed_in_reviewed_free_summary",
+      "liabilities_EUR_million": 22.04,
+      "net_margin_percent_derived_approximate": 1.831,
+      "net_result_EUR_million": 0.765532,
+      "operating_margin_percent_analyst_derived_approximate": 5.871,
+      "operating_result_EUR_million_analyst_derived_from_rounded_summary_lines": 2.4542,
+      "revenue_EUR_million_rounded": 41.8,
+      "revenue_growth_percent_derived_approximate": 1.215
+    },
+    "business_boundary": "TelemaxX also sells telecommunications and IT services; data-center revenue is not standalone site economics or segment operating profit.",
+    "legal_entity": "TelemaxX Telekommunikation GmbH"
+  },
+  "id": "telemaxx_official_facility_summary_2026_07_19",
+  "operator": "TelemaxX Telekommunikation GmbH",
+  "outlook": {
+    "analytical_view": "TelemaxX is a compact municipally anchored regional fiber, colocation and cloud platform with positive 2024 data-center growth and 2025 company profit recovery. It is not a listed pure play, and a valuation case still requires current segment profit, occupancy, billable load, capex, cash flow and equipment-level evidence.",
+    "positive_signals": [
+      "municipal_and_regional_shareholder_base",
+      "four_site_sovereign_regional_colocation_position",
+      "2024_data_center_revenue_growth",
+      "2025_company_net_profit_recovery",
+      "customer_IT_energy_growth_and_efficiency_modernization"
+    ],
+    "risk_signals": [
+      "small_Karlsruhe_and_Stutensee_geographic_concentration",
+      "no_current_site_MW_occupancy_or_billable_load",
+      "no_latest_detailed_data_center_segment_profit",
+      "telecom_price_pressure_and_customer_consolidation",
+      "no_installed_GPU_inventory_or_live_liquid_cooling_evidence",
+      "7800_versus_more_than_8000_square_metre_conflict"
+    ]
+  },
+  "ownership": {
+    "Breitbandkabel_Landkreis_Karlsruhe_interest_percent": 49,
+    "publicly_listed_security": false,
+    "shareholder_percent_checksum": 100.0,
+    "shareholders_percent": {
+      "Energie_und_Wasserversorgung_Bruchsal": 8.0,
+      "Stadt_Stutensee": 4.5,
+      "Stadtwerke_Baden_Baden": 9.1,
+      "Stadtwerke_Bretten": 6.8,
+      "Stadtwerke_Buehl": 5.7,
+      "Stadtwerke_Ettlingen": 8.0,
+      "Stadtwerke_Gaggenau": 6.8,
+      "Stadtwerke_Karlsruhe": 42.0,
+      "Stadtwerke_Rastatt": 9.1
+    }
+  },
+  "portfolio_reconciliation": {
+    "active_new_colocation_marketing_codes": [
+      "IPC3",
+      "IPC4",
+      "IPC5"
+    ],
+    "boundary": "Facility-page usable area, homepage colocation area, EMAS scoped usable area, land area, OSM footprints and available or utilized whitespace are different measures.",
+    "current_high_security_data_centers": 4,
+    "current_housing_scope_codes": [
+      "IPC1",
+      "IPC3",
+      "IPC4",
+      "IPC5"
+    ],
+    "current_page_numeric_usable_area_checksum_m2": 7800,
+    "homepage_colocation_area_claim_m2": "more_than_8000",
+    "network_POP_former_data_center_rows": 1,
+    "provider_directory_rows": 5,
+    "publication_conflict": "The four current facility pages sum to 7,800 square metres, while current company material says more than 8,000 square metres. No hidden area is invented to reconcile the 200-plus-square-metre gap."
+  },
+  "records_sha256": "f46c2ea41c2341a342531751261856d7a1c865bc4dc599516f36af108e0bc10f",
+  "sources": [
+    "https://www.telemaxx.de/",
+    "https://www.telemaxx.de/services/rechenzentrum/datacenter/rechenzentren-der-telemaxx",
+    "https://www.telemaxx.de/services/rechenzentrum/datacenter",
+    "https://www.telemaxx.de/services/rechenzentrum/datacenter/zertifizierungen",
+    "https://www.telemaxx.de/services/rechenzentrum/datacenter/rechenzentrum-infrastruktur",
+    "https://www.telemaxx.de/services/rechenzentrum/datacenter/rechenzentren-der-telemaxx/ipc-1",
+    "https://www.telemaxx.de/services/rechenzentrum/datacenter/rechenzentren-der-telemaxx/ipc-2",
+    "https://www.telemaxx.de/services/rechenzentrum/datacenter/rechenzentren-der-telemaxx/ipc-3",
+    "https://www.telemaxx.de/services/rechenzentrum/datacenter/rechenzentren-der-telemaxx/ipc-4",
+    "https://www.telemaxx.de/services/rechenzentrum/datacenter/rechenzentren-der-telemaxx/ipc-5",
+    "https://www.telemaxx.de/ueber-uns/aktuelles/veranstaltungen/07052026-customer-excellence-forum-mit-rechenzentrumsfuehrung",
+    "https://www.telemaxx.de/fileadmin/docs/Flyer/TelemaxX_Factsheet_Rechenzentren.pdf",
+    "https://www.telemaxx.de/fileadmin/docs/EMAS/TXX_Umwelterklaerung_2026_01.pdf",
+    "https://www.telemaxx.de/ueber-uns/unternehmen/gesellschafter",
+    "https://www.telemaxx.de/ueber-uns/partner",
+    "https://www.telemaxx.de/services/cloud/telemaxx-opencloud/opencloud-kosten",
+    "https://www.telemaxx.de/ueber-uns/aktuelles/veranstaltungen/25072025-ki-anwendungen-auf-telemaxx-opencloud-mit-rechenzentrumsfuehrung",
+    "https://www.telemaxx.de/academy/wissen/rechenzentrum/klimatisierung",
+    "https://handelsregister.ai/de/organizations/karlsruhe/bau-von-versorgungseinrichtungen-fuer-elektrizitaet-und-telekommunikation/telemaxx-telekommunikation-gmbh-2ee96e3e04be3411618451185817e3ef",
+    "https://openregister.de/company/DE-HRB-B1601-108481"
+  ]
+}

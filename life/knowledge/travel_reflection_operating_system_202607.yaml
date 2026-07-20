@@ -306,16 +306,29 @@ promoted_records:
 
   - id: candidate_english_first_ai_working_language
     object_type: Concept
-    title: AI 작업 영어 우선 후보 정책
-    status: candidate_not_active
+    title: AI 대화에서 시작하는 영어 우선 좁은 실험
+    status: active_narrow_experiment_with_broader_policy_unresolved
     area_refs: [MIND, CAREER]
     project_ref: project_ai_agent
     handwritten_direction: >
       영어 말하기, 듣기, 쓰기, 읽기를 매일 훈련하고 모든 기록과 정책을
       영어로 만드는 것이 AI 시대의 토큰 효율적인 방법이라는 여행 메모.
+    activation_update_20260718:
+      active_scope:
+        - Brian이 선택할 때 AI 대화의 user message를 영어로 작성한다.
+        - assistant는 자연스러운 영어 응답과 중요한 오류의 가벼운 교정을 제공한다.
+      flexible_boundary:
+        - 한국어로 전환해도 실패로 취급하지 않는다.
+        - 대화 흐름과 실제 의미를 문법 교정보다 우선한다.
+      not_activated:
+        - 개인 온톨로지 전체의 영어 번역
+        - 모든 개인 감정과 관계 기록의 영어 전용 정책
+      source_refs:
+        - source_life_quality_conversation_20260718_english_study_need
+        - source_life_quality_conversation_20260718_english_messages_intention
     current_system_policy: >
-      Brian이 범위를 확인하기 전까지 개인 온톨로지는 한국어 또는 자연스러운 혼합 언어를 유지한다.
-      기존 기록과 정책을 일괄 번역하거나 영어 전용으로 바꾸지 않는다.
+      AI 대화 영어 연습은 좁은 범위에서 활성화하되, 개인 온톨로지는 한국어 또는
+      자연스러운 혼합 언어를 유지한다. 기존 기록과 정책을 일괄 번역하지 않는다.
     narrower_experiment_candidates:
       - 코드 identifier, schema field, contract 이름은 영어를 우선한다.
       - 회사 공유용 기술 artifact는 영어 초안과 한국어 설명을 필요에 따라 병행한다.
@@ -325,10 +338,12 @@ promoted_records:
       - 목표가 영어 능력 향상인가, AI token 효율인가, 회사 협업인가?
       - 개인 감정과 관계 기록까지 영어로 바꿀 필요가 있는가?
       - 영어 우선이 사고의 정밀도와 기록 지속성을 낮추지는 않는가?
-    activation_condition: Brian이 적용 범위와 시험 기간을 명시적으로 선택한다.
+    broader_activation_condition: 대화 밖의 영어 우선 정책은 Brian이 적용 범위와 시험 기간을 별도로 선택한다.
     source_refs:
       - source_travel_book_note_img_1830_20260715
-    confidence: medium
+      - source_life_quality_conversation_20260718_english_study_need
+      - source_life_quality_conversation_20260718_english_messages_intention
+    confidence: high_for_conversation_intention_medium_for_broader_policy
     needs_user_review: true
 
   - id: principle_happiness_bundle_active_visualization

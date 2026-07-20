@@ -1,0 +1,275 @@
+{
+  "AI_and_accelerator_boundary": {
+    "accelerator_ledger_action": "no_numeric_physical_inventory_row_created",
+    "brand_direction_signal": "AI_oriented_business_names_without_a_reviewed_current_product_or_hardware_ledger",
+    "new_business_names_registered_from_2026_03_11": [
+      "AI_DATA_CENTRES",
+      "AI_DC",
+      "LEDC_AI"
+    ],
+    "physical_GPU_model_count_owner_host_site_delivery_fabric_power_utilization_revenue_and_margin": "undisclosed"
+  },
+  "OSM_crosswalk": {
+    "boundary": "Six OSM ways map to all six current provider cards. Operator-label spelling differs at Tamworth, and object footprints are not a rack, load or ownership census.",
+    "raw_operator_labels": [
+      "Leading Edge Data Centre",
+      "Leading Edge Data Centres"
+    ],
+    "related_objects": 6,
+    "rows": [
+      {
+        "address": {
+          "postcode": "2304",
+          "state": "NSW"
+        },
+        "capacity_counting_rule": "OSM geometry is a crosswalk, not a capacity, ownership, lifecycle, utilization, revenue or GPU source.",
+        "classification": "exact_current_provider_facility_candidate",
+        "facility_ref": "leading_edge_ntl1",
+        "footprint_area_m2": 416.193,
+        "latitude": -32.8832252,
+        "longitude": 151.7305951,
+        "name": "LEDC - NTL1 - Newcastle",
+        "osm_ref": "osm_way_1441548716",
+        "raw_operator": "Leading Edge Data Centres"
+      },
+      {
+        "address": {
+          "postcode": "2340",
+          "state": "NSW"
+        },
+        "capacity_counting_rule": "OSM geometry is a crosswalk, not a capacity, ownership, lifecycle, utilization, revenue or GPU source.",
+        "classification": "exact_current_provider_facility_candidate",
+        "facility_ref": "leading_edge_tmw1",
+        "footprint_area_m2": 477.148,
+        "latitude": -31.0742067,
+        "longitude": 150.9215972,
+        "name": "LEDC - TMW1 - Tamworth",
+        "osm_ref": "osm_way_1248945224",
+        "raw_operator": "Leading Edge Data Centre"
+      },
+      {
+        "address": {
+          "postcode": "2830",
+          "state": "NSW"
+        },
+        "capacity_counting_rule": "OSM geometry is a crosswalk, not a capacity, ownership, lifecycle, utilization, revenue or GPU source.",
+        "classification": "exact_current_provider_facility_candidate",
+        "facility_ref": "leading_edge_dbo1",
+        "footprint_area_m2": 413.257,
+        "latitude": -32.2410708,
+        "longitude": 148.5814901,
+        "name": "LEDC - DBO1 - Dubbo",
+        "osm_ref": "osm_way_1441548719",
+        "raw_operator": "Leading Edge Data Centres"
+      },
+      {
+        "address": {
+          "postcode": "2640",
+          "state": "NSW"
+        },
+        "capacity_counting_rule": "OSM geometry is a crosswalk, not a capacity, ownership, lifecycle, utilization, revenue or GPU source.",
+        "classification": "exact_current_provider_facility_candidate",
+        "facility_ref": "leading_edge_abx1",
+        "footprint_area_m2": 533.813,
+        "latitude": -36.0712585,
+        "longitude": 146.9552152,
+        "name": "LEDC - ABX1 - Albury",
+        "osm_ref": "osm_way_1441547266",
+        "raw_operator": "Leading Edge Data Centres"
+      },
+      {
+        "address": {
+          "postcode": "2450",
+          "state": "NSW"
+        },
+        "capacity_counting_rule": "OSM geometry is a crosswalk, not a capacity, ownership, lifecycle, utilization, revenue or GPU source.",
+        "classification": "exact_current_provider_facility_candidate",
+        "facility_ref": "leading_edge_cfs1",
+        "footprint_area_m2": 206.378,
+        "latitude": -30.3144026,
+        "longitude": 153.117028,
+        "name": "LEDC - CFS1 - Coffs Harbour",
+        "osm_ref": "osm_way_1441548723",
+        "raw_operator": "Leading Edge Data Centres"
+      },
+      {
+        "address": {
+          "postcode": "2650",
+          "state": "NSW"
+        },
+        "capacity_counting_rule": "OSM geometry is a crosswalk, not a capacity, ownership, lifecycle, utilization, revenue or GPU source.",
+        "classification": "exact_current_provider_facility_candidate",
+        "facility_ref": "leading_edge_wga1",
+        "footprint_area_m2": 207.12,
+        "latitude": -35.126104,
+        "longitude": 147.348911,
+        "name": "LEDC - WGA1 - Wagga Wagga",
+        "osm_ref": "osm_way_1150357328",
+        "raw_operator": "Leading Edge Data Centres"
+      }
+    ],
+    "source_file": "life/imports/global_data_centers_20260717/osm_data_center_locations.jsonl",
+    "source_file_sha256": "3a0f1370f036f2ff5fa0c478bfadeb58c7809d90315bbee4e0a7c9cfd21d4733"
+  },
+  "accessed_on": "2026-07-19",
+  "current_facility_scope": {
+    "current_card_rack_count": "undisclosed",
+    "derived_module_boundary": "Capacity divided by each card's 375-kW or 150-kW module field; this is an arithmetic check, not an installed physical-module count.",
+    "derived_module_capacity_equivalent": 13,
+    "facility_codes": [
+      "NTL1",
+      "TMW1",
+      "DBO1",
+      "ABX1",
+      "CFS1",
+      "WGA1"
+    ],
+    "operating_provider_cards": 6,
+    "state": "New_South_Wales",
+    "total_available_area_card_checksum_sqm": 3034,
+    "total_site_capacity_card_checksum_mw": 3.975
+  },
+  "historical_rollout_boundary": {
+    "boundary": "The first-six rack design and older 20/26/30-plus rollout statements are historical program or service-network scopes. They do not prove current installed racks or operating facilities beyond the six NSW cards.",
+    "current_Victoria_and_Queensland_status_on_network_page": "coming_soon_without_current_facility_cards",
+    "first_six_program_investment_with_Schneider_AUD_million": 30,
+    "historical_first_six_rack_plan_checksum": 450,
+    "historical_power_density_kw_per_rack": 5,
+    "historical_racks_per_first_six_site": 75,
+    "older_regional_plan_headlines": [
+      "more_than_20",
+      "26",
+      "more_than_30"
+    ]
+  },
+  "id": "leading_edge_official_facility_summary_2026_07_19",
+  "legal_entity": "Edge Data Centres Pty Ltd",
+  "legal_ownership_and_financial_boundary": {
+    "ABN": "55_632_303_827",
+    "ACN": "632_303_827",
+    "LEDC_standalone_revenue_operating_profit_EBITDA_cash_flow_capex_debt_customer_concentration_and_ROIC": "undisclosed",
+    "WHSP_FY2025_controlled_vehicle": "WHSP_Leading_Edge_Pty_Limited_100_percent_controlled_by_WHSP",
+    "WHSP_FY2025_private_equity_portfolio_AUD_million": {
+      "contracted_investment_commitments": 158.4,
+      "regular_net_loss_after_tax": -21.1,
+      "statutory_net_loss_after_tax": -35.9
+    },
+    "current_named_investors": [
+      "WHSP",
+      "DigitalBridge"
+    ],
+    "exact_current_investor_stakes_and_valuation": "undisclosed",
+    "historical_funding_AUD_million": {
+      "DigitalBridge_2022_equity_secondary_source": 30,
+      "WHSP_2020": 20
+    },
+    "legal_entity_status": "active_Australian_private_company",
+    "parent_portfolio_boundary": "WHSP Private Equity contains multiple holdings and is not allocated to LEDC revenue, profit, debt, capex or value.",
+    "vehicle_boundary": "WHSP's control of its own investment vehicle does not establish 100% ownership of Edge Data Centres Pty Ltd, whose current site also names DigitalBridge as an investor."
+  },
+  "operator": "Leading Edge Data Centres",
+  "outlook": {
+    "analytical_view": "LEDC is a real six-site regional edge platform with a modest published capacity base and an AI-oriented naming signal. Its investability cannot be ranked from public evidence because standalone earnings, current ownership percentages, utilization, expansion funding and physical accelerator deployment remain undisclosed.",
+    "positive_signals": [
+      "six_current_regional_NSW_facility_cards",
+      "3_975_MW_card_capacity_checksum",
+      "redundant_interconnected_edge_network",
+      "Schneider_and_Cisco_supplier_history",
+      "2026_AI_business_name_registrations"
+    ],
+    "risk_signals": [
+      "small_current_card_scale",
+      "current_cards_concentrated_in_NSW",
+      "Victoria_and_Queensland_still_coming_soon",
+      "older_rollout_targets_not_delivered_as_current_cards",
+      "no_physical_GPU_inventory",
+      "no_standalone_financials_or_current_cap_table",
+      "no_measured_site_efficiency_or_utilization"
+    ]
+  },
+  "power_cooling_network_and_supplier_evidence": {
+    "Cisco": "core_network_backbone_historical_program",
+    "Schneider_program_products": [
+      "EcoStruxure_IT_Expert",
+      "EcoStruxure_Asset_Advisor",
+      "Power_Monitoring_Expert",
+      "InRow_DX",
+      "Galaxy_UPS",
+      "APC_NetShelter_SX",
+      "APC_metered_PDUs",
+      "EcoAisle_containment"
+    ],
+    "boundary": "Named suppliers and product families establish program participation, not a current per-site as-built quantity, model, acceptance or remaining-life ledger.",
+    "current_DCI": "redundant_wavelength_backbone_between_regional_data_centres",
+    "site_card_common_cooling": {
+      "airflow": "hot_aisle_containment",
+      "controls": [
+        "temperature_and_humidity_monitoring",
+        "dehumidification",
+        "filtration"
+      ],
+      "redundancy": "N_plus_1_independent_cooling",
+      "technology": "in_row_direct_expansion"
+    },
+    "site_card_common_power": {
+      "UPS": "present",
+      "backup_generation": "redundant_1000_kVA_diesel_generators",
+      "distribution": "isolated_parallel_bus",
+      "rack_power_topology": "2N_A_and_B",
+      "supply_redundancy": "N_plus_1"
+    }
+  },
+  "records_sha256": "1122bd2dc354a24827070d8977cd90b15f32058e3522a8af6d2a4e50975fe36e",
+  "remaining_material_gaps": [
+    "current_non_overlapping_legal_building_title_lease_and_lifecycle_roster_beyond_six_cards",
+    "current_installed_racks_modules_energized_leased_utilized_billed_and_actual_IT_load_by_site",
+    "per_site_grid_substation_transformer_switchgear_PDU_UPS_battery_generator_fuel_and_cooling_BOM",
+    "per_site_measured_PUE_WUE_water_energy_renewable_matching_and_live_liquid_cooled_MW",
+    "facility_specific_current_Uptime_and_ISO_award_identifiers_scope_and_expiry",
+    "physical_GPU_model_count_owner_host_site_delivery_fabric_power_utilization_revenue_and_margin",
+    "standalone_revenue_operating_profit_EBITDA_cash_flow_capex_debt_customer_concentration_and_ROIC",
+    "current_investor_stakes_valuation_governance_and_post_2026_AI_brand_strategy",
+    "Victoria_Queensland_and_historical_NSW_pipeline_land_permit_grid_financing_construction_customer_and_launch_status"
+  ],
+  "sources": [
+    "https://leadingedgedc.com/network-map/",
+    "https://leadingedgedc.com/dc_location/newcastle/",
+    "https://leadingedgedc.com/dc_location/tamworth/",
+    "https://leadingedgedc.com/dc_location/dubbo/",
+    "https://leadingedgedc.com/dc_location/albury/",
+    "https://leadingedgedc.com/dc_location/coffs-harbour/",
+    "https://leadingedgedc.com/dc_location/wagga-wagga/",
+    "https://leadingedgedc.com/news_post/eading-edge-data-centre-opens-doors-in-newcastle-nsw/",
+    "https://leadingedgedc.com/news_post/tamworth-data-centre-grand-opening/",
+    "https://leadingedgedc.com/news_post/ledc-opens-dubbo-press-release/",
+    "https://leadingedgedc.com/news_post/lease-signed-for-albury-wodonga-edge-data-centre/",
+    "https://leadingedgedc.com/news_post/da-lodged-for-a-1m-data-centre-at-coffs-harbour-airport-enterprise-parkl5tsbvakqa1qttmpbjt1nk81ceo52b/",
+    "https://leadingedgedc.com/news_post/leading-edge-dc-breaks-ground-in-coffs-harbour/",
+    "https://leadingedgedc.com/news_post/prime7-news-in-wagga-wagga/",
+    "https://www.se.com/au/en/work/campaign/customer-stories/leading-edge/",
+    "https://leadingedgedc.com/news_post/ecosystm-schneider-electric-partners-with-australias-leading-edge-data-centres/",
+    "https://leadingedgedc.com/news_post/leading-edge-data-centres-cisco-deal/",
+    "https://leadingedgedc.com/data-centre-interconnect/",
+    "https://leadingedgedc.com/sustainability/",
+    "https://leadingedgedc.com/blog_post/tier-ready-a-new-way-to-deliver-data-centres/",
+    "https://leadingedgedc.com/about/",
+    "https://leadingedgedc.com/terms-and-conditions/",
+    "https://abr.business.gov.au/ABN/View/55632303827",
+    "https://leadingedgedc.com/news_post/welcome-aboard-jarrett-appleby-as-senior-advisor/",
+    "https://www.datacenterdynamics.com/en/news/australias-leading-edge-data-centres-raises-au30-million-from-digitalbridge/",
+    "https://www.datocms-assets.com/104850/1759808456-whsp-holdings-limited-fy25-annual-report.pdf",
+    "https://leadingedgedc.com/wp-content/uploads/2022/12/LEDC_IaaS_Final_Dec22.pdf"
+  ],
+  "sustainability_and_certification_boundary": {
+    "Tier_Ready_model": true,
+    "boundary": "The sustainability page's certification wording and the Tier-Ready modular design are retained as provider evidence. No facility-specific independent award identifier was captured in the reviewed public sources, and absence from this review is not proof that no award exists.",
+    "facility_cards": "Tier_Design_Tier_III",
+    "independent_facility_specific_Uptime_award_captured_in_review": false,
+    "measured_fleet_or_site_PUE_WUE_water_energy_renewable_share_and_hourly_matching": "undisclosed",
+    "net_zero_target": "before_2040_or_better",
+    "provider_wording": "each_DC_completed_ISO27001_and_Tier_III_certified",
+    "roof_mounted_on_site_solar": true,
+    "solar_shield_provider_claimed_PUE_improvement": 0.3,
+    "transition_stage": 1
+  }
+}

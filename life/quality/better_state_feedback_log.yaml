@@ -1,0 +1,14 @@
+schema_version: 1
+id: better_state_feedback_log
+collection_type: FeedbackRecord
+status: active
+purpose: >-
+  더 좋은 상태 루프에서 실제로 수용된 선택과 관찰된 결과만 시간순으로 보존한다.
+  제안 자체와 성공 증거를 구분하고, 결과가 없으면 성공으로 추정하지 않는다.
+system_ref: system_better_state_loop
+append_policy:
+  - accepted, declined, modified, pending을 명시한다.
+  - 실제 관찰과 assistant 추론을 구분한다.
+  - 인과관계를 단정하지 않는다.
+  - 동일한 실험의 후속 결과는 원래 feedback record를 참조한다.
+feedback_records: []

@@ -1,0 +1,73 @@
+{
+  "AZs_with_different_sales_availability": 25,
+  "accessed_on": "2026-07-18",
+  "anomalies_and_boundaries": {
+    "AZ_physical_definition": "Provider calls an AZ a physical data center, but exact building, address, ownership, capacity, and lifecycle below the service listing remain undisclosed.",
+    "Hong_Kong_region_label": "Provider label references Hong Kong, Macao, and Taiwan while all three published AZ names/IDs are Hong Kong labels; preserved without inferring separate Macao or Taiwan facilities.",
+    "Sao_Paulo_blank_continuation_row": "Ignored after validating its published one-AZ count.",
+    "asterisk": "Different sales availability, not closure or non-operation.",
+    "finance_regions": "Three finance Regions are application-only service partitions, not proof of three separately owned campuses."
+  },
+  "canonical_record_sha256": "ab4350f616b4bb44e32df25d401d413f4ea32fe6f5d6f2c0fe5d8397da313b09",
+  "partition_AZ_counts": {
+    "finance_cloud": 9,
+    "public_cloud_china_mainland": 24,
+    "public_cloud_greater_china": 3,
+    "public_cloud_international": 22,
+    "self_driving_cloud": 4
+  },
+  "partition_region_counts": {
+    "finance_cloud": 3,
+    "public_cloud_china_mainland": 7,
+    "public_cloud_greater_china": 1,
+    "public_cloud_international": 10,
+    "self_driving_cloud": 1
+  },
+  "portfolio_ESG_2025": {
+    "PUE_scope": "All owned data centers operating for more than 12 months, per report footnote.",
+    "allocation_boundary": "Portfolio metrics are not assigned to a Region or AZ. The report names a leased data center in Zhongwei City, but does not map it to the CVM Region/AZ IDs or disclose its capacity.",
+    "electricity_savings_MWh": 18260.0,
+    "emissions_reduction_tCO2e": 10413.7,
+    "leased_Zhongwei_data_center": true,
+    "leased_data_center_green_electricity_share_percent": 21.4,
+    "leased_data_center_prior_year_green_electricity_share_percent": 3.8,
+    "owned_data_center_average_PUE": 1.246,
+    "owned_data_center_green_electricity_share_percent": 82.9,
+    "owned_data_center_onsite_renewable_capacity_MW": 63.8,
+    "owned_data_center_prior_year_average_PUE": 1.257,
+    "owned_data_center_prior_year_green_electricity_share_percent": 49.8,
+    "reporting_year": 2025,
+    "targets": {
+      "owned_data_center_WUE_improvement_percent_by_2030_from_2025": 20,
+      "owned_data_center_average_PUE_not_to_exceed": 1.25,
+      "owned_data_center_green_electricity_percent_by_2026": 100,
+      "total_green_electricity_consumption_percent_by_2030": 100
+    }
+  },
+  "published_AZ_record_count": 62,
+  "record_count": 22,
+  "registry": "Tencent Cloud official Region and availability-zone registry",
+  "source_snapshots": {
+    "CVM_regions_and_AZs": {
+      "hash_scope": "Parsed Region, Region ID, AZ count, AZ name, AZ ID, and sales-availability marker rows.",
+      "parsed_evidence_sha256": "003b9f3da8de62f02fa14b73eb301d540750c437fb09f0bdfd707eb6961b09ad",
+      "url": "https://intl.cloud.tencent.com/document/product/213/6091"
+    },
+    "ESG_report_2025": {
+      "hash_scope": "Parsed portfolio PUE, green-electricity, savings, renewable-capacity, Zhongwei lease, and target evidence.",
+      "parsed_evidence_sha256": "d5ec7ab46a1d270d1b42e7f20434fb86e8296dd9b8d1a3096c6693763ad5e14b",
+      "url": "https://static.www.tencent.com/uploads/2026/04/09/34cdfa7393ee49cd5677b28f38c68d74.pdf"
+    }
+  },
+  "table_scopes": {
+    "china": {
+      "AZ_rows": 40,
+      "region_rows": 12
+    },
+    "outside_china": {
+      "AZ_rows": 22,
+      "region_rows": 10
+    }
+  },
+  "technical_document_recent_release_time": "2026-02-12 17:10:11"
+}

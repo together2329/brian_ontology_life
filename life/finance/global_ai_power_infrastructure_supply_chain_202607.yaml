@@ -1,0 +1,594 @@
+id: global_ai_power_infrastructure_supply_chain_202607
+object_type: FinancialResearchArtifact
+title: Global AI data-center power infrastructure supply chain
+version: 1
+status: active_research
+as_of: 2026-07-19
+timezone: Asia/Seoul
+language: mixed_English_schema_with_Korean_interpretation
+
+research_scope:
+  primary_question: >-
+    AI 데이터센터에 실제 전력을 전달하는 전체 체인을 연료와 발전부터
+    송전·HVDC, 변압기, 변전소, 배전·UPS·버스웨이, 현장발전, ESS,
+    전력반도체, EPC와 계통연결까지 연결하고 주요 기업과 병목을 구분한다.
+  roster_boundary: >-
+    '모두'는 전 세계의 주요 상장사, 국가·규제 유틸리티, 핵심 비상장 원전·전력
+    기술기업과 Brian의 ETF에 포함된 전략적 공급자를 뜻한다. 모든 지역 배전사,
+    소형 전기공사업체와 부품 유통사를 문자 그대로 전수 집계한 명부는 아니다.
+  evidence_policy:
+    - Prefer filings, investor relations, regulator, government, product and named-project sources.
+    - Preserve signed, permitted, under-construction, energized, billed and recognized-revenue states.
+    - Preserve IT MW, utility MW, generator MW, transformer MVA and battery MW/MWh as different denominators.
+    - Group revenue is not AI or data-center revenue without an explicit segment or customer boundary.
+    - A product qualification, partnership, framework or master agreement is not booked revenue.
+    - Consolidate subsidiaries under the economic parent while retaining operating-company lineage.
+  investment_boundary: >-
+    공급망 원장과 보유 ETF 중복을 점검하기 위한 자료이며 매수·매도·목표가 지시가 아니다.
+
+comparison_contracts:
+  lifecycle: >-
+    Planned, requested, contracted, permitted, under construction, energized, ramped and billed load remain separate.
+  power: >-
+    IT load, campus utility allocation, substation rating, generation nameplate and average energy consumption are not interchangeable.
+  storage: >-
+    Battery power in MW and energy in MWh or GWh are retained separately; neither equals annual generation.
+  financial: >-
+    Preserve currency, reporting period and group or segment boundary; do not add currencies or infer AI revenue.
+  backlog: >-
+    Backlog, remaining performance obligation, order, framework and prospective pipeline are different measures.
+  ownership: >-
+    Hitachi Energy is consolidated under Hitachi, Westinghouse is private under Brookfield Renewable and Cameco,
+    and Piller is part of Langley Holdings; subsidiary and parent are not double-counted as independent revenue pools.
+
+executive_findings:
+  - >-
+    AI 전력의 첫 병목은 발전기 부족 하나가 아니라 계통연결 승인, 대형 변압기와 HVDC,
+    변전·개폐기, 현장 배전, 시공 인력의 연속된 리드타임이다. 한 구간이 늦으면 GPU 설치도 늦어진다.
+  - >-
+    IEA는 데이터센터 전력수요가 2025년 약 485TWh에서 2030년 약 950TWh로 늘고,
+    계획된 프로젝트의 약 20%가 계통 위험으로 지연될 수 있다고 본다. 미국에서는 2030년까지
+    데이터센터가 전력수요 증가분의 약 절반을 차지하는 경로다.
+  - >-
+    NERC의 2025 장기 신뢰도 전망은 북미 여름 피크가 2025~2035년 224GW, 24% 늘며
+    데이터센터를 핵심 원인으로 지목한다. FERC는 2026년 6월 여섯 RTO에 대규모 부하
+    계통연결 규정의 정당화 또는 개정을 요구했다.
+  - >-
+    DOE가 인용한 미국 배전용 변압기 리드타임은 2019년 3~6개월에서 2023년 12~30개월로
+    늘었다. 대형 변압기·HVDC 케이블·고압 개폐기의 공장 증설은 수요 확신의 증거지만
+    완공 전 생산능력과 현재 매출로 계산하면 안 된다.
+  - >-
+    데이터센터 내부에서는 UPS·PDU·버스웨이·스위치기어와 800VDC 전력변환이 랙 전력밀도에
+    직접 연결된다. Vertiv, Schneider, Eaton, ABB, nVent, Legrand와 Delta는 같은 시장에
+    노출돼도 제품 범위와 회계 세그먼트가 다르다.
+  - >-
+    원전과 가스·연료전지·엔진은 기저·브리지·현장전력 역할이 다르다. 장기 PPA나 마스터
+    계약의 MW를 현재 IT부하 또는 인식매출로 바꾸지 않는다. Oklo와 NuScale은 특히
+    상업화 단계와 현재 손익을 분리해 봐야 한다.
+  - >-
+    Brian의 KODEX 미국AI전력핵심인프라는 2026-05-31 기준 GE Vernova, Vertiv,
+    Comfort Systems 상위 3개가 47.51%, 상위 5개가 71.57%다. 발전·현장전력·설비·시공에
+    강하지만 규제 유틸리티, 변압기와 글로벌 HVDC, 배터리 셀에는 직접 노출이 제한적이다.
+  - >-
+    Brian의 KIWOOM 글로벌전력GRID인프라는 전력기기·그리드·케이블을 보완하고,
+    RISE 글로벌원자력은 Constellation·Cameco·원전 기자재를 보완한다. 세 ETF는 분산처럼
+    보여도 GE Vernova·ABB·Eaton·Schneider·HD현대일렉트릭 같은 설비 축에서 경제적 요인이 겹친다.
+
+system_routes:
+  - id: route_grid_supplied_hyperscale
+    use_case: utility_grid_to_hyperscale_campus
+    sequence: [generation, transmission_HVDC, substation, transformer, switchgear, UPS_or_DC_bus, rack]
+    critical_boundaries: [interconnection_queue, firm_capacity, transformer_MVA, energized_date, billed_load]
+  - id: route_onsite_bridge_power
+    use_case: gas_turbine_engine_fuel_cell_or_microgrid_before_or_alongside_grid
+    sequence: [fuel_supply, onsite_generation, synchronization, switchgear, UPS, rack]
+    critical_boundaries: [air_permit, fuel_pipeline, redundancy, emissions, contracted_vs_operating_MW]
+  - id: route_nuclear_long_duration
+    use_case: existing_nuclear_PPA_uprate_or_new_large_and_small_reactor
+    sequence: [fuel_cycle, reactor_vendor, EPC, grid_or_campus_interconnect, long_term_offtake]
+    critical_boundaries: [license, construction, fuel, COD, PPA_term, sponsor_credit]
+  - id: route_storage_and_power_quality
+    use_case: battery_ride_through_peak_shaving_grid_services_and_renewable_firming
+    sequence: [cell, pack, PCS_inverter, BMS_EMS, switchgear, campus_or_grid]
+    critical_boundaries: [MW, MWh, duration, warranty, fire_safety, contracted_vs_deployed]
+  - id: route_high_density_rack
+    use_case: AC_grid_to_800VDC_or_low_voltage_high_current_AI_rack
+    sequence: [medium_voltage, transformer, switchgear, UPS, busway_or_800VDC, rack_power_shelf, accelerator]
+    critical_boundaries: [conversion_efficiency, fault_isolation, copper_content, thermal_density, qualification]
+
+companies:
+  - {id: power_company_vertiv, company: Vertiv, ticker: VRT_US, country: United_States, ownership: public, roles: [critical_power, UPS, switchgear, busway, thermal], core_products: [UPS, PDU, busway, switchgear, integrated_modular_power], financial_profile_ref: company_vertiv, evidence_state: official_financial_and_product_evidence, sources: [https://investors.vertiv.com/financial-information/quarterly-results/default.aspx]}
+  - {id: power_company_schneider, company: Schneider_Electric, ticker: SU_FR, country: France, ownership: public, roles: [medium_and_low_voltage, UPS, busway, power_management], core_products: [Galaxy_UPS, MasterPact, EcoStruxure, busway], financial_profile_ref: company_schneider_electric, evidence_state: official_financial_and_product_evidence, sources: [https://www.se.com/ww/en/about-us/investor-relations/financial-results/]}
+  - {id: power_company_eaton, company: Eaton, ticker: ETN_US, country: Ireland, ownership: public, roles: [switchgear, breakers, UPS, busway, utility_distribution], core_products: [UPS, switchgear, busway, transformers, breakers], financial_profile_ref: company_eaton, evidence_state: official_financial_and_product_evidence, sources: [https://www.eaton.com/us/en-us/company/investor-relations.html]}
+  - {id: power_company_abb, company: ABB, ticker: ABBN_CH, country: Switzerland, ownership: public, roles: [electrification, switchgear, UPS, automation, drives], core_products: [medium_voltage_switchgear, UPS, breakers, energy_management], financial_profile_ref: company_abb, evidence_state: official_financial_and_data_center_order_evidence, sources: [https://global.abb/group/en/investors/quarterly-results]}
+  - {id: power_company_siemens_energy, company: Siemens_Energy, ticker: ENR_DE, country: Germany, ownership: public, roles: [gas_turbines, generators, transformers, HVDC, grid_technology], core_products: [gas_turbines, HVDC_PLUS, power_transformers, substations], financial_profile_ref: company_siemens_energy, evidence_state: official_financial_and_data_center_order_evidence, sources: [https://www.siemens-energy.com/global/en/home/investor-relations.html]}
+  - {id: power_company_ls_electric, company: LS_Electric, ticker: 010120_KR, country: South_Korea, ownership: public, roles: [switchgear, transformers, automation, PCS, HVDC], core_products: [switchgear, transformers, protection, ESS_PCS], financial_profile_ref: company_ls_electric, evidence_state: official_financial_and_product_evidence, sources: [https://www.ls-electric.com/about-us/investor-relations/financials]}
+  - {id: power_company_hd_hyundai_electric, company: HD_Hyundai_Electric, ticker: 267260_KR, country: South_Korea, ownership: public, roles: [power_transformers, switchgear, rotating_machines], core_products: [large_power_transformers, GIS, generators, motors], financial_profile_ref: company_hd_hyundai_electric, evidence_state: official_financial_backlog_and_product_evidence, sources: [https://www.hd-hyundaielectric.com/elect/en/IR/IRdata1.jsp]}
+  - {id: power_company_hitachi_energy, company: Hitachi_Energy, ticker: subsidiary_of_6501_JP, country: Switzerland, ownership: subsidiary, roles: [power_transformers, HVDC, grid_automation, substations], core_products: [large_transformers, HVDC_Light, GIS, grid_control], evidence_state: official_capacity_and_product_evidence, sources: [https://www.hitachienergy.com/us/en/news-and-events/press-releases/2025/09/hitachi-announces-historic-1-billion-usd-manufacturing-investment-to-power-america-s-energy-future-through-production-of-critical-grid-infrastructure, https://www.hitachienergy.com/products-and-solutions/transformers/by-customer-segment/transformers-for-data-centers]}
+  - {id: power_company_mitsubishi_electric, company: Mitsubishi_Electric, ticker: 6503_JP, country: Japan, ownership: public, roles: [power_semiconductors, UPS, transformers, switchgear, grid_systems], core_products: [IGBT_SiC, UPS, GIS, transformers], evidence_state: official_company_and_product_evidence, sources: [https://www.mitsubishielectric.com/investors/]}
+  - {id: power_company_fuji_electric, company: Fuji_Electric, ticker: 6504_JP, country: Japan, ownership: public, roles: [UPS, power_semiconductors, energy_systems], core_products: [large_capacity_UPS, skid_power_systems, IGBT_SiC, PCS], evidence_state: official_segment_financial_and_product_evidence, sources: [https://www.fujielectric.com/ir/library/detail/ar2025_segment_01_e.html]}
+  - {id: power_company_hyosung_heavy, company: Hyosung_Heavy_Industries, ticker: 298040_KR, country: South_Korea, ownership: public, roles: [power_transformers, GIS, HVDC, motors], core_products: [large_power_transformers, GIS, STATCOM, motors], evidence_state: official_company_and_parent_newsroom_capacity_evidence, sources: [https://www.hyosungheavyindustries.com/en/business/power/transformer, https://blog.hyosung.com/508236]}
+  - {id: power_company_iljin_electric, company: ILJIN_Electric, ticker: 103590_KR, country: South_Korea, ownership: public, roles: [power_transformers, switchgear, HV_cable], core_products: [transformers, GIS, HV_cables], evidence_state: official_company_product_evidence_financial_refresh_needed, sources: [https://www.iljinelectric.co.kr/business-area/heavy-electrical/uhv-transformer]}
+  - {id: power_company_hubbell, company: Hubbell, ticker: HUBB_US, country: United_States, ownership: public, roles: [utility_components, connectors, enclosures, electrical_distribution], core_products: [grid_hardware, connectors, grounding, enclosures], evidence_state: official_Q1_2026_financial_and_data_center_evidence, sources: [https://hubbell.gcs-web.com/news-releases/news-release-details/hubbell-reports-first-quarter-2026-results]}
+  - {id: power_company_powell, company: Powell_Industries, ticker: POWL_US, country: United_States, ownership: public, roles: [medium_voltage_switchgear, electrical_rooms, onsite_generation_integration], core_products: [switchgear, E_houses, motor_control, bus_duct], evidence_state: official_Q2_FY2026_financial_and_named_order_evidence, sources: [https://powellindustriesinc.gcs-web.com/news-releases/news-release-details/powell-industries-announces-second-quarter-fiscal-2026-results]}
+  - {id: power_company_nvent, company: nVent_Electric, ticker: NVT_US, country: United_Kingdom, ownership: public, roles: [electrical_enclosures, liquid_cooling, bus_systems, protection], core_products: [enclosures, busbar, cable_management, cooling], evidence_state: official_Q1_2026_financial_and_data_center_evidence, sources: [https://www.sec.gov/Archives/edgar/data/1720635/000162828026029098/q12026nvtpressrelease.htm]}
+  - {id: power_company_atkore, company: Atkore, ticker: ATKR_US, country: United_States, ownership: public, roles: [conduit, cable_management, electrical_raceway], core_products: [conduit, cable_tray, framing, fittings], evidence_state: official_Q2_FY2026_financial_and_end_market_evidence, sources: [https://investors.atkore.com/investors/quarterly-results/default.aspx]}
+  - {id: power_company_legrand, company: Legrand, ticker: LR_FR, country: France, ownership: public, roles: [busway, UPS, PDU, rack_power, digital_infrastructure], core_products: [Starline_busway, Keor_UPS, rack_PDU, structured_cabling], evidence_state: official_2025_financial_and_product_evidence, sources: [https://www.legrandgroup.com/sites/default/files/Documents_PDF_Legrand/Finance/2025/6m/Legrand_Press_Release_Results_H12025_1753878364.pdf]}
+  - {id: power_company_delta, company: Delta_Electronics, ticker: 2308_TW, country: Taiwan, ownership: public, roles: [UPS, power_conversion, liquid_cooling, 800VDC], core_products: [large_AC_UPS, DC_power, PCS, cooling], evidence_state: official_strategy_and_product_evidence, sources: [https://www.deltaww.com/en-US/investors/chairman-statement]}
+  - {id: power_company_piller, company: Piller_Power_Systems, ticker: private_Langley_Holdings, country: Germany, ownership: subsidiary, roles: [rotary_UPS, static_UPS, microgrid_stabilization], core_products: [UNIBLOCK_rotary_UPS, static_UPS, kinetic_storage], evidence_state: official_company_product_evidence, sources: [https://www.piller.com/sector/data-hosting-and-it/]}
+  - {id: power_company_socomec, company: Socomec, ticker: private, country: France, ownership: private, roles: [UPS, power_switching, metering, energy_storage], core_products: [UPS, ATS, metering, modular_storage], evidence_state: official_company_product_evidence, sources: [https://www.socomec.com/en/solutions/data-centers]}
+  - {id: power_company_ge_vernova, company: GE_Vernova, ticker: GEV_US, country: United_States, ownership: public, roles: [gas_turbines, generators, grid_equipment, nuclear_vendor, wind], core_products: [LM2500, HA_turbines, generators, BWRX_300, grid_solutions], financial_profile_ref: company_ge_vernova, evidence_state: official_FY2025_Q1_2026_and_named_project_evidence, sources: [https://www.gevernova.com/investors/reports-filings, https://www.gevernova.com/nuclear]}
+  - {id: power_company_caterpillar, company: Caterpillar, ticker: CAT_US, country: United_States, ownership: public, roles: [reciprocating_engines, generator_sets, turbines, microgrids], core_products: [Cat_G3500, diesel_gensets, Solar_Turbines, microgrid_controls], financial_profile_ref: company_caterpillar, evidence_state: official_FY2025_Q1_2026_and_named_project_evidence, sources: [https://www.caterpillar.com/en/investors/reports.html]}
+  - {id: power_company_cummins, company: Cummins, ticker: CMI_US, country: United_States, ownership: public, roles: [diesel_and_gas_generators, engines, transfer_systems], core_products: [generator_sets, engines, paralleling_controls], financial_profile_ref: company_cummins, evidence_state: official_financial_and_product_evidence, sources: [https://investor.cummins.com/financial-info/financial-results]}
+  - {id: power_company_bloom, company: Bloom_Energy, ticker: BE_US, country: United_States, ownership: public, roles: [solid_oxide_fuel_cells, onsite_generation, microgrids], core_products: [Energy_Server, electrolyzer], financial_profile_ref: company_bloom_energy, evidence_state: official_FY2025_Q1_2026_and_Oracle_master_agreement_evidence, sources: [https://investor.bloomenergy.com/financial-information/quarterly-results]}
+  - {id: power_company_wartsila, company: Wartsila, ticker: WRT1V_FI, country: Finland, ownership: public, roles: [gas_engines, flexible_generation, BESS, energy_management], core_products: [engine_power_plants, GridSolv, GEMS], evidence_state: official_storage_and_named_data_center_order_evidence, sources: [https://www.wartsila.com/energy/energy-storage, https://www.wartsila.com/investors/markets/announced-orders]}
+  - {id: power_company_constellation, company: Constellation_Energy, ticker: CEG_US, country: United_States, ownership: public, roles: [nuclear_generation, gas_and_hydro_generation, retail_energy], core_products: [firm_clean_power, nuclear_PPAs], financial_profile_ref: company_constellation_energy, evidence_state: official_Q1_2026_and_named_data_center_agreement_evidence, sources: [https://investors.constellationenergy.com/news-releases/news-release-details/constellation-reports-first-quarter-2026-results]}
+  - {id: power_company_vistra, company: Vistra, ticker: VST_US, country: United_States, ownership: public, roles: [nuclear_generation, gas_generation, battery_storage, retail_energy], core_products: [firm_generation, nuclear_uprates, BESS], evidence_state: official_Q1_2026_financial_and_Meta_relationship_evidence, sources: [https://investor.vistracorp.com/2026-05-07-Vistra-Reports-First-Quarter-2026-Results]}
+  - {id: power_company_talen, company: Talen_Energy, ticker: TLN_US, country: United_States, ownership: public, roles: [nuclear_generation, gas_generation, colocated_power], core_products: [Susquehanna_nuclear_power, PPAs], evidence_state: official_Q1_2026_and_Amazon_PPA_evidence, sources: [https://ir.talenenergy.com/news-releases/news-release-details/talen-energy-reports-first-quarter-2026-results-reaffirms-2026, https://www.sec.gov/Archives/edgar/data/1622536/000162828025030559/a20250611pressreleasebusin.htm]}
+  - {id: power_company_cameco, company: Cameco, ticker: CCO_CA, country: Canada, ownership: public, roles: [uranium_mining, conversion, fuel_services, Westinghouse_owner], core_products: [uranium_concentrate, UF6_conversion, fuel_manufacturing], evidence_state: official_Q1_2026_financial_and_fuel_cycle_evidence, sources: [https://www.cameco.com/media/news/cameco-reports-2026-first-quarter-results]}
+  - {id: power_company_bwxt, company: BWX_Technologies, ticker: BWXT_US, country: United_States, ownership: public, roles: [nuclear_components, reactor_services, microreactors, fuel], core_products: [reactor_components, nuclear_fuel, microreactor_systems], evidence_state: official_Q1_2026_financial_evidence, sources: [https://investors.bwxt.com/news-releases/news-release-details/bwx-technologies-reports-first-quarter-2026-results]}
+  - {id: power_company_westinghouse, company: Westinghouse_Electric, ticker: private_Brookfield_Cameco, country: United_States, ownership: private_joint_venture, roles: [large_nuclear_reactor_vendor, nuclear_fuel, reactor_services], core_products: [AP1000, eVinci, VVER_fuel, outage_services], evidence_state: official_company_and_owner_evidence, sources: [https://westinghousenuclear.com/energy-systems/ap1000-pwr/, https://www.cameco.com/businesses/westinghouse]}
+  - {id: power_company_doosan_enerbility, company: Doosan_Enerbility, ticker: 034020_KR, country: South_Korea, ownership: public, roles: [nuclear_forgings, turbines, generators, SMR_supply_chain], core_products: [reactor_vessels, steam_generators, turbines, gas_turbines], evidence_state: official_integrated_report_product_evidence, sources: [https://www.doosanenerbility.com/heavy_file/management/data/overview_result/report/2025_report_en.pdf]}
+  - {id: power_company_oklo, company: Oklo, ticker: OKLO_US, country: United_States, ownership: public, roles: [advanced_fission_developer, power_purchase_model], core_products: [Aurora_powerhouse, fuel_recycling_concept], evidence_state: official_Q1_2026_pre_revenue_financial_and_Meta_relationship_evidence, sources: [https://www.sec.gov/Archives/edgar/data/1849056/000162828026034095/oklo-20260331.htm]}
+  - {id: power_company_nuscale, company: NuScale_Power, ticker: SMR_US, country: United_States, ownership: public, roles: [small_modular_reactor_vendor], core_products: [77_MWe_VOYG_R_module], evidence_state: official_Q1_2026_early_commercialization_evidence, sources: [https://www.nuscalepower.com/press-releases/2026/nuscale-power-reports-first-quarter-2026-results]}
+  - {id: power_company_terrapower, company: TerraPower, ticker: private, country: United_States, ownership: private, roles: [advanced_fission_developer, thermal_storage], core_products: [Natrium_345MWe, molten_salt_storage], evidence_state: official_Meta_agreement_and_development_evidence, sources: [https://www.terrapower.com/terrapower-announces-deal-with-meta]}
+  - {id: power_company_kepco, company: Korea_Electric_Power_Corporation, ticker: 015760_KR, country: South_Korea, ownership: state_controlled_public, roles: [transmission, distribution, utility, overseas_nuclear_sponsor], core_products: [national_grid, electricity_supply], evidence_state: official_company_and_financial_evidence, sources: [https://home.kepco.co.kr/kepco/EN/main.do]}
+  - {id: power_company_khnp, company: Korea_Hydro_and_Nuclear_Power, ticker: subsidiary_of_KEPCO, country: South_Korea, ownership: state_owned_subsidiary, roles: [nuclear_generation, hydro_generation, reactor_operator], core_products: [APR1400_operation, nuclear_and_hydro_power], evidence_state: official_company_project_evidence, sources: [https://www.khnp.co.kr/eng/main.do]}
+  - {id: power_company_edf, company: EDF, ticker: state_owned, country: France, ownership: state_owned, roles: [nuclear_generation, utility, reactor_projects, grid_services], core_products: [nuclear_electricity, PPAs, utility_supply], financial_profile_ref: company_edf_group, evidence_state: official_financial_and_generation_evidence, sources: [https://www.edf.fr/en/the-edf-group/dedicated-sections/investors/financial-and-extra-financial-performance/financial-results]}
+  - {id: power_company_duke, company: Duke_Energy, ticker: DUK_US, country: United_States, ownership: public, roles: [regulated_utility, nuclear_and_gas_generation, transmission], core_products: [electricity_supply, large_load_interconnection], evidence_state: official_financial_and_resource_plan_evidence, sources: [https://investors.duke-energy.com/financial-information/quarterly-results/default.aspx]}
+  - {id: power_company_southern, company: Southern_Company, ticker: SO_US, country: United_States, ownership: public, roles: [regulated_utility, nuclear_and_gas_generation, transmission], core_products: [electricity_supply, Vogtle_nuclear, gas_generation], evidence_state: official_financial_and_generation_evidence, sources: [https://investor.southerncompany.com/financial-information/quarterly-results/default.aspx]}
+  - {id: power_company_nextera, company: NextEra_Energy, ticker: NEE_US, country: United_States, ownership: public, roles: [regulated_utility, renewables, storage, gas_pipeline_and_generation_development], core_products: [FPL_utility, renewable_and_storage_projects, large_load_hubs], financial_profile_ref: company_nextera_energy, evidence_state: official_FY2025_financial_and_large_load_pipeline_evidence, sources: [https://www.investor.nexteraenergy.com/reports-and-filings/quarterly-financial-results]}
+  - {id: power_company_prysmian, company: Prysmian, ticker: PRY_IT, country: Italy, ownership: public, roles: [HVAC_HVDC_cable, submarine_cable, grid_connectivity], core_products: [525kV_HVDC_cable, submarine_systems, high_voltage_cable], financial_profile_ref: company_prysmian, evidence_state: official_financial_and_product_evidence, sources: [https://www.prysmian.com/en/investors/results-centre]}
+  - {id: power_company_nexans, company: Nexans, ticker: NEX_FR, country: France, ownership: public, roles: [HVAC_HVDC_cable, submarine_cable, grid_electrification], core_products: [submarine_HVDC, land_high_voltage_cable, grid_cable], financial_profile_ref: company_nexans, evidence_state: official_financial_and_product_evidence, sources: [https://www.nexans.com/investors/financial-information/]}
+  - {id: power_company_nkt, company: NKT, ticker: NKT_DK, country: Denmark, ownership: public, roles: [high_voltage_cable, HVDC, cable_services], core_products: [submarine_and_land_HV_cable, accessories, service], evidence_state: official_FY2025_financial_and_backlog_evidence, sources: [https://investors.nkt.com/financial-reports/nkt-as-annual-report-2025-6-organic-growth-and-record-high-operational-ebitda/]}
+  - {id: power_company_ls_cable, company: LS_Cable_and_System, ticker: private_LS, country: South_Korea, ownership: private_subsidiary, roles: [submarine_HVDC, land_HVDC, power_cable], core_products: [525kV_HVDC_cable, submarine_cable, busduct], evidence_state: official_capacity_expansion_and_product_evidence, sources: ['https://news.lscns.com/?p=5416']}
+  - {id: power_company_taihan, company: Taihan_Cable_and_Solution, ticker: 001440_KR, country: South_Korea, ownership: public, roles: [submarine_HVDC, high_voltage_cable, turnkey_installation], core_products: [500kV_HVDC_cable, submarine_cable, grid_cable], evidence_state: official_factory_plan_and_HVDC_contract_evidence, sources: ['https://www.taihan.com/en/news/pr/taihanNewsDetail?idx=676']}
+  - {id: power_company_sumitomo_electric, company: Sumitomo_Electric_Industries, ticker: 5802_JP, country: Japan, ownership: public, roles: [HVDC_cable, power_cable, power_semiconductors, connectors], core_products: [HVDC_XLPE_cable, submarine_cable, SiC_devices], evidence_state: official_company_strategy_and_product_evidence, sources: [https://sumitomoelectric.com/ir/library]}
+  - {id: power_company_evergy, company: Evergy, ticker: EVRG_US, country: United_States, ownership: public, roles: [regulated_utility, transmission, large_load_tariffs], core_products: [electricity_supply, LLPS_contracts], financial_profile_ref: company_evergy, evidence_state: official_FY2025_and_five_large_load_agreement_evidence, sources: [https://investors.evergy.com/financials/quarterly-results/default.aspx]}
+  - {id: power_company_entergy, company: Entergy, ticker: ETR_US, country: United_States, ownership: public, roles: [regulated_utility, nuclear_and_gas_generation, transmission], core_products: [electricity_supply, dedicated_generation_and_500kV_lines], financial_profile_ref: company_entergy, evidence_state: official_FY2025_and_Meta_Hyperion_plan_evidence, sources: [https://investors.entergy.com/investors/financial-results-and-publications/quarterly-and-annual-results/default.aspx]}
+  - {id: power_company_dte, company: DTE_Energy, ticker: DTE_US, country: United_States, ownership: public, roles: [regulated_utility, gas_and_electric_supply, storage_requirements], core_products: [electricity_supply, large_load_contracts], financial_profile_ref: company_dte_energy, evidence_state: official_FY2025_and_Oracle_contract_evidence, sources: [https://ir.dteenergy.com/financial-information/quarterly-results/default.aspx]}
+  - {id: power_company_wec, company: WEC_Energy_Group, ticker: WEC_US, country: United_States, ownership: public, roles: [regulated_utility, generation, transmission_investment], core_products: [electricity_and_gas_supply, data_center_infrastructure], financial_profile_ref: company_wec_energy_group, evidence_state: official_FY2025_and_Lighthouse_plan_evidence, sources: [https://investor.wecenergygroup.com/financials/quarterly-results/default.aspx]}
+  - {id: power_company_dominion, company: Dominion_Energy, ticker: D_US, country: United_States, ownership: public, roles: [regulated_utility, transmission, nuclear_and_gas_generation], core_products: [electricity_supply, substations, transmission], financial_profile_ref: company_dominion_energy, evidence_state: official_FY2025_and_STACK_substation_plan_evidence, sources: [https://investors.dominionenergy.com/financial-information/quarterly-earnings]}
+  - {id: power_company_tnb, company: Tenaga_Nasional, ticker: 5347_MY, country: Malaysia, ownership: state_linked_public, roles: [regulated_utility, transmission, distribution, generation], core_products: [grid_supply, green_electricity_tariffs, data_center_connections], financial_profile_ref: company_tenaga_nasional, evidence_state: official_FY2025_and_data_center_connection_pipeline_evidence, sources: [https://www.tnb.com.my/suppliers-investors-media-relations/financial-info/]}
+  - {id: power_company_aep, company: American_Electric_Power, ticker: AEP_US, country: United_States, ownership: public, roles: [regulated_utility, transmission, distribution, generation], core_products: [765kV_transmission, electricity_supply, large_load_interconnection], evidence_state: official_financial_and_grid_plan_evidence, sources: [https://www.aep.com/investors/financial/]}
+  - {id: power_company_national_grid, company: National_Grid, ticker: NG_UK, country: United_Kingdom, ownership: public, roles: [transmission, distribution, interconnection, grid_investment], core_products: [UK_and_US_grid_networks, large_load_connections], evidence_state: official_financial_and_network_plan_evidence, sources: [https://www.nationalgrid.com/investors/results-reports-and-events/annual-reports]}
+  - {id: power_company_xcel, company: Xcel_Energy, ticker: XEL_US, country: United_States, ownership: public, roles: [regulated_utility, transmission, generation], core_products: [electricity_supply, clean_energy_and_grid_expansion], evidence_state: official_financial_and_resource_plan_evidence, sources: [https://investors.xcelenergy.com/financial-information/quarterly-results/default.aspx]}
+  - {id: power_company_dewa, company: Dubai_Electricity_and_Water_Authority, ticker: DEWA_DFM, country: United_Arab_Emirates, ownership: government_controlled_public, roles: [utility, transmission, distribution, generation], core_products: [electricity_and_water_supply, smart_grid], financial_profile_ref: company_dewa_pjsc, evidence_state: official_financial_and_data_center_power_context, sources: [https://www.dewa.gov.ae/en/investor-relations/results-and-presentations]}
+  - {id: power_company_tesla, company: Tesla, ticker: TSLA_US, country: United_States, ownership: public, roles: [battery_cells, grid_BESS, inverters, energy_software], core_products: [Megapack, Powerwall, Autobidder], evidence_state: official_Q1_2026_deployment_evidence, sources: [https://ir.tesla.com/press-release/tesla-first-quarter-2026-production-deliveries-and-deployments]}
+  - {id: power_company_catl, company: CATL, ticker: 300750_CN, country: China, ownership: public, roles: [battery_cells, grid_BESS, battery_management], core_products: [LFP_cells, TENER_storage_system, BMS], evidence_state: official_FY2025_financial_capacity_and_data_center_case_evidence, sources: [https://www.catl.com/en/news/6773.html]}
+  - {id: power_company_byd, company: BYD, ticker: 1211_HK_or_002594_CN, country: China, ownership: public, roles: [battery_cells, grid_BESS, power_electronics], core_products: [Blade_battery, Battery_Box, grid_storage], evidence_state: official_company_and_financial_evidence_refresh_needed, sources: ['https://www.bydglobal.com/en/investorannals.html?scroll=true']}
+  - {id: power_company_lges, company: LG_Energy_Solution, ticker: 373220_KR, country: South_Korea, ownership: public, roles: [battery_cells, ESS_systems], core_products: [LFP_ESS_cells, grid_and_data_center_storage], evidence_state: official_FY2025_financial_and_ESS_order_guidance_evidence, sources: [https://www.lg.co.kr/media/release/29812]}
+  - {id: power_company_samsung_sdi, company: Samsung_SDI, ticker: 006400_KR, country: South_Korea, ownership: public, roles: [battery_cells, ESS_systems], core_products: [ESS_cells, Samsung_Battery_Box], evidence_state: official_business_report_and_sustainability_evidence, sources: [https://www.samsungsdi.co.kr/ir/financial/business-report.html]}
+  - {id: power_company_fluence, company: Fluence_Energy, ticker: FLNC_US, country: United_States, ownership: public_AES_Siemens_backed, roles: [BESS_integration, energy_management_software], core_products: [Gridstack, Mosaic, Nispera], evidence_state: official_Q2_FY2026_financial_and_hyperscaler_MSA_evidence, sources: [https://ir.fluenceenergy.com/news-releases/news-release-details/fluence-energy-inc-reports-second-quarter-2026-results-reaffirms]}
+  - {id: power_company_infineon, company: Infineon_Technologies, ticker: IFX_DE, country: Germany, ownership: public, roles: [power_semiconductors, 800VDC_conversion, SiC_GaN], core_products: [CoolSiC, CoolGaN, power_modules, controllers], evidence_state: official_FY2025_AI_revenue_and_NVIDIA_800V_evidence, sources: [https://www.infineon.com/row/public/documents/corporate/investors/annual-reports/2025/2025-annual-report-v01-00-en.pdf, https://www.infineon.com/press-release/2025/INFXX202505-107]}
+  - {id: power_company_stmicro, company: STMicroelectronics, ticker: STM_US, country: Switzerland, ownership: public, roles: [power_semiconductors, SiC_GaN, 800VDC_conversion], core_products: [SiC_MOSFET, GaN, power_management_IC], evidence_state: official_800V_data_center_product_evidence, sources: [https://newsroom.st.com/media-center/press-item.html/t4766.html]}
+  - {id: power_company_onsemi, company: onsemi, ticker: ON_US, country: United_States, ownership: public, roles: [power_semiconductors, SiC, 800VDC_conversion], core_products: [SiC_MOSFET, power_modules, controllers], evidence_state: official_NVIDIA_800V_collaboration_evidence, sources: [https://www.onsemi.com/company/newsroom/news-and-insights/2025-onsemi-collaborates-with-nvidia-to-accelerate-transition-to-800-vdc-power-solutions-for-next-generation-ai-data-centers]}
+  - {id: power_company_quanta, company: Quanta_Services, ticker: PWR_US, country: United_States, ownership: public, roles: [transmission_EPC, substation_EPC, electrical_infrastructure], core_products: [grid_construction, substations, underground_and_overhead_lines], evidence_state: official_Q1_2026_financial_and_backlog_evidence, sources: [https://investors.quantaservices.com/news-events/press-releases/detail/396/quanta-services-reports-first-quarter-2026-results]}
+  - {id: power_company_mastec, company: MasTec, ticker: MTZ_US, country: United_States, ownership: public, roles: [transmission_EPC, pipeline_and_power_EPC, communications], core_products: [grid_construction, generation_and_industrial_EPC], evidence_state: official_Q1_2026_financial_and_backlog_evidence, sources: [https://investors.mastec.com/news-releases/news-release-details/mastec-reports-first-quarter-2026-results-and-increases-full]}
+  - {id: power_company_comfort_systems, company: Comfort_Systems_USA, ticker: FIX_US, country: United_States, ownership: public, roles: [mechanical_and_electrical_construction, modular_fabrication], core_products: [data_center_electrical, HVAC, modular_systems], evidence_state: official_Q1_2026_financial_and_backlog_evidence, sources: [https://investors.comfortsystemsusa.com/node/18401]}
+  - {id: power_company_sterling, company: Sterling_Infrastructure, ticker: STRL_US, country: United_States, ownership: public, roles: [data_center_site_development, electrical_and_civil_infrastructure], core_products: [mission_critical_site_and_electrical_work], evidence_state: official_Q1_2026_financial_and_campus_evidence, sources: [https://www.strlco.com/news/sterling-reports-record-first-quarter-results-and-raises-full-year-2026-guidance/]}
+  - {id: power_company_emcor, company: EMCOR_Group, ticker: EME_US, country: United_States, ownership: public, roles: [electrical_construction, mechanical_construction, facility_services], core_products: [mission_critical_electrical_and_mechanical_systems], evidence_state: official_Q1_2026_financial_and_RPO_evidence, sources: [https://emcorgroup.com/investor-relations/press-releases/2026-news/emcor-group-inc-reports-first-quarter-2026-results]}
+  - {id: power_company_myr, company: MYR_Group, ticker: MYRG_US, country: United_States, ownership: public, roles: [transmission_and_distribution_EPC, commercial_electrical], core_products: [T_and_D_construction, data_center_electrical_work], evidence_state: official_Q1_2026_financial_and_end_market_evidence, sources: [https://investor.myrgroup.com/news-releases/news-release-details/myr-group-inc-announces-first-quarter-2026-results]}
+  - {id: power_company_hyundai_ec, company: Hyundai_Engineering_and_Construction, ticker: 000720_KR, country: South_Korea, ownership: public, roles: [nuclear_EPC, power_plant_EPC, data_center_construction], core_products: [AP1000_FEED, nuclear_and_power_EPC], evidence_state: official_Fermi_FEED_plan_evidence, sources: ['https://newsroom.hdec.kr/en/company/press_view.aspx?CompanyPressSeq=604']}
+
+financial_snapshots:
+  - {company_ref: power_company_vertiv, period: FY2025, currency: USD, revenue: 10229900000, operating_income: 1829700000, boundary: group, note: backlog_15_billion_USD, financial_profile_ref: company_vertiv}
+  - {company_ref: power_company_schneider, period: FY2025, currency: EUR, revenue: 40152000000, operating_income: 6699000000, boundary: group_reported_EBIT, financial_profile_ref: company_schneider_electric}
+  - {company_ref: power_company_eaton, period: FY2025, currency: USD, revenue: 27448000000, boundary: group, note: Electrical_Americas_revenue_13.276b_and_operating_profit_3.972b, financial_profile_ref: company_eaton}
+  - {company_ref: power_company_abb, period: FY2025, currency: USD, revenue: 33220000000, operating_income: 6047000000, boundary: group, financial_profile_ref: company_abb}
+  - {company_ref: power_company_siemens_energy, period: FY2025, currency: EUR, revenue: 39100000000, operating_income: 2361000000, boundary: group_company_defined_profit, note: backlog_138b, financial_profile_ref: company_siemens_energy}
+  - {company_ref: power_company_hd_hyundai_electric, period: FY2025, currency: KRW, revenue: 4079500000000, operating_income: 995300000000, boundary: group, note: operating_margin_24.4_percent, financial_profile_ref: company_hd_hyundai_electric}
+  - {company_ref: power_company_ge_vernova, period: FY2025, currency: USD, revenue: 38068000000, operating_income: 1388000000, boundary: group, financial_profile_ref: company_ge_vernova}
+  - {company_ref: power_company_caterpillar, period: FY2025, currency: USD, revenue: 67589000000, operating_income: 11151000000, boundary: group, financial_profile_ref: company_caterpillar}
+  - {company_ref: power_company_bloom, period: FY2025, currency: USD, revenue: 2024000000, operating_income: 72800000, boundary: group, financial_profile_ref: company_bloom_energy}
+  - {company_ref: power_company_constellation, period: Q1_2026, currency: USD, net_income: 1590000000, adjusted_operating_earnings: 972000000, boundary: group_quarter}
+  - {company_ref: power_company_vistra, period: Q1_2026, currency: USD, net_income: 1029000000, adjusted_EBITDA: 1494000000, boundary: group_quarter}
+  - {company_ref: power_company_talen, period: Q1_2026, currency: USD, net_income: 63000000, adjusted_EBITDA: 473000000, adjusted_free_cash_flow: 350000000, boundary: group_quarter}
+  - {company_ref: power_company_cameco, period: Q1_2026, currency: CAD, net_income: 131000000, adjusted_EBITDA: 509000000, boundary: group_quarter, note: uranium_EBITDA_423m_fuel_services_54m_Cameco_share_Westinghouse_122m}
+  - {company_ref: power_company_bwxt, period: Q1_2026, currency: USD, revenue: 860200000, net_income: 91200000, adjusted_EBITDA: 148000000, boundary: group_quarter}
+  - {company_ref: power_company_oklo, period: Q1_2026, currency: USD, revenue: 0, operating_income: -51249000, net_income: -33065000, boundary: group_quarter_pre_revenue, note: cash_and_marketable_securities_2.5369b}
+  - {company_ref: power_company_nkt, period: FY2025, currency: EUR, revenue: 2722000000, adjusted_operational_EBITDA: 390000000, boundary: group_standard_metal_prices, note: high_voltage_backlog_10.2b}
+  - {company_ref: power_company_quanta, period: Q1_2026, currency: USD, revenue: 7874787000, operating_income: 338779000, boundary: group_quarter, note: total_backlog_48.471b_RPO_26.242b}
+  - {company_ref: power_company_comfort_systems, period: Q1_2026, currency: USD, revenue: 2870000000, net_income: 370400000, boundary: group_quarter, note: backlog_12.45b}
+  - {company_ref: power_company_powell, period: Q2_FY2026, currency: USD, revenue: 296600000, net_income: 45900000, boundary: group_quarter, note: orders_490m_backlog_1.8b}
+  - {company_ref: power_company_sterling, period: Q1_2026, currency: USD, revenue: 825700000, net_income: 96000000, boundary: group_quarter, note: backlog_3.8b_combined_backlog_5.15b}
+  - {company_ref: power_company_mastec, period: Q1_2026, currency: USD, revenue: 3829000000, operating_income: 142000000, net_income: 69700000, boundary: group_quarter, note: backlog_20.328b}
+  - {company_ref: power_company_myr, period: Q1_2026, currency: USD, revenue: 1000000000, net_income: 46800000, adjusted_EBITDA: 81500000, boundary: group_quarter, note: backlog_2.84b}
+  - {company_ref: power_company_emcor, period: Q1_2026, currency: USD, revenue: 4630000000, boundary: group_quarter, note: remaining_performance_obligations_15.62b}
+  - {company_ref: power_company_nvent, period: Q1_2026, currency: USD, revenue: 1242000000, operating_income: 195700000, boundary: group_quarter, note: backlog_2.6b}
+  - {company_ref: power_company_hubbell, period: Q1_2026, currency: USD, revenue: 1516700000, boundary: group_quarter, note: Utility_Solutions_revenue_949m_Electrical_Solutions_568m}
+  - {company_ref: power_company_atkore, period: Q2_FY2026, currency: USD, revenue: 731400000, net_income: -124100000, adjusted_EBITDA: 81100000, boundary: group_quarter}
+  - {company_ref: power_company_catl, period: FY2025, currency: CNY, revenue: 423700000000, net_income: 72200000000, boundary: group, note: lithium_ion_sales_661GWh_energy_storage_share_30.4_percent}
+  - {company_ref: power_company_lges, period: FY2025, currency: KRW, revenue: 23671800000000, operating_income: 1346100000000, boundary: group, note: ESS_order_target_more_than_90GWh}
+  - {company_ref: power_company_fluence, period: Q2_FY2026, currency: USD, revenue: 464900000, net_income: -29200000, adjusted_EBITDA: -9400000, boundary: group_quarter, note: backlog_5.6b}
+  - {company_ref: power_company_infineon, period: FY2025, currency: EUR, AI_data_center_power_revenue: 700000000, boundary: company_disclosed_approximate_product_end_market, note: more_than_700m_and_FY2026_forecast_around_1.5b}
+
+supply_chain_stages:
+  - id: stage_fuel_and_energy_inputs
+    stage: uranium_fuel_gas_and_energy_inputs
+    bottleneck: uranium_conversion_enrichment_fuel_qualification_and_pipeline_or_gas_supply
+    supplier_refs: [power_company_cameco, power_company_westinghouse, power_company_bwxt, power_company_catl, power_company_lges, power_company_samsung_sdi]
+  - id: stage_generation_and_nuclear
+    stage: central_and_distributed_generation
+    bottleneck: licensed_firm_capacity_turbine_slots_reactor_schedule_and_offtake_bankability
+    supplier_refs: [power_company_ge_vernova, power_company_siemens_energy, power_company_constellation, power_company_vistra, power_company_talen, power_company_edf, power_company_khnp, power_company_southern, power_company_nextera, power_company_doosan_enerbility, power_company_westinghouse, power_company_oklo, power_company_nuscale, power_company_terrapower]
+  - id: stage_onsite_and_backup_generation
+    stage: onsite_generation_backup_and_microgrids
+    bottleneck: emissions_permits_fuel_delivery_redundancy_and_long_term_operating_cost
+    supplier_refs: [power_company_ge_vernova, power_company_caterpillar, power_company_cummins, power_company_bloom, power_company_wartsila, power_company_siemens_energy]
+  - id: stage_transmission_and_HVDC
+    stage: high_voltage_transmission_HVDC_and_interconnectors
+    bottleneck: permitting_right_of_way_converter_stations_cable_capacity_and_multi_year_EPC
+    supplier_refs: [power_company_siemens_energy, power_company_hitachi_energy, power_company_abb, power_company_ge_vernova, power_company_prysmian, power_company_nexans, power_company_nkt, power_company_ls_cable, power_company_taihan, power_company_sumitomo_electric, power_company_quanta, power_company_mastec]
+  - id: stage_transformers
+    stage: large_power_and_distribution_transformers
+    bottleneck: electrical_steel_copper_engineering_variants_test_bays_and_12_to_30_month_or_longer_lead_times
+    supplier_refs: [power_company_hitachi_energy, power_company_siemens_energy, power_company_hd_hyundai_electric, power_company_hyosung_heavy, power_company_mitsubishi_electric, power_company_ls_electric, power_company_iljin_electric]
+  - id: stage_substations_switchgear_and_protection
+    stage: substations_switchgear_breakers_protection_and_enclosures
+    bottleneck: factory_slots_arc_fault_qualification_site_coordination_and_commissioning
+    supplier_refs: [power_company_schneider, power_company_eaton, power_company_abb, power_company_ls_electric, power_company_hd_hyundai_electric, power_company_hyosung_heavy, power_company_hubbell, power_company_powell, power_company_nvent, power_company_mitsubishi_electric]
+  - id: stage_power_cable_and_connectivity
+    stage: high_voltage_cable_conduit_busduct_and_connectivity
+    bottleneck: HVDC_extrusion_submarine_installation_copper_and_aluminium_and_route_permitting
+    supplier_refs: [power_company_prysmian, power_company_nexans, power_company_nkt, power_company_ls_cable, power_company_taihan, power_company_sumitomo_electric, power_company_atkore, power_company_hubbell, power_company_legrand]
+  - id: stage_data_center_critical_power
+    stage: UPS_PDU_busway_switching_and_rack_power
+    bottleneck: high_density_efficiency_fault_isolation_modularity_and_harmonic_management
+    supplier_refs: [power_company_vertiv, power_company_schneider, power_company_eaton, power_company_abb, power_company_ls_electric, power_company_fuji_electric, power_company_mitsubishi_electric, power_company_nvent, power_company_legrand, power_company_delta, power_company_piller, power_company_socomec, power_company_powell]
+  - id: stage_storage_and_BESS
+    stage: cells_packs_PCS_BMS_EMS_and_grid_storage
+    bottleneck: cell_supply_safety_duration_warranty_controls_and_interconnection
+    supplier_refs: [power_company_tesla, power_company_catl, power_company_byd, power_company_lges, power_company_samsung_sdi, power_company_fluence, power_company_wartsila, power_company_ls_electric, power_company_delta, power_company_schneider]
+  - id: stage_power_semiconductors_and_conversion
+    stage: Si_SiC_GaN_power_devices_and_800VDC_conversion
+    bottleneck: device_yield_packaging_thermal_management_and_platform_qualification
+    supplier_refs: [power_company_infineon, power_company_stmicro, power_company_onsemi, power_company_mitsubishi_electric, power_company_fuji_electric, power_company_sumitomo_electric, power_company_delta]
+  - id: stage_EPC_and_electrical_construction
+    stage: transmission_substation_campus_and_nuclear_EPC
+    bottleneck: skilled_labor_engineering_coordination_permits_long_lead_equipment_and_execution
+    supplier_refs: [power_company_quanta, power_company_mastec, power_company_comfort_systems, power_company_sterling, power_company_emcor, power_company_myr, power_company_hyundai_ec, power_company_doosan_enerbility]
+  - id: stage_utilities_and_grid_interconnection
+    stage: utilities_RTO_connections_tariffs_and_firm_supply
+    bottleneck: queue_studies_cost_allocation_rate_design_resource_adequacy_and_energization
+    supplier_refs: [power_company_kepco, power_company_edf, power_company_duke, power_company_southern, power_company_nextera, power_company_evergy, power_company_entergy, power_company_dte, power_company_wec, power_company_dominion, power_company_tnb, power_company_aep, power_company_national_grid, power_company_xcel, power_company_dewa]
+  - id: stage_grid_and_power_control_software
+    stage: SCADA_EMS_microgrid_control_and_energy_optimization
+    bottleneck: interoperability_cybersecurity_real_time_controls_and_operational_data
+    supplier_refs: [power_company_schneider, power_company_abb, power_company_siemens_energy, power_company_hitachi_energy, power_company_ge_vernova, power_company_eaton, power_company_wartsila, power_company_fluence, power_company_tesla, power_company_ls_electric]
+
+facility_and_capacity_records:
+  - id: facility_hitachi_virginia_transformer
+    company_ref: power_company_hitachi_energy
+    location: South_Boston_Virginia_US
+    lifecycle: announced_investment
+    measures: [{metric: investment, value: 457000000, unit: USD}, {metric: jobs, value: 825, unit: jobs}]
+    note: new_large_power_transformer_factory_inside_1b_US_investment_program
+    source: https://www.hitachienergy.com/us/en/news-and-events/press-releases/2025/09/hitachi-announces-historic-1-billion-usd-manufacturing-investment-to-power-america-s-energy-future-through-production-of-critical-grid-infrastructure
+  - id: facility_hitachi_global_transformer_program
+    company_ref: power_company_hitachi_energy
+    location: global
+    lifecycle: multi_year_investment_program
+    measures: [{metric: transformer_factories, value: 60, unit: factories_more_than}, {metric: service_centers, value: 30, unit: centers}, {metric: incremental_investment, value: 250000000, unit: USD}]
+    note: part_of_6b_US_2024_program_including_1.5b_for_transformers
+    source: https://www.hitachienergy.com/uk-ie/en/news-and-events/press-releases/2025/03/hitachi-energy-invests-additional-250-million-usd-to-address-global-transformer-shortage
+  - id: facility_hitachi_ludvika
+    company_ref: power_company_hitachi_energy
+    location: Ludvika_Sweden
+    lifecycle: under_construction_target_2027
+    measures: [{metric: large_transformer_capacity_increase, value: 40, unit: percent}, {metric: new_floor_area, value: 20000, unit: square_metres}]
+    source: https://www.hitachienergy.com/uk-ie/en/news-and-events/features/2025/11/hitachi-energy-celebrates-the-start-of-construction-of-the-transformer-factory-expansion-in-ludvika-sweden
+  - id: facility_hyosung_memphis
+    company_ref: power_company_hyosung_heavy
+    location: Memphis_Tennessee_US
+    lifecycle: announced_expansion_target_2028
+    measures: [{metric: investment, value: 157000000, unit: USD}, {metric: capacity_increase, value: 50, unit: percent}]
+    source: https://blog.hyosung.com/508236
+  - id: facility_ls_cable_submarine_plant_5
+    company_ref: power_company_ls_cable
+    location: Donghae_South_Korea
+    lifecycle: completed_expansion
+    measures: [{metric: HVDC_production_capacity_multiple, value: 4, unit: times_previous}]
+    source: https://news.lscns.com/ls%EC%A0%84%EC%84%A0-%ED%95%B4%EC%A0%80-5%EB%8F%99-%EC%A4%80%EA%B3%B5-hvdc-%EC%BC%80%EC%9D%B4%EB%B8%94-%EC%83%9D%EC%82%B0%EB%8A%A5%EB%A0%A5-4%EB%B0%B0-%ED%99%95%EB%8C%80/
+  - id: facility_taihan_HVDC_factory
+    company_ref: power_company_taihan
+    location: South_Korea
+    lifecycle: planned_target_2027
+    measures: [{metric: investment, value: 497200000000, unit: KRW}]
+    source: https://www.taihan.com/news/pr/releaseDetail?idx=388
+  - id: facility_catl_global_battery_capacity
+    company_ref: power_company_catl
+    location: global
+    lifecycle: FY2025_reported_and_under_construction
+    measures: [{metric: production_capacity, value: 772, unit: GWh}, {metric: under_construction_capacity, value: 321, unit: GWh}]
+    source: https://www.catl.com/en/news/6773.html
+  - id: facility_tesla_storage_deployment_Q1_2026
+    company_ref: power_company_tesla
+    location: global
+    lifecycle: deployed_in_quarter
+    measures: [{metric: storage_deployment, value: 8.8, unit: GWh}]
+    source: https://ir.tesla.com/press-release/tesla-first-quarter-2026-production-deliveries-and-deployments
+  - id: facility_wartsila_storage_fleet
+    company_ref: power_company_wartsila
+    location: global
+    lifecycle: deployed_or_contracted
+    measures: [{metric: storage_capacity, value: 19, unit: GWh_more_than}, {metric: sites, value: 130, unit: sites_more_than}]
+    source: https://www.wartsila.com/energy/energy-storage
+  - id: facility_ge_abilene_turbines
+    company_ref: power_company_ge_vernova
+    location: Abilene_Texas_US
+    lifecycle: named_equipment_order_not_current_IT_load
+    measures: [{metric: LM2500XPRESS_units, value: 10, unit: units}, {metric: approximate_nameplate_per_unit, value: 35, unit: MW}]
+    financial_profile_ref: company_ge_vernova
+    source: https://www.gevernova.com/news/articles/rack-em-ai-data-centers-get-more-power-hungry-hunt-more-reliable-flexible-power-solutions
+  - id: facility_powell_data_center_orders
+    company_ref: power_company_powell
+    location: United_States
+    lifecycle: booked_order_and_post_quarter_order
+    measures: [{metric: in_quarter_data_center_order, value: 75000000, unit: USD_more_than}, {metric: post_quarter_onsite_generation_design_order, value: 400000000, unit: USD_more_than}]
+    source: https://powellindustriesinc.gcs-web.com/news-releases/news-release-details/powell-industries-announces-second-quarter-fiscal-2026-results
+  - id: facility_nkt_HV_backlog
+    company_ref: power_company_nkt
+    location: global
+    lifecycle: FY2025_backlog
+    measures: [{metric: high_voltage_backlog, value: 10200000000, unit: EUR}]
+    source: https://investors.nkt.com/financial-reports/nkt-as-annual-report-2025-6-organic-growth-and-record-high-operational-ebitda/
+
+explicit_relationships:
+  - id: relationship_ferc_RTO_large_load_reform
+    parties: []
+    external_parties: [FERC, six_US_RTOs]
+    relationship_type: regulatory_order
+    lifecycle: issued_2026_06_18
+    measures: []
+    boundary: directs_tariff_justification_or_reform_not_an_interconnection_approval
+    source: https://www.ferc.gov/news-events/news/ferc-launches-aggressive-targeted-action-speed-large-load-integration
+  - id: relationship_evergy_five_LLPS_agreements
+    parties: [power_company_evergy]
+    external_parties: [five_unnamed_large_load_customers]
+    relationship_type: electric_service_agreements
+    lifecycle: signed_future_ramp
+    measures: [{metric: steady_state_peak, value: 2500, unit: MW_approximately}, {metric: minimum_bill_term, value: 16_to_17, unit: years}]
+    boundary: contracted_peak_is_not_current_billed_load
+    financial_profile_ref: company_evergy
+    source: https://investors.evergy.com/financials/quarterly-results/default.aspx
+  - id: relationship_entergy_meta_hyperion
+    parties: [power_company_entergy]
+    external_parties: [Meta]
+    relationship_type: dedicated_generation_and_transmission_plan
+    lifecycle: planned_and_regulatory_execution
+    measures: [{metric: CCGT_plants, value: 7, unit: plants}, {metric: generation_capacity, value: 5200, unit: MW_more_than}, {metric: transmission_length, value: 240, unit: miles_approximately}]
+    boundary: plan_not_current_Meta_IT_load_or_recognized_revenue
+    financial_profile_ref: company_entergy
+    source: https://investors.entergy.com/investors/financial-results-and-publications/quarterly-and-annual-results/default.aspx
+  - id: relationship_dte_oracle_saline
+    parties: [power_company_dte]
+    external_parties: [Oracle]
+    relationship_type: large_load_contract_and_storage_obligation
+    lifecycle: future_contracted_load
+    measures: [{metric: contracted_load, value: 1383, unit: MW}, {metric: storage_obligation, value: 1383, unit: MW}]
+    boundary: not_current_revenue_or_current_load_and_storage_duration_not_disclosed_here
+    financial_profile_ref: company_dte_energy
+    source: https://ir.dteenergy.com/financial-information/quarterly-results/default.aspx
+  - id: relationship_wec_lighthouse
+    parties: [power_company_wec]
+    external_parties: [Lighthouse_data_center_project]
+    relationship_type: utility_infrastructure_plan
+    lifecycle: planned_future_ramp
+    measures: [{metric: critical_IT_design, value: 902, unit: MW}, {metric: projected_grid_demand_through_2030, value: 1300, unit: MW}, {metric: long_term_possible_grid_demand, value: 3500, unit: MW_up_to}]
+    boundary: three_power_measures_have_different_scopes_and_dates
+    financial_profile_ref: company_wec_energy_group
+    source: https://investor.wecenergygroup.com/financials/quarterly-results/default.aspx
+  - id: relationship_dominion_stack_stafford
+    parties: [power_company_dominion]
+    external_parties: [STACK_Infrastructure]
+    relationship_type: planned_substation_capacity
+    lifecycle: future_campus_plan
+    measures: [{metric: substations, value: 6, unit: units}, {metric: rating_per_substation, value: 300, unit: MW}, {metric: total_nameplate, value: 1800, unit: MW}]
+    boundary: substation_nameplate_is_not_current_IT_load
+    financial_profile_ref: company_dominion_energy
+    source: https://investors.dominionenergy.com/financial-information/quarterly-earnings
+  - id: relationship_tnb_data_center_connections
+    parties: [power_company_tnb]
+    external_parties: [multiple_data_center_customers]
+    relationship_type: utility_connection_portfolio
+    lifecycle: mixed_operational_and_under_construction
+    measures: [{metric: operational_data_centers, value: 36, unit: facilities}, {metric: planned_supply, value: 4500, unit: MW_approximately}, {metric: construction_projects, value: 23, unit: projects}, {metric: maximum_demand_under_construction, value: 3800, unit: MW}]
+    boundary: facility_count_and_maximum_demand_are_not_current_billed_load
+    financial_profile_ref: company_tenaga_nasional
+    source: https://www.tnb.com.my/suppliers-investors-media-relations/financial-info/
+  - id: relationship_talen_amazon_PPA
+    parties: [power_company_talen]
+    external_parties: [Amazon]
+    relationship_type: nuclear_power_purchase_agreement
+    lifecycle: expanded_contract_through_2042
+    measures: [{metric: full_contract_capacity, value: 1920, unit: MW}, {metric: interim_behind_the_meter_capacity, value: 300, unit: MW}]
+    boundary: contract_capacity_is_not_current_IT_load
+    source: https://www.sec.gov/Archives/edgar/data/1622536/000162828025030559/a20250611pressreleasebusin.htm
+  - id: relationship_constellation_cyrusone_freestone
+    parties: [power_company_constellation]
+    external_parties: [CyrusOne_Freestone]
+    relationship_type: named_power_agreement
+    lifecycle: contracted_with_exclusive_second_phase
+    measures: [{metric: phase_one, value: 380, unit: MW}, {metric: exclusive_phase_two, value: 380, unit: MW}]
+    boundary: contracted_power_is_not_current_energized_IT_load
+    source: https://investors.constellationenergy.com/news-releases/news-release-details/constellation-reports-first-quarter-2026-results
+  - id: relationship_meta_nuclear_portfolio
+    parties: [power_company_vistra, power_company_oklo, power_company_terrapower]
+    external_parties: [Meta]
+    relationship_type: nuclear_offtake_and_development_portfolio
+    lifecycle: mixed_existing_uprate_and_future_development_through_2035
+    measures: [{metric: total_portfolio, value: 6600, unit: MW_up_to}, {metric: Vistra_existing, value: 2176, unit: MW}, {metric: Vistra_uprates, value: 433, unit: MW}, {metric: TerraPower_baseload, value: 2800, unit: MW_up_to}]
+    boundary: portfolio_targets_mix_existing_output_uprates_and_unbuilt_reactors
+    source: https://about.fb.com/news/2026/01/meta-nuclear-energy-projects-power-american-ai-leadership/
+  - id: relationship_bloom_oracle
+    parties: [power_company_bloom]
+    external_parties: [Oracle]
+    relationship_type: master_supply_agreement
+    lifecycle: master_agreement_with_initial_commitment
+    measures: [{metric: master_agreement_capacity, value: 2800, unit: MW_up_to}, {metric: initial_commitment, value: 1200, unit: MW}]
+    boundary: not_equivalent_to_recognized_revenue_operating_capacity_or_IT_load
+    financial_profile_ref: company_bloom_energy
+    source: https://investor.bloomenergy.com/financial-information/quarterly-results
+  - id: relationship_fermi_hyundai_AP1000_FEED
+    parties: [power_company_hyundai_ec, power_company_westinghouse]
+    external_parties: [Fermi_America]
+    relationship_type: front_end_engineering_and_design
+    lifecycle: FEED_for_planned_campus
+    measures: [{metric: planned_total_campus_power, value: 11000, unit: MW}, {metric: planned_AP1000_power, value: 4000, unit: MW}, {metric: planned_gas_power, value: 4000, unit: MW}]
+    boundary: master_plan_and_FEED_not_built_or_operating_capacity
+    source: https://newsroom.hdec.kr/en/company/press_view.aspx?CompanyPressSeq=604
+  - id: relationship_nvidia_800V_power_ecosystem
+    parties: [power_company_infineon, power_company_stmicro, power_company_onsemi]
+    external_parties: [NVIDIA]
+    relationship_type: 800VDC_platform_collaboration
+    lifecycle: development_and_qualification
+    measures: []
+    boundary: ecosystem_collaboration_is_not_customer_revenue_allocation
+    source: https://www.infineon.com/press-release/2025/INFXX202505-107
+  - id: relationship_fluence_hyperscaler_MSAs
+    parties: [power_company_fluence]
+    external_parties: [two_unnamed_hyperscalers]
+    relationship_type: master_service_agreements
+    lifecycle: signed_without_first_order_as_of_Q2_FY2026
+    measures: []
+    boundary: MSA_is_not_order_backlog_revenue_or_deployment
+    source: https://ir.fluenceenergy.com/news-releases/news-release-details/fluence-energy-inc-reports-second-quarter-2026-results-reaffirms
+  - id: relationship_wartsila_US_data_center_engines
+    parties: [power_company_wartsila]
+    external_parties: [unnamed_US_data_center_customer]
+    relationship_type: engine_equipment_order
+    lifecycle: booked_Q4_2025
+    measures: [{metric: generation_capacity, value: 507, unit: MW}, {metric: engines, value: 27, unit: units}]
+    boundary: booked_equipment_order_not_operating_IT_load
+    source: https://www.wartsila.com/investors/markets/announced-orders
+  - id: relationship_caterpillar_nscale_WV
+    parties: [power_company_caterpillar]
+    external_parties: [Nscale, West_Virginia_data_center]
+    relationship_type: planned_onsite_generation_supply
+    lifecycle: announced_plan
+    measures: [{metric: campus_generation_plan, value: 2000, unit: MW}]
+    boundary: plan_not_delivered_or_operating_capacity
+    financial_profile_ref: company_caterpillar
+    source: https://www.nscale.com/press-releases/nscale-west-virginia-ai-factory
+
+investment_exposure:
+  owner: Brian
+  holdings_source: life/finance/ai_data_center_investment_comparison_202607.yaml
+  portfolio_snapshot:
+    KODEX_US_AI_power_core_infrastructure: {shares: 170, evaluation_KRW: 4057016, portfolio_weight_percent: 3.29}
+    KIWOOM_global_power_GRID_infrastructure: {shares: 22, evaluation_KRW: 365420, portfolio_weight_percent: 0.30}
+    RISE_global_nuclear: {shares: 44, evaluation_KRW: 1628013, portfolio_weight_percent: 1.32}
+    direct_power_and_GRID_total: {evaluation_KRW: 4422436, portfolio_weight_percent: 3.58}
+  funds:
+    - id: fund_KODEX_US_AI_power_core_infrastructure
+      Korean_name: KODEX_미국AI전력핵심인프라
+      code: 487230
+      holding_snapshot_date: 2026-05-31
+      source: https://m.samsungfund.com/sheet/20260604/2ETFN6_20260531.pdf
+      holdings:
+        - {company_ref: power_company_ge_vernova, weight_percent: 17.10}
+        - {company_ref: power_company_vertiv, weight_percent: 15.22}
+        - {company_ref: power_company_comfort_systems, weight_percent: 15.19}
+        - {company_ref: power_company_bloom, weight_percent: 12.43}
+        - {company_ref: power_company_quanta, weight_percent: 11.63}
+        - {company_ref: power_company_cameco, weight_percent: 7.66}
+        - {company_ref: power_company_mastec, weight_percent: 7.35}
+        - {company_ref: power_company_sterling, weight_percent: 6.32}
+        - {company_ref: power_company_powell, weight_percent: 4.78}
+        - {company_ref: power_company_oklo, weight_percent: 2.34}
+      checks: {rounding_weight_sum_percent: 100.02, top_three_percent: 47.51, top_five_percent: 71.57}
+    - id: fund_KIWOOM_global_power_GRID_infrastructure
+      Korean_name: KIWOOM_글로벌전력GRID인프라
+      code: 489860
+      holding_snapshot_date: 2024_dated_example_not_current
+      source: https://www.kiwoomam.com/lounge/KI0502010102M?kijaNo=309
+      holdings_partial_top_ten:
+        - {company_ref: power_company_abb, weight_percent: 9.0}
+        - {company_ref: power_company_eaton, weight_percent: 8.1}
+        - {company_ref: power_company_schneider, weight_percent: 8.0}
+        - {external_company: Johnson_Controls, weight_percent: 7.9}
+        - {company_ref: power_company_national_grid, weight_percent: 6.2}
+        - {company_ref: power_company_quanta, weight_percent: 4.1}
+        - {external_company: Aptiv, weight_percent: 3.8}
+        - {company_ref: power_company_hubbell, weight_percent: 3.3}
+        - {company_ref: power_company_prysmian, weight_percent: 2.9}
+        - {external_company: NVIDIA, weight_percent: 2.8}
+      boundary: dated_partial_constituent_example_not_current_full_holdings
+    - id: fund_RISE_global_nuclear
+      Korean_name: RISE_글로벌원자력
+      code: 442320
+      holding_snapshot_date: 2026-07-15
+      source: https://www.riseetf.co.kr/prod/finderDetail/44D6?searchFlag=viewtab1
+      holdings_partial_top_ten:
+        - {company_ref: power_company_constellation, weight_percent: 27.64}
+        - {company_ref: power_company_cameco, weight_percent: 17.73}
+        - {company_ref: power_company_doosan_enerbility, weight_percent: 9.93}
+        - {company_ref: power_company_bwxt, weight_percent: 7.38}
+        - {external_company: KRW, weight_percent: 6.68}
+        - {company_ref: power_company_hd_hyundai_electric, weight_percent: 5.64}
+        - {company_ref: power_company_hyosung_heavy, weight_percent: 4.43}
+        - {company_ref: power_company_oklo, weight_percent: 2.44}
+        - {company_ref: power_company_hyundai_ec, weight_percent: 2.25}
+        - {external_company: NexGen_Energy, weight_percent: 2.15}
+      boundary: current_top_ten_only_not_full_portfolio
+  interpretation:
+    overlaps:
+      - equipment_demand_factor_shared_across_KODEX_and_GRID_fund
+      - Cameco_and_Oklo_overlap_between_KODEX_and_RISE
+      - regulated_utility_and_battery_cell_exposure_remains_limited
+      - construction_backlog_and_equipment_orders_are_cyclical_and_not_identical_to_power_demand
+    operating_rule: >-
+      현재 적자나 강제매도 필요는 없지만 월급 현금흐름 정상화가 먼저다. 추가 매수는
+      7월 말 GPT·휴대폰 요금제 조정과 지출 기록이 실제 월 잉여현금을 만든 뒤,
+      최신 ETF 구성·밸류에이션·중복도를 다시 확인하고 판단한다.
+
+bottleneck_register:
+  - {id: bottleneck_interconnection, severity: structural, evidence: FERC_and_NERC, mitigation: queue_reform_transmission_and_firm_capacity, caveat: rule_change_does_not_create_equipment_or_generation_immediately}
+  - {id: bottleneck_transformers, severity: structural, evidence: DOE_lead_time_and_multiple_factory_expansions, mitigation: capacity_expansion_standardization_and_long_term_orders, caveat: announced_capex_is_not_ramped_output}
+  - {id: bottleneck_HVDC_and_cable, severity: structural, evidence: NKT_backlog_and_Korean_capacity_expansion, mitigation: new_lines_factories_ships_and_permits, caveat: offshore_grid_and_data_center_demand_share_not_separated}
+  - {id: bottleneck_switchgear_UPS_busway, severity: high, evidence: supplier_backlogs_and_data_center_orders, mitigation: standard_design_modularization_and_multi_sourcing, caveat: company_group_revenue_is_not_AI_revenue}
+  - {id: bottleneck_skilled_labor_EPC, severity: high, evidence: construction_backlogs_and_mission_critical_mix, mitigation: modular_fabrication_training_and_early_procurement, caveat: backlog_margin_and_execution_risk_vary}
+  - {id: bottleneck_firm_generation, severity: regional, evidence: utility_contracts_nuclear_PPAs_and_onsite_orders, mitigation: mixed_grid_nuclear_gas_storage_and_demand_flexibility, caveat: contracted_MW_is_not_current_load}
+  - {id: bottleneck_800V_conversion, severity: emerging, evidence: NVIDIA_supplier_collaborations, mitigation: SiC_GaN_platform_qualification_and_protection_architecture, caveat: roadmap_is_not_mass_deployment}
+
+macro_sources:
+  - {organization: IEA, topic: electricity_demand_2026, source: https://www.iea.org/reports/electricity-2026/demand}
+  - {organization: IEA, topic: energy_and_AI_executive_summary, source: https://www.iea.org/reports/energy-and-ai/executive-summary%C2%A0}
+  - {organization: IEA, topic: updated_AI_electricity_2026, source: https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary}
+  - {organization: US_DOE, topic: transformer_supply_chain, source: https://www.energy.gov/oe/supply-chain-and-market-analysis}
+  - {organization: NERC, topic: 2025_long_term_reliability_assessment, source: https://www.nerc.com/globalassets/our-work/assessments/nerc_ltra_2025.pdf}
+  - {organization: FERC, topic: large_load_interconnection_action, source: https://www.ferc.gov/news-events/news/ferc-launches-aggressive-targeted-action-speed-large-load-integration}
+
+lineage_register:
+  - {operating_entity: Hitachi_Energy, current_parent_ref: power_company_hitachi_energy, economic_parent: Hitachi_Ltd, rule: use_Hitachi_consolidated_financials_for_parent_level_totals}
+  - {operating_entity: Westinghouse_Electric, current_parent_ref: power_company_westinghouse, economic_parent: Brookfield_Renewable_51_percent_and_Cameco_49_percent, rule: do_not_add_Westinghouse_revenue_to_both_owners}
+  - {operating_entity: Piller_Power_Systems, current_parent_ref: power_company_piller, economic_parent: Langley_Holdings, rule: private_subsidiary_no_public_standalone_market_cap}
+  - {operating_entity: Korea_Hydro_and_Nuclear_Power, current_parent_ref: power_company_khnp, economic_parent: KEPCO, rule: generation_and_parent_utility_are_distinct_operating_roles_but_not_independent_group_totals}
+  - {operating_entity: Fluence_Energy, current_parent_ref: power_company_fluence, economic_parent: public_company_with_AES_and_Siemens_as_strategic_owners, rule: use_Fluence_filings_for_standalone_public_financials}
+
+quality_gates:
+  minimum_company_records: 65
+  exact_supply_chain_stage_count: 13
+  require_official_url_per_company: true
+  require_unique_company_ids: true
+  require_valid_stage_references: true
+  require_valid_relationship_references: true
+  preserve_power_denominators: true
+  preserve_commercial_lifecycle: true
+  do_not_sum_currencies: true
+  do_not_treat_backlog_or_MSA_as_revenue: true
+  ETF_checks:
+    KODEX_top_three_percent: 47.51
+    KODEX_top_five_percent: 71.57
+    KIWOOM_snapshot_is_dated_partial: true
+    RISE_snapshot_is_current_partial_top_ten: true
+
+open_questions:
+  - Obtain a current full KIWOOM 489860 constituent file and replace the dated 2024 top-ten example.
+  - Normalize latest valuation multiples only after choosing one market timestamp and currency convention.
+  - Add exact transformer factory output in MVA or units where companies disclose comparable ramped capacity.
+  - Track each named data-center power agreement from signed through energized and billed states.
+  - Separate utility-funded shared grid capex from customer-funded dedicated facilities for return-on-equity analysis.
+  - Add gas turbine slot delivery years, firm gas transport and air-permit status for major onsite projects.
+  - Monitor 800VDC qualification versus actual mass-production deployment and rack-level standards.

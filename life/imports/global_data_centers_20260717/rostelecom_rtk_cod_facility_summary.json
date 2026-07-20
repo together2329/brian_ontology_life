@@ -1,0 +1,267 @@
+{
+  "OSM_crosswalk": {
+    "Nizhny_building_objects_for_one_provider_facility": 2,
+    "Rostelecom_operator_objects": 6,
+    "boundary": "OSM has six objects, including two Nizhny building footprints for one official facility, and misses most of the provider's 26-site portfolio. It is not a complete building, ownership, capacity or GPU census.",
+    "objects_joined_to_reviewed_facility_candidate": 4,
+    "objects_with_current_facility_mapping_unresolved": 2,
+    "rows": [
+      {
+        "capacity_counting_rule": "An OSM object is a public map crosswalk, not a current provider roster, ownership, rack, MW, utilization, revenue or GPU record.",
+        "classification": "provider_named_city_facility_candidate_exact_phase_and_building_mapping_unresolved",
+        "facility_ref": "rtk_cod_ekaterinburg",
+        "footprint_area_m2": 511.644,
+        "latitude": 56.9252345,
+        "longitude": 60.6100523,
+        "name": "Rostelecom Ekaterinburg",
+        "osm_ref": "osm_way_70659008",
+        "raw_operator": "Rostelecom"
+      },
+      {
+        "capacity_counting_rule": "An OSM object is a public map crosswalk, not a current provider roster, ownership, rack, MW, utilization, revenue or GPU record.",
+        "classification": "Moscow_V_legacy_or_provider_label_current_facility_mapping_unresolved",
+        "facility_ref": null,
+        "footprint_area_m2": 26671.875,
+        "latitude": 55.8861809,
+        "longitude": 37.6285156,
+        "name": "Rostelecom Moscow-V",
+        "osm_ref": "osm_way_48910297",
+        "raw_operator": "Rostelecom"
+      },
+      {
+        "capacity_counting_rule": "An OSM object is a public map crosswalk, not a current provider roster, ownership, rack, MW, utilization, revenue or GPU record.",
+        "classification": "first_building_footprint_at_official_facility_candidate",
+        "facility_ref": "rtk_cod_nizhny_novgorod",
+        "footprint_area_m2": 1600.276,
+        "latitude": 56.3392666,
+        "longitude": 43.8115764,
+        "name": "Rostelecom Nizhny Novgorod",
+        "osm_ref": "osm_way_149559197",
+        "raw_operator": "Rostelecom"
+      },
+      {
+        "capacity_counting_rule": "An OSM object is a public map crosswalk, not a current provider roster, ownership, rack, MW, utilization, revenue or GPU record.",
+        "classification": "second_building_footprint_at_same_official_facility_candidate",
+        "facility_ref": "rtk_cod_nizhny_novgorod",
+        "footprint_area_m2": 1379.211,
+        "latitude": 56.3396089,
+        "longitude": 43.8110296,
+        "name": "Rostelecom Nizhny Novgorod",
+        "osm_ref": "osm_way_149559237",
+        "raw_operator": "Rostelecom"
+      },
+      {
+        "capacity_counting_rule": "An OSM object is a public map crosswalk, not a current provider roster, ownership, rack, MW, utilization, revenue or GPU record.",
+        "classification": "provider_named_Novosibirsk_market_facility_current_phase_mapping_unresolved",
+        "facility_ref": null,
+        "footprint_area_m2": 949.602,
+        "latitude": 55.073731,
+        "longitude": 82.9604413,
+        "name": "Rostelecom Novosibirsk",
+        "osm_ref": "osm_way_53454428",
+        "raw_operator": "Rostelecom"
+      },
+      {
+        "capacity_counting_rule": "An OSM object is a public map crosswalk, not a current provider roster, ownership, rack, MW, utilization, revenue or GPU record.",
+        "classification": "provider_named_Saint_Petersburg_campus_candidate_exact_boundary_unresolved",
+        "facility_ref": "rtk_cod_st_petersburg",
+        "footprint_area_m2": 15813.836,
+        "latitude": 59.9728641,
+        "longitude": 30.3725654,
+        "name": "ЦОД Ростелеком",
+        "osm_ref": "osm_relation_16256441",
+        "raw_operator": "Rostelecom"
+      }
+    ],
+    "source_file": "life/imports/global_data_centers_20260717/osm_data_center_locations.jsonl",
+    "source_file_sha256": "3a0f1370f036f2ff5fa0c478bfadeb58c7809d90315bbee4e0a7c9cfd21d4733"
+  },
+  "accelerator_and_AI_boundary": {
+    "2025_AI_model_resource_growth_multiple": 13,
+    "2025_GPU_VM_demand_growth_multiple": 3,
+    "Foundation_Model_Hub_accelerator": "NVIDIA_H200",
+    "Foundation_Model_Hub_fabric": "InfiniBand",
+    "Turbo_Cloud_locations_more_than": 20,
+    "accelerator_ledger_action": "no_numeric_physical_inventory_row_created",
+    "boundary": "GPU models, service demand, virtual CPUs and a fabric establish cloud capability. They do not disclose physical accelerator units, ownership, exact host sites, installed power, utilization or GPU revenue and margin.",
+    "disclosed_GPU_models": [
+      "NVIDIA_L40S",
+      "NVIDIA_A100",
+      "NVIDIA_H200"
+    ],
+    "federal_districts": 5,
+    "physical_GPU_model_specific_units_site_delivery_power_utilization_and_revenue": "undisclosed",
+    "virtual_CPUs_more_than": 500000
+  },
+  "accessed_on": "2026-07-19",
+  "current_portfolio_headline": {
+    "CEO_letter_market_share_percent": 32,
+    "Rostelecom_Group_racks_at_end_2025_rounded": 28000,
+    "boundary": "The provider does not publish a complete current 26-facility address roster. Ten markets are not 26 facilities; 27,637, 27,800 and 28,000 are different exact, rounded and group scopes. The 235-MW term is not labelled IT load, energized, leased, utilized, billed or actual draw.",
+    "current_named_markets": [
+      "Moscow",
+      "Saint_Petersburg",
+      "Ekaterinburg",
+      "Novosibirsk",
+      "Nizhny_Novgorod",
+      "Udomlya",
+      "Tolyatti",
+      "Adler",
+      "Khabarovsk",
+      "Vladivostok"
+    ],
+    "data_centers": 26,
+    "detailed_rack_park_after_five_year_program": 27637,
+    "provider_market_share_percent_2025_annual_report": 30,
+    "published_total_power_mw_undefined_denominator": 235,
+    "rounded_marketing_racks": 27800
+  },
+  "financial_scope": {
+    "FY2025_RTK_COD_management_cluster_RUB_million": {
+      "OIBDA": 33958,
+      "accounting_operating_profit": "undisclosed",
+      "derived_OIBDA_margin_percent": 44.85,
+      "prior_year_OIBDA": 30362,
+      "prior_year_revenue": 69670,
+      "revenue": 75715
+    },
+    "Q1_2026_RTK_COD_group_RUB_million": {
+      "OIBDA": 9578,
+      "OIBDA_growth_percent": 30,
+      "accounting_operating_profit": "undisclosed",
+      "derived_OIBDA_margin_percent": 53.51,
+      "prior_year_OIBDA": 7358,
+      "prior_year_revenue": 18098,
+      "revenue": 17898,
+      "revenue_growth_percent": -1
+    },
+    "boundary": "RTK-COD cluster revenue and OIBDA are not pure physical-data-center earnings. No cluster accounting operating profit, cash flow, capex, debt, customer concentration, site economics or ROIC is disclosed.",
+    "cluster_excludes": [
+      "hardware_and_IT_components",
+      "IT_services",
+      "other"
+    ],
+    "cluster_includes": [
+      "colocation_and_related_data_center_services",
+      "cloud_services",
+      "Basis_dynamic_infrastructure_and_virtualization_software"
+    ],
+    "reporting_basis": "standalone_management_accounting_approximated_to_IFRS_audited_segment_or_cluster_values_may_differ"
+  },
+  "id": "rostelecom_rtk_cod_facility_summary_2026_07_19",
+  "investment_and_growth": {
+    "2025_added_racks_approximately": 1400,
+    "2025_added_racks_percent": 5,
+    "2025_new_and_expansion_investment_RUB_billion": 3.6,
+    "2025_operating_launches": {
+      "Nizhny_Novgorod_racks": 401,
+      "Udomlya_3_racks": 820
+    },
+    "Ostapovsky_new_phase_design_window": "2026-2027",
+    "boundary": "The five-year program, 2025 facility investment and future cloud plan are separate scopes. Planned cloud investment is neither incurred physical-data-center capex nor current revenue.",
+    "five_year_program_2021_2025_RUB_billion_more_than": 38,
+    "high_readiness_planned_by_end_2026": {
+      "Ekaterinburg_third_phase_racks_rounded": 200,
+      "Saint_Petersburg_second_phase_racks_rounded": 900
+    },
+    "planned_Turbo_Cloud_investment_to_2030_RUB_billion_more_than": 40,
+    "program_share_for_engineering_and_IT_equipment": "approximately_one_third"
+  },
+  "operator_or_platform": "RTK_COD_group",
+  "ownership_and_operating_model": {
+    "2020_transaction_EV_to_OIBDA_multiple": 7.8,
+    "IPO_status": "management_preparation_task_not_completed_or_guaranteed_listing",
+    "VTB_2020_investment_RUB_billion": 35,
+    "boundary": "The 2020 stakes and multiple are historical transaction evidence. They are not current valuation, market capitalization or a guarantee of the planned IPO. Ownership and tenure are not uniform across all facilities.",
+    "current_description": "joint_venture_of_Rostelecom_and_VTB",
+    "current_exact_stakes_reconfirmed_in_2026_source": false,
+    "last_exact_official_transaction_stakes_2020": {
+      "Rostelecom_implied_percent": 55.2,
+      "VTB_percent": 44.8
+    },
+    "operator_development_models": [
+      "own_construction_and_management",
+      "lease",
+      "acquisition"
+    ]
+  },
+  "parent_financial_context": {
+    "FY2025_RUB_million": {
+      "OIBDA": 331048,
+      "capex": 158039,
+      "free_cash_flow_RUB_billion": 37.8,
+      "net_debt_including_leases": 689637,
+      "net_debt_to_OIBDA": 2.1,
+      "net_profit": 18715,
+      "operating_profit": 149359,
+      "revenue": 872790
+    },
+    "Q1_2026_RUB_million": {
+      "OIBDA": 83870,
+      "capex": 28632,
+      "free_cash_flow": -5556,
+      "net_debt": 712255,
+      "net_debt_to_OIBDA": 2.1,
+      "net_profit": 7436,
+      "operating_profit": 37483,
+      "revenue": 208919
+    },
+    "boundary": "Rostelecom is a diversified telecom and digital-services group. Parent operating profit, debt, cash flow and capex are not assigned to RTK-COD or any facility."
+  },
+  "power_cooling_and_certification_boundary": {
+    "Uptime_current_DataLine_client_projects": [
+      "Nord_4",
+      "Nord_1_and_Nord_2",
+      "Nord_5_server_rooms_120_and_202"
+    ],
+    "Uptime_current_Rostelecom_client_page_exact_project": "M1_Moscow_Tier_III_Design_Documents",
+    "boundary": "Provider reliability wording, an Uptime client-award entry, historical DataLine awards and an exact current 26-site certification ledger are different scopes. Power denominators and cooling details are not normalized across facilities.",
+    "exact_26_site_Uptime_award_bridge": "not_publicly_reconciled",
+    "facility_records_with_numeric_power_evidence": [
+      "Nizhny_Novgorod",
+      "Udomlya_3_per_rack",
+      "Ekaterinburg_historical_phases",
+      "Saint_Petersburg",
+      "Medvedkovo_2",
+      "Ostapovsky_historical_project",
+      "NORD_6"
+    ],
+    "portfolio_PUE_WUE_absolute_water_renewable_matching_and_complete_equipment_BOM": "undisclosed",
+    "provider_portfolio_Tier_III_wording": "26_data_centers_certified_in_accordance_with_Tier_III_requirements"
+  },
+  "public_parent": "PJSC_Rostelecom",
+  "records_sha256": "a7890e96387e1fdeaa98f34ecdeb62844a153846e1cdff72e361822b4db730c7",
+  "remaining_material_gaps": [
+    "complete_current_26_facility_address_building_ownership_tenure_and_lifecycle_roster",
+    "bridge_between_27637_27800_and_28000_rack_scopes_and_235_MW_denominator",
+    "per_site_operating_energized_leased_utilized_billed_and_actual_IT_load",
+    "per_site_grid_substation_transformer_switchgear_UPS_battery_generator_fuel_and_cooling_BOM",
+    "per_site_live_liquid_cooled_MW_PUE_WUE_water_energy_and_hourly_matching",
+    "physical_GPU_model_count_owner_host_site_delivery_fabric_power_utilization_revenue_and_margin",
+    "RTK_COD_pure_data_center_revenue_accounting_operating_profit_cash_flow_capex_debt_customer_concentration_site_economics_and_ROIC",
+    "current_exact_Rostelecom_VTB_ownership_and_IPO_terms"
+  ],
+  "sources": [
+    "https://www.company.rt.ru/projects/news/d478049/",
+    "https://www.company.rt.ru/ir/agm/files/2025/Annual_report_2025_rus.pdf",
+    "https://www.company.rt.ru/ir/agm/files/2024/Annual_report_2024_rus.pdf",
+    "https://www.company.rt.ru/press/news/d477081/",
+    "https://www.company.rt.ru/press/news_ir/news/d477115/",
+    "https://www.company.rt.ru/press/news_ir/news/d478131/",
+    "https://www.company.rt.ru/press/news/d457686/_ftn2",
+    "https://www.company.rt.ru/press/news_project/d473377/",
+    "https://www.company.rt.ru/projects/digital_economy_rf/data-centers/d473700/",
+    "https://www.company.rt.ru/projects/news/d461353/",
+    "https://www.company.rt.ru/press/news_fill/ural/d473668/",
+    "https://www.company.rt.ru/projects/news/d457489/",
+    "https://www.company.rt.ru/press/news_ir/news/d460740/",
+    "https://www.company.rt.ru/projects/news/d455806/",
+    "https://www.company.rt.ru/press/news/d473293/",
+    "https://www.company.rt.ru/projects/news/d474835/",
+    "https://www.company.rt.ru/press/news/d476261/",
+    "https://www.company.rt.ru/press/news/d479061/",
+    "https://www.company.rt.ru/press/news/d474987/",
+    "https://uptimeinstitute.com/uptime-institute-awards/country/id/RU",
+    "https://uptimeinstitute.com/uptime-institute-awards/client/rostelecom/209"
+  ]
+}

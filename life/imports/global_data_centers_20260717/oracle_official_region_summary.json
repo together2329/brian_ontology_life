@@ -1,0 +1,217 @@
+{
+  "coverage": {
+    "commercial_availability_domain_total": 55,
+    "commercial_code_reconciliation_counts": {
+      "marketing_conflicts_with_technical_docs": 3,
+      "marketing_matches_technical_docs": 38,
+      "marketing_missing_code_technical_docs_supplies_it": 4
+    },
+    "commercial_countries_or_territories_from_docs": [
+      "Australia",
+      "Brazil",
+      "Canada",
+      "Chile",
+      "Colombia",
+      "France",
+      "Germany",
+      "India",
+      "Indonesia",
+      "Israel",
+      "Italy",
+      "Japan",
+      "Malaysia",
+      "Mexico",
+      "Morocco",
+      "Netherlands",
+      "Saudi Arabia",
+      "Serbia",
+      "Singapore",
+      "South Africa",
+      "South Korea",
+      "Spain",
+      "Sweden",
+      "Switzerland",
+      "United Arab Emirates",
+      "United Kingdom",
+      "United States"
+    ],
+    "commercial_country_or_territory_count_from_docs": 27,
+    "commercial_interconnect_markers": {
+      "oracle_interconnect_for_azure": {
+        "blank_or_not_applicable": 15,
+        "no": 18,
+        "yes": 12
+      },
+      "oracle_interconnect_for_google_cloud": {
+        "blank_or_not_applicable": 32,
+        "yes": 13
+      }
+    },
+    "commercial_live_and_planned_countries_or_territories": [
+      "Australia",
+      "Brazil",
+      "Canada",
+      "Chile",
+      "Colombia",
+      "France",
+      "Germany",
+      "India",
+      "Indonesia",
+      "Israel",
+      "Italy",
+      "Japan",
+      "Kenya",
+      "Malaysia",
+      "Mexico",
+      "Morocco",
+      "Netherlands",
+      "Saudi Arabia",
+      "Serbia",
+      "Singapore",
+      "South Africa",
+      "South Korea",
+      "Spain",
+      "Sweden",
+      "Switzerland",
+      "United Arab Emirates",
+      "United Kingdom",
+      "United States"
+    ],
+    "commercial_live_and_planned_country_or_territory_count": 28,
+    "commercial_live_rows_joined_to_technical_docs": 45,
+    "commercial_realm_key_counts": {
+      "OC1": 44,
+      "OC20": 1
+    },
+    "commercial_region_count_by_availability_domains": {
+      "1": 40,
+      "3": 5
+    },
+    "commercial_regions_with_three_availability_domains": [
+      "Germany Central (Frankfurt)",
+      "UK South (London)",
+      "US East (Ashburn)",
+      "US Midwest (Chicago)",
+      "US West (Phoenix)"
+    ],
+    "live_region_rows_all_reviewed_realms": 55,
+    "marketing_region_rows_total": 57,
+    "planned_region_rows": 2,
+    "realm_and_status_counts": {
+      "commercial:coming_soon": 2,
+      "commercial:live": 45,
+      "government:live": 8,
+      "sovereign:live": 2
+    }
+  },
+  "generated_on": "2026-07-18",
+  "interpretation": {
+    "hyderabad_and_batam": "The marketing geo-data values are swapped; the technical documentation identifiers ap-hyderabad-1 and ap-batam-1 are selected for their named Regions.",
+    "madrid_second_row": "The marketing table says Spain Central 2 and reuses eu-madrid-1, while technical documentation says Spain Central (Madrid 3) with eu-madrid-3. Both labels are preserved and the technical identifier is selected.",
+    "region_and_building_boundary": "Marketing rows, programmatic Regions, Availability Domains, and physical data centers are different denominators and are not ranked as equivalent fleet counts."
+  },
+  "marketing_code_anomalies": [
+    {
+      "documented_region_identifier": "af-casablanca-1",
+      "documented_region_name": "Morocco West (Casablanca)",
+      "handling": "technical_documentation_identifier_selected_marketing_value_preserved",
+      "marketing_name": "Morocco West (Casablanca)",
+      "marketing_region_code_raw": null
+    },
+    {
+      "documented_region_identifier": "ap-batam-1",
+      "documented_region_name": "Indonesia North (Batam)",
+      "handling": "technical_documentation_identifier_selected_marketing_value_preserved",
+      "marketing_name": "Indonesia North (Batam)",
+      "marketing_region_code_raw": "ap-hyderabad-1"
+    },
+    {
+      "documented_region_identifier": "ap-hyderabad-1",
+      "documented_region_name": "India South (Hyderabad)",
+      "handling": "technical_documentation_identifier_selected_marketing_value_preserved",
+      "marketing_name": "India South (Hyderabad)",
+      "marketing_region_code_raw": "ap-batam-1"
+    },
+    {
+      "documented_region_identifier": "ap-kulai-2",
+      "documented_region_name": "Malaysia West 2 (Kulai)",
+      "handling": "technical_documentation_identifier_selected_marketing_value_preserved",
+      "marketing_name": "Malaysia West (Kulai)",
+      "marketing_region_code_raw": null
+    },
+    {
+      "documented_region_identifier": "eu-jovanovac-1",
+      "documented_region_name": "Serbia Central (Jovanovac)",
+      "handling": "technical_documentation_identifier_selected_marketing_value_preserved",
+      "marketing_name": "Serbia Central (Jovanovac)",
+      "marketing_region_code_raw": null
+    },
+    {
+      "documented_region_identifier": "eu-madrid-3",
+      "documented_region_name": "Spain Central (Madrid 3)",
+      "handling": "technical_documentation_identifier_selected_marketing_value_preserved",
+      "marketing_name": "Spain Central 2 (Madrid)",
+      "marketing_region_code_raw": "eu-madrid-1"
+    },
+    {
+      "documented_region_identifier": "eu-turin-1",
+      "documented_region_name": "Italy North (Turin)",
+      "handling": "technical_documentation_identifier_selected_marketing_value_preserved",
+      "marketing_name": "Italy North (Turin)",
+      "marketing_region_code_raw": null
+    }
+  ],
+  "marketing_headline_reconciliation": {
+    "country_scope_reconciliation": "The 45 live commercial Regions cover 27 countries or territories. Adding the two coming-soon rows adds Kenya but no new country for Morocco 2, producing the marketed 28-country reach.",
+    "current_country_claim": 28,
+    "current_live_rows_across_commercial_sovereign_and_government_tables": 55,
+    "current_public_region_claim": "50+",
+    "interpretation": "The 50-plus claim is compatible with the 55 live rows across the reviewed commercial, sovereign, and government tables. The 28-country claim matches the live-plus-planned commercial scope, not the 27-country live commercial scope. The 41/26 statement is stale content retained on the same page.",
+    "legacy_country_claim_same_page": 26,
+    "legacy_region_claim_same_page": 41,
+    "live_and_planned_commercial_country_or_territory_count": 28,
+    "live_commercial_country_or_territory_count": 27
+  },
+  "marketing_raw_code_collisions": {
+    "eu-frankfurt-1": [
+      "commercial:Germany Central (Frankfurt)",
+      "sovereign:EU Sovereign Central (Frankfurt)"
+    ],
+    "eu-madrid-1": [
+      "commercial:Spain Central (Madrid)",
+      "commercial:Spain Central 2 (Madrid)",
+      "sovereign:EU Sovereign South (Madrid)"
+    ]
+  },
+  "physical_scope_reconciliation": {
+    "active_data_centers": 147,
+    "boundary": "Each Availability Domain contains one or more data centers, so 55 is only a commercial-realm physical lower bound. The 147-active company claim can include multiple buildings per Availability Domain and other public, dedicated, government, partner, or distributed-cloud scopes; no residual building count is inferred.",
+    "claim_date": "2026-01-23",
+    "commercial_availability_domains_documented": 55,
+    "commercial_physical_data_center_lower_bound": 55,
+    "data_centers_on_the_way": 64
+  },
+  "remaining_gaps": [
+    "Complete mapping of 147 active and 64 planned physical data centers to public, sovereign, government, dedicated, multicloud, and partner realms",
+    "Physical campus, building, address, parcel, ownership, lease, and colocation mapping behind each Region and Availability Domain",
+    "Programmatic identifiers and Availability Domain counts for sovereign and government rows",
+    "Per-site operating, energized, leased, utilized, and billed critical IT load",
+    "Per-site live GPU and accelerator model, count, rack, fabric, and utilization inventory",
+    "Per-site utility, substation, transformer, switchgear, UPS, battery, generator, cooling, and equipment OEM bill of materials",
+    "Construction, commissioning, customer-acceptance, and revenue-start dates",
+    "Removal or timestamping of the stale 41-region/26-country statement and correction of marketing geo-data anomalies"
+  ],
+  "schema_version": 1,
+  "sources": {
+    "commercial_region_technical_documentation": "https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm",
+    "hash_boundary": "Hashes cover extracted stable evidence rather than full HTML, whose runtime scripts and delivery metadata can vary.",
+    "physical_data_center_count_claim": "https://www.oracle.com/news/announcement/blog/oracle-advances-american-ai-innovation-in-new-mexico-2026-01-23/",
+    "public_cloud_region_marketing_table": "https://www.oracle.com/cloud/public-cloud-regions/",
+    "retrieved_evidence_sha256": {
+      "commercial_region_technical_table": "1679cee07e32d3a7295a73527440a5b6eaa4a09faf2cec501745d41097d76daa",
+      "marketing_headlines": "3221cf645227709f84cfcbf65d07403c6ff0403380c7bfe100ba45d17f5c11b7",
+      "marketing_region_tables": "f993ef1a3314143c64e48075c4260b2472225055f5cde5151e6bbe2605d15bdd",
+      "physical_data_center_count_claim": "2ae4da91e91b0cf50cf59668b41823020ef3f33446e16dc39f907d64fdb4259e"
+    }
+  }
+}
