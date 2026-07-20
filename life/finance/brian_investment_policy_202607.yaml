@@ -1,7 +1,7 @@
 schema_version: 1
 status: proposed_for_brian_review
 created_at: '2026-07-19'
-updated_at: '2026-07-19'
+updated_at: '2026-07-20'
 area: FINANCE
 secondary_areas:
   - CAREER
@@ -26,6 +26,8 @@ decision_boundary: >
 execution_ledger_ref: life/finance/brian_investment_policy_execution_202607.yaml
 execution_builder_ref: scripts/analyze_brian_investment_policy.py
 country_macro_overlay_ref: life/finance/country_macro_investment_overlay_202607.yaml
+equity_backtest_spec_ref: life/finance/brian_equity_backtest_spec_202607.yaml
+equity_backtest_report_ref: life/finance/brian_equity_backtest_report_ko_202607.md
 
 source_records:
   - id: source_investment_strategy_request_20260719
@@ -328,6 +330,28 @@ dilution_math_if_no_sales:
     New-money dilution can begin the transition but may be too slow by itself. After cashflow,
     reserve, tax lots and the household balance sheet are known, Brian can choose between a
     longer glide path and scheduled partial sales; no immediate forced sale is assumed.
+
+cashflow_only_backtest_checkpoint_20260720:
+  status: first_milestone_complete
+  design: Current 2026-07-15 holdings were backcast from 2016, 2020 and 2023 starts under three strategies and nine cashflow combinations per start, for 81 total scenarios.
+  paired_result:
+    candidate_vs_current_style_cases: 54
+    lower_maximum_drawdown_cases: 54
+    lower_ending_explicit_ai_cases: 54
+    lower_ending_direct_employer_cases: 54
+    higher_terminal_value_cases: 0
+  best_concentration_reached_any_candidate_case:
+    ending_explicit_ai_percent: 78.73
+    ending_direct_employer_percent: 67.97
+    explicit_ai_destination_target_percent: 20
+    direct_employer_first_checkpoint_percent: 45
+  interpretation: Cashflow-only dilution consistently improved the tested risk path but did not reach either concentration checkpoint, even at the largest tested monthly contribution and bonus.
+  return_boundary: The current winner-heavy holdings and current optical constituents were selected with hindsight, so lower candidate terminal values do not establish future return inferiority.
+  decision_boundary: This checkpoint supports further exact-data and tax-aware testing; it does not authorize a sale or make a return forecast.
+  refs:
+    - life/finance/brian_equity_backtest_spec_202607.yaml
+    - life/finance/brian_equity_backtest_report_ko_202607.md
+    - life/imports/investment_backtest_202607/results.json
 
 concentrated_position_glide_path:
   current_direct_sk_hynix_percent: 55.36

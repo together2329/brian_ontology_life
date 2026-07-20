@@ -1,7 +1,7 @@
 schema_version: 1
 status: active_execution_draft_awaiting_household_inputs
 created_at: '2026-07-19'
-updated_at: '2026-07-19'
+updated_at: '2026-07-20'
 area: FINANCE
 title: Brian investment policy execution, stress, country-macro and glide-path ledger
 privacy: Personal holdings and scenario inputs remain local; no external trade is authorized.
@@ -11,6 +11,7 @@ human_readable_summary_ko:
   core_read: 반도체 동반 하락 민감도에서는 포착된 증권자산이 39.12% 감소하고, AI 설비투자 반전 민감도에서는 39.59% 감소한다.
   success_risk: AI 상승 민감도에서는 포트폴리오가 32.91% 증가하지만 SK하이닉스 비중도 58.32%로 올라가므로 성공 자체가 리밸런싱 사유가 될 수 있다.
   action_now: 현금흐름과 비상자금을 먼저 복구하고, 신규 AI 매수를 멈춘 채 ETF 실구성·세금·가계 전체 노출을 측정한다.
+  backtest_read: 무매도 신규자금 희석은 54개 비교 모두에서 낙폭과 집중도를 낮췄지만 최대 납입 조합도 AI 78.73%, SK하이닉스 67.97%에 머물러 현금흐름만으로 정책 체크포인트에 도달하지 못했다.
 source_snapshot:
   as_of: '2026-07-15'
   securities_and_gold_total_krw: 123448709
@@ -21,6 +22,16 @@ source_snapshot:
   - life/finance/ai_data_center_investment_comparison_202607.yaml
   - life/finance/brian_investment_policy_202607.yaml
   - life/finance/country_macro_investment_overlay_202607.yaml
+  - life/finance/brian_equity_backtest_spec_202607.yaml
+  - life/imports/investment_backtest_202607/results.json
+equity_backtest_checkpoint:
+  as_of: '2026-07-20'
+  status: first_milestone_complete
+  scenario_count: 81
+  result_ref: life/imports/investment_backtest_202607/results.json
+  report_ref: life/finance/brian_equity_backtest_report_ko_202607.md
+  operating_read: Preserve cashflow-only dilution as the risk-reduction baseline, but test exact ETF histories and tax-aware position caps before deciding whether a glide path needs sales.
+  boundary: Counterfactual backcast only; no transaction is authorized.
 country_macro_execution_overlay:
   source_as_of: '2026-07-19'
   coverage_boundary: 'This is not a literal survey of every sovereign economy. It is the smallest decision-complete set for
